@@ -8,6 +8,7 @@ import Fieldsonforsearch from '../fieldsonforsearch';
 // Types
 import { CreateElement, RenderContext } from 'vue/types';
 import { DefaultSlots, ScopedSlot } from '../utils/types';
+import VanEmptyCol from '../emptycol';
 
 const [createComponent, bem, t] = createNamespace('search');
 
@@ -57,6 +58,8 @@ function Search(
   }
 
   function Action() {
+    const designer = ctx.parent?.$env?.VUE_APP_DESIGNER;
+
     if (!props.showAction) {
       return;
     }
@@ -73,8 +76,9 @@ function Search(
     }
 
     return (
-      <div class={bem('action')} role="button" tabindex="0" onClick={onCancel}>
-        {slots.action ? slots.action() : props.actiontext}
+      <div class={bem('action')} role="button" tabindex="0" onClick={onCancel} vusion-slot-name="action">
+        {!designer ? ((slots.action && slots.action()) ? slots.action() : props.actiontext) : null}
+        {designer ? ((slots.action && !slots.action() && !props.actiontext) ? <VanEmptyCol></VanEmptyCol> : ((slots.action && slots.action()) ? slots.action() : props.actiontext)) : null}
       </div>
     );
   }

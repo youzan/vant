@@ -3646,7 +3646,7 @@
             "Display"
         ],
         "screenShot": "",
-        "blocks": "[{\"title\":\"基础用法\",\"description\":\"\",\"code\":\"<template>\\n<van-circle value=\\\"50\\\" rate=\\\"100\\\" speed=\\\"100\\\" text=\\\"50%\\\" />\\n</template>\\n\"}]",
+        "blocks": "[{\"title\":\"基础用法\",\"description\":\"\",\"code\":\"<template>\\n<van-circle value=\\\"50\\\" rate=\\\"100\\\" speed=\\\"100\\\">50%</van-circle>\\n</template>\\n\"}]",
         "jsonSchema": {
             "name": "van-circle",
             "title": "环形进度条",
@@ -3658,14 +3658,14 @@
                 {
                     "title": "基础用法",
                     "description": "",
-                    "code": "<template>\n<van-circle value=\"50\" rate=\"100\" speed=\"100\" text=\"50%\" />\n</template>\n"
+                    "code": "<template>\n<van-circle value=\"50\" rate=\"100\" speed=\"100\">50%</van-circle>\n</template>\n"
                 }
             ],
             "attrs": [
                 {
                     "name": "value",
                     "title": "当前进度",
-                    "type": "number | string",
+                    "type": "number",
                     "sync": true,
                     "model": true,
                     "defalut": 50,
@@ -3717,7 +3717,15 @@
                     "description": "是否顺时针增加"
                 }
             ],
-            "slots": false,
+            "slots": [
+                {
+                    "concept": "Slot",
+                    "name": "default",
+                    "title": "默认",
+                    "description": "显示的文本",
+                    "advanced": true
+                }
+            ],
             "events": null,
             "next": true,
             "nested": false,
@@ -3808,9 +3816,24 @@
                     "type": "boolean",
                     "default": true,
                     "description": "是否显示进度文字"
+                },
+                {
+                    "name": "custom",
+                    "title": "是否自定义",
+                    "type": "boolean",
+                    "default": false,
+                    "description": "是否自定义"
                 }
             ],
-            "slots": false,
+            "slots": [
+                {
+                    "concept": "Slot",
+                    "name": "default",
+                    "title": "默认",
+                    "description": "显示的文本",
+                    "advanced": true
+                }
+            ],
             "events": null,
             "next": true,
             "nested": false,
@@ -5409,7 +5432,7 @@
             "Form"
         ],
         "screenShot": "",
-        "blocks": "[{\"title\":\"基本用法\",\"description\":\"\",\"code\":\"<template>\\n<van-search placeholder=\\\"请输入搜索关键词\\\" clearable show-action actiontext=\\\"搜索\\\" cleartrigger=\\\"focus\\\" iconalign=\\\"left\\\" input-align=\\\"left\\\"/>\\n</template>\\n\"}]",
+        "blocks": "[{\"title\":\"基本用法\",\"description\":\"\",\"code\":\"<template>\\n<van-search placeholder=\\\"请输入搜索关键词\\\" clearable show-action cleartrigger=\\\"focus\\\" iconalign=\\\"left\\\" input-align=\\\"left\\\"><template #action>搜索</template></van-search>\\n</template>\\n\"}]",
         "jsonSchema": {
             "name": "van-search",
             "title": "搜索框",
@@ -5421,7 +5444,7 @@
                 {
                     "title": "基本用法",
                     "description": "",
-                    "code": "<template>\n<van-search placeholder=\"请输入搜索关键词\" clearable show-action actiontext=\"搜索\" cleartrigger=\"focus\" iconalign=\"left\" input-align=\"left\"/>\n</template>\n"
+                    "code": "<template>\n<van-search placeholder=\"请输入搜索关键词\" clearable show-action cleartrigger=\"focus\" iconalign=\"left\" input-align=\"left\"><template #action>搜索</template></van-search>\n</template>\n"
                 }
             ],
             "attrs": [
