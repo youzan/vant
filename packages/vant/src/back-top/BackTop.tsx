@@ -33,7 +33,7 @@ export const backTopProps = {
   right: makeNumericProp(30),
   bottom: makeNumericProp(40),
   target: [String, Object] as PropType<TeleportProps['to']>,
-  visibilityHeight: makeNumericProp(200),
+  offset: makeNumericProp(200),
   teleport: {
     type: [String, Object] as PropType<TeleportProps['to']>,
     default: 'body',
@@ -72,7 +72,7 @@ export default defineComponent({
     };
 
     const scroll = () => {
-      show.value = getScrollTop(target) >= props.visibilityHeight;
+      show.value = getScrollTop(target) >= props.offset;
     };
 
     const getTarget = () => {
@@ -95,7 +95,7 @@ export default defineComponent({
       );
     };
 
-    useEventListener('scroll', throttle(scroll, 300), { target: scrollParent });
+    useEventListener('scroll', throttle(scroll, 100), { target: scrollParent });
 
     onMounted(() => {
       nextTick(() => {

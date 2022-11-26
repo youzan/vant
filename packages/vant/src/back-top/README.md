@@ -113,7 +113,7 @@ export default {
 | target | Can be a `selector` or `HTMLElement` | _string \| HTMLElement_ | - |
 | right | Right distance of the page, the default unit is px | _number \| string_ | `30` |
 | bottom | Bottom distance of the page, the default unit is px | _number \| string_ | `40` |
-| visibility-height | The button will not show until the scroll height reaches this value | _number_ | `200` |
+| offset | The button will not show until the scroll height reaches this value | _number_ | `200` |
 | teleport | Specifies a target element where BackTop will be mounted | _string \| Element_ | `body` |
 
 ### Slots
