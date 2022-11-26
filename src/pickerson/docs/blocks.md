@@ -6,5 +6,5 @@
   :show-toolbar="true"
   labelField="左侧标题"
   input-align="left"
-></van-pickerson>
+><template #title>标题</template></van-pickerson>
 ```

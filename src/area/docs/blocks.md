@@ -6,5 +6,5 @@
   converter="json"
   labelField="地区选择"
   input-align="left"
-></van-area>
+><template #title>标题</template></van-area>
 ```

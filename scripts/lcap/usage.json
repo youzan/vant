@@ -6911,7 +6911,7 @@
             "Selector"
         ],
         "screenShot": "",
-        "blocks": "[{\"title\":\"基础用法\",\"description\":\"\",\"code\":\"<template>\\n<van-pickerson\\n  title=\\\"标题\\\"\\n  :show-toolbar=\\\"true\\\"\\n  labelField=\\\"左侧标题\\\"\\n  input-align=\\\"left\\\"\\n></van-pickerson>\\n</template>\\n\"}]",
+        "blocks": "[{\"title\":\"基础用法\",\"description\":\"\",\"code\":\"<template>\\n<van-pickerson\\n  title=\\\"标题\\\"\\n  :show-toolbar=\\\"true\\\"\\n  labelField=\\\"左侧标题\\\"\\n  input-align=\\\"left\\\"\\n><template #title>标题</template></van-pickerson>\\n</template>\\n\"}]",
         "jsonSchema": {
             "name": "van-pickerson",
             "title": "选择器",
@@ -6923,7 +6923,7 @@
                 {
                     "title": "基础用法",
                     "description": "",
-                    "code": "<template>\n<van-pickerson\n  title=\"标题\"\n  :show-toolbar=\"true\"\n  labelField=\"左侧标题\"\n  input-align=\"left\"\n></van-pickerson>\n</template>\n"
+                    "code": "<template>\n<van-pickerson\n  title=\"标题\"\n  :show-toolbar=\"true\"\n  labelField=\"左侧标题\"\n  input-align=\"left\"\n><template #title>标题</template></van-pickerson>\n</template>\n"
                 }
             ],
             "attrs": [
@@ -7071,7 +7071,7 @@
             "Selector"
         ],
         "screenShot": "",
-        "blocks": "[{\"title\":\"基本用法\",\"description\":\"\",\"code\":\"<template>\\n<van-area\\n  title=\\\"标题\\\"\\n  converter=\\\"json\\\"\\n  labelField=\\\"地区选择\\\"\\n  input-align=\\\"left\\\"\\n></van-area>\\n</template>\\n\"}]",
+        "blocks": "[{\"title\":\"基本用法\",\"description\":\"\",\"code\":\"<template>\\n<van-area\\n  title=\\\"标题\\\"\\n  converter=\\\"json\\\"\\n  labelField=\\\"地区选择\\\"\\n  input-align=\\\"left\\\"\\n><template #title>标题</template></van-area>\\n</template>\\n\"}]",
         "jsonSchema": {
             "name": "van-area",
             "title": "地区选择器",
@@ -7083,7 +7083,7 @@
                 {
                     "title": "基本用法",
                     "description": "",
-                    "code": "<template>\n<van-area\n  title=\"标题\"\n  converter=\"json\"\n  labelField=\"地区选择\"\n  input-align=\"left\"\n></van-area>\n</template>\n"
+                    "code": "<template>\n<van-area\n  title=\"标题\"\n  converter=\"json\"\n  labelField=\"地区选择\"\n  input-align=\"left\"\n><template #title>标题</template></van-area>\n</template>\n"
                 }
             ],
             "attrs": [
@@ -7204,7 +7204,7 @@
             "Selector"
         ],
         "screenShot": "",
-        "blocks": "[{\"title\":\"基础用法\",\"description\":\"\",\"code\":\"<template>\\n<van-cascader\\n  title=\\\"请选择\\\"\\n  converter=\\\"json\\\"\\n  labelField=\\\"级联选择\\\"\\n  input-align=\\\"left\\\"\\n></van-cascader>\\n</template>\\n\"}]",
+        "blocks": "[{\"title\":\"基础用法\",\"description\":\"\",\"code\":\"<template>\\n<van-cascader\\n  title=\\\"请选择\\\"\\n  converter=\\\"json\\\"\\n  labelField=\\\"级联选择\\\"\\n  input-align=\\\"left\\\"\\n><template #title>标题</template></van-cascader>\\n</template>\\n\"}]",
         "jsonSchema": {
             "name": "van-cascader",
             "title": "级联选择器",
@@ -7216,7 +7216,7 @@
                 {
                     "title": "基础用法",
                     "description": "",
-                    "code": "<template>\n<van-cascader\n  title=\"请选择\"\n  converter=\"json\"\n  labelField=\"级联选择\"\n  input-align=\"left\"\n></van-cascader>\n</template>\n"
+                    "code": "<template>\n<van-cascader\n  title=\"请选择\"\n  converter=\"json\"\n  labelField=\"级联选择\"\n  input-align=\"left\"\n><template #title>标题</template></van-cascader>\n</template>\n"
                 }
             ],
             "attrs": [
@@ -7340,7 +7340,7 @@
             "Selector"
         ],
         "screenShot": "",
-        "blocks": "[{\"title\":\"基础用法\",\"description\":\"\",\"code\":\"<template>\\n<van-datetime-picker\\n  type=\\\"datetime\\\"\\n  title=\\\"选择完整时间\\\"\\n  labelField=\\\"选择时间\\\"\\n  input-align=\\\"left\\\"\\n></van-datetime-picker>\\n</template>\\n\"}]",
+        "blocks": "[{\"title\":\"基础用法\",\"description\":\"\",\"code\":\"<template>\\n<van-datetime-picker\\n  type=\\\"datetime\\\"\\n  title=\\\"选择完整时间\\\"\\n  labelField=\\\"选择时间\\\"\\n  input-align=\\\"left\\\"\\n><template #title>标题</template></van-datetime-picker>\\n</template>\\n\"}]",
         "jsonSchema": {
             "name": "van-datetime-picker",
             "title": "时间选择器",
@@ -7352,7 +7352,7 @@
                 {
                     "title": "基础用法",
                     "description": "",
-                    "code": "<template>\n<van-datetime-picker\n  type=\"datetime\"\n  title=\"选择完整时间\"\n  labelField=\"选择时间\"\n  input-align=\"left\"\n></van-datetime-picker>\n</template>\n"
+                    "code": "<template>\n<van-datetime-picker\n  type=\"datetime\"\n  title=\"选择完整时间\"\n  labelField=\"选择时间\"\n  input-align=\"left\"\n><template #title>标题</template></van-datetime-picker>\n</template>\n"
                 }
             ],
             "attrs": [
@@ -7540,7 +7540,7 @@
             "Selector"
         ],
         "screenShot": "",
-        "blocks": "[{\"title\":\"基础用法\",\"description\":\"\",\"code\":\"<template>\\n<van-calendar\\n  title=\\\"选择日期\\\"\\n  labelField=\\\"选择日期\\\"\\n  input-align=\\\"left\\\"\\n></van-calendar>\\n</template>\\n\"}]",
+        "blocks": "[{\"title\":\"基础用法\",\"description\":\"\",\"code\":\"<template>\\n<van-calendar\\n  title=\\\"选择日期\\\"\\n  labelField=\\\"选择日期\\\"\\n  input-align=\\\"left\\\"\\n><template #title>标题</template></van-calendar>\\n</template>\\n\"}]",
         "jsonSchema": {
             "name": "van-calendar",
             "title": "日期选择器",
@@ -7552,7 +7552,7 @@
                 {
                     "title": "基础用法",
                     "description": "",
-                    "code": "<template>\n<van-calendar\n  title=\"选择日期\"\n  labelField=\"选择日期\"\n  input-align=\"left\"\n></van-calendar>\n</template>\n"
+                    "code": "<template>\n<van-calendar\n  title=\"选择日期\"\n  labelField=\"选择日期\"\n  input-align=\"left\"\n><template #title>标题</template></van-calendar>\n</template>\n"
                 }
             ],
             "attrs": [

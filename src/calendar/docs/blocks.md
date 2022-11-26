@@ -5,5 +5,5 @@
   title="选择日期"
   labelField="选择日期"
   input-align="left"
-></van-calendar>
+><template #title>标题</template></van-calendar>
 ```

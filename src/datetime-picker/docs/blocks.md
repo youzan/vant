@@ -6,5 +6,5 @@
   title="选择完整时间"
   labelField="选择时间"
   input-align="left"
-></van-datetime-picker>
+><template #title>标题</template></van-datetime-picker>
 ```

@@ -358,16 +358,21 @@ export default createComponent({
   },
 
   render() {
+    const tempSlot = {
+      title: () => this.slots('title')
+    }
     return (
       <div class={bem('wrapppcascader')}>
         <Field
           label={this.labelField}
           value={this.getTitle()}
+          scopedSlots={tempSlot}
           readonly
           isLink={false}
           input-align={this.inputAlign || "right"}
           onClick={this.togglePopup}
-          notitle={true}
+          // eslint-disable-next-line no-prototype-builtins
+          notitle={!this.$slots.hasOwnProperty('title')}
           notitleblock={this.notitleblock}
           novalue={this.novalue}
           insel={true}

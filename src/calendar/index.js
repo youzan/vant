@@ -597,17 +597,22 @@ export default createComponent({
   },
 
   render() {
+    const tempSlot = {
+      title: () => this.slots('title')
+    }
     if (this.poppable) {
       const createListener = (name) => () => this.$emit(name);
       return <div class={bem('wrapppcalendar')}>
         <Field
           label={this.labelField}
           value={this.ifDesigner() ? this.defaultDate : this.getTitle}
+          scopedSlots={tempSlot}
           readonly
           isLink
           input-align={this.inputAlign || "right"}
           onClick={this.togglePopup}
-          notitle={true}
+          // eslint-disable-next-line no-prototype-builtins
+          notitle={!this.$slots.hasOwnProperty('title')}
           insel={true}
           nofi={true}
         />

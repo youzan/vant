@@ -51,17 +51,21 @@ export default createComponent({
 
   render() {
     const Component = this.type === 'time' ? TimePicker : DatePicker;
-
+    const tempSlot = {
+      title: () => this.slots('title')
+    }
     return (
       <div class={bem('wrapppdtpicker')}>
         <Field
           label={this.labelField}
           value={this.getTitle()}
+          scopedSlots={tempSlot}
           readonly
           isLink
           input-align={this.inputAlign || "right"}
           onClick={this.togglePopup}
-          notitle={true}
+          // eslint-disable-next-line no-prototype-builtins
+          notitle={!this.$slots.hasOwnProperty('title')}
           insel={true}
           nofi={true}
         />
