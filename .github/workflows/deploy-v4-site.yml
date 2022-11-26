@@ -36,7 +36,7 @@ jobs:
         with:
           branch: gh-pages
           folder: packages/vant/site-dist
-          target-folder: v4
+          clean: false
 
       - name: Deploy for GitHub 🚀
         uses: JamesIves/github-pages-deploy-action@v4.4.0
@@ -45,4 +45,5 @@ jobs:
           folder: packages/vant/site-dist
           token: ${{ secrets.VANT_UI_TOKEN }}
           repository-name: vant-ui/vant-ui.github.io
-          target-folder: vant/v4
+          target-folder: vant
+          clean: false

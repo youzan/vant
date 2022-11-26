@@ -8,9 +8,6 @@
   "typings": "lib/index.d.ts",
   "unpkg": "lib/vant.min.js",
   "jsdelivr": "lib/vant.min.js",
-  "npm": {
-    "tag": "next"
-  },
   "files": [
     "es",
     "lib"
