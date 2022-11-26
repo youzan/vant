@@ -175,6 +175,7 @@ export default {
 | finished-text | Finished text | _string_ | - |
 | error-text | Error loaded text | _string_ | - |
 | immediate-check | Whether to check loading position immediately after mounted | _boolean_ | `true` |
+| disabled | Whether to disable the load event | _boolean_ | `false` |
 | direction | Scroll direction, can be set to `up` | _string_ | `down` |
 
 ### Events
