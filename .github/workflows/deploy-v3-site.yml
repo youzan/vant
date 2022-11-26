@@ -36,7 +36,7 @@ jobs:
         with:
           branch: gh-pages
           folder: packages/vant/site-dist
-          clean: false
+          target-folder: v3
 
       - name: Deploy for GitHub 🚀
         uses: JamesIves/github-pages-deploy-action@v4.4.0
