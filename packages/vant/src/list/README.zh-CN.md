@@ -190,6 +190,7 @@ export default {
 | finished-text | 加载完成后的提示文案 | _string_ | - |
 | error-text | 加载失败后的提示文案 | _string_ | - |
 | immediate-check | 是否在初始化时立即执行滚动位置检查 | _boolean_ | `true` |
+| disabled | 是否禁用滚动加载 | _boolean_ | `false` |
 | direction | 滚动触发加载的方向，可选值为 `up` | _string_ | `down` |
 
 ### Events

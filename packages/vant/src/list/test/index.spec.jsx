@@ -12,6 +12,18 @@ test('should emit load event when reaching bottom', async () => {
   wrapper.unmount();
 });
 
+test('should not emit load event when disabled', async () => {
+  const wrapper = mount(List, {
+    props: {
+      disabled: true,
+    },
+  });
+
+  await later();
+  expect(wrapper.emitted('load')).toBeFalsy();
+  expect(wrapper.emitted('update:loading')).toBeFalsy();
+});
+
 test('should reload after clicking the error text', async () => {
   const wrapper = mount(List, {
     props: {

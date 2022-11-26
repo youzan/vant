@@ -34,6 +34,7 @@ export const listProps = {
   error: Boolean,
   offset: makeNumericProp(300),
   loading: Boolean,
+  disabled: Boolean,
   finished: Boolean,
   errorText: String,
   direction: makeStringProp<ListDirection>('down'),
@@ -64,6 +65,7 @@ export default defineComponent({
         if (
           loading.value ||
           props.finished ||
+          props.disabled ||
           props.error ||
           // skip check when inside an inactive tab
           tabStatus?.value === false
@@ -129,7 +131,7 @@ export default defineComponent({
     };
 
     const renderLoading = () => {
-      if (loading.value && !props.finished) {
+      if (loading.value && !props.finished && !props.disabled) {
         return (
           <div class={bem('loading')}>
             {slots.loading ? (
