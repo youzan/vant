@@ -362,7 +362,15 @@ export default createComponent({
         return;
       }
 
-      this.focused = false;
+      // https://github.com/youzan/vant/issues/11301
+      // 添加一定的延时处理，当存在清除图标时，给点击事件一定的反应时间
+      const timer = setTimeout(
+        () => {
+          this.focused = false;
+          timer && clearTimeout(timer);
+        },
+        this.showClear ? 300 : 0
+      );
       this.updateValue(this.value, 'onBlur');
       this.$emit('blur', event);
       this.validateWithTrigger('onBlur');
@@ -624,11 +632,7 @@ export default createComponent({
         <div class={bem('body')}>
           {this.genInput()}
           {this.showClear && (
-            <Icon
-              name="clear"
-              class={bem('clear')}
-              onTouchstart={this.onClear}
-            />
+            <Icon name="clear" class={bem('clear')} onClick={this.onClear} />
           )}
           {this.genRightIcon()}
           {slots('button') && (

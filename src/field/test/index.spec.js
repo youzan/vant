@@ -205,7 +205,7 @@ test('clearable prop', () => {
   input.trigger('focus');
   expect(wrapper).toMatchSnapshot();
 
-  wrapper.find('.van-field__clear').trigger('touchstart');
+  wrapper.find('.van-field__clear').trigger('click');
   expect(wrapper.emitted('input')[0][0]).toEqual('');
   expect(wrapper.emitted('clear')[0][0]).toBeTruthy();
 });

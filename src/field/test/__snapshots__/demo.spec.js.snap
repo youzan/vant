@@ -147,5 +147,13 @@ exports[`renders demo correctly 1`] = `
       </div>
     </div>
   </div>
+  <div>
+    <div class="van-cell van-field">
+      <div class="van-cell__title van-field__label"><span>文本</span></div>
+      <div class="van-cell__value van-field__value">
+        <div class="van-field__body"><input type="text" class="van-field__control"></div>
+      </div>
+    </div>
+  </div>
 </div>
 `;
