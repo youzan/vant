@@ -307,7 +307,9 @@ export default defineComponent({
       }
 
       if (inputRef.value && inputRef.value.value !== value) {
+        const { selectionStart, selectionEnd } = inputRef.value;
         inputRef.value.value = value;
+        inputRef.value.setSelectionRange(selectionStart, selectionEnd);
       }
 
       if (value !== props.modelValue) {
