@@ -19,6 +19,21 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 
 ## Details
 
+### [v4.0.0](https://github.com/vant-ui/vant/compare/v4.0.0-rc.9...v4.0.0)
+
+`2022-11-26`
+
+**Feature**
+
+- List: add disabled prop [#11307](https://github.com/vant-ui/vant/issues/11307)
+- BackTop: allow dynamically set target prop [#11311](https://github.com/vant-ui/vant/issues/11311)
+- BackTop: allow using css var to custom position [#11312](https://github.com/vant-ui/vant/issues/11312)
+- BackTop: rename visibility-height prop to offset [#11309](https://github.com/vant-ui/vant/issues/11309)
+
+**Bug Fixes**
+
+- Field: keep selection position after updating value [#11308](https://github.com/vant-ui/vant/issues/11308)
+
 ### [v4.0.0-rc.9](https://github.com/vant-ui/vant/compare/v4.0.0-rc.8...v4.0.0-rc.9)
 
 `2022-11-24`

@@ -19,6 +19,23 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 
 ## 更新内容
 
+### [v4.0.0](https://github.com/vant-ui/vant/compare/v4.0.0-rc.9...v4.0.0)
+
+`2022-11-26`
+
+> Vant 4.0 的完整更新日志正在整理中，请先阅读 [「从 v3 升级到 v4」](#/zh-CN/migrate-from-v3) 进行升级。
+
+**Feature**
+
+- List: 新增 disabled 属性 [#11307](https://github.com/vant-ui/vant/issues/11307)
+- BackTop: 支持动态设置 target 属性 [#11311](https://github.com/vant-ui/vant/issues/11311)
+- BackTop: 支持通过 CSS 变量修改组件位置 [#11312](https://github.com/vant-ui/vant/issues/11312)
+- BackTop: 重命名 visibility-height 属性为 offset [#11309](https://github.com/vant-ui/vant/issues/11309)
+
+**Bug Fixes**
+
+- Field: 修复格式化值后，光标位置错误的问题 [#11308](https://github.com/vant-ui/vant/issues/11308)
+
 ### [v4.0.0-rc.9](https://github.com/vant-ui/vant/compare/v4.0.0-rc.8...v4.0.0-rc.9)
 
 `2022-11-24`
