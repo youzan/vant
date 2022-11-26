@@ -12,6 +12,9 @@
     "es",
     "lib"
   ],
+  "npm": {
+    "tag": "latest-v3"
+  },
   "scripts": {
     "dev": "vant-cli dev",
     "lint": "vant-cli lint",
