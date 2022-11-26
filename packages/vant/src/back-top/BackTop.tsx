@@ -1,5 +1,6 @@
 import {
   ref,
+  watch,
   computed,
   Teleport,
   nextTick,
@@ -55,8 +56,6 @@ export default defineComponent({
     const root = ref<HTMLElement>();
     const scrollParent = ref<Window | Element>();
 
-    let target: Window | Element | undefined;
-
     const style = computed(() => ({
       right: addUnit(props.right),
       bottom: addUnit(props.bottom),
@@ -64,14 +63,16 @@ export default defineComponent({
 
     const onClick = (event: MouseEvent) => {
       emit('click', event);
-      target?.scrollTo({
+      scrollParent.value?.scrollTo({
         top: 0,
         behavior: 'smooth',
       });
     };
 
     const scroll = () => {
-      show.value = target ? getScrollTop(target) >= props.offset : false;
+      show.value = scrollParent.value
+        ? getScrollTop(scrollParent.value) >= props.offset
+        : false;
     };
 
     const getTarget = () => {
@@ -94,16 +95,21 @@ export default defineComponent({
       }
     };
 
+    const updateTarget = () => {
+      if (inBrowser) {
+        nextTick(() => {
+          scrollParent.value = props.target
+            ? getTarget()
+            : getScrollParent(root.value!);
+          scroll();
+        });
+      }
+    };
+
     useEventListener('scroll', throttle(scroll, 100), { target: scrollParent });
 
-    onMounted(() => {
-      nextTick(() => {
-        if (inBrowser) {
-          target = props.target ? getTarget() : getScrollParent(root.value!);
-          scrollParent.value = target;
-        }
-      });
-    });
+    onMounted(updateTarget);
+    watch(() => props.target, updateTarget);
 
     return () => {
       const Content = (
