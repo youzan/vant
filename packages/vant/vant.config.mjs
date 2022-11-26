@@ -11,7 +11,7 @@ export default {
     },
     site: {
       publicPath:
-        (typeof window === 'undefined' && process.env.PUBLIC_PATH) || '/vant/',
+        (typeof window === 'undefined' && process.env.PUBLIC_PATH) || '/vant/v3/',
     },
   },
   site: {
