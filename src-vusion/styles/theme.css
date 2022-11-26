@@ -687,4 +687,49 @@
   ); /* @type color */ /* @desc 警告类型颜色 */
   --tag-default-color: #969799; /* @type color */ /* @desc 默认类型颜色 */
   --tag-plain-background-color: #fff; /* @type color */ /* @hidden */
+
+
+  /* @component van-grid-view @hidden */
+    --van-grid-view-height: calc(30px * 10 + var(--border-width-base) * 2); /* @desc 列表高度 */
+    --van-grid-view-body-background: #fff; /* @type color */ /* @desc 列表body部分背景色 */
+
+    /* @component van-list-view @hidden */
+  --list-view-width: var(--width-medium);
+  --list-view-width-large: var(--width-large);
+  --list-view-width-huge: var(--width-huge);
+  --list-view-height: calc(30px * 10 + var(--border-width-base) * 2);
+  --list-view-height-large: calc(30px * 18 + var(--border-width-base) * 2);
+  --list-view-height-huge: 80vh;
+  --list-view-head-background: var(--background-color-disabled-light);
+  --list-view-body-background: var(--background-color-default);
+  --list-view-body-background-disabled: var(--background-color-default);
+  --list-view-foot-background: var(--background-color-default);
+  --list-view-border-color: var(--border-color-base);
+  --list-view-border-color-focus: var(--border-color-base);
+  --list-view-border-color-disabled: var(--brand-disabled);
+  --list-view-status-color: var(--color-light);
+  --list-view-head-padding: 8px 12px;
+  --list-view-foot-padding: 8px 8px;
+  --list-view-item-padding: 5px 12px;
+  --list-view-item-background-hover: #ededed;
+  --list-view-item-background-hover-inverse: var(--background-color-lighter-inverse);
+  --list-view-item-background-readonly-initial: none;
+  --list-view-item-background-focused: var(--background-color-hover);
+  --list-view-item-background-focused-inverse: var(--background-color-lighter-inverse);
+  --list-view-item-background-selected: var(--brand-primary-light);
+  --list-view-item-background-selected-inverse: var(--brand-primary-light);
+  --list-view-item-color-selected: white;
+  --list-view-item-color-selected-inverse: white;
+  --list-view-item-color-disabled: var(--brand-disabled-dark);
+  --list-view-item-color-disabled-inverse: var(--brand-disabled-dark-inverse);
+  --list-view-item-background-disabled: none;
+  --list-view-item-background-disabled-inverse: none;
+  --list-view-item-background-selected-disabled: var(--brand-disabled-light);
+  --list-view-item-background-selected-disabled-inverse: var(--brand-disabled-light-inverse);
+  --list-view-divider-margin: 9px 0;
+  --list-view-divider-background: var(--border-color-base);
+  --list-view-group-head-padding: 2px 4px;
+  --list-view-group-head-background: #ebedf5;
+  --list-view-group-expander-size: 26px;
+  --list-view-filter-margin: 12px;
 }

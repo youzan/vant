@@ -651,11 +651,11 @@ export default {
 .root {
   /* display: flex; */
   flex-direction: column;
-  background: var(--list-view-body-background);
+  background: var(--van-grid-view-body-background);
   /* border: 1px solid var(--list-view-border-color); */
-  border-radius: var(--border-radius-base);
-  height: var(--list-view-height);
-  min-width: var(--list-view-width);
+  border-radius: 4px;
+  height: var(--van-grid-view-height);
+  min-width: 240px;
   max-width: 100%;
 
   box-sizing: border-box;
@@ -751,11 +751,11 @@ export default {
   background: var(--list-view-body-background-disabled);
 }
 
-.foot {
+/* .foot {
   background: var(--list-view-foot-background);
   padding: var(--list-view-foot-padding);
   border-top: 1px solid var(--list-view-border-color);
-}
+} */
 
 .filter[class][class] {
   margin: var(--list-view-filter-margin);
