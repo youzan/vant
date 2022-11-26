@@ -5,6 +5,7 @@ import { inherit } from '../utils/functional';
 // Types
 import { CreateElement, RenderContext } from 'vue/types';
 import { DefaultSlots } from '../utils/types';
+import VanEmptyCol from '../emptycol';
 
 export type DividerProps = {
   dashed?: string;
@@ -24,6 +25,7 @@ function Divider(
   slots: DefaultSlots,
   ctx: RenderContext
 ) {
+  const designer = ctx.parent?.$env?.VUE_APP_DESIGNER;
   return (
     <div
       role="separator"
@@ -31,12 +33,21 @@ function Divider(
       class={bem({
         dashed: props.dashed !== 'a',
         hairline: props.hairline,
-        [`content-${props.contentPosition}`]: props.title || slots.default,
+        [`content-${props.contentPosition}`]: true,
       })}
       {...inherit(ctx, true)}
     >
-      {/* {slots.default && slots.default()} */}
-      {props.title ? <span vusion-slot-name-edit="title">{props.title}</span> : ''}
+      {props.title ? (
+        <span vusion-slot-name-edit="title">{props.title}</span>
+      ) : slots.default ? (
+        slots.default()
+      ) : (
+        designer && (
+          <span vusion-slot-name="default">
+            <VanEmptyCol></VanEmptyCol>
+          </span>
+        )
+      )}
     </div>
   );
 }
