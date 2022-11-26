@@ -3,6 +3,7 @@ import { doubleRaf, raf } from '../utils/dom/raf';
 import { BindEventMixin } from '../mixins/bind-event';
 import Icon from '../icon';
 import encodeUrl from '../utils/encodeUrl';
+import VanEmptyCol from '../emptycol';
 
 const [createComponent, bem] = createNamespace('notice-bar');
 
@@ -20,7 +21,9 @@ export default createComponent({
       default: null,
     },
   },
-
+  components: {
+    VanEmptyCol,
+  },
   props: {
     text: String,
     mode: String,
@@ -272,8 +275,12 @@ export default createComponent({
             ]}
             style={contentStyle}
             onTransitionend={this.onTransitionEnd}
+            vusion-slot-name="default"
           >
-            {this.slots() || this.text}
+            {!this.inDesigner() ? (this.slots() || this.text) : null}
+            {this.inDesigner() ? (
+              (!this.slots() && !this.text) ? <van-empty-col></van-empty-col> : (this.slots() || this.text)
+              ) : null}
           </div>
         </div>
         {RightIcon()}

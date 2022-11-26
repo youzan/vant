@@ -729,7 +729,7 @@
             "Display"
         ],
         "screenShot": "https://static-vusion.163yun.com/packages/@lcap/mobile-ui@0.12.19/src/divider/screenshots/0.png,https://static-vusion.163yun.com/packages/@lcap/mobile-ui@0.12.19/src/divider/screenshots/1.png",
-        "blocks": "[{\"title\":\"实线\",\"description\":\"\",\"code\":\"<template>\\n<van-divider title=\\\"文本\\\" dashed=\\\"a\\\"></van-divider>\\n</template>\\n\"},{\"title\":\"虚线\",\"description\":\"\",\"code\":\"<template>\\n<van-divider dashed=\\\"b\\\" title=\\\"文本\\\"></van-divider>\\n</template>\\n\"}]",
+        "blocks": "[{\"title\":\"实线\",\"description\":\"\",\"code\":\"<template>\\n<van-divider dashed=\\\"a\\\"> 文本 </van-divider>\\n</template>\\n\"},{\"title\":\"虚线\",\"description\":\"\",\"code\":\"<template>\\n<van-divider dashed=\\\"b\\\"> 文本 </van-divider>\\n</template>\\n\"}]",
         "jsonSchema": {
             "name": "van-divider",
             "title": "分隔线",
@@ -741,12 +741,12 @@
                 {
                     "title": "实线",
                     "description": "",
-                    "code": "<template>\n<van-divider title=\"文本\" dashed=\"a\"></van-divider>\n</template>\n"
+                    "code": "<template>\n<van-divider dashed=\"a\"> 文本 </van-divider>\n</template>\n"
                 },
                 {
                     "title": "虚线",
                     "description": "",
-                    "code": "<template>\n<van-divider dashed=\"b\" title=\"文本\"></van-divider>\n</template>\n"
+                    "code": "<template>\n<van-divider dashed=\"b\"> 文本 </van-divider>\n</template>\n"
                 }
             ],
             "attrs": [
@@ -3033,7 +3033,7 @@
             "Display"
         ],
         "screenShot": "",
-        "blocks": "[{\"title\":\"基础用法\",\"description\":\"\",\"code\":\"<template>\\n<van-notice-bar scrollable text=\\\"技术是开发它的人的共同灵魂。\\\"></van-notice-bar>\\n</template>\\n\"}]",
+        "blocks": "[{\"title\":\"基础用法\",\"description\":\"\",\"code\":\"<template>\\n<van-notice-bar scrollable>\\n  <template>技术是开发它的人的共同灵魂。</template>\\n</van-notice-bar>\\n</template>\\n\"}]",
         "jsonSchema": {
             "name": "van-notice-bar",
             "title": "通知栏",
@@ -3045,7 +3045,7 @@
                 {
                     "title": "基础用法",
                     "description": "",
-                    "code": "<template>\n<van-notice-bar scrollable text=\"技术是开发它的人的共同灵魂。\"></van-notice-bar>\n</template>\n"
+                    "code": "<template>\n<van-notice-bar scrollable>\n  <template>技术是开发它的人的共同灵魂。</template>\n</van-notice-bar>\n</template>\n"
                 }
             ],
             "attrs": [
