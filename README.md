@@ -37,7 +37,7 @@
 - 🍭 Support Tree Shaking
 - 🍭 Support Custom Theme
 - 🍭 Support Accessibility (still improving)
-- 🍭 Support Dark Mode (Requires upgrade to [Vant 4](https://vant-contrib.gitee.io/vant/v4/#/en-US/config-provider))
+- 🍭 Support Dark Mode
 - 🍭 Support SSR
 - 🌍 Support i18n, built-in 20+ languages
 
