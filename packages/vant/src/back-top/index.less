@@ -1,5 +1,7 @@
 :root {
   --van-back-top-size: 40px;
+  --van-back-top-right: 30px;
+  --van-back-top-bottom: 40px;
   --van-back-top-icon-size: 20px;
   --van-back-top-text-color: #fff;
   --van-back-top-background: var(--van-blue);
@@ -12,12 +14,14 @@
   justify-content: center;
   width: var(--van-back-top-size);
   height: var(--van-back-top-size);
+  right: var(--van-back-top-right);
+  bottom: var(--van-back-top-bottom);
   cursor: pointer;
   color: var(--van-back-top-text-color);
   border-radius: var(--van-radius-max);
   box-shadow: 0 2px 8px 0px rgba(0, 0, 0, 0.12);
   transform: scale(0);
-  transition: 0.3s cubic-bezier(0.25, 0.8, 0.5, 1);
+  transition: var(--van-duration-base) cubic-bezier(0.25, 0.8, 0.5, 1);
   background-color: var(--van-back-top-background);
 
   &:active {

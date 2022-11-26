@@ -142,5 +142,7 @@ import type { BackTopProps, BackTopThemeVars } from 'vant';
 | ------------------------- | ----------------- | ---- |
 | --van-back-top-size       | _40px_            | -    |
 | --van-back-top-icon-size  | _20px_            | -    |
+| --van-back-top-right      | _30px_            | -    |
+| --van-back-top-bottom     | _40px_            | -    |
 | --van-back-top-text-color | _#fff_            | -    |
 | --van-back-top-background | _var(--van-blue)_ | -    |

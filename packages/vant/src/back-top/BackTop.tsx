@@ -15,6 +15,7 @@ import {
 import {
   addUnit,
   inBrowser,
+  numericProp,
   getScrollTop,
   createNamespace,
   makeNumericProp,
@@ -30,8 +31,8 @@ import { Icon } from '../icon';
 const [name, bem] = createNamespace('back-top');
 
 export const backTopProps = {
-  right: makeNumericProp(30),
-  bottom: makeNumericProp(40),
+  right: numericProp,
+  bottom: numericProp,
   target: [String, Object] as PropType<TeleportProps['to']>,
   offset: makeNumericProp(200),
   teleport: {
