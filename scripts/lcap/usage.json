@@ -3647,7 +3647,7 @@
             "Display"
         ],
         "screenShot": "",
-        "blocks": "[{\"title\":\"基础用法\",\"description\":\"\",\"code\":\"<template>\\n<van-circle value=\\\"50\\\" rate=\\\"100\\\" speed=\\\"100\\\" />\\n</template>\\n\"}]",
+        "blocks": "[{\"title\":\"基础用法\",\"description\":\"\",\"code\":\"<template>\\n<van-circle value=\\\"50\\\" rate=\\\"100\\\" speed=\\\"100\\\" text=\\\"50%\\\" />\\n</template>\\n\"}]",
         "jsonSchema": {
             "name": "van-circle",
             "title": "环形进度条",
@@ -3659,7 +3659,7 @@
                 {
                     "title": "基础用法",
                     "description": "",
-                    "code": "<template>\n<van-circle value=\"50\" rate=\"100\" speed=\"100\" />\n</template>\n"
+                    "code": "<template>\n<van-circle value=\"50\" rate=\"100\" speed=\"100\" text=\"50%\" />\n</template>\n"
                 }
             ],
             "attrs": [
@@ -6591,9 +6591,27 @@
             "slots": false,
             "events": [
                 {
-                    "name": "change",
+                    "name": "input",
                     "title": "改变时",
+                    "description": "进度变化时实时触发",
+                    "params": []
+                },
+                {
+                    "name": "change",
+                    "title": "改变后",
                     "description": "进度变化且结束拖动后触发",
+                    "params": []
+                },
+                {
+                    "name": "drag-start",
+                    "title": "开始拖动时触发",
+                    "description": "开始拖动时触发",
+                    "params": []
+                },
+                {
+                    "name": "drag-end",
+                    "title": "结束拖动时触发",
+                    "description": "结束拖动时触发",
                     "params": []
                 }
             ],
