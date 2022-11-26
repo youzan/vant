@@ -1,5 +1,6 @@
 import { createNamespace, isObject, addUnit } from '../utils';
 import { raf, cancelRaf } from '../utils/dom/raf';
+import VanEmptyCol from '../emptycol';
 
 const [createComponent, bem] = createNamespace('circle');
 
@@ -120,6 +121,9 @@ export default createComponent({
         </defs>
       );
     },
+    inDesigner() {
+      return this.$env && this.$env.VUE_APP_DESIGNER;
+    }
   },
 
   watch: {
@@ -167,8 +171,11 @@ export default createComponent({
           <path class={bem('layer')} style={this.layerStyle} d={this.path} />
           <path d={this.path} class={bem('hover')} style={this.hoverStyle} />
         </svg>
-        {this.slots() ||
-          (this.text && <div class={bem('text')}>{this.text}</div>)}
+        <div class={bem('text')} vusion-slot-name="default">
+        {!this.slots() ? this.text? <div class={bem('text')}>{this.text}</div>:<VanEmptyCol></VanEmptyCol>:
+            this.slots() 
+          }
+          </div>
       </div>
     );
   },

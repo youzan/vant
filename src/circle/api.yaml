@@ -9,7 +9,7 @@
   attrs:
     - name: value
       title: 当前进度
-      type: number | string
+      type: number
       sync: true
       model: true
       defalut: 50
@@ -45,5 +45,10 @@
       type: boolean
       default: true
       description: 是否顺时针增加
-  slots: false
+  slots:
+    - concept: Slot
+      name: default
+      title: 默认
+      description: 显示的文本
+      advanced: true
   events:
