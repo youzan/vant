@@ -32,12 +32,12 @@ The easiest way to use Vant is to include a CDN link in the HTML file, after whi
 <!-- import style -->
 <link
   rel="stylesheet"
-  href="https://fastly.jsdelivr.net/npm/vant@3/lib/index.css"
+  href="https://fastly.jsdelivr.net/npm/vant@4/lib/index.css"
 />
 
 <!-- import script -->
 <script src="https://fastly.jsdelivr.net/npm/vue@3"></script>
-<script src="https://fastly.jsdelivr.net/npm/vant@3/lib/vant.min.js"></script>
+<script src="https://fastly.jsdelivr.net/npm/vant@4/lib/vant.min.js"></script>
 
 <script>
   // Render the Button component
