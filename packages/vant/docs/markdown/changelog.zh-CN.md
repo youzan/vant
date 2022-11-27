@@ -31,7 +31,7 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 
 **Bug Fixes**
 
-- Field: keep selection position after updating value [#11308](https://github.com/vant-ui/vant/issues/11308)
+- Field: 修复格式化值后，光标位置错误的问题 [#11308](https://github.com/vant-ui/vant/issues/11308)
 
 ### [v3.6.6](https://github.com/vant-ui/vant/compare/v3.6.5...v3.6.6)
 
