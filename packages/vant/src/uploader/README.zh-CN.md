@@ -166,8 +166,6 @@ export default {
 ```
 
 ```js
-import { showToast } from 'vant';
-
 export default {
   setup() {
     const isOverSize = (file) => {

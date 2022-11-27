@@ -153,8 +153,6 @@ If you need to make different size limits for different types of files, you can 
 ```
 
 ```js
-import { showToast } from 'vant';
-
 export default {
   setup() {
     const isOverSize = (file) => {
