@@ -89,7 +89,6 @@ pnpm add vant
 - 配置基于 Rem 的适配方案
 - 配置基于 Viewport 的适配方案
 - 配置基于 TypeScript 的工程
-- 配置自定义主题色方案
 
 ## 引入组件
 

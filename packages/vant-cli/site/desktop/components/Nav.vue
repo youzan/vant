@@ -110,14 +110,14 @@ export default {
     padding: 24px 0 0 var(--van-doc-padding);
     color: var(--van-doc-text-color-2);
     font-weight: 600;
-    font-size: 15px;
+    font-size: 16px;
     line-height: 28px;
   }
 
   &__item {
     a {
       display: block;
-      margin: 8px 0;
+      margin: 4px 0;
       padding: 6px 0 6px var(--van-doc-padding);
       color: var(--van-doc-text-color-3);
       font-size: 14px;

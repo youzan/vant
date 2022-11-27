@@ -4,7 +4,36 @@
 
 本文档提供了从 Vant 3 到 Vant 4 的升级指南。
 
-## 按需引入方式调整
+### 安装 Vant 4
+
+首先你需要安装 Vant 4 以及 `@vant/compat`。
+
+`@vant/compat` 是一个兼容包，可以帮助你从 Vant 3 过渡到 Vant 4。
+
+```bash
+# 通过 npm 安装
+npm add vant@^4 @vant/compat@^1
+
+# 通过 yarn 安装
+yarn add vant@^4 @vant/compat@^1
+
+# 通过 pnpm 安装
+pnpm add vant@^4 @vant/compat@^1
+```
+
+你也可以直接修改 `package.json` 的 `dependencies` 字段中的版本号，修改完成后需要重新安装依赖。
+
+```diff
+{
+  "dependencies": {
+-    "vant": "^3.0.0",
++    "vant": "^4.0.0",
++    "@vant/compat": "^1.0.0",
+  }
+}
+```
+
+## 调整按需引入方式
 
 ### 移除 babel-plugin-import
 
@@ -152,20 +181,7 @@ Dialog.resetDefaultOptions(); // -> resetDialogDefaultOptions()
 
 为了便于旧版本代码迁移至 v4，我们提供了兼容方案，你可以使用 `@vant/compat` 中导出的 `Dialog` 对象来兼容原有代码。
 
-第一步，安装 `@vant/compat` 包：
-
-```bash
-# 通过 npm 安装
-npm add @vant/compat
-
-# 通过 yarn 安装
-yarn add @vant/compat
-
-# 通过 pnpm 安装
-pnpm add @vant/compat
-```
-
-第二步，从 `@vant/compat` 中引用 `Dialog` 方法：
+从 `@vant/compat` 中引用 `Dialog` 方法：
 
 ```js
 import { Dialog } from '@vant/compat';

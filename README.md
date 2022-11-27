@@ -38,6 +38,7 @@
 - 🍭 Support Custom Theme
 - 🍭 Support Accessibility (still improving)
 - 🍭 Support Dark Mode
+- 🍭 Support Nuxt 3
 - 🍭 Support SSR
 - 🌍 Support i18n, built-in 20+ languages
 
