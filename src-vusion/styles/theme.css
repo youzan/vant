@@ -645,11 +645,11 @@
   /* @component van-rate */
   --rate-icon-size: 20px; /* @desc 评分图标大小 */
   --rate-icon-gutter: var(--padding-base); /* @desc 评分图标间距 */
-  --rate-icon-void-color: #c8c9cc; /* @type color */ /* @desc 评分未激活颜色 */
+  --rate-icon-void-color: #E5E5E5; /* @type color */ /* @desc 评分未激活颜色 */
   --rate-icon-full-color: var(
-    --brand-error
+    --brand-warning
   ); /* @type color */ /* @desc 评分激活颜色 */
-  --rate-icon-disabled-color: #c8c9cc; /* @type color */ /* @desc 评分图标禁用色 */
+  --rate-icon-disabled-color: #cccccc; /* @type color */ /* @desc 评分图标禁用色 */
 
   /* @component van-circle */
   --circle-size: 100px; /* @desc 环形进度条大小 */
@@ -670,7 +670,7 @@
   --tag-line-height: 16px; /* @hidden */
   --tag-small-padding: 0px 4px; /* @hidden */
   --tag-medium-padding: 2px 6px; /* @hidden */
-  --tag-large-padding: var(--padding-base) var(--padding-xs); /* @desc 大标签内边距 */
+  --tag-large-padding: 8px 4px; /* @desc 大标签内边距 */
   --tag-large-border-radius: var(--border-radius-md); /* @desc 大标签圆角 */
   --tag-large-font-size: var(--font-size-md); /* @hidden */
   --tag-round-border-radius: var(--border-radius-max); /* @hidden */
