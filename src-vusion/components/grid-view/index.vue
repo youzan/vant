@@ -757,8 +757,10 @@ export default {
 }
 
 .filter[class][class] {
-  margin: 12px;
-    width: calc(100% - 24px);
+  width: calc(100% - 10PX);
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
 }
 
 .pagination {
