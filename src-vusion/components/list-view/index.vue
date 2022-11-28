@@ -53,14 +53,14 @@
             </div>
         </div>
     </van-pull-refresh>
-    <!-- <div v-show="(showFoot || (pageable === true || pageable === 'pagination') && currentDataSource.total > currentDataSource.paging.size) && !notext" :class="$style.foot">
+    <div v-show="(showFoot || (pageable === true || pageable === 'pagination') && currentDataSource.total > currentDataSource.paging.size) && !notext" :class="$style.foot">
         <slot name="foot"></slot>
         <u-pagination :class="$style.pagination" v-if="pageable === true || pageable === 'pagination'"
             :total-items="currentDataSource.total" :page="currentDataSource.paging.number"
             :page-size="currentDataSource.paging.size" :side="1" :around="3"
             @change="page($event.page)">
         </u-pagination>
-    </div> -->
+    </div>
   </div>
 </div>
 </template>
