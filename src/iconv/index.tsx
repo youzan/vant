@@ -8,7 +8,7 @@ import Info from '../info';
 import VanEmptyCol from '../emptycol';
 import config from './config';
 
-import { onlineSvgIcon } from 'online-svg-icon-vue2';
+import { onlineSvgIcon } from './components/main';
 // Types
 import { CreateElement, RenderContext } from 'vue/types';
 import { DefaultSlots } from '../utils/types';

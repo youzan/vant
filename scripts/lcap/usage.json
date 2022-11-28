@@ -3530,7 +3530,7 @@
             "Display"
         ],
         "screenShot": "",
-        "blocks": "[{\"title\":\"基础用法\",\"description\":\"\",\"code\":\"<template>\\n   <van-tag type=\\\"primary\\\" size=\\\"middle\\\">标签</van-tag>\\n</template>\\n\"}]",
+        "blocks": "[{\"title\":\"基础用法\",\"description\":\"\",\"code\":\"<template>\\n<van-tag type=\\\"primary\\\" size=\\\"medium\\\">标签</van-tag>\\n</template>\\n\"}]",
         "jsonSchema": {
             "name": "van-tag",
             "title": "标签",
@@ -3542,7 +3542,7 @@
                 {
                     "title": "基础用法",
                     "description": "",
-                    "code": "<template>\n   <van-tag type=\"primary\" size=\"middle\">标签</van-tag>\n</template>\n"
+                    "code": "<template>\n<van-tag type=\"primary\" size=\"medium\">标签</van-tag>\n</template>\n"
                 }
             ],
             "attrs": [
@@ -3581,8 +3581,12 @@
                             "title": "大型"
                         },
                         {
-                            "value": "middle",
+                            "value": "medium",
                             "title": "中型"
+                        },
+                        {
+                            "value": "small",
+                            "title": "小型"
                         }
                     ],
                     "default": "medium",

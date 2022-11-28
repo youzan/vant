@@ -27,8 +27,10 @@
       options:
         - value: large
           title: 大型
-        - value: middle
+        - value: medium
           title: 中型
+        - value: small
+          title: 小型
       default: medium
       description: 设置尺寸
     - name: plain
