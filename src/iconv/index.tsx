@@ -153,6 +153,14 @@ function Iconv(
   const { icotype } = props;
   const endNotext = icotype === 'only';
 
+  const tempStyle = {
+    color: props.color,
+    fontSize: addUnit(props.size),
+  };
+  if (typeof tempStyle.fontSize === 'undefined') {
+    delete tempStyle.fontSize;
+  }
+
   return (
     <props.tag
       class={[
@@ -161,10 +169,7 @@ function Iconv(
         props.icotype === 'left' ? bem('flex') : '',
         // imageIcon ? '' : `${props.classPrefix}-${name}`,
       ]}
-      style={{
-        color: props.color,
-        fontSize: addUnit(props.size),
-      }}
+      style={tempStyle}
       {...inherit(ctx, false)}
       onClick={onClick}
     >
