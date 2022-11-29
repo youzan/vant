@@ -31,17 +31,14 @@
     - name: color
       title: 选中时的颜色
       type: string
-      default: '#ee0a24'
       description: 选中时的颜色
     - name: void-color
       title: 未选中时的颜色
       type: string
-      default: '#c8c9cc'
       description: 未选中时的颜色
     - name: disabled-color
       title: 禁用时的颜色
       type: string
-      default: '#c8c9cc'
       description: 禁用时的颜色
     - name: icon
       title: 选中时的图标名称或图片链接

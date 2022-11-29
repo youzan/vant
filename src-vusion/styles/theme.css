@@ -381,7 +381,6 @@
   --van-picker-action-padding: 0 var(--van-padding-md);
   --van-picker-action-font-size: var(--van-font-size-md);
   --van-picker-confirm-action-color: var(--van-brand-primary); /* @type color */
-
   --van-picker-cancel-action-color: #969799; /* @type color */
   --van-picker-option-font-size: var(--van-font-size-lg);
   --van-picker-option-text-color: #000; /* @type color */
@@ -428,9 +427,9 @@
   --van-search-action-font-size: var(-font-size-md); /* @desc 搜索区域字体大小 */
 
   /* @component van-sidebar */
-  --van-van-sidebar-width: 80px; /* @desc 宽度 */
-  --van-van-sidebar-font-size: var(--van-font-size-md); /* @desc 字体 */
-  --van-van-sidebar-line-height: var(--van-line-height-md); /* @desc 行高 */
+  --van-sidebar-width: 80px; /* @desc 宽度 */
+  --van-sidebar-font-size: var(--van-font-size-md); /* @desc 字体 */
+  --van-sidebar-line-height: var(--van-line-height-md); /* @desc 行高 */
   --van-van-sidebar-text-color: var(
     --van-component-text-color
   ); /* @type color */ /* @desc 字体颜色 */
@@ -643,13 +642,13 @@
   ); /* @type color */ /* @desc 进度条枢背景色 */
 
   /* @component van-rate */
-  --van-rate-icon-size: 20px; /* @desc 评分图标大小 */
-  --van-rate-icon-gutter: var(--van-padding-base); /* @desc 评分图标间距 */
-  --van-rate-icon-void-color: #c8c9cc; /* @type color */ /* @desc 评分未激活颜色 */
-  --van-rate-icon-full-color: var(
-    --van-brand-error
+  --rate-icon-size: 20px; /* @desc 评分图标大小 */
+  --rate-icon-gutter: var(--van-padding-base); /* @desc 评分图标间距 */
+  --rate-icon-void-color: #E5E5E5; /* @type color */ /* @desc 评分未激活颜色 */
+  --rate-icon-full-color: var(
+    --brand-warning
   ); /* @type color */ /* @desc 评分激活颜色 */
-  --van-rate-icon-disabled-color: #c8c9cc; /* @type color */ /* @desc 评分图标禁用色 */
+  --rate-icon-disabled-color: #cccccc; /* @type color */ /* @desc 评分图标禁用色 */
 
   /* @component van-circle */
   --van-circle-size: 100px; /* @desc 环形进度条大小 */
@@ -663,18 +662,19 @@
   --van-circle-text-line-height: var(--van-line-height-md); /* @hidden */
 
   /* @component van-tag */
-  --van-tag-padding: 0 var(--van-padding-base); /* @desc 标签内边距 */
-  --van-tag-text-color: #fff; /* @hidden */
-  --van-tag-font-size: var(--van-font-size-sm); /* @hidden */
-  --van-tag-border-radius: 2px; /* @desc 标签圆角 */
-  --van-tag-line-height: 16px; /* @hidden */
-  --van-tag-medium-padding: 2px 6px; /* @hidden */
-  --van-tag-large-padding: var(--van-padding-base) var(--padding-xs); /* @desc 大标签内边距 */
-  --van-tag-large-border-radius: var(--van-border-radius-md); /* @desc 大标签圆角 */
-  --van-tag-large-font-size: var(--van-font-size-md); /* @hidden */
-  --van-tag-round-border-radius: var(--van-border-radius-max); /* @hidden */
-  --van-tag-danger-color: var(
-    --van-brand-error
+  --tag-padding: 0 var(--van-padding-base); /* @desc 标签内边距 */
+  --tag-text-color: #fff; /* @hidden */
+  --tag-font-size: var(--van-font-size-sm); /* @hidden */
+  --tag-border-radius: 2px; /* @desc 标签圆角 */
+  --tag-line-height: 16px; /* @hidden */
+  --tag-small-padding: 0px 4px; /* @hidden */
+  --tag-medium-padding: 2px 6px; /* @hidden */
+  --tag-large-padding: 8px 4px; /* @desc 大标签内边距 */
+  --tag-large-border-radius: var(--van-border-radius-md); /* @desc 大标签圆角 */
+  --tag-large-font-size: var(--van-font-size-md); /* @hidden */
+  --tag-round-border-radius: var(--van-border-radius-max); /* @hidden */
+  --tag-danger-color: var(
+    --brand-error
   ); /* @type color */ /* @desc 危险类型颜色 */
   --van-tag-primary-color: var(
     --van-brand-primary

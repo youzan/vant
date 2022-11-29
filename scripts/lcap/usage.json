@@ -3530,7 +3530,7 @@
             "Display"
         ],
         "screenShot": "",
-        "blocks": "[{\"title\":\"基础用法\",\"description\":\"\",\"code\":\"<template>\\n   <van-tag type=\\\"primary\\\" size=\\\"middle\\\">标签</van-tag>\\n</template>\\n\"}]",
+        "blocks": "[{\"title\":\"基础用法\",\"description\":\"\",\"code\":\"<template>\\n<van-tag type=\\\"primary\\\" size=\\\"medium\\\">标签</van-tag>\\n</template>\\n\"}]",
         "jsonSchema": {
             "name": "van-tag",
             "title": "标签",
@@ -3542,7 +3542,7 @@
                 {
                     "title": "基础用法",
                     "description": "",
-                    "code": "<template>\n   <van-tag type=\"primary\" size=\"middle\">标签</van-tag>\n</template>\n"
+                    "code": "<template>\n<van-tag type=\"primary\" size=\"medium\">标签</van-tag>\n</template>\n"
                 }
             ],
             "attrs": [
@@ -3581,8 +3581,12 @@
                             "title": "大型"
                         },
                         {
-                            "value": "middle",
+                            "value": "medium",
                             "title": "中型"
+                        },
+                        {
+                            "value": "small",
+                            "title": "小型"
                         }
                     ],
                     "default": "medium",
@@ -6360,7 +6364,7 @@
             "Display"
         ],
         "screenShot": "",
-        "blocks": "[{\"title\":\"基础用法\",\"description\":\"\",\"code\":\"<template>\\n<van-rate void-icon=\\\"star\\\" icon=\\\"star\\\" />\\n</template>\\n\"}]",
+        "blocks": "[{\"title\":\"基础用法\",\"description\":\"\",\"code\":\"<template>\\n<van-rate void-icon=\\\"star1\\\" icon=\\\"star1\\\" />\\n</template>\\n\"}]",
         "jsonSchema": {
             "name": "van-rate",
             "title": "评分",
@@ -6372,7 +6376,7 @@
                 {
                     "title": "基础用法",
                     "description": "",
-                    "code": "<template>\n<van-rate void-icon=\"star\" icon=\"star\" />\n</template>\n"
+                    "code": "<template>\n<van-rate void-icon=\"star1\" icon=\"star1\" />\n</template>\n"
                 }
             ],
             "attrs": [
@@ -6409,21 +6413,18 @@
                     "name": "color",
                     "title": "选中时的颜色",
                     "type": "string",
-                    "default": "#ee0a24",
                     "description": "选中时的颜色"
                 },
                 {
                     "name": "void-color",
                     "title": "未选中时的颜色",
                     "type": "string",
-                    "default": "#c8c9cc",
                     "description": "未选中时的颜色"
                 },
                 {
                     "name": "disabled-color",
                     "title": "禁用时的颜色",
                     "type": "string",
-                    "default": "#c8c9cc",
                     "description": "禁用时的颜色"
                 },
                 {
