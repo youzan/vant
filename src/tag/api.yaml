@@ -35,22 +35,18 @@
       title: 是否为空心
       type: boolean
       default: false
-      description: 是否为空心样式
     - name: round
       title: 是否为圆角
       type: boolean
       default: false
-      description: 是否为圆角样式
     - name: mark
       title: 是否为标记样式
       type: boolean
       default: false
-      description: 是否为标记样式
     - name: closeable
       title: 是否为可关闭标签
       type: boolean
       default: false
-      description: 是否为可关闭标签
   slots: false
   events:
     - name: click
