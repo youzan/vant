@@ -549,10 +549,6 @@
                         "type": "color",
                         "desc": "主要文本字体颜色,如：#223325"
                     },
-                    "--van-text-color-secondary": {
-                        "type": "color",
-                        "desc": "次要文本字体颜色,如：#223325"
-                    },
                     "--van-text-color-success": {
                         "type": "color",
                         "desc": "成功文本字体颜色,如：#223325"

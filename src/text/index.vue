@@ -25,15 +25,15 @@ export default {
 }
 
 .root[size="normal"] { /* 父级字号不是默认大小时，该值有用的 */
-    font-size: var(--text-font-size);
+    font-size: var(--van-text-font-size);
 }
 
 .root[size="large"] {
-    font-size: var(--text-font-size-large);
+    font-size: var(--van-text-font-size-large);
 }
 
 .root[size="huge"] {
-    font-size: var(--text-font-size-huge);
+    font-size: var(--van-text-font-size-huge);
 }
 
 .root[weight="normal"] {
@@ -49,27 +49,27 @@ export default {
 }
 
 .root[color="primary"] {
-    color: var(--text-color-primary);
+    color: var(--van-text-color-primary);
 }
 
 .root[color="secondary"] {
-    color: var(--text-color-secondary);
+    color: var(--van-text-color-secondary);
 }
 
 .root[color="success"] {
-    color: var(--text-color-success);
+    color: var(--van-text-color-success);
 }
 
 .root[color="warning"] {
-    color: var(--text-color-warning);
+    color: var(--van-text-color-warning);
 }
 
 .root[color="error"] {
-    color: var(--text-color-error);
+    color: var(--van-text-color-error);
 }
 
 .root[color="disabled"] {
-    color: var(--text-color-disabled);
+    color: var(--van-text-color-disabled);
 }
 
 .root[overflow="ellipsis"], .root[wrap="ellipsis"] {
