@@ -131,6 +131,7 @@ export default {
     top: 50%;
     transform: translate(-50%, -50%);
     color: #666666;
+    font-size: 18px;
 }
 
 .mask {
