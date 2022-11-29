@@ -645,7 +645,7 @@
   /* @component van-rate */
   --rate-icon-size: 20px; /* @desc 评分图标大小 */
   --rate-icon-gutter: var(--padding-base); /* @desc 评分图标间距 */
-  --rate-icon-void-color: #E5E5E5; /* @type color */ /* @desc 评分未激活颜色 */
+  --rate-icon-void-color: #e5e5e5; /* @type color */ /* @desc 评分未激活颜色 */
   --rate-icon-full-color: var(
     --brand-warning
   ); /* @type color */ /* @desc 评分激活颜色 */
@@ -656,7 +656,7 @@
   --circle-color: var(
     --brand-primary
   ); /* @type color */ /* @desc 环形进度条激活颜色 */
-  --circle-layer-color: #fff; /* @type color */ /* @desc 环形进度未条激活颜色 */
+  --circle-layer-color: #e5e5e5; /* @type color */ /* @desc 环形进度未条激活颜色 */
   --circle-text-color: var(--component-text-color); /* @hidden */
   --circle-text-font-weight: var(--font-weight-bold); /* @hidden */
   --circle-text-font-size: var(--font-size-md); /* @hidden */

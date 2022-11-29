@@ -20,7 +20,6 @@
         - value: warning
           title: 警告
       default: medium
-      description: 设置尺寸
     - name: size
       title: 尺寸
       type: string
@@ -32,7 +31,6 @@
         - value: small
           title: 小型
       default: medium
-      description: 设置尺寸
     - name: plain
       title: 是否为空心
       type: boolean

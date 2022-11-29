@@ -13,37 +13,29 @@
       sync: true
       model: true
       defalut: 50
-      description: 当前进度
     - name: size
-      title: 圆环直径，默认单位为 px
-      type: numer | string
-      default: 100px
-      description: 圆环直径，默认单位为 px
+      title: 圆环直径(px)
+      type: numer
+      default: 100
     - name: color
       title: 进度条颜色
       type: string
-      description: 进度条颜色
     - name: layer-color
       title: 轨道颜色
       type: string
-      description: 轨道颜色
     - name: fill
       title: 填充颜色
       type: string
-      description: 填充颜色
     - name: text
       title: 文字
       type: string
-      description: 文字
     - name: stroke-width
       title: 进度条宽度
       type: number | string
       default: 40
-      description: 进度条宽度
     - name: clockwise
       title: 是否顺时针增加
       type: boolean
       default: true
-      description: 是否顺时针增加
   slots: false
   events:

@@ -87,7 +87,7 @@ export default createComponent({
         this.currentData =  Array.isArray(this.value)?this.value  : [0, 100]
         this.updateValue(this.currentData);
       } else {
-        this.currentData = this.value.indexOf("{") === -1? this.value  : 0
+        this.currentData = !Array.isArray(this.value) ||this.value.indexOf("{") === -1 ? this.value  : 0
         this.updateValue(this.currentData);
       }
     },

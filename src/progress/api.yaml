@@ -14,39 +14,31 @@
       model: true
       description: 0
     - name: stroke-width
-      title: 进度条粗细
-      type: number | string
+      title: 进度条粗细(px)
+      type: number
       default: 4
-      description: 进度条粗细，默认单位为px
     - name: color
       title: 进度条颜色
       type: string
-      description: 进度条颜色
     - name: track-color
       title: 轨道颜色
       type: string
-      description: 轨道颜色
     - name: text-color
       title: 进度文字颜色
       type: string
-      description: 进度文字颜色
     - name: pivot-text
       title: 进度文字内容
       type: string
-      description: 进度文字内容
     - name: pivot-color
       title: 进度文字背景色
       type: string
-      description: 进度文字背景色
     - name: inactive
       title: 是否置灰
       type: boolean
       default: false
-      description: 是否置灰
     - name: show-pivot
       title: 是否显示进度文字
       type: boolean
       default: true
-      description: 是否显示进度文字
   slots: false
   events:
