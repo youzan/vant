@@ -4,521 +4,566 @@
    *   Global Variables
    * ========================
    */
-  --space-base: 16px;
+  --van-space-base: 16px;
 
   /* Brand Colors */
-  --brand-primary: #337eff;
-  --brand-success: #26bd71;
-  --brand-problem: #ffb21a;
-  --brand-warning: #ffb21a;
-  --brand-error: #f24957;
-  --brand-disabled: #ebebeb;
+  --van-brand-primary: #337eff;
+  --van-brand-success: #26bd71;
+  --van-brand-problem: #ffb21a;
+  --van-brand-warning: #ffb21a;
+  --van-brand-error: #f24957;
+  --van-brand-disabled: #ebebeb;
 
   /* Component Base Colors */
-  --component-text-color: #333;
-  --component-active-color: #f2f3f5;
-  --component-active-opacity: 0.7;
-  --component-disabled-opacity: 0.5;
-  --component-background-color: #f7f8fa;
-  --component-background-color-light: #fafafa;
-  --component-text-link-color: #576b95;
+  --van-component-text-color: #333;
+  --van-component-active-color: #f2f3f5;
+  --van-component-active-opacity: 0.7;
+  --van-component-disabled-opacity: 0.5;
+  --van-component-background-color: #f7f8fa;
+  --van-component-background-color-light: #fafafa;
+  --van-component-text-link-color: #576b95;
 
   /* Font */
-  --font-color: #333;
-  --font-size-xs: 10px;
-  --font-size-sm: 12px;
-  --font-size-md: 14px;
-  --font-size-lg: 16px;
-  --font-weight-bold: 500;
-  --line-height-xs: 14px;
-  --line-height-sm: 18px;
-  --line-height-md: 20px;
-  --line-height-lg: 22px;
-  --base-font-family: -apple-system, blinkmacsystemfont, 'Helvetica Neue',
+  --van-font-color: #333;
+  --van-font-size-xs: 10px;
+  --van-font-size-sm: 12px;
+  --van-font-size-md: 14px;
+  --van-font-size-lg: 16px;
+  --van-font-weight-bold: 500;
+  --van-line-height-xs: 14px;
+  --van-line-height-sm: 18px;
+  --van-line-height-md: 20px;
+  --van-line-height-lg: 22px;
+  --van-base-font-family: -apple-system, blinkmacsystemfont, 'Helvetica Neue',
     helvetica, segoe ui, arial, roboto, 'PingFang SC', 'miui',
     'Hiragino Sans GB', 'Microsoft Yahei', sans-serif;
-  --price-integer-font-family: avenir-heavy, pingfang sc, helvetica neue, arial,
-    sans-serif;
+  --van-price-integer-font-family: avenir-heavy, pingfang sc, helvetica neue,
+    arial, sans-serif;
 
   /* Border Color */
-  --border-color: #e5e5e5;
-  --border-width-base: 1px;
-  --border-radius-sm: 2px;
-  --border-radius-md: 4px;
-  --border-radius-lg: 8px;
-  --border-radius-max: 999px;
+  --van-border-color: #e5e5e5;
+  --van-border-width-base: 1px;
+  --van-border-radius-sm: 2px;
+  --van-border-radius-md: 4px;
+  --van-border-radius-lg: 8px;
+  --van-border-radius-max: 999px;
 
   /* Padding */
-  --padding-base: 6px;
-  --padding-xs: calc(var(--padding-base) * 2);
-  --padding-sm: calc(var(--padding-base) * 3);
-  --padding-md: calc(var(--padding-base) * 4);
-  --padding-lg: calc(var(--padding-base) * 6);
-  --padding-xl: calc(var(--padding-base) * 8);
+  --van-padding-base: 6px;
+  --van-padding-xs: calc(var(--van-padding-base) * 2);
+  --van-padding-sm: calc(var(--van-padding-base) * 3);
+  --van-padding-md: calc(var(--van-padding-base) * 4);
+  --van-padding-lg: calc(var(--van-padding-base) * 6);
+  --van-padding-xl: calc(var(--van-padding-base) * 8);
 
   /* @component van-linear-layout */
-  --space-base: var(--space-base); /* @desc 布局内各元素之间的外间距, 如：1px */
+  --van-space-base: var(
+    --van-space-base
+  ); /* @desc 布局内各元素之间的外间距, 如：1px */
 
   /* @component van-panel */
-  --panel-background-color: #fff; /* @type color */ /* @desc panel背景色 */
-  --panel-header-value-color: #f24957; /* @type color */ /* @desc panel头部字体颜色 */
-  --panel-footer-padding: 12px 24px; /* @desc panel底部内边距 */
+  --van-panel-background-color: #fff; /* @type color */ /* @desc panel背景色 */
+  --van-panel-header-value-color: #f24957; /* @type color */ /* @desc panel头部字体颜色 */
+  --van-panel-footer-padding: 12px 24px; /* @desc panel底部内边距 */
 
   /* @component van-text */
-  --text-font-size: var(--font-size-sm); /* @desc 文本字号大小,如：1px */
-  --text-font-size-small: var(
-    --font-size-xs
+  --van-text-font-size: var(
+    --van-font-size-sm
+  ); /* @desc 文本字号大小,如：1px */
+  --van-text-font-size-small: var(
+    --van-font-size-xs
   ); /* @desc 小号文本字号大小,如：1px */
 
-  --text-font-size-large: calc(
-    var(--font-size-sm) * (18 / 14)
+  --van-text-font-size-large: calc(
+    var(--van-font-size-sm) * (18 / 14)
   ); /* @desc 大号文本字号大小,如：1px */
 
-  --text-color-primary: var(
-    --brand-primary
+  --van-text-color-primary: var(
+    --van-brand-primary
   ); /* @type color */ /* @desc 主要文本字体颜色,如：#223325 */
-  --text-color-secondary: var(
-    --font-second-color
-  ); /* @type color */ /* @desc 次要文本字体颜色,如：#223325 */
-  --text-color-success: var(
-    --brand-success
+  --van-text-color-secondary: #666; /* @type color */ /* @desc 次要文本字体颜色,如：#223325 */ /* @hidden */
+  --van-text-color-success: var(
+    --van-brand-success
   ); /* @type color */ /* @desc 成功文本字体颜色,如：#223325 */
-  --text-color-warning: var(
-    --brand-warning
+  --van-text-color-warning: var(
+    --van-brand-warning
   ); /* @type color */ /* @desc 警告文本字体颜色,如：#223325 */
-  --text-color-error: var(
-    --brand-error
+  --van-text-color-error: var(
+    --van-brand-error
   ); /* @type color */ /* @desc 错误文本字体颜色,如：#223325 */
-  --text-color-disabled: var(
-    --brand-disabled
+  --van-text-color-disabled: var(
+    --van-brand-disabled
   ); /* @type color */ /* @desc 禁用文本字体颜色,如：#223325 */
-  --text-font-size-huge: calc(var(--font-size-sm) * (22 / 14)); /* @hidden */
+  --van-text-font-size-huge: calc(
+    var(--van-font-size-sm) * (22 / 14)
+  ); /* @hidden */
 
   /* @component van-link */
   --link-color: var(
-    --brand-primary
+    --van-brand-primary
   ); /* @type color */ /* @desc 默认链接字体颜色,如：#223325 */
   --link-color-success: var(
-    --brand-success
+    --van-brand-success
   ); /* @type color */ /* @desc 成功链接字体颜色,如：#223325 */
   --link-color-warning: var(
-    --brand-warning
+    --van-brand-warning
   ); /* @type color */ /* @desc 警告链接字体颜色,如：#223325 */
   --link-color-disabled: var(
-    --brand-disabled
+    --van-brand-disabled
   ); /* @type color */ /* @desc 禁用链接字体颜色,如：#223325 */
   --link-color-error: var(
-    --brand-error
+    --van-brand-error
   ); /* @type color */ /* @desc 错误链接字体颜色,如：#223325 */
 
   /* @component van-button */
-  --button-mini-height: 24px; /* @desc 迷你 button 高度 */
-  --button-mini-font-size: var(--font-size-xs); /* @desc 迷你 button字体大小 */
-  --button-small-height: 28px; /* @desc 小 button  高度 */
-  --button-small-font-size: var(--font-size-sm); /* @desc 小 button字体大小 */
-  --button-normal-font-size: var(
-    --font-size-md
+  --van-button-mini-height: 24px; /* @desc 迷你 button 高度 */
+  --van-button-mini-font-size: var(
+    --van-font-size-xs
+  ); /* @desc 迷你 button字体大小 */
+  --van-button-small-height: 28px; /* @desc 小 button  高度 */
+  --van-button-small-font-size: var(
+    --van-font-size-sm
+  ); /* @desc 小 button字体大小 */
+  --van-button-normal-font-size: var(
+    --van-font-size-md
   ); /* @desc 正常 button字体大小 */
 
-  --button-large-height: 50px; /* @desc 大 button字体大小 */
-  --button-default-height: 44px; /* @desc 普通 button高度 */
-  --button-default-line-height: 1.2; /* @desc 普通 button行高 */
-  --button-default-font-size: var(
-    --font-size-lg
+  --van-button-large-height: 50px; /* @desc 大 button字体大小 */
+  --van-button-default-height: 44px; /* @desc 普通 button高度 */
+  --van-button-default-line-height: 1.2; /* @desc 普通 button行高 */
+  --van-button-default-font-size: var(
+    --van-font-size-lg
   ); /* @desc 普通 button字体大小 */
 
-  --button-default-color: var(
-    --component-text-color
+  --van-button-default-color: var(
+    --van-component-text-color
   ); /* @type color */ /* @hidden */
-  --button-default-background-color: #fff; /* @type color */ /* @hidden */
-  --button-default-border-color: var(
-    --border-color
+  --van-button-default-background-color: #fff; /* @type color */ /* @hidden */
+  --van-button-default-border-color: var(
+    --van-border-color
   ); /* @type color */ /* @hidden */
-  --button-primary-color: #fff; /* @type color */ /* @hidden */
-  --button-primary-background-color: var(
-    --brand-success
+  --van-button-primary-color: #fff; /* @type color */ /* @hidden */
+  --van-button-primary-background-color: var(
+    --van-brand-success
   ); /* @type color */ /* @hidden */
-  --button-primary-border-color: var(
-    --brand-success
+  --van-button-primary-border-color: var(
+    --van-brand-success
   ); /* @type color */ /* @hidden */
-  --button-info-color: #fff; /* @type color */ /* @desc 主要按钮文本颜色 */
-  --button-info-background-color: var(
-    --brand-primary
+  --van-button-info-color: #fff; /* @type color */ /* @desc 主要按钮文本颜色 */
+  --van-button-info-background-color: var(
+    --van-brand-primary
   ); /* @type color */ /* @desc 主要按钮背景色 */
-  --button-info-border-color: var(
-    --brand-primary
+  --van-button-info-border-color: var(
+    --van-brand-primary
   ); /* @type color */ /* @desc 主要按钮边框颜色 */
-  --button-danger-color: #fff; /* @type color */ /* @desc 危险按钮文本颜色 */
-  --button-danger-background-color: var(
-    --brand-error
+  --van-button-danger-color: #fff; /* @type color */ /* @desc 危险按钮文本颜色 */
+  --van-button-danger-background-color: var(
+    --van-brand-error
   ); /* @type color */ /* @desc 危险按钮背景颜色 */
-  --button-danger-border-color: var(
-    --brand-error
+  --van-button-danger-border-color: var(
+    --van-brand-error
   ); /* @type color */ /* @desc 危险按钮边框颜色 */
-  --button-warning-color: #fff; /* @type color */ /* @desc 警告按钮文字色 */
-  --button-warning-background-color: var(
-    --brand-warning
+  --van-button-warning-color: #fff; /* @type color */ /* @desc 警告按钮文字色 */
+  --van-button-warning-background-color: var(
+    --van-brand-warning
   ); /* @type color */ /* @desc 警告按钮背景色 */
-  --button-warning-border-color: var(
-    --brand-warning
+  --van-button-warning-border-color: var(
+    --van-brand-warning
   ); /* @type color */ /* @desc 警告按钮边框颜色 */
-  --button-border-width: var(--border-width-base); /* @desc 按钮边框厚度 */
-  --button-border-radius: var(--border-radius-md); /* @desc 按钮边框圆角 */
-  --button-border-radius2: var(--border-radius-md); /* @hidden */
-  --button-round-border-radius: var(
-    --border-radius-max
+  --van-button-border-width: var(
+    --van-border-width-base
+  ); /* @desc 按钮边框厚度 */
+  --van-button-border-radius: var(
+    --van-border-radius-md
+  ); /* @desc 按钮边框圆角 */
+  --van-button-border-radius2: var(--van-border-radius-md); /* @hidden */
+  --van-button-round-border-radius: var(
+    --van-border-radius-max
   ); /* @desc 圆角按钮圆角 */
 
-  --button-plain-background-color: #fff; /* @type color */ /* @hidden */
-  --button-disabled-opacity: var(
-    --component-disabled-opacity
+  --van-button-plain-background-color: #fff; /* @type color */ /* @hidden */
+  --van-button-disabled-opacity: var(
+    --van-component-disabled-opacity
   ); /* @desc 禁用按钮透明度 */
 
   /* @component van-badge */
-  --badge-size: 16px; /* @desc 最小宽度 */
-  --badge-color: #fff; /* @type color */ /* @desc 字体颜色 */
-  --badge-padding: 0 3px; /* @desc 内边距 */
-  --badge-font-size: var(--font-size-sm); /* @desc 字体大小 */
-  --badge-font-weight: var(--font-weight-bold); /* @desc 字体粗细 */
-  --badge-border-width: var(--border-width-base); /* @desc 边框厚度 */
-  --badge-background-color: var(
-    --brand-error
+  --van-badge-size: 16px; /* @desc 最小宽度 */
+  --van-badge-color: #fff; /* @type color */ /* @desc 字体颜色 */
+  --van-badge-padding: 0 3px; /* @desc 内边距 */
+  --van-badge-font-size: var(--van-font-size-sm); /* @desc 字体大小 */
+  --van-badge-font-weight: var(--van-font-weight-bold); /* @desc 字体粗细 */
+  --van-badge-border-width: var(--van-border-width-base); /* @desc 边框厚度 */
+  --van-badge-background-color: var(
+    --van-brand-error
   ); /* @type color */ /* @desc 背景色 */
-  --badge-dot-color: var(
-    --brand-error
+  --van-badge-dot-color: var(
+    --van-brand-error
   ); /* @type color */ /* @desc dot 字体颜色 */
-  --badge-dot-size: 8px; /* @desc dot 字体大小 */
-  --badge-font-family: -apple-system-font, helvetica neue, arial, sans-serif; /* @desc dot 字体 */
+  --van-badge-dot-size: 8px; /* @desc dot 字体大小 */
+  --van-badge-font-family: -apple-system-font, helvetica neue, arial, sans-serif; /* @desc dot 字体 */
 
   /* @component van-calendar */
-  --calendar-background-color: #fff; /* @type color */ /* @desc 日历背景色 */
-  --calendar-popup-height: 60%; /* @desc 日历高度 */
-  --calendar-header-box-shadow: 0 2px 10px rgba(125, 126, 128, 0.16); /* @desc 日历头部阴影 */
-  --calendar-header-title-height: 44px; /* @desc 日历头部高度 */
-  --calendar-header-title-font-size: var(
-    --font-size-lg
+  --van-calendar-background-color: #fff; /* @type color */ /* @desc 日历背景色 */
+  --van-calendar-popup-height: 60%; /* @desc 日历高度 */
+  --van-calendar-header-box-shadow: 0 2px 10px rgba(125, 126, 128, 0.16); /* @desc 日历头部阴影 */
+  --van-calendar-header-title-height: 44px; /* @desc 日历头部高度 */
+  --van-calendar-header-title-font-size: var(
+    --van-font-size-lg
   ); /* @desc 日历头部字体大小 */
 
-  --calendar-header-subtitle-font-size: var(
-    --font-size-md
+  --van-calendar-header-subtitle-font-size: var(
+    --van-font-size-md
   ); /* @desc 日历子标题字体大小 */
 
-  --calendar-weekdays-height: 30px; /* @desc 星期高度 */
-  --calendar-weekdays-font-size: var(--font-size-sm); /* @desc 星期字体大小 */
-  --calendar-month-title-font-size: var(--font-size-md);
-  --calendar-month-mark-color: rgba(
+  --van-calendar-weekdays-height: 30px; /* @desc 星期高度 */
+  --van-calendar-weekdays-font-size: var(
+    --van-font-size-sm
+  ); /* @desc 星期字体大小 */
+  --van-calendar-month-title-font-size: var(--van-font-size-md);
+  --van-calendar-month-mark-color: rgba(
     242,
     243,
     245,
     0.8
   ); /* @type color */ /* @hidden */
-  --calendar-month-mark-font-size: 160px; /* @hidden */
-  --calendar-day-height: 64px; /* @desc 日期高度 */
-  --calendar-day-font-size: var(--font-size-lg); /* @desc 日期字体大小 */
-  --calendar-range-edge-color: #fff; /* @type color */ /* @hidden */
-  --calendar-range-edge-background-color: var(
-    --brand-primary
+  --van-calendar-month-mark-font-size: 160px; /* @hidden */
+  --van-calendar-day-height: 64px; /* @desc 日期高度 */
+  --van-calendar-day-font-size: var(
+    --van-font-size-lg
+  ); /* @desc 日期字体大小 */
+  --van-calendar-range-edge-color: #fff; /* @type color */ /* @hidden */
+  --van-calendar-range-edge-background-color: var(
+    --van-brand-primary
   ); /* @type color */ /* @hidden */
-  --calendar-range-middle-color: var(
-    --brand-primary
+  --van-calendar-range-middle-color: var(
+    --van-brand-primary
   ); /* @type color */ /* @hidden */
-  --calendar-range-middle-background-opacity: 0.1; /* @hidden */
-  --calendar-selected-day-size: 54px; /* @desc 选中日期字体大小 */
-  --calendar-selected-day-color: #fff; /* @type color */ /* @desc 选中日期字体颜色 */
-  --calendar-info-font-size: var(--font-size-xs); /* @hidden */
-  --calendar-info-line-height: var(--line-height-xs); /* @hidden */
-  --calendar-selected-day-background-color: var(
-    --brand-primary
+  --van-calendar-range-middle-background-opacity: 0.1; /* @hidden */
+  --van-calendar-selected-day-size: 54px; /* @desc 选中日期字体大小 */
+  --van-calendar-selected-day-color: #fff; /* @type color */ /* @desc 选中日期字体颜色 */
+  --van-calendar-info-font-size: var(--van-font-size-xs); /* @hidden */
+  --van-calendar-info-line-height: var(--van-line-height-xs); /* @hidden */
+  --van-calendar-selected-day-background-color: var(
+    --van-brand-primary
   ); /* @type color */ /* @desc 选中日期背景色 */
-  --calendar-day-disabled-color: #c8c9cc; /* @type color */ /* @hidden */
-  --calendar-confirm-button-height: 36px; /* @hidden */
-  --calendar-confirm-button-margin: 7px 0; /* @hidden */
+  --van-calendar-day-disabled-color: #c8c9cc; /* @type color */ /* @hidden */
+  --van-calendar-confirm-button-height: 36px; /* @hidden */
+  --van-calendar-confirm-button-margin: 7px 0; /* @hidden */
 
   /* @component van-cascader */
-  --cascader-header-height: 48px; /* @desc 头部区域高度 */
-  --cascader-title-font-size: var(--font-size-lg); /* @desc 头部区域字体大小 */
-  --cascader-title-line-height: 20px; /* @desc 头部区域行高 */
-  --cascader-close-icon-size: 22px; /* @hidden */
-  --cascader-close-icon-color: #c8c9cc; /* @type color */ /* @hidden */
-  --cascader-close-icon-active-color: #969799; /* @type color */ /* @hidden */
-  --cascader-selected-icon-size: 18px; /* @desc 选中态图标大小 */
-  --cascader-tabs-height: 48px; /* @desc tabs区域高度 */
-  --cascader-active-color: var(
-    --brand-primary
+  --van-cascader-header-height: 48px; /* @desc 头部区域高度 */
+  --van-cascader-title-font-size: var(
+    --van-font-size-lg
+  ); /* @desc 头部区域字体大小 */
+  --van-cascader-title-line-height: 20px; /* @desc 头部区域行高 */
+  --van-cascader-close-icon-size: 22px; /* @hidden */
+  --van-cascader-close-icon-color: #c8c9cc; /* @type color */ /* @hidden */
+  --van-cascader-close-icon-active-color: #969799; /* @type color */ /* @hidden */
+  --van-cascader-selected-icon-size: 18px; /* @desc 选中态图标大小 */
+  --van-cascader-tabs-height: 48px; /* @desc tabs区域高度 */
+  --van-cascader-active-color: var(
+    --van-brand-primary
   ); /* @type color */ /* @desc 选中态图标颜色 */
-  --cascader-options-height: 384px; /* @desc 选项区域高度 */
-  --cascader-tab-color: var(
-    --component-text-color
+  --van-cascader-options-height: 384px; /* @desc 选项区域高度 */
+  --van-cascader-tab-color: var(
+    --van-component-text-color
   ); /* @type color */ /* @hidden */
-  --cascader-unselected-tab-color: #969799; /* @type color */ /* @hidden */
+  --van-cascader-unselected-tab-color: #969799; /* @type color */ /* @hidden */
 
   /* @component van-cell-group */
-  --cell-group-background-color: #fff; /* @type color */ /* @desc 单元格组背景色 */ /* @hidden */
-  --cell-group-title-color: #969799; /* @type color */ /* @hidden */
-  --cell-group-title-padding: var(--padding-md) var(var(--padding-md))
-    var(--padding-xs); /* @hidden */
+  --van-cell-group-background-color: #fff; /* @type color */ /* @desc 单元格组背景色 */ /* @hidden */
+  --van-cell-group-title-color: #969799; /* @type color */ /* @hidden */
+  --van-cell-group-title-padding: var(--van-padding-md) var(var(--padding-md))
+    var(--van-padding-xs); /* @hidden */
 
-  --cell-group-title-font-size: var(--font-size-md); /* @hidden */
-  --cell-group-title-line-height: 16px; /* @hidden */
-  --cell-group-inset-padding: 0 var(--padding-md); /* @hidden */
-  --cell-group-inset-border-radius: var(--border-radius-lg); /* @hidden */
-  --cell-group-inset-title-padding: var(--padding-md) var(--padding-md)
-    var(--padding-xs) var(--padding-xl); /* @hidden */
+  --van-cell-group-title-font-size: var(--van-font-size-md); /* @hidden */
+  --van-cell-group-title-line-height: 16px; /* @hidden */
+  --van-cell-group-inset-padding: 0 var(--van-padding-md); /* @hidden */
+  --van-cell-group-inset-border-radius: var(
+    --van-border-radius-lg
+  ); /* @hidden */
+  --van-cell-group-inset-title-padding: var(--van-padding-md) var(--padding-md)
+    var(--van-padding-xs) var(--padding-xl); /* @hidden */
 
-  --cell-font-size: var(--font-size-md); /* @desc 文字大小 */
-  --cell-line-height: 24px; /* @desc 行高 */
-  --cell-vertical-padding: 16px; /* @hidden */
-  --cell-horizontal-padding: 16px; /* @hidden */
-  --cell-text-color: var(
-    --component-text-color
+  --van-cell-font-size: var(--van-font-size-md); /* @desc 文字大小 */
+  --van-cell-line-height: 24px; /* @desc 行高 */
+  --van-cell-vertical-padding: 16px; /* @hidden */
+  --van-cell-horizontal-padding: 16px; /* @hidden */
+  --van-cell-text-color: var(
+    --van-component-text-color
   ); /* @type color */ /* @desc 文本颜色 */
-  --cell-background-color: #fff; /* @type color */ /* @desc 背景色 */ /* @hidden */
-  --cell-border-color: var(--border-color); /* @type color */ /* @hidden */
-  --cell-active-color: var(
-    --component-active-color
+  --van-cell-background-color: #fff; /* @type color */ /* @desc 背景色 */ /* @hidden */
+  --van-cell-border-color: var(
+    --van-border-color
   ); /* @type color */ /* @hidden */
-  --cell-required-color: var(--brand-error); /* @type color */ /* @hidden */
-  --cell-label-color: #969799; /* @type color */ /* @hidden */
-  --cell-label-font-size: var(--font-size-sm); /* @hidden */
-  --cell-label-line-height: var(--line-height-sm); /* @hidden */
-  --cell-label-margin-top: var(--padding-base); /* @hidden */
-  --cell-value-color: #969799; /* @type color */ /* @desc 右侧文本颜色 */
-  --cell-icon-size: 16px; /* @desc icon大小 */
-  --cell-right-icon-color: #969799; /* @type color */ /* @desc icon颜色 */
-  --cell-large-vertical-padding: var(--padding-sm); /* @hidden */
-  --cell-large-title-font-size: var(--font-size-lg); /* @hidden */
-  --cell-large-label-font-size: var(--font-size-md); /* @hidden */
+  --van-cell-active-color: var(
+    --van-component-active-color
+  ); /* @type color */ /* @hidden */
+  --van-cell-required-color: var(
+    --van-brand-error
+  ); /* @type color */ /* @hidden */
+  --van-cell-label-color: #969799; /* @type color */ /* @hidden */
+  --van-cell-label-font-size: var(--van-font-size-sm); /* @hidden */
+  --van-cell-label-line-height: var(--van-line-height-sm); /* @hidden */
+  --van-cell-label-margin-top: var(--van-padding-base); /* @hidden */
+  --van-cell-value-color: #969799; /* @type color */ /* @desc 右侧文本颜色 */
+  --van-cell-icon-size: 16px; /* @desc icon大小 */
+  --van-cell-right-icon-color: #969799; /* @type color */ /* @desc icon颜色 */
+  --van-cell-large-vertical-padding: var(--van-padding-sm); /* @hidden */
+  --van-cell-large-title-font-size: var(--van-font-size-lg); /* @hidden */
+  --van-cell-large-label-font-size: var(--van-font-size-md); /* @hidden */
 
   /* @component van-checkbox */
-  --checkbox-size: 20px;
-  --checkbox-border-color: #c8c9cc; /* @type color */
-  --checkbox-transition-duration: 0.2s;
-  --checkbox-label-margin: var(--padding-xs);
-  --checkbox-label-color: var(--component-text-color);
-  --checkbox-checked-icon-color: var(--brand-primary);
-  --checkbox-disabled-icon-color: #c8c9cc;
-  --checkbox-disabled-label-color: #c8c9cc;
-  --checkbox-disabled-background-color: var(--border-color);
+  --van-checkbox-size: 20px;
+  --van-checkbox-border-color: #c8c9cc; /* @type color */
+  --van-checkbox-transition-duration: 0.2s;
+  --van-checkbox-label-margin: var(--van-padding-xs);
+  --van-checkbox-label-color: var(--van-component-text-color);
+  --van-checkbox-checked-icon-color: var(--van-brand-primary);
+  --van-checkbox-disabled-icon-color: #c8c9cc;
+  --van-checkbox-disabled-label-color: #c8c9cc;
+  --van-checkbox-disabled-background-color: var(--van-border-color);
 
   /* @component van-collapse */
-  --collapse-item-transition-duration: 0.3s; /* @desc 动画时间 */
-  --collapse-item-content-padding: var(--padding-sm) var(-- @padding-md); /* @desc 内部内边距 */
-  --collapse-item-content-font-size: var(--font-size-md); /* @desc 字体大小 */
-  --collapse-item-content-line-height: 1.5; /* @desc 内容行高 */
-  --collapse-item-content-text-color: #969799; /* @type color */ /* @desc 字体颜色 */
-  --collapse-item-content-background-color: #fff; /* @type color */ /* @desc 背景色 */
-  --collapse-item-title-disabled-color: #c8c9cc; /* @type color */ /* @desc 标题禁用状态颜色 */
+  --van-collapse-item-transition-duration: 0.3s; /* @desc 动画时间 */
+  --van-collapse-item-content-padding: var(--van-padding-sm) var(-- @padding-md); /* @desc 内部内边距 */
+  --van-collapse-item-content-font-size: var(
+    --van-font-size-md
+  ); /* @desc 字体大小 */
+  --van-collapse-item-content-line-height: 1.5; /* @desc 内容行高 */
+  --van-collapse-item-content-text-color: #969799; /* @type color */ /* @desc 字体颜色 */
+  --van-collapse-item-content-background-color: #fff; /* @type color */ /* @desc 背景色 */
+  --van-collapse-item-title-disabled-color: #c8c9cc; /* @type color */ /* @desc 标题禁用状态颜色 */
 
   /* @component van-dialog */
-  --dialog-width: 320px; /* @desc 宽度 */
-  --dialog-small-screen-width: 90%; /* @desc 小屏幕宽度 */
-  --dialog-font-size: var(--font-size-lg); /* @hidden */
-  --dialog-transition: 0.3s; /* @desc 动画时间 */
-  --dialog-border-radius: 16px; /* @desc 圆角 */
-  --dialog-background-color: #fff; /* @type color */ /* @desc 背景色 */
-  --dialog-header-font-weight: var(--font-weight-bold); /* @hidden */
-  --dialog-header-line-height: 24px; /* @hidden */
-  --dialog-header-padding-top: 26px; /* @hidden */
-  --dialog-header-isolated-padding: var(--padding-lg) 0; /* @hidden */
-  --dialog-message-padding: var(--padding-lg); /* @hidden */
-  --dialog-message-font-size: var(--font-size-md); /* @desc 信息部分字体大小 */
-  --dialog-message-line-height: var(--line-height-md); /* @desc 信息部分行高 */
-  --dialog-message-max-height: 60vh; /* @desc 信息部分最大高度 */
-  --dialog-has-title-message-text-color: #646566; /* @type color */ /* @hidden */
-  --dialog-has-title-message-padding-top: var(--padding-xs); /* @hidden */
-  --dialog-button-height: 48px; /* @desc 按钮高度 */
-  --dialog-round-button-height: 36px; /* @hidden */
-  --dialog-confirm-button-text-color: var(
-    --brand-primary
+  --van-dialog-width: 320px; /* @desc 宽度 */
+  --van-dialog-small-screen-width: 90%; /* @desc 小屏幕宽度 */
+  --van-dialog-font-size: var(--van-font-size-lg); /* @hidden */
+  --van-dialog-transition: 0.3s; /* @desc 动画时间 */
+  --van-dialog-border-radius: 16px; /* @desc 圆角 */
+  --van-dialog-background-color: #fff; /* @type color */ /* @desc 背景色 */
+  --van-dialog-header-font-weight: var(--van-font-weight-bold); /* @hidden */
+  --van-dialog-header-line-height: 24px; /* @hidden */
+  --van-dialog-header-padding-top: 26px; /* @hidden */
+  --van-dialog-header-isolated-padding: var(--van-padding-lg) 0; /* @hidden */
+  --van-dialog-message-padding: var(--van-padding-lg); /* @hidden */
+  --van-dialog-message-font-size: var(
+    --van-font-size-md
+  ); /* @desc 信息部分字体大小 */
+  --van-dialog-message-line-height: var(
+    --van-line-height-md
+  ); /* @desc 信息部分行高 */
+  --van-dialog-message-max-height: 60vh; /* @desc 信息部分最大高度 */
+  --van-dialog-has-title-message-text-color: #646566; /* @type color */ /* @hidden */
+  --van-dialog-has-title-message-padding-top: var(
+    --van-padding-xs
+  ); /* @hidden */
+  --van-dialog-button-height: 48px; /* @desc 按钮高度 */
+  --van-dialog-round-button-height: 36px; /* @hidden */
+  --van-dialog-confirm-button-text-color: var(
+    --van-brand-primary
   ); /* @type color */ /* @desc 确认按钮颜色 */
 
   /* @component van-divider */
-  --divider-margin: var(--padding-md) 0; /* @desc 外边距 */
-  --divider-text-color: #969799; /* @type color */ /* @desc 文本颜色 */
-  --divider-font-size: var(--font-size-md); /* @desc 字体大小 */
-  --divider-line-height: 24px; /* @desc 行高 */
-  --divider-border-color: var(--border-color); /* @type color */ /* @hidden */
-  --divider-content-padding: var(--padding-md); /* @hidden */
-  --divider-content-left-width: 10%; /* @hidden */
-  --divider-content-right-width: 10%; /* @hidden */
+  --van-divider-margin: var(--van-padding-md) 0; /* @desc 外边距 */
+  --van-divider-text-color: #969799; /* @type color */ /* @desc 文本颜色 */
+  --van-divider-font-size: var(--van-font-size-md); /* @desc 字体大小 */
+  --van-divider-line-height: 24px; /* @desc 行高 */
+  --van-divider-border-color: var(
+    --van-border-color
+  ); /* @type color */ /* @hidden */
+  --van-divider-content-padding: var(--van-padding-md); /* @hidden */
+  --van-divider-content-left-width: 10%; /* @hidden */
+  --van-divider-content-right-width: 10%; /* @hidden */
 
   /* @component van-dropdown-menu */
-  --dropdown-menu-height: 48px; /* @desc 高度 */
-  --dropdown-menu-background-color: #fff; /* @type color */ /* @desc 背景色 */
-  --dropdown-menu-box-shadow: 0 2px 12px rgba(100, 101, 102, 0.12); /* @desc 外阴影 */
-  --dropdown-menu-title-font-size: 15px; /* @desc 字体大小 */
-  --dropdown-menu-title-text-color: var(
-    --component-text-color
+  --van-dropdown-menu-height: 48px; /* @desc 高度 */
+  --van-dropdown-menu-background-color: #fff; /* @type color */ /* @desc 背景色 */
+  --van-dropdown-menu-box-shadow: 0 2px 12px rgba(100, 101, 102, 0.12); /* @desc 外阴影 */
+  --van-dropdown-menu-title-font-size: 15px; /* @desc 字体大小 */
+  --van-dropdown-menu-title-text-color: var(
+    --van-component-text-color
   ); /* @type color */ /* @desc 字体颜色 */
-  --dropdown-menu-title-active-text-color: var(
-    --brand-primary
+  --van-dropdown-menu-title-active-text-color: var(
+    --van-brand-primary
   ); /* @type color */ /* @desc active状态颜色 */
-  --dropdown-menu-title-disabled-text-color: #969799; /* @type color */ /* @desc  disabled状态颜色 */
-  --dropdown-menu-title-padding: 0 var(--padding-xs); /* @hidden */
-  --dropdown-menu-title-line-height: var(--line-height-lg); /* @hidden */
-  --dropdown-menu-option-active-color: var(
-    --brand-primary
+  --van-dropdown-menu-title-disabled-text-color: #969799; /* @type color */ /* @desc  disabled状态颜色 */
+  --van-dropdown-menu-title-padding: 0 var(--van-padding-xs); /* @hidden */
+  --van-dropdown-menu-title-line-height: var(
+    --van-line-height-lg
+  ); /* @hidden */
+  --van-dropdown-menu-option-active-color: var(
+    --van-brand-primary
   ); /* @type color */ /* @hidden */
-  --dropdown-menu-content-max-height: 80%; /* @hidden */
-  --dropdown-item-z-index: 10;
+  --van-dropdown-menu-content-max-height: 80%; /* @hidden */
+  --van-dropdown-item-z-index: 10;
 
   /* @component van-image */
-  --image-placeholder-text-color: #969799; /* @type color */ /* @hidden */
-  --image-placeholder-font-size: var(--font-size-md); /* @hidden */
-  --image-placeholder-background-color: var(
-    --component-background-color
+  --van-image-placeholder-text-color: #969799; /* @type color */ /* @hidden */
+  --van-image-placeholder-font-size: var(--van-font-size-md); /* @hidden */
+  --van-image-placeholder-background-color: var(
+    --van-component-background-color
   ); /* @type color */ /* @hidden */
-  --image-loading-icon-size: 32px; /* @hidden */
-  --image-loading-icon-color: #dcdee0; /* @type color */ /* @hidden */
-  --image-error-icon-size: 32px; /* @hidden */
-  --image-error-icon-color: #dcdee0; /* @type color */ /* @hidden */
+  --van-image-loading-icon-size: 32px; /* @hidden */
+  --van-image-loading-icon-color: #dcdee0; /* @type color */ /* @hidden */
+  --van-image-error-icon-size: 32px; /* @hidden */
+  --van-image-error-icon-color: #dcdee0; /* @type color */ /* @hidden */
 
   /* @component van-picker */
-  --picker-background-color: #fff; /* @type color */
-  --picker-toolbar-height: 44px;
-  --picker-title-font-size: var(--font-size-lg);
-  --picker-title-line-height: var(--line-height-md);
-  --picker-action-padding: 0 var(--padding-md);
-  --picker-action-font-size: var(--font-size-md);
-  --picker-confirm-action-color: var(--brand-primary); /* @type color */
-
-  --picker-cancel-action-color: #969799; /* @type color */
-  --picker-option-font-size: var(--font-size-lg);
-  --picker-option-text-color: #000; /* @type color */
-  --picker-option-disabled-opacity: 0.3;
-  --picker-loading-icon-color: var(--brand-primary); /* @type color */
-  --picker-loading-mask-color: rgba(255, 255, 255, 0.9);
+  --van-picker-background-color: #fff; /* @type color */
+  --van-picker-toolbar-height: 44px;
+  --van-picker-title-font-size: var(--van-font-size-lg);
+  --van-picker-title-line-height: var(--van-line-height-md);
+  --van-picker-action-padding: 0 var(--van-padding-md);
+  --van-picker-action-font-size: var(--van-font-size-md);
+  --van-picker-confirm-action-color: var(--van-brand-primary); /* @type color */
+  --van-picker-cancel-action-color: #969799; /* @type color */
+  --van-picker-option-font-size: var(--van-font-size-lg);
+  --van-picker-option-text-color: #000; /* @type color */
+  --van-picker-option-disabled-opacity: 0.3;
+  --van-picker-loading-icon-color: var(--van-brand-primary); /* @type color */
+  --van-picker-loading-mask-color: rgba(255, 255, 255, 0.9);
 
   /* @component van-popup */
-  --popup-background-color: #fff; /* @type color */ /* @desc 背景色 */
-  --popup-transition: transform 0.3s; /* @desc 动画时间 */ /* @hidden */
-  --popup-round-border-radius: 16px; /* @desc 圆角 */ /* @hidden */
-  --popup-close-icon-size: 22px; /* @hidden */
-  --popup-close-icon-color: #c8c9cc; /* @type color */ /* @hidden */
-  --popup-close-icon-active-color: #969799; /* @type color */ /* @hidden */
-  --popup-close-icon-margin: 16px; /* @hidden */
-  --popup-close-icon-z-index: 1; /* @hidden */
+  --van-popup-background-color: #fff; /* @type color */ /* @desc 背景色 */
+  --van-popup-transition: transform 0.3s; /* @desc 动画时间 */ /* @hidden */
+  --van-popup-round-border-radius: 16px; /* @desc 圆角 */ /* @hidden */
+  --van-popup-close-icon-size: 22px; /* @hidden */
+  --van-popup-close-icon-color: #c8c9cc; /* @type color */ /* @hidden */
+  --van-popup-close-icon-active-color: #969799; /* @type color */ /* @hidden */
+  --van-popup-close-icon-margin: 16px; /* @hidden */
+  --van-popup-close-icon-z-index: 1; /* @hidden */
 
   /* @component van-radio */
-  --radio-size: 20px;
-  --radio-border-color: #c8c9cc; /* @type color */
-  --radio-transition-duration: 0.2s;
-  --radio-label-margin: var(--padding-xs);
-  --radio-label-color: var(--component-text-color); /* @type color */
-  --radio-checked-icon-color: var(--brand-primary); /* @type color */
-  --radio-disabled-icon-color: #c8c9cc; /* @type color */
-  --radio-disabled-label-color: #c8c9cc; /* @type color */
-  --radio-disabled-background-color: var(--border-color); /* @type color */
+  --van-radio-size: 20px;
+  --van-radio-border-color: #c8c9cc; /* @type color */
+  --van-radio-transition-duration: 0.2s;
+  --van-radio-label-margin: var(--van-padding-xs);
+  --van-radio-label-color: var(--van-component-text-color); /* @type color */
+  --van-radio-checked-icon-color: var(--van-brand-primary); /* @type color */
+  --van-radio-disabled-icon-color: #c8c9cc; /* @type color */
+  --van-radio-disabled-label-color: #c8c9cc; /* @type color */
+  --van-radio-disabled-background-color: var(
+    --van-border-color
+  ); /* @type color */
 
   /* @component van-search */
-  --search-padding: 10px var(--padding-sm); /* @hidden */
-  --search-background-color: #fff; /* @type color */ /* @desc 整体背景色 */
-  --search-content-background-color: #f7f8fa; /* @type color */ /* @desc 搜索区域背景色 */
-  --search-input-height: 34px; /* @desc 高度 */
-  --search-label-padding: 0 5px; /* @hidden */
-  --search-label-color: var(
-    --component-text-color
+  --van-search-padding: 10px var(--van-padding-sm); /* @hidden */
+  --van-search-background-color: #fff; /* @type color */ /* @desc 整体背景色 */
+  --van-search-content-background-color: #f7f8fa; /* @type color */ /* @desc 搜索区域背景色 */
+  --van-search-input-height: 34px; /* @desc 高度 */
+  --van-search-label-padding: 0 5px; /* @hidden */
+  --van-search-label-color: var(
+    --van-component-text-color
   ); /* @type color */ /* @hidden */
-  --search-label-font-size: var(--font-size-md); /* @hidden */
-  --search-left-icon-color: #969799; /* @type color */ /* @hidden */
-  --search-action-padding: 0 var(--padding-xs); /* @desc 搜索区域内边距 */
-  --search-action-text-color: var(
-    --component-text-color
+  --van-search-label-font-size: var(--van-font-size-md); /* @hidden */
+  --van-search-left-icon-color: #969799; /* @type color */ /* @hidden */
+  --van-search-action-padding: 0 var(--van-padding-xs); /* @desc 搜索区域内边距 */
+  --van-search-action-text-color: var(
+    --van-component-text-color
   ); /* @type color */ /* @desc 搜索区域字体颜色 */
-  --search-action-font-size: var(-font-size-md); /* @desc 搜索区域字体大小 */
+  --van-search-action-font-size: var(
+    -font-size-md
+  ); /* @desc 搜索区域字体大小 */
 
   /* @component van-sidebar */
   --van-sidebar-width: 80px; /* @desc 宽度 */
-  --van-sidebar-font-size: var(--font-size-md); /* @desc 字体 */
-  --van-sidebar-line-height: var(--line-height-md); /* @desc 行高 */
+  --van-sidebar-font-size: var(--van-font-size-md); /* @desc 字体 */
+  --van-sidebar-line-height: var(--van-line-height-md); /* @desc 行高 */
   --van-sidebar-text-color: var(
-    --component-text-color
+    --van-component-text-color
   ); /* @type color */ /* @desc 字体颜色 */
   --van-sidebar-disabled-text-color: #c8c9cc; /* @type color */ /* @desc 禁用字体颜色 */
-  --van-sidebar-padding: 20px var(--padding-sm); /* @desc 边距 */
+  --van-sidebar-padding: 20px var(--van-padding-sm); /* @desc 边距 */
   --van-sidebar-active-color: var(
-    --component-active-color
+    --van-component-active-color
   ); /* @type color */ /* @hidden */
   --van-sidebar-background-color: var(
-    --component-background-color
+    --van-component-background-color
   ); /* @type color */ /* @desc 背景色 */
   --van-sidebar-selected-font-weight: var(
-    --font-weight-bold
+    --van-font-weight-bold
   ); /* @desc 选中态字体粗细 */
 
   --van-sidebar-selected-text-color: var(
-    --component-text-color
+    --van-component-text-color
   ); /* @type color */ /* @desc 选中态字体颜色 */
   --van-sidebar-selected-border-width: 4px; /* @desc 选中态边框宽度 */
   --van-sidebar-selected-border-height: 16px; /* @desc 选中态边框高度 */
   --van-sidebar-selected-border-color: var(
-    --brand-primary
+    --van-brand-primary
   ); /* @type color */ /* @desc 选中态边框颜色 */
   --van-sidebar-selected-background-color: #fff; /* @type color */ /* @desc 选中态背景色 */
 
   /* @component van-steps */
-  --steps-background-color: #fff; /* @type color */ /* @desc 整体背景色 */
-  --step-text-color: #969799; /* @type color */ /* @desc 非激活态字体颜色 */
-  --step-active-color: var(
-    --brand-success
+  --van-steps-background-color: #fff; /* @type color */ /* @desc 整体背景色 */
+  --van-step-text-color: #969799; /* @type color */ /* @desc 非激活态字体颜色 */
+  --van-step-active-color: var(
+    --van-brand-success
   ); /* @type color */ /* @desc 激活态字体颜色 */
-  --step-process-text-color: var(
-    --component-text-color
+  --van-step-process-text-color: var(
+    --van-component-text-color
   ); /* @type color */ /* @hidden */
-  --step-font-size: var(--font-size-md); /* @desc 字体大小 */
-  --step-line-color: var(--border-color); /* @type color */ /* @desc 线段颜色 */
-  --step-finish-line-color: var(
-    --brand-success
+  --van-step-font-size: var(--van-font-size-md); /* @desc 字体大小 */
+  --van-step-line-color: var(
+    --van-border-color
+  ); /* @type color */ /* @desc 线段颜色 */
+  --van-step-finish-line-color: var(
+    --van-brand-success
   ); /* @type color */ /* @desc finish态线段颜色 */
-  --step-finish-text-color: var(
-    --component-text-color
+  --van-step-finish-text-color: var(
+    --van-component-text-color
   ); /* @type color */ /* @desc  finish态字体颜色 */
-  --step-icon-size: 12px; /* @desc 图大小色 */
-  --step-circle-size: 5px; /* @desc 点大小 */
-  --step-circle-color: #969799; /* @type color */ /* @desc 点颜色 */
-  --step-horizontal-title-font-size: var(
-    --font-size-sm
+  --van-step-icon-size: 12px; /* @desc 图大小色 */
+  --van-step-circle-size: 5px; /* @desc 点大小 */
+  --van-step-circle-color: #969799; /* @type color */ /* @desc 点颜色 */
+  --van-step-horizontal-title-font-size: var(
+    --van-font-size-sm
   ); /* @desc 横向字体大小 */
 
   /* @component van-stepper-new */
-  --stepper-active-color: #e8e8e8; /* @type color */ /* @hidden */
-  --stepper-background-color: var(
-    --component-active-color
+  --van-stepper-active-color: #e8e8e8; /* @type color */ /* @hidden */
+  --van-stepper-background-color: var(
+    --van-component-active-color
   ); /* @type color */ /* @hidden */
-  --stepper-button-icon-color: var(
-    --component-text-color
+  --van-stepper-button-icon-color: var(
+    --van-component-text-color
   ); /* @type color */ /* @hidden */
-  --stepper-button-disabled-color: var(
-    --component-background-color
+  --van-stepper-button-disabled-color: var(
+    --van-component-background-color
   ); /* @type color */ /* @hidden */
-  --stepper-button-disabled-icon-color: #c8c9cc; /* @type color */ /* @hidden */
-  --stepper-button-round-theme-color: var(
-    --brand-primary
+  --van-stepper-button-disabled-icon-color: #c8c9cc; /* @type color */ /* @hidden */
+  --van-stepper-button-round-theme-color: var(
+    --van-brand-primary
   ); /* @type color */ /* @hidden */
-  --stepper-input-width: 32px; /* @hidden */
-  --stepper-input-height: 28px; /* @desc 高度 */
-  --stepper-input-font-size: var(--font-size-md); /* @desc 输入框字体大小 */
-  --stepper-input-line-height: normal; /* @desc 输入框行高 */
-  --stepper-input-text-color: var(
-    --component-text-color
+  --van-stepper-input-width: 32px; /* @hidden */
+  --van-stepper-input-height: 28px; /* @desc 高度 */
+  --van-stepper-input-font-size: var(
+    --van-font-size-md
+  ); /* @desc 输入框字体大小 */
+  --van-stepper-input-line-height: normal; /* @desc 输入框行高 */
+  --van-stepper-input-text-color: var(
+    --van-component-text-color
   ); /* @type color */ /* @desc 输入框字体颜色 */
-  --stepper-input-disabled-text-color: #c8c9cc; /* @type color */ /* @desc 输入框禁止态文本颜色 */
-  --stepper-input-disabled-background-color: var(
-    --component-active-color
+  --van-stepper-input-disabled-text-color: #c8c9cc; /* @type color */ /* @desc 输入框禁止态文本颜色 */
+  --van-stepper-input-disabled-background-color: var(
+    --van-component-active-color
   ); /* @type color */ /* @desc 输入框禁止态背景色 */
-  --stepper-border-radius: var(--border-radius-md); /* @hidden */
+  --van-stepper-border-radius: var(--van-border-radius-md); /* @hidden */
 
   /* @component van-swipe */
-  --swipe-indicator-size: 6px; /* @desc indicator大小 */
-  --swipe-indicator-size-new: 12px; /* @hidden */
-  --swipe-indicator-margin: var(--padding-sm); /* @desc indicator外边距 */
-  --swipe-indicator-active-opacity: 1; /* @desc indicator active态透明度 */
-  --swipe-indicator-inactive-opacity: 0.3; /* @desc indicator 非active态透明度 */
-  --swipe-indicator-active-background-color: var(
-    --brand-primary
+  --van-swipe-indicator-size: 6px; /* @desc indicator大小 */
+  --van-swipe-indicator-size-new: 12px; /* @hidden */
+  --van-swipe-indicator-margin: var(
+    --van-padding-sm
+  ); /* @desc indicator外边距 */
+  --van-swipe-indicator-active-opacity: 1; /* @desc indicator active态透明度 */
+  --van-swipe-indicator-inactive-opacity: 0.3; /* @desc indicator 非active态透明度 */
+  --van-swipe-indicator-active-background-color: var(
+    --van-brand-primary
   ); /* @type color */ /* @desc indicator active态背景色 */
-  --swipe-indicator-inactive-background-color: var(
-    --border-color
+  --van-swipe-indicator-inactive-background-color: var(
+    --van-border-color
   ); /* @type color */ /* @desc indicator 非active态背景色 */
 
   /* @component van-switch */
@@ -532,160 +577,172 @@
 
   --van-switch-background-color: #f2f3f5; /* @type color */ /* @desc 整体背景色 */
   --van-switch-on-background-color: var(
-    --brand-primary
+    --van-brand-primary
   ); /* @type color */ /* @desc 激活态背景色 */
   --van-switch-transition-duration: 0.3s; /* @desc 动画时间 */
   --van-switch-disabled-opacity: var(
-    --component-disabled-opacity
+    --van-component-disabled-opacity
   ); /* @desc 禁用态透明度 */
 
   /* @component van-tabbar */
-  --tabbar-height: 50px; /* @desc 高度 */
-  --tabbar-z-index: 1; /* @desc 层级 */
-  --tabbar-background-color: #fff; /* @type color */ /* @desc 背景色 */
-  --tabbar-item-font-size: var(--font-size-sm); /* @hidden */
-  --tabbar-item-text-color: #646566; /* @type color */ /* @hidden */
-  --tabbar-item-active-color: var(
-    --brand-primary
+  --van-tabbar-height: 50px; /* @desc 高度 */
+  --van-tabbar-z-index: 1; /* @desc 层级 */
+  --van-tabbar-background-color: #fff; /* @type color */ /* @desc 背景色 */
+  --van-tabbar-item-font-size: var(--van-font-size-sm); /* @hidden */
+  --van-tabbar-item-text-color: #646566; /* @type color */ /* @hidden */
+  --van-tabbar-item-active-color: var(
+    --van-brand-primary
   ); /* @type color */ /* @desc 选中态字体色 */
-  --tabbar-item-active-background-color: var(
-    --tabbar-background-color
+  --van-tabbar-item-active-background-color: var(
+    --van-tabbar-background-color
   ); /* @type color */ /* @desc 选中态背景色 */
-  --tabbar-item-line-height: 1; /* @hidden */
-  --tabbar-item-icon-size: 22px; /* @hidden */
-  --tabbar-item-margin-bottom: 4px; /* @hidden */
+  --van-tabbar-item-line-height: 1; /* @hidden */
+  --van-tabbar-item-icon-size: 22px; /* @hidden */
+  --van-tabbar-item-margin-bottom: 4px; /* @hidden */
 
   /* @component van-tabs */
-  --tab-text-color: #646566; /* @type color */ /* @desc 标签字颜色 */
-  --tab-active-text-color: var(
-    --component-text-color
+  --van-tab-text-color: #646566; /* @type color */ /* @desc 标签字颜色 */
+  --van-tab-active-text-color: var(
+    --van-component-text-color
   ); /* @type color */ /* @desc 选中标签字颜色 */
-  --tab-disabled-text-color: #c8c9cc; /* @type color */ /* @desc 禁用标签字颜色 */
-  --tab-font-size: var(--font-size-md); /* @desc 标签字体大小 */
-  --tab-line-height: var(--line-height-md); /* @desc 标签字体行高 */
-  --tabs-default-color: var(--brand-primary); /* @type color */ /* @hidden */
-  --tabs-line-height: 44px; /* @desc line模式 导航高 */
-  --tabs-card-height: 30px; /* @desc card模式 导航高 */
-  --tabs-nav-background-color: #fff; /* @type color */ /* @desc 导航背景色 */
-  --tabs-bottom-bar-width: 40px; /* @desc 滑动条宽度 */
-  --tabs-bottom-bar-height: 3px; /* @desc 滑动条高度 */
-  --tabs-bottom-bar-color: var(
-    --tabs-default-color
+  --van-tab-disabled-text-color: #c8c9cc; /* @type color */ /* @desc 禁用标签字颜色 */
+  --van-tab-font-size: var(--van-font-size-md); /* @desc 标签字体大小 */
+  --van-tab-line-height: var(--van-line-height-md); /* @desc 标签字体行高 */
+  --van-tabs-default-color: var(
+    --van-brand-primary
+  ); /* @type color */ /* @hidden */
+  --van-tabs-line-height: 44px; /* @desc line模式 导航高 */
+  --van-tabs-card-height: 30px; /* @desc card模式 导航高 */
+  --van-tabs-nav-background-color: #fff; /* @type color */ /* @desc 导航背景色 */
+  --van-tabs-bottom-bar-width: 40px; /* @desc 滑动条宽度 */
+  --van-tabs-bottom-bar-height: 3px; /* @desc 滑动条高度 */
+  --van-tabs-bottom-bar-color: var(
+    --van-tabs-default-color
   ); /* @type color */ /* @desc 滑动条景色 */
 
   /* @component van-uploader */
-  --uploader-size: 80px; /* @desc 组件大小 */
-  --uploader-icon-size: 24px; /* @desc 图标大小 */
-  --uploader-icon-color: #dcdee0; /* @type color */ /* @desc 图标颜色 */
-  --uploader-text-color: #969799; /* @type color */ /* @hidden */
-  --uploader-text-font-size: var(--font-size-sm); /* @hidden */
-  --uploader-upload-background-color: #f7f8fa; /* @type color */ /* @desc 背景色 */
-  --uploader-upload-active-color: var(
-    --component-active-color
+  --van-uploader-size: 80px; /* @desc 组件大小 */
+  --van-uploader-icon-size: 24px; /* @desc 图标大小 */
+  --van-uploader-icon-color: #dcdee0; /* @type color */ /* @desc 图标颜色 */
+  --van-uploader-text-color: #969799; /* @type color */ /* @hidden */
+  --van-uploader-text-font-size: var(--van-font-size-sm); /* @hidden */
+  --van-uploader-upload-background-color: #f7f8fa; /* @type color */ /* @desc 背景色 */
+  --van-uploader-upload-active-color: var(
+    --van-component-active-color
   ); /* @type color */ /* @hidden */
-  --uploader-delete-color: #fff; /* @type color */ /* @desc 删除图标颜色 */
-  --uploader-delete-icon-size: 14px; /* @desc 删除图标大小 */
-  --uploader-delete-background-color: rgba(
+  --van-uploader-delete-color: #fff; /* @type color */ /* @desc 删除图标颜色 */
+  --van-uploader-delete-icon-size: 14px; /* @desc 删除图标大小 */
+  --van-uploader-delete-background-color: rgba(
     0,
     0,
     0,
     0.7
   ); /* @type color */ /* @desc 删除区域背景色 */
-  --uploader-file-background-color: var(
-    --component-background-color
+  --van-uploader-file-background-color: var(
+    --van-component-background-color
   ); /* @type color */ /* @hidden */
-  --uploader-file-icon-size: 20px; /* @desc 文件图标大小 */
-  --uploader-file-icon-color: #646566; /* @type color */ /* @desc 文件图标颜色 */
-  --uploader-file-name-padding: 0 var(--padding-base); /* @hidden */
-  --uploader-file-name-margin-top: var(--padding-xs); /* @hidden */
-  --uploader-file-name-font-size: var(--font-size-sm); /* @hidden */
-  --uploader-file-name-text-color: #646566; /* @type color */ /* @hidden */
-  --uploader-mask-background-color: rgba(
+  --van-uploader-file-icon-size: 20px; /* @desc 文件图标大小 */
+  --van-uploader-file-icon-color: #646566; /* @type color */ /* @desc 文件图标颜色 */
+  --van-uploader-file-name-padding: 0 var(--van-padding-base); /* @hidden */
+  --van-uploader-file-name-margin-top: var(--van-padding-xs); /* @hidden */
+  --van-uploader-file-name-font-size: var(--van-font-size-sm); /* @hidden */
+  --van-uploader-file-name-text-color: #646566; /* @type color */ /* @hidden */
+  --van-uploader-mask-background-color: rgba(
     51,
     51,
     51,
     0.88
   ); /* @type color */ /* @hidden */
-  --uploader-mask-icon-size: 22px; /* @hidden */
-  --uploader-mask-message-font-size: var(--font-size-sm); /* @hidden */
-  --uploader-mask-message-line-height: var(--line-height-xs); /* @hidden */
-  --uploader-loading-icon-size: 22px; /* @hidden */
-  --uploader-loading-icon-color: #fff; /* @type color */ /* @hidden */
-  --uploader-disabled-opacity: var(--component-disabled-opacity); /* @hidden */
+  --van-uploader-mask-icon-size: 22px; /* @hidden */
+  --van-uploader-mask-message-font-size: var(--van-font-size-sm); /* @hidden */
+  --van-uploader-mask-message-line-height: var(
+    --van-line-height-xs
+  ); /* @hidden */
+  --van-uploader-loading-icon-size: 22px; /* @hidden */
+  --van-uploader-loading-icon-color: #fff; /* @type color */ /* @hidden */
+  --van-uploader-disabled-opacity: var(
+    --van-component-disabled-opacity
+  ); /* @hidden */
 
   /* @component van-slider */
-  --slider-active-background-color: var(
-    --brand-primary
+  --van-slider-active-background-color: var(
+    --van-brand-primary
   ); /* @type color */ /* @desc 激活态色 */
-  --slider-inactive-background-color: #e5e5e5; /* @type color */ /* @desc 非激活态色 */
-  --slider-disabled-opacity: var(--component-disabled-opacity); /* @hidden */
-  --slider-bar-height: 2px; /* @desc 进度条高度 */
-  --slider-button-width: 24px; /* @desc 进度条滑块宽度 */
-  --slider-button-height: 24px; /* @desc 进度条滑块高度 */
-  --slider-button-border-radius: 50%; /* @desc 进度条滑块圆角 */
-  --slider-button-background-color: #fff; /* @type color */ /* @desc 进度条滑块背景色 */
-  --slider-button-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5); /* @desc 进度条滑块阴影 */
+  --van-slider-inactive-background-color: #e5e5e5; /* @type color */ /* @desc 非激活态色 */
+  --van-slider-disabled-opacity: var(
+    --van-component-disabled-opacity
+  ); /* @hidden */
+  --van-slider-bar-height: 2px; /* @desc 进度条高度 */
+  --van-slider-button-width: 24px; /* @desc 进度条滑块宽度 */
+  --van-slider-button-height: 24px; /* @desc 进度条滑块高度 */
+  --van-slider-button-border-radius: 50%; /* @desc 进度条滑块圆角 */
+  --van-slider-button-background-color: #fff; /* @type color */ /* @desc 进度条滑块背景色 */
+  --van-slider-button-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5); /* @desc 进度条滑块阴影 */
 
   /* @component van-progress */
-  --progress-height: 4px; /* @desc 进度条高度 */
-  --progress-color: var(
-    --brand-primary
+  --van-progress-height: 4px; /* @desc 进度条高度 */
+  --van-progress-color: var(
+    --van-brand-primary
   ); /* @type color */ /* @desc 进度条激活颜色 */
-  --progress-background-color: var(
-    --border-color
+  --van-progress-background-color: var(
+    --van-border-color
   ); /* @type color */ /* @desc 进度条未激活颜色 */
-  --progress-pivot-padding: 0 5px; /* @desc 进度条枢内边距 */
-  --progress-pivot-text-color: #fff; /* @type color */ /* @desc 进度条枢中文字的颜色 */
-  --progress-pivot-font-size: var(--font-size-xs); /* @desc 进度条枢字体大小 */
-  --progress-pivot-line-height: 1.6; /* @desc 进度条枢文字行高 */
-  --progress-pivot-background-color: var(
-    --brand-primary
+  --van-progress-pivot-padding: 0 5px; /* @desc 进度条枢内边距 */
+  --van-progress-pivot-text-color: #fff; /* @type color */ /* @desc 进度条枢中文字的颜色 */
+  --van-progress-pivot-font-size: var(
+    --van-font-size-xs
+  ); /* @desc 进度条枢字体大小 */
+  --van-progress-pivot-line-height: 1.6; /* @desc 进度条枢文字行高 */
+  --van-progress-pivot-background-color: var(
+    --van-brand-primary
   ); /* @type color */ /* @desc 进度条枢背景色 */
 
   /* @component van-rate */
-  --rate-icon-size: 20px; /* @desc 评分图标大小 */
-  --rate-icon-gutter: var(--padding-base); /* @desc 评分图标间距 */
-  --rate-icon-void-color: #e5e5e5; /* @type color */ /* @desc 评分未激活颜色 */
-  --rate-icon-full-color: var(
+  --van-rate-icon-size: 20px; /* @desc 评分图标大小 */
+  --van-rate-icon-gutter: var(--van-padding-base); /* @desc 评分图标间距 */
+  --van-rate-icon-void-color: #e5e5e5; /* @type color */ /* @desc 评分未激活颜色 */
+  --van-rate-icon-full-color: var(
     --brand-warning
   ); /* @type color */ /* @desc 评分激活颜色 */
-  --rate-icon-disabled-color: #cccccc; /* @type color */ /* @desc 评分图标禁用色 */
+  --van-rate-icon-disabled-color: #cccccc; /* @type color */ /* @desc 评分图标禁用色 */
 
   /* @component van-circle */
-  --circle-size: 100px; /* @desc 环形进度条大小 */
-  --circle-color: var(
-    --brand-primary
+  --van-circle-size: 100px; /* @desc 环形进度条大小 */
+  --van-circle-color: var(
+    --van-brand-primary
   ); /* @type color */ /* @desc 环形进度条激活颜色 */
-  --circle-layer-color: #e5e5e5; /* @type color */ /* @desc 环形进度未条激活颜色 */
-  --circle-text-color: var(--component-text-color); /* @hidden */
-  --circle-text-font-weight: var(--font-weight-bold); /* @hidden */
-  --circle-text-font-size: var(--font-size-md); /* @hidden */
-  --circle-text-line-height: var(--line-height-md); /* @hidden */
+  --van-circle-layer-color: #fff; /* @type color */ /* @desc 环形进度未条激活颜色 */
+  --van-circle-text-color: var(--van-component-text-color); /* @hidden */
+  --van-circle-text-font-weight: var(--van-font-weight-bold); /* @hidden */
+  --van-circle-text-font-size: var(--van-font-size-md); /* @hidden */
+  --van-circle-text-line-height: var(--van-line-height-md); /* @hidden */
 
   /* @component van-tag */
-  --tag-padding: 0 var(--padding-base); /* @desc 标签内边距 */
-  --tag-text-color: #fff; /* @hidden */
-  --tag-font-size: var(--font-size-sm); /* @hidden */
-  --tag-border-radius: 2px; /* @desc 标签圆角 */
-  --tag-line-height: 16px; /* @hidden */
-  --tag-small-padding: 0px 4px; /* @hidden */
-  --tag-medium-padding: 2px 6px; /* @hidden */
-  --tag-large-padding: 8px 4px; /* @desc 大标签内边距 */
-  --tag-large-border-radius: var(--border-radius-md); /* @desc 大标签圆角 */
-  --tag-large-font-size: var(--font-size-md); /* @hidden */
-  --tag-round-border-radius: var(--border-radius-max); /* @hidden */
-  --tag-danger-color: var(
+  --van-tag-padding: 0 var(--van-padding-base); /* @desc 标签内边距 */
+  --van-tag-text-color: #fff; /* @hidden */
+  --van-tag-font-size: var(--van-font-size-sm); /* @hidden */
+  --van-tag-border-radius: 2px; /* @desc 标签圆角 */
+  --van-tag-line-height: 16px; /* @hidden */
+  --van-tag-small-padding: 0px 4px; /* @hidden */
+  --van-tag-medium-padding: 2px 6px; /* @hidden */
+  --van-tag-large-padding: 8px 4px; /* @desc 大标签内边距 */
+  --van-tag-large-border-radius: var(
+    --van-border-radius-md
+  ); /* @desc 大标签圆角 */
+  --van-tag-large-font-size: var(--van-font-size-md); /* @hidden */
+  --van-tag-round-border-radius: var(--van-border-radius-max); /* @hidden */
+  --van-tag-danger-color: var(
     --brand-error
   ); /* @type color */ /* @desc 危险类型颜色 */
-  --tag-primary-color: var(
-    --brand-primary
+  --van-tag-primary-color: var(
+    --van-brand-primary
   ); /* @type color */ /* @desc 信息类型颜色 */
-  --tag-success-color: var(
-    --brand-success
+  --van-tag-success-color: var(
+    --van-brand-success
   ); /* @type color */ /* @desc 成功类型颜色 */
-  --tag-warning-color: var(
-    --brand-problem
+  --van-tag-warning-color: var(
+    --van-brand-problem
   ); /* @type color */ /* @desc 警告类型颜色 */
-  --tag-default-color: #969799; /* @type color */ /* @desc 默认类型颜色 */
-  --tag-plain-background-color: #fff; /* @type color */ /* @hidden */
+  --van-tag-default-color: #969799; /* @type color */ /* @desc 默认类型颜色 */
+  --van-tag-plain-background-color: #fff; /* @type color */ /* @hidden */
 }
