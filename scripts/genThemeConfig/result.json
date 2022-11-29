@@ -234,55 +234,55 @@
                 "toPosition": "sidebar",
                 "type": [],
                 "cssProperty": {
-                    "--van-van-sidebar-width": {
+                    "--van-sidebar-width": {
                         "type": "input",
                         "desc": "宽度"
                     },
-                    "--van-van-sidebar-font-size": {
+                    "--van-sidebar-font-size": {
                         "type": "input",
                         "desc": "字体"
                     },
-                    "--van-van-sidebar-line-height": {
+                    "--van-sidebar-line-height": {
                         "type": "input",
                         "desc": "行高"
                     },
-                    "--van-van-sidebar-text-color": {
+                    "--van-sidebar-text-color": {
                         "type": "color",
                         "desc": "字体颜色"
                     },
-                    "--van-van-sidebar-disabled-text-color": {
+                    "--van-sidebar-disabled-text-color": {
                         "type": "color",
                         "desc": "禁用字体颜色"
                     },
-                    "--van-van-sidebar-padding": {
+                    "--van-sidebar-padding": {
                         "type": "input",
                         "desc": "边距"
                     },
-                    "--van-van-sidebar-background-color": {
+                    "--van-sidebar-background-color": {
                         "type": "color",
                         "desc": "背景色"
                     },
-                    "--van-van-sidebar-selected-font-weight": {
+                    "--van-sidebar-selected-font-weight": {
                         "type": "input",
                         "desc": "选中态字体粗细"
                     },
-                    "--van-van-sidebar-selected-text-color": {
+                    "--van-sidebar-selected-text-color": {
                         "type": "color",
                         "desc": "选中态字体颜色"
                     },
-                    "--van-van-sidebar-selected-border-width": {
+                    "--van-sidebar-selected-border-width": {
                         "type": "input",
                         "desc": "选中态边框宽度"
                     },
-                    "--van-van-sidebar-selected-border-height": {
+                    "--van-sidebar-selected-border-height": {
                         "type": "input",
                         "desc": "选中态边框高度"
                     },
-                    "--van-van-sidebar-selected-border-color": {
+                    "--van-sidebar-selected-border-color": {
                         "type": "color",
                         "desc": "选中态边框颜色"
                     },
-                    "--van-van-sidebar-selected-background-color": {
+                    "--van-sidebar-selected-background-color": {
                         "type": "color",
                         "desc": "选中态背景色"
                     }
@@ -757,43 +757,43 @@
                 "toPosition": "switch",
                 "type": [],
                 "cssProperty": {
-                    "--van-van-switch-size": {
+                    "--van-switch-size": {
                         "type": "input",
                         "desc": "字体大小"
                     },
-                    "--van-van-switch-width": {
+                    "--van-switch-width": {
                         "type": "input",
                         "desc": "宽度"
                     },
-                    "--van-van-switch-height": {
+                    "--van-switch-height": {
                         "type": "input",
                         "desc": "高度"
                     },
-                    "--van-van-switch-node-size": {
+                    "--van-switch-node-size": {
                         "type": "input",
                         "desc": "node大小"
                     },
-                    "--van-van-switch-node-background-color": {
+                    "--van-switch-node-background-color": {
                         "type": "color",
                         "desc": "node背景色"
                     },
-                    "--van-van-switch-node-box-shadow": {
+                    "--van-switch-node-box-shadow": {
                         "type": "input",
                         "desc": "node阴影"
                     },
-                    "--van-van-switch-background-color": {
+                    "--van-switch-background-color": {
                         "type": "color",
                         "desc": "整体背景色"
                     },
-                    "--van-van-switch-on-background-color": {
+                    "--van-switch-on-background-color": {
                         "type": "color",
                         "desc": "激活态背景色"
                     },
-                    "--van-van-switch-transition-duration": {
+                    "--van-switch-transition-duration": {
                         "type": "input",
                         "desc": "动画时间"
                     },
-                    "--van-van-switch-disabled-opacity": {
+                    "--van-switch-disabled-opacity": {
                         "type": "input",
                         "desc": "禁用态透明度"
                     }

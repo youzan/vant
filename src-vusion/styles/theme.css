@@ -430,30 +430,30 @@
   --van-sidebar-width: 80px; /* @desc 宽度 */
   --van-sidebar-font-size: var(--van-font-size-md); /* @desc 字体 */
   --van-sidebar-line-height: var(--van-line-height-md); /* @desc 行高 */
-  --van-van-sidebar-text-color: var(
+  --van-sidebar-text-color: var(
     --van-component-text-color
   ); /* @type color */ /* @desc 字体颜色 */
-  --van-van-sidebar-disabled-text-color: #c8c9cc; /* @type color */ /* @desc 禁用字体颜色 */
-  --van-van-sidebar-padding: 20px var(--van-padding-sm); /* @desc 边距 */
-  --van-van-sidebar-active-color: var(
+  --van-sidebar-disabled-text-color: #c8c9cc; /* @type color */ /* @desc 禁用字体颜色 */
+  --van-sidebar-padding: 20px var(--van-padding-sm); /* @desc 边距 */
+  --van-sidebar-active-color: var(
     --van-component-active-color
   ); /* @type color */ /* @hidden */
-  --van-van-sidebar-background-color: var(
+  --van-sidebar-background-color: var(
     --van-component-background-color
   ); /* @type color */ /* @desc 背景色 */
-  --van-van-sidebar-selected-font-weight: var(
+  --van-sidebar-selected-font-weight: var(
     --van-font-weight-bold
   ); /* @desc 选中态字体粗细 */
 
-  --van-van-sidebar-selected-text-color: var(
+  --van-sidebar-selected-text-color: var(
     --van-component-text-color
   ); /* @type color */ /* @desc 选中态字体颜色 */
-  --van-van-sidebar-selected-border-width: 4px; /* @desc 选中态边框宽度 */
-  --van-van-sidebar-selected-border-height: 16px; /* @desc 选中态边框高度 */
-  --van-van-sidebar-selected-border-color: var(
+  --van-sidebar-selected-border-width: 4px; /* @desc 选中态边框宽度 */
+  --van-sidebar-selected-border-height: 16px; /* @desc 选中态边框高度 */
+  --van-sidebar-selected-border-color: var(
     --van-brand-primary
   ); /* @type color */ /* @desc 选中态边框颜色 */
-  --van-van-sidebar-selected-background-color: #fff; /* @type color */ /* @desc 选中态背景色 */
+  --van-sidebar-selected-background-color: #fff; /* @type color */ /* @desc 选中态背景色 */
 
   /* @component van-steps */
   --van-steps-background-color: #fff; /* @type color */ /* @desc 整体背景色 */
@@ -521,20 +521,20 @@
   ); /* @type color */ /* @desc indicator 非active态背景色 */
 
   /* @component van-switch */
-  --van-van-switch-size: 27px; /* @desc 字体大小 */
-  --van-van-switch-width: 1.75em; /* @desc 宽度 */
-  --van-van-switch-height: 1em; /* @desc 高度 */
-  --van-van-switch-node-size: 1em; /* @desc node大小 */
-  --van-van-switch-node-background-color: #fff; /* @type color */ /* @desc node背景色 */
-  --van-van-switch-node-box-shadow: 0 3px 1px 0 rgba(0, 0, 0, 0.05),
+  --van-switch-size: 27px; /* @desc 字体大小 */
+  --van-switch-width: 1.75em; /* @desc 宽度 */
+  --van-switch-height: 1em; /* @desc 高度 */
+  --van-switch-node-size: 1em; /* @desc node大小 */
+  --van-switch-node-background-color: #fff; /* @type color */ /* @desc node背景色 */
+  --van-switch-node-box-shadow: 0 3px 1px 0 rgba(0, 0, 0, 0.05),
     0 2px 2px 0 rgba(0, 0, 0, 0.1), 0 3px 3px 0 rgba(0, 0, 0, 0.05); /* @desc node阴影 */
 
-  --van-van-switch-background-color: #f2f3f5; /* @type color */ /* @desc 整体背景色 */
-  --van-van-switch-on-background-color: var(
+  --van-switch-background-color: #f2f3f5; /* @type color */ /* @desc 整体背景色 */
+  --van-switch-on-background-color: var(
     --van-brand-primary
   ); /* @type color */ /* @desc 激活态背景色 */
-  --van-van-switch-transition-duration: 0.3s; /* @desc 动画时间 */
-  --van-van-switch-disabled-opacity: var(
+  --van-switch-transition-duration: 0.3s; /* @desc 动画时间 */
+  --van-switch-disabled-opacity: var(
     --van-component-disabled-opacity
   ); /* @desc 禁用态透明度 */
 
