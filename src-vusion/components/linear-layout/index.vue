@@ -50,10 +50,10 @@ export default {
 
 
 .root[direction="horizontal"] > *:not(:last-child) {
-    margin-right: var(--space-base);
+    margin-right: var(--van-space-base);
 }
 .root[direction="vertical"] > *:not(:last-child) {
-    margin-bottom: var(--space-base);
+    margin-bottom: var(--van-space-base);
 }
 
 .root[direction="horizontal"][gap="shrink"] > *:not(:last-child) {
