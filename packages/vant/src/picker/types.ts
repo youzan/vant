@@ -47,6 +47,7 @@ export type PickerInstance = ComponentPublicInstance<PickerProps, PickerExpose>;
 export type PickerConfirmEventParams = {
   selectedValues: Numeric[];
   selectedOptions: Array<PickerOption | undefined>;
+  selectedIndexes: number[];
 };
 
 export type PickerCancelEventParams = PickerConfirmEventParams;

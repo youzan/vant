@@ -23,6 +23,7 @@ test('should emit confirm event after clicking the confirm button', async () => 
     {
       selectedOptions: [{ text: '1990', value: '1990' }],
       selectedValues: ['1990'],
+      selectedIndexes: [0],
     },
   ]);
 });
@@ -40,6 +41,7 @@ test('should emit cancel event after clicking the cancel button', () => {
     {
       selectedOptions: [{ text: '1990', value: '1990' }],
       selectedValues: ['1990'],
+      selectedIndexes: [0],
     },
   ]);
 });
@@ -60,6 +62,7 @@ test('should emit change event after draging the column', () => {
         columnIndex: 0,
         selectedOptions: [{ text: '1995', value: '1995' }],
         selectedValues: ['1995'],
+        selectedIndexes: [5],
       },
     ],
   ]);
@@ -83,6 +86,7 @@ test('should emit change event when after clicking a option', async () => {
         columnIndex: 0,
         selectedOptions: [{ text: 'B', value: 'B' }],
         selectedValues: ['B'],
+        selectedIndexes: [1],
       },
     ],
   ]);
@@ -134,6 +138,7 @@ test('should emit click-option event after clicking an option', async () => {
       currentOption: { text: '1990', value: '1990' },
       selectedOptions: [{ text: '1990', value: '1990' }],
       selectedValues: ['1990'],
+      selectedIndexes: [0],
     },
   ]);
 });
@@ -180,7 +185,11 @@ test('should allow to update columns props dynamically', async () => {
 
   await wrapper.find('.van-picker__confirm').trigger('click');
   expect(wrapper.emitted<[string, number]>('confirm')![0]).toEqual([
-    { selectedOptions: [{ text: '2', value: '2' }], selectedValues: ['2'] },
+    {
+      selectedOptions: [{ text: '2', value: '2' }],
+      selectedValues: ['2'],
+      selectedIndexes: [0],
+    },
   ]);
 });
 
@@ -205,7 +214,11 @@ test('should not reset index when columns unchanged', async () => {
 
   await wrapper.find('.van-picker__confirm').trigger('click');
   expect(wrapper.emitted<[string, number]>('confirm')![0]).toEqual([
-    { selectedOptions: [{ text: '2', value: '2' }], selectedValues: ['2'] },
+    {
+      selectedOptions: [{ text: '2', value: '2' }],
+      selectedValues: ['2'],
+      selectedIndexes: [1],
+    },
   ]);
 });
 

@@ -77,6 +77,7 @@ test('should emit confirm event after clicking the confirm button', async () => 
           { text: '00', value: '00' },
         ],
         selectedValues: ['12', '00'],
+        selectedIndexes: [12, 0],
       },
     ],
   ]);
@@ -105,6 +106,7 @@ test('should emit confirm event correctly after setting values', async () => {
           { text: '00', value: '00' },
         ],
         selectedValues: ['00', '00'],
+        selectedIndexes: [0, 0],
       },
     ],
     [
@@ -114,6 +116,7 @@ test('should emit confirm event correctly after setting values', async () => {
           { text: '30', value: '30' },
         ],
         selectedValues: ['22', '30'],
+        selectedIndexes: [22, 30],
       },
     ],
   ]);
@@ -141,6 +144,7 @@ test('should emit confirm event correctly after setting range', async () => {
           { text: '30', value: '30' },
         ],
         selectedValues: ['20', '30'],
+        selectedIndexes: [0, 0],
       },
     ],
   ]);
@@ -167,6 +171,7 @@ test('should emit confirm event correctly after setting smaller max-hour and max
           { text: '00', value: '00' },
         ],
         selectedValues: ['00', '00'],
+        selectedIndexes: [0, 0],
       },
     ],
   ]);

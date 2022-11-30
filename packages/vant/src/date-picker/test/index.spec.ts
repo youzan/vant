@@ -26,6 +26,7 @@ test('should emit confirm event correctly', async () => {
         { text: '01', value: '01' },
       ],
       selectedValues: ['2030', '01', '01'],
+      selectedIndexes: [0, 0, 0],
     }
   );
 });
@@ -47,6 +48,7 @@ test('should emit cancel event correctly', async () => {
       { text: '01', value: '01' },
     ],
     selectedValues: ['2030', '01', '01'],
+    selectedIndexes: [0, 0, 0],
   });
 });
 
