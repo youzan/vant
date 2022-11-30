@@ -1,0 +1,59 @@
+- name: van-tag
+  icon: label
+  title: 标签
+  labels:
+    - Display
+  description: 用于标记关键词和概括主要内容。
+  next: true
+  nested: false
+  attrs:
+    - name: type
+      title: 类型
+      type: string
+      options:
+        - value: primary
+          title: 默认
+        - value: success
+          title: 成功
+        - value: danger
+          title: 危险
+        - value: warning
+          title: 警告
+      default: medium
+    - name: size
+      title: 尺寸
+      type: string
+      options:
+        - value: large
+          title: 大型
+        - value: medium
+          title: 中型
+        - value: small
+          title: 小型
+      default: medium
+    - name: plain
+      title: 是否为空心
+      type: boolean
+      default: false
+    - name: round
+      title: 是否为圆角
+      type: boolean
+      default: false
+    - name: mark
+      title: 是否为标记样式
+      type: boolean
+      default: false
+    - name: closeable
+      title: 是否为可关闭标签
+      type: boolean
+      default: false
+  slots: false
+  events:
+    - name: click
+      title: 点击时
+      description: 点击时触发
+      params: []
+    - name: close
+      title: 关闭时
+      description: 关闭标签时触发
+      params: []

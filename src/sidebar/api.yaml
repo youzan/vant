@@ -14,7 +14,7 @@
     - name: route
       title: 是否开启路由模式
       type: boolean
-      default: true
+      default: false
       description: 是否开启路由模式
   slots:
     - concept: Slot

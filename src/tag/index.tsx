@@ -8,10 +8,11 @@ import Icon from '../icon';
 // Types
 import { CreateElement, RenderContext } from 'vue/types';
 import { DefaultSlots } from '../utils/types';
+import VanEmptyCol from '../emptycol/index';
 
 export type TagType = 'default' | 'primary' | 'success' | 'danger';
 
-export type TagSize = 'large' | 'medium';
+export type TagSize = 'large' | 'medium' | 'small';
 
 export type TagProps = {
   type: TagType;
@@ -69,7 +70,11 @@ function Tag(
         class={bem([classes, type])}
         {...inherit(ctx, true)}
       >
-        {slots.default?.()}
+        {slots.default?.() ? (
+          slots.default?.()
+        ) : (
+          <VanEmptyCol vusion-slot-name="default"></VanEmptyCol>
+        )}
         {CloseIcon}
       </span>
     </transition>

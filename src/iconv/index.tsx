@@ -5,18 +5,18 @@ import { emit, inherit } from '../utils/functional';
 
 // Components
 import Info from '../info';
-import VanEmptyCol from '../emptycol'
-import config from './config'
+import VanEmptyCol from '../emptycol';
+import config from './config';
 
-import { onlineSvgIcon } from 'online-svg-icon-vue2'
+import { onlineSvgIcon } from './components/main';
 // Types
 import { CreateElement, RenderContext } from 'vue/types';
 import { DefaultSlots } from '../utils/types';
 import encodeUrl from '../utils/encodeUrl';
 
-onlineSvgIcon
+onlineSvgIcon;
 
-require('./icon')
+require('./icon');
 
 export type IconProps = {
   text?: string;
@@ -30,14 +30,14 @@ export type IconProps = {
   color?: string;
   classPrefix: string;
   notext?: boolean;
-  href?: string,
-  target?: { type: string, default: '_self' },
-  to?: [string, Object],
-  replace?: { type: boolean, default: false },
-  append?: { type: boolean, default: false },
-  decoration?: { type: boolean, default: true },
-  download?: { type: boolean, default: false },
-  destination?: string,
+  href?: string;
+  target?: { type: string; default: '_self' };
+  to?: [string, Object];
+  replace?: { type: boolean; default: false };
+  append?: { type: boolean; default: false };
+  decoration?: { type: boolean; default: true };
+  download?: { type: boolean; default: false };
+  destination?: string;
 };
 
 export type IconEvents = {
@@ -67,7 +67,9 @@ function correctName(name?: string) {
 }
 
 function getName(name = '默认') {
-  const item = config.glyphs.find((v) => v.font_class === name) || { font_class: 'default' };
+  const item = config.glyphs.find((v) => v.font_class === name) || {
+    font_class: 'default',
+  };
   return item.font_class;
 }
 
@@ -77,7 +79,7 @@ function Iconv(
   slots: DefaultSlots,
   ctx: RenderContext<IconProps>
 ) {
-  const name = getName((props.name));
+  const name = getName(props.name);
   const imageIcon = isImage(name);
 
   if (process.env.NODE_ENV === 'development' && props.info) {
@@ -87,11 +89,13 @@ function Iconv(
   }
 
   function currentHref() {
-    if (props.href !== undefined)
-      return encodeUrl(props.href);
+    if (props.href !== undefined) return encodeUrl(props.href);
     if (ctx.parent?.$router && props.to !== undefined)
       // @ts-ignore：没办法
-      return encodeUrl(ctx.parent?.$router.resolve(props.to, ctx.parent?.$route, props.append).href);
+      return encodeUrl(
+        ctx.parent?.$router.resolve(props.to, ctx.parent?.$route, props.append)
+          .href
+      );
     return undefined;
   }
 
@@ -114,24 +118,22 @@ function Iconv(
       }
 
       const currentTo = to || props.to;
-      if (currentTo === undefined)
-        return;
+      if (currentTo === undefined) return;
       const cancel = false;
-      if (cancel)
-        return;
+      if (cancel) return;
       const $router = ctx.parent?.$router;
       const $route = ctx.parent?.$route;
       const { location } = $router.resolve(
         // @ts-ignore：没办法
         currentTo,
         $route,
-        props.append,
+        props.append
       );
       props.replace ? $router.replace(location) : $router.push(location);
     } else {
       function downloadClick() {
-        const a = document.createElement("a");
-        a.setAttribute("href", hrefR as string);
+        const a = document.createElement('a');
+        a.setAttribute('href', hrefR as string);
         document.body.appendChild(a);
         a.click();
         setTimeout(() => {
@@ -140,7 +142,6 @@ function Iconv(
       }
       downloadClick();
     }
-
   }
   function ifDesigner() {
     return ctx?.parent?.$env && ctx.parent?.$env.VUE_APP_DESIGNER;
@@ -152,26 +153,43 @@ function Iconv(
   const { icotype } = props;
   const endNotext = icotype === 'only';
 
+  const tempStyle = {
+    color: props.color,
+    fontSize: addUnit(props.size),
+  };
+  if (typeof tempStyle.fontSize === 'undefined') {
+    delete tempStyle.fontSize;
+  }
+
   return (
     <props.tag
       class={[
         props.classPrefix,
         isSvgUrl(props.name) ? bem('cus') : '',
-        props.icotype === 'left' ? bem('flex') : ''
+        props.icotype === 'left' ? bem('flex') : '',
         // imageIcon ? '' : `${props.classPrefix}-${name}`,
       ]}
-      style={{
-        // color: props.color,
-        fontSize: addUnit(props.size),
-      }}
+      style={tempStyle}
       {...inherit(ctx, false)}
       onClick={onClick}
     >
-      {isSvgUrl(props.name) ? <onlineSvgIcon purecss={true} url={props.name} /> : <svg class="vant-iconv-svg van-shoud-pa" aria-hidden="true">
-        <use {...href} class="van-shoud-pa"></use>
-      </svg>}
-      {ifDesigner() && !sd && !ifNotext && !endNotext ? <VanEmptyCol vusion-slot-name="default" class="van-shoud-pa" vusion-scope-id={sid}></VanEmptyCol> : null}
-      {!endNotext ? <div class={bem('slot', { inline: icotype === 'left' })}>{sd}</div> : null}
+      {isSvgUrl(props.name) ? (
+        <onlineSvgIcon purecss={true} url={props.name} />
+      ) : (
+        <svg class="vant-iconv-svg van-shoud-pa" aria-hidden="true">
+          <use {...href} class="van-shoud-pa"></use>
+        </svg>
+      )}
+      {ifDesigner() && !sd && !ifNotext && !endNotext ? (
+        <VanEmptyCol
+          vusion-slot-name="default"
+          class="van-shoud-pa"
+          vusion-scope-id={sid}
+        ></VanEmptyCol>
+      ) : null}
+      {!endNotext ? (
+        <div class={bem('slot', { inline: icotype === 'left' })}>{sd}</div>
+      ) : null}
       {/* {imageIcon && <img class={bem('image')} src={name} />} */}
       <Info dot={props.dot} info={props.badge ?? props.info} />
     </props.tag>
@@ -181,7 +199,7 @@ function Iconv(
 Iconv.props = {
   text: {
     type: String,
-    default: '图标'
+    default: '图标',
   },
   dot: Boolean,
   name: String,

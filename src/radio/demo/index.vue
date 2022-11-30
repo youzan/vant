@@ -1,22 +1,26 @@
 <template>
   <demo-section>
     <demo-block>
-      <van-radio-group class="demo-radio-group" :data-source="[1,2,3]">
-        <template #default="scope">
-          <van-radio :name="scope.item.item" :title="'选框'+scope.item.item"></van-radio>
+      <van-radio-group class="demo-radio-group" :data-source="[{}, {}, {}]">
+        <template #item="scope">
+          <van-radio
+            name="scope.item.item"
+            title="选框+scope.item.item"
+          ></van-radio>
         </template>
+        <van-radio disabled name="scope.item.item" title="'节点"></van-radio>
       </van-radio-group>
     </demo-block>
     <demo-block>
       <van-radio-group class="demo-radio-group">
-        <van-radio name="1" >{{ t('radio') }} 1</van-radio>
-        <van-radio name="23" >{{ t('radio') }} 2</van-radio>
+        <van-radio name="1">{{ t('radio') }} 1</van-radio>
+        <van-radio name="23">{{ t('radio') }} 2</van-radio>
       </van-radio-group>
     </demo-block>
     <demo-block :title="t('basicUsage')">
       <van-radio-group class="demo-radio-group">
-        <van-radio name="1" >{{ t('radio') }} 1</van-radio>
-        <van-radio name="2" >{{ t('radio') }} 2</van-radio>
+        <van-radio name="1">{{ t('radio') }} 1</van-radio>
+        <van-radio name="2">{{ t('radio') }} 2</van-radio>
       </van-radio-group>
     </demo-block>
     <demo-block :title="t('basicUsage')">
@@ -125,7 +129,7 @@ export default {
       customColor: '自定义颜色',
       customShape: '自定义形状',
       customIconSize: '自定义大小',
-      disableLabel: '禁用文本点击',
+      disableLabel: '禁用文本点击'
     },
     'en-US': {
       radio: 'Radio',
@@ -137,8 +141,8 @@ export default {
       customColor: 'Custom Color',
       customShape: 'Custom Shape',
       customIconSize: 'Custom Icon Size',
-      disableLabel: 'Disable label click',
-    },
+      disableLabel: 'Disable label click'
+    }
   },
 
   data() {
@@ -154,10 +158,10 @@ export default {
       radioHorizontal: '1',
       icon: {
         active: 'https://img01.yzcdn.cn/vant/user-active.png',
-        inactive: 'https://img01.yzcdn.cn/vant/user-inactive.png',
-      },
+        inactive: 'https://img01.yzcdn.cn/vant/user-inactive.png'
+      }
     };
-  },
+  }
 };
 </script>
 

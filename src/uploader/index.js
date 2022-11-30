@@ -393,7 +393,7 @@ export default createComponent({
           status === 'failed' ? (
             <Icon name="close" class={bem('mask-icon')} />
           ) : (
-            <Loading class={bem('loading')} />
+            <Loading class={bem('loading')} type="spinner" />
           );
 
         const showMessage = isDef(message) && message !== '';

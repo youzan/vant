@@ -4,7 +4,7 @@
 
 <script>
 export default {
-  name: 'VanEmptyCol'
+  name: 'VanEmptyCol',
 };
 </script>
 

@@ -95,7 +95,7 @@ export default createComponent({
     displayTitle() {
       // console.log(this.children, 99, this.value)
       const match1 = this.children.filter(
-        (option) => isDef(option.value) && option.value === this.value
+        (option) => (option.value ?? option.index) === this.value
       );
       const match = this.options.filter(
         (option) => isDef(option.value) && option.value === this.value

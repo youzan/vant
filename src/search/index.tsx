@@ -80,7 +80,7 @@ function Search(
   }
 
   const fieldData = {
-    attrs: {...ctx.data.attrs},
+    attrs: { ...ctx.data.attrs },
     on: {
       ...ctx.listeners,
       keypress(event: KeyboardEvent) {
@@ -96,14 +96,14 @@ function Search(
   const inheritData = inherit(ctx);
   // inheritData.attrs = undefined;
   Object.keys(fieldData?.attrs || {}).forEach((key) => {
-    if(/vusion/.test(key)) {
-      fieldData.attrs && fieldData.attrs[key] && delete fieldData?.attrs[key]
+    if (/vusion/.test(key)) {
+      fieldData.attrs && fieldData.attrs[key] && delete fieldData?.attrs[key];
     }
-  })
+  });
   return (
     <div
       class={bem({ 'show-action': props.showAction })}
-      style={{ background: props.background }}
+      // style={{ background: props.background }}
       {...inheritData}
     >
       {slots.left?.()}

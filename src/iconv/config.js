@@ -6,6 +6,20 @@ export default {
   "description": "H5图标、web图标",
   "glyphs": [
     {
+      "icon_id": "33103629",
+      "name": "star",
+      "font_class": "star1",
+      "unicode": "e601",
+      "unicode_decimal": 58881
+    },
+   {
+      "icon_id": "26584061",
+      "name": "加载中",
+      "font_class": "loading",
+      "unicode": "e600",
+      "unicode_decimal": 58888
+    },
+    {
       "icon_id": "26584061",
       "name": "加载中",
       "font_class": "loading",

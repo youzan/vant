@@ -2,16 +2,19 @@
 
 .van-fieldtextarea {
   &__newwrap {
-    display: flex;
+    display: block;
     width: 100%;
-    align-items: center;
     &--limit {
       position: relative;
     }
     &--clearwrap {
       position: relative;
-      padding-right: 5px;
+      // padding-right: 5px;
     }
+  }
+  &__wrap-con{
+    display: flex;
+    align-items: center;
   }
   &__control {
     display: block;
@@ -77,8 +80,8 @@
   }
 
   &__clear {
-    margin-right: -@padding-xs;
-    padding: 0 @padding-xs;
+    // margin-right: -@padding-xs;
+    // padding: 0 @padding-xs;
     line-height: inherit;
   }
 
@@ -89,14 +92,10 @@
   }
 
   &__word-limit {
-    margin-top: @padding-base;
     color: @field-word-limit-color;
     font-size: @field-word-limit-font-size;
     line-height: @field-word-limit-line-height;
     text-align: right;
-    position: absolute;
-    bottom: -6px;
-    right: 0;
   }
 }
 

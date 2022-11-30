@@ -1,9 +1,23 @@
 <template>
   <demo-section>
+    <van-circle
+      stroke-linecap="sqaure"
+      value="40"
+      :rate="30"
+      :speed="200"
+      :text="currentRate1.toFixed(0) + '%'"
+    />
     <demo-block :title="t('basicUsage')">
       <van-circle
+        stroke-linecap="sqaure"
         v-model="currentRate1"
-        :rate="rate"
+        :rate="400"
+        :speed="100"
+        :text="currentRate1.toFixed(0) + '%'"
+      />
+      <van-circle
+        :value="currentRate1"
+        :rate="200"
         :speed="100"
         :text="currentRate1.toFixed(0) + '%'"
       />
@@ -42,7 +56,7 @@
         :speed="100"
         :clockwise="false"
         :text="t('counterClockwise')"
-        style="margin-top: 15px;"
+        style="margin-top: 15px"
       />
 
       <van-circle
@@ -53,11 +67,11 @@
         size="120px"
         :clockwise="false"
         :text="t('customSize')"
-        style="margin-top: 15px;"
+        style="margin-top: 15px"
       />
     </demo-block>
 
-    <div style="margin-top: 15px;">
+    <div style="margin-top: 15px">
       <van-button :text="t('add')" type="primary" size="small" @click="add" />
       <van-button
         :text="t('decrease')"
@@ -80,7 +94,7 @@ export default {
       customStyle: '样式定制',
       customColor: '颜色定制',
       customWidth: '宽度定制',
-      counterClockwise: '逆时针',
+      counterClockwise: '逆时针'
     },
     'en-US': {
       gradient: 'Gradient',
@@ -88,8 +102,8 @@ export default {
       customStyle: 'Custom Style',
       customColor: 'Custom Color',
       customWidth: 'Custom Width',
-      counterClockwise: 'Counter Clockwise',
-    },
+      counterClockwise: 'Counter Clockwise'
+    }
   },
 
   data() {
@@ -101,8 +115,8 @@ export default {
       currentRate4: 70,
       gradientColor: {
         '0%': '#3fecff',
-        '100%': '#6149f6',
-      },
+        '100%': '#6149f6'
+      }
     };
   },
 
@@ -113,8 +127,8 @@ export default {
 
     reduce() {
       this.rate = format(this.rate - 20);
-    },
-  },
+    }
+  }
 };
 </script>
 

@@ -609,6 +609,7 @@ export default createComponent({
           onClick={this.togglePopup}
           notitle={true}
           insel={true}
+          nofi={true}
         />
         <Popup
           safe-area-inset-bottom

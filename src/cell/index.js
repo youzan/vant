@@ -80,7 +80,7 @@ export default createComponent({
         // const config = isObject(to) ? to : { path: to };
         const config = isObject(destination) ? destination : { path: this.newdest(destination) };
 
-        return !!$route.matched.find((r) => {
+        return !!$route?.matched.find((r) => {
           // vue-router 3.x $route.matched[0].path is empty in / and its children paths
           const path = r.path === '' ? '/' : r.path;
           if (config.path === '/') return false;
@@ -96,7 +96,7 @@ export default createComponent({
 
   methods: {
     newdest(destination) {
-      return destination ? '/' + destination.split('/').slice(2).join('/') : destination;
+      return destination ? '/' + destination.split('/').slice(1).join('/') : destination;
     },
   },
 
@@ -213,13 +213,13 @@ export default createComponent({
     }
 
     function onClick(event) {
-      if (that.vanDropdownMenuItem && that.vanDropdownMenuItem.shutself) {
-        that.vanDropdownMenuItem.showPopup = false;
+      if (that.vanDropdownMenuItem) {
         if ((that.value ?? that.index) !== that.vanDropdownMenuItem.value) {
           that.vanDropdownMenuItem.value = that.value ?? that.index;
           that.vanDropdownMenuItem.$emit('input', that.value);
           that.vanDropdownMenuItem.$emit('update:valueprop', that.value);
         }
+        that.vanDropdownMenuItem.shutself && (that.vanDropdownMenuItem.showPopup = false);
       }
 
 

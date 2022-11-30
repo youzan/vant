@@ -34,7 +34,7 @@ export default createComponent({
 
   watch: {
     value: {
-      handler: function (val, oldVal) {
+      handler (val, oldVal) {
         this.$emit('update:value', val);
         this.$emit('change', val);
         if (val === true && typeof oldVal === 'undefined') {
@@ -76,7 +76,7 @@ export default createComponent({
         }
       } else {
         const index = value.indexOf(this.name);
-        if (parent.min && value.length < parent.min) {
+        if (parent.min && value.length <= parent.min) {
           return;
         }
         /* istanbul ignore else */

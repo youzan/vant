@@ -7,7 +7,7 @@ import { TouchMixin } from '../mixins/touch';
 import { FieldMixin } from '../mixins/field';
 
 // Components
-import Icon from '../icon';
+import Icon from '../iconv';
 
 const [createComponent, bem] = createNamespace('rate');
 
@@ -57,12 +57,21 @@ export default createComponent({
       default: true,
     },
   },
-
+  data() {
+    return {
+      current:0
+    }
+  },
+  watch: {
+    value(value) {
+      this.current = value
+    }
+},
   computed: {
     list() {
       const list = [];
       for (let i = 1; i <= this.count; i++) {
-        list.push(getRateStatus(this.value, i, this.allowHalf));
+        list.push(getRateStatus(this.current, i, this.allowHalf));
       }
 
       return list;
@@ -79,13 +88,15 @@ export default createComponent({
 
   mounted() {
     this.bindTouchEvent(this.$el);
+    this.current = this.value
   },
-
   methods: {
     select(index) {
       if (!this.disabled && !this.readonly && index !== this.value) {
+        this.$emit('update:value', index);
         this.$emit('input', index);
         this.$emit('change', index);
+        this.current= index
       }
     },
 
@@ -182,6 +193,7 @@ export default createComponent({
             onClick={() => {
               this.select(score);
             }}
+            icotype="only"
           />
           {this.allowHalf && (
             <Icon

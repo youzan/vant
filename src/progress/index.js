@@ -80,14 +80,16 @@ export default createComponent({
     };
 
     return (
-      <div class={bem()} style={wrapperStyle}>
-        <span class={bem('portion')} style={portionStyle}>
-          {showPivot && (
-            <span ref="pivot" style={pivotStyle} class={bem('pivot')}>
-              {text}
-            </span>
-          )}
-        </span>
+      <div class="van-progress-room">
+        <div class={bem()} style={wrapperStyle}>
+          <span class={bem('portion')} style={portionStyle}>
+            {showPivot && (
+              <span ref="pivot" style={pivotStyle} class={bem('pivot')}>
+                {text}
+              </span>
+            )}
+          </span>
+        </div>
       </div>
     );
   },

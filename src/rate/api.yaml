@@ -1,0 +1,59 @@
+- name: van-rate
+  icon: rate
+  title: 评分
+  labels:
+    - Display
+  description: 用于对事物进行评级操作。
+  next: true
+  nested: false
+  attrs:
+    - name: value
+      title: 当前分值
+      type: number
+      sync: true
+      model: true
+    - name: count
+      title: 图标总数
+      type: numer | string
+      default: 5
+    - name: size
+      title: 图标大小(px)
+      type: numer
+      default: 20
+    - name: gutter
+      title: 图标间距
+      type: numer | string
+      default: 4
+    - name: color
+      title: 选中时的颜色
+      type: string
+    - name: void-color
+      title: 未选中时的颜色
+      type: string
+    - name: disabled-color
+      title: 禁用时的颜色
+      type: string
+    - name: icon
+      title: 选中时的图标名称或图片链接
+      type: icon
+    - name: void-icon
+      title: 未选中时的图标名称或图片链接
+      type: icon
+    - name: allow-half
+      title: 半选
+      type: boolean
+      default: false
+    - name: readonly
+      title: 只读
+      type: boolean
+      default: false
+    - name: disabled
+      title: 禁用
+      type: boolean
+      default: false
+  slots: false
+  events:
+    - name: change
+      title: 分值变化时
+      description: 分值变化时
+      params: []

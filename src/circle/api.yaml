@@ -1,0 +1,41 @@
+- name: van-circle
+  icon: circular-progress
+  title: 环形进度条
+  labels:
+    - Display
+  description: 圆环形的进度条组件
+  next: true
+  nested: false
+  attrs:
+    - name: value
+      title: 当前进度
+      type: number | string
+      sync: true
+      model: true
+      defalut: 50
+    - name: size
+      title: 圆环直径(px)
+      type: numer
+      default: 100
+    - name: color
+      title: 进度条颜色
+      type: string
+    - name: layer-color
+      title: 轨道颜色
+      type: string
+    - name: fill
+      title: 填充颜色
+      type: string
+    - name: text
+      title: 文字
+      type: string
+    - name: stroke-width
+      title: 进度条宽度
+      type: number | string
+      default: 40
+    - name: clockwise
+      title: 是否顺时针增加
+      type: boolean
+      default: true
+  slots: false
+  events:

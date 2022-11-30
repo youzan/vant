@@ -1,7 +1,7 @@
-import { createNamespace } from '../utils';
+import { createNamespace , isFunction } from '../utils';
 import { FieldMixin } from '../mixins/field';
 import { ParentMixin } from '../mixins/relation';
-import { isFunction } from '../utils';
+
 const [createComponent, bem] = createNamespace('checkbox-group');
 
 export default createComponent({
@@ -44,6 +44,11 @@ export default createComponent({
       immediate: true
     },
   },
+  computed: {
+    inDesigner() {
+      return this.$env && this.$env.VUE_APP_DESIGNER;
+    }
+  },
 
   methods: {
     ifDesigner() {
@@ -51,7 +56,7 @@ export default createComponent({
     },
     fromValue(value) {
       try {
-        if(value === null || value === '') return [];
+        if( value===undefined ||value === null || value === '') return [];
         if(typeof value === 'string') return JSON.parse(value || '[]');
         if(typeof value === 'object') return value;
       } catch (err) {
@@ -80,10 +85,9 @@ export default createComponent({
       this.datatemp = names;
     },
     async update() {
-      if(this.ifDesigner()) {
-        return
-      }
-      if (isFunction(this.dataSource)) {
+      if (this.ifDesigner() && this.dataSource) {
+        this.options = this.dataSource.map(item => { item.disabled = true;return item })
+      } else if (isFunction(this.dataSource)) {
         try {
           const res = await this.dataSource({
             page: 1,
@@ -100,35 +104,12 @@ export default createComponent({
   },
 
   render() {
-    if (this.dataSource && this.options?.length >= 0) {
-      return <div class={bem([this.direction])}>
-        {/* <van-linear-layout direction="horizontal" layout="inline"> */}
-        {
-          this.options.map((item, index) => {
-            const data = {
-              // style: optionStyle,
-              attrs: {
-                role: 'checkbox-wrapthird',
-              },
-              class: [
-              ],
-              // on: {
-              //   click: () => {
-              //     this.onClickItem(index);
-              //   },
-              // },
-            };
-            return this.slots('default', {item, index});
-          })
-        }
-        {/* </van-linear-layout> */}
-      </div>
-    }
     return <div class={bem([this.direction])}>
-        {this.slots()}
-        {/* <van-linear-layout direction="horizontal" layout="inline">
-          {this.slots()}
-        </van-linear-layout> */}
-      </div>;
-  },
+      {this.options?.map((item, index) => <div style="position:relative">{this.slots('item', { item })}
+          {(this.inDesigner && index>0) && <div class="mantle"></div>}
+      </div>)}
+      {(!this.slots()&& this.options?.length===0 &&this.inDesigner ) && <div style="text-align: center;width:100%">请绑定数据源或插入子节点</div>}
+      {this.slots()}
+    </div>
+  }
 });

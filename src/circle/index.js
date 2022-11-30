@@ -22,8 +22,14 @@ export default createComponent({
   props: {
     text: String,
     size: [Number, String],
-    color: [String, Object],
-    layerColor: String,
+    color: {
+      type: [String, Object],
+      default:"#337eff"
+    } ,
+    layerColor: {
+      type: String,
+      default: '#E5E5E5',
+    },
     strokeLinecap: String,
     value: {
       type: Number,
@@ -35,7 +41,7 @@ export default createComponent({
     },
     fill: {
       type: String,
-      default: 'none',
+      default: '#ffffff',
     },
     rate: {
       type: [Number, String],
@@ -74,7 +80,7 @@ export default createComponent({
 
     layerStyle() {
       return {
-        fill: `${this.fill}`,
+        fill: `${this.fill?this.fill:"#fff"}`,
         stroke: `${this.layerColor}`,
         strokeWidth: `${this.strokeWidth}px`,
       };
@@ -131,6 +137,7 @@ export default createComponent({
           cancelRaf(this.rafId);
           this.rafId = raf(this.animate);
         } else {
+          this.$emit('update:value',this.endRate);
           this.$emit('input', this.endRate);
         }
       },
@@ -143,7 +150,7 @@ export default createComponent({
       const now = Date.now();
       const progress = Math.min((now - this.startTime) / this.duration, 1);
       const rate = progress * (this.endRate - this.startRate) + this.startRate;
-
+      this.$emit('update:value', format(parseFloat(rate.toFixed(1))));
       this.$emit('input', format(parseFloat(rate.toFixed(1))));
 
       if (this.increase ? rate < this.endRate : rate > this.endRate) {

@@ -4,12 +4,11 @@ import { preventDefault } from '../utils/dom/event';
 import { range, addNumber } from '../utils/format/number';
 import { TouchMixin } from '../mixins/touch';
 import { FieldMixin } from '../mixins/field';
+import VanEmptyCol from '../emptycol/index';
 
 const [createComponent, bem] = createNamespace('slider');
 
-const isSameValue = (newValue, oldValue) => {
-  return JSON.stringify(newValue) === JSON.stringify(oldValue);
-};
+const isSameValue = (newValue, oldValue) => JSON.stringify(newValue) === JSON.stringify(oldValue);
 
 export default createComponent({
   mixins: [TouchMixin, FieldMixin],
@@ -22,6 +21,7 @@ export default createComponent({
     buttonSize: [Number, String],
     activeColor: String,
     inactiveColor: String,
+    custom:Boolean,
     min: {
       type: [Number, String],
       default: 0,
@@ -43,6 +43,7 @@ export default createComponent({
   data() {
     return {
       dragStatus: '',
+      currentData: 0,
     };
   },
 
@@ -50,7 +51,9 @@ export default createComponent({
     scope() {
       return this.max - this.min;
     },
-
+    inDesigner() {
+      return this.$env && this.$env.VUE_APP_DESIGNER;
+    },
     buttonStyle() {
       if (this.buttonSize) {
         const size = addUnit(this.buttonSize);
@@ -63,8 +66,11 @@ export default createComponent({
   },
 
   created() {
-    // format initial value
-    this.updateValue(this.value);
+    if (typeof this.value ==="string"&&this.value.indexOf("{") !== -1) {
+      this.updateValue(0);
+    } else {
+      this.updateValue(this.value);
+    }
   },
 
   mounted() {
@@ -75,6 +81,20 @@ export default createComponent({
       this.bindTouchEvent(this.$refs.wrapper);
     }
   },
+  watch: {
+    range (value) {
+      if (value) {
+        this.currentData =  Array.isArray(this.value)?this.value  : [0, 100]
+        this.updateValue(this.currentData);
+      } else {
+        this.currentData = !Array.isArray(this.value) ||this.value.indexOf("{") === -1 ? this.value  : 0
+        this.updateValue(this.currentData);
+      }
+    },
+    value(value) {
+      this.currentData = value
+    }
+  },
 
   methods: {
     onTouchStart(event) {
@@ -83,11 +103,11 @@ export default createComponent({
       }
 
       this.touchStart(event);
-      this.currentValue = this.value;
+      this.currentValue = this.currentData;
       if (this.range) {
-        this.startValue = this.value.map(this.format);
+        this.startValue = this.currentData.map(this.format);
       } else {
-        this.startValue = this.format(this.value);
+        this.startValue = this.format(this.currentData);
       }
       this.dragStatus = 'start';
     },
@@ -133,7 +153,6 @@ export default createComponent({
 
     onClick(event) {
       event.stopPropagation();
-
       if (this.disabled) return;
 
       const rect = this.$el.getBoundingClientRect();
@@ -142,9 +161,8 @@ export default createComponent({
         : event.clientX - rect.left;
       const total = this.vertical ? rect.height : rect.width;
       let value = +this.min + (delta / total) * this.scope;
-
       if (this.range) {
-        let [left, right] = this.value;
+        let [left, right] = this.currentData;
         const middle = (left + right) / 2;
         if (value <= middle) {
           left = value;
@@ -154,7 +172,7 @@ export default createComponent({
         value = [left, right];
       }
 
-      this.startValue = this.value;
+      this.startValue = this.currentData;
       this.updateValue(value, true);
     },
 
@@ -169,17 +187,22 @@ export default createComponent({
 
     updateValue(value, end) {
       if (this.range) {
-        value = this.handleOverlap(value).map(this.format);
+        const _value =  Array.isArray(value)?value:[0,100]
+        value = this.handleOverlap(_value).map(this.format);
       } else {
         value = this.format(value);
       }
 
-      if (!isSameValue(value, this.value)) {
+      if (!isSameValue(value, this.currentData)) {
+        this.$emit("update:value",value)
         this.$emit('input', value);
+        this.currentData = value
       }
 
       if (end && !isSameValue(value, this.startValue)) {
+        this.$emit('update:value', value);
         this.$emit('change', value);
+        this.currentData = value
       }
     },
 
@@ -206,7 +229,7 @@ export default createComponent({
 
     // 计算选中条的长度百分比
     const calcMainAxis = () => {
-      const { value, min, range, scope } = this;
+      const { currentData: value, min, range, scope } = this;
       if (range) {
         return `${((value[1] - value[0]) * 100) / scope}%`;
       }
@@ -215,7 +238,7 @@ export default createComponent({
 
     // 计算选中条的开始位置的偏移量
     const calcOffset = () => {
-      const { value, min, range, scope } = this;
+      const { currentData: value, min, range, scope } = this;
       if (range) {
         return `${((value[0] - min) * 100) / scope}%`;
       }
@@ -236,17 +259,44 @@ export default createComponent({
     const renderButton = (i) => {
       const map = ['left', 'right'];
       const isNumber = typeof i === 'number';
+      const current = isNumber ? this.currentData[i] : this.currentData;
+
       const getClassName = () => {
         if (isNumber) {
           return `button-wrapper-${map[i]}`;
         }
         return `button-wrapper`;
       };
+
       const getRefName = () => {
         if (isNumber) {
           return `wrapper${i}`;
         }
         return `wrapper`;
+      };
+
+      const renderButtonContent = () => {
+        const defaultButton =this.inDesigner ? <VanEmptyCol></VanEmptyCol>:<div class={bem('button')} style={this.buttonStyle} />
+        if (isNumber) {
+          const slotName = i === 0 ? 'left-button' : 'right-button'
+          const slot = this.slots(i === 0 ? 'left-button' : 'right-button', {
+            value: current,
+          });
+          if (this.custom) {
+            return <div vusion-slot-name={slotName} >{slot || defaultButton} </div>
+          }
+        }
+
+        // if (this.slots('button')) {
+        //   // this.slots("button")
+        //   return  this.custom &&
+        // }
+
+        if (this.custom) {
+          return <div vusion-slot-name="button">{this.slots("button") ? this.slots("button") : defaultButton}</div>;
+        }
+
+        return <div class={bem('button')} style={this.buttonStyle} />;
       };
 
       return (
@@ -255,7 +305,7 @@ export default createComponent({
           role="slider"
           tabindex={this.disabled ? -1 : 0}
           aria-valuemin={this.min}
-          aria-valuenow={this.value}
+          aria-valuenow={this.currentData}
           aria-valuemax={this.max}
           aria-orientation={this.vertical ? 'vertical' : 'horizontal'}
           class={bem(getClassName())}
@@ -267,22 +317,22 @@ export default createComponent({
           }}
           onClick={(e) => e.stopPropagation()}
         >
-          {this.slots('button') || (
-            <div class={bem('button')} style={this.buttonStyle} />
-          )}
+          {renderButtonContent()}
         </div>
       );
     };
 
     return (
-      <div
-        style={wrapperStyle}
-        class={bem({ disabled: this.disabled, vertical })}
-        onClick={this.onClick}
-      >
-        <div class={bem('bar')} style={barStyle}>
-          {this.range ? [renderButton(0), renderButton(1)] : renderButton()}
-        </div>
+      <div class="van-slider-room">
+        <div
+          style={wrapperStyle}
+          class={bem({ disabled: this.disabled, vertical })}
+          onClick={this.onClick}
+        >
+          <div class={bem('bar')} style={barStyle}>
+            {this.range ? [renderButton(0), renderButton(1)] : renderButton()}
+          </div>
+          </div>
       </div>
     );
   },

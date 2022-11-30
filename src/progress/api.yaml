@@ -1,0 +1,44 @@
+- name: van-progress
+  icon: linear-progress
+  title: 进度条
+  labels:
+    - Display
+  description: 用于展示操作的当前进度。
+  next: true
+  nested: false
+  attrs:
+    - name: percentage
+      title: 进度百分比
+      type: number | string
+      sync: true
+      model: true
+      description: 0
+    - name: stroke-width
+      title: 进度条粗细(px)
+      type: number
+      default: 4
+    - name: color
+      title: 进度条颜色
+      type: string
+    - name: track-color
+      title: 轨道颜色
+      type: string
+    - name: text-color
+      title: 进度文字颜色
+      type: string
+    - name: pivot-text
+      title: 进度文字内容
+      type: string
+    - name: pivot-color
+      title: 进度文字背景色
+      type: string
+    - name: inactive
+      title: 是否置灰
+      type: boolean
+      default: false
+    - name: show-pivot
+      title: 是否显示进度文字
+      type: boolean
+      default: true
+  slots: false
+  events:

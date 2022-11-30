@@ -52,7 +52,7 @@
       left: -@padding-xs;
       z-index: 1;
       padding: 0 @padding-xs;
-      background-color: @white;
+      background-color: @steps-background-color;
       transform: translateY(-50%);
     }
 
@@ -63,7 +63,7 @@
       // transform: translateX(-50%);
 
       @media (max-width: 321px) {
-        font-size: @step-horizontal-title-font-size - 1px;
+        font-size: calc(var(--step-horizontal-title-font-size) - 1px);
       }
     }
 

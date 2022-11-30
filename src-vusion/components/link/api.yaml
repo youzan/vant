@@ -84,6 +84,7 @@
       title: 下划线
       type: boolean
       default: true
+      advanced: true
       description: 是否显示下划线
     - name: disabled
       title: 禁用

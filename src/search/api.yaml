@@ -80,6 +80,7 @@
     - concept: Slot
       name: default
       description: 内容
+      advanced: true
   events:
     - name: search
       title: 确定搜索时触发

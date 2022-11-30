@@ -199,7 +199,6 @@ export default createComponent({
         });
     },
   },
-
   render() {
     return (
       <form class={bem()} onSubmit={this.onSubmit}>

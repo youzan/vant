@@ -3,31 +3,31 @@
 @white: #fff;
 @gray-1: #f7f8fa; //背景色1
 @gray-2: #f2f3f5; //背景色2
-@gray-3: #E5E5E5; //边框色
+@gray-3: #e5e5e5; //边框色
 @gray-4: #dcdee0;
 @gray-5: #c8c9cc;
 @gray-6: #969799;
 @gray-7: #646566;
 @gray-8: #333333;
-@red: #F24957;
-@blue: #337EFF;
-@orange: #FFB21A;
+@red: var(--van-brand-error);
+@blue: var(--van-brand-primary);
+@orange: var(--van-brand-problem);
 @orange-dark: #ed6a0c;
 @orange-light: #fffbe8;
-@green: #26BD71;
+@green: var(--van-brand-success);
 
 // Gradient Colors
 @gradient-red: linear-gradient(to right, #ff6034, #ee0a24);
 @gradient-orange: linear-gradient(to right, #ffd01e, #ff8917);
 
 // Component Colors
-@text-color: @gray-8;
-@active-color: @gray-2;
-@active-opacity: 0.7;
-@disabled-opacity: 0.5;
-@background-color: @gray-1;
-@background-color-light: #fafafa;
-@text-link-color: #576b95;
+@text-color: var(--van-component-text-color);
+@active-color: var(--van-component-active-color);
+@active-opacity: var(--van-component-active-opacity);
+@disabled-opacity: var(--van-component-disabled-opacity);
+@background-color: var(--van-component-background-color);
+@background-color-light: var(--van-component-background-color-light);
+@text-link-color: var(--van-text-link-color);
 
 // Padding
 @padding-base: 6px;
@@ -38,20 +38,17 @@
 @padding-xl: @padding-base * 8;
 
 // Font
-@font-size-xs: 10px;
-@font-size-sm: 12px;
-@font-size-md: 14px;
-@font-size-lg: 16px;
-@font-weight-bold: 500;
-@line-height-xs: 14px;
-@line-height-sm: 18px;
-@line-height-md: 20px;
-@line-height-lg: 22px;
-@base-font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue',
-  Helvetica, Segoe UI, Arial, Roboto, 'PingFang SC', 'miui', 'Hiragino Sans GB',
-  'Microsoft Yahei', sans-serif;
-@price-integer-font-family: Avenir-Heavy, PingFang SC, Helvetica Neue, Arial,
-  sans-serif;
+@font-size-xs: var(--van-font-size-xs);
+@font-size-sm: var(--van-font-size-sm);
+@font-size-md: var(--van-font-size-md);
+@font-size-lg: var(--van-font-size-lg);
+@font-weight-bold: var(--van-font-weight-bold);
+@line-height-xs: var(--van-line-height-xs);
+@line-height-sm: var(--van-line-height-sm);
+@line-height-md: var(--van-line-height-md);
+@line-height-lg: var(--van-line-height-lg);
+@base-font-family: var(--van-base-font-family);
+@price-integer-font-family: var(--van-price-integer-font-family);
 
 // Animation
 @animation-duration-base: 0.3s;
@@ -60,12 +57,12 @@
 @animation-timing-function-leave: ease-in;
 
 // Border
-@border-color: @gray-3;
-@border-width-base: 1px;
-@border-radius-sm: 2px;
-@border-radius-md: 4px;
-@border-radius-lg: 8px;
-@border-radius-max: 999px;
+@border-color: var(--van-border-color);
+@border-width-base: var(--van-border-width-base);
+@border-radius-sm: var(--van-border-radius-sm);
+@border-radius-md: var(--van-border-radius-md);
+@border-radius-lg: var(--van-border-radius-lg);
+@border-radius-max: var(--van-border-radius-max);
 
 // ActionSheet
 @action-sheet-max-height: 80%;
@@ -114,73 +111,79 @@
 @address-list-edit-icon-size: 20px;
 
 // Badge
-@badge-size: 16px;
-@badge-color: @white;
-@badge-padding: 0 3px;
-@badge-font-size: @font-size-sm;
-@badge-font-weight: @font-weight-bold;
-@badge-border-width: @border-width-base;
-@badge-background-color: @red;
-@badge-dot-color: @red;
-@badge-dot-size: 8px;
-@badge-font-family: -apple-system-font, Helvetica Neue, Arial, sans-serif;
+@badge-size: var(--van-badge-size);
+@badge-color: var(--van-badge-color);
+@badge-padding: var(--van-badge-padding);
+@badge-font-size: var(--van-badge-font-size);
+@badge-font-weight: var(--van-badge-font-weight);
+@badge-border-width: var(--van-badge-border-width);
+@badge-background-color: var(--van-badge-background-color);
+@badge-dot-color: var(--van-badge-dot-color);
+@badge-dot-size: var(--van-badge-dot-size);
+@badge-font-family: var(--van-badge-font-family);
 // Button
-@button-mini-height: 24px;
-@button-mini-font-size: @font-size-xs;
-@button-small-height: 28px;
-@button-small-font-size: @font-size-sm;
-@button-normal-font-size: @font-size-md;
-@button-large-height: 50px;
-@button-default-height: 44px;
-@button-default-line-height: 1.2;
-@button-default-font-size: @font-size-lg;
-@button-default-color: @text-color;
-@button-default-background-color: @white;
-@button-default-border-color: @border-color;
-@button-primary-color: @white;
-@button-primary-background-color: @green;
-@button-primary-border-color: @green;
-@button-info-color: @white;
-@button-info-background-color: @blue;
-@button-info-border-color: @blue;
-@button-danger-color: @white;
-@button-danger-background-color: @red;
-@button-danger-border-color: @red;
-@button-warning-color: @white;
-@button-warning-background-color: @orange;
-@button-warning-border-color: @orange;
-@button-border-width: @border-width-base;
-@button-border-radius: @border-radius-md;
-@button-round-border-radius: @border-radius-max;
-@button-plain-background-color: @white;
-@button-disabled-opacity: @disabled-opacity;
+@button-mini-height: var(--van-button-mini-height);
+@button-mini-font-size: var(--van-button-mini-font-size);
+@button-small-height: var(--van-button-small-height);
+@button-small-font-size: var(--van-button-small-font-size);
+@button-normal-font-size: var(--van-button-normal-font-size);
+@button-large-height: var(--van-button-large-height);
+@button-default-height: var(--van-button-default-height);
+@button-default-line-height: var(--van-button-default-line-height);
+@button-default-font-size: var(--van-button-default-font-size);
+@button-default-color: var(--van-button-default-color);
+@button-default-background-color: var(--van-button-default-background-color);
+@button-default-border-color: var(--van-button-default-border-color);
+@button-primary-color: var(--van-button-primary-color);
+@button-primary-background-color: var(--van-button-primary-background-color);
+@button-primary-border-color: var(--van-button-primary-border-color);
+@button-info-color: var(--van-button-info-color);
+@button-info-background-color: var(--van-button-info-background-color);
+@button-info-border-color: var(--van-button-info-border-color);
+@button-danger-color: var(--van-button-danger-color);
+@button-danger-background-color: var(--van-button-danger-background-color);
+@button-danger-border-color: var(--van-button-danger-border-color);
+@button-warning-color: var(--van-button-warning-color);
+@button-warning-background-color: var(--van-button-warning-background-color);
+@button-warning-border-color: var(--van-button-warning-border-color);
+@button-border-width: var(--van-button-border-width);
+@button-border-radius: var(--van-button-border-radius);
+@button-round-border-radius: var(--van-button-round-border-radius);
+@button-plain-background-color: var(--van-button-plain-background-color);
+@button-disabled-opacity: var(--van-button-disabled-opacity);
 
 // Calendar
-@calendar-background-color: @white;
-@calendar-popup-height: 60%;
-@calendar-header-box-shadow: 0 2px 10px rgba(125, 126, 128, 0.16);
-@calendar-header-title-height: 44px;
-@calendar-header-title-font-size: @font-size-lg;
-@calendar-header-subtitle-font-size: @font-size-md;
-@calendar-weekdays-height: 30px;
-@calendar-weekdays-font-size: @font-size-sm;
-@calendar-month-title-font-size: @font-size-md;
-@calendar-month-mark-color: fade(@gray-2, 80%);
-@calendar-month-mark-font-size: 160px;
-@calendar-day-height: 64px;
-@calendar-day-font-size: @font-size-lg;
-@calendar-range-edge-color: @white;
-@calendar-range-edge-background-color: @blue;
-@calendar-range-middle-color: @blue;
-@calendar-range-middle-background-opacity: 0.1;
-@calendar-selected-day-size: 54px;
-@calendar-selected-day-color: @white;
-@calendar-info-font-size: @font-size-xs;
-@calendar-info-line-height: @line-height-xs;
-@calendar-selected-day-background-color: @blue;
-@calendar-day-disabled-color: @gray-5;
-@calendar-confirm-button-height: 36px;
-@calendar-confirm-button-margin: 7px 0;
+@calendar-background-color: var(--van-calendar-background-color);
+@calendar-popup-height: var(--van-calendar-popup-height);
+@calendar-header-box-shadow: var(--van-calendar-header-box-shadow);
+@calendar-header-title-height: var(--van-calendar-header-title-height);
+@calendar-header-title-font-size: var(--van-calendar-header-title-font-size);
+@calendar-header-subtitle-font-size: var(--van-calendar-header-subtitle-font-size);
+@calendar-weekdays-height: var(--van-calendar-weekdays-height);
+@calendar-weekdays-font-size: var(--van-calendar-weekdays-font-size);
+@calendar-month-title-font-size: var(--van-calendar-month-title-font-size);
+@calendar-month-mark-color: var(--van-calendar-month-mark-color);
+@calendar-month-mark-font-size: var(--van-calendar-month-mark-font-size);
+@calendar-day-height: var(--van-calendar-day-height);
+@calendar-day-font-size: var(--van-calendar-day-font-size);
+@calendar-range-edge-color: var(--van-calendar-range-edge-color);
+@calendar-range-edge-background-color: var(
+  --van-calendar-range-edge-background-color
+);
+@calendar-range-middle-color: var(--van-calendar-range-edge-background-color);
+@calendar-range-middle-background-opacity: var(
+  --van-calendar-range-middle-background-opacity
+);
+@calendar-selected-day-size: var(--van-calendar-selected-day-size);
+@calendar-selected-day-color: var(--van-calendar-selected-day-color);
+@calendar-info-font-size: var(--van-calendar-info-font-size);
+@calendar-info-line-height: var(--van-calendar-info-line-height);
+@calendar-selected-day-background-color: var(
+  --van-calendar-selected-day-background-color
+);
+@calendar-day-disabled-color: var(--van-calendar-day-disabled-color);
+@calendar-confirm-button-height: var(--van-calendar-confirm-button-height);
+@calendar-confirm-button-margin: var(--van-calendar-confirm-button-margin);
 
 // Card
 @card-padding: @padding-xs @padding-md;
@@ -201,78 +204,80 @@
 @card-price-font-family: @price-integer-font-family;
 
 // Cascader
-@cascader-header-height: 48px;
-@cascader-title-font-size: @font-size-lg;
-@cascader-title-line-height: 20px;
-@cascader-close-icon-size: 22px;
-@cascader-close-icon-color: @gray-5;
-@cascader-close-icon-active-color: @gray-6;
-@cascader-selected-icon-size: 18px;
-@cascader-tabs-height: 48px;
-@cascader-active-color: @red;
-@cascader-options-height: 384px;
-@cascader-tab-color: @text-color;
-@cascader-unselected-tab-color: @gray-6;
+@cascader-header-height: var(--van-cascader-header-height);
+@cascader-title-font-size: var(--van-cascader-title-font-size);
+@cascader-title-line-height: var(--van-cascader-title-line-height);
+@cascader-close-icon-size: var(--van-cascader-close-icon-size);
+@cascader-close-icon-color: var(--van-cascader-close-icon-color);
+@cascader-close-icon-active-color: var(--van-cascader-close-icon-active-color);
+@cascader-selected-icon-size: var(--van-cascader-selected-icon-size);
+@cascader-tabs-height: var(--van-cascader-tabs-height);
+@cascader-active-color: var(--van-cascader-active-color);
+@cascader-options-height: var(--van-cascader-options-height);
+@cascader-tab-color: var(--van-cascader-tab-color);
+@cascader-unselected-tab-color: var(--van-cascader-unselected-tab-color);
 
 // Cell
-@cell-font-size: @font-size-md;
-@cell-line-height: 24px;
-@cell-vertical-padding: 16px;
-@cell-horizontal-padding: 16px;
-@cell-text-color: @text-color;
-@cell-background-color: @white;
-@cell-border-color: @border-color;
-@cell-active-color: @active-color;
-@cell-required-color: @red;
-@cell-label-color: @gray-6;
-@cell-label-font-size: @font-size-sm;
-@cell-label-line-height: @line-height-sm;
-@cell-label-margin-top: @padding-base;
-@cell-value-color: @gray-6;
-@cell-icon-size: 16px;
-@cell-right-icon-color: @gray-6;
-@cell-large-vertical-padding: @padding-sm;
-@cell-large-title-font-size: @font-size-lg;
-@cell-large-label-font-size: @font-size-md;
+@cell-font-size: var(--van-cell-font-size);
+@cell-line-height: var(--van-cell-line-height);
+@cell-vertical-padding: var(--van-cell-vertical-padding);
+@cell-horizontal-padding: var(--van-cell-horizontal-padding);
+@cell-text-color: var(--van-cell-text-color);
+@cell-background-color: var(--van-cell-background-color);
+@cell-border-color: var(--van-cell-border-color);
+@cell-active-color: var(--van-cell-active-color);
+@cell-required-color: var(--van-cell-required-color);
+@cell-label-color: var(--van-cell-label-color);
+@cell-label-font-size: var(--van-cell-label-font-size);
+@cell-label-line-height: var(--van-cell-label-line-height);
+@cell-label-margin-top: var(--van-cell-label-margin-top);
+@cell-value-color: var(--van-cell-value-color);
+@cell-icon-size: var(--van-cell-icon-size);
+@cell-right-icon-color: var(--van-cell-right-icon-color);
+@cell-large-vertical-padding: var(--van-cell-large-vertial-padding);
+@cell-large-title-font-size: var(--van-cell-large-title-font-size);
+@cell-large-label-font-size: var(--van-cell-large-label-font-size);
 
 // CellGroup
-@cell-group-background-color: @white;
-@cell-group-title-color: @gray-6;
-@cell-group-title-padding: @padding-md @padding-md @padding-xs;
-@cell-group-title-font-size: @font-size-md;
-@cell-group-title-line-height: 16px;
-@cell-group-inset-padding: 0 @padding-md;
-@cell-group-inset-border-radius: @border-radius-lg;
-@cell-group-inset-title-padding: @padding-md @padding-md @padding-xs @padding-xl;
+@cell-group-background-color: var(--van-cell-group-background-color);
+@cell-group-title-color: var(--van-cell-group-title-color);
+@cell-group-title-padding: var(--van-cell-group-title-padding);
+@cell-group-title-font-size: var(--van-cell-group-title-font-size);
+@cell-group-title-line-height: var(--van-cell-group-title-line-height);
+@cell-group-inset-padding: var(--van-cell-group-inset-padding);
+@cell-group-inset-border-radius: var(--van-cell-group-inset-border-radius);
+@cell-group-inset-title-padding: var(--van-cell-group-inset-title-padding);
 
 // Checkbox
-@checkbox-size: 20px;
-@checkbox-border-color: @gray-5;
-@checkbox-transition-duration: @animation-duration-fast;
-@checkbox-label-margin: @padding-xs;
-@checkbox-label-color: @text-color;
-@checkbox-checked-icon-color: @blue;
-@checkbox-disabled-icon-color: @gray-5;
-@checkbox-disabled-label-color: @gray-5;
-@checkbox-disabled-background-color: @border-color;
+@checkbox-size: var(--van-checkbox-size);
+@checkbox-border-color: var(--van-checkbox-border-color);
+@checkbox-transition-duration: var(--van-checkbox-transition-duration);
+@checkbox-label-margin: var(--van-checkbox-label-margin);
+@checkbox-label-color: var(--van-checkbox-label-color);
+@checkbox-checked-icon-color: var(--van-checkbox-checked-icon-color);
+@checkbox-disabled-icon-color: var(--van-checkbox-disabled-icon-color);
+@checkbox-disabled-label-color: var(--van-checkbox-disabled-label-color);
+@checkbox-disabled-background-color: var(--van-checkbox-disabled-background-color);
 
 // Circle
-@circle-size: 100px;
-@circle-color: @blue;
-@circle-layer-color: @white;
-@circle-text-color: @text-color;
-@circle-text-font-weight: @font-weight-bold;
-@circle-text-font-size: @font-size-md;
-@circle-text-line-height: @line-height-md;
+@circle-size: var(--van-circle-size);
+@circle-color: var(--van-circle-color);
+@circle-layer-color: var(--van-circle-layer-color);
+@circle-text-color: var(--van-circle-text-color);
+@circle-text-font-weight: var(--van-circle-text-font-weight);
+@circle-text-font-size: var(--van-circle-text-font-size);
+@circle-text-line-height: var(--van-circle-text-line-height);
 
 // Collapse
-@collapse-item-transition-duration: @animation-duration-base;
-@collapse-item-content-padding: @padding-sm @padding-md;
-@collapse-item-content-font-size: @font-size-md;
-@collapse-item-content-line-height: 1.5;
-@collapse-item-content-text-color: @gray-6;
-@collapse-item-content-background-color: @white;
-@collapse-item-title-disabled-color: @gray-5;
+@collapse-item-transition-duration: var(--van-collapse-item-transition-duration);
+@collapse-item-content-padding: var(--van-collapse-item-content-padding);
+@collapse-item-content-font-size: var(--van-collapse-item-content-font-size);
+@collapse-item-content-line-height: var(--van-collapse-item-content-line-height);
+@collapse-item-content-text-color: var(--van-collapse-item-content-text-color);
+@collapse-item-content-background-color: var(
+  --van-collapse-item-content-background-color
+);
+@collapse-item-title-disabled-color: var(--van-collapse-item-title-disabled-color);
 
 // ContactCard
 @contact-card-padding: @padding-md;
@@ -329,49 +334,57 @@
 @coupon-list-empty-tip-line-height: @line-height-md;
 
 // Dialog
-@dialog-width: 320px;
-@dialog-small-screen-width: 90%;
-@dialog-font-size: @font-size-lg;
-@dialog-transition: @animation-duration-base;
-@dialog-border-radius: 16px;
-@dialog-background-color: @white;
-@dialog-header-font-weight: @font-weight-bold;
-@dialog-header-line-height: 24px;
-@dialog-header-padding-top: 26px;
-@dialog-header-isolated-padding: @padding-lg 0;
-@dialog-message-padding: @padding-lg;
-@dialog-message-font-size: @font-size-md;
-@dialog-message-line-height: @line-height-md;
-@dialog-message-max-height: 60vh;
-@dialog-has-title-message-text-color: @gray-7;
-@dialog-has-title-message-padding-top: @padding-xs;
-@dialog-button-height: 48px;
-@dialog-round-button-height: 36px;
-@dialog-confirm-button-text-color: @blue;
+@dialog-width: var(--van-dialog-width);
+@dialog-small-screen-width: var(--van-dialog-small-screen-width);
+@dialog-font-size: var(--van-dialog-font-size);
+@dialog-transition: var(--van-dialog-transition);
+@dialog-border-radius: var(--van-dialog-border-radius);
+@dialog-background-color: var(--van-dialog-background-color);
+@dialog-header-font-weight: var(--van-dialog-header-font-weight);
+@dialog-header-line-height: var(--van-dialog-header-line-height);
+@dialog-header-padding-top: var(--van-dialog-header-padding-top);
+@dialog-header-isolated-padding: var(--van-dialog-header-isolated-padding);
+@dialog-message-padding: var(--van-dialog-message-padding);
+@dialog-message-font-size: var(--van-dialog-message-font-size);
+@dialog-message-line-height: var(--van-dialog-message-line-height);
+@dialog-message-max-height: var(--van-dialog-message-max-height);
+@dialog-has-title-message-text-color: var(
+  --van-dialog-has-title-message-text-color
+);
+@dialog-has-title-message-padding-top: var(
+  --van-dialog-has-title-message-padding-top
+);
+@dialog-button-height: var(--van-dialog-button-height);
+@dialog-round-button-height: var(--van-dialog-round-button-height);
+@dialog-confirm-button-text-color: var(--van-dialog-confirm-button-text-color);
 
 // Divider
-@divider-margin: @padding-md 0;
-@divider-text-color: @gray-6;
-@divider-font-size: @font-size-md;
-@divider-line-height: 24px;
-@divider-border-color: @border-color;
-@divider-content-padding: @padding-md;
-@divider-content-left-width: 10%;
-@divider-content-right-width: 10%;
+@divider-margin: var(--van-divider-margin);
+@divider-text-color: var(--van-divider-text-color);
+@divider-font-size: var(--van-divider-font-size);
+@divider-line-height: var(--van-divider-line-height);
+@divider-border-color: var(--van-divider-border-color);
+@divider-content-padding: var(--van-divider-content-padding);
+@divider-content-left-width: var(--van-divider-content-left-width);
+@divider-content-right-width: var(--van-divider-content-right-width);
 
 // DropdownMenu
-@dropdown-menu-height: 48px;
-@dropdown-menu-background-color: @white;
-@dropdown-menu-box-shadow: 0 2px 12px fade(@gray-7, 12);
-@dropdown-menu-title-font-size: 15px;
-@dropdown-menu-title-text-color: @text-color;
-@dropdown-menu-title-active-text-color: @blue;
-@dropdown-menu-title-disabled-text-color: @gray-6;
-@dropdown-menu-title-padding: 0 @padding-xs;
-@dropdown-menu-title-line-height: @line-height-lg;
-@dropdown-menu-option-active-color: @blue;
-@dropdown-menu-content-max-height: 80%;
-@dropdown-item-z-index: 10;
+@dropdown-menu-height: var(--van-dropdown-menu-height);
+@dropdown-menu-background-color: var(--van-dropdown-menu-background-color);
+@dropdown-menu-box-shadow: var(--van-dropdown-menu-box-shadow);
+@dropdown-menu-title-font-size: var(--van-dropdown-menu-title-font-size);
+@dropdown-menu-title-text-color: var(--van-dropdown-menu-title-text-color);
+@dropdown-menu-title-active-text-color: var(
+  --van-dropdown-menu-title-active-text-color
+);
+@dropdown-menu-title-disabled-text-color: var(
+  --van-dropdown-menu-title-disabled-text-color
+);
+@dropdown-menu-title-padding: var(--van-dropdown-menu-title-padding);
+@dropdown-menu-title-line-height: var(--van-dropdown-menu-title-line-height);
+@dropdown-menu-option-active-color: var(--van-dropdown-menu-option-active-color);
+@dropdown-menu-content-max-height: var(--van-dropdown-menu-content-max-height);
+@dropdown-item-z-index: var(--van-dropdown-item-z-index);
 
 // Empty
 @empty-padding: @padding-xl 0;
@@ -455,13 +468,13 @@
 @info-font-family: -apple-system-font, Helvetica Neue, Arial, sans-serif;
 
 // Image
-@image-placeholder-text-color: @gray-6;
-@image-placeholder-font-size: @font-size-md;
-@image-placeholder-background-color: @background-color;
-@image-loading-icon-size: 32px;
-@image-loading-icon-color: @gray-4;
-@image-error-icon-size: 32px;
-@image-error-icon-color: @gray-4;
+@image-placeholder-text-color: var(--van-image-placeholder-text-color);
+@image-placeholder-font-size: var(--van-image-placeholder-font-size);
+@image-placeholder-background-color: var(--van-image-placeholder-background-color);
+@image-loading-icon-size: var(--van-image-loading-icon-size);
+@image-loading-icon-color: var(--van-image-loading-icon-color);
+@image-error-icon-size: var(--van-image-error-icon-size);
+@image-error-icon-color: var(--van-image-error-icon-color);
 
 // ImagePreview
 @image-preview-index-text-color: @white;
@@ -554,7 +567,7 @@
 @pagination-disabled-opacity: @disabled-opacity;
 
 // Panel
-@panel-background-color: @white;
+@panel-background-color: var(--van-panel-background-color);
 @panel-header-value-color: @red;
 @panel-footer-padding: @padding-xs @padding-md;
 
@@ -571,19 +584,19 @@
 @password-input-dot-color: @black;
 
 // Picker
-@picker-background-color: @white;
-@picker-toolbar-height: 44px;
-@picker-title-font-size: @font-size-lg;
-@picker-title-line-height: @line-height-md;
-@picker-action-padding: 0 @padding-md;
-@picker-action-font-size: @font-size-md;
-@picker-confirm-action-color: @text-link-color;
-@picker-cancel-action-color: @gray-6;
-@picker-option-font-size: @font-size-lg;
-@picker-option-text-color: @black;
-@picker-option-disabled-opacity: 0.3;
-@picker-loading-icon-color: @blue;
-@picker-loading-mask-color: rgba(255, 255, 255, 0.9);
+@picker-background-color: var(--van-picker-background-color);
+@picker-toolbar-height: var(--van-picker-toolbar-height);
+@picker-title-font-size: var(--van-picker-title-font-size);
+@picker-title-line-height: var(--van-picker-title-line-height);
+@picker-action-padding: var(--van-picker-action-padding);
+@picker-action-font-size: var(--van-picker-action-font-size);
+@picker-confirm-action-color: var(--van-picker-confirm-action-color);
+@picker-cancel-action-color: var(--van-picker-cancel-action-color);
+@picker-option-font-size: var(--van-picker-option-font-size);
+@picker-option-text-color: var(--van-picker-option-text-color);
+@picker-option-disabled-opacity: var(--van-picker-option-disabled-opacity);
+@picker-loading-icon-color: var(--van-picker-loading-icon-color);
+@picker-loading-mask-color: var(--van-picker-loading-mask-color);
 
 // Popover
 @popover-arrow-size: 6px;
@@ -601,24 +614,24 @@
 @popover-dark-action-disabled-text-color: @gray-6;
 
 // Popup
-@popup-background-color: @white;
-@popup-transition: transform @animation-duration-base;
-@popup-round-border-radius: 16px;
-@popup-close-icon-size: 22px;
-@popup-close-icon-color: @gray-5;
-@popup-close-icon-active-color: @gray-6;
-@popup-close-icon-margin: 16px;
-@popup-close-icon-z-index: 1;
+@popup-background-color: var(--van-popup-background-color);
+@popup-transition: var(--van-popup-transition);
+@popup-round-border-radius: var(--van-popup-round-border-radius);
+@popup-close-icon-size: var(--van-popup-close-icon-size);
+@popup-close-icon-color: var(--van-popup-close-icon-color);
+@popup-close-icon-active-color: var(--van-popup-close-icon-active-color);
+@popup-close-icon-margin: var(--van-popup-close-icon-margin);
+@popup-close-icon-z-index: var(--van-popup-close-icon-z-index);
 
 // Progress
-@progress-height: 4px;
-@progress-color: @blue;
-@progress-background-color: @gray-3;
-@progress-pivot-padding: 0 5px;
-@progress-pivot-text-color: @white;
-@progress-pivot-font-size: @font-size-xs;
-@progress-pivot-line-height: 1.6;
-@progress-pivot-background-color: @blue;
+@progress-height: var(--van-progress-height);
+@progress-color: var(--van-progress-color);
+@progress-background-color: var(--van-progress-background-color);
+@progress-pivot-padding: var(--van-progress-pivot-padding);
+@progress-pivot-text-color: var(--van-progress-pivot-text-color);
+@progress-pivot-font-size: var(--van-progress-pivot-font-size);
+@progress-pivot-line-height: var(--van-progress-pivot-line-height);
+@progress-pivot-background-color: var(--van-progress-pivot-background-color);
 
 // PullRefresh
 @pull-refresh-head-height: 50px;
@@ -626,24 +639,24 @@
 @pull-refresh-head-text-color: @gray-6;
 
 // Radio
-@radio-size: 20px;
-@radio-border-color: @gray-5;
-@radio-transition-duration: @animation-duration-fast;
-@radio-label-margin: @padding-xs;
-@radio-label-color: @text-color;
-@radio-checked-icon-color: @blue;
-@radio-disabled-icon-color: @gray-5;
-@radio-disabled-label-color: @gray-5;
-@radio-disabled-background-color: @border-color;
+@radio-size: var(--van-radio-size);
+@radio-border-color: var(--van-radio-border-color);
+@radio-transition-duration: var(--van-radio-transition-duration);
+@radio-label-margin: var(--van-radio-label-margin);
+@radio-label-color: var(--van-radio-label-color);
+@radio-checked-icon-color: var(--van-radio-checked-icon-color);
+@radio-disabled-icon-color: var(--van-radio-disabled-icon-color);
+@radio-disabled-label-color: var(--van-radio-disabled-label-color);
+@radio-disabled-background-color: var(--van-radio-disabled-background-color);
 
 // Rate
-@rate-icon-size: 20px;
-@rate-icon-gutter: @padding-base;
-@rate-icon-void-color: @gray-5;
-@rate-icon-full-color: @red;
-@rate-icon-disabled-color: @gray-5;
+@rate-icon-size: var(--van-rate-icon-size);
+@rate-icon-gutter: var(--van-rate-icon-gutter);
+@rate-icon-void-color: var(--van-rate-icon-void-color);
+@rate-icon-full-color: var(--van-rate-icon-full-color);
+@rate-icon-disabled-color: var(--van-rate-icon-disabled-color);
 
-// ShareSheet
+// ShareShe
 @share-sheet-header-padding: @padding-sm @padding-md @padding-base;
 @share-sheet-title-color: @text-color;
 @share-sheet-title-font-size: @font-size-md;
@@ -661,33 +674,35 @@
 @share-sheet-cancel-button-background: @white;
 
 // Search
-@search-padding: 10px @padding-sm;
-@search-background-color: @white;
-@search-content-background-color: @gray-1;
-@search-input-height: 34px;
-@search-label-padding: 0 5px;
-@search-label-color: @text-color;
-@search-label-font-size: @font-size-md;
-@search-left-icon-color: @gray-6;
-@search-action-padding: 0 @padding-xs;
-@search-action-text-color: @text-color;
-@search-action-font-size: @font-size-md;
+@search-padding: var(--van-search-padding);
+@search-background-color: var(--van-search-background-color);
+@search-content-background-color: var(--van-search-content-background-color);
+@search-input-height: var(--van-search-input-height);
+@search-label-padding: var(--van-search-label-padding);
+@search-label-color: var(--van-search-label-color);
+@search-label-font-size: var(--van-search-label-font-size);
+@search-left-icon-color: var(--van-search-left-icon-color);
+@search-action-padding: var(--van-search-action-padding);
+@search-action-text-color: var(--van-search-action-text-color);
+@search-action-font-size: var(--van-search-action-font-size);
 
 // Sidebar
-@sidebar-width: 80px;
-@sidebar-font-size: @font-size-md;
-@sidebar-line-height: @line-height-md;
-@sidebar-text-color: @text-color;
-@sidebar-disabled-text-color: @gray-5;
-@sidebar-padding: 20px @padding-sm;
-@sidebar-active-color: @active-color;
-@sidebar-background-color: @background-color;
-@sidebar-selected-font-weight: @font-weight-bold;
-@sidebar-selected-text-color: @text-color;
-@sidebar-selected-border-width: 4px;
-@sidebar-selected-border-height: 16px;
-@sidebar-selected-border-color: @red;
-@sidebar-selected-background-color: @white;
+@sidebar-width: var(--van-sidebar-width);
+@sidebar-font-size: var(--van-sidebar-font-size);
+@sidebar-line-height: var(--van-sidebar-line-height);
+@sidebar-text-color: var(--van-sidebar-text-color);
+@sidebar-disabled-text-color: var(--van-sidebar-disabled-text-color);
+@sidebar-padding: var(--van-sidebar-padding);
+@sidebar-active-color: var(--van-sidebar-active-color);
+@sidebar-background-color: var(--van-sidebar-background-color);
+@sidebar-selected-font-weight: var(--van-sidebar-selected-font-weight);
+@sidebar-selected-text-color: var(--van-sidebar-selected-text-color);
+@sidebar-selected-border-width: var(--van-sidebar-selected-border-width);
+@sidebar-selected-border-height: var(--van-sidebar-selected-border-height);
+@sidebar-selected-border-color: var(--van-sidebar-selected-border-color);
+@sidebar-selected-background-color: var(
+  --van-sidebar-selected-background-color
+);
 
 // Skeleton
 @skeleton-row-height: 16px;
@@ -699,50 +714,52 @@
 @skeleton-animation-duration: 1.2s;
 
 // Slider
-@slider-active-background-color: @blue;
-@slider-inactive-background-color: @gray-3;
-@slider-disabled-opacity: @disabled-opacity;
-@slider-bar-height: 2px;
-@slider-button-width: 24px;
-@slider-button-height: 24px;
-@slider-button-border-radius: 50%;
-@slider-button-background-color: @white;
-@slider-button-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+@slider-active-background-color: var(--van-slider-active-background-color);
+@slider-inactive-background-color: var(--van-slider-inactive-background-color);
+@slider-disabled-opacity: var(--van-slider-disabled-opacity);
+@slider-bar-height: var(--van-slider-bar-height);
+@slider-button-width: var(--van-slider-button-width);
+@slider-button-height: var(--van-slider-button-height);
+@slider-button-border-radius: var(--van-slider-button-border-radius);
+@slider-button-background-color: var(--van-slider-button-background-color);
+@slider-button-box-shadow: var(--van-slider-button-box-shadow);
 
 // Step
-@step-text-color: @gray-6;
-@step-active-color: @green;
-@step-process-text-color: @text-color;
-@step-font-size: @font-size-md;
-@step-line-color: @border-color;
-@step-finish-line-color: @green;
-@step-finish-text-color: @text-color;
-@step-icon-size: 12px;
-@step-circle-size: 5px;
-@step-circle-color: @gray-6;
-@step-horizontal-title-font-size: @font-size-sm;
+@step-text-color: var(--van-step-text-color);
+@step-active-color: var(--van-step-active-color);
+@step-process-text-color: var(--van-step-process-text-color);
+@step-font-size: var(--van-step-font-size);
+@step-line-color: var(--van-step-line-color);
+@step-finish-line-color: var(--van-step-finish-line-color);
+@step-finish-text-color: var(--van-step-finish-text-color);
+@step-icon-size: var(--van-step-icon-size);
+@step-circle-size: var(--van-step-circle-size);
+@step-circle-color: var(--van-step-circle-color);
+@step-horizontal-title-font-size: var(--van-step-horizontal-title-font-size);
 
 // Steps
-@steps-background-color: @white;
+@steps-background-color: var(--van-steps-background-color);
 
 // Sticky
 @sticky-z-index: 99;
 
 // Stepper
-@stepper-active-color: #e8e8e8;
-@stepper-background-color: @active-color;
-@stepper-button-icon-color: @text-color;
-@stepper-button-disabled-color: @background-color;
-@stepper-button-disabled-icon-color: @gray-5;
-@stepper-button-round-theme-color: @blue;
-@stepper-input-width: 32px;
-@stepper-input-height: 28px;
-@stepper-input-font-size: @font-size-md;
-@stepper-input-line-height: normal;
-@stepper-input-text-color: @text-color;
-@stepper-input-disabled-text-color: @gray-5;
-@stepper-input-disabled-background-color: @active-color;
-@stepper-border-radius: @border-radius-md;
+@stepper-active-color: var(--van-stepper-active-color);
+@stepper-background-color: var(--van-stepper-background-color);
+@stepper-button-icon-color: var(--van-stepper-button-icon-color);
+@stepper-button-disabled-color: var(--van-stepper-button-disabled-color);
+@stepper-button-disabled-icon-color: var(--van-stepper-button-disabled-icon-color);
+@stepper-button-round-theme-color: var(--van-stepper-button-round-theme-color);
+@stepper-input-width: var(--van-stepper-input-width);
+@stepper-input-height: var(--van-stepper-input-height);
+@stepper-input-font-size: var(--van-stepper-input-font-size);
+@stepper-input-line-height: var(--van-stepper-input-line-height);
+@stepper-input-text-color: var(--van-stepper-input-text-color);
+@stepper-input-disabled-text-color: var(--van-stepper-input-disabled-text-color);
+@stepper-input-disabled-background-color: var(
+  --van-stepper-input-disabled-background-color
+);
+@stepper-border-radius: var(--van-stepper-border-radius);
 
 // SubmitBar
 @submit-bar-height: 50px;
@@ -766,80 +783,87 @@
 @submit-bar-price-font-family: @price-integer-font-family;
 
 // Swipe
-@swipe-indicator-size: 6px;
-@swipe-indicator-size-new: 12px;
-@swipe-indicator-margin: @padding-sm;
-@swipe-indicator-active-opacity: 1;
-@swipe-indicator-inactive-opacity: 0.3;
-@swipe-indicator-active-background-color: @blue;
-@swipe-indicator-inactive-background-color: @border-color;
+@swipe-indicator-size: var(--van-swipe-indicator-size);
+@swipe-indicator-size-new: var(--van-swipe-indicator-size-new);
+@swipe-indicator-margin: var(--van-swipe-indicator-margin);
+@swipe-indicator-active-opacity: var(--van-swipe-indicator-active-opacity);
+@swipe-indicator-inactive-opacity: var(--van-swipe-indicator-inactive-opacity);
+@swipe-indicator-active-background-color: var(
+  --van-swipe-indicator-active-background-color
+);
+@swipe-indicator-inactive-background-color: var(
+  --van-swipe-indicator-inactive-background-color
+);
 
 // Switch
-@switch-size: 27px;
-@switch-width: 1.75em;
-@switch-height: 1em;
-@switch-node-size: 1em;
-@switch-node-background-color: @white;
+@switch-size: var(--van-switch-size);
+@switch-width: var(--van-switch-width);
+@switch-height: var(--van-switch-height);
+@switch-node-size: var(--van-switch-node-size);
+@switch-node-background-color: var(--van-switch-node-background-color);
 @switch-node-box-shadow: 0 3px 1px 0 rgba(0, 0, 0, 0.05),
   0 2px 2px 0 rgba(0, 0, 0, 0.1), 0 3px 3px 0 rgba(0, 0, 0, 0.05);
-@switch-background-color: @gray-2;
-@switch-on-background-color: @blue;
-@switch-transition-duration: @animation-duration-base;
-@switch-disabled-opacity: @disabled-opacity;
+@switch-background-color: var(--van-switch-background-color);
+@switch-on-background-color: var(--van-switch-on-background-color);
+@switch-transition-duration: var(--van-switch-transition-duration);
+@switch-disabled-opacity: var(--van-switch-disabled-opacity);
 
 // SwitchCell
-@switch-cell-padding-top: @cell-vertical-padding - 1px;
-@switch-cell-padding-bottom: @cell-vertical-padding - 1px;
-@switch-cell-large-padding-top: @cell-large-vertical-padding - 1px;
-@switch-cell-large-padding-bottom: @cell-large-vertical-padding - 1px;
+@switch-cell-padding-top: calc(@cell-vertical-padding - 1px);
+@switch-cell-padding-bottom: calc(@cell-vertical-padding - 1px);
+@switch-cell-large-padding-top: calc(@cell-large-vertical-padding - 1px);
+@switch-cell-large-padding-bottom: calc(@cell-large-vertical-padding - 1px);
 
 // Tabbar
-@tabbar-height: 50px;
-@tabbar-z-index: 1;
-@tabbar-background-color: @white;
+@tabbar-height: var(--van-tabbar-height);
+@tabbar-z-index: var(--van-tabbar-z-index);
+@tabbar-background-color: var(--van-tabbar-background-color);
 
 // TabbarItem
-@tabbar-item-font-size: @font-size-sm;
-@tabbar-item-text-color: @gray-7;
-@tabbar-item-active-color: @blue;
-@tabbar-item-active-background-color: @tabbar-background-color;
-@tabbar-item-line-height: 1;
-@tabbar-item-icon-size: 22px;
-@tabbar-item-margin-bottom: 4px;
+@tabbar-item-font-size: var(--van-tabbar-item-font-size);
+@tabbar-item-text-color: var(--van-tabbar-item-text-color);
+@tabbar-item-active-color: var(--van-tabbar-item-active-color);
+@tabbar-item-active-background-color: var(
+  --van-tabbar-item-active-background-color
+);
+@tabbar-item-line-height: var(--van-tabbar-item-line-height);
+@tabbar-item-icon-size: var(--van-tabbar-item-icon-size);
+@tabbar-item-margin-bottom: var(--van-tabbar-item-margin-bottom);
 
 // Tab
-@tab-text-color: @gray-7;
-@tab-active-text-color: @text-color;
-@tab-disabled-text-color: @gray-5;
-@tab-font-size: @font-size-md;
-@tab-line-height: @line-height-md;
+@tab-text-color: var(--van-tab-text-color);
+@tab-active-text-color: var(--van-tab-active-text-color);
+@tab-disabled-text-color: var(--van-tab-disabled-text-color);
+@tab-font-size: var(--van-tab-font-size);
+@tab-line-height: var(--van-tab-line-height);
 
 // Tabs
-@tabs-default-color: @blue;
-@tabs-line-height: 44px;
-@tabs-card-height: 30px;
-@tabs-nav-background-color: @white;
-@tabs-bottom-bar-width: 40px;
-@tabs-bottom-bar-height: 3px;
-@tabs-bottom-bar-color: @tabs-default-color;
+@tabs-default-color: var(--van-tabs-default-color);
+@tabs-line-height: var(--van-tabs-line-height);
+@tabs-card-height: var(--van-tabs-card-height);
+@tabs-nav-background-color: var(--van-tabs-nav-background-color);
+@tabs-bottom-bar-width: var(--van-tabs-bottom-bar-width);
+@tabs-bottom-bar-height: var(--van-tabs-bottom-bar-height);
+@tabs-bottom-bar-color: var(--van-tabs-bottom-bar-color);
 
 // Tag
-@tag-padding: 0 @padding-base;
-@tag-text-color: @white;
-@tag-font-size: @font-size-sm;
-@tag-border-radius: 2px;
-@tag-line-height: 16px;
-@tag-medium-padding: 2px 6px;
-@tag-large-padding: @padding-base @padding-xs;
-@tag-large-border-radius: @border-radius-md;
-@tag-large-font-size: @font-size-md;
-@tag-round-border-radius: @border-radius-max;
-@tag-danger-color: @red;
-@tag-primary-color: @blue;
-@tag-success-color: @green;
-@tag-warning-color: @orange;
-@tag-default-color: @gray-6;
-@tag-plain-background-color: @white;
+@tag-padding: var(--van-tag-padding);
+@tag-text-color: var(--van-tag-text-color);
+@tag-font-size: var(--van-tag-font-size);
+@tag-border-radius: var(--van-tag-border-radius);
+@tag-line-height: var(--van-tag-line-height);
+@tag-small-padding: var(--van-tag-small-padding);
+@tag-medium-padding: var(--van-tag-medium-padding);
+@tag-large-padding: var(--van-tag-large-padding);
+@tag-large-border-radius: var(--van-tag-large-border-radius);
+@tag-large-font-size: var(--van-tag-large-font-size);
+@tag-round-border-radius: var(--van-tag-round-border-radius);
+@tag-danger-color: var(--van-tag-danger-color);
+@tag-primary-color: var(--van-tag-primary-color);
+@tag-success-color: var(--van-tag-success-color);
+@tag-warning-color: var(--van-tag-warning-color);
+@tag-default-color: var(--van-tag-default-color);
+@tag-plain-background-color: var(--van-tag-plain-background-color);
 
 // Toast
 @toast-max-width: 70%;
@@ -869,30 +893,30 @@
 @tree-select-item-selected-size: 16px;
 
 // Uploader
-@uploader-size: 80px;
-@uploader-icon-size: 24px;
-@uploader-icon-color: @gray-4;
-@uploader-text-color: @gray-6;
-@uploader-text-font-size: @font-size-sm;
-@uploader-upload-background-color: @gray-1;
-@uploader-upload-active-color: @active-color;
-@uploader-delete-color: @white;
-@uploader-delete-icon-size: 14px;
-@uploader-delete-background-color: rgba(0, 0, 0, 0.7);
-@uploader-file-background-color: @background-color;
-@uploader-file-icon-size: 20px;
-@uploader-file-icon-color: @gray-7;
-@uploader-file-name-padding: 0 @padding-base;
-@uploader-file-name-margin-top: @padding-xs;
-@uploader-file-name-font-size: @font-size-sm;
-@uploader-file-name-text-color: @gray-7;
-@uploader-mask-background-color: fade(@gray-8, 88%);
-@uploader-mask-icon-size: 22px;
-@uploader-mask-message-font-size: @font-size-sm;
-@uploader-mask-message-line-height: @line-height-xs;
-@uploader-loading-icon-size: 22px;
-@uploader-loading-icon-color: @white;
-@uploader-disabled-opacity: @disabled-opacity;
+@uploader-size: var(--van-uploader-size);
+@uploader-icon-size: var(--van-uploader-icon-size);
+@uploader-icon-color: var(--van-uploader-icon-color);
+@uploader-text-color: var(--van-uploader-text-color);
+@uploader-text-font-size: var(--van-uploader-text-font-size);
+@uploader-upload-background-color: var(--van-uploader-upload-background-color);
+@uploader-upload-active-color: var(--van-uploader-upload-active-color);
+@uploader-delete-color: var(--van-uploader-delete-color);
+@uploader-delete-icon-size: var(--van-uploader-delete-icon-size);
+@uploader-delete-background-color: var(--van-uploader-delete-background-color);
+@uploader-file-background-color: var(--van-uploader-file-background-color);
+@uploader-file-icon-size: var(--van-uploader-file-icon-size);
+@uploader-file-icon-color: var(--van-uploader-file-icon-color);
+@uploader-file-name-padding: var(--van-uploader-file-name-padding);
+@uploader-file-name-margin-top: var(--van-uploader-file-name-margin-top);
+@uploader-file-name-font-size: var(--van-uploader-file-name-font-size);
+@uploader-file-name-text-color: var(--van-uploader-file-name-text-color);
+@uploader-mask-background-color: var(--van-uploader-mask-background-color);
+@uploader-mask-icon-size: var(--van-uploader-mask-icon-size);
+@uploader-mask-message-font-size: var(--van-uploader-mask-message-font-size);
+@uploader-mask-message-line-height: var(--van-uploader-mask-message-line-height);
+@uploader-loading-icon-size: var(--van-uploader-loading-icon-size);
+@uploader-loading-icon-color: var(--van-uploader-loading-icon-color);
+@uploader-disabled-opacity: var(--van-uploader-disabled-opacity);
 
 // Sku
 @sku-item-background-color: @background-color;

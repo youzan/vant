@@ -18,7 +18,7 @@ export default createComponent({
     value: [Number, String],
     route: {
       type: Boolean,
-      default: true,
+      default: false,
     },
   },
 

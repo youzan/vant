@@ -119,6 +119,10 @@ export default createComponent({
     insel: {
       type: Boolean,
       default: false,
+    },
+    nofi: {
+      type: Boolean,
+      default: false
     }
   },
 
@@ -153,18 +157,16 @@ export default createComponent({
   mounted() {
     this.updateValue(this.value, this.formatTrigger);
     this.$nextTick(this.adjustSize);
-
-    if (this.vanForm) {
+    if (this.vanForm && !this.nofi) {
       this.vanForm.addField(this);
     }
   },
 
   beforeDestroy() {
-    if (this.vanForm) {
+    if (this.vanForm && !this.nofi) {
       this.vanForm.removeField(this);
     }
   },
-
   computed: {
     currentRules() {
       // return (this.rules || (this.rootVM && this.rootVM.rules && this.rootVM.rules[this.name]));

@@ -123,10 +123,6 @@
       title: 点击后
       description: 点击此项时触发
       params: []
-    - name: dblclick
-      title: 双击
-      description: 双击此项时触发
-      params: []
   methods:
     - name: openLoading
       title: 打开加载中

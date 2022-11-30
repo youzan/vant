@@ -1,0 +1,35 @@
+- name: van-number-keyboard
+  title: 数字键盘
+  icon: number-keyboard
+  labels:
+    - Display
+  description: 虚拟数字键盘
+  attrs:
+    - name: value
+      title: 当前输入值
+      type: string
+      sync: true
+      model: true
+      description: 当前输入值
+    - name: title
+      title: 键盘标题
+      type: string
+      description: 键盘标题
+    - name: maxlength
+      title: 输入值最大长度
+      type: number | string
+      description: 输入值最大长度
+    - name: z-index
+      title: 键盘 z-index 层级
+      type: number | string
+      description: 键盘 z-index 层级
+  slots: false
+  events:
+    - name: close
+      title: 点击关闭按钮
+      description: 点击关闭按钮时触发
+      params: []
+    - name: blur
+      title: 点击关闭按钮或非键盘区域时
+      description: 点击关闭按钮或非键盘区域时触发
+      params: []

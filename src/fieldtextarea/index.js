@@ -235,34 +235,36 @@ export default createComponent({
     const inputAlign = this.vanField?.getProp('inputAlign');
     return (
       <div class={bem('newwrap', {'clearwrap': this.clearable, 'limit': ifLimit})} ref="wrap">
+        <div class={bem('wrap-con')}>
         <textarea
-        // vShow={this.showInput}
-        ref="input"
-        // type={this.type}
-        role="fieldtextarea"
-        class={bem('control', [inputAlign, 'custom'])}
-        value={this.currentValue}
-        // style={this.inputStyle}
-        disabled={this.disabled}
-        readonly={this.readonly}
-        // set keyboard in modern browsers
-        // inputmode={this.integer ? 'numeric' : 'decimal'}
-        placeholder={this.placeholder}
-        // aria-valuemax={this.max}
-        // aria-valuemin={this.min}
-        // aria-valuenow={this.currentValue}
-        onInput={this.onInput}
-        onFocus={this.onFocus}
-        onBlur={this.onBlur}
-        // onMousedown={this.onMousedown}
-      />
-      {this.showClear() && (
-            <Icon
-              name="clear"
-              class={bem('clear')}
-              onTouchstart={this.onClear}
-            />
-        )}
+          // vShow={this.showInput}
+          ref="input"
+          // type={this.type}
+          role="fieldtextarea"
+          class={bem('control', [inputAlign, 'custom'])}
+          value={this.currentValue}
+          // style={this.inputStyle}
+          disabled={this.disabled}
+          readonly={this.readonly}
+          // set keyboard in modern browsers
+          // inputmode={this.integer ? 'numeric' : 'decimal'}
+          placeholder={this.placeholder}
+          // aria-valuemax={this.max}
+          // aria-valuemin={this.min}
+          // aria-valuenow={this.currentValue}
+          onInput={this.onInput}
+          onFocus={this.onFocus}
+          onBlur={this.onBlur}
+          // onMousedown={this.onMousedown}
+        />
+        {this.showClear() && (
+              <Icon
+                name="clear"
+                class={bem('clear')}
+                onTouchstart={this.onClear}
+              />
+          )}
+        </div>
         {this.genWordLimit()}
       </div>
     );

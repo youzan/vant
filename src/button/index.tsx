@@ -106,7 +106,7 @@ function Button(
       // console.log(ctx.parent.$route);
       emit(ctx, 'click', event);
       const hrefR = currentHref();
-      console.log(hrefR, ctx.props)
+      // console.log(hrefR, ctx.props)
       if (!ctx.props.nativeType && !hrefR && !ctx.listeners.click) {
         event.preventDefault();
       }

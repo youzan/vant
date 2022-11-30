@@ -11,7 +11,7 @@ export default createComponent({
   props: {
     route: {
       type: Boolean,
-      default: true,
+      default: false,
     },
     zIndex: [Number, String],
     placeholder: Boolean,
@@ -77,7 +77,11 @@ export default createComponent({
   methods: {
     setActiveItem() {
       this.children.forEach((item, index) => {
-        item.nameMatched = item.name === this.curvalue || index === this.curvalue;
+        if (item.name) {
+          item.nameMatched = item.name === this.curvalue
+        } else {
+          item.nameMatched = index === this.curvalue;
+        }
       });
     },
 
