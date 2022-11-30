@@ -122,6 +122,14 @@ export default defineComponent({
       )
     );
 
+    const selectedIndexes = computed(() =>
+      currentColumns.value.map((options, index) =>
+        options.findIndex(
+          (option) => option[fields.value.value] === selectedValues.value[index]
+        )
+      )
+    );
+
     const setValue = (index: number, value: Numeric) => {
       if (selectedValues.value[index] !== value) {
         const newValues = selectedValues.value.slice(0);
@@ -133,6 +141,7 @@ export default defineComponent({
     const getEventParams = () => ({
       selectedValues: selectedValues.value.slice(0),
       selectedOptions: selectedOptions.value,
+      selectedIndexes: selectedIndexes.value,
     });
 
     const onChange = (value: Numeric, columnIndex: number) => {
