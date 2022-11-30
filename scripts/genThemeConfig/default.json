@@ -1,5 +1,5 @@
 {
-    "--space-base": "16px",
+    "--van-space-base": "16px",
     "--van-brand-primary": "#337eff",
     "--van-brand-success": "#26bd71",
     "--van-brand-problem": "#ffb21a",

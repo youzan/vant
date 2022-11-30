@@ -326,7 +326,7 @@
 
   /* @component van-collapse */
   --van-collapse-item-transition-duration: 0.3s; /* @desc 动画时间 */
-  --van-collapse-item-content-padding: var(--van-padding-sm) var(-- @padding-md); /* @desc 内部内边距 */
+  --van-collapse-item-content-padding: var(--van-padding-sm) var(--van-padding-md); /* @desc 内部内边距 */
   --van-collapse-item-content-font-size: var(
     --van-font-size-md
   ); /* @desc 字体大小 */
