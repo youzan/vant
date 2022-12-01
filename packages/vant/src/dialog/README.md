@@ -216,7 +216,7 @@ Vant exports following Dialog utility functions:
 | ---------------- | -------------- |
 | default          | Custom message |
 | title            | Custom title   |
-| footer `v3.0.10` | Custom footer  |
+| footer `v3.0.11` | Custom footer  |
 
 ### Types
 
