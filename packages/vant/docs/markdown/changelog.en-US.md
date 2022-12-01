@@ -19,6 +19,14 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 
 ## Details
 
+### [v3.6.9](https://github.com/vant-ui/vant/compare/v3.6.8...v3.6.9)
+
+`2022-12-01`
+
+**Bug Fixes**
+
+- Field: set selection range only when focused [#11333](https://github.com/vant-ui/vant/issues/11333)
+
 ### [v3.6.8](https://github.com/vant-ui/vant/compare/v3.6.7...v3.6.8)
 
 `2022-11-26`
