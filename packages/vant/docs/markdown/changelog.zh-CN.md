@@ -19,6 +19,18 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 
 ## 更新内容
 
+### [v4.0.1](https://github.com/vant-ui/vant/compare/v4.0.0...v4.0.1)
+
+`2022-12-01`
+
+**Feature**
+
+- Picker: 新增 selectedIndexes 作为事件入参 [#11329](https://github.com/vant-ui/vant/issues/11329)
+
+**Bug Fixes**
+
+- Field: 修复未选中时修改绑定的值会导致键盘弹出的问题 [#11333](https://github.com/vant-ui/vant/issues/11333)
+
 ### [v4.0.0](https://github.com/vant-ui/vant/compare/v4.0.0-rc.9...v4.0.0)
 
 `2022-11-26`
