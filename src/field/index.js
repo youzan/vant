@@ -158,6 +158,7 @@ export default createComponent({
     this.updateValue(this.value, this.formatTrigger);
     this.$nextTick(this.adjustSize);
     if (this.vanForm && !this.nofi) {
+      this.$vnode.key = Math.random().toString(36).slice(2);
       this.vanForm.addField(this);
     }
   },
@@ -213,7 +214,6 @@ export default createComponent({
       return (this.type === 'number' || this.type === 'digit') ? Number(this.value) : this.value;
     },
   },
-
   methods: {
     showClear() {
       const readonly = this.getProp('readonly');
