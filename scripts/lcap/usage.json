@@ -728,13 +728,8 @@
         "labels": [
             "Display"
         ],
-<<<<<<< HEAD
-        "screenShot": "https://static-vusion.163yun.com/packages/@lcap/mobile-ui@0.12.19/src/divider/screenshots/0.png,https://static-vusion.163yun.com/packages/@lcap/mobile-ui@0.12.19/src/divider/screenshots/1.png",
-        "blocks": "[{\"title\":\"实线\",\"description\":\"\",\"code\":\"<template>\\n<van-divider dashed=\\\"a\\\"> 文本 </van-divider>\\n</template>\\n\"},{\"title\":\"虚线\",\"description\":\"\",\"code\":\"<template>\\n<van-divider dashed=\\\"b\\\"> 文本 </van-divider>\\n</template>\\n\"}]",
-=======
         "screenShot": "https://static-vusion.163yun.com/packages/@lcap/mobile-ui@0.12.20/src/divider/screenshots/0.png,https://static-vusion.163yun.com/packages/@lcap/mobile-ui@0.12.20/src/divider/screenshots/1.png",
-        "blocks": "[{\"title\":\"实线\",\"description\":\"\",\"code\":\"<template>\\n<van-divider title=\\\"文本\\\" dashed=\\\"a\\\"></van-divider>\\n</template>\\n\"},{\"title\":\"虚线\",\"description\":\"\",\"code\":\"<template>\\n<van-divider dashed=\\\"b\\\" title=\\\"文本\\\"></van-divider>\\n</template>\\n\"}]",
->>>>>>> test
+        "blocks": "[{\"title\":\"实线\",\"description\":\"\",\"code\":\"<template>\\n<van-divider dashed=\\\"a\\\"> 文本 </van-divider>\\n</template>\\n\"},{\"title\":\"虚线\",\"description\":\"\",\"code\":\"<template>\\n<van-divider dashed=\\\"b\\\"> 文本 </van-divider>\\n</template>\\n\"}]",
         "jsonSchema": {
             "name": "van-divider",
             "title": "分隔线",
@@ -3709,7 +3704,8 @@
                     "name": "clockwise",
                     "title": "是否顺时针增加",
                     "type": "boolean",
-                    "default": true
+                    "default": true,
+                    "description": "是否顺时针增加"
                 }
             ],
             "slots": [
@@ -3721,7 +3717,6 @@
                     "advanced": true
                 }
             ],
-            "events": null,
             "next": true,
             "nested": false,
             "children": []
@@ -3802,7 +3797,6 @@
                     "name": "show-pivot",
                     "title": "是否显示进度文字",
                     "type": "boolean",
-<<<<<<< HEAD
                     "default": true,
                     "description": "是否显示进度文字"
                 },
@@ -3821,9 +3815,6 @@
                     "title": "默认",
                     "description": "显示的文本",
                     "advanced": true
-=======
-                    "default": true
->>>>>>> test
                 }
             ],
             "events": null,
