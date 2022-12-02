@@ -4,6 +4,7 @@ import hljs from 'highlight.js';
 import vitePluginMd from 'vite-plugin-md';
 import vitePluginVue from '@vitejs/plugin-vue';
 import vitePluginJsx from '@vitejs/plugin-vue-jsx';
+import vitePluginReact from '@vitejs/plugin-react';
 import { setBuildTarget, getVantConfig, isDev } from '../common/index.js';
 import { SITE_DIST_DIR, SITE_SRC_DIR } from '../common/constant.js';
 import { injectHtml } from 'vite-plugin-html';
@@ -139,6 +140,7 @@ export function getViteConfigForSiteDev(): InlineConfig {
   const title = getTitle(siteConfig);
   const headHtml = vantConfig.site?.headHtml;
   const baiduAnalytics = vantConfig.site?.baiduAnalytics;
+  const frameWork = vantConfig.site?.frameWork;
   const enableVConsole = isDev() && vantConfig.site?.enableVConsole;
 
   return {
@@ -154,6 +156,7 @@ export function getViteConfigForSiteDev(): InlineConfig {
       vitePluginVue({
         include: [/\.vue$/, /\.md$/],
       }),
+      vitePluginReact(),
       vitePluginMd({
         wrapperClasses: 'van-doc-markdown-body',
         transforms: {
@@ -186,6 +189,7 @@ export function getViteConfigForSiteDev(): InlineConfig {
           description: siteConfig.description,
           headHtml,
           baiduAnalytics,
+          frameWork,
           enableVConsole,
           meta: getHTMLMeta(vantConfig),
         },

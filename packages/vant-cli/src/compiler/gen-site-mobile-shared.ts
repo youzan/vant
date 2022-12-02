@@ -59,11 +59,17 @@ function genConfig(demos: DemoItem[]) {
 }
 
 function genCode(components: string[]) {
+  const vantConfig = getVantConfig();
+  const { frameWork } = vantConfig.site;
+  let demoIndex = 'demo/index.vue';
+  if (frameWork === 'react') {
+    demoIndex = 'demo/index.tsx';
+  }
   const demos = components
     .map((component) => ({
       component,
       name: pascalize(component),
-      path: join(SRC_DIR, component, 'demo/index.vue'),
+      path: join(SRC_DIR, component, demoIndex),
     }))
     .filter((item) => existsSync(item.path));
 

@@ -1,0 +1,47 @@
+@import '../common/style/base';
+body {
+  min-width: 100vw;
+  background-color: inherit;
+}
+.van-doc-demo-section {
+  box-sizing: border-box;
+  min-height: calc(100vh - 56px);
+  padding-bottom: 20px;
+}
+
+.demo-nav {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 56px;
+  background-color: var(--van-doc-background-3);
+
+  &__title {
+    font-weight: 600;
+    font-size: 17px;
+    text-transform: capitalize;
+  }
+
+  &__back {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+  }
+}
+
+.van-doc-theme-light {
+  background-color: var(--van-doc-gray-1);
+}
+
+.van-doc-theme-dark {
+  background-color: var(--van-doc-black);
+}
+
+::-webkit-scrollbar {
+  width: 0;
+  background: transparent;
+}

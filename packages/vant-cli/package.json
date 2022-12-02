@@ -45,9 +45,14 @@
     "@types/markdown-it": "^12.2.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-router-dom": "^6.4.3",
     "vue": "^3.2.45"
   },
   "dependencies": {
+    "@types/react": "^18.0.25",
+    "@types/react-dom": "^18.0.9",
+    "@types/react-router-dom": "^5.3.3",
+    "@vitejs/plugin-react": "^2.2.0",
     "@babel/core": "^7.18.13",
     "@babel/preset-typescript": "^7.18.6",
     "@docsearch/css": "^3.2.1",
