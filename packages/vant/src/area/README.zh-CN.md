@@ -77,7 +77,7 @@ export default {
 };
 ```
 
-> Tips: 中国的行政区划每年都会有变动，如果发现省市区数据未及时更新，欢迎提 Pull Request 帮助我们更新。你可以在 [民政部 - 行政区划代码](https://www.mca.gov.cn/article/sj/xzqh/1980/) 网站上查询到最新数据，请根据官方数据进行核实。
+> Tips: 中国的行政区划每年都会有变动，如果发现省市区数据未及时更新，欢迎提 Pull Request 帮助我们更新。你可以在[「国家统计局 - 全国区划代码」](http://www.stats.gov.cn/tjsj/tjbz/tjyqhdmhcxhfdm/) 和[「民政部 - 行政区划代码」](https://www.mca.gov.cn/article/sj/xzqh/1980/)上查询到最新数据，请根据官方数据进行核实。
 
 ### 控制选中项
 
