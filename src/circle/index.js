@@ -81,7 +81,7 @@ export default createComponent({
 
     layerStyle() {
       return {
-        fill: `${this.fill}`,
+        fill: `${this.fill?this.fill:"#fff"}`,
         stroke: `${this.layerColor}`,
         strokeWidth: `${this.strokeWidth}px`,
       };

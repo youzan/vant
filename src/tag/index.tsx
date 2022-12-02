@@ -12,7 +12,7 @@ import VanEmptyCol from '../emptycol/index';
 
 export type TagType = 'default' | 'primary' | 'success' | 'danger';
 
-export type TagSize = 'large' | 'medium';
+export type TagSize = 'large' | 'medium' | 'small';
 
 export type TagProps = {
   type: TagType;

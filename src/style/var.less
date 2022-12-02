@@ -9,25 +9,25 @@
 @gray-6: #969799;
 @gray-7: #646566;
 @gray-8: #333333;
-@red: var(--brand-error);
-@blue: var(--brand-primary);
-@orange: var(--brand-problem);
+@red: var(--van-brand-error);
+@blue: var(--van-brand-primary);
+@orange: var(--van-brand-problem);
 @orange-dark: #ed6a0c;
 @orange-light: #fffbe8;
-@green: var(--brand-success);
+@green: var(--van-brand-success);
 
 // Gradient Colors
 @gradient-red: linear-gradient(to right, #ff6034, #ee0a24);
 @gradient-orange: linear-gradient(to right, #ffd01e, #ff8917);
 
 // Component Colors
-@text-color: var(--component-text-color);
-@active-color: var(--component-active-color);
-@active-opacity: var(--component-active-opacity);
-@disabled-opacity: var(--component-disabled-opacity);
-@background-color: var(--component-background-color);
-@background-color-light: var(--component-background-color-light);
-@text-link-color: var(--text-link-color);
+@text-color: var(--van-component-text-color);
+@active-color: var(--van-component-active-color);
+@active-opacity: var(--van-component-active-opacity);
+@disabled-opacity: var(--van-component-disabled-opacity);
+@background-color: var(--van-component-background-color);
+@background-color-light: var(--van-component-background-color-light);
+@text-link-color: var(--van-text-link-color);
 
 // Padding
 @padding-base: 6px;
@@ -38,17 +38,17 @@
 @padding-xl: @padding-base * 8;
 
 // Font
-@font-size-xs: var(--font-size-xs);
-@font-size-sm: var(--font-size-sm);
-@font-size-md: var(--font-size-md);
-@font-size-lg: var(--font-size-lg);
-@font-weight-bold: var(--font-weight-bold);
-@line-height-xs: var(--line-height-xs);
-@line-height-sm: var(--line-height-sm);
-@line-height-md: var(--line-height-md);
-@line-height-lg: var(--line-height-lg);
-@base-font-family: var(--base-font-family);
-@price-integer-font-family: var(--price-integer-font-family);
+@font-size-xs: var(--van-font-size-xs);
+@font-size-sm: var(--van-font-size-sm);
+@font-size-md: var(--van-font-size-md);
+@font-size-lg: var(--van-font-size-lg);
+@font-weight-bold: var(--van-font-weight-bold);
+@line-height-xs: var(--van-line-height-xs);
+@line-height-sm: var(--van-line-height-sm);
+@line-height-md: var(--van-line-height-md);
+@line-height-lg: var(--van-line-height-lg);
+@base-font-family: var(--van-base-font-family);
+@price-integer-font-family: var(--van-price-integer-font-family);
 
 // Animation
 @animation-duration-base: 0.3s;
@@ -57,12 +57,12 @@
 @animation-timing-function-leave: ease-in;
 
 // Border
-@border-color: var(--border-color);
-@border-width-base: var(--border-width-base);
-@border-radius-sm: var(--border-radius-sm);
-@border-radius-md: var(--border-radius-md);
-@border-radius-lg: var(--border-radius-lg);
-@border-radius-max: var(--border-radius-max);
+@border-color: var(--van-border-color);
+@border-width-base: var(--van-border-width-base);
+@border-radius-sm: var(--van-border-radius-sm);
+@border-radius-md: var(--van-border-radius-md);
+@border-radius-lg: var(--van-border-radius-lg);
+@border-radius-max: var(--van-border-radius-max);
 
 // ActionSheet
 @action-sheet-max-height: 80%;
@@ -111,79 +111,79 @@
 @address-list-edit-icon-size: 20px;
 
 // Badge
-@badge-size: var(--badge-size);
-@badge-color: var(--badge-color);
-@badge-padding: var(--badge-padding);
-@badge-font-size: var(--badge-font-size);
-@badge-font-weight: var(--badge-font-weight);
-@badge-border-width: var(--badge-border-width);
-@badge-background-color: var(--badge-background-color);
-@badge-dot-color: var(--badge-dot-color);
-@badge-dot-size: var(--badge-dot-size);
-@badge-font-family: var(--badge-font-family);
+@badge-size: var(--van-badge-size);
+@badge-color: var(--van-badge-color);
+@badge-padding: var(--van-badge-padding);
+@badge-font-size: var(--van-badge-font-size);
+@badge-font-weight: var(--van-badge-font-weight);
+@badge-border-width: var(--van-badge-border-width);
+@badge-background-color: var(--van-badge-background-color);
+@badge-dot-color: var(--van-badge-dot-color);
+@badge-dot-size: var(--van-badge-dot-size);
+@badge-font-family: var(--van-badge-font-family);
 // Button
-@button-mini-height: var(--button-mini-height);
-@button-mini-font-size: var(--button-mini-font-size);
-@button-small-height: var(--button-small-height);
-@button-small-font-size: var(--button-small-font-size);
-@button-normal-font-size: var(--button-normal-font-size);
-@button-large-height: var(--button-large-height);
-@button-default-height: var(--button-default-height);
-@button-default-line-height: var(--button-default-line-height);
-@button-default-font-size: var(--button-default-font-size);
-@button-default-color: var(--button-default-color);
-@button-default-background-color: var(--button-default-background-color);
-@button-default-border-color: var(--button-default-border-color);
-@button-primary-color: var(--button-primary-color);
-@button-primary-background-color: var(--button-primary-background-color);
-@button-primary-border-color: var(--button-primary-border-color);
-@button-info-color: var(--button-info-color);
-@button-info-background-color: var(--button-info-background-color);
-@button-info-border-color: var(--button-info-border-color);
-@button-danger-color: var(--button-danger-color);
-@button-danger-background-color: var(--button-danger-background-color);
-@button-danger-border-color: var(--button-danger-border-color);
-@button-warning-color: var(--button-warning-color);
-@button-warning-background-color: var(--button-warning-background-color);
-@button-warning-border-color: var(--button-warning-border-color);
-@button-border-width: var(--button-border-width);
-@button-border-radius: var(--button-border-radius);
-@button-round-border-radius: var(--button-round-border-radius);
-@button-plain-background-color: var(--button-plain-background-color);
-@button-disabled-opacity: var(--button-disabled-opacity);
+@button-mini-height: var(--van-button-mini-height);
+@button-mini-font-size: var(--van-button-mini-font-size);
+@button-small-height: var(--van-button-small-height);
+@button-small-font-size: var(--van-button-small-font-size);
+@button-normal-font-size: var(--van-button-normal-font-size);
+@button-large-height: var(--van-button-large-height);
+@button-default-height: var(--van-button-default-height);
+@button-default-line-height: var(--van-button-default-line-height);
+@button-default-font-size: var(--van-button-default-font-size);
+@button-default-color: var(--van-button-default-color);
+@button-default-background-color: var(--van-button-default-background-color);
+@button-default-border-color: var(--van-button-default-border-color);
+@button-primary-color: var(--van-button-primary-color);
+@button-primary-background-color: var(--van-button-primary-background-color);
+@button-primary-border-color: var(--van-button-primary-border-color);
+@button-info-color: var(--van-button-info-color);
+@button-info-background-color: var(--van-button-info-background-color);
+@button-info-border-color: var(--van-button-info-border-color);
+@button-danger-color: var(--van-button-danger-color);
+@button-danger-background-color: var(--van-button-danger-background-color);
+@button-danger-border-color: var(--van-button-danger-border-color);
+@button-warning-color: var(--van-button-warning-color);
+@button-warning-background-color: var(--van-button-warning-background-color);
+@button-warning-border-color: var(--van-button-warning-border-color);
+@button-border-width: var(--van-button-border-width);
+@button-border-radius: var(--van-button-border-radius);
+@button-round-border-radius: var(--van-button-round-border-radius);
+@button-plain-background-color: var(--van-button-plain-background-color);
+@button-disabled-opacity: var(--van-button-disabled-opacity);
 
 // Calendar
-@calendar-background-color: var(--calendar-background-color);
-@calendar-popup-height: var(--calendar-popup-height);
-@calendar-header-box-shadow: var(--calendar-header-box-shadow);
-@calendar-header-title-height: var(--calendar-header-title-height);
-@calendar-header-title-font-size: var(--calendar-header-title-font-size);
-@calendar-header-subtitle-font-size: var(--calendar-header-subtitle-font-size);
-@calendar-weekdays-height: var(--calendar-weekdays-height);
-@calendar-weekdays-font-size: var(--calendar-weekdays-font-size);
-@calendar-month-title-font-size: var(--calendar-month-title-font-size);
-@calendar-month-mark-color: var(--calendar-month-mark-color);
-@calendar-month-mark-font-size: var(--calendar-month-mark-font-size);
-@calendar-day-height: var(--calendar-day-height);
-@calendar-day-font-size: var(--calendar-day-font-size);
-@calendar-range-edge-color: var(--calendar-range-edge-color);
+@calendar-background-color: var(--van-calendar-background-color);
+@calendar-popup-height: var(--van-calendar-popup-height);
+@calendar-header-box-shadow: var(--van-calendar-header-box-shadow);
+@calendar-header-title-height: var(--van-calendar-header-title-height);
+@calendar-header-title-font-size: var(--van-calendar-header-title-font-size);
+@calendar-header-subtitle-font-size: var(--van-calendar-header-subtitle-font-size);
+@calendar-weekdays-height: var(--van-calendar-weekdays-height);
+@calendar-weekdays-font-size: var(--van-calendar-weekdays-font-size);
+@calendar-month-title-font-size: var(--van-calendar-month-title-font-size);
+@calendar-month-mark-color: var(--van-calendar-month-mark-color);
+@calendar-month-mark-font-size: var(--van-calendar-month-mark-font-size);
+@calendar-day-height: var(--van-calendar-day-height);
+@calendar-day-font-size: var(--van-calendar-day-font-size);
+@calendar-range-edge-color: var(--van-calendar-range-edge-color);
 @calendar-range-edge-background-color: var(
-  --calendar-range-edge-background-color
+  --van-calendar-range-edge-background-color
 );
-@calendar-range-middle-color: var(--calendar-range-edge-background-color);
+@calendar-range-middle-color: var(--van-calendar-range-edge-background-color);
 @calendar-range-middle-background-opacity: var(
-  --calendar-range-middle-background-opacity
+  --van-calendar-range-middle-background-opacity
 );
-@calendar-selected-day-size: var(--calendar-selected-day-size);
-@calendar-selected-day-color: var(--calendar-selected-day-color);
-@calendar-info-font-size: var(--calendar-info-font-size);
-@calendar-info-line-height: var(--calendar-info-line-height);
+@calendar-selected-day-size: var(--van-calendar-selected-day-size);
+@calendar-selected-day-color: var(--van-calendar-selected-day-color);
+@calendar-info-font-size: var(--van-calendar-info-font-size);
+@calendar-info-line-height: var(--van-calendar-info-line-height);
 @calendar-selected-day-background-color: var(
-  --calendar-selected-day-background-color
+  --van-calendar-selected-day-background-color
 );
-@calendar-day-disabled-color: var(--calendar-day-disabled-color);
-@calendar-confirm-button-height: var(--calendar-confirm-button-height);
-@calendar-confirm-button-margin: var(--calendar-confirm-button-margin);
+@calendar-day-disabled-color: var(--van-calendar-day-disabled-color);
+@calendar-confirm-button-height: var(--van-calendar-confirm-button-height);
+@calendar-confirm-button-margin: var(--van-calendar-confirm-button-margin);
 
 // Card
 @card-padding: @padding-xs @padding-md;
@@ -204,80 +204,80 @@
 @card-price-font-family: @price-integer-font-family;
 
 // Cascader
-@cascader-header-height: var(--cascader-header-height);
-@cascader-title-font-size: var(--cascader-title-font-size);
-@cascader-title-line-height: var(--cascader-title-line-height);
-@cascader-close-icon-size: var(--cascader-close-icon-size);
-@cascader-close-icon-color: var(--cascader-close-icon-color);
-@cascader-close-icon-active-color: var(--cascader-close-icon-active-color);
-@cascader-selected-icon-size: var(--cascader-selected-icon-size);
-@cascader-tabs-height: var(--cascader-tabs-height);
-@cascader-active-color: var(--cascader-active-color);
-@cascader-options-height: var(--cascader-options-height);
-@cascader-tab-color: var(--cascader-tab-color);
-@cascader-unselected-tab-color: var(--cascader-unselected-tab-color);
+@cascader-header-height: var(--van-cascader-header-height);
+@cascader-title-font-size: var(--van-cascader-title-font-size);
+@cascader-title-line-height: var(--van-cascader-title-line-height);
+@cascader-close-icon-size: var(--van-cascader-close-icon-size);
+@cascader-close-icon-color: var(--van-cascader-close-icon-color);
+@cascader-close-icon-active-color: var(--van-cascader-close-icon-active-color);
+@cascader-selected-icon-size: var(--van-cascader-selected-icon-size);
+@cascader-tabs-height: var(--van-cascader-tabs-height);
+@cascader-active-color: var(--van-cascader-active-color);
+@cascader-options-height: var(--van-cascader-options-height);
+@cascader-tab-color: var(--van-cascader-tab-color);
+@cascader-unselected-tab-color: var(--van-cascader-unselected-tab-color);
 
 // Cell
-@cell-font-size: var(--cell-font-size);
-@cell-line-height: var(--cell-line-height);
-@cell-vertical-padding: var(--cell-vertical-padding);
-@cell-horizontal-padding: var(--cell-horizontal-padding);
-@cell-text-color: var(--cell-text-color);
-@cell-background-color: var(--cell-background-color);
-@cell-border-color: var(--cell-border-color);
-@cell-active-color: var(--cell-active-color);
-@cell-required-color: var(--cell-required-color);
-@cell-label-color: var(--cell-label-color);
-@cell-label-font-size: var(--cell-label-font-size);
-@cell-label-line-height: var(--cell-label-line-height);
-@cell-label-margin-top: var(--cell-label-margin-top);
-@cell-value-color: var(--cell-value-color);
-@cell-icon-size: var(--cell-icon-size);
-@cell-right-icon-color: var(--cell-right-icon-color);
-@cell-large-vertical-padding: var(--cell-large-vertial-padding);
-@cell-large-title-font-size: var(--cell-large-title-font-size);
-@cell-large-label-font-size: var(--cell-large-label-font-size);
+@cell-font-size: var(--van-cell-font-size);
+@cell-line-height: var(--van-cell-line-height);
+@cell-vertical-padding: var(--van-cell-vertical-padding);
+@cell-horizontal-padding: var(--van-cell-horizontal-padding);
+@cell-text-color: var(--van-cell-text-color);
+@cell-background-color: var(--van-cell-background-color);
+@cell-border-color: var(--van-cell-border-color);
+@cell-active-color: var(--van-cell-active-color);
+@cell-required-color: var(--van-cell-required-color);
+@cell-label-color: var(--van-cell-label-color);
+@cell-label-font-size: var(--van-cell-label-font-size);
+@cell-label-line-height: var(--van-cell-label-line-height);
+@cell-label-margin-top: var(--van-cell-label-margin-top);
+@cell-value-color: var(--van-cell-value-color);
+@cell-icon-size: var(--van-cell-icon-size);
+@cell-right-icon-color: var(--van-cell-right-icon-color);
+@cell-large-vertical-padding: var(--van-cell-large-vertial-padding);
+@cell-large-title-font-size: var(--van-cell-large-title-font-size);
+@cell-large-label-font-size: var(--van-cell-large-label-font-size);
 
 // CellGroup
-@cell-group-background-color: var(--cell-group-background-color);
-@cell-group-title-color: var(--cell-group-title-color);
-@cell-group-title-padding: var(--cell-group-title-padding);
-@cell-group-title-font-size: var(--cell-group-title-font-size);
-@cell-group-title-line-height: var(--cell-group-title-line-height);
-@cell-group-inset-padding: var(--cell-group-inset-padding);
-@cell-group-inset-border-radius: var(--cell-group-inset-border-radius);
-@cell-group-inset-title-padding: var(--cell-group-inset-title-padding);
+@cell-group-background-color: var(--van-cell-group-background-color);
+@cell-group-title-color: var(--van-cell-group-title-color);
+@cell-group-title-padding: var(--van-cell-group-title-padding);
+@cell-group-title-font-size: var(--van-cell-group-title-font-size);
+@cell-group-title-line-height: var(--van-cell-group-title-line-height);
+@cell-group-inset-padding: var(--van-cell-group-inset-padding);
+@cell-group-inset-border-radius: var(--van-cell-group-inset-border-radius);
+@cell-group-inset-title-padding: var(--van-cell-group-inset-title-padding);
 
 // Checkbox
-@checkbox-size: var(--checkbox-size);
-@checkbox-border-color: var(--checkbox-border-color);
-@checkbox-transition-duration: var(--checkbox-transition-duration);
-@checkbox-label-margin: var(--checkbox-label-margin);
-@checkbox-label-color: var(--checkbox-label-color);
-@checkbox-checked-icon-color: var(--checkbox-checked-icon-color);
-@checkbox-disabled-icon-color: var(--checkbox-disabled-icon-color);
-@checkbox-disabled-label-color: var(--checkbox-disabled-label-color);
-@checkbox-disabled-background-color: var(--checkbox-disabled-background-color);
+@checkbox-size: var(--van-checkbox-size);
+@checkbox-border-color: var(--van-checkbox-border-color);
+@checkbox-transition-duration: var(--van-checkbox-transition-duration);
+@checkbox-label-margin: var(--van-checkbox-label-margin);
+@checkbox-label-color: var(--van-checkbox-label-color);
+@checkbox-checked-icon-color: var(--van-checkbox-checked-icon-color);
+@checkbox-disabled-icon-color: var(--van-checkbox-disabled-icon-color);
+@checkbox-disabled-label-color: var(--van-checkbox-disabled-label-color);
+@checkbox-disabled-background-color: var(--van-checkbox-disabled-background-color);
 
 // Circle
-@circle-size: var(--circle-size);
-@circle-color: var(--circle-color);
-@circle-layer-color: var(--circle-layer-color);
-@circle-text-color: var(--circle-text-color);
-@circle-text-font-weight: var(--circle-text-font-weight);
-@circle-text-font-size: var(--circle-text-font-size);
-@circle-text-line-height: var(--circle-text-line-height);
+@circle-size: var(--van-circle-size);
+@circle-color: var(--van-circle-color);
+@circle-layer-color: var(--van-circle-layer-color);
+@circle-text-color: var(--van-circle-text-color);
+@circle-text-font-weight: var(--van-circle-text-font-weight);
+@circle-text-font-size: var(--van-circle-text-font-size);
+@circle-text-line-height: var(--van-circle-text-line-height);
 
 // Collapse
-@collapse-item-transition-duration: var(--collapse-item-transition-duration);
-@collapse-item-content-padding: var(--collapse-item-content-padding);
-@collapse-item-content-font-size: var(--collapse-item-content-font-size);
-@collapse-item-content-line-height: var(--collapse-item-content-line-height);
-@collapse-item-content-text-color: var(--collapse-item-content-text-color);
+@collapse-item-transition-duration: var(--van-collapse-item-transition-duration);
+@collapse-item-content-padding: var(--van-collapse-item-content-padding);
+@collapse-item-content-font-size: var(--van-collapse-item-content-font-size);
+@collapse-item-content-line-height: var(--van-collapse-item-content-line-height);
+@collapse-item-content-text-color: var(--van-collapse-item-content-text-color);
 @collapse-item-content-background-color: var(
-  --collapse-item-content-background-color
+  --van-collapse-item-content-background-color
 );
-@collapse-item-title-disabled-color: var(--collapse-item-title-disabled-color);
+@collapse-item-title-disabled-color: var(--van-collapse-item-title-disabled-color);
 
 // ContactCard
 @contact-card-padding: @padding-md;
@@ -334,57 +334,57 @@
 @coupon-list-empty-tip-line-height: @line-height-md;
 
 // Dialog
-@dialog-width: var(--dialog-width);
-@dialog-small-screen-width: var(--dialog-small-screen-width);
-@dialog-font-size: var(--dialog-font-size);
-@dialog-transition: var(--dialog-transition);
-@dialog-border-radius: var(--dialog-border-radius);
-@dialog-background-color: var(--dialog-background-color);
-@dialog-header-font-weight: var(--dialog-header-font-weight);
-@dialog-header-line-height: var(--dialog-header-line-height);
-@dialog-header-padding-top: var(--dialog-header-padding-top);
-@dialog-header-isolated-padding: var(--dialog-header-isolated-padding);
-@dialog-message-padding: var(--dialog-message-padding);
-@dialog-message-font-size: var(--dialog-message-font-size);
-@dialog-message-line-height: var(--dialog-message-line-height);
-@dialog-message-max-height: var(--dialog-message-max-height);
+@dialog-width: var(--van-dialog-width);
+@dialog-small-screen-width: var(--van-dialog-small-screen-width);
+@dialog-font-size: var(--van-dialog-font-size);
+@dialog-transition: var(--van-dialog-transition);
+@dialog-border-radius: var(--van-dialog-border-radius);
+@dialog-background-color: var(--van-dialog-background-color);
+@dialog-header-font-weight: var(--van-dialog-header-font-weight);
+@dialog-header-line-height: var(--van-dialog-header-line-height);
+@dialog-header-padding-top: var(--van-dialog-header-padding-top);
+@dialog-header-isolated-padding: var(--van-dialog-header-isolated-padding);
+@dialog-message-padding: var(--van-dialog-message-padding);
+@dialog-message-font-size: var(--van-dialog-message-font-size);
+@dialog-message-line-height: var(--van-dialog-message-line-height);
+@dialog-message-max-height: var(--van-dialog-message-max-height);
 @dialog-has-title-message-text-color: var(
-  --dialog-has-title-message-text-color
+  --van-dialog-has-title-message-text-color
 );
 @dialog-has-title-message-padding-top: var(
-  --dialog-has-title-message-padding-top
+  --van-dialog-has-title-message-padding-top
 );
-@dialog-button-height: var(--dialog-button-height);
-@dialog-round-button-height: var(--dialog-round-button-height);
-@dialog-confirm-button-text-color: var(--dialog-confirm-button-text-color);
+@dialog-button-height: var(--van-dialog-button-height);
+@dialog-round-button-height: var(--van-dialog-round-button-height);
+@dialog-confirm-button-text-color: var(--van-dialog-confirm-button-text-color);
 
 // Divider
-@divider-margin: var(--divider-margin);
-@divider-text-color: var(--divider-text-color);
-@divider-font-size: var(--divider-font-size);
-@divider-line-height: var(--divider-line-height);
-@divider-border-color: var(--divider-border-color);
-@divider-content-padding: var(--divider-content-padding);
-@divider-content-left-width: var(--divider-content-left-width);
-@divider-content-right-width: var(--divider-content-right-width);
+@divider-margin: var(--van-divider-margin);
+@divider-text-color: var(--van-divider-text-color);
+@divider-font-size: var(--van-divider-font-size);
+@divider-line-height: var(--van-divider-line-height);
+@divider-border-color: var(--van-divider-border-color);
+@divider-content-padding: var(--van-divider-content-padding);
+@divider-content-left-width: var(--van-divider-content-left-width);
+@divider-content-right-width: var(--van-divider-content-right-width);
 
 // DropdownMenu
-@dropdown-menu-height: var(--dropdown-menu-height);
-@dropdown-menu-background-color: var(--dropdown-menu-background-color);
-@dropdown-menu-box-shadow: var(--dropdown-menu-box-shadow);
-@dropdown-menu-title-font-size: var(--dropdown-menu-title-font-size);
-@dropdown-menu-title-text-color: var(--dropdown-menu-title-text-color);
+@dropdown-menu-height: var(--van-dropdown-menu-height);
+@dropdown-menu-background-color: var(--van-dropdown-menu-background-color);
+@dropdown-menu-box-shadow: var(--van-dropdown-menu-box-shadow);
+@dropdown-menu-title-font-size: var(--van-dropdown-menu-title-font-size);
+@dropdown-menu-title-text-color: var(--van-dropdown-menu-title-text-color);
 @dropdown-menu-title-active-text-color: var(
-  --dropdown-menu-title-active-text-color
+  --van-dropdown-menu-title-active-text-color
 );
 @dropdown-menu-title-disabled-text-color: var(
-  --dropdown-menu-title-disabled-text-color
+  --van-dropdown-menu-title-disabled-text-color
 );
-@dropdown-menu-title-padding: var(--dropdown-menu-title-padding);
-@dropdown-menu-title-line-height: var(--dropdown-menu-title-line-height);
-@dropdown-menu-option-active-color: var(--dropdown-menu-option-active-color);
-@dropdown-menu-content-max-height: var(--dropdown-menu-content-max-height);
-@dropdown-item-z-index: var(--dropdown-item-z-index);
+@dropdown-menu-title-padding: var(--van-dropdown-menu-title-padding);
+@dropdown-menu-title-line-height: var(--van-dropdown-menu-title-line-height);
+@dropdown-menu-option-active-color: var(--van-dropdown-menu-option-active-color);
+@dropdown-menu-content-max-height: var(--van-dropdown-menu-content-max-height);
+@dropdown-item-z-index: var(--van-dropdown-item-z-index);
 
 // Empty
 @empty-padding: @padding-xl 0;
@@ -468,13 +468,13 @@
 @info-font-family: -apple-system-font, Helvetica Neue, Arial, sans-serif;
 
 // Image
-@image-placeholder-text-color: var(--image-placeholder-text-color);
-@image-placeholder-font-size: var(--image-placeholder-font-size);
-@image-placeholder-background-color: var(--image-placeholder-background-color);
-@image-loading-icon-size: var(--image-loading-icon-size);
-@image-loading-icon-color: var(--image-loading-icon-color);
-@image-error-icon-size: var(--image-error-icon-size);
-@image-error-icon-color: var(--image-error-icon-color);
+@image-placeholder-text-color: var(--van-image-placeholder-text-color);
+@image-placeholder-font-size: var(--van-image-placeholder-font-size);
+@image-placeholder-background-color: var(--van-image-placeholder-background-color);
+@image-loading-icon-size: var(--van-image-loading-icon-size);
+@image-loading-icon-color: var(--van-image-loading-icon-color);
+@image-error-icon-size: var(--van-image-error-icon-size);
+@image-error-icon-color: var(--van-image-error-icon-color);
 
 // ImagePreview
 @image-preview-index-text-color: @white;
@@ -567,7 +567,7 @@
 @pagination-disabled-opacity: @disabled-opacity;
 
 // Panel
-@panel-background-color: var(--panel-background-color);
+@panel-background-color: var(--van-panel-background-color);
 @panel-header-value-color: @red;
 @panel-footer-padding: @padding-xs @padding-md;
 
@@ -584,19 +584,19 @@
 @password-input-dot-color: @black;
 
 // Picker
-@picker-background-color: var(--picker-background-color);
-@picker-toolbar-height: var(--picker-toolbar-height);
-@picker-title-font-size: var(--picker-title-font-size);
-@picker-title-line-height: var(--picker-title-line-height);
-@picker-action-padding: var(--picker-action-padding);
-@picker-action-font-size: var(--picker-action-font-size);
-@picker-confirm-action-color: var(--picker-confirm-action-color);
-@picker-cancel-action-color: var(--picker-cancel-action-color);
-@picker-option-font-size: var(--picker-option-font-size);
-@picker-option-text-color: var(--picker-option-text-color);
-@picker-option-disabled-opacity: var(--picker-option-disabled-opacity);
-@picker-loading-icon-color: var(--picker-loading-icon-color);
-@picker-loading-mask-color: var(--picker-loading-mask-color);
+@picker-background-color: var(--van-picker-background-color);
+@picker-toolbar-height: var(--van-picker-toolbar-height);
+@picker-title-font-size: var(--van-picker-title-font-size);
+@picker-title-line-height: var(--van-picker-title-line-height);
+@picker-action-padding: var(--van-picker-action-padding);
+@picker-action-font-size: var(--van-picker-action-font-size);
+@picker-confirm-action-color: var(--van-picker-confirm-action-color);
+@picker-cancel-action-color: var(--van-picker-cancel-action-color);
+@picker-option-font-size: var(--van-picker-option-font-size);
+@picker-option-text-color: var(--van-picker-option-text-color);
+@picker-option-disabled-opacity: var(--van-picker-option-disabled-opacity);
+@picker-loading-icon-color: var(--van-picker-loading-icon-color);
+@picker-loading-mask-color: var(--van-picker-loading-mask-color);
 
 // Popover
 @popover-arrow-size: 6px;
@@ -614,24 +614,24 @@
 @popover-dark-action-disabled-text-color: @gray-6;
 
 // Popup
-@popup-background-color: var(--popup-background-color);
-@popup-transition: var(--popup-transition);
-@popup-round-border-radius: var(--popup-round-border-radius);
-@popup-close-icon-size: var(--popup-close-icon-size);
-@popup-close-icon-color: var(--popup-close-icon-color);
-@popup-close-icon-active-color: var(--popup-close-icon-active-color);
-@popup-close-icon-margin: var(--popup-close-icon-margin);
-@popup-close-icon-z-index: var(--popup-close-icon-z-index);
+@popup-background-color: var(--van-popup-background-color);
+@popup-transition: var(--van-popup-transition);
+@popup-round-border-radius: var(--van-popup-round-border-radius);
+@popup-close-icon-size: var(--van-popup-close-icon-size);
+@popup-close-icon-color: var(--van-popup-close-icon-color);
+@popup-close-icon-active-color: var(--van-popup-close-icon-active-color);
+@popup-close-icon-margin: var(--van-popup-close-icon-margin);
+@popup-close-icon-z-index: var(--van-popup-close-icon-z-index);
 
 // Progress
-@progress-height: var(--progress-height);
-@progress-color: var(--progress-color);
-@progress-background-color: var(--progress-background-color);
-@progress-pivot-padding: var(--progress-pivot-padding);
-@progress-pivot-text-color: var(--progress-pivot-text-color);
-@progress-pivot-font-size: var(--progress-pivot-font-size);
-@progress-pivot-line-height: var(--progress-pivot-line-height);
-@progress-pivot-background-color: var(--progress-pivot-background-color);
+@progress-height: var(--van-progress-height);
+@progress-color: var(--van-progress-color);
+@progress-background-color: var(--van-progress-background-color);
+@progress-pivot-padding: var(--van-progress-pivot-padding);
+@progress-pivot-text-color: var(--van-progress-pivot-text-color);
+@progress-pivot-font-size: var(--van-progress-pivot-font-size);
+@progress-pivot-line-height: var(--van-progress-pivot-line-height);
+@progress-pivot-background-color: var(--van-progress-pivot-background-color);
 
 // PullRefresh
 @pull-refresh-head-height: 50px;
@@ -639,22 +639,22 @@
 @pull-refresh-head-text-color: @gray-6;
 
 // Radio
-@radio-size: var(--radio-size);
-@radio-border-color: var(--radio-border-color);
-@radio-transition-duration: var(--radio-transition-duration);
-@radio-label-margin: var(--radio-label-margin);
-@radio-label-color: var(--radio-label-color);
-@radio-checked-icon-color: var(--radio-checked-icon-color);
-@radio-disabled-icon-color: var(--radio-disabled-icon-color);
-@radio-disabled-label-color: var(--radio-disabled-label-color);
-@radio-disabled-background-color: var(--radio-disabled-background-color);
+@radio-size: var(--van-radio-size);
+@radio-border-color: var(--van-radio-border-color);
+@radio-transition-duration: var(--van-radio-transition-duration);
+@radio-label-margin: var(--van-radio-label-margin);
+@radio-label-color: var(--van-radio-label-color);
+@radio-checked-icon-color: var(--van-radio-checked-icon-color);
+@radio-disabled-icon-color: var(--van-radio-disabled-icon-color);
+@radio-disabled-label-color: var(--van-radio-disabled-label-color);
+@radio-disabled-background-color: var(--van-radio-disabled-background-color);
 
 // Rate
-@rate-icon-size: var(--rate-icon-size);
-@rate-icon-gutter: var(--rate-icon-gutter);
-@rate-icon-void-color: var(--rate-icon-void-color);
-@rate-icon-full-color: var(--rate-icon-full-color);
-@rate-icon-disabled-color: var(--rate-icon-disabled-color);
+@rate-icon-size: var(--van-rate-icon-size);
+@rate-icon-gutter: var(--van-rate-icon-gutter);
+@rate-icon-void-color: var(--van-rate-icon-void-color);
+@rate-icon-full-color: var(--van-rate-icon-full-color);
+@rate-icon-disabled-color: var(--van-rate-icon-disabled-color);
 
 // ShareShe
 @share-sheet-header-padding: @padding-sm @padding-md @padding-base;
@@ -674,17 +674,17 @@
 @share-sheet-cancel-button-background: @white;
 
 // Search
-@search-padding: var(--search-padding);
-@search-background-color: var(--search-background-color);
-@search-content-background-color: var(--search-content-background-color);
-@search-input-height: var(--search-input-height);
-@search-label-padding: var(--search-label-padding);
-@search-label-color: var(--search-label-color);
-@search-label-font-size: var(--search-label-font-size);
-@search-left-icon-color: var(--search-left-icon-color);
-@search-action-padding: var(--search-action-padding);
-@search-action-text-color: var(--search-action-text-color);
-@search-action-font-size: var(--search-action-font-size);
+@search-padding: var(--van-search-padding);
+@search-background-color: var(--van-search-background-color);
+@search-content-background-color: var(--van-search-content-background-color);
+@search-input-height: var(--van-search-input-height);
+@search-label-padding: var(--van-search-label-padding);
+@search-label-color: var(--van-search-label-color);
+@search-label-font-size: var(--van-search-label-font-size);
+@search-left-icon-color: var(--van-search-left-icon-color);
+@search-action-padding: var(--van-search-action-padding);
+@search-action-text-color: var(--van-search-action-text-color);
+@search-action-font-size: var(--van-search-action-font-size);
 
 // Sidebar
 @sidebar-width: var(--van-sidebar-width);
@@ -700,7 +700,9 @@
 @sidebar-selected-border-width: var(--van-sidebar-selected-border-width);
 @sidebar-selected-border-height: var(--van-sidebar-selected-border-height);
 @sidebar-selected-border-color: var(--van-sidebar-selected-border-color);
-@sidebar-selected-background-color: var(--van-sidebar-selected-background-color);
+@sidebar-selected-background-color: var(
+  --van-sidebar-selected-background-color
+);
 
 // Skeleton
 @skeleton-row-height: 16px;
@@ -712,52 +714,52 @@
 @skeleton-animation-duration: 1.2s;
 
 // Slider
-@slider-active-background-color: var(--slider-active-background-color);
-@slider-inactive-background-color: var(--slider-inactive-background-color);
-@slider-disabled-opacity: var(--slider-disabled-opacity);
-@slider-bar-height: var(--slider-bar-height);
-@slider-button-width: var(--slider-button-width);
-@slider-button-height: var(--slider-button-height);
-@slider-button-border-radius: var(--slider-button-border-radius);
-@slider-button-background-color: var(--slider-button-background-color);
-@slider-button-box-shadow: var(--slider-button-box-shadow);
+@slider-active-background-color: var(--van-slider-active-background-color);
+@slider-inactive-background-color: var(--van-slider-inactive-background-color);
+@slider-disabled-opacity: var(--van-slider-disabled-opacity);
+@slider-bar-height: var(--van-slider-bar-height);
+@slider-button-width: var(--van-slider-button-width);
+@slider-button-height: var(--van-slider-button-height);
+@slider-button-border-radius: var(--van-slider-button-border-radius);
+@slider-button-background-color: var(--van-slider-button-background-color);
+@slider-button-box-shadow: var(--van-slider-button-box-shadow);
 
 // Step
-@step-text-color: var(--step-text-color);
-@step-active-color: var(--step-active-color);
-@step-process-text-color: var(--step-process-text-color);
-@step-font-size: var(--step-font-size);
-@step-line-color: var(--step-line-color);
-@step-finish-line-color: var(--step-finish-line-color);
-@step-finish-text-color: var(--step-finish-text-color);
-@step-icon-size: var(--step-icon-size);
-@step-circle-size: var(--step-circle-size);
-@step-circle-color: var(--step-circle-color);
-@step-horizontal-title-font-size: var(--step-horizontal-title-font-size);
+@step-text-color: var(--van-step-text-color);
+@step-active-color: var(--van-step-active-color);
+@step-process-text-color: var(--van-step-process-text-color);
+@step-font-size: var(--van-step-font-size);
+@step-line-color: var(--van-step-line-color);
+@step-finish-line-color: var(--van-step-finish-line-color);
+@step-finish-text-color: var(--van-step-finish-text-color);
+@step-icon-size: var(--van-step-icon-size);
+@step-circle-size: var(--van-step-circle-size);
+@step-circle-color: var(--van-step-circle-color);
+@step-horizontal-title-font-size: var(--van-step-horizontal-title-font-size);
 
 // Steps
-@steps-background-color: var(--steps-background-color);
+@steps-background-color: var(--van-steps-background-color);
 
 // Sticky
 @sticky-z-index: 99;
 
 // Stepper
-@stepper-active-color: var(--stepper-active-color);
-@stepper-background-color: var(--stepper-background-color);
-@stepper-button-icon-color: var(--stepper-button-icon-color);
-@stepper-button-disabled-color: var(--stepper-button-disabled-color);
-@stepper-button-disabled-icon-color: var(--stepper-button-disabled-icon-color);
-@stepper-button-round-theme-color: var(--stepper-button-round-theme-color);
-@stepper-input-width: var(--stepper-input-width);
-@stepper-input-height: var(--stepper-input-height);
-@stepper-input-font-size: var(--stepper-input-font-size);
-@stepper-input-line-height: var(--stepper-input-line-height);
-@stepper-input-text-color: var(--stepper-input-text-color);
-@stepper-input-disabled-text-color: var(--stepper-input-disabled-text-color);
+@stepper-active-color: var(--van-stepper-active-color);
+@stepper-background-color: var(--van-stepper-background-color);
+@stepper-button-icon-color: var(--van-stepper-button-icon-color);
+@stepper-button-disabled-color: var(--van-stepper-button-disabled-color);
+@stepper-button-disabled-icon-color: var(--van-stepper-button-disabled-icon-color);
+@stepper-button-round-theme-color: var(--van-stepper-button-round-theme-color);
+@stepper-input-width: var(--van-stepper-input-width);
+@stepper-input-height: var(--van-stepper-input-height);
+@stepper-input-font-size: var(--van-stepper-input-font-size);
+@stepper-input-line-height: var(--van-stepper-input-line-height);
+@stepper-input-text-color: var(--van-stepper-input-text-color);
+@stepper-input-disabled-text-color: var(--van-stepper-input-disabled-text-color);
 @stepper-input-disabled-background-color: var(
-  --stepper-input-disabled-background-color
+  --van-stepper-input-disabled-background-color
 );
-@stepper-border-radius: var(--stepper-border-radius);
+@stepper-border-radius: var(--van-stepper-border-radius);
 
 // SubmitBar
 @submit-bar-height: 50px;
@@ -781,16 +783,16 @@
 @submit-bar-price-font-family: @price-integer-font-family;
 
 // Swipe
-@swipe-indicator-size: var(--swipe-indicator-size);
-@swipe-indicator-size-new: var(--swipe-indicator-size-new);
-@swipe-indicator-margin: var(--swipe-indicator-margin);
-@swipe-indicator-active-opacity: var(--swipe-indicator-active-opacity);
-@swipe-indicator-inactive-opacity: var(--swipe-indicator-inactive-opacity);
+@swipe-indicator-size: var(--van-swipe-indicator-size);
+@swipe-indicator-size-new: var(--van-swipe-indicator-size-new);
+@swipe-indicator-margin: var(--van-swipe-indicator-margin);
+@swipe-indicator-active-opacity: var(--van-swipe-indicator-active-opacity);
+@swipe-indicator-inactive-opacity: var(--van-swipe-indicator-inactive-opacity);
 @swipe-indicator-active-background-color: var(
-  --swipe-indicator-active-background-color
+  --van-swipe-indicator-active-background-color
 );
 @swipe-indicator-inactive-background-color: var(
-  --swipe-indicator-inactive-background-color
+  --van-swipe-indicator-inactive-background-color
 );
 
 // Switch
@@ -813,54 +815,55 @@
 @switch-cell-large-padding-bottom: calc(@cell-large-vertical-padding - 1px);
 
 // Tabbar
-@tabbar-height: var(--tabbar-height);
-@tabbar-z-index: var(--tabbar-z-index);
-@tabbar-background-color: var(--tabbar-background-color);
+@tabbar-height: var(--van-tabbar-height);
+@tabbar-z-index: var(--van-tabbar-z-index);
+@tabbar-background-color: var(--van-tabbar-background-color);
 
 // TabbarItem
-@tabbar-item-font-size: var(--tabbar-item-font-size);
-@tabbar-item-text-color: var(--tabbar-item-text-color);
-@tabbar-item-active-color: var(--tabbar-item-active-color);
+@tabbar-item-font-size: var(--van-tabbar-item-font-size);
+@tabbar-item-text-color: var(--van-tabbar-item-text-color);
+@tabbar-item-active-color: var(--van-tabbar-item-active-color);
 @tabbar-item-active-background-color: var(
-  --tabbar-item-active-background-color
+  --van-tabbar-item-active-background-color
 );
-@tabbar-item-line-height: var(--tabbar-item-line-height);
-@tabbar-item-icon-size: var(--tabbar-item-icon-size);
-@tabbar-item-margin-bottom: var(--tabbar-item-margin-bottom);
+@tabbar-item-line-height: var(--van-tabbar-item-line-height);
+@tabbar-item-icon-size: var(--van-tabbar-item-icon-size);
+@tabbar-item-margin-bottom: var(--van-tabbar-item-margin-bottom);
 
 // Tab
-@tab-text-color: var(--tab-text-color);
-@tab-active-text-color: var(--tab-active-text-color);
-@tab-disabled-text-color: var(--tab-disabled-text-color);
-@tab-font-size: var(--tab-font-size);
-@tab-line-height: var(--tab-line-height);
+@tab-text-color: var(--van-tab-text-color);
+@tab-active-text-color: var(--van-tab-active-text-color);
+@tab-disabled-text-color: var(--van-tab-disabled-text-color);
+@tab-font-size: var(--van-tab-font-size);
+@tab-line-height: var(--van-tab-line-height);
 
 // Tabs
-@tabs-default-color: var(--tabs-default-color);
-@tabs-line-height: var(--tabs-line-height);
-@tabs-card-height: var(--tabs-card-height);
-@tabs-nav-background-color: var(--tabs-nav-background-color);
-@tabs-bottom-bar-width: var(--tabs-bottom-bar-width);
-@tabs-bottom-bar-height: var(--tabs-bottom-bar-height);
-@tabs-bottom-bar-color: var(--tabs-bottom-bar-color);
+@tabs-default-color: var(--van-tabs-default-color);
+@tabs-line-height: var(--van-tabs-line-height);
+@tabs-card-height: var(--van-tabs-card-height);
+@tabs-nav-background-color: var(--van-tabs-nav-background-color);
+@tabs-bottom-bar-width: var(--van-tabs-bottom-bar-width);
+@tabs-bottom-bar-height: var(--van-tabs-bottom-bar-height);
+@tabs-bottom-bar-color: var(--van-tabs-bottom-bar-color);
 
 // Tag
-@tag-padding: var(--tag-padding);
-@tag-text-color: var(--tag-text-color);
-@tag-font-size: var(--tag-font-size);
-@tag-border-radius: var(--tag-border-radius);
-@tag-line-height: var(--tag-line-height);
-@tag-medium-padding: var(--tag-medium-padding);
-@tag-large-padding: var(--tag-large-padding);
-@tag-large-border-radius: var(--tag-large-border-radius);
-@tag-large-font-size: var(--tag-large-font-size);
-@tag-round-border-radius: var(--tag-round-border-radius);
-@tag-danger-color: var(--tag-danger-color);
-@tag-primary-color: var(--tag-primary-color);
-@tag-success-color: var(--tag-success-color);
-@tag-warning-color: var(--tag-warning-color);
-@tag-default-color: var(--tag-default-color);
-@tag-plain-background-color: var(--tag-plain-background-color);
+@tag-padding: var(--van-tag-padding);
+@tag-text-color: var(--van-tag-text-color);
+@tag-font-size: var(--van-tag-font-size);
+@tag-border-radius: var(--van-tag-border-radius);
+@tag-line-height: var(--van-tag-line-height);
+@tag-small-padding: var(--van-tag-small-padding);
+@tag-medium-padding: var(--van-tag-medium-padding);
+@tag-large-padding: var(--van-tag-large-padding);
+@tag-large-border-radius: var(--van-tag-large-border-radius);
+@tag-large-font-size: var(--van-tag-large-font-size);
+@tag-round-border-radius: var(--van-tag-round-border-radius);
+@tag-danger-color: var(--van-tag-danger-color);
+@tag-primary-color: var(--van-tag-primary-color);
+@tag-success-color: var(--van-tag-success-color);
+@tag-warning-color: var(--van-tag-warning-color);
+@tag-default-color: var(--van-tag-default-color);
+@tag-plain-background-color: var(--van-tag-plain-background-color);
 
 // Toast
 @toast-max-width: 70%;
@@ -890,30 +893,30 @@
 @tree-select-item-selected-size: 16px;
 
 // Uploader
-@uploader-size: var(--uploader-size);
-@uploader-icon-size: var(--uploader-icon-size);
-@uploader-icon-color: var(--uploader-icon-color);
-@uploader-text-color: var(--uploader-text-color);
-@uploader-text-font-size: var(--uploader-text-font-size);
-@uploader-upload-background-color: var(--uploader-upload-background-color);
-@uploader-upload-active-color: var(--uploader-upload-active-color);
-@uploader-delete-color: var(--uploader-delete-color);
-@uploader-delete-icon-size: var(--uploader-delete-icon-size);
-@uploader-delete-background-color: var(--uploader-delete-background-color);
-@uploader-file-background-color: var(--uploader-file-background-color);
-@uploader-file-icon-size: var(--uploader-file-icon-size);
-@uploader-file-icon-color: var(--uploader-file-icon-color);
-@uploader-file-name-padding: var(--uploader-file-name-padding);
-@uploader-file-name-margin-top: var(--uploader-file-name-margin-top);
-@uploader-file-name-font-size: var(--uploader-file-name-font-size);
-@uploader-file-name-text-color: var(--uploader-file-name-text-color);
-@uploader-mask-background-color: var(--uploader-mask-background-color);
-@uploader-mask-icon-size: var(--uploader-mask-icon-size);
-@uploader-mask-message-font-size: var(--uploader-mask-message-font-size);
-@uploader-mask-message-line-height: var(--uploader-mask-message-line-height);
-@uploader-loading-icon-size: var(--uploader-loading-icon-size);
-@uploader-loading-icon-color: var(--uploader-loading-icon-color);
-@uploader-disabled-opacity: var(--uploader-disabled-opacity);
+@uploader-size: var(--van-uploader-size);
+@uploader-icon-size: var(--van-uploader-icon-size);
+@uploader-icon-color: var(--van-uploader-icon-color);
+@uploader-text-color: var(--van-uploader-text-color);
+@uploader-text-font-size: var(--van-uploader-text-font-size);
+@uploader-upload-background-color: var(--van-uploader-upload-background-color);
+@uploader-upload-active-color: var(--van-uploader-upload-active-color);
+@uploader-delete-color: var(--van-uploader-delete-color);
+@uploader-delete-icon-size: var(--van-uploader-delete-icon-size);
+@uploader-delete-background-color: var(--van-uploader-delete-background-color);
+@uploader-file-background-color: var(--van-uploader-file-background-color);
+@uploader-file-icon-size: var(--van-uploader-file-icon-size);
+@uploader-file-icon-color: var(--van-uploader-file-icon-color);
+@uploader-file-name-padding: var(--van-uploader-file-name-padding);
+@uploader-file-name-margin-top: var(--van-uploader-file-name-margin-top);
+@uploader-file-name-font-size: var(--van-uploader-file-name-font-size);
+@uploader-file-name-text-color: var(--van-uploader-file-name-text-color);
+@uploader-mask-background-color: var(--van-uploader-mask-background-color);
+@uploader-mask-icon-size: var(--van-uploader-mask-icon-size);
+@uploader-mask-message-font-size: var(--van-uploader-mask-message-font-size);
+@uploader-mask-message-line-height: var(--van-uploader-mask-message-line-height);
+@uploader-loading-icon-size: var(--van-uploader-loading-icon-size);
+@uploader-loading-icon-color: var(--van-uploader-loading-icon-color);
+@uploader-disabled-opacity: var(--van-uploader-disabled-opacity);
 
 // Sku
 @sku-item-background-color: @background-color;

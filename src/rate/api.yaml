@@ -12,63 +12,48 @@
       type: number
       sync: true
       model: true
-      description: 当前分值
     - name: count
       title: 图标总数
       type: numer | string
       default: 5
-      description: 图标总数
     - name: size
-      title: 图标大小
-      type: numer | string
+      title: 图标大小(px)
+      type: numer
       default: 20
-      description: 图标大小，默认单位为px
     - name: gutter
       title: 图标间距
       type: numer | string
       default: 4
-      description: 图标间距，默认单位为px
     - name: color
       title: 选中时的颜色
       type: string
-      default: '#ee0a24'
-      description: 选中时的颜色
     - name: void-color
       title: 未选中时的颜色
       type: string
-      default: '#c8c9cc'
-      description: 未选中时的颜色
     - name: disabled-color
       title: 禁用时的颜色
       type: string
-      default: '#c8c9cc'
-      description: 禁用时的颜色
     - name: icon
       title: 选中时的图标名称或图片链接
       type: icon
-      description: 选中时的图标名称或图片链接
     - name: void-icon
       title: 未选中时的图标名称或图片链接
       type: icon
-      description: 选中时的图标名称或图片链接
     - name: allow-half
       title: 半选
       type: boolean
       default: false
-      description: 是否允许半选
     - name: readonly
       title: 只读
       type: boolean
       default: false
-      description: 是否只读
     - name: disabled
       title: 禁用
       type: boolean
       default: false
-      description: 是否禁用
   slots: false
   events:
     - name: change
-      title: 变更后
-      description: 变更时触发
+      title: 分值变化时
+      description: 分值变化时
       params: []

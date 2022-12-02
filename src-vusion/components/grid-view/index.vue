@@ -651,40 +651,39 @@ export default {
 .root {
   /* display: flex; */
   flex-direction: column;
-  background: var(--van-grid-view-body-background);
+  background: #fff;
   /* border: 1px solid var(--list-view-border-color); */
   border-radius: 4px;
-  height: var(--van-grid-view-height);
-  min-width: 240px;
+  height: 400px;
+  min-width: 280px;
   max-width: 100%;
 
   box-sizing: border-box;
 }
 
 .root:focus {
-  border-color: var(--list-view-border-color-focus);
-  outline: var(--focus-outline);
+  border-color: #e5e5e5;
+  outline: none;
 }
 
 .status {
-  color: var(--list-view-status-color);
+  color: #999999;
   text-align: center;
-  padding: var(--list-view-item-padding);
+  padding: 5px 12px;
 }
 
 .root[disabled] {
-  border: 1px solid var(--list-view-border-color-disabled);
+  border: 1px solid #ebebeb;
 }
 
 .head {
-  background: var(--list-view-head-background);
-  padding: var(--list-view-head-padding);
-  border-bottom: 1px solid var(--list-view-border-color);
+ padding: 8px 12px;
+  border-bottom: 1px solid e5e5e5;
 }
 
 .extra {
   float: right;
-  color: var(--color-light);
+  color: #999;
 }
 
 .body {
@@ -748,18 +747,20 @@ export default {
 }
 
 .root[disabled] .body {
-  background: var(--list-view-body-background-disabled);
+  background: #fff;
 }
 
-/* .foot {
-  background: var(--list-view-foot-background);
+.foot {
+  /* background: var(--list-view-foot-background);
   padding: var(--list-view-foot-padding);
-  border-top: 1px solid var(--list-view-border-color);
-} */
+  border-top: 1px solid var(--list-view-border-color); */
+}
 
 .filter[class][class] {
-  margin: var(--list-view-filter-margin);
-  width: calc(100% - var(--list-view-filter-margin) * 2);
+  width: calc(100% - 10PX);
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
 }
 
 .pagination {
@@ -767,7 +768,7 @@ export default {
   margin: 0 -12px;
 }
 
-.root[size^='normal'] {
+/* .root[size^='normal'] {
   height: var(--list-view-height);
 }
 .root[size^='large'] {
@@ -796,7 +797,7 @@ export default {
 }
 .root[size$='auto'] {
   width: auto;
-}
+} */
 
 /* .root {
     height: 100vh;

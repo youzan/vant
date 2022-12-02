@@ -8,7 +8,7 @@ import Info from '../info';
 import VanEmptyCol from '../emptycol';
 import config from './config';
 
-import { onlineSvgIcon } from 'online-svg-icon-vue2';
+import { onlineSvgIcon } from './components/main';
 // Types
 import { CreateElement, RenderContext } from 'vue/types';
 import { DefaultSlots } from '../utils/types';
@@ -153,6 +153,14 @@ function Iconv(
   const { icotype } = props;
   const endNotext = icotype === 'only';
 
+  const tempStyle = {
+    color: props.color,
+    fontSize: addUnit(props.size),
+  };
+  if (typeof tempStyle.fontSize === 'undefined') {
+    delete tempStyle.fontSize;
+  }
+
   return (
     <props.tag
       class={[
@@ -161,10 +169,7 @@ function Iconv(
         props.icotype === 'left' ? bem('flex') : '',
         // imageIcon ? '' : `${props.classPrefix}-${name}`,
       ]}
-      style={{
-        color: props.color,
-        fontSize: addUnit(props.size),
-      }}
+      style={tempStyle}
       {...inherit(ctx, false)}
       onClick={onClick}
     >
