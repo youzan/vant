@@ -19,6 +19,16 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 
 ## 更新内容
 
+### [v4.0.2](https://github.com/vant-ui/vant/compare/v4.0.1...v4.0.2)
+
+`2022-12-03`
+
+**Bug Fixes**
+
+- Field: 修复使用 formatter 时光标位置错误的问题 [#11348](https://github.com/vant-ui/vant/issues/11348)
+- Image: 修复在 Nuxt 3 下图片可能无法展示的问题 [128972](https://github.com/vant-ui/vant/commit/128972a75329d4b14028d00cd23dac66038e2d4c)
+- NavBar: 修复屏幕旋转时 placeholder 未自动适配高度的问题 [#11351](https://github.com/vant-ui/vant/issues/11351)
+
 ### [v4.0.1](https://github.com/vant-ui/vant/compare/v4.0.0...v4.0.1)
 
 `2022-12-01`

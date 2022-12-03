@@ -295,7 +295,9 @@ export default defineComponent({
       value: string,
       trigger: FieldFormatTrigger = 'onChange'
     ) => {
+      const originalValue = value;
       value = limitValueLength(value);
+      const isExceedLimit = value !== originalValue;
 
       if (props.type === 'number' || props.type === 'digit') {
         const isNumber = props.type === 'number';
@@ -307,10 +309,18 @@ export default defineComponent({
       }
 
       if (inputRef.value && inputRef.value.value !== value) {
-        const { selectionStart, selectionEnd } = inputRef.value;
-        inputRef.value.value = value;
-        if (state.focused) {
-          inputRef.value.setSelectionRange(selectionStart, selectionEnd);
+        // When the value length exceeds maxlength and the input is focused,
+        // correct the cursor position to be consistent with the native behavior.
+        // https://github.com/youzan/vant/issues/11289
+        if (state.focused && isExceedLimit) {
+          const { selectionStart, selectionEnd } = inputRef.value;
+          inputRef.value.value = value;
+          inputRef.value.setSelectionRange(
+            selectionStart! - 1,
+            selectionEnd! - 1
+          );
+        } else {
+          inputRef.value.value = value;
         }
       }
 
