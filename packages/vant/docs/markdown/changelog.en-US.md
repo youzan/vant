@@ -19,6 +19,16 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 
 ## Details
 
+### [v4.0.2](https://github.com/vant-ui/vant/compare/v4.0.1...v4.0.2)
+
+`2022-12-03`
+
+**Bug Fixes**
+
+- Field: incorrect cursor position when using formatter [#11348](https://github.com/vant-ui/vant/issues/11348)
+- Image: load event not triggered in nuxt3 [128972](https://github.com/vant-ui/vant/commit/128972a75329d4b14028d00cd23dac66038e2d4c)
+- NavBar: update placeholder height when window resized [#11351](https://github.com/vant-ui/vant/issues/11351)
+
 ### [v4.0.1](https://github.com/vant-ui/vant/compare/v4.0.0...v4.0.1)
 
 `2022-12-01`
