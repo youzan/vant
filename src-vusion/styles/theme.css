@@ -59,7 +59,8 @@
   /* @component van-linear-layout */
   --van-space-base: var(
     --van-space-base
-  ); /* @desc 布局内各元素之间的外间距, 如：1px */
+  ); /* @desc 布局内各元素之间的
+  外间距, 如：1px */
 
   /* @component van-panel */
   --van-panel-background-color: #fff; /* @type color */ /* @desc panel背景色 */
@@ -745,4 +746,14 @@
   ); /* @type color */ /* @desc 警告类型颜色 */
   --van-tag-default-color: #969799; /* @type color */ /* @desc 默认类型颜色 */
   --van-tag-plain-background-color: #fff; /* @type color */ /* @hidden */
+
+  /* @component van-grid-view */
+  --van-grid-view-input-height: 30px; /* @desc grid-view 输入框高度 */
+  --van-grid-view-input-padding-x: 8px; /* @desc grid-view 输入框左右内边距 */
+  --van-grid-view-input-border-width: 1px; /* @desc grid-view 输入框边框宽度 */
+  --van-grid-view-input-border-color: #e3e4e5; /* @type color */ /* @desc grid-view 输入框边框颜色 */
+  --van-grid-view-input-border-radius: 3px; /* @desc grid-view 输入框圆角 */
+  --van-grid-view-input-color: #333; /* @type color */ /* @desc grid-view 输入框文字颜色 */
 }
+
+

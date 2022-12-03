@@ -758,9 +758,18 @@ export default {
 
 .filter[class][class] {
   width: calc(100% - 10PX);
-    margin-left: auto;
-    margin-right: auto;
-    display: block;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+
+  height: var(--van-grid-view-input-height);
+  padding: 0 var(--van-grid-view-input-padding-x);
+  line-height: calc(var(--van-grid-view-input-height) - var(--van-grid-view-input-border-width) * 2);
+  background: var(--van-grid-view-input-background);
+  border: var(--van-grid-view-input-border-width) solid var(--van-grid-view-input-border-color);
+  border-radius: var(--van-grid-view-input-border-radius);
+  cursor: text;
+  color: var(--van-grid-view-input-color);
 }
 
 .pagination {

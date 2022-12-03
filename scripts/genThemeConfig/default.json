@@ -409,5 +409,11 @@
     "--van-tag-success-color": "var(--van-brand-success)",
     "--van-tag-warning-color": "var(--van-brand-problem)",
     "--van-tag-default-color": "#969799",
-    "--van-tag-plain-background-color": "#ffffff"
+    "--van-tag-plain-background-color": "#ffffff",
+    "--van-grid-view-input-height": "30px",
+    "--van-grid-view-input-padding-x": "8px",
+    "--van-grid-view-input-border-width": "1px",
+    "--van-grid-view-input-border-color": "#e3e4e5",
+    "--van-grid-view-input-border-radius": "3px",
+    "--van-grid-view-input-color": "#333"
 }
