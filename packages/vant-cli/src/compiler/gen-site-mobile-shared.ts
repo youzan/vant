@@ -60,9 +60,9 @@ function genConfig(demos: DemoItem[]) {
 
 function genCode(components: string[]) {
   const vantConfig = getVantConfig();
-  const { frameWork } = vantConfig.site;
+  const { framework } = vantConfig;
   let demoIndex = 'demo/index.vue';
-  if (frameWork === 'react') {
+  if (framework === 'react') {
     demoIndex = 'demo/index.tsx';
   }
   const demos = components

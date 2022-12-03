@@ -140,7 +140,7 @@ export function getViteConfigForSiteDev(): InlineConfig {
   const title = getTitle(siteConfig);
   const headHtml = vantConfig.site?.headHtml;
   const baiduAnalytics = vantConfig.site?.baiduAnalytics;
-  const frameWork = vantConfig.site?.frameWork;
+  const framework = vantConfig?.framework;
   const enableVConsole = isDev() && vantConfig.site?.enableVConsole;
 
   return {
@@ -189,7 +189,7 @@ export function getViteConfigForSiteDev(): InlineConfig {
           description: siteConfig.description,
           headHtml,
           baiduAnalytics,
-          frameWork,
+          framework,
           enableVConsole,
           meta: getHTMLMeta(vantConfig),
         },

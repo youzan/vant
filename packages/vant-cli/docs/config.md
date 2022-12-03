@@ -3,6 +3,7 @@
 - [Config](#----)
   - [vant.config.mjs](#vantconfigmjs)
     - [name](#name)
+    - [framework](#framework)
     - [build.css.base](#buildcssbase)
     - [build.css.preprocessor](#buildcsspreprocessor)
     - [build.site.publicPath](#buildsitepublicpath)
@@ -78,6 +79,13 @@ export default {
 - Default: `''`
 
 Component library name. kebab-case recommended.
+
+### framework
+
+- Type: `string`
+- Default : `vue`
+
+The useful framework of the component library. The default is vue, and the option is react
 
 ### build.css.base
 

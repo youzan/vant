@@ -3,6 +3,7 @@
 - [配置指南](#----)
   - [vant.config.mjs](#vantconfigmjs)
     - [name](#name)
+    - [framework](#framework)
     - [build.css.base](#buildcssbase)
     - [build.css.preprocessor](#buildcsspreprocessor)
     - [build.site.publicPath](#buildsitepublicpath)
@@ -78,6 +79,13 @@ export default {
 - Default: `''`
 
 组件库名称，建议使用中划线分割，如 `demo-ui`。
+
+### framework
+
+- Type: `string`
+- Default : `vue`
+
+组件库所有用框架，不传默认是 vue,可选、react
 
 ### build.css.base
 
