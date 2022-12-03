@@ -3,6 +3,7 @@ import {
   watch,
   computed,
   nextTick,
+  onMounted,
   onBeforeUnmount,
   defineComponent,
   getCurrentInstance,
@@ -69,7 +70,7 @@ export default defineComponent({
   setup(props, { emit, slots }) {
     const error = ref(false);
     const loading = ref(true);
-    const imageRef = ref<HTMLElement>();
+    const imageRef = ref<HTMLImageElement>();
 
     const { $Lazyload } = getCurrentInstance()!.proxy!;
 
@@ -156,7 +157,13 @@ export default defineComponent({
       }
 
       return (
-        <img src={props.src} onLoad={onLoad} onError={onError} {...attrs} />
+        <img
+          ref={imageRef}
+          src={props.src}
+          onLoad={onLoad}
+          onError={onError}
+          {...attrs}
+        />
       );
     };
 
@@ -190,6 +197,15 @@ export default defineComponent({
         $Lazyload.$off('error', onLazyLoadError);
       });
     }
+
+    // In nuxt3, the image may not trigger load event,
+    // so the initial complete state should be checked.
+    // https://github.com/youzan/vant/issues/11335
+    onMounted(() => {
+      if (imageRef.value?.complete) {
+        onLoad();
+      }
+    });
 
     return () => (
       <div
