@@ -19,6 +19,14 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 
 ## Details
 
+### [v3.6.10](https://github.com/vant-ui/vant/compare/v3.6.9...v3.6.10)
+
+`2022-12-03`
+
+**Bug Fixes**
+
+- Field: incorrect cursor position when using formatter [#11348](https://github.com/vant-ui/vant/issues/11348)
+
 ### [v3.6.9](https://github.com/vant-ui/vant/compare/v3.6.8...v3.6.9)
 
 `2022-12-01`
