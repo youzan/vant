@@ -16,6 +16,10 @@ export default createComponent({
       type: String,
       default: 'div',
     },
+    mode: String,
+    align: String,
+    justify: String,
+    direction: String,
   },
 
   computed: {
@@ -40,11 +44,16 @@ export default createComponent({
   },
 
   render() {
-    const { span, offset } = this;
+    const { span, offset, align, justify, direction } = this;
+    const flex = this.mode === 'flex';
     return (
       <this.tag
         style={this.style}
-        class={bem({ [span]: span, [`offset-${offset}`]: offset })}
+        class={bem({ [span]: span, [`offset-${offset}`]: offset, 
+        flex,
+        [`align-${align}`]: flex && align,
+        [`justify-${justify}`]: flex && justify,
+        direction })}
         onClick={this.onClick}
         empty={!this.$slots.default}
         vusion-slot-name="default"

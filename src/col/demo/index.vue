@@ -77,6 +77,10 @@
         <van-col span="6">span: 6</van-col>
         <van-col span="6">span: 6</van-col>
       </van-row>
+
+      <van-row type="flex" align="end">
+        <van-col span="18" mode="flex" align="end"><van-button>1</van-button><van-button>2</van-button><van-button>3</van-button></van-col>
+      </van-row>
     </demo-block>
   </demo-section>
 </template>
