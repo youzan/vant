@@ -97,8 +97,10 @@ export default defineComponent({
     );
 
     const onLoad = (event?: Event) => {
-      loading.value = false;
-      emit('load', event);
+      if (loading.value) {
+        loading.value = false;
+        emit('load', event);
+      }
     };
 
     const onError = (event?: Event) => {
