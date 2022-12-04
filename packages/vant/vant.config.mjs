@@ -83,6 +83,10 @@ location.href = location.href.replace('youzan.github.io', 'vant-ui.github.io');
                 title: '更新日志',
               },
               {
+                path: 'release-note-v4',
+                title: '4.0 更新介绍',
+              },
+              {
                 path: 'migrate-from-v2',
                 title: '从 v2 升级到 v3',
               },
