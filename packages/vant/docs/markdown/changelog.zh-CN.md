@@ -45,7 +45,7 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 
 `2022-11-26`
 
-> Vant 4.0 的完整更新日志正在整理中，请先阅读 [「从 v3 升级到 v4」](#/zh-CN/migrate-from-v3) 进行升级。
+> 完整内容请移步：[「4.0 更新介绍」](https://vant-ui.github.io/vant/#/zh-CN/release-note-v4)
 
 **Feature**
 
