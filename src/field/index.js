@@ -158,7 +158,7 @@ export default createComponent({
     this.updateValue(this.value, this.formatTrigger);
     this.$nextTick(this.adjustSize);
     if (this.vanForm && !this.nofi) {
-      this.$vnode.key = Math.random().toString(36).slice(2);
+      this.$vnode && (this.$vnode.key = Math.random().toString(36).slice(2));
       this.vanForm.addField(this);
     }
   },
