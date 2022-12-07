@@ -85,6 +85,10 @@ app.use(Button);
 
 vant 也支持按需引入、CDN 引入等方式，详细说明见 [快速上手](https://vant-contrib.gitee.io/vant#/zh-CN/quickstart).
 
+## 在 Cloud IDE 中预览
+
+[https://idegithub.com/youzan/vant](https://idegithub.com/youzan/vant)
+
 ## 浏览器支持
 
 Vant 2 支持现代浏览器以及 Android >= 4.0、iOS >= 8.0。
