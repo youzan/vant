@@ -1,5 +1,5 @@
 <template>
-<div :class="$style.root" :type="type" :direction="direction" v-on="$listeners" vusion-slot-name="default">
+<div :class="$style.root" :type="type" :direction="direction" v-on="$listeners" vusion-slot-name="default" :nowrap="!wrap">
     <slot></slot>
     <template v-if="(!$slots.default) && $env.VUE_APP_DESIGNER && !!$attrs['vusion-node-path']">
         <div key="empty" :class="$style.emptyTip" v-if="type === 'root'">拖拽右侧组件放至此处</div>
@@ -24,6 +24,12 @@ import VanLoading from '../../../src/loading';
 export default {
     name: 'van-linear-layout',
     extends: ULinearLayout,
+    props:{
+        wrap: {
+            type: Boolean,
+            default: true,
+        },
+    },
     components: { VanLoading },
 };
 </script>

@@ -20,6 +20,11 @@ export default createComponent({
     align: String,
     justify: String,
     direction: String,
+    wrap: {
+      type: Boolean,
+      default: true,
+    },
+    gap: String,
   },
 
   computed: {
@@ -44,7 +49,7 @@ export default createComponent({
   },
 
   render() {
-    const { span, offset, align, justify, direction } = this;
+    const { span, offset, align, justify, direction, wrap, gap } = this;
     const flex = this.mode === 'flex';
     return (
       <this.tag
@@ -53,7 +58,9 @@ export default createComponent({
         flex,
         [`align-${align}`]: flex && align,
         [`justify-${justify}`]: flex && justify,
-        direction })}
+        [`direction-${direction}`]: flex && direction,
+        nowrap: !wrap,
+        [`direction-${direction}-gap-${gap}`]: flex && direction && gap})}
         onClick={this.onClick}
         empty={!this.$slots.default}
         vusion-slot-name="default"
