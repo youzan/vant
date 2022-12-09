@@ -13,6 +13,7 @@ export type DividerProps = {
   borderColor?: string;
   contentPosition: 'left' | 'center' | 'right';
   title?: string;
+  notitle?: Boolean
 };
 
 // import Text from '../text';
@@ -37,17 +38,17 @@ function Divider(
       })}
       {...inherit(ctx, true)}
     >
-      {props.title ? (
+      {(props.title ? (
         <span vusion-slot-name-edit="title">{props.title}</span>
       ) : slots.default ? (
         slots.default()
       ) : (
-        designer && (
+        designer && !props.notitle &&(
           <span vusion-slot-name="default">
             <VanEmptyCol></VanEmptyCol>
           </span>
         )
-      )}
+      ))}
     </div>
   );
 }
@@ -67,6 +68,9 @@ Divider.props = {
   },
   title: {
     type: String,
+  },
+  notitle: {
+    type: Boolean,
   },
 };
 
