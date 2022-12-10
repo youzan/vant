@@ -600,17 +600,21 @@ export default defineComponent({
     return () => {
       const disabled = getProp('disabled');
       const labelAlign = getProp('labelAlign');
-      const Label = renderLabel();
       const LeftIcon = renderLeftIcon();
 
-      const renderTitle = () =>
-        labelAlign === 'top' ? [LeftIcon, Label] : Label;
+      const renderTitle = () => {
+        const Label = renderLabel();
+        if (labelAlign === 'top') {
+          return [LeftIcon, Label].filter(Boolean);
+        }
+        return Label || [];
+      };
 
       return (
         <Cell
           v-slots={{
             icon: LeftIcon && labelAlign !== 'top' ? () => LeftIcon : null,
-            title: Label || labelAlign === 'top' ? renderTitle : null,
+            title: renderTitle,
             value: renderFieldBody,
             extra: slots.extra,
           }}

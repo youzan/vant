@@ -41,6 +41,16 @@ exports[`should render input slot correctly 1`] = `
 </div>
 `;
 
+exports[`should render label correctly when dynamically set empty label 1`] = `
+<div class="van-cell__title van-field__label">
+  <label id="van-field-label"
+         for="van-field-input"
+  >
+    abc
+  </label>
+</div>
+`;
+
 exports[`should render label slot correctly 1`] = `
 <div class="van-cell__title van-field__label">
   Custom Label
