@@ -77,12 +77,20 @@ export default defineComponent({
 
     const renderTitle = () => {
       if (slots.title || isDef(props.title)) {
+        const titleSlot = slots.title?.();
+
+        // Allow Field to dynamically set empty label
+        // https://github.com/youzan/vant/issues/11368
+        if (Array.isArray(titleSlot) && titleSlot.length === 0) {
+          return;
+        }
+
         return (
           <div
             class={[bem('title'), props.titleClass]}
             style={props.titleStyle}
           >
-            {slots.title ? slots.title() : <span>{props.title}</span>}
+            {titleSlot || <span>{props.title}</span>}
             {renderLabel()}
           </div>
         );
@@ -125,9 +133,10 @@ export default defineComponent({
       }
 
       if (props.isLink) {
-        const name = props.arrowDirection && props.arrowDirection !== 'right'
-          ? `arrow-${props.arrowDirection}`
-          : 'arrow';
+        const name =
+          props.arrowDirection && props.arrowDirection !== 'right'
+            ? `arrow-${props.arrowDirection}`
+            : 'arrow';
         return <Icon name={name} class={bem('right-icon')} />;
       }
     };
