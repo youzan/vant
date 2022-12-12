@@ -33,7 +33,7 @@ function Divider(
       class={bem({
         dashed: props.dashed !== 'a',
         hairline: props.hairline,
-        [`content-${props.contentPosition}`]: true,
+        [`content-${props.contentPosition}`]: designer || (props.title || (slots.default && slots.default())),
       })}
       {...inherit(ctx, true)}
     >
@@ -42,7 +42,7 @@ function Divider(
       ) : slots.default ? (
         slots.default()
       ) : (
-        designer && (
+        designer && !ctx.data?.attrs?.notitle && (
           <span vusion-slot-name="default">
             <VanEmptyCol></VanEmptyCol>
           </span>
