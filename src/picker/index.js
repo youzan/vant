@@ -19,7 +19,7 @@ export default createComponent({
       type: [Number, String],
       default: 0,
     },
-    columnsprop:[Array, String],
+    columnsprop: [Array, String],
     toolbarPosition: {
       type: String,
       default: 'top',
@@ -30,7 +30,7 @@ export default createComponent({
     },
     converter: {
       type: String,
-      default: 'json'
+      default: 'json',
     },
   },
 
@@ -97,15 +97,14 @@ export default createComponent({
     },
     fromValue(value) {
       if (this.converter === 'json')
-          try {
-              if (value === null || value === undefined) return [];
-              if(typeof value === 'string') return JSON.parse(value || '[]');
-              if(typeof value === 'object') return value;
-          } catch (err) {
-              return [];
-          }
-        else
-            return value || [];
+        try {
+          if (value === null || value === undefined) return [];
+          if (typeof value === 'string') return JSON.parse(value || '[]');
+          if (typeof value === 'object') return value;
+        } catch (err) {
+          return [];
+        }
+      else return value || [];
     },
     formatCascade() {
       const formatted = [];
@@ -140,7 +139,8 @@ export default createComponent({
     emit(event) {
       if (this.dataType === 'text') {
         this.$emit(event, this.getColumnValue(0), this.getColumnIndex(0));
-        'confirm' === event && this.$emit('update:pvalue', this.getColumnValue(0));
+        event === 'confirm' &&
+          this.$emit('update:pvalue', this.getColumnValue(0));
       } else {
         let values = this.getValues();
 
@@ -152,7 +152,7 @@ export default createComponent({
         }
 
         this.$emit(event, values, this.getIndexes());
-        'confirm' === event && this.$emit('update:pvalue', values);
+        event === 'confirm' && this.$emit('update:pvalue', values);
       }
     },
 
@@ -294,7 +294,7 @@ export default createComponent({
       try {
         this.$parent.closeModal();
       } catch (error) {
-        console.error(error);
+        // console.error(error);
       }
     },
 
@@ -303,7 +303,7 @@ export default createComponent({
       try {
         this.$parent.closeModal();
       } catch (error) {
-        console.error(error);
+        // console.error(error);
       }
     },
 
