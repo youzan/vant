@@ -1,7 +1,7 @@
 ### 基本用法
 
 ```html
-<van-popup-combination title="标题">
+<van-popup-combination>
   <template #reference>
     <van-button type="primary" text="触发弹出框组件，可删除替换"></van-button>
   </template>
