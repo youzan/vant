@@ -19,6 +19,15 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 
 ## Details
 
+### [v4.0.3](https://github.com/vant-ui/vant/compare/v4.0.2...v4.0.3)
+
+`2022-12-13`
+
+**Bug Fixes**
+
+- Field: failed to dynamically set empty label [#11373](https://github.com/vant-ui/vant/issues/11373)
+- ImagePreview: fix loading when previewing images [#11376](https://github.com/vant-ui/vant/issues/11376)
+
 ### [v4.0.2](https://github.com/vant-ui/vant/compare/v4.0.1...v4.0.2)
 
 `2022-12-03`

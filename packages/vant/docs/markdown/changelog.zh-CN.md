@@ -19,6 +19,15 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 
 ## 更新内容
 
+### [v4.0.3](https://github.com/vant-ui/vant/compare/v4.0.2...v4.0.3)
+
+`2022-12-13`
+
+**Bug Fixes**
+
+- Field: 修复动态设置空的 label 不生效的问题 [#11373](https://github.com/vant-ui/vant/issues/11373)
+- ImagePreview: 修复图片可能加载失败的问题 [#11376](https://github.com/vant-ui/vant/issues/11376)
+
 ### [v4.0.2](https://github.com/vant-ui/vant/compare/v4.0.1...v4.0.2)
 
 `2022-12-03`
