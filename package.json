@@ -1,6 +1,6 @@
 {
   "name": "@lcap/mobile-ui",
-  "version": "0.12.20",
+  "version": "0.12.21",
   "lcapname": "@lcap/mobile-ui",
   "lcapversion": "0.6.3",
   "description": "Mobile UI Components built on Vue",
@@ -42,7 +42,7 @@
     "deploy:online": "node ./scripts/lcap && vusion deploy --framework @lcap/mobile-ui dist-theme && node bin/deploy-screenshots && node bin/deploy-lcp-images --platform=http://netease-template.lcap.163yun.com",
     "prepublishOnly": "npm run build:vusion && git add .",
     "postpublish": "npm run deploy:online",
-    "deploy:qz": "lcap deploy dist-theme --platform=https://defaulttenant.lcap.qz.163yun.com --username=admin --password=Netease123"
+    "deploy:qz": "lcap deploy dist-theme --platform=https://defaulttenant.lcap.qz.163yun.com --username=admin --password=Netease123 && node bin/deploy-lcp-images --platform=https://defaulttenant.lcap.qz.163yun.com"
   },
   "husky": {
     "hooks": {
