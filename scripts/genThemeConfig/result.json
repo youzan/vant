@@ -437,7 +437,7 @@
             {
                 "id": "60830a5b-04b6-4851-b085-24213730533b",
                 "name": "van-swipe",
-                "title": "轮播",
+                "title": "幻灯片",
                 "toPosition": "swipe",
                 "type": [],
                 "cssProperty": {
@@ -1038,7 +1038,7 @@
                     }
                 },
                 "preview": {
-                    "template": "<div><van-button @click=\"onOpen\">Popup</van-button><van-dialog safe-area-inset-bottom ref=\"dialogh5\">\n  <div vusion-slot-name=\"default\" vusion-disabled-copy style=\"min-height: 100px;\" :vusion-disabled-cut=\"true\" env=\"alone\">内容</div>\n  <template #footer>\n    <van-button\n      :vusion-disabled-cut=\"true\"\n   @click=\"onclose\"   size=\"large\"\n      class=\"van-button van-button--van-default van-button--van-large van-dialog__cancel\"\n      text=\"取消\"\n    ></van-button>\n    <van-button\n  @click=\"onclose\"    :vusion-disabled-cut=\"true\"\n      size=\"large\"\n      class=\"van-button van-button--van-default van-button--van-large van-dialog__confirm van-hairline--van-left\"\n      text=\"确认\"\n    ></van-button>\n  </template>\n</van-dialog></div>\n\n",
+                    "template": "<div><van-button @click=\"onOpen\">Dialog</van-button><van-dialog safe-area-inset-bottom ref=\"dialogh5\">\n  <div vusion-slot-name=\"default\" vusion-disabled-copy style=\"min-height: 100px;\" :vusion-disabled-cut=\"true\" env=\"alone\">内容</div>\n  <template #footer>\n    <van-button\n      :vusion-disabled-cut=\"true\"\n   @click=\"onclose\"   size=\"large\"\n      class=\"van-button van-button--van-default van-button--van-large van-dialog__cancel\"\n      text=\"取消\"\n    ></van-button>\n    <van-button\n  @click=\"onclose\"    :vusion-disabled-cut=\"true\"\n      size=\"large\"\n      class=\"van-button van-button--van-default van-button--van-large van-dialog__confirm van-hairline--van-left\"\n      text=\"确认\"\n    ></van-button>\n  </template>\n</van-dialog></div>\n\n",
                     "script": "export default {\n    data() {\n        return {\n            showpopup: false,\n        };\n    },\n    methods: {\n        onOpen() {\n            this.$refs.dialogh5.openModal();\n        },\n    onclose() {\n            this.$refs.dialogh5.closeModal();\n        },},\n};"
                 }
             },

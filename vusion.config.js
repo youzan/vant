@@ -33,7 +33,7 @@ module.exports = {
             { group: 'Navigation', show: true, name: 'tabbar', alias: '标签栏' },
             { group: 'Display', show: true, name: 'button', alias: '按钮' },
             { group: 'Display', show: true, name: 'image', alias: '图片' },
-            { group: 'Display', show: true, name: 'swipe', alias: '轮播' },
+            { group: 'Display', show: true, name: 'swipe', alias: '幻灯片' },
             { group: 'Display', show: true, name: 'tabs', alias: '选项卡' },
             { group: 'Display', show: true, name: 'text', alias: '文本' },
             { group: 'Display', show: true, name: 'link', alias: '链接', vusion: true },
