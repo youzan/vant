@@ -7,7 +7,7 @@ export { datePickerProps } from './DatePicker';
 export type { DatePickerProps };
 export type { DatePickerColumnType } from './DatePicker';
 
-declare module 'vue' {
+declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     VanDatePicker: typeof DatePicker;
   }

@@ -7,7 +7,7 @@ export { circleProps } from './Circle';
 export type { CircleProps, CircleStartPosition } from './Circle';
 export type { CircleThemeVars } from './types';
 
-declare module 'vue' {
+declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     VanCircle: typeof Circle;
   }

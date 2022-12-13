@@ -10,7 +10,7 @@ export type {
 } from './ConfigProvider';
 export type { ConfigProviderThemeVars } from './types';
 
-declare module 'vue' {
+declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     VanConfigProvider: typeof ConfigProvider;
   }

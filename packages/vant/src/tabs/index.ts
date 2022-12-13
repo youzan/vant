@@ -7,7 +7,7 @@ export { tabsProps } from './Tabs';
 export type { TabsProps };
 export type { TabsType, TabsInstance, TabsThemeVars } from './types';
 
-declare module 'vue' {
+declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     VanTabs: typeof Tabs;
   }

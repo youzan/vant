@@ -15,7 +15,7 @@ export type {
   ImagePreviewScaleEventParams,
 } from './types';
 
-declare module 'vue' {
+declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     VanImagePreview: typeof ImagePreview;
   }

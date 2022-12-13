@@ -14,7 +14,7 @@ export {
 export type { NotifyProps } from './Notify';
 export type { NotifyType, NotifyOptions, NotifyThemeVars } from './types';
 
-declare module 'vue' {
+declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     VanNotify: typeof Notify;
   }

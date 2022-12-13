@@ -6,7 +6,7 @@ export default Grid;
 export { gridProps } from './Grid';
 export type { GridProps, GridDirection } from './Grid';
 
-declare module 'vue' {
+declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     VanGrid: typeof Grid;
   }

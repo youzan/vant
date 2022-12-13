@@ -7,7 +7,7 @@ export { dividerProps } from './Divider';
 export type { DividerProps, DividerContentPosition } from './Divider';
 export type { DividerThemeVars } from './types';
 
-declare module 'vue' {
+declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     VanDivider: typeof Divider;
   }

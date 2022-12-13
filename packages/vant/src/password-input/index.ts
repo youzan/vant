@@ -7,7 +7,7 @@ export { passwordInputProps } from './PasswordInput';
 export type { PasswordInputProps } from './PasswordInput';
 export type { PasswordInputThemeVars } from './types';
 
-declare module 'vue' {
+declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     VanPasswordInput: typeof PasswordInput;
   }

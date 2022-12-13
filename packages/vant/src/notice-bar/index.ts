@@ -11,7 +11,7 @@ export type {
   NoticeBarThemeVars,
 } from './types';
 
-declare module 'vue' {
+declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     VanNoticeBar: typeof NoticeBar;
   }

@@ -7,7 +7,7 @@ export { imageProps } from './Image';
 export type { ImageFit, ImageProps } from './Image';
 export type { ImageThemeVars } from './types';
 
-declare module 'vue' {
+declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     VanImage: typeof Image;
   }

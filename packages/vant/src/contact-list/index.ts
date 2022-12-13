@@ -7,7 +7,7 @@ export { contactListProps } from './ContactList';
 export type { ContactListItem, ContactListProps } from './ContactList';
 export type { ContactListThemeVars } from './types';
 
-declare module 'vue' {
+declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     VanContactList: typeof ContactList;
   }

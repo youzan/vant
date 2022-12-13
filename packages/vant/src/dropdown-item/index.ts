@@ -11,7 +11,7 @@ export type {
   DropdownItemThemeVars,
 } from './types';
 
-declare module 'vue' {
+declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     VanDropdownItem: typeof DropdownItem;
   }

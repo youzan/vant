@@ -6,7 +6,7 @@ export default Row;
 export { rowProps } from './Row';
 export type { RowProps, RowAlign, RowJustify } from './Row';
 
-declare module 'vue' {
+declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     VanRow: typeof Row;
   }

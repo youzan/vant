@@ -7,7 +7,7 @@ export { stepperProps } from './Stepper';
 export type { StepperTheme, StepperProps } from './Stepper';
 export type { StepperThemeVars } from './types';
 
-declare module 'vue' {
+declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     VanStepper: typeof Stepper;
   }

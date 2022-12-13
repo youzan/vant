@@ -7,7 +7,7 @@ export { stepsProps } from './Steps';
 export type { StepsProps, StepsDirection } from './Steps';
 export type { StepsThemeVars } from './types';
 
-declare module 'vue' {
+declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     VanSteps: typeof Steps;
   }

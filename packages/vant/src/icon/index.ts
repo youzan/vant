@@ -6,7 +6,7 @@ export default Icon;
 export { iconProps } from './Icon';
 export type { IconProps } from './Icon';
 
-declare module 'vue' {
+declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     VanIcon: typeof Icon;
   }

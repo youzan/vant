@@ -7,7 +7,7 @@ export { cellProps } from './Cell';
 export type { CellSize, CellProps, CellArrowDirection } from './Cell';
 export type { CellThemeVars } from './types';
 
-declare module 'vue' {
+declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     VanCell: typeof Cell;
   }

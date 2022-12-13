@@ -7,7 +7,7 @@ export { couponCellProps } from './CouponCell';
 export type { CouponCellProps } from './CouponCell';
 export type { CouponCellThemeVars } from './types';
 
-declare module 'vue' {
+declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     VanCouponCell: typeof CouponCell;
   }

@@ -7,7 +7,7 @@ export { actionBarButtonProps } from './ActionBarButton';
 export type { ActionBarButtonProps } from './ActionBarButton';
 export type { ActionBarButtonThemeVars } from './types';
 
-declare module 'vue' {
+declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     VanActionBarButton: typeof ActionBarButton;
   }

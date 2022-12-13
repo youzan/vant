@@ -7,7 +7,7 @@ export { couponListProps } from './CouponList';
 export type { CouponListProps } from './CouponList';
 export type { CouponListThemeVars } from './types';
 
-declare module 'vue' {
+declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     VanCouponList: typeof CouponList;
   }

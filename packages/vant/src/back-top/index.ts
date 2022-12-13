@@ -8,7 +8,7 @@ export { backTopProps } from './BackTop';
 export type { BackTopProps } from './BackTop';
 export type { BackTopThemeVars } from './types';
 
-declare module 'vue' {
+declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     VanBackTop: typeof BackTop;
   }

@@ -7,7 +7,7 @@ export { pickerGroupProps } from './PickerGroup';
 export type { PickerGroupProps };
 export type { PickerGroupThemeVars } from './types';
 
-declare module 'vue' {
+declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     VanPickerGroup: typeof PickerGroup;
   }

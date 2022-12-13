@@ -17,7 +17,7 @@ export type {
   PickerConfirmEventParams,
 } from './types';
 
-declare module 'vue' {
+declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     VanPicker: typeof Picker;
   }

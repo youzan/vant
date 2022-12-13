@@ -12,7 +12,7 @@ export type {
   CheckboxLabelPosition,
 } from './types';
 
-declare module 'vue' {
+declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     VanCheckbox: typeof Checkbox;
   }

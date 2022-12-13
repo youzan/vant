@@ -7,7 +7,7 @@ export { navBarProps } from './NavBar';
 export type { NavBarProps } from './NavBar';
 export type { NavBarThemeVars } from './types';
 
-declare module 'vue' {
+declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     VanNavBar: typeof NavBar;
   }

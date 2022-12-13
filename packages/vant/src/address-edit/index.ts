@@ -12,7 +12,7 @@ export type {
   AddressEditSearchItem,
 } from './types';
 
-declare module 'vue' {
+declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     VanAddressEdit: typeof AddressEdit;
   }

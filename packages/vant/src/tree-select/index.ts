@@ -11,7 +11,7 @@ export type {
 } from './TreeSelect';
 export type { TreeSelectThemeVars } from './types';
 
-declare module 'vue' {
+declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     VanTreeSelect: typeof TreeSelect;
   }

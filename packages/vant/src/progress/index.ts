@@ -7,7 +7,7 @@ export { progressProps } from './Progress';
 export type { ProgressProps };
 export type { ProgressInstance, ProgressThemeVars } from './types';
 
-declare module 'vue' {
+declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     VanProgress: typeof Progress;
   }

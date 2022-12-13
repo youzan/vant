@@ -13,7 +13,7 @@ export type {
   PopoverPlacement,
 } from './types';
 
-declare module 'vue' {
+declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     VanPopover: typeof Popover;
   }

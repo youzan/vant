@@ -7,7 +7,7 @@ export { dropdownMenuProps } from './DropdownMenu';
 export type { DropdownMenuProps };
 export type { DropdownMenuDirection, DropdownMenuThemeVars } from './types';
 
-declare module 'vue' {
+declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     VanDropdownMenu: typeof DropdownMenu;
   }

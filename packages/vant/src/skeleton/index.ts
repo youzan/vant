@@ -40,7 +40,7 @@ export type {
   SkeletonAvatarShape,
 } from './types';
 
-declare module 'vue' {
+declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     VanSkeleton: typeof Skeleton;
     VanSkeletonImage: typeof SkeletonImage;

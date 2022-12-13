@@ -7,7 +7,7 @@ export { sliderProps } from './Slider';
 export type { SliderProps } from './Slider';
 export type { SliderThemeVars } from './types';
 
-declare module 'vue' {
+declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     VanSlider: typeof Slider;
   }

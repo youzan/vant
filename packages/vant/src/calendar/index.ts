@@ -13,7 +13,7 @@ export type {
   CalendarThemeVars,
 } from './types';
 
-declare module 'vue' {
+declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     VanCalendar: typeof Calendar;
   }

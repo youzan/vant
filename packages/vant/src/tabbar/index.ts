@@ -7,7 +7,7 @@ export { tabbarProps } from './Tabbar';
 export type { TabbarProps } from './Tabbar';
 export type { TabbarThemeVars } from './types';
 
-declare module 'vue' {
+declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     VanTabbar: typeof Tabbar;
   }

@@ -7,7 +7,7 @@ export { switchProps } from './Switch';
 export type { SwitchProps } from './Switch';
 export type { SwitchThemeVars } from './types';
 
-declare module 'vue' {
+declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     VanSwitch: typeof Switch;
   }

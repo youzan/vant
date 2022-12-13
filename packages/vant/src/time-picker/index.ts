@@ -7,7 +7,7 @@ export { timePickerProps } from './TimePicker';
 export type { TimePickerProps };
 export type { TimePickerColumnType } from './TimePicker';
 
-declare module 'vue' {
+declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     VanTimePicker: typeof TimePicker;
   }

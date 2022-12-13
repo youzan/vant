@@ -7,7 +7,7 @@ export { pullRefreshProps } from './PullRefresh';
 export type { PullRefreshProps } from './PullRefresh';
 export type { PullRefreshThemeVars } from './types';
 
-declare module 'vue' {
+declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     VanPullRefresh: typeof PullRefresh;
   }

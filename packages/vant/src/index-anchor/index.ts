@@ -7,7 +7,7 @@ export { indexAnchorProps } from './IndexAnchor';
 export type { IndexAnchorProps } from './IndexAnchor';
 export type { IndexAnchorThemeVars } from './types';
 
-declare module 'vue' {
+declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     VanIndexAnchor: typeof IndexAnchor;
   }

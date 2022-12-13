@@ -2,7 +2,7 @@ import 'vue';
 
 type EventHandler = (...args: any[]) => void;
 
-declare module 'vue' {
+declare module '@vue/runtime-core' {
   interface ComponentCustomProps {
     id?: string;
     role?: string;

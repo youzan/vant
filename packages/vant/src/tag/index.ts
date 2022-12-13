@@ -7,7 +7,7 @@ export { tagProps } from './Tag';
 export type { TagProps } from './Tag';
 export type { TagSize, TagType, TagThemeVars } from './types';
 
-declare module 'vue' {
+declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     VanTag: typeof Tag;
   }

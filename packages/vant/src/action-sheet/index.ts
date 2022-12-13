@@ -7,7 +7,7 @@ export { actionSheetProps } from './ActionSheet';
 export type { ActionSheetProps, ActionSheetAction } from './ActionSheet';
 export type { ActionSheetThemeVars } from './types';
 
-declare module 'vue' {
+declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     VanActionSheet: typeof ActionSheet;
   }

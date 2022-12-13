@@ -7,7 +7,7 @@ export { badgeProps } from './Badge';
 export type { BadgeProps, BadgePosition } from './Badge';
 export type { BadgeThemeVars } from './types';
 
-declare module 'vue' {
+declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     VanBadge: typeof Badge;
   }

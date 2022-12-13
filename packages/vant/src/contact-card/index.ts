@@ -7,7 +7,7 @@ export { contactCardProps } from './ContactCard';
 export type { ContactCardType, ContactCardProps } from './ContactCard';
 export type { ContactCardThemeVars } from './types';
 
-declare module 'vue' {
+declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     VanContactCard: typeof ContactCard;
   }

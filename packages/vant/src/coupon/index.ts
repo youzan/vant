@@ -6,7 +6,7 @@ export default Coupon;
 export type { CouponInfo } from './Coupon';
 export type { CouponThemeVars } from './types';
 
-declare module 'vue' {
+declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     VanCoupon: typeof Coupon;
   }

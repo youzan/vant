@@ -12,7 +12,7 @@ export type {
   PopupCloseIconPosition,
 } from './types';
 
-declare module 'vue' {
+declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     VanPopup: typeof Popup;
   }

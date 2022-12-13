@@ -5,7 +5,7 @@ export const Step = withInstall(_Step);
 export default Step;
 export type { StepThemeVars } from './types';
 
-declare module 'vue' {
+declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     VanStep: typeof Step;
   }

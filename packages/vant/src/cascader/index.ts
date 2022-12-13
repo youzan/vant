@@ -11,7 +11,7 @@ export type {
   CascaderFieldNames,
 } from './types';
 
-declare module 'vue' {
+declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     VanCascader: typeof Cascader;
   }

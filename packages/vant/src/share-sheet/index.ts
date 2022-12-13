@@ -11,7 +11,7 @@ export type {
 } from './ShareSheet';
 export type { ShareSheetThemeVars } from './types';
 
-declare module 'vue' {
+declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     VanShareSheet: typeof ShareSheet;
   }

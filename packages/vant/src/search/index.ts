@@ -7,7 +7,7 @@ export { searchProps } from './Search';
 export type { SearchProps };
 export type { SearchShape, SearchInstance, SearchThemeVars } from './types';
 
-declare module 'vue' {
+declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     VanSearch: typeof Search;
   }

@@ -7,7 +7,7 @@ export { sidebarItemProps } from './SidebarItem';
 export type { SidebarItemProps } from './SidebarItem';
 export type { SidebarItemThemeVars } from './types';
 
-declare module 'vue' {
+declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     VanSidebarItem: typeof SidebarItem;
   }

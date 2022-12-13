@@ -7,7 +7,7 @@ export { formProps } from './Form';
 export type { FormProps };
 export type { FormInstance } from './types';
 
-declare module 'vue' {
+declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     VanForm: typeof Form;
   }

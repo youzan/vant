@@ -7,7 +7,7 @@ export { emptyProps } from './Empty';
 export type { EmptyProps } from './Empty';
 export type { EmptyThemeVars } from './types';
 
-declare module 'vue' {
+declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     VanEmpty: typeof Empty;
   }

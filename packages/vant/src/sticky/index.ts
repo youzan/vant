@@ -7,7 +7,7 @@ export { stickyProps } from './Sticky';
 export type { StickyProps, StickyPosition } from './Sticky';
 export type { StickyThemeVars } from './types';
 
-declare module 'vue' {
+declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     VanSticky: typeof Sticky;
   }

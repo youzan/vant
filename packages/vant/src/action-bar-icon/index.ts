@@ -7,7 +7,7 @@ export { actionBarIconProps } from './ActionBarIcon';
 export type { ActionBarIconProps } from './ActionBarIcon';
 export type { ActionBarIconThemeVars } from './types';
 
-declare module 'vue' {
+declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     VanActionBarIcon: typeof ActionBarIcon;
   }

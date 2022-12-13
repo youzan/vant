@@ -10,7 +10,7 @@ export type {
   CollapseToggleAllOptions,
 } from './Collapse';
 
-declare module 'vue' {
+declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     VanCollapse: typeof Collapse;
   }

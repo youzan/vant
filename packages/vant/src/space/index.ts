@@ -6,7 +6,7 @@ export default Space;
 export { spaceProps } from './Space';
 export type { SpaceProps, SpaceSize, SpaceAlign } from './Space';
 
-declare module 'vue' {
+declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     VanSpace: typeof Space;
   }

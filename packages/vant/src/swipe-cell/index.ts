@@ -11,7 +11,7 @@ export type {
   SwipeCellInstance,
 } from './types';
 
-declare module 'vue' {
+declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     VanSwipeCell: typeof SwipeCell;
   }

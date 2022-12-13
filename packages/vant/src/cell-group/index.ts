@@ -7,7 +7,7 @@ export { cellGroupProps } from './CellGroup';
 export type { CellGroupProps } from './CellGroup';
 export type { CellGroupThemeVars } from './types';
 
-declare module 'vue' {
+declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     VanCellGroup: typeof CellGroup;
   }

@@ -7,7 +7,7 @@ export { areaProps } from './Area';
 export type { AreaProps } from './Area';
 export type { AreaList, AreaInstance } from './types';
 
-declare module 'vue' {
+declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     VanArea: typeof Area;
   }

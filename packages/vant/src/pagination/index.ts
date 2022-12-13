@@ -7,7 +7,7 @@ export { paginationProps } from './Pagination';
 export type { PaginationMode, PaginationProps } from './Pagination';
 export type { PaginationThemeVars } from './types';
 
-declare module 'vue' {
+declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     VanPagination: typeof Pagination;
   }

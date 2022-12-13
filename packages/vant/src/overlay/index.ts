@@ -7,7 +7,7 @@ export { overlayProps } from './Overlay';
 export type { OverlayProps } from './Overlay';
 export type { OverlayThemeVars } from './types';
 
-declare module 'vue' {
+declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     VanOverlay: typeof Overlay;
   }

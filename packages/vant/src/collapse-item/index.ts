@@ -7,7 +7,7 @@ export { collapseItemProps } from './CollapseItem';
 export type { CollapseItemProps } from './CollapseItem';
 export type { CollapseItemInstance, CollapseItemThemeVars } from './types';
 
-declare module 'vue' {
+declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     VanCollapseItem: typeof CollapseItem;
   }

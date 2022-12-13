@@ -7,7 +7,7 @@ export { loadingProps } from './Loading';
 export type { LoadingType, LoadingProps } from './Loading';
 export type { LoadingThemeVars } from './types';
 
-declare module 'vue' {
+declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     VanLoading: typeof Loading;
   }

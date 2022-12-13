@@ -7,7 +7,7 @@ export { indexBarProps } from './IndexBar';
 export type { IndexBarProps };
 export type { IndexBarInstance, IndexBarThemeVars } from './types';
 
-declare module 'vue' {
+declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     VanIndexBar: typeof IndexBar;
   }

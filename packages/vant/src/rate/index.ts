@@ -7,7 +7,7 @@ export { rateProps } from './Rate';
 export type { RateProps } from './Rate';
 export type { RateThemeVars } from './types';
 
-declare module 'vue' {
+declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     VanRate: typeof Rate;
   }

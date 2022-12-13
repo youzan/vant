@@ -7,7 +7,7 @@ export { gridItemProps } from './GridItem';
 export type { GridItemProps } from './GridItem';
 export type { GridItemThemeVars } from './types';
 
-declare module 'vue' {
+declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     VanGridItem: typeof GridItem;
   }

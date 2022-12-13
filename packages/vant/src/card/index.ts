@@ -7,7 +7,7 @@ export { cardProps } from './Card';
 export type { CardProps } from './Card';
 export type { CardThemeVars } from './types';
 
-declare module 'vue' {
+declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     VanCard: typeof Card;
   }

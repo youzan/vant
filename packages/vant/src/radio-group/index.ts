@@ -6,7 +6,7 @@ export default RadioGroup;
 export { radioGroupProps } from './RadioGroup';
 export type { RadioGroupProps, RadioGroupDirection } from './RadioGroup';
 
-declare module 'vue' {
+declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     VanRadioGroup: typeof RadioGroup;
   }

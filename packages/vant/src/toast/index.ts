@@ -24,7 +24,7 @@ export type {
   ToastWordBreak,
 } from './types';
 
-declare module 'vue' {
+declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     VanToast: typeof Toast;
   }

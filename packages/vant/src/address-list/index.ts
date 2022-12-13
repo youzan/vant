@@ -8,7 +8,7 @@ export type { AddressListProps } from './AddressList';
 export type { AddressListAddress } from './AddressListItem';
 export type { AddressListThemeVars } from './types';
 
-declare module 'vue' {
+declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     VanAddressList: typeof AddressList;
   }

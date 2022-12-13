@@ -7,7 +7,7 @@ export { submitBarProps } from './SubmitBar';
 export type { SubmitBarProps, SubmitBarTextAlign } from './SubmitBar';
 export type { SubmitBarThemeVars } from './types';
 
-declare module 'vue' {
+declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     VanSubmitBar: typeof SubmitBar;
   }

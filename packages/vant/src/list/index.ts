@@ -7,7 +7,7 @@ export { listProps } from './List';
 export type { ListProps };
 export type { ListInstance, ListDirection, ListThemeVars } from './types';
 
-declare module 'vue' {
+declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     VanList: typeof List;
   }

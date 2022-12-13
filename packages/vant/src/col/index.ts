@@ -6,7 +6,7 @@ export default Col;
 export { colProps } from './Col';
 export type { ColProps } from './Col';
 
-declare module 'vue' {
+declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     VanCol: typeof Col;
   }
