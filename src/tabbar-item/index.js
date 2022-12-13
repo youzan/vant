@@ -1,5 +1,5 @@
 // Utils
-import { createNamespace, isObject, isDef } from '../utils';
+import { createNamespace, isObject, isDef, isEmpty } from '../utils';
 import { route, routeProps } from '../utils/router';
 
 // Mixins
@@ -57,10 +57,15 @@ export default createComponent({
         const { to, destination, $route } = this;
         // const config = isObject(to) ? to : { path: to };
         const config = isObject(destination) ? destination : { path: this.newdest(destination) };
-
+        const empty = isEmpty($route.query);
         return !!$route.matched.find((r) => {
+          let path;
+          if (empty) {
+            path = r.path === '' ? '/' : r.path;
+          } else {
+            path = $route.fullPath
+          }
           // vue-router 3.x $route.matched[0].path is empty in / and its children paths
-          const path = r.path === '' ? '/' : r.path;
           if (config.path === '/') return false;
           const pathMatched = config.path === path;
           const nameMatched = isDef(config.name) && config.name === r.name;
