@@ -204,9 +204,11 @@ export default defineComponent({
     // so the initial complete state should be checked.
     // https://github.com/youzan/vant/issues/11335
     onMounted(() => {
-      if (imageRef.value?.complete) {
-        onLoad();
-      }
+      nextTick(() => {
+        if (imageRef.value?.complete) {
+          onLoad();
+        }
+      });
     });
 
     return () => (
