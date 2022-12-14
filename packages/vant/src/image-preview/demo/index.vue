@@ -131,7 +131,7 @@ const showFunctionCall = (options: Partial<ImagePreviewOptions> = {}) => {
   <demo-block card :title="t('useImageSlot')">
     <van-cell
       is-link
-      :value="t('useImageSlot')"
+      :title="t('useImageSlot')"
       @click="showComponentCallSlot"
     />
     <van-image-preview v-model:show="showSlot" :images="imagesSlot">
