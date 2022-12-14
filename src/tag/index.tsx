@@ -61,7 +61,7 @@ function Tag(
       }}
     />
   );
-
+  const designer = ctx.parent?.$env?.VUE_APP_DESIGNER;
   return (
     <transition name={props.closeable ? 'van-fade' : null}>
       <span
@@ -70,11 +70,9 @@ function Tag(
         class={bem([classes, type])}
         {...inherit(ctx, true)}
       >
-        {slots.default?.() ? (
-          slots.default?.()
-        ) : (
-          <VanEmptyCol vusion-slot-name="default"></VanEmptyCol>
-        )}
+        {slots.default?.()
+          ? slots.default?.()
+          : designer && <VanEmptyCol vusion-slot-name="default"></VanEmptyCol>}
         {CloseIcon}
       </span>
     </transition>
