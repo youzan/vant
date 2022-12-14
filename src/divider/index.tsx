@@ -42,7 +42,7 @@ function Divider(
       ) : slots.default ? (
         slots.default()
       ) : (
-        designer && !ctx.data?.attrs?.notitle && (
+        designer && (
           <span vusion-slot-name="default">
             <VanEmptyCol></VanEmptyCol>
           </span>

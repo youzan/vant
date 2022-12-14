@@ -101,7 +101,7 @@ export default {
             {this.slots('head')}
             {(ifDesigner && !noTitle &&!this.slots('head')) ? <VanEmptyCol /> : null}
           </div>
-          { split ? <van-divider notitle={true}></van-divider> : null }
+          { split ? <div class={bem('divider')}></div> : null }
           <div class={bem('content')} vusion-slot-name="default">
             {this.slots()}
             {(ifDesigner && !this.slots()) ? <VanEmptyCol /> : null}
