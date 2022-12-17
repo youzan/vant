@@ -16,6 +16,8 @@
 <script>
 import Swiper from 'swiper/swiper-bundle.esm.js';
 import 'swiper/swiper-bundle.min.css';
+import { isFunction } from '../utils';
+import { formatResult } from '../utils/format/data-source';
 
 export default {
     name: 'van-gallery',
@@ -86,13 +88,13 @@ export default {
         }
       },
       async update() {
-        if (typeof (this.dataSource) === 'function') {
+        if (isFunction(this.dataSource)) {
             try {
                 const res = await this.dataSource({
                     page: 1,
                     size: 1000,
                 });
-                this.options = (res.content);
+                this.options = formatResult(res);
             } catch (error) {
                 console.error(error);
             }

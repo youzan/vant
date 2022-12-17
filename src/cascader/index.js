@@ -1,4 +1,5 @@
 import { createNamespace, isFunction } from '../utils';
+import { formatResult } from '../utils/format/data-source';
 import Tab from '../tab';
 import Tabs from '../tabs';
 import Icon from '../icon';
@@ -169,7 +170,7 @@ export default createComponent({
             page: 1,
             size: 1000
           });
-          this.options = res.content;
+          this.options = formatResult(res);
         } catch (error) {
           console.error(error);
         }

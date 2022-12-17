@@ -1,4 +1,5 @@
 import { createNamespace , isFunction } from '../utils';
+import { formatResult } from '../utils/format/data-source';
 import { FieldMixin } from '../mixins/field';
 import { ParentMixin } from '../mixins/relation';
 
@@ -64,7 +65,7 @@ export default createComponent({
               page: 1,
               size: 1000
             });
-            this.options = (res.content);
+            this.options = formatResult(res);
           } catch (error) {
             console.error(error);
           }
@@ -80,7 +81,7 @@ export default createComponent({
       </div>)}
       {(!this.slots()&& this.options?.length===0 &&this.inDesigner ) && <div style="text-align: center;width:100%">请绑定数据源或插入子节点</div>}
       {this.slots()}
-  </div> 
+  </div>
     // if (this.dataSource && this.options?.length >= 0) {
     //   return <div class={bem([this.direction])}>
     //     {/* <van-linear-layout direction="horizontal" layout="inline"> */}

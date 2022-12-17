@@ -1,4 +1,5 @@
 import { createNamespace , isFunction } from '../utils';
+import { formatResult } from '../utils/format/data-source';
 import { FieldMixin } from '../mixins/field';
 import { ParentMixin } from '../mixins/relation';
 
@@ -93,7 +94,7 @@ export default createComponent({
             page: 1,
             size: 1000
           });
-          this.options = (res.content);
+          this.options = formatResult(res);
         } catch (error) {
           console.error(error);
         }

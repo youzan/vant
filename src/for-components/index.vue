@@ -17,6 +17,7 @@
 
 <script>
 import { isFunction } from '../utils';
+import { formatResult } from '../utils/format/data-source';
 import VanForComponentsItem from './item.vue'
 
 export default {
@@ -96,7 +97,7 @@ export default {
               page: 1,
               size: 1000
             });
-            this.options = this.divide(Array.isArray(res) ? res : res.content);
+            this.options = this.divide(formatResult(res));
           } catch (error) {
             console.error(error);
           }
