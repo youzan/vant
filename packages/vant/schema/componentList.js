@@ -88,7 +88,23 @@ const componentList = {
               type: 'boolean',
               // title: _key,
               option: false, // 是否必须
-              // valueType: '', 根据 type 生成
+              // valueType: '', //根据 enum 或者 type 生成
+            },
+            name:{
+              // 仅枚举值时添加
+              enum: [],
+              type: 'any',
+              // title: _key,
+              option: false, // 是否必须
+              // valueType: '', // 根据 enum 或者 type 生成
+            },
+            shape:{
+               // 仅枚举值时添加
+               enum: ['round','square'],
+               type: 'string',
+               // title:,'' _key,
+               option: false, // 是否必须
+               // valueType: '', // 根据 enum 或者 type 生成
             }
           },
           events: {
