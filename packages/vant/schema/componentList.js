@@ -82,16 +82,17 @@ const componentList = {
           key: 'checkbox',
           children: true,
           props: {
-            v-model:{
+            'v-model':{
+              // 仅枚举值时添加
               enum: [],
-              type: ,
-              title: _key,
-              option: key.includes('?'),
-              valueType: _valueType,
+              type: 'boolean',
+              // title: _key,
+              option: false, // 是否必须
+              // valueType: '', 根据 type 生成
             }
           },
           events: {
-            
+
           },
           // map: component,
         }
