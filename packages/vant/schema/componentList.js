@@ -80,7 +80,7 @@ const componentList = {
       groupKey: 'Basic Components',
       groupName: '基础组件',
       schema: {
-          key: 'checkbox',
+          key: 'button',
           children: true,
           props: {
               type: {
@@ -157,7 +157,7 @@ const componentList = {
       groupKey: 'Basic Components',
       groupName: '基础组件',
       schema: {
-          key: 'checkbox',
+          key: 'cell',
           children: true,
           props: {
               title: {},
@@ -198,6 +198,31 @@ const componentList = {
           }
       }
   },
+  CellGroup : {
+    title: 'Cell 单元格',
+    description: '单元格为列表中的单个展示项。',
+    path: '/cell/Cell.tsx',
+    groupKey: 'Basic Components',
+    groupName: '基础组件',
+    schema: {
+        key: 'CellGroup',
+        children: true,
+        props: {
+            title: {},
+            insert: {type: 'boolean'},
+            border: {
+                type: 'boolean'
+            },
+        },
+        events: {
+            click: (event) => {}
+        },
+        slots: {
+            title: {},
+            default: {},
+        }
+    }
+},
   // image: {
   //     title: 'Image 图片',
   //     description: '增强版的 img 标签，提供多种图片填充模式，支持图片懒加载、加载中提示、加载失败提示。',
@@ -290,7 +315,7 @@ const componentList = {
       groupKey: 'Form Components',
       groupName: '表单组件',
       schema: {
-          key: 'checkbox',
+          key: 'checkboxGroup',
           children: true,
           props: {
               'v-model': {
