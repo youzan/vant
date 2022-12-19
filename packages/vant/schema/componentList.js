@@ -92,7 +92,8 @@ const componentList = {
             }
           },
           events: {
-
+            change:(checked)=>{},
+            click:(event)=>{}
           },
           // map: component,
         }
