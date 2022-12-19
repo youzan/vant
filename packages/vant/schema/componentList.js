@@ -66,13 +66,42 @@ const componentList = {
   //     groupName: '信息展示',
   //     isHidden: '1'
   // },
-  // badge: {
-  //     title: 'Badge 徽标',
-  //     description: '在右上角展示徽标数字或小红点。',
-  //     path: '/badge/Badge.tsx',
-  //     groupKey: 'Display Components',
-  //     groupName: '展示组件'
-  // },
+  badge: {
+      title: 'Badge 徽标',
+      description: '在右上角展示徽标数字或小红点。',
+      path: '/badge/Badge.tsx',
+      groupKey: 'Display Components',
+      groupName: '展示组件',
+      schema: {
+        key: 'badge',
+        children: true,
+        props: {
+            content: {},
+            color: {
+
+            },
+            dot: {
+              type: 'boolean'
+            },
+            max:{type:'number'},
+            offset:{
+              type:'number'
+            },
+            'show-zero':{  type:'boolean'},
+            position :{
+              enum:['top-right','top-left', 'bottom-left', 'bottom-right']
+            },
+
+        },
+        events: {
+
+        },
+        slots: {
+            default: {},
+            content:{}
+        }
+      }
+  },
   button: {
       title: 'Button 按钮',
       description: '按钮用于触发一个操作，如提交表单。',
