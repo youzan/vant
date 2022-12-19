@@ -54,7 +54,7 @@ export default createComponent({
     },
     keytheme: {
       type: String,
-      default: 'custom',
+      default: 'native',
     },
     inputstyle: {
       type: String,
@@ -72,8 +72,6 @@ export default createComponent({
   computed: {
     readonlyforint() {
       return [
-        'text',
-        'password',
         'integer',
         'rndinteger',
         'card',
@@ -81,7 +79,7 @@ export default createComponent({
       ].includes(this.type);
     },
     shownumbertype() {
-      return this.keytheme === 'custom';
+      return this.keytheme === 'custom' || this.inputstyle === 'password';
     },
     extraKey() {
       switch (this.type) {
@@ -192,6 +190,9 @@ export default createComponent({
     },
     onTouchstartinput($event) {
       $event.stopPropagation();
+      if (this.readonly || this.disabled) {
+        return
+      }
       this.shownumber = true;
     },
   },
@@ -238,26 +239,28 @@ export default createComponent({
             onFocus={this.onFocus}
             onBlur={this.onBlur}
             // onMousedown={this.onMousedown}
-            onTouchstart={this.onTouchstartinput}
+            vusion-click-enabled
+            onClick={this.onTouchstartinput}
           />
         ) : null}
         {this.showClear() && (
           <Icon name="clear" class={bem('clear')} onTouchstart={this.onClear} />
         )}
-        {this.inputstyle === 'password' ? (
+        {(this.inputstyle === 'password') ? (
           <PasswordInput
             value={this.currentValue}
             length={this.maxlength}
-            focused={this.shownumber}
             onFocus={() => {
               this.shownumber = true;
             }}
+            vusion-click-enabled
+            onClick={this.onTouchstartinput}
           />
         ) : null}
         {this.shownumbertype ? (
           <NumberKeyboard
             vModel={this.currentValue}
-            closeButtonText={this.keyboardTheme === 'custom' ? '完成' : ''}
+            closeButtonText={'完成'}
             show={this.shownumber}
             title={this.keyboardTitle}
             randomKeyOrder={this.type === 'rndinteger'}

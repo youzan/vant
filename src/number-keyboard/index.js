@@ -175,7 +175,7 @@ export default createComponent({
           {titleLeft && <span class={bem('title-left')}>{titleLeft}</span>}
           {title && <h2 class={bem('title')}>{title}</h2>}
           {showClose && (
-            <button type="button" class={bem('close')} onClick={this.onClose}>
+            <button type="button" class={bem('close')} onClick={this.onClose} vusion-click-enabled>
               {closeButtonText}
             </button>
           )}

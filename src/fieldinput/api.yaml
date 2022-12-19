@@ -37,16 +37,20 @@
           title: 默认
         - value: password
           title: 格子
-      default: text
+      default: input
       description: 输入框样式
     - name: clearable
       title: 清除按钮
       type: boolean
       description: 开启并在输入框有内容时会显示清除按钮。
+      dependency:
+        - inputstyle: input
     - name: placeholder
       title: 占位符
       type: string
       description: 原生属性
+      dependency:
+        - inputstyle: input
     - name: readonly
       title: 只读
       type: boolean
@@ -61,10 +65,18 @@
       title: 输入最大长度
       type: string
       description: 输入最大长度
+      dependency:
+        - inputstyle: password
     - name: keyboard-title
       title: 键盘标题
       type: string
       description: 键盘标题
+      dependency:
+        - type: integer
+        - type: rndinteger
+        - type: point
+        - type: card
+        - inputstyle: password
     - name: keytheme
       title: 键盘样式
       type: string
@@ -74,7 +86,13 @@
         - value: custom
           title: 定制键盘
       default: native
-      description: 是否禁用
+      description: 键盘样式
+      dependency:
+        - type: integer
+        - type: rndinteger
+        - type: point
+        - type: card
+        - inputstyle: password
     - name: keyboard-theme
       title: 定制键盘布局
       type: string
@@ -85,6 +103,12 @@
           title: 定制
       default: default
       description: 定制键盘布局
+      dependency:
+        - type: integer
+        - type: rndinteger
+        - type: point
+        - type: card
+        - inputstyle: password
     - name: prefix
       title: 前缀图标
       type: string
