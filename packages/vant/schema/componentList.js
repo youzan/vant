@@ -159,8 +159,43 @@ const componentList = {
       schema: {
           key: 'checkbox',
           children: true,
-          props: {},
-          events: {}
+          props: {
+              title: {},
+              value: {},
+              label: {},
+              size: {},
+              icon: {},
+              'icon-prefix': {},
+              tag: {},
+              url: {},
+              to: {},
+              border: {
+                  type: 'boolean'
+              },
+              replace: { type: 'boolean' },
+              clickable: { type: 'boolean' },
+              'is-link': { type: 'boolean' },
+              required: { type: 'boolean' },
+              center: { type: 'boolean' },
+              'arrow-direction': {
+                  enum: ['right', 'left', 'up', 'down']
+              },
+              'title-style': {},
+              'title-class': {},
+              'value-class': {},
+              'label-class': {}
+          },
+          events: {
+              click: (event) => {}
+          },
+          slots: {
+              title: {},
+              value: {},
+              label: {},
+              icon: {},
+              'right-icon': {},
+              extra: {}
+          }
       }
   },
   // image: {
@@ -243,12 +278,8 @@ const componentList = {
               click: (event) => {}
           },
           slots: {
-              title: {},
-              value: {},
-              label: {},
-              icon: {},
-              'right-icon': {},
-              extra: {}
+              default: {},
+              icon: {}
           }
       }
   },
@@ -283,7 +314,8 @@ const componentList = {
           },
           events: {
               change: (names) => {}
-          }
+          },
+          slots: {}
       }
   }
   // datePicker: {
