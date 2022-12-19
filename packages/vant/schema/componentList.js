@@ -107,6 +107,15 @@ const componentList = {
             "label-position":{
               enum: ['right','left'],
               // type:'string' // 默认string
+            },
+            "icon-size":{
+              type:'number'
+            },
+            "checked-color":{
+              type:'string'
+            },
+            'bind-group':{
+              type:'boolean',
             }
           },
           events: {
