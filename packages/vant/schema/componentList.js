@@ -84,27 +84,29 @@ const componentList = {
           props: {
             'v-model':{
               // 仅枚举值时添加
-              enum: [],
+              // enum: [], //默认空数组
               type: 'boolean',
               // title: _key,
-              option: false, // 是否必须
+              // option: false, // 是否必须,默认false
               // valueType: '', //根据 enum 或者 type 生成
             },
             name:{
-              // 仅枚举值时添加
-              enum: [],
               type: 'any',
-              // title: _key,
-              option: false, // 是否必须
-              // valueType: '', // 根据 enum 或者 type 生成
             },
             shape:{
                // 仅枚举值时添加
                enum: ['round','square'],
-               type: 'string',
-               // title:,'' _key,
-               option: false, // 是否必须
-               // valueType: '', // 根据 enum 或者 type 生成
+              //  type:'string' // 默认string
+            },
+            disabled:{
+              type:'boolean',
+            },
+            "label-disabled":{
+              type:'boolean',
+            },
+            "label-position":{
+              enum: ['right','left'],
+              // type:'string' // 默认string
             }
           },
           events: {
