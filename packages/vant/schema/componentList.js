@@ -223,13 +223,51 @@ const componentList = {
         }
     }
 },
-  // image: {
-  //     title: 'Image 图片',
-  //     description: '增强版的 img 标签，提供多种图片填充模式，支持图片懒加载、加载中提示、加载失败提示。',
-  //     path: '/image/Image.tsx',
-  //     groupKey: 'Basic Components',
-  //     groupName: '基础组件',
-  // },
+  image: {
+      title: 'Image 图片',
+      description: '增强版的 img 标签，提供多种图片填充模式，支持图片懒加载、加载中提示、加载失败提示。',
+      path: '/image/Image.tsx',
+      groupKey: 'Basic Components',
+      groupName: '基础组件',
+      schema: {
+        key: 'Image',
+        children: true,
+        props: {
+            src: {},
+            fit: {
+              enum:['fit','contain','cover','none','scale-down']
+            },
+            position: {
+
+            },
+            alt:{},
+            width:{
+              type:'number'
+            },
+            height:{  type:'number'},
+            radius:{  type:'number'},
+            round:{type: 'boolean'},
+            block:{type: 'boolean'},
+            'lazy-load':{type: 'boolean'},
+            'show-error':{type: 'boolean'},
+            'show-loading':{type: 'boolean'},
+            'error-icon':{},
+            'loading-icon':{},
+            'icon-size':{type: 'number'},
+            'icon-prefix':{}
+        },
+        events: {
+            click: (event) => {},
+            load: ()=>{},
+            error:()=>{}
+        },
+        slots: {
+            loading: {},
+            default: {},
+            error:{}
+        }
+    }
+  },
   // // Layout: {
   // //     title: 'Layout 布局',
   // //     description: 'Layout 提供了 van-row 和 van-col 两个组件来进行行列布局。',
