@@ -43,7 +43,7 @@
             "boolean"
           ],
           "title": "v-model",
-          "option": false,
+          "option": true,
           "valueType": "switch",
           "default": "false"
         },
@@ -53,7 +53,7 @@
             "boolean"
           ],
           "title": "disabled",
-          "option": false,
+          "option": true,
           "valueType": "switch",
           "default": "false"
         },
@@ -63,7 +63,7 @@
             "string"
           ],
           "title": "max",
-          "option": false,
+          "option": true,
           "valueType": "text",
           "default": ""
         },
@@ -76,7 +76,7 @@
             "string"
           ],
           "title": "direction",
-          "option": false,
+          "option": true,
           "valueType": "select",
           "default": "vertical"
         },
@@ -86,7 +86,7 @@
             "string"
           ],
           "title": "icon-size",
-          "option": false,
+          "option": true,
           "valueType": "text",
           "default": ""
         },
@@ -96,7 +96,7 @@
             "string"
           ],
           "title": "checked-color",
-          "option": false,
+          "option": true,
           "valueType": "text",
           "default": ""
         }

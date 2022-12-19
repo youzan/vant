@@ -43,7 +43,7 @@
             "string"
           ],
           "title": "span",
-          "option": false,
+          "option": true,
           "valueType": "text",
           "default": ""
         },
@@ -53,7 +53,7 @@
             "string"
           ],
           "title": "offset",
-          "option": false,
+          "option": true,
           "valueType": "text",
           "default": ""
         },
@@ -63,7 +63,7 @@
             "string"
           ],
           "title": "tag",
-          "option": false,
+          "option": true,
           "valueType": "text",
           "default": ""
         }

@@ -49,7 +49,7 @@
             "string"
           ],
           "title": "type",
-          "option": false,
+          "option": true,
           "valueType": "select",
           "default": "default"
         },
@@ -64,7 +64,7 @@
             "string"
           ],
           "title": "size",
-          "option": false,
+          "option": true,
           "valueType": "select",
           "default": "normal"
         },
@@ -74,7 +74,7 @@
             "string"
           ],
           "title": "text",
-          "option": false,
+          "option": true,
           "valueType": "text",
           "default": ""
         },
@@ -84,7 +84,7 @@
             "string"
           ],
           "title": "color",
-          "option": false,
+          "option": true,
           "valueType": "text",
           "default": ""
         },
@@ -94,7 +94,7 @@
             "string"
           ],
           "title": "icon",
-          "option": false,
+          "option": true,
           "valueType": "text",
           "default": ""
         },
@@ -104,7 +104,7 @@
             "string"
           ],
           "title": "icon-prefix",
-          "option": false,
+          "option": true,
           "valueType": "text",
           "default": ""
         },
@@ -117,7 +117,7 @@
             "string"
           ],
           "title": "icon-position",
-          "option": false,
+          "option": true,
           "valueType": "select",
           "default": "left"
         },
@@ -127,7 +127,7 @@
             "boolean"
           ],
           "title": "block",
-          "option": false,
+          "option": true,
           "valueType": "switch",
           "default": "false"
         },
@@ -137,7 +137,7 @@
             "boolean"
           ],
           "title": "plain",
-          "option": false,
+          "option": true,
           "valueType": "switch",
           "default": "false"
         },
@@ -147,7 +147,7 @@
             "boolean"
           ],
           "title": "square",
-          "option": false,
+          "option": true,
           "valueType": "switch",
           "default": "false"
         },
@@ -157,7 +157,7 @@
             "boolean"
           ],
           "title": "round",
-          "option": false,
+          "option": true,
           "valueType": "switch",
           "default": "false"
         },
@@ -167,7 +167,7 @@
             "boolean"
           ],
           "title": "disabled",
-          "option": false,
+          "option": true,
           "valueType": "switch",
           "default": "false"
         },
@@ -177,7 +177,7 @@
             "boolean"
           ],
           "title": "hairline",
-          "option": false,
+          "option": true,
           "valueType": "switch",
           "default": "false"
         },
@@ -187,7 +187,7 @@
             "boolean"
           ],
           "title": "loading",
-          "option": false,
+          "option": true,
           "valueType": "switch",
           "default": "false"
         },
@@ -197,7 +197,7 @@
             "string"
           ],
           "title": "loading-text",
-          "option": false,
+          "option": true,
           "valueType": "text",
           "default": ""
         },
@@ -207,7 +207,7 @@
             "string"
           ],
           "title": "loading-size",
-          "option": false,
+          "option": true,
           "valueType": "text",
           "default": ""
         },
@@ -217,7 +217,7 @@
             "string"
           ],
           "title": "url",
-          "option": false,
+          "option": true,
           "valueType": "text",
           "default": ""
         },
@@ -227,7 +227,7 @@
             "string"
           ],
           "title": "to",
-          "option": false,
+          "option": true,
           "valueType": "text",
           "default": ""
         },
@@ -237,7 +237,7 @@
             "boolean"
           ],
           "title": "replace",
-          "option": false,
+          "option": true,
           "valueType": "switch",
           "default": "false"
         }

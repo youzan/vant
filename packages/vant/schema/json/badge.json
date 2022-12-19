@@ -43,7 +43,7 @@
             "string"
           ],
           "title": "content",
-          "option": false,
+          "option": true,
           "valueType": "text",
           "default": ""
         },
@@ -53,7 +53,7 @@
             "string"
           ],
           "title": "color",
-          "option": false,
+          "option": true,
           "valueType": "text",
           "default": ""
         },
@@ -63,7 +63,7 @@
             "boolean"
           ],
           "title": "dot",
-          "option": false,
+          "option": true,
           "valueType": "switch",
           "default": "false"
         },
@@ -73,7 +73,7 @@
             "string"
           ],
           "title": "max",
-          "option": false,
+          "option": true,
           "valueType": "text",
           "default": ""
         },
@@ -83,7 +83,7 @@
             "string"
           ],
           "title": "offset",
-          "option": false,
+          "option": true,
           "valueType": "text",
           "default": ""
         },
@@ -93,7 +93,7 @@
             "boolean"
           ],
           "title": "show-zero",
-          "option": false,
+          "option": true,
           "valueType": "switch",
           "default": "false"
         },
@@ -108,7 +108,7 @@
             "string"
           ],
           "title": "position",
-          "option": false,
+          "option": true,
           "valueType": "select",
           "default": "top-right"
         }

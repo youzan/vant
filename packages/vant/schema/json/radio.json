@@ -43,7 +43,7 @@
             "string"
           ],
           "title": "name",
-          "option": false,
+          "option": true,
           "valueType": "text",
           "default": ""
         },
@@ -56,7 +56,7 @@
             "string"
           ],
           "title": "shape",
-          "option": false,
+          "option": true,
           "valueType": "select",
           "default": "round"
         },
@@ -66,7 +66,7 @@
             "boolean"
           ],
           "title": "disabled",
-          "option": false,
+          "option": true,
           "valueType": "switch",
           "default": "false"
         },
@@ -76,7 +76,7 @@
             "boolean"
           ],
           "title": "label-disabled",
-          "option": false,
+          "option": true,
           "valueType": "switch",
           "default": "false"
         },
@@ -89,7 +89,7 @@
             "string"
           ],
           "title": "label-position",
-          "option": false,
+          "option": true,
           "valueType": "select",
           "default": "right"
         },
@@ -99,7 +99,7 @@
             "string"
           ],
           "title": "icon-size",
-          "option": false,
+          "option": true,
           "valueType": "text",
           "default": ""
         },
@@ -109,7 +109,7 @@
             "string"
           ],
           "title": "checked-color",
-          "option": false,
+          "option": true,
           "valueType": "text",
           "default": ""
         }

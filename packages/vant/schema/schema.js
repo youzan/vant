@@ -159,7 +159,7 @@ function componentProps(componentMapProps) {
                 enum: componentMapProps[key].enum,
                 type: ['string'],
                 title: key,
-                option: false,
+                option: componentMapProps[key].option || true,
                 valueType: 'select',
                 default: componentMapProps[key].enum[0]
             };
@@ -168,18 +168,18 @@ function componentProps(componentMapProps) {
                 enum: [],
                 type: ['boolean'],
                 title: key,
-                option: false,
+                option: componentMapProps[key].option||true,
                 valueType: 'switch',
-                default: 'false'
+                default: componentMapProps[key].default || 'false'
             };
         } else {
             propItem = {
                 enum: [],
                 type: ['string'],
                 title: key,
-                option: false,
+                option: componentMapProps[key].option||true,
                 valueType: 'text',
-                default: ''
+                default: componentMapProps[key].default || ''
             };
         }
         props[key] = propItem;

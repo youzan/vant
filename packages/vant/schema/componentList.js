@@ -27,9 +27,9 @@ const components = [
                    */
                   type: 'string',
                   /**
-                   *  是否必须,默认false
+                   *  是否可选,默认true
                    */
-                  option: false,
+                  option: true,
                   /**
                    * 根据 enum 或者 type 生成
                    * textinput / switch / color / 下拉框 等

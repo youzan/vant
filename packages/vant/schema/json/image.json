@@ -43,7 +43,7 @@
             "string"
           ],
           "title": "src",
-          "option": false,
+          "option": true,
           "valueType": "text",
           "default": ""
         },
@@ -59,7 +59,7 @@
             "string"
           ],
           "title": "fit",
-          "option": false,
+          "option": true,
           "valueType": "select",
           "default": "fit"
         },
@@ -69,7 +69,7 @@
             "string"
           ],
           "title": "position",
-          "option": false,
+          "option": true,
           "valueType": "text",
           "default": ""
         },
@@ -79,7 +79,7 @@
             "string"
           ],
           "title": "alt",
-          "option": false,
+          "option": true,
           "valueType": "text",
           "default": ""
         },
@@ -89,7 +89,7 @@
             "string"
           ],
           "title": "width",
-          "option": false,
+          "option": true,
           "valueType": "text",
           "default": ""
         },
@@ -99,7 +99,7 @@
             "string"
           ],
           "title": "height",
-          "option": false,
+          "option": true,
           "valueType": "text",
           "default": ""
         },
@@ -109,7 +109,7 @@
             "string"
           ],
           "title": "radius",
-          "option": false,
+          "option": true,
           "valueType": "text",
           "default": ""
         },
@@ -119,7 +119,7 @@
             "boolean"
           ],
           "title": "round",
-          "option": false,
+          "option": true,
           "valueType": "switch",
           "default": "false"
         },
@@ -129,7 +129,7 @@
             "boolean"
           ],
           "title": "block",
-          "option": false,
+          "option": true,
           "valueType": "switch",
           "default": "false"
         },
@@ -139,7 +139,7 @@
             "boolean"
           ],
           "title": "lazy-load",
-          "option": false,
+          "option": true,
           "valueType": "switch",
           "default": "false"
         },
@@ -149,7 +149,7 @@
             "boolean"
           ],
           "title": "show-error",
-          "option": false,
+          "option": true,
           "valueType": "switch",
           "default": "false"
         },
@@ -159,7 +159,7 @@
             "boolean"
           ],
           "title": "show-loading",
-          "option": false,
+          "option": true,
           "valueType": "switch",
           "default": "false"
         },
@@ -169,7 +169,7 @@
             "string"
           ],
           "title": "error-icon",
-          "option": false,
+          "option": true,
           "valueType": "text",
           "default": ""
         },
@@ -179,7 +179,7 @@
             "string"
           ],
           "title": "loading-icon",
-          "option": false,
+          "option": true,
           "valueType": "text",
           "default": ""
         },
@@ -189,7 +189,7 @@
             "string"
           ],
           "title": "icon-size",
-          "option": false,
+          "option": true,
           "valueType": "text",
           "default": ""
         },
@@ -199,7 +199,7 @@
             "string"
           ],
           "title": "icon-prefix",
-          "option": false,
+          "option": true,
           "valueType": "text",
           "default": ""
         }
