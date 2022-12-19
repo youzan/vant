@@ -83,9 +83,9 @@
       default: start
       dependency:
         - direction: horizontal
-        - mode: inline-block
+        - mode: inline
           direction: horizontal
-        - mode: inline-block
+        - mode: inline
           direction: vertical
         - mode: block
           direction: horizontal
@@ -185,7 +185,7 @@
       dependency:
         - mode: flex
     - name: gap
-      title: 间隙
+      title: 内容间隙
       type: string
       options:
         - value: shrink
