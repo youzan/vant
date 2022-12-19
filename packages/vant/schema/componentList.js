@@ -21,13 +21,101 @@ const componentList = {
     //     groupKey: 'Display Components',
     //     groupName: '展示组件'
     // },
-    // button: {
-    //     title: 'Button 按钮',
-    //     description: '按钮用于触发一个操作，如提交表单。',
-    //     path: '/button/Button.tsx',
-    //     groupKey: 'Basic Components',
-    //     groupName: '基础组件',
-    // },
+    button: {
+        title: 'Button 按钮',
+        description: '按钮用于触发一个操作，如提交表单。',
+        path: '/button/Button.tsx',
+        groupKey: 'Basic Components',
+        groupName: '基础组件',
+        schema:{
+          key: 'checkbox',
+          children: true,
+          props: {
+            'type':{
+              enum: ["default","primary", "success", "warning", "danger"],
+            },
+            size:{
+              enum:['normal','large', 'small', 'mini']
+            },
+            text:{
+
+            },
+            color:{
+              // type: 'string' // todo : color类型后续添加
+            },
+            "icon":{
+
+            },
+            "icon-prefix":{
+
+            },
+            "icon-position":{
+              enum:['left','right']
+            },
+            // "tag":{
+
+            // },
+            // 'native-type':{
+
+            // },
+            block:{
+              type: 'boolean',
+            },
+            plain:{
+              type: 'boolean',
+            },
+            square:{
+              type: 'boolean',
+            },
+            round:{
+              type: 'boolean',
+            },
+            disabled:{
+              type: 'boolean',
+            },
+            hairline:{
+              type: 'boolean',
+            },
+            loading:{
+              type: 'boolean',
+            },
+            loading-text:{
+
+            },
+            // 'loading-type':{
+
+            // },
+            "loading-size":{
+              type:'number'
+            },
+            url:{
+
+            },
+            to:{
+
+            },
+            replace:{
+              type: 'boolean',
+            }
+          },
+          events: {
+            touchstart:(event)=>{},
+            click:(event)=>{}
+          },
+          slots:{
+            default:{
+
+            },
+            icon:{
+
+            },
+            loading:{
+              
+            }
+          }
+          // map: component,
+        }
+    },
     // cell: {
     //     title: 'Cell 单元格',
     //     description: '单元格为列表中的单个展示项。',
@@ -83,12 +171,11 @@ const componentList = {
           children: true,
           props: {
             'v-model':{
-              // 仅枚举值时添加
-              // enum: [], //默认空数组
+              // enum: [], // todo : 默认空数组. 仅枚举值时添加
               type: 'boolean',
               // title: _key,
-              // option: false, // 是否必须,默认false
-              // valueType: '', //根据 enum 或者 type 生成
+              // option: false, // todo : 是否必须,默认false
+              // valueType: '', //todo : 根据 enum 或者 type 生成
             },
             name:{
               type: 'any',
