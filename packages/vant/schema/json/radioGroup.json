@@ -1,14 +1,14 @@
 {
-  "tagName": "CountDown",
+  "tagName": "RadioGroup",
   "pkgId": "vant",
   "type": "object",
   "properties": {
     "name": {
-      "title": "CountDown 倒计时",
+      "title": "radioGroup 单选框",
       "description": "组件名称"
     },
     "tagName": {
-      "title": "CountDown",
+      "title": "RadioGroup",
       "description": "组件标签"
     },
     "advanceProps": {
@@ -35,97 +35,60 @@
       "type": "object",
       "title": "组件属性",
       "description": "组件属性",
-      "required": [
-        "time",
-        "format",
-        "autoStart",
-        "millisecond",
-        "props",
-        "emits",
-        "watch(()=>props.time,resetTime,{immediate",
-        "reset"
-      ],
+      "required": [],
       "properties": {
-        "time": {
+        "v-model": {
           "enum": [],
           "type": [
-            "+props.time"
+            "boolean"
           ],
-          "title": "time",
+          "title": "v-model",
           "option": false,
-          "valueType": "text"
+          "valueType": "switch",
+          "default": "false"
         },
-        "format": {
+        "disabled": {
           "enum": [],
           "type": [
-            "makeStringProp('HH:mm:ss')"
+            "boolean"
           ],
-          "title": "format",
+          "title": "disabled",
           "option": false,
-          "valueType": "text"
+          "valueType": "switch",
+          "default": "false"
         },
-        "autoStart": {
-          "enum": [],
-          "type": [
-            "truthProp"
+        "direction": {
+          "enum": [
+            "vertical",
+            "horizontal"
           ],
-          "title": "autoStart",
+          "type": [
+            "string"
+          ],
+          "title": "direction",
           "option": false,
-          "valueType": "text"
+          "valueType": "select",
+          "default": "vertical"
         },
-        "millisecond": {
+        "icon-size": {
           "enum": [],
           "type": [
-            "props.millisecond"
+            "string"
           ],
-          "title": "millisecond",
+          "title": "icon-size",
           "option": false,
-          "valueType": "text"
+          "valueType": "text",
+          "default": ""
         },
-        "props": {
+        "checked-color": {
           "enum": [],
           "type": [
-            "countDownProps"
+            "string"
           ],
-          "title": "props",
+          "title": "checked-color",
           "option": false,
-          "valueType": "text"
-        },
-        "emits": {
-          "enum": [],
-          "type": [
-            "['change' 'finish']"
-          ],
-          "title": "emits",
-          "option": false,
-          "valueType": "text"
-        },
-        "watch(()=>props.time,resetTime,{immediate": {
-          "enum": [],
-          "type": [
-            "true });"
-          ],
-          "title": "watch(()=>props.time,resetTime,{immediate",
-          "option": false,
-          "valueType": "text"
-        },
-        "reset": {
-          "enum": [],
-          "type": [
-            "resetTime"
-          ],
-          "title": "reset",
-          "option": false,
-          "valueType": "text"
-        },
-        "{slots.defaultslots.default(current.value)": {
-          "enum": [],
-          "type": [
-            "timeText.value}"
-          ],
-          "title": "{slots.defaultslots.default(current.value)",
-          "option": true,
-          "valueType": "text"
+          "valueType": "text",
+          "default": ""
         }
       }
     },
@@ -133,28 +96,11 @@
       "type": "object",
       "title": "交互行为",
       "description": "组件动作事件",
-      "required": [
-        "onChange",
-        "onFinish"
-      ],
+      "required": [],
       "properties": {
-        "onChange": {
-          "value": "(current) => emit('change' current)",
-          "title": "onChange",
-          "description": "onChange",
-          "type": "object",
-          "properties": {
-            "name": {
-              "description": "函数名",
-              "title": "函数名",
-              "type": "string"
-            }
-          }
-        },
-        "onFinish": {
-          "value": "() => emit('finish')",
-          "title": "onFinish",
-          "description": "onFinish",
+        "change": {
+          "title": "change",
+          "description": "change",
           "type": "object",
           "properties": {
             "name": {
@@ -217,9 +163,9 @@
   "required": [
     null
   ],
-  "description": "将一组内容放置在多个折叠面板中，点击面板的标题可以展开或收缩其内容。",
-  "groupKey": "Display Components",
-  "groupName": "展示组件",
+  "description": "复选框容器",
+  "groupKey": "Form Components",
+  "groupName": "表单组件",
   "isHidden": 0,
   "framework": "vue"
 }

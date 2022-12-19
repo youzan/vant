@@ -35,27 +35,17 @@
       "type": "object",
       "title": "组件属性",
       "description": "组件属性",
-      "required": [
-        "max",
-        "disabled",
-        "iconSize",
-        "direction",
-        "modelValue",
-        "checkedColor",
-        "exportconstCHECKBOX_GROUP_KEY",
-        "props",
-        "emits",
-        "options={checked"
-      ],
+      "required": [],
       "properties": {
-        "max": {
+        "v-model": {
           "enum": [],
           "type": [
-            "numericProp"
+            "boolean"
           ],
-          "title": "max",
+          "title": "v-model",
           "option": false,
-          "valueType": "text"
+          "valueType": "switch",
+          "default": "false"
         },
         "disabled": {
           "enum": [],
@@ -64,79 +54,51 @@
           ],
           "title": "disabled",
           "option": false,
-          "valueType": "switch"
+          "valueType": "switch",
+          "default": "false"
         },
-        "iconSize": {
+        "max": {
           "enum": [],
           "type": [
-            "numericProp"
+            "string"
           ],
-          "title": "iconSize",
+          "title": "max",
           "option": false,
-          "valueType": "text"
+          "valueType": "text",
+          "default": ""
         },
         "direction": {
-          "enum": [],
+          "enum": [
+            "vertical",
+            "horizontal"
+          ],
           "type": [
-            "String as PropType<CheckerDirection>"
+            "string"
           ],
           "title": "direction",
           "option": false,
-          "valueType": "text"
+          "valueType": "select",
+          "default": "vertical"
         },
-        "modelValue": {
+        "icon-size": {
           "enum": [],
           "type": [
-            "makeArrayProp<unknown>()"
+            "string"
           ],
-          "title": "modelValue",
+          "title": "icon-size",
           "option": false,
-          "valueType": "text"
+          "valueType": "text",
+          "default": ""
         },
-        "checkedColor": {
+        "checked-color": {
           "enum": [],
           "type": [
-            "String"
+            "string"
           ],
-          "title": "checkedColor",
+          "title": "checked-color",
           "option": false,
-          "valueType": "text"
-        },
-        "exportconstCHECKBOX_GROUP_KEY": {
-          "enum": [],
-          "type": [
-            "InjectionKey<CheckboxGroupProvide> ="
-          ],
-          "title": "exportconstCHECKBOX_GROUP_KEY",
-          "option": false,
-          "valueType": "text"
-        },
-        "props": {
-          "enum": [],
-          "type": [
-            "checkboxGroupProps"
-          ],
-          "title": "props",
-          "option": false,
-          "valueType": "text"
-        },
-        "emits": {
-          "enum": [],
-          "type": [
-            "['change' 'update:modelValue']"
-          ],
-          "title": "emits",
-          "option": false,
-          "valueType": "text"
-        },
-        "options={checked": {
-          "enum": [],
-          "type": [
-            "options };"
-          ],
-          "title": "options={checked",
-          "option": false,
-          "valueType": "text"
+          "valueType": "text",
+          "default": ""
         }
       }
     },
@@ -144,56 +106,11 @@
       "type": "object",
       "title": "交互行为",
       "description": "组件动作事件",
-      "required": [
-        "constupdateValue=(value",
-        "consttoggleAll=(options",
-        "constcheckedChildren=children.filter((item",
-        "constnames=checkedChildren.map((item"
-      ],
+      "required": [],
       "properties": {
-        "constupdateValue=(value": {
-          "value": "unknown[]) => emit('update:modelValue' value);",
-          "title": "constupdateValue=(value",
-          "description": "constupdateValue=(value",
-          "type": "object",
-          "properties": {
-            "name": {
-              "description": "函数名",
-              "title": "函数名",
-              "type": "string"
-            }
-          }
-        },
-        "consttoggleAll=(options": {
-          "value": "CheckboxGroupToggleAllOptions = {}) => {",
-          "title": "consttoggleAll=(options",
-          "description": "consttoggleAll=(options",
-          "type": "object",
-          "properties": {
-            "name": {
-              "description": "函数名",
-              "title": "函数名",
-              "type": "string"
-            }
-          }
-        },
-        "constcheckedChildren=children.filter((item": {
-          "value": "any) => {",
-          "title": "constcheckedChildren=children.filter((item",
-          "description": "constcheckedChildren=children.filter((item",
-          "type": "object",
-          "properties": {
-            "name": {
-              "description": "函数名",
-              "title": "函数名",
-              "type": "string"
-            }
-          }
-        },
-        "constnames=checkedChildren.map((item": {
-          "value": "any) => item.name);",
-          "title": "constnames=checkedChildren.map((item",
-          "description": "constnames=checkedChildren.map((item",
+        "change": {
+          "title": "change",
+          "description": "change",
           "type": "object",
           "properties": {
             "name": {

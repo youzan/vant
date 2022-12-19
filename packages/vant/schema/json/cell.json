@@ -35,94 +35,232 @@
       "type": "object",
       "title": "组件属性",
       "description": "组件属性",
-      "required": [
-        "props",
-        "",
-        "constclasses",
-        "borderless"
-      ],
+      "required": [],
       "properties": {
-        "props": {
+        "title": {
           "enum": [],
           "type": [
-            "cellProps"
+            "string"
           ],
-          "title": "props",
+          "title": "title",
           "option": false,
-          "valueType": "text"
+          "valueType": "text",
+          "default": ""
         },
-        "{slots.labelslots.label()": {
+        "value": {
           "enum": [],
           "type": [
-            "props.label}"
+            "string"
           ],
-          "title": "{slots.labelslots.label()",
-          "option": true,
-          "valueType": "text"
-        },
-        "{slots.titleslots.title()": {
-          "enum": [],
-          "type": [
-            "<span>{props.title}</span>}"
-          ],
-          "title": "{slots.titleslots.title()",
-          "option": true,
-          "valueType": "text"
-        },
-        "{slotslot()": {
-          "enum": [],
-          "type": [
-            "<span>{props.value}</span>}"
-          ],
-          "title": "{slotslot()",
-          "option": true,
-          "valueType": "text"
-        },
-        "": {
-          "enum": [],
-          "type": [
-            "'arrow';"
-          ],
-          "title": "",
+          "title": "value",
           "option": false,
-          "valueType": "text"
+          "valueType": "text",
+          "default": ""
         },
-        "constclasses": {
+        "label": {
           "enum": [],
           "type": [
-            "Record<string boolean ",
-            " undefined> = {"
+            "string"
           ],
-          "title": "constclasses",
+          "title": "label",
           "option": false,
-          "valueType": "text"
+          "valueType": "text",
+          "default": ""
         },
-        "borderless": {
+        "size": {
           "enum": [],
           "type": [
-            "!border"
+            "string"
           ],
-          "title": "borderless",
+          "title": "size",
           "option": false,
-          "valueType": "text"
+          "valueType": "text",
+          "default": ""
         },
-        "role={clickable'button'": {
+        "icon": {
           "enum": [],
           "type": [
-            "undefined}"
+            "string"
           ],
-          "title": "role={clickable'button'",
-          "option": true,
-          "valueType": "text"
+          "title": "icon",
+          "option": false,
+          "valueType": "text",
+          "default": ""
         },
-        "tabindex={clickable0": {
+        "icon-prefix": {
           "enum": [],
           "type": [
-            "undefined}"
+            "string"
           ],
-          "title": "tabindex={clickable0",
-          "option": true,
-          "valueType": "text"
+          "title": "icon-prefix",
+          "option": false,
+          "valueType": "text",
+          "default": ""
+        },
+        "tag": {
+          "enum": [],
+          "type": [
+            "string"
+          ],
+          "title": "tag",
+          "option": false,
+          "valueType": "text",
+          "default": ""
+        },
+        "url": {
+          "enum": [],
+          "type": [
+            "string"
+          ],
+          "title": "url",
+          "option": false,
+          "valueType": "text",
+          "default": ""
+        },
+        "to": {
+          "enum": [],
+          "type": [
+            "string"
+          ],
+          "title": "to",
+          "option": false,
+          "valueType": "text",
+          "default": ""
+        },
+        "border": {
+          "enum": [],
+          "type": [
+            "boolean"
+          ],
+          "title": "border",
+          "option": false,
+          "valueType": "switch",
+          "default": "false"
+        },
+        "replace": {
+          "enum": [],
+          "type": [
+            "boolean"
+          ],
+          "title": "replace",
+          "option": false,
+          "valueType": "switch",
+          "default": "false"
+        },
+        "clickable": {
+          "enum": [],
+          "type": [
+            "boolean"
+          ],
+          "title": "clickable",
+          "option": false,
+          "valueType": "switch",
+          "default": "false"
+        },
+        "is-link": {
+          "enum": [],
+          "type": [
+            "boolean"
+          ],
+          "title": "is-link",
+          "option": false,
+          "valueType": "switch",
+          "default": "false"
+        },
+        "required": {
+          "enum": [],
+          "type": [
+            "boolean"
+          ],
+          "title": "required",
+          "option": false,
+          "valueType": "switch",
+          "default": "false"
+        },
+        "center": {
+          "enum": [],
+          "type": [
+            "boolean"
+          ],
+          "title": "center",
+          "option": false,
+          "valueType": "switch",
+          "default": "false"
+        },
+        "arrow-direction": {
+          "enum": [
+            "right",
+            "left",
+            "up",
+            "down"
+          ],
+          "type": [
+            "string"
+          ],
+          "title": "arrow-direction",
+          "option": false,
+          "valueType": "select",
+          "default": "right"
+        },
+        "title-style": {
+          "enum": [],
+          "type": [
+            "string"
+          ],
+          "title": "title-style",
+          "option": false,
+          "valueType": "text",
+          "default": ""
+        },
+        "title-class": {
+          "enum": [],
+          "type": [
+            "string"
+          ],
+          "title": "title-class",
+          "option": false,
+          "valueType": "text",
+          "default": ""
+        },
+        "value-class": {
+          "enum": [],
+          "type": [
+            "string"
+          ],
+          "title": "value-class",
+          "option": false,
+          "valueType": "text",
+          "default": ""
+        },
+        "label-class": {
+          "enum": [],
+          "type": [
+            "string"
+          ],
+          "title": "label-class",
+          "option": false,
+          "valueType": "text",
+          "default": ""
+        }
+      }
+    },
+    "events": {
+      "type": "object",
+      "title": "交互行为",
+      "description": "组件动作事件",
+      "required": [],
+      "properties": {
+        "click": {
+          "title": "click",
+          "description": "click",
+          "type": "object",
+          "properties": {
+            "name": {
+              "description": "函数名",
+              "title": "函数名",
+              "type": "string"
+            }
+          }
         }
       }
     },

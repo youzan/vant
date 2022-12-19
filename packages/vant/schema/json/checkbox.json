@@ -35,8 +35,7 @@
       "type": "object",
       "title": "组件属性",
       "description": "组件属性",
-      "required": [
-      ],
+      "required": [],
       "properties": {
         "v-model": {
           "enum": [],
@@ -45,25 +44,31 @@
           ],
           "title": "v-model",
           "option": false,
-          "valueType": "switch"
+          "valueType": "switch",
+          "default": "false"
         },
         "name": {
           "enum": [],
           "type": [
-            "any"
+            "string"
           ],
           "title": "name",
           "option": false,
-          "valueType": "text"
+          "valueType": "text",
+          "default": ""
         },
         "shape": {
-          "enum": ["square","round"],
+          "enum": [
+            "round",
+            "square"
+          ],
           "type": [
             "string"
           ],
           "title": "shape",
           "option": false,
-          "valueType": "text"
+          "valueType": "select",
+          "default": "round"
         },
         "disabled": {
           "enum": [],
@@ -72,57 +77,71 @@
           ],
           "title": "disabled",
           "option": false,
-          "valueType": "switch"
+          "valueType": "switch",
+          "default": "false"
         },
         "label-disabled": {
-          "enum": ["left","right"],
+          "enum": [],
           "type": [
             "boolean"
           ],
-          "title": "disabled",
+          "title": "label-disabled",
           "option": false,
-          "valueType": "switch"
+          "valueType": "switch",
+          "default": "false"
         },
         "label-position": {
-          "enum": ["square","round"],
+          "enum": [
+            "right",
+            "left"
+          ],
           "type": [
             "string"
           ],
           "title": "label-position",
           "option": false,
-          "valueType": "text"
+          "valueType": "select",
+          "default": "right"
         },
         "icon-size": {
           "enum": [],
           "type": [
-            "number"
+            "string"
           ],
           "title": "icon-size",
           "option": false,
-          "valueType": "text"
+          "valueType": "text",
+          "default": ""
+        },
+        "checked-color": {
+          "enum": [],
+          "type": [
+            "string"
+          ],
+          "title": "checked-color",
+          "option": false,
+          "valueType": "text",
+          "default": ""
         },
         "bind-group": {
           "enum": [],
           "type": [
             "boolean"
           ],
-          "title": " bind-group",
+          "title": "bind-group",
           "option": false,
-          "valueType": "switch"
+          "valueType": "switch",
+          "default": "false"
         }
-
       }
     },
     "events": {
       "type": "object",
       "title": "交互行为",
       "description": "组件动作事件",
-      "required": [
-
-      ],
+      "required": [],
       "properties": {
         "change": {
-          "value": "(checked)=>{}",
           "title": "change",
           "description": "change",
           "type": "object",
@@ -135,7 +154,6 @@
           }
         },
         "click": {
-          "value": "(event)=>{}",
           "title": "click",
           "description": "click",
           "type": "object",

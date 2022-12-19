@@ -35,21 +35,28 @@
       "type": "object",
       "title": "组件属性",
       "description": "组件属性",
-      "required": [
-        "dot",
-        "max",
-        "tag",
-        "color",
-        "offset",
-        "content",
-        "showZero",
-        "position",
-        "props",
-        "conststyle",
-        "background",
-        "{dot"
-      ],
+      "required": [],
       "properties": {
+        "content": {
+          "enum": [],
+          "type": [
+            "string"
+          ],
+          "title": "content",
+          "option": false,
+          "valueType": "text",
+          "default": ""
+        },
+        "color": {
+          "enum": [],
+          "type": [
+            "string"
+          ],
+          "title": "color",
+          "option": false,
+          "valueType": "text",
+          "default": ""
+        },
         "dot": {
           "enum": [],
           "type": [
@@ -57,115 +64,53 @@
           ],
           "title": "dot",
           "option": false,
-          "valueType": "switch"
+          "valueType": "switch",
+          "default": "false"
         },
         "max": {
           "enum": [],
           "type": [
-            "numericProp"
+            "string"
           ],
           "title": "max",
           "option": false,
-          "valueType": "text"
-        },
-        "tag": {
-          "enum": [],
-          "type": [
-            "makeStringProp<keyof HTMLElementTagNameMap>('div')"
-          ],
-          "title": "tag",
-          "option": false,
-          "valueType": "text"
-        },
-        "color": {
-          "enum": [],
-          "type": [
-            "String"
-          ],
-          "title": "color",
-          "option": false,
-          "valueType": "text"
+          "valueType": "text",
+          "default": ""
         },
         "offset": {
           "enum": [],
           "type": [
-            "Array as unknown as PropType<[Numeric Numeric]>"
+            "string"
           ],
           "title": "offset",
           "option": false,
-          "valueType": "text"
+          "valueType": "text",
+          "default": ""
         },
-        "content": {
+        "show-zero": {
           "enum": [],
           "type": [
-            "numericProp"
+            "boolean"
           ],
-          "title": "content",
+          "title": "show-zero",
           "option": false,
-          "valueType": "text"
-        },
-        "showZero": {
-          "enum": [],
-          "type": [
-            "truthProp"
-          ],
-          "title": "showZero",
-          "option": false,
-          "valueType": "text"
+          "valueType": "switch",
+          "default": "false"
         },
         "position": {
-          "enum": [],
+          "enum": [
+            "top-right",
+            "top-left",
+            "bottom-left",
+            "bottom-right"
+          ],
           "type": [
-            "makeStringProp<BadgePosition>('top-right')"
+            "string"
           ],
           "title": "position",
           "option": false,
-          "valueType": "text"
-        },
-        "props": {
-          "enum": [],
-          "type": [
-            "badgeProps"
-          ],
-          "title": "props",
-          "option": false,
-          "valueType": "text"
-        },
-        "conststyle": {
-          "enum": [],
-          "type": [
-            "CSSProperties = {"
-          ],
-          "title": "conststyle",
-          "option": false,
-          "valueType": "text"
-        },
-        "background": {
-          "enum": [],
-          "type": [
-            "props.color"
-          ],
-          "title": "background",
-          "option": false,
-          "valueType": "text"
-        },
-        "style.right=x.startsWith('-')x.replace('-','')": {
-          "enum": [],
-          "type": [
-            "`-${x}`;"
-          ],
-          "title": "style.right=x.startsWith('-')x.replace('-','')",
-          "option": true,
-          "valueType": "text"
-        },
-        "{dot": {
-          "enum": [],
-          "type": [
-            "props.dot fixed: !!slots.default }"
-          ],
-          "title": "{dot",
-          "option": false,
-          "valueType": "text"
+          "valueType": "select",
+          "default": "top-right"
         }
       }
     },

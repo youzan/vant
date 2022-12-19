@@ -1,14 +1,14 @@
 {
-  "tagName": "Overlay",
+  "tagName": "Row",
   "pkgId": "vant",
   "type": "object",
   "properties": {
     "name": {
-      "title": "Overlay 遮罩层",
+      "title": "Layout 布局",
       "description": "组件名称"
     },
     "tagName": {
-      "title": "Overlay",
+      "title": "Row",
       "description": "组件标签"
     },
     "advanceProps": {
@@ -35,118 +35,67 @@
       "type": "object",
       "title": "组件属性",
       "description": "组件属性",
-      "required": [
-        "show",
-        "zIndex",
-        "duration",
-        "className",
-        "lockScroll",
-        "lazyRender",
-        "customStyle",
-        "props",
-        "conststyle",
-        "target",
-        "<Transitionv-slots={{default"
-      ],
+      "required": [],
       "properties": {
-        "show": {
+        "gutter": {
+          "enum": [],
+          "type": [
+            "string"
+          ],
+          "title": "gutter",
+          "option": false,
+          "valueType": "text",
+          "default": ""
+        },
+        "tag": {
+          "enum": [],
+          "type": [
+            "string"
+          ],
+          "title": "tag",
+          "option": false,
+          "valueType": "text",
+          "default": ""
+        },
+        "justify": {
+          "enum": [
+            "start",
+            "end",
+            "center",
+            "space-around",
+            "space-between"
+          ],
+          "type": [
+            "string"
+          ],
+          "title": "justify",
+          "option": false,
+          "valueType": "select",
+          "default": "start"
+        },
+        "align": {
+          "enum": [
+            "top",
+            "center",
+            "bottom"
+          ],
+          "type": [
+            "string"
+          ],
+          "title": "align",
+          "option": false,
+          "valueType": "select",
+          "default": "top"
+        },
+        "wrap": {
           "enum": [],
           "type": [
             "boolean"
           ],
-          "title": "show",
+          "title": "wrap",
           "option": false,
-          "valueType": "switch"
-        },
-        "zIndex": {
-          "enum": [],
-          "type": [
-            "numericProp"
-          ],
-          "title": "zIndex",
-          "option": false,
-          "valueType": "text"
-        },
-        "duration": {
-          "enum": [],
-          "type": [
-            "numericProp"
-          ],
-          "title": "duration",
-          "option": false,
-          "valueType": "text"
-        },
-        "className": {
-          "enum": [],
-          "type": [
-            "unknownProp"
-          ],
-          "title": "className",
-          "option": false,
-          "valueType": "text"
-        },
-        "lockScroll": {
-          "enum": [],
-          "type": [
-            "truthProp"
-          ],
-          "title": "lockScroll",
-          "option": false,
-          "valueType": "text"
-        },
-        "lazyRender": {
-          "enum": [],
-          "type": [
-            "truthProp"
-          ],
-          "title": "lazyRender",
-          "option": false,
-          "valueType": "text"
-        },
-        "customStyle": {
-          "enum": [],
-          "type": [
-            "Object as PropType<CSSProperties>"
-          ],
-          "title": "customStyle",
-          "option": false,
-          "valueType": "text"
-        },
-        "props": {
-          "enum": [],
-          "type": [
-            "overlayProps"
-          ],
-          "title": "props",
-          "option": false,
-          "valueType": "text"
-        },
-        "conststyle": {
-          "enum": [],
-          "type": [
-            "CSSProperties = extend("
-          ],
-          "title": "conststyle",
-          "option": false,
-          "valueType": "text"
-        },
-        "target": {
-          "enum": [],
-          "type": [
-            "root"
-          ],
-          "title": "target",
-          "option": false,
-          "valueType": "text"
-        },
-        "<Transitionv-slots={{default": {
-          "enum": [],
-          "type": [
-            "renderOverlay }} name=\"van-fade\" appear />"
-          ],
-          "title": "<Transitionv-slots={{default",
-          "option": false,
-          "valueType": "text"
+          "valueType": "switch",
+          "default": "false"
         }
       }
     },
@@ -154,14 +103,11 @@
       "type": "object",
       "title": "交互行为",
       "description": "组件动作事件",
-      "required": [
-        "constonTouchMove=(event"
-      ],
+      "required": [],
       "properties": {
-        "constonTouchMove=(event": {
-          "value": "TouchEvent) => {",
-          "title": "constonTouchMove=(event",
-          "description": "constonTouchMove=(event",
+        "click": {
+          "title": "click",
+          "description": "click",
           "type": "object",
           "properties": {
             "name": {
@@ -224,9 +170,9 @@
   "required": [
     null
   ],
-  "description": "创建一个遮罩层，用于强调特定的页面元素，并阻止用户进行其他操作。",
-  "groupKey": "Action Components",
-  "groupName": "反馈组件",
+  "description": "Layout 提供了 van-row 和 van-col 两个组件来进行行列布局。",
+  "groupKey": "Basic Components",
+  "groupName": "基础组件",
   "isHidden": 0,
   "framework": "vue"
 }

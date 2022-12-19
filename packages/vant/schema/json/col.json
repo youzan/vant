@@ -1,14 +1,14 @@
 {
-  "tagName": "ContactCard",
+  "tagName": "Col",
   "pkgId": "vant",
   "type": "object",
   "properties": {
     "name": {
-      "title": "ContactCard 联系人卡片",
+      "title": "Layout 布局",
       "description": "组件名称"
     },
     "tagName": {
-      "title": "ContactCard",
+      "title": "Col",
       "description": "组件标签"
     },
     "advanceProps": {
@@ -35,97 +35,37 @@
       "type": "object",
       "title": "组件属性",
       "description": "组件属性",
-      "required": [
-        "tel",
-        "name",
-        "type",
-        "addText",
-        "editable",
-        "props",
-        "emits",
-        "v-slots={{title"
-      ],
+      "required": [],
       "properties": {
-        "tel": {
+        "span": {
           "enum": [],
           "type": [
-            "String"
+            "string"
           ],
-          "title": "tel",
+          "title": "span",
           "option": false,
-          "valueType": "text"
+          "valueType": "text",
+          "default": ""
         },
-        "name": {
+        "offset": {
           "enum": [],
           "type": [
-            "String"
+            "string"
           ],
-          "title": "name",
+          "title": "offset",
           "option": false,
-          "valueType": "text"
+          "valueType": "text",
+          "default": ""
         },
-        "type": {
+        "tag": {
           "enum": [],
           "type": [
-            "makeStringProp<ContactCardType>('add')"
+            "string"
           ],
-          "title": "type",
+          "title": "tag",
           "option": false,
-          "valueType": "text"
-        },
-        "addText": {
-          "enum": [],
-          "type": [
-            "String"
-          ],
-          "title": "addText",
-          "option": false,
-          "valueType": "text"
-        },
-        "editable": {
-          "enum": [],
-          "type": [
-            "truthProp"
-          ],
-          "title": "editable",
-          "option": false,
-          "valueType": "text"
-        },
-        "props": {
-          "enum": [],
-          "type": [
-            "contactCardProps"
-          ],
-          "title": "props",
-          "option": false,
-          "valueType": "text"
-        },
-        "emits": {
-          "enum": [],
-          "type": [
-            "['click']"
-          ],
-          "title": "emits",
-          "option": false,
-          "valueType": "text"
-        },
-        "v-slots={{title": {
-          "enum": [],
-          "type": [
-            "renderContent }}"
-          ],
-          "title": "v-slots={{title",
-          "option": false,
-          "valueType": "text"
-        },
-        "icon={props.type==='edit''contact'": {
-          "enum": [],
-          "type": [
-            "'add-square'}"
-          ],
-          "title": "icon={props.type==='edit''contact'",
-          "option": true,
-          "valueType": "text"
+          "valueType": "text",
+          "default": ""
         }
       }
     },
@@ -133,14 +73,11 @@
       "type": "object",
       "title": "交互行为",
       "description": "组件动作事件",
-      "required": [
-        "constonClick=(event"
-      ],
+      "required": [],
       "properties": {
-        "constonClick=(event": {
-          "value": "MouseEvent) => {",
-          "title": "constonClick=(event",
-          "description": "constonClick=(event",
+        "click": {
+          "title": "click",
+          "description": "click",
           "type": "object",
           "properties": {
             "name": {
@@ -203,9 +140,9 @@
   "required": [
     null
   ],
-  "description": "以卡片的形式展示联系人信息。",
-  "groupKey": "Business Components",
-  "groupName": "业务组件",
+  "description": "Layout 提供了 van-row 和 van-col 两个组件来进行行列布局。",
+  "groupKey": "Basic Components",
+  "groupName": "基础组件",
   "isHidden": 0,
   "framework": "vue"
 }
