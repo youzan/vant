@@ -428,7 +428,80 @@ const componentList = {
           },
           slots: {}
       }
-  }
+  },
+  radio: {
+    title: 'radio 单选框',
+    description: '在一组备选项中进行多选。',
+    path: '/radio/radio.tsx',
+    groupKey: 'Form Components',
+    groupName: '表单组件',
+    schema: {
+        key: 'radio',
+        children: true,
+        props: {
+            name: {
+                // type: 'any'
+            },
+            shape: {
+                enum: ['round', 'square']
+            },
+            disabled: {
+                type: 'boolean'
+            },
+            'label-disabled': {
+                type: 'boolean'
+            },
+            'label-position': {
+                enum: ['right', 'left']
+            },
+            'icon-size': {
+                type: 'number'
+            },
+            'checked-color': {
+                type: 'string'
+            }
+        },
+        events: {
+            click: (event) => {}
+        },
+        slots: {
+            default: {},
+            icon: {}
+        }
+    }
+},
+radioGroup: {
+    title: 'radioGroup 单选框',
+    description: '复选框容器',
+    path: '/radioGroup/radioGroup.tsx',
+    groupKey: 'Form Components',
+    groupName: '表单组件',
+    schema: {
+        key: 'radioGroup',
+        children: true,
+        props: {
+            'v-model': {
+                type: 'boolean'
+            },
+            disabled: {
+                type: 'boolean'
+            },
+            direction: {
+                enum: ['vertical', 'horizontal']
+            },
+            'icon-size': {
+                type: 'number'
+            },
+            'checked-color': {
+                type: 'string'
+            }
+        },
+        events: {
+            change: (names) => {}
+        },
+        slots: {}
+    }
+}
   // datePicker: {
   //     title: 'DatePicker 日期选择',
   //     description: '日期选择器，用于选择年、月、日，通常与弹出层组件配合使用。',
