@@ -58,33 +58,28 @@ const componentList = {
       groupKey: 'Display Components',
       groupName: '展示组件',
       schema: {
-        key: 'badge',
-        children: true,
-        props: {
-            content: {},
-            color: {
-
-            },
-            dot: {
-              type: 'boolean'
-            },
-            max:{type:'number'},
-            offset:{
-              type:'number'
-            },
-            'show-zero':{  type:'boolean'},
-            position :{
-              enum:['top-right','top-left', 'bottom-left', 'bottom-right']
-            },
-
-        },
-        events: {
-
-        },
-        slots: {
-            default: {},
-            content:{}
-        }
+          key: 'badge',
+          children: true,
+          props: {
+              content: {},
+              color: {},
+              dot: {
+                  type: 'boolean'
+              },
+              max: { type: 'number' },
+              offset: {
+                  type: 'number'
+              },
+              'show-zero': { type: 'boolean' },
+              position: {
+                  enum: ['top-right', 'top-left', 'bottom-left', 'bottom-right']
+              }
+          },
+          events: {},
+          slots: {
+              default: {},
+              content: {}
+          }
       }
   },
   button: {
@@ -212,31 +207,31 @@ const componentList = {
           }
       }
   },
-  CellGroup : {
-    title: 'Cell 单元格',
-    description: '单元格为列表中的单个展示项。',
-    path: '/cell/Cell.tsx',
-    groupKey: 'Basic Components',
-    groupName: '基础组件',
-    schema: {
-        key: 'CellGroup',
-        children: true,
-        props: {
-            title: {},
-            insert: {type: 'boolean'},
-            border: {
-                type: 'boolean'
-            },
-        },
-        events: {
-            click: (event) => {}
-        },
-        slots: {
-            title: {},
-            default: {},
-        }
-    }
-},
+  CellGroup: {
+      title: 'Cell 单元格',
+      description: '单元格为列表中的单个展示项。',
+      path: '/cell/Cell.tsx',
+      groupKey: 'Basic Components',
+      groupName: '基础组件',
+      schema: {
+          key: 'CellGroup',
+          children: true,
+          props: {
+              title: {},
+              insert: { type: 'boolean' },
+              border: {
+                  type: 'boolean'
+              }
+          },
+          events: {
+              click: (event) => {}
+          },
+          slots: {
+              title: {},
+              default: {}
+          }
+      }
+  },
   image: {
       title: 'Image 图片',
       description: '增强版的 img 标签，提供多种图片填充模式，支持图片懒加载、加载中提示、加载失败提示。',
@@ -244,43 +239,41 @@ const componentList = {
       groupKey: 'Basic Components',
       groupName: '基础组件',
       schema: {
-        key: 'Image',
-        children: true,
-        props: {
-            src: {},
-            fit: {
-              enum:['fit','contain','cover','none','scale-down']
-            },
-            position: {
-
-            },
-            alt:{},
-            width:{
-              type:'number'
-            },
-            height:{  type:'number'},
-            radius:{  type:'number'},
-            round:{type: 'boolean'},
-            block:{type: 'boolean'},
-            'lazy-load':{type: 'boolean'},
-            'show-error':{type: 'boolean'},
-            'show-loading':{type: 'boolean'},
-            'error-icon':{},
-            'loading-icon':{},
-            'icon-size':{type: 'number'},
-            'icon-prefix':{}
-        },
-        events: {
-            click: (event) => {},
-            load: ()=>{},
-            error:()=>{}
-        },
-        slots: {
-            loading: {},
-            default: {},
-            error:{}
-        }
-    }
+          key: 'Image',
+          children: true,
+          props: {
+              src: {},
+              fit: {
+                  enum: ['fit', 'contain', 'cover', 'none', 'scale-down']
+              },
+              position: {},
+              alt: {},
+              width: {
+                  type: 'number'
+              },
+              height: { type: 'number' },
+              radius: { type: 'number' },
+              round: { type: 'boolean' },
+              block: { type: 'boolean' },
+              'lazy-load': { type: 'boolean' },
+              'show-error': { type: 'boolean' },
+              'show-loading': { type: 'boolean' },
+              'error-icon': {},
+              'loading-icon': {},
+              'icon-size': { type: 'number' },
+              'icon-prefix': {}
+          },
+          events: {
+              click: (event) => {},
+              load: () => {},
+              error: () => {}
+          },
+          slots: {
+              loading: {},
+              default: {},
+              error: {}
+          }
+      }
   },
   row: {
       title: 'Layout 布局',
@@ -289,53 +282,47 @@ const componentList = {
       groupKey: 'Basic Components',
       groupName: '基础组件',
       schema: {
-        key: 'row',
-        children: true,
-        props: {
-            gutter: {type:'number'},
-            tag: {
-            },
-            justify: {
-               enum:['start','end', 'center','space-around', 'space-between']
-            },
-            align:{
-              enum:['top','center', 'bottom']
-            },
-            wrap:{
-              type:'boolean'
-            },
-        },
-        events: {
-          click: (event) => {}
-        },
-        slots: {
-
-        }
+          key: 'row',
+          children: true,
+          props: {
+              gutter: { type: 'number' },
+              tag: {},
+              justify: {
+                  enum: ['start', 'end', 'center', 'space-around', 'space-between']
+              },
+              align: {
+                  enum: ['top', 'center', 'bottom']
+              },
+              wrap: {
+                  type: 'boolean'
+              }
+          },
+          events: {
+              click: (event) => {}
+          },
+          slots: {}
       }
   },
   col: {
-    title: 'Layout 布局',
-    description: 'Layout 提供了 van-row 和 van-col 两个组件来进行行列布局。',
-    path: '/image/Image.tsx',
-    groupKey: 'Basic Components',
-    groupName: '基础组件',
-    schema: {
-      key: 'col',
-      children: true,
-      props: {
-          span: {type:'number'},
-          offset: {type:'number'},
-          tag: {
+      title: 'Layout 布局',
+      description: 'Layout 提供了 van-row 和 van-col 两个组件来进行行列布局。',
+      path: '/image/Image.tsx',
+      groupKey: 'Basic Components',
+      groupName: '基础组件',
+      schema: {
+          key: 'col',
+          children: true,
+          props: {
+              span: { type: 'number' },
+              offset: { type: 'number' },
+              tag: {}
           },
-      },
-      events: {
-        click: (event) => {}
-      },
-      slots: {
-
+          events: {
+              click: (event) => {}
+          },
+          slots: {}
       }
-    }
-},
+  },
   // popup: {
   //     title: 'Popup 弹出层',
   //     description: '弹出层容器，用于展示弹窗、信息提示等内容，支持多个弹出层叠加展示。',
