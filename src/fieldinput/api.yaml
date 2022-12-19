@@ -29,6 +29,16 @@
       sync: true
       model: true
       description: 输入框的值
+    - name: inputstyle
+      title: 输入框样式
+      type: string
+      options:
+        - value: input
+          title: 默认
+        - value: password
+          title: 格子
+      default: text
+      description: 输入框样式
     - name: clearable
       title: 清除按钮
       type: boolean

@@ -5,6 +5,7 @@ import { preventDefault } from '../utils/dom/event';
 import { FieldMixin } from '../mixins/field';
 import Icon from '../icon';
 import NumberKeyboard from '../number-keyboard';
+import PasswordInput from '../password-input';
 
 const [createComponent, bem] = createNamespace('fieldinput');
 
@@ -54,7 +55,11 @@ export default createComponent({
     keytheme: {
       type: String,
       default: 'custom',
-    }
+    },
+    inputstyle: {
+      type: String,
+      default: 'input',
+    },
   },
   data() {
     const defaultValue = this.value ?? this.defaultValue;
@@ -80,8 +85,10 @@ export default createComponent({
     },
     extraKey() {
       switch (this.type) {
-        case 'card': return 'X';
-        case 'point': return '.';
+        case 'card':
+          return 'X';
+        case 'point':
+          return '.';
       }
     },
   },
@@ -209,32 +216,44 @@ export default createComponent({
     const inputAlign = this.vanField?.getProp('inputAlign');
     return (
       <div class={bem('newwrap', { clearwrap: this.clearable })}>
-        <input
-          // vShow={this.showInput}
-          ref="input"
-          type={this.type}
-          role="fieldinput"
-          class={bem('control', [inputAlign, 'custom'])}
-          value={this.currentValue}
-          maxlength={this.maxlength}
-          // style={this.inputStyle}
-          disabled={this.disabled}
-          readonly={this.readonly || this.readonlyforint}
-          // set keyboard in modern browsers
-          // inputmode={this.integer ? 'numeric' : 'decimal'}
-          placeholder={this.placeholder}
-          // aria-valuemax={this.max}
-          // aria-valuemin={this.min}
-          // aria-valuenow={this.currentValue}
-          onInput={this.onInput}
-          onFocus={this.onFocus}
-          onBlur={this.onBlur}
-          // onMousedown={this.onMousedown}
-          onTouchstart={this.onTouchstartinput}
-        />
+        {this.inputstyle === 'input' ? (
+          <input
+            // vShow={this.showInput}
+            ref="input"
+            type={this.type}
+            role="fieldinput"
+            class={bem('control', [inputAlign, 'custom'])}
+            value={this.currentValue}
+            maxlength={this.maxlength}
+            // style={this.inputStyle}
+            disabled={this.disabled}
+            readonly={this.readonly || this.readonlyforint}
+            // set keyboard in modern browsers
+            // inputmode={this.integer ? 'numeric' : 'decimal'}
+            placeholder={this.placeholder}
+            // aria-valuemax={this.max}
+            // aria-valuemin={this.min}
+            // aria-valuenow={this.currentValue}
+            onInput={this.onInput}
+            onFocus={this.onFocus}
+            onBlur={this.onBlur}
+            // onMousedown={this.onMousedown}
+            onTouchstart={this.onTouchstartinput}
+          />
+        ) : null}
         {this.showClear() && (
           <Icon name="clear" class={bem('clear')} onTouchstart={this.onClear} />
         )}
+        {this.inputstyle === 'password' ? (
+          <PasswordInput
+            value={this.currentValue}
+            length={this.maxlength}
+            focused={this.shownumber}
+            onFocus={() => {
+              this.shownumber = true;
+            }}
+          />
+        ) : null}
         {this.shownumbertype ? (
           <NumberKeyboard
             vModel={this.currentValue}

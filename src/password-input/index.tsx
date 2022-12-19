@@ -1,7 +1,7 @@
 // Utils
 import { createNamespace, addUnit } from '../utils';
 import { emit, inherit } from '../utils/functional';
-import { BORDER_LEFT, BORDER_SURROUND } from '../utils/constant';
+import { BORDER_BOTTOM, BORDER_LEFT, BORDER_SURROUND } from '../utils/constant';
 
 // Types
 import { CreateElement, RenderContext } from 'vue/types';
@@ -31,7 +31,7 @@ function PasswordInput(
   const Points = [];
   for (let i = 0; i < length; i++) {
     const char = value[i];
-    const showBorder = i !== 0 && !gutter;
+    const showBorder = !gutter;
     const showCursor = focused && i === value.length;
 
     let style;
@@ -41,7 +41,7 @@ function PasswordInput(
 
     Points.push(
       <li
-        class={[{ [BORDER_LEFT]: showBorder }, bem('item', { focus: showCursor })]}
+        class={[{ [BORDER_SURROUND]: showBorder }, bem('item', { focus: showCursor })]}
         style={style}
       >
         {mask ? (
@@ -57,7 +57,7 @@ function PasswordInput(
   return (
     <div class={bem()}>
       <ul
-        class={[bem('security'), { [BORDER_SURROUND]: !gutter }]}
+        class={[bem('security'), { [BORDER_SURROUND]: false &&!gutter }]}
         onTouchstart={(event: TouchEvent) => {
           event.stopPropagation();
           emit(ctx, 'focus', event);
