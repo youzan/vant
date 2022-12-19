@@ -23,3 +23,115 @@
   text-align: center;
   color: #ccc;
 }
+.van-col {
+  &--flex {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &--direction-vertical {
+    flex-direction: column;
+    &-gap-normal {
+      *:not(:last-child) {
+        margin-bottom: var(--van-space-base);
+      }
+    }
+    &-gap-shrink {
+      *:not(:last-child) {
+        margin-bottom: var(--space-shrink);
+      }
+    }
+    &-gap-none {
+      *:not(:last-child) {
+        margin-bottom: 0;
+      }
+    }
+    &-gap-mini {
+      *:not(:last-child) {
+        margin-bottom: var(--space-mini);
+      }
+    }
+    &-gap-small {
+      *:not(:last-child) {
+        margin-bottom: var(--space-small);
+      }
+    }
+    &-gap-large {
+      *:not(:last-child) {
+        margin-bottom: var(--space-large);
+      }
+    }
+  }
+
+  &--direction-horizontal {
+    &-gap-normal  {
+      *:not(:last-child) {
+        margin-right: var(--van-space-base);
+      }
+    }
+    &-gap-shrink {
+      *:not(:last-child) {
+        margin-right: var(--space-shrink);
+      }
+    }
+    &-gap-none {
+      *:not(:last-child) {
+        margin-right: 0;
+      }
+    }
+    &-gap-mini {
+      *:not(:last-child) {
+        margin-right: var(--space-mini);
+      }
+    }
+    &-gap-small {
+      *:not(:last-child) {
+        margin-right: var(--space-small);
+      }
+    }
+    &-gap-large {
+      *:not(:last-child) {
+        margin-right: var(--space-large);
+      }
+    }
+  }
+
+  &--justify-center {
+    justify-content: center;
+  }
+
+  &--justify-end {
+    justify-content: flex-end;
+  }
+
+  &--justify-space-between {
+    justify-content: space-between;
+  }
+
+  &--justify-space-around {
+    justify-content: space-around;
+  }
+
+  &--align-start {
+    align-items: flex-start;
+  }
+
+  &--align-center {
+    align-items: center;
+  }
+
+  &--align-end {
+    align-items: flex-end;
+  }
+
+  &--align-baseline {
+    align-items: baseline;
+  }
+
+  &--align-stretch {
+    align-items: stretch;
+  }
+  &--nowrap {
+    flex-wrap: nowrap
+  }
+}
