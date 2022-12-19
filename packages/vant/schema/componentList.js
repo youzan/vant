@@ -51,21 +51,6 @@ const components = [
 ];
 
 const componentList = {
-  // autoCenter: {
-  //     title: '自动居中',
-  //     description: '文本自动居中对齐。',
-  //     path: '/auto-center/auto-center.tsx',
-  //     groupKey: 'layout',
-  //     groupName: '布局'
-  // },
-  // avatar: {
-  //     title: '头像',
-  //     description: '用来代表用户或事物。',
-  //     path: '/avatar/avatar.tsx',
-  //     groupKey: 'dataDisplay',
-  //     groupName: '信息展示',
-  //     isHidden: '1'
-  // },
   badge: {
       title: 'Badge 徽标',
       description: '在右上角展示徽标数字或小红点。',
@@ -297,13 +282,60 @@ const componentList = {
         }
     }
   },
-  // // Layout: {
-  // //     title: 'Layout 布局',
-  // //     description: 'Layout 提供了 van-row 和 van-col 两个组件来进行行列布局。',
-  // //     path: '/image/Image.tsx',
-  // //     groupKey: 'Basic Components',
-  // //     groupName: '基础组件',
-  // // },
+  row: {
+      title: 'Layout 布局',
+      description: 'Layout 提供了 van-row 和 van-col 两个组件来进行行列布局。',
+      path: '/image/Image.tsx',
+      groupKey: 'Basic Components',
+      groupName: '基础组件',
+      schema: {
+        key: 'row',
+        children: true,
+        props: {
+            gutter: {type:'number'},
+            tag: {
+            },
+            justify: {
+               enum:['start','end', 'center','space-around', 'space-between']
+            },
+            align:{
+              enum:['top','center', 'bottom']
+            },
+            wrap:{
+              type:'boolean'
+            },
+        },
+        events: {
+          click: (event) => {}
+        },
+        slots: {
+
+        }
+      }
+  },
+  col: {
+    title: 'Layout 布局',
+    description: 'Layout 提供了 van-row 和 van-col 两个组件来进行行列布局。',
+    path: '/image/Image.tsx',
+    groupKey: 'Basic Components',
+    groupName: '基础组件',
+    schema: {
+      key: 'col',
+      children: true,
+      props: {
+          span: {type:'number'},
+          offset: {type:'number'},
+          tag: {
+          },
+      },
+      events: {
+        click: (event) => {}
+      },
+      slots: {
+
+      }
+    }
+},
   // popup: {
   //     title: 'Popup 弹出层',
   //     description: '弹出层容器，用于展示弹窗、信息提示等内容，支持多个弹出层叠加展示。',
