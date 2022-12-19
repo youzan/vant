@@ -153,6 +153,10 @@
       title: 清空后
       description: 清空后触发。
       params: []
+    - name: enoughkey
+      title: 输入完成时
+      description: 输入完成时后触发。
+      params: []
   methods:
     - name: focus
       description: 让输入框获取焦点。

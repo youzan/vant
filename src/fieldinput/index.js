@@ -211,6 +211,9 @@ export default createComponent({
     currentValue(val) {
       this.$emit('update:value', val);
       this.$emit('change', val, this);
+      if (this.maxlength && this.maxlength===val?.length) {
+        this.$emit('enoughkey', val)
+      }
     },
   },
   render() {
