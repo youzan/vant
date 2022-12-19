@@ -1,0 +1,237 @@
+{
+  "tagName": "Tab",
+  "pkgId": "vant",
+  "type": "object",
+  "properties": {
+    "name": {
+      "title": "Tab 标签页",
+      "description": "组件名称"
+    },
+    "tagName": {
+      "title": "Tab",
+      "description": "组件标签"
+    },
+    "advanceProps": {
+      "title": "高级属性",
+      "description": "高级属性",
+      "type": "object",
+      "properties": {
+        "condition": {
+          "title": "是否渲染",
+          "description": "是否渲染",
+          "type": "string",
+          "valueType": "switch",
+          "default": true
+        }
+      }
+    },
+    "hasChild": {
+      "type": "boolean",
+      "const": true,
+      "title": "支持调用子组件",
+      "description": "true:支持;false:不支持"
+    },
+    "props": {
+      "type": "object",
+      "title": "组件属性",
+      "description": "组件属性",
+      "required": [
+        "dot",
+        "name",
+        "badge",
+        "title",
+        "disabled",
+        "titleClass",
+        "titleStyle",
+        "showZeroBadge",
+        "props",
+        "//https",
+        "class={bem('panel-wrapper',{inactive"
+      ],
+      "properties": {
+        "dot": {
+          "enum": [],
+          "type": [
+            "boolean"
+          ],
+          "title": "dot",
+          "option": false,
+          "valueType": "switch"
+        },
+        "name": {
+          "enum": [],
+          "type": [
+            "numericProp"
+          ],
+          "title": "name",
+          "option": false,
+          "valueType": "text"
+        },
+        "badge": {
+          "enum": [],
+          "type": [
+            "numericProp"
+          ],
+          "title": "badge",
+          "option": false,
+          "valueType": "text"
+        },
+        "title": {
+          "enum": [],
+          "type": [
+            "String"
+          ],
+          "title": "title",
+          "option": false,
+          "valueType": "text"
+        },
+        "disabled": {
+          "enum": [],
+          "type": [
+            "boolean"
+          ],
+          "title": "disabled",
+          "option": false,
+          "valueType": "switch"
+        },
+        "titleClass": {
+          "enum": [],
+          "type": [
+            "unknownProp"
+          ],
+          "title": "titleClass",
+          "option": false,
+          "valueType": "text"
+        },
+        "titleStyle": {
+          "enum": [],
+          "type": [
+            "[String Object] as PropType<string ",
+            " CSSProperties>"
+          ],
+          "title": "titleStyle",
+          "option": false,
+          "valueType": "text"
+        },
+        "showZeroBadge": {
+          "enum": [],
+          "type": [
+            "truthProp"
+          ],
+          "title": "showZeroBadge",
+          "option": false,
+          "valueType": "text"
+        },
+        "props": {
+          "enum": [],
+          "type": [
+            "tabProps"
+          ],
+          "title": "props",
+          "option": false,
+          "valueType": "text"
+        },
+        "//https": {
+          "enum": [],
+          "type": [
+            "//github.com/youzan/vant/issues/11050"
+          ],
+          "title": "//https",
+          "option": false,
+          "valueType": "text"
+        },
+        "class={bem('panel-wrapper',{inactive": {
+          "enum": [],
+          "type": [
+            "hasInactiveClass.value })}"
+          ],
+          "title": "class={bem('panel-wrapper',{inactive",
+          "option": false,
+          "valueType": "text"
+        },
+        "tabindex={active.value0": {
+          "enum": [],
+          "type": [
+            "-1}"
+          ],
+          "title": "tabindex={active.value0",
+          "option": true,
+          "valueType": "text"
+        },
+        "constContent=shouldRenderslots.default.()": {
+          "enum": [],
+          "type": [
+            "null;"
+          ],
+          "title": "constContent=shouldRenderslots.default.()",
+          "option": true,
+          "valueType": "text"
+        },
+        "tabindex={show0": {
+          "enum": [],
+          "type": [
+            "-1}"
+          ],
+          "title": "tabindex={show0",
+          "option": true,
+          "valueType": "text"
+        }
+      }
+    },
+    "pkgId": {
+      "title": "vant",
+      "description": "组件库包名称"
+    },
+    "version": {
+      "title": "4.0.2",
+      "description": "组件库包版本"
+    },
+    "protoProps": {
+      "type": "object",
+      "title": "原生属性",
+      "required": [],
+      "properties": {
+        "id": {
+          "type": "string",
+          "title": "唯一id",
+          "valueType": "text",
+          "description": "元素唯一标识"
+        },
+        "ref": {
+          "type": "string",
+          "title": "ref",
+          "valueType": "text",
+          "description": "组件ref名称，可在this.[ref名称]来获取组件实例this对象"
+        },
+        "style": {
+          "type": "object",
+          "title": "内联样式",
+          "valueType": "object",
+          "description": "组件内联样式(JSON格式)"
+        },
+        "className": {
+          "type": "string",
+          "title": "样式名",
+          "valueType": "textarea",
+          "description": "组件样式名"
+        }
+      },
+      "description": "原生属性"
+    },
+    "lastModifyTime": {
+      "type": "string",
+      "title": "最后一次修改时间",
+      "description": "2022-12-13"
+    }
+  },
+  "lastModifyTime": "2022-12-13",
+  "version": "4.0.2",
+  "required": [
+    null
+  ],
+  "description": "选项卡组件，用于在不同的内容区域之间进行切换。",
+  "groupKey": "Navigation Components",
+  "groupName": "导航组件",
+  "isHidden": 0,
+  "framework": "vue"
+}

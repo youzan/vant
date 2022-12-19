@@ -1,0 +1,295 @@
+{
+  "tagName": "List",
+  "pkgId": "vant",
+  "type": "object",
+  "properties": {
+    "name": {
+      "title": "List 列表",
+      "description": "组件名称"
+    },
+    "tagName": {
+      "title": "List",
+      "description": "组件标签"
+    },
+    "advanceProps": {
+      "title": "高级属性",
+      "description": "高级属性",
+      "type": "object",
+      "properties": {
+        "condition": {
+          "title": "是否渲染",
+          "description": "是否渲染",
+          "type": "string",
+          "valueType": "switch",
+          "default": true
+        }
+      }
+    },
+    "hasChild": {
+      "type": "boolean",
+      "const": true,
+      "title": "支持调用子组件",
+      "description": "true:支持;false:不支持"
+    },
+    "props": {
+      "type": "object",
+      "title": "组件属性",
+      "description": "组件属性",
+      "required": [
+        "error",
+        "offset",
+        "loading",
+        "disabled",
+        "finished",
+        "errorText",
+        "direction",
+        "loadingText",
+        "finishedText",
+        "immediateCheck",
+        "props",
+        "emits",
+        "emit('update",
+        ")",
+        "target",
+        "passive"
+      ],
+      "properties": {
+        "error": {
+          "enum": [],
+          "type": [
+            "boolean"
+          ],
+          "title": "error",
+          "option": false,
+          "valueType": "switch"
+        },
+        "offset": {
+          "enum": [],
+          "type": [
+            "makeNumericProp(300)"
+          ],
+          "title": "offset",
+          "option": false,
+          "valueType": "text"
+        },
+        "loading": {
+          "enum": [],
+          "type": [
+            "boolean"
+          ],
+          "title": "loading",
+          "option": false,
+          "valueType": "switch"
+        },
+        "disabled": {
+          "enum": [],
+          "type": [
+            "boolean"
+          ],
+          "title": "disabled",
+          "option": false,
+          "valueType": "switch"
+        },
+        "finished": {
+          "enum": [],
+          "type": [
+            "boolean"
+          ],
+          "title": "finished",
+          "option": false,
+          "valueType": "switch"
+        },
+        "errorText": {
+          "enum": [],
+          "type": [
+            "String"
+          ],
+          "title": "errorText",
+          "option": false,
+          "valueType": "text"
+        },
+        "direction": {
+          "enum": [],
+          "type": [
+            "makeStringProp<ListDirection>('down')"
+          ],
+          "title": "direction",
+          "option": false,
+          "valueType": "text"
+        },
+        "loadingText": {
+          "enum": [],
+          "type": [
+            "String"
+          ],
+          "title": "loadingText",
+          "option": false,
+          "valueType": "text"
+        },
+        "finishedText": {
+          "enum": [],
+          "type": [
+            "String"
+          ],
+          "title": "finishedText",
+          "option": false,
+          "valueType": "text"
+        },
+        "immediateCheck": {
+          "enum": [],
+          "type": [
+            "truthProp"
+          ],
+          "title": "immediateCheck",
+          "option": false,
+          "valueType": "text"
+        },
+        "props": {
+          "enum": [],
+          "type": [
+            "listProps"
+          ],
+          "title": "props",
+          "option": false,
+          "valueType": "text"
+        },
+        "emits": {
+          "enum": [],
+          "type": [
+            "['load' 'update:error' 'update:loading']"
+          ],
+          "title": "emits",
+          "option": false,
+          "valueType": "text"
+        },
+        "emit('update": {
+          "enum": [],
+          "type": [
+            "error' false);"
+          ],
+          "title": "emit('update",
+          "option": false,
+          "valueType": "text"
+        },
+        "consttext=slots.finishedslots.finished()": {
+          "enum": [],
+          "type": [
+            "props.finishedText;"
+          ],
+          "title": "consttext=slots.finishedslots.finished()",
+          "option": true,
+          "valueType": "text"
+        },
+        "consttext=slots.errorslots.error()": {
+          "enum": [],
+          "type": [
+            "props.errorText;"
+          ],
+          "title": "consttext=slots.errorslots.error()",
+          "option": true,
+          "valueType": "text"
+        },
+        ")": {
+          "enum": [],
+          "type": [
+            "("
+          ],
+          "title": ")",
+          "option": false,
+          "valueType": "text"
+        },
+        "target": {
+          "enum": [],
+          "type": [
+            "scrollParent"
+          ],
+          "title": "target",
+          "option": false,
+          "valueType": "text"
+        },
+        "passive": {
+          "enum": [],
+          "type": [
+            "true"
+          ],
+          "title": "passive",
+          "option": false,
+          "valueType": "text"
+        },
+        "{props.direction==='down'Content": {
+          "enum": [],
+          "type": [
+            "Placeholder}"
+          ],
+          "title": "{props.direction==='down'Content",
+          "option": true,
+          "valueType": "text"
+        },
+        "{props.direction==='up'Content": {
+          "enum": [],
+          "type": [
+            "Placeholder}"
+          ],
+          "title": "{props.direction==='up'Content",
+          "option": true,
+          "valueType": "text"
+        }
+      }
+    },
+    "pkgId": {
+      "title": "vant",
+      "description": "组件库包名称"
+    },
+    "version": {
+      "title": "4.0.2",
+      "description": "组件库包版本"
+    },
+    "protoProps": {
+      "type": "object",
+      "title": "原生属性",
+      "required": [],
+      "properties": {
+        "id": {
+          "type": "string",
+          "title": "唯一id",
+          "valueType": "text",
+          "description": "元素唯一标识"
+        },
+        "ref": {
+          "type": "string",
+          "title": "ref",
+          "valueType": "text",
+          "description": "组件ref名称，可在this.[ref名称]来获取组件实例this对象"
+        },
+        "style": {
+          "type": "object",
+          "title": "内联样式",
+          "valueType": "object",
+          "description": "组件内联样式(JSON格式)"
+        },
+        "className": {
+          "type": "string",
+          "title": "样式名",
+          "valueType": "textarea",
+          "description": "组件样式名"
+        }
+      },
+      "description": "原生属性"
+    },
+    "lastModifyTime": {
+      "type": "string",
+      "title": "最后一次修改时间",
+      "description": "2022-12-13"
+    }
+  },
+  "lastModifyTime": "2022-12-13",
+  "version": "4.0.2",
+  "required": [
+    null
+  ],
+  "description": "瀑布流滚动加载，用于展示长列表，当列表即将滚动到底部时，会触发事件并加载更多列表项。",
+  "groupKey": "Display Components",
+  "groupName": "展示组件",
+  "isHidden": 0,
+  "framework": "vue"
+}

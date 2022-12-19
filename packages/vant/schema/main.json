@@ -1,0 +1,9 @@
+{
+  "key": "antd-mobile",
+  "title": "antd-mobile",
+  "icon": "",
+  "tooltip": "基于React的UI组件库",
+  "version": "5.22.0",
+  "default": 0,
+  "$schema": "http://json-schema.org/draft-07/schema#"
+}

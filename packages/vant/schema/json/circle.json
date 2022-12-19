@@ -1,0 +1,378 @@
+{
+  "tagName": "Circle",
+  "pkgId": "vant",
+  "type": "object",
+  "properties": {
+    "name": {
+      "title": "Circle 环形进度条",
+      "description": "组件名称"
+    },
+    "tagName": {
+      "title": "Circle",
+      "description": "组件标签"
+    },
+    "advanceProps": {
+      "title": "高级属性",
+      "description": "高级属性",
+      "type": "object",
+      "properties": {
+        "condition": {
+          "title": "是否渲染",
+          "description": "是否渲染",
+          "type": "string",
+          "valueType": "switch",
+          "default": true
+        }
+      }
+    },
+    "hasChild": {
+      "type": "boolean",
+      "const": true,
+      "title": "支持调用子组件",
+      "description": "true:支持;false:不支持"
+    },
+    "props": {
+      "type": "object",
+      "title": "组件属性",
+      "description": "组件属性",
+      "required": [
+        "text",
+        "size",
+        "fill",
+        "rate",
+        "speed",
+        "color",
+        "clockwise",
+        "layerColor",
+        "currentRate",
+        "strokeWidth",
+        "strokeLinecap",
+        "startPosition",
+        "props",
+        "emits",
+        "constROTATE_ANGLE_MAP",
+        "top",
+        "right",
+        "bottom",
+        "left",
+        "transform",
+        "letrafId",
+        "emit('update",
+        "{immediate",
+        "conststyle",
+        "stroke",
+        "strokeDasharray"
+      ],
+      "properties": {
+        "text": {
+          "enum": [],
+          "type": [
+            "String"
+          ],
+          "title": "text",
+          "option": false,
+          "valueType": "text"
+        },
+        "size": {
+          "enum": [],
+          "type": [
+            "numericProp"
+          ],
+          "title": "size",
+          "option": false,
+          "valueType": "text"
+        },
+        "fill": {
+          "enum": [],
+          "type": [
+            "props.fill"
+          ],
+          "title": "fill",
+          "option": false,
+          "valueType": "text"
+        },
+        "rate": {
+          "enum": [],
+          "type": [
+            "makeNumericProp(100)"
+          ],
+          "title": "rate",
+          "option": false,
+          "valueType": "text"
+        },
+        "speed": {
+          "enum": [],
+          "type": [
+            "makeNumericProp(0)"
+          ],
+          "title": "speed",
+          "option": false,
+          "valueType": "text"
+        },
+        "color": {
+          "enum": [],
+          "type": [
+            "[String Object] as PropType<string ",
+            " Record<string string>>"
+          ],
+          "title": "color",
+          "option": false,
+          "valueType": "text"
+        },
+        "clockwise": {
+          "enum": [],
+          "type": [
+            "truthProp"
+          ],
+          "title": "clockwise",
+          "option": false,
+          "valueType": "text"
+        },
+        "layerColor": {
+          "enum": [],
+          "type": [
+            "String"
+          ],
+          "title": "layerColor",
+          "option": false,
+          "valueType": "text"
+        },
+        "currentRate": {
+          "enum": [],
+          "type": [
+            "makeNumberProp(0)"
+          ],
+          "title": "currentRate",
+          "option": false,
+          "valueType": "text"
+        },
+        "strokeWidth": {
+          "enum": [],
+          "type": [
+            "`${props.strokeWidth}px`"
+          ],
+          "title": "strokeWidth",
+          "option": false,
+          "valueType": "text"
+        },
+        "strokeLinecap": {
+          "enum": [],
+          "type": [
+            "String as PropType<CanvasLineCap>"
+          ],
+          "title": "strokeLinecap",
+          "option": false,
+          "valueType": "text"
+        },
+        "startPosition": {
+          "enum": [],
+          "type": [
+            "makeStringProp<CircleStartPosition>('top')"
+          ],
+          "title": "startPosition",
+          "option": false,
+          "valueType": "text"
+        },
+        "props": {
+          "enum": [],
+          "type": [
+            "circleProps"
+          ],
+          "title": "props",
+          "option": false,
+          "valueType": "text"
+        },
+        "emits": {
+          "enum": [],
+          "type": [
+            "['update:currentRate']"
+          ],
+          "title": "emits",
+          "option": false,
+          "valueType": "text"
+        },
+        "constROTATE_ANGLE_MAP": {
+          "enum": [],
+          "type": [
+            "number"
+          ],
+          "title": "constROTATE_ANGLE_MAP",
+          "option": false,
+          "valueType": "digit"
+        },
+        "top": {
+          "enum": [],
+          "type": [
+            "0"
+          ],
+          "title": "top",
+          "option": false,
+          "valueType": "text"
+        },
+        "right": {
+          "enum": [],
+          "type": [
+            "90"
+          ],
+          "title": "right",
+          "option": false,
+          "valueType": "text"
+        },
+        "bottom": {
+          "enum": [],
+          "type": [
+            "180"
+          ],
+          "title": "bottom",
+          "option": false,
+          "valueType": "text"
+        },
+        "left": {
+          "enum": [],
+          "type": [
+            "270"
+          ],
+          "title": "left",
+          "option": false,
+          "valueType": "text"
+        },
+        "transform": {
+          "enum": [],
+          "type": [
+            "`rotate(${angleValue}deg)`"
+          ],
+          "title": "transform",
+          "option": false,
+          "valueType": "text"
+        },
+        "letrafId": {
+          "enum": [],
+          "type": [
+            "number"
+          ],
+          "title": "letrafId",
+          "option": false,
+          "valueType": "digit"
+        },
+        "emit('update": {
+          "enum": [],
+          "type": [
+            "currentRate' endRate);"
+          ],
+          "title": "emit('update",
+          "option": false,
+          "valueType": "text"
+        },
+        "if(endRate>startRaterate<endRate": {
+          "enum": [],
+          "type": [
+            "rate > endRate) {"
+          ],
+          "title": "if(endRate>startRaterate<endRate",
+          "option": true,
+          "valueType": "text"
+        },
+        "{immediate": {
+          "enum": [],
+          "type": [
+            "true }"
+          ],
+          "title": "{immediate",
+          "option": false,
+          "valueType": "text"
+        },
+        "constcolor=isObject(props.color)`url(#${id})`": {
+          "enum": [],
+          "type": [
+            "props.color;"
+          ],
+          "title": "constcolor=isObject(props.color)`url(#${id})`",
+          "option": true,
+          "valueType": "text"
+        },
+        "conststyle": {
+          "enum": [],
+          "type": [
+            "CSSProperties = {"
+          ],
+          "title": "conststyle",
+          "option": false,
+          "valueType": "text"
+        },
+        "stroke": {
+          "enum": [],
+          "type": [
+            "props.layerColor"
+          ],
+          "title": "stroke",
+          "option": false,
+          "valueType": "text"
+        },
+        "strokeDasharray": {
+          "enum": [],
+          "type": [
+            "`${offset}px ${PERIMETER}px`"
+          ],
+          "title": "strokeDasharray",
+          "option": false,
+          "valueType": "text"
+        }
+      }
+    },
+    "pkgId": {
+      "title": "vant",
+      "description": "组件库包名称"
+    },
+    "version": {
+      "title": "4.0.2",
+      "description": "组件库包版本"
+    },
+    "protoProps": {
+      "type": "object",
+      "title": "原生属性",
+      "required": [],
+      "properties": {
+        "id": {
+          "type": "string",
+          "title": "唯一id",
+          "valueType": "text",
+          "description": "元素唯一标识"
+        },
+        "ref": {
+          "type": "string",
+          "title": "ref",
+          "valueType": "text",
+          "description": "组件ref名称，可在this.[ref名称]来获取组件实例this对象"
+        },
+        "style": {
+          "type": "object",
+          "title": "内联样式",
+          "valueType": "object",
+          "description": "组件内联样式(JSON格式)"
+        },
+        "className": {
+          "type": "string",
+          "title": "样式名",
+          "valueType": "textarea",
+          "description": "组件样式名"
+        }
+      },
+      "description": "原生属性"
+    },
+    "lastModifyTime": {
+      "type": "string",
+      "title": "最后一次修改时间",
+      "description": "2022-12-13"
+    }
+  },
+  "lastModifyTime": "2022-12-13",
+  "version": "4.0.2",
+  "required": [
+    null
+  ],
+  "description": "圆环形的进度条组件，支持进度渐变动画。",
+  "groupKey": "Display Components",
+  "groupName": "展示组件",
+  "isHidden": 0,
+  "framework": "vue"
+}

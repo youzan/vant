@@ -1,0 +1,361 @@
+{
+  "tagName": "Button",
+  "pkgId": "vant",
+  "type": "object",
+  "properties": {
+    "name": {
+      "title": "Button 按钮",
+      "description": "组件名称"
+    },
+    "tagName": {
+      "title": "Button",
+      "description": "组件标签"
+    },
+    "advanceProps": {
+      "title": "高级属性",
+      "description": "高级属性",
+      "type": "object",
+      "properties": {
+        "condition": {
+          "title": "是否渲染",
+          "description": "是否渲染",
+          "type": "string",
+          "valueType": "switch",
+          "default": true
+        }
+      }
+    },
+    "hasChild": {
+      "type": "boolean",
+      "const": true,
+      "title": "支持调用子组件",
+      "description": "true:支持;false:不支持"
+    },
+    "props": {
+      "type": "object",
+      "title": "组件属性",
+      "description": "组件属性",
+      "required": [
+        "tag",
+        "text",
+        "icon",
+        "type",
+        "size",
+        "color",
+        "block",
+        "plain",
+        "round",
+        "square",
+        "loading",
+        "hairline",
+        "disabled",
+        "iconPrefix",
+        "nativeType",
+        "loadingSize",
+        "loadingText",
+        "loadingType",
+        "iconPosition",
+        "props",
+        "emits",
+        "conststyle",
+        "{[BORDER_SURROUND]"
+      ],
+      "properties": {
+        "tag": {
+          "enum": [],
+          "type": [
+            "makeStringProp<keyof HTMLElementTagNameMap>('button')"
+          ],
+          "title": "tag",
+          "option": false,
+          "valueType": "text"
+        },
+        "text": {
+          "enum": [],
+          "type": [
+            "String"
+          ],
+          "title": "text",
+          "option": false,
+          "valueType": "text"
+        },
+        "icon": {
+          "enum": [],
+          "type": [
+            "String"
+          ],
+          "title": "icon",
+          "option": false,
+          "valueType": "text"
+        },
+        "type": {
+          "enum": [],
+          "type": [
+            "makeStringProp<ButtonType>('default')"
+          ],
+          "title": "type",
+          "option": false,
+          "valueType": "text"
+        },
+        "size": {
+          "enum": [],
+          "type": [
+            "makeStringProp<ButtonSize>('normal')"
+          ],
+          "title": "size",
+          "option": false,
+          "valueType": "text"
+        },
+        "color": {
+          "enum": [],
+          "type": [
+            "plain ? color : 'white'"
+          ],
+          "title": "color",
+          "option": false,
+          "valueType": "text"
+        },
+        "block": {
+          "enum": [],
+          "type": [
+            "boolean"
+          ],
+          "title": "block",
+          "option": false,
+          "valueType": "switch"
+        },
+        "plain": {
+          "enum": [],
+          "type": [
+            "boolean"
+          ],
+          "title": "plain",
+          "option": false,
+          "valueType": "switch"
+        },
+        "round": {
+          "enum": [],
+          "type": [
+            "boolean"
+          ],
+          "title": "round",
+          "option": false,
+          "valueType": "switch"
+        },
+        "square": {
+          "enum": [],
+          "type": [
+            "boolean"
+          ],
+          "title": "square",
+          "option": false,
+          "valueType": "switch"
+        },
+        "loading": {
+          "enum": [],
+          "type": [
+            "boolean"
+          ],
+          "title": "loading",
+          "option": false,
+          "valueType": "switch"
+        },
+        "hairline": {
+          "enum": [],
+          "type": [
+            "boolean"
+          ],
+          "title": "hairline",
+          "option": false,
+          "valueType": "switch"
+        },
+        "disabled": {
+          "enum": [],
+          "type": [
+            "boolean"
+          ],
+          "title": "disabled",
+          "option": false,
+          "valueType": "switch"
+        },
+        "iconPrefix": {
+          "enum": [],
+          "type": [
+            "String"
+          ],
+          "title": "iconPrefix",
+          "option": false,
+          "valueType": "text"
+        },
+        "nativeType": {
+          "enum": [],
+          "type": [
+            "makeStringProp<ButtonNativeType>('button')"
+          ],
+          "title": "nativeType",
+          "option": false,
+          "valueType": "text"
+        },
+        "loadingSize": {
+          "enum": [],
+          "type": [
+            "numericProp"
+          ],
+          "title": "loadingSize",
+          "option": false,
+          "valueType": "text"
+        },
+        "loadingText": {
+          "enum": [],
+          "type": [
+            "String"
+          ],
+          "title": "loadingText",
+          "option": false,
+          "valueType": "text"
+        },
+        "loadingType": {
+          "enum": [],
+          "type": [
+            "String as PropType<LoadingType>"
+          ],
+          "title": "loadingType",
+          "option": false,
+          "valueType": "text"
+        },
+        "iconPosition": {
+          "enum": [],
+          "type": [
+            "makeStringProp<ButtonIconPosition>('left')"
+          ],
+          "title": "iconPosition",
+          "option": false,
+          "valueType": "text"
+        },
+        "props": {
+          "enum": [],
+          "type": [
+            "buttonProps"
+          ],
+          "title": "props",
+          "option": false,
+          "valueType": "text"
+        },
+        "emits": {
+          "enum": [],
+          "type": [
+            "['click']"
+          ],
+          "title": "emits",
+          "option": false,
+          "valueType": "text"
+        },
+        "text=slots.defaultslots.default()": {
+          "enum": [],
+          "type": [
+            "props.text;"
+          ],
+          "title": "text=slots.defaultslots.default()",
+          "option": true,
+          "valueType": "text"
+        },
+        "conststyle": {
+          "enum": [],
+          "type": [
+            "CSSProperties = {"
+          ],
+          "title": "conststyle",
+          "option": false,
+          "valueType": "text"
+        },
+        "{[BORDER_SURROUND]": {
+          "enum": [],
+          "type": [
+            "hairline }"
+          ],
+          "title": "{[BORDER_SURROUND]",
+          "option": false,
+          "valueType": "text"
+        }
+      }
+    },
+    "events": {
+      "type": "object",
+      "title": "交互行为",
+      "description": "组件动作事件",
+      "required": [
+        "constonClick=(event"
+      ],
+      "properties": {
+        "constonClick=(event": {
+          "value": "MouseEvent) => {",
+          "title": "constonClick=(event",
+          "description": "constonClick=(event",
+          "type": "object",
+          "properties": {
+            "name": {
+              "description": "函数名",
+              "title": "函数名",
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "pkgId": {
+      "title": "vant",
+      "description": "组件库包名称"
+    },
+    "version": {
+      "title": "4.0.2",
+      "description": "组件库包版本"
+    },
+    "protoProps": {
+      "type": "object",
+      "title": "原生属性",
+      "required": [],
+      "properties": {
+        "id": {
+          "type": "string",
+          "title": "唯一id",
+          "valueType": "text",
+          "description": "元素唯一标识"
+        },
+        "ref": {
+          "type": "string",
+          "title": "ref",
+          "valueType": "text",
+          "description": "组件ref名称，可在this.[ref名称]来获取组件实例this对象"
+        },
+        "style": {
+          "type": "object",
+          "title": "内联样式",
+          "valueType": "object",
+          "description": "组件内联样式(JSON格式)"
+        },
+        "className": {
+          "type": "string",
+          "title": "样式名",
+          "valueType": "textarea",
+          "description": "组件样式名"
+        }
+      },
+      "description": "原生属性"
+    },
+    "lastModifyTime": {
+      "type": "string",
+      "title": "最后一次修改时间",
+      "description": "2022-12-13"
+    }
+  },
+  "lastModifyTime": "2022-12-13",
+  "version": "4.0.2",
+  "required": [
+    null
+  ],
+  "description": "按钮用于触发一个操作，如提交表单。",
+  "groupKey": "Basic Components",
+  "groupName": "基础组件",
+  "isHidden": 0,
+  "framework": "vue"
+}

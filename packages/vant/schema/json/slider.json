@@ -1,0 +1,659 @@
+{
+  "tagName": "Slider",
+  "pkgId": "vant",
+  "type": "object",
+  "properties": {
+    "name": {
+      "title": "Slider 滑块",
+      "description": "组件名称"
+    },
+    "tagName": {
+      "title": "Slider",
+      "description": "组件标签"
+    },
+    "advanceProps": {
+      "title": "高级属性",
+      "description": "高级属性",
+      "type": "object",
+      "properties": {
+        "condition": {
+          "title": "是否渲染",
+          "description": "是否渲染",
+          "type": "string",
+          "valueType": "switch",
+          "default": true
+        }
+      }
+    },
+    "hasChild": {
+      "type": "boolean",
+      "const": true,
+      "title": "支持调用子组件",
+      "description": "true:支持;false:不支持"
+    },
+    "props": {
+      "type": "object",
+      "title": "组件属性",
+      "description": "组件属性",
+      "required": [
+        "min",
+        "max",
+        "step",
+        "range",
+        "reverse",
+        "disabled",
+        "readonly",
+        "vertical",
+        "barHeight",
+        "buttonSize",
+        "activeColor",
+        "inactiveColor",
+        "modelValue",
+        "type",
+        "default",
+        "props",
+        "emits",
+        "letbuttonIndex",
+        "letcurrent",
+        "letstartValue",
+        "background",
+        "[crossAxis]",
+        "conststyle",
+        "[mainAxis]",
+        "emit('update",
+        "",
+        "target"
+      ],
+      "properties": {
+        "min": {
+          "enum": [],
+          "type": [
+            "makeNumericProp(0)"
+          ],
+          "title": "min",
+          "option": false,
+          "valueType": "text"
+        },
+        "max": {
+          "enum": [],
+          "type": [
+            "makeNumericProp(100)"
+          ],
+          "title": "max",
+          "option": false,
+          "valueType": "text"
+        },
+        "step": {
+          "enum": [],
+          "type": [
+            "makeNumericProp(1)"
+          ],
+          "title": "step",
+          "option": false,
+          "valueType": "text"
+        },
+        "range": {
+          "enum": [],
+          "type": [
+            "boolean"
+          ],
+          "title": "range",
+          "option": false,
+          "valueType": "switch"
+        },
+        "reverse": {
+          "enum": [],
+          "type": [
+            "boolean"
+          ],
+          "title": "reverse",
+          "option": false,
+          "valueType": "switch"
+        },
+        "disabled": {
+          "enum": [],
+          "type": [
+            "props.disabled"
+          ],
+          "title": "disabled",
+          "option": false,
+          "valueType": "text"
+        },
+        "readonly": {
+          "enum": [],
+          "type": [
+            "boolean"
+          ],
+          "title": "readonly",
+          "option": false,
+          "valueType": "switch"
+        },
+        "vertical": {
+          "enum": [],
+          "type": [
+            "props.vertical"
+          ],
+          "title": "vertical",
+          "option": false,
+          "valueType": "text"
+        },
+        "barHeight": {
+          "enum": [],
+          "type": [
+            "numericProp"
+          ],
+          "title": "barHeight",
+          "option": false,
+          "valueType": "text"
+        },
+        "buttonSize": {
+          "enum": [],
+          "type": [
+            "numericProp"
+          ],
+          "title": "buttonSize",
+          "option": false,
+          "valueType": "text"
+        },
+        "activeColor": {
+          "enum": [],
+          "type": [
+            "String"
+          ],
+          "title": "activeColor",
+          "option": false,
+          "valueType": "text"
+        },
+        "inactiveColor": {
+          "enum": [],
+          "type": [
+            "String"
+          ],
+          "title": "inactiveColor",
+          "option": false,
+          "valueType": "text"
+        },
+        "modelValue": {
+          "enum": [],
+          "type": [
+            "{"
+          ],
+          "title": "modelValue",
+          "option": false,
+          "valueType": "text"
+        },
+        "type": {
+          "enum": [],
+          "type": [
+            "[Number Array] as PropType<SliderValue>"
+          ],
+          "title": "type",
+          "option": false,
+          "valueType": "text"
+        },
+        "default": {
+          "enum": [],
+          "type": [
+            "0"
+          ],
+          "title": "default",
+          "option": false,
+          "valueType": "text"
+        },
+        "props": {
+          "enum": [],
+          "type": [
+            "sliderProps"
+          ],
+          "title": "props",
+          "option": false,
+          "valueType": "text"
+        },
+        "emits": {
+          "enum": [],
+          "type": [
+            "['change' 'dragEnd' 'dragStart' 'update:modelValue']"
+          ],
+          "title": "emits",
+          "option": false,
+          "valueType": "text"
+        },
+        "letbuttonIndex": {
+          "enum": [],
+          "type": [
+            "0 ",
+            " 1;"
+          ],
+          "title": "letbuttonIndex",
+          "option": false,
+          "valueType": "text"
+        },
+        "letcurrent": {
+          "enum": [],
+          "type": [
+            "SliderValue;"
+          ],
+          "title": "letcurrent",
+          "option": false,
+          "valueType": "text"
+        },
+        "letstartValue": {
+          "enum": [],
+          "type": [
+            "SliderValue;"
+          ],
+          "title": "letstartValue",
+          "option": false,
+          "valueType": "text"
+        },
+        "constcrossAxis=props.vertical'width'": {
+          "enum": [],
+          "type": [
+            "'height';"
+          ],
+          "title": "constcrossAxis=props.vertical'width'",
+          "option": true,
+          "valueType": "text"
+        },
+        "background": {
+          "enum": [],
+          "type": [
+            "props.activeColor"
+          ],
+          "title": "background",
+          "option": false,
+          "valueType": "text"
+        },
+        "[crossAxis]": {
+          "enum": [],
+          "type": [
+            "addUnit(props.barHeight)"
+          ],
+          "title": "[crossAxis]",
+          "option": false,
+          "valueType": "text"
+        },
+        "constmainAxis=props.vertical'height'": {
+          "enum": [],
+          "type": [
+            "'width';"
+          ],
+          "title": "constmainAxis=props.vertical'height'",
+          "option": true,
+          "valueType": "text"
+        },
+        "conststyle": {
+          "enum": [],
+          "type": [
+            "CSSProperties = {"
+          ],
+          "title": "conststyle",
+          "option": false,
+          "valueType": "text"
+        },
+        "[mainAxis]": {
+          "enum": [],
+          "type": [
+            "calcMainAxis()"
+          ],
+          "title": "[mainAxis]",
+          "option": false,
+          "valueType": "text"
+        },
+        "returnprops.reverse'bottom'": {
+          "enum": [],
+          "type": [
+            "'top';"
+          ],
+          "title": "returnprops.reverse'bottom'",
+          "option": true,
+          "valueType": "text"
+        },
+        "returnprops.reverse'right'": {
+          "enum": [],
+          "type": [
+            "'left';"
+          ],
+          "title": "returnprops.reverse'right'",
+          "option": true,
+          "valueType": "text"
+        },
+        "returnleft>right[right,left]": {
+          "enum": [],
+          "type": [
+            "[left right];"
+          ],
+          "title": "returnleft>right[right,left]",
+          "option": true,
+          "valueType": "text"
+        },
+        "emit('update": {
+          "enum": [],
+          "type": [
+            "modelValue' value);"
+          ],
+          "title": "emit('update",
+          "option": false,
+          "valueType": "text"
+        },
+        "consttotal=verticalrect.height": {
+          "enum": [],
+          "type": [
+            "rect.width;"
+          ],
+          "title": "consttotal=verticalrect.height",
+          "option": true,
+          "valueType": "text"
+        },
+        "constdelta=props.verticaltouch.deltaY.value": {
+          "enum": [],
+          "type": [
+            "touch.deltaX.value;"
+          ],
+          "title": "constdelta=props.verticaltouch.deltaY.value",
+          "option": true,
+          "valueType": "text"
+        },
+        "consttotal=props.verticalrect.height": {
+          "enum": [],
+          "type": [
+            "rect.width;"
+          ],
+          "title": "consttotal=props.verticalrect.height",
+          "option": true,
+          "valueType": "text"
+        },
+        "constindex=props.reverse1-buttonIndex": {
+          "enum": [],
+          "type": [
+            "buttonIndex;"
+          ],
+          "title": "constindex=props.reverse1-buttonIndex",
+          "option": true,
+          "valueType": "text"
+        },
+        "returnbem('button-wrapper',props.reverse'left'": {
+          "enum": [],
+          "type": [
+            "'right');"
+          ],
+          "title": "returnbem('button-wrapper',props.reverse'left'",
+          "option": true,
+          "valueType": "text"
+        },
+        "constslot=slots[index===0'left-button'": {
+          "enum": [],
+          "type": [
+            "'right-button'];"
+          ],
+          "title": "constslot=slots[index===0'left-button'",
+          "option": true,
+          "valueType": "text"
+        },
+        "": {
+          "enum": [],
+          "type": [
+            "number"
+          ],
+          "title": "",
+          "option": false,
+          "valueType": "digit"
+        },
+        "tabindex={props.disabledundefined": {
+          "enum": [],
+          "type": [
+            "0}"
+          ],
+          "title": "tabindex={props.disabledundefined",
+          "option": true,
+          "valueType": "text"
+        },
+        "aria-orientation={props.vertical'vertical'": {
+          "enum": [],
+          "type": [
+            "'horizontal'}"
+          ],
+          "title": "aria-orientation={props.vertical'vertical'",
+          "option": true,
+          "valueType": "text"
+        },
+        "target": {
+          "enum": [],
+          "type": [
+            "slider"
+          ],
+          "title": "target",
+          "option": false,
+          "valueType": "text"
+        },
+        "{props.range[renderButton(0),renderButton(1)]": {
+          "enum": [],
+          "type": [
+            "renderButton()}"
+          ],
+          "title": "{props.range[renderButton(0),renderButton(1)]",
+          "option": true,
+          "valueType": "text"
+        }
+      }
+    },
+    "events": {
+      "type": "object",
+      "title": "交互行为",
+      "description": "组件动作事件",
+      "required": [
+        "constisRange=(val",
+        "constformat=(value",
+        "consthandleRangeValue=(value",
+        "constupdateValue=(value",
+        "constonClick=(event",
+        "constonTouchStart=(event",
+        "constonTouchMove=(event",
+        "constonTouchEnd=(event",
+        "constgetButtonClassName=(index",
+        "constrenderButtonContent=(value",
+        "constrenderButton=(index"
+      ],
+      "properties": {
+        "constisRange=(val": {
+          "value": "unknown): val is NumberRange =>",
+          "title": "constisRange=(val",
+          "description": "constisRange=(val",
+          "type": "object",
+          "properties": {
+            "name": {
+              "description": "函数名",
+              "title": "函数名",
+              "type": "string"
+            }
+          }
+        },
+        "constformat=(value": {
+          "value": "number) => {",
+          "title": "constformat=(value",
+          "description": "constformat=(value",
+          "type": "object",
+          "properties": {
+            "name": {
+              "description": "函数名",
+              "title": "函数名",
+              "type": "string"
+            }
+          }
+        },
+        "consthandleRangeValue=(value": {
+          "value": "NumberRange) => {",
+          "title": "consthandleRangeValue=(value",
+          "description": "consthandleRangeValue=(value",
+          "type": "object",
+          "properties": {
+            "name": {
+              "description": "函数名",
+              "title": "函数名",
+              "type": "string"
+            }
+          }
+        },
+        "constupdateValue=(value": {
+          "value": "SliderValue end?: boolean) => {",
+          "title": "constupdateValue=(value",
+          "description": "constupdateValue=(value",
+          "type": "object",
+          "properties": {
+            "name": {
+              "description": "函数名",
+              "title": "函数名",
+              "type": "string"
+            }
+          }
+        },
+        "constonClick=(event": {
+          "value": "MouseEvent) => {",
+          "title": "constonClick=(event",
+          "description": "constonClick=(event",
+          "type": "object",
+          "properties": {
+            "name": {
+              "description": "函数名",
+              "title": "函数名",
+              "type": "string"
+            }
+          }
+        },
+        "constonTouchStart=(event": {
+          "value": "TouchEvent) => {",
+          "title": "constonTouchStart=(event",
+          "description": "constonTouchStart=(event",
+          "type": "object",
+          "properties": {
+            "name": {
+              "description": "函数名",
+              "title": "函数名",
+              "type": "string"
+            }
+          }
+        },
+        "constonTouchMove=(event": {
+          "value": "TouchEvent) => {",
+          "title": "constonTouchMove=(event",
+          "description": "constonTouchMove=(event",
+          "type": "object",
+          "properties": {
+            "name": {
+              "description": "函数名",
+              "title": "函数名",
+              "type": "string"
+            }
+          }
+        },
+        "constonTouchEnd=(event": {
+          "value": "TouchEvent) => {",
+          "title": "constonTouchEnd=(event",
+          "description": "constonTouchEnd=(event",
+          "type": "object",
+          "properties": {
+            "name": {
+              "description": "函数名",
+              "title": "函数名",
+              "type": "string"
+            }
+          }
+        },
+        "constgetButtonClassName=(index": {
+          "value": "0 | 1) => {",
+          "title": "constgetButtonClassName=(index",
+          "description": "constgetButtonClassName=(index",
+          "type": "object",
+          "properties": {
+            "name": {
+              "description": "函数名",
+              "title": "函数名",
+              "type": "string"
+            }
+          }
+        },
+        "constrenderButtonContent=(value": {
+          "value": "number index?: 0 | 1) => {",
+          "title": "constrenderButtonContent=(value",
+          "description": "constrenderButtonContent=(value",
+          "type": "object",
+          "properties": {
+            "name": {
+              "description": "函数名",
+              "title": "函数名",
+              "type": "string"
+            }
+          }
+        },
+        "constrenderButton=(index": {
+          "value": "0 | 1) => {",
+          "title": "constrenderButton=(index",
+          "description": "constrenderButton=(index",
+          "type": "object",
+          "properties": {
+            "name": {
+              "description": "函数名",
+              "title": "函数名",
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "pkgId": {
+      "title": "vant",
+      "description": "组件库包名称"
+    },
+    "version": {
+      "title": "4.0.2",
+      "description": "组件库包版本"
+    },
+    "protoProps": {
+      "type": "object",
+      "title": "原生属性",
+      "required": [],
+      "properties": {
+        "id": {
+          "type": "string",
+          "title": "唯一id",
+          "valueType": "text",
+          "description": "元素唯一标识"
+        },
+        "ref": {
+          "type": "string",
+          "title": "ref",
+          "valueType": "text",
+          "description": "组件ref名称，可在this.[ref名称]来获取组件实例this对象"
+        },
+        "style": {
+          "type": "object",
+          "title": "内联样式",
+          "valueType": "object",
+          "description": "组件内联样式(JSON格式)"
+        },
+        "className": {
+          "type": "string",
+          "title": "样式名",
+          "valueType": "textarea",
+          "description": "组件样式名"
+        }
+      },
+      "description": "原生属性"
+    },
+    "lastModifyTime": {
+      "type": "string",
+      "title": "最后一次修改时间",
+      "description": "2022-12-13"
+    }
+  },
+  "lastModifyTime": "2022-12-13",
+  "version": "4.0.2",
+  "required": [
+    null
+  ],
+  "description": "滑动输入条，用于在给定的范围内选择一个值。",
+  "groupKey": "Form Components",
+  "groupName": "表单组件",
+  "isHidden": 0,
+  "framework": "vue"
+}

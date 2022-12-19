@@ -1,0 +1,300 @@
+{
+  "tagName": "Card",
+  "pkgId": "vant",
+  "type": "object",
+  "properties": {
+    "name": {
+      "title": "Card 卡片",
+      "description": "组件名称"
+    },
+    "tagName": {
+      "title": "Card",
+      "description": "组件标签"
+    },
+    "advanceProps": {
+      "title": "高级属性",
+      "description": "高级属性",
+      "type": "object",
+      "properties": {
+        "condition": {
+          "title": "是否渲染",
+          "description": "是否渲染",
+          "type": "string",
+          "valueType": "switch",
+          "default": true
+        }
+      }
+    },
+    "hasChild": {
+      "type": "boolean",
+      "const": true,
+      "title": "支持调用子组件",
+      "description": "true:支持;false:不支持"
+    },
+    "props": {
+      "type": "object",
+      "title": "组件属性",
+      "description": "组件属性",
+      "required": [
+        "tag",
+        "num",
+        "desc",
+        "thumb",
+        "title",
+        "price",
+        "centered",
+        "lazyLoad",
+        "currency",
+        "thumbLink",
+        "originPrice",
+        "props",
+        "emits",
+        ")",
+        "",
+        "<divclass={bem('content',{centered"
+      ],
+      "properties": {
+        "tag": {
+          "enum": [],
+          "type": [
+            "String"
+          ],
+          "title": "tag",
+          "option": false,
+          "valueType": "text"
+        },
+        "num": {
+          "enum": [],
+          "type": [
+            "numericProp"
+          ],
+          "title": "num",
+          "option": false,
+          "valueType": "text"
+        },
+        "desc": {
+          "enum": [],
+          "type": [
+            "String"
+          ],
+          "title": "desc",
+          "option": false,
+          "valueType": "text"
+        },
+        "thumb": {
+          "enum": [],
+          "type": [
+            "String"
+          ],
+          "title": "thumb",
+          "option": false,
+          "valueType": "text"
+        },
+        "title": {
+          "enum": [],
+          "type": [
+            "String"
+          ],
+          "title": "title",
+          "option": false,
+          "valueType": "text"
+        },
+        "price": {
+          "enum": [],
+          "type": [
+            "numericProp"
+          ],
+          "title": "price",
+          "option": false,
+          "valueType": "text"
+        },
+        "centered": {
+          "enum": [],
+          "type": [
+            "boolean"
+          ],
+          "title": "centered",
+          "option": false,
+          "valueType": "switch"
+        },
+        "lazyLoad": {
+          "enum": [],
+          "type": [
+            "boolean"
+          ],
+          "title": "lazyLoad",
+          "option": false,
+          "valueType": "switch"
+        },
+        "currency": {
+          "enum": [],
+          "type": [
+            "makeStringProp('¥')"
+          ],
+          "title": "currency",
+          "option": false,
+          "valueType": "text"
+        },
+        "thumbLink": {
+          "enum": [],
+          "type": [
+            "String"
+          ],
+          "title": "thumbLink",
+          "option": false,
+          "valueType": "text"
+        },
+        "originPrice": {
+          "enum": [],
+          "type": [
+            "numericProp"
+          ],
+          "title": "originPrice",
+          "option": false,
+          "valueType": "text"
+        },
+        "props": {
+          "enum": [],
+          "type": [
+            "cardProps"
+          ],
+          "title": "props",
+          "option": false,
+          "valueType": "text"
+        },
+        "emits": {
+          "enum": [],
+          "type": [
+            "['clickThumb']"
+          ],
+          "title": "emits",
+          "option": false,
+          "valueType": "text"
+        },
+        ")": {
+          "enum": [],
+          "type": [
+            "("
+          ],
+          "title": ")",
+          "option": false,
+          "valueType": "text"
+        },
+        "{slots.priceslots.price()": {
+          "enum": [],
+          "type": [
+            "renderPriceText()}"
+          ],
+          "title": "{slots.priceslots.price()",
+          "option": true,
+          "valueType": "text"
+        },
+        "": {
+          "enum": [],
+          "type": [
+            "`${props.currency} ${props.originPrice}`}"
+          ],
+          "title": "",
+          "option": false,
+          "valueType": "text"
+        },
+        "{slots.numslots.num()": {
+          "enum": [],
+          "type": [
+            "`x${props.num}`}"
+          ],
+          "title": "{slots.numslots.num()",
+          "option": true,
+          "valueType": "text"
+        },
+        "<divclass={bem('content',{centered": {
+          "enum": [],
+          "type": [
+            "props.centered })}>"
+          ],
+          "title": "<divclass={bem('content',{centered",
+          "option": false,
+          "valueType": "text"
+        }
+      }
+    },
+    "events": {
+      "type": "object",
+      "title": "交互行为",
+      "description": "组件动作事件",
+      "required": [
+        "onClick={(event"
+      ],
+      "properties": {
+        "onClick={(event": {
+          "value": "MouseEvent) => emit('clickThumb' event)}",
+          "title": "onClick={(event",
+          "description": "onClick={(event",
+          "type": "object",
+          "properties": {
+            "name": {
+              "description": "函数名",
+              "title": "函数名",
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "pkgId": {
+      "title": "vant",
+      "description": "组件库包名称"
+    },
+    "version": {
+      "title": "4.0.2",
+      "description": "组件库包版本"
+    },
+    "protoProps": {
+      "type": "object",
+      "title": "原生属性",
+      "required": [],
+      "properties": {
+        "id": {
+          "type": "string",
+          "title": "唯一id",
+          "valueType": "text",
+          "description": "元素唯一标识"
+        },
+        "ref": {
+          "type": "string",
+          "title": "ref",
+          "valueType": "text",
+          "description": "组件ref名称，可在this.[ref名称]来获取组件实例this对象"
+        },
+        "style": {
+          "type": "object",
+          "title": "内联样式",
+          "valueType": "object",
+          "description": "组件内联样式(JSON格式)"
+        },
+        "className": {
+          "type": "string",
+          "title": "样式名",
+          "valueType": "textarea",
+          "description": "组件样式名"
+        }
+      },
+      "description": "原生属性"
+    },
+    "lastModifyTime": {
+      "type": "string",
+      "title": "最后一次修改时间",
+      "description": "2022-12-13"
+    }
+  },
+  "lastModifyTime": "2022-12-13",
+  "version": "4.0.2",
+  "required": [
+    null
+  ],
+  "description": "商品卡片，用于展示商品的图片、价格等信息。",
+  "groupKey": "Business Components",
+  "groupName": "业务组件",
+  "isHidden": 0,
+  "framework": "vue"
+}
