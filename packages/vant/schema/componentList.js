@@ -125,13 +125,41 @@ const componentList = {
           // map: component,
         }
     },
-    // checkboxGroup: {
-    //     title: 'CheckboxGroup 复选框',
-    //     description: '复选框容器',
-    //     path: '/checkbox-group/CheckboxGroup.tsx',
-    //     groupKey: 'Form Components',
-    //     groupName: '表单组件',
-    // },
+    checkboxGroup: {
+        title: 'CheckboxGroup 复选框',
+        description: '复选框容器',
+        path: '/checkbox-group/CheckboxGroup.tsx',
+        groupKey: 'Form Components',
+        groupName: '表单组件',
+        schema:{
+          key: 'checkbox',
+          children: true,
+          props: {
+            'v-model':{
+              type: 'boolean',
+            },
+            disabled:{
+              type:'boolean',
+            },
+            "max":{
+              type:'number',
+            },
+            "direction":{
+              enum: ['vertical','horizontal'],
+            },
+            "icon-size":{
+              type:'number'
+            },
+            "checked-color":{
+              type:'string'
+            },
+          },
+          events: {
+            change:(names)=>{}
+          },
+          // map: component,
+        }
+    },
     // datePicker: {
     //     title: 'DatePicker 日期选择',
     //     description: '日期选择器，用于选择年、月、日，通常与弹出层组件配合使用。',
