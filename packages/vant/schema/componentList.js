@@ -1,3 +1,55 @@
+const components = [
+  {
+      title: 'Button 按钮',
+      description: '按钮用于触发一个操作，如提交表单。',
+      // 暂时不用
+      path: '/button/Button.tsx',
+      groupKey: 'Basic Components',
+      groupName: '基础组件',
+      schema: {
+          key: 'checkbox',
+          children: true,
+          props: {
+              propName: {
+                  /**
+                   * 默认 propName
+                   */
+                  title: '',
+                  /**
+                   * 仅枚举值时需要添加,默认空数组
+                   * 默认值是数组第一个
+                   *
+                   */
+                  enum: ['default', 'primary', 'success', 'warning', 'danger'],
+                  /**
+                   * 默认 string
+                   * todo : color类型后续添加
+                   */
+                  type: 'string',
+                  /**
+                   *  是否必须,默认false
+                   */
+                  option: false,
+                  /**
+                   * 根据 enum 或者 type 生成
+                   * textinput / switch / color / 下拉框 等
+                   */
+                  valueType: ''
+              }
+          },
+          events: {
+              eventName: (event) => {}
+          },
+          /**
+           * 仅 vue 组件库
+           */
+          slots: {
+              slotName: {}
+          }
+      }
+  }
+];
+
 const componentList = {
   // autoCenter: {
   //     title: '自动居中',
@@ -39,7 +91,7 @@ const componentList = {
               },
               text: {},
               color: {
-                  // type: 'string' // todo : color类型后续添加
+                  // type: 'color'
               },
               icon: {},
               'icon-prefix': {},
@@ -98,13 +150,19 @@ const componentList = {
           // map: component,
       }
   },
-  // cell: {
-  //     title: 'Cell 单元格',
-  //     description: '单元格为列表中的单个展示项。',
-  //     path: '/cell/Cell.tsx',
-  //     groupKey: 'Basic Components',
-  //     groupName: '基础组件',
-  // },
+  cell: {
+      title: 'Cell 单元格',
+      description: '单元格为列表中的单个展示项。',
+      path: '/cell/Cell.tsx',
+      groupKey: 'Basic Components',
+      groupName: '基础组件',
+      schema: {
+          key: 'checkbox',
+          children: true,
+          props: {},
+          events: {}
+      }
+  },
   // image: {
   //     title: 'Image 图片',
   //     description: '增强版的 img 标签，提供多种图片填充模式，支持图片懒加载、加载中提示、加载失败提示。',
@@ -153,19 +211,13 @@ const componentList = {
           children: true,
           props: {
               'v-model': {
-                  // enum: [], // todo : 默认空数组. 仅枚举值时添加
                   type: 'boolean'
-                  // title: _key,
-                  // option: false, // todo : 是否必须,默认false
-                  // valueType: '', //todo : 根据 enum 或者 type 生成
               },
               name: {
-                  type: 'any'
+                  // type: 'any'
               },
               shape: {
-                  // 仅枚举值时添加
                   enum: ['round', 'square']
-                  //  type:'string' // 默认string
               },
               disabled: {
                   type: 'boolean'
@@ -175,7 +227,6 @@ const componentList = {
               },
               'label-position': {
                   enum: ['right', 'left']
-                  // type:'string' // 默认string
               },
               'icon-size': {
                   type: 'number'
@@ -190,8 +241,15 @@ const componentList = {
           events: {
               change: (checked) => {},
               click: (event) => {}
+          },
+          slots: {
+              title: {},
+              value: {},
+              label: {},
+              icon: {},
+              'right-icon': {},
+              extra: {}
           }
-          // map: component,
       }
   },
   checkboxGroup: {
@@ -226,7 +284,6 @@ const componentList = {
           events: {
               change: (names) => {}
           }
-          // map: component,
       }
   }
   // datePicker: {
