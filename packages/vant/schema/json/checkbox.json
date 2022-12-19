@@ -36,48 +36,81 @@
       "title": "组件属性",
       "description": "组件属性",
       "required": [
-        "bindGroup",
-        "props",
-        "emits",
-        "emit('update"
       ],
       "properties": {
-        "bindGroup": {
+        "v-model": {
           "enum": [],
           "type": [
-            "truthProp"
+            "boolean"
           ],
-          "title": "bindGroup",
+          "title": "v-model",
+          "option": false,
+          "valueType": "switch"
+        },
+        "name": {
+          "enum": [],
+          "type": [
+            "any"
+          ],
+          "title": "name",
           "option": false,
           "valueType": "text"
         },
-        "props": {
-          "enum": [],
+        "shape": {
+          "enum": ["square","round"],
           "type": [
-            "checkboxProps"
+            "string"
           ],
-          "title": "props",
+          "title": "shape",
           "option": false,
           "valueType": "text"
         },
-        "emits": {
+        "disabled": {
           "enum": [],
           "type": [
-            "['change' 'update:modelValue']"
+            "boolean"
           ],
-          "title": "emits",
+          "title": "disabled",
+          "option": false,
+          "valueType": "switch"
+        },
+        "label-disabled": {
+          "enum": ["left","right"],
+          "type": [
+            "boolean"
+          ],
+          "title": "disabled",
+          "option": false,
+          "valueType": "switch"
+        },
+        "label-position": {
+          "enum": ["square","round"],
+          "type": [
+            "string"
+          ],
+          "title": "label-position",
           "option": false,
           "valueType": "text"
         },
-        "emit('update": {
+        "icon-size": {
           "enum": [],
           "type": [
-            "modelValue' newValue);"
+            "number"
           ],
-          "title": "emit('update",
+          "title": "icon-size",
           "option": false,
           "valueType": "text"
+        },
+        "bind-group": {
+          "enum": [],
+          "type": [
+            "boolean"
+          ],
+          "title": " bind-group",
+          "option": false,
+          "valueType": "switch"
         }
+
       }
     },
     "events": {
@@ -85,13 +118,26 @@
       "title": "交互行为",
       "description": "组件动作事件",
       "required": [
-        "constsetParentValue=(checked"
+
       ],
       "properties": {
-        "constsetParentValue=(checked": {
-          "value": "boolean) => {",
-          "title": "constsetParentValue=(checked",
-          "description": "constsetParentValue=(checked",
+        "change": {
+          "value": "(checked)=>{}",
+          "title": "change",
+          "description": "change",
+          "type": "object",
+          "properties": {
+            "name": {
+              "description": "函数名",
+              "title": "函数名",
+              "type": "string"
+            }
+          }
+        },
+        "click": {
+          "value": "(event)=>{}",
+          "title": "click",
+          "description": "click",
           "type": "object",
           "properties": {
             "name": {
