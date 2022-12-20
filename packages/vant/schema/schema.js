@@ -161,14 +161,14 @@ function componentProps(componentMapProps) {
                 title: key,
                 option: componentMapProps[key].option || true,
                 valueType: 'select',
-                default: componentMapProps[key].enum[0]
+                default: componentMapProps[key].default || componentMapProps[key].enum[0]
             };
         } else if (componentMapProps[key].type === 'boolean') {
             propItem = {
                 enum: [],
                 type: ['boolean'],
                 title: key,
-                option: componentMapProps[key].option||true,
+                option: componentMapProps[key].option || true,
                 valueType: 'switch',
                 default: componentMapProps[key].default || 'false'
             };
@@ -181,14 +181,14 @@ function componentProps(componentMapProps) {
               title: key,
               option: false,
               valueType: "digit",
-              default: ''
+              default: componentMapProps[key].default || ''
             }
         } else {
             propItem = {
                 enum: [],
                 type: ['string'],
                 title: key,
-                option: componentMapProps[key].option||true,
+                option: componentMapProps[key].option || true,
                 valueType: 'text',
                 default: componentMapProps[key].default || ''
             };

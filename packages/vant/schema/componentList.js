@@ -10,6 +10,10 @@ const components = [
           key: 'checkbox',
           children: true,
           props: {
+              /**
+               * 先添加全量props
+               * 暂时不支持的先通过注释隐藏
+               */
               propName: {
                   /**
                    * 默认 propName
@@ -34,7 +38,11 @@ const components = [
                    * 根据 enum 或者 type 生成
                    * textinput / switch / color / 下拉框 等
                    */
-                  valueType: ''
+                  valueType: '',
+                  /**
+                   * 属性默认值
+                   */
+                  default: ''
               }
           },
           events: {
@@ -333,7 +341,7 @@ const componentList = {
         key: 'popup',
         children: true,
         props: {
-            'v-Model:show': {type: 'boolean'},
+            // 'v-Model:show': {type: 'boolean'},
             overlay: {},
             position: {
                 enum: ['top', 'bottom', 'right', 'left']
@@ -383,7 +391,7 @@ const componentList = {
           key: 'toast',
           children: true,
           props: {
-              'v-model:show': { type: 'boolean' },
+              // 'v-model:show': { type: 'boolean' },
           },
           events: {
               click: (event) => {}
