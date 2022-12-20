@@ -75,7 +75,7 @@
           "title": "placeholder",
           "option": true,
           "valueType": "text",
-          "default": ""
+          "default": "请选择"
         },
         "active-color": {
           "enum": [],
@@ -105,7 +105,7 @@
           "title": "closeable",
           "option": true,
           "valueType": "switch",
-          "default": "false"
+          "default": true
         },
         "show-header": {
           "enum": [],
@@ -115,7 +115,7 @@
           "title": "show-header",
           "option": true,
           "valueType": "switch",
-          "default": "false"
+          "default": true
         },
         "close-icon": {
           "enum": [],
@@ -126,16 +126,6 @@
           "option": true,
           "valueType": "switch",
           "default": "false"
-        },
-        "field-names": {
-          "enum": [],
-          "type": [
-            "string"
-          ],
-          "title": "field-names",
-          "option": true,
-          "valueType": "text",
-          "default": ""
         }
       }
     },

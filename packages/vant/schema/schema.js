@@ -170,19 +170,18 @@ function componentProps(componentMapProps) {
                 title: key,
                 option: componentMapProps[key].option || true,
                 valueType: 'switch',
+                // todo : 默认字符串 false ？
                 default: componentMapProps[key].default || 'false'
             };
         } else if (componentMapProps[key].type === 'number') {
             propItem = {
-              enum: [],
-              type: [
-                "number"
-              ],
-              title: key,
-              option: false,
-              valueType: "digit",
-              default: componentMapProps[key].default || ''
-            }
+                enum: [],
+                type: ['number'],
+                title: key,
+                option: false,
+                valueType: 'digit',
+                default: componentMapProps[key].default || 0
+            };
         } else {
             propItem = {
                 enum: [],

@@ -135,7 +135,7 @@
           "title": "border",
           "option": true,
           "valueType": "switch",
-          "default": "false"
+          "default": true
         },
         "replace": {
           "enum": [],

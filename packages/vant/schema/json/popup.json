@@ -45,7 +45,7 @@
           "title": "overlay",
           "option": true,
           "valueType": "text",
-          "default": ""
+          "default": true
         },
         "position": {
           "enum": [
@@ -100,7 +100,7 @@
           "title": "duration",
           "option": false,
           "valueType": "digit",
-          "default": ""
+          "default": 0.3
         },
         "z-index": {
           "enum": [],
@@ -110,7 +110,7 @@
           "title": "z-index",
           "option": false,
           "valueType": "digit",
-          "default": ""
+          "default": 2048
         },
         "round": {
           "enum": [],
@@ -130,7 +130,7 @@
           "title": "lock-scroll",
           "option": true,
           "valueType": "switch",
-          "default": "false"
+          "default": true
         },
         "lazy-render": {
           "enum": [],
@@ -140,7 +140,7 @@
           "title": "lazy-render",
           "option": true,
           "valueType": "switch",
-          "default": "false"
+          "default": true
         },
         "close-on-popstate": {
           "enum": [],
@@ -160,7 +160,7 @@
           "title": "close-on-click-overlay",
           "option": true,
           "valueType": "switch",
-          "default": "false"
+          "default": true
         },
         "closeable": {
           "enum": [],

@@ -4,7 +4,7 @@
   "type": "object",
   "properties": {
     "name": {
-      "title": "radioGroup 单选框",
+      "title": "radioGroup 单选组",
       "description": "组件名称"
     },
     "tagName": {
@@ -78,7 +78,7 @@
           "title": "icon-size",
           "option": false,
           "valueType": "digit",
-          "default": ""
+          "default": 0
         },
         "checked-color": {
           "enum": [],
@@ -88,7 +88,7 @@
           "title": "checked-color",
           "option": true,
           "valueType": "text",
-          "default": ""
+          "default": "#1989fa"
         }
       }
     },

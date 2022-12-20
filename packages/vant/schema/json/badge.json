@@ -55,7 +55,7 @@
           "title": "color",
           "option": true,
           "valueType": "text",
-          "default": ""
+          "default": "#ee0a24"
         },
         "dot": {
           "enum": [],
@@ -75,7 +75,7 @@
           "title": "max",
           "option": false,
           "valueType": "digit",
-          "default": ""
+          "default": 0
         },
         "offset": {
           "enum": [],
@@ -85,7 +85,7 @@
           "title": "offset",
           "option": false,
           "valueType": "digit",
-          "default": ""
+          "default": 0
         },
         "show-zero": {
           "enum": [],
@@ -95,7 +95,7 @@
           "title": "show-zero",
           "option": true,
           "valueType": "switch",
-          "default": "false"
+          "default": true
         },
         "position": {
           "enum": [

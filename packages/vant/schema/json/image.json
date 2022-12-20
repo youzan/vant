@@ -91,7 +91,7 @@
           "title": "width",
           "option": false,
           "valueType": "digit",
-          "default": ""
+          "default": 0
         },
         "height": {
           "enum": [],
@@ -101,7 +101,7 @@
           "title": "height",
           "option": false,
           "valueType": "digit",
-          "default": ""
+          "default": 0
         },
         "radius": {
           "enum": [],
@@ -111,7 +111,7 @@
           "title": "radius",
           "option": false,
           "valueType": "digit",
-          "default": ""
+          "default": 0
         },
         "round": {
           "enum": [],
@@ -151,7 +151,7 @@
           "title": "show-error",
           "option": true,
           "valueType": "switch",
-          "default": "false"
+          "default": true
         },
         "show-loading": {
           "enum": [],
@@ -161,7 +161,7 @@
           "title": "show-loading",
           "option": true,
           "valueType": "switch",
-          "default": "false"
+          "default": true
         },
         "error-icon": {
           "enum": [],
@@ -191,7 +191,7 @@
           "title": "icon-size",
           "option": false,
           "valueType": "digit",
-          "default": ""
+          "default": 0
         },
         "icon-prefix": {
           "enum": [],

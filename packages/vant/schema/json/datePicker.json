@@ -78,7 +78,7 @@
           "title": "icon-size",
           "option": false,
           "valueType": "digit",
-          "default": ""
+          "default": 0
         },
         "checked-color": {
           "enum": [],

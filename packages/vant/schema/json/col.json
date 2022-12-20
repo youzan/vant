@@ -4,7 +4,7 @@
   "type": "object",
   "properties": {
     "name": {
-      "title": "Layout 布局",
+      "title": "col 布局",
       "description": "组件名称"
     },
     "tagName": {
@@ -45,7 +45,7 @@
           "title": "span",
           "option": false,
           "valueType": "digit",
-          "default": ""
+          "default": 0
         },
         "offset": {
           "enum": [],
@@ -55,7 +55,7 @@
           "title": "offset",
           "option": false,
           "valueType": "digit",
-          "default": ""
+          "default": 0
         },
         "tag": {
           "enum": [],
@@ -65,7 +65,7 @@
           "title": "tag",
           "option": true,
           "valueType": "text",
-          "default": ""
+          "default": "div"
         }
       }
     },

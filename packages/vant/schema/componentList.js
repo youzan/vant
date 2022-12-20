@@ -70,15 +70,18 @@ const componentList = {
           children: true,
           props: {
               content: {},
-              color: {},
+              color: {
+                  default: '#ee0a24'
+              },
               dot: {
-                  type: 'boolean'
+                  type: 'boolean',
+                  default: false
               },
               max: { type: 'number' },
               offset: {
                   type: 'number'
               },
-              'show-zero': { type: 'boolean' },
+              'show-zero': { type: 'boolean', default: true },
               position: {
                   enum: ['top-right', 'top-left', 'bottom-left', 'bottom-right']
               }
@@ -187,7 +190,8 @@ const componentList = {
               url: {},
               to: {},
               border: {
-                  type: 'boolean'
+                  type: 'boolean',
+                  default: true
               },
               replace: { type: 'boolean' },
               clickable: { type: 'boolean' },
@@ -216,7 +220,7 @@ const componentList = {
       }
   },
   CellGroup: {
-      title: 'Cell 单元格',
+      title: 'Cell 单元组',
       description: '单元格为列表中的单个展示项。',
       path: '/cell/Cell.tsx',
       groupKey: 'Basic Components',
@@ -228,7 +232,8 @@ const componentList = {
               title: {},
               insert: { type: 'boolean' },
               border: {
-                  type: 'boolean'
+                  type: 'boolean',
+                  default: true
               }
           },
           events: {
@@ -260,12 +265,12 @@ const componentList = {
                   type: 'number'
               },
               height: { type: 'number' },
-              radius: { type: 'number' },
+              radius: { type: 'number', default: 0 },
               round: { type: 'boolean' },
               block: { type: 'boolean' },
               'lazy-load': { type: 'boolean' },
-              'show-error': { type: 'boolean' },
-              'show-loading': { type: 'boolean' },
+              'show-error': { type: 'boolean', default: true },
+              'show-loading': { type: 'boolean', default: true },
               'error-icon': {},
               'loading-icon': {},
               'icon-size': { type: 'number' },
@@ -284,7 +289,7 @@ const componentList = {
       }
   },
   row: {
-      title: 'Layout 布局',
+      title: 'row 布局',
       description: 'Layout 提供了 van-row 和 van-col 两个组件来进行行列布局。',
       path: '/image/Image.tsx',
       groupKey: 'Basic Components',
@@ -294,7 +299,9 @@ const componentList = {
           children: true,
           props: {
               gutter: { type: 'number' },
-              tag: {},
+              tag: {
+                  default: 'div'
+              },
               justify: {
                   enum: ['start', 'end', 'center', 'space-around', 'space-between']
               },
@@ -302,7 +309,8 @@ const componentList = {
                   enum: ['top', 'center', 'bottom']
               },
               wrap: {
-                  type: 'boolean'
+                  type: 'boolean',
+                  default: true
               }
           },
           events: {
@@ -312,7 +320,7 @@ const componentList = {
       }
   },
   col: {
-      title: 'Layout 布局',
+      title: 'col 布局',
       description: 'Layout 提供了 van-row 和 van-col 两个组件来进行行列布局。',
       path: '/image/Image.tsx',
       groupKey: 'Basic Components',
@@ -323,7 +331,7 @@ const componentList = {
           props: {
               span: { type: 'number' },
               offset: { type: 'number' },
-              tag: {}
+              tag: { default: 'div' }
           },
           events: {
               click: (event) => {}
@@ -338,48 +346,49 @@ const componentList = {
       groupKey: 'Basic Components',
       groupName: '基础组件',
       schema: {
-        key: 'popup',
-        children: true,
-        props: {
-            // 'v-Model:show': {type: 'boolean'},
-            overlay: {},
-            position: {
-                enum: ['top', 'bottom', 'right', 'left']
-            },
-            'overlay-class': {},
-            'overlay-style': {type: 'object'},
-            'show-zero': { type: 'boolean' },
-            duration: { type: 'number' },
-            'z-index': { type: 'number' },
-            'round': { type: 'boolean' },
-            'lock-scroll': { type: 'boolean' },
-            'lazy-render': { type: 'boolean' },
-            'close-on-popstate': { type: 'boolean' },
-            'close-on-click-overlay': { type: 'boolean' },
-            'closeable': { type: 'boolean' },
-            'close-icon': { type: 'string' },
-            'close-icon-position': { type: 'string' },
-            'transition': { type: 'string' },
-            'transition-appear': { type: 'boolean' },
-            'teleport': { type: 'string' },
-            'safe-area-inset-top': { type: 'boolean' },
-            'safe-area-inset-bottom': { type: 'boolean' }
-        },
-        events: {
-            click: (event) => {},
-            'click-overlay': (event) => {},
-            'click-close-icon': (event) => {},
-            'open': () => {},
-            'close': () => {},
-            'opened': () => {},
-            'closed': () => {},
-
-        },
-        slots: {
-            default: {},
-            content: {}
-        }
-    }
+          key: 'popup',
+          children: true,
+          props: {
+              // 'v-Model:show': {type: 'boolean'},
+              overlay: {
+                  default: true
+              },
+              position: {
+                  enum: ['top', 'bottom', 'right', 'left']
+              },
+              'overlay-class': {},
+              'overlay-style': { type: 'object' },
+              'show-zero': { type: 'boolean' },
+              duration: { type: 'number', default: 0.3 },
+              'z-index': { type: 'number', default: 2048 },
+              round: { type: 'boolean' },
+              'lock-scroll': { type: 'boolean', default: true },
+              'lazy-render': { type: 'boolean', default: true },
+              'close-on-popstate': { type: 'boolean' },
+              'close-on-click-overlay': { type: 'boolean', default: true },
+              closeable: { type: 'boolean' },
+              'close-icon': { type: 'string' },
+              'close-icon-position': { type: 'string' },
+              transition: { type: 'string' },
+              'transition-appear': { type: 'boolean' },
+              teleport: { type: 'string' },
+              'safe-area-inset-top': { type: 'boolean' },
+              'safe-area-inset-bottom': { type: 'boolean' }
+          },
+          events: {
+              click: (event) => {},
+              'click-overlay': (event) => {},
+              'click-close-icon': (event) => {},
+              open: () => {},
+              close: () => {},
+              opened: () => {},
+              closed: () => {}
+          },
+          slots: {
+              default: {},
+              content: {}
+          }
+      }
   },
   toast: {
       title: 'Toast 轻提示',
@@ -408,61 +417,62 @@ const componentList = {
   //     groupKey: 'Form Components',
   //     groupName: '表单组件',
   // },
-	cascader: {
-	    title: 'Cascader 级联选择',
-	    description: '级联选择框，用于多层级数据的选择，典型场景为省市区选择。',
-	    path: '/date-picker/Cascader.tsx',
-	    groupKey: 'Form Components',
-	    groupName: '表单组件',
-			schema: {
-				key: 'checkbox',
-				children: true,
-				props: {
-						'title': {
-							type: 'string'
-						},
-						'value': {
-							type: 'string'
-						},
-						'options': {
-
-						},
-						'placeholder': {
-							type: 'string'
-						},
-						'active-color': {
-							type: 'string'
-						},
-						'swipeable': {
-							type: 'boolean'
-						},
-						'closeable': {
-							type: 'boolean'
-						},
-						'show-header': {
-							type: 'boolean'
-						},
-						'close-icon': {
-								type: 'boolean'
-						},
-						'field-names': {
-								type: 'CascaderFieldNames'
-						}
-				},
-				events: {
-					change: (checked) => {},
-					finish: (event) => {},
-					close: () => {},
-					'click-tab': (event) => {}
-				},
-				slots: {
-					title: {},
-					optionicon: {},
-					'options-top': {},
-					'options-bottom': {}
-				}
-		}
-	},
+  cascader: {
+      title: 'Cascader 级联选择',
+      description: '级联选择框，用于多层级数据的选择，典型场景为省市区选择。',
+      path: '/date-picker/Cascader.tsx',
+      groupKey: 'Form Components',
+      groupName: '表单组件',
+      schema: {
+          key: 'checkbox',
+          children: true,
+          props: {
+              title: {
+                  type: 'string'
+              },
+              value: {
+                  type: 'string'
+              },
+              options: {},
+              placeholder: {
+                  type: 'string',
+                  default: '请选择'
+              },
+              'active-color': {
+                  type: 'string'
+              },
+              swipeable: {
+                  type: 'boolean'
+              },
+              closeable: {
+                  type: 'boolean',
+                  default: true
+              },
+              'show-header': {
+                  type: 'boolean',
+                  default: true
+              },
+              'close-icon': {
+                  type: 'boolean'
+              }
+              // 'field-names': {
+              // 		type: 'CascaderFieldNames'
+              // }
+          },
+          events: {
+              change: (checked) => {},
+              finish: (event) => {},
+              close: () => {},
+              'click-tab': (event) => {}
+          },
+          slots: {
+              title: {},
+              optionicon: {},
+              'options-top': {},
+              'options-bottom': {}
+          }
+      }
+  },
   checkbox: {
       title: 'Checkbox 复选框',
       description: '在一组备选项中进行多选。',
@@ -498,7 +508,8 @@ const componentList = {
                   type: 'string'
               },
               'bind-group': {
-                  type: 'boolean'
+                  type: 'boolean',
+                  default: true
               }
           },
           events: {
@@ -546,285 +557,290 @@ const componentList = {
           slots: {}
       }
   },
-	radio: {
-		title: 'radio 单选框',
-		description: '在一组备选项中进行多选。',
-		path: '/radio/radio.tsx',
-		groupKey: 'Form Components',
-		groupName: '表单组件',
-		schema: {
-				key: 'radio',
-				children: true,
-				props: {
-						name: {
-								// type: 'any'
-						},
-						shape: {
-								enum: ['round', 'square']
-						},
-						disabled: {
-								type: 'boolean'
-						},
-						'label-disabled': {
-								type: 'boolean'
-						},
-						'label-position': {
-								enum: ['right', 'left']
-						},
-						'icon-size': {
-								type: 'number'
-						},
-						'checked-color': {
-								type: 'string'
-						}
-				},
-				events: {
-						click: (event) => {}
-				},
-				slots: {
-						default: {},
-						icon: {}
-				}
-		}
-	},
-	radioGroup: {
-		title: 'radioGroup 单选框',
-		description: '复选框容器',
-		path: '/radioGroup/radioGroup.tsx',
-		groupKey: 'Form Components',
-		groupName: '表单组件',
-		schema: {
-				key: 'radioGroup',
-				children: true,
-				props: {
-						'v-model': {
-								type: 'boolean'
-						},
-						disabled: {
-								type: 'boolean'
-						},
-						direction: {
-								enum: ['vertical', 'horizontal']
-						},
-						'icon-size': {
-								type: 'number'
-						},
-						'checked-color': {
-								type: 'string'
-						}
-				},
-				events: {
-						change: (names) => {}
-				},
-				slots: {}
-		}
-	},
-	datePicker: {
-		title: 'DatePicker 日期选择',
-		description: '日期选择器，用于选择年、月、日，通常与弹出层组件配合使用。',
-		path: '/date-picker/DatePicker.tsx',
-		groupKey: 'Form Components',
-		groupName: '表单组件',
-		schema: {
-			key: 'datePicker',
-			children: true,
-			props: {
-				'v-model': {
-						type: 'boolean'
-				},
-				disabled: {
-						type: 'boolean'
-				},
-				direction: {
-						enum: ['vertical', 'horizontal']
-				},
-				'icon-size': {
-						type: 'number'
-				},
-				'checked-color': {
-						type: 'string'
-				}
-			},
-			events: {
-					change: (names) => {}
-			},
-			slots: {}
-		}
-	},
+  radio: {
+      title: 'radio 单选框',
+      description: '在一组备选项中进行多选。',
+      path: '/radio/radio.tsx',
+      groupKey: 'Form Components',
+      groupName: '表单组件',
+      schema: {
+          key: 'radio',
+          children: true,
+          props: {
+              name: {
+                  // type: 'any'
+              },
+              shape: {
+                  enum: ['round', 'square']
+              },
+              disabled: {
+                  type: 'boolean'
+              },
+              'label-disabled': {
+                  type: 'boolean'
+              },
+              'label-position': {
+                  enum: ['right', 'left']
+              },
+              'icon-size': {
+                  type: 'number'
+              },
+              'checked-color': {
+                  type: 'string',
+                  default: '#1989fa'
+              }
+          },
+          events: {
+              click: (event) => {}
+          },
+          slots: {
+              default: {},
+              icon: {}
+          }
+      }
+  },
+  radioGroup: {
+      title: 'radioGroup 单选组',
+      description: '复选框容器',
+      path: '/radioGroup/radioGroup.tsx',
+      groupKey: 'Form Components',
+      groupName: '表单组件',
+      schema: {
+          key: 'radioGroup',
+          children: true,
+          props: {
+              'v-model': {
+                  type: 'boolean'
+              },
+              disabled: {
+                  type: 'boolean'
+              },
+              direction: {
+                  enum: ['vertical', 'horizontal']
+              },
+              'icon-size': {
+                  type: 'number'
+              },
+              'checked-color': {
+                  type: 'string',
+                  default: '#1989fa'
+              }
+          },
+          events: {
+              change: (names) => {}
+          },
+          slots: {}
+      }
+  },
+  datePicker: {
+      title: 'DatePicker 日期选择',
+      description: '日期选择器，用于选择年、月、日，通常与弹出层组件配合使用。',
+      path: '/date-picker/DatePicker.tsx',
+      groupKey: 'Form Components',
+      groupName: '表单组件',
+      schema: {
+          key: 'datePicker',
+          children: true,
+          props: {
+              'v-model': {
+                  type: 'boolean'
+              },
+              disabled: {
+                  type: 'boolean'
+              },
+              direction: {
+                  enum: ['vertical', 'horizontal']
+              },
+              'icon-size': {
+                  type: 'number'
+              },
+              'checked-color': {
+                  type: 'string'
+              }
+          },
+          events: {
+              change: (names) => {}
+          },
+          slots: {}
+      }
+  },
   field: {
       title: 'Field 输入框',
       description: '用户可以在文本框内输入或编辑文字。',
       path: '/field/Field.tsx',
       groupKey: 'Form Components',
       groupName: '表单组件',
-			schema: {
-				key: 'field',
-				children: true,
-				props: {
-					'v-model': {
-							type: 'string'
-					},
-					label: {
-							type: 'string'
-					},
-					name: {
-							type: 'string'
-					},
-					id: {
-							type: 'string'
-					},
-					type: {
-							type: 'FieldType'
-					},
-					size: {
-							type: 'string'
-					},
-					maxlength: {
-							type: 'number'
-					},
-					placeholder: {
-							type: 'number'
-					},
-					'border': {
-						type: 'boolean'
-					},
-					'disabled': {
-						type: 'boolean'
-					},
-					'readonly': {
-						type: 'boolean'
-					},
-					'colon': {
-						type: 'boolean'
-					},
-					'required': {
-						type: 'boolean'
-					},
-					'center': {
-						type: 'boolean'
-					},
-					'clearable': {
-						type: 'boolean'
-					},
-					'clear-icon': {
-						type: 'string'
-					},
-					'clickable': {
-						type: 'boolean'
-					},
-					'is-link': {
-						type: 'boolean'
-					},
-					'autofocus': {
-						type: 'boolean'
-					},
-					'show-word-limit': {
-						type: 'boolean'
-					},
-					'error': {
-						type: 'boolean'
-					},
-					'error-message': {
-						type: 'string'
-					},
-					'arrow-direction': {
-						type: 'string'
-					},
-					'label-class': {
-						type: 'string'
-					},
-					'label-width': {
-						type: 'number'
-					},
-					'left-icon': {
-						type: 'string'
-					},
-					'right-icon': {
-						type: 'string'
-					},
-					'icon-prefix': {
-						type: 'string'
-					},
-					'autocomplete': {
-						type: 'string'
-					},
-					'enterkeyhint': {
-						type: 'string'
-					}
-				},
-				events: {
-						'update:model-value': (value) => {},
-						'focus': (event) => {},
-						'blur': (event) => {},
-						'clear': (event) => {},
-						'click': (event) => {},
-						'click-input': (event) => {},
-						'click-left-icon': (event) => {},
-						'click-right-icon': (event) => {},
-						'start-validate': () => {},
-						'end-validate': () => {}
-
-				},
-				slots: {}
-			}
+      schema: {
+          key: 'field',
+          children: true,
+          props: {
+              'v-model': {
+                  type: 'string'
+              },
+              label: {
+                  type: 'string'
+              },
+              name: {
+                  type: 'string'
+              },
+              id: {
+                  type: 'string'
+              },
+              type: {
+                  type: 'FieldType'
+              },
+              size: {
+                  type: 'string'
+              },
+              maxlength: {
+                  type: 'number'
+              },
+              placeholder: {
+                  type: 'number'
+              },
+              border: {
+                  type: 'boolean',
+                  default: true
+              },
+              disabled: {
+                  type: 'boolean'
+              },
+              readonly: {
+                  type: 'boolean'
+              },
+              colon: {
+                  type: 'boolean'
+              },
+              required: {
+                  type: 'boolean'
+              },
+              center: {
+                  type: 'boolean'
+              },
+              clearable: {
+                  type: 'boolean'
+              },
+              'clear-icon': {
+                  type: 'string'
+              },
+              clickable: {
+                  type: 'boolean'
+              },
+              'is-link': {
+                  type: 'boolean'
+              },
+              autofocus: {
+                  type: 'boolean'
+              },
+              'show-word-limit': {
+                  type: 'boolean'
+              },
+              error: {
+                  type: 'boolean'
+              },
+              'error-message': {
+                  type: 'string'
+              },
+              'arrow-direction': {
+                  type: 'string'
+              },
+              'label-class': {
+                  type: 'string'
+              },
+              'label-width': {
+                  type: 'number'
+              },
+              'left-icon': {
+                  type: 'string'
+              },
+              'right-icon': {
+                  type: 'string'
+              },
+              'icon-prefix': {
+                  type: 'string'
+              },
+              autocomplete: {
+                  type: 'string'
+              },
+              enterkeyhint: {
+                  type: 'string'
+              }
+          },
+          events: {
+              'update:model-value': (value) => {},
+              focus: (event) => {},
+              blur: (event) => {},
+              clear: (event) => {},
+              click: (event) => {},
+              'click-input': (event) => {},
+              'click-left-icon': (event) => {},
+              'click-right-icon': (event) => {},
+              'start-validate': () => {},
+              'end-validate': () => {}
+          },
+          slots: {}
+      }
   },
   form: {
       title: 'Form 表单',
-      description: '用于数据录入、校验，支持输入框、单选框、复选框、文件上传等类型，需要与 Field 输入框 组件搭配使用。',
+      description:
+          '用于数据录入、校验，支持输入框、单选框、复选框、文件上传等类型，需要与 Field 输入框 组件搭配使用。',
       path: '/form/Form.tsx',
       groupKey: 'Form Components',
       groupName: '表单组件',
-			schema: {
-				key: 'form',
-				children: true,
-				props: {
-					'label-width': {
-						type: 'number'
-					},
-					'label-align': {
-						type: 'string'
-					},
-					'input-align': {
-						type: 'string'
-					},
-					'error-message-align': {
-						type: 'string'
-					},
-					'validate-trigger': {
-						type: 'string'
-					},
-					'colon': {
-						type: 'boolean'
-					},
-					'disabled': {
-						type: 'boolean'
-					},
-					'readonly': {
-						type: 'boolean'
-					},
-					'validate-first': {
-						type: 'boolean'
-					},
-					'scroll-to-error': {
-						type: 'boolean'
-					},
-					'show-error': {
-						type: 'boolean'
-					},
-					'show-error-message': {
-						type: 'boolean'
-					},
-					'submit-on-enter': {
-						type: 'boolean'
-					}
-				},
-				events: {
-					submit: (values) => {},
-					failed: () => {}
-				},
-				slots: {}
-			}
-  },
+      schema: {
+          key: 'form',
+          children: true,
+          props: {
+              'label-width': {
+                  type: 'number'
+              },
+              'label-align': {
+                  type: 'string'
+              },
+              'input-align': {
+                  type: 'string'
+              },
+              'error-message-align': {
+                  type: 'string'
+              },
+              'validate-trigger': {
+                  type: 'string'
+              },
+              colon: {
+                  type: 'boolean'
+              },
+              disabled: {
+                  type: 'boolean'
+              },
+              readonly: {
+                  type: 'boolean'
+              },
+              'validate-first': {
+                  type: 'boolean'
+              },
+              'scroll-to-error': {
+                  type: 'boolean'
+              },
+              'show-error': {
+                  type: 'boolean'
+              },
+              'show-error-message': {
+                  type: 'boolean',
+                  default: true
+              },
+              'submit-on-enter': {
+                  type: 'boolean',
+                  default: true
+              }
+          },
+          events: {
+              submit: (values) => {},
+              failed: () => {}
+          },
+          slots: {}
+      }
+  }
   // numberKeyboard: {
   //     title: 'NumberKeyboard 数字键盘',
   //     description: '虚拟数字键盘，可以配合密码输入框组件或自定义的输入框组件使用。',

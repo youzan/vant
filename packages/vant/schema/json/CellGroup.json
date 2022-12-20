@@ -4,7 +4,7 @@
   "type": "object",
   "properties": {
     "name": {
-      "title": "Cell 单元格",
+      "title": "Cell 单元组",
       "description": "组件名称"
     },
     "tagName": {
@@ -65,7 +65,7 @@
           "title": "border",
           "option": true,
           "valueType": "switch",
-          "default": "false"
+          "default": true
         }
       }
     },

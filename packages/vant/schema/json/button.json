@@ -209,7 +209,7 @@
           "title": "loading-size",
           "option": false,
           "valueType": "digit",
-          "default": ""
+          "default": 0
         },
         "url": {
           "enum": [],

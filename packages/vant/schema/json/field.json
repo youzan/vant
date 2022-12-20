@@ -105,7 +105,7 @@
           "title": "maxlength",
           "option": false,
           "valueType": "digit",
-          "default": ""
+          "default": 0
         },
         "placeholder": {
           "enum": [],
@@ -115,7 +115,7 @@
           "title": "placeholder",
           "option": false,
           "valueType": "digit",
-          "default": ""
+          "default": 0
         },
         "border": {
           "enum": [],
@@ -125,7 +125,7 @@
           "title": "border",
           "option": true,
           "valueType": "switch",
-          "default": "false"
+          "default": true
         },
         "disabled": {
           "enum": [],
@@ -285,7 +285,7 @@
           "title": "label-width",
           "option": false,
           "valueType": "digit",
-          "default": ""
+          "default": 0
         },
         "left-icon": {
           "enum": [],

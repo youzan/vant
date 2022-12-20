@@ -111,7 +111,7 @@
           "title": "icon-size",
           "option": false,
           "valueType": "digit",
-          "default": ""
+          "default": 0
         },
         "checked-color": {
           "enum": [],
@@ -131,7 +131,7 @@
           "title": "bind-group",
           "option": true,
           "valueType": "switch",
-          "default": "false"
+          "default": true
         }
       }
     },
