@@ -91,6 +91,13 @@
           direction: horizontal
         - mode: block
           direction: vertical
+      toggleupdate:
+        - value: space-between
+          updateData:
+            gap: normal
+        - value: space-around
+          updateData:
+            gap: normal
     - name: alignment
       title: 纵轴对齐
       type: string
@@ -177,6 +184,13 @@
       dependency:
         - mode: flex
           direction: vertical
+      toggleupdate:
+        - value: space-between
+          updateData:
+            gap: normal
+        - value: space-around
+          updateData:
+            gap: normal
     - name: wrap
       title: 是否换行
       type: boolean
@@ -201,6 +215,10 @@
           title: 大
       default: normal
       description: 内容块间隙大小
+      dependency:
+        - '!justify':
+          - space-between
+          - space-around
     - name: display
       title: 展示方式
       type: string
