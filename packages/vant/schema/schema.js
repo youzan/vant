@@ -172,6 +172,17 @@ function componentProps(componentMapProps) {
                 valueType: 'switch',
                 default: componentMapProps[key].default || 'false'
             };
+        } else if (componentMapProps[key].type === 'number') {
+            propItem = {
+              enum: [],
+              type: [
+                "number"
+              ],
+              title: key,
+              option: false,
+              valueType: "digit",
+              default: ''
+            }
         } else {
             propItem = {
                 enum: [],

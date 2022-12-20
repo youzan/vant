@@ -1,14 +1,14 @@
 {
-  "tagName": "Button",
+  "tagName": "Form",
   "pkgId": "vant",
   "type": "object",
   "properties": {
     "name": {
-      "title": "Button 按钮",
+      "title": "Form 表单",
       "description": "组件名称"
     },
     "tagName": {
-      "title": "Button",
+      "title": "Form",
       "description": "组件标签"
     },
     "advanceProps": {
@@ -37,126 +37,62 @@
       "description": "组件属性",
       "required": [],
       "properties": {
-        "type": {
-          "enum": [
-            "default",
-            "primary",
-            "success",
-            "warning",
-            "danger"
-          ],
+        "label-width": {
+          "enum": [],
           "type": [
-            "string"
+            "number"
           ],
-          "title": "type",
-          "option": true,
-          "valueType": "select",
-          "default": "default"
+          "title": "label-width",
+          "option": false,
+          "valueType": "digit",
+          "default": ""
         },
-        "size": {
-          "enum": [
-            "normal",
-            "large",
-            "small",
-            "mini"
-          ],
-          "type": [
-            "string"
-          ],
-          "title": "size",
-          "option": true,
-          "valueType": "select",
-          "default": "normal"
-        },
-        "text": {
+        "label-align": {
           "enum": [],
           "type": [
             "string"
           ],
-          "title": "text",
+          "title": "label-align",
           "option": true,
           "valueType": "text",
           "default": ""
         },
-        "color": {
+        "input-align": {
           "enum": [],
           "type": [
             "string"
           ],
-          "title": "color",
+          "title": "input-align",
           "option": true,
           "valueType": "text",
           "default": ""
         },
-        "icon": {
+        "error-message-align": {
           "enum": [],
           "type": [
             "string"
           ],
-          "title": "icon",
+          "title": "error-message-align",
           "option": true,
           "valueType": "text",
           "default": ""
         },
-        "icon-prefix": {
+        "validate-trigger": {
           "enum": [],
           "type": [
             "string"
           ],
-          "title": "icon-prefix",
+          "title": "validate-trigger",
           "option": true,
           "valueType": "text",
           "default": ""
         },
-        "icon-position": {
-          "enum": [
-            "left",
-            "right"
-          ],
-          "type": [
-            "string"
-          ],
-          "title": "icon-position",
-          "option": true,
-          "valueType": "select",
-          "default": "left"
-        },
-        "block": {
+        "colon": {
           "enum": [],
           "type": [
             "boolean"
           ],
-          "title": "block",
-          "option": true,
-          "valueType": "switch",
-          "default": "false"
-        },
-        "plain": {
-          "enum": [],
-          "type": [
-            "boolean"
-          ],
-          "title": "plain",
-          "option": true,
-          "valueType": "switch",
-          "default": "false"
-        },
-        "square": {
-          "enum": [],
-          "type": [
-            "boolean"
-          ],
-          "title": "square",
-          "option": true,
-          "valueType": "switch",
-          "default": "false"
-        },
-        "round": {
-          "enum": [],
-          "type": [
-            "boolean"
-          ],
-          "title": "round",
+          "title": "colon",
           "option": true,
           "valueType": "switch",
           "default": "false"
@@ -171,72 +107,62 @@
           "valueType": "switch",
           "default": "false"
         },
-        "hairline": {
+        "readonly": {
           "enum": [],
           "type": [
             "boolean"
           ],
-          "title": "hairline",
+          "title": "readonly",
           "option": true,
           "valueType": "switch",
           "default": "false"
         },
-        "loading": {
+        "validate-first": {
           "enum": [],
           "type": [
             "boolean"
           ],
-          "title": "loading",
+          "title": "validate-first",
           "option": true,
           "valueType": "switch",
           "default": "false"
         },
-        "loading-text": {
-          "enum": [],
-          "type": [
-            "string"
-          ],
-          "title": "loading-text",
-          "option": true,
-          "valueType": "text",
-          "default": ""
-        },
-        "loading-size": {
-          "enum": [],
-          "type": [
-            "number"
-          ],
-          "title": "loading-size",
-          "option": false,
-          "valueType": "digit",
-          "default": ""
-        },
-        "url": {
-          "enum": [],
-          "type": [
-            "string"
-          ],
-          "title": "url",
-          "option": true,
-          "valueType": "text",
-          "default": ""
-        },
-        "to": {
-          "enum": [],
-          "type": [
-            "string"
-          ],
-          "title": "to",
-          "option": true,
-          "valueType": "text",
-          "default": ""
-        },
-        "replace": {
+        "scroll-to-error": {
           "enum": [],
           "type": [
             "boolean"
           ],
-          "title": "replace",
+          "title": "scroll-to-error",
+          "option": true,
+          "valueType": "switch",
+          "default": "false"
+        },
+        "show-error": {
+          "enum": [],
+          "type": [
+            "boolean"
+          ],
+          "title": "show-error",
+          "option": true,
+          "valueType": "switch",
+          "default": "false"
+        },
+        "show-error-message": {
+          "enum": [],
+          "type": [
+            "boolean"
+          ],
+          "title": "show-error-message",
+          "option": true,
+          "valueType": "switch",
+          "default": "false"
+        },
+        "submit-on-enter": {
+          "enum": [],
+          "type": [
+            "boolean"
+          ],
+          "title": "submit-on-enter",
           "option": true,
           "valueType": "switch",
           "default": "false"
@@ -249,9 +175,9 @@
       "description": "组件动作事件",
       "required": [],
       "properties": {
-        "touchstart": {
-          "title": "touchstart",
-          "description": "touchstart",
+        "submit": {
+          "title": "submit",
+          "description": "submit",
           "type": "object",
           "properties": {
             "name": {
@@ -261,9 +187,9 @@
             }
           }
         },
-        "click": {
-          "title": "click",
-          "description": "click",
+        "failed": {
+          "title": "failed",
+          "description": "failed",
           "type": "object",
           "properties": {
             "name": {
@@ -326,9 +252,9 @@
   "required": [
     null
   ],
-  "description": "按钮用于触发一个操作，如提交表单。",
-  "groupKey": "Basic Components",
-  "groupName": "基础组件",
+  "description": "用于数据录入、校验，支持输入框、单选框、复选框、文件上传等类型，需要与 Field 输入框 组件搭配使用。",
+  "groupKey": "Form Components",
+  "groupName": "表单组件",
   "isHidden": 0,
   "framework": "vue"
 }

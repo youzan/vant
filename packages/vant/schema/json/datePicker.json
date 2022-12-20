@@ -1,14 +1,14 @@
 {
-  "tagName": "Badge",
+  "tagName": "DatePicker",
   "pkgId": "vant",
   "type": "object",
   "properties": {
     "name": {
-      "title": "Badge 徽标",
+      "title": "DatePicker 日期选择",
       "description": "组件名称"
     },
     "tagName": {
-      "title": "Badge",
+      "title": "DatePicker",
       "description": "组件标签"
     },
     "advanceProps": {
@@ -37,80 +37,78 @@
       "description": "组件属性",
       "required": [],
       "properties": {
-        "content": {
-          "enum": [],
-          "type": [
-            "string"
-          ],
-          "title": "content",
-          "option": true,
-          "valueType": "text",
-          "default": ""
-        },
-        "color": {
-          "enum": [],
-          "type": [
-            "string"
-          ],
-          "title": "color",
-          "option": true,
-          "valueType": "text",
-          "default": ""
-        },
-        "dot": {
+        "v-model": {
           "enum": [],
           "type": [
             "boolean"
           ],
-          "title": "dot",
+          "title": "v-model",
           "option": true,
           "valueType": "switch",
           "default": "false"
         },
-        "max": {
-          "enum": [],
-          "type": [
-            "number"
-          ],
-          "title": "max",
-          "option": false,
-          "valueType": "digit",
-          "default": ""
-        },
-        "offset": {
-          "enum": [],
-          "type": [
-            "number"
-          ],
-          "title": "offset",
-          "option": false,
-          "valueType": "digit",
-          "default": ""
-        },
-        "show-zero": {
+        "disabled": {
           "enum": [],
           "type": [
             "boolean"
           ],
-          "title": "show-zero",
+          "title": "disabled",
           "option": true,
           "valueType": "switch",
           "default": "false"
         },
-        "position": {
+        "direction": {
           "enum": [
-            "top-right",
-            "top-left",
-            "bottom-left",
-            "bottom-right"
+            "vertical",
+            "horizontal"
           ],
           "type": [
             "string"
           ],
-          "title": "position",
+          "title": "direction",
           "option": true,
           "valueType": "select",
-          "default": "top-right"
+          "default": "vertical"
+        },
+        "icon-size": {
+          "enum": [],
+          "type": [
+            "number"
+          ],
+          "title": "icon-size",
+          "option": false,
+          "valueType": "digit",
+          "default": ""
+        },
+        "checked-color": {
+          "enum": [],
+          "type": [
+            "string"
+          ],
+          "title": "checked-color",
+          "option": true,
+          "valueType": "text",
+          "default": ""
+        }
+      }
+    },
+    "events": {
+      "type": "object",
+      "title": "交互行为",
+      "description": "组件动作事件",
+      "required": [],
+      "properties": {
+        "change": {
+          "title": "change",
+          "description": "change",
+          "type": "object",
+          "properties": {
+            "name": {
+              "description": "函数名",
+              "title": "函数名",
+              "type": "string"
+            }
+          }
         }
       }
     },
@@ -165,9 +163,9 @@
   "required": [
     null
   ],
-  "description": "在右上角展示徽标数字或小红点。",
-  "groupKey": "Display Components",
-  "groupName": "展示组件",
+  "description": "日期选择器，用于选择年、月、日，通常与弹出层组件配合使用。",
+  "groupKey": "Form Components",
+  "groupName": "表单组件",
   "isHidden": 0,
   "framework": "vue"
 }

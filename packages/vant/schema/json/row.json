@@ -40,11 +40,11 @@
         "gutter": {
           "enum": [],
           "type": [
-            "string"
+            "number"
           ],
           "title": "gutter",
-          "option": true,
-          "valueType": "text",
+          "option": false,
+          "valueType": "digit",
           "default": ""
         },
         "tag": {

@@ -60,11 +60,11 @@
         "max": {
           "enum": [],
           "type": [
-            "string"
+            "number"
           ],
           "title": "max",
-          "option": true,
-          "valueType": "text",
+          "option": false,
+          "valueType": "digit",
           "default": ""
         },
         "direction": {
@@ -83,11 +83,11 @@
         "icon-size": {
           "enum": [],
           "type": [
-            "string"
+            "number"
           ],
           "title": "icon-size",
-          "option": true,
-          "valueType": "text",
+          "option": false,
+          "valueType": "digit",
           "default": ""
         },
         "checked-color": {

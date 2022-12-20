@@ -40,21 +40,21 @@
         "span": {
           "enum": [],
           "type": [
-            "string"
+            "number"
           ],
           "title": "span",
-          "option": true,
-          "valueType": "text",
+          "option": false,
+          "valueType": "digit",
           "default": ""
         },
         "offset": {
           "enum": [],
           "type": [
-            "string"
+            "number"
           ],
           "title": "offset",
-          "option": true,
-          "valueType": "text",
+          "option": false,
+          "valueType": "digit",
           "default": ""
         },
         "tag": {

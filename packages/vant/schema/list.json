@@ -71,21 +71,21 @@
           "max": {
             "enum": [],
             "type": [
-              "string"
+              "number"
             ],
             "title": "max",
-            "option": true,
-            "valueType": "text",
+            "option": false,
+            "valueType": "digit",
             "default": ""
           },
           "offset": {
             "enum": [],
             "type": [
-              "string"
+              "number"
             ],
             "title": "offset",
-            "option": true,
-            "valueType": "text",
+            "option": false,
+            "valueType": "digit",
             "default": ""
           },
           "show-zero": {
@@ -378,11 +378,11 @@
           "loading-size": {
             "enum": [],
             "type": [
-              "string"
+              "number"
             ],
             "title": "loading-size",
-            "option": true,
-            "valueType": "text",
+            "option": false,
+            "valueType": "digit",
             "default": ""
           },
           "url": {
@@ -1065,31 +1065,31 @@
           "width": {
             "enum": [],
             "type": [
-              "string"
+              "number"
             ],
             "title": "width",
-            "option": true,
-            "valueType": "text",
+            "option": false,
+            "valueType": "digit",
             "default": ""
           },
           "height": {
             "enum": [],
             "type": [
-              "string"
+              "number"
             ],
             "title": "height",
-            "option": true,
-            "valueType": "text",
+            "option": false,
+            "valueType": "digit",
             "default": ""
           },
           "radius": {
             "enum": [],
             "type": [
-              "string"
+              "number"
             ],
             "title": "radius",
-            "option": true,
-            "valueType": "text",
+            "option": false,
+            "valueType": "digit",
             "default": ""
           },
           "round": {
@@ -1165,11 +1165,11 @@
           "icon-size": {
             "enum": [],
             "type": [
-              "string"
+              "number"
             ],
             "title": "icon-size",
-            "option": true,
-            "valueType": "text",
+            "option": false,
+            "valueType": "digit",
             "default": ""
           },
           "icon-prefix": {
@@ -1327,11 +1327,11 @@
           "gutter": {
             "enum": [],
             "type": [
-              "string"
+              "number"
             ],
             "title": "gutter",
-            "option": true,
-            "valueType": "text",
+            "option": false,
+            "valueType": "digit",
             "default": ""
           },
           "tag": {
@@ -1505,21 +1505,21 @@
           "span": {
             "enum": [],
             "type": [
-              "string"
+              "number"
             ],
             "title": "span",
-            "option": true,
-            "valueType": "text",
+            "option": false,
+            "valueType": "digit",
             "default": ""
           },
           "offset": {
             "enum": [],
             "type": [
-              "string"
+              "number"
             ],
             "title": "offset",
-            "option": true,
-            "valueType": "text",
+            "option": false,
+            "valueType": "digit",
             "default": ""
           },
           "tag": {
@@ -1608,6 +1608,793 @@
     "description": "Layout 提供了 van-row 和 van-col 两个组件来进行行列布局。",
     "groupKey": "Basic Components",
     "groupName": "基础组件",
+    "isHidden": 0,
+    "framework": "vue"
+  },
+  {
+    "tagName": "Popup",
+    "pkgId": "vant",
+    "type": "object",
+    "properties": {
+      "name": {
+        "title": "Popup 弹出层",
+        "description": "组件名称"
+      },
+      "tagName": {
+        "title": "Popup",
+        "description": "组件标签"
+      },
+      "advanceProps": {
+        "title": "高级属性",
+        "description": "高级属性",
+        "type": "object",
+        "properties": {
+          "condition": {
+            "title": "是否渲染",
+            "description": "是否渲染",
+            "type": "string",
+            "valueType": "switch",
+            "default": true
+          }
+        }
+      },
+      "hasChild": {
+        "type": "boolean",
+        "const": true,
+        "title": "支持调用子组件",
+        "description": "true:支持;false:不支持"
+      },
+      "props": {
+        "type": "object",
+        "title": "组件属性",
+        "description": "组件属性",
+        "required": [],
+        "properties": {
+          "v-Model:show": {
+            "enum": [],
+            "type": [
+              "boolean"
+            ],
+            "title": "v-Model:show",
+            "option": true,
+            "valueType": "switch",
+            "default": "false"
+          },
+          "overlay": {
+            "enum": [],
+            "type": [
+              "string"
+            ],
+            "title": "overlay",
+            "option": true,
+            "valueType": "text",
+            "default": ""
+          },
+          "position": {
+            "enum": [
+              "top",
+              "bottom",
+              "right",
+              "left"
+            ],
+            "type": [
+              "string"
+            ],
+            "title": "position",
+            "option": true,
+            "valueType": "select",
+            "default": "top"
+          },
+          "overlay-class": {
+            "enum": [],
+            "type": [
+              "string"
+            ],
+            "title": "overlay-class",
+            "option": true,
+            "valueType": "text",
+            "default": ""
+          },
+          "overlay-style": {
+            "enum": [],
+            "type": [
+              "string"
+            ],
+            "title": "overlay-style",
+            "option": true,
+            "valueType": "text",
+            "default": ""
+          },
+          "show-zero": {
+            "enum": [],
+            "type": [
+              "boolean"
+            ],
+            "title": "show-zero",
+            "option": true,
+            "valueType": "switch",
+            "default": "false"
+          },
+          "duration": {
+            "enum": [],
+            "type": [
+              "number"
+            ],
+            "title": "duration",
+            "option": false,
+            "valueType": "digit",
+            "default": ""
+          },
+          "z-index": {
+            "enum": [],
+            "type": [
+              "number"
+            ],
+            "title": "z-index",
+            "option": false,
+            "valueType": "digit",
+            "default": ""
+          },
+          "round": {
+            "enum": [],
+            "type": [
+              "boolean"
+            ],
+            "title": "round",
+            "option": true,
+            "valueType": "switch",
+            "default": "false"
+          },
+          "lock-scroll": {
+            "enum": [],
+            "type": [
+              "boolean"
+            ],
+            "title": "lock-scroll",
+            "option": true,
+            "valueType": "switch",
+            "default": "false"
+          },
+          "lazy-render": {
+            "enum": [],
+            "type": [
+              "boolean"
+            ],
+            "title": "lazy-render",
+            "option": true,
+            "valueType": "switch",
+            "default": "false"
+          },
+          "close-on-popstate": {
+            "enum": [],
+            "type": [
+              "boolean"
+            ],
+            "title": "close-on-popstate",
+            "option": true,
+            "valueType": "switch",
+            "default": "false"
+          },
+          "close-on-click-overlay": {
+            "enum": [],
+            "type": [
+              "boolean"
+            ],
+            "title": "close-on-click-overlay",
+            "option": true,
+            "valueType": "switch",
+            "default": "false"
+          },
+          "closeable": {
+            "enum": [],
+            "type": [
+              "boolean"
+            ],
+            "title": "closeable",
+            "option": true,
+            "valueType": "switch",
+            "default": "false"
+          },
+          "close-icon": {
+            "enum": [],
+            "type": [
+              "string"
+            ],
+            "title": "close-icon",
+            "option": true,
+            "valueType": "text",
+            "default": ""
+          },
+          "close-icon-position": {
+            "enum": [],
+            "type": [
+              "string"
+            ],
+            "title": "close-icon-position",
+            "option": true,
+            "valueType": "text",
+            "default": ""
+          },
+          "transition": {
+            "enum": [],
+            "type": [
+              "string"
+            ],
+            "title": "transition",
+            "option": true,
+            "valueType": "text",
+            "default": ""
+          },
+          "transition-appear": {
+            "enum": [],
+            "type": [
+              "boolean"
+            ],
+            "title": "transition-appear",
+            "option": true,
+            "valueType": "switch",
+            "default": "false"
+          },
+          "teleport": {
+            "enum": [],
+            "type": [
+              "string"
+            ],
+            "title": "teleport",
+            "option": true,
+            "valueType": "text",
+            "default": ""
+          },
+          "safe-area-inset-top": {
+            "enum": [],
+            "type": [
+              "boolean"
+            ],
+            "title": "safe-area-inset-top",
+            "option": true,
+            "valueType": "switch",
+            "default": "false"
+          },
+          "safe-area-inset-bottom": {
+            "enum": [],
+            "type": [
+              "boolean"
+            ],
+            "title": "safe-area-inset-bottom",
+            "option": true,
+            "valueType": "switch",
+            "default": "false"
+          }
+        }
+      },
+      "events": {
+        "type": "object",
+        "title": "交互行为",
+        "description": "组件动作事件",
+        "required": [],
+        "properties": {
+          "click": {
+            "title": "click",
+            "description": "click",
+            "type": "object",
+            "properties": {
+              "name": {
+                "description": "函数名",
+                "title": "函数名",
+                "type": "string"
+              }
+            }
+          },
+          "click-overlay": {
+            "title": "click-overlay",
+            "description": "click-overlay",
+            "type": "object",
+            "properties": {
+              "name": {
+                "description": "函数名",
+                "title": "函数名",
+                "type": "string"
+              }
+            }
+          },
+          "click-close-icon": {
+            "title": "click-close-icon",
+            "description": "click-close-icon",
+            "type": "object",
+            "properties": {
+              "name": {
+                "description": "函数名",
+                "title": "函数名",
+                "type": "string"
+              }
+            }
+          },
+          "open": {
+            "title": "open",
+            "description": "open",
+            "type": "object",
+            "properties": {
+              "name": {
+                "description": "函数名",
+                "title": "函数名",
+                "type": "string"
+              }
+            }
+          },
+          "close": {
+            "title": "close",
+            "description": "close",
+            "type": "object",
+            "properties": {
+              "name": {
+                "description": "函数名",
+                "title": "函数名",
+                "type": "string"
+              }
+            }
+          },
+          "opened": {
+            "title": "opened",
+            "description": "opened",
+            "type": "object",
+            "properties": {
+              "name": {
+                "description": "函数名",
+                "title": "函数名",
+                "type": "string"
+              }
+            }
+          },
+          "closed": {
+            "title": "closed",
+            "description": "closed",
+            "type": "object",
+            "properties": {
+              "name": {
+                "description": "函数名",
+                "title": "函数名",
+                "type": "string"
+              }
+            }
+          }
+        }
+      },
+      "pkgId": {
+        "title": "vant",
+        "description": "组件库包名称"
+      },
+      "version": {
+        "title": "4.0.2",
+        "description": "组件库包版本"
+      },
+      "protoProps": {
+        "type": "object",
+        "title": "原生属性",
+        "required": [],
+        "properties": {
+          "id": {
+            "type": "string",
+            "title": "唯一id",
+            "valueType": "text",
+            "description": "元素唯一标识"
+          },
+          "ref": {
+            "type": "string",
+            "title": "ref",
+            "valueType": "text",
+            "description": "组件ref名称，可在this.[ref名称]来获取组件实例this对象"
+          },
+          "style": {
+            "type": "object",
+            "title": "内联样式",
+            "valueType": "object",
+            "description": "组件内联样式(JSON格式)"
+          },
+          "className": {
+            "type": "string",
+            "title": "样式名",
+            "valueType": "textarea",
+            "description": "组件样式名"
+          }
+        },
+        "description": "原生属性"
+      },
+      "lastModifyTime": {
+        "type": "string",
+        "title": "最后一次修改时间",
+        "description": "2022-12-13"
+      }
+    },
+    "lastModifyTime": "2022-12-13",
+    "version": "4.0.2",
+    "required": [
+      null
+    ],
+    "description": "弹出层容器，用于展示弹窗、信息提示等内容，支持多个弹出层叠加展示。",
+    "groupKey": "Basic Components",
+    "groupName": "基础组件",
+    "isHidden": 0,
+    "framework": "vue"
+  },
+  {
+    "tagName": "Toast",
+    "pkgId": "vant",
+    "type": "object",
+    "properties": {
+      "name": {
+        "title": "Toast 轻提示",
+        "description": "组件名称"
+      },
+      "tagName": {
+        "title": "Toast",
+        "description": "组件标签"
+      },
+      "advanceProps": {
+        "title": "高级属性",
+        "description": "高级属性",
+        "type": "object",
+        "properties": {
+          "condition": {
+            "title": "是否渲染",
+            "description": "是否渲染",
+            "type": "string",
+            "valueType": "switch",
+            "default": true
+          }
+        }
+      },
+      "hasChild": {
+        "type": "boolean",
+        "const": true,
+        "title": "支持调用子组件",
+        "description": "true:支持;false:不支持"
+      },
+      "props": {
+        "type": "object",
+        "title": "组件属性",
+        "description": "组件属性",
+        "required": [],
+        "properties": {
+          "v-model:show": {
+            "enum": [],
+            "type": [
+              "boolean"
+            ],
+            "title": "v-model:show",
+            "option": true,
+            "valueType": "switch",
+            "default": "false"
+          }
+        }
+      },
+      "events": {
+        "type": "object",
+        "title": "交互行为",
+        "description": "组件动作事件",
+        "required": [],
+        "properties": {
+          "click": {
+            "title": "click",
+            "description": "click",
+            "type": "object",
+            "properties": {
+              "name": {
+                "description": "函数名",
+                "title": "函数名",
+                "type": "string"
+              }
+            }
+          }
+        }
+      },
+      "pkgId": {
+        "title": "vant",
+        "description": "组件库包名称"
+      },
+      "version": {
+        "title": "4.0.2",
+        "description": "组件库包版本"
+      },
+      "protoProps": {
+        "type": "object",
+        "title": "原生属性",
+        "required": [],
+        "properties": {
+          "id": {
+            "type": "string",
+            "title": "唯一id",
+            "valueType": "text",
+            "description": "元素唯一标识"
+          },
+          "ref": {
+            "type": "string",
+            "title": "ref",
+            "valueType": "text",
+            "description": "组件ref名称，可在this.[ref名称]来获取组件实例this对象"
+          },
+          "style": {
+            "type": "object",
+            "title": "内联样式",
+            "valueType": "object",
+            "description": "组件内联样式(JSON格式)"
+          },
+          "className": {
+            "type": "string",
+            "title": "样式名",
+            "valueType": "textarea",
+            "description": "组件样式名"
+          }
+        },
+        "description": "原生属性"
+      },
+      "lastModifyTime": {
+        "type": "string",
+        "title": "最后一次修改时间",
+        "description": "2022-12-13"
+      }
+    },
+    "lastModifyTime": "2022-12-13",
+    "version": "4.0.2",
+    "required": [
+      null
+    ],
+    "description": "在页面中间弹出黑色半透明提示，用于消息通知、加载提示、操作结果提示等场景。",
+    "groupKey": "Basic Components",
+    "groupName": "基础组件",
+    "isHidden": 0,
+    "framework": "vue"
+  },
+  {
+    "tagName": "Cascader",
+    "pkgId": "vant",
+    "type": "object",
+    "properties": {
+      "name": {
+        "title": "Cascader 级联选择",
+        "description": "组件名称"
+      },
+      "tagName": {
+        "title": "Cascader",
+        "description": "组件标签"
+      },
+      "advanceProps": {
+        "title": "高级属性",
+        "description": "高级属性",
+        "type": "object",
+        "properties": {
+          "condition": {
+            "title": "是否渲染",
+            "description": "是否渲染",
+            "type": "string",
+            "valueType": "switch",
+            "default": true
+          }
+        }
+      },
+      "hasChild": {
+        "type": "boolean",
+        "const": true,
+        "title": "支持调用子组件",
+        "description": "true:支持;false:不支持"
+      },
+      "props": {
+        "type": "object",
+        "title": "组件属性",
+        "description": "组件属性",
+        "required": [],
+        "properties": {
+          "title": {
+            "enum": [],
+            "type": [
+              "string"
+            ],
+            "title": "title",
+            "option": true,
+            "valueType": "text",
+            "default": ""
+          },
+          "value": {
+            "enum": [],
+            "type": [
+              "string"
+            ],
+            "title": "value",
+            "option": true,
+            "valueType": "text",
+            "default": ""
+          },
+          "options": {
+            "enum": [],
+            "type": [
+              "string"
+            ],
+            "title": "options",
+            "option": true,
+            "valueType": "text",
+            "default": ""
+          },
+          "placeholder": {
+            "enum": [],
+            "type": [
+              "string"
+            ],
+            "title": "placeholder",
+            "option": true,
+            "valueType": "text",
+            "default": ""
+          },
+          "active-color": {
+            "enum": [],
+            "type": [
+              "string"
+            ],
+            "title": "active-color",
+            "option": true,
+            "valueType": "text",
+            "default": ""
+          },
+          "swipeable": {
+            "enum": [],
+            "type": [
+              "boolean"
+            ],
+            "title": "swipeable",
+            "option": true,
+            "valueType": "switch",
+            "default": "false"
+          },
+          "closeable": {
+            "enum": [],
+            "type": [
+              "boolean"
+            ],
+            "title": "closeable",
+            "option": true,
+            "valueType": "switch",
+            "default": "false"
+          },
+          "show-header": {
+            "enum": [],
+            "type": [
+              "boolean"
+            ],
+            "title": "show-header",
+            "option": true,
+            "valueType": "switch",
+            "default": "false"
+          },
+          "close-icon": {
+            "enum": [],
+            "type": [
+              "boolean"
+            ],
+            "title": "close-icon",
+            "option": true,
+            "valueType": "switch",
+            "default": "false"
+          },
+          "field-names": {
+            "enum": [],
+            "type": [
+              "string"
+            ],
+            "title": "field-names",
+            "option": true,
+            "valueType": "text",
+            "default": ""
+          }
+        }
+      },
+      "events": {
+        "type": "object",
+        "title": "交互行为",
+        "description": "组件动作事件",
+        "required": [],
+        "properties": {
+          "change": {
+            "title": "change",
+            "description": "change",
+            "type": "object",
+            "properties": {
+              "name": {
+                "description": "函数名",
+                "title": "函数名",
+                "type": "string"
+              }
+            }
+          },
+          "finish": {
+            "title": "finish",
+            "description": "finish",
+            "type": "object",
+            "properties": {
+              "name": {
+                "description": "函数名",
+                "title": "函数名",
+                "type": "string"
+              }
+            }
+          },
+          "close": {
+            "title": "close",
+            "description": "close",
+            "type": "object",
+            "properties": {
+              "name": {
+                "description": "函数名",
+                "title": "函数名",
+                "type": "string"
+              }
+            }
+          },
+          "click-tab": {
+            "title": "click-tab",
+            "description": "click-tab",
+            "type": "object",
+            "properties": {
+              "name": {
+                "description": "函数名",
+                "title": "函数名",
+                "type": "string"
+              }
+            }
+          }
+        }
+      },
+      "pkgId": {
+        "title": "vant",
+        "description": "组件库包名称"
+      },
+      "version": {
+        "title": "4.0.2",
+        "description": "组件库包版本"
+      },
+      "protoProps": {
+        "type": "object",
+        "title": "原生属性",
+        "required": [],
+        "properties": {
+          "id": {
+            "type": "string",
+            "title": "唯一id",
+            "valueType": "text",
+            "description": "元素唯一标识"
+          },
+          "ref": {
+            "type": "string",
+            "title": "ref",
+            "valueType": "text",
+            "description": "组件ref名称，可在this.[ref名称]来获取组件实例this对象"
+          },
+          "style": {
+            "type": "object",
+            "title": "内联样式",
+            "valueType": "object",
+            "description": "组件内联样式(JSON格式)"
+          },
+          "className": {
+            "type": "string",
+            "title": "样式名",
+            "valueType": "textarea",
+            "description": "组件样式名"
+          }
+        },
+        "description": "原生属性"
+      },
+      "lastModifyTime": {
+        "type": "string",
+        "title": "最后一次修改时间",
+        "description": "2022-12-13"
+      }
+    },
+    "lastModifyTime": "2022-12-13",
+    "version": "4.0.2",
+    "required": [
+      null
+    ],
+    "description": "级联选择框，用于多层级数据的选择，典型场景为省市区选择。",
+    "groupKey": "Form Components",
+    "groupName": "表单组件",
     "isHidden": 0,
     "framework": "vue"
   },
@@ -1719,11 +2506,11 @@
           "icon-size": {
             "enum": [],
             "type": [
-              "string"
+              "number"
             ],
             "title": "icon-size",
-            "option": true,
-            "valueType": "text",
+            "option": false,
+            "valueType": "digit",
             "default": ""
           },
           "checked-color": {
@@ -1899,11 +2686,11 @@
           "max": {
             "enum": [],
             "type": [
-              "string"
+              "number"
             ],
             "title": "max",
-            "option": true,
-            "valueType": "text",
+            "option": false,
+            "valueType": "digit",
             "default": ""
           },
           "direction": {
@@ -1922,11 +2709,11 @@
           "icon-size": {
             "enum": [],
             "type": [
-              "string"
+              "number"
             ],
             "title": "icon-size",
-            "option": true,
-            "valueType": "text",
+            "option": false,
+            "valueType": "digit",
             "default": ""
           },
           "checked-color": {
@@ -2116,11 +2903,11 @@
           "icon-size": {
             "enum": [],
             "type": [
-              "string"
+              "number"
             ],
             "title": "icon-size",
-            "option": true,
-            "valueType": "text",
+            "option": false,
+            "valueType": "digit",
             "default": ""
           },
           "checked-color": {
@@ -2287,11 +3074,11 @@
           "icon-size": {
             "enum": [],
             "type": [
-              "string"
+              "number"
             ],
             "title": "icon-size",
-            "option": true,
-            "valueType": "text",
+            "option": false,
+            "valueType": "digit",
             "default": ""
           },
           "checked-color": {
@@ -2378,6 +3165,963 @@
       null
     ],
     "description": "复选框容器",
+    "groupKey": "Form Components",
+    "groupName": "表单组件",
+    "isHidden": 0,
+    "framework": "vue"
+  },
+  {
+    "tagName": "DatePicker",
+    "pkgId": "vant",
+    "type": "object",
+    "properties": {
+      "name": {
+        "title": "DatePicker 日期选择",
+        "description": "组件名称"
+      },
+      "tagName": {
+        "title": "DatePicker",
+        "description": "组件标签"
+      },
+      "advanceProps": {
+        "title": "高级属性",
+        "description": "高级属性",
+        "type": "object",
+        "properties": {
+          "condition": {
+            "title": "是否渲染",
+            "description": "是否渲染",
+            "type": "string",
+            "valueType": "switch",
+            "default": true
+          }
+        }
+      },
+      "hasChild": {
+        "type": "boolean",
+        "const": true,
+        "title": "支持调用子组件",
+        "description": "true:支持;false:不支持"
+      },
+      "props": {
+        "type": "object",
+        "title": "组件属性",
+        "description": "组件属性",
+        "required": [],
+        "properties": {
+          "v-model": {
+            "enum": [],
+            "type": [
+              "boolean"
+            ],
+            "title": "v-model",
+            "option": true,
+            "valueType": "switch",
+            "default": "false"
+          },
+          "disabled": {
+            "enum": [],
+            "type": [
+              "boolean"
+            ],
+            "title": "disabled",
+            "option": true,
+            "valueType": "switch",
+            "default": "false"
+          },
+          "direction": {
+            "enum": [
+              "vertical",
+              "horizontal"
+            ],
+            "type": [
+              "string"
+            ],
+            "title": "direction",
+            "option": true,
+            "valueType": "select",
+            "default": "vertical"
+          },
+          "icon-size": {
+            "enum": [],
+            "type": [
+              "number"
+            ],
+            "title": "icon-size",
+            "option": false,
+            "valueType": "digit",
+            "default": ""
+          },
+          "checked-color": {
+            "enum": [],
+            "type": [
+              "string"
+            ],
+            "title": "checked-color",
+            "option": true,
+            "valueType": "text",
+            "default": ""
+          }
+        }
+      },
+      "events": {
+        "type": "object",
+        "title": "交互行为",
+        "description": "组件动作事件",
+        "required": [],
+        "properties": {
+          "change": {
+            "title": "change",
+            "description": "change",
+            "type": "object",
+            "properties": {
+              "name": {
+                "description": "函数名",
+                "title": "函数名",
+                "type": "string"
+              }
+            }
+          }
+        }
+      },
+      "pkgId": {
+        "title": "vant",
+        "description": "组件库包名称"
+      },
+      "version": {
+        "title": "4.0.2",
+        "description": "组件库包版本"
+      },
+      "protoProps": {
+        "type": "object",
+        "title": "原生属性",
+        "required": [],
+        "properties": {
+          "id": {
+            "type": "string",
+            "title": "唯一id",
+            "valueType": "text",
+            "description": "元素唯一标识"
+          },
+          "ref": {
+            "type": "string",
+            "title": "ref",
+            "valueType": "text",
+            "description": "组件ref名称，可在this.[ref名称]来获取组件实例this对象"
+          },
+          "style": {
+            "type": "object",
+            "title": "内联样式",
+            "valueType": "object",
+            "description": "组件内联样式(JSON格式)"
+          },
+          "className": {
+            "type": "string",
+            "title": "样式名",
+            "valueType": "textarea",
+            "description": "组件样式名"
+          }
+        },
+        "description": "原生属性"
+      },
+      "lastModifyTime": {
+        "type": "string",
+        "title": "最后一次修改时间",
+        "description": "2022-12-13"
+      }
+    },
+    "lastModifyTime": "2022-12-13",
+    "version": "4.0.2",
+    "required": [
+      null
+    ],
+    "description": "日期选择器，用于选择年、月、日，通常与弹出层组件配合使用。",
+    "groupKey": "Form Components",
+    "groupName": "表单组件",
+    "isHidden": 0,
+    "framework": "vue"
+  },
+  {
+    "tagName": "Field",
+    "pkgId": "vant",
+    "type": "object",
+    "properties": {
+      "name": {
+        "title": "Field 输入框",
+        "description": "组件名称"
+      },
+      "tagName": {
+        "title": "Field",
+        "description": "组件标签"
+      },
+      "advanceProps": {
+        "title": "高级属性",
+        "description": "高级属性",
+        "type": "object",
+        "properties": {
+          "condition": {
+            "title": "是否渲染",
+            "description": "是否渲染",
+            "type": "string",
+            "valueType": "switch",
+            "default": true
+          }
+        }
+      },
+      "hasChild": {
+        "type": "boolean",
+        "const": true,
+        "title": "支持调用子组件",
+        "description": "true:支持;false:不支持"
+      },
+      "props": {
+        "type": "object",
+        "title": "组件属性",
+        "description": "组件属性",
+        "required": [],
+        "properties": {
+          "v-model": {
+            "enum": [],
+            "type": [
+              "string"
+            ],
+            "title": "v-model",
+            "option": true,
+            "valueType": "text",
+            "default": ""
+          },
+          "label": {
+            "enum": [],
+            "type": [
+              "string"
+            ],
+            "title": "label",
+            "option": true,
+            "valueType": "text",
+            "default": ""
+          },
+          "name": {
+            "enum": [],
+            "type": [
+              "string"
+            ],
+            "title": "name",
+            "option": true,
+            "valueType": "text",
+            "default": ""
+          },
+          "id": {
+            "enum": [],
+            "type": [
+              "string"
+            ],
+            "title": "id",
+            "option": true,
+            "valueType": "text",
+            "default": ""
+          },
+          "type": {
+            "enum": [],
+            "type": [
+              "string"
+            ],
+            "title": "type",
+            "option": true,
+            "valueType": "text",
+            "default": ""
+          },
+          "size": {
+            "enum": [],
+            "type": [
+              "string"
+            ],
+            "title": "size",
+            "option": true,
+            "valueType": "text",
+            "default": ""
+          },
+          "maxlength": {
+            "enum": [],
+            "type": [
+              "number"
+            ],
+            "title": "maxlength",
+            "option": false,
+            "valueType": "digit",
+            "default": ""
+          },
+          "placeholder": {
+            "enum": [],
+            "type": [
+              "number"
+            ],
+            "title": "placeholder",
+            "option": false,
+            "valueType": "digit",
+            "default": ""
+          },
+          "border": {
+            "enum": [],
+            "type": [
+              "boolean"
+            ],
+            "title": "border",
+            "option": true,
+            "valueType": "switch",
+            "default": "false"
+          },
+          "disabled": {
+            "enum": [],
+            "type": [
+              "boolean"
+            ],
+            "title": "disabled",
+            "option": true,
+            "valueType": "switch",
+            "default": "false"
+          },
+          "readonly": {
+            "enum": [],
+            "type": [
+              "boolean"
+            ],
+            "title": "readonly",
+            "option": true,
+            "valueType": "switch",
+            "default": "false"
+          },
+          "colon": {
+            "enum": [],
+            "type": [
+              "boolean"
+            ],
+            "title": "colon",
+            "option": true,
+            "valueType": "switch",
+            "default": "false"
+          },
+          "required": {
+            "enum": [],
+            "type": [
+              "boolean"
+            ],
+            "title": "required",
+            "option": true,
+            "valueType": "switch",
+            "default": "false"
+          },
+          "center": {
+            "enum": [],
+            "type": [
+              "boolean"
+            ],
+            "title": "center",
+            "option": true,
+            "valueType": "switch",
+            "default": "false"
+          },
+          "clearable": {
+            "enum": [],
+            "type": [
+              "boolean"
+            ],
+            "title": "clearable",
+            "option": true,
+            "valueType": "switch",
+            "default": "false"
+          },
+          "clear-icon": {
+            "enum": [],
+            "type": [
+              "string"
+            ],
+            "title": "clear-icon",
+            "option": true,
+            "valueType": "text",
+            "default": ""
+          },
+          "clickable": {
+            "enum": [],
+            "type": [
+              "boolean"
+            ],
+            "title": "clickable",
+            "option": true,
+            "valueType": "switch",
+            "default": "false"
+          },
+          "is-link": {
+            "enum": [],
+            "type": [
+              "boolean"
+            ],
+            "title": "is-link",
+            "option": true,
+            "valueType": "switch",
+            "default": "false"
+          },
+          "autofocus": {
+            "enum": [],
+            "type": [
+              "boolean"
+            ],
+            "title": "autofocus",
+            "option": true,
+            "valueType": "switch",
+            "default": "false"
+          },
+          "show-word-limit": {
+            "enum": [],
+            "type": [
+              "boolean"
+            ],
+            "title": "show-word-limit",
+            "option": true,
+            "valueType": "switch",
+            "default": "false"
+          },
+          "error": {
+            "enum": [],
+            "type": [
+              "boolean"
+            ],
+            "title": "error",
+            "option": true,
+            "valueType": "switch",
+            "default": "false"
+          },
+          "error-message": {
+            "enum": [],
+            "type": [
+              "string"
+            ],
+            "title": "error-message",
+            "option": true,
+            "valueType": "text",
+            "default": ""
+          },
+          "arrow-direction": {
+            "enum": [],
+            "type": [
+              "string"
+            ],
+            "title": "arrow-direction",
+            "option": true,
+            "valueType": "text",
+            "default": ""
+          },
+          "label-class": {
+            "enum": [],
+            "type": [
+              "string"
+            ],
+            "title": "label-class",
+            "option": true,
+            "valueType": "text",
+            "default": ""
+          },
+          "label-width": {
+            "enum": [],
+            "type": [
+              "number"
+            ],
+            "title": "label-width",
+            "option": false,
+            "valueType": "digit",
+            "default": ""
+          },
+          "left-icon": {
+            "enum": [],
+            "type": [
+              "string"
+            ],
+            "title": "left-icon",
+            "option": true,
+            "valueType": "text",
+            "default": ""
+          },
+          "right-icon": {
+            "enum": [],
+            "type": [
+              "string"
+            ],
+            "title": "right-icon",
+            "option": true,
+            "valueType": "text",
+            "default": ""
+          },
+          "icon-prefix": {
+            "enum": [],
+            "type": [
+              "string"
+            ],
+            "title": "icon-prefix",
+            "option": true,
+            "valueType": "text",
+            "default": ""
+          },
+          "autocomplete": {
+            "enum": [],
+            "type": [
+              "string"
+            ],
+            "title": "autocomplete",
+            "option": true,
+            "valueType": "text",
+            "default": ""
+          },
+          "enterkeyhint": {
+            "enum": [],
+            "type": [
+              "string"
+            ],
+            "title": "enterkeyhint",
+            "option": true,
+            "valueType": "text",
+            "default": ""
+          }
+        }
+      },
+      "events": {
+        "type": "object",
+        "title": "交互行为",
+        "description": "组件动作事件",
+        "required": [],
+        "properties": {
+          "update:model-value": {
+            "title": "update:model-value",
+            "description": "update:model-value",
+            "type": "object",
+            "properties": {
+              "name": {
+                "description": "函数名",
+                "title": "函数名",
+                "type": "string"
+              }
+            }
+          },
+          "focus": {
+            "title": "focus",
+            "description": "focus",
+            "type": "object",
+            "properties": {
+              "name": {
+                "description": "函数名",
+                "title": "函数名",
+                "type": "string"
+              }
+            }
+          },
+          "blur": {
+            "title": "blur",
+            "description": "blur",
+            "type": "object",
+            "properties": {
+              "name": {
+                "description": "函数名",
+                "title": "函数名",
+                "type": "string"
+              }
+            }
+          },
+          "clear": {
+            "title": "clear",
+            "description": "clear",
+            "type": "object",
+            "properties": {
+              "name": {
+                "description": "函数名",
+                "title": "函数名",
+                "type": "string"
+              }
+            }
+          },
+          "click": {
+            "title": "click",
+            "description": "click",
+            "type": "object",
+            "properties": {
+              "name": {
+                "description": "函数名",
+                "title": "函数名",
+                "type": "string"
+              }
+            }
+          },
+          "click-input": {
+            "title": "click-input",
+            "description": "click-input",
+            "type": "object",
+            "properties": {
+              "name": {
+                "description": "函数名",
+                "title": "函数名",
+                "type": "string"
+              }
+            }
+          },
+          "click-left-icon": {
+            "title": "click-left-icon",
+            "description": "click-left-icon",
+            "type": "object",
+            "properties": {
+              "name": {
+                "description": "函数名",
+                "title": "函数名",
+                "type": "string"
+              }
+            }
+          },
+          "click-right-icon": {
+            "title": "click-right-icon",
+            "description": "click-right-icon",
+            "type": "object",
+            "properties": {
+              "name": {
+                "description": "函数名",
+                "title": "函数名",
+                "type": "string"
+              }
+            }
+          },
+          "start-validate": {
+            "title": "start-validate",
+            "description": "start-validate",
+            "type": "object",
+            "properties": {
+              "name": {
+                "description": "函数名",
+                "title": "函数名",
+                "type": "string"
+              }
+            }
+          },
+          "end-validate": {
+            "title": "end-validate",
+            "description": "end-validate",
+            "type": "object",
+            "properties": {
+              "name": {
+                "description": "函数名",
+                "title": "函数名",
+                "type": "string"
+              }
+            }
+          }
+        }
+      },
+      "pkgId": {
+        "title": "vant",
+        "description": "组件库包名称"
+      },
+      "version": {
+        "title": "4.0.2",
+        "description": "组件库包版本"
+      },
+      "protoProps": {
+        "type": "object",
+        "title": "原生属性",
+        "required": [],
+        "properties": {
+          "id": {
+            "type": "string",
+            "title": "唯一id",
+            "valueType": "text",
+            "description": "元素唯一标识"
+          },
+          "ref": {
+            "type": "string",
+            "title": "ref",
+            "valueType": "text",
+            "description": "组件ref名称，可在this.[ref名称]来获取组件实例this对象"
+          },
+          "style": {
+            "type": "object",
+            "title": "内联样式",
+            "valueType": "object",
+            "description": "组件内联样式(JSON格式)"
+          },
+          "className": {
+            "type": "string",
+            "title": "样式名",
+            "valueType": "textarea",
+            "description": "组件样式名"
+          }
+        },
+        "description": "原生属性"
+      },
+      "lastModifyTime": {
+        "type": "string",
+        "title": "最后一次修改时间",
+        "description": "2022-12-13"
+      }
+    },
+    "lastModifyTime": "2022-12-13",
+    "version": "4.0.2",
+    "required": [
+      null
+    ],
+    "description": "用户可以在文本框内输入或编辑文字。",
+    "groupKey": "Form Components",
+    "groupName": "表单组件",
+    "isHidden": 0,
+    "framework": "vue"
+  },
+  {
+    "tagName": "Form",
+    "pkgId": "vant",
+    "type": "object",
+    "properties": {
+      "name": {
+        "title": "Form 表单",
+        "description": "组件名称"
+      },
+      "tagName": {
+        "title": "Form",
+        "description": "组件标签"
+      },
+      "advanceProps": {
+        "title": "高级属性",
+        "description": "高级属性",
+        "type": "object",
+        "properties": {
+          "condition": {
+            "title": "是否渲染",
+            "description": "是否渲染",
+            "type": "string",
+            "valueType": "switch",
+            "default": true
+          }
+        }
+      },
+      "hasChild": {
+        "type": "boolean",
+        "const": true,
+        "title": "支持调用子组件",
+        "description": "true:支持;false:不支持"
+      },
+      "props": {
+        "type": "object",
+        "title": "组件属性",
+        "description": "组件属性",
+        "required": [],
+        "properties": {
+          "label-width": {
+            "enum": [],
+            "type": [
+              "number"
+            ],
+            "title": "label-width",
+            "option": false,
+            "valueType": "digit",
+            "default": ""
+          },
+          "label-align": {
+            "enum": [],
+            "type": [
+              "string"
+            ],
+            "title": "label-align",
+            "option": true,
+            "valueType": "text",
+            "default": ""
+          },
+          "input-align": {
+            "enum": [],
+            "type": [
+              "string"
+            ],
+            "title": "input-align",
+            "option": true,
+            "valueType": "text",
+            "default": ""
+          },
+          "error-message-align": {
+            "enum": [],
+            "type": [
+              "string"
+            ],
+            "title": "error-message-align",
+            "option": true,
+            "valueType": "text",
+            "default": ""
+          },
+          "validate-trigger": {
+            "enum": [],
+            "type": [
+              "string"
+            ],
+            "title": "validate-trigger",
+            "option": true,
+            "valueType": "text",
+            "default": ""
+          },
+          "colon": {
+            "enum": [],
+            "type": [
+              "boolean"
+            ],
+            "title": "colon",
+            "option": true,
+            "valueType": "switch",
+            "default": "false"
+          },
+          "disabled": {
+            "enum": [],
+            "type": [
+              "boolean"
+            ],
+            "title": "disabled",
+            "option": true,
+            "valueType": "switch",
+            "default": "false"
+          },
+          "readonly": {
+            "enum": [],
+            "type": [
+              "boolean"
+            ],
+            "title": "readonly",
+            "option": true,
+            "valueType": "switch",
+            "default": "false"
+          },
+          "validate-first": {
+            "enum": [],
+            "type": [
+              "boolean"
+            ],
+            "title": "validate-first",
+            "option": true,
+            "valueType": "switch",
+            "default": "false"
+          },
+          "scroll-to-error": {
+            "enum": [],
+            "type": [
+              "boolean"
+            ],
+            "title": "scroll-to-error",
+            "option": true,
+            "valueType": "switch",
+            "default": "false"
+          },
+          "show-error": {
+            "enum": [],
+            "type": [
+              "boolean"
+            ],
+            "title": "show-error",
+            "option": true,
+            "valueType": "switch",
+            "default": "false"
+          },
+          "show-error-message": {
+            "enum": [],
+            "type": [
+              "boolean"
+            ],
+            "title": "show-error-message",
+            "option": true,
+            "valueType": "switch",
+            "default": "false"
+          },
+          "submit-on-enter": {
+            "enum": [],
+            "type": [
+              "boolean"
+            ],
+            "title": "submit-on-enter",
+            "option": true,
+            "valueType": "switch",
+            "default": "false"
+          }
+        }
+      },
+      "events": {
+        "type": "object",
+        "title": "交互行为",
+        "description": "组件动作事件",
+        "required": [],
+        "properties": {
+          "submit": {
+            "title": "submit",
+            "description": "submit",
+            "type": "object",
+            "properties": {
+              "name": {
+                "description": "函数名",
+                "title": "函数名",
+                "type": "string"
+              }
+            }
+          },
+          "failed": {
+            "title": "failed",
+            "description": "failed",
+            "type": "object",
+            "properties": {
+              "name": {
+                "description": "函数名",
+                "title": "函数名",
+                "type": "string"
+              }
+            }
+          }
+        }
+      },
+      "pkgId": {
+        "title": "vant",
+        "description": "组件库包名称"
+      },
+      "version": {
+        "title": "4.0.2",
+        "description": "组件库包版本"
+      },
+      "protoProps": {
+        "type": "object",
+        "title": "原生属性",
+        "required": [],
+        "properties": {
+          "id": {
+            "type": "string",
+            "title": "唯一id",
+            "valueType": "text",
+            "description": "元素唯一标识"
+          },
+          "ref": {
+            "type": "string",
+            "title": "ref",
+            "valueType": "text",
+            "description": "组件ref名称，可在this.[ref名称]来获取组件实例this对象"
+          },
+          "style": {
+            "type": "object",
+            "title": "内联样式",
+            "valueType": "object",
+            "description": "组件内联样式(JSON格式)"
+          },
+          "className": {
+            "type": "string",
+            "title": "样式名",
+            "valueType": "textarea",
+            "description": "组件样式名"
+          }
+        },
+        "description": "原生属性"
+      },
+      "lastModifyTime": {
+        "type": "string",
+        "title": "最后一次修改时间",
+        "description": "2022-12-13"
+      }
+    },
+    "lastModifyTime": "2022-12-13",
+    "version": "4.0.2",
+    "required": [
+      null
+    ],
+    "description": "用于数据录入、校验，支持输入框、单选框、复选框、文件上传等类型，需要与 Field 输入框 组件搭配使用。",
     "groupKey": "Form Components",
     "groupName": "表单组件",
     "isHidden": 0,

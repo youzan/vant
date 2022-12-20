@@ -106,11 +106,11 @@
         "icon-size": {
           "enum": [],
           "type": [
-            "string"
+            "number"
           ],
           "title": "icon-size",
-          "option": true,
-          "valueType": "text",
+          "option": false,
+          "valueType": "digit",
           "default": ""
         },
         "checked-color": {

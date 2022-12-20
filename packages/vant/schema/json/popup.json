@@ -1,14 +1,14 @@
 {
-  "tagName": "Button",
+  "tagName": "Popup",
   "pkgId": "vant",
   "type": "object",
   "properties": {
     "name": {
-      "title": "Button 按钮",
+      "title": "Popup 弹出层",
       "description": "组件名称"
     },
     "tagName": {
-      "title": "Button",
+      "title": "Popup",
       "description": "组件标签"
     },
     "advanceProps": {
@@ -37,119 +37,90 @@
       "description": "组件属性",
       "required": [],
       "properties": {
-        "type": {
-          "enum": [
-            "default",
-            "primary",
-            "success",
-            "warning",
-            "danger"
-          ],
-          "type": [
-            "string"
-          ],
-          "title": "type",
-          "option": true,
-          "valueType": "select",
-          "default": "default"
-        },
-        "size": {
-          "enum": [
-            "normal",
-            "large",
-            "small",
-            "mini"
-          ],
-          "type": [
-            "string"
-          ],
-          "title": "size",
-          "option": true,
-          "valueType": "select",
-          "default": "normal"
-        },
-        "text": {
-          "enum": [],
-          "type": [
-            "string"
-          ],
-          "title": "text",
-          "option": true,
-          "valueType": "text",
-          "default": ""
-        },
-        "color": {
-          "enum": [],
-          "type": [
-            "string"
-          ],
-          "title": "color",
-          "option": true,
-          "valueType": "text",
-          "default": ""
-        },
-        "icon": {
-          "enum": [],
-          "type": [
-            "string"
-          ],
-          "title": "icon",
-          "option": true,
-          "valueType": "text",
-          "default": ""
-        },
-        "icon-prefix": {
-          "enum": [],
-          "type": [
-            "string"
-          ],
-          "title": "icon-prefix",
-          "option": true,
-          "valueType": "text",
-          "default": ""
-        },
-        "icon-position": {
-          "enum": [
-            "left",
-            "right"
-          ],
-          "type": [
-            "string"
-          ],
-          "title": "icon-position",
-          "option": true,
-          "valueType": "select",
-          "default": "left"
-        },
-        "block": {
+        "v-Model:show": {
           "enum": [],
           "type": [
             "boolean"
           ],
-          "title": "block",
+          "title": "v-Model:show",
           "option": true,
           "valueType": "switch",
           "default": "false"
         },
-        "plain": {
+        "overlay": {
+          "enum": [],
+          "type": [
+            "string"
+          ],
+          "title": "overlay",
+          "option": true,
+          "valueType": "text",
+          "default": ""
+        },
+        "position": {
+          "enum": [
+            "top",
+            "bottom",
+            "right",
+            "left"
+          ],
+          "type": [
+            "string"
+          ],
+          "title": "position",
+          "option": true,
+          "valueType": "select",
+          "default": "top"
+        },
+        "overlay-class": {
+          "enum": [],
+          "type": [
+            "string"
+          ],
+          "title": "overlay-class",
+          "option": true,
+          "valueType": "text",
+          "default": ""
+        },
+        "overlay-style": {
+          "enum": [],
+          "type": [
+            "string"
+          ],
+          "title": "overlay-style",
+          "option": true,
+          "valueType": "text",
+          "default": ""
+        },
+        "show-zero": {
           "enum": [],
           "type": [
             "boolean"
           ],
-          "title": "plain",
+          "title": "show-zero",
           "option": true,
           "valueType": "switch",
           "default": "false"
         },
-        "square": {
+        "duration": {
           "enum": [],
           "type": [
-            "boolean"
+            "number"
           ],
-          "title": "square",
-          "option": true,
-          "valueType": "switch",
-          "default": "false"
+          "title": "duration",
+          "option": false,
+          "valueType": "digit",
+          "default": ""
+        },
+        "z-index": {
+          "enum": [],
+          "type": [
+            "number"
+          ],
+          "title": "z-index",
+          "option": false,
+          "valueType": "digit",
+          "default": ""
         },
         "round": {
           "enum": [],
@@ -161,82 +132,122 @@
           "valueType": "switch",
           "default": "false"
         },
-        "disabled": {
+        "lock-scroll": {
           "enum": [],
           "type": [
             "boolean"
           ],
-          "title": "disabled",
+          "title": "lock-scroll",
           "option": true,
           "valueType": "switch",
           "default": "false"
         },
-        "hairline": {
+        "lazy-render": {
           "enum": [],
           "type": [
             "boolean"
           ],
-          "title": "hairline",
+          "title": "lazy-render",
           "option": true,
           "valueType": "switch",
           "default": "false"
         },
-        "loading": {
+        "close-on-popstate": {
           "enum": [],
           "type": [
             "boolean"
           ],
-          "title": "loading",
+          "title": "close-on-popstate",
           "option": true,
           "valueType": "switch",
           "default": "false"
         },
-        "loading-text": {
-          "enum": [],
-          "type": [
-            "string"
-          ],
-          "title": "loading-text",
-          "option": true,
-          "valueType": "text",
-          "default": ""
-        },
-        "loading-size": {
-          "enum": [],
-          "type": [
-            "number"
-          ],
-          "title": "loading-size",
-          "option": false,
-          "valueType": "digit",
-          "default": ""
-        },
-        "url": {
-          "enum": [],
-          "type": [
-            "string"
-          ],
-          "title": "url",
-          "option": true,
-          "valueType": "text",
-          "default": ""
-        },
-        "to": {
-          "enum": [],
-          "type": [
-            "string"
-          ],
-          "title": "to",
-          "option": true,
-          "valueType": "text",
-          "default": ""
-        },
-        "replace": {
+        "close-on-click-overlay": {
           "enum": [],
           "type": [
             "boolean"
           ],
-          "title": "replace",
+          "title": "close-on-click-overlay",
+          "option": true,
+          "valueType": "switch",
+          "default": "false"
+        },
+        "closeable": {
+          "enum": [],
+          "type": [
+            "boolean"
+          ],
+          "title": "closeable",
+          "option": true,
+          "valueType": "switch",
+          "default": "false"
+        },
+        "close-icon": {
+          "enum": [],
+          "type": [
+            "string"
+          ],
+          "title": "close-icon",
+          "option": true,
+          "valueType": "text",
+          "default": ""
+        },
+        "close-icon-position": {
+          "enum": [],
+          "type": [
+            "string"
+          ],
+          "title": "close-icon-position",
+          "option": true,
+          "valueType": "text",
+          "default": ""
+        },
+        "transition": {
+          "enum": [],
+          "type": [
+            "string"
+          ],
+          "title": "transition",
+          "option": true,
+          "valueType": "text",
+          "default": ""
+        },
+        "transition-appear": {
+          "enum": [],
+          "type": [
+            "boolean"
+          ],
+          "title": "transition-appear",
+          "option": true,
+          "valueType": "switch",
+          "default": "false"
+        },
+        "teleport": {
+          "enum": [],
+          "type": [
+            "string"
+          ],
+          "title": "teleport",
+          "option": true,
+          "valueType": "text",
+          "default": ""
+        },
+        "safe-area-inset-top": {
+          "enum": [],
+          "type": [
+            "boolean"
+          ],
+          "title": "safe-area-inset-top",
+          "option": true,
+          "valueType": "switch",
+          "default": "false"
+        },
+        "safe-area-inset-bottom": {
+          "enum": [],
+          "type": [
+            "boolean"
+          ],
+          "title": "safe-area-inset-bottom",
           "option": true,
           "valueType": "switch",
           "default": "false"
@@ -249,9 +260,9 @@
       "description": "组件动作事件",
       "required": [],
       "properties": {
-        "touchstart": {
-          "title": "touchstart",
-          "description": "touchstart",
+        "click": {
+          "title": "click",
+          "description": "click",
           "type": "object",
           "properties": {
             "name": {
@@ -261,9 +272,69 @@
             }
           }
         },
-        "click": {
-          "title": "click",
-          "description": "click",
+        "click-overlay": {
+          "title": "click-overlay",
+          "description": "click-overlay",
+          "type": "object",
+          "properties": {
+            "name": {
+              "description": "函数名",
+              "title": "函数名",
+              "type": "string"
+            }
+          }
+        },
+        "click-close-icon": {
+          "title": "click-close-icon",
+          "description": "click-close-icon",
+          "type": "object",
+          "properties": {
+            "name": {
+              "description": "函数名",
+              "title": "函数名",
+              "type": "string"
+            }
+          }
+        },
+        "open": {
+          "title": "open",
+          "description": "open",
+          "type": "object",
+          "properties": {
+            "name": {
+              "description": "函数名",
+              "title": "函数名",
+              "type": "string"
+            }
+          }
+        },
+        "close": {
+          "title": "close",
+          "description": "close",
+          "type": "object",
+          "properties": {
+            "name": {
+              "description": "函数名",
+              "title": "函数名",
+              "type": "string"
+            }
+          }
+        },
+        "opened": {
+          "title": "opened",
+          "description": "opened",
+          "type": "object",
+          "properties": {
+            "name": {
+              "description": "函数名",
+              "title": "函数名",
+              "type": "string"
+            }
+          }
+        },
+        "closed": {
+          "title": "closed",
+          "description": "closed",
           "type": "object",
           "properties": {
             "name": {
@@ -326,7 +397,7 @@
   "required": [
     null
   ],
-  "description": "按钮用于触发一个操作，如提交表单。",
+  "description": "弹出层容器，用于展示弹窗、信息提示等内容，支持多个弹出层叠加展示。",
   "groupKey": "Basic Components",
   "groupName": "基础组件",
   "isHidden": 0,

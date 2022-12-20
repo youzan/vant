@@ -1,14 +1,14 @@
 {
-  "tagName": "Button",
+  "tagName": "Cascader",
   "pkgId": "vant",
   "type": "object",
   "properties": {
     "name": {
-      "title": "Button 按钮",
+      "title": "Cascader 级联选择",
       "description": "组件名称"
     },
     "tagName": {
-      "title": "Button",
+      "title": "Cascader",
       "description": "组件标签"
     },
     "advanceProps": {
@@ -37,209 +37,105 @@
       "description": "组件属性",
       "required": [],
       "properties": {
-        "type": {
-          "enum": [
-            "default",
-            "primary",
-            "success",
-            "warning",
-            "danger"
-          ],
-          "type": [
-            "string"
-          ],
-          "title": "type",
-          "option": true,
-          "valueType": "select",
-          "default": "default"
-        },
-        "size": {
-          "enum": [
-            "normal",
-            "large",
-            "small",
-            "mini"
-          ],
-          "type": [
-            "string"
-          ],
-          "title": "size",
-          "option": true,
-          "valueType": "select",
-          "default": "normal"
-        },
-        "text": {
+        "title": {
           "enum": [],
           "type": [
             "string"
           ],
-          "title": "text",
+          "title": "title",
           "option": true,
           "valueType": "text",
           "default": ""
         },
-        "color": {
+        "value": {
           "enum": [],
           "type": [
             "string"
           ],
-          "title": "color",
+          "title": "value",
           "option": true,
           "valueType": "text",
           "default": ""
         },
-        "icon": {
+        "options": {
           "enum": [],
           "type": [
             "string"
           ],
-          "title": "icon",
+          "title": "options",
           "option": true,
           "valueType": "text",
           "default": ""
         },
-        "icon-prefix": {
+        "placeholder": {
           "enum": [],
           "type": [
             "string"
           ],
-          "title": "icon-prefix",
+          "title": "placeholder",
           "option": true,
           "valueType": "text",
           "default": ""
         },
-        "icon-position": {
-          "enum": [
-            "left",
-            "right"
-          ],
-          "type": [
-            "string"
-          ],
-          "title": "icon-position",
-          "option": true,
-          "valueType": "select",
-          "default": "left"
-        },
-        "block": {
-          "enum": [],
-          "type": [
-            "boolean"
-          ],
-          "title": "block",
-          "option": true,
-          "valueType": "switch",
-          "default": "false"
-        },
-        "plain": {
-          "enum": [],
-          "type": [
-            "boolean"
-          ],
-          "title": "plain",
-          "option": true,
-          "valueType": "switch",
-          "default": "false"
-        },
-        "square": {
-          "enum": [],
-          "type": [
-            "boolean"
-          ],
-          "title": "square",
-          "option": true,
-          "valueType": "switch",
-          "default": "false"
-        },
-        "round": {
-          "enum": [],
-          "type": [
-            "boolean"
-          ],
-          "title": "round",
-          "option": true,
-          "valueType": "switch",
-          "default": "false"
-        },
-        "disabled": {
-          "enum": [],
-          "type": [
-            "boolean"
-          ],
-          "title": "disabled",
-          "option": true,
-          "valueType": "switch",
-          "default": "false"
-        },
-        "hairline": {
-          "enum": [],
-          "type": [
-            "boolean"
-          ],
-          "title": "hairline",
-          "option": true,
-          "valueType": "switch",
-          "default": "false"
-        },
-        "loading": {
-          "enum": [],
-          "type": [
-            "boolean"
-          ],
-          "title": "loading",
-          "option": true,
-          "valueType": "switch",
-          "default": "false"
-        },
-        "loading-text": {
+        "active-color": {
           "enum": [],
           "type": [
             "string"
           ],
-          "title": "loading-text",
+          "title": "active-color",
           "option": true,
           "valueType": "text",
           "default": ""
         },
-        "loading-size": {
-          "enum": [],
-          "type": [
-            "number"
-          ],
-          "title": "loading-size",
-          "option": false,
-          "valueType": "digit",
-          "default": ""
-        },
-        "url": {
-          "enum": [],
-          "type": [
-            "string"
-          ],
-          "title": "url",
-          "option": true,
-          "valueType": "text",
-          "default": ""
-        },
-        "to": {
-          "enum": [],
-          "type": [
-            "string"
-          ],
-          "title": "to",
-          "option": true,
-          "valueType": "text",
-          "default": ""
-        },
-        "replace": {
+        "swipeable": {
           "enum": [],
           "type": [
             "boolean"
           ],
-          "title": "replace",
+          "title": "swipeable",
           "option": true,
           "valueType": "switch",
           "default": "false"
+        },
+        "closeable": {
+          "enum": [],
+          "type": [
+            "boolean"
+          ],
+          "title": "closeable",
+          "option": true,
+          "valueType": "switch",
+          "default": "false"
+        },
+        "show-header": {
+          "enum": [],
+          "type": [
+            "boolean"
+          ],
+          "title": "show-header",
+          "option": true,
+          "valueType": "switch",
+          "default": "false"
+        },
+        "close-icon": {
+          "enum": [],
+          "type": [
+            "boolean"
+          ],
+          "title": "close-icon",
+          "option": true,
+          "valueType": "switch",
+          "default": "false"
+        },
+        "field-names": {
+          "enum": [],
+          "type": [
+            "string"
+          ],
+          "title": "field-names",
+          "option": true,
+          "valueType": "text",
+          "default": ""
         }
       }
     },
@@ -249,9 +145,9 @@
       "description": "组件动作事件",
       "required": [],
       "properties": {
-        "touchstart": {
-          "title": "touchstart",
-          "description": "touchstart",
+        "change": {
+          "title": "change",
+          "description": "change",
           "type": "object",
           "properties": {
             "name": {
@@ -261,9 +157,33 @@
             }
           }
         },
-        "click": {
-          "title": "click",
-          "description": "click",
+        "finish": {
+          "title": "finish",
+          "description": "finish",
+          "type": "object",
+          "properties": {
+            "name": {
+              "description": "函数名",
+              "title": "函数名",
+              "type": "string"
+            }
+          }
+        },
+        "close": {
+          "title": "close",
+          "description": "close",
+          "type": "object",
+          "properties": {
+            "name": {
+              "description": "函数名",
+              "title": "函数名",
+              "type": "string"
+            }
+          }
+        },
+        "click-tab": {
+          "title": "click-tab",
+          "description": "click-tab",
           "type": "object",
           "properties": {
             "name": {
@@ -326,9 +246,9 @@
   "required": [
     null
   ],
-  "description": "按钮用于触发一个操作，如提交表单。",
-  "groupKey": "Basic Components",
-  "groupName": "基础组件",
+  "description": "级联选择框，用于多层级数据的选择，典型场景为省市区选择。",
+  "groupKey": "Form Components",
+  "groupName": "表单组件",
   "isHidden": 0,
   "framework": "vue"
 }
