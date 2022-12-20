@@ -76,7 +76,7 @@
           "title": "text",
           "option": true,
           "valueType": "text",
-          "default": ""
+          "default": "按钮"
         },
         "color": {
           "enum": [],

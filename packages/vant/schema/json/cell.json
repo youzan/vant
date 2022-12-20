@@ -45,7 +45,7 @@
           "title": "title",
           "option": true,
           "valueType": "text",
-          "default": ""
+          "default": "单元格"
         },
         "value": {
           "enum": [],
@@ -55,7 +55,7 @@
           "title": "value",
           "option": true,
           "valueType": "text",
-          "default": ""
+          "default": "内容"
         },
         "label": {
           "enum": [],

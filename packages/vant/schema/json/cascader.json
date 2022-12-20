@@ -120,12 +120,12 @@
         "close-icon": {
           "enum": [],
           "type": [
-            "boolean"
+            "string"
           ],
           "title": "close-icon",
           "option": true,
-          "valueType": "switch",
-          "default": false
+          "valueType": "text",
+          "default": "cross"
         }
       }
     },

@@ -48,44 +48,61 @@
           "default": 0
         },
         "label-align": {
-          "enum": [],
+          "enum": [
+            "left",
+            "center",
+            "right",
+            "top"
+          ],
           "type": [
             "string"
           ],
           "title": "label-align",
           "option": true,
-          "valueType": "text",
-          "default": ""
+          "valueType": "select",
+          "default": "left"
         },
         "input-align": {
-          "enum": [],
+          "enum": [
+            "left",
+            "center",
+            "right"
+          ],
           "type": [
             "string"
           ],
           "title": "input-align",
           "option": true,
-          "valueType": "text",
-          "default": ""
+          "valueType": "select",
+          "default": "left"
         },
         "error-message-align": {
-          "enum": [],
+          "enum": [
+            "left",
+            "center",
+            "right"
+          ],
           "type": [
             "string"
           ],
           "title": "error-message-align",
           "option": true,
-          "valueType": "text",
-          "default": ""
+          "valueType": "select",
+          "default": "left"
         },
         "validate-trigger": {
-          "enum": [],
+          "enum": [
+            "onBlur",
+            "onChange",
+            "onSubmit"
+          ],
           "type": [
             "string"
           ],
           "title": "validate-trigger",
           "option": true,
-          "valueType": "text",
-          "default": ""
+          "valueType": "select",
+          "default": "onBlur"
         },
         "colon": {
           "enum": [],

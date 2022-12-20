@@ -4,7 +4,7 @@
   "type": "object",
   "properties": {
     "name": {
-      "title": "radioGroup 单选组",
+      "title": "RadioGroup 单选组",
       "description": "组件名称"
     },
     "tagName": {
@@ -37,16 +37,6 @@
       "description": "组件属性",
       "required": [],
       "properties": {
-        "v-model": {
-          "enum": [],
-          "type": [
-            "boolean"
-          ],
-          "title": "v-model",
-          "option": true,
-          "valueType": "switch",
-          "default": false
-        },
         "disabled": {
           "enum": [],
           "type": [

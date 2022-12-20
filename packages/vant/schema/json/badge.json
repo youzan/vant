@@ -45,7 +45,7 @@
           "title": "content",
           "option": true,
           "valueType": "text",
-          "default": ""
+          "default": "0"
         },
         "color": {
           "enum": [],

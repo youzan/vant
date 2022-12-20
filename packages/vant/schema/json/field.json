@@ -37,16 +37,6 @@
       "description": "组件属性",
       "required": [],
       "properties": {
-        "v-model": {
-          "enum": [],
-          "type": [
-            "string"
-          ],
-          "title": "v-model",
-          "option": true,
-          "valueType": "text",
-          "default": ""
-        },
         "label": {
           "enum": [],
           "type": [
@@ -110,12 +100,12 @@
         "placeholder": {
           "enum": [],
           "type": [
-            "number"
+            "string"
           ],
           "title": "placeholder",
-          "option": false,
-          "valueType": "digit",
-          "default": 0
+          "option": true,
+          "valueType": "text",
+          "default": "请输入"
         },
         "border": {
           "enum": [],

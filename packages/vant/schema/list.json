@@ -46,7 +46,7 @@
             "title": "content",
             "option": true,
             "valueType": "text",
-            "default": ""
+            "default": "0"
           },
           "color": {
             "enum": [],
@@ -250,7 +250,7 @@
             "title": "text",
             "option": true,
             "valueType": "text",
-            "default": ""
+            "default": "按钮"
           },
           "color": {
             "enum": [],
@@ -553,7 +553,7 @@
             "title": "title",
             "option": true,
             "valueType": "text",
-            "default": ""
+            "default": "单元格"
           },
           "value": {
             "enum": [],
@@ -563,7 +563,7 @@
             "title": "value",
             "option": true,
             "valueType": "text",
-            "default": ""
+            "default": "内容"
           },
           "label": {
             "enum": [],
@@ -1291,7 +1291,7 @@
     "type": "object",
     "properties": {
       "name": {
-        "title": "row 布局",
+        "title": "Row 布局",
         "description": "组件名称"
       },
       "tagName": {
@@ -1469,7 +1469,7 @@
     "type": "object",
     "properties": {
       "name": {
-        "title": "col 布局",
+        "title": "Col 布局",
         "description": "组件名称"
       },
       "tagName": {
@@ -2245,12 +2245,12 @@
           "close-icon": {
             "enum": [],
             "type": [
-              "boolean"
+              "string"
             ],
             "title": "close-icon",
             "option": true,
-            "valueType": "switch",
-            "default": false
+            "valueType": "text",
+            "default": "cross"
           }
         }
       },
@@ -2406,16 +2406,6 @@
         "description": "组件属性",
         "required": [],
         "properties": {
-          "v-model": {
-            "enum": [],
-            "type": [
-              "boolean"
-            ],
-            "title": "v-model",
-            "option": true,
-            "valueType": "switch",
-            "default": false
-          },
           "name": {
             "enum": [],
             "type": [
@@ -2632,16 +2622,6 @@
         "description": "组件属性",
         "required": [],
         "properties": {
-          "v-model": {
-            "enum": [],
-            "type": [
-              "boolean"
-            ],
-            "title": "v-model",
-            "option": true,
-            "valueType": "switch",
-            "default": false
-          },
           "disabled": {
             "enum": [],
             "type": [
@@ -2780,7 +2760,7 @@
     "type": "object",
     "properties": {
       "name": {
-        "title": "radio 单选框",
+        "title": "Radio 单选框",
         "description": "组件名称"
       },
       "tagName": {
@@ -2974,7 +2954,7 @@
     "type": "object",
     "properties": {
       "name": {
-        "title": "radioGroup 单选组",
+        "title": "RadioGroup 单选组",
         "description": "组件名称"
       },
       "tagName": {
@@ -3007,16 +2987,6 @@
         "description": "组件属性",
         "required": [],
         "properties": {
-          "v-model": {
-            "enum": [],
-            "type": [
-              "boolean"
-            ],
-            "title": "v-model",
-            "option": true,
-            "valueType": "switch",
-            "default": false
-          },
           "disabled": {
             "enum": [],
             "type": [
@@ -3178,58 +3148,125 @@
         "description": "组件属性",
         "required": [],
         "properties": {
-          "v-model": {
+          "columns-type": {
             "enum": [],
-            "type": [
-              "boolean"
-            ],
-            "title": "v-model",
-            "option": true,
-            "valueType": "switch",
-            "default": false
-          },
-          "disabled": {
-            "enum": [],
-            "type": [
-              "boolean"
-            ],
-            "title": "disabled",
-            "option": true,
-            "valueType": "switch",
-            "default": false
-          },
-          "direction": {
-            "enum": [
-              "vertical",
-              "horizontal"
-            ],
             "type": [
               "string"
             ],
-            "title": "direction",
+            "title": "columns-type",
             "option": true,
-            "valueType": "select",
-            "default": "vertical"
+            "valueType": "text",
+            "default": ""
           },
-          "icon-size": {
+          "min-date": {
+            "enum": [],
+            "type": [
+              "string"
+            ],
+            "title": "min-date",
+            "option": true,
+            "valueType": "text",
+            "default": ""
+          },
+          "title": {
+            "enum": [],
+            "type": [
+              "string"
+            ],
+            "title": "title",
+            "option": true,
+            "valueType": "text",
+            "default": "title"
+          },
+          "confirm-button-text": {
+            "enum": [],
+            "type": [
+              "string"
+            ],
+            "title": "confirm-button-text",
+            "option": true,
+            "valueType": "text",
+            "default": "确认"
+          },
+          "cancel-button-text": {
+            "enum": [],
+            "type": [
+              "string"
+            ],
+            "title": "cancel-button-text",
+            "option": true,
+            "valueType": "text",
+            "default": "取消"
+          },
+          "show-toolbar": {
+            "enum": [],
+            "type": [
+              "boolean"
+            ],
+            "title": "show-toolbar",
+            "option": true,
+            "valueType": "switch",
+            "default": true
+          },
+          "loading": {
+            "enum": [],
+            "type": [
+              "boolean"
+            ],
+            "title": "loading",
+            "option": true,
+            "valueType": "switch",
+            "default": false
+          },
+          "readonly": {
+            "enum": [],
+            "type": [
+              "boolean"
+            ],
+            "title": "readonly",
+            "option": true,
+            "valueType": "switch",
+            "default": false
+          },
+          "filter": {
+            "enum": [],
+            "type": [
+              "string"
+            ],
+            "title": "filter",
+            "option": true,
+            "valueType": "text",
+            "default": ""
+          },
+          "formatter": {
+            "enum": [],
+            "type": [
+              "string"
+            ],
+            "title": "formatter",
+            "option": true,
+            "valueType": "text",
+            "default": ""
+          },
+          "option-height": {
             "enum": [],
             "type": [
               "number"
             ],
-            "title": "icon-size",
+            "title": "option-height",
             "option": false,
             "valueType": "digit",
-            "default": 0
+            "default": 44
           },
-          "checked-color": {
+          "visible-option-num": {
             "enum": [],
             "type": [
-              "string"
+              "number"
             ],
-            "title": "checked-color",
-            "option": true,
-            "valueType": "text",
-            "default": ""
+            "title": "visible-option-num",
+            "option": false,
+            "valueType": "digit",
+            "default": 6
           }
         }
       },
@@ -3242,6 +3279,30 @@
           "change": {
             "title": "change",
             "description": "change",
+            "type": "object",
+            "properties": {
+              "name": {
+                "description": "函数名",
+                "title": "函数名",
+                "type": "string"
+              }
+            }
+          },
+          "confirm": {
+            "title": "confirm",
+            "description": "confirm",
+            "type": "object",
+            "properties": {
+              "name": {
+                "description": "函数名",
+                "title": "函数名",
+                "type": "string"
+              }
+            }
+          },
+          "cancel": {
+            "title": "cancel",
+            "description": "cancel",
             "type": "object",
             "properties": {
               "name": {
@@ -3349,16 +3410,6 @@
         "description": "组件属性",
         "required": [],
         "properties": {
-          "v-model": {
-            "enum": [],
-            "type": [
-              "string"
-            ],
-            "title": "v-model",
-            "option": true,
-            "valueType": "text",
-            "default": ""
-          },
           "label": {
             "enum": [],
             "type": [
@@ -3422,12 +3473,12 @@
           "placeholder": {
             "enum": [],
             "type": [
-              "number"
+              "string"
             ],
             "title": "placeholder",
-            "option": false,
-            "valueType": "digit",
-            "default": 0
+            "option": true,
+            "valueType": "text",
+            "default": "请输入"
           },
           "border": {
             "enum": [],
@@ -3886,44 +3937,61 @@
             "default": 0
           },
           "label-align": {
-            "enum": [],
+            "enum": [
+              "left",
+              "center",
+              "right",
+              "top"
+            ],
             "type": [
               "string"
             ],
             "title": "label-align",
             "option": true,
-            "valueType": "text",
-            "default": ""
+            "valueType": "select",
+            "default": "left"
           },
           "input-align": {
-            "enum": [],
+            "enum": [
+              "left",
+              "center",
+              "right"
+            ],
             "type": [
               "string"
             ],
             "title": "input-align",
             "option": true,
-            "valueType": "text",
-            "default": ""
+            "valueType": "select",
+            "default": "left"
           },
           "error-message-align": {
-            "enum": [],
+            "enum": [
+              "left",
+              "center",
+              "right"
+            ],
             "type": [
               "string"
             ],
             "title": "error-message-align",
             "option": true,
-            "valueType": "text",
-            "default": ""
+            "valueType": "select",
+            "default": "left"
           },
           "validate-trigger": {
-            "enum": [],
+            "enum": [
+              "onBlur",
+              "onChange",
+              "onSubmit"
+            ],
             "type": [
               "string"
             ],
             "title": "validate-trigger",
             "option": true,
-            "valueType": "text",
-            "default": ""
+            "valueType": "select",
+            "default": "onBlur"
           },
           "colon": {
             "enum": [],

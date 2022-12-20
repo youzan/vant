@@ -4,7 +4,7 @@
   "type": "object",
   "properties": {
     "name": {
-      "title": "row 布局",
+      "title": "Row 布局",
       "description": "组件名称"
     },
     "tagName": {

@@ -4,7 +4,7 @@
   "type": "object",
   "properties": {
     "name": {
-      "title": "radio 单选框",
+      "title": "Radio 单选框",
       "description": "组件名称"
     },
     "tagName": {

@@ -27,7 +27,7 @@ const components = [
                   enum: ['default', 'primary', 'success', 'warning', 'danger'],
                   /**
                    * 默认 string
-                   * todo : color类型后续添加
+                   *
                    */
                   type: 'string',
                   /**
@@ -36,7 +36,7 @@ const components = [
                   option: true,
                   /**
                    * 根据 enum 或者 type 生成
-                   * textinput / switch / color / 下拉框 等
+                   * textinput / switch / color / 下拉框 / date / function 等
                    */
                   valueType: '',
                   /**
@@ -115,7 +115,7 @@ const componentList = {
                   default: '按钮'
               },
               color: {
-                  // type: 'color'
+                  type: 'color'
               },
               icon: {},
               'icon-prefix': {},
@@ -184,8 +184,12 @@ const componentList = {
           key: 'cell',
           children: true,
           props: {
-              title: {},
-              value: {},
+              title: {
+                  default: '单元格'
+              },
+              value: {
+                  default: '内容'
+              },
               label: {},
               size: {},
               icon: {},
@@ -293,7 +297,7 @@ const componentList = {
       }
   },
   row: {
-      title: 'row 布局',
+      title: 'Row 布局',
       description: 'Layout 提供了 van-row 和 van-col 两个组件来进行行列布局。',
       path: '/image/Image.tsx',
       groupKey: 'Basic Components',
@@ -324,7 +328,7 @@ const componentList = {
       }
   },
   col: {
-      title: 'col 布局',
+      title: 'Col 布局',
       description: 'Layout 提供了 van-row 和 van-col 两个组件来进行行列布局。',
       path: '/image/Image.tsx',
       groupKey: 'Basic Components',
@@ -457,7 +461,7 @@ const componentList = {
                   default: true
               },
               'close-icon': {
-                  type: 'boolean'
+                  default: 'cross'
               }
               // 'field-names': {
               // 		type: 'CascaderFieldNames'
@@ -487,9 +491,9 @@ const componentList = {
           key: 'checkbox',
           children: true,
           props: {
-              'v-model': {
-                  type: 'boolean'
-              },
+              // 'v-model': {
+              //     type: 'boolean'
+              // },
               name: {
                   // type: 'any'
               },
@@ -536,9 +540,9 @@ const componentList = {
           key: 'checkboxGroup',
           children: true,
           props: {
-              'v-model': {
-                  type: 'boolean'
-              },
+              // 'v-model': {
+              //     type: 'boolean'
+              // },
               disabled: {
                   type: 'boolean'
               },
@@ -562,7 +566,7 @@ const componentList = {
       }
   },
   radio: {
-      title: 'radio 单选框',
+      title: 'Radio 单选框',
       description: '在一组备选项中进行多选。',
       path: '/radio/radio.tsx',
       groupKey: 'Form Components',
@@ -604,7 +608,7 @@ const componentList = {
       }
   },
   radioGroup: {
-      title: 'radioGroup 单选组',
+      title: 'RadioGroup 单选组',
       description: '复选框容器',
       path: '/radioGroup/radioGroup.tsx',
       groupKey: 'Form Components',
@@ -613,9 +617,9 @@ const componentList = {
           key: 'radioGroup',
           children: true,
           props: {
-              'v-model': {
-                  type: 'boolean'
-              },
+              // 'v-model': {
+              //     type: 'boolean'
+              // },
               disabled: {
                   type: 'boolean'
               },
@@ -646,24 +650,56 @@ const componentList = {
           key: 'datePicker',
           children: true,
           props: {
-              'v-model': {
+              // 'v-model': {
+              //     type: 'boolean'
+              // },
+              'columns-type': {
+                  //选项类型，由 year、month 和 day 组成的数组	string[]	['year', 'month', 'day']
+              },
+              'min-date': {
+                  type: 'date'
+              },
+              'min-date': {
+                  type: 'date'
+              },
+              title: {
+                  default: 'title'
+              },
+              'confirm-button-text': {
+                  default: '确认'
+              },
+              'cancel-button-text': {
+                  default: '取消'
+              },
+              'show-toolbar': {
+                  type: 'boolean',
+                  default: true
+              },
+              loading: {
                   type: 'boolean'
               },
-              disabled: {
+              readonly: {
                   type: 'boolean'
               },
-              direction: {
-                  enum: ['vertical', 'horizontal']
+              filter: {
+                  type: 'function'
               },
-              'icon-size': {
-                  type: 'number'
+              formatter: {
+                  type: 'function'
               },
-              'checked-color': {
-                  type: 'string'
+              'option-height': {
+                  type: 'number',
+                  default: 44
+              },
+              'visible-option-num': {
+                  type: 'number',
+                  default: 6
               }
           },
           events: {
-              change: (names) => {}
+              change: () => {},
+              confirm: () => {},
+              cancel: () => {}
           },
           slots: {}
       }
@@ -678,9 +714,9 @@ const componentList = {
           key: 'field',
           children: true,
           props: {
-              'v-model': {
-                  type: 'string'
-              },
+              // 'v-model': {
+              //     type: 'string'
+              // },
               label: {
                   type: 'string'
               },
@@ -700,7 +736,7 @@ const componentList = {
                   type: 'number'
               },
               placeholder: {
-                  type: 'number'
+                  default: '请输入'
               },
               border: {
                   type: 'boolean',
@@ -800,16 +836,16 @@ const componentList = {
                   type: 'number'
               },
               'label-align': {
-                  type: 'string'
+                  enum: ['left', 'center', 'right', 'top']
               },
               'input-align': {
-                  type: 'string'
+                  enum: ['left', 'center', 'right']
               },
               'error-message-align': {
-                  type: 'string'
+                  enum: ['left', 'center', 'right']
               },
               'validate-trigger': {
-                  type: 'string'
+                  enum: ['onBlur', 'onChange', 'onSubmit']
               },
               colon: {
                   type: 'boolean'

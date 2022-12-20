@@ -37,16 +37,6 @@
       "description": "组件属性",
       "required": [],
       "properties": {
-        "v-model": {
-          "enum": [],
-          "type": [
-            "boolean"
-          ],
-          "title": "v-model",
-          "option": true,
-          "valueType": "switch",
-          "default": false
-        },
         "disabled": {
           "enum": [],
           "type": [
