@@ -45,7 +45,7 @@
           "title": "v-model",
           "option": true,
           "valueType": "switch",
-          "default": "false"
+          "default": false
         },
         "disabled": {
           "enum": [],
@@ -55,7 +55,7 @@
           "title": "disabled",
           "option": true,
           "valueType": "switch",
-          "default": "false"
+          "default": false
         },
         "max": {
           "enum": [],

@@ -121,7 +121,7 @@
           "title": "round",
           "option": true,
           "valueType": "switch",
-          "default": "false"
+          "default": false
         },
         "block": {
           "enum": [],
@@ -131,7 +131,7 @@
           "title": "block",
           "option": true,
           "valueType": "switch",
-          "default": "false"
+          "default": false
         },
         "lazy-load": {
           "enum": [],
@@ -141,7 +141,7 @@
           "title": "lazy-load",
           "option": true,
           "valueType": "switch",
-          "default": "false"
+          "default": false
         },
         "show-error": {
           "enum": [],

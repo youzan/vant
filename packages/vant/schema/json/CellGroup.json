@@ -55,7 +55,7 @@
           "title": "insert",
           "option": true,
           "valueType": "switch",
-          "default": "false"
+          "default": false
         },
         "border": {
           "enum": [],

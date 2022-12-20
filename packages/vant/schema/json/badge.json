@@ -65,7 +65,7 @@
           "title": "dot",
           "option": true,
           "valueType": "switch",
-          "default": "false"
+          "default": false
         },
         "max": {
           "enum": [],

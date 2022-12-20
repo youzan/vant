@@ -135,7 +135,7 @@
           "title": "disabled",
           "option": true,
           "valueType": "switch",
-          "default": "false"
+          "default": false
         },
         "readonly": {
           "enum": [],
@@ -145,7 +145,7 @@
           "title": "readonly",
           "option": true,
           "valueType": "switch",
-          "default": "false"
+          "default": false
         },
         "colon": {
           "enum": [],
@@ -155,7 +155,7 @@
           "title": "colon",
           "option": true,
           "valueType": "switch",
-          "default": "false"
+          "default": false
         },
         "required": {
           "enum": [],
@@ -165,7 +165,7 @@
           "title": "required",
           "option": true,
           "valueType": "switch",
-          "default": "false"
+          "default": false
         },
         "center": {
           "enum": [],
@@ -175,7 +175,7 @@
           "title": "center",
           "option": true,
           "valueType": "switch",
-          "default": "false"
+          "default": false
         },
         "clearable": {
           "enum": [],
@@ -185,7 +185,7 @@
           "title": "clearable",
           "option": true,
           "valueType": "switch",
-          "default": "false"
+          "default": false
         },
         "clear-icon": {
           "enum": [],
@@ -205,7 +205,7 @@
           "title": "clickable",
           "option": true,
           "valueType": "switch",
-          "default": "false"
+          "default": false
         },
         "is-link": {
           "enum": [],
@@ -215,7 +215,7 @@
           "title": "is-link",
           "option": true,
           "valueType": "switch",
-          "default": "false"
+          "default": false
         },
         "autofocus": {
           "enum": [],
@@ -225,7 +225,7 @@
           "title": "autofocus",
           "option": true,
           "valueType": "switch",
-          "default": "false"
+          "default": false
         },
         "show-word-limit": {
           "enum": [],
@@ -235,7 +235,7 @@
           "title": "show-word-limit",
           "option": true,
           "valueType": "switch",
-          "default": "false"
+          "default": false
         },
         "error": {
           "enum": [],
@@ -245,7 +245,7 @@
           "title": "error",
           "option": true,
           "valueType": "switch",
-          "default": "false"
+          "default": false
         },
         "error-message": {
           "enum": [],

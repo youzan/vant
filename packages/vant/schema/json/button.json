@@ -129,7 +129,7 @@
           "title": "block",
           "option": true,
           "valueType": "switch",
-          "default": "false"
+          "default": false
         },
         "plain": {
           "enum": [],
@@ -139,7 +139,7 @@
           "title": "plain",
           "option": true,
           "valueType": "switch",
-          "default": "false"
+          "default": false
         },
         "square": {
           "enum": [],
@@ -149,7 +149,7 @@
           "title": "square",
           "option": true,
           "valueType": "switch",
-          "default": "false"
+          "default": false
         },
         "round": {
           "enum": [],
@@ -159,7 +159,7 @@
           "title": "round",
           "option": true,
           "valueType": "switch",
-          "default": "false"
+          "default": false
         },
         "disabled": {
           "enum": [],
@@ -169,7 +169,7 @@
           "title": "disabled",
           "option": true,
           "valueType": "switch",
-          "default": "false"
+          "default": false
         },
         "hairline": {
           "enum": [],
@@ -179,7 +179,7 @@
           "title": "hairline",
           "option": true,
           "valueType": "switch",
-          "default": "false"
+          "default": false
         },
         "loading": {
           "enum": [],
@@ -189,7 +189,7 @@
           "title": "loading",
           "option": true,
           "valueType": "switch",
-          "default": "false"
+          "default": false
         },
         "loading-text": {
           "enum": [],
@@ -239,7 +239,7 @@
           "title": "replace",
           "option": true,
           "valueType": "switch",
-          "default": "false"
+          "default": false
         }
       }
     },

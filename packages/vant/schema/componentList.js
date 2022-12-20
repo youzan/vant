@@ -69,7 +69,9 @@ const componentList = {
           key: 'badge',
           children: true,
           props: {
-              content: {},
+              content: {
+                  default: '0'
+              },
               color: {
                   default: '#ee0a24'
               },
@@ -109,7 +111,9 @@ const componentList = {
               size: {
                   enum: ['normal', 'large', 'small', 'mini']
               },
-              text: {},
+              text: {
+                  default: '按钮'
+              },
               color: {
                   // type: 'color'
               },

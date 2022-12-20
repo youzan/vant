@@ -68,7 +68,7 @@
           "title": "disabled",
           "option": true,
           "valueType": "switch",
-          "default": "false"
+          "default": false
         },
         "label-disabled": {
           "enum": [],
@@ -78,7 +78,7 @@
           "title": "label-disabled",
           "option": true,
           "valueType": "switch",
-          "default": "false"
+          "default": false
         },
         "label-position": {
           "enum": [

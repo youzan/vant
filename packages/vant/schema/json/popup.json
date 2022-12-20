@@ -90,7 +90,7 @@
           "title": "show-zero",
           "option": true,
           "valueType": "switch",
-          "default": "false"
+          "default": false
         },
         "duration": {
           "enum": [],
@@ -120,7 +120,7 @@
           "title": "round",
           "option": true,
           "valueType": "switch",
-          "default": "false"
+          "default": false
         },
         "lock-scroll": {
           "enum": [],
@@ -150,7 +150,7 @@
           "title": "close-on-popstate",
           "option": true,
           "valueType": "switch",
-          "default": "false"
+          "default": false
         },
         "close-on-click-overlay": {
           "enum": [],
@@ -170,7 +170,7 @@
           "title": "closeable",
           "option": true,
           "valueType": "switch",
-          "default": "false"
+          "default": false
         },
         "close-icon": {
           "enum": [],
@@ -210,7 +210,7 @@
           "title": "transition-appear",
           "option": true,
           "valueType": "switch",
-          "default": "false"
+          "default": false
         },
         "teleport": {
           "enum": [],
@@ -230,7 +230,7 @@
           "title": "safe-area-inset-top",
           "option": true,
           "valueType": "switch",
-          "default": "false"
+          "default": false
         },
         "safe-area-inset-bottom": {
           "enum": [],
@@ -240,7 +240,7 @@
           "title": "safe-area-inset-bottom",
           "option": true,
           "valueType": "switch",
-          "default": "false"
+          "default": false
         }
       }
     },

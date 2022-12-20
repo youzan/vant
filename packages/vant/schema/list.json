@@ -66,7 +66,7 @@
             "title": "dot",
             "option": true,
             "valueType": "switch",
-            "default": "false"
+            "default": false
           },
           "max": {
             "enum": [],
@@ -303,7 +303,7 @@
             "title": "block",
             "option": true,
             "valueType": "switch",
-            "default": "false"
+            "default": false
           },
           "plain": {
             "enum": [],
@@ -313,7 +313,7 @@
             "title": "plain",
             "option": true,
             "valueType": "switch",
-            "default": "false"
+            "default": false
           },
           "square": {
             "enum": [],
@@ -323,7 +323,7 @@
             "title": "square",
             "option": true,
             "valueType": "switch",
-            "default": "false"
+            "default": false
           },
           "round": {
             "enum": [],
@@ -333,7 +333,7 @@
             "title": "round",
             "option": true,
             "valueType": "switch",
-            "default": "false"
+            "default": false
           },
           "disabled": {
             "enum": [],
@@ -343,7 +343,7 @@
             "title": "disabled",
             "option": true,
             "valueType": "switch",
-            "default": "false"
+            "default": false
           },
           "hairline": {
             "enum": [],
@@ -353,7 +353,7 @@
             "title": "hairline",
             "option": true,
             "valueType": "switch",
-            "default": "false"
+            "default": false
           },
           "loading": {
             "enum": [],
@@ -363,7 +363,7 @@
             "title": "loading",
             "option": true,
             "valueType": "switch",
-            "default": "false"
+            "default": false
           },
           "loading-text": {
             "enum": [],
@@ -413,7 +413,7 @@
             "title": "replace",
             "option": true,
             "valueType": "switch",
-            "default": "false"
+            "default": false
           }
         }
       },
@@ -653,7 +653,7 @@
             "title": "replace",
             "option": true,
             "valueType": "switch",
-            "default": "false"
+            "default": false
           },
           "clickable": {
             "enum": [],
@@ -663,7 +663,7 @@
             "title": "clickable",
             "option": true,
             "valueType": "switch",
-            "default": "false"
+            "default": false
           },
           "is-link": {
             "enum": [],
@@ -673,7 +673,7 @@
             "title": "is-link",
             "option": true,
             "valueType": "switch",
-            "default": "false"
+            "default": false
           },
           "required": {
             "enum": [],
@@ -683,7 +683,7 @@
             "title": "required",
             "option": true,
             "valueType": "switch",
-            "default": "false"
+            "default": false
           },
           "center": {
             "enum": [],
@@ -693,7 +693,7 @@
             "title": "center",
             "option": true,
             "valueType": "switch",
-            "default": "false"
+            "default": false
           },
           "arrow-direction": {
             "enum": [
@@ -886,7 +886,7 @@
             "title": "insert",
             "option": true,
             "valueType": "switch",
-            "default": "false"
+            "default": false
           },
           "border": {
             "enum": [],
@@ -1100,7 +1100,7 @@
             "title": "round",
             "option": true,
             "valueType": "switch",
-            "default": "false"
+            "default": false
           },
           "block": {
             "enum": [],
@@ -1110,7 +1110,7 @@
             "title": "block",
             "option": true,
             "valueType": "switch",
-            "default": "false"
+            "default": false
           },
           "lazy-load": {
             "enum": [],
@@ -1120,7 +1120,7 @@
             "title": "lazy-load",
             "option": true,
             "valueType": "switch",
-            "default": "false"
+            "default": false
           },
           "show-error": {
             "enum": [],
@@ -1703,7 +1703,7 @@
             "title": "show-zero",
             "option": true,
             "valueType": "switch",
-            "default": "false"
+            "default": false
           },
           "duration": {
             "enum": [],
@@ -1733,7 +1733,7 @@
             "title": "round",
             "option": true,
             "valueType": "switch",
-            "default": "false"
+            "default": false
           },
           "lock-scroll": {
             "enum": [],
@@ -1763,7 +1763,7 @@
             "title": "close-on-popstate",
             "option": true,
             "valueType": "switch",
-            "default": "false"
+            "default": false
           },
           "close-on-click-overlay": {
             "enum": [],
@@ -1783,7 +1783,7 @@
             "title": "closeable",
             "option": true,
             "valueType": "switch",
-            "default": "false"
+            "default": false
           },
           "close-icon": {
             "enum": [],
@@ -1823,7 +1823,7 @@
             "title": "transition-appear",
             "option": true,
             "valueType": "switch",
-            "default": "false"
+            "default": false
           },
           "teleport": {
             "enum": [],
@@ -1843,7 +1843,7 @@
             "title": "safe-area-inset-top",
             "option": true,
             "valueType": "switch",
-            "default": "false"
+            "default": false
           },
           "safe-area-inset-bottom": {
             "enum": [],
@@ -1853,7 +1853,7 @@
             "title": "safe-area-inset-bottom",
             "option": true,
             "valueType": "switch",
-            "default": "false"
+            "default": false
           }
         }
       },
@@ -2220,7 +2220,7 @@
             "title": "swipeable",
             "option": true,
             "valueType": "switch",
-            "default": "false"
+            "default": false
           },
           "closeable": {
             "enum": [],
@@ -2250,7 +2250,7 @@
             "title": "close-icon",
             "option": true,
             "valueType": "switch",
-            "default": "false"
+            "default": false
           }
         }
       },
@@ -2414,7 +2414,7 @@
             "title": "v-model",
             "option": true,
             "valueType": "switch",
-            "default": "false"
+            "default": false
           },
           "name": {
             "enum": [],
@@ -2447,7 +2447,7 @@
             "title": "disabled",
             "option": true,
             "valueType": "switch",
-            "default": "false"
+            "default": false
           },
           "label-disabled": {
             "enum": [],
@@ -2457,7 +2457,7 @@
             "title": "label-disabled",
             "option": true,
             "valueType": "switch",
-            "default": "false"
+            "default": false
           },
           "label-position": {
             "enum": [
@@ -2640,7 +2640,7 @@
             "title": "v-model",
             "option": true,
             "valueType": "switch",
-            "default": "false"
+            "default": false
           },
           "disabled": {
             "enum": [],
@@ -2650,7 +2650,7 @@
             "title": "disabled",
             "option": true,
             "valueType": "switch",
-            "default": "false"
+            "default": false
           },
           "max": {
             "enum": [],
@@ -2844,7 +2844,7 @@
             "title": "disabled",
             "option": true,
             "valueType": "switch",
-            "default": "false"
+            "default": false
           },
           "label-disabled": {
             "enum": [],
@@ -2854,7 +2854,7 @@
             "title": "label-disabled",
             "option": true,
             "valueType": "switch",
-            "default": "false"
+            "default": false
           },
           "label-position": {
             "enum": [
@@ -3015,7 +3015,7 @@
             "title": "v-model",
             "option": true,
             "valueType": "switch",
-            "default": "false"
+            "default": false
           },
           "disabled": {
             "enum": [],
@@ -3025,7 +3025,7 @@
             "title": "disabled",
             "option": true,
             "valueType": "switch",
-            "default": "false"
+            "default": false
           },
           "direction": {
             "enum": [
@@ -3186,7 +3186,7 @@
             "title": "v-model",
             "option": true,
             "valueType": "switch",
-            "default": "false"
+            "default": false
           },
           "disabled": {
             "enum": [],
@@ -3196,7 +3196,7 @@
             "title": "disabled",
             "option": true,
             "valueType": "switch",
-            "default": "false"
+            "default": false
           },
           "direction": {
             "enum": [
@@ -3447,7 +3447,7 @@
             "title": "disabled",
             "option": true,
             "valueType": "switch",
-            "default": "false"
+            "default": false
           },
           "readonly": {
             "enum": [],
@@ -3457,7 +3457,7 @@
             "title": "readonly",
             "option": true,
             "valueType": "switch",
-            "default": "false"
+            "default": false
           },
           "colon": {
             "enum": [],
@@ -3467,7 +3467,7 @@
             "title": "colon",
             "option": true,
             "valueType": "switch",
-            "default": "false"
+            "default": false
           },
           "required": {
             "enum": [],
@@ -3477,7 +3477,7 @@
             "title": "required",
             "option": true,
             "valueType": "switch",
-            "default": "false"
+            "default": false
           },
           "center": {
             "enum": [],
@@ -3487,7 +3487,7 @@
             "title": "center",
             "option": true,
             "valueType": "switch",
-            "default": "false"
+            "default": false
           },
           "clearable": {
             "enum": [],
@@ -3497,7 +3497,7 @@
             "title": "clearable",
             "option": true,
             "valueType": "switch",
-            "default": "false"
+            "default": false
           },
           "clear-icon": {
             "enum": [],
@@ -3517,7 +3517,7 @@
             "title": "clickable",
             "option": true,
             "valueType": "switch",
-            "default": "false"
+            "default": false
           },
           "is-link": {
             "enum": [],
@@ -3527,7 +3527,7 @@
             "title": "is-link",
             "option": true,
             "valueType": "switch",
-            "default": "false"
+            "default": false
           },
           "autofocus": {
             "enum": [],
@@ -3537,7 +3537,7 @@
             "title": "autofocus",
             "option": true,
             "valueType": "switch",
-            "default": "false"
+            "default": false
           },
           "show-word-limit": {
             "enum": [],
@@ -3547,7 +3547,7 @@
             "title": "show-word-limit",
             "option": true,
             "valueType": "switch",
-            "default": "false"
+            "default": false
           },
           "error": {
             "enum": [],
@@ -3557,7 +3557,7 @@
             "title": "error",
             "option": true,
             "valueType": "switch",
-            "default": "false"
+            "default": false
           },
           "error-message": {
             "enum": [],
@@ -3933,7 +3933,7 @@
             "title": "colon",
             "option": true,
             "valueType": "switch",
-            "default": "false"
+            "default": false
           },
           "disabled": {
             "enum": [],
@@ -3943,7 +3943,7 @@
             "title": "disabled",
             "option": true,
             "valueType": "switch",
-            "default": "false"
+            "default": false
           },
           "readonly": {
             "enum": [],
@@ -3953,7 +3953,7 @@
             "title": "readonly",
             "option": true,
             "valueType": "switch",
-            "default": "false"
+            "default": false
           },
           "validate-first": {
             "enum": [],
@@ -3963,7 +3963,7 @@
             "title": "validate-first",
             "option": true,
             "valueType": "switch",
-            "default": "false"
+            "default": false
           },
           "scroll-to-error": {
             "enum": [],
@@ -3973,7 +3973,7 @@
             "title": "scroll-to-error",
             "option": true,
             "valueType": "switch",
-            "default": "false"
+            "default": false
           },
           "show-error": {
             "enum": [],
@@ -3983,7 +3983,7 @@
             "title": "show-error",
             "option": true,
             "valueType": "switch",
-            "default": "false"
+            "default": false
           },
           "show-error-message": {
             "enum": [],

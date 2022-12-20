@@ -95,7 +95,7 @@
           "title": "swipeable",
           "option": true,
           "valueType": "switch",
-          "default": "false"
+          "default": false
         },
         "closeable": {
           "enum": [],
@@ -125,7 +125,7 @@
           "title": "close-icon",
           "option": true,
           "valueType": "switch",
-          "default": "false"
+          "default": false
         }
       }
     },

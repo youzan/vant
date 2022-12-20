@@ -145,7 +145,7 @@
           "title": "replace",
           "option": true,
           "valueType": "switch",
-          "default": "false"
+          "default": false
         },
         "clickable": {
           "enum": [],
@@ -155,7 +155,7 @@
           "title": "clickable",
           "option": true,
           "valueType": "switch",
-          "default": "false"
+          "default": false
         },
         "is-link": {
           "enum": [],
@@ -165,7 +165,7 @@
           "title": "is-link",
           "option": true,
           "valueType": "switch",
-          "default": "false"
+          "default": false
         },
         "required": {
           "enum": [],
@@ -175,7 +175,7 @@
           "title": "required",
           "option": true,
           "valueType": "switch",
-          "default": "false"
+          "default": false
         },
         "center": {
           "enum": [],
@@ -185,7 +185,7 @@
           "title": "center",
           "option": true,
           "valueType": "switch",
-          "default": "false"
+          "default": false
         },
         "arrow-direction": {
           "enum": [

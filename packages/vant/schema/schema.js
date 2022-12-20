@@ -171,7 +171,7 @@ function componentProps(componentMapProps) {
                 option: componentMapProps[key].option || true,
                 valueType: 'switch',
                 // todo : 默认字符串 false ？
-                default: componentMapProps[key].default || 'false'
+                default: componentMapProps[key].default || false
             };
         } else if (componentMapProps[key].type === 'number') {
             propItem = {

@@ -95,7 +95,7 @@
           "title": "colon",
           "option": true,
           "valueType": "switch",
-          "default": "false"
+          "default": false
         },
         "disabled": {
           "enum": [],
@@ -105,7 +105,7 @@
           "title": "disabled",
           "option": true,
           "valueType": "switch",
-          "default": "false"
+          "default": false
         },
         "readonly": {
           "enum": [],
@@ -115,7 +115,7 @@
           "title": "readonly",
           "option": true,
           "valueType": "switch",
-          "default": "false"
+          "default": false
         },
         "validate-first": {
           "enum": [],
@@ -125,7 +125,7 @@
           "title": "validate-first",
           "option": true,
           "valueType": "switch",
-          "default": "false"
+          "default": false
         },
         "scroll-to-error": {
           "enum": [],
@@ -135,7 +135,7 @@
           "title": "scroll-to-error",
           "option": true,
           "valueType": "switch",
-          "default": "false"
+          "default": false
         },
         "show-error": {
           "enum": [],
@@ -145,7 +145,7 @@
           "title": "show-error",
           "option": true,
           "valueType": "switch",
-          "default": "false"
+          "default": false
         },
         "show-error-message": {
           "enum": [],
