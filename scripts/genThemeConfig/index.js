@@ -52,6 +52,11 @@ _root.nodes.forEach((node) => {
           node.text.trim()
         );
         lastComponent.cssProperty[lastProp].desc = cap[1].trim();
+      } else if (node.text.includes('@group ')) {
+        const cap = /@group\s+([\u4e00-\u9fa5|\w|,|\s|：|\\#|（|）|(|)|\\.|，]+)/.exec(
+          node.text.trim()
+        );
+        lastComponent.cssProperty[lastProp].group = cap[1].trim();
       }
     }
   } else if (node.type === 'decl') {

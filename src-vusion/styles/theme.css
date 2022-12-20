@@ -59,8 +59,7 @@
   /* @component van-linear-layout */
   --van-space-base: var(
     --van-space-baset
-  ); /* @desc 布局内各元素之间的
-  外间距, 如：1px */
+  ); /* @desc 布局内各元素之间的外间距, 如：1px */
 
   /* @component van-panel */
   --van-panel-background-color: #fff; /* @type color */ /* @desc panel背景色 */
@@ -347,12 +346,12 @@
   --van-collapse-item-title-disabled-color: #c8c9cc; /* @type color */ /* @desc 标题禁用状态颜色 */
 
   /* @component van-dialog */
-  --van-dialog-width: 320px; /* @desc 宽度 */
-  --van-dialog-small-screen-width: 90%; /* @desc 小屏幕宽度 */
+  --van-dialog-width: 320px; /* @group 宽度 */ /* @desc 宽度 */
+  --van-dialog-small-screen-width: 90%; /* @group 宽度 */ /* @desc 小屏幕宽度 */
   --van-dialog-font-size: var(--van-font-size-lg); /* @hidden */
-  --van-dialog-transition: 0.3s; /* @desc 动画时间 */
-  --van-dialog-border-radius: 16px; /* @desc 圆角 */
-  --van-dialog-background-color: #fff; /* @type color */ /* @desc 背景色 */
+  --van-dialog-transition: 0.3s; /* @group 动画 */ /* @desc 动画时间 */
+  --van-dialog-border-radius: 16px; /* @group 边框 */ /* @desc 圆角 */
+  --van-dialog-background-color: #fff; /* @type color */ /* @group 背景 */ /* @desc 背景色 */
   --van-dialog-header-font-weight: var(--van-font-weight-bold); /* @hidden */
   --van-dialog-header-line-height: 24px; /* @hidden */
   --van-dialog-header-padding-top: 26px; /* @hidden */
@@ -360,23 +359,21 @@
   --van-dialog-message-padding: var(--van-padding-lg); /* @hidden */
   --van-dialog-message-font-size: var(
     --van-font-size-md
-  ); /* @desc 信息部分字体大小 */
-
+  ); /* @group 字体 */ /* @desc 信息部分字体大小 */
   --van-dialog-message-line-height: var(
     --van-line-height-md
-  ); /* @desc 信息部分行高 */
-
-  --van-dialog-message-max-height: 60vh; /* @desc 信息部分最大高度 */
+  ); /* @group 字体 */ /* @desc 信息部分行高 */
+  --van-dialog-message-max-height: 60vh; /* @group 字体 */ /* @desc 信息部分最大高度 */
   --van-dialog-has-title-message-text-color: #646566; /* @type color */ /* @hidden */
   --van-dialog-has-title-message-padding-top: var(
     --van-padding-xs
   ); /* @hidden */
 
-  --van-dialog-button-height: 48px; /* @desc 按钮高度 */
+  --van-dialog-button-height: 48px; /* @group 按钮 */ /* @desc 按钮高度 */
   --van-dialog-round-button-height: 36px; /* @hidden */
   --van-dialog-confirm-button-text-color: var(
     --van-brand-primary
-  ); /* @type color */ /* @desc 确认按钮颜色 */
+  ); /* @type color */ /* @group 按钮 */ /* @desc 确认按钮颜色 */
 
   /* @component van-divider */
   --van-divider-margin: var(--van-padding-md) 0; /* @desc 外边距 */
