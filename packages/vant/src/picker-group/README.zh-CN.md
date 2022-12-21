@@ -86,7 +86,7 @@ export default {
   @confirm="onConfirm"
   @cancel="onCancel"
 >
-  <van-date-picker v-model="startEnd" :min-date="minDate" :max-date="maxDate" />
+  <van-date-picker v-model="startDate" :min-date="minDate" :max-date="maxDate" />
   <van-date-picker v-model="endDate" :min-date="minDate" :max-date="maxDate" />
 </van-picker-group>
 ```
@@ -128,8 +128,8 @@ export default {
   @confirm="onConfirm"
   @cancel="onCancel"
 >
-  <van-time-picker v-model="startEnd" />
-  <van-time-picker v-model="endDate" />
+  <van-time-picker v-model="startTime" />
+  <van-time-picker v-model="endTime" />
 </van-picker-group>
 ```
 
