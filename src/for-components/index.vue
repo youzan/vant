@@ -27,7 +27,7 @@ export default {
     },
     props: {
       dataSource: {
-        type: Array,
+        type: [Array, Object, Function, String],
         default: () => [],
       },
       colnum: {
@@ -81,15 +81,6 @@ export default {
         }
         return result;
       },
-      fromValue(value) {
-        try {
-          if (value === null || value === undefined) return [];
-          if(typeof value === 'string') return JSON.parse(value || '[]');
-          if(typeof value === 'object') return value;
-        } catch (err) {
-            return [];
-        }
-      },
       async update() {
         if (isFunction(this.dataSource)) {
           try {
@@ -102,7 +93,7 @@ export default {
             console.error(error);
           }
         } else {
-          this.options = this.divide(this.fromValue(this.dataSource));
+          this.options = this.divide(formatResult(this.dataSource));
         }
       },
       comIndex(index1, index2) {

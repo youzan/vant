@@ -9,7 +9,7 @@ export default createComponent({
   mixins: [ParentMixin('vanCheckbox'), FieldMixin],
 
   props: {
-    dataSource: [Array, Function],
+    dataSource: [Array, Object, Function, String],
     max: [Number, String],
     min: {
       type: Number,
@@ -99,7 +99,7 @@ export default createComponent({
           console.error(error);
         }
       } else {
-        this.options = (this.fromValue(this.dataSource));
+        this.options = formatResult(this.dataSource);
       }
     }
   },

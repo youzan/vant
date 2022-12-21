@@ -13,10 +13,20 @@ interface ListTotal {
   list: any[];
   total: number;
 }
-type Result = any[] | PageOf | ListTotal;
+type Result = any[] | PageOf | ListTotal | String;
 
 export function formatResult(result: Result): any[] {
-  if (Array.isArray(result)) {
+  if (!result) {
+    return [];
+  } else if (typeof result === 'string') {
+    let list = [];
+    try {
+      list = formatResult(JSON.parse(result));
+    } catch (err) {
+      console.error(err);
+    }
+    return list;
+  } else if (Array.isArray(result)) {
     return result;
   } else if (Array.isArray((result as ListTotal)?.list)) {
     return (result as ListTotal).list;

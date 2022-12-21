@@ -25,7 +25,7 @@ export default {
     },
     props: {
       dataSource: {
-            type: [Array, Object, Function],
+            type: [Array, Object, Function, String],
             default: () => [],
         },
         num: {
@@ -77,29 +77,23 @@ export default {
       fromValue(value) {
         const reg = /^([^\[\]]+)(\,([^\[\]]+)){0,}$/g;
         if (typeof value === 'string' && reg.test(value)) {
-            return value.split(',');
+          return value.split(',');
         }
-        try {
-          if (value === null || value === undefined) return [];
-          if(typeof value === 'string') return JSON.parse(value || '[]');
-          if(typeof value === 'object') return value;
-        } catch (err) {
-            return [];
-        }
+        return formatResult(value);
       },
       async update() {
         if (isFunction(this.dataSource)) {
-            try {
-                const res = await this.dataSource({
-                    page: 1,
-                    size: 1000,
-                });
-                this.options = formatResult(res);
-            } catch (error) {
-                console.error(error);
-            }
+          try {
+            const res = await this.dataSource({
+              page: 1,
+              size: 1000,
+            });
+            this.options = formatResult(res);
+          } catch (error) {
+            console.error(error);
+          }
         } else {
-            this.options = (this.fromValue(this.dataSource));
+          this.options = this.fromValue(this.dataSource);
         }
         this.renderSwiper();
       },
