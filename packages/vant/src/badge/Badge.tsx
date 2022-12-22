@@ -71,7 +71,7 @@ export default defineComponent({
       }
     };
 
-    const getOffsetWithString = (val: string) =>
+    const getOffsetWithMinusString = (val: string) =>
       val.startsWith('-') ? val.replace('-', '') : `-${val}`;
 
     const style = computed(() => {
@@ -90,14 +90,14 @@ export default defineComponent({
             style[offsetY] = addUnit(offsetY === 'top' ? y : -y);
           } else {
             style[offsetY] =
-              offsetY === 'top' ? addUnit(y) : getOffsetWithString(y);
+              offsetY === 'top' ? addUnit(y) : getOffsetWithMinusString(y);
           }
 
           if (typeof x === 'number') {
             style[offsetX] = addUnit(offsetX === 'left' ? x : -x);
           } else {
             style[offsetX] =
-              offsetX === 'left' ? addUnit(x) : getOffsetWithString(x);
+              offsetX === 'left' ? addUnit(x) : getOffsetWithMinusString(x);
           }
         } else {
           style.marginTop = addUnit(y);
