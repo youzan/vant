@@ -19,6 +19,15 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 
 ## 更新内容
 
+### [v4.0.4](https://github.com/vant-ui/vant/compare/v4.0.3...v4.0.4)
+
+`2022-12-23`
+
+**Bug Fixes**
+
+- Field: 修复使用 formatter 时光标位置可能错误的问题 [#11360](https://github.com/vant-ui/vant/issues/11360)
+- Image: 修复 load 事件未正确触发导致 ImagePreview 报错的问题 [#11406](https://github.com/vant-ui/vant/issues/11406)
+
 ### [v4.0.3](https://github.com/vant-ui/vant/compare/v4.0.2...v4.0.3)
 
 `2022-12-13`
