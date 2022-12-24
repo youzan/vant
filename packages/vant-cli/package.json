@@ -50,8 +50,6 @@
   "dependencies": {
     "@babel/core": "^7.18.13",
     "@babel/preset-typescript": "^7.18.6",
-    "@docsearch/css": "^3.2.1",
-    "@docsearch/js": "^3.2.1",
     "@types/jest": "^29.1.1",
     "@vant/eslint-config": "^3.5.0",
     "@vant/touch-emulator": "^1.4.0",
