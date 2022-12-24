@@ -43,8 +43,6 @@
     "@types/fs-extra": "^9.0.13",
     "@types/less": "^3.0.3",
     "@types/markdown-it": "^12.2.3",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
     "vue": "^3.2.45"
   },
   "dependencies": {
