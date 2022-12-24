@@ -82,8 +82,10 @@ export default defineComponent({
       if (props.offset) {
         const [x, y] = props.offset;
         const { position } = props;
-        const offsetY = position.indexOf('top') > -1 ? 'top' : 'bottom';
-        const offsetX = position.indexOf('left') > -1 ? 'left' : 'right';
+        const [offsetY, offsetX] = position.split('-') as [
+          'top' | 'bottom',
+          'left' | 'right'
+        ];
 
         if (slots.default) {
           if (typeof y === 'number') {
