@@ -32,9 +32,6 @@ export default {
     baiduAnalytics: {
       seed: 'af5d41bc4e446e76665dbe3ec18d55c3',
     },
-    htmlMeta: {
-      'docsearch:version': 'v4',
-    },
     headHtml: `<script>
 if (location.host === 'youzan.github.io') {
 location.href = location.href.replace('youzan.github.io', 'vant-ui.github.io');
