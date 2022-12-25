@@ -19,6 +19,21 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 
 ## 更新内容
 
+### [v4.0.5](https://github.com/vant-ui/vant/compare/v4.0.4...v4.0.5)
+
+`2022-12-25`
+
+**Feature**
+
+- Locale: 新增 Dutch 荷兰语 [#11419](https://github.com/vant-ui/vant/issues/11419)
+- Locale: 新增 Mongolian 蒙古语 [#11418](https://github.com/vant-ui/vant/issues/11418)
+
+**Bug Fixes**
+
+- Badge: 修复 offset 属性部分情况下导致样式错误的问题 [#11400](https://github.com/vant-ui/vant/issues/11400)
+- Form: 修复事件参数中可能出现 key 为 undefined 的问题 [#11410](https://github.com/vant-ui/vant/issues/11410)
+- Picker: 修复深色模式下加载状态样式错误的问题 [#11405](https://github.com/vant-ui/vant/issues/11405)
+
 ### [v4.0.4](https://github.com/vant-ui/vant/compare/v4.0.3...v4.0.4)
 
 `2022-12-23`
