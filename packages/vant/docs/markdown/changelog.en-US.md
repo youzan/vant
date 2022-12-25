@@ -19,6 +19,21 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 
 ## Details
 
+### [v4.0.5](https://github.com/vant-ui/vant/compare/v4.0.4...v4.0.5)
+
+`2022-12-25`
+
+**Feature**
+
+- Locale: add Dutch lang [#11419](https://github.com/vant-ui/vant/issues/11419)
+- Locale: add Mongolian lang [#11418](https://github.com/vant-ui/vant/issues/11418)
+
+**Bug Fixes**
+
+- Badge: fix badge offset of different position [#11400](https://github.com/vant-ui/vant/issues/11400)
+- Form: filter no name field's value [#11410](https://github.com/vant-ui/vant/issues/11410)
+- Picker: picker loading color in dark theme [#11405](https://github.com/vant-ui/vant/issues/11405)
+
 ### [v4.0.4](https://github.com/vant-ui/vant/compare/v4.0.3...v4.0.4)
 
 `2022-12-23`
