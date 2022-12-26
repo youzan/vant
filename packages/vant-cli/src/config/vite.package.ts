@@ -28,6 +28,8 @@ export function getViteConfigForPackage({
       : undefined,
 
     build: {
+      emptyOutDir: false,
+
       lib: {
         name,
         entry,
