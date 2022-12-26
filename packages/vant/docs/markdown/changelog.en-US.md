@@ -19,6 +19,14 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 
 ## Details
 
+### [v4.0.6](https://github.com/vant-ui/vant/compare/v4.0.5...v4.0.6)
+
+`2022-12-26`
+
+**Bug Fixes**
+
+- Fix missing declaration files caused by upgrading vite v4 [#11423](https://github.com/vant-ui/vant/issues/11423)
+
 ### [v4.0.5](https://github.com/vant-ui/vant/compare/v4.0.4...v4.0.5)
 
 `2022-12-25`

@@ -19,6 +19,14 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 
 ## 更新内容
 
+### [v4.0.6](https://github.com/vant-ui/vant/compare/v4.0.5...v4.0.6)
+
+`2022-12-26`
+
+**Bug Fixes**
+
+- 修复升级 vite v4 导致构建产物不全的问题 [#11423](https://github.com/vant-ui/vant/issues/11423)
+
 ### [v4.0.5](https://github.com/vant-ui/vant/compare/v4.0.4...v4.0.5)
 
 `2022-12-25`
