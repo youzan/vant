@@ -6,6 +6,7 @@ import { preventDefault } from '../utils/dom/event';
 // Mixins
 import { TouchMixin } from '../mixins/touch';
 import { ClickOutsideMixin } from '../mixins/click-outside';
+import EmptyCol from '../emptycol';
 
 const [createComponent, bem] = createNamespace('swipe-cell');
 const THRESHOLD = 0.15;
@@ -39,6 +40,9 @@ export default createComponent({
       offset: 0,
       dragging: false,
     };
+  },
+  components: {
+    EmptyCol
   },
 
   computed: {
@@ -208,6 +212,16 @@ export default createComponent({
           </div>
         );
       }
+      return (
+        <div
+          ref="left"
+          class={bem('left')}
+          onClick={this.getClickHandler('left', true)}
+          vusion-template-left-node-path={this.$attrs['vusion-template-left-node-path']}
+        >
+          <van-empty-col></van-empty-col>
+        </div>
+      );
     },
 
     genRightPart() {
@@ -219,12 +233,21 @@ export default createComponent({
             ref="right"
             class={bem('right')}
             onClick={this.getClickHandler('right', true)}
-          >
+            >
             {content}
           </div>
         );
       }
-    },
+      return (
+        <div
+          ref="right"
+          class={bem('right')}
+          onClick={this.getClickHandler('right', true)}
+          vusion-template-right-node-path={this.$attrs['vusion-template-right-node-path']}
+        >
+          <van-empty-col></van-empty-col>
+        </div>
+      );    },
   },
 
   render() {

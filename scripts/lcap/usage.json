@@ -5377,6 +5377,12 @@
                     "title": "清空后",
                     "description": "清空后触发。",
                     "params": []
+                },
+                {
+                    "name": "enoughkey",
+                    "title": "输入完成时",
+                    "description": "输入完成时后触发。",
+                    "params": []
                 }
             ],
             "children": []
@@ -8363,6 +8369,85 @@
                     "params": []
                 }
             ],
+            "children": []
+        }
+    },
+    {
+        "symbol": "van-swipe-cell",
+        "name": "滑动单元格",
+        "icon": "swipe-cell",
+        "depDescription": {},
+        "description": "滑动单元格",
+        "labels": [
+            "Display"
+        ],
+        "screenShot": "",
+        "blocks": "[{\"title\":\"基本用法\",\"description\":\"\",\"code\":\"<template>\\n<van-swipe-cell>\\n  <template #left>\\n    <van-button squareroud=\\\"square\\\" type=\\\"primary\\\" text=\\\"选择\\\" />\\n  </template>\\n  <van-cell center>\\n    <template #title>\\n      左侧文本\\n    </template>\\n    <template>\\n      右侧文本\\n    </template>\\n  </van-cell>\\n  <template #right>\\n    <van-button squareroud=\\\"square\\\" type=\\\"danger\\\" text=\\\"删除\\\" />\\n    <van-button squareroud=\\\"square\\\" type=\\\"primary\\\" text=\\\"收藏\\\" />\\n  </template>\\n</van-swipe-cell>\\n</template>\\n\"}]",
+        "jsonSchema": {
+            "name": "van-swipe-cell",
+            "title": "滑动单元格",
+            "description": "滑动单元格",
+            "category": "Display",
+            "screenShot": "",
+            "drawings": "",
+            "blocks": [
+                {
+                    "title": "基本用法",
+                    "description": "",
+                    "code": "<template>\n<van-swipe-cell>\n  <template #left>\n    <van-button squareroud=\"square\" type=\"primary\" text=\"选择\" />\n  </template>\n  <van-cell center>\n    <template #title>\n      左侧文本\n    </template>\n    <template>\n      右侧文本\n    </template>\n  </van-cell>\n  <template #right>\n    <van-button squareroud=\"square\" type=\"danger\" text=\"删除\" />\n    <van-button squareroud=\"square\" type=\"primary\" text=\"收藏\" />\n  </template>\n</van-swipe-cell>\n</template>\n"
+                }
+            ],
+            "attrs": [
+                {
+                    "name": "left-width",
+                    "title": "左侧滑动区域宽度",
+                    "type": "number | string",
+                    "default": "auto",
+                    "description": "是否垂直居中"
+                },
+                {
+                    "name": "right-width",
+                    "title": "右侧滑动区域宽度",
+                    "type": "number | string",
+                    "default": "auto",
+                    "description": "左侧文本"
+                }
+            ],
+            "slots": [
+                {
+                    "concept": "Slot",
+                    "name": "default",
+                    "description": "插入文本或 HTML。"
+                },
+                {
+                    "concept": "Slot",
+                    "name": "right",
+                    "description": "右侧。"
+                },
+                {
+                    "concept": "Slot",
+                    "name": "left",
+                    "description": "左侧。"
+                }
+            ],
+            "methods": [
+                {
+                    "name": "close",
+                    "title": "收起单元格侧边栏",
+                    "description": "收起单元格侧边栏",
+                    "params": []
+                }
+            ],
+            "events": [
+                {
+                    "name": "click",
+                    "title": "点击后",
+                    "description": "点击后触发",
+                    "params": []
+                }
+            ],
+            "next": true,
+            "nested": false,
             "children": []
         }
     }
