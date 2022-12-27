@@ -32,7 +32,6 @@
   "license": "MIT",
   "devDependencies": {
     "@types/fs-extra": "^9.0.13",
-    "@types/inquirer": "^8.2.3",
     "release-it": "^15.4.1",
     "typescript": "^4.8.2"
   },
@@ -40,7 +39,7 @@
     "consola": "^2.11.3",
     "fast-glob": "^3.2.11",
     "fs-extra": "^10.1.0",
-    "inquirer": "^8.2.4",
+    "enquirer": "2.3.6",
     "picocolors": "^1.0.0"
   },
   "release-it": {
