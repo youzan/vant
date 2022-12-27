@@ -141,6 +141,7 @@ function fmtComponentJson(componentInfo, key) {
         // required: Object.keys(componentInfo.props).filter(
         //   key => !componentInfo.props[key].option
         // ),
+        // todo: [null]
         required: [null],
         description: componentInfo.description,
         groupKey: componentInfo.groupKey,
@@ -170,7 +171,6 @@ function componentProps(componentMapProps) {
                 title: key,
                 option: componentMapProps[key].option || true,
                 valueType: 'switch',
-                // todo : 默认字符串 false ？
                 default: componentMapProps[key].default || false
             };
         } else if (componentMapProps[key].type === 'number') {
