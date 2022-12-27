@@ -258,9 +258,10 @@ export default createComponent({
 
     return (
       <div class={bem()} onClick={this.getClickHandler('cell')}>
-        <div class={bem('wrapper')} style={wrapperStyle}>
+        <div class={bem('wrapper')} style={wrapperStyle} vusion-slot-name="default">
           {this.genLeftPart()}
           {this.slots()}
+          {this.inDesigner() && !this.slots() ? <van-empty-col></van-empty-col> : null}
           {this.genRightPart()}
         </div>
       </div>
