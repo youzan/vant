@@ -1040,7 +1040,221 @@ const componentList = {
       },
       slots: {}
     }
+  },
+  stepper: {
+    title: 'Stepper 步进器',
+    description: '步进器由增加按钮、减少按钮和输入框组成，用于在一定范围内输入、调整数字。',
+    path: '/badge/Badge.tsx',
+    groupKey: 'Display Components',
+    groupName: '展示组件',
+    schema: {
+      key: 'stepper',
+      children: true,
+      props: {
+        name: {},
+        value: { type: 'number' },
+        min: { type: 'number' },
+        max: { type: 'number' },
+        step: { type: 'number' },
+        integer: {
+          type: 'boolean'
+        },
+        disabled: { type: 'boolean' },
+        'disable-input': { type: 'boolean' },
+        'async-change': {
+          type: 'boolean'
+        },
+        'input-width': {
+          type: 'number'
+        },
+        'button-size': {},
+        'show-plus': {
+          type: 'boolean',
+          default: true
+        },
+        'show-minus': {
+          type: 'boolean',
+          default: true
+        },
+        'decimal-length': {
+          type: 'number'
+        },
+        theme: {},
+        'disable-plus': {
+          type: 'boolean'
+        },
+        'disable-minus': {
+          type: 'boolean'
+        },
+        'long-press': {
+          type: 'boolean',
+          default: true
+        },
+        'always-embed': {
+          type: 'boolean'
+        }
+      },
+      events: {
+        'bind:change': () => {},
+        'bind:overlimit': () => {},
+        'bind:plus': () => {},
+        'bind:minus': () => {},
+        'bind:focus': () => {},
+        'bind:blur': () => {}
+      },
+      slots: {}
+    }
+  },
+  noticeBar: {
+    title: 'NoticeBar 通知栏',
+    description: '用于循环播放展示一组消息通知。',
+    path: '/badge/Badge.tsx',
+    groupKey: 'Display Components',
+    groupName: '展示组件',
+    schema: {
+      key: 'noticeBar',
+      children: true,
+      props: {
+        mode: {
+          enum: ['string', 'closeable', 'link']
+        },
+        text: {
+          default: '用于循环播放展示一组消息通知。'
+        },
+        color: {
+          type: 'color'
+        },
+        background: {
+          type: 'color'
+        },
+        'left-icon': {},
+        delay: {
+          type: 'number',
+          default: 1
+        },
+        speed: {
+          type: 'number',
+          default: 60
+        },
+        scrollable: {
+          type: 'boolean'
+        },
+        wrapable: {
+          type: 'boolean'
+        },
+        'open-type': {
+          default: 'navigate'
+        }
+      },
+      events: {
+        'bind:click': () => {},
+        'bind:close': () => {}
+      },
+      slots: {
+        'left-icon': {},
+        'right-icon': {}
+      }
+    }
+  },
+  swipeCell: {
+    title: 'SwipeCell 滑动单元格',
+    description: '可以左右滑动来展示操作按钮的单元格组件。',
+    path: '/badge/Badge.tsx',
+    groupKey: 'Display Components',
+    groupName: '展示组件',
+    schema: {
+      key: 'swipeCell',
+      children: true,
+      props: {
+        name: {},
+        'left-width': { type: 'number' },
+        'right-width': { type: 'number' },
+        'async-close': { type: 'boolean' },
+        disabled: {
+          type: 'boolean'
+        }
+      },
+      events: {
+        'bind:click': () => {},
+        'bind:close': () => {},
+        'bind:open': () => {}
+      },
+      slots: {
+        left: {},
+        right: {}
+      }
+    }
+  },
+  circle: {
+    title: 'Circle 环形进度条',
+    description: '圆环形的进度条组件，支持进度渐变动画。',
+    path: '/badge/Badge.tsx',
+    groupKey: 'Display Components',
+    groupName: '展示组件',
+    schema: {
+      key: 'circle',
+      children: true,
+      props: {
+        value: {
+          type: 'number',
+          default: 0
+        },
+        type: {},
+        size: {
+          type: 'number',
+          default: 100
+        },
+        color: {
+          type: 'color'
+        },
+        'layer-color': {
+          type: 'color'
+        },
+        fill: {},
+        speed: {
+          type: 'number',
+          default: 50
+        },
+        text: {},
+        'stroke-width': {
+          type: 'number',
+          default: 4
+        },
+        clockwise: {
+          type: 'boolean'
+        }
+      },
+      events: {},
+      slots: {}
+    }
+  },
+  countDown: {
+    title: 'CountDown 倒计时',
+    description: '用于实时展示倒计时数值，支持毫秒精度。',
+    path: '/badge/Badge.tsx',
+    groupKey: 'Display Components',
+    groupName: '展示组件',
+    schema: {
+      key: 'countDown',
+      children: true,
+      props: {
+        time: {
+          type: 'number',
+          default: 1000 * 60
+        },
+        format: {},
+        'auto-start': { type: 'boolean', default: true },
+        millisecond: { type: 'boolean' },
+        'use-slot': { type: 'boolean' }
+      },
+      events: {
+        'bind:finish': () => {},
+        'bind:change': () => {}
+      },
+      slots: {}
+    }
   }
+
   // passwordInput: {
   //     title: 'PasswordInput 密码输入框',
   //     description: '带网格的输入框组件，可以用于输入密码、短信验证码等场景，通常与数字键盘组件配合使用。',
