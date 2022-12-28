@@ -417,15 +417,34 @@ const componentList = {
       slots: {}
     }
   },
-
-  // // 表单组件
-  // calendar: {
-  //     title: 'Calendar 日历',
-  //     description: '日历组件用于选择日期或日期区间。',
-  //     path: '/calendar/Calendar.tsx',
-  //     groupKey: 'Form Components',
-  //     groupName: '表单组件',
-  // },
+  icon: {
+    title: 'Icon 图标',
+    description: '在页面中间弹出黑色半透明提示，用于消息通知、加载提示、操作结果提示等场景。',
+    path: '/toast/Toast.tsx',
+    groupKey: 'Basic Components',
+    groupName: '基础组件',
+    schema: {
+      key: 'icon',
+      children: true,
+      props: {
+        name: {},
+        dot: {
+          type: 'boolean'
+        },
+        info: {},
+        color: {
+          type: 'color'
+        },
+        size: {},
+        'custom-style': {},
+        'class-prefix': {}
+      },
+      events: {
+        'bind:click': (event) => {}
+      },
+      slots: {}
+    }
+  },
   cascader: {
     title: 'Cascader 级联选择',
     description: '级联选择框，用于多层级数据的选择，典型场景为省市区选择。',
@@ -880,14 +899,148 @@ const componentList = {
       },
       slots: {}
     }
+  },
+  picker: {
+    title: 'Picker 选择器',
+    description: '提供多个选项集合供用户选择，支持单列选择和多列级联，通常与 弹出层 组件配合使用',
+    path: '/badge/Badge.tsx',
+    groupKey: 'Display Components',
+    groupName: '展示组件',
+    schema: {
+      key: 'picker',
+      children: true,
+      props: {
+        columns: {
+          type: 'array'
+        },
+        'show-toolbar': {
+          type: 'boolean'
+        },
+        'toolbar-position': {
+          enum: ['top', 'bottom']
+        },
+        title: { default: 'title' },
+        loading: {
+          type: 'boolean'
+        },
+        'value-key': {},
+        'item-height': {
+          type: 'number',
+          default: 44
+        },
+        'confirm-button-text': {
+          default: '确认'
+        },
+        'cancel-button-text': {
+          default: '取消'
+        },
+        'visible-item-count': {
+          type: 'number',
+          default: 6
+        },
+        'default-index': {
+          type: 'number',
+          default: 0
+        }
+      },
+      events: {
+        confirm: () => {},
+        cancel: () => {},
+        change: () => {}
+      },
+      slots: {}
+    }
+  },
+  rate: {
+    title: 'Rate 评分',
+    description: '用于对事物进行评级操作。',
+    path: '/badge/Badge.tsx',
+    groupKey: 'Display Components',
+    groupName: '展示组件',
+    schema: {
+      key: 'rate',
+      children: true,
+      props: {
+        name: {},
+        value: {
+          type: 'number'
+        },
+        count: {
+          type: 'number',
+          default: 5
+        },
+        size: { type: 'number' },
+        gutter: {
+          type: 'number'
+        },
+        color: { type: 'color' },
+        'void-color': {
+          type: 'color'
+        },
+        icon: {},
+        'void-icon': {},
+        'allow-half': {
+          type: 'boolean'
+        },
+        readonly: {
+          type: 'boolean'
+        },
+        disabled: {
+          type: 'boolean'
+        },
+        'disabled-color': {
+          type: 'color'
+        },
+        touchable: {
+          type: 'boolean',
+          default: true
+        }
+      },
+      events: {
+        change: () => {}
+      },
+      slots: {}
+    }
+  },
+  slider: {
+    title: 'Slider 滑块',
+    description: '滑动输入条，用于在给定的范围内选择一个值。',
+    path: '/badge/Badge.tsx',
+    groupKey: 'Display Components',
+    groupName: '展示组件',
+    schema: {
+      key: 'slider',
+      children: true,
+      props: {
+        value: {
+          type: 'number'
+        },
+        disabled: { type: 'boolean' },
+        max: { type: 'number', default: 100 },
+        min: { type: 'number', default: 0 },
+        step: { type: 'number', default: 1 },
+        'bar-height': {
+          type: 'number'
+        },
+        'active-color': { type: 'color' },
+        'inactive-color': {
+          type: 'color'
+        },
+        'use-slot-button': {
+          type: 'boolean'
+        },
+        range: { type: 'boolean' },
+        vertical: { type: 'boolean' }
+      },
+      events: {
+        drag: () => {},
+        change: () => {},
+        'drag-start': () => {},
+        'drag-end': () => {}
+      },
+      slots: {}
+    }
   }
-  // numberKeyboard: {
-  //     title: 'NumberKeyboard 数字键盘',
-  //     description: '虚拟数字键盘，可以配合密码输入框组件或自定义的输入框组件使用。',
-  //     path: '/number-keyboard/NumberKeyboard.tsx',
-  //     groupKey: 'Form Components',
-  //     groupName: '表单组件',
-  // },
   // passwordInput: {
   //     title: 'PasswordInput 密码输入框',
   //     description: '带网格的输入框组件，可以用于输入密码、短信验证码等场景，通常与数字键盘组件配合使用。',
