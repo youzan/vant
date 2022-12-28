@@ -8,6 +8,7 @@ import {
   type PropType,
   type CSSProperties,
   type ExtractPropTypes,
+  type TeleportProps,
 } from 'vue';
 
 // Utils
@@ -46,6 +47,7 @@ const popupProps = [
   'transition',
   'overlayStyle',
   'closeOnPopstate',
+  'teleport'
 ] as const;
 
 export const imagePreviewProps = {
@@ -68,6 +70,7 @@ export const imagePreviewProps = {
   showIndicators: Boolean,
   closeOnPopstate: truthProp,
   closeIconPosition: makeStringProp<PopupCloseIconPosition>('top-right'),
+  teleport: [String, Object] as PropType<TeleportProps['to']>,
 };
 
 export type ImagePreviewProps = ExtractPropTypes<typeof imagePreviewProps>;

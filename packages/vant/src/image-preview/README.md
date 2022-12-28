@@ -109,7 +109,7 @@ setTimeout(() => {
 
 ```html
 <van-image-preview v-model:show="show" :images="images" @change="onChange">
-  <template v-slot:index>Page: {{ index }}</template>
+  <template v-slot:index>Page: {{ index + 1 }}</template>
 </van-image-preview>
 ```
 
