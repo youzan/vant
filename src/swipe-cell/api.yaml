@@ -11,12 +11,12 @@
       title: 左侧滑动区域宽度
       type: number | string
       default: auto
-      description: 是否垂直居中
+      description: 左侧滑动区域宽度
     - name: right-width
       title: 右侧滑动区域宽度
       type: number | string
       default: auto
-      description: 左侧文本
+      description: 右侧滑动区域宽度
   slots:
     - concept: Slot
       name: default

@@ -54,7 +54,14 @@ export default createComponent({
       return +this.rightWidth || this.getWidthByRef('right');
     },
   },
+  watch: {
+    computedLeftWidth() {
 
+    },
+    computedRightWidth() {
+      
+    }
+  },
   mounted() {
     this.bindTouchEvent(this.$el);
   },
@@ -217,6 +224,7 @@ export default createComponent({
           ref="left"
           class={bem('left')}
           onClick={this.getClickHandler('left', true)}
+          vusion-slot-name="left"
           vusion-template-left-node-path={this.$attrs['vusion-template-left-node-path']}
         >
           <van-empty-col></van-empty-col>
@@ -243,6 +251,7 @@ export default createComponent({
           ref="right"
           class={bem('right')}
           onClick={this.getClickHandler('right', true)}
+          vusion-slot-name="right"
           vusion-template-right-node-path={this.$attrs['vusion-template-right-node-path']}
         >
           <van-empty-col></van-empty-col>
@@ -258,10 +267,10 @@ export default createComponent({
 
     return (
       <div class={bem()} onClick={this.getClickHandler('cell')}>
-        <div class={bem('wrapper')} style={wrapperStyle} vusion-slot-name="default">
+        <div class={bem('wrapper')} style={wrapperStyle}>
           {this.genLeftPart()}
           {this.slots()}
-          {this.inDesigner() && !this.slots() ? <van-empty-col></van-empty-col> : null}
+          {this.inDesigner() && !this.slots() ? <div vusion-slot-name="default"><van-empty-col></van-empty-col></div> : null}
           {this.genRightPart()}
         </div>
       </div>
