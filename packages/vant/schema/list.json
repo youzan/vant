@@ -2124,6 +2124,194 @@
     "framework": "vue"
   },
   {
+    "tagName": "Icon",
+    "pkgId": "vant",
+    "type": "object",
+    "properties": {
+      "name": {
+        "title": "Icon 图标",
+        "description": "组件名称"
+      },
+      "tagName": {
+        "title": "Icon",
+        "description": "组件标签"
+      },
+      "advanceProps": {
+        "title": "高级属性",
+        "description": "高级属性",
+        "type": "object",
+        "properties": {
+          "condition": {
+            "title": "是否渲染",
+            "description": "是否渲染",
+            "type": "string",
+            "valueType": "switch",
+            "default": true
+          }
+        }
+      },
+      "hasChild": {
+        "type": "boolean",
+        "const": true,
+        "title": "支持调用子组件",
+        "description": "true:支持;false:不支持"
+      },
+      "props": {
+        "type": "object",
+        "title": "组件属性",
+        "description": "组件属性",
+        "required": [],
+        "properties": {
+          "name": {
+            "enum": [],
+            "type": [
+              "string"
+            ],
+            "title": "name",
+            "option": true,
+            "valueType": "text",
+            "default": ""
+          },
+          "dot": {
+            "enum": [],
+            "type": [
+              "boolean"
+            ],
+            "title": "dot",
+            "option": true,
+            "valueType": "switch",
+            "default": false
+          },
+          "info": {
+            "enum": [],
+            "type": [
+              "string"
+            ],
+            "title": "info",
+            "option": true,
+            "valueType": "text",
+            "default": ""
+          },
+          "color": {
+            "enum": [],
+            "type": [
+              "string"
+            ],
+            "title": "color",
+            "option": true,
+            "valueType": "text",
+            "default": ""
+          },
+          "size": {
+            "enum": [],
+            "type": [
+              "string"
+            ],
+            "title": "size",
+            "option": true,
+            "valueType": "text",
+            "default": ""
+          },
+          "custom-style": {
+            "enum": [],
+            "type": [
+              "string"
+            ],
+            "title": "custom-style",
+            "option": true,
+            "valueType": "text",
+            "default": ""
+          },
+          "class-prefix": {
+            "enum": [],
+            "type": [
+              "string"
+            ],
+            "title": "class-prefix",
+            "option": true,
+            "valueType": "text",
+            "default": ""
+          }
+        }
+      },
+      "events": {
+        "type": "object",
+        "title": "交互行为",
+        "description": "组件动作事件",
+        "required": [],
+        "properties": {
+          "bind:click": {
+            "title": "bind:click",
+            "description": "bind:click",
+            "type": "object",
+            "properties": {
+              "name": {
+                "description": "函数名",
+                "title": "函数名",
+                "type": "string"
+              }
+            }
+          }
+        }
+      },
+      "pkgId": {
+        "title": "vant",
+        "description": "组件库包名称"
+      },
+      "version": {
+        "title": "4.0.2",
+        "description": "组件库包版本"
+      },
+      "protoProps": {
+        "type": "object",
+        "title": "原生属性",
+        "required": [],
+        "properties": {
+          "id": {
+            "type": "string",
+            "title": "唯一id",
+            "valueType": "text",
+            "description": "元素唯一标识"
+          },
+          "ref": {
+            "type": "string",
+            "title": "ref",
+            "valueType": "text",
+            "description": "组件ref名称，可在this.[ref名称]来获取组件实例this对象"
+          },
+          "style": {
+            "type": "object",
+            "title": "内联样式",
+            "valueType": "object",
+            "description": "组件内联样式(JSON格式)"
+          },
+          "className": {
+            "type": "string",
+            "title": "样式名",
+            "valueType": "textarea",
+            "description": "组件样式名"
+          }
+        },
+        "description": "原生属性"
+      },
+      "lastModifyTime": {
+        "type": "string",
+        "title": "最后一次修改时间",
+        "description": "2022-12-13"
+      }
+    },
+    "lastModifyTime": "2022-12-13",
+    "version": "4.0.2",
+    "required": [
+      null
+    ],
+    "description": "在页面中间弹出黑色半透明提示，用于消息通知、加载提示、操作结果提示等场景。",
+    "groupKey": "Basic Components",
+    "groupName": "基础组件",
+    "isHidden": 0,
+    "framework": "vue"
+  },
+  {
     "tagName": "Cascader",
     "pkgId": "vant",
     "type": "object",
@@ -4161,6 +4349,2143 @@
     "description": "用于数据录入、校验，支持输入框、单选框、复选框、文件上传等类型，需要与 Field 输入框 组件搭配使用。",
     "groupKey": "Form Components",
     "groupName": "表单组件",
+    "isHidden": 0,
+    "framework": "vue"
+  },
+  {
+    "tagName": "Picker",
+    "pkgId": "vant",
+    "type": "object",
+    "properties": {
+      "name": {
+        "title": "Picker 选择器",
+        "description": "组件名称"
+      },
+      "tagName": {
+        "title": "Picker",
+        "description": "组件标签"
+      },
+      "advanceProps": {
+        "title": "高级属性",
+        "description": "高级属性",
+        "type": "object",
+        "properties": {
+          "condition": {
+            "title": "是否渲染",
+            "description": "是否渲染",
+            "type": "string",
+            "valueType": "switch",
+            "default": true
+          }
+        }
+      },
+      "hasChild": {
+        "type": "boolean",
+        "const": true,
+        "title": "支持调用子组件",
+        "description": "true:支持;false:不支持"
+      },
+      "props": {
+        "type": "object",
+        "title": "组件属性",
+        "description": "组件属性",
+        "required": [],
+        "properties": {
+          "columns": {
+            "enum": [],
+            "type": [
+              "string"
+            ],
+            "title": "columns",
+            "option": true,
+            "valueType": "text",
+            "default": ""
+          },
+          "show-toolbar": {
+            "enum": [],
+            "type": [
+              "boolean"
+            ],
+            "title": "show-toolbar",
+            "option": true,
+            "valueType": "switch",
+            "default": false
+          },
+          "toolbar-position": {
+            "enum": [
+              "top",
+              "bottom"
+            ],
+            "type": [
+              "string"
+            ],
+            "title": "toolbar-position",
+            "option": true,
+            "valueType": "select",
+            "default": "top"
+          },
+          "title": {
+            "enum": [],
+            "type": [
+              "string"
+            ],
+            "title": "title",
+            "option": true,
+            "valueType": "text",
+            "default": "title"
+          },
+          "loading": {
+            "enum": [],
+            "type": [
+              "boolean"
+            ],
+            "title": "loading",
+            "option": true,
+            "valueType": "switch",
+            "default": false
+          },
+          "value-key": {
+            "enum": [],
+            "type": [
+              "string"
+            ],
+            "title": "value-key",
+            "option": true,
+            "valueType": "text",
+            "default": ""
+          },
+          "item-height": {
+            "enum": [],
+            "type": [
+              "number"
+            ],
+            "title": "item-height",
+            "option": false,
+            "valueType": "digit",
+            "default": 44
+          },
+          "confirm-button-text": {
+            "enum": [],
+            "type": [
+              "string"
+            ],
+            "title": "confirm-button-text",
+            "option": true,
+            "valueType": "text",
+            "default": "确认"
+          },
+          "cancel-button-text": {
+            "enum": [],
+            "type": [
+              "string"
+            ],
+            "title": "cancel-button-text",
+            "option": true,
+            "valueType": "text",
+            "default": "取消"
+          },
+          "visible-item-count": {
+            "enum": [],
+            "type": [
+              "number"
+            ],
+            "title": "visible-item-count",
+            "option": false,
+            "valueType": "digit",
+            "default": 6
+          },
+          "default-index": {
+            "enum": [],
+            "type": [
+              "number"
+            ],
+            "title": "default-index",
+            "option": false,
+            "valueType": "digit",
+            "default": 0
+          }
+        }
+      },
+      "events": {
+        "type": "object",
+        "title": "交互行为",
+        "description": "组件动作事件",
+        "required": [],
+        "properties": {
+          "confirm": {
+            "title": "confirm",
+            "description": "confirm",
+            "type": "object",
+            "properties": {
+              "name": {
+                "description": "函数名",
+                "title": "函数名",
+                "type": "string"
+              }
+            }
+          },
+          "cancel": {
+            "title": "cancel",
+            "description": "cancel",
+            "type": "object",
+            "properties": {
+              "name": {
+                "description": "函数名",
+                "title": "函数名",
+                "type": "string"
+              }
+            }
+          },
+          "change": {
+            "title": "change",
+            "description": "change",
+            "type": "object",
+            "properties": {
+              "name": {
+                "description": "函数名",
+                "title": "函数名",
+                "type": "string"
+              }
+            }
+          }
+        }
+      },
+      "pkgId": {
+        "title": "vant",
+        "description": "组件库包名称"
+      },
+      "version": {
+        "title": "4.0.2",
+        "description": "组件库包版本"
+      },
+      "protoProps": {
+        "type": "object",
+        "title": "原生属性",
+        "required": [],
+        "properties": {
+          "id": {
+            "type": "string",
+            "title": "唯一id",
+            "valueType": "text",
+            "description": "元素唯一标识"
+          },
+          "ref": {
+            "type": "string",
+            "title": "ref",
+            "valueType": "text",
+            "description": "组件ref名称，可在this.[ref名称]来获取组件实例this对象"
+          },
+          "style": {
+            "type": "object",
+            "title": "内联样式",
+            "valueType": "object",
+            "description": "组件内联样式(JSON格式)"
+          },
+          "className": {
+            "type": "string",
+            "title": "样式名",
+            "valueType": "textarea",
+            "description": "组件样式名"
+          }
+        },
+        "description": "原生属性"
+      },
+      "lastModifyTime": {
+        "type": "string",
+        "title": "最后一次修改时间",
+        "description": "2022-12-13"
+      }
+    },
+    "lastModifyTime": "2022-12-13",
+    "version": "4.0.2",
+    "required": [
+      null
+    ],
+    "description": "提供多个选项集合供用户选择，支持单列选择和多列级联，通常与 弹出层 组件配合使用",
+    "groupKey": "Display Components",
+    "groupName": "展示组件",
+    "isHidden": 0,
+    "framework": "vue"
+  },
+  {
+    "tagName": "Rate",
+    "pkgId": "vant",
+    "type": "object",
+    "properties": {
+      "name": {
+        "title": "Rate 评分",
+        "description": "组件名称"
+      },
+      "tagName": {
+        "title": "Rate",
+        "description": "组件标签"
+      },
+      "advanceProps": {
+        "title": "高级属性",
+        "description": "高级属性",
+        "type": "object",
+        "properties": {
+          "condition": {
+            "title": "是否渲染",
+            "description": "是否渲染",
+            "type": "string",
+            "valueType": "switch",
+            "default": true
+          }
+        }
+      },
+      "hasChild": {
+        "type": "boolean",
+        "const": true,
+        "title": "支持调用子组件",
+        "description": "true:支持;false:不支持"
+      },
+      "props": {
+        "type": "object",
+        "title": "组件属性",
+        "description": "组件属性",
+        "required": [],
+        "properties": {
+          "name": {
+            "enum": [],
+            "type": [
+              "string"
+            ],
+            "title": "name",
+            "option": true,
+            "valueType": "text",
+            "default": ""
+          },
+          "value": {
+            "enum": [],
+            "type": [
+              "number"
+            ],
+            "title": "value",
+            "option": false,
+            "valueType": "digit",
+            "default": 0
+          },
+          "count": {
+            "enum": [],
+            "type": [
+              "number"
+            ],
+            "title": "count",
+            "option": false,
+            "valueType": "digit",
+            "default": 5
+          },
+          "size": {
+            "enum": [],
+            "type": [
+              "number"
+            ],
+            "title": "size",
+            "option": false,
+            "valueType": "digit",
+            "default": 0
+          },
+          "gutter": {
+            "enum": [],
+            "type": [
+              "number"
+            ],
+            "title": "gutter",
+            "option": false,
+            "valueType": "digit",
+            "default": 0
+          },
+          "color": {
+            "enum": [],
+            "type": [
+              "string"
+            ],
+            "title": "color",
+            "option": true,
+            "valueType": "text",
+            "default": ""
+          },
+          "void-color": {
+            "enum": [],
+            "type": [
+              "string"
+            ],
+            "title": "void-color",
+            "option": true,
+            "valueType": "text",
+            "default": ""
+          },
+          "icon": {
+            "enum": [],
+            "type": [
+              "string"
+            ],
+            "title": "icon",
+            "option": true,
+            "valueType": "text",
+            "default": ""
+          },
+          "void-icon": {
+            "enum": [],
+            "type": [
+              "string"
+            ],
+            "title": "void-icon",
+            "option": true,
+            "valueType": "text",
+            "default": ""
+          },
+          "allow-half": {
+            "enum": [],
+            "type": [
+              "boolean"
+            ],
+            "title": "allow-half",
+            "option": true,
+            "valueType": "switch",
+            "default": false
+          },
+          "readonly": {
+            "enum": [],
+            "type": [
+              "boolean"
+            ],
+            "title": "readonly",
+            "option": true,
+            "valueType": "switch",
+            "default": false
+          },
+          "disabled": {
+            "enum": [],
+            "type": [
+              "boolean"
+            ],
+            "title": "disabled",
+            "option": true,
+            "valueType": "switch",
+            "default": false
+          },
+          "disabled-color": {
+            "enum": [],
+            "type": [
+              "string"
+            ],
+            "title": "disabled-color",
+            "option": true,
+            "valueType": "text",
+            "default": ""
+          },
+          "touchable": {
+            "enum": [],
+            "type": [
+              "boolean"
+            ],
+            "title": "touchable",
+            "option": true,
+            "valueType": "switch",
+            "default": true
+          }
+        }
+      },
+      "events": {
+        "type": "object",
+        "title": "交互行为",
+        "description": "组件动作事件",
+        "required": [],
+        "properties": {
+          "change": {
+            "title": "change",
+            "description": "change",
+            "type": "object",
+            "properties": {
+              "name": {
+                "description": "函数名",
+                "title": "函数名",
+                "type": "string"
+              }
+            }
+          }
+        }
+      },
+      "pkgId": {
+        "title": "vant",
+        "description": "组件库包名称"
+      },
+      "version": {
+        "title": "4.0.2",
+        "description": "组件库包版本"
+      },
+      "protoProps": {
+        "type": "object",
+        "title": "原生属性",
+        "required": [],
+        "properties": {
+          "id": {
+            "type": "string",
+            "title": "唯一id",
+            "valueType": "text",
+            "description": "元素唯一标识"
+          },
+          "ref": {
+            "type": "string",
+            "title": "ref",
+            "valueType": "text",
+            "description": "组件ref名称，可在this.[ref名称]来获取组件实例this对象"
+          },
+          "style": {
+            "type": "object",
+            "title": "内联样式",
+            "valueType": "object",
+            "description": "组件内联样式(JSON格式)"
+          },
+          "className": {
+            "type": "string",
+            "title": "样式名",
+            "valueType": "textarea",
+            "description": "组件样式名"
+          }
+        },
+        "description": "原生属性"
+      },
+      "lastModifyTime": {
+        "type": "string",
+        "title": "最后一次修改时间",
+        "description": "2022-12-13"
+      }
+    },
+    "lastModifyTime": "2022-12-13",
+    "version": "4.0.2",
+    "required": [
+      null
+    ],
+    "description": "用于对事物进行评级操作。",
+    "groupKey": "Display Components",
+    "groupName": "展示组件",
+    "isHidden": 0,
+    "framework": "vue"
+  },
+  {
+    "tagName": "Slider",
+    "pkgId": "vant",
+    "type": "object",
+    "properties": {
+      "name": {
+        "title": "Slider 滑块",
+        "description": "组件名称"
+      },
+      "tagName": {
+        "title": "Slider",
+        "description": "组件标签"
+      },
+      "advanceProps": {
+        "title": "高级属性",
+        "description": "高级属性",
+        "type": "object",
+        "properties": {
+          "condition": {
+            "title": "是否渲染",
+            "description": "是否渲染",
+            "type": "string",
+            "valueType": "switch",
+            "default": true
+          }
+        }
+      },
+      "hasChild": {
+        "type": "boolean",
+        "const": true,
+        "title": "支持调用子组件",
+        "description": "true:支持;false:不支持"
+      },
+      "props": {
+        "type": "object",
+        "title": "组件属性",
+        "description": "组件属性",
+        "required": [],
+        "properties": {
+          "value": {
+            "enum": [],
+            "type": [
+              "number"
+            ],
+            "title": "value",
+            "option": false,
+            "valueType": "digit",
+            "default": 0
+          },
+          "disabled": {
+            "enum": [],
+            "type": [
+              "boolean"
+            ],
+            "title": "disabled",
+            "option": true,
+            "valueType": "switch",
+            "default": false
+          },
+          "max": {
+            "enum": [],
+            "type": [
+              "number"
+            ],
+            "title": "max",
+            "option": false,
+            "valueType": "digit",
+            "default": 100
+          },
+          "min": {
+            "enum": [],
+            "type": [
+              "number"
+            ],
+            "title": "min",
+            "option": false,
+            "valueType": "digit",
+            "default": 0
+          },
+          "step": {
+            "enum": [],
+            "type": [
+              "number"
+            ],
+            "title": "step",
+            "option": false,
+            "valueType": "digit",
+            "default": 1
+          },
+          "bar-height": {
+            "enum": [],
+            "type": [
+              "number"
+            ],
+            "title": "bar-height",
+            "option": false,
+            "valueType": "digit",
+            "default": 0
+          },
+          "active-color": {
+            "enum": [],
+            "type": [
+              "string"
+            ],
+            "title": "active-color",
+            "option": true,
+            "valueType": "text",
+            "default": ""
+          },
+          "inactive-color": {
+            "enum": [],
+            "type": [
+              "string"
+            ],
+            "title": "inactive-color",
+            "option": true,
+            "valueType": "text",
+            "default": ""
+          },
+          "use-slot-button": {
+            "enum": [],
+            "type": [
+              "boolean"
+            ],
+            "title": "use-slot-button",
+            "option": true,
+            "valueType": "switch",
+            "default": false
+          },
+          "range": {
+            "enum": [],
+            "type": [
+              "boolean"
+            ],
+            "title": "range",
+            "option": true,
+            "valueType": "switch",
+            "default": false
+          },
+          "vertical": {
+            "enum": [],
+            "type": [
+              "boolean"
+            ],
+            "title": "vertical",
+            "option": true,
+            "valueType": "switch",
+            "default": false
+          }
+        }
+      },
+      "events": {
+        "type": "object",
+        "title": "交互行为",
+        "description": "组件动作事件",
+        "required": [],
+        "properties": {
+          "drag": {
+            "title": "drag",
+            "description": "drag",
+            "type": "object",
+            "properties": {
+              "name": {
+                "description": "函数名",
+                "title": "函数名",
+                "type": "string"
+              }
+            }
+          },
+          "change": {
+            "title": "change",
+            "description": "change",
+            "type": "object",
+            "properties": {
+              "name": {
+                "description": "函数名",
+                "title": "函数名",
+                "type": "string"
+              }
+            }
+          },
+          "drag-start": {
+            "title": "drag-start",
+            "description": "drag-start",
+            "type": "object",
+            "properties": {
+              "name": {
+                "description": "函数名",
+                "title": "函数名",
+                "type": "string"
+              }
+            }
+          },
+          "drag-end": {
+            "title": "drag-end",
+            "description": "drag-end",
+            "type": "object",
+            "properties": {
+              "name": {
+                "description": "函数名",
+                "title": "函数名",
+                "type": "string"
+              }
+            }
+          }
+        }
+      },
+      "pkgId": {
+        "title": "vant",
+        "description": "组件库包名称"
+      },
+      "version": {
+        "title": "4.0.2",
+        "description": "组件库包版本"
+      },
+      "protoProps": {
+        "type": "object",
+        "title": "原生属性",
+        "required": [],
+        "properties": {
+          "id": {
+            "type": "string",
+            "title": "唯一id",
+            "valueType": "text",
+            "description": "元素唯一标识"
+          },
+          "ref": {
+            "type": "string",
+            "title": "ref",
+            "valueType": "text",
+            "description": "组件ref名称，可在this.[ref名称]来获取组件实例this对象"
+          },
+          "style": {
+            "type": "object",
+            "title": "内联样式",
+            "valueType": "object",
+            "description": "组件内联样式(JSON格式)"
+          },
+          "className": {
+            "type": "string",
+            "title": "样式名",
+            "valueType": "textarea",
+            "description": "组件样式名"
+          }
+        },
+        "description": "原生属性"
+      },
+      "lastModifyTime": {
+        "type": "string",
+        "title": "最后一次修改时间",
+        "description": "2022-12-13"
+      }
+    },
+    "lastModifyTime": "2022-12-13",
+    "version": "4.0.2",
+    "required": [
+      null
+    ],
+    "description": "滑动输入条，用于在给定的范围内选择一个值。",
+    "groupKey": "Display Components",
+    "groupName": "展示组件",
+    "isHidden": 0,
+    "framework": "vue"
+  },
+  {
+    "tagName": "Stepper",
+    "pkgId": "vant",
+    "type": "object",
+    "properties": {
+      "name": {
+        "title": "Stepper 步进器",
+        "description": "组件名称"
+      },
+      "tagName": {
+        "title": "Stepper",
+        "description": "组件标签"
+      },
+      "advanceProps": {
+        "title": "高级属性",
+        "description": "高级属性",
+        "type": "object",
+        "properties": {
+          "condition": {
+            "title": "是否渲染",
+            "description": "是否渲染",
+            "type": "string",
+            "valueType": "switch",
+            "default": true
+          }
+        }
+      },
+      "hasChild": {
+        "type": "boolean",
+        "const": true,
+        "title": "支持调用子组件",
+        "description": "true:支持;false:不支持"
+      },
+      "props": {
+        "type": "object",
+        "title": "组件属性",
+        "description": "组件属性",
+        "required": [],
+        "properties": {
+          "name": {
+            "enum": [],
+            "type": [
+              "string"
+            ],
+            "title": "name",
+            "option": true,
+            "valueType": "text",
+            "default": ""
+          },
+          "value": {
+            "enum": [],
+            "type": [
+              "number"
+            ],
+            "title": "value",
+            "option": false,
+            "valueType": "digit",
+            "default": 0
+          },
+          "min": {
+            "enum": [],
+            "type": [
+              "number"
+            ],
+            "title": "min",
+            "option": false,
+            "valueType": "digit",
+            "default": 0
+          },
+          "max": {
+            "enum": [],
+            "type": [
+              "number"
+            ],
+            "title": "max",
+            "option": false,
+            "valueType": "digit",
+            "default": 0
+          },
+          "step": {
+            "enum": [],
+            "type": [
+              "number"
+            ],
+            "title": "step",
+            "option": false,
+            "valueType": "digit",
+            "default": 0
+          },
+          "integer": {
+            "enum": [],
+            "type": [
+              "boolean"
+            ],
+            "title": "integer",
+            "option": true,
+            "valueType": "switch",
+            "default": false
+          },
+          "disabled": {
+            "enum": [],
+            "type": [
+              "boolean"
+            ],
+            "title": "disabled",
+            "option": true,
+            "valueType": "switch",
+            "default": false
+          },
+          "disable-input": {
+            "enum": [],
+            "type": [
+              "boolean"
+            ],
+            "title": "disable-input",
+            "option": true,
+            "valueType": "switch",
+            "default": false
+          },
+          "async-change": {
+            "enum": [],
+            "type": [
+              "boolean"
+            ],
+            "title": "async-change",
+            "option": true,
+            "valueType": "switch",
+            "default": false
+          },
+          "input-width": {
+            "enum": [],
+            "type": [
+              "number"
+            ],
+            "title": "input-width",
+            "option": false,
+            "valueType": "digit",
+            "default": 0
+          },
+          "button-size": {
+            "enum": [],
+            "type": [
+              "string"
+            ],
+            "title": "button-size",
+            "option": true,
+            "valueType": "text",
+            "default": ""
+          },
+          "show-plus": {
+            "enum": [],
+            "type": [
+              "boolean"
+            ],
+            "title": "show-plus",
+            "option": true,
+            "valueType": "switch",
+            "default": true
+          },
+          "show-minus": {
+            "enum": [],
+            "type": [
+              "boolean"
+            ],
+            "title": "show-minus",
+            "option": true,
+            "valueType": "switch",
+            "default": true
+          },
+          "decimal-length": {
+            "enum": [],
+            "type": [
+              "number"
+            ],
+            "title": "decimal-length",
+            "option": false,
+            "valueType": "digit",
+            "default": 0
+          },
+          "theme": {
+            "enum": [],
+            "type": [
+              "string"
+            ],
+            "title": "theme",
+            "option": true,
+            "valueType": "text",
+            "default": ""
+          },
+          "disable-plus": {
+            "enum": [],
+            "type": [
+              "boolean"
+            ],
+            "title": "disable-plus",
+            "option": true,
+            "valueType": "switch",
+            "default": false
+          },
+          "disable-minus": {
+            "enum": [],
+            "type": [
+              "boolean"
+            ],
+            "title": "disable-minus",
+            "option": true,
+            "valueType": "switch",
+            "default": false
+          },
+          "long-press": {
+            "enum": [],
+            "type": [
+              "boolean"
+            ],
+            "title": "long-press",
+            "option": true,
+            "valueType": "switch",
+            "default": true
+          },
+          "always-embed": {
+            "enum": [],
+            "type": [
+              "boolean"
+            ],
+            "title": "always-embed",
+            "option": true,
+            "valueType": "switch",
+            "default": false
+          }
+        }
+      },
+      "events": {
+        "type": "object",
+        "title": "交互行为",
+        "description": "组件动作事件",
+        "required": [],
+        "properties": {
+          "bind:change": {
+            "title": "bind:change",
+            "description": "bind:change",
+            "type": "object",
+            "properties": {
+              "name": {
+                "description": "函数名",
+                "title": "函数名",
+                "type": "string"
+              }
+            }
+          },
+          "bind:overlimit": {
+            "title": "bind:overlimit",
+            "description": "bind:overlimit",
+            "type": "object",
+            "properties": {
+              "name": {
+                "description": "函数名",
+                "title": "函数名",
+                "type": "string"
+              }
+            }
+          },
+          "bind:plus": {
+            "title": "bind:plus",
+            "description": "bind:plus",
+            "type": "object",
+            "properties": {
+              "name": {
+                "description": "函数名",
+                "title": "函数名",
+                "type": "string"
+              }
+            }
+          },
+          "bind:minus": {
+            "title": "bind:minus",
+            "description": "bind:minus",
+            "type": "object",
+            "properties": {
+              "name": {
+                "description": "函数名",
+                "title": "函数名",
+                "type": "string"
+              }
+            }
+          },
+          "bind:focus": {
+            "title": "bind:focus",
+            "description": "bind:focus",
+            "type": "object",
+            "properties": {
+              "name": {
+                "description": "函数名",
+                "title": "函数名",
+                "type": "string"
+              }
+            }
+          },
+          "bind:blur": {
+            "title": "bind:blur",
+            "description": "bind:blur",
+            "type": "object",
+            "properties": {
+              "name": {
+                "description": "函数名",
+                "title": "函数名",
+                "type": "string"
+              }
+            }
+          }
+        }
+      },
+      "pkgId": {
+        "title": "vant",
+        "description": "组件库包名称"
+      },
+      "version": {
+        "title": "4.0.2",
+        "description": "组件库包版本"
+      },
+      "protoProps": {
+        "type": "object",
+        "title": "原生属性",
+        "required": [],
+        "properties": {
+          "id": {
+            "type": "string",
+            "title": "唯一id",
+            "valueType": "text",
+            "description": "元素唯一标识"
+          },
+          "ref": {
+            "type": "string",
+            "title": "ref",
+            "valueType": "text",
+            "description": "组件ref名称，可在this.[ref名称]来获取组件实例this对象"
+          },
+          "style": {
+            "type": "object",
+            "title": "内联样式",
+            "valueType": "object",
+            "description": "组件内联样式(JSON格式)"
+          },
+          "className": {
+            "type": "string",
+            "title": "样式名",
+            "valueType": "textarea",
+            "description": "组件样式名"
+          }
+        },
+        "description": "原生属性"
+      },
+      "lastModifyTime": {
+        "type": "string",
+        "title": "最后一次修改时间",
+        "description": "2022-12-13"
+      }
+    },
+    "lastModifyTime": "2022-12-13",
+    "version": "4.0.2",
+    "required": [
+      null
+    ],
+    "description": "步进器由增加按钮、减少按钮和输入框组成，用于在一定范围内输入、调整数字。",
+    "groupKey": "Display Components",
+    "groupName": "展示组件",
+    "isHidden": 0,
+    "framework": "vue"
+  },
+  {
+    "tagName": "NoticeBar",
+    "pkgId": "vant",
+    "type": "object",
+    "properties": {
+      "name": {
+        "title": "NoticeBar 通知栏",
+        "description": "组件名称"
+      },
+      "tagName": {
+        "title": "NoticeBar",
+        "description": "组件标签"
+      },
+      "advanceProps": {
+        "title": "高级属性",
+        "description": "高级属性",
+        "type": "object",
+        "properties": {
+          "condition": {
+            "title": "是否渲染",
+            "description": "是否渲染",
+            "type": "string",
+            "valueType": "switch",
+            "default": true
+          }
+        }
+      },
+      "hasChild": {
+        "type": "boolean",
+        "const": true,
+        "title": "支持调用子组件",
+        "description": "true:支持;false:不支持"
+      },
+      "props": {
+        "type": "object",
+        "title": "组件属性",
+        "description": "组件属性",
+        "required": [],
+        "properties": {
+          "mode": {
+            "enum": [
+              "string",
+              "closeable",
+              "link"
+            ],
+            "type": [
+              "string"
+            ],
+            "title": "mode",
+            "option": true,
+            "valueType": "select",
+            "default": "string"
+          },
+          "text": {
+            "enum": [],
+            "type": [
+              "string"
+            ],
+            "title": "text",
+            "option": true,
+            "valueType": "text",
+            "default": "用于循环播放展示一组消息通知。"
+          },
+          "color": {
+            "enum": [],
+            "type": [
+              "string"
+            ],
+            "title": "color",
+            "option": true,
+            "valueType": "text",
+            "default": ""
+          },
+          "background": {
+            "enum": [],
+            "type": [
+              "string"
+            ],
+            "title": "background",
+            "option": true,
+            "valueType": "text",
+            "default": ""
+          },
+          "left-icon": {
+            "enum": [],
+            "type": [
+              "string"
+            ],
+            "title": "left-icon",
+            "option": true,
+            "valueType": "text",
+            "default": ""
+          },
+          "delay": {
+            "enum": [],
+            "type": [
+              "number"
+            ],
+            "title": "delay",
+            "option": false,
+            "valueType": "digit",
+            "default": 1
+          },
+          "speed": {
+            "enum": [],
+            "type": [
+              "number"
+            ],
+            "title": "speed",
+            "option": false,
+            "valueType": "digit",
+            "default": 60
+          },
+          "scrollable": {
+            "enum": [],
+            "type": [
+              "boolean"
+            ],
+            "title": "scrollable",
+            "option": true,
+            "valueType": "switch",
+            "default": false
+          },
+          "wrapable": {
+            "enum": [],
+            "type": [
+              "boolean"
+            ],
+            "title": "wrapable",
+            "option": true,
+            "valueType": "switch",
+            "default": false
+          },
+          "open-type": {
+            "enum": [],
+            "type": [
+              "string"
+            ],
+            "title": "open-type",
+            "option": true,
+            "valueType": "text",
+            "default": "navigate"
+          }
+        }
+      },
+      "events": {
+        "type": "object",
+        "title": "交互行为",
+        "description": "组件动作事件",
+        "required": [],
+        "properties": {
+          "bind:click": {
+            "title": "bind:click",
+            "description": "bind:click",
+            "type": "object",
+            "properties": {
+              "name": {
+                "description": "函数名",
+                "title": "函数名",
+                "type": "string"
+              }
+            }
+          },
+          "bind:close": {
+            "title": "bind:close",
+            "description": "bind:close",
+            "type": "object",
+            "properties": {
+              "name": {
+                "description": "函数名",
+                "title": "函数名",
+                "type": "string"
+              }
+            }
+          }
+        }
+      },
+      "pkgId": {
+        "title": "vant",
+        "description": "组件库包名称"
+      },
+      "version": {
+        "title": "4.0.2",
+        "description": "组件库包版本"
+      },
+      "protoProps": {
+        "type": "object",
+        "title": "原生属性",
+        "required": [],
+        "properties": {
+          "id": {
+            "type": "string",
+            "title": "唯一id",
+            "valueType": "text",
+            "description": "元素唯一标识"
+          },
+          "ref": {
+            "type": "string",
+            "title": "ref",
+            "valueType": "text",
+            "description": "组件ref名称，可在this.[ref名称]来获取组件实例this对象"
+          },
+          "style": {
+            "type": "object",
+            "title": "内联样式",
+            "valueType": "object",
+            "description": "组件内联样式(JSON格式)"
+          },
+          "className": {
+            "type": "string",
+            "title": "样式名",
+            "valueType": "textarea",
+            "description": "组件样式名"
+          }
+        },
+        "description": "原生属性"
+      },
+      "lastModifyTime": {
+        "type": "string",
+        "title": "最后一次修改时间",
+        "description": "2022-12-13"
+      }
+    },
+    "lastModifyTime": "2022-12-13",
+    "version": "4.0.2",
+    "required": [
+      null
+    ],
+    "description": "用于循环播放展示一组消息通知。",
+    "groupKey": "Display Components",
+    "groupName": "展示组件",
+    "isHidden": 0,
+    "framework": "vue"
+  },
+  {
+    "tagName": "SwipeCell",
+    "pkgId": "vant",
+    "type": "object",
+    "properties": {
+      "name": {
+        "title": "SwipeCell 滑动单元格",
+        "description": "组件名称"
+      },
+      "tagName": {
+        "title": "SwipeCell",
+        "description": "组件标签"
+      },
+      "advanceProps": {
+        "title": "高级属性",
+        "description": "高级属性",
+        "type": "object",
+        "properties": {
+          "condition": {
+            "title": "是否渲染",
+            "description": "是否渲染",
+            "type": "string",
+            "valueType": "switch",
+            "default": true
+          }
+        }
+      },
+      "hasChild": {
+        "type": "boolean",
+        "const": true,
+        "title": "支持调用子组件",
+        "description": "true:支持;false:不支持"
+      },
+      "props": {
+        "type": "object",
+        "title": "组件属性",
+        "description": "组件属性",
+        "required": [],
+        "properties": {
+          "name": {
+            "enum": [],
+            "type": [
+              "string"
+            ],
+            "title": "name",
+            "option": true,
+            "valueType": "text",
+            "default": ""
+          },
+          "left-width": {
+            "enum": [],
+            "type": [
+              "number"
+            ],
+            "title": "left-width",
+            "option": false,
+            "valueType": "digit",
+            "default": 0
+          },
+          "right-width": {
+            "enum": [],
+            "type": [
+              "number"
+            ],
+            "title": "right-width",
+            "option": false,
+            "valueType": "digit",
+            "default": 0
+          },
+          "async-close": {
+            "enum": [],
+            "type": [
+              "boolean"
+            ],
+            "title": "async-close",
+            "option": true,
+            "valueType": "switch",
+            "default": false
+          },
+          "disabled": {
+            "enum": [],
+            "type": [
+              "boolean"
+            ],
+            "title": "disabled",
+            "option": true,
+            "valueType": "switch",
+            "default": false
+          }
+        }
+      },
+      "events": {
+        "type": "object",
+        "title": "交互行为",
+        "description": "组件动作事件",
+        "required": [],
+        "properties": {
+          "bind:click": {
+            "title": "bind:click",
+            "description": "bind:click",
+            "type": "object",
+            "properties": {
+              "name": {
+                "description": "函数名",
+                "title": "函数名",
+                "type": "string"
+              }
+            }
+          },
+          "bind:close": {
+            "title": "bind:close",
+            "description": "bind:close",
+            "type": "object",
+            "properties": {
+              "name": {
+                "description": "函数名",
+                "title": "函数名",
+                "type": "string"
+              }
+            }
+          },
+          "bind:open": {
+            "title": "bind:open",
+            "description": "bind:open",
+            "type": "object",
+            "properties": {
+              "name": {
+                "description": "函数名",
+                "title": "函数名",
+                "type": "string"
+              }
+            }
+          }
+        }
+      },
+      "pkgId": {
+        "title": "vant",
+        "description": "组件库包名称"
+      },
+      "version": {
+        "title": "4.0.2",
+        "description": "组件库包版本"
+      },
+      "protoProps": {
+        "type": "object",
+        "title": "原生属性",
+        "required": [],
+        "properties": {
+          "id": {
+            "type": "string",
+            "title": "唯一id",
+            "valueType": "text",
+            "description": "元素唯一标识"
+          },
+          "ref": {
+            "type": "string",
+            "title": "ref",
+            "valueType": "text",
+            "description": "组件ref名称，可在this.[ref名称]来获取组件实例this对象"
+          },
+          "style": {
+            "type": "object",
+            "title": "内联样式",
+            "valueType": "object",
+            "description": "组件内联样式(JSON格式)"
+          },
+          "className": {
+            "type": "string",
+            "title": "样式名",
+            "valueType": "textarea",
+            "description": "组件样式名"
+          }
+        },
+        "description": "原生属性"
+      },
+      "lastModifyTime": {
+        "type": "string",
+        "title": "最后一次修改时间",
+        "description": "2022-12-13"
+      }
+    },
+    "lastModifyTime": "2022-12-13",
+    "version": "4.0.2",
+    "required": [
+      null
+    ],
+    "description": "可以左右滑动来展示操作按钮的单元格组件。",
+    "groupKey": "Display Components",
+    "groupName": "展示组件",
+    "isHidden": 0,
+    "framework": "vue"
+  },
+  {
+    "tagName": "Circle",
+    "pkgId": "vant",
+    "type": "object",
+    "properties": {
+      "name": {
+        "title": "Circle 环形进度条",
+        "description": "组件名称"
+      },
+      "tagName": {
+        "title": "Circle",
+        "description": "组件标签"
+      },
+      "advanceProps": {
+        "title": "高级属性",
+        "description": "高级属性",
+        "type": "object",
+        "properties": {
+          "condition": {
+            "title": "是否渲染",
+            "description": "是否渲染",
+            "type": "string",
+            "valueType": "switch",
+            "default": true
+          }
+        }
+      },
+      "hasChild": {
+        "type": "boolean",
+        "const": true,
+        "title": "支持调用子组件",
+        "description": "true:支持;false:不支持"
+      },
+      "props": {
+        "type": "object",
+        "title": "组件属性",
+        "description": "组件属性",
+        "required": [],
+        "properties": {
+          "value": {
+            "enum": [],
+            "type": [
+              "number"
+            ],
+            "title": "value",
+            "option": false,
+            "valueType": "digit",
+            "default": 0
+          },
+          "type": {
+            "enum": [],
+            "type": [
+              "string"
+            ],
+            "title": "type",
+            "option": true,
+            "valueType": "text",
+            "default": ""
+          },
+          "size": {
+            "enum": [],
+            "type": [
+              "number"
+            ],
+            "title": "size",
+            "option": false,
+            "valueType": "digit",
+            "default": 100
+          },
+          "color": {
+            "enum": [],
+            "type": [
+              "string"
+            ],
+            "title": "color",
+            "option": true,
+            "valueType": "text",
+            "default": ""
+          },
+          "layer-color": {
+            "enum": [],
+            "type": [
+              "string"
+            ],
+            "title": "layer-color",
+            "option": true,
+            "valueType": "text",
+            "default": ""
+          },
+          "fill": {
+            "enum": [],
+            "type": [
+              "string"
+            ],
+            "title": "fill",
+            "option": true,
+            "valueType": "text",
+            "default": ""
+          },
+          "speed": {
+            "enum": [],
+            "type": [
+              "number"
+            ],
+            "title": "speed",
+            "option": false,
+            "valueType": "digit",
+            "default": 50
+          },
+          "text": {
+            "enum": [],
+            "type": [
+              "string"
+            ],
+            "title": "text",
+            "option": true,
+            "valueType": "text",
+            "default": ""
+          },
+          "stroke-width": {
+            "enum": [],
+            "type": [
+              "number"
+            ],
+            "title": "stroke-width",
+            "option": false,
+            "valueType": "digit",
+            "default": 4
+          },
+          "clockwise": {
+            "enum": [],
+            "type": [
+              "boolean"
+            ],
+            "title": "clockwise",
+            "option": true,
+            "valueType": "switch",
+            "default": false
+          }
+        }
+      },
+      "pkgId": {
+        "title": "vant",
+        "description": "组件库包名称"
+      },
+      "version": {
+        "title": "4.0.2",
+        "description": "组件库包版本"
+      },
+      "protoProps": {
+        "type": "object",
+        "title": "原生属性",
+        "required": [],
+        "properties": {
+          "id": {
+            "type": "string",
+            "title": "唯一id",
+            "valueType": "text",
+            "description": "元素唯一标识"
+          },
+          "ref": {
+            "type": "string",
+            "title": "ref",
+            "valueType": "text",
+            "description": "组件ref名称，可在this.[ref名称]来获取组件实例this对象"
+          },
+          "style": {
+            "type": "object",
+            "title": "内联样式",
+            "valueType": "object",
+            "description": "组件内联样式(JSON格式)"
+          },
+          "className": {
+            "type": "string",
+            "title": "样式名",
+            "valueType": "textarea",
+            "description": "组件样式名"
+          }
+        },
+        "description": "原生属性"
+      },
+      "lastModifyTime": {
+        "type": "string",
+        "title": "最后一次修改时间",
+        "description": "2022-12-13"
+      }
+    },
+    "lastModifyTime": "2022-12-13",
+    "version": "4.0.2",
+    "required": [
+      null
+    ],
+    "description": "圆环形的进度条组件，支持进度渐变动画。",
+    "groupKey": "Display Components",
+    "groupName": "展示组件",
+    "isHidden": 0,
+    "framework": "vue"
+  },
+  {
+    "tagName": "CountDown",
+    "pkgId": "vant",
+    "type": "object",
+    "properties": {
+      "name": {
+        "title": "CountDown 倒计时",
+        "description": "组件名称"
+      },
+      "tagName": {
+        "title": "CountDown",
+        "description": "组件标签"
+      },
+      "advanceProps": {
+        "title": "高级属性",
+        "description": "高级属性",
+        "type": "object",
+        "properties": {
+          "condition": {
+            "title": "是否渲染",
+            "description": "是否渲染",
+            "type": "string",
+            "valueType": "switch",
+            "default": true
+          }
+        }
+      },
+      "hasChild": {
+        "type": "boolean",
+        "const": true,
+        "title": "支持调用子组件",
+        "description": "true:支持;false:不支持"
+      },
+      "props": {
+        "type": "object",
+        "title": "组件属性",
+        "description": "组件属性",
+        "required": [],
+        "properties": {
+          "time": {
+            "enum": [],
+            "type": [
+              "number"
+            ],
+            "title": "time",
+            "option": false,
+            "valueType": "digit",
+            "default": 60000
+          },
+          "format": {
+            "enum": [],
+            "type": [
+              "string"
+            ],
+            "title": "format",
+            "option": true,
+            "valueType": "text",
+            "default": ""
+          },
+          "auto-start": {
+            "enum": [],
+            "type": [
+              "boolean"
+            ],
+            "title": "auto-start",
+            "option": true,
+            "valueType": "switch",
+            "default": true
+          },
+          "millisecond": {
+            "enum": [],
+            "type": [
+              "boolean"
+            ],
+            "title": "millisecond",
+            "option": true,
+            "valueType": "switch",
+            "default": false
+          },
+          "use-slot": {
+            "enum": [],
+            "type": [
+              "boolean"
+            ],
+            "title": "use-slot",
+            "option": true,
+            "valueType": "switch",
+            "default": false
+          }
+        }
+      },
+      "events": {
+        "type": "object",
+        "title": "交互行为",
+        "description": "组件动作事件",
+        "required": [],
+        "properties": {
+          "bind:finish": {
+            "title": "bind:finish",
+            "description": "bind:finish",
+            "type": "object",
+            "properties": {
+              "name": {
+                "description": "函数名",
+                "title": "函数名",
+                "type": "string"
+              }
+            }
+          },
+          "bind:change": {
+            "title": "bind:change",
+            "description": "bind:change",
+            "type": "object",
+            "properties": {
+              "name": {
+                "description": "函数名",
+                "title": "函数名",
+                "type": "string"
+              }
+            }
+          }
+        }
+      },
+      "pkgId": {
+        "title": "vant",
+        "description": "组件库包名称"
+      },
+      "version": {
+        "title": "4.0.2",
+        "description": "组件库包版本"
+      },
+      "protoProps": {
+        "type": "object",
+        "title": "原生属性",
+        "required": [],
+        "properties": {
+          "id": {
+            "type": "string",
+            "title": "唯一id",
+            "valueType": "text",
+            "description": "元素唯一标识"
+          },
+          "ref": {
+            "type": "string",
+            "title": "ref",
+            "valueType": "text",
+            "description": "组件ref名称，可在this.[ref名称]来获取组件实例this对象"
+          },
+          "style": {
+            "type": "object",
+            "title": "内联样式",
+            "valueType": "object",
+            "description": "组件内联样式(JSON格式)"
+          },
+          "className": {
+            "type": "string",
+            "title": "样式名",
+            "valueType": "textarea",
+            "description": "组件样式名"
+          }
+        },
+        "description": "原生属性"
+      },
+      "lastModifyTime": {
+        "type": "string",
+        "title": "最后一次修改时间",
+        "description": "2022-12-13"
+      }
+    },
+    "lastModifyTime": "2022-12-13",
+    "version": "4.0.2",
+    "required": [
+      null
+    ],
+    "description": "用于实时展示倒计时数值，支持毫秒精度。",
+    "groupKey": "Display Components",
+    "groupName": "展示组件",
+    "isHidden": 0,
+    "framework": "vue"
+  },
+  {
+    "tagName": "Progress",
+    "pkgId": "vant",
+    "type": "object",
+    "properties": {
+      "name": {
+        "title": "Progress 进度条",
+        "description": "组件名称"
+      },
+      "tagName": {
+        "title": "Progress",
+        "description": "组件标签"
+      },
+      "advanceProps": {
+        "title": "高级属性",
+        "description": "高级属性",
+        "type": "object",
+        "properties": {
+          "condition": {
+            "title": "是否渲染",
+            "description": "是否渲染",
+            "type": "string",
+            "valueType": "switch",
+            "default": true
+          }
+        }
+      },
+      "hasChild": {
+        "type": "boolean",
+        "const": true,
+        "title": "支持调用子组件",
+        "description": "true:支持;false:不支持"
+      },
+      "props": {
+        "type": "object",
+        "title": "组件属性",
+        "description": "组件属性",
+        "required": [],
+        "properties": {
+          "inactive": {
+            "enum": [],
+            "type": [
+              "boolean"
+            ],
+            "title": "inactive",
+            "option": true,
+            "valueType": "switch",
+            "default": false
+          },
+          "percentage": {
+            "enum": [],
+            "type": [
+              "number"
+            ],
+            "title": "percentage",
+            "option": false,
+            "valueType": "digit",
+            "default": 0
+          },
+          "stroke-width": {
+            "enum": [],
+            "type": [
+              "number"
+            ],
+            "title": "stroke-width",
+            "option": false,
+            "valueType": "digit",
+            "default": 4
+          },
+          "show-pivot": {
+            "enum": [],
+            "type": [
+              "boolean"
+            ],
+            "title": "show-pivot",
+            "option": true,
+            "valueType": "switch",
+            "default": true
+          },
+          "color": {
+            "enum": [],
+            "type": [
+              "string"
+            ],
+            "title": "color",
+            "option": true,
+            "valueType": "text",
+            "default": ""
+          },
+          "text-color": {
+            "enum": [],
+            "type": [
+              "string"
+            ],
+            "title": "text-color",
+            "option": true,
+            "valueType": "text",
+            "default": ""
+          },
+          "track-color": {
+            "enum": [],
+            "type": [
+              "string"
+            ],
+            "title": "track-color",
+            "option": true,
+            "valueType": "text",
+            "default": ""
+          },
+          "pivot-text": {
+            "enum": [],
+            "type": [
+              "string"
+            ],
+            "title": "pivot-text",
+            "option": true,
+            "valueType": "text",
+            "default": ""
+          },
+          "pivot-color": {
+            "enum": [],
+            "type": [
+              "string"
+            ],
+            "title": "pivot-color",
+            "option": true,
+            "valueType": "text",
+            "default": ""
+          }
+        }
+      },
+      "pkgId": {
+        "title": "vant",
+        "description": "组件库包名称"
+      },
+      "version": {
+        "title": "4.0.2",
+        "description": "组件库包版本"
+      },
+      "protoProps": {
+        "type": "object",
+        "title": "原生属性",
+        "required": [],
+        "properties": {
+          "id": {
+            "type": "string",
+            "title": "唯一id",
+            "valueType": "text",
+            "description": "元素唯一标识"
+          },
+          "ref": {
+            "type": "string",
+            "title": "ref",
+            "valueType": "text",
+            "description": "组件ref名称，可在this.[ref名称]来获取组件实例this对象"
+          },
+          "style": {
+            "type": "object",
+            "title": "内联样式",
+            "valueType": "object",
+            "description": "组件内联样式(JSON格式)"
+          },
+          "className": {
+            "type": "string",
+            "title": "样式名",
+            "valueType": "textarea",
+            "description": "组件样式名"
+          }
+        },
+        "description": "原生属性"
+      },
+      "lastModifyTime": {
+        "type": "string",
+        "title": "最后一次修改时间",
+        "description": "2022-12-13"
+      }
+    },
+    "lastModifyTime": "2022-12-13",
+    "version": "4.0.2",
+    "required": [
+      null
+    ],
+    "description": "用于展示操作的当前进度。",
+    "groupKey": "Display Components",
+    "groupName": "展示组件",
     "isHidden": 0,
     "framework": "vue"
   }
