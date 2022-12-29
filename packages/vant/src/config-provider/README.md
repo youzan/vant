@@ -97,7 +97,7 @@ You can directly override these CSS variables in the code, and the style of the 
 
 ```css
 /* the Primary Button will turn red */
-:root {
+:root:root {
   --van-button-primary-background: red;
 }
 ```

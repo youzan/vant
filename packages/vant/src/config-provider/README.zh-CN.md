@@ -95,7 +95,7 @@ Vant 组件通过丰富的 [CSS 变量](https://developer.mozilla.org/zh-CN/docs
 
 ```css
 /* 添加这段样式后，Primary Button 会变成红色 */
-:root {
+:root:root {
   --van-button-primary-background: red;
 }
 ```
