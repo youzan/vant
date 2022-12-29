@@ -100,6 +100,10 @@ Vant 组件通过丰富的 [CSS 变量](https://developer.mozilla.org/zh-CN/docs
 }
 ```
 
+> 注意：为什么要写两个重复的 `:root`？
+>
+> 由于 vant 中的主题变量也是在 `:root` 下声明的，所以在有些情况下会由于优先级的问题无法成功覆盖。通过 `:root:root` 可以显式地让你所写内容的优先级更高一些，从而确保主题变量的成功覆盖。
+
 #### 通过 ConfigProvider 覆盖
 
 `ConfigProvider` 组件提供了覆盖 CSS 变量的能力，你需要在根节点包裹一个 `ConfigProvider` 组件，并通过 `theme-vars` 属性来配置一些主题变量。

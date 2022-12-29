@@ -102,6 +102,10 @@ You can directly override these CSS variables in the code, and the style of the 
 }
 ```
 
+> Note: Why write two duplicate `:root`?
+>
+> Since the theme variables in vant are also declared under `:root`, in some cases they cannot be successfully overwritten due to priority issues. Through `:root:root` you can explicitly make the content you write a higher priority to ensure the successful coverage of the theme variables.
+
 #### Override by ConfigProvider
 
 The `ConfigProvider` component provides the ability to override CSS variables. You need to wrap a `ConfigProvider` component at the root node and configure some CSS variables through the `theme-vars` property.
