@@ -1,4 +1,5 @@
 import { createNamespace , isFunction } from '../utils';
+import { formatResult } from '../utils/format/data-source';
 import { FieldMixin } from '../mixins/field';
 import { ParentMixin } from '../mixins/relation';
 
@@ -8,7 +9,7 @@ export default createComponent({
   mixins: [ParentMixin('vanCheckbox'), FieldMixin],
 
   props: {
-    dataSource: [Array, Function],
+    dataSource: [Array, Object, Function, String],
     max: [Number, String],
     min: {
       type: Number,
@@ -93,12 +94,12 @@ export default createComponent({
             page: 1,
             size: 1000
           });
-          this.options = (res.content);
+          this.options = formatResult(res);
         } catch (error) {
           console.error(error);
         }
       } else {
-        this.options = (this.fromValue(this.dataSource));
+        this.options = formatResult(this.dataSource);
       }
     }
   },

@@ -998,42 +998,52 @@
                 "cssProperty": {
                     "--van-dialog-width": {
                         "type": "input",
+                        "group": "宽度",
                         "desc": "宽度"
                     },
                     "--van-dialog-small-screen-width": {
                         "type": "input",
+                        "group": "宽度",
                         "desc": "小屏幕宽度"
                     },
                     "--van-dialog-transition": {
                         "type": "input",
+                        "group": "动画",
                         "desc": "动画时间"
                     },
                     "--van-dialog-border-radius": {
                         "type": "input",
+                        "group": "边框",
                         "desc": "圆角"
                     },
                     "--van-dialog-background-color": {
                         "type": "color",
+                        "group": "背景",
                         "desc": "背景色"
                     },
                     "--van-dialog-message-font-size": {
                         "type": "input",
+                        "group": "字体",
                         "desc": "信息部分字体大小"
                     },
                     "--van-dialog-message-line-height": {
                         "type": "input",
+                        "group": "字体",
                         "desc": "信息部分行高"
                     },
                     "--van-dialog-message-max-height": {
                         "type": "input",
+                        "group": "字体",
                         "desc": "信息部分最大高度"
                     },
                     "--van-dialog-button-height": {
                         "type": "input",
+                        "group": "按钮",
                         "desc": "按钮高度"
                     },
                     "--van-dialog-confirm-button-text-color": {
                         "type": "color",
+                        "group": "按钮",
                         "desc": "确认按钮颜色"
                     }
                 },

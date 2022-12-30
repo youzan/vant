@@ -1,4 +1,5 @@
 import { createNamespace, isFunction } from '../utils';
+import { formatResult } from '../utils/format/data-source';
 import Tab from '../tab';
 import Tabs from '../tabs';
 import Icon from '../icon';
@@ -22,7 +23,7 @@ export default createComponent({
     placeholder: {type: String, default: '请选择'},
     activeColor: String,
     dataSource: {
-      type: Array,
+      type: [Array, Object, Function, String],
       default: () => [],
     },
     closeable: {
@@ -150,18 +151,6 @@ export default createComponent({
         }
       }
     },
-    fromValue(value) {
-      if (this.converter === 'json')
-          try {
-            if (value === null || value === undefined) return [];
-            if(typeof value === 'string') return JSON.parse(value || '[]');
-            if(typeof value === 'object') return value;
-          } catch (err) {
-              return [];
-          }
-        else
-            return value || [];
-    },
     async updateTabs() {
       if (isFunction(this.dataSource)) {
         try {
@@ -169,12 +158,12 @@ export default createComponent({
             page: 1,
             size: 1000
           });
-          this.options = res.content;
+          this.options = formatResult(res);
         } catch (error) {
           console.error(error);
         }
       } else {
-        this.options = this.fromValue(this.dataSource);
+        this.options = formatResult(this.dataSource);
       }
       if (this.curValue || this.curValue === 0) {
         const selectedOptions = this.getSelectedOptionsByValue(

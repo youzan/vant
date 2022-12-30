@@ -17,6 +17,7 @@
 
 <script>
 import { isFunction } from '../utils';
+import { formatResult } from '../utils/format/data-source';
 import VanForComponentsItem from './item.vue'
 
 export default {
@@ -26,7 +27,7 @@ export default {
     },
     props: {
       dataSource: {
-        type: Array,
+        type: [Array, Object, Function, String],
         default: () => [],
       },
       colnum: {
@@ -80,15 +81,6 @@ export default {
         }
         return result;
       },
-      fromValue(value) {
-        try {
-          if (value === null || value === undefined) return [];
-          if(typeof value === 'string') return JSON.parse(value || '[]');
-          if(typeof value === 'object') return value;
-        } catch (err) {
-            return [];
-        }
-      },
       async update() {
         if (isFunction(this.dataSource)) {
           try {
@@ -96,12 +88,12 @@ export default {
               page: 1,
               size: 1000
             });
-            this.options = this.divide(Array.isArray(res) ? res : res.content);
+            this.options = this.divide(formatResult(res));
           } catch (error) {
             console.error(error);
           }
         } else {
-          this.options = this.divide(this.fromValue(this.dataSource));
+          this.options = this.divide(formatResult(this.dataSource));
         }
       },
       comIndex(index1, index2) {

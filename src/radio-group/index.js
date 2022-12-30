@@ -1,4 +1,5 @@
 import { createNamespace , isFunction } from '../utils';
+import { formatResult } from '../utils/format/data-source';
 import { FieldMixin } from '../mixins/field';
 import { ParentMixin } from '../mixins/relation';
 
@@ -8,7 +9,7 @@ export default createComponent({
   mixins: [ParentMixin('vanRadio'), FieldMixin],
 
   props: {
-    dataSource: [Array, Function],
+    dataSource: [Array, Object, Function, String],
     value: null,
     disabled: Boolean,
     readonly: Boolean,
@@ -46,15 +47,6 @@ export default createComponent({
     ifDesigner() {
       return this.$env && this.$env.VUE_APP_DESIGNER;
     },
-    fromValue(value) {
-      try {
-        if( value ===undefined || value === null || value === '') return [];
-        if(typeof value === 'string') return JSON.parse(value || '[]');
-        if(typeof value === 'object') return value;
-      } catch (err) {
-        return [];
-      }
-    },
     async update() {
       if (this.ifDesigner() && this.dataSource) {
         this.options = this.dataSource.map(item => { item.disabled = true;return item })
@@ -64,12 +56,12 @@ export default createComponent({
               page: 1,
               size: 1000
             });
-            this.options = (res.content);
+            this.options = formatResult(res);
           } catch (error) {
             console.error(error);
           }
         } else {
-          this.options = (this.fromValue(this.dataSource));
+          this.options = formatResult(this.dataSource);
         }
     }
   },
@@ -80,7 +72,7 @@ export default createComponent({
       </div>)}
       {(!this.slots()&& this.options?.length===0 &&this.inDesigner ) && <div style="text-align: center;width:100%">请绑定数据源或插入子节点</div>}
       {this.slots()}
-  </div> 
+  </div>
     // if (this.dataSource && this.options?.length >= 0) {
     //   return <div class={bem([this.direction])}>
     //     {/* <van-linear-layout direction="horizontal" layout="inline"> */}

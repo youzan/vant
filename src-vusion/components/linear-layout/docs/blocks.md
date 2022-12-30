@@ -5,7 +5,7 @@
 </van-linear-layout>
 ```
 
-### 双行排布
+### 多行排布
 
 ``` html
 <van-linear-layout direction="vertical">
