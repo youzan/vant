@@ -1,4 +1,4 @@
-import { join } from 'path';
+import { join } from 'node:path';
 import { setBuildTarget } from '../common/index.js';
 import { CWD, ES_DIR, getVantConfig, LIB_DIR } from '../common/constant.js';
 import type { InlineConfig } from 'vite';

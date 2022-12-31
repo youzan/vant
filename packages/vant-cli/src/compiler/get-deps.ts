@@ -1,6 +1,6 @@
-import { join } from 'path';
+import { join } from 'node:path';
 import { SCRIPT_EXTS, STYLE_EXTS } from '../common/constant.js';
-import { readFileSync, existsSync } from 'fs';
+import { readFileSync, existsSync } from 'node:fs';
 
 let depsMap: Record<string, string[]> = {};
 let existsCache: Record<string, boolean> = {};

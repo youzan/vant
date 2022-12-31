@@ -3,7 +3,7 @@ import glob from 'fast-glob';
 import color from 'picocolors';
 import consola from 'consola';
 import { prompt } from 'enquirer';
-import { sep, join } from 'path';
+import { sep, join } from 'node:path';
 import { CWD, GENERATOR_DIR } from './constant';
 
 const PROMPTS = [

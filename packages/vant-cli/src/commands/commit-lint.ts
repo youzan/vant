@@ -1,4 +1,4 @@
-import { readFileSync } from 'fs';
+import { readFileSync } from 'node:fs';
 import { consola } from '../common/logger.js';
 
 const commitRE =

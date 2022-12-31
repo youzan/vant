@@ -1,5 +1,5 @@
-import { existsSync } from 'fs';
-import { join, isAbsolute } from 'path';
+import { existsSync } from 'node:fs';
+import { join, isAbsolute } from 'node:path';
 import { getVantConfig } from '../common/index.js';
 import { STYLE_DIR, SRC_DIR } from './constant.js';
 

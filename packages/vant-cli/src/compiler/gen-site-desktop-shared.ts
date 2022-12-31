@@ -1,6 +1,6 @@
 import glob from 'fast-glob';
-import { join, parse } from 'path';
-import { existsSync, readFileSync, readdirSync } from 'fs';
+import { join, parse } from 'node:path';
+import { existsSync, readFileSync, readdirSync } from 'node:fs';
 import { pascalize, getVantConfig, normalizePath } from '../common/index.js';
 import {
   SRC_DIR,
