@@ -1,5 +1,5 @@
-import { join } from 'path';
-import { createRequire } from 'module';
+import { join } from 'node:path';
+import { createRequire } from 'node:module';
 import hljs from 'highlight.js';
 import vitePluginMd from 'vite-plugin-md';
 import vitePluginVue from '@vitejs/plugin-vue';

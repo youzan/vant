@@ -1,6 +1,6 @@
 import less from 'less';
-import { join } from 'path';
-import { readFileSync } from 'fs';
+import { join } from 'node:path';
+import { readFileSync } from 'node:fs';
 import { CWD } from '../common/constant.js';
 
 export async function compileLess(filePath: string) {

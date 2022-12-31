@@ -3,8 +3,8 @@
  */
 
 import fse from 'fs-extra';
-import { createRequire } from 'module';
-import { sep, join, relative } from 'path';
+import { createRequire } from 'node:module';
+import { sep, join, relative } from 'node:path';
 import { getComponents, replaceExt } from '../common/index.js';
 import { CSS_LANG, getCssBaseFile } from '../common/css.js';
 import { checkStyleExists } from './gen-style-deps-map.js';
