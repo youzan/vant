@@ -1,5 +1,5 @@
 import fse from 'fs-extra';
-import execa from 'execa';
+import { execa } from 'execa';
 import { join, relative } from 'path';
 import { clean } from './clean.js';
 import { CSS_LANG } from '../common/css.js';
