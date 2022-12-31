@@ -17,7 +17,7 @@
   "engines": {
     "pnpm": ">= 7.0.0"
   },
-  "packageManager": "pnpm@7.17.1",
+  "packageManager": "pnpm@7.20.0",
   "devDependencies": {
     "@vant/cli": "workspace:*",
     "@vant/eslint-config": "workspace:*",

@@ -51,7 +51,7 @@
     "vue": "^3.0.0"
   },
   "devDependencies": {
-    "@types/node": "^16.11.56",
+    "@types/node": "^18.11.18",
     "@types/jest": "^29.1.1",
     "@vant/area-data": "workspace:*",
     "@vant/cli": "workspace:*",
