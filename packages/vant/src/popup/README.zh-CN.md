@@ -46,10 +46,35 @@ export default {
 
 ### 弹出位置
 
-通过 `position` 属性设置弹出位置，默认居中弹出，可以设置为 `top`、`bottom`、`left`、`right`。
+通过 `position` 属性设置弹窗的弹出位置，默认为居中弹出，可以设置为 `top`、`bottom`、`left`、`right`。
+
+- 当弹窗从顶部或底部弹出时，默认宽度与屏幕宽度保持一致，弹窗高度取决于内容的高度。
+- 当弹窗从左侧或右侧弹出时，默认不设置宽度和高度，弹窗的宽高取决于内容的宽高。
 
 ```html
-<van-popup v-model:show="show" position="top" :style="{ height: '30%' }" />
+<!-- 顶部弹出 -->
+<van-popup v-model:show="showTop" position="top" :style="{ height: '30%' }" />
+
+<!-- 底部弹出 -->
+<van-popup
+  v-model:show="showBottom"
+  position="bottom"
+  :style="{ height: '30%' }"
+/>
+
+<!-- 左侧弹出 -->
+<van-popup
+  v-model:show="showLeft"
+  position="left"
+  :style="{ width: '30%', height: '100%' }"
+/>
+
+<!-- 右侧弹出 -->
+<van-popup
+  v-model:show="showRight"
+  position="right"
+  :style="{ width: '30%', height: '100%' }"
+/>
 ```
 
 ### 关闭图标

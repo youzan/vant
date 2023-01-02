@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import VanCell from '../../cell';
 import VanPopup from '..';
+import VanGrid from '../../grid';
+import VanGridItem from '../../grid-item';
 import { ref } from 'vue';
 import { useTranslate } from '../../../docs/site';
 
@@ -54,10 +56,28 @@ const showCustomIconPosition = ref(false);
   </demo-block>
 
   <demo-block card :title="t('position')">
-    <van-cell :title="t('buttonTop')" is-link @click="showTop = true" />
-    <van-cell :title="t('buttonBottom')" is-link @click="showBottom = true" />
-    <van-cell :title="t('buttonLeft')" is-link @click="showLeft = true" />
-    <van-cell :title="t('buttonRight')" is-link @click="showRight = true" />
+    <van-grid clickable>
+      <van-grid-item
+        icon="arrow-up"
+        :text="t('buttonTop')"
+        @click="showTop = true"
+      />
+      <van-grid-item
+        icon="arrow-down"
+        :text="t('buttonBottom')"
+        @click="showBottom = true"
+      />
+      <van-grid-item
+        icon="arrow-left"
+        :text="t('buttonLeft')"
+        @click="showLeft = true"
+      />
+      <van-grid-item
+        icon="arrow"
+        :text="t('buttonRight')"
+        @click="showRight = true"
+      />
+    </van-grid>
 
     <van-popup
       v-model:show="showTop"
