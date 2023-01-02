@@ -19,6 +19,18 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 
 ## 更新内容
 
+### [v4.0.7](https://github.com/vant-ui/vant/compare/v4.0.6...v4.0.7)
+
+`2023-01-02`
+
+**Bug Fixes**
+
+- Icons: 修复 delete / delete-o 图标存在多余黑点的问题 [#11441](https://github.com/vant-ui/vant/issues/11441)
+- Icons: 移除多余的 woff/ttf 格式声明 [#11442](https://github.com/vant-ui/vant/issues/11442)
+- ImagePreview：修复 teleport 属性不生效的问题 [#11429](https://github.com/vant-ui/vant/issues/11429)
+- Locale: 修复 ru-RU 中的 "Calendar" 拼写错误 [#11425](https://github.com/vant-ui/vant/issues/11425)
+- Swipe: 修复在 keep-alive 内使用时可能渲染空白的问题 [#11437](https://github.com/vant-ui/vant/issues/11437)
+
 ### [v4.0.6](https://github.com/vant-ui/vant/compare/v4.0.5...v4.0.6)
 
 `2022-12-26`

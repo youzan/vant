@@ -19,6 +19,18 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 
 ## Details
 
+### [v4.0.7](https://github.com/vant-ui/vant/compare/v4.0.6...v4.0.7)
+
+`2023-01-02`
+
+**Bug Fixes**
+
+- Icons: fix delete / delete-o icon [#11441](https://github.com/vant-ui/vant/issues/11441)
+- Icons: no longer support woff/ttf format [#11442](https://github.com/vant-ui/vant/issues/11442)
+- ImagePreview：fix teleport prop not work [#11429](https://github.com/vant-ui/vant/issues/11429)
+- Locale: fix typo of "Calendar" in ru-RU [#11425](https://github.com/vant-ui/vant/issues/11425)
+- Swipe: failed to render inside keep-alive [#11437](https://github.com/vant-ui/vant/issues/11437)
+
 ### [v4.0.6](https://github.com/vant-ui/vant/compare/v4.0.5...v4.0.6)
 
 `2022-12-26`
