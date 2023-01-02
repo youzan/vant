@@ -232,7 +232,87 @@ exports[`should render demo and match snapshot 1`] = `
   >
     <div class="van-cell__title">
       <span>
-        Round Corner
+        Round Corner (center)
+      </span>
+    </div>
+    <i class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon">
+    </i>
+  </div>
+  <transition-stub name="van-fade"
+                   appear="true"
+                   persisted="false"
+                   css="true"
+                   role="button"
+                   tabindex="0"
+  >
+  </transition-stub>
+  <transition-stub name="van-fade"
+                   appear="false"
+                   persisted="false"
+                   css="true"
+  >
+  </transition-stub>
+  <div class="van-cell van-cell--clickable"
+       role="button"
+       tabindex="0"
+  >
+    <div class="van-cell__title">
+      <span>
+        Round Corner (bottom)
+      </span>
+    </div>
+    <i class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon">
+    </i>
+  </div>
+  <transition-stub name="van-fade"
+                   appear="true"
+                   persisted="false"
+                   css="true"
+                   role="button"
+                   tabindex="0"
+  >
+  </transition-stub>
+  <transition-stub name="van-popup-slide-bottom"
+                   appear="false"
+                   persisted="false"
+                   css="true"
+  >
+  </transition-stub>
+</div>
+<div>
+  <div class="van-cell van-cell--clickable"
+       role="button"
+       tabindex="0"
+  >
+    <div class="van-cell__title">
+      <span>
+        Listen To Click Events
+      </span>
+    </div>
+    <i class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon">
+    </i>
+  </div>
+  <transition-stub name="van-fade"
+                   appear="true"
+                   persisted="false"
+                   css="true"
+                   role="button"
+                   tabindex="0"
+  >
+  </transition-stub>
+  <transition-stub name="van-popup-slide-bottom"
+                   appear="false"
+                   persisted="false"
+                   css="true"
+  >
+  </transition-stub>
+  <div class="van-cell van-cell--clickable"
+       role="button"
+       tabindex="0"
+  >
+    <div class="van-cell__title">
+      <span>
+        Listen To Display Events
       </span>
     </div>
     <i class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon">
