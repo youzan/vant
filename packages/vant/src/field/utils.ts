@@ -7,6 +7,7 @@ import {
   setRootScrollTop,
 } from '../utils';
 import type { FieldRule, FieldType, FieldAutosizeConfig } from './types';
+import runes from '../utils/runes';
 
 export function isEmptyValue(value: unknown) {
   if (Array.isArray(value)) {
@@ -117,10 +118,10 @@ export function mapInputType(type: FieldType): {
 // get correct length of emoji
 // https://github.com/vant-ui/vant/issues/10032
 export function getStringLength(str: string) {
-  return [...str].length;
+  return runes(str).length;
 }
 
 // cut string with emoji
 export function cutString(str: string, maxlength: number) {
-  return [...str].slice(0, maxlength).join('');
+  return runes(str).slice(0, maxlength).join('');
 }

@@ -69,6 +69,7 @@ import type {
   FieldValidateTrigger,
   FieldFormSharedProps,
 } from './types';
+import runes from '../utils/runes';
 
 const [name, bem] = createNamespace('field');
 
@@ -290,7 +291,7 @@ export default defineComponent({
         // make it consistent with the native input maxlength behavior.
         const selectionEnd = inputRef.value?.selectionEnd;
         if (state.focused && selectionEnd) {
-          const valueArr = [...value];
+          const valueArr = runes(value);
           const exceededLength = valueArr.length - +maxlength;
           valueArr.splice(selectionEnd - exceededLength, exceededLength);
           return valueArr.join('');
