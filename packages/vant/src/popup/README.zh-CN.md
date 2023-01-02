@@ -24,7 +24,7 @@ app.use(Popup);
 
 ```html
 <van-cell is-link @click="showPopup">展示弹出层</van-cell>
-<van-popup v-model:show="show">内容</van-popup>
+<van-popup v-model:show="show" :style="{ padding: '64px' }">内容</van-popup>
 ```
 
 ```js
@@ -111,12 +111,95 @@ export default {
 设置 `round` 属性后，弹窗会根据弹出位置添加不同的圆角样式。
 
 ```html
+<!-- 圆角弹窗（居中） -->
+<van-popup v-model:show="showCenter" round :style="{ padding: '64px' }" />
+
+<!-- 圆角弹窗（底部） -->
 <van-popup
-  v-model:show="show"
+  v-model:show="showBottom"
   round
   position="bottom"
   :style="{ height: '30%' }"
 />
+```
+
+### 监听点击事件
+
+Popup 支持以下点击事件：
+
+- `click`: 点击弹出层时触发。
+- `click-overlay`: 点击遮罩层时触发。
+- `click-close-icon`: 点击关闭图标时触发。
+
+```html
+<van-cell title="监听点击事件" is-link @click="show = true" />
+<van-popup
+  v-model:show="show"
+  position="bottom"
+  :style="{ height: '30%' }"
+  closeable
+  @click-overlay="onClickOverlay"
+  @click-close-icon="onClickCloseIcon"
+/>
+```
+
+```js
+import { ref } from 'vue';
+import { showToast } from 'vant';
+
+export default {
+  setup() {
+    const show = ref(false);
+    const onClickOverlay = () => {
+      showToast('click-overlay');
+    };
+    const onClickCloseIcon = () => {
+      showToast('click-close-icon');
+    };
+    return {
+      show,
+      onClickOverlay,
+      onClickCloseIcon,
+    };
+  },
+};
+```
+
+### 监听显示事件
+
+当 Popup 被打开或关闭时，会触发以下事件：
+
+- `open`: 打开弹出层时立即触发。
+- `opened`: 打开弹出层且动画结束后触发。
+- `close`: 关闭弹出层时立即触发。
+- `closed`: 关闭弹出层且动画结束后触发。
+
+```html
+<van-cell title="监听显示事件" is-link @click="show = true" />
+<van-popup
+  v-model:show="show"
+  position="bottom"
+  :style="{ height: '30%' }"
+  @open="showToast('open')"
+  @opened="showToast('opened')"
+  @close="showToast('close')"
+  @closed="showToast('closed')"
+/>
+```
+
+```js
+import { ref } from 'vue';
+import { showToast } from 'vant';
+
+export default {
+  setup() {
+    const show = ref(false);
+    return {
+      show,
+      showToast,
+    };
+  },
+};
 ```
 
 ### 指定挂载位置
@@ -167,8 +250,8 @@ export default {
 | click            | 点击弹出层时触发           | _event: MouseEvent_ |
 | click-overlay    | 点击遮罩层时触发           | _event: MouseEvent_ |
 | click-close-icon | 点击关闭图标时触发         | _event: MouseEvent_ |
-| open             | 打开弹出层时触发           | -                   |
-| close            | 关闭弹出层时触发           | -                   |
+| open             | 打开弹出层时立即触发       | -                   |
+| close            | 关闭弹出层时立即触发       | -                   |
 | opened           | 打开弹出层且动画结束后触发 | -                   |
 | closed           | 关闭弹出层且动画结束后触发 | -                   |
 
