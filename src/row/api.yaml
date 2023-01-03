@@ -8,15 +8,79 @@
   nested: false
   attrs:
     - name: type
-      title: 布局方式
+      title: 布局模式
       type: string
+      display: capsules
+      bindHide: true
       options:
-        - value: flex
-          title: 弹性布局
         - value: "-"
           title: 正常
+          icon: layout-block
+          tooltip: 块级布局
+        - value: flex
+          title: 弹性布局
+          icon: layout-flex
+          tooltip: 弹性布局
       default: flex
       description: 元素布局方式
+    - name: justify
+      title: 横轴对齐
+      type: string
+      display: capsules
+      bindHide: true
+      options:
+        - value: start
+          title: 左对齐
+          icon: horizontal-justify-start
+          tooltip: 左对齐
+        - value: center
+          title: 居中对齐
+          icon: horizontal-justify-center
+          tooltip: 居中对齐
+        - value: end
+          title: 右对齐
+          icon: horizontal-justify-end
+          tooltip: 右对齐
+        - value: space-between
+          title: 平均分布(两端不留空)
+          icon: horizontal-justify-space-between
+          tooltip: 平均分布(两端不留空)
+        - value: space-around
+          title: 水平分布-左右留空
+          icon: horizontal-justify-space-around
+          tooltip: 平均分布
+      default: start
+      dependency:
+        - type: flex
+    - name: align
+      title: 纵轴对齐
+      type: string
+      display: capsules
+      bindHide: true
+      options:
+        - value: start
+          title: 顶对齐
+          icon: horizontal-alignment-start
+          tooltip: 顶对齐
+        - value: center
+          title: 垂直居中
+          icon: horizontal-alignment-center
+          tooltip: 垂直居中
+        - value: end
+          title: 底对齐
+          icon: horizontal-alignment-end
+          tooltip: 底对齐
+        - value: baseline
+          title: 行内文字基线对齐
+          icon: horizontal-alignment-baseline
+          tooltip: 行内文字基线对齐
+        - value: stretch
+          title: 占满容器高度
+          icon: horizontal-alignment-stretch
+          tooltip: 占满容器高度
+      default: stretch
+      dependency:
+        - type: flex
     - name: gutter
       title: 列间距
       type: string
@@ -31,22 +95,6 @@
           title: 大（30）
       default: '0'
       description: 列元素之间的间距（单位为 px）
-    - name: justify
-      title: 对齐方式
-      type: string
-      options:
-        - value: start
-          title: 左对齐
-        - value: center
-          title: 居中对齐
-        - value: end
-          title: 右对齐
-        - value: space-between
-          title:  水平分布-左右不留空
-        - value: space-around
-          title: 水平分布-左右留空
-      default: start
-      description: flex布局对齐方式
   slots:
     - concept: Slot
       name: default
@@ -62,6 +110,205 @@
   next: false
   nested: true
   attrs:
+    - name: mode
+      title: 布局模式
+      type: string
+      display: capsules
+      bindHide: true
+      options:
+        - value: inline
+          title: 块级
+          icon: layout-inline-block
+          tooltip: 内联布局
+        - value: flex
+          title: 弹性
+          icon: layout-flex
+          tooltip: 弹性布局
+      default: inline
+      toggleclear:
+        - justify
+        - align
+        - wrap
+        - gap
+    - name: direction
+      title: 主轴方向
+      type: string
+      display: capsules
+      bindHide: true
+      options:
+        - value: horizontal
+          title: 横向排列
+          icon: flex-horizontal
+          tooltip: 横向
+        - value: vertical
+          title: 纵向排列
+          icon: flex-vertical
+          tooltip: 纵向
+      default: horizontal
+      toggleclear:
+        - justify
+        - align
+      dependency:
+        - mode: flex
+    - name: justify
+      title: 横轴对齐
+      type: string
+      display: capsules
+      bindHide: true
+      options:
+        - value: start
+          title: 左对齐
+          icon: horizontal-justify-start
+          tooltip: 左对齐
+        - value: center
+          title: 居中对齐
+          icon: horizontal-justify-center
+          tooltip: 居中对齐
+        - value: end
+          title: 右对齐
+          icon: horizontal-justify-end
+          tooltip: 右对齐
+        - value: space-between
+          title: 平均分布(两端不留空)
+          icon: horizontal-justify-space-between
+          tooltip: 平均分布(两端不留空)
+        - value: space-around
+          title: 平均分布
+          icon: horizontal-justify-space-around
+          tooltip: 平均分布
+      default: start
+      dependency:
+        - mode: flex
+          direction: horizontal
+      toggleupdate:
+        - value: space-between
+          updateData:
+            gap: normal
+        - value: space-around
+          updateData:
+            gap: normal
+    - name: align
+      title: 纵轴对齐
+      type: string
+      display: capsules
+      bindHide: true
+      options:
+        - value: start
+          title: 顶对齐
+          icon: horizontal-alignment-start
+          tooltip: 顶对齐
+        - value: center
+          title: 垂直居中
+          icon: horizontal-alignment-center
+          tooltip: 垂直居中
+        - value: end
+          title: 底对齐
+          icon: horizontal-alignment-end
+          tooltip: 底对齐
+        - value: baseline
+          title: 行内文字基线对齐
+          icon: horizontal-alignment-baseline
+          tooltip: 行内文字基线对齐
+        - value: stretch
+          title: 占满容器高度
+          icon: horizontal-alignment-stretch
+          tooltip: 占满容器高度
+      default: stretch
+      dependency:
+        - mode: flex
+          direction: horizontal
+    - name: align
+      title: 横轴对齐
+      type: string
+      display: capsules
+      bindHide: true
+      options:
+        - value: start
+          title: 左对齐
+          icon: vertical-alignment-start
+          tooltip: 左对齐
+        - value: center
+          title: 居中对齐
+          icon: vertical-alignment-center
+          tooltip: 居中对齐
+        - value: end
+          title: 右对齐
+          icon: vertical-alignment-end
+          tooltip: 右对齐
+        - value: stretch
+          title: 拉伸子元素充满整个父元素空间
+          icon: vertical-alignment-stretch
+          tooltip: 占满容器宽度
+      default: stretch
+      dependency:
+        - mode: flex
+          direction: vertical
+    - name: justify
+      title: 纵轴对齐
+      type: string
+      display: capsules
+      bindHide: true
+      options:
+        - value: start
+          title: 顶对齐
+          icon: vertical-justify-start
+          tooltip: 顶对齐
+        - value: center
+          title: 垂直居中
+          icon: vertical-justify-center
+          tooltip: 垂直居中
+        - value: end
+          title: 底对齐
+          icon: vertical-justify-end
+          tooltip: 底对齐
+        - value: space-between
+          title: 平均分布(两端不留空)
+          icon: vertical-justify-space-between
+          tooltip: 平均分布(两端不留空)
+        - value: space-around
+          title: 平均分布
+          icon: vertical-justify-space-around
+          tooltip: 平均分布
+      default: start
+      dependency:
+        - mode: flex
+          direction: vertical
+      toggleupdate:
+        - value: space-between
+          updateData:
+            gap: normal
+        - value: space-around
+          updateData:
+            gap: normal
+    - name: wrap
+      title: 是否换行
+      type: boolean
+      default: true
+      description: 弹性布局下子元素总宽度超出父级时子元素是否换行展示
+      dependency:
+        - mode: flex
+    - name: gap
+      title: 内容间隙
+      type: string
+      options:
+        - value: shrink
+          title: 收缩
+          advanced: true
+        - value: none
+          title: 无
+        - value: small
+          title: 小
+        - value: normal
+          title: 正常
+        - value: large
+          title: 大
+      default: normal
+      description: 内容块间隙大小
+      dependency:
+        - mode: flex
+          '!justify':
+            - space-between
+            - space-around
     - name: span
       title: 占据列数
       type: number
