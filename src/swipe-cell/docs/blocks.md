@@ -1,7 +1,7 @@
 ### 基本用法
 
 ``` html
-<van-swipe-cell>
+<van-swipe-cell :leftforhelper="false" :rightforhelper="false">
   <template #left>
     <van-button squareroud="square" type="primary" text="选择" />
   </template>

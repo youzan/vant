@@ -1,5 +1,5 @@
 // Utils
-import { createNamespace } from '../utils';
+import { createNamespace, isDef } from '../utils';
 import { range } from '../utils/format/number';
 import { preventDefault } from '../utils/dom/event';
 
@@ -33,12 +33,15 @@ export default createComponent({
       type: [Number, String],
       default: '',
     },
+    leftforhelper: Boolean,
+    rightforhelper: Boolean,
   },
 
   data() {
     return {
       offset: 0,
       dragging: false,
+      position: '',
     };
   },
   components: {
@@ -47,32 +50,46 @@ export default createComponent({
 
   computed: {
     computedLeftWidth() {
-      return +this.leftWidth || this.getWidthByRef('left');
+      if (isDef(this.leftWidth)) {
+        return +this.leftWidth
+      }
+      return this.getWidthByRef('left');
     },
 
     computedRightWidth() {
-      return +this.rightWidth || this.getWidthByRef('right');
+      if (isDef(this.rightWidth)) {
+        return +this.rightWidth
+      }
+      return this.getWidthByRef('right');
     },
   },
   watch: {
-    computedLeftWidth() {
-
+    leftforhelper: {
+      immediate: true,
+      handler(newValue, oldValue) {
+        console.log(newValue, 222)
+        newValue && this.open('left')
+      },
     },
-    computedRightWidth() {
-      
-    }
+    rightforhelper: {
+      immediate: true,
+      handler(newValue, oldValue) {
+        console.log(newValue, 333)
+        newValue && this.open('right')
+      },
+    },
   },
   mounted() {
     this.bindTouchEvent(this.$el);
   },
 
   methods: {
-    getWidthByRef(ref) {
+    getWidthByRef(ref) {console.log(ref, 'ref')
       if (this.$refs[ref]) {
         const rect = this.$refs[ref].getBoundingClientRect();
         return rect.width;
       }
-
+console.log(ref, 'ref2222')
       return 0;
     },
 
@@ -83,7 +100,7 @@ export default createComponent({
 
       this.opened = true;
       this.offset = offset;
-
+      this.position = position;
       this.$emit('open', {
         position,
         name: this.name,
@@ -96,7 +113,7 @@ export default createComponent({
     // @exposed-api
     close(position) {
       this.offset = 0;
-
+      this.position = '';
       if (this.opened) {
         this.opened = false;
         this.$emit('close', {
@@ -264,7 +281,7 @@ export default createComponent({
       transform: `translate3d(${this.offset}px, 0, 0)`,
       transitionDuration: this.dragging ? '0s' : '.6s',
     };
-
+console.log(this.offset, 666)
     return (
       <div class={bem()} onClick={this.getClickHandler('cell')}>
         <div class={bem('wrapper')} style={wrapperStyle}>
