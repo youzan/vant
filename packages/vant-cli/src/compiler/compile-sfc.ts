@@ -6,6 +6,7 @@ import {
   SFCBlock,
   compileTemplate,
   compileScript,
+  compileStyle,
 } from 'vue/compiler-sfc';
 import { replaceExt } from '../common/index.js';
 
@@ -37,7 +38,7 @@ function injectRender(script: string, render: string) {
 }
 
 function injectScopeId(script: string, scopeId: string) {
-  script += `\n${VUEIDS}._scopeId = '${scopeId}'`;
+  script += `\n${VUEIDS}.__scopeId = '${scopeId}'`;
   return script;
 }
 
@@ -136,18 +137,14 @@ export async function compileSfc(filePath: string): Promise<any> {
     ...styles.map(async (style, index: number) => {
       const cssFilePath = getSfcStylePath(filePath, style.lang || 'css', index);
 
-      const styleSource = trim(style.content);
-
-      // TODO support scoped
-      // if (style.scoped) {
-      //   styleSource = compileUtils.compileStyle({
-      //     id: scopeId,
-      //     scoped: true,
-      //     source: styleSource,
-      //     filename: cssFilePath,
-      //     preprocessLang: style.lang,
-      //   }).code;
-      // }
+      const styleSource = compileStyle({
+        id: scopeId,
+        scoped: style.scoped,
+        source: trim(style.content),
+        filename: cssFilePath,
+        // @ts-ignore
+        preprocessLang: style.lang,
+      }).code;
 
       return outputFile(cssFilePath, styleSource);
     })
