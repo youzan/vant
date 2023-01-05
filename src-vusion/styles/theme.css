@@ -408,7 +408,7 @@
     --van-brand-primary
   ); /* @type color */ /* @hidden */
   --van-dropdown-menu-content-max-height: 80%; /* @hidden */
-  --van-dropdown-item-z-index: 10;
+  --van-dropdown-item-z-index: 10; /* @hidden */
 
   /* @component van-image */
   --van-image-placeholder-text-color: #969799; /* @type color */ /* @hidden */
