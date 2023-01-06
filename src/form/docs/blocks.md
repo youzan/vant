@@ -16,7 +16,7 @@
     </template>
     <template #input>
       <van-radio-group direction="horizontal">
-        <template #default="scope">
+        <template #default="current">
           <van-radio name="1" title="单选框 1"></van-radio>
           <van-radio name="2" title="单选框 2"></van-radio>
         </template>
