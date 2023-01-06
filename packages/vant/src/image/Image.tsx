@@ -96,11 +96,20 @@ export default defineComponent({
       }
     );
 
-    const onLoad = (event?: Event) => {
+    const onLoad = (event: Event) => {
       if (loading.value) {
         loading.value = false;
         emit('load', event);
       }
+    };
+
+    const triggerLoad = () => {
+      const loadEvent = new Event('load');
+      Object.defineProperty(loadEvent, 'target', {
+        value: imageRef.value,
+        enumerable: true,
+      });
+      onLoad(loadEvent);
     };
 
     const onError = (event?: Event) => {
@@ -172,7 +181,7 @@ export default defineComponent({
     const onLazyLoaded = ({ el }: { el: HTMLElement }) => {
       const check = () => {
         if (el === imageRef.value && loading.value) {
-          onLoad();
+          triggerLoad();
         }
       };
       if (imageRef.value) {
@@ -204,9 +213,11 @@ export default defineComponent({
     // so the initial complete state should be checked.
     // https://github.com/youzan/vant/issues/11335
     onMounted(() => {
-      if (imageRef.value?.complete) {
-        onLoad();
-      }
+      nextTick(() => {
+        if (imageRef.value?.complete) {
+          triggerLoad();
+        }
+      });
     });
 
     return () => (

@@ -163,7 +163,9 @@ export default defineComponent({
 
     const getValues = () =>
       children.reduce<Record<string, unknown>>((form, field) => {
-        form[field.name] = field.formValue.value;
+        if (field.name !== undefined) {
+          form[field.name] = field.formValue.value;
+        }
         return form;
       }, {});
 

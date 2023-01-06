@@ -1,4 +1,4 @@
-import { parse } from 'path';
+import { parse } from 'node:path';
 import fse from 'fs-extra';
 import { getVantConfig, replaceExt } from '../common/index.js';
 import { compileCss } from './compile-css.js';

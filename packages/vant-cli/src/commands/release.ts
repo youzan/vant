@@ -1,7 +1,7 @@
 /* eslint-disable no-template-curly-in-string */
 import releaseIt from 'release-it';
-import { join, dirname } from 'path';
-import { fileURLToPath } from 'url';
+import { join, dirname } from 'node:path';
+import { fileURLToPath } from 'node:url';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const PLUGIN_PATH = join(__dirname, '../compiler/vant-cli-release-plugin.js');

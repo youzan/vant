@@ -1,5 +1,10 @@
 ## Changelog
 
+## 2.0.0
+
+- no longer support woff/ttf format
+- fix delete / delete-o icon
+
 ## 1.8.0
 
 - add qq icon

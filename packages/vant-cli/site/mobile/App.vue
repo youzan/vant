@@ -1,11 +1,11 @@
 <template>
   <demo-nav />
   <router-view v-slot="{ Component }">
-    <keep-alive>
-      <demo-section>
+    <demo-section>
+      <keep-alive>
         <component :is="Component" />
-      </demo-section>
-    </keep-alive>
+      </keep-alive>
+    </demo-section>
   </router-view>
 </template>
 

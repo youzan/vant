@@ -270,6 +270,10 @@ export default defineComponent({
 
         if (count.value) {
           active = Math.min(count.value - 1, active);
+
+          if (active === -1) {
+            active = count.value - 1;
+          }
         }
 
         state.active = active;

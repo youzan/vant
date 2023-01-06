@@ -16,7 +16,6 @@
     - [site.nav](#sitenav)
     - [site.versions](#siteversions)
     - [site.baiduAnalytics](#sitebaiduanalytics)
-    - [site.searchConfig](#sitesearchconfig)
     - [site.hideSimulator](#sitehidesimulator)
     - [site.simulator.url](#sitesimulatorurl)
     - [site.htmlMeta](#sitehtmlmeta)
@@ -356,15 +355,6 @@ module.exports = {
   },
 };
 ```
-
-### site.searchConfig
-
-- Type: `object`
-- Default: `undefined`
-
-文档网站的搜索配置，基于 algolia 提供的 docsearch 服务实现。
-
-配置内容参见 [docsearch](https://docsearch.algolia.com/docs/behavior)。
 
 ### site.hideSimulator
 

@@ -1,5 +1,5 @@
 import color from 'picocolors';
-import { createRequire } from 'module';
+import { createRequire } from 'node:module';
 import { createServer, build } from 'vite';
 import {
   getViteConfigForSiteDev,

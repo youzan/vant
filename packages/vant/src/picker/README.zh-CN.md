@@ -74,7 +74,7 @@ export default {
 
 ```html
 <van-field
-  v-model="value"
+  v-model="fieldValue"
   is-link
   readonly
   label="城市"
@@ -102,7 +102,7 @@ export default {
       { text: '绍兴', value: 'Shaoxing' },
       { text: '湖州', value: 'Huzhou' },
     ];
-    const result = ref('');
+    const fieldValue = ref('');
     const showPicker = ref(false);
 
     const onConfirm = ({ selectedOptions }) => {
@@ -111,9 +111,9 @@ export default {
     };
 
     return {
-      result,
       columns,
       onConfirm,
+      fieldValue,
       showPicker,
     };
   },

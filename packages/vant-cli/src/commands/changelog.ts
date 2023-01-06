@@ -1,8 +1,8 @@
-import { join, dirname } from 'path';
-import { fileURLToPath } from 'url';
+import { join, dirname } from 'node:path';
+import { fileURLToPath } from 'node:url';
 import { ROOT } from '../common/constant.js';
 import { createSpinner, slimPath } from '../common/logger.js';
-import { createWriteStream, readFileSync } from 'fs';
+import { createWriteStream, readFileSync } from 'node:fs';
 import conventionalChangelog from 'conventional-changelog';
 
 const DIST_FILE = join(ROOT, './changelog.generated.md');

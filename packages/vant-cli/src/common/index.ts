@@ -1,5 +1,5 @@
 import fse from 'fs-extra';
-import { sep, join } from 'path';
+import { sep, join } from 'node:path';
 import { SRC_DIR, getVantConfig } from './constant.js';
 import { InlineConfig, loadConfigFromFile, mergeConfig } from 'vite';
 

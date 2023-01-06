@@ -139,7 +139,7 @@ Use `position` prop to set the position of badge.
 | color | Background color | _string_ | `#ee0a24` |
 | dot | Whether to show dot | _boolean_ | `false` |
 | max | Max value, show `{max}+` when exceed, only works when content is number | _number \| string_ | - |
-| offset `v3.0.5` | Offset of badge dot | _[number \| string, number \| string]_ | - |
+| offset `v3.0.5` | Offset of badge dot, the two items of the array correspond to the horizontal and vertical offsets | _[number \| string, number \| string]_ | - |
 | show-zero `v3.0.10` | Whether to show badge when content is zero | _boolean_ | `true` |
 | position `v3.2.7` | Badge position, can be set to `top-left` `bottom-left` `bottom-right` | _string_ | `top-right` |
 

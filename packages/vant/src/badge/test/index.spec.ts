@@ -98,6 +98,57 @@ test('should change dot position when using offset prop without children', () =>
   expect(badge.style.marginLeft).toEqual('2px');
 });
 
+test('should change dot position when using offset prop and position is bottom-right', async () => {
+  const wrapper = mount(Badge, {
+    props: {
+      dot: true,
+      offset: [2, '-4rem'],
+      position: 'bottom-right',
+    },
+    slots: {
+      default: () => 'Child',
+    },
+  });
+
+  const badge = wrapper.find('.van-badge');
+  expect(badge.style.bottom).toEqual('4rem');
+  expect(badge.style.right).toEqual('-2px');
+});
+
+test('should change dot position when using offset prop and position is bottom-left', async () => {
+  const wrapper = mount(Badge, {
+    props: {
+      dot: true,
+      offset: [2, '-4rem'],
+      position: 'bottom-left',
+    },
+    slots: {
+      default: () => 'Child',
+    },
+  });
+
+  const badge = wrapper.find('.van-badge');
+  expect(badge.style.bottom).toEqual('4rem');
+  expect(badge.style.left).toEqual('2px');
+});
+
+test('should change dot position when using offset prop and position is top-left', async () => {
+  const wrapper = mount(Badge, {
+    props: {
+      dot: true,
+      offset: [2, '-4rem'],
+      position: 'top-left',
+    },
+    slots: {
+      default: () => 'Child',
+    },
+  });
+
+  const badge = wrapper.find('.van-badge');
+  expect(badge.style.top).toEqual('-4rem');
+  expect(badge.style.left).toEqual('2px');
+});
+
 test('should not render zero when show-zero is false', async () => {
   const wrapper = mount(Badge, {
     props: {

@@ -38,7 +38,7 @@ pnpm dev
 
 仓库的不同分支对应不同的 Vant 版本，请切换到对应分支进行开发：
 
-- dev 分支对应 Vant 4 版本，适用于 Vue 3
+- main 分支对应 Vant 4 版本，适用于 Vue 3
 - 3.x 分支对应 Vant 3 版本 ，适用于 Vue 3
 - 2.x 分支对应 Vant 2 版本，适用于 Vue 2
 
@@ -106,7 +106,7 @@ src
 如果你是第一次在 GitHub 上提 Pull Request ，可以阅读下面这两篇文章来学习：
 
 - [如何优雅地在 GitHub 上贡献代码](https://segmentfault.com/a/1190000000736629)
-- [第一次参与开源](https://github.com/firstcontributions/first-contributions/blob/master/translations/README.chs.md)
+- [第一次参与开源](https://github.com/firstcontributions/first-contributions/blob/main/translations/README.zh-cn.md)
 
 ### Pull Request 规范
 
@@ -119,8 +119,8 @@ src
 ### Pull Request 流程
 
 1. fork 主仓库，如果已经 fork 过，请同步主仓库的最新代码。
-2. 基于 fork 后仓库的 dev 分支新建一个分支，比如 `feature/button_color`。
-3. 在新分支上进行开发，开发完成后，提 Pull Request 到主仓库的 dev 分支。
+2. 基于 fork 后仓库的 main 分支新建一个分支，比如 `feature/button_color`。
+3. 在新分支上进行开发，开发完成后，提 Pull Request 到主仓库的 main 分支。
 4. Pull Request 会在 Review 通过后被合并到主仓库。
 5. 等待 Vant 发布新版本，一般是每周一次。
 
@@ -135,9 +135,9 @@ git remote add upstream git@github.com:vant-ui/vant.git
 # 拉取主仓库最新代码
 git fetch upstream
 
-# 切换至 dev 分支
-git checkout dev
+# 切换至 main 分支
+git checkout main
 
 # 合并主仓库代码
-git merge upstream/dev
+git merge upstream/main
 ```

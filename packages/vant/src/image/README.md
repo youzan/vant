@@ -125,7 +125,7 @@ app.use(Lazyload);
 | Event | Description                    | Arguments           |
 | ----- | ------------------------------ | ------------------- |
 | click | Emitted when image is clicked  | _event: MouseEvent_ |
-| load  | Emitted when image loaded      | -                   |
+| load  | Emitted when image loaded      | _event: Event_      |
 | error | Emitted when image load failed | -                   |
 
 ### Slots

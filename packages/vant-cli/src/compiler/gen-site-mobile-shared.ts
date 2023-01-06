@@ -1,5 +1,5 @@
-import { join } from 'path';
-import { existsSync, readdirSync } from 'fs';
+import { join } from 'node:path';
+import { existsSync, readdirSync } from 'node:fs';
 import { SRC_DIR } from '../common/constant.js';
 import {
   pascalize,

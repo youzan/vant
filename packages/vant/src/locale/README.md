@@ -59,7 +59,9 @@ Current supported languages:
 | Japanese                 | ja-JP        | -        |
 | Korean                   | ko-KR        | `v3.4.3` |
 | Lao                      | la-LA        | `v3.4.7` |
+| Mongolian                | mm-MN        | `v4.0.5` |
 | Norwegian                | nb-NO        | -        |
+| Dutch                    | nl-NL        | `v4.0.5` |
 | Portuguese (Brazil)      | pt-BR        | `v3.3.3` |
 | Romanian                 | ro-RO        | -        |
 | Russian                  | ru-RU        | `v3.1.5` |

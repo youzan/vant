@@ -1,4 +1,4 @@
-import execa from 'execa';
+import { execa } from 'execa';
 import { consola, createSpinner } from '../common/logger.js';
 import { SCRIPT_EXTS } from '../common/constant.js';
 
@@ -18,7 +18,7 @@ function runCommand(
   return new Promise((resolve) => {
     execa(cmd, options, {
       preferLocal: true,
-      env: { FORCE_COLOR: true },
+      env: { FORCE_COLOR: 'true' },
     })
       .then(() => {
         spinner.success({ text: messages.succeed });

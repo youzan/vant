@@ -1,6 +1,6 @@
-import { relative, sep, join } from 'path';
+import { relative, sep, join } from 'node:path';
 import { CSS_LANG } from '../common/css.js';
-import { existsSync } from 'fs';
+import { existsSync } from 'node:fs';
 import { getDeps, clearDepsCache, fillExt } from './get-deps.js';
 import { getComponents, smartOutputFile } from '../common/index.js';
 import { SRC_DIR, STYLE_DEPS_JSON_FILE } from '../common/constant.js';
