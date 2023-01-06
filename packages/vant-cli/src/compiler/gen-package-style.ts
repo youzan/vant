@@ -1,9 +1,10 @@
 import { join } from 'node:path';
 import { existsSync } from 'node:fs';
 import { createRequire } from 'node:module';
-import { smartOutputFile, normalizePath } from '../common/index.js';
+import { smartOutputFile, normalizePath, isSfc } from '../common/index.js';
 import { CSS_LANG, getCssBaseFile } from '../common/css.js';
 import { SRC_DIR, STYLE_DEPS_JSON_FILE } from '../common/constant.js';
+import { fillExt } from './get-deps.js';
 
 type Options = {
   outputPath?: string;
@@ -28,9 +29,10 @@ export function genPackageStyle(options: Options = {}) {
 
   content += styleDepsJson.sequence
     .map((name: string) => {
+      const componentPath = fillExt(join(SRC_DIR, name, 'index')).path;
       let path = join(SRC_DIR, `${name}/index${ext}`);
 
-      if (!existsSync(path)) {
+      if (!isSfc(componentPath) && !existsSync(path)) {
         return '';
       }
 

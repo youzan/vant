@@ -1,5 +1,5 @@
 import fse from 'fs-extra';
-import path from 'node:path';
+import { parse as pathParse, join, relative, dirname, sep } from 'node:path';
 import hash from 'hash-sum';
 import {
   parse,
@@ -8,9 +8,17 @@ import {
   compileScript,
   compileStyle,
 } from 'vue/compiler-sfc';
-import { replaceExt } from '../common/index.js';
+import {
+  replaceExt,
+  getComponents,
+  isSfc,
+  normalizePath,
+} from '../common/index.js';
+import { CSS_LANG } from '../common/css.js';
+import { getVantConfig, SRC_DIR, ROOT } from '../common/constant.js';
+import { getDeps, fillExt } from './get-deps.js';
 
-const { remove, readFileSync, outputFile } = fse;
+const { remove, readFileSync, outputFile, existsSync } = fse;
 
 const RENDER_FN = '__vue_render__';
 const VUEIDS = '__vue_sfc__';
@@ -42,18 +50,16 @@ function injectScopeId(script: string, scopeId: string) {
   return script;
 }
 
-function injectStyle(script: string, styles: SFCBlock[], filePath: string) {
-  if (styles.length) {
-    const imports = styles
-      .map((style, index) => {
-        const { base } = path.parse(getSfcStylePath(filePath, 'css', index));
-        return `import './${base}';`;
-      })
-      .join('\n');
-
-    script = `${imports}\n${script}`;
-
-    return script;
+function injectStyle(
+  script: string,
+  styles: SFCBlock[],
+  filePath: string,
+  theme: boolean | 'css3'
+) {
+  // 如果有样式，并且不需要主题，则引入css
+  if (styles.length && !theme) {
+    const { base } = pathParse(replaceExt(filePath, `.css`));
+    return `import './${base}';\n${script}`;
   }
 
   return script;
@@ -68,10 +74,23 @@ export function parseSfc(filename: string) {
   return descriptor;
 }
 
+let cacheComponentPaths: null | string[] = null;
+
+function getComponentPaths() {
+  if (cacheComponentPaths) return cacheComponentPaths;
+  cacheComponentPaths = getComponents().map(
+    (component) => fillExt(join(SRC_DIR, component, 'index')).path
+  );
+  return cacheComponentPaths;
+}
+
 export async function compileSfc(filePath: string): Promise<any> {
   const tasks = [remove(filePath)];
   const source = readFileSync(filePath, 'utf-8');
   const descriptor = parseSfc(filePath);
+  const vantConfig = getVantConfig();
+  // css3 or boolean
+  const theme = vantConfig.build?.css.theme || 'css3';
 
   const { template, styles } = descriptor;
 
@@ -99,7 +118,7 @@ export async function compileSfc(filePath: string): Promise<any> {
           script += descriptor.script!.content;
         }
 
-        script = injectStyle(script, styles, filePath);
+        script = injectStyle(script, styles, filePath, theme);
         script = script.replace(EXPORT, `const ${VUEIDS} =`);
 
         if (template) {
@@ -134,19 +153,57 @@ export async function compileSfc(filePath: string): Promise<any> {
 
   // compile style part
   tasks.push(
-    ...styles.map(async (style, index: number) => {
-      const cssFilePath = getSfcStylePath(filePath, style.lang || 'css', index);
+    new Promise((resolve, reject) => {
+      const componentPaths = getComponentPaths();
+      const sfcStyleDeps = getDeps(filePath)
+        .filter((dep) => {
+          if (!isSfc(dep)) return false;
+          const relativePath = relative(ROOT, dep);
+          const absoluteSrcPath = join(
+            SRC_DIR,
+            relativePath.slice(relativePath.indexOf(sep) + 1)
+          );
+          return !componentPaths.includes(absoluteSrcPath);
+        })
+        .map((key) => {
+          const relativePath = normalizePath(
+            relative(dirname(filePath), replaceExt(key, `.${CSS_LANG}`))
+          );
+          const importUrl = relativePath.startsWith('.')
+            ? relativePath
+            : `./${relativePath}`;
+          return `@import "${importUrl}";`;
+        })
+        .join('\n');
+      const styleFiles = styles.map((style, index: number) => {
+        const cssFilePath = getSfcStylePath(
+          filePath,
+          style.lang || 'css',
+          index
+        );
 
-      const styleSource = compileStyle({
-        id: scopeId,
-        scoped: style.scoped,
-        source: trim(style.content),
-        filename: cssFilePath,
-        // @ts-ignore
-        preprocessLang: style.lang,
-      }).code;
+        let styleSource = trim(style.content);
+        // 如果为true，则不进行compileStyle，这也意味着不支持scope\v-bind()等
+        // 这种一般用于使用less等进行主题配置场景
+        if (theme === true) {
+          styleSource = compileStyle({
+            id: scopeId,
+            scoped: style.scoped,
+            source: styleSource,
+            filename: cssFilePath,
+            // @ts-ignore
+            preprocessLang: style.lang,
+          }).code;
+        }
 
-      return outputFile(cssFilePath, styleSource);
+        return styleSource;
+      });
+      const indexStylePath = replaceExt(filePath, `.${CSS_LANG}`);
+      let indexStyleContent = existsSync(indexStylePath)
+        ? readFileSync(indexStylePath, 'utf-8')
+        : '';
+      indexStyleContent += `\n${sfcStyleDeps}\n${styleFiles.join('\n')}`;
+      outputFile(indexStylePath, trim(indexStyleContent)).then(resolve, reject);
     })
   );
 

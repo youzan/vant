@@ -98,9 +98,11 @@ async function buildCJSOutputs() {
   await compileDir(LIB_DIR, 'cjs');
 }
 
-async function buildTypeDeclarations() {
-  await Promise.all([preCompileDir(ES_DIR), preCompileDir(LIB_DIR)]);
+function preCompileDirs() {
+  return Promise.all([preCompileDir(ES_DIR), preCompileDir(LIB_DIR)]);
+}
 
+async function buildTypeDeclarations() {
   const tsConfig = join(process.cwd(), 'tsconfig.declaration.json');
 
   if (existsSync(tsConfig)) {
@@ -149,6 +151,10 @@ const tasks = [
   {
     text: 'Build Package Script Entry',
     task: buildPackageScriptEntry,
+  },
+  {
+    text: 'Compile sfc and remove unneeded dirs',
+    task: preCompileDirs,
   },
   {
     text: 'Build Component Style Entry',

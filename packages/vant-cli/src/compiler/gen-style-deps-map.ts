@@ -16,7 +16,9 @@ function getStylePath(component: string) {
 }
 
 export function checkStyleExists(component: string) {
-  return existsSync(getStylePath(component));
+  const sfcPath = join(SRC_DIR, component, `index.vue`);
+  // 如果该组件是用vue编写的，则默认其有style文件
+  return existsSync(sfcPath) || existsSync(getStylePath(component));
 }
 
 // analyze component dependencies
