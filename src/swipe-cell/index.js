@@ -66,16 +66,26 @@ export default createComponent({
   watch: {
     leftforhelper: {
       immediate: true,
-      handler(newValue, oldValue) {
-        console.log(newValue, 222)
-        newValue && this.open('left')
+      handler(newValue) {
+        if (this.inDesigner()) {
+          if (newValue) {
+            this.open('left')
+          } else if (this.opened && this.position==='left') {
+            this.close('left')
+          }
+        }
       },
     },
     rightforhelper: {
       immediate: true,
-      handler(newValue, oldValue) {
-        console.log(newValue, 333)
-        newValue && this.open('right')
+      handler(newValue) {
+        if (this.inDesigner()) {
+          if (newValue) {
+            this.open('right')
+          } else if (this.opened && this.position==='right') {
+            this.close('right')
+          }
+        }
       },
     },
   },
@@ -84,12 +94,11 @@ export default createComponent({
   },
 
   methods: {
-    getWidthByRef(ref) {console.log(ref, 'ref')
+    getWidthByRef(ref) {
       if (this.$refs[ref]) {
         const rect = this.$refs[ref].getBoundingClientRect();
         return rect.width;
       }
-console.log(ref, 'ref2222')
       return 0;
     },
 
@@ -281,7 +290,6 @@ console.log(ref, 'ref2222')
       transform: `translate3d(${this.offset}px, 0, 0)`,
       transitionDuration: this.dragging ? '0s' : '.6s',
     };
-console.log(this.offset, 666)
     return (
       <div class={bem()} onClick={this.getClickHandler('cell')}>
         <div class={bem('wrapper')} style={wrapperStyle}>

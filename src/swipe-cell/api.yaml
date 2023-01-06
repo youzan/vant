@@ -1,9 +1,9 @@
 - name: van-swipe-cell
   icon: swipe-cell
-  title: 滑动单元格
-  description: 滑动单元格
+  title: 滑动条
+  description: 滑动条
   labels:
-    - Display
+    - Container
   next: true
   nested: false
   attrs:
