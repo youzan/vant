@@ -28,24 +28,6 @@ export function hasDefaultExport(code: string) {
   return code.includes('export default') || code.includes('export { default }');
 }
 
-export function getComponents() {
-  const EXCLUDES = ['.DS_Store'];
-  const dirs = readdirSync(SRC_DIR);
-
-  return dirs
-    .filter((dir) => !EXCLUDES.includes(dir))
-    .filter((dir) =>
-      ENTRY_EXTS.some((ext) => {
-        const path = join(SRC_DIR, dir, `index.${ext}`);
-        if (existsSync(path)) {
-          return hasDefaultExport(readFileSync(path, 'utf-8'));
-        }
-
-        return false;
-      })
-    );
-}
-
 export const isDir = (dir: string) => lstatSync(dir).isDirectory();
 export const isDemoDir = (dir: string) => DEMO_REGEXP.test(dir);
 export const isTestDir = (dir: string) => TEST_REGEXP.test(dir);
@@ -57,6 +39,25 @@ export const isJsx = (path: string) => JSX_REGEXP.test(path);
 
 const camelizeRE = /-(\w)/g;
 const pascalizeRE = /(\w)(\w*)/g;
+
+export function getComponents() {
+  const EXCLUDES = ['.DS_Store'];
+  const dirs = readdirSync(SRC_DIR);
+
+  return dirs
+    .filter((dir) => !EXCLUDES.includes(dir))
+    .filter((dir) =>
+      ENTRY_EXTS.some((ext) => {
+        const path = join(SRC_DIR, dir, `index.${ext}`);
+        if (existsSync(path)) {
+          // index.vue文件不判断是否包含export default
+          return isSfc(path) || hasDefaultExport(readFileSync(path, 'utf-8'));
+        }
+
+        return false;
+      })
+    );
+}
 
 export function camelize(str: string): string {
   return str.replace(camelizeRE, (_, c) => c.toUpperCase());
