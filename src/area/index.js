@@ -101,8 +101,8 @@ export default createComponent({
       if (this.ifDesigner()) {
         return this.value;
       }
-      if (!this.value) return '';
-      const tcode = this.value;
+      if (!this.value && !this.code) return '';
+      const tcode = this.value || this.code;
       const provincet = this.getListTempNew('province', tcode.slice(0, 2) + '0000');
       const cityt = this.getListTempNew('city', tcode.slice(0, 4) + '00');
       const countyt = this.getListTempNew('county', tcode.slice(0, 6));
@@ -252,6 +252,9 @@ export default createComponent({
     onConfirm(values, index) {
       values = this.parseOutputValues(values);
       this.setValues();
+      if (!this.value) {
+        this.code = values[2].code;
+      }
       this.$emit('update:value', values[2].code);
       this.$emit('confirm', values, index, values[2].code);
       this.togglePopup();
