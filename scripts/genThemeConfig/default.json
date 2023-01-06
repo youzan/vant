@@ -385,7 +385,7 @@
     "--van-rate-icon-size": "20px",
     "--van-rate-icon-gutter": "var(--van-padding-base)",
     "--van-rate-icon-void-color": "#c8c9cc",
-    "--van-rate-icon-full-color": "var(--van-brand-error)",
+    "--van-rate-icon-full-color": "var(--van-brand-warning)",
     "--van-rate-icon-disabled-color": "#c8c9cc",
     "--van-circle-size": "100px",
     "--van-circle-color": "var(--van-brand-primary)",
