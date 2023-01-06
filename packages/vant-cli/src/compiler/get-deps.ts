@@ -1,4 +1,4 @@
-import { join } from 'node:path';
+import { join, parse } from 'node:path';
 import { SCRIPT_EXTS, STYLE_EXTS } from '../common/constant.js';
 import { readFileSync, existsSync } from 'node:fs';
 
@@ -30,6 +30,15 @@ function exists(filePath: string) {
 }
 
 export function fillExt(filePath: string) {
+  const hasScriptExt = SCRIPT_EXTS.includes(parse(filePath).ext);
+  if (hasScriptExt) {
+    // 由于编译时序问题，这里也不去判断该path是否存在
+    return {
+      path: filePath,
+      replaced: true, // 表示当前path已为完整路径，不需再进行fillExt
+      isIndex: false,
+    };
+  }
   for (let i = 0; i < SCRIPT_EXTS.length; i++) {
     const completePath = `${filePath}${SCRIPT_EXTS[i]}`;
     if (exists(completePath)) {
@@ -129,7 +138,7 @@ export function replaceScriptImportExt(
 
       const pathInfo = getPathByImport(line, filePath);
 
-      if (pathInfo) {
+      if (pathInfo && !pathInfo.replaced) {
         const relativePath = getImportRelativePath(line);
 
         if (pathInfo.isIndex) {
