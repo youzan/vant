@@ -154,6 +154,54 @@ exports[`should render correctly after inserting a tab 1`] = `
 </div>
 `;
 
+exports[`should render correctly after inserting a tab from an array 1`] = `
+<div class="van-tabs van-tabs--line">
+  <div class="van-tabs__wrap">
+    <div role="tablist"
+         class="van-tabs__nav van-tabs__nav--line"
+         aria-orientation="horizontal"
+    >
+      <div id="van-tabs-0"
+           role="tab"
+           class="van-tab van-tab--line"
+           tabindex="-1"
+           aria-selected="false"
+      >
+        <span class="van-tab__text van-tab__text--ellipsis">
+          1
+        </span>
+      </div>
+      <div id="van-tabs-1"
+           role="tab"
+           class="van-tab van-tab--line van-tab--active"
+           tabindex="0"
+           aria-selected="true"
+      >
+        <span class="van-tab__text van-tab__text--ellipsis">
+          2
+        </span>
+      </div>
+      <div id="van-tabs-2"
+           role="tab"
+           class="van-tab van-tab--line"
+           tabindex="-1"
+           aria-selected="false"
+      >
+        <span class="van-tab__text van-tab__text--ellipsis">
+          3
+        </span>
+      </div>
+      <div class="van-tabs__line"
+           style="transform: translateX(50px) translateX(-50%);"
+      >
+      </div>
+    </div>
+  </div>
+  <div class="van-tabs__content">
+  </div>
+</div>
+`;
+
 exports[`should render correctly after inserting a tab with name 1`] = `
 <div class="van-tabs van-tabs--line">
   <div class="van-tabs__wrap">
