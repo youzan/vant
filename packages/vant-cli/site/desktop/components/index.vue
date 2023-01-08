@@ -110,3 +110,8 @@ export default {
   },
 };
 </script>
+<style lang="less">
+.van-doc {
+  position: relative;
+}
+</style>

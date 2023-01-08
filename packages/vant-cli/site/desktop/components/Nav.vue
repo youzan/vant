@@ -72,7 +72,7 @@ export default {
 
 <style lang="less">
 .van-doc-nav {
-  position: fixed;
+  position: absolute;
   left: 0;
   z-index: 1;
   min-width: var(--van-doc-nav-width);
