@@ -22,7 +22,7 @@ app.use(Popup);
 
 ```html
 <van-cell is-link @click="showPopup">Show Popup</van-cell>
-<van-popup v-model:show="show">Content</van-popup>
+<van-popup v-model:show="show" :style="{ padding: '64px' }">Content</van-popup>
 ```
 
 ```js
@@ -44,10 +44,37 @@ export default {
 
 ### Position
 
-Use `position` prop to set popup display position.
+Use `position` prop to set Popup display position.
+
+The default position is `center`, it can be set to `top`, `bottom`, `left`, `right`.
+
+- When the position is `top` or `bottom`, the default width is consistent with the screen width, and the height of the Popup depends on the height of the content.
+- When the position is `left` or `right` side, the width and height are not set by default, and the width and height of the popup depend on the width and height of the content.
 
 ```html
-<van-popup v-model:show="show" position="top" :style="{ height: '30%' }" />
+<!-- top popup -->
+<van-popup v-model:show="showTop" position="top" :style="{ height: '30%' }" />
+
+<!-- bottom popup -->
+<van-popup
+  v-model:show="showBottom"
+  position="bottom"
+  :style="{ height: '30%' }"
+/>
+
+<!-- left popup -->
+<van-popup
+  v-model:show="showLeft"
+  position="left"
+  :style="{ width: '30%', height: '100%' }"
+/>
+
+<!-- Popup on the right -->
+<van-popup
+  v-model:show="showRight"
+  position="right"
+  :style="{ width: '30%', height: '100%' }"
+/>
 ```
 
 ### Close Icon
@@ -79,13 +106,98 @@ Use `position` prop to set popup display position.
 
 ### Round Corner
 
+After setting the `round` prop, the Popup will add different rounded corner styles according to the position.
+
 ```html
+<!-- Round Popup (center) -->
+<van-popup v-model:show="showCenter" round :style="{ padding: '64px' }" />
+
+<!-- Round Popup (bottom) -->
 <van-popup
-  v-model:show="show"
+  v-model:show="showBottom"
   round
   position="bottom"
   :style="{ height: '30%' }"
 />
+```
+
+### Listen To Click Events
+
+Popup supports following events:
+
+- `click`: Emitted when Popup is clicked.
+- `click-overlay`: Emitted when overlay is clicked.
+- `click-close-icon`: Emitted when close icon is clicked.
+
+```html
+<van-cell title="Listen Click Events" is-link @click="show = true" />
+<van-popup
+  v-model:show="show"
+  position="bottom"
+  :style="{ height: '30%' }"
+  closeable
+  @click-overlay="onClickOverlay"
+  @click-close-icon="onClickCloseIcon"
+/>
+```
+
+```js
+import { ref } from 'vue';
+import { showToast } from 'vant';
+
+export default {
+  setup() {
+    const show = ref(false);
+    const onClickOverlay = () => {
+      showToast('click-overlay');
+    };
+    const onClickCloseIcon = () => {
+      showToast('click-close-icon');
+    };
+    return {
+      show,
+      onClickOverlay,
+      onClickCloseIcon,
+    };
+  },
+};
+```
+
+### Listen to Display Events
+
+When the Popup is opened or closed, the following events will be emitted:
+
+- `open`: Emitted immediately when the Popup is opened.
+- `opened`: Emitted when the Popup is opened and the animation ends.
+- `close`: Emitted immediately when the Popup is closed.
+- `closed`: Emitted when the Popup is closed and the animation ends.
+
+```html
+<van-cell title="Listen to display events" is-link @click="show = true" />
+<van-popup
+  v-model:show="show"
+  position="bottom"
+  :style="{ height: '30%' }"
+  @open="showToast('open')"
+  @opened="showToast('opened')"
+  @close="showToast('close')"
+  @closed="showToast('closed')"
+/>
+```
+
+```js
+import { ref } from 'vue';
+import { showToast } from 'vant';
+
+export default {
+  setup() {
+    const show = ref(false);
+    return {
+      show,
+      showToast,
+    };
+  },
+};
 ```
 
 ### Get Container
@@ -131,15 +243,15 @@ Use `teleport` prop to specify mount location.
 
 ### Events
 
-| Event            | Description                        | Arguments           |
-| ---------------- | ---------------------------------- | ------------------- |
-| click            | Emitted when Popup is clicked      | _event: MouseEvent_ |
-| click-overlay    | Emitted when overlay is clicked    | _event: MouseEvent_ |
+| Event | Description | Arguments |
+| --- | --- | --- |
+| click | Emitted when Popup is clicked | _event: MouseEvent_ |
+| click-overlay | Emitted when overlay is clicked | _event: MouseEvent_ |
 | click-close-icon | Emitted when close icon is clicked | _event: MouseEvent_ |
-| open             | Emitted when opening Popup         | -                   |
-| close            | Emitted when closing Popup         | -                   |
-| opened           | Emitted when Popup is opened       | -                   |
-| closed           | Emitted when Popup is closed       | -                   |
+| open | Emitted immediately when Popup is opened | - |
+| close | Emitted immediately when Popup is closed | - |
+| opened | Emitted when Popup is opened and the animation ends | - |
+| closed | Emitted when Popup is closed and the animation ends | - |
 
 ### Slots
 

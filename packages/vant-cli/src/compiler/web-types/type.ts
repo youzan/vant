@@ -1,4 +1,4 @@
-import { PathLike } from 'fs';
+import { PathLike } from 'node:fs';
 
 export type VueSlot = {
   name: string;

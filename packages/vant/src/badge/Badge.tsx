@@ -71,6 +71,9 @@ export default defineComponent({
       }
     };
 
+    const getOffsetWithMinusString = (val: string) =>
+      val.startsWith('-') ? val.replace('-', '') : `-${val}`;
+
     const style = computed(() => {
       const style: CSSProperties = {
         background: props.color,
@@ -78,13 +81,25 @@ export default defineComponent({
 
       if (props.offset) {
         const [x, y] = props.offset;
+        const { position } = props;
+        const [offsetY, offsetX] = position.split('-') as [
+          'top' | 'bottom',
+          'left' | 'right'
+        ];
+
         if (slots.default) {
-          style.top = addUnit(y);
+          if (typeof y === 'number') {
+            style[offsetY] = addUnit(offsetY === 'top' ? y : -y);
+          } else {
+            style[offsetY] =
+              offsetY === 'top' ? addUnit(y) : getOffsetWithMinusString(y);
+          }
 
           if (typeof x === 'number') {
-            style.right = addUnit(-x);
+            style[offsetX] = addUnit(offsetX === 'left' ? x : -x);
           } else {
-            style.right = x.startsWith('-') ? x.replace('-', '') : `-${x}`;
+            style[offsetX] =
+              offsetX === 'left' ? addUnit(x) : getOffsetWithMinusString(x);
           }
         } else {
           style.marginTop = addUnit(y);

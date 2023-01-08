@@ -97,10 +97,14 @@ You can directly override these CSS variables in the code, and the style of the 
 
 ```css
 /* the Primary Button will turn red */
-:root {
+:root:root {
   --van-button-primary-background: red;
 }
 ```
+
+> Note: Why write two duplicate `:root`?
+>
+> Since the theme variables in vant are also declared under `:root`, in some cases they cannot be successfully overwritten due to priority issues. Through `:root:root` you can explicitly make the content you write a higher priority to ensure the successful coverage of the theme variables.
 
 #### Override by ConfigProvider
 
@@ -129,7 +133,7 @@ The `ConfigProvider` component provides the ability to override CSS variables. Y
 ```
 
 ```js
-import { ref } from 'vue';
+import { ref, reactive } from 'vue';
 
 export default {
   setup() {
@@ -138,7 +142,7 @@ export default {
 
     // ThemeVars will be converted to the corresponding CSS variable
     // For example, sliderBarHeight will be converted to `--van-slider-bar-height`
-    const themeVars = {
+    const themeVars = reactive({
       rateIconFullColor: '#07c160',
       sliderBarHeight: '4px',
       sliderButtonWidth: '20px',
@@ -146,7 +150,7 @@ export default {
       sliderActiveBackground: '#07c160',
       buttonPrimaryBackground: '#07c160',
       buttonPrimaryBorderColor: '#07c160',
-    };
+    });
 
     return {
       rate,
@@ -193,13 +197,13 @@ Take the `buttonPrimaryBackground` variable below as an example, the value will 
 ```
 
 ```js
-import { ref } from 'vue';
+import { ref, reactive } from 'vue';
 
 export default {
   setup() {
-    const themeVars = { buttonPrimaryBackground: 'red' };
-    const themeVarsDark = { buttonPrimaryBackground: 'blue' };
-    const themeVarsLight = { buttonPrimaryBackground: 'green' };
+    const themeVars = reactive({ buttonPrimaryBackground: 'red' });
+    const themeVarsDark = reactive({ buttonPrimaryBackground: 'blue' });
+    const themeVarsLight = reactive({ buttonPrimaryBackground: 'green' });
 
     return {
       themeVars,

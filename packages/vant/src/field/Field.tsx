@@ -286,6 +286,15 @@ export default defineComponent({
         if (modelValue && getStringLength(modelValue) === +maxlength) {
           return modelValue;
         }
+        // Remove redundant interpolated values,
+        // make it consistent with the native input maxlength behavior.
+        const selectionEnd = inputRef.value?.selectionEnd;
+        if (state.focused && selectionEnd) {
+          const valueArr = [...value];
+          const exceededLength = valueArr.length - +maxlength;
+          valueArr.splice(selectionEnd - exceededLength, exceededLength);
+          return valueArr.join('');
+        }
         return cutString(value, +maxlength);
       }
       return value;
@@ -297,28 +306,58 @@ export default defineComponent({
     ) => {
       const originalValue = value;
       value = limitValueLength(value);
-      const isExceedLimit = value !== originalValue;
+      // When the value length exceeds maxlength,
+      // record the excess length for correcting the cursor position.
+      // https://github.com/youzan/vant/issues/11289
+      const limitDiffLen =
+        getStringLength(originalValue) - getStringLength(value);
 
       if (props.type === 'number' || props.type === 'digit') {
         const isNumber = props.type === 'number';
         value = formatNumber(value, isNumber, isNumber);
       }
 
+      let formatterDiffLen = 0;
       if (props.formatter && trigger === props.formatTrigger) {
-        value = props.formatter(value);
+        const { formatter, maxlength } = props;
+        value = formatter(value);
+        // The length of the formatted value may exceed maxlength.
+        if (isDef(maxlength) && getStringLength(value) > maxlength) {
+          value = cutString(value, +maxlength);
+        }
+        if (inputRef.value && state.focused) {
+          const { selectionEnd } = inputRef.value;
+          // The value before the cursor of the original value.
+          const bcoVal = cutString(originalValue, selectionEnd!);
+          // Record the length change of `bcoVal` after formatting,
+          // which is used to correct the cursor position.
+          formatterDiffLen =
+            getStringLength(formatter(bcoVal)) - getStringLength(bcoVal);
+        }
       }
 
       if (inputRef.value && inputRef.value.value !== value) {
-        // When the value length exceeds maxlength and the input is focused,
-        // correct the cursor position to be consistent with the native behavior.
-        // https://github.com/youzan/vant/issues/11289
-        if (state.focused && isExceedLimit) {
-          const { selectionStart, selectionEnd } = inputRef.value;
+        // When the input is focused, correct the cursor position.
+        if (state.focused) {
+          let { selectionStart, selectionEnd } = inputRef.value;
           inputRef.value.value = value;
-          inputRef.value.setSelectionRange(
-            selectionStart! - 1,
-            selectionEnd! - 1
-          );
+
+          if (isDef(selectionStart) && isDef(selectionEnd)) {
+            const valueLen = getStringLength(value);
+
+            if (limitDiffLen) {
+              selectionStart -= limitDiffLen;
+              selectionEnd -= limitDiffLen;
+            } else if (formatterDiffLen) {
+              selectionStart += formatterDiffLen;
+              selectionEnd += formatterDiffLen;
+            }
+
+            inputRef.value.setSelectionRange(
+              Math.min(selectionStart, valueLen),
+              Math.min(selectionEnd, valueLen)
+            );
+          }
         } else {
           inputRef.value.value = value;
         }
@@ -600,17 +639,21 @@ export default defineComponent({
     return () => {
       const disabled = getProp('disabled');
       const labelAlign = getProp('labelAlign');
-      const Label = renderLabel();
       const LeftIcon = renderLeftIcon();
 
-      const renderTitle = () =>
-        labelAlign === 'top' ? [LeftIcon, Label] : Label;
+      const renderTitle = () => {
+        const Label = renderLabel();
+        if (labelAlign === 'top') {
+          return [LeftIcon, Label].filter(Boolean);
+        }
+        return Label || [];
+      };
 
       return (
         <Cell
           v-slots={{
             icon: LeftIcon && labelAlign !== 'top' ? () => LeftIcon : null,
-            title: Label || labelAlign === 'top' ? renderTitle : null,
+            title: renderTitle,
             value: renderFieldBody,
             extra: slots.extra,
           }}

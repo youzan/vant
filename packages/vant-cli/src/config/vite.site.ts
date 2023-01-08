@@ -1,12 +1,12 @@
-import { join } from 'path';
-import { createRequire } from 'module';
+import { join } from 'node:path';
+import { createRequire } from 'node:module';
 import hljs from 'highlight.js';
 import vitePluginMd from 'vite-plugin-md';
 import vitePluginVue from '@vitejs/plugin-vue';
 import vitePluginJsx from '@vitejs/plugin-vue-jsx';
 import { setBuildTarget, getVantConfig, isDev } from '../common/index.js';
 import { SITE_DIST_DIR, SITE_SRC_DIR } from '../common/constant.js';
-import { injectHtml } from 'vite-plugin-html';
+import lodash from 'lodash';
 import type { InlineConfig, PluginOption } from 'vite';
 import type MarkdownIt from 'markdown-it';
 import { genSiteMobileShared } from '../compiler/gen-site-mobile-shared.js';
@@ -131,6 +131,18 @@ function vitePluginGenVantBaseCode(): PluginOption {
   };
 }
 
+function vitePluginHTML(data: object): PluginOption {
+  return {
+    name: 'vite-plugin-html',
+    transformIndexHtml: {
+      enforce: 'pre',
+      transform(html) {
+        return lodash.template(html)(data);
+      },
+    },
+  };
+}
+
 export function getViteConfigForSiteDev(): InlineConfig {
   setBuildTarget('site');
 
@@ -177,18 +189,16 @@ export function getViteConfigForSiteDev(): InlineConfig {
         },
       }),
       vitePluginJsx(),
-      injectHtml({
-        data: {
-          ...siteConfig,
-          title,
-          // `description` is used by the HTML ejs template,
-          // so it needs to be written explicitly here to avoid error: description is not defined
-          description: siteConfig.description,
-          headHtml,
-          baiduAnalytics,
-          enableVConsole,
-          meta: getHTMLMeta(vantConfig),
-        },
+      vitePluginHTML({
+        ...siteConfig,
+        title,
+        // `description` is used by the HTML ejs template,
+        // so it needs to be written explicitly here to avoid error: description is not defined
+        description: siteConfig.description,
+        headHtml,
+        baiduAnalytics,
+        enableVConsole,
+        meta: getHTMLMeta(vantConfig),
       }),
     ],
 

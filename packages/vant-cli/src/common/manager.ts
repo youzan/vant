@@ -1,4 +1,4 @@
-import execa from 'execa';
+import { execa } from 'execa';
 import { consola } from './logger.js';
 import { execSync } from 'child_process';
 import { getVantConfig } from './constant.js';

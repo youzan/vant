@@ -95,7 +95,7 @@ export function formatDataForCascade({
     });
   }
 
-  const options = Array.from(provinceMap.values()) as PickerOption[];
+  const options = Array.from(provinceMap.values());
 
   if (placeholder.length) {
     const county = showCounty ? [makeOption(placeholder[2])] : undefined;

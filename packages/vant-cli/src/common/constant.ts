@@ -1,6 +1,6 @@
-import { existsSync, readFileSync } from 'fs';
-import { fileURLToPath, pathToFileURL } from 'url';
-import { join, dirname, isAbsolute } from 'path';
+import { existsSync, readFileSync } from 'node:fs';
+import { fileURLToPath, pathToFileURL } from 'node:url';
+import { join, dirname, isAbsolute } from 'node:path';
 
 function findRootDir(dir: string): string {
   if (existsSync(join(dir, 'vant.config.mjs'))) {

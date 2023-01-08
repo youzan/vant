@@ -1,6 +1,6 @@
-import { join } from 'path';
-import { existsSync } from 'fs';
-import { createRequire } from 'module';
+import { join } from 'node:path';
+import { existsSync } from 'node:fs';
+import { createRequire } from 'node:module';
 import { smartOutputFile, normalizePath } from '../common/index.js';
 import { CSS_LANG, getCssBaseFile } from '../common/css.js';
 import { SRC_DIR, STYLE_DEPS_JSON_FILE } from '../common/constant.js';

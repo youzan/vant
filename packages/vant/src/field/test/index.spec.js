@@ -520,3 +520,16 @@ test('should render left icon inside label when label-align is top', () => {
   });
   expect(wrapper.html()).toMatchSnapshot();
 });
+
+test('should render label correctly when dynamically set empty label', async () => {
+  const wrapper = mount(Field, {
+    props: {
+      label: 'abc',
+    },
+  });
+
+  expect(wrapper.find('.van-field__label').html()).toMatchSnapshot();
+
+  await wrapper.setProps({ label: '' });
+  expect(wrapper.find('.van-field__label').exists()).toBeFalsy();
+});

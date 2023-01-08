@@ -13,7 +13,7 @@ export default {
   vanCalendar: {
     end: 'Конец',
     start: 'Начало',
-    title: 'Каленарь',
+    title: 'Календарь',
     weekdays: ['ВС', 'ПН', 'ВТ', 'СР', 'ЧТ', 'ПТ', 'СБ'],
     monthTitle: (year: number, month: number) => `${year}/${month}`,
     rangePrompt: (maxRange: number) => `Укажите более ${maxRange} дней`,

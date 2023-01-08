@@ -1,5 +1,5 @@
 import glob from 'fast-glob';
-import { join } from 'path';
+import { join } from 'node:path';
 import fse from 'fs-extra';
 import { mdParser } from './parser.js';
 import { formatter } from './formatter.js';

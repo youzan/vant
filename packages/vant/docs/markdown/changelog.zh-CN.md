@@ -19,6 +19,59 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 
 ## 更新内容
 
+### [v4.0.7](https://github.com/vant-ui/vant/compare/v4.0.6...v4.0.7)
+
+`2023-01-02`
+
+**Bug Fixes**
+
+- Icons: 修复 delete / delete-o 图标存在多余黑点的问题 [#11441](https://github.com/vant-ui/vant/issues/11441)
+- Icons: 移除多余的 woff/ttf 格式声明 [#11442](https://github.com/vant-ui/vant/issues/11442)
+- ImagePreview：修复 teleport 属性不生效的问题 [#11429](https://github.com/vant-ui/vant/issues/11429)
+- Locale: 修复 ru-RU 中的 "Calendar" 拼写错误 [#11425](https://github.com/vant-ui/vant/issues/11425)
+- Swipe: 修复在 keep-alive 内使用时可能渲染空白的问题 [#11437](https://github.com/vant-ui/vant/issues/11437)
+
+### [v4.0.6](https://github.com/vant-ui/vant/compare/v4.0.5...v4.0.6)
+
+`2022-12-26`
+
+**Bug Fixes**
+
+- 修复升级 vite v4 导致构建产物不全的问题 [#11423](https://github.com/vant-ui/vant/issues/11423)
+
+### [v4.0.5](https://github.com/vant-ui/vant/compare/v4.0.4...v4.0.5)
+
+`2022-12-25`
+
+**Feature**
+
+- Locale: 新增 Dutch 荷兰语 [#11419](https://github.com/vant-ui/vant/issues/11419)
+- Locale: 新增 Mongolian 蒙古语 [#11418](https://github.com/vant-ui/vant/issues/11418)
+
+**Bug Fixes**
+
+- Badge: 修复 offset 属性部分情况下导致样式错误的问题 [#11400](https://github.com/vant-ui/vant/issues/11400)
+- Form: 修复事件参数中可能出现 key 为 undefined 的问题 [#11410](https://github.com/vant-ui/vant/issues/11410)
+- Picker: 修复深色模式下加载状态样式错误的问题 [#11405](https://github.com/vant-ui/vant/issues/11405)
+
+### [v4.0.4](https://github.com/vant-ui/vant/compare/v4.0.3...v4.0.4)
+
+`2022-12-23`
+
+**Bug Fixes**
+
+- Field: 修复使用 formatter 时光标位置可能错误的问题 [#11360](https://github.com/vant-ui/vant/issues/11360)
+- Image: 修复 load 事件未正确触发导致 ImagePreview 报错的问题 [#11406](https://github.com/vant-ui/vant/issues/11406)
+
+### [v4.0.3](https://github.com/vant-ui/vant/compare/v4.0.2...v4.0.3)
+
+`2022-12-13`
+
+**Bug Fixes**
+
+- Field: 修复动态设置空的 label 不生效的问题 [#11373](https://github.com/vant-ui/vant/issues/11373)
+- ImagePreview: 修复图片可能加载失败的问题 [#11376](https://github.com/vant-ui/vant/issues/11376)
+
 ### [v4.0.2](https://github.com/vant-ui/vant/compare/v4.0.1...v4.0.2)
 
 `2022-12-03`

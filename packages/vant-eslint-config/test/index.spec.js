@@ -24,7 +24,6 @@ test('a vue project should pass lint', async () => {
   expect([
     'no-const-assign',
     '@typescript-eslint/no-unused-vars',
-    'vue/multi-word-component-names',
     'no-undef',
   ]).toEqual(rest);
 });
@@ -34,7 +33,6 @@ test('a vue-tsx project should pass lint', async () => {
 
   expect([
     '@typescript-eslint/no-unused-vars',
-    'vue/multi-word-component-names',
     'vue/no-ref-as-operand',
     '@typescript-eslint/no-empty-interface',
   ]).toEqual(rest);

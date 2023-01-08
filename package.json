@@ -17,27 +17,14 @@
   "engines": {
     "pnpm": ">= 7.0.0"
   },
-  "packageManager": "pnpm@7.17.1",
+  "packageManager": "pnpm@7.20.0",
   "devDependencies": {
     "@vant/cli": "workspace:*",
     "@vant/eslint-config": "workspace:*",
-    "eslint": "^8.23.0",
+    "eslint": "^8.31.0",
     "husky": "^8.0.1",
     "nano-staged": "^0.8.0",
     "prettier": "^2.7.1",
     "rimraf": "^3.0.2"
-  },
-  "pnpm": {
-    "overrides": {
-      "esbuild": "^0.14"
-    },
-    "peerDependencyRules": {
-      "ignoreMissing": [
-        "@algolia/client-search",
-        "@types/react",
-        "react",
-        "react-dom"
-      ]
-    }
   }
 }

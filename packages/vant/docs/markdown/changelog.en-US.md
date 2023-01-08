@@ -19,6 +19,59 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 
 ## Details
 
+### [v4.0.7](https://github.com/vant-ui/vant/compare/v4.0.6...v4.0.7)
+
+`2023-01-02`
+
+**Bug Fixes**
+
+- Icons: fix delete / delete-o icon [#11441](https://github.com/vant-ui/vant/issues/11441)
+- Icons: no longer support woff/ttf format [#11442](https://github.com/vant-ui/vant/issues/11442)
+- ImagePreview：fix teleport prop not work [#11429](https://github.com/vant-ui/vant/issues/11429)
+- Locale: fix typo of "Calendar" in ru-RU [#11425](https://github.com/vant-ui/vant/issues/11425)
+- Swipe: failed to render inside keep-alive [#11437](https://github.com/vant-ui/vant/issues/11437)
+
+### [v4.0.6](https://github.com/vant-ui/vant/compare/v4.0.5...v4.0.6)
+
+`2022-12-26`
+
+**Bug Fixes**
+
+- Fix missing declaration files caused by upgrading vite v4 [#11423](https://github.com/vant-ui/vant/issues/11423)
+
+### [v4.0.5](https://github.com/vant-ui/vant/compare/v4.0.4...v4.0.5)
+
+`2022-12-25`
+
+**Feature**
+
+- Locale: add Dutch lang [#11419](https://github.com/vant-ui/vant/issues/11419)
+- Locale: add Mongolian lang [#11418](https://github.com/vant-ui/vant/issues/11418)
+
+**Bug Fixes**
+
+- Badge: fix badge offset of different position [#11400](https://github.com/vant-ui/vant/issues/11400)
+- Form: filter no name field's value [#11410](https://github.com/vant-ui/vant/issues/11410)
+- Picker: picker loading color in dark theme [#11405](https://github.com/vant-ui/vant/issues/11405)
+
+### [v4.0.4](https://github.com/vant-ui/vant/compare/v4.0.3...v4.0.4)
+
+`2022-12-23`
+
+**Bug Fixes**
+
+- Field: incorrect cursor position when value length exceeds maxlength or when formatter is used [#11360](https://github.com/vant-ui/vant/issues/11360)
+- Image: load event missing params [#11406](https://github.com/vant-ui/vant/issues/11406)
+
+### [v4.0.3](https://github.com/vant-ui/vant/compare/v4.0.2...v4.0.3)
+
+`2022-12-13`
+
+**Bug Fixes**
+
+- Field: failed to dynamically set empty label [#11373](https://github.com/vant-ui/vant/issues/11373)
+- ImagePreview: fix loading when previewing images [#11376](https://github.com/vant-ui/vant/issues/11376)
+
 ### [v4.0.2](https://github.com/vant-ui/vant/compare/v4.0.1...v4.0.2)
 
 `2022-12-03`

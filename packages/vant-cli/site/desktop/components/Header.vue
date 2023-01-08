@@ -64,12 +64,6 @@
               {{ langLabel }}
             </a>
           </li>
-
-          <search-input
-            v-if="searchConfig"
-            :lang="lang"
-            :search-config="searchConfig"
-          />
         </ul>
       </div>
     </div>
@@ -77,16 +71,11 @@
 </template>
 
 <script>
-import SearchInput from './SearchInput.vue';
 import { packageVersion } from 'site-desktop-shared';
 import { getDefaultTheme, syncThemeToChild } from '../../common/iframe-sync';
 
 export default {
   name: 'VanDocHeader',
-
-  components: {
-    SearchInput,
-  },
 
   props: {
     lang: String,
@@ -120,10 +109,6 @@ export default {
       }
 
       return {};
-    },
-
-    searchConfig() {
-      return this.config.searchConfig;
     },
 
     themeImg() {
