@@ -43,7 +43,7 @@ function Tag(
     style.borderColor = color;
   } else {
     style.color = textColor;
-    style.background = color;
+    style.backgroundColor = color;
   }
 
   // 组件上写style，组件里不生效，这里需要合并style
