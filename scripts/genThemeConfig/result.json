@@ -67,36 +67,46 @@
                 "id": "530dd9a7-963b-4d2a-900b-e3d1fda51882",
                 "name": "van-collapse",
                 "title": "折叠面板",
+                "children": [
+                    "van-collapse-item"
+                ],
                 "toPosition": "collapse",
                 "type": [],
                 "cssProperty": {
                     "--van-collapse-item-transition-duration": {
                         "type": "input",
-                        "desc": "动画时间"
+                        "desc": "动画时间",
+                        "prefix": "van-collapse-item"
                     },
                     "--van-collapse-item-content-padding": {
                         "type": "input",
-                        "desc": "内部内边距"
+                        "desc": "内部内边距",
+                        "prefix": "van-collapse-item"
                     },
                     "--van-collapse-item-content-font-size": {
                         "type": "input",
-                        "desc": "字体大小"
+                        "desc": "字体大小",
+                        "prefix": "van-collapse-item"
                     },
                     "--van-collapse-item-content-line-height": {
                         "type": "input",
-                        "desc": "内容行高"
+                        "desc": "内容行高",
+                        "prefix": "van-collapse-item"
                     },
                     "--van-collapse-item-content-text-color": {
                         "type": "color",
-                        "desc": "字体颜色"
+                        "desc": "字体颜色",
+                        "prefix": "van-collapse-item"
                     },
                     "--van-collapse-item-content-background-color": {
                         "type": "color",
-                        "desc": "背景色"
+                        "desc": "背景色",
+                        "prefix": "van-collapse-item"
                     },
                     "--van-collapse-item-title-disabled-color": {
                         "type": "color",
-                        "desc": "标题禁用状态颜色"
+                        "desc": "标题禁用状态颜色",
+                        "prefix": "van-collapse-item"
                     }
                 },
                 "preview": {
@@ -154,22 +164,29 @@
                 "title": "单元格",
                 "toPosition": "cell-group",
                 "type": [],
+                "children": [
+                    "van-cell"
+                ],
                 "cssProperty": {
                     "--van-cell-font-size": {
                         "type": "input",
-                        "desc": "文字大小"
+                        "desc": "文字大小",
+                        "prefix": "van-cell"
                     },
                     "--van-cell-line-height": {
                         "type": "input",
-                        "desc": "行高"
+                        "desc": "行高",
+                        "prefix": "van-cell"
                     },
                     "--van-cell-text-color": {
                         "type": "color",
-                        "desc": "文本颜色"
+                        "desc": "文本颜色",
+                        "prefix": "van-cell"
                     },
                     "--van-cell-value-color": {
                         "type": "color",
-                        "desc": "右侧文本颜色"
+                        "desc": "右侧文本颜色",
+                        "prefix": "van-cell"
                     },
                     "--van-cell-icon-size": {
                         "type": "input",
@@ -177,7 +194,8 @@
                     },
                     "--van-cell-right-icon-color": {
                         "type": "color",
-                        "desc": "icon颜色"
+                        "desc": "icon颜色",
+                        "prefix": "van-cell"
                     }
                 },
                 "preview": {
@@ -218,9 +236,6 @@
                     "--van-dropdown-menu-title-disabled-text-color": {
                         "type": "color",
                         "desc": "disabled状态颜色"
-                    },
-                    "--van-dropdown-item-z-index": {
-                        "type": "input"
                     }
                 },
                 "preview": {
@@ -231,60 +246,76 @@
                 "id": "3f189676-52fd-45c5-8b4e-4b9edc9ba887",
                 "name": "van-sidebar",
                 "title": "侧边导航",
+                "children": [
+                    "van-sidebar-item"
+                ],
                 "toPosition": "sidebar",
                 "type": [],
                 "cssProperty": {
                     "--van-sidebar-width": {
                         "type": "input",
-                        "desc": "宽度"
+                        "desc": "宽度",
+                        "prefix": "van-sidebar"
                     },
                     "--van-sidebar-font-size": {
                         "type": "input",
-                        "desc": "字体"
+                        "desc": "字体",
+                        "prefix": "van-sidebar"
                     },
                     "--van-sidebar-line-height": {
                         "type": "input",
-                        "desc": "行高"
+                        "desc": "行高",
+                        "prefix": "van-sidebar"
                     },
                     "--van-sidebar-text-color": {
                         "type": "color",
-                        "desc": "字体颜色"
+                        "desc": "字体颜色",
+                        "prefix": "van-sidebar"
                     },
                     "--van-sidebar-disabled-text-color": {
                         "type": "color",
-                        "desc": "禁用字体颜色"
+                        "desc": "禁用字体颜色",
+                        "prefix": "van-sidebar"
                     },
                     "--van-sidebar-padding": {
                         "type": "input",
-                        "desc": "边距"
+                        "desc": "边距",
+                        "prefix": "van-sidebar"
                     },
                     "--van-sidebar-background-color": {
                         "type": "color",
-                        "desc": "背景色"
+                        "desc": "背景色",
+                        "prefix": "van-sidebar"
                     },
                     "--van-sidebar-selected-font-weight": {
                         "type": "input",
-                        "desc": "选中态字体粗细"
+                        "desc": "选中态字体粗细",
+                        "prefix": "van-sidebar"
                     },
                     "--van-sidebar-selected-text-color": {
                         "type": "color",
-                        "desc": "选中态字体颜色"
+                        "desc": "选中态字体颜色",
+                        "prefix": "van-sidebar"
                     },
                     "--van-sidebar-selected-border-width": {
                         "type": "input",
-                        "desc": "选中态边框宽度"
+                        "desc": "选中态边框宽度",
+                        "prefix": "van-sidebar"
                     },
                     "--van-sidebar-selected-border-height": {
                         "type": "input",
-                        "desc": "选中态边框高度"
+                        "desc": "选中态边框高度",
+                        "prefix": "van-sidebar"
                     },
                     "--van-sidebar-selected-border-color": {
                         "type": "color",
-                        "desc": "选中态边框颜色"
+                        "desc": "选中态边框颜色",
+                        "prefix": "van-sidebar"
                     },
                     "--van-sidebar-selected-background-color": {
                         "type": "color",
-                        "desc": "选中态背景色"
+                        "desc": "选中态背景色",
+                        "prefix": "van-sidebar"
                     }
                 },
                 "preview": {
@@ -295,20 +326,32 @@
                 "id": "bebb1002-b7d8-4113-bf85-d67f96f78f0f",
                 "name": "van-tabbar",
                 "title": "标签栏",
+                "children": [
+                    "van-tabbar-item"
+                ],
                 "toPosition": "tabbar",
                 "type": [],
                 "cssProperty": {
                     "--van-tabbar-height": {
                         "type": "input",
-                        "desc": "高度"
+                        "desc": "高度",
+                        "excludeTags": [
+                            "van-tabbar-item"
+                        ]
                     },
                     "--van-tabbar-z-index": {
                         "type": "input",
-                        "desc": "层级"
+                        "desc": "层级",
+                        "excludeTags": [
+                            "van-tabbar-item"
+                        ]
                     },
                     "--van-tabbar-background-color": {
                         "type": "color",
-                        "desc": "背景色"
+                        "desc": "背景色",
+                        "excludeTags": [
+                            "van-tabbar-item"
+                        ]
                     },
                     "--van-tabbar-item-active-color": {
                         "type": "color",
@@ -332,27 +375,57 @@
                 "cssProperty": {
                     "--van-button-mini-height": {
                         "type": "input",
-                        "desc": "迷你 button 高度"
+                        "desc": "迷你 button 高度",
+                        "depAttrs": {
+                            "size": [
+                                "mini"
+                            ]
+                        }
                     },
                     "--van-button-mini-font-size": {
                         "type": "input",
-                        "desc": "迷你 button字体大小"
+                        "desc": "迷你 button字体大小",
+                        "depAttrs": {
+                            "size": [
+                                "mini"
+                            ]
+                        }
                     },
                     "--van-button-small-height": {
                         "type": "input",
-                        "desc": "小 button  高度"
+                        "desc": "小 button  高度",
+                        "depAttrs": {
+                            "size": [
+                                "small"
+                            ]
+                        }
                     },
                     "--van-button-small-font-size": {
                         "type": "input",
-                        "desc": "小 button字体大小"
+                        "desc": "小 button字体大小",
+                        "depAttrs": {
+                            "size": [
+                                "small"
+                            ]
+                        }
                     },
                     "--van-button-normal-font-size": {
                         "type": "input",
-                        "desc": "正常 button字体大小"
+                        "desc": "正常 button字体大小",
+                        "depAttrs": {
+                            "size": [
+                                "normal"
+                            ]
+                        }
                     },
                     "--van-button-large-height": {
                         "type": "input",
-                        "desc": "大 button字体大小"
+                        "desc": "大 button字体大小",
+                        "depAttrs": {
+                            "size": [
+                                "large"
+                            ]
+                        }
                     },
                     "--van-button-default-height": {
                         "type": "input",
@@ -364,7 +437,12 @@
                     },
                     "--van-button-default-font-size": {
                         "type": "input",
-                        "desc": "普通 button字体大小"
+                        "desc": "普通 button字体大小",
+                        "depAttrs": {
+                            "size": [
+                                "middle"
+                            ]
+                        }
                     },
                     "--van-button-info-color": {
                         "type": "color",
@@ -474,52 +552,78 @@
                 "id": "1406b0b4-031e-477f-a695-bd74bd6ed78a",
                 "name": "van-tabs",
                 "title": "选项卡",
+                "children": [
+                    "van-tab"
+                ],
                 "toPosition": "tabs",
                 "type": [],
                 "cssProperty": {
                     "--van-tab-text-color": {
                         "type": "color",
-                        "desc": "标签字颜色"
+                        "desc": "标签字颜色",
+                        "prefix": "van-tab"
                     },
                     "--van-tab-active-text-color": {
                         "type": "color",
-                        "desc": "选中标签字颜色"
+                        "desc": "选中标签字颜色",
+                        "prefix": "van-tab"
                     },
                     "--van-tab-disabled-text-color": {
                         "type": "color",
-                        "desc": "禁用标签字颜色"
+                        "desc": "禁用标签字颜色",
+                        "prefix": "van-tab"
                     },
                     "--van-tab-font-size": {
                         "type": "input",
-                        "desc": "标签字体大小"
+                        "desc": "标签字体大小",
+                        "prefix": "van-tab"
                     },
                     "--van-tab-line-height": {
                         "type": "input",
-                        "desc": "标签字体行高"
+                        "desc": "标签字体行高",
+                        "prefix": "van-tab"
                     },
                     "--van-tabs-line-height": {
                         "type": "input",
-                        "desc": "line模式 导航高"
+                        "desc": "line模式 导航高",
+                        "excludeTags": [
+                            "van-tab"
+                        ]
                     },
                     "--van-tabs-card-height": {
                         "type": "input",
-                        "desc": "card模式 导航高"
+                        "desc": "card模式 导航高",
+                        "excludeTags": [
+                            "van-tab"
+                        ]
                     },
                     "--van-tabs-nav-background-color": {
                         "type": "color",
-                        "desc": "导航背景色"
+                        "desc": "导航背景色",
+                        "excludeTags": [
+                            "van-tab"
+                        ]
                     },
                     "--van-tabs-bottom-bar-width": {
                         "type": "input",
-                        "desc": "滑动条宽度"
+                        "desc": "滑动条宽度",
+                        "excludeTags": [
+                            "van-tab"
+                        ]
                     },
                     "--van-tabs-bottom-bar-height": {
                         "type": "input",
-                        "desc": "滑动条高度"
+                        "desc": "滑动条高度",
+                        "excludeTags": [
+                            "van-tab"
+                        ]
                     },
                     "--van-tabs-bottom-bar-color": {
                         "type": "color",
-                        "desc": "滑动条景色"
+                        "desc": "滑动条景色",
+                        "excludeTags": [
+                            "van-tab"
+                        ]
                     }
                 },
                 "preview": {
@@ -535,35 +639,76 @@
                 "cssProperty": {
                     "--van-text-font-size": {
                         "type": "input",
-                        "desc": "文本字号大小,如：1px"
+                        "desc": "文本字号大小,如：1px",
+                        "depAttrs": {
+                            "size": [
+                                "normal",
+                                null
+                            ]
+                        }
                     },
                     "--van-text-font-size-small": {
                         "type": "input",
-                        "desc": "小号文本字号大小,如：1px"
+                        "desc": "小号文本字号大小,如：1px",
+                        "depAttrs": {
+                            "size": [
+                                "small"
+                            ]
+                        }
                     },
                     "--van-text-font-size-large": {
                         "type": "input",
-                        "desc": "大号文本字号大小,如：1px"
+                        "desc": "大号文本字号大小,如：1px",
+                        "depAttrs": {
+                            "size": [
+                                "large"
+                            ]
+                        }
                     },
                     "--van-text-color-primary": {
                         "type": "color",
-                        "desc": "主要文本字体颜色,如：#223325"
+                        "desc": "主要文本字体颜色,如：#223325",
+                        "depAttrs": {
+                            "color": [
+                                "primary"
+                            ]
+                        }
                     },
                     "--van-text-color-success": {
                         "type": "color",
-                        "desc": "成功文本字体颜色,如：#223325"
+                        "desc": "成功文本字体颜色,如：#223325",
+                        "depAttrs": {
+                            "color": [
+                                "success"
+                            ]
+                        }
                     },
                     "--van-text-color-warning": {
                         "type": "color",
-                        "desc": "警告文本字体颜色,如：#223325"
+                        "desc": "警告文本字体颜色,如：#223325",
+                        "depAttrs": {
+                            "color": [
+                                "warning"
+                            ]
+                        }
                     },
                     "--van-text-color-error": {
                         "type": "color",
-                        "desc": "错误文本字体颜色,如：#223325"
+                        "desc": "错误文本字体颜色,如：#223325",
+                        "depAttrs": {
+                            "color": [
+                                "error"
+                            ]
+                        }
                     },
                     "--van-text-color-disabled": {
                         "type": "color",
-                        "desc": "禁用文本字体颜色,如：#223325"
+                        "desc": "禁用文本字体颜色,如：#223325",
+                        "depAttrs": {
+                            "color": [
+                                "disabled"
+                            ]
+                        }
                     }
                 },
                 "preview": {
@@ -579,15 +724,30 @@
                 "cssProperty": {
                     "--link-color": {
                         "type": "color",
-                        "desc": "默认链接字体颜色,如：#223325"
+                        "desc": "默认链接字体颜色,如：#223325",
+                        "depAttrs": {
+                            "color": [
+                                "primary"
+                            ]
+                        }
                     },
                     "--link-color-success": {
                         "type": "color",
-                        "desc": "成功链接字体颜色,如：#223325"
+                        "desc": "成功链接字体颜色,如：#223325",
+                        "depAttrs": {
+                            "color": [
+                                "success"
+                            ]
+                        }
                     },
                     "--link-color-warning": {
                         "type": "color",
-                        "desc": "警告链接字体颜色,如：#223325"
+                        "desc": "警告链接字体颜色,如：#223325",
+                        "depAttrs": {
+                            "color": [
+                                "warning"
+                            ]
+                        }
                     },
                     "--link-color-disabled": {
                         "type": "color",
@@ -595,7 +755,12 @@
                     },
                     "--link-color-error": {
                         "type": "color",
-                        "desc": "错误链接字体颜色,如：#223325"
+                        "desc": "错误链接字体颜色,如：#223325",
+                        "depAttrs": {
+                            "color": [
+                                "error"
+                            ]
+                        }
                     }
                 },
                 "preview": {
@@ -658,52 +823,68 @@
                 "id": "5134f3e6-6cfd-4d97-a1a8-4db8c0294bfd",
                 "name": "van-steps",
                 "title": "步骤条",
+                "children": [
+                    "van-step"
+                ],
                 "toPosition": "steps",
                 "type": [],
                 "cssProperty": {
                     "--van-steps-background-color": {
                         "type": "color",
-                        "desc": "整体背景色"
+                        "desc": "整体背景色",
+                        "excludeTags": [
+                            "van-step"
+                        ]
                     },
                     "--van-step-text-color": {
                         "type": "color",
-                        "desc": "非激活态字体颜色"
+                        "desc": "非激活态字体颜色",
+                        "prefix": "van-step"
                     },
                     "--van-step-active-color": {
                         "type": "color",
-                        "desc": "激活态字体颜色"
+                        "desc": "激活态字体颜色",
+                        "prefix": "van-step"
                     },
                     "--van-step-font-size": {
                         "type": "input",
-                        "desc": "字体大小"
+                        "desc": "字体大小",
+                        "prefix": "van-step"
                     },
                     "--van-step-line-color": {
                         "type": "color",
-                        "desc": "线段颜色"
+                        "desc": "线段颜色",
+                        "prefix": "van-step"
                     },
                     "--van-step-finish-line-color": {
                         "type": "color",
-                        "desc": "finish态线段颜色"
+                        "desc": "finish态线段颜色",
+                        "prefix": "van-step"
                     },
                     "--van-step-finish-text-color": {
                         "type": "color",
-                        "desc": "finish态字体颜色"
+                        "desc": "finish态字体颜色",
+                        "prefix": "van-step"
                     },
                     "--van-step-icon-size": {
                         "type": "input",
-                        "desc": "图大小色"
+                        "desc": "图大小色",
+                        "prefix": "van-step"
                     },
                     "--van-step-circle-size": {
                         "type": "input",
-                        "desc": "点大小"
+                        "desc": "点大小",
+                        "prefix": "van-step"
                     },
                     "--van-step-circle-color": {
                         "type": "color",
-                        "desc": "点颜色"
+                        "desc": "点颜色",
+                        "prefix": "van-step"
                     },
                     "--van-step-horizontal-title-font-size": {
                         "type": "input",
-                        "desc": "横向字体大小"
+                        "desc": "横向字体大小",
+                        "prefix": "van-step"
                     }
                 },
                 "preview": {
@@ -807,27 +988,33 @@
                 "cssProperty": {
                     "--van-stepper-input-height": {
                         "type": "input",
-                        "desc": "高度"
+                        "desc": "高度",
+                        "prefix": "van-stepper"
                     },
                     "--van-stepper-input-font-size": {
                         "type": "input",
-                        "desc": "输入框字体大小"
+                        "desc": "输入框字体大小",
+                        "prefix": "van-stepper"
                     },
                     "--van-stepper-input-line-height": {
                         "type": "input",
-                        "desc": "输入框行高"
+                        "desc": "输入框行高",
+                        "prefix": "van-stepper"
                     },
                     "--van-stepper-input-text-color": {
                         "type": "color",
-                        "desc": "输入框字体颜色"
+                        "desc": "输入框字体颜色",
+                        "prefix": "van-stepper"
                     },
                     "--van-stepper-input-disabled-text-color": {
                         "type": "color",
-                        "desc": "输入框禁止态文本颜色"
+                        "desc": "输入框禁止态文本颜色",
+                        "prefix": "van-stepper"
                     },
                     "--van-stepper-input-disabled-background-color": {
                         "type": "color",
-                        "desc": "输入框禁止态背景色"
+                        "desc": "输入框禁止态背景色",
+                        "prefix": "van-stepper"
                     }
                 },
                 "preview": {
@@ -1190,35 +1377,181 @@
                     },
                     "--van-tag-large-padding": {
                         "type": "input",
-                        "desc": "大标签内边距"
+                        "desc": "大标签内边距",
+                        "depAttrs": {
+                            "size": [
+                                "large"
+                            ]
+                        }
                     },
                     "--van-tag-large-border-radius": {
                         "type": "input",
-                        "desc": "大标签圆角"
+                        "desc": "大标签圆角",
+                        "depAttrs": {
+                            "size": [
+                                "large"
+                            ]
+                        }
                     },
                     "--van-tag-danger-color": {
                         "type": "color",
-                        "desc": "危险类型颜色"
+                        "desc": "危险类型颜色",
+                        "depAttrs": {
+                            "type": [
+                                "danger"
+                            ]
+                        }
                     },
                     "--van-tag-primary-color": {
                         "type": "color",
-                        "desc": "信息类型颜色"
+                        "desc": "信息类型颜色",
+                        "depAttrs": {
+                            "type": [
+                                "primary"
+                            ]
+                        }
                     },
                     "--van-tag-success-color": {
                         "type": "color",
-                        "desc": "成功类型颜色"
+                        "desc": "成功类型颜色",
+                        "depAttrs": {
+                            "type": [
+                                "success"
+                            ]
+                        }
                     },
                     "--van-tag-warning-color": {
                         "type": "color",
-                        "desc": "警告类型颜色"
+                        "desc": "警告类型颜色",
+                        "depAttrs": {
+                            "type": [
+                                "warning"
+                            ]
+                        }
                     },
                     "--van-tag-default-color": {
                         "type": "color",
-                        "desc": "默认类型颜色"
+                        "desc": "默认类型颜色",
+                        "depAttrs": {
+                            "type": [
+                                "default",
+                                null
+                            ]
+                        }
                     }
                 },
                 "preview": {
                     "template": "<van-tag type=\"primary\" size=\"middle\">标签</van-tag>"
+                }
+            },
+            {
+                "id": "4fcd4dfd-683b-4d7e-9210f-a0fw9afa9",
+                "name": "van-radio",
+                "title": "单选项",
+                "parents": [
+                    "van-radio-group"
+                ],
+                "toPosition": "radio",
+                "type": [],
+                "cssProperty": {
+                    "--van-radio-size": {
+                        "type": "input",
+                        "desc": "单选项字体大小",
+                        "prefix": "van-radio"
+                    },
+                    "--van-radio-border-color": {
+                        "type": "color",
+                        "desc": "单选项边框颜色",
+                        "prefix": "van-radio"
+                    },
+                    "--van-radio-label-margin": {
+                        "type": "input",
+                        "desc": "单选项label外边距",
+                        "prefix": "van-radio"
+                    },
+                    "--van-radio-label-color": {
+                        "type": "color",
+                        "desc": "单选项label字体大小",
+                        "prefix": "van-radio"
+                    },
+                    "--van-radio-checked-icon-color": {
+                        "type": "color",
+                        "desc": "单选项选中颜色",
+                        "prefix": "van-radio"
+                    },
+                    "--van-radio-disabled-icon-color": {
+                        "type": "color",
+                        "desc": "单选项禁用边框颜色",
+                        "prefix": "van-radio"
+                    },
+                    "--van-radio-disabled-label-color": {
+                        "type": "color",
+                        "desc": "单选项禁用字体颜色",
+                        "prefix": "van-radio"
+                    },
+                    "--van-radio-disabled-background-color": {
+                        "type": "color",
+                        "desc": "单选项禁用背景色",
+                        "prefix": "van-radio"
+                    }
+                },
+                "preview": {
+                    "template": "<van-radio></van-radio>"
+                }
+            },
+            {
+                "id": "4fcd4dfd-683b-4d7e-9210f-gv9sdf08e08",
+                "name": "van-checkbox",
+                "title": "多选项",
+                "parents": [
+                    "van-checkbox-group"
+                ],
+                "toPosition": "checkbox",
+                "type": [],
+                "cssProperty": {
+                    "--van-checkbox-size": {
+                        "type": "input",
+                        "desc": "多选项文字大小",
+                        "prefix": "van-checkbox"
+                    },
+                    "--van-checkbox-border-color": {
+                        "type": "color",
+                        "desc": "多选项边框颜色",
+                        "prefix": "van-checkbox"
+                    },
+                    "--van-checkbox-label-margin": {
+                        "type": "input",
+                        "desc": "多选项文字外边距",
+                        "prefix": "van-checkbox"
+                    },
+                    "--van-checkbox-label-color": {
+                        "type": "color",
+                        "desc": "多选项文字颜色",
+                        "prefix": "van-checkbox"
+                    },
+                    "--van-checkbox-checked-icon-color": {
+                        "type": "color",
+                        "desc": "多选项选中颜色",
+                        "prefix": "van-checkbox"
+                    },
+                    "--van-checkbox-disabled-icon-color": {
+                        "type": "color",
+                        "desc": "多选项禁用边框颜色",
+                        "prefix": "van-checkbox"
+                    },
+                    "--van-checkbox-disabled-label-color": {
+                        "type": "color",
+                        "desc": "多选项禁用文字颜色",
+                        "prefix": "van-checkbox"
+                    },
+                    "--van-checkbox-disabled-background-color": {
+                        "type": "color",
+                        "desc": "多选项禁用颜色",
+                        "prefix": "van-checkbox"
+                    }
+                },
+                "preview": {
+                    "template": "<van-checkbox shape=\"square\"></van-checkbox>"
                 }
             }
         ]

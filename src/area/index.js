@@ -67,6 +67,8 @@ export default createComponent({
       columns: [{ values: [] }, { values: [] }, { values: [] }],
       // areaList: {},
       valuepopup: false,
+      getTitle: '',
+      oldcode: '',
     };
   },
 
@@ -97,23 +99,13 @@ export default createComponent({
         county: this.columnsPlaceholder[2] || '',
       };
     },
-    getTitle() {
-      if (this.ifDesigner()) {
-        return this.value;
-      }
-      if (!this.value) return '';
-      const tcode = this.value;
-      const provincet = this.getListTempNew('province', tcode.slice(0, 2) + '0000');
-      const cityt = this.getListTempNew('city', tcode.slice(0, 4) + '00');
-      const countyt = this.getListTempNew('county', tcode.slice(0, 6));
-      return `${provincet}/${cityt}/${countyt}`;
-    },
   },
 
   watch: {
     value(val) {
       this.code = val;
       this.setValues();
+      this.setTitle();
     },
 
     areaListprop: {
@@ -130,6 +122,7 @@ export default createComponent({
 
   mounted() {
     this.setValues();
+    this.setTitle();
   },
 
   methods: {
@@ -137,9 +130,16 @@ export default createComponent({
       return this.$env && this.$env.VUE_APP_DESIGNER;
     },
     setTitle() {
-      const areaP = this.getValues();
-      const result = areaP.map((item) => item.name).join('/');
-      this.getTitle = result;
+      if (this.ifDesigner()) {
+        this.getTitle = this.value;
+        return
+      }
+      if (!this.value && !this.code) return '';
+      const tcode = this.value || this.code;
+      const provincet = this.getListTempNew('province', tcode.slice(0, 2) + '0000');
+      const cityt = this.getListTempNew('city', tcode.slice(0, 4) + '00');
+      const countyt = this.getListTempNew('county', tcode.slice(0, 6));
+      this.getTitle = `${provincet}/${cityt}/${countyt}`;
     },
     togglePopup() {
       this.valuepopup = !this.valuepopup;
@@ -242,6 +242,7 @@ export default createComponent({
     },
 
     onChange(picker, values, index) {
+      this.oldcode = this.code;
       this.code = values[index].code;
       this.setValues();
 
@@ -252,12 +253,17 @@ export default createComponent({
     onConfirm(values, index) {
       values = this.parseOutputValues(values);
       this.setValues();
+      if (!this.value) {
+        this.code = values[2].code;
+      }
       this.$emit('update:value', values[2].code);
       this.$emit('confirm', values, index, values[2].code);
       this.togglePopup();
+      this.setTitle();
     },
     onCancel() {
       this.togglePopup();
+      this.code = this.oldcode;
     },
     getDefaultCode() {
       if (this.columnsPlaceholder.length) {

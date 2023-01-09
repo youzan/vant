@@ -194,7 +194,7 @@ export default createComponent({
 
   mounted() {
     this.init();
-    this.setTitle();
+    // this.setTitle();
   },
 
   /* istanbul ignore next */
@@ -491,7 +491,7 @@ export default createComponent({
         this.getTitle = this.defaultDate;
         return
       }
-      if (this.defaultDate && this.currentDate) {
+      if (this.currentDate) {
         if (Array.isArray(this.currentDate)) {
           this.getTitle = this.currentDate.reduce((p, c) => p + (isDate(c) ? c.formath("yyyy/MM/dd") : c)+'-', '');
         } else {

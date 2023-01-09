@@ -2,7 +2,7 @@
 
 ``` html
 <van-for-components>
-  <template #default="scope">
+  <template #default="current">
     <van-row gutter="0"  vusion-disabled-copy vusion-disabled-addslot vusion-disabled-cut>
       <van-col span="24" vusion-disabled-copy vusion-disabled-cut>
       </van-col>
