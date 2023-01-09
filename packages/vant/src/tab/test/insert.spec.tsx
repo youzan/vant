@@ -1,4 +1,4 @@
-import { defineComponent } from 'vue';
+import { defineComponent, reactive } from 'vue';
 import { mount, later } from '../../../test';
 import { Tab } from '..';
 import { Tabs } from '../../tabs';
@@ -28,6 +28,45 @@ test('should render correctly after inserting a tab', async () => {
 
   await later();
   await wrapper.setData({ insert: true });
+  await later();
+  expect(wrapper.html()).toMatchSnapshot();
+});
+
+test('should render correctly after inserting a tab from an array', async () => {
+  const tabs = reactive([
+    {
+      text: 1,
+      show: true,
+    },
+    {
+      text: 2,
+      show: false,
+    },
+    {
+      text: 3,
+      show: true,
+    },
+  ]);
+
+  const wrapper = mount({
+    render() {
+      return (
+        <Tabs v-model:active={this.active}>
+          {tabs.map((tab, index) => (
+            <Tab title={String(tab.text)} v-show={tab.show} key={index} />
+          ))}
+        </Tabs>
+      );
+    },
+    data() {
+      return {
+        active: 1,
+      };
+    },
+  });
+
+  await later();
+  tabs[1].show = true;
   await later();
   expect(wrapper.html()).toMatchSnapshot();
 });

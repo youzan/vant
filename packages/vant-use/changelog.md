@@ -1,5 +1,9 @@
 # Changelog
 
+## v1.4.4
+
+- Fix `useChildren` not sort children correctly
+
 ## v1.4.3
 
 - improve `useEventListener` typing
