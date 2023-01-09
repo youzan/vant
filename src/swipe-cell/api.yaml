@@ -17,6 +17,11 @@
       type: number | string
       default: auto
       description: 右侧滑动区域宽度
+    - name: disabled
+      title: 禁止滑动
+      type: boolean
+      default: false
+      description: 禁止滑动
   slots:
     - concept: Slot
       name: default
