@@ -46,6 +46,12 @@ function Tag(
     style.background = color;
   }
 
+  // 组件上写style，组件里不生效，这里需要合并style
+  const vnodeStaticStyle = ctx.data && ctx.data.staticStyle || {};
+  const vnodeStyle = ctx.data && ctx.data.style || {};
+  Object.assign(style, vnodeStaticStyle);
+  Object.assign(style, vnodeStyle);
+
   const classes: { [key: string]: any } = { mark, plain, round };
   if (size) {
     classes[size] = size;
