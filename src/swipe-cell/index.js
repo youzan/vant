@@ -49,6 +49,19 @@ export default createComponent({
   },
 
   computed: {
+
+  },
+  mounted() {
+    this.bindTouchEvent(this.$el);
+  },
+  updated() {
+    if(this.opened && this.inDesigner()) {
+      const offset =
+      this.position === 'left' ? this.computedLeftWidth() : -this.computedRightWidth();
+      this.offset = offset;
+    }
+  },
+  methods: {
     computedLeftWidth() {
       if (isDef(this.leftWidth)) {
         return +this.leftWidth
@@ -62,38 +75,6 @@ export default createComponent({
       }
       return this.getWidthByRef('right');
     },
-  },
-  watch: {
-    leftforhelper: {
-      immediate: true,
-      handler(newValue) {
-        if (this.inDesigner()) {
-          if (newValue) {
-            this.open('left')
-          } else if (this.opened && this.position==='left') {
-            this.close('left')
-          }
-        }
-      },
-    },
-    rightforhelper: {
-      immediate: true,
-      handler(newValue) {
-        if (this.inDesigner()) {
-          if (newValue) {
-            this.open('right')
-          } else if (this.opened && this.position==='right') {
-            this.close('right')
-          }
-        }
-      },
-    },
-  },
-  mounted() {
-    this.bindTouchEvent(this.$el);
-  },
-
-  methods: {
     getWidthByRef(ref) {
       if (this.$refs[ref]) {
         const rect = this.$refs[ref].getBoundingClientRect();
@@ -105,7 +86,7 @@ export default createComponent({
     // @exposed-api
     open(position) {
       const offset =
-        position === 'left' ? this.computedLeftWidth : -this.computedRightWidth;
+        position === 'left' ? this.computedLeftWidth() : -this.computedRightWidth();
 
       this.opened = true;
       this.offset = offset;
@@ -160,8 +141,8 @@ export default createComponent({
 
         this.offset = range(
           this.deltaX + this.startOffset,
-          -this.computedRightWidth,
-          this.computedLeftWidth
+          -this.computedRightWidth(),
+          this.computedLeftWidth()
         );
       }
     },
@@ -188,15 +169,15 @@ export default createComponent({
       const { computedLeftWidth, computedRightWidth } = this;
 
       if (
-        computedRightWidth &&
+        computedRightWidth() &&
         direction === 'right' &&
-        offset > computedRightWidth * threshold
+        offset > computedRightWidth() * threshold
       ) {
         this.open('right');
       } else if (
-        computedLeftWidth &&
+        computedLeftWidth() &&
         direction === 'left' &&
-        offset > computedLeftWidth * threshold
+        offset > computedLeftWidth() * threshold
       ) {
         this.open('left');
       } else {
@@ -286,6 +267,7 @@ export default createComponent({
   },
 
   render() {
+    if (this.inDesigner()) this.dragging = true;
     const wrapperStyle = {
       transform: `translate3d(${this.offset}px, 0, 0)`,
       transitionDuration: this.dragging ? '0s' : '.6s',
