@@ -1,5 +1,5 @@
 <template>
-  <div :class="$style.fake" v-if="$env.VUE_APP_DESIGNER" router-view-symbol>
+  <div :class="$style.fake" v-if="$env.VUE_APP_DESIGNER" router-view-symbol :designer="$env.VUE_APP_DESIGNER && designer">
     <router-view></router-view>
   </div>
   <router-view v-else></router-view>
@@ -8,11 +8,18 @@
 <script>
 export default {
   name: 'VanRouterView',
+  props: {
+    designer: { type: Boolean, default: true },
+  },
 };
 </script>
 
 <style module>
 .fake:empty {
+  min-height: 32px;
+  text-align: center;
+}
+.fake[designer]:empty{
   background: linear-gradient(
     -45deg,
     white 25%,
@@ -22,9 +29,8 @@ export default {
     white 75%,
     #f3f5fa 75%
   );
-  background-size: 45px 45px;
-  min-height: 32px;
-  text-align: center;
+  background-size: 45px 45px !important;
+  background-repeat: repeat !important;
 }
 .fake:empty::after {
   content: '此容器为子页面呈现占位，可在子页面编辑内容';
