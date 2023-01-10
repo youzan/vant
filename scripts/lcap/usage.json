@@ -507,25 +507,314 @@
             ],
             "attrs": [
                 {
-                    "name": "direction",
-                    "title": "排列方向",
+                    "name": "mode",
+                    "title": "布局模式",
                     "type": "string",
+                    "display": "capsules",
+                    "bindHide": true,
+                    "options": [
+                        {
+                            "value": "inline",
+                            "title": "行内",
+                            "icon": "layout-inline-block",
+                            "tooltip": "内联布局"
+                        },
+                        {
+                            "value": "block",
+                            "title": "块级",
+                            "icon": "layout-block",
+                            "tooltip": "块级布局"
+                        },
+                        {
+                            "value": "flex",
+                            "title": "弹性",
+                            "icon": "layout-flex",
+                            "tooltip": "弹性布局"
+                        }
+                    ],
+                    "default": "block",
+                    "toggleclear": [
+                        "justify",
+                        "alignment",
+                        "wrap",
+                        "layout"
+                    ]
+                },
+                {
+                    "name": "direction",
+                    "title": "主轴方向",
+                    "type": "string",
+                    "display": "capsules",
+                    "bindHide": true,
                     "options": [
                         {
                             "value": "horizontal",
-                            "title": "横向排列"
+                            "title": "横向排列",
+                            "icon": "flex-horizontal",
+                            "tooltip": "横向"
                         },
                         {
                             "value": "vertical",
-                            "title": "纵向排列"
+                            "title": "纵向排列",
+                            "icon": "flex-vertical",
+                            "tooltip": "纵向"
                         }
                     ],
                     "default": "horizontal",
-                    "description": "可更改布局的排列方向"
+                    "toggleclear": [
+                        "justify",
+                        "alignment"
+                    ]
+                },
+                {
+                    "name": "justify",
+                    "title": "横轴对齐",
+                    "type": "string",
+                    "display": "capsules",
+                    "bindHide": true,
+                    "options": [
+                        {
+                            "value": "start",
+                            "title": "左对齐",
+                            "icon": "horizontal-justify-start",
+                            "tooltip": "左对齐"
+                        },
+                        {
+                            "value": "center",
+                            "title": "居中对齐",
+                            "icon": "horizontal-justify-center",
+                            "tooltip": "居中对齐"
+                        },
+                        {
+                            "value": "end",
+                            "title": "右对齐",
+                            "icon": "horizontal-justify-end",
+                            "tooltip": "右对齐"
+                        },
+                        {
+                            "value": "space-between",
+                            "title": "平均分布(两端不留空)",
+                            "icon": "horizontal-justify-space-between",
+                            "tooltip": "平均分布(两端不留空)",
+                            "dependency": [
+                                {
+                                    "direction": "horizontal"
+                                },
+                                {
+                                    "mode": "flex"
+                                }
+                            ]
+                        },
+                        {
+                            "value": "space-around",
+                            "title": "平均分布",
+                            "icon": "horizontal-justify-space-around",
+                            "tooltip": "平均分布",
+                            "dependency": [
+                                {
+                                    "mode": "flex"
+                                }
+                            ]
+                        }
+                    ],
+                    "default": "start",
+                    "dependency": [
+                        {
+                            "direction": "horizontal"
+                        },
+                        {
+                            "mode": "inline",
+                            "direction": "horizontal"
+                        },
+                        {
+                            "mode": "inline",
+                            "direction": "vertical"
+                        },
+                        {
+                            "mode": "block",
+                            "direction": "horizontal"
+                        },
+                        {
+                            "mode": "block",
+                            "direction": "vertical"
+                        }
+                    ],
+                    "toggleupdate": [
+                        {
+                            "value": "space-between",
+                            "updateData": {
+                                "gap": "normal"
+                            }
+                        },
+                        {
+                            "value": "space-around",
+                            "updateData": {
+                                "gap": "normal"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "alignment",
+                    "title": "纵轴对齐",
+                    "type": "string",
+                    "display": "capsules",
+                    "bindHide": true,
+                    "options": [
+                        {
+                            "value": "start",
+                            "title": "顶对齐",
+                            "icon": "horizontal-alignment-start",
+                            "tooltip": "顶对齐"
+                        },
+                        {
+                            "value": "center",
+                            "title": "垂直居中",
+                            "icon": "horizontal-alignment-center",
+                            "tooltip": "垂直居中"
+                        },
+                        {
+                            "value": "end",
+                            "title": "底对齐",
+                            "icon": "horizontal-alignment-end",
+                            "tooltip": "底对齐"
+                        },
+                        {
+                            "value": "baseline",
+                            "title": "行内文字基线对齐",
+                            "icon": "horizontal-alignment-baseline",
+                            "tooltip": "行内文字基线对齐"
+                        },
+                        {
+                            "value": "stretch",
+                            "title": "占满容器高度",
+                            "icon": "horizontal-alignment-stretch",
+                            "tooltip": "占满容器高度"
+                        }
+                    ],
+                    "default": "stretch",
+                    "dependency": [
+                        {
+                            "mode": "flex",
+                            "direction": "horizontal"
+                        }
+                    ]
+                },
+                {
+                    "name": "alignment",
+                    "title": "横轴对齐",
+                    "type": "string",
+                    "display": "capsules",
+                    "bindHide": true,
+                    "options": [
+                        {
+                            "value": "start",
+                            "title": "左对齐",
+                            "icon": "vertical-alignment-start",
+                            "tooltip": "左对齐"
+                        },
+                        {
+                            "value": "center",
+                            "title": "居中对齐",
+                            "icon": "vertical-alignment-center",
+                            "tooltip": "居中对齐"
+                        },
+                        {
+                            "value": "end",
+                            "title": "右对齐",
+                            "icon": "vertical-alignment-end",
+                            "tooltip": "右对齐"
+                        },
+                        {
+                            "value": "stretch",
+                            "title": "拉伸子元素充满整个父元素空间",
+                            "icon": "vertical-alignment-stretch",
+                            "tooltip": "占满容器宽度"
+                        }
+                    ],
+                    "default": "stretch",
+                    "dependency": [
+                        {
+                            "mode": "flex",
+                            "direction": "vertical"
+                        }
+                    ]
+                },
+                {
+                    "name": "justify",
+                    "title": "纵轴对齐",
+                    "type": "string",
+                    "display": "capsules",
+                    "bindHide": true,
+                    "options": [
+                        {
+                            "value": "start",
+                            "title": "顶对齐",
+                            "icon": "vertical-justify-start",
+                            "tooltip": "顶对齐"
+                        },
+                        {
+                            "value": "center",
+                            "title": "垂直居中",
+                            "icon": "vertical-justify-center",
+                            "tooltip": "垂直居中"
+                        },
+                        {
+                            "value": "end",
+                            "title": "底对齐",
+                            "icon": "vertical-justify-end",
+                            "tooltip": "底对齐"
+                        },
+                        {
+                            "value": "space-between",
+                            "title": "平均分布(两端不留空)",
+                            "icon": "vertical-justify-space-between",
+                            "tooltip": "平均分布(两端不留空)"
+                        },
+                        {
+                            "value": "space-around",
+                            "title": "平均分布",
+                            "icon": "vertical-justify-space-around",
+                            "tooltip": "平均分布"
+                        }
+                    ],
+                    "default": "start",
+                    "dependency": [
+                        {
+                            "mode": "flex",
+                            "direction": "vertical"
+                        }
+                    ],
+                    "toggleupdate": [
+                        {
+                            "value": "space-between",
+                            "updateData": {
+                                "gap": "normal"
+                            }
+                        },
+                        {
+                            "value": "space-around",
+                            "updateData": {
+                                "gap": "normal"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "wrap",
+                    "title": "是否换行",
+                    "type": "boolean",
+                    "default": true,
+                    "description": "弹性布局下子元素总宽度超出父级时子元素是否换行展示",
+                    "dependency": [
+                        {
+                            "mode": "flex"
+                        }
+                    ]
                 },
                 {
                     "name": "gap",
-                    "title": "间隙",
+                    "title": "内容间隙",
                     "type": "string",
                     "options": [
                         {
@@ -551,7 +840,15 @@
                         }
                     ],
                     "default": "normal",
-                    "description": "内容块间隙大小"
+                    "description": "内容块间隙大小",
+                    "dependency": [
+                        {
+                            "!justify": [
+                                "space-between",
+                                "space-around"
+                            ]
+                        }
+                    ]
                 },
                 {
                     "name": "display",
@@ -568,7 +865,8 @@
                         }
                     ],
                     "default": "block",
-                    "description": "行内展示，或块级换行展示"
+                    "description": "行内展示，或块级换行展示",
+                    "advanced": true
                 },
                 {
                     "name": "layout",
@@ -589,81 +887,15 @@
                         }
                     ],
                     "default": "none",
-                    "description": "子元素行内展示或块级换行展示"
-                },
-                {
-                    "name": "type",
-                    "title": "布局模式",
-                    "type": "string",
-                    "options": [
+                    "description": "子元素行内展示或块级换行展示",
+                    "dependency": [
                         {
-                            "value": "flex",
-                            "title": "flex 布局模式"
+                            "mode": "inline"
+                        },
+                        {
+                            "mode": "block"
                         }
-                    ],
-                    "description": "布局模式",
-                    "advanced": true
-                },
-                {
-                    "name": "justify",
-                    "title": "主轴分布方式",
-                    "type": "string",
-                    "options": [
-                        {
-                            "value": "start",
-                            "title": "左对齐"
-                        },
-                        {
-                            "value": "center",
-                            "title": "居中对齐"
-                        },
-                        {
-                            "value": "end",
-                            "title": "右对齐"
-                        },
-                        {
-                            "value": "space-between",
-                            "title": "各行之间留有空",
-                            "advanced": true
-                        },
-                        {
-                            "value": "space-around",
-                            "title": "之前、之间、之后都留有空白",
-                            "advanced": true
-                        }
-                    ],
-                    "default": "start",
-                    "description": "内容对齐方式"
-                },
-                {
-                    "name": "alignment",
-                    "title": "纵轴对齐方式",
-                    "type": "string",
-                    "options": [
-                        {
-                            "value": "start",
-                            "title": "头对齐"
-                        },
-                        {
-                            "value": "center",
-                            "title": "居中对齐"
-                        },
-                        {
-                            "value": "end",
-                            "title": "尾对齐"
-                        },
-                        {
-                            "value": "baseline",
-                            "title": "基线对齐"
-                        },
-                        {
-                            "value": "stretch",
-                            "title": "拉伸子元素充满整个父元素空间"
-                        }
-                    ],
-                    "default": "stretch",
-                    "description": "flex布局模式下的交叉轴对齐方式",
-                    "advanced": true
+                    ]
                 },
                 {
                     "name": "loadingIcon",
@@ -1076,20 +1308,116 @@
             "attrs": [
                 {
                     "name": "type",
-                    "title": "布局方式",
+                    "title": "布局模式",
                     "type": "string",
+                    "display": "capsules",
+                    "bindHide": true,
                     "options": [
                         {
-                            "value": "flex",
-                            "title": "弹性布局"
+                            "value": "-",
+                            "title": "正常",
+                            "icon": "layout-block",
+                            "tooltip": "块级布局"
                         },
                         {
-                            "value": "-",
-                            "title": "正常"
+                            "value": "flex",
+                            "title": "弹性布局",
+                            "icon": "layout-flex",
+                            "tooltip": "弹性布局"
                         }
                     ],
                     "default": "flex",
                     "description": "元素布局方式"
+                },
+                {
+                    "name": "justify",
+                    "title": "横轴对齐",
+                    "type": "string",
+                    "display": "capsules",
+                    "bindHide": true,
+                    "options": [
+                        {
+                            "value": "start",
+                            "title": "左对齐",
+                            "icon": "horizontal-justify-start",
+                            "tooltip": "左对齐"
+                        },
+                        {
+                            "value": "center",
+                            "title": "居中对齐",
+                            "icon": "horizontal-justify-center",
+                            "tooltip": "居中对齐"
+                        },
+                        {
+                            "value": "end",
+                            "title": "右对齐",
+                            "icon": "horizontal-justify-end",
+                            "tooltip": "右对齐"
+                        },
+                        {
+                            "value": "space-between",
+                            "title": "平均分布(两端不留空)",
+                            "icon": "horizontal-justify-space-between",
+                            "tooltip": "平均分布(两端不留空)"
+                        },
+                        {
+                            "value": "space-around",
+                            "title": "水平分布-左右留空",
+                            "icon": "horizontal-justify-space-around",
+                            "tooltip": "平均分布"
+                        }
+                    ],
+                    "default": "start",
+                    "dependency": [
+                        {
+                            "type": "flex"
+                        }
+                    ]
+                },
+                {
+                    "name": "align",
+                    "title": "纵轴对齐",
+                    "type": "string",
+                    "display": "capsules",
+                    "bindHide": true,
+                    "options": [
+                        {
+                            "value": "start",
+                            "title": "顶对齐",
+                            "icon": "horizontal-alignment-start",
+                            "tooltip": "顶对齐"
+                        },
+                        {
+                            "value": "center",
+                            "title": "垂直居中",
+                            "icon": "horizontal-alignment-center",
+                            "tooltip": "垂直居中"
+                        },
+                        {
+                            "value": "end",
+                            "title": "底对齐",
+                            "icon": "horizontal-alignment-end",
+                            "tooltip": "底对齐"
+                        },
+                        {
+                            "value": "baseline",
+                            "title": "行内文字基线对齐",
+                            "icon": "horizontal-alignment-baseline",
+                            "tooltip": "行内文字基线对齐"
+                        },
+                        {
+                            "value": "stretch",
+                            "title": "占满容器高度",
+                            "icon": "horizontal-alignment-stretch",
+                            "tooltip": "占满容器高度"
+                        }
+                    ],
+                    "default": "stretch",
+                    "dependency": [
+                        {
+                            "type": "flex"
+                        }
+                    ]
                 },
                 {
                     "name": "gutter",
@@ -1115,35 +1443,6 @@
                     ],
                     "default": "0",
                     "description": "列元素之间的间距（单位为 px）"
-                },
-                {
-                    "name": "justify",
-                    "title": "对齐方式",
-                    "type": "string",
-                    "options": [
-                        {
-                            "value": "start",
-                            "title": "左对齐"
-                        },
-                        {
-                            "value": "center",
-                            "title": "居中对齐"
-                        },
-                        {
-                            "value": "end",
-                            "title": "右对齐"
-                        },
-                        {
-                            "value": "space-between",
-                            "title": "水平分布-左右不留空"
-                        },
-                        {
-                            "value": "space-around",
-                            "title": "水平分布-左右留空"
-                        }
-                    ],
-                    "default": "start",
-                    "description": "flex布局对齐方式"
                 }
             ],
             "slots": [
@@ -1169,6 +1468,322 @@
                     "title": "栅格列",
                     "description": "内部元素行内列布局",
                     "attrs": [
+                        {
+                            "name": "mode",
+                            "title": "布局模式",
+                            "type": "string",
+                            "display": "capsules",
+                            "bindHide": true,
+                            "options": [
+                                {
+                                    "value": "inline",
+                                    "title": "块级",
+                                    "icon": "layout-inline-block",
+                                    "tooltip": "内联布局"
+                                },
+                                {
+                                    "value": "flex",
+                                    "title": "弹性",
+                                    "icon": "layout-flex",
+                                    "tooltip": "弹性布局"
+                                }
+                            ],
+                            "default": "inline",
+                            "toggleclear": [
+                                "justify",
+                                "align",
+                                "wrap",
+                                "gap"
+                            ]
+                        },
+                        {
+                            "name": "direction",
+                            "title": "主轴方向",
+                            "type": "string",
+                            "display": "capsules",
+                            "bindHide": true,
+                            "options": [
+                                {
+                                    "value": "horizontal",
+                                    "title": "横向排列",
+                                    "icon": "flex-horizontal",
+                                    "tooltip": "横向"
+                                },
+                                {
+                                    "value": "vertical",
+                                    "title": "纵向排列",
+                                    "icon": "flex-vertical",
+                                    "tooltip": "纵向"
+                                }
+                            ],
+                            "default": "horizontal",
+                            "toggleclear": [
+                                "justify",
+                                "align"
+                            ],
+                            "dependency": [
+                                {
+                                    "mode": "flex"
+                                }
+                            ]
+                        },
+                        {
+                            "name": "justify",
+                            "title": "横轴对齐",
+                            "type": "string",
+                            "display": "capsules",
+                            "bindHide": true,
+                            "options": [
+                                {
+                                    "value": "start",
+                                    "title": "左对齐",
+                                    "icon": "horizontal-justify-start",
+                                    "tooltip": "左对齐"
+                                },
+                                {
+                                    "value": "center",
+                                    "title": "居中对齐",
+                                    "icon": "horizontal-justify-center",
+                                    "tooltip": "居中对齐"
+                                },
+                                {
+                                    "value": "end",
+                                    "title": "右对齐",
+                                    "icon": "horizontal-justify-end",
+                                    "tooltip": "右对齐"
+                                },
+                                {
+                                    "value": "space-between",
+                                    "title": "平均分布(两端不留空)",
+                                    "icon": "horizontal-justify-space-between",
+                                    "tooltip": "平均分布(两端不留空)"
+                                },
+                                {
+                                    "value": "space-around",
+                                    "title": "平均分布",
+                                    "icon": "horizontal-justify-space-around",
+                                    "tooltip": "平均分布"
+                                }
+                            ],
+                            "default": "start",
+                            "dependency": [
+                                {
+                                    "mode": "flex",
+                                    "direction": "horizontal"
+                                }
+                            ],
+                            "toggleupdate": [
+                                {
+                                    "value": "space-between",
+                                    "updateData": {
+                                        "gap": "normal"
+                                    }
+                                },
+                                {
+                                    "value": "space-around",
+                                    "updateData": {
+                                        "gap": "normal"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "name": "align",
+                            "title": "纵轴对齐",
+                            "type": "string",
+                            "display": "capsules",
+                            "bindHide": true,
+                            "options": [
+                                {
+                                    "value": "start",
+                                    "title": "顶对齐",
+                                    "icon": "horizontal-alignment-start",
+                                    "tooltip": "顶对齐"
+                                },
+                                {
+                                    "value": "center",
+                                    "title": "垂直居中",
+                                    "icon": "horizontal-alignment-center",
+                                    "tooltip": "垂直居中"
+                                },
+                                {
+                                    "value": "end",
+                                    "title": "底对齐",
+                                    "icon": "horizontal-alignment-end",
+                                    "tooltip": "底对齐"
+                                },
+                                {
+                                    "value": "baseline",
+                                    "title": "行内文字基线对齐",
+                                    "icon": "horizontal-alignment-baseline",
+                                    "tooltip": "行内文字基线对齐"
+                                },
+                                {
+                                    "value": "stretch",
+                                    "title": "占满容器高度",
+                                    "icon": "horizontal-alignment-stretch",
+                                    "tooltip": "占满容器高度"
+                                }
+                            ],
+                            "default": "stretch",
+                            "dependency": [
+                                {
+                                    "mode": "flex",
+                                    "direction": "horizontal"
+                                }
+                            ]
+                        },
+                        {
+                            "name": "align",
+                            "title": "横轴对齐",
+                            "type": "string",
+                            "display": "capsules",
+                            "bindHide": true,
+                            "options": [
+                                {
+                                    "value": "start",
+                                    "title": "左对齐",
+                                    "icon": "vertical-alignment-start",
+                                    "tooltip": "左对齐"
+                                },
+                                {
+                                    "value": "center",
+                                    "title": "居中对齐",
+                                    "icon": "vertical-alignment-center",
+                                    "tooltip": "居中对齐"
+                                },
+                                {
+                                    "value": "end",
+                                    "title": "右对齐",
+                                    "icon": "vertical-alignment-end",
+                                    "tooltip": "右对齐"
+                                },
+                                {
+                                    "value": "stretch",
+                                    "title": "拉伸子元素充满整个父元素空间",
+                                    "icon": "vertical-alignment-stretch",
+                                    "tooltip": "占满容器宽度"
+                                }
+                            ],
+                            "default": "stretch",
+                            "dependency": [
+                                {
+                                    "mode": "flex",
+                                    "direction": "vertical"
+                                }
+                            ]
+                        },
+                        {
+                            "name": "justify",
+                            "title": "纵轴对齐",
+                            "type": "string",
+                            "display": "capsules",
+                            "bindHide": true,
+                            "options": [
+                                {
+                                    "value": "start",
+                                    "title": "顶对齐",
+                                    "icon": "vertical-justify-start",
+                                    "tooltip": "顶对齐"
+                                },
+                                {
+                                    "value": "center",
+                                    "title": "垂直居中",
+                                    "icon": "vertical-justify-center",
+                                    "tooltip": "垂直居中"
+                                },
+                                {
+                                    "value": "end",
+                                    "title": "底对齐",
+                                    "icon": "vertical-justify-end",
+                                    "tooltip": "底对齐"
+                                },
+                                {
+                                    "value": "space-between",
+                                    "title": "平均分布(两端不留空)",
+                                    "icon": "vertical-justify-space-between",
+                                    "tooltip": "平均分布(两端不留空)"
+                                },
+                                {
+                                    "value": "space-around",
+                                    "title": "平均分布",
+                                    "icon": "vertical-justify-space-around",
+                                    "tooltip": "平均分布"
+                                }
+                            ],
+                            "default": "start",
+                            "dependency": [
+                                {
+                                    "mode": "flex",
+                                    "direction": "vertical"
+                                }
+                            ],
+                            "toggleupdate": [
+                                {
+                                    "value": "space-between",
+                                    "updateData": {
+                                        "gap": "normal"
+                                    }
+                                },
+                                {
+                                    "value": "space-around",
+                                    "updateData": {
+                                        "gap": "normal"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "name": "wrap",
+                            "title": "是否换行",
+                            "type": "boolean",
+                            "default": true,
+                            "description": "弹性布局下子元素总宽度超出父级时子元素是否换行展示",
+                            "dependency": [
+                                {
+                                    "mode": "flex"
+                                }
+                            ]
+                        },
+                        {
+                            "name": "gap",
+                            "title": "内容间隙",
+                            "type": "string",
+                            "options": [
+                                {
+                                    "value": "shrink",
+                                    "title": "收缩",
+                                    "advanced": true
+                                },
+                                {
+                                    "value": "none",
+                                    "title": "无"
+                                },
+                                {
+                                    "value": "small",
+                                    "title": "小"
+                                },
+                                {
+                                    "value": "normal",
+                                    "title": "正常"
+                                },
+                                {
+                                    "value": "large",
+                                    "title": "大"
+                                }
+                            ],
+                            "default": "normal",
+                            "description": "内容块间隙大小",
+                            "dependency": [
+                                {
+                                    "mode": "flex",
+                                    "!justify": [
+                                        "space-between",
+                                        "space-around"
+                                    ]
+                                }
+                            ]
+                        },
                         {
                             "name": "span",
                             "title": "占据列数",
@@ -3567,7 +4182,7 @@
                             "title": "警告"
                         }
                     ],
-                    "default": "medium"
+                    "default": "primary"
                 },
                 {
                     "name": "size",
@@ -4139,12 +4754,12 @@
                     "description": "自定义选项的结构和样式",
                     "slotProps": {
                         "concept": "Param",
-                        "name": "scope",
+                        "name": "current",
                         "typeAnnotation": {
                             "concept": "TypeAnnotation",
                             "typeKind": "generic",
                             "typeNamespace": "nasl.ui",
-                            "typeName": "ScopeOf",
+                            "typeName": "Current",
                             "typeArguments": [
                                 {
                                     "concept": "TypeAnnotation",
@@ -4395,7 +5010,7 @@
             "Table"
         ],
         "screenShot": "",
-        "blocks": "[{\"title\":\"基本用法\",\"description\":\"\",\"code\":\"<template>\\n<van-for-components>\\n  <template #default=\\\"scope\\\">\\n    <van-row gutter=\\\"0\\\"  vusion-disabled-copy vusion-disabled-addslot vusion-disabled-cut>\\n      <van-col span=\\\"24\\\" vusion-disabled-copy vusion-disabled-cut>\\n      </van-col>\\n    </van-row>\\n  </template>\\n</van-for-components>\\n</template>\\n\"}]",
+        "blocks": "[{\"title\":\"基本用法\",\"description\":\"\",\"code\":\"<template>\\n<van-for-components>\\n  <template #default=\\\"current\\\">\\n    <van-row gutter=\\\"0\\\"  vusion-disabled-copy vusion-disabled-addslot vusion-disabled-cut>\\n      <van-col span=\\\"24\\\" vusion-disabled-copy vusion-disabled-cut>\\n      </van-col>\\n    </van-row>\\n  </template>\\n</van-for-components>\\n</template>\\n\"}]",
         "jsonSchema": {
             "name": "van-for-components",
             "title": "组件列表",
@@ -4407,7 +5022,7 @@
                 {
                     "title": "基本用法",
                     "description": "",
-                    "code": "<template>\n<van-for-components>\n  <template #default=\"scope\">\n    <van-row gutter=\"0\"  vusion-disabled-copy vusion-disabled-addslot vusion-disabled-cut>\n      <van-col span=\"24\" vusion-disabled-copy vusion-disabled-cut>\n      </van-col>\n    </van-row>\n  </template>\n</van-for-components>\n</template>\n"
+                    "code": "<template>\n<van-for-components>\n  <template #default=\"current\">\n    <van-row gutter=\"0\"  vusion-disabled-copy vusion-disabled-addslot vusion-disabled-cut>\n      <van-col span=\"24\" vusion-disabled-copy vusion-disabled-cut>\n      </van-col>\n    </van-row>\n  </template>\n</van-for-components>\n</template>\n"
                 }
             ],
             "attrs": [
@@ -4752,12 +5367,12 @@
                     "description": "自定义选项的结构和样式",
                     "slotProps": {
                         "concept": "Param",
-                        "name": "scope",
+                        "name": "current",
                         "typeAnnotation": {
                             "concept": "TypeAnnotation",
                             "typeKind": "generic",
                             "typeNamespace": "nasl.ui",
-                            "typeName": "ScopeOf",
+                            "typeName": "Current",
                             "typeArguments": [
                                 {
                                     "concept": "TypeAnnotation",
@@ -4852,7 +5467,7 @@
             "Form"
         ],
         "screenShot": "",
-        "blocks": "[{\"title\":\"基础用法\",\"description\":\"\",\"code\":\"<template>\\n<van-form>\\n  <van-field required drole=\\\"other\\\">\\n    <template #title>\\n      <van-text text=\\\"名称\\\"></van-text>\\n    </template>\\n    <template #input>\\n      <van-fieldinput  placeholder=\\\"请输入\\\" clearable></van-fieldinput>\\n    </template>\\n  </van-field>\\n  <van-field name=\\\"radio\\\" drole=\\\"other\\\">\\n    <template #title>\\n      <van-text text=\\\"单选框\\\"></van-text>\\n    </template>\\n    <template #input>\\n      <van-radio-group direction=\\\"horizontal\\\">\\n        <template #default=\\\"scope\\\">\\n          <van-radio name=\\\"1\\\" title=\\\"单选框 1\\\"></van-radio>\\n          <van-radio name=\\\"2\\\" title=\\\"单选框 2\\\"></van-radio>\\n        </template>\\n      </van-radio-group>\\n    </template>\\n  </van-field>\\n  <div style=\\\"margin: 16px 16px 0\\\">\\n    <van-button round block=\\\"blockb\\\" type=\\\"info\\\" native-type=\\\"submit\\\" text=\\\"提交\\\">\\n    </van-button>\\n  </div>\\n</van-form>\\n</template>\\n\"}]",
+        "blocks": "[{\"title\":\"基础用法\",\"description\":\"\",\"code\":\"<template>\\n<van-form>\\n  <van-field required drole=\\\"other\\\">\\n    <template #title>\\n      <van-text text=\\\"名称\\\"></van-text>\\n    </template>\\n    <template #input>\\n      <van-fieldinput  placeholder=\\\"请输入\\\" clearable></van-fieldinput>\\n    </template>\\n  </van-field>\\n  <van-field name=\\\"radio\\\" drole=\\\"other\\\">\\n    <template #title>\\n      <van-text text=\\\"单选框\\\"></van-text>\\n    </template>\\n    <template #input>\\n      <van-radio-group direction=\\\"horizontal\\\">\\n        <template #default=\\\"current\\\">\\n          <van-radio name=\\\"1\\\" title=\\\"单选框 1\\\"></van-radio>\\n          <van-radio name=\\\"2\\\" title=\\\"单选框 2\\\"></van-radio>\\n        </template>\\n      </van-radio-group>\\n    </template>\\n  </van-field>\\n  <div style=\\\"margin: 16px 16px 0\\\">\\n    <van-button round block=\\\"blockb\\\" type=\\\"info\\\" native-type=\\\"submit\\\" text=\\\"提交\\\">\\n    </van-button>\\n  </div>\\n</van-form>\\n</template>\\n\"}]",
         "jsonSchema": {
             "name": "van-form",
             "title": "表单",
@@ -4864,7 +5479,7 @@
                 {
                     "title": "基础用法",
                     "description": "",
-                    "code": "<template>\n<van-form>\n  <van-field required drole=\"other\">\n    <template #title>\n      <van-text text=\"名称\"></van-text>\n    </template>\n    <template #input>\n      <van-fieldinput  placeholder=\"请输入\" clearable></van-fieldinput>\n    </template>\n  </van-field>\n  <van-field name=\"radio\" drole=\"other\">\n    <template #title>\n      <van-text text=\"单选框\"></van-text>\n    </template>\n    <template #input>\n      <van-radio-group direction=\"horizontal\">\n        <template #default=\"scope\">\n          <van-radio name=\"1\" title=\"单选框 1\"></van-radio>\n          <van-radio name=\"2\" title=\"单选框 2\"></van-radio>\n        </template>\n      </van-radio-group>\n    </template>\n  </van-field>\n  <div style=\"margin: 16px 16px 0\">\n    <van-button round block=\"blockb\" type=\"info\" native-type=\"submit\" text=\"提交\">\n    </van-button>\n  </div>\n</van-form>\n</template>\n"
+                    "code": "<template>\n<van-form>\n  <van-field required drole=\"other\">\n    <template #title>\n      <van-text text=\"名称\"></van-text>\n    </template>\n    <template #input>\n      <van-fieldinput  placeholder=\"请输入\" clearable></van-fieldinput>\n    </template>\n  </van-field>\n  <van-field name=\"radio\" drole=\"other\">\n    <template #title>\n      <van-text text=\"单选框\"></van-text>\n    </template>\n    <template #input>\n      <van-radio-group direction=\"horizontal\">\n        <template #default=\"current\">\n          <van-radio name=\"1\" title=\"单选框 1\"></van-radio>\n          <van-radio name=\"2\" title=\"单选框 2\"></van-radio>\n        </template>\n      </van-radio-group>\n    </template>\n  </van-field>\n  <div style=\"margin: 16px 16px 0\">\n    <van-button round block=\"blockb\" type=\"info\" native-type=\"submit\" text=\"提交\">\n    </van-button>\n  </div>\n</van-form>\n</template>\n"
                 }
             ],
             "attrs": [
@@ -5127,7 +5742,45 @@
                         }
                     ],
                     "default": "text",
-                    "description": "输入框的类型"
+                    "description": "输入框的类型",
+                    "toggleupdate": [
+                        {
+                            "value": "text",
+                            "updateData": {
+                                "keytheme": "native"
+                            }
+                        },
+                        {
+                            "value": "password",
+                            "updateData": {
+                                "keytheme": "native"
+                            }
+                        },
+                        {
+                            "value": "integer",
+                            "updateData": {
+                                "keytheme": "custom"
+                            }
+                        },
+                        {
+                            "value": "rndinteger",
+                            "updateData": {
+                                "keytheme": "custom"
+                            }
+                        },
+                        {
+                            "value": "point",
+                            "updateData": {
+                                "keytheme": "custom"
+                            }
+                        },
+                        {
+                            "value": "card",
+                            "updateData": {
+                                "keytheme": "custom"
+                            }
+                        }
+                    ]
                 },
                 {
                     "name": "value",
@@ -5152,7 +5805,22 @@
                         }
                     ],
                     "default": "input",
-                    "description": "输入框样式"
+                    "description": "输入框样式",
+                    "toggleupdate": [
+                        {
+                            "value": "input",
+                            "updateData": {
+                                "maxlength": 10000
+                            }
+                        },
+                        {
+                            "value": "password",
+                            "updateData": {
+                                "clearable": false,
+                                "maxlength": 6
+                            }
+                        }
+                    ]
                 },
                 {
                     "name": "clearable",
@@ -5193,8 +5861,12 @@
                 {
                     "name": "maxlength",
                     "title": "输入最大长度",
-                    "type": "string",
+                    "type": "number",
                     "description": "输入最大长度",
+                    "display": "number",
+                    "default": 6,
+                    "min": 1,
+                    "max": 6,
                     "dependency": [
                         {
                             "inputstyle": "password"
@@ -5231,7 +5903,15 @@
                     "options": [
                         {
                             "value": "native",
-                            "title": "默认键盘"
+                            "title": "默认键盘",
+                            "dependency": [
+                                {
+                                    "type": "text"
+                                },
+                                {
+                                    "type": "password"
+                                }
+                            ]
                         },
                         {
                             "value": "custom",
@@ -5241,6 +5921,9 @@
                     "default": "native",
                     "description": "键盘样式",
                     "dependency": [
+                        {
+                            "type": "password"
+                        },
                         {
                             "type": "integer"
                         },
@@ -5851,12 +6534,12 @@
                     "description": "自定义选项的结构和样式",
                     "slotProps": {
                         "concept": "Param",
-                        "name": "scope",
+                        "name": "current",
                         "typeAnnotation": {
                             "concept": "TypeAnnotation",
                             "typeKind": "generic",
                             "typeNamespace": "nasl.ui",
-                            "typeName": "ScopeOf",
+                            "typeName": "Current",
                             "typeArguments": [
                                 {
                                     "concept": "TypeAnnotation",
@@ -6107,12 +6790,12 @@
                     "description": "自定义选项的结构和样式",
                     "slotProps": {
                         "concept": "Param",
-                        "name": "scope",
+                        "name": "current",
                         "typeAnnotation": {
                             "concept": "TypeAnnotation",
                             "typeKind": "generic",
                             "typeNamespace": "nasl.ui",
-                            "typeName": "ScopeOf",
+                            "typeName": "Current",
                             "typeArguments": [
                                 {
                                     "concept": "TypeAnnotation",
@@ -8374,43 +9057,50 @@
     },
     {
         "symbol": "van-swipe-cell",
-        "name": "滑动单元格",
+        "name": "滑动条",
         "icon": "swipe-cell",
         "depDescription": {},
-        "description": "滑动单元格",
+        "description": "滑动条",
         "labels": [
-            "Display"
+            "Container"
         ],
         "screenShot": "",
-        "blocks": "[{\"title\":\"基本用法\",\"description\":\"\",\"code\":\"<template>\\n<van-swipe-cell>\\n  <template #left>\\n    <van-button squareroud=\\\"square\\\" type=\\\"primary\\\" text=\\\"选择\\\" />\\n  </template>\\n  <van-cell center>\\n    <template #title>\\n      左侧文本\\n    </template>\\n    <template>\\n      右侧文本\\n    </template>\\n  </van-cell>\\n  <template #right>\\n    <van-button squareroud=\\\"square\\\" type=\\\"danger\\\" text=\\\"删除\\\" />\\n    <van-button squareroud=\\\"square\\\" type=\\\"primary\\\" text=\\\"收藏\\\" />\\n  </template>\\n</van-swipe-cell>\\n</template>\\n\"}]",
+        "blocks": "[{\"title\":\"基本用法\",\"description\":\"\",\"code\":\"<template>\\n<van-swipe-cell :leftforhelper=\\\"false\\\" :rightforhelper=\\\"false\\\">\\n  <template #left>\\n    <van-button squareroud=\\\"square\\\" type=\\\"primary\\\" text=\\\"选择\\\" />\\n  </template>\\n  <van-cell center>\\n    <template #title>\\n      左侧文本\\n    </template>\\n    <template>\\n      右侧文本\\n    </template>\\n  </van-cell>\\n  <template #right>\\n    <van-button squareroud=\\\"square\\\" type=\\\"danger\\\" text=\\\"删除\\\" />\\n    <van-button squareroud=\\\"square\\\" type=\\\"primary\\\" text=\\\"收藏\\\" />\\n  </template>\\n</van-swipe-cell>\\n</template>\\n\"}]",
         "jsonSchema": {
             "name": "van-swipe-cell",
-            "title": "滑动单元格",
-            "description": "滑动单元格",
-            "category": "Display",
+            "title": "滑动条",
+            "description": "滑动条",
+            "category": "Container",
             "screenShot": "",
             "drawings": "",
             "blocks": [
                 {
                     "title": "基本用法",
                     "description": "",
-                    "code": "<template>\n<van-swipe-cell>\n  <template #left>\n    <van-button squareroud=\"square\" type=\"primary\" text=\"选择\" />\n  </template>\n  <van-cell center>\n    <template #title>\n      左侧文本\n    </template>\n    <template>\n      右侧文本\n    </template>\n  </van-cell>\n  <template #right>\n    <van-button squareroud=\"square\" type=\"danger\" text=\"删除\" />\n    <van-button squareroud=\"square\" type=\"primary\" text=\"收藏\" />\n  </template>\n</van-swipe-cell>\n</template>\n"
+                    "code": "<template>\n<van-swipe-cell :leftforhelper=\"false\" :rightforhelper=\"false\">\n  <template #left>\n    <van-button squareroud=\"square\" type=\"primary\" text=\"选择\" />\n  </template>\n  <van-cell center>\n    <template #title>\n      左侧文本\n    </template>\n    <template>\n      右侧文本\n    </template>\n  </van-cell>\n  <template #right>\n    <van-button squareroud=\"square\" type=\"danger\" text=\"删除\" />\n    <van-button squareroud=\"square\" type=\"primary\" text=\"收藏\" />\n  </template>\n</van-swipe-cell>\n</template>\n"
                 }
             ],
             "attrs": [
                 {
                     "name": "left-width",
                     "title": "左侧滑动区域宽度",
-                    "type": "number | string",
+                    "type": "number",
                     "default": "auto",
-                    "description": "是否垂直居中"
+                    "description": "左侧滑动区域宽度"
                 },
                 {
                     "name": "right-width",
                     "title": "右侧滑动区域宽度",
-                    "type": "number | string",
+                    "type": "number",
                     "default": "auto",
-                    "description": "左侧文本"
+                    "description": "右侧滑动区域宽度"
+                },
+                {
+                    "name": "disabled",
+                    "title": "禁止滑动",
+                    "type": "boolean",
+                    "default": false,
+                    "description": "禁止滑动"
                 }
             ],
             "slots": [

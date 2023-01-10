@@ -79,7 +79,7 @@ export default createComponent({
       ].includes(this.type);
     },
     shownumbertype() {
-      return this.keytheme === 'custom' || this.inputstyle === 'password';
+      return this.keytheme === 'custom';
     },
     extraKey() {
       switch (this.type) {
