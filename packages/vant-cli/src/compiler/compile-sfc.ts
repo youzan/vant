@@ -1,6 +1,7 @@
 import fse from 'fs-extra';
 import { parse as pathParse, join, relative, dirname, sep } from 'node:path';
 import hash from 'hash-sum';
+import { consola } from '../common/logger.js';
 import {
   parse,
   SFCBlock,
@@ -175,6 +176,10 @@ export async function compileSfc(filePath: string): Promise<any> {
           return `@import "${importUrl}";`;
         })
         .join('\n');
+
+      // 如果为true，则不进行compileStyle，这也意味着不支持scope\v-bind()等
+      // 这种一般用于使用less等进行主题配置场景
+      const needCompileStyle = theme !== true;
       const styleFiles = styles.map((style, index: number) => {
         const cssFilePath = getSfcStylePath(
           filePath,
@@ -183,9 +188,8 @@ export async function compileSfc(filePath: string): Promise<any> {
         );
 
         let styleSource = trim(style.content);
-        // 如果为true，则不进行compileStyle，这也意味着不支持scope\v-bind()等
-        // 这种一般用于使用less等进行主题配置场景
-        if (theme === true) {
+
+        if (needCompileStyle) {
           styleSource = compileStyle({
             id: scopeId,
             scoped: style.scoped,
@@ -194,6 +198,20 @@ export async function compileSfc(filePath: string): Promise<any> {
             // @ts-ignore
             preprocessLang: style.lang,
           }).code;
+        } else {
+          const logError = (key: string) =>
+            consola.error(
+              `[${filePath}]: when vantConfig.build.css.theme is ${theme}, ${key} is unsupported`
+            );
+          if (styleSource.includes('v-bind(')) {
+            logError('v-bind()');
+          }
+          if (style.scoped) {
+            logError('scoped attr');
+          }
+          if (style.module) {
+            logError('module attr');
+          }
         }
 
         return styleSource;
