@@ -186,7 +186,9 @@ export default createComponent({
     },
 
     onClick(position = 'outside') {
-      this.$emit('click', position);
+      if (position !== 'outside') {
+        this.$emit('click', position);
+      }
 
       if (this.opened && !this.lockClick) {
         if (this.beforeClose) {
@@ -226,17 +228,19 @@ export default createComponent({
           </div>
         );
       }
-      return (
-        <div
-          ref="left"
-          class={bem('left')}
-          onClick={this.getClickHandler('left', true)}
-          vusion-slot-name="left"
-          vusion-template-left-node-path={this.$attrs['vusion-template-left-node-path']}
-        >
-          <van-empty-col></van-empty-col>
-        </div>
-      );
+      if (this.inDesigner()) {
+        return (
+          <div
+            ref="left"
+            class={bem('left')}
+            onClick={this.getClickHandler('left', true)}
+            vusion-slot-name="left"
+            vusion-template-left-node-path={this.$attrs['vusion-template-left-node-path']}
+          >
+            <van-empty-col></van-empty-col>
+          </div>
+        );
+      }
     },
 
     genRightPart() {
@@ -253,17 +257,20 @@ export default createComponent({
           </div>
         );
       }
-      return (
-        <div
-          ref="right"
-          class={bem('right')}
-          onClick={this.getClickHandler('right', true)}
-          vusion-slot-name="right"
-          vusion-template-right-node-path={this.$attrs['vusion-template-right-node-path']}
-        >
-          <van-empty-col></van-empty-col>
-        </div>
-      );    },
+      if (this.inDesigner()) {
+        return (
+          <div
+            ref="right"
+            class={bem('right')}
+            onClick={this.getClickHandler('right', true)}
+            vusion-slot-name="right"
+            vusion-template-right-node-path={this.$attrs['vusion-template-right-node-path']}
+          >
+            <van-empty-col></van-empty-col>
+          </div>
+        );
+      }
+    },
   },
 
   render() {
