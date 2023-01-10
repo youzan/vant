@@ -8,6 +8,7 @@ import { fillExt } from './get-deps.js';
 
 type Options = {
   outputPath?: string;
+  checkIsSfc?: boolean;
   pathResolver?: (path: string) => string;
 };
 
@@ -32,7 +33,9 @@ export function genPackageStyle(options: Options = {}) {
       const componentPath = fillExt(join(SRC_DIR, name, 'index')).path;
       let path = join(SRC_DIR, `${name}/index${ext}`);
 
-      if (!isSfc(componentPath) && !existsSync(path)) {
+      const checkIsSfc = options.checkIsSfc ?? true;
+
+      if (!(checkIsSfc && isSfc(componentPath)) && !existsSync(path)) {
         return '';
       }
 

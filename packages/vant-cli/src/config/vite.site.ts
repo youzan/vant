@@ -123,7 +123,7 @@ function vitePluginGenVantBaseCode(): PluginOption {
         case resolvedDesktopVirtualModuleId:
           return genSiteDesktopShared();
         case resolvedPackageStyleVirtualModuleId:
-          return genPackageStyle();
+          return genPackageStyle({ checkIsSfc: false });
         default:
           break;
       }
