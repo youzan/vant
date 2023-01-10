@@ -126,11 +126,11 @@
     --van-font-size-md
   ); /* @desc 正常 button字体大小 */ /* @depAttrs {"size": ["normal"]} */
   --van-button-large-height: 50px; /* @desc 大 button字体大小 */ /* @depAttrs {"size": ["large"]} */
-  --van-button-default-height: 44px; /* @desc 普通 button高度 */
-  --van-button-default-line-height: 1.2; /* @desc 普通 button行高 */
+  --van-button-default-height: 44px; /* @desc 普通 button高度 */ /* @depAttrs {"size": ["middle", null]} */
+  --van-button-default-line-height: 1.2; /* @desc 普通 button行高 */ /* @depAttrs {"size": ["middle", null]} */
   --van-button-default-font-size: var(
     --van-font-size-lg
-  ); /* @desc 普通 button字体大小 */ /* @depAttrs {"size": ["middle"]} */
+  ); /* @desc 普通 button字体大小 */ /* @depAttrs {"size": ["middle", null]} */
   --van-button-default-color: var(
     --van-component-text-color
   ); /* @type color */ /* @hidden */
@@ -145,27 +145,27 @@
   --van-button-primary-border-color: var(
     --van-brand-success
   ); /* @type color */ /* @hidden */
-  --van-button-info-color: #fff; /* @type color */ /* @desc 主要按钮文本颜色 */
+  --van-button-info-color: #fff; /* @type color */ /* @desc 主要按钮文本颜色 */ /* @depAttrs {"type": ["info", null]} */
   --van-button-info-background-color: var(
     --van-brand-primary
-  ); /* @type color */ /* @desc 主要按钮背景色 */
+  ); /* @type color */ /* @desc 主要按钮背景色 */ /* @depAttrs {"type": ["info", null]} */
   --van-button-info-border-color: var(
     --van-brand-primary
-  ); /* @type color */ /* @desc 主要按钮边框颜色 */
-  --van-button-danger-color: #fff; /* @type color */ /* @desc 危险按钮文本颜色 */
+  ); /* @type color */ /* @desc 主要按钮边框颜色 */ /* @depAttrs {"type": ["info", null]} */
+  --van-button-danger-color: #fff; /* @type color */ /* @desc 危险按钮文本颜色 */ /* @depAttrs {"type": ["danger"]} */
   --van-button-danger-background-color: var(
     --van-brand-error
-  ); /* @type color */ /* @desc 危险按钮背景颜色 */
+  ); /* @type color */ /* @desc 危险按钮背景颜色 */ /* @depAttrs {"type": ["danger"]} */
   --van-button-danger-border-color: var(
     --van-brand-error
-  ); /* @type color */ /* @desc 危险按钮边框颜色 */
-  --van-button-warning-color: #fff; /* @type color */ /* @desc 警告按钮文字色 */
+  ); /* @type color */ /* @desc 危险按钮边框颜色 */ /* @depAttrs {"type": ["danger"]} */
+  --van-button-warning-color: #fff; /* @type color */ /* @desc 警告按钮文字色 */ /* @depAttrs {"type": ["warning"]} */
   --van-button-warning-background-color: var(
     --van-brand-warning
-  ); /* @type color */ /* @desc 警告按钮背景色 */
+  ); /* @type color */ /* @desc 警告按钮背景色 */ /* @depAttrs {"type": ["warning"]} */
   --van-button-warning-border-color: var(
     --van-brand-warning
-  ); /* @type color */ /* @desc 警告按钮边框颜色 */
+  ); /* @type color */ /* @desc 警告按钮边框颜色 */ /* @depAttrs {"type": ["warning"]} */
   --van-button-border-width: var(
     --van-border-width-base
   ); /* @desc 按钮边框厚度 */
