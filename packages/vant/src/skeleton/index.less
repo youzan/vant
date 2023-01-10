@@ -3,8 +3,6 @@
   --van-skeleton-paragraph-background: var(--van-active-color);
   --van-skeleton-paragraph-margin-top: var(--van-padding-sm);
   --van-skeleton-title-width: 40%;
-  --van-skeleton-avatar-size: 32px;
-  --van-skeleton-avatar-background: var(--van-active-color);
   --van-skeleton-image-size: 96px;
   --van-skeleton-image-radius: 24px;
   --van-skeleton-duration: 1.2s;
@@ -14,24 +12,8 @@
   display: flex;
   padding: 0 var(--van-padding-md);
 
-  &-avatar {
-    flex-shrink: 0;
-    width: var(--van-skeleton-avatar-size);
-    height: var(--van-skeleton-avatar-size);
-    margin-right: var(--van-padding-md);
-    background: var(--van-skeleton-avatar-background);
-
-    &--round {
-      border-radius: var(--van-radius-max);
-    }
-  }
-
   &__content {
     width: 100%;
-  }
-
-  &-avatar + &__content {
-    padding-top: var(--van-padding-xs);
   }
 
   &-paragraph,

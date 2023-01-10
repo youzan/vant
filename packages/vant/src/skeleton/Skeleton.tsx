@@ -13,7 +13,7 @@ import {
 
 // Components
 import SkeletonTitle from './SkeletonTitle';
-import SkeletonAvatar from './SkeletonAvatar';
+import SkeletonAvatar from '../skeleton-avatar';
 import SkeletonParagraph, { DEFAULT_ROW_WIDTH } from './SkeletonParagraph';
 
 // Types
