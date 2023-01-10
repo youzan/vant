@@ -400,6 +400,11 @@ export default createComponent({
         ...item.$attrs,
         [aId] : ''
       }
+      const style = item.titleStyle || {};
+      const vnodeStaticStyle = item.$vnode.data && item.$vnode.data.staticStyle || {};
+      const vnodeStyle = item.$vnode.data && item.$vnode.data.style || {};
+      Object.assign(style, vnodeStaticStyle);
+      Object.assign(style, vnodeStyle);
       return <Title
         {...{attrs: {...aIdo}}}
         vusion-slot-name="extra"
@@ -411,7 +416,7 @@ export default createComponent({
         badgemax={item.badgemax}
         title={item.title}
         color={this.color}
-        style={item.titleStyle}
+        style={style}
         class={item.titleClass}
         isActive={index === this.currentIndex}
         disabled={disabled || item.disabled}
