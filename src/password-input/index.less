@@ -4,6 +4,7 @@
   position: relative;
   margin: @password-input-margin;
   user-select: none;
+  width: 100%;
 
   &__info,
   &__error-info {
@@ -23,23 +24,27 @@
   &__security {
     display: flex;
     width: 100%;
-    height: @password-input-height;
     cursor: pointer;
+    flex-wrap: wrap;
 
     &::after {
       border-radius: @password-input-border-radius;
     }
 
     li {
+      box-sizing: border-box;
       position: relative;
       display: flex;
       flex: 1;
       align-items: center;
       justify-content: center;
       height: 100%;
+      height: @password-input-height;
       font-size: @password-input-font-size;
       line-height: 1.2;
       background-color: @password-input-background-color;
+      flex-basis: 16.666666666%;
+      flex-grow: 0;
     }
 
     i {

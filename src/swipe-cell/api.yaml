@@ -1,0 +1,44 @@
+- name: van-swipe-cell
+  icon: swipe-cell
+  title: 滑动条
+  description: 滑动条
+  labels:
+    - Container
+  next: true
+  nested: false
+  attrs:
+    - name: left-width
+      title: 左侧滑动区域宽度
+      type: number
+      default: auto
+      description: 左侧滑动区域宽度
+    - name: right-width
+      title: 右侧滑动区域宽度
+      type: number
+      default: auto
+      description: 右侧滑动区域宽度
+    - name: disabled
+      title: 禁止滑动
+      type: boolean
+      default: false
+      description: 禁止滑动
+  slots:
+    - concept: Slot
+      name: default
+      description: 插入文本或 HTML。
+    - concept: Slot
+      name: right
+      description: 右侧。
+    - concept: Slot
+      name: left
+      description: 左侧。
+  events:
+    - name: click
+      title: 点击后
+      description: 点击后触发
+      params: []
+  methods:
+    - name: close
+      title: 收起单元格侧边栏
+      description: 收起单元格侧边栏
+      params: []

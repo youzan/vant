@@ -1,18 +1,13 @@
-import {
-  isDef,
-  createNamespace,
-} from '../utils';
+import { isDef, createNamespace } from '../utils';
 import { resetScroll } from '../utils/dom/reset-scroll';
 import { preventDefault } from '../utils/dom/event';
 
-
 import { FieldMixin } from '../mixins/field';
 import Icon from '../icon';
+import NumberKeyboard from '../number-keyboard';
+import PasswordInput from '../password-input';
 
 const [createComponent, bem] = createNamespace('fieldinput');
-function equal(value1, value2) {
-  return String(value1) === String(value2);
-}
 
 export default createComponent({
   mixins: [FieldMixin],
@@ -48,19 +43,54 @@ export default createComponent({
       type: String,
       default: 'focus',
     },
+    maxlength: [Number, String],
+    keyboardTitle: {
+      type: String,
+      default: '',
+    },
+    keyboardTheme: {
+      type: String,
+      default: 'default',
+    },
+    keytheme: {
+      type: String,
+      default: 'native',
+    },
+    inputstyle: {
+      type: String,
+      default: 'input',
+    },
   },
   data() {
     const defaultValue = this.value ?? this.defaultValue;
 
     return {
       currentValue: defaultValue,
+      shownumber: false,
     };
   },
   computed: {
-
+    readonlyforint() {
+      return [
+        'integer',
+        'rndinteger',
+        'card',
+        'point',
+      ].includes(this.type);
+    },
+    shownumbertype() {
+      return this.keytheme === 'custom';
+    },
+    extraKey() {
+      switch (this.type) {
+        case 'card':
+          return 'X';
+        case 'point':
+          return '.';
+      }
+    },
   },
-  mounted() {
-  },
+  mounted() {},
   methods: {
     getProp(key) {
       if (isDef(this[key])) {
@@ -89,7 +119,14 @@ export default createComponent({
     },
     updateValue(value, trigger = 'onChange') {
       value = isDef(value) ? String(value) : '';
-
+      const { maxlength } = this;
+      if (isDef(maxlength) && value.length > maxlength) {
+        if (this.value && this.value.length === +maxlength) {
+          ({ value } = this);
+        } else {
+          value = value.slice(0, maxlength);
+        }
+      }
       const { input } = this.$refs;
       if (input && value !== input.value) {
         input.value = value;
@@ -132,7 +169,7 @@ export default createComponent({
     },
     showClear() {
       const readonly = this.getProp('readonly');
-      if ((this.clearable && !readonly)) {
+      if (this.clearable && !readonly) {
         const hasValue = isDef(this.currentValue) && this.currentValue !== '';
         const trigger =
           this.clearTrigger === 'always' ||
@@ -151,6 +188,13 @@ export default createComponent({
       // console.log(666);
       this.currentValue = this.value;
     },
+    onTouchstartinput($event) {
+      $event.stopPropagation();
+      if (this.readonly || this.disabled) {
+        return
+      }
+      this.shownumber = true;
+    },
   },
   watch: {
     // value: {
@@ -167,41 +211,71 @@ export default createComponent({
     currentValue(val) {
       this.$emit('update:value', val);
       this.$emit('change', val, this);
+      if (this.maxlength && this.maxlength===val?.length) {
+        this.$emit('enoughkey', val)
+      }
     },
   },
   render() {
     const inputAlign = this.vanField?.getProp('inputAlign');
     return (
-      <div class={bem('newwrap', {'clearwrap': this.clearable})}>
-        <input
-        // vShow={this.showInput}
-        ref="input"
-        type={this.type}
-        role="fieldinput"
-        class={bem('control', [inputAlign, 'custom'])}
-        value={this.currentValue}
-        // style={this.inputStyle}
-        disabled={this.disabled}
-        readonly={this.readonly}
-        // set keyboard in modern browsers
-        // inputmode={this.integer ? 'numeric' : 'decimal'}
-        placeholder={this.placeholder}
-        // aria-valuemax={this.max}
-        // aria-valuemin={this.min}
-        // aria-valuenow={this.currentValue}
-        onInput={this.onInput}
-        onFocus={this.onFocus}
-        onBlur={this.onBlur}
-        // onMousedown={this.onMousedown}
-        />
+      <div class={bem('newwrap', { clearwrap: this.clearable })}>
+        {this.inputstyle === 'input' ? (
+          <input
+            // vShow={this.showInput}
+            ref="input"
+            type={this.type}
+            role="fieldinput"
+            class={bem('control', [inputAlign, 'custom'])}
+            value={this.currentValue}
+            maxlength={this.maxlength}
+            // style={this.inputStyle}
+            disabled={this.disabled}
+            readonly={this.readonly || this.readonlyforint}
+            // set keyboard in modern browsers
+            // inputmode={this.integer ? 'numeric' : 'decimal'}
+            placeholder={this.placeholder}
+            // aria-valuemax={this.max}
+            // aria-valuemin={this.min}
+            // aria-valuenow={this.currentValue}
+            onInput={this.onInput}
+            onFocus={this.onFocus}
+            onBlur={this.onBlur}
+            // onMousedown={this.onMousedown}
+            vusion-click-enabled
+            onClick={this.onTouchstartinput}
+          />
+        ) : null}
         {this.showClear() && (
-            <Icon
-              name="clear"
-              class={bem('clear')}
-              onTouchstart={this.onClear}
-            />
+          <Icon name="clear" class={bem('clear')} onTouchstart={this.onClear} />
         )}
+        {(this.inputstyle === 'password') ? (
+          <PasswordInput
+            value={this.currentValue}
+            length={this.maxlength}
+            onFocus={() => {
+              this.shownumber = true;
+            }}
+            vusion-click-enabled
+            onClick={this.onTouchstartinput}
+          />
+        ) : null}
+        {this.shownumbertype ? (
+          <NumberKeyboard
+            vModel={this.currentValue}
+            closeButtonText={'完成'}
+            show={this.shownumber}
+            title={this.keyboardTitle}
+            randomKeyOrder={this.type === 'rndinteger'}
+            extraKey={this.extraKey}
+            theme={this.keyboardTheme}
+            maxlength={this.maxlength}
+            onBlur={() => {
+              this.shownumber = false;
+            }}
+          />
+        ) : null}
       </div>
     );
-  }
+  },
 });

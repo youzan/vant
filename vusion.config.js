@@ -75,6 +75,7 @@ module.exports = {
             // { group: 'Feedback', show: true, name: 'popover-combination', alias: '气泡弹出框' },
             { group: 'Feedback', show: true, name: 'popup-combination', alias: '气泡弹出框', vusion: true },
             { group: 'Feedback', show: true, name: 'dialog', alias: '弹出框' },
+            { group: 'Feedback', show: true, name: 'swipe-cell', alias: '滑动单元格' },
         ],
         blocks: [],
         directives: [
