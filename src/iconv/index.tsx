@@ -153,6 +153,7 @@ function Iconv(
   const { icotype } = props;
   const endNotext = icotype === 'only';
 
+
   const tempStyle = {
     color: props.color,
     fontSize: addUnit(props.size),
@@ -160,6 +161,12 @@ function Iconv(
   if (typeof tempStyle.fontSize === 'undefined') {
     delete tempStyle.fontSize;
   }
+
+  // 组件上写style，组件里不生效，这里需要合并style
+  const vnodeStaticStyle = ctx.data && ctx.data.staticStyle || {};
+  const vnodeStyle = ctx.data && ctx.data.style || {};
+  Object.assign(tempStyle, vnodeStaticStyle);
+  Object.assign(tempStyle, vnodeStyle);
 
   return (
     <props.tag

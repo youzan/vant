@@ -43,8 +43,14 @@ function Tag(
     style.borderColor = color;
   } else {
     style.color = textColor;
-    style.background = color;
+    style.backgroundColor = color;
   }
+
+  // 组件上写style，组件里不生效，这里需要合并style
+  const vnodeStaticStyle = ctx.data && ctx.data.staticStyle || {};
+  const vnodeStyle = ctx.data && ctx.data.style || {};
+  Object.assign(style, vnodeStaticStyle);
+  Object.assign(style, vnodeStyle);
 
   const classes: { [key: string]: any } = { mark, plain, round };
   if (size) {

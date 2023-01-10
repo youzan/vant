@@ -183,13 +183,13 @@ export default createComponent({
       this.currentValue = this.value;
     },
     adjustSize() {
-      let input = this.$refs.input;
+      const {input} = this.$refs;
 
       const scrollTop = getRootScrollTop();
       input.style.height = 'auto';
 
       let height = input.scrollHeight;
-      const wrap = this.$refs.wrap;
+      const {wrap} = this.$refs;
       // eslint-disable-next-line radix
       const wrapHeight = parseInt(window.getComputedStyle(wrap).height);
       if (isObject(this.autosize || input.autosize)) {
@@ -200,10 +200,12 @@ export default createComponent({
         if (minHeight) {
           height = Math.max(height, minHeight);
         }
+        input.style.overflowY = "auto"
       }
 
       if (height) {
         input.style.height = (wrapHeight > height ? wrapHeight : height) + 'px';
+      
         // https://github.com/youzan/vant/issues/9178
         setRootScrollTop(scrollTop);
       }

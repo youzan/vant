@@ -57,6 +57,28 @@ _root.nodes.forEach((node) => {
           node.text.trim()
         );
         lastComponent.cssProperty[lastProp].group = cap[1].trim();
+      } else if (node.text.includes('@excludeElTags ')) {
+        // 排除elTag
+        const cap = /@excludeElTags\s+([\S]+)/.exec(node.text.trim());
+        lastComponent.cssProperty[lastProp].excludeElTags = cap[1]
+          .trim()
+          .split(',');
+      } else if (node.text.includes('@excludeTags ')) {
+        // 排除组件
+        const cap = /@excludeTags\s+([\S]+)/.exec(node.text.trim());
+        lastComponent.cssProperty[lastProp].excludeTags = cap[1]
+          .trim()
+          .split(',');
+      } else if (node.text.includes('@prefix ')) {
+        // 变量前缀，方便让子组件去除变量前缀
+        const cap = /@prefix\s+([\S]+)/.exec(node.text.trim());
+        lastComponent.cssProperty[lastProp].prefix = cap[1].trim();
+      } else if (node.text.includes('@depAttrs ')) {
+        // 此变量依赖的属性
+        const cap = /@depAttrs\s+(.*)/.exec(node.text.trim());
+        lastComponent.cssProperty[lastProp].depAttrs = JSON.parse(
+          cap[1] || '{}'
+        );
       }
     }
   } else if (node.type === 'decl') {

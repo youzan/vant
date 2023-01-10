@@ -19,7 +19,7 @@
           title: 危险
         - value: warning
           title: 警告
-      default: medium
+      default: primary
     - name: size
       title: 尺寸
       type: string
