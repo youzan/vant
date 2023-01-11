@@ -1,6 +1,7 @@
 import { existsSync, readFileSync } from 'node:fs';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 import { join, dirname, isAbsolute } from 'node:path';
+import { version } from 'vue';
 
 function findRootDir(dir: string): string {
   if (existsSync(join(dir, 'vant.config.mjs'))) {
@@ -14,6 +15,9 @@ function findRootDir(dir: string): string {
 
   return findRootDir(parentDir);
 }
+
+// vue version
+export const IS_VUE2 = version.split('.')[0] === '2';
 
 // Root paths
 export const CWD = process.cwd();

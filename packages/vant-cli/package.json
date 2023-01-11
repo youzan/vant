@@ -1,6 +1,6 @@
 {
-  "name": "@vant/cli",
-  "version": "5.1.0",
+  "name": "@cfit/vant-cli",
+  "version": "0.0.1",
   "type": "module",
   "main": "lib/index.js",
   "typings": "lib/index.d.ts",
@@ -27,24 +27,21 @@
     "vant"
   ],
   "publishConfig": {
-    "access": "public",
-    "registry": "https://registry.npmjs.org/"
+    "access": "public"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/vant-ui/vant.git",
-    "directory": "packages/vant-cli"
-  },
-  "bugs": "https://github.com/vant-ui/vant/issues",
-  "author": "chenjiahan",
   "license": "MIT",
+  "peerDependencies": {
+    "vue": "^2.7.14 || ^3.2.45",
+    "vue-router": "^3.6.5 || ^4.1.5"
+  },
   "devDependencies": {
     "@jest/types": "^29.1.2",
     "@types/fs-extra": "^9.0.13",
     "@types/less": "^3.0.3",
     "@types/lodash": "^4.14.191",
     "@types/markdown-it": "^12.2.3",
-    "vue": "^3.2.45"
+    "vue": "^3.2.45",
+    "vue-router": "^4.1.5"
   },
   "dependencies": {
     "@babel/core": "^7.18.13",
@@ -54,7 +51,10 @@
     "@vant/touch-emulator": "^1.4.0",
     "@vitejs/plugin-vue": "^4.0.0",
     "@vitejs/plugin-vue-jsx": "^3.0.0",
+    "@vitejs/plugin-vue2": "^2.2.0",
+    "@vitejs/plugin-vue2-jsx": "^1.1.0",
     "@vue/babel-plugin-jsx": "^1.1.1",
+    "@vue/babel-preset-jsx": "^1.4.0",
     "autoprefixer": "^10.4.8",
     "commander": "^9.4.0",
     "consola": "^2.15.3",
@@ -86,13 +86,12 @@
     "transliteration": "^2.3.5",
     "typescript": "^4.8.2",
     "vite": "^4.0.3",
-    "vite-plugin-md": "^0.11.9",
-    "vue-router": "^4.1.5"
+    "vite-plugin-md": "^0.11.9"
   },
   "release-it": {
     "git": {
       "tag": false,
-      "commitMessage": "release: @vant/cli ${version}"
+      "commitMessage": "release: @cfit/vant-cli ${version}"
     }
   }
 }

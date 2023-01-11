@@ -4,7 +4,7 @@ import { cliVersion } from './index.js';
 
 const program = new Command();
 
-program.version(`@vant/cli ${cliVersion}`);
+program.version(`@cfit/vant-cli ${cliVersion}`);
 
 program
   .command('dev')
