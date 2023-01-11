@@ -153,7 +153,7 @@ const tasks = [
     task: buildPackageScriptEntry,
   },
   {
-    text: 'Compile sfc and remove unneeded dirs',
+    text: 'Compile Sfc And Remove Unneeded Dirs',
     task: preCompileDirs,
   },
   {

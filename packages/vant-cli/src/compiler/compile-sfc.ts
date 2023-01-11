@@ -85,6 +85,17 @@ function getComponentPaths() {
   return cacheComponentPaths;
 }
 
+// 由于vant-cli build是先进行了一次copy到dist dir，所以这里filePath目录是相对于
+// dist dir的，该方法是通过filePath获取其对应的src目录下的文件路径
+function getOriginAbsolutePath(filePath: string): string {
+  const relativePath = relative(ROOT, filePath);
+  const absoluteSrcPath = join(
+    SRC_DIR,
+    relativePath.slice(relativePath.indexOf(sep) + 1)
+  );
+  return absoluteSrcPath;
+}
+
 export async function compileSfc(filePath: string): Promise<any> {
   const tasks = [remove(filePath)];
   const source = readFileSync(filePath, 'utf-8');
@@ -156,19 +167,13 @@ export async function compileSfc(filePath: string): Promise<any> {
   tasks.push(
     new Promise((resolve, reject) => {
       const componentPaths = getComponentPaths();
-      const sfcStyleDeps = getDeps(filePath)
-        .filter((dep) => {
-          if (!isSfc(dep)) return false;
-          const relativePath = relative(ROOT, dep);
-          const absoluteSrcPath = join(
-            SRC_DIR,
-            relativePath.slice(relativePath.indexOf(sep) + 1)
-          );
-          return !componentPaths.includes(absoluteSrcPath);
-        })
+      const originFilePath = getOriginAbsolutePath(filePath);
+      const originFileDir = dirname(originFilePath);
+      const sfcStyleDeps = getDeps(originFilePath)
+        .filter((dep) => isSfc(dep) && !componentPaths.includes(dep))
         .map((key) => {
           const relativePath = normalizePath(
-            relative(dirname(filePath), replaceExt(key, `.${CSS_LANG}`))
+            relative(originFileDir, replaceExt(key, `.${CSS_LANG}`))
           );
           const importUrl = relativePath.startsWith('.')
             ? relativePath
@@ -199,9 +204,12 @@ export async function compileSfc(filePath: string): Promise<any> {
             preprocessLang: style.lang,
           }).code;
         } else {
+          const relativePathWithRoot = normalizePath(
+            relative(ROOT, originFilePath)
+          );
           const logError = (key: string) =>
             consola.error(
-              `[${filePath}]: when vantConfig.build.css.theme is ${theme}, ${key} is unsupported`
+              `[${relativePathWithRoot}]: when vantConfig.build.css.theme is ${theme}, ${key} is unsupported`
             );
           if (styleSource.includes('v-bind(')) {
             logError('v-bind()');
