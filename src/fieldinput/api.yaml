@@ -89,9 +89,9 @@
       default: false
       description: 是否禁用
     - name: maxlength
-      title: 输入最大长度
+      title: 输入长度
       type: number
-      description: 输入最大长度
+      description: 为展示美观，可输入的最大长度限制为6
       display: number
       default: 6
       min: 1
@@ -135,7 +135,7 @@
         - value: default
           title: 默认
         - value: custom
-          title: 定制
+          title: 右侧栏
       default: default
       description: 定制键盘布局
       dependency:

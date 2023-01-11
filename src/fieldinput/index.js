@@ -90,7 +90,8 @@ export default createComponent({
       }
     },
   },
-  mounted() {},
+  mounted() {
+  },
   methods: {
     getProp(key) {
       if (isDef(this[key])) {
@@ -215,6 +216,11 @@ export default createComponent({
         this.$emit('enoughkey', val)
       }
     },
+    type() {
+      if (this.readonlyforint && this.inDesigner()) {
+        this.shownumber = true;
+      }
+    }
   },
   render() {
     const inputAlign = this.vanField?.getProp('inputAlign');
@@ -270,6 +276,8 @@ export default createComponent({
             extraKey={this.extraKey}
             theme={this.keyboardTheme}
             maxlength={this.maxlength}
+            getContainer="body"
+            zIndex="9999"
             onBlur={() => {
               this.shownumber = false;
             }}

@@ -5860,9 +5860,9 @@
                 },
                 {
                     "name": "maxlength",
-                    "title": "输入最大长度",
+                    "title": "输入长度",
                     "type": "number",
-                    "description": "输入最大长度",
+                    "description": "为展示美观，可输入的最大长度限制为6",
                     "display": "number",
                     "default": 6,
                     "min": 1,
@@ -5952,7 +5952,7 @@
                         },
                         {
                             "value": "custom",
-                            "title": "定制"
+                            "title": "右侧栏"
                         }
                     ],
                     "default": "default",
@@ -9065,7 +9065,7 @@
             "Container"
         ],
         "screenShot": "",
-        "blocks": "[{\"title\":\"基本用法\",\"description\":\"\",\"code\":\"<template>\\n<van-swipe-cell :leftforhelper=\\\"false\\\" :rightforhelper=\\\"false\\\">\\n  <template #left>\\n    <van-button squareroud=\\\"square\\\" type=\\\"primary\\\" text=\\\"选择\\\" />\\n  </template>\\n  <van-cell center>\\n    <template #title>\\n      左侧文本\\n    </template>\\n    <template>\\n      右侧文本\\n    </template>\\n  </van-cell>\\n  <template #right>\\n    <van-button squareroud=\\\"square\\\" type=\\\"danger\\\" text=\\\"删除\\\" />\\n    <van-button squareroud=\\\"square\\\" type=\\\"primary\\\" text=\\\"收藏\\\" />\\n  </template>\\n</van-swipe-cell>\\n</template>\\n\"}]",
+        "blocks": "[{\"title\":\"基本用法\",\"description\":\"\",\"code\":\"<template>\\n<van-swipe-cell :leftforhelper=\\\"false\\\" :rightforhelper=\\\"false\\\">\\n  <template #left>\\n    <van-button\\n      style=\\\"height:100%;width:72px;border-radius:0;\\\"\\n      squareroud=\\\"square\\\"\\n      type=\\\"primary\\\"\\n      text=\\\"选择\\\"\\n      size=\\\"middle\\\"\\n    />\\n  </template>\\n  <van-cell center>\\n    <template #title> 左侧文本 </template>\\n    <template> 右侧文本 </template>\\n  </van-cell>\\n  <template #right>\\n    <van-button\\n      style=\\\"height:100%;width:72px;border-radius:0;\\\"\\n      squareroud=\\\"square\\\"\\n      type=\\\"danger\\\"\\n      text=\\\"删除\\\"\\n      size=\\\"middle\\\"\\n    />\\n  </template>\\n</van-swipe-cell>\\n</template>\\n\"}]",
         "jsonSchema": {
             "name": "van-swipe-cell",
             "title": "滑动条",
@@ -9077,7 +9077,7 @@
                 {
                     "title": "基本用法",
                     "description": "",
-                    "code": "<template>\n<van-swipe-cell :leftforhelper=\"false\" :rightforhelper=\"false\">\n  <template #left>\n    <van-button squareroud=\"square\" type=\"primary\" text=\"选择\" />\n  </template>\n  <van-cell center>\n    <template #title>\n      左侧文本\n    </template>\n    <template>\n      右侧文本\n    </template>\n  </van-cell>\n  <template #right>\n    <van-button squareroud=\"square\" type=\"danger\" text=\"删除\" />\n    <van-button squareroud=\"square\" type=\"primary\" text=\"收藏\" />\n  </template>\n</van-swipe-cell>\n</template>\n"
+                    "code": "<template>\n<van-swipe-cell :leftforhelper=\"false\" :rightforhelper=\"false\">\n  <template #left>\n    <van-button\n      style=\"height:100%;width:72px;border-radius:0;\"\n      squareroud=\"square\"\n      type=\"primary\"\n      text=\"选择\"\n      size=\"middle\"\n    />\n  </template>\n  <van-cell center>\n    <template #title> 左侧文本 </template>\n    <template> 右侧文本 </template>\n  </van-cell>\n  <template #right>\n    <van-button\n      style=\"height:100%;width:72px;border-radius:0;\"\n      squareroud=\"square\"\n      type=\"danger\"\n      text=\"删除\"\n      size=\"middle\"\n    />\n  </template>\n</van-swipe-cell>\n</template>\n"
                 }
             ],
             "attrs": [
