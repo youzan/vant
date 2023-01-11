@@ -75,7 +75,7 @@
     "@vant/icons": "^1.7.1",
     "@vant/popperjs": "^1.1.0",
     "@vue/babel-helper-vue-jsx-merge-props": "^1.0.0",
-    "cloud-ui.vusion": "0.14.18-beta.9",
+    "cloud-ui.vusion": "0.14.24-beta.4",
     "lodash": "^4.17.21",
     "online-svg-icon-vue2": "^1.2.3",
     "swiper": "^7.4.1",

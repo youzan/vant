@@ -429,56 +429,117 @@
                     },
                     "--van-button-default-height": {
                         "type": "input",
-                        "desc": "普通 button高度"
+                        "desc": "普通 button高度",
+                        "depAttrs": {
+                            "size": [
+                                "middle",
+                                null
+                            ]
+                        }
                     },
                     "--van-button-default-line-height": {
                         "type": "input",
-                        "desc": "普通 button行高"
+                        "desc": "普通 button行高",
+                        "depAttrs": {
+                            "size": [
+                                "middle",
+                                null
+                            ]
+                        }
                     },
                     "--van-button-default-font-size": {
                         "type": "input",
                         "desc": "普通 button字体大小",
                         "depAttrs": {
                             "size": [
-                                "middle"
+                                "middle",
+                                null
                             ]
                         }
                     },
                     "--van-button-info-color": {
                         "type": "color",
-                        "desc": "主要按钮文本颜色"
+                        "desc": "主要按钮文本颜色",
+                        "depAttrs": {
+                            "type": [
+                                "info",
+                                null
+                            ]
+                        }
                     },
                     "--van-button-info-background-color": {
                         "type": "color",
-                        "desc": "主要按钮背景色"
+                        "desc": "主要按钮背景色",
+                        "depAttrs": {
+                            "type": [
+                                "info",
+                                null
+                            ]
+                        }
                     },
                     "--van-button-info-border-color": {
                         "type": "color",
-                        "desc": "主要按钮边框颜色"
+                        "desc": "主要按钮边框颜色",
+                        "depAttrs": {
+                            "type": [
+                                "info",
+                                null
+                            ]
+                        }
                     },
                     "--van-button-danger-color": {
                         "type": "color",
-                        "desc": "危险按钮文本颜色"
+                        "desc": "危险按钮文本颜色",
+                        "depAttrs": {
+                            "type": [
+                                "danger"
+                            ]
+                        }
                     },
                     "--van-button-danger-background-color": {
                         "type": "color",
-                        "desc": "危险按钮背景颜色"
+                        "desc": "危险按钮背景颜色",
+                        "depAttrs": {
+                            "type": [
+                                "danger"
+                            ]
+                        }
                     },
                     "--van-button-danger-border-color": {
                         "type": "color",
-                        "desc": "危险按钮边框颜色"
+                        "desc": "危险按钮边框颜色",
+                        "depAttrs": {
+                            "type": [
+                                "danger"
+                            ]
+                        }
                     },
                     "--van-button-warning-color": {
                         "type": "color",
-                        "desc": "警告按钮文字色"
+                        "desc": "警告按钮文字色",
+                        "depAttrs": {
+                            "type": [
+                                "warning"
+                            ]
+                        }
                     },
                     "--van-button-warning-background-color": {
                         "type": "color",
-                        "desc": "警告按钮背景色"
+                        "desc": "警告按钮背景色",
+                        "depAttrs": {
+                            "type": [
+                                "warning"
+                            ]
+                        }
                     },
                     "--van-button-warning-border-color": {
                         "type": "color",
-                        "desc": "警告按钮边框颜色"
+                        "desc": "警告按钮边框颜色",
+                        "depAttrs": {
+                            "type": [
+                                "warning"
+                            ]
+                        }
                     },
                     "--van-button-border-width": {
                         "type": "input",
