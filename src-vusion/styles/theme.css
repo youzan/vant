@@ -62,33 +62,33 @@
   ); /* @desc 布局内各元素之间的外间距, 如：1px */
 
   /* @component van-panel */
-  --van-panel-background-color: #fff; /* @type color */ /* @desc panel背景色 */
+  --van-panel-background-color: #fff; /* @type color */ /* @desc panel背景色 */ /* @depStaticStyles ["background-color"] */
   --van-panel-header-value-color: #f24957; /* @type color */ /* @desc panel头部字体颜色 */
   --van-panel-footer-padding: 12px 24px; /* @desc panel底部内边距 */
 
   /* @component van-text */
   --van-text-font-size: var(
     --van-font-size-sm
-  ); /* @desc 文本字号大小,如：1px */ /* @depAttrs {"size": ["normal", null]} */
+  ); /* @desc 文本字号大小,如：1px */ /* @depAttrs {"size": ["normal", null]} */ /* @depStaticStyles ["font-size"] */
   --van-text-font-size-small: var(
     --van-font-size-xs
-  ); /* @desc 小号文本字号大小,如：1px */ /* @depAttrs {"size": ["small"]} */
+  ); /* @desc 小号文本字号大小,如：1px */ /* @depAttrs {"size": ["small"]} */ /* @depStaticStyles ["font-size"] */
   --van-text-font-size-large: calc(
     var(--van-font-size-sm) * (18 / 14)
-  ); /* @desc 大号文本字号大小,如：1px */ /* @depAttrs {"size": ["large"]} */
+  ); /* @desc 大号文本字号大小,如：1px */ /* @depAttrs {"size": ["large"]} */ /* @depStaticStyles ["font-size"] */
   --van-text-color-primary: var(
     --van-brand-primary
-  ); /* @type color */ /* @desc 主要文本字体颜色,如：#223325 */ /* @depAttrs {"color": ["primary"]} */
+  ); /* @type color */ /* @desc 主要文本字体颜色,如：#223325 */ /* @depAttrs {"color": ["primary"]} */ /* @depStaticStyles ["color"] */
   --van-text-color-secondary: #666; /* @type color */ /* @desc 次要文本字体颜色,如：#223325 */ /* @hidden */
   --van-text-color-success: var(
     --van-brand-success
-  ); /* @type color */ /* @desc 成功文本字体颜色,如：#223325 */ /* @depAttrs {"color": ["success"]} */
+  ); /* @type color */ /* @desc 成功文本字体颜色,如：#223325 */ /* @depAttrs {"color": ["success"]} */ /* @depStaticStyles ["color"] */
   --van-text-color-warning: var(
     --van-brand-warning
-  ); /* @type color */ /* @desc 警告文本字体颜色,如：#223325 */ /* @depAttrs {"color": ["warning"]} */
+  ); /* @type color */ /* @desc 警告文本字体颜色,如：#223325 */ /* @depAttrs {"color": ["warning"]} */ /* @depStaticStyles ["color"] */
   --van-text-color-error: var(
     --van-brand-error
-  ); /* @type color */ /* @desc 错误文本字体颜色,如：#223325 */ /* @depAttrs {"color": ["error"]} */
+  ); /* @type color */ /* @desc 错误文本字体颜色,如：#223325 */ /* @depAttrs {"color": ["error"]} */ /* @depStaticStyles ["color"] */
   --van-text-color-disabled: var(
     --van-brand-disabled
   ); /* @type color */ /* @desc 禁用文本字体颜色,如：#223325 */ /* @depAttrs {"color": ["disabled"]} */
@@ -99,38 +99,38 @@
   /* @component van-link */
   --link-color: var(
     --van-brand-primary
-  ); /* @type color */ /* @desc 默认链接字体颜色,如：#223325 */ /* @depAttrs {"color": ["primary"]} */
+  ); /* @type color */ /* @desc 默认链接字体颜色,如：#223325 */ /* @depAttrs {"color": ["primary"]} */ /* @depStaticStyles ["color"] */
   --link-color-success: var(
     --van-brand-success
-  ); /* @type color */ /* @desc 成功链接字体颜色,如：#223325 */ /* @depAttrs {"color": ["success"]} */
+  ); /* @type color */ /* @desc 成功链接字体颜色,如：#223325 */ /* @depAttrs {"color": ["success"]} */ /* @depStaticStyles ["color"] */
   --link-color-warning: var(
     --van-brand-warning
-  ); /* @type color */ /* @desc 警告链接字体颜色,如：#223325 */ /* @depAttrs {"color": ["warning"]} */
+  ); /* @type color */ /* @desc 警告链接字体颜色,如：#223325 */ /* @depAttrs {"color": ["warning"]} */ /* @depStaticStyles ["color"] */
   --link-color-disabled: var(
     --van-brand-disabled
   ); /* @type color */ /* @desc 禁用链接字体颜色,如：#223325 */
   --link-color-error: var(
     --van-brand-error
-  ); /* @type color */ /* @desc 错误链接字体颜色,如：#223325 */ /* @depAttrs {"color": ["error"]} */
+  ); /* @type color */ /* @desc 错误链接字体颜色,如：#223325 */ /* @depAttrs {"color": ["error"]} */ /* @depStaticStyles ["color"] */
 
   /* @component van-button */
-  --van-button-mini-height: 24px; /* @desc 迷你 button 高度 */ /* @depAttrs {"size": ["mini"]} */
+  --van-button-mini-height: 24px; /* @desc 迷你 button 高度 */ /* @depAttrs {"size": ["mini"]} */ /* @depStaticStyles ["height"] */
   --van-button-mini-font-size: var(
     --van-font-size-xs
-  ); /* @desc 迷你 button字体大小 */ /* @depAttrs {"size": ["mini"]} */
-  --van-button-small-height: 28px; /* @desc 小 button  高度 */ /* @depAttrs {"size": ["small"]} */
+  ); /* @desc 迷你 button字体大小 */ /* @depAttrs {"size": ["mini"]} */ /* @depStaticStyles ["font-size"] */
+  --van-button-small-height: 28px; /* @desc 小 button  高度 */ /* @depAttrs {"size": ["small"]} */ /* @depStaticStyles ["height"] */
   --van-button-small-font-size: var(
     --van-font-size-sm
-  ); /* @desc 小 button字体大小 */ /* @depAttrs {"size": ["small"]} */
+  ); /* @desc 小 button字体大小 */ /* @depAttrs {"size": ["small"]} */ /* @depStaticStyles ["font-size"] */
   --van-button-normal-font-size: var(
     --van-font-size-md
-  ); /* @desc 正常 button字体大小 */ /* @depAttrs {"size": ["normal"]} */
-  --van-button-large-height: 50px; /* @desc 大 button字体大小 */ /* @depAttrs {"size": ["large"]} */
-  --van-button-default-height: 44px; /* @desc 普通 button高度 */ /* @depAttrs {"size": ["middle", null]} */
+  ); /* @desc 正常 button字体大小 */ /* @depAttrs {"size": ["normal"]} */ /* @depStaticStyles ["font-size"] */
+  --van-button-large-height: 50px; /* @desc 大 button字体大小 */ /* @depAttrs {"size": ["large"]} */ /* @depStaticStyles ["height"] */
+  --van-button-default-height: 44px; /* @desc 普通 button高度 */ /* @depAttrs {"size": ["middle", null]} */ /* @depStaticStyles ["height"] */
   --van-button-default-line-height: 1.2; /* @desc 普通 button行高 */ /* @depAttrs {"size": ["middle", null]} */
   --van-button-default-font-size: var(
     --van-font-size-lg
-  ); /* @desc 普通 button字体大小 */ /* @depAttrs {"size": ["middle", null]} */
+  ); /* @desc 普通 button字体大小 */ /* @depAttrs {"size": ["middle", null]} */ /* @depStaticStyles ["font-size"] */
   --van-button-default-color: var(
     --van-component-text-color
   ); /* @type color */ /* @hidden */
@@ -152,32 +152,32 @@
   --van-button-info-border-color: var(
     --van-brand-primary
   ); /* @type color */ /* @desc 主要按钮边框颜色 */ /* @depAttrs {"type": ["info", null]} */
-  --van-button-danger-color: #fff; /* @type color */ /* @desc 危险按钮文本颜色 */ /* @depAttrs {"type": ["danger"]} */
+  --van-button-danger-color: #fff; /* @type color */ /* @desc 危险按钮文本颜色 */ /* @depAttrs {"type": ["danger"]} */ /* @depStaticStyles ["color"] */
   --van-button-danger-background-color: var(
     --van-brand-error
-  ); /* @type color */ /* @desc 危险按钮背景颜色 */ /* @depAttrs {"type": ["danger"]} */
+  ); /* @type color */ /* @desc 危险按钮背景颜色 */ /* @depAttrs {"type": ["danger"]} */ /* @depStaticStyles ["background-color"] */
   --van-button-danger-border-color: var(
     --van-brand-error
-  ); /* @type color */ /* @desc 危险按钮边框颜色 */ /* @depAttrs {"type": ["danger"]} */
-  --van-button-warning-color: #fff; /* @type color */ /* @desc 警告按钮文字色 */ /* @depAttrs {"type": ["warning"]} */
+  ); /* @type color */ /* @desc 危险按钮边框颜色 */ /* @depAttrs {"type": ["danger"]} */ /* @depStaticStyles ["border-color"] */
+  --van-button-warning-color: #fff; /* @type color */ /* @desc 警告按钮文字色 */ /* @depAttrs {"type": ["warning"]} */ /* @depStaticStyles ["color"] */
   --van-button-warning-background-color: var(
     --van-brand-warning
-  ); /* @type color */ /* @desc 警告按钮背景色 */ /* @depAttrs {"type": ["warning"]} */
+  ); /* @type color */ /* @desc 警告按钮背景色 */ /* @depAttrs {"type": ["warning"]} */ /* @depStaticStyles ["background-color"] */
   --van-button-warning-border-color: var(
     --van-brand-warning
-  ); /* @type color */ /* @desc 警告按钮边框颜色 */ /* @depAttrs {"type": ["warning"]} */
+  ); /* @type color */ /* @desc 警告按钮边框颜色 */ /* @depAttrs {"type": ["warning"]} */ /* @depStaticStyles ["border-color"] */
   --van-button-border-width: var(
     --van-border-width-base
-  ); /* @desc 按钮边框厚度 */
+  ); /* @desc 按钮边框厚度 */ /* @depStaticStyles ["border-top-width", "border-right-width", "border-bottom-width", "border-left-width"] */
 
   --van-button-border-radius: var(
     --van-border-radius-md
-  ); /* @desc 按钮边框圆角 */
+  ); /* @desc 按钮边框圆角 */ /* @depStaticStyles ["border-top-left-radius", "border-top-right-radius", "border-bottom-left-radius", "border-bottom-right-radius"] */
 
   --van-button-border-radius2: var(--van-border-radius-md); /* @hidden */
   --van-button-round-border-radius: var(
     --van-border-radius-max
-  ); /* @desc 圆角按钮圆角 */
+  ); /* @desc 圆角按钮圆角 */ /* @depStaticStyles ["border-top-left-radius", "border-top-right-radius", "border-bottom-left-radius", "border-bottom-right-radius"] */
 
   --van-button-plain-background-color: #fff; /* @type color */ /* @hidden */
   --van-button-disabled-opacity: var(

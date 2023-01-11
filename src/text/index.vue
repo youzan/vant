@@ -18,6 +18,7 @@ export default {
 <style module>
 .root {
   /* color: var(--component-text-color); */
+  font-size: var(--van-text-font-size);
 }
 
 .root[size="small"] {

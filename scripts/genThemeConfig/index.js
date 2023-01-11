@@ -79,6 +79,12 @@ _root.nodes.forEach((node) => {
         lastComponent.cssProperty[lastProp].depAttrs = JSON.parse(
           cap[1] || '{}'
         );
+      } else if (node.text.includes('@depParentAttrs ')) { // 此变量依赖的父组件属性
+          const cap = /@depParentAttrs\s+(.*)/.exec(node.text.trim());
+          lastComponent.cssProperty[lastProp].depParentAttrs = JSON.parse(cap[1] || '{}');
+      } else if (node.text.includes('@depStaticStyles ')) { // 此变量依赖的静态样式属性
+          const cap = /@depStaticStyles\s+(.*)/.exec(node.text.trim());
+          lastComponent.cssProperty[lastProp].depStaticStyles = JSON.parse(cap[1] || '[]');
       }
     }
   } else if (node.type === 'decl') {
