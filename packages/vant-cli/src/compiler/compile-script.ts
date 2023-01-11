@@ -3,6 +3,7 @@ import babel from '@babel/core';
 import esbuild, { type Format } from 'esbuild';
 import { sep } from 'node:path';
 import { isJsx, replaceExt, getVantConfig } from '../common/index.js';
+import { IS_VUE2 } from '../common/constant.js';
 import { replaceCSSImportExt } from '../common/css.js';
 import { replaceScriptImportExt } from './get-deps.js';
 
@@ -33,7 +34,7 @@ export async function compileScript(
       presets: ['@babel/preset-typescript'],
       plugins: [
         [
-          '@vue/babel-plugin-jsx',
+          IS_VUE2 ? '@vue/babel-preset-jsx' : '@vue/babel-plugin-jsx',
           {
             enableObjectSlots: false,
           },

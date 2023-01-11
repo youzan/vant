@@ -2,10 +2,8 @@ import { join } from 'node:path';
 import { createRequire } from 'node:module';
 import hljs from 'highlight.js';
 import vitePluginMd from 'vite-plugin-md';
-import vitePluginVue from '@vitejs/plugin-vue';
-import vitePluginJsx from '@vitejs/plugin-vue-jsx';
 import { setBuildTarget, getVantConfig, isDev } from '../common/index.js';
-import { SITE_DIST_DIR, SITE_SRC_DIR } from '../common/constant.js';
+import { SITE_DIST_DIR, SITE_SRC_DIR, IS_VUE2 } from '../common/constant.js';
 import lodash from 'lodash';
 import type { InlineConfig, PluginOption } from 'vite';
 import type MarkdownIt from 'markdown-it';
@@ -13,6 +11,13 @@ import { genSiteMobileShared } from '../compiler/gen-site-mobile-shared.js';
 import { genSiteDesktopShared } from '../compiler/gen-site-desktop-shared.js';
 import { genPackageStyle } from '../compiler/gen-package-style.js';
 import { CSS_LANG } from '../common/css.js';
+
+const vitePluginVue = await import(
+  IS_VUE2 ? '@vitejs/plugin-vue2' : '@vitejs/plugin-vue'
+);
+const vitePluginJsx = await import(
+  IS_VUE2 ? '@vitejs/plugin-vue2-jsx' : '@vitejs/plugin-vue-jsx'
+);
 
 function markdownHighlight(str: string, lang: string) {
   if (lang && hljs.getLanguage(lang)) {
