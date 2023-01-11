@@ -260,8 +260,13 @@ export default createComponent({
             value={this.currentValue}
             length={this.maxlength}
             onFocus={() => {
+              if (this.readonly || this.disabled) {
+                return
+              }
               this.shownumber = true;
             }}
+            disabled={this.disabled}
+            readonly={this.readonly}
             vusion-click-enabled
             onClick={this.onTouchstartinput}
           />

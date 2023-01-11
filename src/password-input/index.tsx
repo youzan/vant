@@ -15,6 +15,8 @@ export type PasswordInputProps = {
   gutter: number;
   focused?: boolean;
   errorInfo?: string;
+  readonly?: boolean;
+  disabled?: boolean;
 };
 
 const [createComponent, bem] = createNamespace('password-input');
@@ -25,7 +27,7 @@ function PasswordInput(
   slots: DefaultSlots,
   ctx: RenderContext<PasswordInputProps>
 ) {
-  const { mask, value, length, gutter, focused, errorInfo } = props;
+  const { mask, value, length, gutter, focused, errorInfo, readonly, disabled } = props;
   const info = errorInfo || props.info;
 
   const Points = [];
@@ -41,7 +43,7 @@ function PasswordInput(
 
     Points.push(
       <li
-        class={[{ [BORDER_SURROUND]: showBorder }, bem('item', { focus: showCursor })]}
+        class={[{ [BORDER_SURROUND]: showBorder }, bem('item', { focus: showCursor, dis: disabled })]}
         style={style}
       >
         {mask ? (
@@ -88,6 +90,8 @@ PasswordInput.props = {
     type: [Number, String],
     default: 6,
   },
+  readonly: Boolean,
+  disabled: Boolean,
 };
 
 export default createComponent<PasswordInputProps>(PasswordInput);
