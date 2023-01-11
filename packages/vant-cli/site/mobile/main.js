@@ -5,13 +5,13 @@ import { router } from './router';
 import App from './App.vue';
 import '@vant/touch-emulator';
 
-window.app = createApp(App)
+const app = createApp(App)
   .use(router)
   .component(DemoBlock.name, DemoBlock)
   .component(DemoSection.name, DemoSection);
 
 setTimeout(() => {
-  window.app.mount('#app');
+  app.mount('#app');
 }, 0);
 
 // https://stackoverflow.com/questions/3885018/active-pseudo-class-doesnt-work-in-mobile-safari/33681490#33681490

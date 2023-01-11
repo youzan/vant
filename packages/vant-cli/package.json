@@ -1,6 +1,6 @@
 {
   "name": "@cfit/vant-cli",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "type": "module",
   "main": "lib/index.js",
   "typings": "lib/index.d.ts",
@@ -40,8 +40,8 @@
     "@types/less": "^3.0.3",
     "@types/lodash": "^4.14.191",
     "@types/markdown-it": "^12.2.3",
-    "vue": "^3.2.45",
-    "vue-router": "^4.1.5"
+    "vue": "2.7.14",
+    "vue-router": "3.6.5"
   },
   "dependencies": {
     "@babel/core": "^7.18.13",

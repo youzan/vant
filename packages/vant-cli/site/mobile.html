@@ -41,6 +41,10 @@
   </head>
   <body>
     <div id="app"></div>
+    <% if (isVue2) { %>
+    <script type="module" src="/mobile/vue2/main.js"></script>
+    <% } else { %>
     <script type="module" src="/mobile/main.js"></script>
+    <% } %>
   </body>
 </html>

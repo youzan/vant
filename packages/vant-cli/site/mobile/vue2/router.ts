@@ -1,11 +1,12 @@
-import { watch, nextTick } from 'vue';
-import { createRouter, createWebHashHistory } from 'vue-router';
-import DemoHome from './components/DemoHome.vue';
-import { decamelize } from '../common';
+import Vue, { watch, nextTick } from 'vue';
+import VueRouter from 'vue-router';
+import DemoHome from '../components/DemoHome.vue';
+import { decamelize } from '../../common';
 import { demos, config } from 'site-mobile-shared';
-import { getLang, setDefaultLang } from '../common/locales';
-import { listenToSyncPath, syncPathToParent, getCurrentRoute } from '../common/iframe-sync';
+import { getLang, setDefaultLang } from '../../common/locales';
+import { listenToSyncPath, syncPathToParent } from '../../common/iframe-sync';
 
+Vue.use(VueRouter);
 const { locales, defaultLang } = config.site;
 
 setDefaultLang(defaultLang);
@@ -22,9 +23,36 @@ function getLangFromRoute(route) {
 }
 
 function getRoutes() {
-  const routes = [];
+  const routes: any[] = [];
   const names = Object.keys(demos);
   const langs = locales ? Object.keys(locales) : [];
+
+  names.forEach((name) => {
+    const component = decamelize(name);
+
+    if (langs.length) {
+      langs.forEach((lang) => {
+        routes.push({
+          name: `${lang}/${component}`,
+          path: `/${lang}/${component}`,
+          component: demos[name],
+          meta: {
+            name,
+            lang,
+          },
+        });
+      });
+    } else {
+      routes.push({
+        name: component,
+        path: `/${component}`,
+        component: demos[name],
+        meta: {
+          name,
+        },
+      });
+    }
+  });
 
   if (langs.length) {
     routes.push({
@@ -58,45 +86,18 @@ function getRoutes() {
       component: DemoHome,
     });
   }
-
-  names.forEach((name) => {
-    const component = decamelize(name);
-
-    if (langs.length) {
-      langs.forEach((lang) => {
-        routes.push({
-          name: `${lang}/${component}`,
-          path: `/${lang}/${component}`,
-          component: demos[name],
-          meta: {
-            name,
-            lang,
-          },
-        });
-      });
-    } else {
-      routes.push({
-        name: component,
-        path: `/${component}`,
-        component: demos[name],
-        meta: {
-          name,
-        },
-      });
-    }
-  });
-
   return routes;
 }
 
-export const router = createRouter({
-  history: createWebHashHistory(),
+export const router = new VueRouter({
   routes: getRoutes(),
-  scrollBehavior: (to, from, savedPosition) => savedPosition || { x: 0, y: 0 },
+  scrollBehavior() {
+    return { x: 0, y: 0 };
+  },
 });
 
-watch(router.currentRoute, () => {
-  if (!router.currentRoute.value.redirectedFrom) {
+router.afterEach(() => {
+  if (!router.currentRoute.redirectedFrom) {
     nextTick(syncPathToParent);
   }
 });

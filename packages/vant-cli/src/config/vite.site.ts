@@ -12,12 +12,12 @@ import { genSiteDesktopShared } from '../compiler/gen-site-desktop-shared.js';
 import { genPackageStyle } from '../compiler/gen-package-style.js';
 import { CSS_LANG } from '../common/css.js';
 
-const vitePluginVue = await import(
+const vitePluginVue = (await import(
   IS_VUE2 ? '@vitejs/plugin-vue2' : '@vitejs/plugin-vue'
-);
-const vitePluginJsx = await import(
+)).default;
+const vitePluginJsx = (await import(
   IS_VUE2 ? '@vitejs/plugin-vue2-jsx' : '@vitejs/plugin-vue-jsx'
-);
+)).default;
 
 function markdownHighlight(str: string, lang: string) {
   if (lang && hljs.getLanguage(lang)) {
@@ -203,6 +203,7 @@ export function getViteConfigForSiteDev(): InlineConfig {
         headHtml,
         baiduAnalytics,
         enableVConsole,
+        isVue2: IS_VUE2,
         meta: getHTMLMeta(vantConfig),
       }),
     ],

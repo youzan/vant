@@ -1,6 +1,11 @@
 import { ref } from 'vue';
 import { config } from 'site-desktop-shared';
 
+export function getCurrentRoute() {
+  const currentRoute = window.vueRouter?.currentRoute;
+  return currentRoute?.value || currentRoute;
+}
+
 let queue = [];
 let isIframeReady = false;
 
@@ -25,8 +30,7 @@ if (window.top === window) {
 }
 
 function getCurrentDir() {
-  const router = window.vueRouter;
-  const { path } = router.currentRoute.value;
+  const { path } = getCurrentRoute();
 
   if (config.site.simulator?.routeMapper) {
     return config.site.simulator?.routeMapper(path);
@@ -110,7 +114,7 @@ export function listenToSyncPath(router) {
 
     const path = event.data?.value || '';
     // should preserve hash for anchor
-    if (router.currentRoute.value.path !== path) {
+    if (getCurrentRoute().path !== path) {
       router.replace(path).catch(() => {});
     }
   });
