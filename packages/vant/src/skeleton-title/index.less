@@ -1,0 +1,23 @@
+:root {
+  --van-skeleton-title-width: 40%;
+}
+
+.van-skeleton {
+  &-title {
+    height: var(--van-skeleton-paragraph-height);
+    background: var(--van-skeleton-paragraph-background);
+
+    &--round {
+      border-radius: var(--van-radius-max);
+    }
+  }
+
+  &-title {
+    width: var(--van-skeleton-title-width);
+    margin: 0;
+  }
+
+  &-title + &-paragraph {
+    margin-top: 20px;
+  }
+}

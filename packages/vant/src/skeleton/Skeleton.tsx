@@ -12,7 +12,7 @@ import {
 } from '../utils';
 
 // Components
-import SkeletonTitle from './SkeletonTitle';
+import SkeletonTitle from '../skeleton-title';
 import SkeletonAvatar from '../skeleton-avatar';
 import SkeletonParagraph, { DEFAULT_ROW_WIDTH } from '../skeleton-paragraph';
 
