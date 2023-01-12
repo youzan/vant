@@ -262,7 +262,6 @@ There are all **Basic Variables** below, for component CSS Variables, please ref
 --van-text-color: var(--van-gray-8);
 --van-text-color-2: var(--van-gray-6);
 --van-text-color-3: var(--van-gray-5);
---van-link-color: #576b95;
 --van-active-color: var(--van-gray-2);
 --van-active-opacity: 0.6;
 --van-disabled-opacity: 0.5;

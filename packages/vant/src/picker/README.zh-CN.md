@@ -455,7 +455,7 @@ pickerRef.value?.confirm();
 | --van-picker-title-line-height       | _var(--van-line-height-md)_ | -    |
 | --van-picker-action-padding          | _0 var(--van-padding-md)_   | -    |
 | --van-picker-action-font-size        | _var(--van-font-size-md)_   | -    |
-| --van-picker-confirm-action-color    | _var(--van-link-color)_     | -    |
+| --van-picker-confirm-action-color    | _var(--van-primary-color)_  | -    |
 | --van-picker-cancel-action-color     | _var(--van-text-color-2)_   | -    |
 | --van-picker-option-padding          | _0 var(--van-padding-base)_ | -    |
 | --van-picker-option-font-size        | _var(--van-font-size-lg)_   | -    |
