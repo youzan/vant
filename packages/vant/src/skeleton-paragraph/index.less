@@ -1,0 +1,20 @@
+:root {
+  --van-skeleton-paragraph-height: 16px;
+  --van-skeleton-paragraph-background: var(--van-active-color);
+  --van-skeleton-paragraph-margin-top: var(--van-padding-sm);
+}
+
+.van-skeleton {
+  &-paragraph {
+    height: var(--van-skeleton-paragraph-height);
+    background: var(--van-skeleton-paragraph-background);
+
+    &--round {
+      border-radius: var(--van-radius-max);
+    }
+
+    &:not(:first-child) {
+      margin-top: var(--van-skeleton-paragraph-margin-top);
+    }
+  }
+}

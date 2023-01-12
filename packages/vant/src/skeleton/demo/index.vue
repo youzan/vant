@@ -1,6 +1,7 @@
 <script setup lang="ts">
-import VanSkeleton, { SkeletonParagraph as VanSkeletonParagraph } from '..';
+import VanSkeleton from '..';
 import { SkeletonImage as VanSkeletonImage } from '../../skeleton-image';
+import { SkeletonParagraph as VanSkeletonParagraph } from '../../skeleton-paragraph';
 import VanSwitch from '../../switch';
 import { ref } from 'vue';
 import { cdnURL, useTranslate } from '../../../docs/site';

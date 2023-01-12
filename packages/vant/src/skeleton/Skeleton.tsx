@@ -14,7 +14,7 @@ import {
 // Components
 import SkeletonTitle from './SkeletonTitle';
 import SkeletonAvatar from '../skeleton-avatar';
-import SkeletonParagraph, { DEFAULT_ROW_WIDTH } from './SkeletonParagraph';
+import SkeletonParagraph, { DEFAULT_ROW_WIDTH } from '../skeleton-paragraph';
 
 // Types
 import type { SkeletonAvatarShape } from '../skeleton-avatar';
