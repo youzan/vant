@@ -322,6 +322,7 @@ export default {
   position: relative;
   flex: 1;
   padding: 0 0 75px;
+  top: var(--van-doc-header-top-height);
 
   .van-doc-markdown-body {
     padding: 24px;
