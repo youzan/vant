@@ -15,5 +15,5 @@ test/coverage
 es
 lib
 dist
-site
+**/site-dist
 changelog.generated.md
