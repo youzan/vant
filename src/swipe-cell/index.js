@@ -235,6 +235,7 @@ export default createComponent({
             class={bem('left')}
             onClick={this.getClickHandler('left', true)}
             vusion-slot-name="left"
+            style={{width: `${Math.abs(this.offset)}px`}}
             vusion-template-left-node-path={this.$attrs['vusion-template-left-node-path']}
           >
             <van-empty-col></van-empty-col>
@@ -245,7 +246,6 @@ export default createComponent({
 
     genRightPart() {
       const content = this.slots('right');
-
       if (content) {
         return (
           <div
@@ -264,6 +264,7 @@ export default createComponent({
             class={bem('right')}
             onClick={this.getClickHandler('right', true)}
             vusion-slot-name="right"
+            style={{width: `${Math.abs(this.offset)}px`}}
             vusion-template-right-node-path={this.$attrs['vusion-template-right-node-path']}
           >
             <van-empty-col></van-empty-col>

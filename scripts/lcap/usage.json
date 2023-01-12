@@ -5918,7 +5918,29 @@
                         },
                         {
                             "value": "custom",
-                            "title": "定制键盘"
+                            "title": "定制键盘",
+                            "dependency": [
+                                {
+                                    "type": "integer"
+                                },
+                                {
+                                    "type": "rndinteger"
+                                },
+                                {
+                                    "type": "point"
+                                },
+                                {
+                                    "type": "card"
+                                },
+                                {
+                                    "type": "password",
+                                    "readonly": true
+                                },
+                                {
+                                    "type": "password",
+                                    "disabled": true
+                                }
+                            ]
                         }
                     ],
                     "default": "native",
