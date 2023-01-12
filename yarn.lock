@@ -2127,9 +2127,9 @@
   "version" "10.11.3"
 
 "@types/validator@^13.7.0":
-  "integrity" "sha512-I6OUIZ5cYRk5lp14xSOAiXjWrfVoMZVjDuevBYgQDYzZIjsf2CAISpEcXOkFAtpAHbmWIDLcZObejqny/9xq5Q=="
-  "resolved" "https://registry.npmjs.org/@types/validator/-/validator-13.7.1.tgz"
-  "version" "13.7.1"
+  "integrity" "sha512-t1yxFAR2n0+VO6hd/FJ9F2uezAZVWHLmpmlJzm1eX03+H7+HsuTAp7L8QJs+2pQCfWkP1+EXsGK9Z9v7o/qPVQ=="
+  "resolved" "https://registry.npmjs.org/@types/validator/-/validator-13.7.10.tgz"
+  "version" "13.7.10"
 
 "@types/webpack-dev-server@^3.11.0":
   "integrity" "sha512-vjsbQBW3fE5FDICkF3w3ZWFRXNwQdKt7JRPLmRy5W0KXlcuew4wgpKWXhgHS71iLNv7Z2PlY9dSSIaYg+bk+9w=="
@@ -2890,10 +2890,10 @@
     "lodash" "^4.17.11"
     "validator" "^11.0.0"
 
-"@vusion/validator@^0.4.1":
-  "integrity" "sha512-7C95v88hg/yIHNZXuxZT3QYWzYs1nM25AwbQ2jeTpmAoTjq7CAMJVouXeMRNXLSB6NEawXApTtHTy9s6XCcskQ=="
-  "resolved" "https://registry.npmjs.org/@vusion/validator/-/validator-0.4.1.tgz"
-  "version" "0.4.1"
+"@vusion/validator@^0.4.6":
+  "integrity" "sha512-P1ThUn3MJ6mJQP2hIfDaw3qZs7YRnWJXYNl25p2FVn8ld+qS/1leccXmYRQwLkyb2XiWqBe5bTNVbQBMAxs1AQ=="
+  "resolved" "https://registry.npmjs.org/@vusion/validator/-/validator-0.4.6.tgz"
+  "version" "0.4.6"
   dependencies:
     "@types/lodash" "^4.14.136"
     "@types/validator" "^13.7.0"
@@ -5030,14 +5030,14 @@
     "normalize.css" "^7.0.0"
     "vusion-async-validator" "^1.8.8"
 
-"cloud-ui.vusion@>=0.6.18", "cloud-ui.vusion@0.14.18-beta.9":
-  "integrity" "sha512-gmssDF+2SX6nhJ1n++YRyygoTafw2Ok0uk0W9pPw0T4tMmjiKMlOTgXWYuDdlOfsR3tQ5UUjJnOfPk+R+L8IFg=="
-  "resolved" "https://registry.npmjs.org/cloud-ui.vusion/-/cloud-ui.vusion-0.14.18-beta.9.tgz"
-  "version" "0.14.18-beta.9"
+"cloud-ui.vusion@>=0.6.18", "cloud-ui.vusion@0.14.24-beta.4":
+  "integrity" "sha512-lRjglVRbc1WJgK2Hq7CcBqS4RDDXYd+TcW7Mzfw981AFQnkzbs9Aku7Xju4y4XfPi7JxRz8dvHix+wpES7UNMA=="
+  "resolved" "https://registry.npmjs.org/cloud-ui.vusion/-/cloud-ui.vusion-0.14.24-beta.4.tgz"
+  "version" "0.14.24-beta.4"
   dependencies:
     "@popperjs/core" "^2.10.2"
     "@vusion/utils" "0.4.11"
-    "@vusion/validator" "^0.4.1"
+    "@vusion/validator" "^0.4.6"
     "animate.css" "^4.1.1"
     "countup.js" "^1.9.3"
     "dayjs" "^1.10.7"
@@ -5051,6 +5051,7 @@
     "regenerator-runtime" "^0.13.9"
     "resize-observer-polyfill" "^1.5.1"
     "swiper" "^7.4.1"
+    "vue-cropper" "^0.5.8"
     "vusion-api" "^0.6.30"
     "xlsx" "^0.17.3"
     "yargs" "^16.2.0"
@@ -19829,6 +19830,11 @@
     "@babel/preset-env" "^7.5.4"
     "@babel/traverse" "^7.5.5"
     "fs-extra" "^7.0.1"
+
+"vue-cropper@^0.5.8":
+  "integrity" "sha512-Xgi/aLQCcNCiBTUdovy/i4LWx0G7fQnAENBpDWA3J4i87Zlk9DJRksXrClsQ6nnaFRfQVkMimij5GEvAMaXdYw=="
+  "resolved" "https://registry.npmjs.org/vue-cropper/-/vue-cropper-0.5.8.tgz"
+  "version" "0.5.8"
 
 "vue-eslint-parser@^7.0.0", "vue-eslint-parser@^7.10.0":
   "integrity" "sha512-7tc/ewS9Vq9Bn741pvpg8op2fWJPH3k32aL+jcIcWGCTzh/zXSdh7pZ5FV3W2aJancP9+ftPAv292zY5T5IPCg=="
