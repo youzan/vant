@@ -17,7 +17,7 @@ import SkeletonAvatar from '../skeleton-avatar';
 import SkeletonParagraph, { DEFAULT_ROW_WIDTH } from './SkeletonParagraph';
 
 // Types
-import type { SkeletonAvatarShape } from './types';
+import type { SkeletonAvatarShape } from '../skeleton-avatar';
 
 const [name, bem] = createNamespace('skeleton');
 const DEFAULT_LAST_ROW_WIDTH = '60%';
