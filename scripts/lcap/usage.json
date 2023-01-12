@@ -5817,7 +5817,8 @@
                             "value": "password",
                             "updateData": {
                                 "clearable": false,
-                                "maxlength": 6
+                                "maxlength": 6,
+                                "keytheme": "custom"
                             }
                         }
                     ]
@@ -5906,10 +5907,12 @@
                             "title": "默认键盘",
                             "dependency": [
                                 {
-                                    "type": "text"
+                                    "type": "text",
+                                    "inputstyle": "input"
                                 },
                                 {
-                                    "type": "password"
+                                    "type": "password",
+                                    "inputstyle": "input"
                                 }
                             ]
                         },

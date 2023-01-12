@@ -265,6 +265,7 @@ export default createComponent({
               }
               this.shownumber = true;
             }}
+            mask={this.type === 'password'}
             disabled={this.disabled}
             readonly={this.readonly}
             vusion-click-enabled
