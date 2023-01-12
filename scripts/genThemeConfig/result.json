@@ -122,7 +122,8 @@
                 "cssProperty": {
                     "--van-space-base": {
                         "type": "input",
-                        "desc": "布局内各元素之间的外间距, 如：1px"
+                        "desc": "布局内各元素之间的外间距, 如：1px",
+                        "prefix": "van"
                     }
                 },
                 "preview": {
@@ -211,7 +212,10 @@
                 "cssProperty": {
                     "--van-dropdown-menu-height": {
                         "type": "input",
-                        "desc": "高度"
+                        "desc": "高度",
+                        "depStaticStyles": [
+                            "height"
+                        ]
                     },
                     "--van-dropdown-menu-background-color": {
                         "type": "color",
@@ -255,7 +259,10 @@
                     "--van-sidebar-width": {
                         "type": "input",
                         "desc": "宽度",
-                        "prefix": "van-sidebar"
+                        "prefix": "van-sidebar",
+                        "depStaticStyles": [
+                            "width"
+                        ]
                     },
                     "--van-sidebar-font-size": {
                         "type": "input",
@@ -337,6 +344,9 @@
                         "desc": "高度",
                         "excludeTags": [
                             "van-tabbar-item"
+                        ],
+                        "depStaticStyles": [
+                            "height"
                         ]
                     },
                     "--van-tabbar-z-index": {
@@ -351,6 +361,9 @@
                         "desc": "背景色",
                         "excludeTags": [
                             "van-tabbar-item"
+                        ],
+                        "depStaticStyles": [
+                            "background-color"
                         ]
                     },
                     "--van-tabbar-item-active-color": {
@@ -380,7 +393,10 @@
                             "size": [
                                 "mini"
                             ]
-                        }
+                        },
+                        "depStaticStyles": [
+                            "height"
+                        ]
                     },
                     "--van-button-mini-font-size": {
                         "type": "input",
@@ -389,7 +405,10 @@
                             "size": [
                                 "mini"
                             ]
-                        }
+                        },
+                        "depStaticStyles": [
+                            "font-size"
+                        ]
                     },
                     "--van-button-small-height": {
                         "type": "input",
@@ -398,7 +417,10 @@
                             "size": [
                                 "small"
                             ]
-                        }
+                        },
+                        "depStaticStyles": [
+                            "height"
+                        ]
                     },
                     "--van-button-small-font-size": {
                         "type": "input",
@@ -407,7 +429,10 @@
                             "size": [
                                 "small"
                             ]
-                        }
+                        },
+                        "depStaticStyles": [
+                            "font-size"
+                        ]
                     },
                     "--van-button-normal-font-size": {
                         "type": "input",
@@ -416,7 +441,10 @@
                             "size": [
                                 "normal"
                             ]
-                        }
+                        },
+                        "depStaticStyles": [
+                            "font-size"
+                        ]
                     },
                     "--van-button-large-height": {
                         "type": "input",
@@ -425,7 +453,10 @@
                             "size": [
                                 "large"
                             ]
-                        }
+                        },
+                        "depStaticStyles": [
+                            "height"
+                        ]
                     },
                     "--van-button-default-height": {
                         "type": "input",
@@ -435,7 +466,10 @@
                                 "middle",
                                 null
                             ]
-                        }
+                        },
+                        "depStaticStyles": [
+                            "height"
+                        ]
                     },
                     "--van-button-default-line-height": {
                         "type": "input",
@@ -455,7 +489,10 @@
                                 "middle",
                                 null
                             ]
-                        }
+                        },
+                        "depStaticStyles": [
+                            "font-size"
+                        ]
                     },
                     "--van-button-info-color": {
                         "type": "color",
@@ -465,7 +502,10 @@
                                 "info",
                                 null
                             ]
-                        }
+                        },
+                        "depStaticStyles": [
+                            "color"
+                        ]
                     },
                     "--van-button-info-background-color": {
                         "type": "color",
@@ -475,7 +515,10 @@
                                 "info",
                                 null
                             ]
-                        }
+                        },
+                        "depStaticStyles": [
+                            "background-color"
+                        ]
                     },
                     "--van-button-info-border-color": {
                         "type": "color",
@@ -485,7 +528,10 @@
                                 "info",
                                 null
                             ]
-                        }
+                        },
+                        "depStaticStyles": [
+                            "border-color"
+                        ]
                     },
                     "--van-button-danger-color": {
                         "type": "color",
@@ -494,7 +540,10 @@
                             "type": [
                                 "danger"
                             ]
-                        }
+                        },
+                        "depStaticStyles": [
+                            "color"
+                        ]
                     },
                     "--van-button-danger-background-color": {
                         "type": "color",
@@ -503,7 +552,10 @@
                             "type": [
                                 "danger"
                             ]
-                        }
+                        },
+                        "depStaticStyles": [
+                            "background-color"
+                        ]
                     },
                     "--van-button-danger-border-color": {
                         "type": "color",
@@ -512,7 +564,10 @@
                             "type": [
                                 "danger"
                             ]
-                        }
+                        },
+                        "depStaticStyles": [
+                            "border-color"
+                        ]
                     },
                     "--van-button-warning-color": {
                         "type": "color",
@@ -521,7 +576,10 @@
                             "type": [
                                 "warning"
                             ]
-                        }
+                        },
+                        "depStaticStyles": [
+                            "color"
+                        ]
                     },
                     "--van-button-warning-background-color": {
                         "type": "color",
@@ -530,7 +588,10 @@
                             "type": [
                                 "warning"
                             ]
-                        }
+                        },
+                        "depStaticStyles": [
+                            "background-color"
+                        ]
                     },
                     "--van-button-warning-border-color": {
                         "type": "color",
@@ -539,19 +600,40 @@
                             "type": [
                                 "warning"
                             ]
-                        }
+                        },
+                        "depStaticStyles": [
+                            "border-color"
+                        ]
                     },
                     "--van-button-border-width": {
                         "type": "input",
-                        "desc": "按钮边框厚度"
+                        "desc": "按钮边框厚度",
+                        "depStaticStyles": [
+                            "border-top-width",
+                            "border-right-width",
+                            "border-bottom-width",
+                            "border-left-width"
+                        ]
                     },
                     "--van-button-border-radius": {
                         "type": "input",
-                        "desc": "按钮边框圆角"
+                        "desc": "按钮边框圆角",
+                        "depStaticStyles": [
+                            "border-top-left-radius",
+                            "border-top-right-radius",
+                            "border-bottom-left-radius",
+                            "border-bottom-right-radius"
+                        ]
                     },
                     "--van-button-round-border-radius": {
                         "type": "input",
-                        "desc": "圆角按钮圆角"
+                        "desc": "圆角按钮圆角",
+                        "depStaticStyles": [
+                            "border-top-left-radius",
+                            "border-top-right-radius",
+                            "border-bottom-left-radius",
+                            "border-bottom-right-radius"
+                        ]
                     },
                     "--van-button-disabled-opacity": {
                         "type": "input",
@@ -706,7 +788,10 @@
                                 "normal",
                                 null
                             ]
-                        }
+                        },
+                        "depStaticStyles": [
+                            "font-size"
+                        ]
                     },
                     "--van-text-font-size-small": {
                         "type": "input",
@@ -715,7 +800,10 @@
                             "size": [
                                 "small"
                             ]
-                        }
+                        },
+                        "depStaticStyles": [
+                            "font-size"
+                        ]
                     },
                     "--van-text-font-size-large": {
                         "type": "input",
@@ -724,7 +812,10 @@
                             "size": [
                                 "large"
                             ]
-                        }
+                        },
+                        "depStaticStyles": [
+                            "font-size"
+                        ]
                     },
                     "--van-text-color-primary": {
                         "type": "color",
@@ -733,7 +824,10 @@
                             "color": [
                                 "primary"
                             ]
-                        }
+                        },
+                        "depStaticStyles": [
+                            "color"
+                        ]
                     },
                     "--van-text-color-success": {
                         "type": "color",
@@ -742,7 +836,10 @@
                             "color": [
                                 "success"
                             ]
-                        }
+                        },
+                        "depStaticStyles": [
+                            "color"
+                        ]
                     },
                     "--van-text-color-warning": {
                         "type": "color",
@@ -751,7 +848,10 @@
                             "color": [
                                 "warning"
                             ]
-                        }
+                        },
+                        "depStaticStyles": [
+                            "color"
+                        ]
                     },
                     "--van-text-color-error": {
                         "type": "color",
@@ -760,7 +860,10 @@
                             "color": [
                                 "error"
                             ]
-                        }
+                        },
+                        "depStaticStyles": [
+                            "color"
+                        ]
                     },
                     "--van-text-color-disabled": {
                         "type": "color",
@@ -790,7 +893,10 @@
                             "color": [
                                 "primary"
                             ]
-                        }
+                        },
+                        "depStaticStyles": [
+                            "color"
+                        ]
                     },
                     "--link-color-success": {
                         "type": "color",
@@ -799,7 +905,10 @@
                             "color": [
                                 "success"
                             ]
-                        }
+                        },
+                        "depStaticStyles": [
+                            "color"
+                        ]
                     },
                     "--link-color-warning": {
                         "type": "color",
@@ -808,7 +917,10 @@
                             "color": [
                                 "warning"
                             ]
-                        }
+                        },
+                        "depStaticStyles": [
+                            "color"
+                        ]
                     },
                     "--link-color-disabled": {
                         "type": "color",
@@ -821,7 +933,10 @@
                             "color": [
                                 "error"
                             ]
-                        }
+                        },
+                        "depStaticStyles": [
+                            "color"
+                        ]
                     }
                 },
                 "preview": {
@@ -895,6 +1010,9 @@
                         "desc": "整体背景色",
                         "excludeTags": [
                             "van-step"
+                        ],
+                        "depStaticStyles": [
+                            "background-color"
                         ]
                     },
                     "--van-step-text-color": {
@@ -961,7 +1079,10 @@
                 "cssProperty": {
                     "--van-search-background-color": {
                         "type": "color",
-                        "desc": "整体背景色"
+                        "desc": "整体背景色",
+                        "depStaticStyles": [
+                            "background-color"
+                        ]
                     },
                     "--van-search-content-background-color": {
                         "type": "color",
@@ -997,15 +1118,24 @@
                 "cssProperty": {
                     "--van-switch-size": {
                         "type": "input",
-                        "desc": "字体大小"
+                        "desc": "字体大小",
+                        "depStaticStyles": [
+                            "font-size"
+                        ]
                     },
                     "--van-switch-width": {
                         "type": "input",
-                        "desc": "宽度"
+                        "desc": "宽度",
+                        "depStaticStyles": [
+                            "width"
+                        ]
                     },
                     "--van-switch-height": {
                         "type": "input",
-                        "desc": "高度"
+                        "desc": "高度",
+                        "depStaticStyles": [
+                            "height"
+                        ]
                     },
                     "--van-switch-node-size": {
                         "type": "input",
@@ -1021,7 +1151,10 @@
                     },
                     "--van-switch-background-color": {
                         "type": "color",
-                        "desc": "整体背景色"
+                        "desc": "整体背景色",
+                        "depStaticStyles": [
+                            "background-color"
+                        ]
                     },
                     "--van-switch-on-background-color": {
                         "type": "color",
@@ -1461,7 +1594,10 @@
                             "type": [
                                 "danger"
                             ]
-                        }
+                        },
+                        "depStaticStyles": [
+                            "background-color"
+                        ]
                     },
                     "--van-tag-primary-color": {
                         "type": "color",
@@ -1470,7 +1606,10 @@
                             "type": [
                                 "primary"
                             ]
-                        }
+                        },
+                        "depStaticStyles": [
+                            "background-color"
+                        ]
                     },
                     "--van-tag-success-color": {
                         "type": "color",
@@ -1479,7 +1618,10 @@
                             "type": [
                                 "success"
                             ]
-                        }
+                        },
+                        "depStaticStyles": [
+                            "background-color"
+                        ]
                     },
                     "--van-tag-warning-color": {
                         "type": "color",
@@ -1488,7 +1630,10 @@
                             "type": [
                                 "warning"
                             ]
-                        }
+                        },
+                        "depStaticStyles": [
+                            "background-color"
+                        ]
                     },
                     "--van-tag-default-color": {
                         "type": "color",
@@ -1498,7 +1643,10 @@
                                 "default",
                                 null
                             ]
-                        }
+                        },
+                        "depStaticStyles": [
+                            "background-color"
+                        ]
                     }
                 },
                 "preview": {

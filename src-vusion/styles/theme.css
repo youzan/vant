@@ -59,7 +59,7 @@
   /* @component van-linear-layout */
   --van-space-base: var(
     --van-space-baset
-  ); /* @desc 布局内各元素之间的外间距, 如：1px */
+  ); /* @desc 布局内各元素之间的外间距, 如：1px */ /* @prefix van */
 
   /* @component van-panel */
   --van-panel-background-color: #fff; /* @type color */ /* @desc panel背景色 */ /* @depStaticStyles ["background-color"] */
@@ -145,13 +145,13 @@
   --van-button-primary-border-color: var(
     --van-brand-success
   ); /* @type color */ /* @hidden */
-  --van-button-info-color: #fff; /* @type color */ /* @desc 主要按钮文本颜色 */ /* @depAttrs {"type": ["info", null]} */
+  --van-button-info-color: #fff; /* @type color */ /* @desc 主要按钮文本颜色 */ /* @depAttrs {"type": ["info", null]} */ /* @depStaticStyles ["color"] */
   --van-button-info-background-color: var(
     --van-brand-primary
-  ); /* @type color */ /* @desc 主要按钮背景色 */ /* @depAttrs {"type": ["info", null]} */
+  ); /* @type color */ /* @desc 主要按钮背景色 */ /* @depAttrs {"type": ["info", null]} */ /* @depStaticStyles ["background-color"] */
   --van-button-info-border-color: var(
     --van-brand-primary
-  ); /* @type color */ /* @desc 主要按钮边框颜色 */ /* @depAttrs {"type": ["info", null]} */
+  ); /* @type color */ /* @desc 主要按钮边框颜色 */ /* @depAttrs {"type": ["info", null]} */ /* @depStaticStyles ["border-color"] */
   --van-button-danger-color: #fff; /* @type color */ /* @desc 危险按钮文本颜色 */ /* @depAttrs {"type": ["danger"]} */ /* @depStaticStyles ["color"] */
   --van-button-danger-background-color: var(
     --van-brand-error
@@ -380,7 +380,7 @@
   --van-divider-content-right-width: 10%; /* @hidden */
 
   /* @component van-dropdown-menu */
-  --van-dropdown-menu-height: 48px; /* @desc 高度 */
+  --van-dropdown-menu-height: 48px; /* @desc 高度 */ /* @depStaticStyles ["height"] */
   --van-dropdown-menu-background-color: #fff; /* @type color */ /* @desc 背景色 */
   --van-dropdown-menu-box-shadow: 0 2px 12px rgba(100, 101, 102, 0.12); /* @desc 外阴影 */
   --van-dropdown-menu-title-font-size: 15px; /* @desc 字体大小 */
@@ -453,7 +453,7 @@
 
   /* @component van-search */
   --van-search-padding: 10px var(--van-padding-sm); /* @hidden */
-  --van-search-background-color: #fff; /* @type color */ /* @desc 整体背景色 */
+  --van-search-background-color: #fff; /* @type color */ /* @desc 整体背景色 */ /* @depStaticStyles ["background-color"] */
   --van-search-content-background-color: #f7f8fa; /* @type color */ /* @desc 搜索区域背景色 */
   --van-search-input-height: 34px; /* @desc 高度 */
   --van-search-label-padding: 0 5px; /* @hidden */
@@ -471,8 +471,8 @@
   ); /* @desc 搜索区域字体大小 */
 
   /* @component van-sidebar */
-  --van-sidebar-width: 80px; /* @desc 宽度 */ /* @prefix van-sidebar */
-  --van-sidebar-font-size: var(--van-font-size-md); /* @desc 字体 */ /* @prefix van-sidebar */
+  --van-sidebar-width: 80px; /* @desc 宽度 */ /* @prefix van-sidebar */ /* @depStaticStyles ["width"] */
+  --van-sidebar-font-size: var(--van-font-size-md); /* @desc 字体 */ /* @prefix van-sidebar */ 
   --van-sidebar-line-height: var(--van-line-height-md); /* @desc 行高 */ /* @prefix van-sidebar */
   --van-sidebar-text-color: var(
     --van-component-text-color
@@ -499,7 +499,7 @@
   --van-sidebar-selected-background-color: #fff; /* @type color */ /* @desc 选中态背景色 */ /* @prefix van-sidebar */
 
   /* @component van-steps */
-  --van-steps-background-color: #fff; /* @type color */ /* @desc 整体背景色 */ /* @excludeTags van-step */
+  --van-steps-background-color: #fff; /* @type color */ /* @desc 整体背景色 */ /* @excludeTags van-step */ /* @depStaticStyles ["background-color"] */
   --van-step-text-color: #969799; /* @type color */ /* @desc 非激活态字体颜色 */ /* @prefix van-step */
   --van-step-active-color: var(
     --van-brand-success
@@ -571,15 +571,15 @@
   ); /* @type color */ /* @desc indicator 非active态背景色 */
 
   /* @component van-switch */
-  --van-switch-size: 27px; /* @desc 字体大小 */
-  --van-switch-width: 1.75em; /* @desc 宽度 */
-  --van-switch-height: 1em; /* @desc 高度 */
+  --van-switch-size: 27px; /* @desc 字体大小 */  /* @depStaticStyles ["font-size"] */
+  --van-switch-width: 1.75em; /* @desc 宽度 */  /* @depStaticStyles ["width"] */
+  --van-switch-height: 1em; /* @desc 高度 */  /* @depStaticStyles ["height"] */
   --van-switch-node-size: 1em; /* @desc node大小 */
   --van-switch-node-background-color: #fff; /* @type color */ /* @desc node背景色 */
   --van-switch-node-box-shadow: 0 3px 1px 0 rgba(0, 0, 0, 0.05),
     0 2px 2px 0 rgba(0, 0, 0, 0.1), 0 3px 3px 0 rgba(0, 0, 0, 0.05); /* @desc node阴影 */
 
-  --van-switch-background-color: #f2f3f5; /* @type color */ /* @desc 整体背景色 */
+  --van-switch-background-color: #f2f3f5; /* @type color */ /* @desc 整体背景色 */  /* @depStaticStyles ["background-color"] */
   --van-switch-on-background-color: var(
     --van-brand-primary
   ); /* @type color */ /* @desc 激活态背景色 */
@@ -589,9 +589,9 @@
   ); /* @desc 禁用态透明度 */
 
   /* @component van-tabbar */
-  --van-tabbar-height: 50px; /* @desc 高度 */ /* @excludeTags van-tabbar-item */
+  --van-tabbar-height: 50px; /* @desc 高度 */ /* @excludeTags van-tabbar-item */  /* @depStaticStyles ["height"] */
   --van-tabbar-z-index: 1; /* @desc 层级 */ /* @excludeTags van-tabbar-item */
-  --van-tabbar-background-color: #fff; /* @type color */ /* @desc 背景色 */ /* @excludeTags van-tabbar-item */
+  --van-tabbar-background-color: #fff; /* @type color */ /* @desc 背景色 */ /* @excludeTags van-tabbar-item */  /* @depStaticStyles ["background-color"] */
   --van-tabbar-item-font-size: var(--van-font-size-sm); /* @hidden */
   --van-tabbar-item-text-color: #646566; /* @type color */ /* @hidden */
   --van-tabbar-item-active-color: var(
@@ -740,17 +740,17 @@
   --van-tag-round-border-radius: var(--van-border-radius-max); /* @hidden */
   --van-tag-danger-color: var(
     --van-brand-error
-  ); /* @type color */ /* @desc 危险类型颜色 */ /* @depAttrs { "type": ["danger"] } */
+  ); /* @type color */ /* @desc 危险类型颜色 */ /* @depAttrs { "type": ["danger"] } */  /* @depStaticStyles ["background-color"] */
   --van-tag-primary-color: var(
     --van-brand-primary
-  ); /* @type color */ /* @desc 信息类型颜色 */ /* @depAttrs { "type": ["primary"] } */
+  ); /* @type color */ /* @desc 信息类型颜色 */ /* @depAttrs { "type": ["primary"] } */  /* @depStaticStyles ["background-color"] */
   --van-tag-success-color: var(
     --van-brand-success
-  ); /* @type color */ /* @desc 成功类型颜色 */ /* @depAttrs { "type": ["success"] } */
+  ); /* @type color */ /* @desc 成功类型颜色 */ /* @depAttrs { "type": ["success"] } */  /* @depStaticStyles ["background-color"] */
   --van-tag-warning-color: var(
     --van-brand-problem
-  ); /* @type color */ /* @desc 警告类型颜色 */ /* @depAttrs { "type": ["warning"] } */
-  --van-tag-default-color: #969799; /* @type color */ /* @desc 默认类型颜色 */ /* @depAttrs { "type": ["default", null] } */
+  ); /* @type color */ /* @desc 警告类型颜色 */ /* @depAttrs { "type": ["warning"] } */  /* @depStaticStyles ["background-color"] */
+  --van-tag-default-color: #969799; /* @type color */ /* @desc 默认类型颜色 */ /* @depAttrs { "type": ["default", null] } */  /* @depStaticStyles ["background-color"] */
   --van-tag-plain-background-color: #fff; /* @type color */ /* @hidden */
 
   /* @component van-grid-view */
