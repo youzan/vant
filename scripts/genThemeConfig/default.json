@@ -276,7 +276,7 @@
     "--van-sidebar-selected-border-height": "16px",
     "--van-sidebar-selected-border-color": "var(--van-brand-primary)",
     "--van-sidebar-selected-background-color": "#fff",
-    "--van-steps-background-color": "#fff",
+    "--van-steps-background-color": "transparent",
     "--van-step-text-color": "#969799",
     "--van-step-active-color": "var(--van-brand-success)",
     "--van-step-process-text-color": "var(--van-component-text-color)",
