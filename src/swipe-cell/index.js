@@ -63,14 +63,15 @@ export default createComponent({
   },
   methods: {
     computedLeftWidth() {
-      if (isDef(this.leftWidth)) {
+      console.log(this.leftWidth, 777)
+      if (isDef(this.leftWidth) && this.leftWidth !== 'auto') {
         return +this.leftWidth
       }
       return this.getWidthByRef('left');
     },
 
     computedRightWidth() {
-      if (isDef(this.rightWidth)) {
+      if (isDef(this.rightWidth) && this.leftWidth !== 'auto') {
         return +this.rightWidth
       }
       return this.getWidthByRef('right');
