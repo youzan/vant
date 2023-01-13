@@ -292,6 +292,7 @@ export default createComponent({
             maxlength={this.maxlength}
             getContainer={this.getContain}
             zIndex="9999"
+            hideOnClickOutside={!this.inDesigner()}
             onBlur={() => {
               this.shownumber = false;
             }}
