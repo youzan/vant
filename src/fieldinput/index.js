@@ -70,14 +70,6 @@ export default createComponent({
     };
   },
   computed: {
-    readonlyforint() {
-      return [
-        'integer',
-        'rndinteger',
-        'card',
-        'point',
-      ].includes(this.type);
-    },
     shownumbertype() {
       return this.keytheme === 'custom';
     },
@@ -192,9 +184,9 @@ export default createComponent({
     onTouchstartinput($event) {
       $event.stopPropagation();
       if (this.readonly || this.disabled) {
-        return
+        return;
       }
-      this.shownumber = true;
+      !this.shownumber && (this.shownumber = true);
     },
   },
   watch: {
@@ -217,7 +209,12 @@ export default createComponent({
       }
     },
     type() {
-      if (this.readonlyforint && this.inDesigner()) {
+      if (this.shownumbertype && this.inDesigner()) {
+        this.shownumber = true;
+      }
+    },
+    keytheme() {
+      if (this.shownumbertype && this.inDesigner()) {
         this.shownumber = true;
       }
     }
@@ -237,7 +234,7 @@ export default createComponent({
             maxlength={this.maxlength}
             // style={this.inputStyle}
             disabled={this.disabled}
-            readonly={this.readonly || this.readonlyforint}
+            readonly={this.readonly || this.shownumbertype}
             // set keyboard in modern browsers
             // inputmode={this.integer ? 'numeric' : 'decimal'}
             placeholder={this.placeholder}

@@ -23,25 +23,6 @@
           title: 身份证
       default: text
       description: 输入框的类型
-      toggleupdate:
-        - value: text
-          updateData:
-            keytheme: native
-        - value: password
-          updateData:
-            keytheme: native
-        - value: integer
-          updateData:
-            keytheme: custom
-        - value: rndinteger
-          updateData:
-            keytheme: custom
-        - value: point
-          updateData:
-            keytheme: custom
-        - value: card
-          updateData:
-            keytheme: custom
     - name: value
       title: 值
       type: string
@@ -104,11 +85,7 @@
       type: string
       description: 键盘标题
       dependency:
-        - type: integer
-        - type: rndinteger
-        - type: point
-        - type: card
-        - inputstyle: password
+        - keytheme: custom
     - name: keytheme
       title: 键盘样式
       type: string
@@ -116,30 +93,11 @@
         - value: native
           title: 默认键盘
           dependency:
-            - type: text
-              inputstyle: input
-            - type: password
-              inputstyle: input
+            - '!inputstyle': password
         - value: custom
           title: 定制键盘
-          dependency:
-            - type: integer
-            - type: rndinteger
-            - type: point
-            - type: card
-            - type: password
-              readonly: true
-            - type: password
-              disabled: true
       default: native
       description: 键盘样式
-      dependency:
-        - type: password
-        - type: integer
-        - type: rndinteger
-        - type: point
-        - type: card
-        - inputstyle: password
     - name: keyboard-theme
       title: 定制键盘布局
       type: string
@@ -150,12 +108,6 @@
           title: 右侧栏
       default: default
       description: 定制键盘布局
-      dependency:
-        - type: integer
-        - type: rndinteger
-        - type: point
-        - type: card
-        - inputstyle: password
     - name: prefix
       title: 前缀图标
       type: string

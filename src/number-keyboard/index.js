@@ -54,7 +54,7 @@ export default createComponent({
     },
     hideOnClickOutside: {
       type: Boolean,
-      default: true,
+      default: false,
     },
     safeAreaInsetBottom: {
       type: Boolean,
