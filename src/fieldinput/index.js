@@ -195,6 +195,9 @@ export default createComponent({
       }
       return document.querySelector('body');
     },
+    closeNumber() {
+      this.shownumber = false;
+    }
   },
   watch: {
     // value: {
@@ -293,9 +296,7 @@ export default createComponent({
             getContainer={this.getContain}
             zIndex="9999"
             hideOnClickOutside={!this.inDesigner()}
-            onBlur={() => {
-              this.shownumber = false;
-            }}
+            onBlur={this.closeNumber}
           />
         ) : null}
       </div>
