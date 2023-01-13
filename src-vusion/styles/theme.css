@@ -622,7 +622,7 @@
   --van-tabs-bottom-bar-height: 3px; /* @desc 滑动条高度 */ /* @excludeTags van-tab */
   --van-tabs-bottom-bar-color: var(
     --van-tabs-default-color
-  ); /* @type color */ /* @desc 滑动条景色 */ /* @excludeTags van-tab */
+  ); /* @type color */ /* @desc 滑动条背景色 */ /* @excludeTags van-tab */
 
   /* @component van-uploader */
   --van-uploader-size: 80px; /* @desc 组件大小 */

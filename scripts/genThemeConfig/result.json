@@ -763,7 +763,7 @@
                     },
                     "--van-tabs-bottom-bar-color": {
                         "type": "color",
-                        "desc": "滑动条景色",
+                        "desc": "滑动条背景色",
                         "excludeTags": [
                             "van-tab"
                         ]
