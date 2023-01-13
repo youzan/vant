@@ -6,6 +6,7 @@ import { FieldMixin } from '../mixins/field';
 import Icon from '../icon';
 import NumberKeyboard from '../number-keyboard';
 import PasswordInput from '../password-input';
+import { times } from 'lodash';
 
 const [createComponent, bem] = createNamespace('fieldinput');
 
@@ -188,6 +189,12 @@ export default createComponent({
       }
       !this.shownumber && (this.shownumber = true);
     },
+    getContain() {
+      if (this.inDesigner()) {
+        return document.querySelector('[root-app]');
+      }
+      return document.querySelector('body');
+    },
   },
   watch: {
     // value: {
@@ -214,8 +221,12 @@ export default createComponent({
       }
     },
     keytheme() {
-      if (this.shownumbertype && this.inDesigner()) {
-        this.shownumber = true;
+      if (this.inDesigner()) {
+        if (this.shownumbertype) {
+          this.shownumber = true;
+        } else {
+          this.shownumber = false;
+        }
       }
     }
   },
@@ -279,7 +290,7 @@ export default createComponent({
             extraKey={this.extraKey}
             theme={this.keyboardTheme}
             maxlength={this.maxlength}
-            getContainer="body"
+            getContainer={this.getContain}
             zIndex="9999"
             onBlur={() => {
               this.shownumber = false;
