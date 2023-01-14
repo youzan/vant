@@ -172,8 +172,7 @@ export default {
   width: 100%;
   background-color: var(--van-doc-header-background);
   user-select: none;
-  position: fixed;
-  width: 100%;
+  position: relative;
   z-index: 2;
 
   &__top {

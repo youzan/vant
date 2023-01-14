@@ -1,5 +1,5 @@
 <template>
-  <div class="van-doc-nav" :style="style">
+  <div :class="['van-doc-nav', { 'van-doc-nav-fixed': isFixed }]">
     <div
       v-for="(group, index) in navConfig"
       class="van-doc-nav__group"
@@ -38,19 +38,11 @@ export default {
 
   data() {
     return {
-      top: 64,
-      bottom: 0,
+      isFixed: false,
     };
   },
 
   computed: {
-    style() {
-      return {
-        top: this.top + 'px',
-        bottom: this.bottom + 'px',
-      };
-    },
-
     base() {
       return this.lang ? `/${this.lang}/` : '/';
     },
@@ -64,7 +56,7 @@ export default {
   methods: {
     onScroll() {
       const { pageYOffset: offset } = window;
-      this.top = Math.max(0, 64 - offset);
+      this.isFixed = offset > 64;
     },
   },
 };
@@ -72,8 +64,10 @@ export default {
 
 <style lang="less">
 .van-doc-nav {
-  position: fixed;
+  position: absolute;
   left: 0;
+  top: var(--van-doc-header-top-height);
+  bottom: 0;
   z-index: 1;
   min-width: var(--van-doc-nav-width);
   max-width: var(--van-doc-nav-width);
@@ -86,6 +80,10 @@ export default {
     margin-left: calc((var(--van-doc-row-max-width) / 2 * -1));
   }
 
+  &.van-doc-nav-fixed {
+    position: fixed;
+    top: 0;
+  }
   &::-webkit-scrollbar {
     width: 6px;
     height: 6px;
