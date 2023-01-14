@@ -238,7 +238,7 @@ import type { NumberKeyboardProps, NumberKeyboardTheme } from 'vant';
 | --van-number-keyboard-title-height      | _34px_                     | -    |
 | --van-number-keyboard-title-font-size   | _var(--van-font-size-lg)_  | -    |
 | --van-number-keyboard-close-padding     | _0 var(--van-padding-md)_  | -    |
-| --van-number-keyboard-close-color       | _var(--van-link-color)_    | -    |
+| --van-number-keyboard-close-color       | _var(--van-primary-color)_ | -    |
 | --van-number-keyboard-close-font-size   | _var(--van-font-size-md)_  | -    |
 | --van-number-keyboard-button-text-color | _var(--van-white)_         | -    |
 | --van-number-keyboard-button-background | _var(--van-primary-color)_ | -    |

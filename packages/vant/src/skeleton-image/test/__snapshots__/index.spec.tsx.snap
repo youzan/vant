@@ -1,0 +1,8 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should skeleton image render correctly 1`] = `
+<div class="van-skeleton-image van-skeleton-image--square">
+  <i class="van-badge__wrapper van-icon van-icon-photo van-skeleton-image__icon">
+  </i>
+</div>
+`;

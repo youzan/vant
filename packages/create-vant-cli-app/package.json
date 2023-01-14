@@ -1,6 +1,6 @@
 {
   "name": "create-vant-cli-app",
-  "version": "2.1.0",
+  "version": "2.1.1",
   "description": "Create Vant CLI App",
   "main": "lib/index.js",
   "bin": {
@@ -33,6 +33,7 @@
   "devDependencies": {
     "@types/fs-extra": "^9.0.13",
     "release-it": "^15.4.1",
+    "rimraf": "^4.0.4",
     "typescript": "^4.8.2"
   },
   "dependencies": {

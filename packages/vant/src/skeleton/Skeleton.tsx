@@ -12,12 +12,12 @@ import {
 } from '../utils';
 
 // Components
-import SkeletonTitle from './SkeletonTitle';
-import SkeletonAvatar from './SkeletonAvatar';
-import SkeletonParagraph, { DEFAULT_ROW_WIDTH } from './SkeletonParagraph';
+import SkeletonTitle from '../skeleton-title';
+import SkeletonAvatar from '../skeleton-avatar';
+import SkeletonParagraph, { DEFAULT_ROW_WIDTH } from '../skeleton-paragraph';
 
 // Types
-import type { SkeletonAvatarShape } from './types';
+import type { SkeletonAvatarShape } from '../skeleton-avatar';
 
 const [name, bem] = createNamespace('skeleton');
 const DEFAULT_LAST_ROW_WIDTH = '60%';
