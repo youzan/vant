@@ -10,7 +10,6 @@ importers:
       husky: ^8.0.1
       nano-staged: ^0.8.0
       prettier: ^2.7.1
-      rimraf: ^3.0.2
     devDependencies:
       '@vant/cli': link:packages/vant-cli
       '@vant/eslint-config': link:packages/vant-eslint-config
@@ -18,7 +17,6 @@ importers:
       husky: 8.0.2
       nano-staged: 0.8.0
       prettier: 2.7.1
-      rimraf: 3.0.2
 
   packages/create-vant-cli-app:
     specifiers:
@@ -29,6 +27,7 @@ importers:
       fs-extra: ^10.1.0
       picocolors: ^1.0.0
       release-it: ^15.4.1
+      rimraf: ^4.0.4
       typescript: ^4.8.2
     dependencies:
       consola: 2.15.3
@@ -39,6 +38,7 @@ importers:
     devDependencies:
       '@types/fs-extra': 9.0.13
       release-it: 15.5.0
+      rimraf: 4.0.4
       typescript: 4.9.3
 
   packages/vant:
@@ -76,10 +76,12 @@ importers:
     specifiers:
       esbuild: ^0.16.10
       release-it: ^15.4.1
+      rimraf: ^4.0.4
       typescript: ^4.8.2
     devDependencies:
       esbuild: 0.16.10
       release-it: 15.5.0
+      rimraf: 4.0.4
       typescript: 4.9.3
 
   packages/vant-cli:
@@ -124,6 +126,7 @@ importers:
       postcss-load-config: ^3.1.4
       prettier: ^2.7.1
       release-it: ^15.4.1
+      rimraf: ^4.0.4
       terser: ^5.16.1
       transliteration: ^2.3.5
       typescript: ^4.8.2
@@ -179,6 +182,7 @@ importers:
       '@types/less': 3.0.3
       '@types/lodash': 4.14.191
       '@types/markdown-it': 12.2.3
+      rimraf: 4.0.4
       vue: 3.2.45
 
   packages/vant-compat:
@@ -186,6 +190,7 @@ importers:
       '@vue/runtime-core': ^3.2.27
       esbuild: ^0.16.10
       release-it: ^15.1.1
+      rimraf: ^4.0.4
       typescript: ^4.7.4
       vant: workspace:*
       vue: ^3.2.45
@@ -193,6 +198,7 @@ importers:
       '@vue/runtime-core': 3.2.45
       esbuild: 0.16.10
       release-it: 15.5.0
+      rimraf: 4.0.4
       typescript: 4.9.3
       vant: link:../vant
       vue: 3.2.45
@@ -233,11 +239,13 @@ importers:
       '@popperjs/core': ^2.11.6
       esbuild: ^0.16.10
       release-it: ^15.4.1
+      rimraf: ^4.0.4
       typescript: ^4.8.2
     devDependencies:
       '@popperjs/core': 2.11.6
       esbuild: 0.16.10
       release-it: 15.5.0
+      rimraf: 4.0.4
       typescript: 4.9.3
 
   packages/vant-touch-emulator:
@@ -247,11 +255,13 @@ importers:
     specifiers:
       esbuild: ^0.16.10
       release-it: ^15.4.1
+      rimraf: ^4.0.4
       typescript: ^4.8.2
       vue: ^3.2.45
     devDependencies:
       esbuild: 0.16.10
       release-it: 15.5.0
+      rimraf: 4.0.4
       typescript: 4.9.3
       vue: 3.2.45
 
@@ -5706,6 +5716,12 @@ packages:
     hasBin: true
     dependencies:
       glob: 7.2.3
+
+  /rimraf/4.0.4:
+    resolution: {integrity: sha512-R0hoVr9xTwemarQjoWlNt/nb5dEGVTBhVdkRmEX2zEkT8T6onH0XKiGjuaC7rNNj/gYzY2p4NVRJ3sjO1ascHQ==}
+    engines: {node: '>=14'}
+    hasBin: true
+    dev: true
 
   /rollup/3.8.1:
     resolution: {integrity: sha512-4yh9eMW7byOroYcN8DlF9P/2jCpu6txVIHjEqquQVSx7DI0RgyCCN3tjrcy4ra6yVtV336aLBB3v2AarYAxePQ==}
