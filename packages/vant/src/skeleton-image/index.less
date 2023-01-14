@@ -1,0 +1,26 @@
+:root {
+  --van-skeleton-image-size: 96px;
+  --van-skeleton-image-radius: 24px;
+}
+
+.van-skeleton {
+  &-image {
+    display: flex;
+    width: var(--van-skeleton-image-size);
+    height: var(--van-skeleton-image-size);
+    align-items: center;
+    justify-content: center;
+    background: var(--van-active-color);
+
+    &--round {
+      border-radius: var(--van-skeleton-image-radius);
+    }
+
+    &__icon {
+      width: calc(var(--van-skeleton-image-size) / 2);
+      height: calc(var(--van-skeleton-image-size) / 2);
+      font-size: calc(var(--van-skeleton-image-size) / 2);
+      color: var(--van-gray-5);
+    }
+  }
+}

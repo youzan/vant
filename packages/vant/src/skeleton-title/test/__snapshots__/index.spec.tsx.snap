@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should skeleton title works 1`] = `
+<h3 class="van-skeleton-title">
+</h3>
+`;
+
+exports[`should skeleton title works with props 1`] = `
+<h3 class="van-skeleton-title van-skeleton-title--round"
+    style="width: 200rem;"
+>
+</h3>
+`;
