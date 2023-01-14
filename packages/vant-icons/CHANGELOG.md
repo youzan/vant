@@ -1,5 +1,9 @@
 ## Changelog
 
+## 2.0.1
+
+- add woff format back to be compatible with some special webview
+
 ## 2.0.0
 
 - no longer support woff/ttf format
