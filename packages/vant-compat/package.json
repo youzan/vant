@@ -41,6 +41,7 @@
     "vue": "^3.2.45",
     "esbuild": "^0.16.10",
     "release-it": "^15.1.1",
+    "rimraf": "^4.0.4",
     "typescript": "^4.7.4"
   },
   "release-it": {
