@@ -37,6 +37,7 @@
   user-select: none;
 
   &__toolbar {
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -61,12 +62,15 @@
   }
 
   &__title {
+    position: absolute;
+    left: 50%;
     color: var(--van-text-color);
     max-width: 50%;
     font-weight: var(--van-font-bold);
     font-size: var(--van-picker-title-font-size);
     line-height: var(--van-picker-title-line-height);
     text-align: center;
+    transform: translateX(-50%);
   }
 
   &__columns {
