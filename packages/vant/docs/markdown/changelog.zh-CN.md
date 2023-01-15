@@ -19,6 +19,23 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 
 ## 更新内容
 
+### [v4.0.8](https://github.com/vant-ui/vant/compare/v4.0.7...v4.0.8)
+
+`2023-01-15`
+
+**Feature**
+
+- PickerGroup: 新增 next-step-text 属性 [#11487](https://github.com/vant-ui/vant/issues/11487)
+
+**Bug Fixes**
+
+- Picker: 调整确认按钮的颜色为 primary color [#11479](https://github.com/vant-ui/vant/issues/11479)
+- NumberKeyboard: 调整确认按钮的颜色为 primary color [#11479](https://github.com/vant-ui/vant/issues/11479)
+- Icons: 增加 woff 格式来兼容个别 webview 环境 [#11485](https://github.com/vant-ui/vant/issues/11485)
+- Picker: 修复标题文字可能不居中的问题 [#11489](https://github.com/vant-ui/vant/issues/11489)
+- Skeleton: 修复全量引入组件时不会自动注册 Skeleton 子组件的问题 [#11470](https://github.com/vant-ui/vant/issues/11470) [#11469](https://github.com/vant-ui/vant/issues/11469)
+- Tabs: 修复动态插入 Tab 时在个别情况下顺序错误的问题 [#11462](https://github.com/vant-ui/vant/issues/11462)
+
 ### [v4.0.7](https://github.com/vant-ui/vant/compare/v4.0.6...v4.0.7)
 
 `2023-01-02`

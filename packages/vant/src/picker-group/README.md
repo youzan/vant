@@ -213,13 +213,13 @@ export default {
 
 ### Props
 
-| Attribute           | Description              | Type       | Default   |
-| ------------------- | ------------------------ | ---------- | --------- |
-| tabs                | Titles of tabs           | _string[]_ | `[]`      |
-| title               | Toolbar title            | _string_   | `''`      |
-| next-step-text      | Text of next step button | _string_   | `''`      |
-| confirm-button-text | Text of confirm button   | _string_   | `Confirm` |
-| cancel-button-text  | Text of cancel button    | _string_   | `Cancel`  |
+| Attribute               | Description              | Type       | Default   |
+| ----------------------- | ------------------------ | ---------- | --------- |
+| tabs                    | Titles of tabs           | _string[]_ | `[]`      |
+| title                   | Toolbar title            | _string_   | `''`      |
+| next-step-text `v4.0.8` | Text of next step button | _string_   | `''`      |
+| confirm-button-text     | Text of confirm button   | _string_   | `Confirm` |
+| cancel-button-text      | Text of cancel button    | _string_   | `Cancel`  |
 
 ### Slots
 
