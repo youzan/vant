@@ -75,6 +75,54 @@ export default {
 };
 ```
 
+### Next Step Button
+
+In some scenarios, in order to ensure that users can select all Pickers in turn, you can set the `next-step-text` prop of PickerGroup. After setting the `next-step-text` prop, if the user has not switched to the last tab, the button in the upper right corner will become "Next Step", and automatically switch to the next Picker after clicking. When the user switches to the last tab, the button in the upper right corner changes to "Confirm".
+
+```html
+<van-picker-group
+  title="Title"
+  :tabs="['Date', 'Time']"
+  next-step-text="Next Step"
+  @confirm="onConfirm"
+  @cancel="onCancel"
+>
+  <van-date-picker
+    v-model="currentDate"
+    :min-date="minDate"
+    :max-date="maxDate"
+  />
+  <van-time-picker v-model="currentTime" />
+</van-picker-group>
+```
+
+```js
+import { ref } from 'vue';
+import { showToast } from 'vant';
+
+export default {
+  setup() {
+    const currentDate = ref(['2022', '06', '01']);
+    const currentTime = ref(['12', '00']);
+    const onConfirm = () => {
+      showToast(
+        `${currentDate.value.join('/')} ${currentTime.value.join(':')}`
+      );
+    };
+    const onCancel = () => {
+      showToast('cancel');
+    };
+
+    return {
+      minDate: new Date(2020, 0, 1),
+      maxDate: new Date(2025, 5, 1),
+      currentDate,
+      currentTime,
+    };
+  },
+};
+```
+
 ### Select Date Range
 
 Place two `DatePicker` components in the default slot of `PickerGroup` to select the time range.
@@ -165,12 +213,13 @@ export default {
 
 ### Props
 
-| Attribute           | Description            | Type       | Default   |
-| ------------------- | ---------------------- | ---------- | --------- |
-| tabs                | Titles of tabs         | _string[]_ | `[]`      |
-| title               | Toolbar title          | _string_   | `''`      |
-| confirm-button-text | Text of confirm button | _string_   | `Confirm` |
-| cancel-button-text  | Text of cancel button  | _string_   | `Cancel`  |
+| Attribute           | Description              | Type       | Default   |
+| ------------------- | ------------------------ | ---------- | --------- |
+| tabs                | Titles of tabs           | _string[]_ | `[]`      |
+| title               | Toolbar title            | _string_   | `''`      |
+| next-step-text      | Text of next step button | _string_   | `''`      |
+| confirm-button-text | Text of confirm button   | _string_   | `Confirm` |
+| cancel-button-text  | Text of cancel button    | _string_   | `Cancel`  |
 
 ### Slots
 

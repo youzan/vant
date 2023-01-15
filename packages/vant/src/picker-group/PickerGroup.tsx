@@ -1,4 +1,9 @@
-import { defineComponent, type InjectionKey, type ExtractPropTypes } from 'vue';
+import {
+  ref,
+  defineComponent,
+  type InjectionKey,
+  type ExtractPropTypes,
+} from 'vue';
 
 // Utils
 import { extend, makeArrayProp, createNamespace } from '../utils';
@@ -20,6 +25,7 @@ export const PICKER_GROUP_KEY: InjectionKey<PickerGroupProvide> = Symbol(name);
 export const pickerGroupProps = extend(
   {
     tabs: makeArrayProp<string>(),
+    nextStepText: String,
   },
   pickerToolbarProps
 );
@@ -34,26 +40,47 @@ export default defineComponent({
   emits: ['confirm', 'cancel'],
 
   setup(props, { emit, slots }) {
+    const activeTab = ref(0);
     const { children, linkChildren } = useChildren(PICKER_GROUP_KEY);
 
     linkChildren();
 
+    const showNextButton = () =>
+      activeTab.value < props.tabs.length - 1 && props.nextStepText;
+
     const onConfirm = () => {
-      emit(
-        'confirm',
-        children.map((item) => item.confirm())
-      );
+      if (showNextButton()) {
+        activeTab.value++;
+      } else {
+        emit(
+          'confirm',
+          children.map((item) => item.confirm())
+        );
+      }
     };
 
     const onCancel = () => emit('cancel');
 
     return () => {
       const childNodes = slots.default?.();
+      const confirmButtonText = showNextButton()
+        ? props.nextStepText
+        : props.confirmButtonText;
 
       return (
         <div class={bem()}>
-          <Toolbar {...props} onConfirm={onConfirm} onCancel={onCancel} />
-          <Tabs shrink class={bem('tabs')} animated>
+          <Toolbar
+            {...props}
+            confirmButtonText={confirmButtonText}
+            onConfirm={onConfirm}
+            onCancel={onCancel}
+          />
+          <Tabs
+            v-model:active={activeTab.value}
+            class={bem('tabs')}
+            shrink
+            animated
+          >
             {props.tabs.map((title, index) => (
               <Tab title={title} titleClass={bem('tab-title')}>
                 {childNodes?.[index]}
