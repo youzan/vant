@@ -19,6 +19,23 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 
 ## Details
 
+### [v4.0.8](https://github.com/vant-ui/vant/compare/v4.0.7...v4.0.8)
+
+`2023-01-15`
+
+**Feature**
+
+- PickerGroup: add next-step-text prop [#11487](https://github.com/vant-ui/vant/issues/11487)
+
+**Bug Fixes**
+
+- Picker: change confirm button color to primary color [#11479](https://github.com/vant-ui/vant/issues/11479)
+- NumberKeyboard: change confirm button color to primary color [#11479](https://github.com/vant-ui/vant/issues/11479)
+- Icons: add woff format to compat some special webview [#11485](https://github.com/vant-ui/vant/issues/11485)
+- Picker: ensure title align in center [#11489](https://github.com/vant-ui/vant/issues/11489)
+- Skeleton: fix can not register skeleton image component [#11470](https://github.com/vant-ui/vant/issues/11470) [#11469](https://github.com/vant-ui/vant/issues/11469)
+- Tabs: incorrect insert position in some cases [#11462](https://github.com/vant-ui/vant/issues/11462)
+
 ### [v4.0.7](https://github.com/vant-ui/vant/compare/v4.0.6...v4.0.7)
 
 `2023-01-02`
