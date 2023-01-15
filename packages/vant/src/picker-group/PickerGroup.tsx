@@ -70,7 +70,8 @@ export default defineComponent({
       return (
         <div class={bem()}>
           <Toolbar
-            {...props}
+            title={props.title}
+            cancelButtonText={props.cancelButtonText}
             confirmButtonText={confirmButtonText}
             onConfirm={onConfirm}
             onCancel={onCancel}

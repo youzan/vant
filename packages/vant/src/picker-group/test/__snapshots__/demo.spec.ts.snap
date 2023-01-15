@@ -3,9 +3,7 @@
 exports[`should render demo and match snapshot 1`] = `
 <div>
   <div class="van-picker-group">
-    <div class="van-picker__toolbar"
-         tabs="Date,Time"
-    >
+    <div class="van-picker__toolbar">
       <button type="button"
               class="van-picker__cancel van-haptics-feedback"
       >
@@ -1333,10 +1331,7 @@ exports[`should render demo and match snapshot 1`] = `
 </div>
 <div>
   <div class="van-picker-group">
-    <div class="van-picker__toolbar"
-         nextsteptext="Next Step"
-         tabs="Date,Time"
-    >
+    <div class="van-picker__toolbar">
       <button type="button"
               class="van-picker__cancel van-haptics-feedback"
       >
@@ -2664,9 +2659,7 @@ exports[`should render demo and match snapshot 1`] = `
 </div>
 <div>
   <div class="van-picker-group">
-    <div class="van-picker__toolbar"
-         tabs="Start Date,End Date"
-    >
+    <div class="van-picker__toolbar">
       <button type="button"
               class="van-picker__cancel van-haptics-feedback"
       >
@@ -3658,9 +3651,7 @@ exports[`should render demo and match snapshot 1`] = `
 </div>
 <div>
   <div class="van-picker-group">
-    <div class="van-picker__toolbar"
-         tabs="Start Time,End Time"
-    >
+    <div class="van-picker__toolbar">
       <button type="button"
               class="van-picker__cancel van-haptics-feedback"
       >
