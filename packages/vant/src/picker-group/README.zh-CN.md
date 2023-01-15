@@ -75,6 +75,54 @@ export default {
 };
 ```
 
+### 下一步按钮
+
+部分场景下，为了保证用户能够依次选择所有的 Picker，你可以设置 PickerGroup 的 `next-step-text` 属性。在设置 `next-step-text` 属性后，如果用户未切换到最后一个标签页，那么右上角的按钮会变成「下一步」，点击后自动切换到下一个 Picker。当用户切换到最后一个标签页时，右上角的按钮会变为「确认」。
+
+```html
+<van-picker-group
+  title="预约日期"
+  :tabs="['选择日期', '选择时间']"
+  next-step-text="下一步"
+  @confirm="onConfirm"
+  @cancel="onCancel"
+>
+  <van-date-picker
+    v-model="currentDate"
+    :min-date="minDate"
+    :max-date="maxDate"
+  />
+  <van-time-picker v-model="currentTime" />
+</van-picker-group>
+```
+
+```js
+import { ref } from 'vue';
+import { showToast } from 'vant';
+
+export default {
+  setup() {
+    const currentDate = ref(['2022', '06', '01']);
+    const currentTime = ref(['12', '00']);
+    const onConfirm = () => {
+      showToast(
+        `${currentDate.value.join('/')} ${currentTime.value.join(':')}`
+      );
+    };
+    const onCancel = () => {
+      showToast('cancel');
+    };
+
+    return {
+      minDate: new Date(2020, 0, 1),
+      maxDate: new Date(2025, 5, 1),
+      currentDate,
+      currentTime,
+    };
+  },
+};
+```
+
 ### 选择日期范围
 
 在 `PickerGroup` 的默认插槽中放置两个 `DatePicker` 组件，可以实现选择日期范围的交互效果。
@@ -169,8 +217,9 @@ export default {
 | ------------------- | ---------------- | ---------- | ------ |
 | tabs                | 设置标签页的标题 | _string[]_ | `[]`   |
 | title               | 顶部栏标题       | _string_   | `''`   |
-| confirm-button-text | 确认按钮文字     | _string_   | `确认` |
-| cancel-button-text  | 取消按钮文字     | _string_   | `取消` |
+| next-step-text      | 下一步按钮的文字 | _string_   | `''`   |
+| confirm-button-text | 确认按钮的文字   | _string_   | `确认` |
+| cancel-button-text  | 取消按钮的文字   | _string_   | `取消` |
 
 ### Slots
 
