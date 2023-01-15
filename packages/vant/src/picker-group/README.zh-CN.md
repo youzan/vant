@@ -86,7 +86,11 @@ export default {
   @confirm="onConfirm"
   @cancel="onCancel"
 >
-  <van-date-picker v-model="startDate" :min-date="minDate" :max-date="maxDate" />
+  <van-date-picker
+    v-model="startDate"
+    :min-date="minDate"
+    :max-date="maxDate"
+  />
   <van-date-picker v-model="endDate" :min-date="minDate" :max-date="maxDate" />
 </van-picker-group>
 ```
@@ -161,11 +165,12 @@ export default {
 
 ### Props
 
-| 参数                | 说明         | 类型     | 默认值 |
-| ------------------- | ------------ | -------- | ------ |
-| title               | 顶部栏标题   | _string_ | `''`   |
-| confirm-button-text | 确认按钮文字 | _string_ | `确认` |
-| cancel-button-text  | 取消按钮文字 | _string_ | `取消` |
+| 参数                | 说明             | 类型       | 默认值 |
+| ------------------- | ---------------- | ---------- | ------ |
+| tabs                | 设置标签页的标题 | _string[]_ | `[]`   |
+| title               | 顶部栏标题       | _string_   | `''`   |
+| confirm-button-text | 确认按钮文字     | _string_   | `确认` |
+| cancel-button-text  | 取消按钮文字     | _string_   | `取消` |
 
 ### Slots
 

@@ -86,7 +86,11 @@ Place two `DatePicker` components in the default slot of `PickerGroup` to select
   @confirm="onConfirm"
   @cancel="onCancel"
 >
-  <van-date-picker v-model="startDate" :min-date="minDate" :max-date="maxDate" />
+  <van-date-picker
+    v-model="startDate"
+    :min-date="minDate"
+    :max-date="maxDate"
+  />
   <van-date-picker v-model="endDate" :min-date="minDate" :max-date="maxDate" />
 </van-picker-group>
 ```
@@ -161,11 +165,12 @@ export default {
 
 ### Props
 
-| Attribute           | Description            | Type     | Default   |
-| ------------------- | ---------------------- | -------- | --------- |
-| title               | Toolbar title          | _string_ | `''`      |
-| confirm-button-text | Text of confirm button | _string_ | `Confirm` |
-| cancel-button-text  | Text of cancel button  | _string_ | `Cancel`  |
+| Attribute           | Description            | Type       | Default   |
+| ------------------- | ---------------------- | ---------- | --------- |
+| tabs                | Titles of tabs         | _string[]_ | `[]`      |
+| title               | Toolbar title          | _string_   | `''`      |
+| confirm-button-text | Text of confirm button | _string_   | `Confirm` |
+| cancel-button-text  | Text of cancel button  | _string_   | `Cancel`  |
 
 ### Slots
 
