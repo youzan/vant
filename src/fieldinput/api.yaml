@@ -86,6 +86,18 @@
       description: 键盘标题
       dependency:
         - keytheme: custom
+    - name: keyboard-theme
+      title: 定制键盘布局
+      type: string
+      options:
+        - value: default
+          title: 默认
+        - value: custom
+          title: 右侧栏
+      default: default
+      description: 定制键盘布局
+      dependency:
+        - keytheme: custom
     - name: keytheme
       title: 键盘样式
       type: string
@@ -98,16 +110,6 @@
           title: 定制键盘
       default: native
       description: 键盘样式
-    - name: keyboard-theme
-      title: 定制键盘布局
-      type: string
-      options:
-        - value: default
-          title: 默认
-        - value: custom
-          title: 右侧栏
-      default: default
-      description: 定制键盘布局
     - name: prefix
       title: 前缀图标
       type: string
