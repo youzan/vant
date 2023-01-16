@@ -285,6 +285,7 @@ export default createComponent({
         ) : null}
         {this.shownumbertype ? (
           <NumberKeyboard
+            vusionnp={this.$attrs['vusion-node-path']}
             vModel={this.currentValue}
             closeButtonText={'完成'}
             show={this.shownumber}

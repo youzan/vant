@@ -5842,6 +5842,28 @@
                     ]
                 },
                 {
+                    "name": "keytheme",
+                    "title": "键盘样式",
+                    "type": "string",
+                    "options": [
+                        {
+                            "value": "native",
+                            "title": "默认键盘",
+                            "dependency": [
+                                {
+                                    "!inputstyle": "password"
+                                }
+                            ]
+                        },
+                        {
+                            "value": "custom",
+                            "title": "定制键盘"
+                        }
+                    ],
+                    "default": "native",
+                    "description": "键盘样式"
+                },
+                {
                     "name": "keyboard-title",
                     "title": "键盘标题",
                     "type": "string",
@@ -5873,28 +5895,6 @@
                             "keytheme": "custom"
                         }
                     ]
-                },
-                {
-                    "name": "keytheme",
-                    "title": "键盘样式",
-                    "type": "string",
-                    "options": [
-                        {
-                            "value": "native",
-                            "title": "默认键盘",
-                            "dependency": [
-                                {
-                                    "!inputstyle": "password"
-                                }
-                            ]
-                        },
-                        {
-                            "value": "custom",
-                            "title": "定制键盘"
-                        }
-                    ],
-                    "default": "native",
-                    "description": "键盘样式"
                 },
                 {
                     "name": "prefix",

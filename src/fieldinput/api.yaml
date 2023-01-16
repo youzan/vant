@@ -80,6 +80,18 @@
       max: 6
       dependency:
         - inputstyle: password
+    - name: keytheme
+      title: 键盘样式
+      type: string
+      options:
+        - value: native
+          title: 默认键盘
+          dependency:
+            - '!inputstyle': password
+        - value: custom
+          title: 定制键盘
+      default: native
+      description: 键盘样式
     - name: keyboard-title
       title: 键盘标题
       type: string
@@ -98,18 +110,6 @@
       description: 定制键盘布局
       dependency:
         - keytheme: custom
-    - name: keytheme
-      title: 键盘样式
-      type: string
-      options:
-        - value: native
-          title: 默认键盘
-          dependency:
-            - '!inputstyle': password
-        - value: custom
-          title: 定制键盘
-      default: native
-      description: 键盘样式
     - name: prefix
       title: 前缀图标
       type: string
