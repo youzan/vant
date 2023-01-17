@@ -52,14 +52,14 @@ export class VanGenerator {
   }
 
   async prompting() {
-    const inputs = await prompt<Record<string, string>>(PROMPTS);
-    console.log('inputs==>', inputs);
-    const preprocessor = inputs.preprocessor.toLowerCase();
-    const cssLang = preprocessor === 'sass' ? 'scss' : preprocessor;
+    return prompt<Record<string, string>>(PROMPTS).then((inputs) => {
+      const preprocessor = inputs.preprocessor.toLowerCase();
+      const cssLang = preprocessor === 'sass' ? 'scss' : preprocessor;
 
-    this.inputs.cssLang = cssLang;
-    this.inputs.vueVersion = inputs.vueVersion;
-    this.inputs.preprocessor = preprocessor;
+      this.inputs.cssLang = cssLang;
+      this.inputs.vueVersion = inputs.vueVersion;
+      this.inputs.preprocessor = preprocessor;
+    });
   }
 
   writing() {
