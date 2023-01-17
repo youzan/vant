@@ -472,7 +472,7 @@
 
   /* @component van-sidebar */
   --van-sidebar-width: 80px; /* @desc 宽度 */ /* @prefix van-sidebar */ /* @depStaticStyles ["width"] */
-  --van-sidebar-font-size: var(--van-font-size-md); /* @desc 字体 */ /* @prefix van-sidebar */ 
+  --van-sidebar-font-size: var(--van-font-size-md); /* @desc 字体 */ /* @prefix van-sidebar */
   --van-sidebar-line-height: var(--van-line-height-md); /* @desc 行高 */ /* @prefix van-sidebar */
   --van-sidebar-text-color: var(
     --van-component-text-color
@@ -754,12 +754,24 @@
   --van-tag-plain-background-color: #fff; /* @type color */ /* @hidden */
 
   /* @component van-grid-view */
-  --van-grid-view-input-height: 30px; /* @desc grid-view 输入框高度 */
-  --van-grid-view-input-padding-x: 8px; /* @desc grid-view 输入框左右内边距 */
-  --van-grid-view-input-border-width: 1px; /* @desc grid-view 输入框边框宽度 */
-  --van-grid-view-input-border-color: #e3e4e5; /* @type color */ /* @desc grid-view 输入框边框颜色 */
-  --van-grid-view-input-border-radius: 3px; /* @desc grid-view 输入框圆角 */
-  --van-grid-view-input-color: #333; /* @type color */ /* @desc grid-view 输入框文字颜色 */
+  --van-grid-view-height: 400px; /* @desc 默认高度 */
+  --van-grid-view-bgcolor: #fff; /* @type color */ /* @desc 背景颜色 */
+  --van-grid-view-input-height: 30px; /* @desc 输入框高度 */
+  --van-grid-view-input-padding-x: 8px; /* @desc 输入框左右内边距 */
+  --van-grid-view-input-border-width: 1px; /* @desc 输入框边框宽度 */
+  --van-grid-view-input-border-color: #e3e4e5; /* @type color */ /* @desc 输入框边框颜色 */
+  --van-grid-view-input-border-radius: 3px; /* @desc 输入框圆角 */
+  --van-grid-view-input-color: #333; /* @type color */ /* @desc 输入框文字颜色 */
+
+  /* @component van-cardu */
+  --van-cardu-padding-bottom: 10px; /* @desc 底部内边距 */
+  --van-cardu-backgroundcolor: #fff; /* @type color */ /* @desc 背景色 */
+  --van-cardu-head-margin-bottom: 8px; /* @desc 头部下外边距 */
+  --van-cardu-head-margin-top: 12px; /* @desc 头部上外边距 */
+  --van-cardu-head-margin-left: 12px; /* @desc 头部左外边距 */
+  --van-cardu-head-margin-right: 12px; /* @desc 头部右外边距 */
+  --van-cardu-content-margin-left: 12px; /* @desc 内容区左外边距 */
+  --van-cardu-content-margin-right: 12px; /* @desc 内容区右外边距 */
 }
 
 

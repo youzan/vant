@@ -1762,6 +1762,94 @@
                 "preview": {
                     "template": "<van-checkbox shape=\"square\"></van-checkbox>"
                 }
+            },
+            {
+                "id": "4fcd4dfd-683b-4d7e-9210f-gv9sdf08e0899nbna",
+                "name": "van-cardu",
+                "title": "卡片",
+                "toPosition": "cardu",
+                "type": [],
+                "cssProperty": {
+                    "--van-cardu-padding-bottom": {
+                        "type": "input",
+                        "desc": "底部内边距"
+                    },
+                    "--van-cardu-backgroundcolor": {
+                        "type": "color",
+                        "desc": "背景色"
+                    },
+                    "--van-cardu-head-margin-bottom": {
+                        "type": "input",
+                        "desc": "头部下外边距"
+                    },
+                    "--van-cardu-head-margin-top": {
+                        "type": "input",
+                        "desc": "头部上外边距"
+                    },
+                    "--van-cardu-head-margin-left": {
+                        "type": "input",
+                        "desc": "头部左外边距"
+                    },
+                    "--van-cardu-head-margin-right": {
+                        "type": "input",
+                        "desc": "头部右外边距"
+                    },
+                    "--van-cardu-content-margin-left": {
+                        "type": "input",
+                        "desc": "内容区左外边距"
+                    },
+                    "--van-cardu-content-margin-right": {
+                        "type": "input",
+                        "desc": "内容区右外边距"
+                    }
+                },
+                "preview": {
+                    "template": "<van-cardu ref=\"cardu1\">\n    <template #head ref=\"template1\">\n        <van-text ref=\"text1\" text=\"标题\"></van-text>\n    </template>\n    <van-text ref=\"text2\" text=\"卡片内容\"></van-text>\n</van-cardu>"
+                }
+            },
+            {
+                "id": "4fcd4dfd-683b-4d7e-9210f-gv9sdf08e0899nbnanba",
+                "name": "van-grid-view",
+                "title": "数据网格",
+                "toPosition": "grid-view",
+                "type": [],
+                "cssProperty": {
+                    "--van-grid-view-height": {
+                        "type": "input",
+                        "desc": "gridview默认高度"
+                    },
+                    "--van-grid-view-bgcolor": {
+                        "type": "color",
+                        "desc": "gridview背景颜色"
+                    },
+                    "--van-grid-view-input-height": {
+                        "type": "input",
+                        "desc": "gridview输入框高度"
+                    },
+                    "--van-grid-view-input-padding-x": {
+                        "type": "input",
+                        "desc": "gridview输入框左右内边距"
+                    },
+                    "--van-grid-view-input-border-width": {
+                        "type": "input",
+                        "desc": "gridview输入框边框宽度"
+                    },
+                    "--van-grid-view-input-border-color": {
+                        "type": "color",
+                        "desc": "gridview输入框边框颜色"
+                    },
+                    "--van-grid-view-input-border-radius": {
+                        "type": "input",
+                        "desc": "gridview 输入框圆角"
+                    },
+                    "--van-grid-view-input-color": {
+                        "type": "color",
+                        "desc": "gridview输入框文字颜色"
+                    }
+                },
+                "preview": {
+                    "template": "<van-grid-view :filterable=\"true\" pageable=\"load-more\" :data-source=\"[1,2,3,4,5]\">\n    <template #item=\"scope\">\n<van-cardu>\n            <template #head>\n                <van-text :text=\"'动态'+scope.item\"></van-text>\n            </template>\n            <van-text text=\"卡片内容\"></van-text>\n        </van-cardu>\n</template>\n</van-grid-view>"
+                }
             }
         ]
     }

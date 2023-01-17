@@ -421,7 +421,7 @@ export default {
     calcCol() {
       let col = 2;
       if (this.col) {
-        col = this.col;
+        col = this.col;console.log(this.mainW, 11111)
         this.colW = this.mainW / col;
       } else if (this.colWidth) {
         col = parseInt(this.mainW / this.colWidth) || 1;
@@ -651,10 +651,10 @@ export default {
 .root {
   /* display: flex; */
   flex-direction: column;
-  background: #fff;
+  background: var(--van-grid-view-bgcolor);
   /* border: 1px solid var(--list-view-border-color); */
   border-radius: 4px;
-  height: 400px;
+  height: var(--van-grid-view-height);
   min-width: 280px;
   max-width: 100%;
 
