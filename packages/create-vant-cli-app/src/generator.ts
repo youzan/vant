@@ -13,12 +13,12 @@ const PROMPTS = [
     type: 'select',
     choices: [
       {
-        name: 'Vue 2',
-        value: 'vue2',
+        name: 'vue2',
+        message: 'Vue 2',
       },
       {
-        name: 'Vue 3',
-        value: 'vue3',
+        name: 'vue3',
+        message: 'Vue 3',
       },
     ],
   },
@@ -52,14 +52,14 @@ export class VanGenerator {
   }
 
   async prompting() {
-    return prompt<Record<string, string>>(PROMPTS).then((inputs) => {
-      const preprocessor = inputs.preprocessor.toLowerCase();
-      const cssLang = preprocessor === 'sass' ? 'scss' : preprocessor;
+    const inputs = await prompt<Record<string, string>>(PROMPTS);
+    console.log('inputs==>', inputs);
+    const preprocessor = inputs.preprocessor.toLowerCase();
+    const cssLang = preprocessor === 'sass' ? 'scss' : preprocessor;
 
-      this.inputs.cssLang = cssLang;
-      this.inputs.vueVersion = inputs.vueVersion;
-      this.inputs.preprocessor = preprocessor;
-    });
+    this.inputs.cssLang = cssLang;
+    this.inputs.vueVersion = inputs.vueVersion;
+    this.inputs.preprocessor = preprocessor;
   }
 
   writing() {
