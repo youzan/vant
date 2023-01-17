@@ -421,7 +421,7 @@ export default {
     calcCol() {
       let col = 2;
       if (this.col) {
-        col = this.col;console.log(this.mainW, 11111)
+        col = this.col;
         this.colW = this.mainW / col;
       } else if (this.colWidth) {
         col = parseInt(this.mainW / this.colWidth) || 1;

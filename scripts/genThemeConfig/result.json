@@ -1848,7 +1848,7 @@
                     }
                 },
                 "preview": {
-                    "template": "<van-grid-view :filterable=\"true\" pageable=\"load-more\" :data-source=\"[1,2,3,4,5]\">\n    <template #item=\"scope\">\n<van-cardu>\n            <template #head>\n                <van-text :text=\"'动态'+scope.item\"></van-text>\n            </template>\n            <van-text text=\"卡片内容\"></van-text>\n        </van-cardu>\n</template>\n</van-grid-view>"
+                    "template": "<van-grid-view :col=\"0\" :col-width=\"150\" :filterable=\"true\" pageable=\"load-more\" :data-source=\"[1,2,3,4,5]\">\n    <template #item=\"scope\">\n<van-cardu>\n            <template #head>\n                <van-text :text=\"'动态'+scope.item\"></van-text>\n            </template>\n            <van-text text=\"卡片内容\"></van-text>\n        </van-cardu>\n</template>\n</van-grid-view>"
                 }
             }
         ]
