@@ -402,7 +402,7 @@ test('should render month-title slot correctly', async () => {
 
   await later();
 
-  expect(wrapper.html()).toMatchSnapshot();
+  expect(wrapper.find('.van-calendar__month-title').html()).toMatchSnapshot();
 });
 
 test('should reset when type changed', async () => {
