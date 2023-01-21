@@ -185,7 +185,16 @@ export default defineComponent({
 
     const renderTitle = () => {
       if (props.showMonthTitle) {
-        return <div class={bem('month-title')}>{title.value}</div>;
+        return (
+          <div class={bem('month-title')}>
+            {slots['month-title']
+              ? slots['month-title']({
+                  date: props.date,
+                  text: title.value,
+                })
+              : title.value}
+          </div>
+        );
       }
     };
 
