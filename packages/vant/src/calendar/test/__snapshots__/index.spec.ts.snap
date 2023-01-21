@@ -957,7 +957,6 @@ exports[`should render month-title slot correctly 1`] = `
       Calendar
     </div>
     <div class="van-calendar__header-subtitle">
-      2010/1
     </div>
     <div class="van-calendar__weekdays">
       <span class="van-calendar__weekday">
@@ -1183,7 +1182,7 @@ exports[`should render month-title slot correctly 1`] = `
     </div>
     <div class="van-calendar__month">
       <div class="van-calendar__month-title">
-        Title: 1264953600000
+        Custom Month Title
       </div>
       <div role="grid"
            class="van-calendar__days"

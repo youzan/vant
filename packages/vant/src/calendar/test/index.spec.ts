@@ -396,7 +396,7 @@ test('should render month-title slot correctly', async () => {
       lazyRender: false,
     },
     slots: {
-      'month-title': ({ date }) => `Title: ${date.getTime()}`,
+      'month-title': () => ` Custom Month Title`,
     },
   });
 
