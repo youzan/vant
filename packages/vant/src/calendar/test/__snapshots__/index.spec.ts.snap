@@ -950,6 +950,426 @@ exports[`should render confirm-text slot correctly 1`] = `
 </button>
 `;
 
+exports[`should render month-title slot correctly 1`] = `
+<div class="van-calendar">
+  <div class="van-calendar__header">
+    <div class="van-calendar__header-title">
+      Calendar
+    </div>
+    <div class="van-calendar__header-subtitle">
+      2010/1
+    </div>
+    <div class="van-calendar__weekdays">
+      <span class="van-calendar__weekday">
+        Sun
+      </span>
+      <span class="van-calendar__weekday">
+        Mon
+      </span>
+      <span class="van-calendar__weekday">
+        Tue
+      </span>
+      <span class="van-calendar__weekday">
+        Wed
+      </span>
+      <span class="van-calendar__weekday">
+        Thu
+      </span>
+      <span class="van-calendar__weekday">
+        Fri
+      </span>
+      <span class="van-calendar__weekday">
+        Sat
+      </span>
+    </div>
+  </div>
+  <div class="van-calendar__body">
+    <div class="van-calendar__month">
+      <div role="grid"
+           class="van-calendar__days"
+      >
+        <div class="van-calendar__month-mark">
+          1
+        </div>
+        <div role="gridcell"
+             style="margin-left: 71.42857142857143%;"
+             class="van-calendar__day van-calendar__day--disabled"
+        >
+          1
+        </div>
+        <div role="gridcell"
+             class="van-calendar__day van-calendar__day--disabled"
+        >
+          2
+        </div>
+        <div role="gridcell"
+             class="van-calendar__day van-calendar__day--disabled"
+        >
+          3
+        </div>
+        <div role="gridcell"
+             class="van-calendar__day van-calendar__day--disabled"
+        >
+          4
+        </div>
+        <div role="gridcell"
+             class="van-calendar__day van-calendar__day--disabled"
+        >
+          5
+        </div>
+        <div role="gridcell"
+             class="van-calendar__day van-calendar__day--disabled"
+        >
+          6
+        </div>
+        <div role="gridcell"
+             class="van-calendar__day van-calendar__day--disabled"
+        >
+          7
+        </div>
+        <div role="gridcell"
+             class="van-calendar__day van-calendar__day--disabled"
+        >
+          8
+        </div>
+        <div role="gridcell"
+             class="van-calendar__day van-calendar__day--disabled"
+        >
+          9
+        </div>
+        <div role="gridcell"
+             class="van-calendar__day van-calendar__day--selected"
+             tabindex="-1"
+        >
+          <div class="van-calendar__selected-day">
+            10
+          </div>
+        </div>
+        <div role="gridcell"
+             class="van-calendar__day"
+             tabindex="-1"
+        >
+          11
+        </div>
+        <div role="gridcell"
+             class="van-calendar__day"
+             tabindex="-1"
+        >
+          12
+        </div>
+        <div role="gridcell"
+             class="van-calendar__day"
+             tabindex="-1"
+        >
+          13
+        </div>
+        <div role="gridcell"
+             class="van-calendar__day"
+             tabindex="-1"
+        >
+          14
+        </div>
+        <div role="gridcell"
+             class="van-calendar__day"
+             tabindex="-1"
+        >
+          15
+        </div>
+        <div role="gridcell"
+             class="van-calendar__day"
+             tabindex="-1"
+        >
+          16
+        </div>
+        <div role="gridcell"
+             class="van-calendar__day"
+             tabindex="-1"
+        >
+          17
+        </div>
+        <div role="gridcell"
+             class="van-calendar__day"
+             tabindex="-1"
+        >
+          18
+        </div>
+        <div role="gridcell"
+             class="van-calendar__day"
+             tabindex="-1"
+        >
+          19
+        </div>
+        <div role="gridcell"
+             class="van-calendar__day"
+             tabindex="-1"
+        >
+          20
+        </div>
+        <div role="gridcell"
+             class="van-calendar__day"
+             tabindex="-1"
+        >
+          21
+        </div>
+        <div role="gridcell"
+             class="van-calendar__day"
+             tabindex="-1"
+        >
+          22
+        </div>
+        <div role="gridcell"
+             class="van-calendar__day"
+             tabindex="-1"
+        >
+          23
+        </div>
+        <div role="gridcell"
+             style="margin-bottom: 0px;"
+             class="van-calendar__day"
+             tabindex="-1"
+        >
+          24
+        </div>
+        <div role="gridcell"
+             style="margin-bottom: 0px;"
+             class="van-calendar__day"
+             tabindex="-1"
+        >
+          25
+        </div>
+        <div role="gridcell"
+             style="margin-bottom: 0px;"
+             class="van-calendar__day"
+             tabindex="-1"
+        >
+          26
+        </div>
+        <div role="gridcell"
+             style="margin-bottom: 0px;"
+             class="van-calendar__day"
+             tabindex="-1"
+        >
+          27
+        </div>
+        <div role="gridcell"
+             style="margin-bottom: 0px;"
+             class="van-calendar__day"
+             tabindex="-1"
+        >
+          28
+        </div>
+        <div role="gridcell"
+             style="margin-bottom: 0px;"
+             class="van-calendar__day"
+             tabindex="-1"
+        >
+          29
+        </div>
+        <div role="gridcell"
+             style="margin-bottom: 0px;"
+             class="van-calendar__day"
+             tabindex="-1"
+        >
+          30
+        </div>
+        <div role="gridcell"
+             style="margin-bottom: 0px;"
+             class="van-calendar__day"
+             tabindex="-1"
+        >
+          31
+        </div>
+      </div>
+    </div>
+    <div class="van-calendar__month">
+      <div class="van-calendar__month-title">
+        Title: 1264953600000
+      </div>
+      <div role="grid"
+           class="van-calendar__days"
+      >
+        <div class="van-calendar__month-mark">
+          2
+        </div>
+        <div role="gridcell"
+             style="margin-left: 14.285714285714286%;"
+             class="van-calendar__day"
+             tabindex="-1"
+        >
+          1
+        </div>
+        <div role="gridcell"
+             class="van-calendar__day"
+             tabindex="-1"
+        >
+          2
+        </div>
+        <div role="gridcell"
+             class="van-calendar__day"
+             tabindex="-1"
+        >
+          3
+        </div>
+        <div role="gridcell"
+             class="van-calendar__day"
+             tabindex="-1"
+        >
+          4
+        </div>
+        <div role="gridcell"
+             class="van-calendar__day"
+             tabindex="-1"
+        >
+          5
+        </div>
+        <div role="gridcell"
+             class="van-calendar__day"
+             tabindex="-1"
+        >
+          6
+        </div>
+        <div role="gridcell"
+             class="van-calendar__day"
+             tabindex="-1"
+        >
+          7
+        </div>
+        <div role="gridcell"
+             class="van-calendar__day"
+             tabindex="-1"
+        >
+          8
+        </div>
+        <div role="gridcell"
+             class="van-calendar__day"
+             tabindex="-1"
+        >
+          9
+        </div>
+        <div role="gridcell"
+             class="van-calendar__day"
+             tabindex="-1"
+        >
+          10
+        </div>
+        <div role="gridcell"
+             class="van-calendar__day"
+             tabindex="-1"
+        >
+          11
+        </div>
+        <div role="gridcell"
+             class="van-calendar__day"
+             tabindex="-1"
+        >
+          12
+        </div>
+        <div role="gridcell"
+             class="van-calendar__day"
+             tabindex="-1"
+        >
+          13
+        </div>
+        <div role="gridcell"
+             class="van-calendar__day"
+             tabindex="-1"
+        >
+          14
+        </div>
+        <div role="gridcell"
+             class="van-calendar__day"
+             tabindex="-1"
+        >
+          15
+        </div>
+        <div role="gridcell"
+             class="van-calendar__day"
+             tabindex="-1"
+        >
+          16
+        </div>
+        <div role="gridcell"
+             class="van-calendar__day"
+             tabindex="-1"
+        >
+          17
+        </div>
+        <div role="gridcell"
+             class="van-calendar__day"
+             tabindex="-1"
+        >
+          18
+        </div>
+        <div role="gridcell"
+             class="van-calendar__day"
+             tabindex="-1"
+        >
+          19
+        </div>
+        <div role="gridcell"
+             class="van-calendar__day"
+             tabindex="-1"
+        >
+          20
+        </div>
+        <div role="gridcell"
+             class="van-calendar__day van-calendar__day--disabled"
+        >
+          21
+        </div>
+        <div role="gridcell"
+             class="van-calendar__day van-calendar__day--disabled"
+        >
+          22
+        </div>
+        <div role="gridcell"
+             class="van-calendar__day van-calendar__day--disabled"
+        >
+          23
+        </div>
+        <div role="gridcell"
+             class="van-calendar__day van-calendar__day--disabled"
+        >
+          24
+        </div>
+        <div role="gridcell"
+             class="van-calendar__day van-calendar__day--disabled"
+        >
+          25
+        </div>
+        <div role="gridcell"
+             class="van-calendar__day van-calendar__day--disabled"
+        >
+          26
+        </div>
+        <div role="gridcell"
+             class="van-calendar__day van-calendar__day--disabled"
+        >
+          27
+        </div>
+        <div role="gridcell"
+             style="margin-bottom: 0px;"
+             class="van-calendar__day van-calendar__day--disabled"
+        >
+          28
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="van-calendar__footer van-safe-area-bottom">
+    <button type="button"
+            class="van-button van-button--primary van-button--normal van-button--block van-button--round van-calendar__confirm"
+    >
+      <div class="van-button__content">
+        <span class="van-button__text">
+          Confirm
+        </span>
+      </div>
+    </button>
+  </div>
+</div>
+`;
+
 exports[`should render subtitle slot with params 1`] = `
 <div class="van-calendar__header-subtitle">
   Custom Subtitle

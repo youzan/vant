@@ -386,6 +386,25 @@ test('should render subtitle slot with params', async () => {
   ).toMatchSnapshot();
 });
 
+test('should render month-title slot correctly', async () => {
+  const wrapper = mount(Calendar, {
+    props: {
+      minDate,
+      maxDate: new Date(2010, 1, 20),
+      poppable: false,
+      defaultDate: minDate,
+      lazyRender: false,
+    },
+    slots: {
+      'month-title': ({ date }) => `Title: ${date.getTime()}`,
+    },
+  });
+
+  await later();
+
+  expect(wrapper.html()).toMatchSnapshot();
+});
+
 test('should reset when type changed', async () => {
   const wrapper = mount(Calendar, {
     props: {

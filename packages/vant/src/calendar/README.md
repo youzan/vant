@@ -335,6 +335,7 @@ Following props are supported when the type is multiple
 | --- | --- | --- |
 | title | Custom title | - |
 | subtitle `v3.1.3` | Custom subtitle | _{ text: string, date?: Date }_ |
+| month-title `v4.0.9` | Custom title of every month | _{ text: string, date: Date }_ |
 | footer | Custom footer | - |
 | confirm-text `v3.2.6` | Custom confirm text | _{ disabled: boolean }_ |
 | top-info `v3.0.17` | Custom top info of day | _day: Day_ |
