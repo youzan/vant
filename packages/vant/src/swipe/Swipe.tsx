@@ -302,7 +302,12 @@ export default defineComponent({
     let touchStartTime: number;
 
     const onTouchStart = (event: TouchEvent) => {
-      if (!props.touchable) return;
+      if (
+        !props.touchable ||
+        // avoid resetting position on multi-finger touch
+        event.touches.length > 1
+      )
+        return;
 
       touch.start(event);
 
