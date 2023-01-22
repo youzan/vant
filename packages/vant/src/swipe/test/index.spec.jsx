@@ -331,3 +331,28 @@ test('should render indicator slot correctly', async () => {
   await later();
   expect(wrapper.html()).toMatchSnapshot();
 });
+
+test('should emit drag-start and drag-end events correctly', async () => {
+  const dragStart = jest.fn();
+  const dragEnd = jest.fn();
+  const wrapper = mount({
+    render() {
+      return (
+        <Swipe onDragEnd={dragEnd} onDragStart={dragStart}>
+          <SwipeItem>1</SwipeItem>
+          <SwipeItem>2</SwipeItem>
+        </Swipe>
+      );
+    },
+  });
+
+  const track = wrapper.find('.van-swipe__track');
+
+  await triggerDrag(track, 100, 0);
+  expect(dragStart).toHaveBeenCalledTimes(1);
+  expect(dragEnd).toHaveBeenCalledTimes(1);
+
+  await triggerDrag(track, 100, 0);
+  expect(dragStart).toHaveBeenCalledTimes(2);
+  expect(dragEnd).toHaveBeenCalledTimes(2);
+});
