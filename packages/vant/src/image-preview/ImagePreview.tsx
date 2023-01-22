@@ -44,10 +44,10 @@ const [name, bem] = createNamespace('image-preview');
 
 const popupProps = [
   'show',
+  'teleport',
   'transition',
   'overlayStyle',
   'closeOnPopstate',
-  'teleport'
 ] as const;
 
 export const imagePreviewProps = {
@@ -89,6 +89,7 @@ export default defineComponent({
       active: 0,
       rootWidth: 0,
       rootHeight: 0,
+      disableZoom: false,
     });
 
     const resize = () => {
@@ -137,6 +138,14 @@ export default defineComponent({
       }
     };
 
+    const onDragStart = () => {
+      state.disableZoom = true;
+    };
+
+    const onDragEnd = () => {
+      state.disableZoom = false;
+    };
+
     const renderImages = () => (
       <Swipe
         ref={swipeRef}
@@ -148,9 +157,14 @@ export default defineComponent({
         showIndicators={props.showIndicators}
         indicatorColor="white"
         onChange={setActive}
+        onDragEnd={onDragEnd}
+        onDragStart={onDragStart}
       >
         {props.images.map((image, index) => (
           <ImagePreviewItem
+            v-slots={{
+              image: slots.image,
+            }}
             src={image}
             show={props.show}
             active={state.active}
@@ -158,12 +172,10 @@ export default defineComponent({
             minZoom={props.minZoom}
             rootWidth={state.rootWidth}
             rootHeight={state.rootHeight}
+            disableZoom={state.disableZoom}
             onScale={emitScale}
             onClose={emitClose}
             onLongPress={() => emit('longPress', { index })}
-            v-slots={{
-              image: slots.image,
-            }}
           />
         ))}
       </Swipe>
