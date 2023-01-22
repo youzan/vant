@@ -161,7 +161,7 @@ export default {
 | active-color | 进度条激活态颜色 | _string_ | `#1989fa` |
 | inactive-color | 进度条非激活态颜色 | _string_ | `#e5e5e5` |
 | range | 是否开启双滑块模式 | _boolean_ | `false` |
-| reverse `v3.2.1` | 是否将进度条反转 | `false` |
+| reverse `v3.2.1` | 是否将进度条反转 | _boolean_ | `false` |
 | disabled | 是否禁用滑块 | _boolean_ | `false` |
 | readonly `v3.0.5` | 是否为只读状态，只读状态下无法修改滑块的值 | _boolean_ | `false` |
 | vertical | 是否垂直展示 | _boolean_ | `false` |
