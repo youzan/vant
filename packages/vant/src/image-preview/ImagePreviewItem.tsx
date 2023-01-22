@@ -44,6 +44,7 @@ export default defineComponent({
     maxZoom: makeRequiredProp(numericProp),
     rootWidth: makeRequiredProp(Number),
     rootHeight: makeRequiredProp(Number),
+    disableZoom: Boolean,
   },
 
   emits: ['scale', 'close', 'longPress'],
@@ -146,11 +147,16 @@ export default defineComponent({
 
     const onTouchStart = (event: TouchEvent) => {
       const { touches } = event;
+      fingerNum = touches.length;
+
+      if (fingerNum === 2 && props.disableZoom) {
+        return;
+      }
+
       const { offsetX } = touch;
 
       touch.start(event);
 
-      fingerNum = touches.length;
       startMoveX = state.moveX;
       startMoveY = state.moveY;
       touchStartTime = Date.now();
