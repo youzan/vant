@@ -101,10 +101,6 @@ location.href = location.href.replace('youzan.github.io', 'vant-ui.github.io');
                 title: '设计资源',
               },
               {
-                path: 'style-guide',
-                title: '风格指南',
-              },
-              {
                 path: 'locale',
                 title: '国际化',
               },
