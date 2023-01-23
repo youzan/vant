@@ -508,6 +508,10 @@ location.href = location.href.replace('youzan.github.io', 'vant-ui.github.io');
                 title: 'Advanced Usage',
               },
               {
+                path: 'faq',
+                title: 'FAQ',
+              },
+              {
                 path: 'changelog',
                 title: 'Changelog',
               },
