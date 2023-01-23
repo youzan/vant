@@ -144,6 +144,7 @@ export default defineComponent({
     let startDistance: number;
     let doubleTapTimer: ReturnType<typeof setTimeout> | null;
     let touchStartTime: number;
+    let isImageMoved = false;
 
     const onTouchStart = (event: TouchEvent) => {
       const { touches } = event;
@@ -161,6 +162,9 @@ export default defineComponent({
       startMoveY = state.moveY;
       touchStartTime = Date.now();
 
+      // whether the image position is moved after scaling
+      isImageMoved = false;
+
       state.moving = fingerNum === 1 && state.scale !== 1;
       state.zooming = fingerNum === 2 && !offsetX.value;
 
@@ -175,23 +179,36 @@ export default defineComponent({
 
       touch.move(event);
 
-      if (state.moving || state.zooming) {
-        preventDefault(event, true);
-      }
-
       if (state.moving) {
         const { deltaX, deltaY } = touch;
         const moveX = deltaX.value + startMoveX;
         const moveY = deltaY.value + startMoveY;
+
+        // if the image is moved to the edge, no longer trigger move,
+        // allow user to swipe to next image
+        if (
+          (moveX > maxMoveX.value || moveX < -maxMoveX.value) &&
+          !isImageMoved
+        ) {
+          state.moving = false;
+          return;
+        }
+
+        isImageMoved = true;
+        preventDefault(event, true);
         state.moveX = clamp(moveX, -maxMoveX.value, maxMoveX.value);
         state.moveY = clamp(moveY, -maxMoveY.value, maxMoveY.value);
       }
 
-      if (state.zooming && touches.length === 2) {
-        const distance = getDistance(touches);
-        const scale = (startScale * distance) / startDistance;
+      if (state.zooming) {
+        preventDefault(event, true);
 
-        setScale(scale);
+        if (touches.length === 2) {
+          const distance = getDistance(touches);
+          const scale = (startScale * distance) / startDistance;
+
+          setScale(scale);
+        }
       }
     };
 
