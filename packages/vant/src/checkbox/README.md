@@ -98,6 +98,14 @@ export default {
 };
 ```
 
+### Left Label
+
+Set `label-position` prop to `'left'` to adjust the label position to the left of the Checkbox.
+
+```html
+<van-checkbox v-model="checked" label-position="left">Checkbox</van-checkbox>
+```
+
 ### Disable Label Click
 
 ```html

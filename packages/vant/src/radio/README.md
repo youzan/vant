@@ -130,6 +130,17 @@ export default {
 };
 ```
 
+### Left Label
+
+Set `label-position` prop to `'left'` to adjust the label position to the left of the Radio.
+
+```html
+<van-radio-group v-model="checked">
+  <van-radio name="1" label-position="left">Radio 1</van-radio>
+  <van-radio name="2" label-position="left">Radio 2</van-radio>
+</van-radio-group>
+```
+
 ### Disable Label Click
 
 ```html

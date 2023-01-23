@@ -17,6 +17,7 @@ const t = useTranslate({
     customIconSize: '自定义大小',
     customColor: '自定义颜色',
     customShape: '自定义形状',
+    leftLabel: '左侧文本',
     title3: '复选框组',
     title4: '限制最大可选数',
     title5: '搭配单元格组件使用',
@@ -32,6 +33,7 @@ const t = useTranslate({
     customIconSize: 'Custom Icon Size',
     customColor: 'Custom Color',
     customShape: 'Custom Shape',
+    leftLabel: 'Left Label',
     title3: 'Checkbox Group',
     title4: 'Maximum amount of checked options',
     title5: 'Inside a Cell',
@@ -50,6 +52,7 @@ const state = reactive({
   checkboxShape: true,
   checkboxLabel: true,
   checkboxIcon: true,
+  leftLabel: false,
   list: ['a', 'b'],
   result: ['a', 'b'],
   result2: [],
@@ -115,6 +118,12 @@ const toggleAll = () => {
       <template #icon="{ checked }">
         <img :src="checked ? activeIcon : inactiveIcon" />
       </template>
+    </van-checkbox>
+  </demo-block>
+
+  <demo-block :title="t('leftLabel')">
+    <van-checkbox v-model="state.leftLabel" label-position="left">
+      {{ t('leftLabel') }}
     </van-checkbox>
   </demo-block>
 
