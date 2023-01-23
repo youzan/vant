@@ -106,6 +106,14 @@ export default {
 };
 ```
 
+### 左侧文本
+
+将 `label-position` 属性设置为 `'left'`，可以将文本位置调整到复选框左侧。
+
+```html
+<van-checkbox v-model="checked" label-position="left">复选框</van-checkbox>
+```
+
 ### 禁用文本点击
 
 设置 `label-disabled` 属性后，点击图标以外的内容不会触发复选框切换。
