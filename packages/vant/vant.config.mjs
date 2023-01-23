@@ -520,6 +520,10 @@ location.href = location.href.replace('youzan.github.io', 'vant-ui.github.io');
                 title: '4.0 Release Note',
               },
               {
+                path: 'migrate-from-v3',
+                title: 'Upgrade from v3 to v4',
+              },
+              {
                 path: 'design',
                 title: 'Design Resources',
               },
