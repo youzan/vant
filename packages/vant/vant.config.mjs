@@ -524,6 +524,10 @@ location.href = location.href.replace('youzan.github.io', 'vant-ui.github.io');
                 title: 'Upgrade from v3 to v4',
               },
               {
+                path: 'contribution',
+                title: 'Contribution Guide',
+              },
+              {
                 path: 'design',
                 title: 'Design Resources',
               },
