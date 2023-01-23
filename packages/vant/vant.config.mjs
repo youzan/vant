@@ -516,6 +516,10 @@ location.href = location.href.replace('youzan.github.io', 'vant-ui.github.io');
                 title: 'Changelog',
               },
               {
+                path: 'release-note-v4',
+                title: '4.0 Release Note',
+              },
+              {
                 path: 'design',
                 title: 'Design Resources',
               },
