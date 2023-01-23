@@ -93,6 +93,7 @@ export default {
     margin: 0 0 40px;
     color: var(--van-doc-text-color-4);
     font-size: 14px;
+    line-height: 1.6;
   }
 }
 </style>
