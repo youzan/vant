@@ -116,6 +116,12 @@ export default {
 | offset | The component will not display until the scroll offset reaches this value | _number_ | `200` |
 | teleport | Specifies a target element where BackTop will be mounted | _string \| Element_ | `body` |
 
+### Events
+
+| Event | Description                       | Arguments           |
+| ----- | --------------------------------- | ------------------- |
+| click | Emitted when Component is clicked | _event: MouseEvent_ |
+
 ### Slots
 
 | Name    | Description               |
