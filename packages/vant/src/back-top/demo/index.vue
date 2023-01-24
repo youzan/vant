@@ -11,12 +11,14 @@ const t = useTranslate({
     backTop: '返回顶部',
     customContent: '自定义内容',
     customPosition: '自定义位置',
+    immediateScroll: '瞬间滚动',
     setScrollTarget: '设置滚动目标',
   },
   'en-US': {
     backTop: 'Back Top',
     customContent: 'Custom Content',
     customPosition: 'Custom Position',
+    immediateScroll: 'Immediate Scroll',
     setScrollTarget: 'Set Scroll Target',
   },
 });
@@ -50,6 +52,11 @@ const targetEl = ref<HTMLElement>();
         <van-cell v-for="item in list" :key="item" :title="item" />
         <van-back-top v-if="activeTab === 3" :target="targetEl" bottom="30vh" />
       </div>
+    </van-tab>
+
+    <van-tab :title="t('immediateScroll')">
+      <van-cell v-for="item in list" :key="item" :title="item" />
+      <van-back-top v-if="activeTab === 4" immediate />
     </van-tab>
   </van-tabs>
 </template>

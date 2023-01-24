@@ -23,7 +23,9 @@ app.use(BackTop);
 请滚动右侧的示例页面，当页面滚动 `200px` 时，右下角会出现返回顶部按钮。
 
 ```html
-<van-cell v-for="item in list" :key="item" :title="item" /> <van-back-top />
+<van-cell v-for="item in list" :key="item" :title="item" />
+
+<van-back-top />
 ```
 
 ```js
@@ -106,6 +108,14 @@ export default {
 };
 ```
 
+### 瞬间滚动
+
+当设置 `immediate` 属性后，页面滚动的过程不再有过渡效果，而是瞬间滚动到顶部。
+
+```html
+<van-back-top immediate />
+```
+
 ## API
 
 ### Props
@@ -117,6 +127,7 @@ export default {
 | bottom | 距离页面底部的距离，默认单位为 `px` | _number \| string_ | `40` |
 | offset | 滚动高度达到此参数值时才显示组件 | _number_ | `200` |
 | teleport | 指定挂载的节点，等同于 Teleport 组件的 [to 属性](https://v3.cn.vuejs.org/api/built-in-components.html#teleport) | _string \| Element_ | `body` |
+| immediate `v4.0.9` | 是否瞬间滚动到顶部 | _boolean_ | `false` |
 
 ### Events
 

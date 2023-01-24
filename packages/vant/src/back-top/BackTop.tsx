@@ -35,6 +35,7 @@ export const backTopProps = {
   bottom: numericProp,
   target: [String, Object] as PropType<TeleportProps['to']>,
   offset: makeNumericProp(200),
+  immediate: Boolean,
   teleport: {
     type: [String, Object] as PropType<TeleportProps['to']>,
     default: 'body',
@@ -66,7 +67,7 @@ export default defineComponent({
       emit('click', event);
       scrollParent.value?.scrollTo({
         top: 0,
-        behavior: 'smooth',
+        behavior: props.immediate ? 'auto' : 'smooth',
       });
     };
 
