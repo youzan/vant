@@ -51,6 +51,17 @@ exports[`should render demo and match snapshot 1`] = `
           Set Scroll Target
         </span>
       </div>
+      <div id="van-tabs-4"
+           role="tab"
+           class="van-tab van-tab--line van-tab--grow"
+           tabindex="-1"
+           aria-selected="false"
+           aria-controls="van-tab"
+      >
+        <span class="van-tab__text">
+          Immediate Scroll
+        </span>
+      </div>
       <div class="van-tabs__line"
            style="transform: translateX(50px) translateX(-50%);"
       >
@@ -437,6 +448,14 @@ exports[`should render demo and match snapshot 1`] = `
          class="van-tab__panel"
          tabindex="-1"
          aria-labelledby="van-tabs-3"
+         style="display: none;"
+    >
+    </div>
+    <div id="van-tab"
+         role="tabpanel"
+         class="van-tab__panel"
+         tabindex="-1"
+         aria-labelledby="van-tabs-4"
          style="display: none;"
     >
     </div>
