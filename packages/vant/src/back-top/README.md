@@ -23,7 +23,9 @@ app.use(BackTop);
 Please scroll the demo page to display the back top button.
 
 ```html
-<van-cell v-for="item in list" :key="item" :title="item" /> <van-back-top />
+<van-cell v-for="item in list" :key="item" :title="item" />
+
+<van-back-top />
 ```
 
 ```js
@@ -104,6 +106,14 @@ export default {
 };
 ```
 
+### Immediate Scroll
+
+Add `immediate` prop to scroll to top immediately.
+
+```html
+<van-back-top immediate />
+```
+
 ## API
 
 ### Props
@@ -115,6 +125,7 @@ export default {
 | bottom | Bottom distance of the page, the default unit is px | _number \| string_ | `40` |
 | offset | The component will not display until the scroll offset reaches this value | _number_ | `200` |
 | teleport | Specifies a target element where BackTop will be mounted | _string \| Element_ | `body` |
+| immediate `v4.0.9` | Whether to scroll to top immediately | _boolean_ | `false` |
 
 ### Events
 
