@@ -79,3 +79,23 @@ Current supported languages:
 ### Add new language
 
 If you can’t find the language you need, please send us a Pull Request to add the new language pack, you can refer to [Add German language pack](https://github.com/vant-ui/vant/pull/7245) PR.
+
+### Get Current Lang
+
+You can get the current language using `useCurrentLang` method.
+
+- **Type:**
+
+```ts
+function useCurrentLang(): Ref<string>;
+```
+
+- **Example:**
+
+```ts
+import { useCurrentLang } from 'vant';
+
+const currentLang = useCurrentLang();
+
+console.log(currentLang.value); // --> 'en-US'
+```

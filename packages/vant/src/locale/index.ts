@@ -25,4 +25,6 @@ export const Locale = {
   },
 };
 
+export const useCurrentLang = () => lang;
+
 export default Locale;
