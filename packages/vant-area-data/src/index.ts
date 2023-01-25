@@ -1,4 +1,8 @@
-export const areaList = {
+export const areaList: {
+  province_list: Record<string, string>;
+  city_list: Record<string, string>;
+  county_list: Record<string, string>;
+} = {
   province_list: {
     110000: '北京市',
     120000: '天津市',
@@ -3886,3 +3890,53 @@ export const areaList = {
     820204: '圣方济各堂区',
   },
 };
+
+type CascaderOption = {
+  text: string;
+  value: string;
+  children?: CascaderOption[];
+};
+
+const makeOption = (
+  text: string,
+  value: string,
+  children?: CascaderOption[]
+): CascaderOption => ({
+  text,
+  value,
+  children,
+});
+
+export function useCascaderAreaData() {
+  const {
+    city_list: city,
+    county_list: county,
+    province_list: province,
+  } = areaList;
+
+  const provinceMap = new Map<string, CascaderOption>();
+  Object.keys(province).forEach((code) => {
+    provinceMap.set(code.slice(0, 2), makeOption(province[code], code, []));
+  });
+
+  const cityMap = new Map<string, CascaderOption>();
+
+  Object.keys(city).forEach((code) => {
+    const option = makeOption(city[code], code, []);
+    cityMap.set(code.slice(0, 4), option);
+
+    const province = provinceMap.get(code.slice(0, 2));
+    if (province) {
+      province.children!.push(option);
+    }
+  });
+
+  Object.keys(county).forEach((code) => {
+    const city = cityMap.get(code.slice(0, 4));
+    if (city) {
+      city.children!.push(makeOption(county[code], code));
+    }
+  });
+
+  return Array.from(provinceMap.values());
+}
