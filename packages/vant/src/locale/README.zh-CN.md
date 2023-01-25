@@ -77,6 +77,26 @@ Locale.add(messages);
 
 > 在 [这里](https://github.com/vant-ui/vant/tree/main/packages/vant/src/locale/lang) 查看所有的语言包源文件。
 
+### 获取当前语言
+
+你可以通过 `useCurrentLang` 方法来获取当前使用的语言。
+
+- **类型：**
+
+```ts
+function useCurrentLang(): Ref<string>;
+```
+
+- **示例：**
+
+```ts
+import { useCurrentLang } from 'vant';
+
+const currentLang = useCurrentLang();
+
+console.log(currentLang.value); // --> 'zh-CN'
+```
+
 ## 常见问题
 
 ### 找不到所需的语言包？
