@@ -83,8 +83,8 @@ export default {
 
 <style lang="less">
 .van-doc-card {
-  margin-bottom: 24px;
-  padding: 24px;
+  margin-bottom: var(--van-doc-padding);
+  padding: 28px 28px 32px;
   background-color: var(--van-doc-background-2);
   border-radius: var(--van-doc-border-radius);
   overflow: auto;
@@ -253,7 +253,7 @@ export default {
   }
 
   > ul {
-    margin: 12px 0;
+    margin: 16px 0;
   }
 
   > ul li,
@@ -324,7 +324,7 @@ export default {
   padding: 0 0 75px;
 
   .van-doc-markdown-body {
-    padding: 24px;
+    padding: var(--van-doc-padding);
     overflow: hidden;
 
     h1,
@@ -344,7 +344,7 @@ export default {
     }
 
     h2 {
-      margin: 45px 0 20px;
+      margin: 52px 0 20px;
       font-size: 26px;
     }
   }
