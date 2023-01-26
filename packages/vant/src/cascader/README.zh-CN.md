@@ -274,13 +274,15 @@ export default {
 ```html
 <van-cascader v-model="code" title="请选择所在地区" :options="options">
   <template #options-top="{ tabIndex }">
-    <div class="current-level">当前为第 {{ tabIndex }} 级</div>
+    <div class="current-level">当前为第 {{ tabIndex + 1 }} 级</div>
   </template>
 </van-cascader>
 
 <style>
   .current-level {
-    padding: 10px 16px 0;
+    font-size: 14px;
+    padding: 16px 16px 0;
+    color: var(--van-gray-6);
   }
 </style>
 ```

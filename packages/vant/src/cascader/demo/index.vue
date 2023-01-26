@@ -310,7 +310,7 @@ const onFinish = (
         @finish="onFinish(customContentState, $event)"
       >
         <template #options-top="{ tabIndex }">
-          <div class="current-level">{{ t('currentLevel', tabIndex) }}</div>
+          <div class="current-level">{{ t('currentLevel', tabIndex + 1) }}</div>
         </template>
       </van-cascader>
     </van-popup>
@@ -319,6 +319,8 @@ const onFinish = (
 
 <style lang="less">
 .current-level {
-  padding: 10px 16px 0;
+  font-size: 14px;
+  padding: 16px 16px 0;
+  color: var(--van-gray-6);
 }
 </style>
