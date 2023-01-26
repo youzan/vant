@@ -7,7 +7,13 @@ import { useTranslate } from '../../../docs/site';
 import { deepClone } from '../../utils/deep-clone';
 import zhCNOptions from './area-zh-CN';
 import enUSOptions from './area-en-US';
+import { useCurrentLang } from '../../locale';
+import { useCascaderAreaData } from '@vant/area-data';
 import type { Numeric } from '../../utils';
+
+const lang = useCurrentLang();
+
+const cascaderAreaData = useCascaderAreaData();
 
 const t = useTranslate({
   'zh-CN': {
@@ -28,6 +34,7 @@ const t = useTranslate({
       { text: '宁波市', value: '330200' },
     ],
     currentLevel: (level: number) => `当前为第 ${level} 级`,
+    chinaAreaData: '中国省市区数据',
     customContent: '自定义选项上方内容',
     customFieldNames: '自定义字段名',
   },
@@ -49,6 +56,7 @@ const t = useTranslate({
       { text: 'Ningbo', value: '330200' },
     ],
     currentLevel: (level: number) => `Current level is ${level}`,
+    chinaAreaData: 'China Area Data',
     customContent: 'Custom Content',
     customFieldNames: 'Custom Field Names',
   },
@@ -63,6 +71,11 @@ type StateItem = {
 };
 
 const baseState = reactive<StateItem>({
+  show: false,
+  value: '',
+  result: '',
+});
+const chinaAreaDataState = reactive<StateItem>({
   show: false,
   value: '',
   result: '',
@@ -164,6 +177,31 @@ const onFinish = (
         :options="t('options')"
         @close="baseState.show = false"
         @finish="onFinish(baseState, $event)"
+      />
+    </van-popup>
+  </demo-block>
+
+  <demo-block v-if="lang === 'zh-CN'" card :title="t('chinaAreaData')">
+    <van-field
+      v-model="chinaAreaDataState.result"
+      is-link
+      readonly
+      :label="t('area')"
+      :placeholder="t('selectArea')"
+      @click="chinaAreaDataState.show = true"
+    />
+    <van-popup
+      v-model:show="chinaAreaDataState.show"
+      round
+      teleport="body"
+      position="bottom"
+    >
+      <van-cascader
+        v-model="chinaAreaDataState.value"
+        :title="t('selectArea')"
+        :options="cascaderAreaData"
+        @close="chinaAreaDataState.show = false"
+        @finish="onFinish(chinaAreaDataState, $event)"
       />
     </van-popup>
   </demo-block>
@@ -272,7 +310,7 @@ const onFinish = (
         @finish="onFinish(customContentState, $event)"
       >
         <template #options-top="{ tabIndex }">
-          <div class="current-level">{{ t('currentLevel', tabIndex) }}</div>
+          <div class="current-level">{{ t('currentLevel', tabIndex + 1) }}</div>
         </template>
       </van-cascader>
     </van-popup>
@@ -281,6 +319,8 @@ const onFinish = (
 
 <style lang="less">
 .current-level {
-  padding: 10px 16px 0;
+  font-size: 14px;
+  padding: 16px 16px 0;
+  color: var(--van-gray-6);
 }
 </style>

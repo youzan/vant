@@ -80,6 +80,68 @@ export default {
 };
 ```
 
+### 中国省市区数据
+
+Cascader 组件常用于选择省市区，Vant 提供了一份中国省市区数据，你可以安装 [@vant/area-data](https://github.com/vant-ui/vant/tree/main/packages/vant-area-data) npm 包来引入：
+
+```bash
+# 通过 npm
+npm i @vant/area-data
+
+# 通过 yarn
+yarn add @vant/area-data
+
+# 通过 pnpm
+pnpm add @vant/area-data
+```
+
+```html
+<van-field
+  v-model="fieldValue"
+  is-link
+  readonly
+  label="地区"
+  placeholder="请选择所在地区"
+  @click="show = true"
+/>
+<van-popup v-model:show="show" round position="bottom">
+  <van-cascader
+    v-model="cascaderValue"
+    title="请选择所在地区"
+    :options="options"
+    @close="show = false"
+    @finish="onFinish"
+  />
+</van-popup>
+```
+
+```js
+import { ref } from 'vue';
+import { useCascaderAreaData } from '@vant/area-data';
+
+export default {
+  setup() {
+    const show = ref(false);
+    const fieldValue = ref('');
+    const cascaderValue = ref('');
+    const options = useCascaderAreaData();
+    const onFinish = ({ selectedOptions }) => {
+      show.value = false;
+      fieldValue.value = selectedOptions.map((option) => option.text).join('/');
+    };
+    return {
+      show,
+      options,
+      onFinish,
+      fieldValue,
+      cascaderValue,
+    };
+  },
+};
+```
+
+> Tips: 中国的行政区划每年都会有变动，如果发现省市区数据未及时更新，欢迎提 Pull Request 帮助我们更新。你可以在[「国家统计局 - 全国区划代码」](http://www.stats.gov.cn/tjsj/tjbz/tjyqhdmhcxhfdm/) 和[「民政部 - 行政区划代码」](https://www.mca.gov.cn/article/sj/xzqh/1980/)上查询到最新数据，请根据官方数据进行核实。
+
 ### 自定义颜色
 
 通过 `active-color` 属性来设置选中状态的高亮颜色。
@@ -212,13 +274,15 @@ export default {
 ```html
 <van-cascader v-model="code" title="请选择所在地区" :options="options">
   <template #options-top="{ tabIndex }">
-    <div class="current-level">当前为第 {{ tabIndex }} 级</div>
+    <div class="current-level">当前为第 {{ tabIndex + 1 }} 级</div>
   </template>
 </van-cascader>
 
 <style>
   .current-level {
-    padding: 10px 16px 0;
+    font-size: 14px;
+    padding: 16px 16px 0;
+    color: var(--van-gray-6);
   }
 </style>
 ```
