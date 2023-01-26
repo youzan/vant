@@ -22,7 +22,7 @@
 - 🍭 Support Dark Mode
 - 🍭 Support Nuxt 3
 - 🍭 Support SSR
-- 🌍 Support i18n, built-in 20+ languages
+- 🌍 Support i18n, built-in 30+ languages
 
 ### Quickstart
 

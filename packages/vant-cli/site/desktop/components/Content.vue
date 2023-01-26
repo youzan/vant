@@ -185,7 +185,7 @@ export default {
   }
 
   > p {
-    margin-top: 8px;
+    margin-top: 16px;
     color: var(--van-doc-text-color-3);
     font-size: 15px;
     line-height: 26px;
@@ -253,7 +253,7 @@ export default {
   }
 
   > ul {
-    margin: 16px 0;
+    margin: 16px 0 0;
   }
 
   > ul li,
@@ -313,7 +313,7 @@ export default {
   > img,
   > p img {
     width: 100%;
-    margin: 16px 0;
+    margin: 16px 0 0;
     border-radius: var(--van-doc-border-radius);
   }
 }
