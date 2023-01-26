@@ -52,9 +52,9 @@ const areaList = {
 };
 ```
 
-### @vant/area-data
+### 中国省市区数据
 
-Vant 官方提供了一份默认的中国省市区数据，可以通过 [@vant/area-data](https://github.com/vant-ui/vant/tree/main/packages/vant-area-data) 引入：
+Vant 提供了一份中国省市区数据，你可以安装 [@vant/area-data](https://github.com/vant-ui/vant/tree/main/packages/vant-area-data) npm 包来引入：
 
 ```bash
 # 通过 npm

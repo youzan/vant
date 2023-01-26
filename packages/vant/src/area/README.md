@@ -50,9 +50,9 @@ export default {
 };
 ```
 
-### @vant/area-data
+### China Area Data
 
-Vant officially provides a default China area data, which can be imported through [@vant/area-data](https://github.com/vant-ui/vant/tree/main/packages/vant-area-data):
+Vant officially provides a default china area data, which can be imported through [@vant/area-data](https://github.com/vant-ui/vant/tree/main/packages/vant-area-data):
 
 ```bash
 # with npm
