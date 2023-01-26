@@ -49,6 +49,7 @@ Locale.add(messages);
 | 德语（正式）         | de-DE-formal | -        |
 | 希腊语               | el-GR        | `v3.5.0` |
 | 英语                 | en-US        | -        |
+| 世界语               | eo-EO        | `v4.0.9` |
 | 西班牙语             | es-ES        | -        |
 | 波斯语               | fa-IR        | `v3.5.0` |
 | 法语                 | fr-FR        | -        |

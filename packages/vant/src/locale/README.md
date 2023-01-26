@@ -48,6 +48,7 @@ Current supported languages:
 | German (formal)          | de-DE-formal | -        |
 | Greek                    | el-GR        | `v3.5.0` |
 | English                  | en-US        | -        |
+| Esperanto                | eo-EO        | `v4.0.9` |
 | Spanish (Spain)          | es-ES        | -        |
 | Farsi                    | fa-IR        | `v3.5.0` |
 | French                   | fr-FR        | -        |
