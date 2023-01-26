@@ -9,19 +9,19 @@ export default {
   noCoupon: 'Nessun coupon',
   nameEmpty: 'Inserisci il nome',
   addContact: 'Aggiungi contatto',
-  telInvalid: 'Numero di telefono errato',
+  telInvalid: 'Numero di telefono non valido',
   vanCalendar: {
     end: 'Fine',
     start: 'Inizio',
     title: 'Calendario',
     weekdays: [
-      'domenica',
-      'Lunedi',
-      'Martedì',
-      'mercoledì',
-      'giovedì',
-      'venerdì',
-      'Sabato',
+      'dom',
+      'lun',
+      'mar',
+      'mer',
+      'gio',
+      'ven',
+      'sab',
     ],
     monthTitle: (year: number, month: number) => `${year}/${month}`,
     rangePrompt: (maxRange: number) => `Scegli non più di ${maxRange} giorni`,
@@ -31,11 +31,11 @@ export default {
   },
   vanPagination: {
     prev: 'Precedente',
-    next: 'Avanti',
+    next: 'Successivo',
   },
   vanPullRefresh: {
-    pulling: 'Tiri per aggiornare...',
-    loosing: 'Largo per rinfrescare...',
+    pulling: 'Tira per aggiornare...',
+    loosing: 'Rilascia per aggiornare...',
   },
   vanSubmitBar: {
     label: 'Totale:',
@@ -46,7 +46,7 @@ export default {
     condition: (condition: number) => `Almeno ${condition}`,
   },
   vanCouponCell: {
-    title: 'Buono',
+    title: 'Coupon',
     count: (count: number) => `Hai ${count} coupon`,
   },
   vanCouponList: {
