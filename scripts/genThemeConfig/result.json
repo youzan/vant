@@ -1894,6 +1894,62 @@
                 "preview": {
                     "template": "<van-list-view :filterable=\"true\" pageable=\"load-more\" :data-source=\"[1,2,3,4,5]\">\n    <template #item=\"scope\"><van-text :text=\"'动态'+scope.item\"></van-text>\n</template>\n</van-list-view>"
                 }
+            },
+            {
+                "id": "4fcd4dfd-683b-4d7e-9210f-gv9sdf08e0899nbnanb112eeeea1",
+                "name": "van-fieldinput",
+                "title": "单行输入",
+                "toPosition": "fieldinput",
+                "type": [],
+                "cssProperty": {
+                    "--van-fieldinput-text-color": {
+                        "type": "color",
+                        "desc": "输入框文字颜色"
+                    },
+                    "--van-fieldinput-placeholder-color": {
+                        "type": "color",
+                        "desc": "输入框占位提示文字颜色"
+                    },
+                    "--van-fieldinput-disabled-color": {
+                        "type": "color",
+                        "desc": "输入框禁用态文字颜色"
+                    },
+                    "--van-fieldinput-line-height": {
+                        "type": "input",
+                        "desc": "输入框最小高度"
+                    }
+                },
+                "preview": {
+                    "template": "<van-fieldinput placeholder=\"请输入\"></van-fieldinput>"
+                }
+            },
+            {
+                "id": "4fcd4dfd-683b-4d7e-9210f-gv9sdf08e0899nbnanb112eeeea2",
+                "name": "van-fieldtextarea",
+                "title": "多行输入",
+                "toPosition": "fieldtextarea",
+                "type": [],
+                "cssProperty": {
+                    "--van-fieldtextarea-text-color": {
+                        "type": "color",
+                        "desc": "输入框文字颜色"
+                    },
+                    "--van-fieldtextarea-placeholder-color": {
+                        "type": "color",
+                        "desc": "输入框占位提示文字颜色"
+                    },
+                    "--van-fieldtextarea-disabled-color": {
+                        "type": "color",
+                        "desc": "输入框禁用态文字颜色"
+                    },
+                    "--van-fieldtextarea-line-height": {
+                        "type": "input",
+                        "desc": "输入框最小高度"
+                    }
+                },
+                "preview": {
+                    "template": "<van-fieldtextarea placeholder=\"请输入\"></van-fieldtextarea>"
+                }
             }
         ]
     }

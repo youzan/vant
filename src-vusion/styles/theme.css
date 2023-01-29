@@ -782,6 +782,18 @@
   --van-list-view-input-border-color: #e3e4e5; /* @type color */ /* @desc 输入框边框颜色 */
   --van-list-view-input-border-radius: 3px; /* @desc 输入框圆角 */
   --van-list-view-input-color: #333; /* @type color */ /* @desc 输入框文字颜色 */
+
+  /* @component van-fieldinput */
+  --van-fieldinput-text-color: #333; /* @type color */ /* @desc 输入框文字颜色 */
+  --van-fieldinput-placeholder-color: #c8c9cc; /* @type color */ /* @desc 输入框占位提示文字颜色 */
+  --van-fieldinput-disabled-color: #c8c9cc; /* @type color */ /* @desc 输入框禁用态文字颜色 */
+  --van-fieldinput-line-height: 24px; /* @desc 输入框最小高度 */
+
+  /* @component van-fieldtextarea */
+  --van-fieldtextarea-text-color: #333; /* @type color */ /* @desc 输入框文字颜色 */
+  --van-fieldtextarea-placeholder-color: #c8c9cc; /* @type color */ /* @desc 输入框占位提示文字颜色 */
+  --van-fieldtextarea-disabled-color: #c8c9cc; /* @type color */ /* @desc 输入框禁用态文字颜色 */
+  --van-fieldtextarea-line-height: 24px; /* @desc 输入框最小高度 */
 }
 
 

@@ -17,7 +17,7 @@
     min-width: 0; // for flex-shrink in field__button
     margin: 0;
     padding: 0;
-    color: @field-input-text-color;
+    color: var(--van-fieldinput-text-color);
     line-height: inherit;
     text-align: inherit;
     background-color: transparent;
@@ -25,15 +25,15 @@
     resize: none;
 
     &::placeholder {
-      color: @field-placeholder-text-color;
+      color: var(--van-fieldinput-placeholder-color);
     }
 
     &:disabled {
-      color: @field-input-disabled-text-color;
+      color: var(--van-fieldinput-disabled-color);
       cursor: not-allowed;
       opacity: 1;
       // fix disabled color in mobile safari
-      -webkit-text-fill-color: @field-input-disabled-text-color;
+      -webkit-text-fill-color: var(--van-fieldinput-disabled-color);
     }
 
     &:read-only {
@@ -53,14 +53,14 @@
     &--custom {
       display: flex;
       align-items: center;
-      min-height: @cell-line-height;
+      min-height: var(--van-fieldinput-line-height);
     }
 
     // for ios wechat
     &[type='date'],
     &[type='time'],
     &[type='datetime-local'] {
-      min-height: @cell-line-height;
+      min-height: var(--van-fieldinput-line-height);
     }
 
     // for safari

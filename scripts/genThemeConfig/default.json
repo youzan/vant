@@ -433,5 +433,13 @@
     "--van-list-view-input-border-width": "1px",
     "--van-list-view-input-border-color": "#e3e4e5",
     "--van-list-view-input-border-radius": "3px",
-    "--van-list-view-input-color": "#333"
+    "--van-list-view-input-color": "#333",
+    "--van-fieldinput-text-color": "#333",
+    "--van-fieldinput-placeholder-color": "#c8c9cc",
+    "--van-fieldinput-disabled-color": "#c8c9cc",
+    "--van-fieldinput-line-height": "24px",
+    "--van-fieldtextarea-text-color": "#333",
+    "--van-fieldtextarea-placeholder-color": "#c8c9cc",
+    "--van-fieldtextarea-disabled-color": "#c8c9cc",
+    "--van-fieldtextarea-line-height": "24px"
 }
