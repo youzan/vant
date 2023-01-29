@@ -146,10 +146,10 @@ export default {
 .root {
     display: flex;
     flex-direction: column;
-    background: #fff;
+    background: var(--van-list-view-bgcolor);
     /* border: 1px solid var(--list-view-border-color); */
     border-radius: 4px;
-    height: 400px;
+    height: var(--van-list-view-height);
     min-width: 280px;
     max-width: 100%;
 }
@@ -204,6 +204,15 @@ export default {
 .filter[class][class] {
     margin: 12px;
     width: calc(100% - 24px);
+
+    height: var(--van-list-view-input-height);
+    padding: 0 var(--van-list-view-input-padding-x);
+    line-height: calc(var(--van-list-view-input-height) - var(--van-list-view-input-border-width) * 2);
+    background: var(--van-list-view-input-background);
+    border: var(--van-list-view-input-border-width) solid var(--van-list-view-input-border-color);
+    border-radius: var(--van-list-view-input-border-radius);
+    cursor: text;
+    color: var(--van-list-view-input-color);
 }
 
 .pagination {

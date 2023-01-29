@@ -772,6 +772,16 @@
   --van-cardu-head-margin-right: 12px; /* @desc 头部右外边距 */
   --van-cardu-content-margin-left: 12px; /* @desc 内容区左外边距 */
   --van-cardu-content-margin-right: 12px; /* @desc 内容区右外边距 */
+
+  /* @component van-list-view */
+  --van-list-view-height: 400px; /* @desc 默认高度 */
+  --van-list-view-bgcolor: #fff; /* @type color */ /* @desc 背景颜色 */
+  --van-list-view-input-height: 30px; /* @desc 输入框高度 */
+  --van-list-view-input-padding-x: 8px; /* @desc 输入框左右内边距 */
+  --van-list-view-input-border-width: 1px; /* @desc 输入框边框宽度 */
+  --van-list-view-input-border-color: #e3e4e5; /* @type color */ /* @desc 输入框边框颜色 */
+  --van-list-view-input-border-radius: 3px; /* @desc 输入框圆角 */
+  --van-list-view-input-color: #333; /* @type color */ /* @desc 输入框文字颜色 */
 }
 
 

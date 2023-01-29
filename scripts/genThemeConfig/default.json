@@ -410,7 +410,7 @@
     "--van-tag-warning-color": "var(--van-brand-problem)",
     "--van-tag-default-color": "#969799",
     "--van-tag-plain-background-color": "#ffffff",
-    "--van-cardu-padding-bottom": "10px;",
+    "--van-cardu-padding-bottom": "10px",
     "--van-cardu-backgroundcolor": "#fff",
     "--van-cardu-head-margin-bottom": "8px",
     "--van-cardu-head-margin-top": "12px",
@@ -425,5 +425,13 @@
     "--van-grid-view-input-border-width": "1px",
     "--van-grid-view-input-border-color": "#e3e4e5",
     "--van-grid-view-input-border-radius": "3px",
-    "--van-grid-view-input-color": "#333"
+    "--van-grid-view-input-color": "#333",
+    "--van-list-view-height": "400px",
+    "--van-list-view-bgcolor": "#fff",
+    "--van-list-view-input-height": "30px",
+    "--van-list-view-input-padding-x": "8px",
+    "--van-list-view-input-border-width": "1px",
+    "--van-list-view-input-border-color": "#e3e4e5",
+    "--van-list-view-input-border-radius": "3px",
+    "--van-list-view-input-color": "#333"
 }
