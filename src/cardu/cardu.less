@@ -1,7 +1,7 @@
 .van-cardu__wrap {
   // padding: 12px 16px;
-  padding-bottom: 10px;
-  background-color: #fff;
+  padding-bottom: var(--van-cardu-padding-bottom);
+  background-color: var(--van-cardu-backgroundcolor);
 
   &--border {
     border: 0.5px solid #E5E5E5;
@@ -26,14 +26,14 @@
 }
 .van-cardu__head {
     line-height: 1;
-    margin-bottom: 8px;
-    margin-top: 12px;
-    margin-left: 12px;
-    margin-right: 12px;
+    margin-bottom: var(--van-cardu-head-margin-bottom);
+    margin-top: var(--van-cardu-head-margin-top);
+    margin-left: var(--van-cardu-head-margin-left);
+    margin-right: var(--van-cardu-head-margin-right);
 }
 .van-cardu__content {
-  margin-left: 12px;
-  margin-right: 12px;
+  margin-left: var(--van-cardu-content-margin-left);
+  margin-right: var(--van-cardu-content-margin-right);
 }
 
 .van-cardu__divider {
