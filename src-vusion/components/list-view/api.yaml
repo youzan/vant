@@ -153,6 +153,11 @@
       type: boolean
       default: false
       description: 是否使用后端过滤
+    - name: hiddenempty
+      title: 是否隐藏空态文案
+      type: boolean
+      default: false
+      description: 是否隐藏空态文案
     - name: placeholder
       title: 筛选输入框的占位符
       type: string

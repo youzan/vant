@@ -45,10 +45,10 @@
             <div :class="$style.status" v-else-if="pageable === 'load-more' && currentDataSource && currentDataSource.hasMore() && !notext">
                 <u-link @click="load(true)">{{ $t('loadMore') }}</u-link>
             </div>
-            <div :class="$style.status" v-else-if="(pageable === 'auto-more' || pageable === 'load-more') && currentDataSource && !currentDataSource.hasMore() && !$env.VUE_APP_DESIGNER && !notext">
+            <div :class="$style.status" v-else-if="(pageable === 'auto-more' || pageable === 'load-more') && currentDataSource && !currentDataSource.hasMore() && !$env.VUE_APP_DESIGNER && !notext && !hiddenempty">
                 {{ $t('noMore') }}
             </div>
-            <div :class="$style.status" v-else-if="currentData && !currentData.length && !notext">
+            <div :class="$style.status" v-else-if="currentData && !currentData.length && !notext && !hiddenempty">
                 <slot name="empty">{{ emptyText }}</slot>
             </div>
         </div>
@@ -89,6 +89,7 @@ export default {
         successDuration: 500,
         pullDistance: 50,
         notext: { type: Boolean, default: false },
+        hiddenempty: { type: Boolean, default: false },
     },
     data() {
       return {
