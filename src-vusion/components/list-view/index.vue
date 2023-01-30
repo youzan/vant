@@ -48,7 +48,7 @@
             <div :class="$style.status" v-else-if="(pageable === 'auto-more' || pageable === 'load-more') && currentDataSource && !currentDataSource.hasMore() && !$env.VUE_APP_DESIGNER && !notext && !hiddenempty">
                 {{ $t('noMore') }}
             </div>
-            <div :class="$style.status" v-else-if="currentData && !currentData.length && !notext && !hiddenempty">
+            <div :class="$style.status" v-else-if="currentData && !currentData.length && !notext">
                 <slot name="empty">{{ emptyText }}</slot>
             </div>
         </div>
