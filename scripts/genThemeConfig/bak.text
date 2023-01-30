@@ -1,216 +1,188 @@
-{
-  "id": "4fcd4dfd-683b-4d7e-920f-a6d1a0cabd00",
-  "name": "van-slider",
-  "title": "滑块",
-  "toPosition": "slider",
-  "type": [],
-  "cssProperty": {
-      "--slider-active-background-color": {
-          "type": "color",
-          "desc": "激活态色"
-      },
-      "--slider-inactive-background-color": {
-          "type": "color",
-          "desc": "非激活态色"
-      },
-      "--slider-bar-height": {
-          "type": "input",
-          "desc": "进度条高度"
-      },
-      "--slider-button-width": {
-          "type": "input",
-          "desc": "进度条滑块宽度"
-      },
-      "--slider-button-height": {
-          "type": "input",
-          "desc": "进度条滑块高度"
-      },
-      "--slider-button-border-radius": {
-          "type": "input",
-          "desc": "进度条滑块圆角"
-      },
-      "--slider-button-background-color": {
-          "type": "color",
-          "desc": "进度条滑块背景色"
-      },
-      "--slider-button-box-shadow": {
-          "type": "input",
-          "desc": "进度条滑块阴影"
-      }
-  },
-  "preview": {
-      "template": "<van-slider  :value.sync=\"variable2\" > </van-slider>",
-      "script": "export default {\n    data() {\n        return {\n            variable2: '',\n        };\n    },\n};"
-  }
-},
-{
-  "id": "4fcd4dfd-683b-4d7e-920f-a6d1a0cab222",
-  "name": "van-progress",
-  "title": "进度条",
-  "toPosition": "progress",
-  "type": [],
-  "cssProperty": {
-      "--progress-height": {
-          "type": "input"
-      },
-      "--progress-color": {
-          "type": "color"
-      },
-      "--progress-background-color": {
-          "type": "color"
-      },
-      "--progress-pivot-padding": {
-          "type": "input"
-      },
-      "--progress-pivot-text-color": {
-          "type": "color"
-      },
-      "--progress-pivot-font-size": {
-          "type": "input"
-      },
-      "--progress-pivot-line-height": {
-          "type": "input"
-      },
-      "--progress-pivot-background-color": {
-          "type": "color"
-      }
-  },
-  "preview": {
-      "template": "  <van-progress percentage=\"50\" />"
-  }
-},
-{
-  "id": "4fcd4dfd-683b-4d7e-920f-a6d1fa0abd36",
-  "name": "van-circle",
-  "title": "环形进度条",
-  "toPosition": "circle",
-  "type": [],
-  "cssProperty": {
-      "--circle-size": {
-          "type": "input"
-      },
-      "--circle-color": {
-          "type": "color"
-      },
-      "--circle-layer-color": {
-          "type": "color"
-      },
-      "--circle-text-color": {
-          "type": "color"
-      },
-      "--circle-text-font-weight": {
-          "type": "input"
-      },
-      "--circle-text-font-size": {
-          "type": "input"
-      },
-      "--circle-text-line-height": {
-          "type": "input"
-      }
-  },
-  "preview": {
-      "template": "  <van-circle  rate=\"30\" speed=\"100\"  />"
-  }
-},
-{
-  "id": "4fcd4dfd-683b-4d7e-920f-a6d1fa0fab6",
-  "name": "van-rate",
-  "title": "评分",
-  "toPosition": "rate",
-  "type": [],
-  "cssProperty": {
-      "--rate-icon-size": {
-          "type": "input"
-      },
-      "--rate-icon-gutter": {
-          "type": "input"
-      },
-      "--rate-icon-void-color": {
-          "type": "color"
-      },
-      "--rate-icon-full-color": {
-          "type": "input"
-      },
-      "--rate-icon-disabled-color": {
-          "type": "color"
-      }
-  },
-  "preview": {
-      "template": " <van-rate void-icon=\"star\" icon=\"star\" />"
-  }
-},
-{
-  "id": "4fcd4dfd-683b-4d7e-9210f-fdafdafda",
-  "name": "van-tag",
-  "title": "标签",
-  "toPosition": "tag",
-  "type": [],
-  "cssProperty": {
-      "--tag-padding": {
-          "type": "input"
-      },
-      "--tag-text-color": {
-          "type": "color"
-      },
-      "--tag-font-size": {
-          "type": "input"
-      },
-      "--tag-border-radius": {
-          "type": "input"
-      },
-      "--tag-line-height": {
-          "type": "input"
-      },
-      "--tag-medium-padding": {
-          "type": "input"
-      },
-      "--tag-large-padding": {
-          "type": "input"
-      },
-      "--tag-large-border-radius": {
-          "type": "input"
-      },
-      "--tag-large-font-size": {
-          "type": "input"
-      },
-      "--tag-round-border-radius": {
-          "type": "input"
-      },
-      "--tag-danger-color": {
-          "type": "color"
-      },
-      "--tag-primary-color": {
-          "type": "color"
-      },
-      "--tag-success-color": {
-          "type": "color"
-      },
-      "--tag-warning-color": {
-          "type": "color"
-      },
-      "--tag-default-color": {
-          "type": "color"
-      },
-      "--tag-plain-background-color": {
-          "type": "color"
-      }
-  },
-  "preview": {
-      "template": "<van-tag type=\"primary\" size=\"middle\">标签</van-tag>"
-  }
-}
-
-
-
-{
-              "id": "4d794918-b80f-4129-9f14-854de592e6d822898776",
-              "name": "van-row",
-              "title": "删格布局",
-              "toPosition": "row",
-              "type": [],
-              "cssProperty": {
-              },
-              "preview": {
-                  "template": "<van-row ref=\"row2\" gutter=\"0\">\n    <van-col ref=\"col4\" style=\"background-color:#4598b9;height:40px;\" span=\"8\"></van-col>\n    <van-col ref=\"col5\" style=\"background-color:#4c65de;\" span=\"8\"></van-col>\n    <van-col ref=\"col6\" style=\"background-color:#561ae3;\" span=\"8\"></van-col>\n</van-row>"
-              }
-          },
+            {
+                "id": "4fcd4dfd-683b-4d7e-9210f-gv9sdf08e0899nbna",
+                "name": "van-cardu",
+                "title": "卡片",
+                "toPosition": "cardu",
+                "type": [],
+                "cssProperty": {
+                    "--van-cardu-padding-bottom": {
+                        "type": "input",
+                        "desc": "底部内边距"
+                    },
+                    "--van-cardu-backgroundcolor": {
+                        "type": "color",
+                        "desc": "背景色"
+                    },
+                    "--van-cardu-head-margin-bottom": {
+                        "type": "input",
+                        "desc": "头部下外边距"
+                    },
+                    "--van-cardu-head-margin-top": {
+                        "type": "input",
+                        "desc": "头部上外边距"
+                    },
+                    "--van-cardu-head-margin-left": {
+                        "type": "input",
+                        "desc": "头部左外边距"
+                    },
+                    "--van-cardu-head-margin-right": {
+                        "type": "input",
+                        "desc": "头部右外边距"
+                    },
+                    "--van-cardu-content-margin-left": {
+                        "type": "input",
+                        "desc": "内容区左外边距"
+                    },
+                    "--van-cardu-content-margin-right": {
+                        "type": "input",
+                        "desc": "内容区右外边距"
+                    }
+                },
+                "preview": {
+                    "template": "<van-cardu ref=\"cardu1\">\n    <template #head ref=\"template1\">\n        <van-text ref=\"text1\" text=\"标题\"></van-text>\n    </template>\n    <van-text ref=\"text2\" text=\"卡片内容\"></van-text>\n</van-cardu>"
+                }
+            },
+            {
+                "id": "4fcd4dfd-683b-4d7e-9210f-gv9sdf08e0899nbnanba",
+                "name": "van-grid-view",
+                "title": "数据网格",
+                "toPosition": "grid-view",
+                "type": [],
+                "cssProperty": {
+                    "--van-grid-view-height": {
+                        "type": "input",
+                        "desc": "默认高度"
+                    },
+                    "--van-grid-view-bgcolor": {
+                        "type": "color",
+                        "desc": "背景颜色"
+                    },
+                    "--van-grid-view-input-height": {
+                        "type": "input",
+                        "desc": "输入框高度"
+                    },
+                    "--van-grid-view-input-padding-x": {
+                        "type": "input",
+                        "desc": "输入框左右内边距"
+                    },
+                    "--van-grid-view-input-border-width": {
+                        "type": "input",
+                        "desc": "输入框边框宽度"
+                    },
+                    "--van-grid-view-input-border-color": {
+                        "type": "color",
+                        "desc": "输入框边框颜色"
+                    },
+                    "--van-grid-view-input-border-radius": {
+                        "type": "input",
+                        "desc": "输入框圆角"
+                    },
+                    "--van-grid-view-input-color": {
+                        "type": "color",
+                        "desc": "输入框文字颜色"
+                    }
+                },
+                "preview": {
+                    "template": "<van-grid-view :col=\"0\" :col-width=\"150\" :filterable=\"true\" pageable=\"load-more\" :data-source=\"[1,2,3,4,5]\">\n    <template #item=\"scope\">\n<van-cardu>\n            <template #head>\n                <van-text :text=\"'动态'+scope.item\"></van-text>\n            </template>\n            <van-text text=\"卡片内容\"></van-text>\n        </van-cardu>\n</template>\n</van-grid-view>"
+                }
+            },
+            {
+                "id": "4fcd4dfd-683b-4d7e-9210f-gv9sdf08e0899nbnanb112eeeea",
+                "name": "van-list-view",
+                "title": "数据列表",
+                "toPosition": "list-view",
+                "type": [],
+                "cssProperty": {
+                    "--van-list-view-height": {
+                        "type": "input",
+                        "desc": "默认高度"
+                    },
+                    "--van-list-view-bgcolor": {
+                        "type": "color",
+                        "desc": "背景颜色"
+                    },
+                    "--van-list-view-input-height": {
+                        "type": "input",
+                        "desc": "输入框高度"
+                    },
+                    "--van-list-view-input-padding-x": {
+                        "type": "input",
+                        "desc": "输入框左右内边距"
+                    },
+                    "--van-list-view-input-border-width": {
+                        "type": "input",
+                        "desc": "输入框边框宽度"
+                    },
+                    "--van-list-view-input-border-color": {
+                        "type": "color",
+                        "desc": "输入框边框颜色"
+                    },
+                    "--van-list-view-input-border-radius": {
+                        "type": "input",
+                        "desc": "输入框圆角"
+                    },
+                    "--van-list-view-input-color": {
+                        "type": "color",
+                        "desc": "输入框文字颜色"
+                    }
+                },
+                "preview": {
+                    "template": "<van-list-view :filterable=\"true\" pageable=\"load-more\" :data-source=\"[1,2,3,4,5]\">\n    <template #item=\"scope\"><van-text :text=\"'动态'+scope.item\"></van-text>\n</template>\n</van-list-view>"
+                }
+            },
+            {
+                "id": "4fcd4dfd-683b-4d7e-9210f-gv9sdf08e0899nbnanb112eeeea1",
+                "name": "van-fieldinput",
+                "title": "单行输入",
+                "toPosition": "fieldinput",
+                "type": [],
+                "cssProperty": {
+                    "--van-fieldinput-text-color": {
+                        "type": "color",
+                        "desc": "输入框文字颜色"
+                    },
+                    "--van-fieldinput-placeholder-color": {
+                        "type": "color",
+                        "desc": "输入框占位提示文字颜色"
+                    },
+                    "--van-fieldinput-disabled-color": {
+                        "type": "color",
+                        "desc": "输入框禁用态文字颜色"
+                    },
+                    "--van-fieldinput-line-height": {
+                        "type": "input",
+                        "desc": "输入框最小高度"
+                    }
+                },
+                "preview": {
+                    "template": "<van-fieldinput placeholder=\"请输入\"></van-fieldinput>"
+                }
+            },
+            {
+                "id": "4fcd4dfd-683b-4d7e-9210f-gv9sdf08e0899nbnanb112eeeea2",
+                "name": "van-fieldtextarea",
+                "title": "多行输入",
+                "toPosition": "fieldtextarea",
+                "type": [],
+                "cssProperty": {
+                    "--van-fieldtextarea-text-color": {
+                        "type": "color",
+                        "desc": "输入框文字颜色"
+                    },
+                    "--van-fieldtextarea-placeholder-color": {
+                        "type": "color",
+                        "desc": "输入框占位提示文字颜色"
+                    },
+                    "--van-fieldtextarea-disabled-color": {
+                        "type": "color",
+                        "desc": "输入框禁用态文字颜色"
+                    },
+                    "--van-fieldtextarea-line-height": {
+                        "type": "input",
+                        "desc": "输入框最小高度"
+                    }
+                },
+                "preview": {
+                    "template": "<van-fieldtextarea placeholder=\"请输入\"></van-fieldtextarea>"
+                }
+            }
