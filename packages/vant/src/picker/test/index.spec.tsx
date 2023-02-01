@@ -46,7 +46,7 @@ test('should emit cancel event after clicking the cancel button', () => {
   ]);
 });
 
-test('should emit change event after draging the column', () => {
+test('should emit change event after draging the column', async () => {
   const wrapper = mount(Picker, {
     props: {
       columns: simpleColumn,
@@ -54,7 +54,7 @@ test('should emit change event after draging the column', () => {
   });
 
   triggerDrag(wrapper.find('.van-picker-column'), 0, -100);
-  wrapper.find('.van-picker-column ul').trigger('transitionend');
+  await wrapper.find('.van-picker-column ul').trigger('transitionend');
 
   expect(wrapper.emitted('change')).toEqual([
     [
