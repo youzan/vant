@@ -216,6 +216,10 @@ export default {
     color: var(--van-list-view-input-color);
 }
 
+.filter[class][class] [class^="u-input_input__"]::placeholder {
+  color: var(--van-list-view-placeholder-color);
+}
+
 .pagination {
     text-align: center;
     margin: 0 -12px;

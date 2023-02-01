@@ -1845,6 +1845,10 @@
                     "--van-grid-view-input-color": {
                         "type": "color",
                         "desc": "输入框文字颜色"
+                    },
+                    "--van-grid-view-placeholder-color": {
+                        "type": "color",
+                        "desc": "输入框占位提示文字颜色"
                     }
                 },
                 "preview": {
@@ -1889,6 +1893,10 @@
                     "--van-list-view-input-color": {
                         "type": "color",
                         "desc": "输入框文字颜色"
+                    },
+                    "--van-list-view-placeholder-color": {
+                        "type": "color",
+                        "desc": "输入框占位提示文字颜色"
                     }
                 },
                 "preview": {

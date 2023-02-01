@@ -772,6 +772,10 @@ export default {
   color: var(--van-grid-view-input-color);
 }
 
+.filter[class][class] [class^="u-input_input__"]::placeholder {
+  color: var(--van-grid-view-placeholder-color);
+}
+
 .pagination {
   text-align: center;
   margin: 0 -12px;
