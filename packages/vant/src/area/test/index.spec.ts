@@ -54,7 +54,7 @@ test('should watch modelValue prop and render correctly', async () => {
   ).toMatchSnapshot();
 });
 
-test('should emit change event after dragging options', () => {
+test('should emit change event after dragging options', async () => {
   const wrapper = mount(Area, {
     props: {
       areaList,
@@ -67,6 +67,7 @@ test('should emit change event after dragging options', () => {
   triggerDrag(columns[2], 0, -100);
   columns[2].find('ul').trigger('transitionend');
 
+  await later();
   const params = wrapper.emitted<PickerChangeEventParams[]>('change')?.[0];
   expect(params?.[0].selectedValues).toEqual(['120000', '120100', '120101']);
 });

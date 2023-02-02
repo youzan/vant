@@ -160,7 +160,9 @@ export default defineComponent({
         });
       }
 
-      emit('change', extend({ columnIndex }, getEventParams()));
+      nextTick(() => {
+        emit('change', extend({ columnIndex }, getEventParams()));
+      });
     };
 
     const onClickOption = (currentOption: PickerOption, columnIndex: number) =>
