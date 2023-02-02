@@ -19,6 +19,15 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 
 ## 更新内容
 
+### [v4.0.10](https://github.com/vant-ui/vant/compare/v4.0.9...v4.0.10)
+
+`2023-02-02`
+
+**Bug Fixes**
+
+- DatePicker: 修复 change 事件中日期参数不正确的问题 [#11529](https://github.com/vant-ui/vant/issues/11529)
+- Slider: 修复双滑块模式下无法正确拖动的问题 [#11526](https://github.com/vant-ui/vant/issues/11526) [#11534](https://github.com/vant-ui/vant/issues/11534)
+
 ### [v4.0.9](https://github.com/vant-ui/vant/compare/v4.0.8...v4.0.9)
 
 `2023-01-26`
