@@ -65,7 +65,7 @@ export default defineComponent({
     let startValue: SliderValue;
 
     const root = ref<HTMLElement>();
-    const slider = ref<HTMLElement>();
+    const slider = [ref<HTMLElement>(), ref<HTMLElement>()] as const;
     const dragStatus = ref<'start' | 'dragging' | ''>();
     const touch = useTouch();
 
@@ -291,7 +291,7 @@ export default defineComponent({
 
       return (
         <div
-          ref={slider}
+          ref={slider[index ?? 0]}
           role="slider"
           class={getButtonClassName(index)}
           tabindex={props.disabled ? undefined : 0}
@@ -321,9 +321,11 @@ export default defineComponent({
     updateValue(props.modelValue);
     useCustomFieldValue(() => props.modelValue);
 
-    // useEventListener will set passive to `false` to eliminate the warning of Chrome
-    useEventListener('touchmove', onTouchMove, {
-      target: root,
+    slider.forEach((item) => {
+      // useEventListener will set passive to `false` to eliminate the warning of Chrome
+      useEventListener('touchmove', onTouchMove, {
+        target: item,
+      });
     });
 
     return () => (
