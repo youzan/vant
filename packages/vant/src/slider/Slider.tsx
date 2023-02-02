@@ -323,7 +323,7 @@ export default defineComponent({
 
     // useEventListener will set passive to `false` to eliminate the warning of Chrome
     useEventListener('touchmove', onTouchMove, {
-      target: slider,
+      target: root,
     });
 
     return () => (
