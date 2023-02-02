@@ -19,6 +19,15 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 
 ## Details
 
+### [v4.0.10](https://github.com/vant-ui/vant/compare/v4.0.9...v4.0.10)
+
+`2023-02-02`
+
+**Bug Fixes**
+
+- DatePicker: fix the value is not updated in time of change event [#11529](https://github.com/vant-ui/vant/issues/11529)
+- Slider: fix button does not work properly in two-thumb mode [#11526](https://github.com/vant-ui/vant/issues/11526) [#11534](https://github.com/vant-ui/vant/issues/11534)
+
 ### [v4.0.9](https://github.com/vant-ui/vant/compare/v4.0.8...v4.0.9)
 
 `2023-01-26`
