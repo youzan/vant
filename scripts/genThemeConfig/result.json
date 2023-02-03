@@ -1814,41 +1814,37 @@
                 "toPosition": "grid-view",
                 "type": [],
                 "cssProperty": {
-                    "--van-grid-view-height": {
-                        "type": "input",
-                        "desc": "默认高度"
-                    },
                     "--van-grid-view-bgcolor": {
                         "type": "color",
                         "desc": "背景颜色"
                     },
                     "--van-grid-view-input-height": {
                         "type": "input",
-                        "desc": "输入框高度"
+                        "desc": "筛选框高度"
                     },
                     "--van-grid-view-input-padding-x": {
                         "type": "input",
-                        "desc": "输入框左右内边距"
+                        "desc": "筛选框左右内边距"
                     },
                     "--van-grid-view-input-border-width": {
                         "type": "input",
-                        "desc": "输入框边框宽度"
+                        "desc": "筛选框边框宽度"
                     },
                     "--van-grid-view-input-border-color": {
                         "type": "color",
-                        "desc": "输入框边框颜色"
+                        "desc": "筛选框边框颜色"
                     },
                     "--van-grid-view-input-border-radius": {
                         "type": "input",
-                        "desc": "输入框圆角"
+                        "desc": "筛选框圆角"
                     },
                     "--van-grid-view-input-color": {
                         "type": "color",
-                        "desc": "输入框文字颜色"
+                        "desc": "筛选框文字颜色"
                     },
                     "--van-grid-view-placeholder-color": {
                         "type": "color",
-                        "desc": "输入框占位提示文字颜色"
+                        "desc": "筛选框占位提示文字颜色"
                     }
                 },
                 "preview": {
@@ -1862,41 +1858,37 @@
                 "toPosition": "list-view",
                 "type": [],
                 "cssProperty": {
-                    "--van-list-view-height": {
-                        "type": "input",
-                        "desc": "默认高度"
-                    },
                     "--van-list-view-bgcolor": {
                         "type": "color",
                         "desc": "背景颜色"
                     },
                     "--van-list-view-input-height": {
                         "type": "input",
-                        "desc": "输入框高度"
+                        "desc": "筛选框高度"
                     },
                     "--van-list-view-input-padding-x": {
                         "type": "input",
-                        "desc": "输入框左右内边距"
+                        "desc": "筛选框左右内边距"
                     },
                     "--van-list-view-input-border-width": {
                         "type": "input",
-                        "desc": "输入框边框宽度"
+                        "desc": "筛选框边框宽度"
                     },
                     "--van-list-view-input-border-color": {
                         "type": "color",
-                        "desc": "输入框边框颜色"
+                        "desc": "筛选框边框颜色"
                     },
                     "--van-list-view-input-border-radius": {
                         "type": "input",
-                        "desc": "输入框圆角"
+                        "desc": "筛选框圆角"
                     },
                     "--van-list-view-input-color": {
                         "type": "color",
-                        "desc": "输入框文字颜色"
+                        "desc": "筛选框文字颜色"
                     },
                     "--van-list-view-placeholder-color": {
                         "type": "color",
-                        "desc": "输入框占位提示文字颜色"
+                        "desc": "筛选框占位提示文字颜色"
                     }
                 },
                 "preview": {
