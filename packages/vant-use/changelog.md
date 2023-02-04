@@ -1,5 +1,9 @@
 # Changelog
 
+## v1.5.0
+
+- `useEventListener` now returns a cleanup function
+
 ## v1.4.4
 
 - Fix `useChildren` not sort children correctly
