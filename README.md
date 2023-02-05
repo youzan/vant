@@ -4,7 +4,7 @@
 
 <h1 align="center">Vant</h1>
 
-<p align="center">Lightweight Mobile UI Components built on Vue</p>
+<p align="center">A lightweight Vue UI library for mobile web apps.</p>
 
 <p align="center">
     <img src="https://img.shields.io/npm/v/vant?style=flat-square" alt="npm version" />

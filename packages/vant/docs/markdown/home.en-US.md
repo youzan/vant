@@ -2,7 +2,7 @@
   <div class="van-doc-intro">
     <img class="van-doc-intro__logo" style="width: 120px; height: 120px;" src="https://fastly.jsdelivr.net/npm/@vant/assets/logo.png">
     <h2 style="margin: 0; font-size: 36px; line-height: 60px;">Vant</h2>
-    <p>Lightweight Mobile UI Components built on Vue</p>
+    <p>A lightweight Vue UI library for mobile web apps.</p>
   </div>
 </div>
 

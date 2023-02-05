@@ -6,5 +6,5 @@ apps:
     command: # 使用此命令启动服务，且不执行run
     root: ./ # 应用的启动目录
     name: Vant # 应用名称
-    description: Lightweight Mobile UI Components built on Vue # 应用描述
+    description: A lightweight Vue UI library for mobile web apps. # 应用描述
     autoOpen: true # 打开工作空间时是否自动开启预览（优先级高于根级 autoOpen)
