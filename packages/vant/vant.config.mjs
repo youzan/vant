@@ -43,7 +43,7 @@ location.href = location.href.replace('youzan.github.io', 'vant-ui.github.io');
       'zh-CN': {
         title: 'Vant 4',
         subtitle: '（适用于 Vue 3）',
-        description: '轻量、可靠的移动端组件库',
+        description: '轻量、可定制的移动端组件库',
         logo: 'https://fastly.jsdelivr.net/npm/@vant/assets/logo.png',
         langLabel: '中',
         links: [
@@ -482,7 +482,7 @@ location.href = location.href.replace('youzan.github.io', 'vant-ui.github.io');
       'en-US': {
         title: 'Vant 4',
         subtitle: ' (for Vue 3)',
-        description: 'A lightweight Vue UI library for mobile web apps.',
+        description: 'A lightweight, customizable Vue UI library for mobile web apps.',
         logo: 'https://fastly.jsdelivr.net/npm/@vant/assets/logo.png',
         langLabel: 'EN',
         links: [

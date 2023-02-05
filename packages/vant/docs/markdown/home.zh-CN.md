@@ -2,13 +2,13 @@
   <div class="van-doc-intro">
     <img class="van-doc-intro__logo" style="width: 120px; height: 120px;" src="https://fastly.jsdelivr.net/npm/@vant/assets/logo.png">
     <h2 style="margin: 0; font-size: 36px; line-height: 60px;">Vant</h2>
-    <p>轻量、可靠的移动端 Vue 组件库</p>
+    <p>轻量、可定制的移动端 Vue 组件库</p>
   </div>
 </div>
 
 ### 介绍
 
-Vant 是一个**轻量、可靠的移动端组件库**，于 2017 年开源。
+Vant 是一个**轻量、可定制的移动端组件库**，于 2017 年开源。
 
 目前 Vant 官方提供了 [Vue 2 版本](https://vant-contrib.gitee.io/vant/v2)、[Vue 3 版本](https://vant-contrib.gitee.io/vant)和[微信小程序版本](http://vant-contrib.gitee.io/vant-weapp)，并由社区团队维护 [React 版本](https://github.com/3lang3/react-vant)和[支付宝小程序版本](https://github.com/ant-move/Vant-Aliapp)。
 
