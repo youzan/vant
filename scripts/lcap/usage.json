@@ -4681,7 +4681,7 @@
                     "title": "是否隐藏空态文案",
                     "type": "boolean",
                     "default": false,
-                    "description": "是否隐藏空态文案"
+                    "description": "是否隐藏表格末尾“没有更多了”文案"
                 },
                 {
                     "name": "placeholder",
