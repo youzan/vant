@@ -98,6 +98,7 @@ export default defineComponent({
     let tabHeight: number;
     let lockScroll: boolean;
     let stickyFixed: boolean;
+    let observer: ResizeObserver | undefined;
 
     const root = ref<HTMLElement>();
     const navRef = ref<HTMLElement>();
@@ -443,6 +444,18 @@ export default defineComponent({
           });
         }
       }
+    );
+
+    watch(
+      () => root.value,
+      (el) => {
+        const isSupported = window && 'ResizeObserver' in window;
+        if (isSupported && el) {
+          observer = new ResizeObserver(setLine);
+          observer!.observe(el);
+        }
+      },
+      { immediate: true, flush: 'post' }
     );
 
     const init = () => {
