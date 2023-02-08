@@ -1,0 +1,12 @@
+{
+  "extends": [
+    "@vant",
+    "@nuxtjs/eslint-config-typescript"
+  ],
+  "rules": {
+    "import/no-relative-packages": "off",
+    "@typescript-eslint/no-unused-vars": [
+      "off"
+    ]
+  }
+}
