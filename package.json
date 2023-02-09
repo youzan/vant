@@ -27,7 +27,7 @@
     "lint": "vant-cli lint",
     "test": "vant-cli test",
     "copyimg": "node bin/copy-lcp-images ",
-    "build:vusion": "npm run check && vue-cli-service library-build --dest dist-theme && npm run copyimg",
+    "build:vusion": "npm run check && vue-cli-service library-build --dest dist-theme && npm run copyimg && node ./scripts/lcap",
     "build2": "vant-cli build",
     "build": "cross-env scene=desktop vant-cli build",
     "release": "vant-cli release",
