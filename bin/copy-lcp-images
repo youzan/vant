@@ -1,0 +1,29 @@
+#!/usr/bin/env node
+const fs = require('fs-extra');
+const config = require('../vusion.config.js');
+
+const components = config.docs.components.filter((component) => !component.href && !component.path && !component.deprecated);
+const copy = function (from, to) {
+    const pathExists = fs.pathExistsSync(from);
+    if (pathExists) {
+        fs.ensureDirSync(to);
+        fs.copySync(from, to);
+    }
+};
+
+components.forEach((component) => {
+  let to = `assets-package/src/${component.name}/screenshots`;
+  let to2 = `assets-package/src/${component.name}/drawings`;
+  let from = `src/${component.name}/screenshots`;
+  let from2 = `src/${component.name}/drawings`;
+  if (component.vusion) {
+    to = `assets-package/src-vusion/${component.name}/screenshots`
+    to2 = `assets-package/src-vusion/${component.name}/drawings`;
+    from = `src-vusion/components/${component.name}/screenshots`;
+    from2 = `src-vusion/components/${component.name}/drawings`;
+  }
+
+    copy(from, to);
+    copy(from2, to2);
+});
+
