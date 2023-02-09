@@ -60,6 +60,8 @@ export default createComponent({
 
   beforeDestroy() {
     if (this.popper) {
+      window.removeEventListener('animationend', this.popper.update);
+      window.removeEventListener('transitionend', this.popper.update);
       this.popper.destroy();
       this.popper = null;
     }
@@ -67,7 +69,7 @@ export default createComponent({
 
   methods: {
     createPopper() {
-      return createPopper(this.$refs.wrapper, this.$refs.popover.$el, {
+      const popper = createPopper(this.$refs.wrapper, this.$refs.popover.$el, {
         placement: this.placement,
         modifiers: [
           {
@@ -85,6 +87,9 @@ export default createComponent({
           },
         ],
       });
+      window.addEventListener('animationend', popper.update);
+      window.addEventListener('transitionend', popper.update);
+      return popper;
     },
 
     updateLocation() {
