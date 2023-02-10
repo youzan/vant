@@ -25,7 +25,7 @@ const areaCode = ref('');
 const showArea = ref(false);
 
 const onConfirm = ({ selectedOptions }: PickerConfirmEventParams) => {
-  areaCode.value = selectedOptions.map((item) => item.text).join('/');
+  areaCode.value = selectedOptions.map((item) => item!.text).join('/');
   showArea.value = false;
 };
 

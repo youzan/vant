@@ -466,7 +466,7 @@ export default {
     const showArea = ref(false);
     const onConfirm = ({ selectedOptions }) => {
       showArea.value = false;
-      areaCode.value = selectedOptions.map((item) => item.text).join('/');
+      result.value = selectedOptions.map((item) => item.text).join('/');
     };
 
     return {
