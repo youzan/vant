@@ -73,7 +73,6 @@ export default defineComponent({
       return (
         <div class={bem()}>
           <Toolbar
-            // fork from https://github.com/youzan/vant/blob/main/packages/vant/src/picker/Picker.tsx#L239
             v-slots={pick(slots, pickerToolbarSlots)}
             title={props.title}
             cancelButtonText={props.cancelButtonText}
