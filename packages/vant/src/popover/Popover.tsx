@@ -137,6 +137,8 @@ export default defineComponent({
 
         if (!popper) {
           popper = createPopperInstance();
+          window.addEventListener('animationend', updateLocation);
+          window.addEventListener('transitionend', updateLocation);
         } else {
           popper.setOptions(getPopoverOptions());
         }
@@ -217,6 +219,8 @@ export default defineComponent({
 
     onBeforeUnmount(() => {
       if (popper) {
+        window.removeEventListener('animationend', updateLocation);
+        window.removeEventListener('transitionend', updateLocation);
         popper.destroy();
         popper = null;
       }
