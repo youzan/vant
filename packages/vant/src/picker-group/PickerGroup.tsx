@@ -6,7 +6,7 @@ import {
 } from 'vue';
 
 // Utils
-import { extend, makeArrayProp, createNamespace } from '../utils';
+import { extend, pick, makeArrayProp, createNamespace } from '../utils';
 
 // Composables
 import { useChildren } from '@vant/use';
@@ -14,7 +14,10 @@ import { useChildren } from '@vant/use';
 // Components
 import { Tab } from '../tab';
 import { Tabs } from '../tabs';
-import Toolbar, { pickerToolbarProps } from '../picker/PickerToolbar';
+import Toolbar, {
+  pickerToolbarProps,
+  pickerToolbarSlots,
+} from '../picker/PickerToolbar';
 
 const [name, bem] = createNamespace('picker-group');
 
@@ -70,6 +73,7 @@ export default defineComponent({
       return (
         <div class={bem()}>
           <Toolbar
+            v-slots={pick(slots, pickerToolbarSlots)}
             title={props.title}
             cancelButtonText={props.cancelButtonText}
             confirmButtonText={confirmButtonText}
@@ -81,6 +85,7 @@ export default defineComponent({
             class={bem('tabs')}
             shrink
             animated
+            lazyRender={false}
           >
             {props.tabs.map((title, index) => (
               <Tab title={title} titleClass={bem('tab-title')}>

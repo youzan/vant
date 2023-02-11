@@ -1,10 +1,12 @@
 import {
   computed,
+  Comment,
   CSSProperties,
   defineComponent,
   ExtractPropTypes,
   Fragment,
   PropType,
+  Text,
   type VNode,
 } from 'vue';
 import { createNamespace } from '../utils';
@@ -47,7 +49,7 @@ function filterEmpty(children: VNode[] = []) {
     (c) =>
       !(
         c &&
-        ((typeof Comment !== 'undefined' && c.type === Comment) ||
+        (c.type === Comment ||
           (c.type === Fragment && c.children?.length === 0) ||
           (c.type === Text && (c.children as string).trim() === ''))
       )
