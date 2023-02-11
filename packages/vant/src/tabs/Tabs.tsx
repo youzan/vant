@@ -49,6 +49,7 @@ import { route, RouteProps } from '../composables/use-route';
 import { useRefs } from '../composables/use-refs';
 import { useExpose } from '../composables/use-expose';
 import { onPopupReopen } from '../composables/on-popup-reopen';
+import { useVisibilityChange } from '../composables/use-visibility-change';
 
 // Components
 import { Sticky } from '../sticky';
@@ -98,7 +99,6 @@ export default defineComponent({
     let tabHeight: number;
     let lockScroll: boolean;
     let stickyFixed: boolean;
-    let observer: ResizeObserver | undefined;
 
     const root = ref<HTMLElement>();
     const navRef = ref<HTMLElement>();
@@ -446,18 +446,6 @@ export default defineComponent({
       }
     );
 
-    watch(
-      () => root.value,
-      (el) => {
-        const isSupported = window && 'ResizeObserver' in window;
-        if (isSupported && el) {
-          observer = new ResizeObserver(setLine);
-          observer!.observe(el);
-        }
-      },
-      { immediate: true, flush: 'post' }
-    );
-
     const init = () => {
       setCurrentIndexByName(props.active, true);
       nextTick(() => {
@@ -485,6 +473,7 @@ export default defineComponent({
     onActivated(setLine);
     onPopupReopen(setLine);
     onMountedOrActivated(init);
+    useVisibilityChange(root, setLine);
     useEventListener('scroll', onScroll, {
       target: scroller,
       passive: true,
