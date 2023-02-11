@@ -13,8 +13,6 @@
 npm i @vant/nuxt -D
 ```
 
-## Usage
-
 ```ts
 export default defineNuxtConfig({
   modules: ['@vant/nuxt'],
@@ -24,7 +22,15 @@ export default defineNuxtConfig({
 });
 ```
 
-[demo](./playground/app.vue)
+## Usage
+
+```vue
+<template>
+  <van-button type="primary" @click="showToast('toast')"> button </van-button>
+  <VanButton type="success" @click="showNotify('notify')"> button </VanButton>
+  <LazyVanButton type="default"> lazy button </LazyVanButton>
+</template>
+```
 
 ## Options
 
