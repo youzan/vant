@@ -81,6 +81,7 @@ export default defineComponent({
             class={bem('tabs')}
             shrink
             animated
+            lazyRender={false}
           >
             {props.tabs.map((title, index) => (
               <Tab title={title} titleClass={bem('tab-title')}>
