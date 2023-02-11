@@ -25,6 +25,15 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 
 ## 更新内容
 
+### [v2.12.54](https://github.com/vant-ui/vant/compare/v2.12.53...v2.12.54)
+
+`2023-02-11`
+
+**Bug Fixes**
+
+- Popover: 修复过渡动画后位置错误的问题 [#11558](https://github.com/vant-ui/vant/issues/11558)
+- Search: 修复 @search-left-icon-color 样式变量不生效的问题 [#11299](https://github.com/vant-ui/vant/issues/11299)
+
 ### [v2.12.53](https://github.com/vant-ui/vant/compare/v2.12.52...v2.12.53)
 
 `2022-11-17`
