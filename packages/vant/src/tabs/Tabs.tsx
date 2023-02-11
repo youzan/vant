@@ -49,6 +49,7 @@ import { route, RouteProps } from '../composables/use-route';
 import { useRefs } from '../composables/use-refs';
 import { useExpose } from '../composables/use-expose';
 import { onPopupReopen } from '../composables/on-popup-reopen';
+import { useVisibilityChange } from '../composables/use-visibility-change';
 
 // Components
 import { Sticky } from '../sticky';
@@ -472,6 +473,7 @@ export default defineComponent({
     onActivated(setLine);
     onPopupReopen(setLine);
     onMountedOrActivated(init);
+    useVisibilityChange(root, setLine);
     useEventListener('scroll', onScroll, {
       target: scroller,
       passive: true,
