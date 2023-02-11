@@ -17,6 +17,7 @@ import { Instance, createPopper, offsetModifier } from '@vant/popperjs';
 import {
   pick,
   extend,
+  inBrowser,
   truthProp,
   numericProp,
   unknownProp,
@@ -137,8 +138,10 @@ export default defineComponent({
 
         if (!popper) {
           popper = createPopperInstance();
-          window.addEventListener('animationend', updateLocation);
-          window.addEventListener('transitionend', updateLocation);
+          if (inBrowser) {
+            window.addEventListener('animationend', updateLocation);
+            window.addEventListener('transitionend', updateLocation);
+          }
         } else {
           popper.setOptions(getPopoverOptions());
         }
@@ -219,8 +222,10 @@ export default defineComponent({
 
     onBeforeUnmount(() => {
       if (popper) {
-        window.removeEventListener('animationend', updateLocation);
-        window.removeEventListener('transitionend', updateLocation);
+        if (inBrowser) {
+          window.removeEventListener('animationend', updateLocation);
+          window.removeEventListener('transitionend', updateLocation);
+        }
         popper.destroy();
         popper = null;
       }
