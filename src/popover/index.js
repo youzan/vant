@@ -1,5 +1,5 @@
 import { createPopper, offsetModifier } from '@vant/popperjs';
-import { createNamespace } from '../utils';
+import { createNamespace, isServer } from '../utils';
 import { BORDER_BOTTOM } from '../utils/constant';
 
 // Mixins
@@ -60,8 +60,10 @@ export default createComponent({
 
   beforeDestroy() {
     if (this.popper) {
-      window.removeEventListener('animationend', this.popper.update);
-      window.removeEventListener('transitionend', this.popper.update);
+      if (!isServer) {
+        window.removeEventListener('animationend', this.updateLocation);
+        window.removeEventListener('transitionend', this.updateLocation);
+      }
       this.popper.destroy();
       this.popper = null;
     }
@@ -87,8 +89,10 @@ export default createComponent({
           },
         ],
       });
-      window.addEventListener('animationend', popper.update);
-      window.addEventListener('transitionend', popper.update);
+      if (!isServer) {
+        window.addEventListener('animationend', this.updateLocation);
+        window.addEventListener('transitionend', this.updateLocation);
+      }
       return popper;
     },
 
