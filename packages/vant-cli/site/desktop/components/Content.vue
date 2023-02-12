@@ -245,7 +245,7 @@ export default {
       display: inline-block;
       color: var(--van-doc-green);
       font-size: 14px;
-      font-family: 'Source Code Pro', 'Monaco', 'Inconsolata', monospace;
+      font-family: var(--van-doc-code-font-family);
       font-style: normal;
       max-width: 300px;
       -webkit-font-smoothing: auto;
@@ -291,13 +291,12 @@ export default {
   > table code {
     display: inline;
     margin: 0 2px;
-    padding: 2px 5px;
+    padding: 3px 7px;
     font-size: 14px;
-    font-family: inherit;
-    font-weight: 600;
     word-break: keep-all;
-    border-radius: 4px;
-    -webkit-font-smoothing: antialiased;
+    border-radius: 6px;
+    -webkit-font-smoothing: auto;
+    font-family: var(--van-doc-code-font-family);
   }
 
   > blockquote {
