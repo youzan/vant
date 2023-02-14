@@ -4756,7 +4756,7 @@
                         {
                             "name": "van-cell",
                             "title": "单元格",
-                            "snippet": "<template #item=\"scope\"><van-cell isLink><template #title>文本</template></van-cell></template>"
+                            "snippet": "<template #item=\"current\"><van-cell isLink><template #title>文本</template></van-cell></template>"
                         }
                     ]
                 },
@@ -5369,7 +5369,7 @@
                         {
                             "name": "van-cardu",
                             "title": "卡片",
-                            "snippet": "<template #item=\"scope\"><van-cardu><template #head><van-text text=\"标题\"></van-text></template><van-text  text=\"卡片内容\"></van-text></van-cardu></template>"
+                            "snippet": "<template #item=\"current\"><van-cardu><template #head><van-text text=\"标题\"></van-text></template><van-text  text=\"卡片内容\"></van-text></van-cardu></template>"
                         }
                     ]
                 },
@@ -6372,7 +6372,7 @@
             "Form"
         ],
         "screenShot": "",
-        "blocks": "[{\"title\":\"基本用法\",\"description\":\"\",\"code\":\"<template>\\n<van-radio-group direction=\\\"horizontal\\\">\\n  <template #item=\\\"scope\\\">\\n    <van-radio vusion-disabled-cut vusion-disabled-copy></van-radio>\\n  </template>\\n</van-radio-group>\\n</template>\\n\"}]",
+        "blocks": "[{\"title\":\"基本用法\",\"description\":\"\",\"code\":\"<template>\\n<van-radio-group direction=\\\"horizontal\\\">\\n  <template #item=\\\"current\\\">\\n    <van-radio vusion-disabled-cut vusion-disabled-copy></van-radio>\\n  </template>\\n</van-radio-group>\\n</template>\\n\"}]",
         "jsonSchema": {
             "name": "van-radio-group",
             "title": "单选组",
@@ -6384,7 +6384,7 @@
                 {
                     "title": "基本用法",
                     "description": "",
-                    "code": "<template>\n<van-radio-group direction=\"horizontal\">\n  <template #item=\"scope\">\n    <van-radio vusion-disabled-cut vusion-disabled-copy></van-radio>\n  </template>\n</van-radio-group>\n</template>\n"
+                    "code": "<template>\n<van-radio-group direction=\"horizontal\">\n  <template #item=\"current\">\n    <van-radio vusion-disabled-cut vusion-disabled-copy></van-radio>\n  </template>\n</van-radio-group>\n</template>\n"
                 }
             ],
             "attrs": [
@@ -6622,7 +6622,7 @@
             "Form"
         ],
         "screenShot": "",
-        "blocks": "[{\"title\":\"基本用法\",\"description\":\"\",\"code\":\"<template>\\n<van-checkbox-group direction=\\\"horizontal\\\">\\n  <template #item=\\\"scope\\\">\\n    <van-checkbox\\n      shape=\\\"square\\\"\\n      vusion-disabled-cut\\n      vusion-disabled-copy\\n    ></van-checkbox>\\n  </template>\\n</van-checkbox-group>\\n</template>\\n\"}]",
+        "blocks": "[{\"title\":\"基本用法\",\"description\":\"\",\"code\":\"<template>\\n<van-checkbox-group direction=\\\"horizontal\\\">\\n  <template #item=\\\"current\\\">\\n    <van-checkbox\\n      shape=\\\"square\\\"\\n      vusion-disabled-cut\\n      vusion-disabled-copy\\n    ></van-checkbox>\\n  </template>\\n</van-checkbox-group>\\n</template>\\n\"}]",
         "jsonSchema": {
             "name": "van-checkbox-group",
             "title": "多选组",
@@ -6634,7 +6634,7 @@
                 {
                     "title": "基本用法",
                     "description": "",
-                    "code": "<template>\n<van-checkbox-group direction=\"horizontal\">\n  <template #item=\"scope\">\n    <van-checkbox\n      shape=\"square\"\n      vusion-disabled-cut\n      vusion-disabled-copy\n    ></van-checkbox>\n  </template>\n</van-checkbox-group>\n</template>\n"
+                    "code": "<template>\n<van-checkbox-group direction=\"horizontal\">\n  <template #item=\"current\">\n    <van-checkbox\n      shape=\"square\"\n      vusion-disabled-cut\n      vusion-disabled-copy\n    ></van-checkbox>\n  </template>\n</van-checkbox-group>\n</template>\n"
                 }
             ],
             "attrs": [
