@@ -126,6 +126,7 @@ Add `immediate` prop to scroll to top immediately.
 | offset | The component will not display until the scroll offset reaches this value | _number_ | `200` |
 | teleport | Specifies a target element where BackTop will be mounted | _string \| Element_ | `body` |
 | immediate `v4.0.9` | Whether to scroll to top immediately | _boolean_ | `false` |
+| z-index | Set the z-index to a fixed value | _number \| string_ | `100` |
 
 ### Events
 
