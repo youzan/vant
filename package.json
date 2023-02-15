@@ -1,6 +1,6 @@
 {
   "name": "@lcap/mobile-ui",
-  "version": "0.12.24",
+  "version": "0.12.25",
   "lcapname": "@lcap/mobile-ui",
   "lcapversion": "0.6.3",
   "description": "Mobile UI Components built on Vue",
@@ -26,7 +26,8 @@
     "dev2": "vant-cli dev",
     "lint": "vant-cli lint",
     "test": "vant-cli test",
-    "build:vusion": "npm run check && vue-cli-service library-build --dest dist-theme",
+    "copyimg": "node bin/copy-lcp-images ",
+    "build:vusion": "npm run check && vue-cli-service library-build --dest dist-theme && npm run copyimg",
     "build2": "vant-cli build",
     "build": "cross-env scene=desktop vant-cli build",
     "release": "vant-cli release",

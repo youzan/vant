@@ -169,16 +169,13 @@
   --van-button-border-width: var(
     --van-border-width-base
   ); /* @desc 按钮边框厚度 */ /* @depStaticStyles ["border-top-width", "border-right-width", "border-bottom-width", "border-left-width"] */
-
   --van-button-border-radius: var(
     --van-border-radius-md
   ); /* @desc 按钮边框圆角 */ /* @depStaticStyles ["border-top-left-radius", "border-top-right-radius", "border-bottom-left-radius", "border-bottom-right-radius"] */
-
   --van-button-border-radius2: var(--van-border-radius-md); /* @hidden */
   --van-button-round-border-radius: var(
     --van-border-radius-max
   ); /* @desc 圆角按钮圆角 */ /* @depStaticStyles ["border-top-left-radius", "border-top-right-radius", "border-bottom-left-radius", "border-bottom-right-radius"] */
-
   --van-button-plain-background-color: #fff; /* @type color */ /* @hidden */
   --van-button-disabled-opacity: var(
     --van-component-disabled-opacity
@@ -754,15 +751,15 @@
   --van-tag-plain-background-color: #fff; /* @type color */ /* @hidden */
 
   /* @component van-grid-view */
-  --van-grid-view-height: 400px; /* @desc 默认高度 */
+  --van-grid-view-height: 400px; /* @desc 默认高度 */ /* @hidden */
   --van-grid-view-bgcolor: #fff; /* @type color */ /* @desc 背景颜色 */
-  --van-grid-view-input-height: 30px; /* @desc 输入框高度 */
-  --van-grid-view-input-padding-x: 8px; /* @desc 输入框左右内边距 */
-  --van-grid-view-input-border-width: 1px; /* @desc 输入框边框宽度 */
-  --van-grid-view-input-border-color: #e3e4e5; /* @type color */ /* @desc 输入框边框颜色 */
-  --van-grid-view-input-border-radius: 3px; /* @desc 输入框圆角 */
-  --van-grid-view-input-color: #333; /* @type color */ /* @desc 输入框文字颜色 */
-  --van-grid-view-placeholder-color: #c8c9cc; /* @type color */ /* @desc 输入框占位提示文字颜色 */
+  --van-grid-view-input-height: 30px; /* @desc 筛选框高度 */
+  --van-grid-view-input-padding-x: 8px; /* @desc 筛选框左右内边距 */
+  --van-grid-view-input-border-width: 1px; /* @desc 筛选框边框宽度 */
+  --van-grid-view-input-border-color: #e3e4e5; /* @type color */ /* @desc 筛选框边框颜色 */
+  --van-grid-view-input-border-radius: 3px; /* @desc 筛选框圆角 */
+  --van-grid-view-input-color: #333; /* @type color */ /* @desc 筛选框文字颜色 */
+  --van-grid-view-placeholder-color: #c8c9cc; /* @type color */ /* @desc 筛选框占位提示文字颜色 */
 
 
   /* @component van-cardu */
@@ -776,15 +773,15 @@
   --van-cardu-content-margin-right: 12px; /* @desc 内容区右外边距 */
 
   /* @component van-list-view */
-  --van-list-view-height: 400px; /* @desc 默认高度 */
+  --van-list-view-height: 400px; /* @desc 默认高度 */ /* @hidden */
   --van-list-view-bgcolor: #fff; /* @type color */ /* @desc 背景颜色 */
-  --van-list-view-input-height: 30px; /* @desc 输入框高度 */
-  --van-list-view-input-padding-x: 8px; /* @desc 输入框左右内边距 */
-  --van-list-view-input-border-width: 1px; /* @desc 输入框边框宽度 */
-  --van-list-view-input-border-color: #e3e4e5; /* @type color */ /* @desc 输入框边框颜色 */
-  --van-list-view-input-border-radius: 3px; /* @desc 输入框圆角 */
-  --van-list-view-input-color: #333; /* @type color */ /* @desc 输入框文字颜色 */
-  --van-list-view-placeholder-color: #c8c9cc; /* @type color */ /* @desc 输入框占位提示文字颜色 */
+  --van-list-view-input-height: 30px; /* @desc 筛选框高度 */
+  --van-list-view-input-padding-x: 8px; /* @desc 筛选框左右内边距 */
+  --van-list-view-input-border-width: 1px; /* @desc 筛选框边框宽度 */
+  --van-list-view-input-border-color: #e3e4e5; /* @type color */ /* @desc 筛选框边框颜色 */
+  --van-list-view-input-border-radius: 3px; /* @desc 筛选框圆角 */
+  --van-list-view-input-color: #333; /* @type color */ /* @desc 筛选框文字颜色 */
+  --van-list-view-placeholder-color: #c8c9cc; /* @type color */ /* @desc 筛选框占位提示文字颜色 */
 
 
   /* @component van-fieldinput */

@@ -13,6 +13,7 @@ es
 lib
 dist
 dist-theme
+assets-package
 /site
 changelog.generated.md
 test/coverage
