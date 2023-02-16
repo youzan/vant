@@ -70,4 +70,5 @@ export const cellProps = {
   vusionMove: Boolean,
   vusionNodePath: String,
   vusionNodeTag: String,
+  link: [Function, String]
 };
