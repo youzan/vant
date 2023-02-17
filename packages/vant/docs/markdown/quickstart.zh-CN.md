@@ -226,7 +226,7 @@ import 'vant/es/image-preview/style';
 
 ### 在 Nuxt 3 中使用
 
-在 Nuxt 3 中使用 Vant 时，可以使用 [van-nuxt](https://github.com/vant-ui/vant-nuxt) 模块，它可以自动引入组件，并按需引入的样式（包括函数组件）。
+在 Nuxt 3 中使用 Vant 时，可以使用 [vant-nuxt](https://github.com/vant-ui/vant-nuxt) 模块，它可以自动引入组件，并按需引入的样式（包括函数组件）。
 
 #### 1. 安装模块
 

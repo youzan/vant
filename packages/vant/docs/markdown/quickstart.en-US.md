@@ -222,7 +222,7 @@ import 'vant/es/image-preview/style';
 
 ### Use Vant in Nuxt 3
 
-When using Vant in Nuxt 3, you can use [van-nuxt](https://github.com/vant-ui/vant-nuxt), this module can help you to auto importing components and reduce CSS file size.
+When using Vant in Nuxt 3, you can use [vant-nuxt](https://github.com/vant-ui/vant-nuxt), this module can help you to auto importing components and reduce CSS file size.
 
 #### 1. Install Module
 

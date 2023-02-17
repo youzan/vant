@@ -99,7 +99,7 @@ Vant 3/4 supports modern browsers and Chrome >= 51、iOS >= 10.0 (same as Vue 3)
 | [vant-cli](https://github.com/vant-ui/vant/tree/main/packages/vant-cli) | Scaffold for UI library |
 | [vant-icons](https://github.com/vant-ui/vant/tree/main/packages/vant-icons) | Vant icons |
 | [vant-touch-emulator](https://github.com/vant-ui/vant/tree/main/packages/vant-touch-emulator) | Using vant in desktop browsers |
-| [van-nuxt](https://github.com/vant-ui/vant-nuxt) | Vant module for Nuxt |
+| [vant-nuxt](https://github.com/vant-ui/vant-nuxt) | Vant module for Nuxt |
 
 ## Community Ecosystem
 
