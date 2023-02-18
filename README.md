@@ -33,11 +33,11 @@
 - 📖 Extensive documentation and demos
 - 📖 Provide Sketch and Axure design resources
 - 🍭 Support Vue 2 & Vue 3
+- 🍭 Support Nuxt 2 & Nuxt 3, provide [Vant Module](https://github.com/vant-ui/vant-nuxt) for Nuxt
 - 🍭 Support Tree Shaking
 - 🍭 Support Custom Theme
 - 🍭 Support Accessibility (still improving)
 - 🍭 Support Dark Mode
-- 🍭 Support Nuxt 3
 - 🍭 Support SSR
 - 🌍 Support i18n, built-in 30+ languages
 
