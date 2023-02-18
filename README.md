@@ -80,10 +80,6 @@ app.use(Button);
 
 See more in [Quickstart](https://vant-ui.github.io/vant#/en-US/quickstart).
 
-## Start On Visual Studio Code Web
-
-[https://github.dev/youzan/vant](https://github.dev/youzan/vant)
-
 ## Browser Support
 
 Vant 2 supports modern browsers and Android >= 4.0、iOS >= 8.0.
@@ -144,6 +140,10 @@ Thanks to the following friends for their contributions to Vant:
 
 Please make sure to read the [Contributing Guide](./.github/CONTRIBUTING.md) before making a pull request.
 
+## Start On Web IDE
+
+[https://github.dev/youzan/vant](https://github.dev/youzan/vant)
+
 ## LICENSE
 
-[MIT](https://en.wikipedia.org/wiki/MIT_License)
+Vant is [MIT](https://github.com/youzan/vant/blob/main/LICENSE) licensed.
