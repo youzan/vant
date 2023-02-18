@@ -6,9 +6,6 @@ import {
   type ExtractPropTypes,
 } from 'vue';
 
-// Composables
-import { useEventListener } from '@vant/use';
-
 // Utils
 import { makeNumericProp, makeStringProp, createNamespace } from '../utils';
 
@@ -37,6 +34,8 @@ export default defineComponent({
     const expanded = ref(false);
     const hasAction = ref(false);
     const root = ref<HTMLElement>();
+
+    let observer: ResizeObserver | undefined;
 
     const pxToNum = (value: string | null) => {
       if (!value) return 0;
@@ -109,6 +108,14 @@ export default defineComponent({
       document.body.removeChild(container);
     };
 
+    const resizeObserver = () => {
+      const isSupported = window && 'ResizeObserver' in window;
+      if (isSupported && root.value) {
+        observer = new ResizeObserver(calcEllipsised);
+        observer!.observe(root.value);
+      }
+    };
+
     const onClick = (event: MouseEvent) => {
       expanded.value = !expanded.value;
       emit('click', event);
@@ -122,11 +129,10 @@ export default defineComponent({
 
     onMounted(() => {
       calcEllipsised();
+      resizeObserver();
     });
 
     watch(() => [props.content, props.rows], calcEllipsised);
-
-    useEventListener('resize', calcEllipsised, { target: root.value });
 
     return () => (
       <div ref={root} class={bem()}>
