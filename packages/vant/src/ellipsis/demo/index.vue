@@ -48,4 +48,8 @@ const t = useTranslate({
   </demo-block>
 </template>
 
-<style lang="less"></style>
+<style lang="less">
+.van-ellipsis {
+  padding: 0 20px;
+}
+</style>
