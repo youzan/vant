@@ -780,6 +780,10 @@ location.href = location.href.replace('youzan.github.io', 'vant-ui.github.io');
                 path: 'tag',
                 title: 'Tag',
               },
+              {
+                path: 'ellipsis',
+                title: 'Ellipsis',
+              },
             ],
           },
           {
