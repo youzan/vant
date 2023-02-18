@@ -82,14 +82,14 @@ exports[`should render option slot correctly 1`] = `
             tabindex="0"
             class="van-picker-column__item van-picker-column__item--selected"
         >
-          Custom 1990
+          Custom 1990, index: 0
         </li>
         <li role="button"
             style="height: 44px;"
             tabindex="0"
             class="van-picker-column__item"
         >
-          Custom 1991
+          Custom 1991, index: 1
         </li>
       </ul>
     </div>

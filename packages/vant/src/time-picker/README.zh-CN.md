@@ -196,15 +196,15 @@ export default {
 
 ### Slots
 
-| 名称           | 说明                   | 参数                   |
-| -------------- | ---------------------- | ---------------------- |
-| toolbar        | 自定义整个顶部栏的内容 | -                      |
-| title          | 自定义标题内容         | -                      |
-| confirm        | 自定义确认按钮内容     | -                      |
-| cancel         | 自定义取消按钮内容     | -                      |
-| option         | 自定义选项内容         | _option: PickerOption_ |
-| columns-top    | 自定义选项上方内容     | -                      |
-| columns-bottom | 自定义选项下方内容     | -                      |
+| 名称 | 说明 | 参数 |
+| --- | --- | --- |
+| toolbar | 自定义整个顶部栏的内容 | - |
+| title | 自定义标题内容 | - |
+| confirm | 自定义确认按钮内容 | - |
+| cancel | 自定义取消按钮内容 | - |
+| option | 自定义选项内容 | _option: PickerOption, index: number_ |
+| columns-top | 自定义选项上方内容 | - |
+| columns-bottom | 自定义选项下方内容 | - |
 
 ### 类型定义
 

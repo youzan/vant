@@ -362,15 +362,15 @@ export default {
 
 ### Slots
 
-| Name            | Description                  | SlotProps              |
-| --------------- | ---------------------------- | ---------------------- |
-| toolbar `3.1.2` | Custom toolbar content       | -                      |
-| title           | Custom title                 | -                      |
-| confirm         | Custom confirm button text   | -                      |
-| cancel          | Custom cancel button text    | -                      |
-| option          | Custom option content        | _option: PickerOption_ |
-| columns-top     | Custom content above columns | -                      |
-| columns-bottom  | Custom content below columns | -                      |
+| Name | Description | SlotProps |
+| --- | --- | --- |
+| toolbar `3.1.2` | Custom toolbar content | - |
+| title | Custom title | - |
+| confirm | Custom confirm button text | - |
+| cancel | Custom cancel button text | - |
+| option | Custom option content | _option: PickerOption, index: number_ |
+| columns-top | Custom content above columns | - |
+| columns-bottom | Custom content below columns | - |
 
 ### Data Structure of PickerOption
 
