@@ -8,12 +8,14 @@ test('should allow to custom position by position prop', async () => {
     props: {
       right: 30,
       bottom: 100,
+      zIndex: 200,
       teleport: root,
     },
   });
   const backTopEl = root.querySelector<HTMLDivElement>('.van-back-top')!;
   expect(backTopEl.style.right).toBe('30px');
   expect(backTopEl.style.bottom).toBe('100px');
+  expect(backTopEl.style.zIndex).toBe('200');
 });
 
 test('should allow position prop to contain unit', async () => {
