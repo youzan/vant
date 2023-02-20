@@ -19,6 +19,7 @@ onlineSvgIcon;
 require('./icon');
 
 export type IconProps = {
+  link: any;
   text?: string;
   dot?: boolean;
   tag: keyof HTMLElementTagNameMap | string;
@@ -99,8 +100,32 @@ function Iconv(
     return undefined;
   }
 
-  function onClick(event: Event) {
+  async function onClick(event: Event) {
     emit(ctx, 'click', event);
+    if (props.link) {
+      const url = props.link;
+      const target = props.target;
+      let realUrl: any;
+      if (typeof url === 'function') {
+          // @ts-ignore
+          realUrl = await url();
+      } else {
+          realUrl = url;
+      }
+      function linkpao() {
+          const a = document.createElement('a');
+          a.setAttribute('href', realUrl);
+          // @ts-ignore
+          a.setAttribute('target', target);
+          document.body.appendChild(a);
+          a.click();
+          setTimeout(() => {
+              document.body.removeChild(a);
+          }, 500);
+      }
+      linkpao();
+      return;
+    }
     const hrefR = currentHref();
     // console.log(hrefR, ctx, event)
     // @ts-ignore：没办法

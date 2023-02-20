@@ -28,11 +28,9 @@
       options:
         - value: destination
           title: 页面跳转
-        - value: href
-          title: 普通链接
         - value: download
           title: 下载链接
-      default: href
+      default: destination
       description: 链接类型
       compType: linkTypeSelect
     - name: hrefAndTo
