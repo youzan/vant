@@ -24,7 +24,7 @@ export default {
         decoration: { type: Boolean, default: true },
         download: { type: Boolean, default: false },
         destination: String,
-        link: [string, Function]
+        link: [String, Function]
     },
     methods: {
       async onClick(event) {
