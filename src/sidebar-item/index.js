@@ -36,6 +36,7 @@ export default createComponent({
     decoration: { type: Boolean, default: true },
     download: { type: Boolean, default: false },
     destination: String,
+    link: [Function, String]
   },
   data() {
     return {
@@ -74,7 +75,7 @@ export default createComponent({
     newdest(destination) {
       return destination ? '/' + destination.split('/').slice(1).join('/') : destination;
     },
-    onClick() {
+    async onClick() {
       if (this.disabled) {
         return;
       }
@@ -90,6 +91,30 @@ export default createComponent({
       // route(this.$router, this);
       const props = this._props;
       const parent = this.$parent;
+      if (props.link) {
+        const url = props.link;
+        const {target} = props;
+        let realUrl;
+        if (typeof url === 'function') {
+            // @ts-ignore
+            realUrl = await url();
+        } else {
+            realUrl = url;
+        }
+        function linkpao() {
+            const a = document.createElement('a');
+            a.setAttribute('href', realUrl);
+            // @ts-ignore
+            a.setAttribute('target', target);
+            document.body.appendChild(a);
+            a.click();
+            setTimeout(() => {
+                document.body.removeChild(a);
+            }, 500);
+        }
+        linkpao();
+        return;
+      }
       function currentHref() {
         if (props.href !== undefined)
           return props.href;

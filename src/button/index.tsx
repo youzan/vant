@@ -45,6 +45,7 @@ export type ButtonProps = RouteProps & {
   download: { type: boolean, default: false },
   destination: string,
   squareroud?: string
+  link?: [String, Function]
 };
 
 export type ButtonEvents = {
@@ -96,7 +97,7 @@ function Button(
     }
   }
 
-  function onClick(event: Event) {
+  async function onClick(event: Event) {
     if (props.loading) {
       event.preventDefault();
     }
@@ -109,6 +110,30 @@ function Button(
       // console.log(hrefR, ctx.props)
       if (!ctx.props.nativeType && !hrefR && !ctx.listeners.click) {
         event.preventDefault();
+      }
+      if (props.link) {
+        const url = props.link;
+        const target = props.target;
+        let realUrl: any;
+        if (typeof url === 'function') {
+            // @ts-ignore
+            realUrl = await url();
+        } else {
+            realUrl = url;
+        }
+        function linkpao() {
+            const a = document.createElement('a');
+            a.setAttribute('href', realUrl);
+            // @ts-ignore
+            a.setAttribute('target', target);
+            document.body.appendChild(a);
+            a.click();
+            setTimeout(() => {
+                document.body.removeChild(a);
+            }, 500);
+        }
+        linkpao();
+        return;
       }
       // @ts-ignore：没办法
       // if (props.target !== '_self')
@@ -317,6 +342,7 @@ Button.props = {
   decoration: { type: Boolean, default: true },
   download: { type: Boolean, default: false },
   destination: String,
+  link: [String, Function]
 };
 
 export default createComponent<ButtonProps, ButtonEvents, ButtonSlots>(Button);
