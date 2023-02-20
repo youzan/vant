@@ -100,7 +100,7 @@ function Iconv(
     return undefined;
   }
 
-  function onClick(event: Event) {
+  async function onClick(event: Event) {
     emit(ctx, 'click', event);
     if (props.link) {
       const url = props.link;

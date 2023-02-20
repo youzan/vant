@@ -5016,24 +5016,10 @@
   "resolved" "https://registry.npmjs.org/clones/-/clones-1.2.0.tgz"
   "version" "1.2.0"
 
-"cloud-ui.vusion@^0.9.0":
-  "integrity" "sha512-FR3YIwpfF6ETLaDaJeVxnHilXrJw5tBtFnOKyZID6KHnKLiSNt8D6vG4Ue10G6O2Iqpox0t8dP0bODUIY/VE9g=="
-  "resolved" "https://registry.npmjs.org/cloud-ui.vusion/-/cloud-ui.vusion-0.9.29.tgz"
-  "version" "0.9.29"
-  dependencies:
-    "@vusion/popper.js" "^1.14.1"
-    "@vusion/utils" "^0.4.9"
-    "@vusion/validator" "^0.2.4"
-    "countup.js" "^1.9.3"
-    "i-material-design.vue" "^5.1.0"
-    "lodash" "^4.17.5"
-    "normalize.css" "^7.0.0"
-    "vusion-async-validator" "^1.8.8"
-
-"cloud-ui.vusion@>=0.6.18", "cloud-ui.vusion@0.14.24-beta.4":
-  "integrity" "sha512-lRjglVRbc1WJgK2Hq7CcBqS4RDDXYd+TcW7Mzfw981AFQnkzbs9Aku7Xju4y4XfPi7JxRz8dvHix+wpES7UNMA=="
-  "resolved" "https://registry.npmjs.org/cloud-ui.vusion/-/cloud-ui.vusion-0.14.24-beta.4.tgz"
-  "version" "0.14.24-beta.4"
+"cloud-ui.vusion@^0.14.28-beta.1", "cloud-ui.vusion@>=0.6.18":
+  "integrity" "sha512-aOLEek/9RYuJWd+MxQxo/OrLWp5rzBkoFCKKF9atSgZutiHD++3El/+gu/cTSSqXzpRBFfxLuISKx6crc7v/CA=="
+  "resolved" "https://registry.npmjs.org/cloud-ui.vusion/-/cloud-ui.vusion-0.14.28-beta.1.tgz"
+  "version" "0.14.28-beta.1"
   dependencies:
     "@popperjs/core" "^2.10.2"
     "@vusion/utils" "0.4.11"
@@ -5055,6 +5041,20 @@
     "vusion-api" "^0.6.30"
     "xlsx" "^0.17.3"
     "yargs" "^16.2.0"
+
+"cloud-ui.vusion@^0.9.0":
+  "integrity" "sha512-FR3YIwpfF6ETLaDaJeVxnHilXrJw5tBtFnOKyZID6KHnKLiSNt8D6vG4Ue10G6O2Iqpox0t8dP0bODUIY/VE9g=="
+  "resolved" "https://registry.npmjs.org/cloud-ui.vusion/-/cloud-ui.vusion-0.9.29.tgz"
+  "version" "0.9.29"
+  dependencies:
+    "@vusion/popper.js" "^1.14.1"
+    "@vusion/utils" "^0.4.9"
+    "@vusion/validator" "^0.2.4"
+    "countup.js" "^1.9.3"
+    "i-material-design.vue" "^5.1.0"
+    "lodash" "^4.17.5"
+    "normalize.css" "^7.0.0"
+    "vusion-async-validator" "^1.8.8"
 
 "co@^4.6.0":
   "integrity" "sha512-QVb0dM5HvG+uaxitm8wONl7jltx8dqhfU33DcqtOZcLSVIKSDDLDi7+0LbAKiyI8hD9u42m2YxXSkMGWThaecQ=="
