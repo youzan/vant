@@ -87,9 +87,9 @@ export default {
 
 ### Events
 
-| Event | Description                             | Arguments           |
-| ----- | --------------------------------------- | ------------------- |
-| click | Emitted when Expand/Collapse is clicked | _event: MouseEvent_ |
+| Event        | Description                             | Arguments           |
+| ------------ | --------------------------------------- | ------------------- |
+| click-action | Emitted when Expand/Collapse is clicked | _event: MouseEvent_ |
 
 ### Types
 

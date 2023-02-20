@@ -6,6 +6,9 @@ import {
   type ExtractPropTypes,
 } from 'vue';
 
+// Composables
+import { useEventListener } from '@vant/use';
+
 // Utils
 import { makeNumericProp, makeStringProp, createNamespace } from '../utils';
 
@@ -27,15 +30,13 @@ export default defineComponent({
 
   props: ellipsisProps,
 
-  emits: ['click'],
+  emits: ['clickAction'],
 
   setup(props, { emit }) {
     const text = ref('');
     const expanded = ref(false);
     const hasAction = ref(false);
     const root = ref<HTMLElement>();
-
-    let observer: ResizeObserver | undefined;
 
     const pxToNum = (value: string | null) => {
       if (!value) return 0;
@@ -72,18 +73,18 @@ export default defineComponent({
       ) => {
         const { content, expandText } = props;
         const dot = '...';
-        let l = 0;
-        let r = content.length;
+        let left = 0;
+        let right = content.length;
         let res = -1;
 
-        while (l <= r) {
-          const mid = Math.floor((l + r) / 2);
+        while (left <= right) {
+          const mid = Math.floor((left + right) / 2);
           container.innerText = content.slice(0, mid) + dot + expandText;
           if (container.offsetHeight <= maxHeight) {
-            l = mid + 1;
+            left = mid + 1;
             res = mid;
           } else {
-            r = mid - 1;
+            right = mid - 1;
           }
         }
         return content.slice(0, res) + dot;
@@ -108,31 +109,24 @@ export default defineComponent({
       document.body.removeChild(container);
     };
 
-    const resizeObserver = () => {
-      const isSupported = window && 'ResizeObserver' in window;
-      if (isSupported && root.value) {
-        observer = new ResizeObserver(calcEllipsised);
-        observer!.observe(root.value);
-      }
-    };
-
-    const onClick = (event: MouseEvent) => {
+    const onClickAction = (event: MouseEvent) => {
       expanded.value = !expanded.value;
-      emit('click', event);
+      emit('clickAction', event);
     };
 
     const renderAction = () => (
-      <span class={bem('action')} onClick={onClick}>
+      <span class={bem('action')} onClick={onClickAction}>
         {expanded.value ? props.collapseText : props.expandText}
       </span>
     );
 
     onMounted(() => {
       calcEllipsised();
-      resizeObserver();
     });
 
     watch(() => [props.content, props.rows], calcEllipsised);
+
+    useEventListener('resize', calcEllipsised);
 
     return () => (
       <div ref={root} class={bem()}>
