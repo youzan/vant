@@ -46,6 +46,10 @@
       type: string, number
       place: 不限制
       description: 输入框内可输入的最大字符数，超过时不支持输入
+      toggleupdate:
+        - value: ''
+          updateData:
+            show-word-limit: false
     - name: show-word-limit
       title: 显示字数统计
       type: boolean
