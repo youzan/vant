@@ -109,6 +109,15 @@ exports[`should render demo and match snapshot 1`] = `
   </div>
 </div>
 <div>
+  <div class="van-cell van-cell--titleless">
+    <div class="van-cell__value">
+      <span>
+        Content
+      </span>
+    </div>
+  </div>
+</div>
+<div>
   <div class="van-cell van-cell--clickable"
        role="button"
        tabindex="0"

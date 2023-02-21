@@ -6,20 +6,20 @@ exports[`should change arrow direction when using arrow-direction prop 1`] = `
 `;
 
 exports[`should change icon class prefix when using icon-prefix prop 1`] = `
-<div class="van-cell">
+<div class="van-cell van-cell--titleless">
   <i class="van-badge__wrapper my-icon my-icon-success van-cell__left-icon">
   </i>
 </div>
 `;
 
 exports[`should render extra slot correctly 1`] = `
-<div class="van-cell">
+<div class="van-cell van-cell--titleless">
   Custom Extra
 </div>
 `;
 
 exports[`should render icon slot correctly 1`] = `
-<div class="van-cell">
+<div class="van-cell van-cell--titleless">
   Custom Icon
 </div>
 `;
@@ -38,7 +38,7 @@ exports[`should render label slot correctly 1`] = `
 `;
 
 exports[`should render tag prop correctly 1`] = `
-<a class="van-cell">
+<a class="van-cell van-cell--titleless">
 </a>
 `;
 
@@ -51,7 +51,7 @@ exports[`should render title slot correctly 1`] = `
 `;
 
 exports[`should render value slot correctly 1`] = `
-<div class="van-cell">
+<div class="van-cell van-cell--titleless">
   <div class="van-cell__value">
     Custom Value
   </div>
