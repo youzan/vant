@@ -14,6 +14,7 @@ const t = useTranslate({
     vueRoute: '路由跳转',
     useSlots: '使用插槽',
     showIcon: '展示图标',
+    valueOnly: '只设置 value',
     showArrow: '展示箭头',
     largeSize: '单元格大小',
     groupTitle: '分组标题',
@@ -28,6 +29,7 @@ const t = useTranslate({
     vueRoute: 'Vue Router',
     useSlots: 'Use Slots',
     showIcon: 'Left Icon',
+    valueOnly: 'Value Only',
     showArrow: 'Link',
     largeSize: 'Size',
     groupTitle: 'Group Title',
@@ -64,6 +66,10 @@ const t = useTranslate({
 
   <demo-block :title="t('showIcon')">
     <van-cell :title="t('cell')" :value="t('content')" icon="location-o" />
+  </demo-block>
+
+  <demo-block :title="t('valueOnly')">
+    <van-cell :value="t('content')" />
   </demo-block>
 
   <demo-block :title="t('showArrow')">

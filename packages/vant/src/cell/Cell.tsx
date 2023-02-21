@@ -144,12 +144,13 @@ export default defineComponent({
     return () => {
       const { tag, size, center, border, isLink, required } = props;
       const clickable = props.clickable ?? isLink;
-
+      const hasTitle = slots.title || isDef(props.title);
       const classes: Record<string, boolean | undefined> = {
         center,
         required,
         clickable,
         borderless: !border,
+        titleless: !hasTitle,
       };
       if (size) {
         classes[size] = !!size;
