@@ -237,6 +237,8 @@ export default {
     dot: true,
     // 导航节点额外类名
     className: 'my-class',
+    // 是否允许 text 内容中渲染 HTML
+    allowHtml: false,
     // 该导航下所有的可选项
     children: [
       {

@@ -26,6 +26,7 @@ export type TreeSelectChild = {
 export type TreeSelectItem = {
   dot?: boolean;
   text: string;
+  allowHtml?: boolean;
   badge?: Numeric;
   children?: TreeSelectChild[];
   disabled?: boolean;
@@ -111,16 +112,24 @@ export default defineComponent({
     const onClickSidebarItem = (index: number) => emit('clickNav', index);
 
     const renderSidebar = () => {
-      const Items = props.items.map((item) => (
-        <SidebarItem
-          dot={item.dot}
-          title={item.text}
-          badge={item.badge}
-          class={[bem('nav-item'), item.className]}
-          disabled={item.disabled}
-          onClick={onClickSidebarItem}
-        />
-      ));
+      const Items = props.items.map((item) => {
+        const renderContent = item.allowHtml ? (
+          <div innerHTML={String(item.text)} />
+        ) : (
+          <>{item.text}</>
+        );
+
+        return (
+          <SidebarItem
+            dot={item.dot}
+            badge={item.badge}
+            class={[bem('nav-item'), item.className]}
+            disabled={item.disabled}
+            onClick={onClickSidebarItem}
+            v-slots={{ title: renderContent }}
+          />
+        );
+      });
 
       return (
         <Sidebar
