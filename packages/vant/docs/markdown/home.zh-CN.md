@@ -22,11 +22,11 @@ Vant 是一个**轻量、可定制的移动端组件库**，于 2017 年开源�
 - 📖 提供丰富的中英文文档和组件示例
 - 📖 提供 Sketch 和 Axure 设计资源
 - 🍭 支持 Vue 2、Vue 3 和微信小程序
+- 🍭 支持 Nuxt 2、Nuxt 3，提供 Nuxt 的 [Vant Module](https://github.com/vant-ui/vant-nuxt)
 - 🍭 支持主题定制，内置 700+ 个主题变量
 - 🍭 支持按需引入和 Tree Shaking
 - 🍭 支持无障碍访问（持续改进中）
 - 🍭 支持深色模式
-- 🍭 支持 Nuxt 3
 - 🍭 支持服务器端渲染
 - 🌍 支持国际化，内置 30+ 种语言包
 
@@ -68,6 +68,7 @@ Vant 3/4 支持现代浏览器以及 Chrome >= 51、iOS >= 10.0（与 Vue 3 一�
 | [vant-cli](https://github.com/vant-ui/vant/tree/main/packages/vant-cli) | 开箱即用的组件库搭建工具 |
 | [vant-icons](https://github.com/vant-ui/vant/tree/main/packages/vant-icons) | Vant 图标库 |
 | [vant-touch-emulator](https://github.com/vant-ui/vant/tree/main/packages/vant-touch-emulator) | 在桌面端使用 Vant 的辅助库 |
+| [vant-nuxt](https://github.com/vant-ui/vant-nuxt) | 为 Nuxt 准备的模块 |
 
 ### 社区生态
 

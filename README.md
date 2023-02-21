@@ -33,11 +33,11 @@
 - 📖 Extensive documentation and demos
 - 📖 Provide Sketch and Axure design resources
 - 🍭 Support Vue 2 & Vue 3
+- 🍭 Support Nuxt 2 & Nuxt 3, provide [Vant Module](https://github.com/vant-ui/vant-nuxt) for Nuxt
 - 🍭 Support Tree Shaking
 - 🍭 Support Custom Theme
 - 🍭 Support Accessibility (still improving)
 - 🍭 Support Dark Mode
-- 🍭 Support Nuxt 3
 - 🍭 Support SSR
 - 🌍 Support i18n, built-in 30+ languages
 
@@ -80,10 +80,6 @@ app.use(Button);
 
 See more in [Quickstart](https://vant-ui.github.io/vant#/en-US/quickstart).
 
-## Start On Visual Studio Code Web
-
-[https://github.dev/youzan/vant](https://github.dev/youzan/vant)
-
 ## Browser Support
 
 Vant 2 supports modern browsers and Android >= 4.0、iOS >= 8.0.
@@ -99,6 +95,7 @@ Vant 3/4 supports modern browsers and Chrome >= 51、iOS >= 10.0 (same as Vue 3)
 | [vant-cli](https://github.com/vant-ui/vant/tree/main/packages/vant-cli) | Scaffold for UI library |
 | [vant-icons](https://github.com/vant-ui/vant/tree/main/packages/vant-icons) | Vant icons |
 | [vant-touch-emulator](https://github.com/vant-ui/vant/tree/main/packages/vant-touch-emulator) | Using vant in desktop browsers |
+| [vant-nuxt](https://github.com/vant-ui/vant-nuxt) | Vant module for Nuxt |
 
 ## Community Ecosystem
 
@@ -143,6 +140,10 @@ Thanks to the following friends for their contributions to Vant:
 
 Please make sure to read the [Contributing Guide](./.github/CONTRIBUTING.md) before making a pull request.
 
+## Start On Web IDE
+
+[https://github.dev/youzan/vant](https://github.dev/youzan/vant)
+
 ## LICENSE
 
-[MIT](https://en.wikipedia.org/wiki/MIT_License)
+Vant is [MIT](https://github.com/youzan/vant/blob/main/LICENSE) licensed.

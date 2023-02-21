@@ -42,7 +42,8 @@ test('should render option slot correctly', () => {
       columns: simpleColumn,
     },
     slots: {
-      option: (option: PickerOption) => `Custom ${option.text}`,
+      option: (option: PickerOption, index) =>
+        `Custom ${option.text}, index: ${index}`,
     },
   });
 

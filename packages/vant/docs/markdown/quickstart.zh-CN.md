@@ -226,22 +226,42 @@ import 'vant/es/image-preview/style';
 
 ### 在 Nuxt 3 中使用
 
-在 Nuxt 3 中使用 Vant 时，由于 Nuxt 3 框架本身的限制，需要在 `nuxt.config.ts` 中添加以下配置：
+在 Nuxt 3 中使用 Vant 时，可以使用 [vant-nuxt](https://github.com/vant-ui/vant-nuxt) 模块，它可以自动引入组件，并按需引入的样式（包括函数组件）。
 
-```ts
-import { defineNuxtConfig } from 'nuxt';
+#### 1. 安装模块
 
+```bash
+# 通过 npm 安装
+npm i @vant/nuxt -D
+
+# 通过 yarn 安装
+yarn add @vant/nuxt -D
+
+# 通过 pnpm 安装
+pnpm add @vant/nuxt -D
+```
+
+#### 2. 增加模块
+
+在 `nuxt.config.js` 文件中增加模块：
+
+```js
 export default defineNuxtConfig({
-  experimental: {
-    externalVue: true,
-  },
+  modules: ['@vant/nuxt'],
 });
 ```
 
-关于该问题的背景，可以参考以下 issue：
+#### 3. 使用组件
 
-- [nuxt/framework#6761](https://github.com/nuxt/framework/issues/6761)
-- [nuxt/framework#4084](https://github.com/nuxt/framework/issues/4084)
+完成以上两步，就可以直接在模板中使用 Vant 组件了。前往 [Nuxt 文档](https://nuxt.com/docs/guide/directory-structure/components) 了解更多。
+
+```html
+<template>
+  <van-button type="primary" @click="showToast('toast')">button</van-button>
+  <VanButton type="success" @click="showNotify('notify')">button</VanButton>
+  <LazyVanButton type="default">lazy button</LazyVanButton>
+</template>
+```
 
 ## 迁移提示
 

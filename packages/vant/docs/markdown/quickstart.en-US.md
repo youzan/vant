@@ -222,19 +222,39 @@ import 'vant/es/image-preview/style';
 
 ### Use Vant in Nuxt 3
 
-When using Vant in Nuxt 3, you should add `/vant/` to the `build.transpile`:
+When using Vant in Nuxt 3, you can use [vant-nuxt](https://github.com/vant-ui/vant-nuxt), this module can help you to auto importing components and reduce CSS file size.
 
-```ts
-import { defineNuxtConfig } from 'nuxt';
+#### 1. Install Module
 
+```bash
+# with npm
+npm i @vant/nuxt -D
+
+# with yarn
+yarn add @vant/nuxt -D
+
+# with pnpm
+pnpm add @vant/nuxt -D
+```
+
+#### 2. Add Module
+
+add the module in the `nuxt.config.js` file:
+
+```js
 export default defineNuxtConfig({
-  experimental: {
-    externalVue: true,
-  },
+  modules: ['@vant/nuxt'],
 });
 ```
 
-Reference:
+#### 3. Using Components
 
-- [nuxt/framework#6761](https://github.com/nuxt/framework/issues/6761)
-- [nuxt/framework#4084](https://github.com/nuxt/framework/issues/4084)
+Then you can using components from Vant in the template, Go to the [Nuxt documentation](https://nuxt.com/docs/guide/directory-structure/components) to learn more.
+
+```html
+<template>
+  <van-button type="primary" @click="showToast('toast')">button</van-button>
+  <VanButton type="success" @click="showNotify('notify')">button</VanButton>
+  <LazyVanButton type="default">lazy button</LazyVanButton>
+</template>
+```

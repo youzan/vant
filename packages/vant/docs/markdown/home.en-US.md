@@ -16,11 +16,11 @@
 - 📖 Extensive documentation and demos
 - 📖 Provide Sketch and Axure design resources
 - 🍭 Support Vue 2 & Vue 3
+- 🍭 Support Nuxt 2 & Nuxt 3, provide [Vant Module](https://github.com/vant-ui/vant-nuxt) for Nuxt
 - 🍭 Support Tree Shaking
 - 🍭 Support Custom Theme
 - 🍭 Support Accessibility (still improving)
 - 🍭 Support Dark Mode
-- 🍭 Support Nuxt 3
 - 🍭 Support SSR
 - 🌍 Support i18n, built-in 30+ languages
 
@@ -56,6 +56,7 @@ The current maintenance status of each version of Vant is as follows:
 | [vant-cli](https://github.com/vant-ui/vant/tree/main/packages/vant-cli) | Scaffold for UI library |
 | [vant-icons](https://github.com/vant-ui/vant/tree/main/packages/vant-icons) | Vant icons |
 | [vant-touch-emulator](https://github.com/vant-ui/vant/tree/main/packages/vant-touch-emulator) | Using vant in desktop browsers |
+| [vant-nuxt](https://github.com/vant-ui/vant-nuxt) | Vant module for Nuxt |
 
 ### Community Ecosystem
 
