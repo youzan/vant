@@ -1,5 +1,6 @@
 import {
   isDef,
+  isDefB,
   isObject,
   createNamespace,
 } from '../utils';
@@ -98,7 +99,7 @@ export default createComponent({
       value = isDef(value) ? String(value) : '';
 
       const { maxlength } = this;
-      if (isDef(maxlength) && value.length > maxlength) {
+      if (isDefB(maxlength) && value.length > maxlength) {
         if (this.currentValue && this.currentValue.length === +maxlength) {
           value = this.currentValue;
         } else {
@@ -205,7 +206,7 @@ export default createComponent({
 
       if (height) {
         input.style.height = (wrapHeight > height ? wrapHeight : height) + 'px';
-      
+
         // https://github.com/youzan/vant/issues/9178
         setRootScrollTop(scrollTop);
       }
