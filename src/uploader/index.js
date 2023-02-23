@@ -210,11 +210,10 @@ export default createComponent({
         }
       }
       if (Array.isArray(files)) {
-        // eslint-disable-next-line array-callback-return
-        files.map((file) => {
+        for (let i = 0; i < files.length; i++) {
           if (this.accept) {
-            const extension = (file.name.indexOf('.') > -1 ? `.${file.name.split('.').pop()}` : '').toLowerCase();
-            const type = file.type.toLowerCase();
+            const extension = (files[i].name.indexOf('.') > -1 ? `.${files[i].name.split('.').pop()}` : '').toLowerCase();
+            const type = files[i].type.toLowerCase();
             const baseType = type.replace(/\/.*$/, '').toLowerCase();
             const accept = this.accept.split(',')
                 .map((type) => type.trim())
@@ -237,8 +236,8 @@ export default createComponent({
                 Toast('文件类型不匹配，请上传' + this.accept + '的文件类型');
                 return null;
             }
+          }
         }
-        })
       } else if (this.accept) {
           const file = files;
           const extension = (file.name.indexOf('.') > -1 ? `.${file.name.split('.').pop()}` : '').toLowerCase();
