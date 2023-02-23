@@ -143,6 +143,7 @@ export default createComponent({
     },
     async clickHandler(event) {
       this.$emit('click', event);
+      const that = this;
       if (this.mode === 'link') {
         this.$emit('rout', event);
         const props = this._props;
@@ -211,8 +212,11 @@ export default createComponent({
             $route,
             props.append,
           );
-          props.replace ? $router.replace(location) : $router.push(location);
-
+          if (props.target === '_self') {
+            props.replace ? $router.replace(location) : $router.push(location);
+          } else {
+            that.$linkpao(currentTo, props.target);
+          }
           this.$emit(this, 'navigate', { to: currentTo, replace: props.replace, append: props.append });
         } else {
           function downloadClick() {

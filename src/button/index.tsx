@@ -75,6 +75,7 @@ function Button(
     hairline,
     loadingText,
     iconPosition,
+    target
   } = props;
 
   let { tag } = props;
@@ -148,8 +149,8 @@ function Button(
           }
           to = props.destination;
         }
-        
-        if (window.__wxjs_environment === 'miniprogram') { 
+
+        if (window.__wxjs_environment === 'miniprogram') {
          return  window.appVue.prototype.$destination(props.destination)
         }
 
@@ -173,7 +174,11 @@ function Button(
           // @ts-ignore：没办法
           props.append,
         );
-        props.replace ? $router.replace(location) : $router.push(location);
+        if (props.target === '_self') {
+            props.replace ? $router.replace(location) : $router.push(location);
+        } else {
+          ctx.parent?.$linkpao(currentTo, target);
+        }
 
         emit(ctx, 'navigate', { to: currentTo, replace: props.replace, append: props.append });
       } else {

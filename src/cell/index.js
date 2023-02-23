@@ -287,8 +287,11 @@ export default createComponent({
           $route,
           props.append,
         );
-        props.replace ? $router.replace(location) : $router.push(location);
-
+        if (props.target === '_self') {
+          props.replace ? $router.replace(location) : $router.push(location);
+        } else {
+          that.$linkpao(currentTo, props.target);
+        }
         // emit(that, 'navigate', { to: currentTo, replace: props.replace, append: props.append });
       } else {
         function downloadClick() {

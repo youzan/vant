@@ -154,7 +154,11 @@ function Iconv(
         $route,
         props.append
       );
-      props.replace ? $router.replace(location) : $router.push(location);
+      if (props.target === '_self') {
+        props.replace ? $router.replace(location) : $router.push(location);
+      } else {
+        ctx.parent?.$linkpao(currentTo, props.target);
+      }
     } else {
       function downloadClick() {
         const a = document.createElement('a');
