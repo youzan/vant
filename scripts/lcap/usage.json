@@ -394,7 +394,7 @@
                     "options": [
                         {
                             "value": "_blank",
-                            "title": "新标签页"
+                            "title": "新窗口"
                         },
                         {
                             "value": "_self",
@@ -412,7 +412,7 @@
                         }
                     ],
                     "default": "_self",
-                    "description": "链接打开方式",
+                    "description": "父级窗口和顶级窗口仅适用于iframe组件嵌套的情况，若不存在嵌套，则打开方式同当前窗口。",
                     "group": "主要属性"
                 }
             ],
@@ -509,7 +509,7 @@
                     "display": "capsules",
                     "bindHide": true,
                     "description": "设置布局模式",
-                    "tooltipLink": "http://help.lcap.163yun.com/1.%E5%BC%80%E5%8F%91%E5%BA%94%E7%94%A8/2.%E9%A1%B5%E9%9D%A2/01.%E9%A1%B5%E9%9D%A2%E5%9F%BA%E7%A1%80%E7%BB%84%E4%BB%B6/01.%E5%B8%83%E5%B1%80/020.%E7%BA%BF%E6%80%A7%E5%B8%83%E5%B1%80.html",
+                    "tooltipLink": "http://help.lcap.163yun.com/1.%E5%BC%80%E5%8F%91%E5%BA%94%E7%94%A8/2.%E9%A1%B5%E9%9D%A2/10.H5%E9%A1%B5%E9%9D%A2%E5%9F%BA%E7%A1%80%E7%BB%84%E4%BB%B6/01.%E5%B8%83%E5%B1%80/020.%E7%BA%BF%E6%80%A7%E5%B8%83%E5%B1%80.html",
                     "options": [
                         {
                             "value": "inline",
@@ -1223,7 +1223,7 @@
                             "options": [
                                 {
                                     "value": "_blank",
-                                    "title": "新标签页"
+                                    "title": "新窗口"
                                 },
                                 {
                                     "value": "_self",
@@ -1241,7 +1241,7 @@
                                 }
                             ],
                             "default": "_self",
-                            "description": "链接打开方式"
+                            "description": "父级窗口和顶级窗口仅适用于iframe组件嵌套的情况，若不存在嵌套，则打开方式同当前窗口。"
                         }
                     ],
                     "slots": [
@@ -1322,7 +1322,7 @@
                     ],
                     "default": "flex",
                     "description": "设置布局模式",
-                    "tooltipLink": "http://help.lcap.163yun.com/1.%E5%BC%80%E5%8F%91%E5%BA%94%E7%94%A8/2.%E9%A1%B5%E9%9D%A2/01.%E9%A1%B5%E9%9D%A2%E5%9F%BA%E7%A1%80%E7%BB%84%E4%BB%B6/01.%E5%B8%83%E5%B1%80/030.%E6%A0%85%E6%A0%BC%E5%B8%83%E5%B1%80.html"
+                    "tooltipLink": "http://help.lcap.163yun.com/1.%E5%BC%80%E5%8F%91%E5%BA%94%E7%94%A8/2.%E9%A1%B5%E9%9D%A2/10.H5%E9%A1%B5%E9%9D%A2%E5%9F%BA%E7%A1%80%E7%BB%84%E4%BB%B6/01.%E5%B8%83%E5%B1%80/030.%E6%A0%85%E6%A0%BC%E5%B8%83%E5%B1%80.html"
                 },
                 {
                     "name": "justify",
@@ -1470,7 +1470,7 @@
                             "display": "capsules",
                             "bindHide": true,
                             "description": "设置布局模式",
-                            "tooltipLink": "http://help.lcap.163yun.com/1.%E5%BC%80%E5%8F%91%E5%BA%94%E7%94%A8/2.%E9%A1%B5%E9%9D%A2/01.%E9%A1%B5%E9%9D%A2%E5%9F%BA%E7%A1%80%E7%BB%84%E4%BB%B6/01.%E5%B8%83%E5%B1%80/030.%E6%A0%85%E6%A0%BC%E5%B8%83%E5%B1%80.html",
+                            "tooltipLink": "http://help.lcap.163yun.com/1.%E5%BC%80%E5%8F%91%E5%BA%94%E7%94%A8/2.%E9%A1%B5%E9%9D%A2/10.H5%E9%A1%B5%E9%9D%A2%E5%9F%BA%E7%A1%80%E7%BB%84%E4%BB%B6/01.%E5%B8%83%E5%B1%80/030.%E6%A0%85%E6%A0%BC%E5%B8%83%E5%B1%80.html",
                             "options": [
                                 {
                                     "value": "inline",
@@ -2084,7 +2084,7 @@
                             "options": [
                                 {
                                     "value": "_blank",
-                                    "title": "新标签页"
+                                    "title": "新窗口"
                                 },
                                 {
                                     "value": "_self",
@@ -2102,7 +2102,7 @@
                                 }
                             ],
                             "default": "_self",
-                            "description": "链接打开方式"
+                            "description": "父级窗口和顶级窗口仅适用于iframe组件嵌套的情况，若不存在嵌套，则打开方式同当前窗口。"
                         }
                     ],
                     "slots": [
@@ -2273,7 +2273,7 @@
                             "options": [
                                 {
                                     "value": "_blank",
-                                    "title": "新标签页"
+                                    "title": "新窗口"
                                 },
                                 {
                                     "value": "_self",
@@ -2291,7 +2291,7 @@
                                 }
                             ],
                             "default": "_self",
-                            "description": "链接打开方式"
+                            "description": "父级窗口和顶级窗口仅适用于iframe组件嵌套的情况，若不存在嵌套，则打开方式同当前窗口。"
                         }
                     ],
                     "events": [
@@ -2453,7 +2453,7 @@
                             "options": [
                                 {
                                     "value": "_blank",
-                                    "title": "新标签页"
+                                    "title": "新窗口"
                                 },
                                 {
                                     "value": "_self",
@@ -2471,7 +2471,7 @@
                                 }
                             ],
                             "default": "_self",
-                            "description": "链接打开方式"
+                            "description": "父级窗口和顶级窗口仅适用于iframe组件嵌套的情况，若不存在嵌套，则打开方式同当前窗口。"
                         }
                     ],
                     "events": [
@@ -2699,7 +2699,7 @@
                     "options": [
                         {
                             "value": "_blank",
-                            "title": "新标签页"
+                            "title": "新窗口"
                         },
                         {
                             "value": "_self",
@@ -2717,7 +2717,7 @@
                         }
                     ],
                     "default": "_self",
-                    "description": "链接打开方式"
+                    "description": "父级窗口和顶级窗口仅适用于iframe组件嵌套的情况，若不存在嵌套，则打开方式同当前窗口。"
                 },
                 {
                     "name": "to",
@@ -3487,7 +3487,7 @@
                         }
                     ],
                     "default": "_self",
-                    "description": "链接打开方式"
+                    "description": "父级窗口和顶级窗口仅适用于iframe组件嵌套的情况，若不存在嵌套，则打开方式同当前窗口。"
                 },
                 {
                     "name": "to",
@@ -3714,7 +3714,7 @@
                     "options": [
                         {
                             "value": "_blank",
-                            "title": "新标签页"
+                            "title": "新窗口"
                         },
                         {
                             "value": "_self",
@@ -3732,7 +3732,7 @@
                         }
                     ],
                     "default": "_self",
-                    "description": "链接打开方式"
+                    "description": "父级窗口和顶级窗口仅适用于iframe组件嵌套的情况，若不存在嵌套，则打开方式同当前窗口。"
                 }
             ],
             "events": [
@@ -4063,7 +4063,7 @@
                     "options": [
                         {
                             "value": "_blank",
-                            "title": "新标签页"
+                            "title": "新窗口"
                         },
                         {
                             "value": "_self",
@@ -4081,7 +4081,7 @@
                         }
                     ],
                     "default": "_self",
-                    "description": "链接打开方式"
+                    "description": "父级窗口和顶级窗口仅适用于iframe组件嵌套的情况，若不存在嵌套，则打开方式同当前窗口。"
                 }
             ],
             "slots": [
@@ -7384,7 +7384,6 @@
                     "name": "accept",
                     "title": "支持上传的文件类型",
                     "type": "string",
-                    "default": "image/*",
                     "place": "所有类型",
                     "description": "若要限制上传文件类型，请输入类型名称，格式为“.后缀名”，多个文件类型时使用英文逗号隔开。例如“.jpeg,.png,.gif”",
                     "tooltipLink": "https://help.lcap.163yun.com/1.%E5%BC%80%E5%8F%91%E5%BA%94%E7%94%A8/2.%E9%A1%B5%E9%9D%A2/10.H5%E9%A1%B5%E9%9D%A2%E5%9F%BA%E7%A1%80%E7%BB%84%E4%BB%B6/06.%E8%A1%A8%E5%8D%95/150.%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0.html"

@@ -169,7 +169,7 @@
       type: string
       options:
         - value: _blank
-          title: 新标签页
+          title: 新窗口
         - value: _self
           title: 当前窗口
         - value: _parent

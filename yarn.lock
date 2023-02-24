@@ -5016,10 +5016,10 @@
   "resolved" "https://registry.npmjs.org/clones/-/clones-1.2.0.tgz"
   "version" "1.2.0"
 
-"cloud-ui.vusion@^0.14.28-beta.1", "cloud-ui.vusion@>=0.6.18":
-  "integrity" "sha512-aOLEek/9RYuJWd+MxQxo/OrLWp5rzBkoFCKKF9atSgZutiHD++3El/+gu/cTSSqXzpRBFfxLuISKx6crc7v/CA=="
-  "resolved" "https://registry.npmjs.org/cloud-ui.vusion/-/cloud-ui.vusion-0.14.28-beta.1.tgz"
-  "version" "0.14.28-beta.1"
+"cloud-ui.vusion@^0.14.28-beta.2", "cloud-ui.vusion@>=0.6.18":
+  "integrity" "sha512-eLolwT0qWjknafqK77a+y60BgHJ3ccxJOAB1uMPZiKenpsjoZ60W+PImMeqWeLtXxqQEPn4OsL2ExIY7pceHng=="
+  "resolved" "https://registry.npmjs.org/cloud-ui.vusion/-/cloud-ui.vusion-0.14.28-beta.2.tgz"
+  "version" "0.14.28-beta.2"
   dependencies:
     "@popperjs/core" "^2.10.2"
     "@vusion/utils" "0.4.11"
