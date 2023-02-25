@@ -202,9 +202,9 @@ Vant exports following ImagePreview utility functions:
 | closeable | Whether to show close icon | _boolean_ | `false` |
 | closeIcon | Close icon name | _string_ | `clear` |
 | closeIconPosition | Close icon position, can be set to `top-left` `bottom-left` `bottom-right` | _string_ | `top-right` |
-| transition `v3.0.8` | Transition, equivalent to `name` prop of [transition](https://v3.vuejs.org/api/built-in-components.html#transition) | _string_ | `van-fade` |
-| overlayClass `v3.2.8` | Custom overlay class | _string \| Array \| object_ | - |
-| overlayStyle `v3.0.8` | Custom overlay style | _object_ | - |
+| transition | Transition, equivalent to `name` prop of [transition](https://v3.vuejs.org/api/built-in-components.html#transition) | _string_ | `van-fade` |
+| overlayClass | Custom overlay class | _string \| Array \| object_ | - |
+| overlayStyle | Custom overlay style | _object_ | - |
 | teleport | Specifies a target element where ImagePreview will be mounted | _string \| Element_ | - |
 
 ### Props
@@ -226,9 +226,9 @@ Vant exports following ImagePreview utility functions:
 | closeable | Whether to show close icon | _boolean_ | `false` |
 | close-icon | Close icon name | _string_ | `clear` |
 | close-icon-position | Close icon position, can be set to `top-left` `bottom-left` `bottom-right` | _string_ | `top-right` |
-| transition `v3.0.8` | Transition, equivalent to `name` prop of [transition](https://v3.vuejs.org/api/built-in-components.html#transition) | _string_ | `van-fade` |
-| overlay-class `v3.2.8` | Custom overlay class | _string \| Array \| object_ | - |
-| overlay-style `v3.0.8` | Custom overlay style | _object_ | - |
+| transition | Transition, equivalent to `name` prop of [transition](https://v3.vuejs.org/api/built-in-components.html#transition) | _string_ | `van-fade` |
+| overlay-class | Custom overlay class | _string \| Array \| object_ | - |
+| overlay-style | Custom overlay style | _object_ | - |
 | teleport | Specifies a target element where ImagePreview will be mounted | _string \| Element_ | - |
 
 ### Events
@@ -279,7 +279,7 @@ imagePreviewRef.value?.swipeTo(1);
 | --- | --- | --- |
 | index | Custom index | { index: index of current image } |
 | cover | Custom content that covers the image preview | - |
-| image `v3.6.5` | Custom image content | { src: current image src } |
+| image | Custom image content | { src: current image src } |
 
 ### onClose Parameters
 

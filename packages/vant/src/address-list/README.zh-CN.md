@@ -114,12 +114,12 @@ export default {
 
 ### Slots
 
-| 名称         | 说明                 | 参数                       |
-| ------------ | -------------------- | -------------------------- |
-| default      | 在列表下方插入内容   | -                          |
-| top          | 在顶部插入内容       | -                          |
-| item-bottom  | 在列表项底部插入内容 | _item: AddressListAddress_ |
-| tag `v3.0.9` | 自定义列表项标签内容 | _item: AddressListAddress_ |
+| 名称        | 说明                 | 参数                       |
+| ----------- | -------------------- | -------------------------- |
+| default     | 在列表下方插入内容   | -                          |
+| top         | 在顶部插入内容       | -                          |
+| item-bottom | 在列表项底部插入内容 | _item: AddressListAddress_ |
+| tag         | 自定义列表项标签内容 | _item: AddressListAddress_ |
 
 ### 类型定义
 

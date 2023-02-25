@@ -332,7 +332,7 @@ export default {
 | preview-options | 全屏图片预览的配置项，可选值见 [ImagePreview](#/zh-CN/image-preview) | _object_ | - |
 | multiple | 是否开启图片多选，部分安卓机型不支持 | _boolean_ | `false` |
 | disabled | 是否禁用文件上传 | _boolean_ | `false` |
-| readonly `v3.1.5` | 是否将上传区域设置为只读状态 | _boolean_ | `false` |
+| readonly | 是否将上传区域设置为只读状态 | _boolean_ | `false` |
 | deletable | 是否展示删除按钮 | _boolean_ | `true` |
 | show-upload | 是否展示上传区域 | _boolean_ | `true` |
 | lazy-load | 是否开启图片懒加载，须配合 [Lazyload](#/zh-CN/lazyload) 组件使用 | _boolean_ | `false` |
@@ -340,7 +340,7 @@ export default {
 | after-read | 文件读取完成后的回调函数 | _Function_ | - |
 | before-read | 文件读取前的回调函数，返回 `false` 可终止文件读取，<br>支持返回 `Promise` | _Function_ | - |
 | before-delete | 文件删除前的回调函数，返回 `false` 可终止文件读取，<br>支持返回 `Promise` | _Function_ | - |
-| max-size `v3.0.17` | 文件大小限制，单位为 `byte` | _number \| string \| (file: File) => boolean_ | `Infinity` |
+| max-size | 文件大小限制，单位为 `byte` | _number \| string \| (file: File) => boolean_ | `Infinity` |
 | max-count | 文件上传数量限制 | _number \| string_ | `Infinity` |
 | result-type | 文件读取结果类型，可选值为 `file` `text` | _string_ | `dataUrl` |
 | upload-text | 上传区域文字提示 | _string_ | - |
@@ -351,21 +351,21 @@ export default {
 
 ### Events
 
-| 事件名                | 说明                   | 回调参数            |
-| --------------------- | ---------------------- | ------------------- |
-| oversize              | 文件大小超过限制时触发 | 同 `after-read`     |
-| click-upload `v3.1.5` | 点击上传区域时触发     | _event: MouseEvent_ |
-| click-preview         | 点击预览图时触发       | 同 `after-read`     |
-| close-preview         | 关闭全屏图片预览时触发 | -                   |
-| delete                | 删除文件预览时触发     | 同 `after-read`     |
+| 事件名        | 说明                   | 回调参数            |
+| ------------- | ---------------------- | ------------------- |
+| oversize      | 文件大小超过限制时触发 | 同 `after-read`     |
+| click-upload  | 点击上传区域时触发     | _event: MouseEvent_ |
+| click-preview | 点击预览图时触发       | 同 `after-read`     |
+| close-preview | 关闭全屏图片预览时触发 | -                   |
+| delete        | 删除文件预览时触发     | 同 `after-read`     |
 
 ### Slots
 
-| 名称 | 说明 | 参数 |
-| --- | --- | --- |
-| default | 自定义上传区域 | - |
-| preview-delete `v3.5.0` | 自定义删除按钮 | - |
-| preview-cover | 自定义覆盖在预览区域上方的内容 | _item: FileListItem_ |
+| 名称           | 说明                           | 参数                 |
+| -------------- | ------------------------------ | -------------------- |
+| default        | 自定义上传区域                 | -                    |
+| preview-delete | 自定义删除按钮                 | -                    |
+| preview-cover  | 自定义覆盖在预览区域上方的内容 | _item: FileListItem_ |
 
 ### 回调参数
 

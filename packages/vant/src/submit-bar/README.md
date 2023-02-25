@@ -106,7 +106,7 @@ export default {
 | disabled | Whether to disable button | _boolean_ | `false` |
 | loading | Whether to show loading icon | _boolean_ | `false` |
 | safe-area-inset-bottom | Whether to enable bottom safe area adaptation | _boolean_ | `true` |
-| placeholder `v3.5.1` | Whether to generate a placeholder element | _boolean_ | `false` |
+| placeholder | Whether to generate a placeholder element | _boolean_ | `false` |
 
 ### Events
 

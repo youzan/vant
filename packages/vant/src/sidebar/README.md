@@ -107,7 +107,7 @@ export default {
 | title | Content | _string_ | `''` |
 | dot | Whether to show red dot | _boolean_ | `false` |
 | badge | Content of the badge | _number \| string_ | `''` |
-| badge-props `v3.2.8` | Props of Badge, see [Badge - props](#/en-US/badge#props) | _BadgeProps_ | - |
+| badge-props | Props of Badge, see [Badge - props](#/en-US/badge#props) | _BadgeProps_ | - |
 | disabled | Whether to be disabled | _boolean_ | `false` |
 | url | Link | _string_ | - |
 | to | Target route of the link, same as to of vue-router | _string \| object_ | - |

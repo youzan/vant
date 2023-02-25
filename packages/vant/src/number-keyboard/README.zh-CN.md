@@ -187,7 +187,7 @@ export default {
 | delete-button-text | 删除按钮文字，空则展示删除图标 | _string_ | - |
 | close-button-loading | 是否将关闭按钮设置为加载中状态，仅在 `theme="custom"` 时有效 | _boolean_ | `false` |
 | show-delete-key | 是否展示删除图标 | _boolean_ | `true` |
-| blur-on-close `v3.0.6` | 是否在点击关闭按钮时触发 blur 事件 | _boolean_ | `true` |
+| blur-on-close | 是否在点击关闭按钮时触发 blur 事件 | _boolean_ | `true` |
 | hide-on-click-outside | 是否在点击外部时收起键盘 | _boolean_ | `true` |
 | teleport | 指定挂载的节点，等同于 Teleport 组件的 [to 属性](https://v3.cn.vuejs.org/api/built-in-components.html#teleport) | _string \| Element_ | - |
 | safe-area-inset-bottom | 是否开启[底部安全区适配](#/zh-CN/advanced-usage#di-bu-an-quan-qu-gua-pei) | _boolean_ | `true` |

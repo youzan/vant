@@ -80,7 +80,7 @@ export default {
 | sticky | 是否开启锚点自动吸顶 | _boolean_ | `true` |
 | sticky-offset-top | 锚点自动吸顶时与顶部的距离 | _number_ | `0` |
 | highlight-color | 索引字符高亮颜色 | _string_ | `#1989fa` |
-| teleport `v3.0.19` | 指定索引栏挂载的节点 | _string \| Element_ | - |
+| teleport | 指定索引栏挂载的节点 | _string \| Element_ | - |
 
 ### IndexAnchor Props
 

@@ -120,7 +120,7 @@ setTimeout(() => {
 
 ```html
 <van-image-preview v-model:show="show" :images="images" @change="onChange">
-  <template v-slot:index>第{{ index + 1  }}页</template>
+  <template v-slot:index>第{{ index + 1 }}页</template>
 </van-image-preview>
 ```
 
@@ -215,9 +215,9 @@ Vant 中导出了以下 ImagePreview 相关的辅助函数：
 | closeable | 是否显示关闭图标 | _boolean_ | `false` |
 | closeIcon | 关闭图标名称或图片链接 | _string_ | `clear` |
 | closeIconPosition | 关闭图标位置，可选值为 `top-left`<br>`bottom-left` `bottom-right` | _string_ | `top-right` |
-| transition `v3.0.8` | 动画类名，等价于 [transition](https://v3.cn.vuejs.org/api/built-in-components.html#transition) 的 `name` 属性 | _string_ | `van-fade` |
-| overlayClass `v3.2.8` | 自定义遮罩层类名 | _string \| Array \| object_ | - |
-| overlayStyle `v3.0.8` | 自定义遮罩层样式 | _object_ | - |
+| transition | 动画类名，等价于 [transition](https://v3.cn.vuejs.org/api/built-in-components.html#transition) 的 `name` 属性 | _string_ | `van-fade` |
+| overlayClass | 自定义遮罩层类名 | _string \| Array \| object_ | - |
+| overlayStyle | 自定义遮罩层样式 | _object_ | - |
 | teleport | 指定挂载的节点，等同于 Teleport 组件的 [to 属性](https://v3.cn.vuejs.org/api/built-in-components.html#teleport) | _string \| Element_ | - |
 
 ### Props
@@ -241,9 +241,9 @@ Vant 中导出了以下 ImagePreview 相关的辅助函数：
 | closeable | 是否显示关闭图标 | _boolean_ | `false` |
 | close-icon | 关闭图标名称或图片链接 | _string_ | `clear` |
 | close-icon-position | 关闭图标位置，可选值为 `top-left`<br>`bottom-left` `bottom-right` | _string_ | `top-right` |
-| transition `v3.0.8` | 动画类名，等价于 [transition](https://v3.cn.vuejs.org/api/built-in-components.html#transition) 的 `name` 属性 | _string_ | `van-fade` |
-| overlay-class `v3.2.8` | 自定义遮罩层类名 | _string \| Array \| object_ | - |
-| overlay-style `v3.0.8` | 自定义遮罩层样式 | _object_ | - |
+| transition | 动画类名，等价于 [transition](https://v3.cn.vuejs.org/api/built-in-components.html#transition) 的 `name` 属性 | _string_ | `van-fade` |
+| overlay-class | 自定义遮罩层类名 | _string \| Array \| object_ | - |
+| overlay-style | 自定义遮罩层样式 | _object_ | - |
 | teleport | 指定挂载的节点，等同于 Teleport 组件的 [to 属性](https://v3.cn.vuejs.org/api/built-in-components.html#teleport) | _string \| Element_ | - |
 
 ### Events
@@ -294,11 +294,11 @@ imagePreviewRef.value?.swipeTo(1);
 
 通过组件调用 `ImagePreview` 时，支持以下插槽：
 
-| 名称           | 说明                           | 参数                      |
-| -------------- | ------------------------------ | ------------------------- |
-| index          | 自定义页码内容                 | { index: 当前图片的索引 } |
-| cover          | 自定义覆盖在图片预览上方的内容 | -                         |
-| image `v3.6.5` | 自定义图片内容                 | { src: 当前资源地址 }     |
+| 名称  | 说明                           | 参数                      |
+| ----- | ------------------------------ | ------------------------- |
+| index | 自定义页码内容                 | { index: 当前图片的索引 } |
+| cover | 自定义覆盖在图片预览上方的内容 | -                         |
+| image | 自定义图片内容                 | { src: 当前资源地址 }     |
 
 ### onClose 回调参数
 

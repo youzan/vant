@@ -253,22 +253,22 @@ export default {
 | options | Options | _CascaderOption[]_ | `[]` |
 | placeholder | Placeholder of unselected tab | _string_ | `Select` |
 | active-color | Active color | _string_ | `#1989fa` |
-| swipeable `v3.0.11` | Whether to enable gestures to slide left and right | _boolean_ | `false` |
+| swipeable | Whether to enable gestures to slide left and right | _boolean_ | `false` |
 | closeable | Whether to show close icon | _boolean_ | `true` |
-| show-header `v3.4.2` | Whether to show header | _boolean_ | `true` |
-| close-icon `v3.0.10` | Close icon name | _string_ | `cross` |
-| field-names `v3.0.4` | Custom the fields of options | _CascaderFieldNames_ | `{ text: 'text', value: 'value', children: 'children' }` |
+| show-header | Whether to show header | _boolean_ | `true` |
+| close-icon | Close icon name | _string_ | `cross` |
+| field-names | Custom the fields of options | _CascaderFieldNames_ | `{ text: 'text', value: 'value', children: 'children' }` |
 
 ### Data Structure of CascaderOption
 
-| Key                | Description               | Type                        |
-| ------------------ | ------------------------- | --------------------------- |
-| text               | Option text               | _string_                    |
-| value              | Option value              | _string \| number_          |
-| color `v3.1.0`     | Text color                | _string_                    |
-| children           | Cascade children          | _CascaderOption[]_          |
-| disabled `v3.1.2`  | Whether to disable option | _boolean_                   |
-| className `v3.1.0` | className for the option  | _string \| Array \| object_ |
+| Key       | Description               | Type                        |
+| --------- | ------------------------- | --------------------------- |
+| text      | Option text               | _string_                    |
+| value     | Option value              | _string \| number_          |
+| color     | Text color                | _string_                    |
+| children  | Cascade children          | _CascaderOption[]_          |
+| disabled  | Whether to disable option | _boolean_                   |
+| className | className for the option  | _string \| Array \| object_ |
 
 ### Events
 
@@ -284,9 +284,9 @@ export default {
 | Name | Description | SlotProps |
 | --- | --- | --- |
 | title | Custom title | - |
-| option `v3.1.4` | Custom option text | _{ option: CascaderOption, selected: boolean }_ |
-| options-top `v3.2.7` | Custom the content above the options | _{ tabIndex: number }_ |
-| options-bottom `v3.2.8` | Custom the content below the options | _{ tabIndex: number }_ |
+| option | Custom option text | _{ option: CascaderOption, selected: boolean }_ |
+| options-top | Custom the content above the options | _{ tabIndex: number }_ |
+| options-bottom | Custom the content below the options | _{ tabIndex: number }_ |
 
 ### Types
 

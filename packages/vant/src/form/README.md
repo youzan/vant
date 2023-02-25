@@ -515,7 +515,7 @@ export default {
 | pattern | Regexp pattern, if the regexp cannot match, means that the validation fails | _RegExp_ |
 | trigger | When to validate the form, priority is higher than the `validate-trigger` of the Form component, can be set to `onChange`, `onBlur`, `onSubmit` | _string \| string[]_ |
 | formatter | Format value before validate | _(value, rule) => any_ |
-| validateEmpty `v3.6.0` | Controls whether the `validator` and `pattern` options to verify empty values, the default value is `true`, you can set to `false` to disable this behavior | _boolean_ |
+| validateEmpty | Controls whether the `validator` and `pattern` options to verify empty values, the default value is `true`, you can set to `false` to disable this behavior | _boolean_ |
 
 ### validate-trigger
 
@@ -539,10 +539,10 @@ Use [ref](https://v3.vuejs.org/guide/component-template-refs.html) to get Form i
 | Name | Description | Attribute | Return value |
 | --- | --- | --- | --- |
 | submit | Submit form | - | - |
-| getValues `v3.4.8` | Get current form values | - | _Record<string, unknown>_ |
+| getValues | Get current form values | - | _Record<string, unknown>_ |
 | validate | Validate form | _name?: string \| string[]_ | _Promise\<void\>_ |
 | resetValidation | Reset validation | _name?: string \| string[]_ | - |
-| getValidationStatus `v3.5.0` | Get validation status of all fields，status can be `passed`、`failed`、`unvalidated` | - | _Record\<string, FieldValidationStatus\>_ |
+| getValidationStatus | Get validation status of all fields，status can be `passed`、`failed`、`unvalidated` | - | _Record\<string, FieldValidationStatus\>_ |
 | scrollToField | Scroll to field | _name: string, alignToTop: boolean_ | - |
 
 ### Types

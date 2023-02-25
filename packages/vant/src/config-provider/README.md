@@ -316,9 +316,9 @@ There are all **Basic Variables** below, for component CSS Variables, please ref
 | theme-vars | Theme variables | _object_ | - |
 | theme-vars-dark | Theme variables that work in dark mode，will override `theme-vars` | _object_ | - |
 | theme-vars-light | Theme variables that work in light mode, will override `theme-vars` | _object_ | - |
-| z-index `v3.6.0` | Set the z-index of all popup components, this property takes effect globally | _number_ | `2000` |
-| tag `v3.1.2` | HTML Tag of root element | _string_ | `div` |
-| icon-prefix `v3.1.3` | Icon className prefix | _string_ | `van-icon` |
+| z-index | Set the z-index of all popup components, this property takes effect globally | _number_ | `2000` |
+| tag | HTML Tag of root element | _string_ | `div` |
+| icon-prefix | Icon className prefix | _string_ | `van-icon` |
 
 ### Types
 

@@ -172,10 +172,10 @@ Vant 中导出了以下 Dialog 相关的辅助函数：
 | showCancelButton | 是否展示取消按钮 | _boolean_ | `false` |
 | confirmButtonText | 确认按钮文案 | _string_ | `确认` |
 | confirmButtonColor | 确认按钮颜色 | _string_ | `#ee0a24` |
-| confirmButtonDisabled `v3.5.0` | 是否禁用确认按钮 | _boolean_ | `false` |
+| confirmButtonDisabled | 是否禁用确认按钮 | _boolean_ | `false` |
 | cancelButtonText | 取消按钮文案 | _string_ | `取消` |
 | cancelButtonColor | 取消按钮颜色 | _string_ | `black` |
-| cancelButtonDisabled `v3.5.0` | 是否禁用取消按钮 | _boolean_ | `false` |
+| cancelButtonDisabled | 是否禁用取消按钮 | _boolean_ | `false` |
 | overlay | 是否展示遮罩层 | _boolean_ | `true` |
 | overlayClass | 自定义遮罩层类名 | _string \| Array \| object_ | - |
 | overlayStyle | 自定义遮罩层样式 | _object_ | - |
@@ -203,10 +203,10 @@ Vant 中导出了以下 Dialog 相关的辅助函数：
 | show-cancel-button | 是否展示取消按钮 | _boolean_ | `false` |
 | confirm-button-text | 确认按钮文案 | _string_ | `确认` |
 | confirm-button-color | 确认按钮颜色 | _string_ | `#ee0a24` |
-| confirm-button-disabled `v3.5.0` | 是否禁用确认按钮 | _boolean_ | `false` |
+| confirm-button-disabled | 是否禁用确认按钮 | _boolean_ | `false` |
 | cancel-button-text | 取消按钮文案 | _string_ | `取消` |
 | cancel-button-color | 取消按钮颜色 | _string_ | `black` |
-| cancel-button-disabled `v3.5.0` | 是否禁用取消按钮 | _boolean_ | `false` |
+| cancel-button-disabled | 是否禁用取消按钮 | _boolean_ | `false` |
 | z-index | 将弹窗的 z-index 层级设置为一个固定值 | _number \| string_ | `2000+` |
 | overlay | 是否展示遮罩层 | _boolean_ | `true` |
 | overlay-class | 自定义遮罩层类名 | _string_ | - |
@@ -237,11 +237,11 @@ Vant 中导出了以下 Dialog 相关的辅助函数：
 
 通过组件调用 `Dialog` 时，支持以下插槽：
 
-| 名称             | 说明               |
-| ---------------- | ------------------ |
-| default          | 自定义内容         |
-| title            | 自定义标题         |
-| footer `v3.0.11` | 自定义底部按钮区域 |
+| 名称    | 说明               |
+| ------- | ------------------ |
+| default | 自定义内容         |
+| title   | 自定义标题         |
+| footer  | 自定义底部按钮区域 |
 
 ### 类型定义
 

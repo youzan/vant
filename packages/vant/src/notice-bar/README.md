@@ -117,9 +117,9 @@ app.use(NoticeBar);
 
 Use [ref](https://v3.vuejs.org/guide/component-template-refs.html) to get NoticeBar instance and call instance methods.
 
-| Name           | Description     | Attribute | Return value |
-| -------------- | --------------- | --------- | ------------ |
-| reset `v3.1.1` | Reset NoticeBar | -         | -            |
+| Name  | Description     | Attribute | Return value |
+| ----- | --------------- | --------- | ------------ |
+| reset | Reset NoticeBar | -         | -            |
 
 ### Types
 
