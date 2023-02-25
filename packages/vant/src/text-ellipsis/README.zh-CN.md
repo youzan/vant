@@ -1,4 +1,4 @@
-# Ellipsis 文本省略
+# TextEllipsis 文本省略
 
 ### 介绍
 
@@ -10,10 +10,10 @@
 
 ```js
 import { createApp } from 'vue';
-import { Ellipsis } from 'vant';
+import { TextEllipsis } from 'vant';
 
 const app = createApp();
-app.use(Ellipsis);
+app.use(TextEllipsis);
 ```
 
 ## 代码演示
@@ -23,7 +23,7 @@ app.use(Ellipsis);
 默认展示`1`行，超过`1`行显示省略号。
 
 ```html
-<van-ellipsis :content="text" />
+<van-text-ellipsis :content="text" />
 ```
 
 ```js
@@ -40,7 +40,7 @@ export default {
 超过行数支持展开/收起。
 
 ```html
-<van-ellipsis :content="text" expand-text="展开" collapse-text="收起" />
+<van-text-ellipsis :content="text" expand-text="展开" collapse-text="收起" />
 ```
 
 ```js
@@ -57,7 +57,7 @@ export default {
 通过设置 `rows` 限制展示行数。
 
 ```html
-<van-ellipsis
+<van-text-ellipsis
   rows="3"
   :content="text"
   expand-text="展开"
@@ -96,7 +96,7 @@ export default {
 组件导出以下类型定义：
 
 ```ts
-import type { EllipsisProps, EllipsisThemeVars } from 'vant';
+import type { TextEllipsisProps, TextEllipsisThemeVars } from 'vant';
 ```
 
 ## 主题定制
@@ -105,6 +105,6 @@ import type { EllipsisProps, EllipsisThemeVars } from 'vant';
 
 组件提供了下列 CSS 变量，可用于自定义样式，使用方法请参考 [ConfigProvider 组件](#/zh-CN/config-provider)。
 
-| 名称                        | 默认值            | 描述 |
-| --------------------------- | ----------------- | ---- |
-| --van-ellipsis-action-color | _var(--van-blue)_ | -    |
+| 名称                             | 默认值            | 描述 |
+| -------------------------------- | ----------------- | ---- |
+| --van-text-ellipsis-action-color | _var(--van-blue)_ | -    |

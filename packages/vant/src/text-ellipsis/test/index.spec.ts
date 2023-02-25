@@ -1,6 +1,6 @@
 import { mount } from '../../../test';
 import { nextTick } from 'vue';
-import Ellipsis from '..';
+import TextEllipsis from '..';
 
 const originGetComputedStyle = window.getComputedStyle;
 
@@ -33,7 +33,7 @@ afterAll(() => {
 });
 
 test('should render content correctly', async () => {
-  const wrapper = mount(Ellipsis, {
+  const wrapper = mount(TextEllipsis, {
     props: {
       content,
     },
@@ -44,7 +44,7 @@ test('should render content correctly', async () => {
 });
 
 test('Expand and Collapse should be work', async () => {
-  const wrapper = mount(Ellipsis, {
+  const wrapper = mount(TextEllipsis, {
     props: {
       content,
       expandText: 'expand',
@@ -54,12 +54,12 @@ test('Expand and Collapse should be work', async () => {
 
   await nextTick();
   expect(wrapper.text()).toMatch('...');
-  await wrapper.find('.van-ellipsis__action').trigger('click');
+  await wrapper.find('.van-text-ellipsis__action').trigger('click');
   expect(wrapper.text()).not.toMatch('...');
 });
 
 test('should emit click event after Expand/Collapse is clicked', async () => {
-  const wrapper = mount(Ellipsis, {
+  const wrapper = mount(TextEllipsis, {
     props: {
       content,
       expandText: 'expand',
@@ -68,7 +68,7 @@ test('should emit click event after Expand/Collapse is clicked', async () => {
   });
 
   await nextTick();
-  await wrapper.find('.van-ellipsis__action').trigger('click');
+  await wrapper.find('.van-text-ellipsis__action').trigger('click');
   expect(wrapper.emitted('click')).toHaveLength(1);
 });
 
@@ -78,7 +78,7 @@ test('text not exceeded', async () => {
   });
 
   const shortContent = 'Vant is a component library';
-  const wrapper = mount(Ellipsis, {
+  const wrapper = mount(TextEllipsis, {
     props: {
       content: shortContent,
       expandText: 'expand',

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import VanEllipsis from '..';
+import VanTextEllipsis from '..';
 import { useTranslate } from '../../../docs/site';
 
 const textCN =
@@ -27,11 +27,11 @@ const t = useTranslate({
 
 <template>
   <demo-block :title="t('basicUsage')">
-    <van-ellipsis :content="t('text')" />
+    <van-text-ellipsis :content="t('text')" />
   </demo-block>
 
   <demo-block :title="t('expandCollapse')">
-    <van-ellipsis
+    <van-text-ellipsis
       :content="t('text')"
       :expand-text="t('expandText')"
       :collapse-text="t('collapseText')"
@@ -39,7 +39,7 @@ const t = useTranslate({
   </demo-block>
 
   <demo-block :title="t('customRows')">
-    <van-ellipsis
+    <van-text-ellipsis
       rows="3"
       :content="t('text')"
       :expand-text="t('expandText')"
@@ -49,7 +49,7 @@ const t = useTranslate({
 </template>
 
 <style lang="less">
-.van-ellipsis {
+.van-text-ellipsis {
   padding: 0 20px;
 }
 </style>

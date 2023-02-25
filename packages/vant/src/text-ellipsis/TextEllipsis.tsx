@@ -12,23 +12,23 @@ import { useEventListener } from '@vant/use';
 // Utils
 import { makeNumericProp, makeStringProp, createNamespace } from '../utils';
 
-const [name, bem] = createNamespace('ellipsis');
+const [name, bem] = createNamespace('text-ellipsis');
 
-export const ellipsisProps = {
+export const textEllipsisProps = {
   rows: makeNumericProp(1),
   content: makeStringProp(''),
   expandText: makeStringProp(''),
   collapseText: makeStringProp(''),
 };
 
-export type EllipsisProps = ExtractPropTypes<typeof ellipsisProps>;
+export type TextEllipsisProps = ExtractPropTypes<typeof textEllipsisProps>;
 
 export default defineComponent({
   name,
 
   inheritAttrs: false,
 
-  props: ellipsisProps,
+  props: textEllipsisProps,
 
   emits: ['clickAction'],
 

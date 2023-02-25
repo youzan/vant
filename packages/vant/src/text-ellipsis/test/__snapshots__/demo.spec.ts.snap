@@ -2,24 +2,24 @@
 
 exports[`should render demo and match snapshot 1`] = `
 <div>
-  <div class="van-ellipsis">
+  <div class="van-text-ellipsis">
     Vant is a lightweight, customizable mobile component library that was open sourced in 2017. Currently Vant officially provides Vue 2 version, Vue 3 version and WeChat applet version, and the community team maintains React version and Alipay applet version...
-    <span class="van-ellipsis__action">
+    <span class="van-text-ellipsis__action">
     </span>
   </div>
 </div>
 <div>
-  <div class="van-ellipsis">
+  <div class="van-text-ellipsis">
     Vant is a lightweight, customizable mobile component library that was open sourced in 2017. Currently Vant officially provides Vue 2 version, Vue 3 version and WeChat applet version, and the community team maintains React version and Alipay applet version...
-    <span class="van-ellipsis__action">
+    <span class="van-text-ellipsis__action">
       expand
     </span>
   </div>
 </div>
 <div>
-  <div class="van-ellipsis">
+  <div class="van-text-ellipsis">
     Vant is a lightweight, customizable mobile component library that was open sourced in 2017. Currently Vant officially provides Vue 2 version, Vue 3 version and WeChat applet version, and the community team maintains React version and Alipay applet version...
-    <span class="van-ellipsis__action">
+    <span class="van-text-ellipsis__action">
       expand
     </span>
   </div>

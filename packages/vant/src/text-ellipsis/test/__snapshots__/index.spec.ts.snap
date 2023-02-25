@@ -1,9 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`should render content correctly 1`] = `
-<div class="van-ellipsis">
+<div class="van-text-ellipsis">
   Vant is a lightweight, customizable mobile component library th...
-  <span class="van-ellipsis__action">
+  <span class="van-text-ellipsis__action">
   </span>
 </div>
 `;

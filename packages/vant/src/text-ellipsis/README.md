@@ -1,4 +1,4 @@
-# Ellipsis
+# TextEllipsis
 
 ### Intro
 
@@ -10,10 +10,10 @@ Register component globally via `app.use`, refer to [Component Registration](#/e
 
 ```js
 import { createApp } from 'vue';
-import { Ellipsis } from 'vant';
+import { TextEllipsis } from 'vant';
 
 const app = createApp();
-app.use(Ellipsis);
+app.use(TextEllipsis);
 ```
 
 ## Usage
@@ -23,7 +23,7 @@ app.use(Ellipsis);
 Show one rows by default.
 
 ```html
-<van-ellipsis :content="text" />
+<van-text-ellipsis :content="text" />
 ```
 
 ```js
@@ -40,7 +40,11 @@ export default {
 Support Expand/Collapse.
 
 ```html
-<van-ellipsis :content="text" expand-text="expand" collapse-text="collapse" />
+<van-text-ellipsis
+  :content="text"
+  expand-text="expand"
+  collapse-text="collapse"
+/>
 ```
 
 ```js
@@ -57,7 +61,7 @@ export default {
 Display the number of `rows` by setting rows.
 
 ```html
-<van-ellipsis
+<van-text-ellipsis
   rows="3"
   :content="text"
   expand-text="expand"
@@ -96,7 +100,7 @@ export default {
 The component exports the following type definitions:
 
 ```ts
-import type { EllipsisProps, EllipsisThemeVars } from 'vant';
+import type { TextEllipsisProps, TextEllipsisThemeVars } from 'vant';
 ```
 
 ## Theming
@@ -105,6 +109,6 @@ import type { EllipsisProps, EllipsisThemeVars } from 'vant';
 
 The component provides the following CSS variables, which can be used to customize styles. Please refer to [ConfigProvider component](#/en-US/config-provider).
 
-| Name                        | Default Value     | Description |
-| --------------------------- | ----------------- | ----------- |
-| --van-ellipsis-action-color | _var(--van-blue)_ | -           |
+| Name                             | Default Value     | Description |
+| -------------------------------- | ----------------- | ----------- |
+| --van-text-ellipsis-action-color | _var(--van-blue)_ | -           |

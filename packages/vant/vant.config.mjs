@@ -341,8 +341,8 @@ location.href = location.href.replace('youzan.github.io', 'vant-ui.github.io');
                 title: 'Tag 标签',
               },
               {
-                path: 'ellipsis',
-                title: 'Ellipsis 文本省略',
+                path: 'text-ellipsis',
+                title: 'TextEllipsis 文本省略',
               },
             ],
           },
@@ -781,8 +781,8 @@ location.href = location.href.replace('youzan.github.io', 'vant-ui.github.io');
                 title: 'Tag',
               },
               {
-                path: 'ellipsis',
-                title: 'Ellipsis',
+                path: 'text-ellipsis',
+                title: 'TextEllipsis',
               },
             ],
           },
