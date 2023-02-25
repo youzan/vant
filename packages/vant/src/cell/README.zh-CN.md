@@ -58,14 +58,6 @@ app.use(CellGroup);
 <van-cell title="单元格" icon="location-o" />
 ```
 
-### 只设置 value
-
-只设置 `value` 时，内容会靠左对齐。
-
-```html
-<van-cell value="内容" />
-```
-
 ### 展示箭头
 
 设置 `is-link` 属性后会在单元格右侧显示箭头，并且可以通过 `arrow-direction` 属性控制箭头方向。
