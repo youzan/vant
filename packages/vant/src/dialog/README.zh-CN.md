@@ -305,7 +305,9 @@ Vant 从 4.0 版本开始不再支持 `babel-plugin-import` 插件，请参考 [
 将 `closeOnPopstate` 属性设置为 false 即可。
 
 ```js
-Dialog.alert({
+import { showDialog } from 'vant';
+
+showDialog({
   title: '标题',
   message: '弹窗内容',
   closeOnPopstate: false,
