@@ -327,19 +327,19 @@ Following props are supported when the type is multiple
 | unselect | Emitted when unselect date when type is multiple | _value: Date_ |
 | month-show | Emitted when a month enters the visible area | _value: { date: Date, title: string }_ |
 | over-range | Emitted when exceeded max range | - |
-| click-subtitle `v3.1.3` | Emitted when clicking the subtitle | _event: MouseEvent_ |
+| click-subtitle | Emitted when clicking the subtitle | _event: MouseEvent_ |
 
 ### Slots
 
 | Name | Description | SlotProps |
 | --- | --- | --- |
 | title | Custom title | - |
-| subtitle `v3.1.3` | Custom subtitle | _{ text: string, date?: Date }_ |
+| subtitle | Custom subtitle | _{ text: string, date?: Date }_ |
 | month-title `v4.0.9` | Custom title of every month | _{ text: string, date: Date }_ |
 | footer | Custom footer | - |
-| confirm-text `v3.2.6` | Custom confirm text | _{ disabled: boolean }_ |
-| top-info `v3.0.17` | Custom top info of day | _day: Day_ |
-| bottom-info `v3.0.17` | Custom bottom info of day | _day: Day_ |
+| confirm-text | Custom confirm text | _{ disabled: boolean }_ |
+| top-info | Custom top info of day | _day: Day_ |
+| bottom-info | Custom bottom info of day | _day: Day_ |
 
 ### Methods
 

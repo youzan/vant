@@ -95,7 +95,7 @@ app.use(Lazyload);
 | --- | --- | --- | --- |
 | src | Src | _string_ | - |
 | fit | Fit mode, same as [object-fit](https://developer.mozilla.org/en-US/docs/Web/CSS/object-fit) | _string_ | `fill` |
-| position `v3.4.2` | Position, same as [object-position](https://developer.mozilla.org/en-US/docs/Web/CSS/object-position), can be set to `top` `right` `bottom` `left` or `string` | _string_ | `center` |
+| position | Position, same as [object-position](https://developer.mozilla.org/en-US/docs/Web/CSS/object-position), can be set to `top` `right` `bottom` `left` or `string` | _string_ | `center` |
 | alt | Alt | _string_ | - |
 | width | Width | _number \| string_ | - |
 | height | Height | _number \| string_ | - |
@@ -107,7 +107,7 @@ app.use(Lazyload);
 | show-loading | Whether to show loading placeholder | _boolean_ | `true` |
 | error-icon | Error icon | _string_ | `photo-fail` |
 | loading-icon | Loading icon | _string_ | `photo` |
-| icon-size `v3.0.11` | Icon size | _number \| string_ | `32px` |
+| icon-size | Icon size | _number \| string_ | `32px` |
 | icon-prefix | Icon className prefix | _string_ | `van-icon` |
 
 ### fit optional value

@@ -178,9 +178,9 @@ export default {
 | label | Description below the title | _string_ | - |
 | border | Whether to show inner border | _boolean_ | `true` |
 | disabled | Whether to disabled collapse | _boolean_ | `false` |
-| readonly `v3.0.12` | Whether to be readonly | _boolean_ | `false` |
+| readonly | Whether to be readonly | _boolean_ | `false` |
 | is-link | Whether to show link icon | _boolean_ | `true` |
-| lazy-render `v3.4.5` | Whether to lazy render util opened | _boolean_ | `true` |
+| lazy-render | Whether to lazy render util opened | _boolean_ | `true` |
 | title-class | Title className | _string_ | - |
 | value-class | Value className | _string_ | - |
 | label-class | Label className | _string_ | - |
@@ -191,7 +191,7 @@ Use [ref](https://v3.vuejs.org/guide/component-template-refs.html) to get Collap
 
 | Name | Description | Attribute | Return value |
 | --- | --- | --- | --- |
-| toggleAll `v3.5.3` | Toggle the expanded status of all collapses | _options?: boolean \| object_ | - |
+| toggleAll | Toggle the expanded status of all collapses | _options?: boolean \| object_ | - |
 
 ### toggleAll Usage
 
@@ -253,14 +253,14 @@ collapseItemRef.value?.toggle();
 
 ### CollapseItem Slots
 
-| Name           | Description              |
-| -------------- | ------------------------ |
-| default        | Content                  |
-| title          | Custom header title      |
-| value          | Custom header value      |
-| label `v3.1.1` | Custom header label      |
-| icon           | Custom header left icon  |
-| right-icon     | Custom header right icon |
+| Name       | Description              |
+| ---------- | ------------------------ |
+| default    | Content                  |
+| title      | Custom header title      |
+| value      | Custom header value      |
+| label      | Custom header label      |
+| icon       | Custom header left icon  |
+| right-icon | Custom header right icon |
 
 ## Theming
 

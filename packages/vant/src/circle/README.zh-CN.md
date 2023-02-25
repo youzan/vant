@@ -173,7 +173,7 @@ export default {
 | stroke-width | 进度条宽度 | _number \| string_ | `40` |
 | stroke-linecap | 进度条端点的形状，可选值为 `square` `butt` | _string_ | `round` |
 | clockwise | 是否顺时针增加 | _boolean_ | `true` |
-| start-position `v3.2.1` | 进度起始位置，可选值为 `left`、`right`、`bottom` | _CircleStartPosition_ | `top` |
+| start-position | 进度起始位置，可选值为 `left`、`right`、`bottom` | _CircleStartPosition_ | `top` |
 
 ### Slots
 

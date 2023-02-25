@@ -96,7 +96,7 @@ Layout 组件提供了 `24列栅格`，通过在 `Col` 上添加 `span` 属性�
 | tag | 自定义元素标签 | _string_ | `div` |
 | justify | 主轴对齐方式，可选值为 `end` `center` <br> `space-around` `space-between` | _string_ | `start` |
 | align | 交叉轴对齐方式，可选值为 `center` `bottom` | _string_ | `top` |
-| wrap `v3.0.11` | 是否自动换行 | _boolean_ | `true` |
+| wrap | 是否自动换行 | _boolean_ | `true` |
 
 ### Col Props
 

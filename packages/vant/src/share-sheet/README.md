@@ -175,7 +175,7 @@ export default {
 | description | Description | _string_ | - |
 | duration | Transition duration, unit second | _number \| string_ | `0.3` |
 | z-index | Set the z-index to a fixed value | _number \| string_ | `2000+` |
-| round `v3.2.6` | Whether to show round corner | _boolean_ | `true` |
+| round | Whether to show round corner | _boolean_ | `true` |
 | overlay | Whether to show overlay | _boolean_ | `true` |
 | overlay-class | Custom overlay class | _string \| Array \| object_ | - |
 | overlay-style | Custom overlay style | _object_ | - |
@@ -185,7 +185,7 @@ export default {
 | close-on-click-overlay | Whether to close when overlay is clicked | _boolean_ | `true` |
 | safe-area-inset-bottom | Whether to enable bottom safe area adaptation | _boolean_ | `true` |
 | teleport | Specifies a target element where ShareSheet will be mounted | _string \| Element_ | - |
-| before-close `v3.1.4` | Callback function before close | _(action: string) => boolean \| Promise\<boolean\>_ | - |
+| before-close | Callback function before close | _(action: string) => boolean \| Promise\<boolean\>_ | - |
 
 ### Data Structure of Option
 
@@ -210,11 +210,11 @@ export default {
 
 ### Slots
 
-| Name             | Description                         |
-| ---------------- | ----------------------------------- |
-| title            | Custom title                        |
-| description      | Custom description                  |
-| cancel `v3.0.10` | Custom the content of cancel button |
+| Name        | Description                         |
+| ----------- | ----------------------------------- |
+| title       | Custom title                        |
+| description | Custom description                  |
+| cancel      | Custom the content of cancel button |
 
 ### Types
 

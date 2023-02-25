@@ -253,14 +253,14 @@ export default {
 | duration | Transition duration, unit second | _number \| string_ | `0.3` |
 | offset | Distance to reference | _[number, number]_ | `[0, 8]` |
 | overlay | Whether to show overlay | _boolean_ | `false` |
-| overlay-class `v3.0.10` | Custom overlay class | _string \| Array \| object_ | - |
-| overlay-style `v3.0.10` | Custom overlay style | _object_ | - |
-| show-arrow `v3.2.2` | Whether to show arrow | _boolean_ | `true` |
+| overlay-class | Custom overlay class | _string \| Array \| object_ | - |
+| overlay-style | Custom overlay style | _object_ | - |
+| show-arrow | Whether to show arrow | _boolean_ | `true` |
 | close-on-click-action | Whether to close when clicking action | _boolean_ | `true` |
 | close-on-click-outside | Whether to close when clicking outside | _boolean_ | `true` |
-| close-on-click-overlay `v3.0.10` | Whether to close when clicking overlay | _boolean_ | `true` |
+| close-on-click-overlay | Whether to close when clicking overlay | _boolean_ | `true` |
 | teleport | Specifies a target element where Popover will be mounted | _string \| Element_ | `body` |
-| icon-prefix `v3.0.17` | Icon className prefix | _string_ | `van-icon` |
+| icon-prefix | Icon className prefix | _string_ | `van-icon` |
 
 ### Data Structure of PopoverAction
 
@@ -289,7 +289,7 @@ export default {
 | --- | --- | --- |
 | default | Custom content | - |
 | reference | Reference Element | - |
-| action `v3.4.0` | Custom the content of option | _{ action: PopoverAction, index: number }_ |
+| action | Custom the content of option | _{ action: PopoverAction, index: number }_ |
 
 ### Types
 

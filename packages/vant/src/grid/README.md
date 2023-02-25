@@ -118,7 +118,7 @@ app.use(GridItem);
 | square | Whether to be square shape | _boolean_ | `false` |
 | clickable | Whether to show click feedback when clicked | _boolean_ | `false` |
 | direction | Content arrangement direction, can be set to `horizontal` | _string_ | `vertical` |
-| reverse `v3.1.0` | Whether to reverse the position of icon and text | _boolean_ | `false` |
+| reverse | Whether to reverse the position of icon and text | _boolean_ | `false` |
 
 ### GridItem Props
 
@@ -130,7 +130,7 @@ app.use(GridItem);
 | icon-color | Icon color | _string_ | - |
 | dot | Whether to show red dot | _boolean_ | `false` |
 | badge | Content of the badge | _number \| string_ | - |
-| badge-props `v3.2.8` | Props of Badge, see [Badge - props](#/en-US/badge#props) | _BadgeProps_ | - |
+| badge-props | Props of Badge, see [Badge - props](#/en-US/badge#props) | _BadgeProps_ | - |
 | url | Link URL | _string_ | - |
 | to | Target route of the link, same as to of vue-router | _string \| object_ | - |
 | replace | If true, the navigation will not leave a history record | _boolean_ | `false` |

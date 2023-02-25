@@ -83,17 +83,17 @@ export default {
 | inactive-color | Inactive step color | _string_ | `#969799` |
 | active-icon | Active icon name | _string_ | `checked` |
 | inactive-icon | Inactive icon name | _string_ | - |
-| finish-icon `v3.0.7` | Finish icon name | _string_ | - |
-| icon-prefix `v3.0.15` | Icon className prefix | _string_ | `van-icon` |
+| finish-icon | Finish icon name | _string_ | - |
+| icon-prefix | Icon className prefix | _string_ | `van-icon` |
 
 ### Step Slots
 
-| Name                 | Description          |
-| -------------------- | -------------------- |
-| default              | Step content         |
-| active-icon          | Custom active icon   |
-| inactive-icon        | Custom inactive icon |
-| finish-icon `v3.0.7` | Custom finish icon   |
+| Name          | Description          |
+| ------------- | -------------------- |
+| default       | Step content         |
+| active-icon   | Custom active icon   |
+| inactive-icon | Custom inactive icon |
+| finish-icon   | Custom finish icon   |
 
 ### Steps Events
 
