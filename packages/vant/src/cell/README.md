@@ -59,14 +59,6 @@ app.use(CellGroup);
 </van-cell-group>
 ```
 
-### Value only
-
-```html
-<van-cell-group>
-  <van-cell value="Content" />
-</van-cell-group>
-```
-
 ### Link
 
 ```html
