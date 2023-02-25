@@ -46,4 +46,19 @@ jobs:
           token: ${{ secrets.VANT_UI_TOKEN }}
           repository-name: vant-ui/vant-ui.github.io
           target-folder: vant
-          clean: false
+          clean: true
+          clean-exclude: |
+            1.x/*
+            1.x/**/*
+            next/*
+            next/**/*
+            v1/*
+            v1/**/*
+            v2/*
+            v2/**/*
+            v3/*
+            v3/**/*
+            v4/*
+            v4/**/*
+            vant-use/*
+            vant-use/**/*
