@@ -29,9 +29,15 @@ function formatArguments(input: string): VueEventArgument[] {
     } else if ([':', ',', '_', ' '].includes(input[0])) {
       input = input.substring(1);
     } else {
-      const val = input.match(/( |'|\||\w)+/)![0] || '';
-      input = input.substring(val.length);
-      items.push(val);
+      const matched = input.match(/( |'|\||\w)+/);
+
+      if (matched?.length && matched[0]) {
+        const val = matched[0];
+        input = input.substring(val.length);
+        items.push(val);
+      } else {
+        input = '';
+      }
     }
   }
 
