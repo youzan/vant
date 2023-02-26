@@ -26,8 +26,6 @@ export type TextEllipsisProps = ExtractPropTypes<typeof textEllipsisProps>;
 export default defineComponent({
   name,
 
-  inheritAttrs: false,
-
   props: textEllipsisProps,
 
   emits: ['clickAction'],
@@ -120,9 +118,7 @@ export default defineComponent({
       </span>
     );
 
-    onMounted(() => {
-      calcEllipsised();
-    });
+    onMounted(calcEllipsised);
 
     watch(() => [props.content, props.rows], calcEllipsised);
 
