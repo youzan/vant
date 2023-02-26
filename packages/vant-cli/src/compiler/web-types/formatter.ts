@@ -30,8 +30,9 @@ function formatArguments(input: string): VueEventArgument[] {
       input = input.substring(1);
     } else {
       const matched = input.match(/( |'|\||\w)+/);
-      if (matched?.length) {
-        const val = matched[0] || '';
+
+      if (matched?.length && matched[0]) {
+        const val = matched[0];
         input = input.substring(val.length);
         items.push(val);
       } else {
