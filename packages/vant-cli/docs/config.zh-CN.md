@@ -221,7 +221,7 @@ module.exports = {
 ### build.packageManager
 
 - Type: `'npm' | 'yarn' | 'pnpm'`
-- Default: `undefined`
+- Default: `yarn`
 
 指定使用的包管理器。
 
