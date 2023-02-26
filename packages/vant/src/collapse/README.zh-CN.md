@@ -201,8 +201,8 @@ export default {
 | border | 是否显示内边框 | _boolean_ | `true` |
 | is-link | 是否展示标题栏右侧箭头并开启点击反馈 | _boolean_ | `true` |
 | disabled | 是否禁用面板 | _boolean_ | `false` |
-| readonly `v3.0.12` | 是否为只读状态，只读状态下无法操作面板 | _boolean_ | `false` |
-| lazy-render `v3.4.5` | 是否在首次展开时才渲染面板内容 | _boolean_ | `true` |
+| readonly | 是否为只读状态，只读状态下无法操作面板 | _boolean_ | `false` |
+| lazy-render | 是否在首次展开时才渲染面板内容 | _boolean_ | `true` |
 | title-class | 左侧标题额外类名 | _string_ | - |
 | value-class | 右侧内容额外类名 | _string_ | - |
 | label-class | 描述信息额外类名 | _string_ | - |
@@ -213,7 +213,7 @@ export default {
 
 | 方法名 | 说明 | 参数 | 返回值 |
 | --- | --- | --- | --- |
-| toggleAll `v3.5.3` | 切换所有面板展开状态，传 `true` 为全部展开，`false` 为全部收起，不传参为全部切换 | _options?: boolean \| object_ | - |
+| toggleAll | 切换所有面板展开状态，传 `true` 为全部展开，`false` 为全部收起，不传参为全部切换 | _options?: boolean \| object_ | - |
 
 ### toggleAll 方法示例
 
@@ -275,14 +275,14 @@ collapseItemRef.value?.toggle();
 
 ### CollapseItem Slots
 
-| 名称           | 说明                 |
-| -------------- | -------------------- |
-| default        | 面板内容             |
-| title          | 自定义标题栏左侧内容 |
-| value          | 自定义标题栏右侧内容 |
-| label `v3.1.1` | 自定义标题栏描述信息 |
-| icon           | 自定义标题栏左侧图标 |
-| right-icon     | 自定义标题栏右侧图标 |
+| 名称       | 说明                 |
+| ---------- | -------------------- |
+| default    | 面板内容             |
+| title      | 自定义标题栏左侧内容 |
+| value      | 自定义标题栏右侧内容 |
+| label      | 自定义标题栏描述信息 |
+| icon       | 自定义标题栏左侧图标 |
+| right-icon | 自定义标题栏右侧图标 |
 
 ## 主题定制
 

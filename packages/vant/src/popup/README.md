@@ -233,8 +233,8 @@ Use `teleport` prop to specify mount location.
 | closeable | Whether to show close icon | _boolean_ | `false` |
 | close-icon | Close icon name | _string_ | `cross` |
 | close-icon-position | Close Icon Position, can be set to `top-left` `bottom-left` `bottom-right` | _string_ | `top-right` |
-| before-close `v3.1.4` | Callback function before close | _(action: string) => boolean \| Promise\<boolean\>_ | - |
-| icon-prefix `v3.0.18` | Icon className prefix | _string_ | `van-icon` |
+| before-close | Callback function before close | _(action: string) => boolean \| Promise\<boolean\>_ | - |
+| icon-prefix | Icon className prefix | _string_ | `van-icon` |
 | transition | Transition, equivalent to `name` prop of [transition](https://v3.vuejs.org/api/built-in-components.html#transition) | _string_ | - |
 | transition-appear | Whether to apply transition on initial render | _boolean_ | `false` |
 | teleport | Specifies a target element where Popup will be mounted | _string \| Element_ | - |
@@ -255,10 +255,10 @@ Use `teleport` prop to specify mount location.
 
 ### Slots
 
-| Name                      | Description              |
-| ------------------------- | ------------------------ |
-| default                   | Content of Popup         |
-| overlay-content `v3.0.18` | Content of Popup overlay |
+| Name            | Description              |
+| --------------- | ------------------------ |
+| default         | Content of Popup         |
+| overlay-content | Content of Popup overlay |
 
 ### Types
 

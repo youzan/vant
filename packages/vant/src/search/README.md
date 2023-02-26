@@ -138,14 +138,14 @@ export default {
 | --- | --- | --- | --- |
 | v-model | Input value | _number \| string_ | - |
 | label | Left side label | _string_ | - |
-| name `v3.2.3` | As the identifier when submitting the form | _string_ | - |
+| name | As the identifier when submitting the form | _string_ | - |
 | shape | Shape of field, can be set to `round` | _string_ | `square` |
-| id `v3.2.2` | Input id, the for attribute of the label also will be set | _string_ | `van-search-n-input` |
+| id | Input id, the for attribute of the label also will be set | _string_ | `van-search-n-input` |
 | background | Background color of field | _string_ | `#f2f2f2` |
 | maxlength | Max length of value | _number \| string_ | - |
 | placeholder | Placeholder | _string_ | - |
 | clearable | Whether to be clearable | _boolean_ | `true` |
-| clear-icon `v3.0.12` | Clear icon name | _string_ | `clear` |
+| clear-icon | Clear icon name | _string_ | `clear` |
 | clear-trigger | When to display the clear icon, `always` means to display the icon when value is not empty, `focus` means to display the icon when input is focused | _string_ | `focus` |
 | autofocus | Whether to auto focus, unsupported in iOS | _boolean_ | `false` |
 | show-action | Whether to show right action button | _boolean_ | `false` |
@@ -153,13 +153,13 @@ export default {
 | disabled | Whether to disable field | _boolean_ | `false` |
 | readonly | Whether to be readonly | _boolean_ | `false` |
 | error | Whether to mark the input content in red | _boolean_ | `false` |
-| error-message `v3.0.12` | Error message | _string_ | - |
-| formatter `v3.0.12` | Input value formatter | _(val: string) => string_ | - |
-| format-trigger `v3.0.12` | When to format value, can be set to `onBlur` | _string_ | `onChange` |
+| error-message | Error message | _string_ | - |
+| formatter | Input value formatter | _(val: string) => string_ | - |
+| format-trigger | When to format value, can be set to `onBlur` | _string_ | `onChange` |
 | input-align | Text align of field, can be set to `center` `right` | _string_ | `left` |
 | left-icon | Left icon name | _string_ | `search` |
 | right-icon | Right icon name | _string_ | - |
-| autocomplete `v3.2.3` | [autocomplete](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/autocomplete) attribute of native input element | _string_ | - |
+| autocomplete | [autocomplete](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/autocomplete) attribute of native input element | _string_ | - |
 
 ### Events
 
@@ -170,8 +170,8 @@ export default {
 | focus | Emitted when input is focused | _event: Event_ |
 | blur | Emitted when input is blurred | _event: Event_ |
 | click-input | Emitted when the input is clicked | _event: MouseEvent_ |
-| click-left-icon `v3.4.0` | Emitted when the left icon is clicked | _event: MouseEvent_ |
-| click-right-icon `v3.4.0` | Emitted when the right icon is clicked | _event: MouseEvent_ |
+| click-left-icon | Emitted when the left icon is clicked | _event: MouseEvent_ |
+| click-right-icon | Emitted when the right icon is clicked | _event: MouseEvent_ |
 | clear | Emitted when the clear icon is clicked | _event: MouseEvent_ |
 | cancel | Emitted when the cancel button is clicked | - |
 

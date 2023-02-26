@@ -191,7 +191,7 @@ export default {
 | close-on-click-overlay | Whether to close when overlay is clicked | _boolean_ | `true` |
 | safe-area-inset-bottom | Whether to enable bottom safe area adaptation | _boolean_ | `true` |
 | teleport | Specifies a target element where ActionSheet will be mounted | _string \| Element_ | - |
-| before-close `v3.1.4` | Callback function before close | _(action: string) => boolean \| Promise\<boolean\>_ | - |
+| before-close | Callback function before close | _(action: string) => boolean \| Promise\<boolean\>_ | - |
 
 ### Data Structure of ActionSheetAction
 
@@ -223,8 +223,8 @@ export default {
 | --- | --- | --- |
 | default | Custom content |
 | description | Custom description above the options |
-| cancel `v3.0.10` | Custom the content of cancel button |
-| action `v3.4.0` | Custom the content of action | _{ action: ActionSheetAction, index: number }_ |
+| cancel | Custom the content of cancel button |
+| action | Custom the content of action | _{ action: ActionSheetAction, index: number }_ |
 
 ### Types
 

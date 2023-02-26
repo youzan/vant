@@ -248,7 +248,7 @@ export default {
 | border | Whether to show border when `type="line"` | _boolean_ | `false` |
 | ellipsis | Whether to ellipsis too long title | _boolean_ | `true` |
 | sticky | Whether to use sticky mode | _boolean_ | `false` |
-| shrink `v3.2.8` | Whether to shrink the the tabs to the left | _boolean_ | `false` |
+| shrink | Whether to shrink the the tabs to the left | _boolean_ | `false` |
 | swipeable | Whether to enable gestures to slide left and right | _boolean_ | `false` |
 | lazy-render | Whether to enable tab content lazy render | _boolean_ | `true` |
 | scrollspy | Whether to use scrollspy mode | _boolean_ | `false` |
@@ -272,13 +272,13 @@ export default {
 | replace | If true, the navigation will not leave a history record | _boolean_ | `false` |
 | title-style | Custom title style | _string \| Array \| object_ | - |
 | title-class | Custom title class name | _string \| Array \| object_ | - |
-| show-zero-badge `v3.2.2` | Whether to show badge when the value is zero | _boolean_ | `true` |
+| show-zero-badge | Whether to show badge when the value is zero | _boolean_ | `true` |
 
 ### Tabs Events
 
 | Event | Description | Arguments |
 | --- | --- | --- |
-| click-tab `v3.1.4` | Emitted when a tab is clicked | _{ name: string \| number, title: string, event: MouseEvent, disabled: boolean }_ |
+| click-tab | Emitted when a tab is clicked | _{ name: string \| number, title: string, event: MouseEvent, disabled: boolean }_ |
 | change | Emitted when active tab changed | _name: string \| number, title: string_ |
 | rendered | Emitted when content first rendered in lazy-render mode | _name: string \| number, title: string_ |
 | scroll | Emitted when tab scrolling in sticky mode | _{ scrollTop: number, isFixed: boolean }_ |
@@ -313,11 +313,11 @@ tabsRef.value?.scrollTo(0);
 
 ### Tabs Slots
 
-| Name                | Description               |
-| ------------------- | ------------------------- |
-| nav-left            | Custom nav left content   |
-| nav-right           | Custom nav right content  |
-| nav-bottom `v3.1.1` | Custom nav bottom content |
+| Name       | Description               |
+| ---------- | ------------------------- |
+| nav-left   | Custom nav left content   |
+| nav-right  | Custom nav right content  |
+| nav-bottom | Custom nav bottom content |
 
 ### Tab Slots
 

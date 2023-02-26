@@ -143,11 +143,11 @@ Vant 中导出了以下 Notify 相关的辅助函数：
 | message | 展示文案，支持通过`\n`换行 | _string_ | - |
 | duration | 展示时长(ms)，值为 0 时，notify 不会消失 | _number \| string_ | `3000` |
 | z-index | 将组件的 z-index 层级设置为一个固定值 | _number \| string_ | `2000+` |
-| position `v3.4.0` | 弹出位置，可选值为 `bottom` | _NotifyPosition_ | `top` |
+| position | 弹出位置，可选值为 `bottom` | _NotifyPosition_ | `top` |
 | color | 字体颜色 | _string_ | `white` |
 | background | 背景颜色 | _string_ | - |
 | className | 自定义类名 | _string \| Array \| object_ | - |
-| lockScroll `v3.0.7` | 是否锁定背景滚动 | _boolean_ | `false` |
+| lockScroll | 是否锁定背景滚动 | _boolean_ | `false` |
 | onClick | 点击时的回调函数 | _(event: MouseEvent): void_ | - |
 | onOpened | 完全展示后的回调函数 | _() => void_ | - |
 | onClose | 关闭时的回调函数 | _() => void_ | - |

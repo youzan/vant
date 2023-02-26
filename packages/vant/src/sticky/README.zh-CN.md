@@ -75,18 +75,18 @@ export default {
 
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
-| position `v3.0.6` | 吸附位置，可选值为 `bottom` | _string_ | `top` |
+| position | 吸附位置，可选值为 `bottom` | _string_ | `top` |
 | offset-top | 吸顶时与顶部的距离，支持 `px` `vw` `vh` `rem` 单位，默认 `px` | _number \| string_ | `0` |
-| offset-bottom `v3.0.6` | 吸底时与底部的距离，支持 `px` `vw` `vh` `rem` 单位，默认 `px` | _number \| string_ | `0` |
+| offset-bottom | 吸底时与底部的距离，支持 `px` `vw` `vh` `rem` 单位，默认 `px` | _number \| string_ | `0` |
 | z-index | 吸顶时的 z-index | _number \| string_ | `99` |
 | container | 容器对应的 HTML 节点 | _Element_ | - |
 
 ### Events
 
-| 事件名 | 说明 | 回调参数 |
-| --- | --- | --- |
-| change `v3.0.10` | 当吸顶状态改变时触发 | _isFixed: boolean_ |
-| scroll | 滚动时触发 | _{ scrollTop: number, isFixed: boolean }_ |
+| 事件名 | 说明                 | 回调参数                                  |
+| ------ | -------------------- | ----------------------------------------- |
+| change | 当吸顶状态改变时触发 | _isFixed: boolean_                        |
+| scroll | 滚动时触发           | _{ scrollTop: number, isFixed: boolean }_ |
 
 ### 类型定义
 

@@ -208,10 +208,10 @@ swipeRef.value?.next();
 
 ### Swipe Slots
 
-| Name               | Description      | SlotProps                           |
-| ------------------ | ---------------- | ----------------------------------- |
-| default            | Content          | -                                   |
-| indicator `v3.4.0` | Custom indicator | _{ active: number, total: number }_ |
+| Name      | Description      | SlotProps                           |
+| --------- | ---------------- | ----------------------------------- |
+| default   | Content          | -                                   |
+| indicator | Custom indicator | _{ active: number, total: number }_ |
 
 ## Theming
 

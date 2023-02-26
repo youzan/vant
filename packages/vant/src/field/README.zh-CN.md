@@ -284,7 +284,7 @@ export default {
 | v-model | 当前输入的值 | _number \| string_ | - |
 | label | 输入框左侧文本 | _string_ | - |
 | name | 名称，作为提交表单时的标识符 | _string_ | - |
-| id `v3.2.2` | 输入框 id，同时会设置 label 的 for 属性 | _string_ | `van-field-n-input` |
+| id | 输入框 id，同时会设置 label 的 for 属性 | _string_ | `van-field-n-input` |
 | type | 输入框类型, 支持原生 input 标签的所有 [type 属性](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/input#%3Cinput%3E_types)，额外支持了 `digit` 类型 | _FieldType_ | `text` |
 | size | 大小，可选值为 `large` | _string_ | - |
 | maxlength | 输入的最大字符数 | _number \| string_ | - |
@@ -296,7 +296,7 @@ export default {
 | required | 是否显示表单必填星号 | _boolean_ | `false` |
 | center | 是否使内容垂直居中 | _boolean_ | `false` |
 | clearable | 是否启用清除图标，点击清除图标后会清空输入框 | _boolean_ | `false` |
-| clear-icon `v3.0.12` | 清除图标名称或图片链接，等同于 Icon 组件的 [name 属性](#/zh-CN/icon#props) | _string_ | `clear` |
+| clear-icon | 清除图标名称或图片链接，等同于 Icon 组件的 [name 属性](#/zh-CN/icon#props) | _string_ | `clear` |
 | clear-trigger | 显示清除图标的时机，`always` 表示输入框不为空时展示，<br>`focus` 表示输入框聚焦且不为空时展示 | _FieldClearTrigger_ | `focus` |
 | clickable | 是否开启点击反馈 | _boolean_ | `false` |
 | is-link | 是否展示右侧箭头并开启点击反馈 | _boolean_ | `false` |
@@ -317,8 +317,8 @@ export default {
 | right-icon | 右侧图标名称或图片链接，等同于 Icon 组件的 [name 属性](#/zh-CN/icon#props) | _string_ | - |
 | icon-prefix | 图标类名前缀，等同于 Icon 组件的 [class-prefix 属性](#/zh-CN/icon#props) | _string_ | `van-icon` |
 | rules | 表单校验规则，详见 [Form 组件](#/zh-CN/form#rule-shu-ju-jie-gou) | _FieldRule[]_ | - |
-| autocomplete `v3.0.3` | HTML 原生属性，用于控制自动完成功能，详见 [MDN - autocomplete](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/autocomplete) | _string_ | - |
-| enterkeyhint `v3.4.8` | HTML 原生属性，用于控制回车键样式，此 API 仅在部分浏览器支持，详见 [MDN - enterkeyhint](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/enterkeyhint)<br> | _string_ | - |
+| autocomplete | HTML 原生属性，用于控制自动完成功能，详见 [MDN - autocomplete](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/autocomplete) | _string_ | - |
+| enterkeyhint | HTML 原生属性，用于控制回车键样式，此 API 仅在部分浏览器支持，详见 [MDN - enterkeyhint](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/enterkeyhint)<br> | _string_ | - |
 
 ### Events
 
@@ -332,8 +332,8 @@ export default {
 | click-input | 点击输入区域时触发 | _event: MouseEvent_ |
 | click-left-icon | 点击左侧图标时触发 | _event: MouseEvent_ |
 | click-right-icon | 点击右侧图标时触发 | _event: MouseEvent_ |
-| start-validate `v3.5.1` | 开始表单校验时触发 | - |
-| end-validate `v3.5.1` | 结束表单校验时触发 | _{ status: string, message: string }_ |
+| start-validate | 开始表单校验时触发 | - |
+| end-validate | 结束表单校验时触发 | _{ status: string, message: string }_ |
 
 ### 方法
 
@@ -387,7 +387,7 @@ fieldRef.value?.focus();
 | left-icon | 自定义输入框头部图标 | - |
 | right-icon | 自定义输入框尾部图标 | - |
 | button | 自定义输入框尾部按钮 | - |
-| error-message `v3.2.5` | 自定义底部错误提示文案 | _{ message: string }_ |
+| error-message | 自定义底部错误提示文案 | _{ message: string }_ |
 | extra | 自定义输入框最右侧的额外内容 | - |
 
 ## 主题定制

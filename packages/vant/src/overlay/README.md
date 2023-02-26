@@ -73,7 +73,7 @@ export default {
 | class-name | ClassName | _string_ | - |
 | custom-class | Custom style | _object_ | - |
 | lock-scroll | Whether to lock background scroll | _boolean_ | `true` |
-| lazy-render `v3.4.2` | Whether to lazy render util appeared | _boolean_ | `true` |
+| lazy-render | Whether to lazy render util appeared | _boolean_ | `true` |
 
 ### Events
 

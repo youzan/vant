@@ -59,14 +59,6 @@ app.use(CellGroup);
 </van-cell-group>
 ```
 
-### Value only
-
-```html
-<van-cell-group>
-  <van-cell value="Content" />
-</van-cell-group>
-```
-
 ### Link
 
 ```html
@@ -138,11 +130,11 @@ app.use(CellGroup);
 
 ### CellGroup Props
 
-| Attribute      | Description                  | Type      | Default |
-| -------------- | ---------------------------- | --------- | ------- |
-| title          | Group title                  | _string_  | -       |
-| inset `v3.1.0` | Whether to be inset grouped  | _boolean_ | `false` |
-| border         | Whether to show outer border | _boolean_ | `true`  |
+| Attribute | Description                  | Type      | Default |
+| --------- | ---------------------------- | --------- | ------- |
+| title     | Group title                  | _string_  | -       |
+| inset     | Whether to be inset grouped  | _boolean_ | `false` |
+| border    | Whether to show outer border | _boolean_ | `true`  |
 
 ### Cell Props
 
@@ -184,14 +176,14 @@ app.use(CellGroup);
 
 ### Cell Slots
 
-| Name           | Description                       |
-| -------------- | --------------------------------- |
-| title          | Custom title                      |
-| value `v3.1.1` | Custom value                      |
-| label          | Custom label                      |
-| icon           | Custom left icon                  |
-| right-icon     | Custom right icon                 |
-| extra          | Custom extra content on the right |
+| Name       | Description                       |
+| ---------- | --------------------------------- |
+| title      | Custom title                      |
+| value      | Custom value                      |
+| label      | Custom label                      |
+| icon       | Custom left icon                  |
+| right-icon | Custom right icon                 |
+| extra      | Custom extra content on the right |
 
 ### Types
 

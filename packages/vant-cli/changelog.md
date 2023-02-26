@@ -1,11 +1,14 @@
 # 更新日志
 
-## v6.0.0 [unreleased]
+## v6.0.0
+
+`2023-02-26`
 
 - vite: 由 v3 升级至 v4
 - @vitejs/plugin-vue: 由 v3 升级至 v4
 - @vitejs/plugin-vue-jsx: 由 v2 升级至 v3
 - 移除 `site.searchConfig` 配置项
+- 修复 build 时解析 markdown 可能报错的问题
 
 ## v5.1.0
 

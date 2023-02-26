@@ -325,24 +325,24 @@ export default {
 | options | 可选项数据源 | _CascaderOption[]_ | `[]` |
 | placeholder | 未选中时的提示文案 | _string_ | `请选择` |
 | active-color | 选中状态的高亮颜色 | _string_ | `#1989fa` |
-| swipeable `v3.0.11` | 是否开启手势左右滑动切换 | _boolean_ | `false` |
+| swipeable | 是否开启手势左右滑动切换 | _boolean_ | `false` |
 | closeable | 是否显示关闭图标 | _boolean_ | `true` |
-| show-header `v3.4.2` | 是否展示标题栏 | _boolean_ | `true` |
-| close-icon `v3.0.10` | 关闭图标名称或图片链接，等同于 Icon 组件的 [name 属性](#/zh-CN/icon#props) | _string_ | `cross` |
-| field-names `v3.0.4` | 自定义 `options` 结构中的字段 | _CascaderFieldNames_ | `{ text: 'text', value: 'value', children: 'children' }` |
+| show-header | 是否展示标题栏 | _boolean_ | `true` |
+| close-icon | 关闭图标名称或图片链接，等同于 Icon 组件的 [name 属性](#/zh-CN/icon#props) | _string_ | `cross` |
+| field-names | 自定义 `options` 结构中的字段 | _CascaderFieldNames_ | `{ text: 'text', value: 'value', children: 'children' }` |
 
 ### CascaderOption 数据结构
 
 `options` 属性是一个由对象构成的数组，数组中的每个对象配置一个可选项，对象可以包含以下值：
 
-| 键名               | 说明                     | 类型                        |
-| ------------------ | ------------------------ | --------------------------- |
-| text               | 选项文字（必填）         | _string_                    |
-| value              | 选项对应的值（必填）     | _string \| number_          |
-| color `v3.1.0`     | 选项文字颜色             | _string_                    |
-| children           | 子选项列表               | _CascaderOption[]_          |
-| disabled `v3.1.2`  | 是否禁用选项             | _boolean_                   |
-| className `v3.1.0` | 为对应列添加额外的 class | _string \| Array \| object_ |
+| 键名      | 说明                     | 类型                        |
+| --------- | ------------------------ | --------------------------- |
+| text      | 选项文字（必填）         | _string_                    |
+| value     | 选项对应的值（必填）     | _string \| number_          |
+| color     | 选项文字颜色             | _string_                    |
+| children  | 子选项列表               | _CascaderOption[]_          |
+| disabled  | 是否禁用选项             | _boolean_                   |
+| className | 为对应列添加额外的 class | _string \| Array \| object_ |
 
 ### Events
 
@@ -358,9 +358,9 @@ export default {
 | 名称 | 说明 | 参数 |
 | --- | --- | --- |
 | title | 自定义顶部标题 | - |
-| option `v3.1.4` | 自定义选项文字 | _{ option: CascaderOption, selected: boolean }_ |
-| options-top `v3.2.7` | 自定义选项上方的内容 | _{ tabIndex: number }_ |
-| options-bottom `v3.2.8` | 自定义选项下方的内容 | _{ tabIndex: number }_ |
+| option | 自定义选项文字 | _{ option: CascaderOption, selected: boolean }_ |
+| options-top | 自定义选项上方的内容 | _{ tabIndex: number }_ |
+| options-bottom | 自定义选项下方的内容 | _{ tabIndex: number }_ |
 
 ### 类型定义
 

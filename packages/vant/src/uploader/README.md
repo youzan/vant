@@ -313,7 +313,7 @@ export default {
 | preview-options | Options of full screen image preview, see [ImagePreview](#/en-US/image-preview) | _object_ | - |
 | multiple | Whether to enable multiple selection pictures | _boolean_ | `false` |
 | disabled | Whether to disabled the upload | _boolean_ | `false` |
-| readonly `v3.1.5` | Whether to make upload area readonly | _boolean_ | `false` |
+| readonly | Whether to make upload area readonly | _boolean_ | `false` |
 | deletable | Whether to show delete icon | _boolean_ | `true` |
 | show-upload | Whether to show upload area | _boolean_ | `true` |
 | lazy-load | Whether to enable lazy load, should register [Lazyload](#/en-US/lazyload) component | _boolean_ | `false` |
@@ -321,7 +321,7 @@ export default {
 | after-read | Hook after reading the file | _Function_ | - |
 | before-read | Hook before reading the file, return false to stop reading the file, can return Promise | _Function_ | - |
 | before-delete | Hook before delete the file, return false to stop reading the file, can return Promise | _Function_ | - |
-| max-size `v3.0.17` | Max size of file | _number \| string \| (file: File) => boolean_ | `Infinity` |
+| max-size | Max size of file | _number \| string \| (file: File) => boolean_ | `Infinity` |
 | max-count | Max count of image | _number \| string_ | `Infinity` |
 | result-type | Type of file read result, can be set to `file` `text` | _string_ | `dataUrl` |
 | upload-text | Upload text | _string_ | - |
@@ -335,7 +335,7 @@ export default {
 | Event | Description | Arguments |
 | --- | --- | --- |
 | oversize | Emitted when file size over limit | Same as after-read |
-| click-upload `v3.1.5` | Emitted when click upload area | _event: MouseEvent_ |
+| click-upload | Emitted when click upload area | _event: MouseEvent_ |
 | click-preview | Emitted when preview image is clicked | Same as after-read |
 | close-preview | Emitted when the full screen image preview is closed | - |
 | delete | Emitted when preview file is deleted | Same as after-read |

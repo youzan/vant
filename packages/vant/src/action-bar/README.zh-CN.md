@@ -94,7 +94,7 @@ export default {
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
 | safe-area-inset-bottom | 是否开启[底部安全区适配](#/zh-CN/advanced-usage#di-bu-an-quan-qu-gua-pei) | _boolean_ | `true` |
-| placeholder `v3.5.1` | 是否在标签位置生成一个等高的占位元素 | _boolean_ | `false` |
+| placeholder | 是否在标签位置生成一个等高的占位元素 | _boolean_ | `false` |
 
 ### ActionBarIcon Props
 
@@ -104,10 +104,10 @@ export default {
 | icon | 图标 | _string_ | - |
 | color | 图标颜色 | _string_ | `#323233` |
 | icon-class | 图标额外类名 | _string \| Array \| object_ | - |
-| icon-prefix `v3.0.17` | 图标类名前缀，等同于 Icon 组件的 [class-prefix 属性](#/zh-CN/icon#props) | _string_ | `van-icon` |
+| icon-prefix | 图标类名前缀，等同于 Icon 组件的 [class-prefix 属性](#/zh-CN/icon#props) | _string_ | `van-icon` |
 | dot | 是否显示图标右上角小红点 | _boolean_ | `false` |
 | badge | 图标右上角徽标的内容 | _number \| string_ | - |
-| badge-props `v3.2.8` | 自定义徽标的属性，传入的对象会被透传给 [Badge 组件的 props](#/zh-CN/badge#props) | _BadgeProps_ | - |
+| badge-props | 自定义徽标的属性，传入的对象会被透传给 [Badge 组件的 props](#/zh-CN/badge#props) | _BadgeProps_ | - |
 | url | 点击后跳转的链接地址 | _string_ | - |
 | to | 点击后跳转的目标路由对象，等同于 vue-router 的 [to 属性](https://router.vuejs.org/zh/api/#to) | _string \| object_ | - |
 | replace | 是否在跳转时替换当前页面历史 | _boolean_ | `false` |

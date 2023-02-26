@@ -263,14 +263,14 @@ export default {
 | duration | 动画时长，单位秒，设置为 0 可以禁用动画 | _number \| string_ | `0.3` |
 | offset | 出现位置的偏移量 | _[number, number]_ | `[0, 8]` |
 | overlay | 是否显示遮罩层 | _boolean_ | `false` |
-| overlay-class `v3.0.10` | 自定义遮罩层类名 | _string \| Array \| object_ | - |
-| overlay-style `v3.0.10` | 自定义遮罩层样式 | _object_ | - |
-| show-arrow `v3.2.2` | 是否展示小箭头 | _boolean_ | `true` |
+| overlay-class | 自定义遮罩层类名 | _string \| Array \| object_ | - |
+| overlay-style | 自定义遮罩层样式 | _object_ | - |
+| show-arrow | 是否展示小箭头 | _boolean_ | `true` |
 | close-on-click-action | 是否在点击选项后关闭 | _boolean_ | `true` |
 | close-on-click-outside | 是否在点击外部元素后关闭菜单 | _boolean_ | `true` |
-| close-on-click-overlay `v3.0.10` | 是否在点击遮罩层后关闭菜单 | _boolean_ | `true` |
+| close-on-click-overlay | 是否在点击遮罩层后关闭菜单 | _boolean_ | `true` |
 | teleport | 指定挂载的节点，等同于 Teleport 组件的 [to 属性](https://v3.cn.vuejs.org/api/built-in-components.html#teleport) | _string \| Element_ | `body` |
-| icon-prefix `v3.0.17` | 图标类名前缀，等同于 Icon 组件的 [class-prefix 属性](#/zh-CN/icon#props) | _string_ | `van-icon` |
+| icon-prefix | 图标类名前缀，等同于 Icon 组件的 [class-prefix 属性](#/zh-CN/icon#props) | _string_ | `van-icon` |
 
 ### PopoverAction 数据结构
 
@@ -301,7 +301,7 @@ export default {
 | --- | --- | --- |
 | default | 自定义菜单内容 | - |
 | reference | 触发 Popover 显示的元素内容 | - |
-| action `v3.4.0` | 自定义选项内容 | _{ action: PopoverAction, index: number }_ |
+| action | 自定义选项内容 | _{ action: PopoverAction, index: number }_ |
 
 ### 类型定义
 

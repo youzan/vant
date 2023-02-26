@@ -124,15 +124,15 @@ export default {
 | success-duration | 刷新成功提示展示时长(ms) | _number \| string_ | `500` |
 | animation-duration | 动画时长 | _number \| string_ | `300` |
 | head-height | 顶部内容高度 | _number \| string_ | `50` |
-| pull-distance `v3.0.8` | 触发下拉刷新的距离 | _number \| string_ | 与 `head-height` 一致 |
+| pull-distance | 触发下拉刷新的距离 | _number \| string_ | 与 `head-height` 一致 |
 | disabled | 是否禁用下拉刷新 | _boolean_ | `false` |
 
 ### Events
 
-| 事件名 | 说明 | 回调参数 |
-| --- | --- | --- |
-| refresh | 下拉刷新时触发 | - |
-| change `v3.5.1` | 拖动时或状态改变时触发 | _{ status: string, distance: number }_ |
+| 事件名  | 说明                   | 回调参数                               |
+| ------- | ---------------------- | -------------------------------------- |
+| refresh | 下拉刷新时触发         | -                                      |
+| change  | 拖动时或状态改变时触发 | _{ status: string, distance: number }_ |
 
 ### Slots
 

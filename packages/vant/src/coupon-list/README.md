@@ -129,10 +129,10 @@ export default {
 
 ### CouponList Slots
 
-| Name                           | Description                     |
-| ------------------------------ | ------------------------------- |
-| list-footer `v3.0.18`          | Coupon list bottom              |
-| disabled-list-footer `v3.0.18` | Unavailable coupons list bottom |
+| Name                 | Description                     |
+| -------------------- | ------------------------------- |
+| list-footer          | Coupon list bottom              |
+| disabled-list-footer | Unavailable coupons list bottom |
 
 ### Data Structure of Coupon
 

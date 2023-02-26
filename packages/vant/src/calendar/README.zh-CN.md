@@ -333,19 +333,19 @@ export default {
 | unselect | 当日历组件的 `type` 为 `multiple` 时，取消选中日期时触发 | _value: Date_ |
 | month-show | 当某个月份进入可视区域时触发 | _{ date: Date, title: string }_ |
 | over-range | 范围选择超过最多可选天数时触发 | - |
-| click-subtitle `v3.1.3` | 点击日历副标题时触发 | _event: MouseEvent_ |
+| click-subtitle | 点击日历副标题时触发 | _event: MouseEvent_ |
 
 ### Slots
 
 | 名称 | 说明 | 参数 |
 | --- | --- | --- |
 | title | 自定义标题 | - |
-| subtitle `v3.1.3` | 自定义日历副标题 | _{ text: string, date?: Date }_ |
+| subtitle | 自定义日历副标题 | _{ text: string, date?: Date }_ |
 | month-title `v4.0.9` | 自定义每个月份的小标题 | _{ text: string, date: Date }_ |
 | footer | 自定义底部区域内容 | - |
-| confirm-text `v3.2.6` | 自定义确认按钮的内容 | _{ disabled: boolean }_ |
-| top-info `v3.0.17` | 自定义日期上方的提示信息 | _day: Day_ |
-| bottom-info `v3.0.17` | 自定义日期下方的提示信息 | _day: Day_ |
+| confirm-text | 自定义确认按钮的内容 | _{ disabled: boolean }_ |
+| top-info | 自定义日期上方的提示信息 | _day: Day_ |
+| bottom-info | 自定义日期下方的提示信息 | _day: Day_ |
 
 ### 方法
 
