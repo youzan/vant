@@ -1,0 +1,17 @@
+:root {
+  --van-text-ellipsis-action-color: var(--van-blue);
+}
+
+.van-text-ellipsis {
+  line-height: 1.5;
+  white-space: pre-wrap;
+
+  &__action {
+    cursor: pointer;
+    color: var(--van-text-ellipsis-action-color);
+
+    &:active {
+      opacity: var(--van-active-opacity);
+    }
+  }
+}
