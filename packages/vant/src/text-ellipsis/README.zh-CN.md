@@ -20,7 +20,7 @@ app.use(TextEllipsis);
 
 ### 基础用法
 
-默认展示`1`行，超过`1`行显示省略号。
+默认展示 `1` 行，超过 `1` 行显示省略号。
 
 ```html
 <van-text-ellipsis :content="text" />
@@ -31,6 +31,7 @@ export default {
   setup() {
     const text =
       'Vant 是一个轻量、可定制的移动端组件库，于 2017 年开源。目前 Vant 官方提供了 Vue 2 版本、Vue 3 版本和微信小程序版本，并由社区团队维护 React 版本和支付宝小程序版本。';
+    return { text };
   },
 };
 ```
@@ -48,6 +49,7 @@ export default {
   setup() {
     const text =
       'Vant 是一个轻量、可定制的移动端组件库，于 2017 年开源。目前 Vant 官方提供了 Vue 2 版本、Vue 3 版本和微信小程序版本，并由社区团队维护 React 版本和支付宝小程序版本。';
+    return { text };
   },
 };
 ```
@@ -70,6 +72,7 @@ export default {
   setup() {
     const text =
       'Vant 是一个轻量、可定制的移动端组件库，于 2017 年开源。目前 Vant 官方提供了 Vue 2 版本、Vue 3 版本和微信小程序版本，并由社区团队维护 React 版本和支付宝小程序版本。';
+    return { text };
   },
 };
 ```
@@ -105,6 +108,7 @@ import type { TextEllipsisProps, TextEllipsisThemeVars } from 'vant';
 
 组件提供了下列 CSS 变量，可用于自定义样式，使用方法请参考 [ConfigProvider 组件](#/zh-CN/config-provider)。
 
-| 名称                             | 默认值            | 描述 |
-| -------------------------------- | ----------------- | ---- |
-| --van-text-ellipsis-action-color | _var(--van-blue)_ | -    |
+| 名称                             | 默认值            | 描述           |
+| -------------------------------- | ----------------- | -------------- |
+| --van-text-ellipsis-action-color | _var(--van-blue)_ | 操作按钮的颜色 |
+| --van-text-ellipsis-line-height  | _1.6_             | 文本的行高     |

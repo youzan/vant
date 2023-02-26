@@ -49,7 +49,12 @@ const t = useTranslate({
 </template>
 
 <style lang="less">
-.van-text-ellipsis {
-  padding: 0 20px;
+.demo-text-ellipsis {
+  font-size: 15px;
+  background-color: var(--van-background-2);
+
+  .van-text-ellipsis {
+    padding: 0 20px;
+  }
 }
 </style>
