@@ -218,9 +218,10 @@ export default {
 
 ### Slots
 
-| 名称    | 说明               |
-| ------- | ------------------ |
-| content | 自定义右侧区域内容 |
+| 名称     | 说明               |
+| -------- | ------------------ |
+| nav-text | 自定义导航名称     |
+| content  | 自定义右侧区域内容 |
 
 ### TreeSelectItem 数据结构
 
@@ -237,8 +238,6 @@ export default {
     dot: true,
     // 导航节点额外类名
     className: 'my-class',
-    // 是否允许 text 内容中渲染 HTML
-    allowHtml: false,
     // 该导航下所有的可选项
     children: [
       {
