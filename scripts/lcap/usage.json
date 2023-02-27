@@ -370,15 +370,11 @@
                             "title": "页面跳转"
                         },
                         {
-                            "value": "href",
-                            "title": "普通链接"
-                        },
-                        {
                             "value": "download",
                             "title": "下载链接"
                         }
                     ],
-                    "default": "href",
+                    "default": "destination",
                     "description": "链接类型",
                     "compType": "linkTypeSelect",
                     "group": "主要属性"
@@ -398,7 +394,7 @@
                     "options": [
                         {
                             "value": "_blank",
-                            "title": "新标签页"
+                            "title": "新窗口"
                         },
                         {
                             "value": "_self",
@@ -416,7 +412,7 @@
                         }
                     ],
                     "default": "_self",
-                    "description": "链接打开方式",
+                    "description": "父级窗口和顶级窗口仅适用于iframe组件嵌套的情况，若不存在嵌套，则打开方式同当前窗口。",
                     "group": "主要属性"
                 }
             ],
@@ -513,7 +509,7 @@
                     "display": "capsules",
                     "bindHide": true,
                     "description": "设置布局模式",
-                    "tooltipLink": "http://help.lcap.163yun.com/1.%E5%BC%80%E5%8F%91%E5%BA%94%E7%94%A8/2.%E9%A1%B5%E9%9D%A2/01.%E9%A1%B5%E9%9D%A2%E5%9F%BA%E7%A1%80%E7%BB%84%E4%BB%B6/01.%E5%B8%83%E5%B1%80/020.%E7%BA%BF%E6%80%A7%E5%B8%83%E5%B1%80.html",
+                    "tooltipLink": "http://help.lcap.163yun.com/1.%E5%BC%80%E5%8F%91%E5%BA%94%E7%94%A8/2.%E9%A1%B5%E9%9D%A2/10.H5%E9%A1%B5%E9%9D%A2%E5%9F%BA%E7%A1%80%E7%BB%84%E4%BB%B6/01.%E5%B8%83%E5%B1%80/020.%E7%BA%BF%E6%80%A7%E5%B8%83%E5%B1%80.html",
                     "options": [
                         {
                             "value": "inline",
@@ -1205,15 +1201,11 @@
                                     "title": "页面跳转"
                                 },
                                 {
-                                    "value": "href",
-                                    "title": "普通链接"
-                                },
-                                {
                                     "value": "download",
                                     "title": "下载链接"
                                 }
                             ],
-                            "default": "href",
+                            "default": "destination",
                             "description": "链接类型",
                             "compType": "linkTypeSelect"
                         },
@@ -1231,7 +1223,7 @@
                             "options": [
                                 {
                                     "value": "_blank",
-                                    "title": "新标签页"
+                                    "title": "新窗口"
                                 },
                                 {
                                     "value": "_self",
@@ -1249,7 +1241,7 @@
                                 }
                             ],
                             "default": "_self",
-                            "description": "链接打开方式"
+                            "description": "父级窗口和顶级窗口仅适用于iframe组件嵌套的情况，若不存在嵌套，则打开方式同当前窗口。"
                         }
                     ],
                     "slots": [
@@ -1330,7 +1322,7 @@
                     ],
                     "default": "flex",
                     "description": "设置布局模式",
-                    "tooltipLink": "http://help.lcap.163yun.com/1.%E5%BC%80%E5%8F%91%E5%BA%94%E7%94%A8/2.%E9%A1%B5%E9%9D%A2/01.%E9%A1%B5%E9%9D%A2%E5%9F%BA%E7%A1%80%E7%BB%84%E4%BB%B6/01.%E5%B8%83%E5%B1%80/030.%E6%A0%85%E6%A0%BC%E5%B8%83%E5%B1%80.html"
+                    "tooltipLink": "http://help.lcap.163yun.com/1.%E5%BC%80%E5%8F%91%E5%BA%94%E7%94%A8/2.%E9%A1%B5%E9%9D%A2/10.H5%E9%A1%B5%E9%9D%A2%E5%9F%BA%E7%A1%80%E7%BB%84%E4%BB%B6/01.%E5%B8%83%E5%B1%80/030.%E6%A0%85%E6%A0%BC%E5%B8%83%E5%B1%80.html"
                 },
                 {
                     "name": "justify",
@@ -1478,7 +1470,7 @@
                             "display": "capsules",
                             "bindHide": true,
                             "description": "设置布局模式",
-                            "tooltipLink": "http://help.lcap.163yun.com/1.%E5%BC%80%E5%8F%91%E5%BA%94%E7%94%A8/2.%E9%A1%B5%E9%9D%A2/01.%E9%A1%B5%E9%9D%A2%E5%9F%BA%E7%A1%80%E7%BB%84%E4%BB%B6/01.%E5%B8%83%E5%B1%80/030.%E6%A0%85%E6%A0%BC%E5%B8%83%E5%B1%80.html",
+                            "tooltipLink": "http://help.lcap.163yun.com/1.%E5%BC%80%E5%8F%91%E5%BA%94%E7%94%A8/2.%E9%A1%B5%E9%9D%A2/10.H5%E9%A1%B5%E9%9D%A2%E5%9F%BA%E7%A1%80%E7%BB%84%E4%BB%B6/01.%E5%B8%83%E5%B1%80/030.%E6%A0%85%E6%A0%BC%E5%B8%83%E5%B1%80.html",
                             "options": [
                                 {
                                     "value": "inline",
@@ -2070,15 +2062,11 @@
                                     "title": "页面跳转"
                                 },
                                 {
-                                    "value": "href",
-                                    "title": "普通链接"
-                                },
-                                {
                                     "value": "download",
                                     "title": "下载链接"
                                 }
                             ],
-                            "default": "href",
+                            "default": "destination",
                             "description": "链接类型",
                             "compType": "linkTypeSelect"
                         },
@@ -2096,7 +2084,7 @@
                             "options": [
                                 {
                                     "value": "_blank",
-                                    "title": "新标签页"
+                                    "title": "新窗口"
                                 },
                                 {
                                     "value": "_self",
@@ -2114,7 +2102,7 @@
                                 }
                             ],
                             "default": "_self",
-                            "description": "链接打开方式"
+                            "description": "父级窗口和顶级窗口仅适用于iframe组件嵌套的情况，若不存在嵌套，则打开方式同当前窗口。"
                         }
                     ],
                     "slots": [
@@ -2263,15 +2251,11 @@
                                     "title": "页面跳转"
                                 },
                                 {
-                                    "value": "href",
-                                    "title": "普通链接"
-                                },
-                                {
                                     "value": "download",
                                     "title": "下载链接"
                                 }
                             ],
-                            "default": "href",
+                            "default": "destination",
                             "description": "链接类型",
                             "compType": "linkTypeSelect"
                         },
@@ -2289,7 +2273,7 @@
                             "options": [
                                 {
                                     "value": "_blank",
-                                    "title": "新标签页"
+                                    "title": "新窗口"
                                 },
                                 {
                                     "value": "_self",
@@ -2307,7 +2291,7 @@
                                 }
                             ],
                             "default": "_self",
-                            "description": "链接打开方式"
+                            "description": "父级窗口和顶级窗口仅适用于iframe组件嵌套的情况，若不存在嵌套，则打开方式同当前窗口。"
                         }
                     ],
                     "events": [
@@ -2447,15 +2431,11 @@
                                     "title": "页面跳转"
                                 },
                                 {
-                                    "value": "href",
-                                    "title": "普通链接"
-                                },
-                                {
                                     "value": "download",
                                     "title": "下载链接"
                                 }
                             ],
-                            "default": "href",
+                            "default": "destination",
                             "description": "链接类型",
                             "compType": "linkTypeSelect"
                         },
@@ -2473,7 +2453,7 @@
                             "options": [
                                 {
                                     "value": "_blank",
-                                    "title": "新标签页"
+                                    "title": "新窗口"
                                 },
                                 {
                                     "value": "_self",
@@ -2491,7 +2471,7 @@
                                 }
                             ],
                             "default": "_self",
-                            "description": "链接打开方式"
+                            "description": "父级窗口和顶级窗口仅适用于iframe组件嵌套的情况，若不存在嵌套，则打开方式同当前窗口。"
                         }
                     ],
                     "events": [
@@ -2697,15 +2677,11 @@
                             "title": "页面跳转"
                         },
                         {
-                            "value": "href",
-                            "title": "普通链接"
-                        },
-                        {
                             "value": "download",
                             "title": "下载链接"
                         }
                     ],
-                    "default": "href",
+                    "default": "destination",
                     "description": "链接类型",
                     "compType": "linkTypeSelect"
                 },
@@ -2723,7 +2699,7 @@
                     "options": [
                         {
                             "value": "_blank",
-                            "title": "新标签页"
+                            "title": "新窗口"
                         },
                         {
                             "value": "_self",
@@ -2741,7 +2717,7 @@
                         }
                     ],
                     "default": "_self",
-                    "description": "链接打开方式"
+                    "description": "父级窗口和顶级窗口仅适用于iframe组件嵌套的情况，若不存在嵌套，则打开方式同当前窗口。"
                 },
                 {
                     "name": "to",
@@ -3471,15 +3447,11 @@
                             "title": "页面跳转"
                         },
                         {
-                            "value": "href",
-                            "title": "普通链接"
-                        },
-                        {
                             "value": "download",
                             "title": "下载链接"
                         }
                     ],
-                    "default": "href",
+                    "default": "destination",
                     "description": "",
                     "compType": "linkTypeSelect"
                 },
@@ -3515,7 +3487,7 @@
                         }
                     ],
                     "default": "_self",
-                    "description": "链接打开方式"
+                    "description": "父级窗口和顶级窗口仅适用于iframe组件嵌套的情况，若不存在嵌套，则打开方式同当前窗口。"
                 },
                 {
                     "name": "to",
@@ -3720,15 +3692,11 @@
                             "title": "页面跳转"
                         },
                         {
-                            "value": "href",
-                            "title": "普通链接"
-                        },
-                        {
                             "value": "download",
                             "title": "下载链接"
                         }
                     ],
-                    "default": "href",
+                    "default": "destination",
                     "description": "链接类型",
                     "compType": "linkTypeSelect"
                 },
@@ -3746,7 +3714,7 @@
                     "options": [
                         {
                             "value": "_blank",
-                            "title": "新标签页"
+                            "title": "新窗口"
                         },
                         {
                             "value": "_self",
@@ -3764,7 +3732,7 @@
                         }
                     ],
                     "default": "_self",
-                    "description": "链接打开方式"
+                    "description": "父级窗口和顶级窗口仅适用于iframe组件嵌套的情况，若不存在嵌套，则打开方式同当前窗口。"
                 }
             ],
             "events": [
@@ -4073,15 +4041,11 @@
                             "title": "页面跳转"
                         },
                         {
-                            "value": "href",
-                            "title": "普通链接"
-                        },
-                        {
                             "value": "download",
                             "title": "下载链接"
                         }
                     ],
-                    "default": "href",
+                    "default": "destination",
                     "description": "链接类型",
                     "compType": "linkTypeSelect"
                 },
@@ -4099,7 +4063,7 @@
                     "options": [
                         {
                             "value": "_blank",
-                            "title": "新标签页"
+                            "title": "新窗口"
                         },
                         {
                             "value": "_self",
@@ -4117,7 +4081,7 @@
                         }
                     ],
                     "default": "_self",
-                    "description": "链接打开方式"
+                    "description": "父级窗口和顶级窗口仅适用于iframe组件嵌套的情况，若不存在嵌套，则打开方式同当前窗口。"
                 }
             ],
             "slots": [
@@ -4756,7 +4720,7 @@
                         {
                             "name": "van-cell",
                             "title": "单元格",
-                            "snippet": "<template #item=\"scope\"><van-cell isLink><template #title>文本</template></van-cell></template>"
+                            "snippet": "<template #item=\"current\"><van-cell isLink><template #title>文本</template></van-cell></template>"
                         }
                     ]
                 },
@@ -5369,7 +5333,7 @@
                         {
                             "name": "van-cardu",
                             "title": "卡片",
-                            "snippet": "<template #item=\"scope\"><van-cardu><template #head><van-text text=\"标题\"></van-text></template><van-text  text=\"卡片内容\"></van-text></van-cardu></template>"
+                            "snippet": "<template #item=\"current\"><van-cardu><template #head><van-text text=\"标题\"></van-text></template><van-text  text=\"卡片内容\"></van-text></van-cardu></template>"
                         }
                     ]
                 },
@@ -6046,20 +6010,6 @@
                     "description": "原生属性"
                 },
                 {
-                    "name": "readonly",
-                    "title": "只读",
-                    "type": "boolean",
-                    "default": false,
-                    "description": "是否只读"
-                },
-                {
-                    "name": "disabled",
-                    "title": "禁用",
-                    "type": "boolean",
-                    "default": false,
-                    "description": "是否禁用"
-                },
-                {
                     "name": "prefix",
                     "title": "前缀图标",
                     "type": "string",
@@ -6097,21 +6047,50 @@
                 },
                 {
                     "name": "maxlength",
-                    "title": "输入的最大字符数",
+                    "title": "可输入最大字符数",
                     "type": "string, number",
-                    "description": "输入的最大字符数"
+                    "place": "不限制",
+                    "description": "输入框内可输入的最大字符数，超过时不支持输入",
+                    "toggleupdate": [
+                        {
+                            "value": "",
+                            "updateData": {
+                                "show-word-limit": false
+                            }
+                        }
+                    ]
                 },
                 {
                     "name": "show-word-limit",
-                    "title": "是否显示字数统计",
+                    "title": "显示字数统计",
                     "type": "boolean",
-                    "description": "是否显示字数统计，需要设置maxlength属性"
+                    "description": "设置是否显示「可输入最大字符数」的字数统计",
+                    "dependency": [
+                        {
+                            "!maxlength": ""
+                        }
+                    ]
                 },
                 {
                     "name": "autosize",
-                    "title": "是否自适应内容高度",
+                    "title": "自适应内容高度",
                     "type": "boolean, object",
-                    "description": "是否自适应内容高度,可传入对象,如 { maxHeight: 100, minHeight: 50 },单位为px"
+                    "place": "不设置则根据输入内容自适应",
+                    "description": "可输入如{maxHeight:100,minHeight:50}，单位默认为px"
+                },
+                {
+                    "name": "readonly",
+                    "title": "只读",
+                    "type": "boolean",
+                    "default": false,
+                    "description": ""
+                },
+                {
+                    "name": "disabled",
+                    "title": "禁用",
+                    "type": "boolean",
+                    "default": false,
+                    "description": ""
                 }
             ],
             "slots": [],
@@ -6372,7 +6351,7 @@
             "Form"
         ],
         "screenShot": "",
-        "blocks": "[{\"title\":\"基本用法\",\"description\":\"\",\"code\":\"<template>\\n<van-radio-group direction=\\\"horizontal\\\">\\n  <template #item=\\\"scope\\\">\\n    <van-radio vusion-disabled-cut vusion-disabled-copy></van-radio>\\n  </template>\\n</van-radio-group>\\n</template>\\n\"}]",
+        "blocks": "[{\"title\":\"基本用法\",\"description\":\"\",\"code\":\"<template>\\n<van-radio-group direction=\\\"horizontal\\\">\\n  <template #item=\\\"current\\\">\\n    <van-radio vusion-disabled-cut vusion-disabled-copy></van-radio>\\n  </template>\\n</van-radio-group>\\n</template>\\n\"}]",
         "jsonSchema": {
             "name": "van-radio-group",
             "title": "单选组",
@@ -6384,7 +6363,7 @@
                 {
                     "title": "基本用法",
                     "description": "",
-                    "code": "<template>\n<van-radio-group direction=\"horizontal\">\n  <template #item=\"scope\">\n    <van-radio vusion-disabled-cut vusion-disabled-copy></van-radio>\n  </template>\n</van-radio-group>\n</template>\n"
+                    "code": "<template>\n<van-radio-group direction=\"horizontal\">\n  <template #item=\"current\">\n    <van-radio vusion-disabled-cut vusion-disabled-copy></van-radio>\n  </template>\n</van-radio-group>\n</template>\n"
                 }
             ],
             "attrs": [
@@ -6622,7 +6601,7 @@
             "Form"
         ],
         "screenShot": "",
-        "blocks": "[{\"title\":\"基本用法\",\"description\":\"\",\"code\":\"<template>\\n<van-checkbox-group direction=\\\"horizontal\\\">\\n  <template #item=\\\"scope\\\">\\n    <van-checkbox\\n      shape=\\\"square\\\"\\n      vusion-disabled-cut\\n      vusion-disabled-copy\\n    ></van-checkbox>\\n  </template>\\n</van-checkbox-group>\\n</template>\\n\"}]",
+        "blocks": "[{\"title\":\"基本用法\",\"description\":\"\",\"code\":\"<template>\\n<van-checkbox-group direction=\\\"horizontal\\\">\\n  <template #item=\\\"current\\\">\\n    <van-checkbox\\n      shape=\\\"square\\\"\\n      vusion-disabled-cut\\n      vusion-disabled-copy\\n    ></van-checkbox>\\n  </template>\\n</van-checkbox-group>\\n</template>\\n\"}]",
         "jsonSchema": {
             "name": "van-checkbox-group",
             "title": "多选组",
@@ -6634,7 +6613,7 @@
                 {
                     "title": "基本用法",
                     "description": "",
-                    "code": "<template>\n<van-checkbox-group direction=\"horizontal\">\n  <template #item=\"scope\">\n    <van-checkbox\n      shape=\"square\"\n      vusion-disabled-cut\n      vusion-disabled-copy\n    ></van-checkbox>\n  </template>\n</van-checkbox-group>\n</template>\n"
+                    "code": "<template>\n<van-checkbox-group direction=\"horizontal\">\n  <template #item=\"current\">\n    <van-checkbox\n      shape=\"square\"\n      vusion-disabled-cut\n      vusion-disabled-copy\n    ></van-checkbox>\n  </template>\n</van-checkbox-group>\n</template>\n"
                 }
             ],
             "attrs": [
@@ -7403,10 +7382,11 @@
                 },
                 {
                     "name": "accept",
-                    "title": "文件类型",
+                    "title": "支持上传的文件类型",
                     "type": "string",
-                    "default": "image/*",
-                    "description": "允许上传的文件类型"
+                    "place": "所有类型",
+                    "description": "若要限制上传文件类型，请输入类型名称，格式为“.后缀名”，多个文件类型时使用英文逗号隔开。例如“.jpeg,.png,.gif”",
+                    "tooltipLink": "https://help.lcap.163yun.com/1.%E5%BC%80%E5%8F%91%E5%BA%94%E7%94%A8/2.%E9%A1%B5%E9%9D%A2/10.H5%E9%A1%B5%E9%9D%A2%E5%9F%BA%E7%A1%80%E7%BB%84%E4%BB%B6/06.%E8%A1%A8%E5%8D%95/150.%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0.html"
                 },
                 {
                     "name": "converter",

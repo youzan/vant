@@ -185,10 +185,13 @@ export default createComponent({
       this.reset();
     },
 
-    defaultDate(val) {
-      this.currentDate = typeof val === 'string' ? new Date(val) : val;
-      this.scrollIntoView();
-      this.setTitle();
+    defaultDate: {
+      handler(val) {
+        this.currentDate = typeof val === 'string' ? new Date(val) : val;
+        this.scrollIntoView();
+        this.setTitle();
+      },
+      immediate: true
     },
   },
 

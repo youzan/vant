@@ -68,11 +68,9 @@
       options:
         - value: destination
           title: 页面跳转
-        - value: href
-          title: 普通链接
         - value: download
           title: 下载链接
-      default: href
+      default: destination
       description: 链接类型
       compType: linkTypeSelect
     - name: hrefAndTo
@@ -85,7 +83,7 @@
       type: string
       options:
         - value: _blank
-          title: 新标签页
+          title: 新窗口
         - value: _self
           title: 当前窗口
         - value: _parent
@@ -95,7 +93,7 @@
           title: 顶级窗口
           advanced: true
       default: _self
-      description: 链接打开方式
+      description: 父级窗口和顶级窗口仅适用于iframe组件嵌套的情况，若不存在嵌套，则打开方式同当前窗口。
   events:
     - name: click
       title: 点击菜单项

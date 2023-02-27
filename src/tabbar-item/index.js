@@ -41,6 +41,7 @@ export default createComponent({
     decoration: { type: Boolean, default: true },
     download: { type: Boolean, default: false },
     destination: String,
+    link: [Function, String]
   },
 
   data() {
@@ -84,12 +85,36 @@ export default createComponent({
     newdest(destination) {
       return encodeUrl(destination ? '/' + destination.split('/').slice(1).join('/') : destination);
     },
-    onClick(event) {
+    async onClick(event) {
       this.parent.onChange(this.name || this.index);
       this.$emit('click', event);
       // route(this.$router, this);
       const props = this._props;
       const parent = this.$parent;
+      if (props.link) {
+        const url = props.link;
+        const {target} = props;
+        let realUrl;
+        if (typeof url === 'function') {
+            // @ts-ignore
+            realUrl = await url();
+        } else {
+            realUrl = url;
+        }
+        function linkpao() {
+            const a = document.createElement('a');
+            a.setAttribute('href', realUrl);
+            // @ts-ignore
+            a.setAttribute('target', target);
+            document.body.appendChild(a);
+            a.click();
+            setTimeout(() => {
+                document.body.removeChild(a);
+            }, 500);
+        }
+        linkpao();
+        return;
+      }
       function currentHref() {
         if (props.href !== undefined)
           return encodeUrl(props.href);
@@ -139,8 +164,11 @@ export default createComponent({
           $route,
           props.append,
         );
-        props.replace ? $router.replace(location) : $router.push(location);
-
+        if (props.target === '_self') {
+          props.replace ? $router.replace(location) : $router.push(location);
+        } else {
+          this.$linkpao(currentTo, props.target);
+        }
         // this.$emit(that, 'navigate',  { to: currentTo, replace: props.replace, append: props.append });
       } else {
         function downloadClick() {

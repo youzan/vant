@@ -19,16 +19,6 @@
       title: 占位符
       type: string
       description: 原生属性
-    - name: readonly
-      title: 只读
-      type: boolean
-      default: false
-      description: 是否只读
-    - name: disabled
-      title: 禁用
-      type: boolean
-      default: false
-      description: 是否禁用
     - name: prefix
       title: 前缀图标
       type: string
@@ -52,17 +42,36 @@
       default: ""
       description: 后缀图标
     - name: maxlength
-      title: 输入的最大字符数
-      type: string, number
-      description: 输入的最大字符数
+      title: 可输入最大字符数
+      type: number
+      display: number
+      place: 不限制
+      description: 输入框内可输入的最大字符数，超过时不支持输入
+      toggleupdate:
+        - value: ''
+          updateData:
+            show-word-limit: false
     - name: show-word-limit
-      title: 是否显示字数统计
+      title: 显示字数统计
       type: boolean
-      description: 是否显示字数统计，需要设置maxlength属性
+      description: 设置是否显示「可输入最大字符数」的字数统计
+      dependency:
+        - '!maxlength': ''
     - name: autosize
-      title: '是否自适应内容高度'
+      title: 自适应内容高度
       type: boolean, object
-      description: '是否自适应内容高度,可传入对象,如 { maxHeight: 100, minHeight: 50 },单位为px'
+      place: 不设置则根据输入内容自适应
+      description: 可输入如{maxHeight:100,minHeight:50}，单位默认为px
+    - name: readonly
+      title: 只读
+      type: boolean
+      default: false
+      description: ""
+    - name: disabled
+      title: 禁用
+      type: boolean
+      default: false
+      description: ""
   slots: []
   events:
     - name: input

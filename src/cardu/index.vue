@@ -24,9 +24,10 @@ export default {
         decoration: { type: Boolean, default: true },
         download: { type: Boolean, default: false },
         destination: String,
+        link: [String, Function]
     },
     methods: {
-      onClick(event) {
+      async onClick(event) {
           const props = this._props;
           const parent = this.$parent;
           function currentHref() {
@@ -36,6 +37,30 @@ export default {
                 return encodeUrl(parent?.$router.resolve(props.to, parent?.$route, props.append).href);
             else
                 return undefined;
+          }
+          if (props.link) {
+            const url = props.link;
+            const target = props.target;
+            let realUrl;
+            if (typeof url === 'function') {
+                // @ts-ignore
+                realUrl = await url();
+            } else {
+                realUrl = url;
+            }
+            function linkpao() {
+                const a = document.createElement('a');
+                a.setAttribute('href', realUrl);
+                // @ts-ignore
+                a.setAttribute('target', target);
+                document.body.appendChild(a);
+                a.click();
+                setTimeout(() => {
+                    document.body.removeChild(a);
+                }, 500);
+            }
+            linkpao();
+            return;
           }
           const hrefR = currentHref();
           // if (!hrefR && !this.$listeners.click) {
@@ -72,8 +97,11 @@ export default {
               $route,
               props.append,
           );
-          props.replace ? $router.replace(location) : $router.push(location);
-
+          if (props.target === '_self') {
+            props.replace ? $router.replace(location) : $router.push(location);
+          } else {
+            this.$linkpao(currentTo, props.target);
+          }
         } else {
           function downloadClick() {
             const a = document.createElement("a");

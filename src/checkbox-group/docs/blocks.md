@@ -2,7 +2,7 @@
 
 ```html
 <van-checkbox-group direction="horizontal">
-  <template #item="scope">
+  <template #item="current">
     <van-checkbox
       shape="square"
       vusion-disabled-cut

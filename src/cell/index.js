@@ -212,7 +212,7 @@ export default createComponent({
         return undefined;
     }
 
-    function onClick(event) {
+    async function onClick(event) {
       if (that.vanDropdownMenuItem) {
         if ((that.value ?? that.index) !== that.vanDropdownMenuItem.value) {
           that.vanDropdownMenuItem.value = that.value ?? that.index;
@@ -233,7 +233,30 @@ export default createComponent({
       // @ts-ignore：没办法
       // if (props.target !== '_self')
       //   return;
-
+      if (props.link) {
+        const url = props.link;
+        const {target} = props;
+        let realUrl;
+        if (typeof url === 'function') {
+            // @ts-ignore
+            realUrl = await url();
+        } else {
+            realUrl = url;
+        }
+        function linkpao() {
+            const a = document.createElement('a');
+            a.setAttribute('href', realUrl);
+            // @ts-ignore
+            a.setAttribute('target', target);
+            document.body.appendChild(a);
+            a.click();
+            setTimeout(() => {
+                document.body.removeChild(a);
+            }, 500);
+        }
+        linkpao();
+        return;
+      }
       if (hrefR === undefined) {
         let to;
         if (props.destination) {
@@ -264,8 +287,11 @@ export default createComponent({
           $route,
           props.append,
         );
-        props.replace ? $router.replace(location) : $router.push(location);
-
+        if (props.target === '_self') {
+          props.replace ? $router.replace(location) : $router.push(location);
+        } else {
+          that.$linkpao(currentTo, props.target);
+        }
         // emit(that, 'navigate', { to: currentTo, replace: props.replace, append: props.append });
       } else {
         function downloadClick() {

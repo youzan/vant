@@ -6,9 +6,9 @@ import { getScroller } from '../utils/dom/scroll';
 import { ParentMixin } from '../mixins/relation';
 import { ClickOutsideMixin } from '../mixins/click-outside';
 
-const [createComponent, bem] = createNamespace('dropdown-menu');
-
 import son from './son';
+
+const [createComponent, bem] = createNamespace('dropdown-menu');
 export { son };
 
 export default createComponent({
@@ -69,6 +69,11 @@ export default createComponent({
       }
     },
   },
+  watch: {
+    direction() {
+      this.updateOffset();
+    },
+  },
   methods: {
     updateOffset() {
       if (!this.$refs.bar) {
@@ -103,36 +108,43 @@ export default createComponent({
   render() {
     const Titles = this.children.map((item, index) => {
       const aId = item.$vnode.context.$options._scopeId;
-      return <div
-        role="button"
-        tabindex={item.disabled ? -1 : 0}
-        class={bem('item', { disabled: item.disabled })}
-        vusion-slot-name="title"
-        vusion-slot-name-edit="title"
-        vusion-scope-id={aId}
-        vusion-node-path={item.$attrs['vusion-node-path']}
-        vusion-node-tag={item.$attrs['vusion-node-tag']}
-      >
-        <span
-          class={[
-            bem('title', {
-              active: item.showPopup,
-              down: item.showPopup === (this.direction === 'down'),
-            }),
-            item.titleClass,
-          ]}
-          style={{ color: item.showPopup ? this.activeColor : '' }}
-          vusion-click-enabled onClick={() => {
-            if (!item.disabled) {
-              this.toggleItem(index);
-            }
-          }}
+      return (
+        <div
+          role="button"
+          tabindex={item.disabled ? -1 : 0}
+          class={bem('item', { disabled: item.disabled })}
+          vusion-slot-name="title"
+          vusion-slot-name-edit="title"
+          vusion-scope-id={aId}
+          vusion-node-path={item.$attrs['vusion-node-path']}
+          vusion-node-tag={item.$attrs['vusion-node-tag']}
         >
-          <div class="van-ellipsis" vusion-slot-name="title" vusion-slot-name-edit="title">
-            {item.slots('title') || item.displayTitle()}
-          </div>
-        </span>
-      </div>
+          <span
+            class={[
+              bem('title', {
+                active: item.showPopup,
+                down: item.showPopup === (this.direction === 'down'),
+              }),
+              item.titleClass,
+            ]}
+            style={{ color: item.showPopup ? this.activeColor : '' }}
+            vusion-click-enabled
+            onClick={() => {
+              if (!item.disabled) {
+                this.toggleItem(index);
+              }
+            }}
+          >
+            <div
+              class="van-ellipsis"
+              vusion-slot-name="title"
+              vusion-slot-name-edit="title"
+            >
+              {item.slots('title') || item.displayTitle()}
+            </div>
+          </span>
+        </div>
+      );
     });
 
     return (

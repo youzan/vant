@@ -1,6 +1,6 @@
 {
   "name": "@lcap/mobile-ui",
-  "version": "0.12.25",
+  "version": "0.12.26",
   "lcapname": "@lcap/mobile-ui",
   "lcapversion": "0.6.3",
   "description": "Mobile UI Components built on Vue",
@@ -27,7 +27,7 @@
     "lint": "vant-cli lint",
     "test": "vant-cli test",
     "copyimg": "node bin/copy-lcp-images ",
-    "build:vusion": "npm run check && vue-cli-service library-build --dest dist-theme && npm run copyimg",
+    "build:vusion": "npm run check && vue-cli-service library-build --dest dist-theme && npm run copyimg && node ./scripts/lcap",
     "build2": "vant-cli build",
     "build": "cross-env scene=desktop vant-cli build",
     "release": "vant-cli release",
@@ -41,15 +41,14 @@
     "deploy:dev": "node ./scripts/lcap && lcap deploy dist-theme --platform http://defaulttenant.lcap.dev.env.com && node bin/deploy-lcp-images --platform=http://defaulttenant.lcap.dev.env.com",
     "deploy:test": "node ./scripts/lcap && lcap deploy dist-theme --platform http://defaulttenant.lcap.ha.test.com && node bin/deploy-lcp-images --platform=http://defaulttenant.lcap.ha.test.com",
     "deploy:pre": "node ./scripts/lcap && lcap deploy dist-theme --platform http://defaulttenant.lcap.ha.dri.com && node bin/deploy-lcp-images --platform=http://defaulttenant.lcap.ha.dri.com",
-    "deploy:online": "node ./scripts/lcap && vusion deploy --framework @lcap/mobile-ui dist-theme &&  node bin/deploy-lcp-images --platform=http://netease-template.lcap.163yun.com",
+    "deploy:online": "node ./scripts/lcap && lcap deploy dist-theme --platform http://netease-template.lcap.163yun.com &&  node bin/deploy-lcp-images --platform=http://netease-template.lcap.163yun.com",
     "prepublishOnly": "npm run build:vusion && git add .",
     "postpublish": "npm run deploy:online",
     "deploy:qz": "lcap deploy dist-theme --platform=https://defaulttenant.lcap.qz.163yun.com --username=admin --password=Netease123 && node bin/deploy-lcp-images --platform=https://defaulttenant.lcap.qz.163yun.com"
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged",
-      "commit-msg": "vant-cli commit-lint"
+      "pre-commit": "lint-staged"
     }
   },
   "lint-staged": {
@@ -77,7 +76,7 @@
     "@vant/icons": "^1.7.1",
     "@vant/popperjs": "^1.1.0",
     "@vue/babel-helper-vue-jsx-merge-props": "^1.0.0",
-    "cloud-ui.vusion": "0.14.24-beta.4",
+    "cloud-ui.vusion": "^0.14.28-beta.2",
     "lodash": "^4.17.21",
     "online-svg-icon-vue2": "^1.2.3",
     "swiper": "^7.4.1",

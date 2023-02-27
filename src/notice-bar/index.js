@@ -51,6 +51,7 @@ export default createComponent({
     decoration: { type: Boolean, default: true },
     download: { type: Boolean, default: false },
     destination: String,
+    link: [Function, String]
   },
 
   data() {
@@ -140,12 +141,37 @@ export default createComponent({
         }
       }, delay);
     },
-    clickHandler(event) {
+    async clickHandler(event) {
       this.$emit('click', event);
+      const that = this;
       if (this.mode === 'link') {
         this.$emit('rout', event);
         const props = this._props;
         const parent = this.$parent;
+        if (props.link) {
+          const url = props.link;
+          const {target} = props;
+          let realUrl;
+          if (typeof url === 'function') {
+              // @ts-ignore
+              realUrl = await url();
+          } else {
+              realUrl = url;
+          }
+          function linkpao() {
+              const a = document.createElement('a');
+              a.setAttribute('href', realUrl);
+              // @ts-ignore
+              a.setAttribute('target', target);
+              document.body.appendChild(a);
+              a.click();
+              setTimeout(() => {
+                  document.body.removeChild(a);
+              }, 500);
+          }
+          linkpao();
+          return;
+        }
         function currentHref() {
           if (props.href !== undefined)
             return encodeUrl(props.href);
@@ -186,8 +212,11 @@ export default createComponent({
             $route,
             props.append,
           );
-          props.replace ? $router.replace(location) : $router.push(location);
-
+          if (props.target === '_self') {
+            props.replace ? $router.replace(location) : $router.push(location);
+          } else {
+            that.$linkpao(currentTo, props.target);
+          }
           this.$emit(this, 'navigate', { to: currentTo, replace: props.replace, append: props.append });
         } else {
           function downloadClick() {
