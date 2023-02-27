@@ -43,7 +43,8 @@
       description: 后缀图标
     - name: maxlength
       title: 可输入最大字符数
-      type: string, number
+      type: number
+      display: number
       place: 不限制
       description: 输入框内可输入的最大字符数，超过时不支持输入
       toggleupdate:
