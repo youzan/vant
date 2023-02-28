@@ -169,8 +169,8 @@ export default {
 | 事件名              | 说明                         | 回调参数        |
 | ------------------- | ---------------------------- | --------------- |
 | change              | 每一页轮播结束后触发         | _index: number_ |
-| drag-start `v4.0.9` | 当用户开始拖动轮播组件时触发 | -               |
-| drag-end `v4.0.9`   | 当用户结束拖动轮播组件时触发 | -               |
+| drag-start `v4.0.9` | 当用户开始拖动轮播组件时触发 | _index: number_ |
+| drag-end `v4.0.9`   | 当用户结束拖动轮播组件时触发 | _index: number_ |
 
 ### SwipeItem Events
 

@@ -350,9 +350,13 @@ test('should emit drag-start and drag-end events correctly', async () => {
 
   await triggerDrag(track, 100, 0);
   expect(dragStart).toHaveBeenCalledTimes(1);
+  expect(dragStart).toHaveBeenCalledWith(0);
   expect(dragEnd).toHaveBeenCalledTimes(1);
+  expect(dragEnd).toHaveBeenCalledWith(1);
 
   await triggerDrag(track, 100, 0);
   expect(dragStart).toHaveBeenCalledTimes(2);
+  expect(dragStart).toHaveBeenCalledWith(1);
   expect(dragEnd).toHaveBeenCalledTimes(2);
+  expect(dragEnd).toHaveBeenCalledWith(0);
 });

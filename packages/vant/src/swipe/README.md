@@ -161,8 +161,8 @@ export default {
 | Event | Description | Arguments |
 | --- | --- | --- |
 | change | Emitted when current swipe changed | _index: number_ |
-| drag-start `v4.0.9` | Emitted when user starts dragging the swipe | - |
-| drag-end `v4.0.9` | Emitted when user ends dragging the swipe | - |
+| drag-start `v4.0.9` | Emitted when user starts dragging the swipe | _index: number_ |
+| drag-end `v4.0.9` | Emitted when user ends dragging the swipe | _index: number_ |
 
 ### SwipeItem Events
 
