@@ -333,7 +333,7 @@ export default defineComponent({
             move({ offset: delta.value });
 
             if (!dragging) {
-              emit('dragStart', activeIndicator.value);
+              emit('dragStart', { index: activeIndicator.value });
               dragging = true;
             }
           }
@@ -377,7 +377,7 @@ export default defineComponent({
       dragging = false;
       state.swiping = false;
 
-      emit('dragEnd', activeIndicator.value);
+      emit('dragEnd', { index: activeIndicator.value });
       autoplay();
     };
 
