@@ -143,7 +143,7 @@ export default defineComponent({
       );
     };
 
-    linkChildren({ id, props, offset });
+    linkChildren({ id, props, offset, updateOffset });
     useClickAway(root, onClickAway);
     useEventListener('scroll', onScroll, {
       target: scrollParent,

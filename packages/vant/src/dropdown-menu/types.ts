@@ -7,6 +7,7 @@ export type DropdownMenuProvide = {
   id: string;
   props: DropdownMenuProps;
   offset: Ref<number>;
+  updateOffset: () => void;
 };
 
 export type DropdownMenuThemeVars = {
