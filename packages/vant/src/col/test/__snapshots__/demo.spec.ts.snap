@@ -28,18 +28,20 @@ exports[`should render demo and match snapshot 1`] = `
   </div>
 </div>
 <div>
-  <div class="van-row">
-    <div class="van-col van-col--8"
-         style="padding-right: 13.333333333333334px;"
-    >
-      span: 8
-    </div>
-    <div style="padding-left: 6.666666666666666px; padding-right: 6.666666666666668px;"
+  <div style="margin-left: -10px; margin-right: -10px;"
+       class="van-row"
+  >
+    <div style="padding-left: 10px; padding-right: 10px;"
          class="van-col van-col--8"
     >
       span: 8
     </div>
-    <div style="padding-left: 13.333333333333332px;"
+    <div style="padding-left: 10px; padding-right: 10px;"
+         class="van-col van-col--8"
+    >
+      span: 8
+    </div>
+    <div style="padding-left: 10px; padding-right: 10px;"
          class="van-col van-col--8"
     >
       span: 8

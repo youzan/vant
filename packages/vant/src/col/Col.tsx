@@ -1,11 +1,20 @@
-import { computed, defineComponent, type ExtractPropTypes } from 'vue';
 import {
+  computed,
+  defineComponent,
+  type CSSProperties,
+  type ExtractPropTypes,
+} from 'vue';
+
+import {
+  addUnit,
   numericProp,
   createNamespace,
   makeNumericProp,
   makeStringProp,
 } from '../utils';
+
 import { useParent } from '@vant/use';
+
 import { ROW_KEY } from '../row/Row';
 
 const [name, bem] = createNamespace('col');
@@ -24,22 +33,23 @@ export default defineComponent({
   props: colProps,
 
   setup(props, { slots }) {
-    const { parent, index } = useParent(ROW_KEY);
+    const { parent } = useParent(ROW_KEY);
 
     const style = computed(() => {
       if (!parent) {
         return;
       }
 
-      const { spaces } = parent;
+      const { gutter } = parent;
+      const styles: CSSProperties = {};
 
-      if (spaces && spaces.value && spaces.value[index.value]) {
-        const { left, right } = spaces.value[index.value];
-        return {
-          paddingLeft: left ? `${left}px` : null,
-          paddingRight: right ? `${right}px` : null,
-        };
+      if (gutter) {
+        const halfGutter = Number(gutter) / 2;
+        styles.paddingLeft = addUnit(halfGutter);
+        styles.paddingRight = addUnit(halfGutter);
       }
+
+      return styles;
     });
 
     return () => {

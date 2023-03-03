@@ -2,24 +2,26 @@ import {
   computed,
   defineComponent,
   type PropType,
-  type ComputedRef,
   type InjectionKey,
+  type CSSProperties,
   type ExtractPropTypes,
 } from 'vue';
+
 import {
+  addUnit,
+  Numeric,
   truthProp,
   makeStringProp,
   makeNumericProp,
   createNamespace,
 } from '../utils';
+
 import { useChildren } from '@vant/use';
 
 const [name, bem] = createNamespace('row');
 
-export type RowSpaces = { left?: number; right: number }[];
-
 export type RowProvide = {
-  spaces: ComputedRef<RowSpaces>;
+  gutter: Numeric;
 };
 
 export const ROW_KEY: InjectionKey<RowProvide> = Symbol(name);
@@ -49,57 +51,30 @@ export default defineComponent({
   props: rowProps,
 
   setup(props, { slots }) {
-    const { children, linkChildren } = useChildren(ROW_KEY);
+    const { linkChildren } = useChildren(ROW_KEY);
 
-    const groups = computed(() => {
-      const groups: number[][] = [[]];
-
-      let totalSpan = 0;
-      children.forEach((child, index) => {
-        totalSpan += Number(child.span);
-
-        if (totalSpan > 24) {
-          groups.push([index]);
-          totalSpan -= 24;
-        } else {
-          groups[groups.length - 1].push(index);
-        }
-      });
-
-      return groups;
-    });
-
-    const spaces = computed(() => {
-      const gutter = Number(props.gutter);
-      const spaces: RowSpaces = [];
-
-      if (!gutter) {
-        return spaces;
+    const style = computed(() => {
+      const styles: CSSProperties = {};
+      if (!props.gutter) {
+        return styles;
       }
 
-      groups.value.forEach((group) => {
-        const averagePadding = (gutter * (group.length - 1)) / group.length;
+      const gutter = Number(props.gutter);
+      const halfGutter = gutter / 2;
 
-        group.forEach((item, index) => {
-          if (index === 0) {
-            spaces.push({ right: averagePadding });
-          } else {
-            const left = gutter - spaces[item - 1].right;
-            const right = averagePadding - left;
-            spaces.push({ left, right });
-          }
-        });
-      });
+      styles.marginLeft = addUnit(-halfGutter);
+      styles.marginRight = addUnit(-halfGutter);
 
-      return spaces;
+      return styles;
     });
 
-    linkChildren({ spaces });
+    linkChildren({ gutter: props.gutter });
 
     return () => {
       const { tag, wrap, align, justify } = props;
       return (
         <tag
+          style={style.value}
           class={bem({
             [`align-${align}`]: align,
             [`justify-${justify}`]: justify,
