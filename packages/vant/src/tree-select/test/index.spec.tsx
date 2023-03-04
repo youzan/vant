@@ -247,3 +247,16 @@ test('should change selected icon when using selected-icon prop', () => {
 
   expect(wrapper.find('.van-tree-select__item').html()).toMatchSnapshot();
 });
+
+test('should render nav-text slot correctly', async () => {
+  const wrapper = mount(TreeSelect, {
+    props: {
+      items: mockItems,
+    },
+    slots: {
+      'nav-text': (item) => `Custom nav text, ${item.text}`,
+    },
+  });
+
+  expect(wrapper.html()).toMatchSnapshot();
+});

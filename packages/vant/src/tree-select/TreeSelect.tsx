@@ -114,12 +114,14 @@ export default defineComponent({
       const Items = props.items.map((item) => (
         <SidebarItem
           dot={item.dot}
-          title={item.text}
           badge={item.badge}
           class={[bem('nav-item'), item.className]}
           disabled={item.disabled}
           onClick={onClickSidebarItem}
-          v-slots={{ title: slots['nav-text']?.() }}
+          v-slots={{
+            title: () =>
+              slots['nav-text'] ? slots['nav-text'](item) : item.text,
+          }}
         />
       ));
 

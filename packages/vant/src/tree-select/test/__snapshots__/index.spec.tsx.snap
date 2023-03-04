@@ -68,3 +68,37 @@ exports[`should render nav badge correctly 1`] = `
   </div>
 </div>
 `;
+
+exports[`should render nav-text slot correctly 1`] = `
+<div class="van-tree-select"
+     style="height: 300px;"
+>
+  <div role="tablist"
+       class="van-sidebar van-tree-select__nav"
+  >
+    <div role="tab"
+         class="van-sidebar-item van-sidebar-item--select van-tree-select__nav-item"
+         tabindex="0"
+         aria-selected="true"
+    >
+      <div class="van-badge__wrapper van-sidebar-item__text">
+        Custom nav text, group1
+      </div>
+    </div>
+    <div role="tab"
+         class="van-sidebar-item van-tree-select__nav-item"
+         tabindex="0"
+         aria-selected="false"
+    >
+      <div class="van-badge__wrapper van-sidebar-item__text">
+        Custom nav text, group2
+      </div>
+    </div>
+  </div>
+  <div class="van-tree-select__content">
+    <div class="van-ellipsis van-tree-select__item">
+      city1
+    </div>
+  </div>
+</div>
+`;
