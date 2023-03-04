@@ -119,6 +119,7 @@ export default defineComponent({
           class={[bem('nav-item'), item.className]}
           disabled={item.disabled}
           onClick={onClickSidebarItem}
+          v-slots={{ title: slots['nav-text']?.() }}
         />
       ));
 
