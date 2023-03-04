@@ -103,7 +103,6 @@ export default defineComponent({
     const toggleItem = (active: number) => {
       children.forEach((item, index) => {
         if (index === active) {
-          updateOffset();
           item.toggle();
         } else if (item.state.showPopup) {
           item.toggle(false, { immediate: true });
