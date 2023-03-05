@@ -19,6 +19,25 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 
 ## Details
 
+### [v4.1.0](https://github.com/vant-ui/vant/compare/v4.0.11...v4.1.0)
+
+`2023-03-05`
+
+**New Component**
+
+- add new TextEllipsis component [#11593](https://github.com/vant-ui/vant/issues/11593)
+
+**Feature**
+
+- Swipe: add index param to drag-start/drag-end event [#11632](https://github.com/vant-ui/vant/issues/11632)
+- TreeSelect: add nav-text slot [#11602](https://github.com/vant-ui/vant/issues/11602) [#11641](https://github.com/vant-ui/vant/issues/11641)
+
+**Bug Fixes**
+
+- DropdownMenu: fix dropdown-item position when expanded by default [#11640](https://github.com/vant-ui/vant/issues/11640)
+- Field: fix label-align top not work when set label-width [#11611](https://github.com/vant-ui/vant/issues/11611)
+- Locale: improve Ukrainian translation [#11629](https://github.com/vant-ui/vant/issues/11629)
+
 ### [v4.0.11](https://github.com/vant-ui/vant/compare/v4.0.10...v4.0.11)
 
 `2023-02-20`
