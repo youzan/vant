@@ -19,6 +19,25 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 
 ## 更新内容
 
+### [v4.1.0](https://github.com/vant-ui/vant/compare/v4.0.11...v4.1.0)
+
+`2023-03-05`
+
+**New Component**
+
+- 新增 TextEllipsis 文本省略组件 [#11593](https://github.com/vant-ui/vant/issues/11593)
+
+**Feature**
+
+- Swipe: 新增 drag-start/drag-end 事件的 index 参数 [#11632](https://github.com/vant-ui/vant/issues/11632)
+- TreeSelect: 新增 nav-text 插槽 [#11602](https://github.com/vant-ui/vant/issues/11602) [#11641](https://github.com/vant-ui/vant/issues/11641)
+
+**Bug Fixes**
+
+- DropdownMenu: 修复使用 toggle 方法打开时位置错误的问题 [#11640](https://github.com/vant-ui/vant/issues/11640)
+- Field: 修复设置 label-width 后 label-position 不生效的问题 [#11611](https://github.com/vant-ui/vant/issues/11611)
+- Locale: 修复乌克兰语翻译问题 [#11629](https://github.com/vant-ui/vant/issues/11629)
+
 ### [v4.0.11](https://github.com/vant-ui/vant/compare/v4.0.10...v4.0.11)
 
 `2023-02-20`
