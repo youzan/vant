@@ -100,6 +100,7 @@ export default defineComponent({
       state.transition = !options.immediate;
 
       if (show) {
+        parent.updateOffset();
         state.showWrapper = true;
       }
     };
