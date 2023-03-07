@@ -116,7 +116,7 @@ export function replaceScriptImportExt(
 
   imports.forEach((line, index) => {
     if (line.includes('.vue')) {
-      updateImport(index, line.replace('.vue', ext));
+      updateImport(index, line.replace('.vue', ''));
     }
   });
 
