@@ -275,6 +275,7 @@ export default defineComponent({
           !isSameValue(newValues, lastEmittedModelValue)
         ) {
           selectedValues.value = newValues.slice(0);
+          lastEmittedModelValue = newValues.slice(0);
         }
       },
       { deep: true }
