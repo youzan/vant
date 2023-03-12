@@ -36,9 +36,9 @@
   "author": "chenjiahan",
   "license": "MIT",
   "devDependencies": {
-    "@vue/runtime-core": "^3.2.27",
+    "@vue/runtime-core": "^3.2.47",
     "vant": "workspace:*",
-    "vue": "^3.2.45",
+    "vue": "^3.2.47",
     "esbuild": "^0.16.10",
     "release-it": "^15.1.1",
     "rimraf": "^4.0.4",
