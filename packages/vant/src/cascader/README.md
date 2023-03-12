@@ -114,6 +114,7 @@ export default {
 
 ```js
 import { ref } from 'vue';
+import { closeToast, showLoadingToast } from 'vant';
 
 export default {
   setup() {
@@ -128,13 +129,19 @@ export default {
       },
     ]);
     const onChange = ({ value }) => {
-      if (value === options.value[0].value) {
+      if (
+        value === options.value[0].value &&
+        options.value[0].children.length === 0
+      ) {
+        showLoadingToast('Loading...');
+        // mock data request
         setTimeout(() => {
           options.value[0].children = [
             { text: 'Hangzhou', value: '330100' },
             { text: 'Ningbo', value: '330200' },
           ];
-        }, 500);
+          closeToast();
+        }, 1000);
       }
     };
     const onFinish = ({ selectedOptions }) => {
