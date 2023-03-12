@@ -184,6 +184,7 @@ export default {
 
 ```js
 import { ref } from 'vue';
+import { closeToast, showLoadingToast } from 'vant';
 
 export default {
   setup() {
@@ -198,13 +199,19 @@ export default {
       },
     ]);
     const onChange = ({ value }) => {
-      if (value === options.value[0].value) {
+      if (
+        value === options.value[0].value &&
+        options.value[0].children.length === 0
+      ) {
+        // 模拟数据请求
+        showLoadingToast('加载中...');
         setTimeout(() => {
           options.value[0].children = [
             { text: '杭州市', value: '330100' },
             { text: '宁波市', value: '330200' },
           ];
-        }, 500);
+          closeToast();
+        }, 1000);
       }
     };
     const onFinish = ({ selectedOptions }) => {
