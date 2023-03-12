@@ -1,5 +1,9 @@
 # Changelog
 
+## v1.5.1
+
+- add `vue` as peer dependencies
+
 ## v1.5.0
 
 - `useEventListener` now returns a cleanup function
