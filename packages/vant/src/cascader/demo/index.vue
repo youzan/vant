@@ -9,6 +9,7 @@ import zhCNOptions from './area-zh-CN';
 import enUSOptions from './area-en-US';
 import { useCurrentLang } from '../../locale';
 import { useCascaderAreaData } from '@vant/area-data';
+import { closeToast, showLoadingToast } from '../../toast';
 import type { Numeric } from '../../utils';
 
 const lang = useCurrentLang();
@@ -131,10 +132,12 @@ const customFieldOptions = computed(() => {
 });
 
 const loadDynamicOptions = ({ value }: CascaderOption) => {
-  if (value === '330000') {
+  if (value === '330000' && asyncState.options![0].children?.length === 0) {
+    showLoadingToast(t('loading'));
     setTimeout(() => {
       asyncState.options![0].children = t('asyncOptions2');
-    }, 500);
+      closeToast();
+    }, 1000);
   }
 };
 
