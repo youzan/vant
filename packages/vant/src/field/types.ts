@@ -55,7 +55,7 @@ export type FieldRuleValidator = (
   rule: FieldRule
 ) => boolean | string | Promise<boolean | string>;
 
-export type FiledRuleFormatter = (value: any, rule: FieldRule) => string;
+export type FieldRuleFormatter = (value: any, rule: FieldRule) => string;
 
 export type FieldRule = {
   pattern?: RegExp;
@@ -63,7 +63,7 @@ export type FieldRule = {
   message?: FieldRuleMessage;
   required?: boolean;
   validator?: FieldRuleValidator;
-  formatter?: FiledRuleFormatter;
+  formatter?: FieldRuleFormatter;
   validateEmpty?: boolean;
 };
 

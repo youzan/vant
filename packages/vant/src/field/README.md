@@ -340,7 +340,7 @@ import type {
   FieldClearTrigger,
   FieldFormatTrigger,
   FieldRuleValidator,
-  FiledRuleFormatter,
+  FieldRuleFormatter,
   FieldValidateError,
   FieldAutosizeConfig,
   FieldValidateTrigger,
