@@ -54,7 +54,7 @@ export default defineComponent({
 
   setup(props, { emit, slots, attrs }) {
     const id = useId();
-    const filedRef = ref<FieldInstance>();
+    const fieldRef = ref<FieldInstance>();
 
     const onCancel = () => {
       if (!slots.action) {
@@ -99,8 +99,8 @@ export default defineComponent({
       }
     };
 
-    const blur = () => filedRef.value?.blur();
-    const focus = () => filedRef.value?.focus();
+    const blur = () => fieldRef.value?.blur();
+    const focus = () => fieldRef.value?.focus();
     const onBlur = (event: Event) => emit('blur', event);
     const onFocus = (event: Event) => emit('focus', event);
     const onClear = (event: MouseEvent) => emit('clear', event);
@@ -123,7 +123,7 @@ export default defineComponent({
       return (
         <Field
           v-slots={pick(slots, ['left-icon', 'right-icon'])}
-          ref={filedRef}
+          ref={fieldRef}
           type="search"
           class={bem('field')}
           border={false}

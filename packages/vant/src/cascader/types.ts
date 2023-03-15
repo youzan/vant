@@ -7,7 +7,7 @@ export type CascaderOption = {
   disabled?: boolean;
   children?: CascaderOption[];
   className?: unknown;
-  // for custom filed names
+  // for custom field names
   [key: PropertyKey]: any;
 };
 
