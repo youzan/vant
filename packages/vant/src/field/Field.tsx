@@ -540,6 +540,16 @@ export default defineComponent({
       }
     };
 
+    const renderLinkIcon = () => {
+      if (props.isLink) {
+        const name =
+          props.arrowDirection && props.arrowDirection !== 'right'
+            ? `arrow-${props.arrowDirection}`
+            : 'arrow';
+        return <Icon name={name} class={bem('right-icon')} />;
+      }
+    };
+
     const renderWordLimit = () => {
       if (props.showWordLimit && props.maxlength) {
         const count = getStringLength(getModelValue());
@@ -596,6 +606,7 @@ export default defineComponent({
         )}
         {renderRightIcon()}
         {slots.button && <div class={bem('button')}>{slots.button()}</div>}
+        {renderLinkIcon()}
       </div>,
       renderWordLimit(),
       renderMessage(),
@@ -665,7 +676,6 @@ export default defineComponent({
           })}
           center={props.center}
           border={props.border}
-          isLink={props.isLink}
           clickable={props.clickable}
           titleStyle={labelStyle.value}
           valueClass={bem('value')}
@@ -673,7 +683,6 @@ export default defineComponent({
             bem('label', [labelAlign, { required: props.required }]),
             props.labelClass,
           ]}
-          arrowDirection={props.arrowDirection}
         />
       );
     };
