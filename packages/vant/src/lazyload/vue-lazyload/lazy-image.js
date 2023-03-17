@@ -51,7 +51,6 @@ export default (lazyManager) => ({
   },
   created() {
     this.init();
-    this.renderSrc = this.options.loading;
   },
   mounted() {
     this.el = this.$el;
