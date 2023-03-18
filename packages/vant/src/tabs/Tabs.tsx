@@ -120,7 +120,7 @@ export default defineComponent({
     // whether the nav is scrollable
     const scrollable = computed(
       () =>
-        children.length > props.swipeThreshold ||
+        children.length > +props.swipeThreshold ||
         !props.ellipsis ||
         props.shrink
     );

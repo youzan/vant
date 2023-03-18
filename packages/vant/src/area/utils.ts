@@ -42,8 +42,8 @@ export function formatDataForCascade({
     county_list: county = {},
     province_list: province = {},
   } = areaList;
-  const showCity = columnsNum > 1;
-  const showCounty = columnsNum > 2;
+  const showCity = +columnsNum > 1;
+  const showCounty = +columnsNum > 2;
 
   const getProvinceChildren = () => {
     if (showCity) {

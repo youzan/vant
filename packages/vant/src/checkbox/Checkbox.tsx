@@ -38,7 +38,7 @@ export default defineComponent({
       const value = modelValue.slice();
 
       if (checked) {
-        const overlimit = max && value.length >= max;
+        const overlimit = max && value.length >= +max;
 
         if (!overlimit && !value.includes(name)) {
           value.push(name);

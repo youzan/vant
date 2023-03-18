@@ -39,7 +39,8 @@ export default defineComponent({
 
     const renderPoints = () => {
       const Points: JSX.Element[] = [];
-      const { mask, value, length, gutter, focused } = props;
+      const { mask, value, gutter, focused } = props;
+      const length = +props.length;
 
       for (let i = 0; i < length; i++) {
         const char = value[i];

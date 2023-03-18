@@ -174,7 +174,7 @@ export default defineComponent({
         emit('update:modelValue', value.slice(0, value.length - 1));
       } else if (type === 'close') {
         onClose();
-      } else if (value.length < props.maxlength) {
+      } else if (value.length < +props.maxlength) {
         emit('input', text);
         emit('update:modelValue', value + text);
       }

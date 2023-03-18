@@ -73,7 +73,8 @@ export default defineComponent({
           return;
         }
 
-        const { offset, direction } = props;
+        const { direction } = props;
+        const offset = +props.offset;
         const scrollParentRect = useRect(scrollParent);
 
         if (!scrollParentRect.height || isHidden(root)) {

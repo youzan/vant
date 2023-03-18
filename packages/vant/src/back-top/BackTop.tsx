@@ -78,7 +78,7 @@ export default defineComponent({
 
     const scroll = () => {
       show.value = scrollParent.value
-        ? getScrollTop(scrollParent.value) >= props.offset
+        ? getScrollTop(scrollParent.value) >= +props.offset
         : false;
     };
 

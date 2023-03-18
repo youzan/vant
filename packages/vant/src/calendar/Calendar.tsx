@@ -333,7 +333,7 @@ export default defineComponent({
     const checkRange = (date: [Date, Date]) => {
       const { maxRange, rangePrompt, showRangePrompt } = props;
 
-      if (maxRange && calcDateNum(date) > maxRange) {
+      if (maxRange && calcDateNum(date) > +maxRange) {
         if (showRangePrompt) {
           showToast(rangePrompt || t('rangePrompt', maxRange));
         }
@@ -451,7 +451,7 @@ export default defineComponent({
         if (selectedIndex !== -1) {
           const [unselectedDate] = dates.splice(selectedIndex, 1);
           emit('unselect', cloneDate(unselectedDate));
-        } else if (props.maxRange && dates.length >= props.maxRange) {
+        } else if (props.maxRange && dates.length >= +props.maxRange) {
           showToast(props.rangePrompt || t('rangePrompt', props.maxRange));
         } else {
           select([...dates, date]);
