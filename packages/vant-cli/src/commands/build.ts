@@ -104,7 +104,10 @@ async function buildTypeDeclarations() {
   const tsConfig = join(process.cwd(), 'tsconfig.declaration.json');
 
   if (existsSync(tsConfig)) {
-    await execa('tsc', ['-p', tsConfig]);
+    await execa('tsc', ['-p', tsConfig], {
+      stdout: 'inherit',
+      stderr: 'inherit',
+    });
   }
 }
 
