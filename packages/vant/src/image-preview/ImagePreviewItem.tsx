@@ -276,8 +276,9 @@ export default defineComponent({
             resetScale();
           }
 
-          if (state.scale > props.maxZoom) {
-            state.scale = +props.maxZoom;
+          const maxZoom = +props.maxZoom;
+          if (state.scale > maxZoom) {
+            state.scale = maxZoom;
           }
         }
       }

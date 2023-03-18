@@ -246,7 +246,7 @@ export default defineComponent({
 
     const autoplay = () => {
       stopAutoplay();
-      if (props.autoplay > 0 && count.value > 1) {
+      if (+props.autoplay > 0 && count.value > 1) {
         autoplayTimer = setTimeout(() => {
           next();
           autoplay();

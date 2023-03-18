@@ -34,7 +34,7 @@
     "@types/fs-extra": "^11.0.1",
     "release-it": "^15.4.1",
     "rimraf": "^4.0.4",
-    "typescript": "^4.8.2"
+    "typescript": "^5.0.2"
   },
   "dependencies": {
     "consola": "^2.11.3",

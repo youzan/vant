@@ -67,7 +67,7 @@ export default defineComponent({
         const gutterValue = addUnit(gutter);
         style.paddingRight = gutterValue;
 
-        if (index.value >= columnNum) {
+        if (index.value >= +columnNum) {
           style.marginTop = gutterValue;
         }
       }

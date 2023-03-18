@@ -73,7 +73,7 @@ export default defineComponent({
 
           if (index !== -1) {
             activeId.splice(index, 1);
-          } else if (activeId.length < props.max) {
+          } else if (activeId.length < +props.max) {
             activeId.push(item.id);
           }
         } else {

@@ -301,7 +301,7 @@ export default defineComponent({
     const onClickUpload = (event: MouseEvent) => emit('clickUpload', event);
 
     const renderUpload = () => {
-      if (props.modelValue.length >= props.maxCount) {
+      if (props.modelValue.length >= +props.maxCount) {
         return;
       }
 

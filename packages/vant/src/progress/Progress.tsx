@@ -21,7 +21,7 @@ export const progressProps = {
   percentage: {
     type: numericProp,
     default: 0,
-    validator: (value: Numeric) => value >= 0 && value <= 100,
+    validator: (value: Numeric) => +value >= 0 && +value <= 100,
   },
 };
 

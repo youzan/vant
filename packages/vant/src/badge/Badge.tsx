@@ -63,7 +63,7 @@ export default defineComponent({
           return slots.content();
         }
 
-        if (isDef(max) && isNumeric(content!) && +content > max) {
+        if (isDef(max) && isNumeric(content!) && +content > +max) {
           return `${max}+`;
         }
 
