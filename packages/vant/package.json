@@ -68,5 +68,10 @@
     "lib/**/style/*",
     "*.css"
   ],
+  "release-it": {
+    "git": {
+      "commitMessage": "release: vant v${version}"
+    }
+  },
   "web-types": "lib/web-types.json"
 }

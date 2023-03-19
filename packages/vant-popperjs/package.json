@@ -46,7 +46,7 @@
   "release-it": {
     "git": {
       "tag": false,
-      "commitMessage": "release: @vant/popperjs ${version}"
+      "commitMessage": "release: @vant/popperjs v${version}"
     }
   }
 }

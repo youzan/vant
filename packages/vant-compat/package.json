@@ -47,7 +47,7 @@
   "release-it": {
     "git": {
       "tag": false,
-      "commitMessage": "release: @vant/compat ${version}"
+      "commitMessage": "release: @vant/compat v${version}"
     }
   }
 }

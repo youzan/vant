@@ -28,7 +28,7 @@
   "release-it": {
     "git": {
       "tag": false,
-      "commitMessage": "release: @vant/icons ${version}",
+      "commitMessage": "release: @vant/icons v${version}",
       "addUntrackedFiles": true,
       "requireCleanWorkingDir": false
     }

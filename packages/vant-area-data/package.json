@@ -45,7 +45,7 @@
   "release-it": {
     "git": {
       "tag": false,
-      "commitMessage": "release: @vant/area-data ${version}"
+      "commitMessage": "release: @vant/area-data v${version}"
     }
   }
 }

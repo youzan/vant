@@ -49,7 +49,7 @@
   "release-it": {
     "git": {
       "tag": false,
-      "commitMessage": "release: @vant/use ${version}"
+      "commitMessage": "release: @vant/use v${version}"
     }
   }
 }

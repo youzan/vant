@@ -93,7 +93,7 @@
   "release-it": {
     "git": {
       "tag": false,
-      "commitMessage": "release: @vant/cli ${version}"
+      "commitMessage": "release: @vant/cli v${version}"
     }
   }
 }
