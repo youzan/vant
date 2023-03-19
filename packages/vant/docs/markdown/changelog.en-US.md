@@ -19,6 +19,21 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 
 ## Details
 
+### [v4.1.1](https://github.com/vant-ui/vant/compare/v4.1.0...v4.1.1)
+
+`2023-03-19`
+
+**Feature**
+
+- Uploader: support avif image format [#11655](https://github.com/vant-ui/vant/issues/11655)
+
+**Bug Fixes**
+
+- @vant/use: add vue as peer dependencies [#11662](https://github.com/vant-ui/vant/issues/11662)
+- DatePicker: fix display back wrong of date-picker [#11656](https://github.com/vant-ui/vant/issues/11656)
+- Field: fix `FieldRuleFormatter` typo [#11674](https://github.com/vant-ui/vant/issues/11674)
+- TextEllipsis: fix that numbers and letters cannot display ellipses [#11669](https://github.com/vant-ui/vant/issues/11669)
+
 ### [v4.1.0](https://github.com/vant-ui/vant/compare/v4.0.11...v4.1.0)
 
 `2023-03-05`

@@ -19,6 +19,21 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 
 ## 更新内容
 
+### [v4.1.1](https://github.com/vant-ui/vant/compare/v4.1.0...v4.1.1)
+
+`2023-03-19`
+
+**Feature**
+
+- Uploader: 支持 avif 图片格式 [#11655](https://github.com/vant-ui/vant/issues/11655)
+
+**Bug Fixes**
+
+- @vant/use: 增加 vue 作为 peer dependencies [#11662](https://github.com/vant-ui/vant/issues/11662)
+- DatePicker: 修复个别情况下显示时间错误的问题 [#11656](https://github.com/vant-ui/vant/issues/11656)
+- Field: 修复 `FieldRuleFormatter` 类型拼写错误 [#11674](https://github.com/vant-ui/vant/issues/11674)
+- TextEllipsis: 修复长数字无法被正确截断的问题 [#11669](https://github.com/vant-ui/vant/issues/11669)
+
 ### [v4.1.0](https://github.com/vant-ui/vant/compare/v4.0.11...v4.1.0)
 
 `2023-03-05`
