@@ -36,6 +36,10 @@ export default createComponent({
       type: String,
       default: 's',
     },
+    preview: {
+      type: Boolean,
+      default: true,
+    },
   },
 
   data() {
@@ -147,9 +151,9 @@ export default createComponent({
       if (window.top.globalData) return;
       if (this.$listeners.click) {
         this.$emit('click', event);
-      } else if (!this.ifDesigner()) {
-          ImagePreview([this.getSrc(this.src)]);
-        }
+      } else if (!this.ifDesigner() && this.preview) {
+        ImagePreview([this.getSrc(this.src)]);
+      }
     },
 
     genPlaceholder() {

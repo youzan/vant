@@ -39,6 +39,11 @@
           title: 圆形
       default: s
       description: 图片风格
+    - name: preview
+      title: 图片预览
+      type: boolean
+      default: true
+      description: 是否支持点击全屏放大预览
   slots: false
   events:
     - name: click
