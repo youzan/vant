@@ -1,0 +1,6 @@
+{
+  "root": true,
+  "extends": [
+    "@vant/eslint-config"
+  ]
+}

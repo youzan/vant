@@ -9,7 +9,7 @@ import Field from '../field';
 // Mixins
 import { FieldMixin } from '../mixins/field';
 
-const _ = require('lodash');
+const _get = require('lodash/get');
 
 const [createComponent, bem, t] = createNamespace('cascader');
 
@@ -100,7 +100,7 @@ export default createComponent({
           (tab) => {
             if (tab.selectedOption) {
               // return tab.selectedOption?.[this.valueKey];
-              return _.get(tab.selectedOption, this.valueKey);
+              return _get(tab.selectedOption, this.valueKey);
             }
             return tab.selectedOption;
           }
@@ -128,7 +128,7 @@ export default createComponent({
         this.curValue
       ) || [];
       const result = selectedOptions
-        .map((option) => _.get(option, this.textKey))
+        .map((option) => _get(option, this.textKey))
         .join('/');
       return result;
     },
@@ -136,7 +136,7 @@ export default createComponent({
       for (let i = 0; i < options.length; i++) {
         const option = options[i];
 
-        if (_.get(option, this.valueKey) === value) {
+        if (_get(option, this.valueKey) === value) {
           return [option];
         }
 
@@ -181,7 +181,7 @@ export default createComponent({
             };
 
             const next = optionsCursor.filter(
-              (item) => _.get(item, this.valueKey) === _.get(option, this.valueKey)
+              (item) => _get(item, this.valueKey) === _get(option, this.valueKey)
             );
             if (next.length) {
               optionsCursor = next[0][this.childrenKey];
@@ -242,13 +242,13 @@ export default createComponent({
         .filter((item) => !!item);
 
       const eventParams = {
-        value: _.get(option, this.valueKey),
+        value: _get(option, this.valueKey),
         tabIndex,
         selectedOptions,
       };
-      this.curValue = _.get(option, this.valueKey);
-      this.$emit('input', _.get(option, this.valueKey));
-      this.$emit('update:value', _.get(option, this.valueKey));
+      this.curValue = _get(option, this.valueKey);
+      this.$emit('input', _get(option, this.valueKey));
+      this.$emit('update:value', _get(option, this.valueKey));
       this.$emit('change', eventParams);
 
       if (!option[this.childrenKey]) {
@@ -286,11 +286,11 @@ export default createComponent({
     renderOptions(options, selectedOption, tabIndex) {
       const renderOption = (option) => {
         const isSelected =
-          selectedOption && (_.get(option, this.valueKey) === _.get(selectedOption, this.valueKey))
+          selectedOption && (_get(option, this.valueKey) === _get(selectedOption, this.valueKey))
           // option[this.valueKey] === selectedOption[this.valueKey];
           // console.log(option);
         const Text = this.slots('option', { option, selected: isSelected }) || (
-          <span>{_.get(option, this.textKey)}</span>
+          <span>{_get(option, this.textKey)}</span>
         );
 
         return (
@@ -315,7 +315,7 @@ export default createComponent({
     renderTab(item, tabIndex) {
       const { options, selectedOption } = item;
       const title = selectedOption
-        ? _.get(selectedOption, this.textKey)
+        ? _get(selectedOption, this.textKey)
         : this.placeholder || t('select');
 
       return (

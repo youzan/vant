@@ -202,7 +202,7 @@
   slots:
     - concept: Slot
       name: default
-      description: 插入<van-cardu>
+      description: 插入<van-cardu />
       empty-background: drag-entity-here
       support:
         - name: van-cardu

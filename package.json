@@ -28,6 +28,7 @@
     "test": "vant-cli test",
     "copyimg": "node bin/copy-lcp-images ",
     "build:vusion": "npm run check && vue-cli-service library-build --dest dist-theme && npm run copyimg && node ./scripts/lcap",
+    "build:vusion-local": "vue-cli-service library-build --dest dist-theme --report",
     "build2": "vant-cli build",
     "build": "cross-env scene=desktop vant-cli build",
     "release": "vant-cli release",
@@ -76,10 +77,9 @@
     "@vant/icons": "^1.7.1",
     "@vant/popperjs": "^1.1.0",
     "@vue/babel-helper-vue-jsx-merge-props": "^1.0.0",
-    "cloud-ui.vusion": "^0.14.28-beta.2",
+    "cloud-ui.vusion": "^0.14.27-beta.3",
     "lodash": "^4.17.21",
     "online-svg-icon-vue2": "^1.2.3",
-    "swiper": "^7.4.1",
     "vconsole": "^3.9.3",
     "vue-lazyload": "1.2.3",
     "vue-month-picker": "^1.6.0"
@@ -89,8 +89,9 @@
   },
   "devDependencies": {
     "@vant/area-data": "^1.1.1",
-    "@vant/cli": "^2.10.3",
-    "@vant/eslint-config": "^3.3.2",
+    "@vant/cli": "2.10.3",
+    "@vant/eslint-config": "2.2.3",
+    "@vant/stylelint-config": "1.3.0",
     "@vue/cli-plugin-babel": "^4.5.13",
     "@vue/cli-plugin-typescript": "^4.5.13",
     "@vue/cli-service": "^4.5.13",
@@ -123,21 +124,6 @@
     "attributes": "vetur/attributes.json"
   },
   "web-types": "vetur/web-types.json",
-  "eslintConfig": {
-    "root": true,
-    "extends": [
-      "@vant"
-    ]
-  },
-  "stylelint": {
-    "extends": [
-      "@vant/stylelint-config"
-    ]
-  },
-  "prettier": {
-    "singleQuote": true,
-    "proseWrap": "never"
-  },
   "browserslist": [
     "Android >= 4.0",
     "iOS >= 8"
