@@ -423,7 +423,6 @@ exports[`should render demo and match snapshot 1`] = `
       <div class="van-cell__title van-field__label van-field__label--top">
         <label id="van-field-label"
                for="van-field-input"
-               style="width: 50px;"
         >
           Text
         </label>
@@ -440,9 +439,7 @@ exports[`should render demo and match snapshot 1`] = `
       </div>
     </div>
     <div class="van-cell van-field van-field--label-left">
-      <div class="van-cell__title van-field__label van-field__label--left"
-           style="width: 50px;"
-      >
+      <div class="van-cell__title van-field__label van-field__label--left">
         <label id="van-field-label"
                for="van-field-input"
         >
@@ -461,9 +458,7 @@ exports[`should render demo and match snapshot 1`] = `
       </div>
     </div>
     <div class="van-cell van-field van-field--label-center">
-      <div class="van-cell__title van-field__label van-field__label--center"
-           style="width: 50px;"
-      >
+      <div class="van-cell__title van-field__label van-field__label--center">
         <label id="van-field-label"
                for="van-field-input"
         >
@@ -482,9 +477,7 @@ exports[`should render demo and match snapshot 1`] = `
       </div>
     </div>
     <div class="van-cell van-field van-field--label-right">
-      <div class="van-cell__title van-field__label van-field__label--right"
-           style="width: 50px;"
-      >
+      <div class="van-cell__title van-field__label van-field__label--right">
         <label id="van-field-label"
                for="van-field-input"
         >
