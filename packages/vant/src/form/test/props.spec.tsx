@@ -243,6 +243,7 @@ test('should render label-width prop correctly', () => {
         <Form labelWidth="5rem">
           <Field label="Label" />
           <Field label="Label" labelWidth="10vw" />
+          <Field label="Label" labelWidth="10vw" labelAlign="top" />
         </Form>
       );
     },

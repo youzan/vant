@@ -162,6 +162,25 @@ exports[`should render label-width prop correctly 1`] = `
       </div>
     </div>
   </div>
+  <div class="van-cell van-field van-field--label-top">
+    <div class="van-cell__title van-field__label van-field__label--top">
+      <label id="van-field-label"
+             for="van-field-input"
+             style="width: 10vw;"
+      >
+        Label
+      </label>
+    </div>
+    <div class="van-cell__value van-field__value">
+      <div class="van-field__body">
+        <input type="text"
+               id="van-field-input"
+               class="van-field__control"
+               aria-labelledby="van-field-label"
+        >
+      </div>
+    </div>
+  </div>
 </form>
 `;
 

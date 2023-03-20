@@ -23,15 +23,6 @@
 .van-field {
   flex-wrap: wrap;
 
-  &--label {
-    &-top {
-      .van-field__value {
-        flex: none;
-        width: 100%;
-      }
-    }
-  }
-
   &__label {
     flex: none;
     box-sizing: border-box;
@@ -50,6 +41,9 @@
     }
 
     &--top {
+      display: flex;
+      width: 100%;
+      text-align: left;
       margin-bottom: var(--van-padding-base);
     }
 

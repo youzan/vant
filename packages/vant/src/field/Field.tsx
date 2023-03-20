@@ -433,7 +433,8 @@ export default defineComponent({
 
     const labelStyle = computed(() => {
       const labelWidth = getProp('labelWidth');
-      if (labelWidth) {
+      const labelAlign = getProp('labelAlign');
+      if (labelWidth && labelAlign !== 'top') {
         return { width: addUnit(labelWidth) };
       }
     });
@@ -570,6 +571,8 @@ export default defineComponent({
     };
 
     const renderLabel = () => {
+      const labelWidth = getProp('labelWidth');
+      const labelAlign = getProp('labelAlign');
       const colon = getProp('colon') ? ':' : '';
 
       if (slots.label) {
@@ -577,7 +580,15 @@ export default defineComponent({
       }
       if (props.label) {
         return (
-          <label id={`${id}-label`} for={getInputId()}>
+          <label
+            id={`${id}-label`}
+            for={getInputId()}
+            style={
+              labelAlign === 'top' && labelWidth
+                ? { width: addUnit(labelWidth) }
+                : undefined
+            }
+          >
             {props.label + colon}
           </label>
         );
