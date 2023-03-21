@@ -1,6 +1,6 @@
 import { useRect, useWindowSize } from '@vant/use';
 import { unref, Ref } from 'vue';
-import { isIOS as checkIsIOS } from './validate';
+import { isIOS } from './validate';
 
 export type ScrollElement = Element | Window;
 
@@ -43,12 +43,10 @@ export function getElementTop(el: ScrollElement, scroller?: ScrollElement) {
   return useRect(el).top + scrollTop;
 }
 
-const isIOS = checkIsIOS();
-
 // hack for iOS12 page scroll
 // see: https://developers.weixin.qq.com/community/develop/doc/00044ae90742f8c82fb78fcae56800
 export function resetScroll() {
-  if (isIOS) {
+  if (isIOS()) {
     setRootScrollTop(getRootScrollTop());
   }
 }
