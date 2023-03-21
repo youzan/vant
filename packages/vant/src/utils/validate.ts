@@ -29,5 +29,5 @@ export const isNumeric = (val: Numeric): val is string =>
 
 export const isIOS = (): boolean =>
   inBrowser
-    ? /ios|iphone|ipad|ipod/.test(navigator.userAgent.toLowerCase())
+    ? /ios|iphone|ipad|ipod/.test(window.navigator.userAgent.toLowerCase())
     : false;
