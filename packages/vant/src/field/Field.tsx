@@ -397,13 +397,14 @@ export default defineComponent({
     };
 
     const onBlur = (event: Event) => {
+      state.focused = false;
+      updateValue(getModelValue(), 'onBlur');
+      emit('blur', event);
+
       if (getProp('readonly')) {
         return;
       }
 
-      state.focused = false;
-      updateValue(getModelValue(), 'onBlur');
-      emit('blur', event);
       validateWithTrigger('onBlur');
       nextTick(adjustTextareaSize);
       resetScroll();
