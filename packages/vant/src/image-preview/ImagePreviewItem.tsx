@@ -188,7 +188,8 @@ export default defineComponent({
         // allow user to swipe to next image
         if (
           (moveX > maxMoveX.value || moveX < -maxMoveX.value) &&
-          !isImageMoved
+          !isImageMoved &&
+          touch.isHorizontal()
         ) {
           state.moving = false;
           return;
