@@ -424,7 +424,7 @@ exports[`should render demo and match snapshot 1`] = `
         <label id="van-field-label"
                for="van-field-input"
         >
-          Text
+          Label
         </label>
       </div>
       <div class="van-cell__value van-field__value">
@@ -432,7 +432,7 @@ exports[`should render demo and match snapshot 1`] = `
           <input type="text"
                  id="van-field-input"
                  class="van-field__control"
-                 placeholder="Top Align"
+                 placeholder="Align Top"
                  aria-labelledby="van-field-label"
           >
         </div>
@@ -443,7 +443,7 @@ exports[`should render demo and match snapshot 1`] = `
         <label id="van-field-label"
                for="van-field-input"
         >
-          Text
+          Label
         </label>
       </div>
       <div class="van-cell__value van-field__value">
@@ -451,7 +451,7 @@ exports[`should render demo and match snapshot 1`] = `
           <input type="text"
                  id="van-field-input"
                  class="van-field__control"
-                 placeholder="Left Align"
+                 placeholder="Align Left"
                  aria-labelledby="van-field-label"
           >
         </div>
@@ -462,7 +462,7 @@ exports[`should render demo and match snapshot 1`] = `
         <label id="van-field-label"
                for="van-field-input"
         >
-          Text
+          Label
         </label>
       </div>
       <div class="van-cell__value van-field__value">
@@ -470,7 +470,7 @@ exports[`should render demo and match snapshot 1`] = `
           <input type="text"
                  id="van-field-input"
                  class="van-field__control"
-                 placeholder="Center Align"
+                 placeholder="Align Center"
                  aria-labelledby="van-field-label"
           >
         </div>
@@ -481,7 +481,7 @@ exports[`should render demo and match snapshot 1`] = `
         <label id="van-field-label"
                for="van-field-input"
         >
-          Text
+          Label
         </label>
       </div>
       <div class="van-cell__value van-field__value">
@@ -489,7 +489,7 @@ exports[`should render demo and match snapshot 1`] = `
           <input type="text"
                  id="van-field-input"
                  class="van-field__control"
-                 placeholder="Right Align"
+                 placeholder="Align Right"
                  aria-labelledby="van-field-label"
           >
         </div>
