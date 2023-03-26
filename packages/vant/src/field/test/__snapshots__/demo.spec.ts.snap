@@ -424,7 +424,7 @@ exports[`should render demo and match snapshot 1`] = `
         <label id="van-field-label"
                for="van-field-input"
         >
-          Tel
+          Text
         </label>
       </div>
       <div class="van-cell__value van-field__value">
@@ -432,7 +432,64 @@ exports[`should render demo and match snapshot 1`] = `
           <input type="text"
                  id="van-field-input"
                  class="van-field__control"
-                 placeholder="Please input tel number"
+                 placeholder="Top Align"
+                 aria-labelledby="van-field-label"
+          >
+        </div>
+      </div>
+    </div>
+    <div class="van-cell van-field van-field--label-left">
+      <div class="van-cell__title van-field__label van-field__label--left">
+        <label id="van-field-label"
+               for="van-field-input"
+        >
+          Text
+        </label>
+      </div>
+      <div class="van-cell__value van-field__value">
+        <div class="van-field__body">
+          <input type="text"
+                 id="van-field-input"
+                 class="van-field__control"
+                 placeholder="Left Align"
+                 aria-labelledby="van-field-label"
+          >
+        </div>
+      </div>
+    </div>
+    <div class="van-cell van-field van-field--label-center">
+      <div class="van-cell__title van-field__label van-field__label--center">
+        <label id="van-field-label"
+               for="van-field-input"
+        >
+          Text
+        </label>
+      </div>
+      <div class="van-cell__value van-field__value">
+        <div class="van-field__body">
+          <input type="text"
+                 id="van-field-input"
+                 class="van-field__control"
+                 placeholder="Center Align"
+                 aria-labelledby="van-field-label"
+          >
+        </div>
+      </div>
+    </div>
+    <div class="van-cell van-field van-field--label-right">
+      <div class="van-cell__title van-field__label van-field__label--right">
+        <label id="van-field-label"
+               for="van-field-input"
+        >
+          Text
+        </label>
+      </div>
+      <div class="van-cell__value van-field__value">
+        <div class="van-field__body">
+          <input type="text"
+                 id="van-field-input"
+                 class="van-field__control"
+                 placeholder="Right Align"
                  aria-labelledby="van-field-label"
           >
         </div>

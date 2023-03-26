@@ -24,6 +24,7 @@ export function test(command: Config.Argv) {
     clearCache: command.clearCache,
     changedSince: command.changedSince,
     logHeapUsage: command.logHeapUsage,
+    updateSnapshot: command.updateSnapshot,
     // make jest tests faster
     // see: https://ivantanev.com/make-jest-faster/
     maxWorkers: '50%',

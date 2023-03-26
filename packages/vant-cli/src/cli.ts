@@ -45,6 +45,10 @@ program
     '--runInBand',
     'Run all tests serially in the current process, rather than creating a worker pool of child processes that run tests'
   )
+  .option(
+    '--updateSnapshot',
+    'Re-record every snapshot that fails during this test run'
+  )
   .option('--debug', 'Print debugging info about your Jest config')
   .action(async (options) => {
     const { test } = await import('./commands/jest.js');
