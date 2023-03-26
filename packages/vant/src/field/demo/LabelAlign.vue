@@ -6,7 +6,7 @@ import { useTranslate } from '../../../docs/site';
 
 const t = useTranslate({
   'zh-CN': {
-    text: '文本',
+    label: '文本',
     top: '顶部对齐',
     center: '居中对齐',
     left: '左对齐',
@@ -14,11 +14,11 @@ const t = useTranslate({
     labelAlign: '输入框文本位置',
   },
   'en-US': {
-    text: 'Text',
-    top: 'Top Align',
-    center: 'Center Align',
-    left: 'Left Align',
-    right: 'Right Align',
+    label: 'Label',
+    top: 'Align Top',
+    center: 'Align Center',
+    left: 'Align Left',
+    right: 'Align Right',
     labelAlign: 'Label Align',
   },
 });
@@ -31,25 +31,25 @@ const value = ref('');
     <van-cell-group inset>
       <van-field
         v-model="value"
-        :label="t('text')"
+        :label="t('label')"
         :placeholder="t('top')"
         label-align="top"
       />
       <van-field
         v-model="value"
-        :label="t('text')"
+        :label="t('label')"
         :placeholder="t('left')"
         label-align="left"
       />
       <van-field
         v-model="value"
-        :label="t('text')"
+        :label="t('label')"
         :placeholder="t('center')"
         label-align="center"
       />
       <van-field
         v-model="value"
-        :label="t('text')"
+        :label="t('label')"
         :placeholder="t('right')"
         label-align="right"
       />
