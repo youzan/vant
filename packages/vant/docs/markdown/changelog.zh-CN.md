@@ -19,6 +19,20 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 
 ## 更新内容
 
+### [v4.1.2](https://github.com/vant-ui/vant/compare/v4.1.1...v4.1.2)
+
+`2023-03-26`
+
+**Feature**
+
+- Locale: 增加 Khmer 高棉语 [#11701](https://github.com/vant-ui/vant/issues/11701)
+
+**Bug Fixes**
+
+- Field: 修复同时设置 label-align "top" 和 is-link 时样式错误的问题 [#11684](https://github.com/vant-ui/vant/issues/11684)
+- Field: 修复设置 readonly 属性后无法触发 blur 事件的问题 [#11699](https://github.com/vant-ui/vant/issues/11699)
+- ImagePreview: 修复长图片上下拖动不顺滑的问题 [#11702](https://github.com/vant-ui/vant/issues/11702)
+
 ### [v4.1.1](https://github.com/vant-ui/vant/compare/v4.1.0...v4.1.1)
 
 `2023-03-19`

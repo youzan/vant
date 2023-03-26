@@ -19,6 +19,20 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 
 ## Details
 
+### [v4.1.2](https://github.com/vant-ui/vant/compare/v4.1.1...v4.1.2)
+
+`2023-03-26`
+
+**Feature**
+
+- Locale: add Khmer translations [#11701](https://github.com/vant-ui/vant/issues/11701)
+
+**Bug Fixes**
+
+- Field: label-align top works well with label-width [#11684](https://github.com/vant-ui/vant/issues/11684)
+- Field: should emit blur event when readonly [#11699](https://github.com/vant-ui/vant/issues/11699)
+- ImagePreview: long vertical images sliding up and down [#11702](https://github.com/vant-ui/vant/issues/11702)
+
 ### [v4.1.1](https://github.com/vant-ui/vant/compare/v4.1.0...v4.1.1)
 
 `2023-03-19`
