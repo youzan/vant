@@ -1,5 +1,8 @@
 import { ShareSheet } from '..';
 import { mount, trigger, later } from '../../../test';
+import { cdnURL } from '../../../docs/site';
+
+const IMAGE = cdnURL('custom-icon-water.png');
 
 test('should render cancel text when using cancel-text prop', async () => {
   const wrapper = mount(ShareSheet, {
@@ -130,4 +133,20 @@ test('should have "van-popup--round" class when setting the round prop', async (
 
   await wrapper.setProps({ round: false });
   expect(wrapper.find('.van-popup--round').exists()).toBeFalsy();
+});
+
+test('should allow to custom the icon of option', () => {
+  const wrapper = mount(ShareSheet, {
+    props: {
+      show: true,
+      options: [
+        { name: 'Water', icon: IMAGE },
+        { name: 'Collect', icon: 'label' },
+      ],
+    },
+  });
+
+  expect(
+    wrapper.element.querySelectorAll('.van-share-sheet__option').length
+  ).toEqual(2);
 });

@@ -24,6 +24,8 @@ export type ShareSheetOption = {
 
 export type ShareSheetOptions = ShareSheetOption[] | ShareSheetOption[][];
 
+const isImage = (name?: string) => name?.includes('/');
+
 const popupInheritKeys = [
   ...popupSharedPropKeys,
   'round',
@@ -93,14 +95,14 @@ export default defineComponent({
     };
 
     const renderIcon = (icon: string) => {
-      if (iconMap[icon]) {
-        return (
-          <div class={bem('icon', [icon])}>
-            <Icon name={iconMap[icon] || icon} />
-          </div>
-        );
+      if (isImage(icon)) {
+        return <img src={icon} class={bem('image-icon')} />;
       }
-      return <img src={icon} class={bem('image-icon')} />;
+      return (
+        <div class={bem('icon', [icon])}>
+          <Icon name={iconMap[icon] || icon} />
+        </div>
+      );
     };
 
     const renderOption = (option: ShareSheetOption, index: number) => {
