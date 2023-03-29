@@ -6,7 +6,7 @@ import { FieldMixin } from '../mixins/field';
 import Icon from '../icon';
 import NumberKeyboard from '../number-keyboard';
 import PasswordInput from '../password-input';
-import { times } from 'lodash';
+// import { times } from 'lodash';
 
 const [createComponent, bem] = createNamespace('fieldinput');
 
