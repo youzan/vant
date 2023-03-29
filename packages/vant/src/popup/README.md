@@ -21,7 +21,7 @@ app.use(Popup);
 ### Basic Usage
 
 ```html
-<van-cell is-link @click="showPopup">Show Popup</van-cell>
+<van-cell title="Show Popup" is-link @click="showPopup" />
 <van-popup v-model:show="show" :style="{ padding: '64px' }">Content</van-popup>
 ```
 
