@@ -1,10 +1,10 @@
-# Watermark 水印
+# Watermark
 
 ### Intro
 
 Add watermark for page.
 
-### 引入
+### Install
 
 Register component globally via `app.use`, refer to [Component Registration](#/en-US/advanced-usage#zu-jian-zhu-ce) for more registration ways.
 
@@ -94,7 +94,7 @@ Use the `default slot` to pass HTML directly. Inline styles are supported, and s
 
 ### Slots
 
-| 名称 | 说明 |
+| Attribute | Description |
 | --- | --- |
 | default | Content of HTML watermark. Inline styles are supported, and self-closing tags are not supported. This slot is invalid if `content` or `image` is passed |
 

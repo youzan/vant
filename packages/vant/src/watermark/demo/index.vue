@@ -8,16 +8,21 @@ const t = useTranslate({
   'zh-CN': {
     customGap: '自定义间隔',
     customImage: '自定义图片',
+    customRotate: '自定义倾斜角度',
+    displayRange: '显示范围',
+    htmlWatermark: 'HTML 水印',
+    textWatermark: '文字水印',
+    imageWatermark: '图片水印',
+    switch: '切换',
   },
   'en-US': {
-    error: 'Error',
-    search: 'Search',
-    network: 'Network',
-    imageType: 'Image Type',
-    customSize: 'Custom Size',
-    description: 'Description',
-    customImage: 'Custom Image',
-    bottomContent: 'Bottom Content',
+    customGap: 'Custom Gap',
+    customRotate: 'Custom Rotate',
+    displayRange: 'Display Range',
+    htmlWatermark: 'HTML Watermark',
+    textWatermark: 'Text Watermark',
+    imageWatermark: 'Image Watermark',
+    switch: 'Swtich',
   },
 });
 const baseWatermarkFlag = ref<'text' | 'image'>('text');
@@ -34,7 +39,7 @@ const fullPage = ref(false);
               baseWatermarkFlag = 'text';
             }
           "
-          >文字水印</van-button
+          >{{ t('textWatermark') }}</van-button
         >
         <van-button
           @click="
@@ -43,7 +48,7 @@ const fullPage = ref(false);
             }
           "
           style="margin: 0 var(--van-padding-md)"
-          >图片水印</van-button
+          >{{ t('imageWatermark') }}</van-button
         >
       </div>
       <van-watermark
@@ -67,7 +72,7 @@ const fullPage = ref(false);
     </div>
   </demo-block>
 
-  <demo-block title="自定义倾斜角度">
+  <demo-block :title="t('customRotate')">
     <div class="demo-watermark-wrapper">
       <van-watermark
         image="https://fastly.jsdelivr.net/npm/@vant/assets/cat.jpeg"
@@ -76,7 +81,7 @@ const fullPage = ref(false);
     </div>
   </demo-block>
 
-  <demo-block title="显示范围">
+  <demo-block :title="t('displayRange')">
     <div class="demo-watermark-wrapper">
       <van-button
         @click="
@@ -85,7 +90,7 @@ const fullPage = ref(false);
           }
         "
       >
-        切换
+        {{ t('switch') }}
       </van-button>
       <van-watermark
         :full-page="fullPage"
@@ -96,7 +101,7 @@ const fullPage = ref(false);
     </div>
   </demo-block>
 
-  <demo-block title="HTML 水印">
+  <demo-block :title="t('htmlWatermark')">
     <div class="demo-watermark-wrapper">
       <van-watermark :width="150">
         <div
