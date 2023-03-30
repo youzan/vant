@@ -2766,7 +2766,7 @@
             "Display"
         ],
         "screenShot": "https://static-vusion.163yun.com/packages/@lcap/mobile-ui@0.12.28/src/image/screenshots/0.png,https://static-vusion.163yun.com/packages/@lcap/mobile-ui@0.12.28/src/image/screenshots/1.png,https://static-vusion.163yun.com/packages/@lcap/mobile-ui@0.12.28/src/image/screenshots/2.png,https://static-vusion.163yun.com/packages/@lcap/mobile-ui@0.12.28/src/image/screenshots/3.png,https://static-vusion.163yun.com/packages/@lcap/mobile-ui@0.12.28/src/image/screenshots/4.png",
-        "blocks": "[{\"title\":\"适应\",\"description\":\"\",\"code\":\"<template>\\n<van-image src=\\\"http://ceph.lcap.hatest.163yun.com/lcap-test-static/icon/1.png\\\" fit=\\\"contain\\\" preview></van-image>\\n</template>\\n\"},{\"title\":\"适应（图片小于父元素时以原尺寸展示）\",\"description\":\"\",\"code\":\"<template>\\n<van-image src=\\\"http://ceph.lcap.hatest.163yun.com/lcap-test-static/icon/1.png\\\" fit=\\\"scale-down\\\" preview></van-image>\\n</template>\\n\"},{\"title\":\"原尺寸\",\"description\":\"\",\"code\":\"<template>\\n<van-image src=\\\"http://ceph.lcap.hatest.163yun.com/lcap-test-static/icon/1.png\\\" fit=\\\"none\\\" preview></van-image>\\n</template>\\n\"},{\"title\":\"拉伸\",\"description\":\"\",\"code\":\"<template>\\n<van-image src=\\\"http://ceph.lcap.hatest.163yun.com/lcap-test-static/icon/1.png\\\" fit=\\\"fill\\\" preview></van-image>\\n</template>\\n\"},{\"title\":\"填充\",\"description\":\"\",\"code\":\"<template>\\n<van-image src=\\\"http://ceph.lcap.hatest.163yun.com/lcap-test-static/icon/1.png\\\" fit=\\\"cover\\\" preview></van-image>\\n</template>\\n\"}]",
+        "blocks": "[{\"title\":\"适应\",\"description\":\"\",\"code\":\"<template>\\n<van-image\\n  src=\\\"http://ceph.lcap.hatest.163yun.com/lcap-test-static/icon/1.png\\\"\\n  fit=\\\"contain\\\"\\n  preview\\n></van-image>\\n</template>\\n\"},{\"title\":\"适应（图片小于父元素时以原尺寸展示）\",\"description\":\"\",\"code\":\"<template>\\n<van-image\\n  src=\\\"http://ceph.lcap.hatest.163yun.com/lcap-test-static/icon/1.png\\\"\\n  fit=\\\"scale-down\\\"\\n  preview\\n></van-image>\\n</template>\\n\"},{\"title\":\"原尺寸\",\"description\":\"\",\"code\":\"<template>\\n<van-image\\n  src=\\\"http://ceph.lcap.hatest.163yun.com/lcap-test-static/icon/1.png\\\"\\n  fit=\\\"none\\\"\\n  preview\\n></van-image>\\n</template>\\n\"},{\"title\":\"拉伸\",\"description\":\"\",\"code\":\"<template>\\n<van-image\\n  src=\\\"http://ceph.lcap.hatest.163yun.com/lcap-test-static/icon/1.png\\\"\\n  fit=\\\"fill\\\"\\n  preview\\n></van-image>\\n</template>\\n\"},{\"title\":\"填充\",\"description\":\"\",\"code\":\"<template>\\n<van-image\\n  src=\\\"http://ceph.lcap.hatest.163yun.com/lcap-test-static/icon/1.png\\\"\\n  fit=\\\"cover\\\"\\n  preview\\n></van-image>\\n</template>\\n\"}]",
         "jsonSchema": {
             "name": "van-image",
             "title": "图片展示",
@@ -2778,27 +2778,27 @@
                 {
                     "title": "适应",
                     "description": "",
-                    "code": "<template>\n<van-image src=\"http://ceph.lcap.hatest.163yun.com/lcap-test-static/icon/1.png\" fit=\"contain\" preview></van-image>\n</template>\n"
+                    "code": "<template>\n<van-image\n  src=\"http://ceph.lcap.hatest.163yun.com/lcap-test-static/icon/1.png\"\n  fit=\"contain\"\n  preview\n></van-image>\n</template>\n"
                 },
                 {
                     "title": "适应（图片小于父元素时以原尺寸展示）",
                     "description": "",
-                    "code": "<template>\n<van-image src=\"http://ceph.lcap.hatest.163yun.com/lcap-test-static/icon/1.png\" fit=\"scale-down\" preview></van-image>\n</template>\n"
+                    "code": "<template>\n<van-image\n  src=\"http://ceph.lcap.hatest.163yun.com/lcap-test-static/icon/1.png\"\n  fit=\"scale-down\"\n  preview\n></van-image>\n</template>\n"
                 },
                 {
                     "title": "原尺寸",
                     "description": "",
-                    "code": "<template>\n<van-image src=\"http://ceph.lcap.hatest.163yun.com/lcap-test-static/icon/1.png\" fit=\"none\" preview></van-image>\n</template>\n"
+                    "code": "<template>\n<van-image\n  src=\"http://ceph.lcap.hatest.163yun.com/lcap-test-static/icon/1.png\"\n  fit=\"none\"\n  preview\n></van-image>\n</template>\n"
                 },
                 {
                     "title": "拉伸",
                     "description": "",
-                    "code": "<template>\n<van-image src=\"http://ceph.lcap.hatest.163yun.com/lcap-test-static/icon/1.png\" fit=\"fill\" preview></van-image>\n</template>\n"
+                    "code": "<template>\n<van-image\n  src=\"http://ceph.lcap.hatest.163yun.com/lcap-test-static/icon/1.png\"\n  fit=\"fill\"\n  preview\n></van-image>\n</template>\n"
                 },
                 {
                     "title": "填充",
                     "description": "",
-                    "code": "<template>\n<van-image src=\"http://ceph.lcap.hatest.163yun.com/lcap-test-static/icon/1.png\" fit=\"cover\" preview></van-image>\n</template>\n"
+                    "code": "<template>\n<van-image\n  src=\"http://ceph.lcap.hatest.163yun.com/lcap-test-static/icon/1.png\"\n  fit=\"cover\"\n  preview\n></van-image>\n</template>\n"
                 }
             ],
             "attrs": [
@@ -4721,7 +4721,7 @@
                 {
                     "concept": "Slot",
                     "name": "default",
-                    "description": "插入<van-cell>",
+                    "description": "插入<van-cell />",
                     "empty-background": "drag-entity-here",
                     "support": [
                         {
@@ -5334,7 +5334,7 @@
                 {
                     "concept": "Slot",
                     "name": "default",
-                    "description": "插入<van-cardu>",
+                    "description": "插入<van-cardu />",
                     "empty-background": "drag-entity-here",
                     "support": [
                         {
