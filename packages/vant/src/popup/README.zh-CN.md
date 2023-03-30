@@ -23,7 +23,7 @@ app.use(Popup);
 通过 `v-model:show` 控制弹出层是否展示。
 
 ```html
-<van-cell is-link @click="showPopup">展示弹出层</van-cell>
+<van-cell title="展示弹出层" is-link @click="showPopup" />
 <van-popup v-model:show="show" :style="{ padding: '64px' }">内容</van-popup>
 ```
 
