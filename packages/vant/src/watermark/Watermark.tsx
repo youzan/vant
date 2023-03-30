@@ -1,6 +1,7 @@
 import {
   defineComponent,
   nextTick,
+  onUnmounted,
   ref,
   watch,
   watchEffect,
@@ -146,6 +147,9 @@ export default defineComponent({
         // 路径为 renderWatermark渲染的实际HTML => SVG字符串转换为blob图片 => 放到background-image中。
         nextTick(() => {
           if (svgElRef.value) {
+            if (watermarkUrl.value) {
+              URL.revokeObjectURL(watermarkUrl.value);
+            }
             watermarkUrl.value = makeSvgToBlobUrl(svgElRef.value.innerHTML);
           }
         });
@@ -154,6 +158,12 @@ export default defineComponent({
         immediate: true,
       }
     );
+
+    onUnmounted(() => {
+      if (watermarkUrl.value) {
+        URL.revokeObjectURL(watermarkUrl.value);
+      }
+    });
 
     return () => (
       <div
