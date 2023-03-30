@@ -613,6 +613,9 @@ export default createComponent({
         }
       }
 
+      if(window.appInfo && window.appInfo.domainName)
+        headers.DomainName = window.appInfo.domainName;
+
       const xhr = ajax({
         url: this.url,
         headers,
