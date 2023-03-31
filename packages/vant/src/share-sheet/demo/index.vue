@@ -83,6 +83,7 @@ const customIconOptions = computed(() => [
     name: t('name'),
     icon: cdnURL('custom-icon-water.png'),
   },
+  { name: t('name'), icon: 'label' },
 ]);
 
 const optionsWithDesc = computed<ShareSheetOptions>(() => [
