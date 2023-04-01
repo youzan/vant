@@ -26,9 +26,6 @@ git clone git@github.com:vant-ui/vant.git
 # 启用 pnpm 包管理器
 corepack enable
 
-# 如果无法使用 corepack，你也可以手动安装 pnpm
-npm install -g pnpm@7
-
 # 安装依赖
 pnpm i
 
