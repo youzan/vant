@@ -26,9 +26,6 @@ git clone git@github.com:vant-ui/vant.git
 # Enable pnpm package manager
 corepack enable
 
-# If you can't use corepack, you can also install pnpm manually
-npm install -g pnpm@7
-
 # Install dependencies
 pnpm i
 
