@@ -47,6 +47,8 @@ export default {
 
 ### Custom Width
 
+The width of the progress bar is controlled by the `stroke-width` prop, `stroke-width` refers to the width of `path` in SVG, and the default value is `40`.
+
 ```html
 <van-circle
   v-model:current-rate="currentRate"
@@ -54,6 +56,19 @@ export default {
   :stroke-width="60"
   text="Custom Width"
 />
+```
+
+The unit of `stroke-width` is not `px`, if you want to know the relationship between `stroke-width` and `px`, you can use the following formula to calculate:
+
+```js
+// viewBox size for SVG
+const viewBox = 1000 + strokeWidth;
+
+// The width of the Circle component, the default is 100px
+const circleWidth = 100;
+
+// Final rendered progress bar width (px)
+const pxWidth = (strokeWidth * circleWidth) / viewBox;
 ```
 
 ### Custom Color
