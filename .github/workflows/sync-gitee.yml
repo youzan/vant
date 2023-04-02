@@ -2,7 +2,8 @@ name: Sync to Gitee
 
 on:
   push:
-    branches: [main, 2.x, 3.x, gh-pages]
+    tags:
+      - 'v*' # Push events to matching v*, i.e. v1.0, v20.15.10
 
   workflow_dispatch:
 
