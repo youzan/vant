@@ -12,6 +12,7 @@ import {
   makeNumberProp,
   makeNumericProp,
   makeStringProp,
+  truthProp,
 } from '../utils';
 
 const [name, bem] = createNamespace('watermark');
@@ -20,13 +21,14 @@ export const watermarkProps = {
   width: makeNumberProp(100),
   height: makeNumberProp(100),
   rotate: makeNumericProp(-22),
-  zIndex: makeNumberProp(1),
+  zIndex: makeNumberProp(100),
   content: String,
   image: String,
-  fullPage: Boolean,
+  fullPage: truthProp,
   gapX: makeNumberProp(0),
   gapY: makeNumberProp(0),
-  fontColor: makeStringProp('#323233'),
+  fontColor: makeStringProp('#dcdee0'),
+  opacity: makeNumberProp(1),
 };
 
 export type WatermarkProps = ExtractPropTypes<typeof watermarkProps>;
@@ -41,7 +43,6 @@ export default defineComponent({
 
     const watermarkUrl = ref('');
     const imageBase64 = ref('');
-
     const renderWatermark = () => {
       const svgInner = () => {
         if (props.image) {
@@ -96,6 +97,7 @@ export default defineComponent({
           xmlns="http://www.w3.org/2000/svg"
           style={{
             padding: `0 ${props.gapX}px ${props.gapY}px 0`,
+            opacity: props.opacity,
           }}
         >
           {svgInner()}

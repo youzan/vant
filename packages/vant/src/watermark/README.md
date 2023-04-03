@@ -40,6 +40,17 @@ Use `gapX` `gapY` attributes to control the gap between two watermark slice.
 />
 ```
 
+### Custom Opacity
+
+Use `opacity` attribute to control the entirety opacity.
+
+```html
+<van-watermark
+  image="https://fastly.jsdelivr.net/npm/@vant/assets/cat.jpeg"
+  :opacity="0.5"
+/>
+```
+
 ### Custom Rotate
 
 Use `rotate` attribute to control the rotate of watermark. Default value is `-22`.
@@ -84,10 +95,10 @@ Use the `default slot` to pass HTML directly. Inline styles are supported, and s
 | --- | --- | --- | --- |
 | width | Watermark width | _number_ | 100 |
 | height | Watermark height | _number_ | 100 |
-| zIndex | Watermark's z-index | _number_ | 1 |
+| zIndex | Watermark's z-index | _number_ | 100 |
 | content | Text watermark content | _string_ | - |
 | image | Image watermark content. If `content` and `image` are passed at the same time, use the `image` watermark first | _string_ | - |
-| fullPage | Whether to display the watermark in full screen | _boolean_ | false |
+| fullPage | Whether to display the watermark in full screen | _boolean_ | true |
 | gapX | Horizontal spacing between watermarks | _number_ | 0 |
 | gapY | Vertical spacing between watermarks | _number_ | 0 |
 | fontColor | Color of text watermark | _string_ | #323233 |

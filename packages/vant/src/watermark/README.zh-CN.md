@@ -40,6 +40,17 @@ app.use(Watermark);
 />
 ```
 
+### 自定义透明度
+
+通过 `opacity` 属性来控制水印的整体透明度。
+
+```html
+<van-watermark
+  image="https://fastly.jsdelivr.net/npm/@vant/assets/cat.jpeg"
+  :opacity="0.5"
+/>
+```
+
 ### 自定义倾斜角度
 
 通过 `rotate` 属性来控制水印的倾斜角度，默认值为`-22`。

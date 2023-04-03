@@ -6,6 +6,7 @@ import { useTranslate } from '../../../docs/site';
 
 const t = useTranslate({
   'zh-CN': {
+    customOpacity: '自定义透明度',
     customGap: '自定义间隔',
     customImage: '自定义图片',
     customRotate: '自定义倾斜角度',
@@ -16,6 +17,7 @@ const t = useTranslate({
     switch: '切换',
   },
   'en-US': {
+    customOpacity: 'Custom opacity',
     customGap: 'Custom Gap',
     customRotate: 'Custom Rotate',
     displayRange: 'Display Range',
@@ -32,7 +34,7 @@ const fullPage = ref(false);
 <template>
   <demo-block :title="t('basicUsage')">
     <div class="demo-watermark-wrapper">
-      <div style="position: relative; z-index: 2">
+      <div style="position: relative; z-index: 9999">
         <van-button
           @click="
             () => {
@@ -54,10 +56,12 @@ const fullPage = ref(false);
       <van-watermark
         content="Vant"
         v-if="baseWatermarkFlag === 'text'"
+        :full-page="false"
       ></van-watermark>
       <van-watermark
         image="https://fastly.jsdelivr.net/npm/@vant/assets/cat.jpeg"
         v-if="baseWatermarkFlag === 'image'"
+        :full-page="false"
       ></van-watermark>
     </div>
   </demo-block>
@@ -68,7 +72,19 @@ const fullPage = ref(false);
         image="https://fastly.jsdelivr.net/npm/@vant/assets/cat.jpeg"
         :gap-x="20"
         :gap-y="10"
+        :full-page="false"
       />
+    </div>
+  </demo-block>
+
+  <demo-block :title="t('customOpacity')">
+    <div class="demo-watermark-wrapper">
+      <van-watermark
+        :full-page="false"
+        :opacity="0.5"
+        image="https://fastly.jsdelivr.net/npm/@vant/assets/cat.jpeg"
+      >
+      </van-watermark>
     </div>
   </demo-block>
 
@@ -77,6 +93,7 @@ const fullPage = ref(false);
       <van-watermark
         image="https://fastly.jsdelivr.net/npm/@vant/assets/cat.jpeg"
         rotate="22"
+        :full-page="false"
       />
     </div>
   </demo-block>
@@ -103,7 +120,7 @@ const fullPage = ref(false);
 
   <demo-block :title="t('htmlWatermark')">
     <div class="demo-watermark-wrapper">
-      <van-watermark :width="150">
+      <van-watermark :width="150" :full-page="false">
         <div
           style="background: linear-gradient(45deg, #000 0, #000 50%, #fff 50%)"
         >
