@@ -124,7 +124,6 @@ export default defineComponent({
       const svgBlob = new Blob([svgStr], {
         type: 'image/svg+xml;charset=utf-8',
       });
-
       return URL.createObjectURL(svgBlob);
     };
 
