@@ -95,13 +95,14 @@ app.use(Watermark);
 | --- | --- | --- | --- |
 | width | 水印宽度 | _number_ | 100 |
 | height | 水印高度 | _number_ | 100 |
-| zIndex | 水印的 z-index | _number_ | 1 |
+| zIndex | 水印的 z-index | _number_ | 100 |
 | content | 文字水印的内容 | _string_ | - |
 | image | 图片水印的内容，如果与 content 同时传入，优先使用图片水印 | _string_ | - |
 | fullPage | 水印是否全屏显示 | _boolean_ | false |
 | gapX | 水印水平间隔 | _number_ | 0 |
 | gapY | 水印垂直间隔 | _number_ | 0 |
-| fontColor | 文字水印的颜色 | _string_ | #323233 |
+| fontColor | 文字水印的颜色 | _string_ | #dcdee0 |
+| opacity | 水印的透明度 | _number_ | 1 |
 
 ### Slots
 
