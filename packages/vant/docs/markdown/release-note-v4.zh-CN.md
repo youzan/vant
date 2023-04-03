@@ -30,7 +30,7 @@
 
 - [BackTop 回到顶部](https://vant-ui.github.io/vant/#/zh-CN/back-top)：返回页面顶部的操作按钮。
 - [TimePicker 时间选择器](https://vant-ui.github.io/vant/#/zh-CN/time-picker)：用于时间选择，包括时、分、秒。
-- [DatePicker 日期选择器](https://vant-ui.github.io/vant/#/zh-CN/time-picker)：用于日期选择，包括年、月、日。
+- [DatePicker 日期选择器](https://vant-ui.github.io/vant/#/zh-CN/date-picker)：用于日期选择，包括年、月、日。
 - [PickerGroup 选择器组](https://vant-ui.github.io/vant/#/zh-CN/picker-group)：用于结合多个 Picker 选择器组件，在一次交互中完成多个值的选择。
 - [Skeleton 骨架屏子组件](https://vant-ui.github.io/vant/#/zh-CN/skeleton)：通过 SkeletonTitle、SkeletonImage、SkeletonAvatar 等子组件来自定义骨架屏。
 
