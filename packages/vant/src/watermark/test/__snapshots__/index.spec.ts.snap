@@ -1,8 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`watermark should render content 1`] = `
-<div class="van-watermark"
-     style="position: fixed; background-image: url(); z-index: 100;"
+<div class="van-watermark van-watermark--full"
+     style="background-image: url();"
 >
   <div style="display: none;">
     <svg viewbox="0 0 100 100"
@@ -30,8 +30,8 @@ exports[`watermark should render content 1`] = `
 `;
 
 exports[`watermark should render html 1`] = `
-<div class="van-watermark"
-     style="position: fixed; background-image: url(); z-index: 100;"
+<div class="van-watermark van-watermark--full"
+     style="background-image: url();"
 >
   <div style="display: none;">
     <svg viewbox="0 0 100 100"
@@ -57,8 +57,8 @@ exports[`watermark should render html 1`] = `
 `;
 
 exports[`watermark should render image 1`] = `
-<div class="van-watermark"
-     style="position: fixed; background-image: url(); z-index: 100;"
+<div class="van-watermark van-watermark--full"
+     style="background-image: url();"
 >
   <div style="display: none;">
     <svg viewbox="0 0 100 100"
@@ -82,7 +82,7 @@ exports[`watermark should render image 1`] = `
 
 exports[`watermark test false value fullPage 1`] = `
 <div class="van-watermark"
-     style="position: absolute; background-image: url(); z-index: 100;"
+     style="background-image: url();"
 >
   <div style="display: none;">
     <svg viewbox="0 0 100 100"
@@ -108,8 +108,8 @@ exports[`watermark test false value fullPage 1`] = `
 `;
 
 exports[`watermark test width, height, rotate, zIndex 1`] = `
-<div class="van-watermark"
-     style="position: fixed; background-image: url(); z-index: 200;"
+<div class="van-watermark van-watermark--full"
+     style="background-image: url(); z-index: 200;"
 >
   <div style="display: none;">
     <svg viewbox="0 0 20 20"

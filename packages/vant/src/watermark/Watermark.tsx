@@ -8,11 +8,14 @@ import {
   type ExtractPropTypes,
 } from 'vue';
 import {
+  extend,
+  truthProp,
+  numericProp,
   createNamespace,
+  getZIndexStyle,
   makeNumberProp,
   makeNumericProp,
   makeStringProp,
-  truthProp,
 } from '../utils';
 
 const [name, bem] = createNamespace('watermark');
@@ -21,7 +24,7 @@ export const watermarkProps = {
   width: makeNumberProp(100),
   height: makeNumberProp(100),
   rotate: makeNumericProp(-22),
-  zIndex: makeNumberProp(100),
+  zIndex: numericProp,
   content: String,
   image: String,
   fullPage: truthProp,
@@ -166,19 +169,19 @@ export default defineComponent({
       }
     });
 
-    return () => (
-      <div
-        class={bem()}
-        style={{
-          position: props.fullPage ? 'fixed' : 'absolute',
-          backgroundImage: `url(${watermarkUrl.value})`,
-          zIndex: props.zIndex,
-        }}
-      >
-        <div style={{ display: 'none' }} ref={svgElRef}>
-          {renderWatermark()}
+    return () => {
+      const style = extend(
+        { backgroundImage: `url(${watermarkUrl.value})` },
+        getZIndexStyle(props.zIndex)
+      );
+
+      return (
+        <div class={bem({ full: props.fullPage })} style={style}>
+          <div style={{ display: 'none' }} ref={svgElRef}>
+            {renderWatermark()}
+          </div>
         </div>
-      </div>
-    );
+      );
+    };
   },
 });
