@@ -2,7 +2,7 @@
 
 ### Intro
 
-Add watermark for page.
+Add specific text or patterns on the page as watermarks, which can be used to prevent information theft. Please upgrade `vant` to >= v4.2.0 before using this component.
 
 ### Install
 
@@ -93,22 +93,22 @@ Use the `default slot` to pass HTML directly. Inline styles are supported, and s
 
 | Attribute | Description | Type | Default |
 | --- | --- | --- | --- |
-| width | Watermark width | _number_ | 100 |
-| height | Watermark height | _number_ | 100 |
-| zIndex | Watermark's z-index | _number_ | 100 |
+| width | Watermark width | _number_ | `100` |
+| height | Watermark height | _number_ | `100` |
+| zIndex | Watermark's z-index | _number_ | `100` |
 | content | Text watermark content | _string_ | - |
 | image | Image watermark content. If `content` and `image` are passed at the same time, use the `image` watermark first | _string_ | - |
-| fullPage | Whether to display the watermark in full screen | _boolean_ | true |
-| gapX | Horizontal spacing between watermarks | _number_ | 0 |
-| gapY | Vertical spacing between watermarks | _number_ | 0 |
-| fontColor | Color of text watermark | _string_ | #dcdee0 |
-| opacity | opacity of watermark | _number_ | 1 |
+| fullPage | Whether to display the watermark in full screen | _boolean_ | `true` |
+| gapX | Horizontal spacing between watermarks | _number_ | `0` |
+| gapY | Vertical spacing between watermarks | _number_ | `0` |
+| fontColor | Color of text watermark | _string_ | `#dcdee0` |
+| opacity | opacity of watermark | _number_ | `1` |
 
 ### Slots
 
 | Attribute | Description |
 | --- | --- |
-| default | Content of HTML watermark. Inline styles are supported, and self-closing tags are not supported. This slot is invalid if `content` or `image` is passed |
+| default | Content of HTML watermark. Inline styles are supported, and self-closing tags are not supported. This slot is invalid if `content` or `image` props is passed |
 
 ### Types
 

@@ -2,7 +2,7 @@
 
 ### 介绍
 
-页面上添加特定的文字或图案，可用于防止信息盗用
+在页面上添加特定的文字或图案作为水印，可用于防止信息盗用。请升级 `vant` 到 >= 4.2.0 版本来使用该组件。
 
 ### 引入
 
@@ -30,7 +30,7 @@ app.use(Watermark);
 
 ### 自定义间隔
 
-通过 `gapX` `gapY` 属性来控制重复水印之间的间隔。
+通过 `gapX` 和 `gapY` 属性来控制多个重复水印之间的间隔。
 
 ```html
 <van-watermark
@@ -93,22 +93,22 @@ app.use(Watermark);
 
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
-| width | 水印宽度 | _number_ | 100 |
-| height | 水印高度 | _number_ | 100 |
-| zIndex | 水印的 z-index | _number_ | 100 |
+| width | 水印宽度 | _number_ | `100` |
+| height | 水印高度 | _number_ | `100` |
+| zIndex | 水印的 z-index | _number_ | `100` |
 | content | 文字水印的内容 | _string_ | - |
 | image | 图片水印的内容，如果与 content 同时传入，优先使用图片水印 | _string_ | - |
-| fullPage | 水印是否全屏显示 | _boolean_ | false |
-| gapX | 水印水平间隔 | _number_ | 0 |
-| gapY | 水印垂直间隔 | _number_ | 0 |
-| fontColor | 文字水印的颜色 | _string_ | #dcdee0 |
-| opacity | 水印的透明度 | _number_ | 1 |
+| fullPage | 水印是否全屏显示 | _boolean_ | `false` |
+| gapX | 水印水平间隔 | _number_ | `0` |
+| gapY | 水印垂直间隔 | _number_ | `0` |
+| fontColor | 文字水印的颜色 | _string_ | `#dcdee0` |
+| opacity | 水印的透明度 | _number_ | `1` |
 
 ### Slots
 
 | 名称 | 说明 |
 | --- | --- |
-| default | HTML 水印的内容，仅支持行内样式同时不支持传入自闭合标签，存在 content 或 image 时此插槽无效 |
+| default | HTML 水印的内容，仅支持行内样式同时不支持传入自闭合标签，存在 `content` 或 `image` 属性时，此插槽无效 |
 
 ### 类型定义
 

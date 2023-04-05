@@ -2,7 +2,7 @@
 
 ### Intro
 
-Display ellipsis for long text and support for expanding or collapsing text. Please upgrade to >= v4.1.0 before using this component.
+Display ellipsis for long text and support for expanding or collapsing text. Please upgrade `vant` to >= v4.1.0 before using this component.
 
 ### Install
 

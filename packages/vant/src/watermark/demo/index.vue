@@ -6,6 +6,7 @@ import { useTranslate } from '../../../docs/site';
 
 const t = useTranslate({
   'zh-CN': {
+    switch: '切换',
     customOpacity: '自定义透明度',
     customGap: '自定义间隔',
     customImage: '自定义图片',
@@ -14,9 +15,9 @@ const t = useTranslate({
     htmlWatermark: 'HTML 水印',
     textWatermark: '文字水印',
     imageWatermark: '图片水印',
-    switch: '切换',
   },
   'en-US': {
+    switch: 'Switch',
     customOpacity: 'Custom opacity',
     customGap: 'Custom Gap',
     customRotate: 'Custom Rotate',
@@ -24,7 +25,6 @@ const t = useTranslate({
     htmlWatermark: 'HTML Watermark',
     textWatermark: 'Text Watermark',
     imageWatermark: 'Image Watermark',
-    switch: 'Swtich',
   },
 });
 const baseWatermarkFlag = ref<'text' | 'image'>('text');
@@ -35,23 +35,16 @@ const fullPage = ref(false);
   <demo-block :title="t('basicUsage')">
     <div class="demo-watermark-wrapper">
       <div style="position: relative; z-index: 9999">
+        <van-button type="primary" @click="baseWatermarkFlag = 'text'">
+          {{ t('textWatermark') }}
+        </van-button>
         <van-button
-          @click="
-            () => {
-              baseWatermarkFlag = 'text';
-            }
-          "
-          >{{ t('textWatermark') }}</van-button
-        >
-        <van-button
-          @click="
-            () => {
-              baseWatermarkFlag = 'image';
-            }
-          "
+          type="primary"
           style="margin: 0 var(--van-padding-md)"
-          >{{ t('imageWatermark') }}</van-button
+          @click="baseWatermarkFlag = 'image'"
         >
+          {{ t('imageWatermark') }}
+        </van-button>
       </div>
       <van-watermark
         content="Vant"
@@ -100,13 +93,7 @@ const fullPage = ref(false);
 
   <demo-block :title="t('displayRange')">
     <div class="demo-watermark-wrapper">
-      <van-button
-        @click="
-          () => {
-            fullPage = !fullPage;
-          }
-        "
-      >
+      <van-button @click="fullPage = !fullPage">
         {{ t('switch') }}
       </van-button>
       <van-watermark
