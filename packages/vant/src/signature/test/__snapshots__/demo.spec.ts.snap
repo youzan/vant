@@ -1,0 +1,94 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render demo and match snapshot 1`] = `
+<div>
+  <div class="van-signature">
+    <div class="van-signature__content">
+      <canvas width="100"
+              height="100"
+      >
+      </canvas>
+    </div>
+    <div class="van-signature__footer">
+      <button type="button"
+              class="van-button van-button--default van-button--small"
+      >
+        <div class="van-button__content">
+          <span class="van-button__text">
+            取消
+          </span>
+        </div>
+      </button>
+      <button type="button"
+              class="van-button van-button--primary van-button--small"
+      >
+        <div class="van-button__content">
+          <span class="van-button__text">
+            完成
+          </span>
+        </div>
+      </button>
+    </div>
+  </div>
+</div>
+<div>
+  <div class="van-signature">
+    <div class="van-signature__content">
+      <canvas width="100"
+              height="100"
+      >
+      </canvas>
+    </div>
+    <div class="van-signature__footer">
+      <button type="button"
+              class="van-button van-button--default van-button--small"
+      >
+        <div class="van-button__content">
+          <span class="van-button__text">
+            取消
+          </span>
+        </div>
+      </button>
+      <button type="button"
+              class="van-button van-button--primary van-button--small"
+      >
+        <div class="van-button__content">
+          <span class="van-button__text">
+            完成
+          </span>
+        </div>
+      </button>
+    </div>
+  </div>
+</div>
+<div>
+  <div class="van-signature">
+    <div class="van-signature__content">
+      <canvas width="100"
+              height="100"
+      >
+      </canvas>
+    </div>
+    <div class="van-signature__footer">
+      <button type="button"
+              class="van-button van-button--default van-button--small"
+      >
+        <div class="van-button__content">
+          <span class="van-button__text">
+            取消
+          </span>
+        </div>
+      </button>
+      <button type="button"
+              class="van-button van-button--primary van-button--small"
+      >
+        <div class="van-button__content">
+          <span class="van-button__text">
+            完成
+          </span>
+        </div>
+      </button>
+    </div>
+  </div>
+</div>
+`;
