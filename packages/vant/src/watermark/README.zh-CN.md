@@ -95,13 +95,13 @@ app.use(Watermark);
 | --- | --- | --- | --- |
 | width | 水印宽度 | _number_ | `100` |
 | height | 水印高度 | _number_ | `100` |
-| zIndex | 水印的 z-index | _number_ | `100` |
+| z-index | 水印的 z-index | _number \| string_ | `100` |
 | content | 文字水印的内容 | _string_ | - |
 | image | 图片水印的内容，如果与 content 同时传入，优先使用图片水印 | _string_ | - |
-| fullPage | 水印是否全屏显示 | _boolean_ | `false` |
-| gapX | 水印水平间隔 | _number_ | `0` |
-| gapY | 水印垂直间隔 | _number_ | `0` |
-| fontColor | 文字水印的颜色 | _string_ | `#dcdee0` |
+| full-page | 水印是否全屏显示 | _boolean_ | `false` |
+| gapX | 水印之间的水平间隔 | _number_ | `0` |
+| gapY | 水印之间的垂直间隔 | _number_ | `0` |
+| font-color | 文字水印的颜色 | _string_ | `#dcdee0` |
 | opacity | 水印的透明度 | _number_ | `1` |
 
 ### Slots
@@ -117,3 +117,13 @@ app.use(Watermark);
 ```ts
 import type { WaterProps } from 'vant';
 ```
+
+## 主题定制
+
+### 样式变量
+
+组件提供了下列 CSS 变量，可用于自定义样式，使用方法请参考 [ConfigProvider 组件](#/zh-CN/config-provider)。
+
+| 名称                    | 默认值 | 描述                  |
+| ----------------------- | ------ | --------------------- |
+| --van-watermark-z-index | _100_  | 根节点的 z-index 层级 |

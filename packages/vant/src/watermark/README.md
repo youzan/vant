@@ -95,13 +95,13 @@ Use the `default slot` to pass HTML directly. Inline styles are supported, and s
 | --- | --- | --- | --- |
 | width | Watermark width | _number_ | `100` |
 | height | Watermark height | _number_ | `100` |
-| zIndex | Watermark's z-index | _number_ | `100` |
+| z-index | Watermark's z-index | _number \| string_ | `100` |
 | content | Text watermark content | _string_ | - |
 | image | Image watermark content. If `content` and `image` are passed at the same time, use the `image` watermark first | _string_ | - |
-| fullPage | Whether to display the watermark in full screen | _boolean_ | `true` |
+| full-page | Whether to display the watermark in full screen | _boolean_ | `true` |
 | gapX | Horizontal spacing between watermarks | _number_ | `0` |
 | gapY | Vertical spacing between watermarks | _number_ | `0` |
-| fontColor | Color of text watermark | _string_ | `#dcdee0` |
+| font-color | Color of text watermark | _string_ | `#dcdee0` |
 | opacity | opacity of watermark | _number_ | `1` |
 
 ### Slots
@@ -117,3 +117,13 @@ The component exports the following type definitions:
 ```ts
 import type { WaterProps } from 'vant';
 ```
+
+## Theming
+
+### CSS Variables
+
+The component provides the following CSS variables, which can be used to customize styles. Please refer to [ConfigProvider component](#/en-US/config-provider).
+
+| Name                    | Default Value | Description             |
+| ----------------------- | ------------- | ----------------------- |
+| --van-watermark-z-index | _100_         | z-index of root element |
