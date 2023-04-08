@@ -16,6 +16,7 @@ const [name, bem] = createNamespace('text-ellipsis');
 
 export const textEllipsisProps = {
   rows: makeNumericProp(1),
+  dots: makeStringProp('...'),
   content: makeStringProp(''),
   expandText: makeStringProp(''),
   collapseText: makeStringProp(''),
@@ -69,15 +70,15 @@ export default defineComponent({
         container: HTMLDivElement,
         maxHeight: number
       ) => {
-        const { content, expandText } = props;
-        const dot = '...';
+        const { dots, content, expandText } = props;
+
         let left = 0;
         let right = content.length;
         let res = -1;
 
         while (left <= right) {
           const mid = Math.floor((left + right) / 2);
-          container.innerText = content.slice(0, mid) + dot + expandText;
+          container.innerText = content.slice(0, mid) + dots + expandText;
           if (container.offsetHeight <= maxHeight) {
             left = mid + 1;
             res = mid;
@@ -85,7 +86,7 @@ export default defineComponent({
             right = mid - 1;
           }
         }
-        return content.slice(0, res) + dot;
+        return content.slice(0, res) + dots;
       };
 
       const container = cloneContainer();
