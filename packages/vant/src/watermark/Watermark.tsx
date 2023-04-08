@@ -21,17 +21,17 @@ import {
 const [name, bem] = createNamespace('watermark');
 
 export const watermarkProps = {
+  gapX: makeNumberProp(0),
+  gapY: makeNumberProp(0),
+  image: String,
   width: makeNumberProp(100),
   height: makeNumberProp(100),
   rotate: makeNumericProp(-22),
   zIndex: numericProp,
   content: String,
-  image: String,
+  opacity: numericProp,
   fullPage: truthProp,
-  gapX: makeNumberProp(0),
-  gapY: makeNumberProp(0),
   fontColor: makeStringProp('#dcdee0'),
-  opacity: makeNumberProp(1),
 };
 
 export type WatermarkProps = ExtractPropTypes<typeof watermarkProps>;
