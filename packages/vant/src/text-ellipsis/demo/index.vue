@@ -2,21 +2,25 @@
 import VanTextEllipsis from '..';
 import { useTranslate } from '../../../docs/site';
 
-const textCN =
-  'Vant 是一个轻量、可定制的移动端组件库，于2017年开源。目前 Vant 官方提供了 Vue 2 版本、Vue 3 版本和微信小程序版本，并由社区团队维护 React 版本和支付宝小程序版本。';
-const textUS =
-  'Vant is a lightweight, customizable mobile component library that was open sourced in 2017. Currently Vant officially provides Vue 2 version, Vue 3 version and WeChat applet version, and the community team maintains React version and Alipay applet version.';
-
 const t = useTranslate({
   'zh-CN': {
-    text: textCN,
+    text1: '慢慢来，不要急，生活给你出了难题，可也终有一天会给出答案。',
+    text2:
+      '似水流年是一个人所有的一切，只有这个东西，才真正归你所有。其余的一切，都是片刻的欢娱和不幸，转眼间就已跑到那似水流年里去了。',
+    text3:
+      '那一天我二十一岁，在我一生的黄金时代。我有好多奢望。我想爱，想吃，还想在一瞬间变成天上半明半暗的云。后来我才知道，生活就是个缓慢受锤的过程，人一天天老下去，奢望也一天天消失，最后变得像挨了锤的牛一样。可是我过二十一岁生日时没有预见到这一点。我觉得自己会永远生猛下去，什么也锤不了我。',
     expandText: '展开',
     collapseText: '收起',
     expandCollapse: '展开/收起',
     customRows: '自定义展示行数',
   },
   'en-US': {
-    text: textUS,
+    text1:
+      'Take your time and be patient. Life itself will eventually answer all those questions it once raised for you.',
+    text2:
+      "The fleeting time of one's life is everything that belongs to a person. Only this thing truly belongs to you. Everything else is just a momentary pleasure or misfortune, which will soon be gone with the passing of time.",
+    text3:
+      "That day, I turned twenty-one. In the golden age of my life, I was full of dreams. I wanted to love, to eat, and to instantly transform into one of these clouds, part alight, part darkened. It was only later that I understood life is but a slow, drawn-out process of getting your balls crushed. Day by day, you get older. Day by day, your dreams fade. In the end you are no different from a crushed ox. But I hadn't foreseen any of it on my twenty-first birthday. I thought I would be vigorous forever, and that nothing could ever crush me.",
     expandText: 'expand',
     collapseText: 'collapse',
     expandCollapse: 'Expand/Collapse',
@@ -27,12 +31,12 @@ const t = useTranslate({
 
 <template>
   <demo-block :title="t('basicUsage')">
-    <van-text-ellipsis :content="t('text')" />
+    <van-text-ellipsis :content="t('text1')" />
   </demo-block>
 
   <demo-block :title="t('expandCollapse')">
     <van-text-ellipsis
-      :content="t('text')"
+      :content="t('text2')"
       :expand-text="t('expandText')"
       :collapse-text="t('collapseText')"
     />
@@ -41,7 +45,7 @@ const t = useTranslate({
   <demo-block :title="t('customRows')">
     <van-text-ellipsis
       rows="3"
-      :content="t('text')"
+      :content="t('text3')"
       :expand-text="t('expandText')"
       :collapse-text="t('collapseText')"
     />
@@ -54,7 +58,7 @@ const t = useTranslate({
   background-color: var(--van-background-2);
 
   .van-text-ellipsis {
-    padding: 0 20px;
+    padding: 0 16px;
   }
 }
 </style>
