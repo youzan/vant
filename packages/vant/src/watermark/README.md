@@ -18,66 +18,65 @@ app.use(Watermark);
 
 ## Usage
 
-### Basic Usage
+### Text Watermark
+
+Use the `content` prop to set the text of the watermark.
 
 ```html
-<!-- text watermark -->
 <van-watermark content="Vant" />
+```
 
-<!-- image watermark -->
-<van-watermark image="https://fastly.jsdelivr.net/npm/@vant/assets/cat.jpeg" />
+### Image Watermark
+
+Use the `image` prop to set the watermark image, and use `opacity` prop to adjust the transparency of the watermark.
+
+```html
+<van-watermark
+  image="https://fastly.jsdelivr.net/npm/@vant/assets/vant-watermark.png"
+  :opacity="0.2"
+/>
 ```
 
 ### Custom Gap
 
-Use `gapX` `gapY` attributes to control the gap between two watermark slice.
+Use `gap-x` `gap-y` prop to control the gap between watermark items.
 
 ```html
 <van-watermark
-  image="https://fastly.jsdelivr.net/npm/@vant/assets/cat.jpeg"
-  :gap-x="20"
+  image="https://fastly.jsdelivr.net/npm/@vant/assets/vant-watermark.png"
+  :gap-x="30"
   :gap-y="10"
-/>
-```
-
-### Custom Opacity
-
-Use `opacity` attribute to control the entirety opacity.
-
-```html
-<van-watermark
-  image="https://fastly.jsdelivr.net/npm/@vant/assets/cat.jpeg"
-  :opacity="0.5"
+  :opacity="0.2"
 />
 ```
 
 ### Custom Rotate
 
-Use `rotate` attribute to control the rotate of watermark. Default value is `-22`.
+Use `rotate` prop to control the rotate of watermark. The default value is `-22`.
 
 ```html
 <van-watermark
-  image="https://fastly.jsdelivr.net/npm/@vant/assets/cat.jpeg"
+  image="https://fastly.jsdelivr.net/npm/@vant/assets/vant-watermark.png"
   rotate="22"
+  :opacity="0.2"
 />
 ```
 
 ### Display Range
 
-Use the `fullPage` attribute to control the display range of the watermark.
+Use the `full-page` prop to control the display range of the watermark.
 
 ```html
 <van-watermark
+  image="https://fastly.jsdelivr.net/npm/@vant/assets/vant-watermark.png"
+  :opacity="0.2"
   :full-page="true"
-  content="vant watermark"
-  font-color="rgba(0, 0, 0, 0.15)"
->
-</van-watermark>
+/>
 ```
 
 ### HTML Watermark
 
-Use the `default slot` to pass HTML directly. Inline styles are supported, and self-closing tags are not supported.
+Use the `default` slot to pass HTML directly. Inline styles are supported, and self-closing tags are not supported.
 
 ```html
 <van-watermark :width="150">
