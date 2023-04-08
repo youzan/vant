@@ -42,7 +42,7 @@ const fullPage = ref(false);
     <div class="demo-watermark-wrapper">
       <van-watermark
         image="https://fastly.jsdelivr.net/npm/@vant/assets/vant-watermark.png"
-        :opacity="0.2"
+        opacity="0.2"
         :full-page="false"
       />
     </div>
@@ -54,7 +54,7 @@ const fullPage = ref(false);
         image="https://fastly.jsdelivr.net/npm/@vant/assets/vant-watermark.png"
         :gap-x="30"
         :gap-y="10"
-        :opacity="0.2"
+        opacity="0.2"
         :full-page="false"
       />
     </div>
@@ -65,7 +65,7 @@ const fullPage = ref(false);
       <van-watermark
         image="https://fastly.jsdelivr.net/npm/@vant/assets/vant-watermark.png"
         rotate="22"
-        :opacity="0.2"
+        opacity="0.2"
         :full-page="false"
       />
     </div>
@@ -78,7 +78,7 @@ const fullPage = ref(false);
       </van-button>
       <van-watermark
         :full-page="fullPage"
-        :opacity="0.2"
+        opacity="0.2"
         image="https://fastly.jsdelivr.net/npm/@vant/assets/vant-watermark.png"
       >
       </van-watermark>

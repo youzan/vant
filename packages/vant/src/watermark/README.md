@@ -33,7 +33,7 @@ Use the `image` prop to set the watermark image, and use `opacity` prop to adjus
 ```html
 <van-watermark
   image="https://fastly.jsdelivr.net/npm/@vant/assets/vant-watermark.png"
-  :opacity="0.2"
+  opacity="0.2"
 />
 ```
 
@@ -46,7 +46,7 @@ Use `gap-x` `gap-y` prop to control the gap between watermark items.
   image="https://fastly.jsdelivr.net/npm/@vant/assets/vant-watermark.png"
   :gap-x="30"
   :gap-y="10"
-  :opacity="0.2"
+  opacity="0.2"
 />
 ```
 
@@ -58,7 +58,7 @@ Use `rotate` prop to control the rotate of watermark. The default value is `-22`
 <van-watermark
   image="https://fastly.jsdelivr.net/npm/@vant/assets/vant-watermark.png"
   rotate="22"
-  :opacity="0.2"
+  opacity="0.2"
 />
 ```
 
@@ -69,7 +69,7 @@ Use the `full-page` prop to control the display range of the watermark.
 ```html
 <van-watermark
   image="https://fastly.jsdelivr.net/npm/@vant/assets/vant-watermark.png"
-  :opacity="0.2"
+  opacity="0.2"
   :full-page="true"
 />
 ```
@@ -101,7 +101,7 @@ Use the `default` slot to pass HTML directly. Inline styles are supported, and s
 | gapX | Horizontal spacing between watermarks | _number_ | `0` |
 | gapY | Vertical spacing between watermarks | _number_ | `0` |
 | font-color | Color of text watermark | _string_ | `#dcdee0` |
-| opacity | opacity of watermark | _number_ | `1` |
+| opacity | Opacity of watermark | _number \| string_ | - |
 
 ### Slots
 

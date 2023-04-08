@@ -33,7 +33,7 @@ app.use(Watermark);
 ```html
 <van-watermark
   image="https://fastly.jsdelivr.net/npm/@vant/assets/vant-watermark.png"
-  :opacity="0.2"
+  opacity="0.2"
 />
 ```
 
@@ -46,7 +46,7 @@ app.use(Watermark);
   image="https://fastly.jsdelivr.net/npm/@vant/assets/vant-watermark.png"
   :gap-x="30"
   :gap-y="10"
-  :opacity="0.2"
+  opacity="0.2"
 />
 ```
 
@@ -58,7 +58,7 @@ app.use(Watermark);
 <van-watermark
   image="https://fastly.jsdelivr.net/npm/@vant/assets/vant-watermark.png"
   rotate="22"
-  :opacity="0.2"
+  opacity="0.2"
 />
 ```
 
@@ -69,7 +69,7 @@ app.use(Watermark);
 ```html
 <van-watermark
   image="https://fastly.jsdelivr.net/npm/@vant/assets/vant-watermark.png"
-  :opacity="0.2"
+  opacity="0.2"
   :full-page="true"
 />
 ```
@@ -101,7 +101,7 @@ app.use(Watermark);
 | gapX | 水印之间的水平间隔 | _number_ | `0` |
 | gapY | 水印之间的垂直间隔 | _number_ | `0` |
 | font-color | 文字水印的颜色 | _string_ | `#dcdee0` |
-| opacity | 水印的透明度 | _number_ | `1` |
+| opacity | 水印的透明度 | _number \| string_ | - |
 
 ### Slots
 
