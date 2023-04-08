@@ -100,7 +100,7 @@ app.use(Watermark);
 | full-page | 水印是否全屏显示 | _boolean_ | `false` |
 | gapX | 水印之间的水平间隔 | _number_ | `0` |
 | gapY | 水印之间的垂直间隔 | _number_ | `0` |
-| font-color | 文字水印的颜色 | _string_ | `#dcdee0` |
+| text-color | 文字水印的颜色 | _string_ | `#dcdee0` |
 | opacity | 水印的透明度 | _number \| string_ | - |
 
 ### Slots

@@ -47,7 +47,7 @@ describe('watermark', () => {
     const wrapper = mount(Watermark, {
       props: {
         content: 'Vant',
-        fontColor: 'red',
+        textColor: 'red',
       },
     });
 

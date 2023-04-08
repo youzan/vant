@@ -100,7 +100,7 @@ Use the `default` slot to pass HTML directly. Inline styles are supported, and s
 | full-page | Whether to display the watermark in full screen | _boolean_ | `true` |
 | gapX | Horizontal spacing between watermarks | _number_ | `0` |
 | gapY | Vertical spacing between watermarks | _number_ | `0` |
-| font-color | Color of text watermark | _string_ | `#dcdee0` |
+| text-color | Color of text watermark | _string_ | `#dcdee0` |
 | opacity | Opacity of watermark | _number \| string_ | - |
 
 ### Slots
