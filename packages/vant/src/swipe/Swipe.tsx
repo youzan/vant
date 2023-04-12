@@ -290,11 +290,7 @@ export default defineComponent({
       };
 
       // issue: https://github.com/vant-ui/vant/issues/10052
-      if (isHidden(root)) {
-        nextTick().then(cb);
-      } else {
-        cb();
-      }
+      nextTick().then(cb);
     };
 
     const resize = () => initialize(state.active);
