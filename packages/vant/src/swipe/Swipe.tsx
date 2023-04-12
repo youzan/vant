@@ -290,7 +290,11 @@ export default defineComponent({
       };
 
       // issue: https://github.com/vant-ui/vant/issues/10052
-      nextTick().then(cb);
+      if (isHidden(root)) {
+        nextTick().then(cb);
+      } else {
+        cb();
+      }
     };
 
     const resize = () => initialize(state.active);
@@ -453,7 +457,7 @@ export default defineComponent({
 
     watch(count, () => initialize(state.active));
     watch(() => props.autoplay, autoplay);
-    watch([windowWidth, windowHeight], resize);
+    watch([windowWidth, windowHeight], () => nextTick().then(resize));
     watch(usePageVisibility(), (visible) => {
       if (visible === 'visible') {
         autoplay();
