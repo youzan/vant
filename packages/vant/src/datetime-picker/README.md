@@ -63,7 +63,7 @@ import { ref } from 'vue';
 
 export default {
   setup() {
-    const currentDate = ref(new Date());
+    const currentDate = ref(new Date(2020, 0, 1));
 
     const formatter = (type, val) => {
       if (type === 'year') {
@@ -103,7 +103,7 @@ import { ref } from 'vue';
 
 export default {
   setup() {
-    const currentDate = ref(new Date());
+    const currentDate = ref(new Date(2020, 0, 1));
 
     const formatter = (type, val) => {
       if (type === 'month') {
@@ -165,7 +165,7 @@ import { ref } from 'vue';
 
 export default {
   setup() {
-    const currentDate = ref(new Date());
+    const currentDate = ref(new Date(2020, 0, 1));
     return {
       minDate: new Date(2020, 0, 1),
       maxDate: new Date(2025, 10, 1),
@@ -192,7 +192,7 @@ import { ref } from 'vue';
 
 export default {
   setup() {
-    const currentDate = ref(new Date());
+    const currentDate = ref(new Date(2020, 0, 1));
     return {
       minDate: new Date(2020, 0, 1),
       maxDate: new Date(2025, 10, 1),
@@ -252,7 +252,7 @@ import { ref } from 'vue';
 
 export default {
   setup() {
-    const currentDate = ref(new Date());
+    const currentDate = ref(new Date(2020, 0, 1));
 
     const formatter = (type, val) => {
       if (type === 'year') {
