@@ -45,6 +45,23 @@
           title: 垂直
       default: horizontal
       description: 是否禁用
+    - name: converter
+      title: 转换器
+      type: string
+      options:
+        - value: join
+          title: 以','连接
+        - value: join:|
+          title: 以'|'连接
+        - value: join:;
+          title: 以';'连接
+        - value: json
+          title: json
+        - value: ""
+          title: 无
+      default: ""
+      description: 将选中的值以选择的符号作为连接符，转为字符串格式；选择“json”则转为JSON字符串格式
+      bindHide: true
   slots:
     - concept: Slot
       name: default

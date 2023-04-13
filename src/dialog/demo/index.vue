@@ -1,6 +1,6 @@
 <template>
   <demo-section>
-    <demo-block card :title="t('basicUsage')">
+    <!-- <demo-block card :title="t('basicUsage')">
       <van-cell is-link :title="t('alert1')" @click="onClickAlert" />
       <van-cell is-link :title="t('alert2')" @click="onClickAlert2" />
       <van-cell is-link :title="t('confirm')" @click="onClickConfirm" />
@@ -25,28 +25,31 @@
         :close-on-click-overlay="wagover"
       >
         <img :src="image" />
-        <!-- <template #footer>77777</template> -->
       </van-dialog>
-    </demo-block>
+    </demo-block> -->
     <demo-block card :title="t('componentCall')">
-      <van-cell is-link :title="t('componentCall')" @click="show2 = true" />
+      <!-- <van-cell is-link :title="t('componentCall')" @click="show2 = true" /> -->
+      <van-cell is-link :title="t('componentCall')" @click="onxxx" />
+
       <van-dialog
         v-model="show2"
         :title="'退下2' || t('title')"
         show-cancel-button
         :lazy-render="false"
       >
-        <div vusion-slot-name="default" style="min-height: 200px;width: 100%;">内容</div>
+        <div vusion-slot-name="default">内容</div>
         <template #footer>
           <van-button
             size="large"
             class="van-button van-button--default van-button--large van-dialog__cancel"
             text="取消"
+            @click="show2 = false"
           ></van-button>
           <van-button
             size="large"
             class="van-button van-button--default van-button--large van-dialog__confirm van-hairline--left"
             text="确认"
+            @click="show2 = false"
           ></van-button>
         </template>
       </van-dialog>
@@ -85,12 +88,19 @@ export default {
       image: 'https://img01.yzcdn.cn/vant/apple-3.jpg',
     };
   },
-  mounted(){
+  mounted() {
     setTimeout(() => {
       this.wagover = true;
-    }, 10000)
+    }, 10000);
   },
   methods: {
+    onxxx() {
+      this.$dialog.alert({
+        title: this.t('title'),
+        message: this.t('content'),
+        closeOnClickOverlay: true,
+      });
+    },
     onClickAlert() {
       this.$dialog.alert({
         title: this.t('title'),

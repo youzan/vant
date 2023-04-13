@@ -1,7 +1,7 @@
 ### 基本用法
 
 ```html
-<van-checkbox-group direction="horizontal">
+<van-checkbox-group direction="horizontal" converter="">
   <template #item="current">
     <van-checkbox
       shape="square"

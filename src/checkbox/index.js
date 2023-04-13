@@ -16,7 +16,7 @@ export default createComponent({
     checked: {
       get() {
         if (this.parent) {
-          return this.parent.datatemp.indexOf(this.name) !== -1;
+          return this.parent.currentValue.indexOf(this.name) !== -1;
         }
         return this.value;
       },
@@ -34,7 +34,7 @@ export default createComponent({
 
   watch: {
     value: {
-      handler (val, oldVal) {
+      handler(val, oldVal) {
         this.$emit('update:value', val);
         this.$emit('change', val);
         if (val === true && typeof oldVal === 'undefined') {
@@ -43,7 +43,7 @@ export default createComponent({
           }
         }
       },
-      immediate: true
+      immediate: true,
     },
   },
 
@@ -61,7 +61,7 @@ export default createComponent({
 
     setParentValue(val) {
       const { parent } = this;
-      const value = parent.datatemp.slice();
+      const value = parent.currentValue.slice();
       if (val) {
         if (parent.max && value.length >= parent.max) {
           return;
@@ -70,7 +70,7 @@ export default createComponent({
         /* istanbul ignore else */
         if (value.indexOf(this.name) === -1) {
           value.push(this.name);
-          parent.datatemp = value;
+          parent.currentValue = value;
           // parent.$emit('input', value);
           // parent.$emit('update:value', value);
         }
@@ -82,7 +82,7 @@ export default createComponent({
         /* istanbul ignore else */
         if (index !== -1) {
           value.splice(index, 1);
-          parent.datatemp = value;
+          parent.currentValue = value;
 
           // parent.$emit('input', value);
           // parent.$emit('update:value', value);
