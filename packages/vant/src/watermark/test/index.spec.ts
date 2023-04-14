@@ -47,7 +47,7 @@ describe('watermark', () => {
     const wrapper = mount(Watermark, {
       props: {
         content: 'Vant',
-        fontColor: 'red',
+        textColor: 'red',
       },
     });
 
@@ -58,7 +58,8 @@ describe('watermark', () => {
     const wrapper = mount(Watermark, {
       props: {
         content: 'Vant',
-        image: 'https://fastly.jsdelivr.net/npm/@vant/assets/cat.jpeg',
+        image:
+          'https://fastly.jsdelivr.net/npm/@vant/assets/vant-watermark.png',
         opacity: 0.5,
       },
     });

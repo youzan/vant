@@ -29,8 +29,7 @@ app.use(TextEllipsis);
 ```js
 export default {
   setup() {
-    const text =
-      'Vant 是一个轻量、可定制的移动端组件库，于 2017 年开源。目前 Vant 官方提供了 Vue 2 版本、Vue 3 版本和微信小程序版本，并由社区团队维护 React 版本和支付宝小程序版本。';
+    const text = '慢慢来，不要急，生活给你出了难题，可也终有一天会给出答案。';
     return { text };
   },
 };
@@ -48,7 +47,7 @@ export default {
 export default {
   setup() {
     const text =
-      'Vant 是一个轻量、可定制的移动端组件库，于 2017 年开源。目前 Vant 官方提供了 Vue 2 版本、Vue 3 版本和微信小程序版本，并由社区团队维护 React 版本和支付宝小程序版本。';
+      '似水流年是一个人所有的一切，只有这个东西，才真正归你所有。其余的一切，都是片刻的欢娱和不幸，转眼间就已跑到那似水流年里去了。';
     return { text };
   },
 };
@@ -71,7 +70,7 @@ export default {
 export default {
   setup() {
     const text =
-      'Vant 是一个轻量、可定制的移动端组件库，于 2017 年开源。目前 Vant 官方提供了 Vue 2 版本、Vue 3 版本和微信小程序版本，并由社区团队维护 React 版本和支付宝小程序版本。';
+      '那一天我二十一岁，在我一生的黄金时代。我有好多奢望。我想爱，想吃，还想在一瞬间变成天上半明半暗的云。后来我才知道，生活就是个缓慢受锤的过程，人一天天老下去，奢望也一天天消失，最后变得像挨了锤的牛一样。可是我过二十一岁生日时没有预见到这一点。我觉得自己会永远生猛下去，什么也锤不了我。';
     return { text };
   },
 };
@@ -81,12 +80,13 @@ export default {
 
 ### Props
 
-| 参数          | 说明           | 类型               | 默认值 |
-| ------------- | -------------- | ------------------ | ------ |
-| rows          | 展示的行数     | _number \| string_ | `1`    |
-| content       | 需要展示的文本 | _string_           | -      |
-| expand-text   | 展开操作的文案 | _string_           | -      |
-| collapse-text | 收起操作的文案 | _string_           | -      |
+| 参数          | 说明             | 类型               | 默认值  |
+| ------------- | ---------------- | ------------------ | ------- |
+| rows          | 展示的行数       | _number \| string_ | `1`     |
+| content       | 需要展示的文本   | _string_           | -       |
+| expand-text   | 展开操作的文案   | _string_           | -       |
+| collapse-text | 收起操作的文案   | _string_           | -       |
+| dots          | 省略号的文本内容 | _string_           | `'...'` |
 
 ### Events
 

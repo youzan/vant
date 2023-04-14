@@ -21,17 +21,17 @@ import {
 const [name, bem] = createNamespace('watermark');
 
 export const watermarkProps = {
+  gapX: makeNumberProp(0),
+  gapY: makeNumberProp(0),
+  image: String,
   width: makeNumberProp(100),
   height: makeNumberProp(100),
   rotate: makeNumericProp(-22),
   zIndex: numericProp,
   content: String,
-  image: String,
+  opacity: numericProp,
   fullPage: truthProp,
-  gapX: makeNumberProp(0),
-  gapY: makeNumberProp(0),
-  fontColor: makeStringProp('#dcdee0'),
-  opacity: makeNumberProp(1),
+  textColor: makeStringProp('#dcdee0'),
 };
 
 export type WatermarkProps = ExtractPropTypes<typeof watermarkProps>;
@@ -76,7 +76,7 @@ export default defineComponent({
               {props.content ? (
                 <span
                   style={{
-                    color: props.fontColor,
+                    color: props.textColor,
                   }}
                 >
                   {props.content}
@@ -140,7 +140,7 @@ export default defineComponent({
       () => [
         imageBase64.value,
         props.content,
-        props.fontColor,
+        props.textColor,
         props.height,
         props.width,
         props.rotate,
@@ -148,7 +148,11 @@ export default defineComponent({
         props.gapY,
       ],
       () => {
-        // 路径为 renderWatermark渲染的实际HTML => SVG字符串转换为blob图片 => 放到background-image中。
+        /**
+         * The path is the actual HTML rendered by renderWatermark
+         * => convert the SVG string to a blob image
+         * => put it in background-image.
+         */
         nextTick(() => {
           if (svgElRef.value) {
             if (watermarkUrl.value) {

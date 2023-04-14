@@ -3,14 +3,14 @@
 exports[`should render demo and match snapshot 1`] = `
 <div>
   <div class="van-text-ellipsis">
-    Vant is a lightweight, customizable mobile component library that was open sourced in 2017. Currently Vant officially provides Vue 2 version, Vue 3 version and WeChat applet version, and the community team maintains React version and Alipay applet version...
+    Take your time and be patient. Life itself will eventually answer all those questions it once raised for you...
     <span class="van-text-ellipsis__action">
     </span>
   </div>
 </div>
 <div>
   <div class="van-text-ellipsis">
-    Vant is a lightweight, customizable mobile component library that was open sourced in 2017. Currently Vant officially provides Vue 2 version, Vue 3 version and WeChat applet version, and the community team maintains React version and Alipay applet version...
+    The fleeting time of one's life is everything that belongs to a person. Only this thing truly belongs to you. Everything else is just a momentary pleasure or misfortune, which will soon be gone with the passing of time...
     <span class="van-text-ellipsis__action">
       expand
     </span>
@@ -18,7 +18,7 @@ exports[`should render demo and match snapshot 1`] = `
 </div>
 <div>
   <div class="van-text-ellipsis">
-    Vant is a lightweight, customizable mobile component library that was open sourced in 2017. Currently Vant officially provides Vue 2 version, Vue 3 version and WeChat applet version, and the community team maintains React version and Alipay applet version...
+    That day, I turned twenty-one. In the golden age of my life, I was full of dreams. I wanted to love, to eat, and to instantly transform into one of these clouds, part alight, part darkened. It was only later that I understood life is but a slow, drawn-out process of getting your balls crushed. Day by day, you get older. Day by day, your dreams fade. In the end you are no different from a crushed ox. But I hadn't foreseen any of it on my twenty-first birthday. I thought I would be vigorous forever, and that nothing could ever crush me...
     <span class="van-text-ellipsis__action">
       expand
     </span>

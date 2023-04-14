@@ -9,7 +9,7 @@ exports[`watermark should render content 1`] = `
          width="100"
          height="100"
          xmlns="http://www.w3.org/2000/svg"
-         style="padding: 0px 0px 0px 0px; opacity: 1;"
+         style="padding: 0px 0px 0px 0px;"
     >
       <foreignObject x="0"
                      y="0"
@@ -38,7 +38,7 @@ exports[`watermark should render html 1`] = `
          width="100"
          height="100"
          xmlns="http://www.w3.org/2000/svg"
-         style="padding: 0px 0px 0px 0px; opacity: 1;"
+         style="padding: 0px 0px 0px 0px;"
     >
       <foreignObject x="0"
                      y="0"
@@ -89,7 +89,7 @@ exports[`watermark test false value fullPage 1`] = `
          width="100"
          height="100"
          xmlns="http://www.w3.org/2000/svg"
-         style="padding: 0px 0px 0px 0px; opacity: 1;"
+         style="padding: 0px 0px 0px 0px;"
     >
       <foreignObject x="0"
                      y="0"
@@ -116,7 +116,7 @@ exports[`watermark test width, height, rotate, zIndex 1`] = `
          width="20"
          height="20"
          xmlns="http://www.w3.org/2000/svg"
-         style="padding: 0px 0px 0px 0px; opacity: 1;"
+         style="padding: 0px 0px 0px 0px;"
     >
       <foreignObject x="0"
                      y="0"
