@@ -5,22 +5,16 @@ import {
   onMounted,
   type ExtractPropTypes,
 } from 'vue';
-import {
-  createNamespace,
-  unknownProp,
-  makeNumberProp,
-  makeStringProp,
-} from '../utils';
+import { createNamespace, makeNumberProp, makeStringProp } from '../utils';
 import { Button } from '../button';
 
-const [name, bem] = createNamespace('signature');
+const [name, bem, t] = createNamespace('signature');
 
 export const signatureProps = {
   type: makeStringProp('png'),
-  penColor: String,
-  className: unknownProp,
   lineWidth: makeNumberProp(3),
-  tips: makeStringProp('当前浏览器不支持Canvas，无法使用本控件'),
+  penColor: makeStringProp('#000'),
+  tips: String,
 };
 
 export type SignatureProps = ExtractPropTypes<typeof signatureProps>;
@@ -33,8 +27,8 @@ export default defineComponent({
   emits: ['submit', 'clear', 'start', 'end', 'signing'],
 
   setup(props, { emit }) {
-    const canvasRef: any = ref<HTMLElement | null>(null);
-    const wrapRef: any = ref<HTMLElement | null>(null);
+    const canvasRef = ref<HTMLCanvasElement | null>(null);
+    const wrapRef = ref<HTMLElement | null>(null);
 
     const state = reactive({
       width: 0,
@@ -61,9 +55,9 @@ export default defineComponent({
       let mouseY = evt.clientY;
 
       if (!state.isSupportTouch) {
-        const coverPos = canvasRef.value.getBoundingClientRect();
-        mouseX = evt.clientX - coverPos.left;
-        mouseY = evt.clientY - coverPos.top;
+        const coverPos = canvasRef.value?.getBoundingClientRect();
+        mouseX = evt.clientX - (coverPos?.left || 0);
+        mouseY = evt.clientY - (coverPos?.top || 0);
       }
       state.ctx.lineCap = 'round';
       state.ctx.lineJoin = 'round';
@@ -98,15 +92,22 @@ export default defineComponent({
       if (!canvas) {
         return;
       }
+
       const isEmpty = isCanvasEmpty(canvas);
-      const _canvas = isEmpty ? '未绘制签名' : canvas;
+      const _canvas = isEmpty ? null : canvas;
       const _filePath = isEmpty
         ? ''
         : canvas.toDataURL(
             `image/${props.type}`,
-            props.type === 'jpg' ? 0.9 : undefined
+            props.type === 'jpg' ? 0.9 : null
           );
-      emit('submit', _canvas, _filePath);
+
+      const data = {
+        canvas: _canvas,
+        filePath: _filePath,
+      };
+
+      emit('submit', data);
     };
 
     const clear = () => {
@@ -117,14 +118,14 @@ export default defineComponent({
 
     onMounted(() => {
       if (hasCanvasSupport()) {
-        state.ctx = canvasRef.value.getContext('2d');
-        state.width = wrapRef.value.offsetWidth;
-        state.height = wrapRef.value.offsetHeight;
+        state.ctx = canvasRef.value?.getContext('2d');
+        state.width = wrapRef.value?.offsetWidth || 0;
+        state.height = wrapRef.value?.offsetHeight || 0;
       }
     });
 
     return () => (
-      <div class={[bem(), props.className]}>
+      <div class={bem()}>
         <div class={bem('content')} ref={wrapRef}>
           {(hasCanvasSupport() && (
             <canvas
@@ -138,11 +139,12 @@ export default defineComponent({
           )) || <p>{props.tips}</p>}
         </div>
         <div class={bem('footer')}>
+          <p>{props.tips}</p>
           <Button size="small" onClick={clear}>
-            取消
+            {t('cancel')}
           </Button>
           <Button type="primary" size="small" onClick={submit}>
-            完成
+            {t('confirm')}
           </Button>
         </div>
       </div>

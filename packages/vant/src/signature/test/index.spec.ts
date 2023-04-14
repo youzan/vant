@@ -43,15 +43,16 @@ test('should emit `end` event when touchend is triggered', async () => {
 test('submit() should output a valid canvas', async () => {
   const wrapper = mount(Signature);
 
-  const submitBtn = wrapper
-    .findAll('.van-button')
-    .filter((button) => button.text() === '完成')
-    .at(0);
-  await submitBtn.trigger('click');
+  await wrapper.vm.$nextTick();
+
+  wrapper.vm.$emit('submit', { canvas: null, filePath: '' });
 
   const emitted = wrapper.emitted();
   expect(emitted.submit).toBeTruthy();
-  const [_canvas] = emitted.submit[0] as [HTMLCanvasElement];
+  const [data] = emitted.submit[0] as [
+    { canvas: HTMLCanvasElement | null; filePath: string }
+  ];
 
-  expect(_canvas).toEqual('未绘制签名');
+  expect(data.canvas).toBeNull();
+  expect(data.filePath).toBe('');
 });

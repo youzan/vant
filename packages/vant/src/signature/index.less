@@ -1,12 +1,20 @@
+:root {
+  --van-signature-padding: var(--van-padding-xs);
+  --van-signature-content-height: 160px;
+  --van-signature-content-background: var(--van-background-2);
+  --van-signature-content-border: 1px dotted #dadada;
+}
+
 .van-signature {
-  padding: 8px;
+  padding: var(--van-signature-padding);
+
   &__content {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #ffffff;
-    height: 9rem;
-    border: 1px dotted #dadada;
+    height: var(--van-signature-content-height);
+    background-color: var(--van-signature-content-background);
+    border: var(--van-signature-content-border);
   }
   &__footer {
     display: flex;

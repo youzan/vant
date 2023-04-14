@@ -10,12 +10,14 @@ exports[`should render demo and match snapshot 1`] = `
       </canvas>
     </div>
     <div class="van-signature__footer">
+      <p>
+      </p>
       <button type="button"
               class="van-button van-button--default van-button--small"
       >
         <div class="van-button__content">
           <span class="van-button__text">
-            取消
+            Cancel
           </span>
         </div>
       </button>
@@ -24,7 +26,7 @@ exports[`should render demo and match snapshot 1`] = `
       >
         <div class="van-button__content">
           <span class="van-button__text">
-            完成
+            Confirm
           </span>
         </div>
       </button>
@@ -40,12 +42,14 @@ exports[`should render demo and match snapshot 1`] = `
       </canvas>
     </div>
     <div class="van-signature__footer">
+      <p>
+      </p>
       <button type="button"
               class="van-button van-button--default van-button--small"
       >
         <div class="van-button__content">
           <span class="van-button__text">
-            取消
+            Cancel
           </span>
         </div>
       </button>
@@ -54,7 +58,7 @@ exports[`should render demo and match snapshot 1`] = `
       >
         <div class="van-button__content">
           <span class="van-button__text">
-            完成
+            Confirm
           </span>
         </div>
       </button>
@@ -70,12 +74,14 @@ exports[`should render demo and match snapshot 1`] = `
       </canvas>
     </div>
     <div class="van-signature__footer">
+      <p>
+      </p>
       <button type="button"
               class="van-button van-button--default van-button--small"
       >
         <div class="van-button__content">
           <span class="van-button__text">
-            取消
+            Cancel
           </span>
         </div>
       </button>
@@ -84,7 +90,7 @@ exports[`should render demo and match snapshot 1`] = `
       >
         <div class="van-button__content">
           <span class="van-button__text">
-            完成
+            Confirm
           </span>
         </div>
       </button>

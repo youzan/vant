@@ -32,15 +32,19 @@ export default {
   setup() {
     const demoUrl = ref('');
 
-    const onSubmit = (data, filePath) => {
+    const onSubmit = (data) => {
+      const { filePath, canvas } = data;
       demoUrl.value = filePath;
-      console.log('submit', data, filePath);
+
+      console.log('submit', canvas, filePath);
     };
+
     const onClear = () => console.log('clear');
 
     return {
       onSubmit,
       onClear,
+      demoUrl,
     };
   },
 };
@@ -62,23 +66,22 @@ export default {
 
 ### Props
 
-| 参数 | 说明 | 类型 | 默认值 |
-| --- | --- | --- | --- |
-| type | 导出图片类型 | _string_ | `png` |
-| penColor | 笔触颜色，默认黑色。 | _string_ | `#000000` |
-| lineWidth | 线条宽度 | _number_ | `3` |
-| tips | 当不支持 Canvas 的时候出现的提示文案 | _string_ | `当前浏览器不支持Canvas，无法使用本控件` |
-| className | 自定义类名 | _string \| Array \| object_ | - |
+| 参数      | 说明                                 | 类型     | 默认值 |
+| --------- | ------------------------------------ | -------- | ------ |
+| type      | 导出图片类型                         | _string_ | `png`  |
+| penColor  | 笔触颜色，默认黑色。                 | _string_ | `#000` |
+| lineWidth | 线条宽度                             | _number_ | `3`    |
+| tips      | 当不支持 Canvas 的时候出现的提示文案 | _string_ | -      |
 
 ### Events
 
-| 事件名  | 说明             | 回调参数                                      |
-| ------- | ---------------- | --------------------------------------------- |
-| start   | 签名开始事件回调 | -                                             |
-| end     | 签名结束事件回调 | -                                             |
-| signing | 签名过程事件回调 | _event: TouchEvent_                           |
-| submit  | 确定按钮事件回调 | _canvas: HTMLCanvasElement, filePath: string_ |
-| clear   | 取消按钮事件回调 | -                                             |
+| 事件名 | 说明 | 回调参数 |
+| --- | --- | --- |
+| start | 签名开始事件回调 | - |
+| end | 签名结束事件回调 | - |
+| signing | 签名过程事件回调 | _event: TouchEvent_ |
+| submit | 确定按钮事件回调 | _data: {canvas: HTMLCanvasElement, filePath: string}_ |
+| clear | 取消按钮事件回调 | - |
 
 ### 类型定义
 
@@ -87,3 +90,16 @@ export default {
 ```js
 import type { SignatureProps } from 'vant';
 ```
+
+## 主题定制
+
+### 样式变量
+
+组件提供了下列 CSS 变量，可用于自定义样式，使用方法请参考 [ConfigProvider 组件](#/zh-CN/config-provider)。
+
+| 名称 | 默认值 | 描述 |
+| --- | --- | --- |
+| --van-signature-padding | _var(--van-padding-xs)_ | - |
+| --van-signature-content-height | _160px_ | 画布高度 |
+| --van-signature-content-background | _var(--van-background-2)_ | 画布背景色 |
+| --van-signature-content-border | _1px dotted #dadada_ | 画布边框样式 |

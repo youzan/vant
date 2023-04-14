@@ -20,10 +20,13 @@ const t = useTranslate({
 
 const demoUrl = ref('');
 
-const onSubmit = (data, filePath) => {
+const onSubmit = (data) => {
+  const { filePath, canvas } = data;
   demoUrl.value = filePath;
-  console.log('submit', data, filePath);
+
+  console.log('submit', canvas, filePath);
 };
+
 const onStart = () => console.log('start');
 const onClear = () => console.log('clear');
 const onEnd = () => console.log('end');
@@ -38,7 +41,7 @@ const onSigning = (e) => console.log('signing', e);
       @start="onStart"
       @end="onEnd"
       @signing="onSigning"
-    ></van-signature>
+    />
   </demo-block>
   <van-image v-if="demoUrl" :src="demoUrl" />
   <demo-block :title="t('penColor')">
@@ -49,7 +52,7 @@ const onSigning = (e) => console.log('signing', e);
       @start="onStart"
       @end="onEnd"
       @signing="onSigning"
-    ></van-signature>
+    />
   </demo-block>
   <demo-block :title="t('lineWidth')">
     <van-signature
@@ -59,6 +62,6 @@ const onSigning = (e) => console.log('signing', e);
       @start="onStart"
       @end="onEnd"
       @signing="onSigning"
-    ></van-signature>
+    />
   </demo-block>
 </template>
