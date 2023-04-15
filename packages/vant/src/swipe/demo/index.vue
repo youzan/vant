@@ -3,6 +3,9 @@ import VanSwipe from '..';
 import VanSwipeItem from '../../swipe-item';
 import { cdnURL, useTranslate } from '../../../docs/site';
 import { showToast } from '../../toast';
+import { useWindowSize } from '@vant/use';
+
+const { width } = useWindowSize();
 
 const t = useTranslate({
   'zh-CN': {
@@ -35,7 +38,11 @@ const onChange = (index: number) => showToast(t('message') + index);
 
 <template>
   <demo-block :title="t('basicUsage')">
-    <van-swipe :autoplay="3000" indicator-color="white">
+    <van-swipe
+      :width="(300 / 375) * width"
+      :autoplay="3000"
+      indicator-color="white"
+    >
       <van-swipe-item>1</van-swipe-item>
       <van-swipe-item>2</van-swipe-item>
       <van-swipe-item>3</van-swipe-item>

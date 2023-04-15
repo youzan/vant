@@ -33,11 +33,11 @@
   "devDependencies": {
     "@types/fs-extra": "^11.0.1",
     "release-it": "^15.4.1",
-    "rimraf": "^4.0.4",
+    "rimraf": "^5.0.0",
     "typescript": "^5.0.2"
   },
   "dependencies": {
-    "consola": "^2.11.3",
+    "consola": "^3.0.2",
     "fast-glob": "^3.2.11",
     "fs-extra": "^11.1.0",
     "enquirer": "2.3.6",
