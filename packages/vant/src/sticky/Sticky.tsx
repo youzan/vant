@@ -154,6 +154,8 @@ export default defineComponent({
       }
       root.value.style.width = 'auto';
       root.value.style.height = 'auto';
+      (root.value.firstElementChild as HTMLDivElement).style.width = 'auto';
+      (root.value.firstElementChild as HTMLDivElement).style.height = 'auto';
       const rootRect = useRect(root);
       state.width = rootRect.width;
       state.height = rootRect.height;

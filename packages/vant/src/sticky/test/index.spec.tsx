@@ -381,14 +381,13 @@ test('should sticky resize or orientationchange reset root height and width', as
   expect(wrapper.html()).toMatchSnapshot();
 
   window.innerWidth = 677;
-  await trigger(window, 'resize');
   mockStickyRect.mockReturnValue({
     top: -100,
     bottom: -90,
     width: window.innerWidth,
     height: 20,
   } as DOMRect);
-  await mockScrollTop(100);
+  await trigger(window, 'resize');
   expect(wrapper.html()).toMatchSnapshot();
 
   mockStickyRect.mockRestore();
