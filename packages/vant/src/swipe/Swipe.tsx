@@ -457,7 +457,10 @@ export default defineComponent({
 
     watch(count, () => initialize(state.active));
     watch(() => props.autoplay, autoplay);
-    watch([windowWidth, windowHeight], resize);
+    watch(
+      [windowWidth, windowHeight, () => props.width, () => props.height],
+      resize
+    );
     watch(usePageVisibility(), (visible) => {
       if (visible === 'visible') {
         autoplay();
