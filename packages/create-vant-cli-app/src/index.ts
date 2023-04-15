@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-import consola from 'consola';
+import { consola } from 'consola';
 import { prompt } from 'enquirer';
 import { ensureDir } from 'fs-extra';
 import { VanGenerator } from './generator';
