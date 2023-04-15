@@ -20,6 +20,8 @@ import {
   makeStringProp,
   makeNumericProp,
   createNamespace,
+  windowWidth,
+  windowHeight,
 } from '../utils';
 
 // Composables
@@ -145,6 +147,17 @@ export default defineComponent({
       passive: true,
     });
     useVisibilityChange(root, onScroll);
+
+    watch([windowWidth, windowHeight], () => {
+      if (!root.value || isHidden(root) || !state.fixed) {
+        return;
+      }
+      root.value.style.width = 'auto';
+      root.value.style.height = 'auto';
+      const rootRect = useRect(root);
+      state.width = rootRect.width;
+      state.height = rootRect.height;
+    });
 
     return () => (
       <div ref={root} style={rootStyle.value}>

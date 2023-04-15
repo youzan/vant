@@ -353,3 +353,42 @@ test('should emit change event when sticky status changed', async () => {
 
   restore();
 });
+
+test('should sticky resize or orientationchange reset root height and width', async () => {
+  const wrapper = mount({
+    render() {
+      return (
+        <Sticky>
+          <div class="content" style="height:20px">
+            Content
+          </div>
+        </Sticky>
+      );
+    },
+  });
+
+  const mockStickyRect = jest
+    .spyOn(wrapper.element, 'getBoundingClientRect')
+    .mockReturnValue({
+      top: -100,
+      bottom: -90,
+      width: window.innerWidth,
+      height: 20,
+    } as DOMRect);
+
+  await mockScrollTop(100);
+  expect(wrapper.html()).toMatchSnapshot();
+
+  window.innerWidth = 677;
+  await trigger(window, 'resize');
+  mockStickyRect.mockReturnValue({
+    top: -100,
+    bottom: -90,
+    width: window.innerWidth,
+    height: 20,
+  } as DOMRect);
+  await mockScrollTop(100);
+  expect(wrapper.html()).toMatchSnapshot();
+
+  mockStickyRect.mockRestore();
+});
