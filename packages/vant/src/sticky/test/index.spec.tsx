@@ -367,6 +367,7 @@ test('should sticky resize or orientationchange reset root height and width', as
     },
   });
 
+  window.innerWidth = 375;
   const mockStickyRect = jest
     .spyOn(wrapper.element, 'getBoundingClientRect')
     .mockReturnValue({

@@ -83,9 +83,9 @@ exports[`should sticky inside container when using container prop 2`] = `
 `;
 
 exports[`should sticky resize or orientationchange reset root height and width 1`] = `
-<div style="width: 300px; height: 20px;">
+<div style="width: 375px; height: 20px;">
   <div class="van-sticky van-sticky--fixed"
-       style="width: 300px; height: 20px; top: 0px;"
+       style="width: 375px; height: 20px; top: 0px;"
   >
     <div class="content"
          style="height: 20px;"
