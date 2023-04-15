@@ -44,7 +44,7 @@
     "@types/less": "^3.0.3",
     "@types/lodash": "^4.14.191",
     "@types/markdown-it": "^12.2.3",
-    "rimraf": "^4.0.4",
+    "rimraf": "^5.0.0",
     "vue": "^3.2.47"
   },
   "dependencies": {
@@ -58,7 +58,7 @@
     "@vue/babel-plugin-jsx": "^1.1.1",
     "autoprefixer": "^10.4.8",
     "commander": "^10.0.0",
-    "consola": "^2.15.3",
+    "consola": "^3.0.2",
     "conventional-changelog": "^3.1.25",
     "esbuild": "^0.17.12",
     "eslint": "^8.31.0",
@@ -80,7 +80,7 @@
     "nanospinner": "^1.1.0",
     "picocolors": "^1.0.0",
     "postcss": "^8.4.16",
-    "postcss-load-config": "^3.1.4",
+    "postcss-load-config": "^4.0.1",
     "prettier": "^2.7.1",
     "release-it": "^15.4.1",
     "terser": "^5.16.1",
