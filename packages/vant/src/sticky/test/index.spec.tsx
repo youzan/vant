@@ -1,5 +1,5 @@
 import { nextTick, ref } from 'vue';
-import { VueWrapper } from '@vue/test-utils';
+import { VueWrapper, flushPromises } from '@vue/test-utils';
 import { mockScrollTop, trigger, mount } from '../../../test';
 import { Sticky } from '..';
 import { ComponentInstance } from '../../utils';
@@ -382,12 +382,11 @@ test('should sticky resize or orientationchange reset root height and width', as
 
   window.innerWidth = 677;
   mockStickyRect.mockReturnValue({
-    top: -100,
-    bottom: -90,
     width: window.innerWidth,
     height: 20,
   } as DOMRect);
   await trigger(window, 'resize');
+  await flushPromises();
   expect(wrapper.html()).toMatchSnapshot();
 
   mockStickyRect.mockRestore();
