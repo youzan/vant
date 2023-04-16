@@ -19,6 +19,23 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 
 ## 更新内容
 
+### [v4.2.0](https://github.com/vant-ui/vant/compare/v4.1.2...v4.2.0)
+
+`2023-04-16`
+
+**New Component**
+
+- 新增 Watermark 水印组件，由 [@HuberTRoy](https://github.com/HuberTRoy) 贡献 [#11721](https://github.com/vant-ui/vant/issues/11721)
+
+**Feature**
+
+- ShareSheet: 支持自定义 icon [#11709](https://github.com/vant-ui/vant/issues/11709)
+- TextEllipsis: 新增 dots 属性 [#11745](https://github.com/vant-ui/vant/issues/11745)
+
+**Bug Fixes**
+
+- Swipe: 修复 width 和 height 属性变化后未重新渲染的问题 [#11747](https://github.com/vant-ui/vant/issues/11747)
+
 ### [v4.1.2](https://github.com/vant-ui/vant/compare/v4.1.1...v4.1.2)
 
 `2023-03-26`
@@ -54,7 +71,7 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 
 **New Component**
 
-- 新增 TextEllipsis 文本省略组件 [#11593](https://github.com/vant-ui/vant/issues/11593)
+- 新增 TextEllipsis 文本省略组件，由 [@wjw-gavin](https://github.com/wjw-gavin) 贡献 [#11593](https://github.com/vant-ui/vant/issues/11593)
 
 **Feature**
 
