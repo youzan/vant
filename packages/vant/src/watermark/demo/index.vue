@@ -88,11 +88,17 @@ const fullPage = ref(false);
   <demo-block :title="t('htmlWatermark')">
     <div class="demo-watermark-wrapper">
       <van-watermark :width="150" :full-page="false">
-        <div
-          style="background: linear-gradient(45deg, #000 0, #000 50%, #fff 50%)"
-        >
-          <p style="mix-blend-mode: difference; color: #fff">Vant watermark</p>
-        </div>
+        <template #content>
+          <div
+            style="
+              background: linear-gradient(45deg, #000 0, #000 50%, #fff 50%);
+            "
+          >
+            <p style="mix-blend-mode: difference; color: #fff">
+              Vant watermark
+            </p>
+          </div>
+        </template>
       </van-watermark>
     </div>
   </demo-block>

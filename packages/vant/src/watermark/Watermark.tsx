@@ -47,8 +47,13 @@ export default defineComponent({
     const watermarkUrl = ref('');
     const imageBase64 = ref('');
     const renderWatermark = () => {
+      const rotateStyle = {
+        transformOrigin: 'center',
+        transform: `rotate(${props.rotate}deg)`,
+      };
+
       const svgInner = () => {
-        if (props.image) {
+        if (props.image && !slots.content) {
           return (
             <image
               href={imageBase64.value}
@@ -56,11 +61,8 @@ export default defineComponent({
               y="0"
               width={props.width}
               height={props.height}
-              style={{
-                transformOrigin: 'center',
-                transform: `rotate(${props.rotate}deg)`,
-              }}
-            ></image>
+              style={rotateStyle}
+            />
           );
         }
 
@@ -69,20 +71,12 @@ export default defineComponent({
             <div
               // @ts-ignore
               xmlns="http://www.w3.org/1999/xhtml"
-              style={{
-                transform: `rotate(${props.rotate}deg)`,
-              }}
+              style={rotateStyle}
             >
-              {props.content ? (
-                <span
-                  style={{
-                    color: props.textColor,
-                  }}
-                >
-                  {props.content}
-                </span>
+              {slots.content ? (
+                slots.content()
               ) : (
-                slots?.default?.()
+                <span style={{ color: props.textColor }}>{props.content}</span>
               )}
             </div>
           </foreignObject>
@@ -181,7 +175,7 @@ export default defineComponent({
 
       return (
         <div class={bem({ full: props.fullPage })} style={style}>
-          <div style={{ display: 'none' }} ref={svgElRef}>
+          <div class={bem('wrapper')} ref={svgElRef}>
             {renderWatermark()}
           </div>
         </div>
