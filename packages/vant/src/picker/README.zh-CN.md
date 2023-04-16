@@ -378,8 +378,9 @@ export default {
 | --- | --- | --- |
 | confirm | 点击完成按钮时触发 | _{ selectedValues, selectedOptions, selectedIndexes }_ |
 | cancel | 点击取消按钮时触发 | _{ selectedValues, selectedOptions, selectedIndexes }_ |
-| change | 选项改变时触发 | _{ selectedValues, selectedOptions, selectedIndexes, columnIndex }_ |
+| change | 选中的选项改变时触发 | _{ selectedValues, selectedOptions, selectedIndexes, columnIndex }_ |
 | click-option | 点击选项时触发 | _{ currentOption, selectedValues, selectedOptions, selectedIndexes, columnIndex }_ |
+| scroll-into `v4.2.1` | 当用户通过点击或拖拽让一个选项滚动到中间的选择区域时触发 | _{ currentOption, columnIndex }_ |
 
 ### Slots
 
