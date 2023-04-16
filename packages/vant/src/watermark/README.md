@@ -76,13 +76,15 @@ Use the `full-page` prop to control the display range of the watermark.
 
 ### HTML Watermark
 
-Use the `default` slot to pass HTML directly. Inline styles are supported, and self-closing tags are not supported.
+Use the `content` slot to pass HTML as watermark. Only supports inline styles, and self-closing tags are not supported.
 
 ```html
 <van-watermark :width="150">
-  <div style="background: linear-gradient(45deg, #000 0, #000 50%, #fff 50%)">
-    <p style="mix-blend-mode: difference; color: #fff">Vant watermark</p>
-  </div>
+  <template #content>
+    <div style="background: linear-gradient(45deg, #000 0, #000 50%, #fff 50%)">
+      <p style="mix-blend-mode: difference; color: #fff">Vant watermark</p>
+    </div>
+  </template>
 </van-watermark>
 ```
 
@@ -98,8 +100,8 @@ Use the `default` slot to pass HTML directly. Inline styles are supported, and s
 | content | Text watermark content | _string_ | - |
 | image | Image watermark content. If `content` and `image` are passed at the same time, use the `image` watermark first | _string_ | - |
 | full-page | Whether to display the watermark in full screen | _boolean_ | `true` |
-| gapX | Horizontal spacing between watermarks | _number_ | `0` |
-| gapY | Vertical spacing between watermarks | _number_ | `0` |
+| gap-x | Horizontal spacing between watermarks | _number_ | `0` |
+| gap-y | Vertical spacing between watermarks | _number_ | `0` |
 | text-color | Color of text watermark | _string_ | `#dcdee0` |
 | opacity | Opacity of watermark | _number \| string_ | - |
 
@@ -107,7 +109,7 @@ Use the `default` slot to pass HTML directly. Inline styles are supported, and s
 
 | Attribute | Description |
 | --- | --- |
-| default | Content of HTML watermark. Inline styles are supported, and self-closing tags are not supported. This slot is invalid if `content` or `image` props is passed |
+| content | Content of HTML watermark. Only supports inline styles, and self-closing tags are not supported. The priority is higher than `content` or `image` props |
 
 ### Types
 

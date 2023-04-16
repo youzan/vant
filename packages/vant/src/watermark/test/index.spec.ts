@@ -70,7 +70,7 @@ describe('watermark', () => {
   test('should render html', () => {
     const wrapper = mount(Watermark, {
       slots: {
-        default: () => 'vant watermark test',
+        content: () => 'vant watermark test',
       },
     });
 
@@ -86,7 +86,7 @@ describe('watermark', () => {
         zIndex: 200,
       },
       slots: {
-        default: () => 'vant watermark test',
+        content: () => 'vant watermark test',
       },
     });
 
@@ -99,7 +99,7 @@ describe('watermark', () => {
         fullPage: false,
       },
       slots: {
-        default: () => 'vant watermark test',
+        content: () => 'vant watermark test',
       },
     });
 

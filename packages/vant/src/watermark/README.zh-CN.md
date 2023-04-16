@@ -76,13 +76,15 @@ app.use(Watermark);
 
 ### HTML 水印
 
-通过默认插槽可以直接传入 HTML，HTML 样式仅支持行内样式同时不支持传入自闭合标签。
+通过 `content` 插槽可以直接传入 HTML 作为水印。HTML 中的样式仅支持行内样式，同时不支持传入自闭合标签。
 
 ```html
 <van-watermark :width="150">
-  <div style="background: linear-gradient(45deg, #000 0, #000 50%, #fff 50%)">
-    <p style="mix-blend-mode: difference; color: #fff">Vant watermark</p>
-  </div>
+  <template #content>
+    <div style="background: linear-gradient(45deg, #000 0, #000 50%, #fff 50%)">
+      <p style="mix-blend-mode: difference; color: #fff">Vant watermark</p>
+    </div>
+  </template>
 </van-watermark>
 ```
 
@@ -98,8 +100,8 @@ app.use(Watermark);
 | content | 文字水印的内容 | _string_ | - |
 | image | 图片水印的内容，如果与 `content` 同时传入，优先使用图片水印 | _string_ | - |
 | full-page | 水印是否全屏显示 | _boolean_ | `false` |
-| gapX | 水印之间的水平间隔 | _number_ | `0` |
-| gapY | 水印之间的垂直间隔 | _number_ | `0` |
+| gap-x | 水印之间的水平间隔 | _number_ | `0` |
+| gap-y | 水印之间的垂直间隔 | _number_ | `0` |
 | text-color | 文字水印的颜色 | _string_ | `#dcdee0` |
 | opacity | 水印的透明度 | _number \| string_ | - |
 
@@ -107,7 +109,7 @@ app.use(Watermark);
 
 | 名称 | 说明 |
 | --- | --- |
-| default | HTML 水印的内容，仅支持行内样式同时不支持传入自闭合标签，存在 `content` 或 `image` 属性时，此插槽无效 |
+| content | HTML 水印的内容，仅支持行内样式，同时不支持传入自闭合标签，优先级高于 `content` 或 `image` 属性 |
 
 ### 类型定义
 
