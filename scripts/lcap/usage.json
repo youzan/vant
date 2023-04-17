@@ -6609,7 +6609,7 @@
             "Form"
         ],
         "screenShot": "",
-        "blocks": "[{\"title\":\"基本用法\",\"description\":\"\",\"code\":\"<template>\\n<van-checkbox-group direction=\\\"horizontal\\\" converter=\\\"\\\">\\n  <template #item=\\\"current\\\">\\n    <van-checkbox\\n      shape=\\\"square\\\"\\n      vusion-disabled-cut\\n      vusion-disabled-copy\\n    ></van-checkbox>\\n  </template>\\n</van-checkbox-group>\\n</template>\\n\"}]",
+        "blocks": "[{\"title\":\"基本用法\",\"description\":\"\",\"code\":\"<template>\\n<van-checkbox-group direction=\\\"horizontal\\\" converter=\\\"none\\\">\\n  <template #item=\\\"current\\\">\\n    <van-checkbox\\n      shape=\\\"square\\\"\\n      vusion-disabled-cut\\n      vusion-disabled-copy\\n    ></van-checkbox>\\n  </template>\\n</van-checkbox-group>\\n</template>\\n\"}]",
         "jsonSchema": {
             "name": "van-checkbox-group",
             "title": "多选组",
@@ -6621,7 +6621,7 @@
                 {
                     "title": "基本用法",
                     "description": "",
-                    "code": "<template>\n<van-checkbox-group direction=\"horizontal\" converter=\"\">\n  <template #item=\"current\">\n    <van-checkbox\n      shape=\"square\"\n      vusion-disabled-cut\n      vusion-disabled-copy\n    ></van-checkbox>\n  </template>\n</van-checkbox-group>\n</template>\n"
+                    "code": "<template>\n<van-checkbox-group direction=\"horizontal\" converter=\"none\">\n  <template #item=\"current\">\n    <van-checkbox\n      shape=\"square\"\n      vusion-disabled-cut\n      vusion-disabled-copy\n    ></van-checkbox>\n  </template>\n</van-checkbox-group>\n</template>\n"
                 }
             ],
             "attrs": [
@@ -6706,11 +6706,11 @@
                             "title": "json"
                         },
                         {
-                            "value": "",
+                            "value": "none",
                             "title": "无"
                         }
                     ],
-                    "default": "",
+                    "default": "none",
                     "description": "将选中的值以选择的符号作为连接符，转为字符串格式；选择“json”则转为JSON字符串格式",
                     "bindHide": true
                 }

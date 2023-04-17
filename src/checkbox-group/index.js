@@ -25,7 +25,7 @@ export default createComponent({
       default: () => [],
     },
     converter: {
-      type: [String, Object],
+      type: String,
       default: 'json',
     },
   },
