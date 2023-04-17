@@ -19,6 +19,23 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 
 ## Details
 
+### [v4.2.0](https://github.com/vant-ui/vant/compare/v4.1.2...v4.2.0)
+
+`2023-04-16`
+
+**New Component**
+
+- add new Watermark component, contributed by [@HuberTRoy](https://github.com/HuberTRoy) [#11721](https://github.com/vant-ui/vant/issues/11721)
+
+**Feature**
+
+- ShareSheet: allow custom icon [#11709](https://github.com/vant-ui/vant/issues/11709)
+- TextEllipsis: add dots prop [#11745](https://github.com/vant-ui/vant/issues/11745)
+
+**Bug Fixes**
+
+- Swipe: should resize after props.width and props.height changed [#11747](https://github.com/vant-ui/vant/issues/11747)
+
 ### [v4.1.2](https://github.com/vant-ui/vant/compare/v4.1.1...v4.1.2)
 
 `2023-03-26`
@@ -54,7 +71,7 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 
 **New Component**
 
-- add new TextEllipsis component [#11593](https://github.com/vant-ui/vant/issues/11593)
+- add new TextEllipsis component, contributed by [@wjw-gavin](https://github.com/wjw-gavin) [#11593](https://github.com/vant-ui/vant/issues/11593)
 
 **Feature**
 

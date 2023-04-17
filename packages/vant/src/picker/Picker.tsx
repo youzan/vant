@@ -83,7 +83,14 @@ export default defineComponent({
 
   props: pickerProps,
 
-  emits: ['confirm', 'cancel', 'change', 'clickOption', 'update:modelValue'],
+  emits: [
+    'confirm',
+    'cancel',
+    'change',
+    'scrollInto',
+    'clickOption',
+    'update:modelValue',
+  ],
 
   setup(props, { emit, slots }) {
     const columnsRef = ref<HTMLElement>();
@@ -165,11 +172,14 @@ export default defineComponent({
       });
     };
 
-    const onClickOption = (currentOption: PickerOption, columnIndex: number) =>
-      emit(
-        'clickOption',
-        extend({ columnIndex, currentOption }, getEventParams())
-      );
+    const onClickOption = (
+      currentOption: PickerOption,
+      columnIndex: number
+    ) => {
+      const params = { columnIndex, currentOption };
+      emit('clickOption', extend(getEventParams(), params));
+      emit('scrollInto', params);
+    };
 
     const confirm = () => {
       children.forEach((child) => child.stopMomentum());
@@ -202,6 +212,12 @@ export default defineComponent({
           onClickOption={(option: PickerOption) =>
             onClickOption(option, columnIndex)
           }
+          onScrollInto={(option: PickerOption) => {
+            emit('scrollInto', {
+              currentOption: option,
+              columnIndex,
+            });
+          }}
         />
       ));
 

@@ -143,6 +143,38 @@ test('should emit click-option event after clicking an option', async () => {
   ]);
 });
 
+test('should emit scroll-into event after draging the column', async () => {
+  const wrapper = mount(Picker, {
+    props: {
+      columns: simpleColumn,
+    },
+  });
+
+  triggerDrag(wrapper.find('.van-picker-column'), 0, -100);
+  await wrapper.find('.van-picker-column ul').trigger('transitionend');
+
+  expect(wrapper.emitted('scrollInto')).toEqual([
+    [{ columnIndex: 0, currentOption: { text: '1992', value: '1992' } }],
+  ]);
+});
+
+test('should emit scroll-into event after clicking an option', async () => {
+  const wrapper = mount(Picker, {
+    props: {
+      showToolbar: true,
+      columns: simpleColumn,
+    },
+  });
+
+  await wrapper.find('.van-picker-column__item').trigger('click');
+  expect(wrapper.emitted('scrollInto')![0]).toEqual([
+    {
+      columnIndex: 0,
+      currentOption: { text: '1990', value: '1990' },
+    },
+  ]);
+});
+
 test('should render bottom toolbar when toolbar-position is bottom', () => {
   const wrapper = mount(Picker, {
     props: {
