@@ -3,7 +3,7 @@ export const Converter = {
     converter: { type: [String, Object], default: undefined },
   },
   data() {
-    let currentConverter = {};
+    let currentConverter;
     let types = [];
     if (this.converter) {
       if (this.converter instanceof Object) currentConverter = this.converter;

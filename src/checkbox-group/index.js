@@ -40,14 +40,15 @@ export default createComponent({
       // 暴露出去的值
       this.$emit(
         'change',
-        this.converter ? this.currentConverter.get(val) : val
+        this.converter !== 'none' ? this.currentConverter.get(val) : val
       );
 
-      this.currentValue = this.converter ? this.currentConverter.set(val) : val;
+      this.currentValue =
+        this.converter !== 'none' ? this.currentConverter.set(val) : val;
     },
     currentValue(val) {
       let temp = val;
-      if (this.converter) {
+      if (this.converter !== 'none') {
         temp = this.currentConverter.get(val);
       }
 
@@ -67,9 +68,10 @@ export default createComponent({
   },
 
   mounted() {
-    this.currentValue = this.converter
-      ? this.currentConverter.set(this.value)
-      : this.value || [];
+    this.currentValue =
+      this.converter !== 'none'
+        ? this.currentConverter.set(this.value)
+        : this.value || [];
   },
 
   methods: {
