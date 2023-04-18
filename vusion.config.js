@@ -69,6 +69,7 @@ module.exports = {
       { group: 'Display', show: true, name: 'tag', alias: '标签' },
       { group: 'Display', show: true, name: 'circle', alias: '环形进度条' },
       { group: 'Display', show: true, name: 'progress', alias: '进度条' },
+      { group: 'Effects', show: true, name: 'copy', alias: '复制' },
       {
         group: 'Data',
         show: true,
