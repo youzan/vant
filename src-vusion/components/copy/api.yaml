@@ -1,0 +1,101 @@
+- name: van-copy
+  title: 复制
+  icon: copy
+  description: 复制文本到剪切板
+  labels:
+    - Effects
+  attrs:
+    - name: value
+      title: 需要复制的值
+      type: string
+      description: 需要复制的值
+    - name: text
+      title: 默认显示文本
+      type: string
+      default: 复制
+      description: 默认显示的文本
+      advanced: true
+    - name: success-text
+      title: 复制成功提示文本
+      type: string
+      default: 已复制
+      description: 复制成功提示文本
+      advanced: true
+    - name: feedback
+      title: 复制提示反馈方式
+      type: string
+      options:
+        - value: tooltip
+          title: 工具提示
+        - value: toast
+          title: 弹框提示
+        - value: none
+          title: 无反馈
+      default: tooltip
+      description: 复制提示反馈方式
+      advanced: true
+    - name: placement
+      title: 提示框位置
+      type: string
+      options:
+        - value: top
+          title: 上
+        - value: bottom
+          title: 下
+        - value: left
+          title: 左
+        - value: right
+          title: 右
+        - value: top-start
+          title: 上左
+        - value: top-end
+          title: 上右
+        - value: bottom-start
+          title: 下左
+        - value: bottom-end
+          title: 下右
+        - value: left-start
+          title: 左上
+        - value: left-end
+          title: 左下
+        - value: right-start
+          title: 右上
+        - value: right-end
+          title: 右下
+      default: top
+      description: tooltip 提示框位置
+      advanced: true
+    - name: hide-delay
+      title: 提示框显示时长
+      type: number
+      default: 3000
+      description: 提示框显示时长
+      advanced: true
+    - name: disabled
+      title: 禁用
+      type: boolean
+      default: false
+      description: 禁止复制
+  slots:
+    - concept: Slot
+      name: default
+      description: 修改默认触发元素
+  events:
+    - name: copy
+      description: 内容复制成功后触发
+      title: 复制成功后
+      params:
+        - name: $event
+          type: object
+          title: 自定义事件对象
+          description: 自定义事件对象
+          schema:
+            $ref: "#/systemTypes/ChangeEvent"
+        - name: $event.value
+          type: string
+          description: 复制的值
+          title: 复制的值
+        - name: senderVM
+          type: UCopy
+          title: 事件发送对象
+          description: 事件发送对象
