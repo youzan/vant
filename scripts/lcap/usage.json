@@ -6088,9 +6088,7 @@
                     "description": "设置完成按钮大小",
                     "dependency": [
                         {
-                            "keytheme": "custom"
-                        },
-                        {
+                            "keytheme": "custom",
                             "keyboard-theme": "custom"
                         }
                     ]
