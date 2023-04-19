@@ -129,7 +129,7 @@
       description: 设置完成按钮大小
       dependency:
         - keytheme: custom
-        - keyboard-theme: custom
+          keyboard-theme: custom
     - name: prefix
       title: 前缀图标
       type: string
