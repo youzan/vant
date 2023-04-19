@@ -28,6 +28,10 @@ export default createComponent({
     closeButtonText: String,
     deleteButtonText: String,
     closeButtonLoading: Boolean,
+    confirmSize: {
+      type: String,
+      default: 'default',
+    },
     theme: {
       type: String,
       default: 'default',
@@ -77,6 +81,12 @@ export default createComponent({
       }
       return this.genDefaultKeys();
     },
+    large() {
+      return this.confirmSize === 'default';
+    },
+    huge() {
+      return this.confirmSize === 'large';
+    }
   },
 
   methods: {
@@ -132,6 +142,7 @@ export default createComponent({
 
     onClose() {
       this.$emit('close');
+      this.$emit('handleConfirm');
       this.onBlur();
     },
 
@@ -205,7 +216,7 @@ export default createComponent({
           <div class={bem('sidebar')}>
             {this.showDeleteKey && (
               <Key
-                large
+                large={this.large}
                 text={this.deleteButtonText}
                 type="delete"
                 onPress={this.onPress}
@@ -214,7 +225,8 @@ export default createComponent({
               </Key>
             )}
             <Key
-              large
+              large={this.large}
+              huge={this.huge}
               text={this.closeButtonText}
               type="close"
               color="blue"

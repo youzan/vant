@@ -110,6 +110,26 @@
       description: 定制键盘布局
       dependency:
         - keytheme: custom
+    - name: confirmText
+      title: 完成按钮内容
+      type: string
+      default: 完成
+      description: 设置完成按钮文字内容
+      dependency:
+        - keytheme: custom
+    - name : confirmSize
+      title: 完成按钮尺寸
+      type: string
+      options:
+        - value: default
+          title: 默认
+        - value: large
+          title: 大号
+      default: default
+      description: 设置完成按钮大小
+      dependency:
+        - keytheme: custom
+        - keyboard-theme: custom
     - name: prefix
       title: 前缀图标
       type: string

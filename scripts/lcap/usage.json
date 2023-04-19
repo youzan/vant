@@ -2766,7 +2766,7 @@
             "Display"
         ],
         "screenShot": "https://static-vusion.163yun.com/packages/@lcap/mobile-ui@0.12.28/src/image/screenshots/0.png,https://static-vusion.163yun.com/packages/@lcap/mobile-ui@0.12.28/src/image/screenshots/1.png,https://static-vusion.163yun.com/packages/@lcap/mobile-ui@0.12.28/src/image/screenshots/2.png,https://static-vusion.163yun.com/packages/@lcap/mobile-ui@0.12.28/src/image/screenshots/3.png,https://static-vusion.163yun.com/packages/@lcap/mobile-ui@0.12.28/src/image/screenshots/4.png",
-        "blocks": "[{\"title\":\"适应\",\"description\":\"\",\"code\":\"<template>\\n<van-image\\n  src=\\\"http://ceph.lcap.hatest.163yun.com/lcap-test-static/icon/1.png\\\"\\n  fit=\\\"contain\\\"\\n  preview\\n></van-image>\\n</template>\\n\"},{\"title\":\"适应（图片小于父元素时以原尺寸展示）\",\"description\":\"\",\"code\":\"<template>\\n<van-image\\n  src=\\\"http://ceph.lcap.hatest.163yun.com/lcap-test-static/icon/1.png\\\"\\n  fit=\\\"scale-down\\\"\\n  preview\\n></van-image>\\n</template>\\n\"},{\"title\":\"原尺寸\",\"description\":\"\",\"code\":\"<template>\\n<van-image\\n  src=\\\"http://ceph.lcap.hatest.163yun.com/lcap-test-static/icon/1.png\\\"\\n  fit=\\\"none\\\"\\n  preview\\n></van-image>\\n</template>\\n\"},{\"title\":\"拉伸\",\"description\":\"\",\"code\":\"<template>\\n<van-image\\n  src=\\\"http://ceph.lcap.hatest.163yun.com/lcap-test-static/icon/1.png\\\"\\n  fit=\\\"fill\\\"\\n  preview\\n></van-image>\\n</template>\\n\"},{\"title\":\"填充\",\"description\":\"\",\"code\":\"<template>\\n<van-image\\n  src=\\\"http://ceph.lcap.hatest.163yun.com/lcap-test-static/icon/1.png\\\"\\n  fit=\\\"cover\\\"\\n  preview\\n></van-image>\\n</template>\\n\"}]",
+        "blocks": "[{\"title\":\"适应\",\"description\":\"\",\"code\":\"<template>\\n<van-image\\n  src=\\\"http://ceph.lcap.hatest.163yun.com/lcap-test-static/h5-template/components/image_default.png\\\"\\n  fit=\\\"contain\\\"\\n  preview\\n></van-image>\\n</template>\\n\"},{\"title\":\"适应（图片小于父元素时以原尺寸展示）\",\"description\":\"\",\"code\":\"<template>\\n<van-image\\n  src=\\\"http://ceph.lcap.hatest.163yun.com/lcap-test-static/h5-template/components/image_default.png\\\"\\n  fit=\\\"scale-down\\\"\\n  preview\\n></van-image>\\n</template>\\n\"},{\"title\":\"原尺寸\",\"description\":\"\",\"code\":\"<template>\\n<van-image\\n  src=\\\"http://ceph.lcap.hatest.163yun.com/lcap-test-static/h5-template/components/image_default.png\\\"\\n  fit=\\\"none\\\"\\n  preview\\n></van-image>\\n</template>\\n\"},{\"title\":\"拉伸\",\"description\":\"\",\"code\":\"<template>\\n<van-image\\n  src=\\\"http://ceph.lcap.hatest.163yun.com/lcap-test-static/h5-template/components/image_default.png\\\"\\n  fit=\\\"fill\\\"\\n  preview\\n></van-image>\\n</template>\\n\"},{\"title\":\"填充\",\"description\":\"\",\"code\":\"<template>\\n<van-image\\n  src=\\\"http://ceph.lcap.hatest.163yun.com/lcap-test-static/h5-template/components/image_default.png\\\"\\n  fit=\\\"cover\\\"\\n  preview\\n></van-image>\\n</template>\\n\"}]",
         "jsonSchema": {
             "name": "van-image",
             "title": "图片展示",
@@ -2778,27 +2778,27 @@
                 {
                     "title": "适应",
                     "description": "",
-                    "code": "<template>\n<van-image\n  src=\"http://ceph.lcap.hatest.163yun.com/lcap-test-static/icon/1.png\"\n  fit=\"contain\"\n  preview\n></van-image>\n</template>\n"
+                    "code": "<template>\n<van-image\n  src=\"http://ceph.lcap.hatest.163yun.com/lcap-test-static/h5-template/components/image_default.png\"\n  fit=\"contain\"\n  preview\n></van-image>\n</template>\n"
                 },
                 {
                     "title": "适应（图片小于父元素时以原尺寸展示）",
                     "description": "",
-                    "code": "<template>\n<van-image\n  src=\"http://ceph.lcap.hatest.163yun.com/lcap-test-static/icon/1.png\"\n  fit=\"scale-down\"\n  preview\n></van-image>\n</template>\n"
+                    "code": "<template>\n<van-image\n  src=\"http://ceph.lcap.hatest.163yun.com/lcap-test-static/h5-template/components/image_default.png\"\n  fit=\"scale-down\"\n  preview\n></van-image>\n</template>\n"
                 },
                 {
                     "title": "原尺寸",
                     "description": "",
-                    "code": "<template>\n<van-image\n  src=\"http://ceph.lcap.hatest.163yun.com/lcap-test-static/icon/1.png\"\n  fit=\"none\"\n  preview\n></van-image>\n</template>\n"
+                    "code": "<template>\n<van-image\n  src=\"http://ceph.lcap.hatest.163yun.com/lcap-test-static/h5-template/components/image_default.png\"\n  fit=\"none\"\n  preview\n></van-image>\n</template>\n"
                 },
                 {
                     "title": "拉伸",
                     "description": "",
-                    "code": "<template>\n<van-image\n  src=\"http://ceph.lcap.hatest.163yun.com/lcap-test-static/icon/1.png\"\n  fit=\"fill\"\n  preview\n></van-image>\n</template>\n"
+                    "code": "<template>\n<van-image\n  src=\"http://ceph.lcap.hatest.163yun.com/lcap-test-static/h5-template/components/image_default.png\"\n  fit=\"fill\"\n  preview\n></van-image>\n</template>\n"
                 },
                 {
                     "title": "填充",
                     "description": "",
-                    "code": "<template>\n<van-image\n  src=\"http://ceph.lcap.hatest.163yun.com/lcap-test-static/icon/1.png\"\n  fit=\"cover\"\n  preview\n></van-image>\n</template>\n"
+                    "code": "<template>\n<van-image\n  src=\"http://ceph.lcap.hatest.163yun.com/lcap-test-static/h5-template/components/image_default.png\"\n  fit=\"cover\"\n  preview\n></van-image>\n</template>\n"
                 }
             ],
             "attrs": [
@@ -6055,6 +6055,43 @@
                     "dependency": [
                         {
                             "keytheme": "custom"
+                        }
+                    ]
+                },
+                {
+                    "name": "confirmText",
+                    "title": "完成按钮内容",
+                    "type": "string",
+                    "default": "完成",
+                    "description": "设置完成按钮文字内容",
+                    "dependency": [
+                        {
+                            "keytheme": "custom"
+                        }
+                    ]
+                },
+                {
+                    "name": "confirmSize",
+                    "title": "完成按钮尺寸",
+                    "type": "string",
+                    "options": [
+                        {
+                            "value": "default",
+                            "title": "默认"
+                        },
+                        {
+                            "value": "large",
+                            "title": "大号"
+                        }
+                    ],
+                    "default": "default",
+                    "description": "设置完成按钮大小",
+                    "dependency": [
+                        {
+                            "keytheme": "custom"
+                        },
+                        {
+                            "keyboard-theme": "custom"
                         }
                     ]
                 },
