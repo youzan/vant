@@ -2,7 +2,7 @@
 
 ```html
 <van-image
-  src="http://ceph.lcap.hatest.163yun.com/lcap-test-static/icon/1.png"
+  src="http://ceph.lcap.hatest.163yun.com/lcap-test-static/h5-template/components/image_default.png"
   fit="contain"
   preview
 ></van-image>
@@ -12,7 +12,7 @@
 
 ```html
 <van-image
-  src="http://ceph.lcap.hatest.163yun.com/lcap-test-static/icon/1.png"
+  src="http://ceph.lcap.hatest.163yun.com/lcap-test-static/h5-template/components/image_default.png"
   fit="scale-down"
   preview
 ></van-image>
@@ -22,7 +22,7 @@
 
 ```html
 <van-image
-  src="http://ceph.lcap.hatest.163yun.com/lcap-test-static/icon/1.png"
+  src="http://ceph.lcap.hatest.163yun.com/lcap-test-static/h5-template/components/image_default.png"
   fit="none"
   preview
 ></van-image>
@@ -32,7 +32,7 @@
 
 ```html
 <van-image
-  src="http://ceph.lcap.hatest.163yun.com/lcap-test-static/icon/1.png"
+  src="http://ceph.lcap.hatest.163yun.com/lcap-test-static/h5-template/components/image_default.png"
   fit="fill"
   preview
 ></van-image>
@@ -42,7 +42,7 @@
 
 ```html
 <van-image
-  src="http://ceph.lcap.hatest.163yun.com/lcap-test-static/icon/1.png"
+  src="http://ceph.lcap.hatest.163yun.com/lcap-test-static/h5-template/components/image_default.png"
   fit="cover"
   preview
 ></van-image>
