@@ -18,6 +18,9 @@
     <van-cell is-link @touchstart.native.stop="keyboard = 'randomKeyOrder'">
       {{ t('button6') }}
     </van-cell>
+    <van-cell is-link @touchstart.native.stop="keyboard = 'largeConfirmSize'">
+      {{ t('button7') }}
+    </van-cell>
 
     <van-field
       readonly
@@ -84,6 +87,17 @@
     />
 
     <van-number-keyboard
+      :show="keyboard === 'largeConfirmSize'"
+      :close-button-text="t('close')"
+      confirmSize="large"
+      theme="custom"
+      extra-key="."
+      @blur="keyboard = ''"
+      @input="onInput"
+      @delete="onDelete"
+    />
+
+    <van-number-keyboard
       v-model="value"
       :show="keyboard === 'bindValue'"
       maxlength="6"
@@ -105,6 +119,7 @@ export default {
       button4: '弹出带标题的键盘',
       button5: '弹出配置多个按键的键盘',
       button6: '弹出配置随机数字的键盘',
+      button7: '弹出带右侧栏的键盘, 按钮尺寸为大号',
       extraKey: '左下角按键内容',
       bindValue: '双向绑定',
       clickToInput: '点此输入',
@@ -121,6 +136,7 @@ export default {
       button4: 'Show Keyboard With Title',
       button5: 'Show Keyboard With Multiple ExtraKey',
       button6: 'Show Keyboard With Random Key Order',
+      button7: 'Show Keyboard With Sidebar, Large Size',
       bindValue: 'Bind Value',
       clickToInput: 'Click To Input',
       extraKey: 'IdNumber Keyboard',

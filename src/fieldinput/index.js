@@ -61,6 +61,14 @@ export default createComponent({
       type: String,
       default: 'input',
     },
+    confirmText: {
+      type: String,
+      default: '完成',
+    },
+    confirmSize: {
+      type: String,
+      default: 'default',
+    },
   },
   data() {
     const defaultValue = this.value ?? this.defaultValue;
@@ -197,7 +205,10 @@ export default createComponent({
     },
     closeNumber() {
       this.shownumber = false;
-    }
+    },
+    handleConfirm() {
+      this.$emit('enoughkey', this.currentValue);
+    },
   },
   watch: {
     // value: {
@@ -287,7 +298,8 @@ export default createComponent({
           <NumberKeyboard
             vusionnp={this.$attrs['vusion-node-path']}
             vModel={this.currentValue}
-            closeButtonText={'完成'}
+            closeButtonText={this.confirmText}
+            confirmSize={this.confirmSize}
             show={this.shownumber}
             title={this.keyboardTitle}
             randomKeyOrder={this.type === 'rndinteger'}
@@ -298,6 +310,7 @@ export default createComponent({
             zIndex="9999"
             hideOnClickOutside={!this.inDesigner()}
             onBlur={this.closeNumber}
+            onHandleConfirm={this.handleConfirm}
           />
         ) : null}
       </div>
