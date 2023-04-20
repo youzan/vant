@@ -1,0 +1,67 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should auto play when only list props 1`] = `
+<div class="van-barrage">
+  <span class="van-barrage__item"
+        style="animation-duration: 4000ms; animation-delay: 0ms; animation-name: barrage; animation-timing-function: linear; top: 10px;"
+  >
+  </span>
+  <span class="van-barrage__item"
+        style="animation-duration: 4000ms; animation-delay: 500ms; animation-name: barrage; animation-timing-function: linear; top: 110px;"
+  >
+  </span>
+  <span class="van-barrage__item"
+        style="animation-duration: 4000ms; animation-delay: 1000ms; animation-name: barrage; animation-timing-function: linear; top: 210px;"
+  >
+  </span>
+  <span class="van-barrage__item"
+        style="animation-duration: 4000ms; animation-delay: 1500ms; animation-name: barrage; animation-timing-function: linear; top: 310px;"
+  >
+  </span>
+  <span class="van-barrage__item"
+        style="animation-duration: 4000ms; animation-delay: 2000ms; animation-name: barrage; animation-timing-function: linear; top: 10px;"
+  >
+  </span>
+  <span class="van-barrage__item"
+        style="animation-duration: 4000ms; animation-delay: 2500ms; animation-name: barrage; animation-timing-function: linear; top: 110px;"
+  >
+  </span>
+  <span class="van-barrage__item"
+        style="animation-duration: 4000ms; animation-delay: 3000ms; animation-name: barrage; animation-timing-function: linear; top: 210px;"
+  >
+  </span>
+</div>
+`;
+
+exports[`should not auto play use play function when use play function 1`] = `
+<div class="van-barrage">
+  <span class="van-barrage__item"
+        style="animation-duration: 4000ms; animation-delay: 0ms; animation-name: barrage; animation-timing-function: linear; animation-play-state: paused; top: 10px;"
+  >
+  </span>
+  <span class="van-barrage__item"
+        style="animation-duration: 4000ms; animation-delay: 500ms; animation-name: barrage; animation-timing-function: linear; animation-play-state: paused; top: 110px;"
+  >
+  </span>
+  <span class="van-barrage__item"
+        style="animation-duration: 4000ms; animation-delay: 1000ms; animation-name: barrage; animation-timing-function: linear; animation-play-state: paused; top: 210px;"
+  >
+  </span>
+  <span class="van-barrage__item"
+        style="animation-duration: 4000ms; animation-delay: 1500ms; animation-name: barrage; animation-timing-function: linear; animation-play-state: paused; top: 310px;"
+  >
+  </span>
+  <span class="van-barrage__item"
+        style="animation-duration: 4000ms; animation-delay: 2000ms; animation-name: barrage; animation-timing-function: linear; animation-play-state: paused; top: 10px;"
+  >
+  </span>
+  <span class="van-barrage__item"
+        style="animation-duration: 4000ms; animation-delay: 2500ms; animation-name: barrage; animation-timing-function: linear; animation-play-state: paused; top: 110px;"
+  >
+  </span>
+  <span class="van-barrage__item"
+        style="animation-duration: 4000ms; animation-delay: 3000ms; animation-name: barrage; animation-timing-function: linear; animation-play-state: paused; top: 210px;"
+  >
+  </span>
+</div>
+`;

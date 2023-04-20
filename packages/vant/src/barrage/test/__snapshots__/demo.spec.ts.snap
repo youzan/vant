@@ -1,0 +1,112 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render demo and match snapshot 1`] = `
+<div>
+  <div class="van-barrage">
+    <span class="van-barrage__item"
+          style="animation-duration: 4000ms; animation-delay: 0ms; animation-name: barrage; animation-timing-function: linear; top: 10px;"
+    >
+    </span>
+    <span class="van-barrage__item"
+          style="animation-duration: 4000ms; animation-delay: 500ms; animation-name: barrage; animation-timing-function: linear; top: 110px;"
+    >
+    </span>
+    <span class="van-barrage__item"
+          style="animation-duration: 4000ms; animation-delay: 1000ms; animation-name: barrage; animation-timing-function: linear; top: 210px;"
+    >
+    </span>
+    <span class="van-barrage__item"
+          style="animation-duration: 4000ms; animation-delay: 1500ms; animation-name: barrage; animation-timing-function: linear; top: 310px;"
+    >
+    </span>
+    <span class="van-barrage__item"
+          style="animation-duration: 4000ms; animation-delay: 2000ms; animation-name: barrage; animation-timing-function: linear; top: 10px;"
+    >
+    </span>
+    <span class="van-barrage__item"
+          style="animation-duration: 4000ms; animation-delay: 2500ms; animation-name: barrage; animation-timing-function: linear; top: 110px;"
+    >
+    </span>
+    <span class="van-barrage__item"
+          style="animation-duration: 4000ms; animation-delay: 3000ms; animation-name: barrage; animation-timing-function: linear; top: 210px;"
+    >
+    </span>
+  </div>
+  <div class="van-space van-space--horizontal van-space--align-center"
+       style="margin-top: 10px;"
+  >
+    <div class="van-space-item">
+      <button type="button"
+              class="van-button van-button--primary van-button--small"
+      >
+        <div class="van-button__content">
+          <span class="van-button__text">
+            barrage
+          </span>
+        </div>
+      </button>
+    </div>
+  </div>
+</div>
+<div>
+  <div class="van-barrage">
+    <span class="van-barrage__item"
+          style="animation-duration: 4000ms; animation-delay: 0ms; animation-name: barrage; animation-timing-function: linear; animation-play-state: paused; top: 10px;"
+    >
+    </span>
+    <span class="van-barrage__item"
+          style="animation-duration: 4000ms; animation-delay: 500ms; animation-name: barrage; animation-timing-function: linear; animation-play-state: paused; top: 110px;"
+    >
+    </span>
+    <span class="van-barrage__item"
+          style="animation-duration: 4000ms; animation-delay: 1000ms; animation-name: barrage; animation-timing-function: linear; animation-play-state: paused; top: 210px;"
+    >
+    </span>
+    <span class="van-barrage__item"
+          style="animation-duration: 4000ms; animation-delay: 1500ms; animation-name: barrage; animation-timing-function: linear; animation-play-state: paused; top: 310px;"
+    >
+    </span>
+    <span class="van-barrage__item"
+          style="animation-duration: 4000ms; animation-delay: 2000ms; animation-name: barrage; animation-timing-function: linear; animation-play-state: paused; top: 10px;"
+    >
+    </span>
+    <span class="van-barrage__item"
+          style="animation-duration: 4000ms; animation-delay: 2500ms; animation-name: barrage; animation-timing-function: linear; animation-play-state: paused; top: 110px;"
+    >
+    </span>
+    <span class="van-barrage__item"
+          style="animation-duration: 4000ms; animation-delay: 3000ms; animation-name: barrage; animation-timing-function: linear; animation-play-state: paused; top: 210px;"
+    >
+    </span>
+  </div>
+  <div class="van-space van-space--horizontal van-space--align-center"
+       style="margin-top: 10px;"
+  >
+    <div class="van-space-item"
+         style="margin-right: 8px;"
+    >
+      <button type="button"
+              class="van-button van-button--primary van-button--small van-button--disabled"
+              disabled
+      >
+        <div class="van-button__content">
+          <span class="van-button__text">
+            barrage
+          </span>
+        </div>
+      </button>
+    </div>
+    <div class="van-space-item">
+      <button type="button"
+              class="van-button van-button--default van-button--small"
+      >
+        <div class="van-button__content">
+          <span class="van-button__text">
+            play
+          </span>
+        </div>
+      </button>
+    </div>
+  </div>
+</div>
+`;

@@ -1,0 +1,41 @@
+:root {
+  --van-barrage-font-size: 16px;
+  --van-barrage-space: 10px;
+  --van-barrage-font: -apple-system-font, helvetica neue, arial, sans-serif;
+  --van-barrage-color: var(--van-white);
+}
+
+.van-barrage {
+  min-height: 150px;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  &__item {
+    position: absolute;
+    top: 0;
+    left: 100%;
+    z-index: 99;
+    opacity: 0.75;
+    font-size: var(--van-barrage-font-size);
+    padding-bottom: var(--van-barrage-space);
+    line-height: 1;
+    color: var(--van-barrage-color);
+    font-family: var(--van-barrage-font);
+    font-weight: bold;
+    text-shadow: var(--van-gray-8) 1px 1px 2px;
+    white-space: nowrap;
+    transform: none;
+    user-select: none;
+  }
+}
+
+@keyframes barrage {
+  from {
+    left: 100%;
+    transform: none;
+  }
+  to {
+    left: 0;
+    transform: translateX(-100%);
+  }
+}

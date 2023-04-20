@@ -411,6 +411,10 @@ location.href = location.href.replace('youzan.github.io', 'vant-ui.github.io');
                 title: 'Area 省市区选择',
               },
               {
+                path: 'barrage',
+                title: 'Barrage 弹幕',
+              },
+              {
                 path: 'card',
                 title: 'Card 商品卡片',
               },
@@ -853,6 +857,10 @@ location.href = location.href.replace('youzan.github.io', 'vant-ui.github.io');
               {
                 path: 'area',
                 title: 'Area',
+              },
+              {
+                path: 'barrage',
+                title: 'Barrage',
               },
               {
                 path: 'card',
