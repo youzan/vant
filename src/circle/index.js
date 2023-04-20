@@ -139,7 +139,7 @@ export default createComponent({
 
         if (this.speed) {
           cancelRaf(this.rafId);
-          this.rafId = raf(this.animate);
+          // this.rafId = raf(this.animate);
         } else {
           this.$emit('update:value',this.endRate);
           this.$emit('input', this.endRate);
