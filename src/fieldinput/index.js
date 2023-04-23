@@ -207,7 +207,7 @@ export default createComponent({
       this.shownumber = false;
     },
     handleConfirm() {
-      this.$emit('enoughkey', this.currentValue);
+      this.$emit('clickConfirm', this.currentValue);
     },
   },
   watch: {

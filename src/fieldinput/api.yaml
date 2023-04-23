@@ -178,6 +178,10 @@
       title: 输入完成时
       description: 输入完成时后触发。
       params: []
+    - name: clickConfirm
+      title: 点击完成按钮时
+      description: 点击完成按钮时触发。
+      params: []
   methods:
     - name: focus
       description: 让输入框获取焦点。
