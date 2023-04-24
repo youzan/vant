@@ -8364,6 +8364,7 @@
                     "name": "converter",
                     "title": "转换器",
                     "type": "string",
+                    "description": "转换绑定的值类型",
                     "options": [
                         {
                             "title": "yyyy/MM/dd HH:mm:ss",
@@ -8391,6 +8392,10 @@
                         {
                             "name": "type",
                             "value": "date"
+                        },
+                        {
+                            "name": "type",
+                            "value": "year-month"
                         }
                     ]
                 },
@@ -8442,6 +8447,12 @@
                     "type": "string, number",
                     "default": 0,
                     "description": "当时间选择器类型为 time 时"
+                },
+                {
+                    "name": "displayFormat",
+                    "title": "自定义展示格式",
+                    "type": "string",
+                    "description": "只用于页面上展示的格式，例如：yyyy年MM月dd日"
                 },
                 {
                     "name": "title",

@@ -33,24 +33,24 @@ export function getMonthEndDay(year: number, month: number): number {
 
 // @ts-ignore
 Date.prototype.formath = function(fmt) {
-  var o = {
+  const o = {
       "M+": this.getMonth() + 1,
-      //月份
+      // 月份
       "d+": this.getDate(),
-      //日
+      // 日
       "h+": this.getHours() % 12 == 0 ? 12 : this.getHours() % 12,
-      //小时
+      // 小时
       "H+": this.getHours(),
-      //小时
+      // 小时
       "m+": this.getMinutes(),
-      //分
+      // 分
       "s+": this.getSeconds(),
-      //秒
+      // 秒
       "q+": Math.floor((this.getMonth() + 3) / 3),
-      //季度
-      "S": this.getMilliseconds() //毫秒
+      // 季度
+      "S": this.getMilliseconds() // 毫秒
   };
-  var week = {
+  const week = {
       "0": "\u65e5",
       "1": "\u4e00",
       "2": "\u4e8c",
@@ -66,7 +66,7 @@ Date.prototype.formath = function(fmt) {
     // @ts-ignore
       fmt = fmt.replace(RegExp.$1, ((RegExp.$1.length > 1) ? (RegExp.$1.length > 2 ? "\u661f\u671f": "\u5468") : "") + week[this.getDay() + ""]);
   }
-  for (var k in o) {
+  for (const k in o) {
       if (new RegExp("(" + k + ")").test(fmt)) {
         // @ts-ignore
           fmt = fmt.replace(RegExp.$1, (RegExp.$1.length == 1) ? (o[k]) : (("00" + o[k]).substr(("" + o[k]).length)));
@@ -113,5 +113,28 @@ export function formatFu(date: string | number | Date, type: string, gmt: boolea
   if (type === 'year-month') {
     // @ts-ignore
     return tmpDate.formath("yyyy/MM")
+  }
+}
+
+
+export function displayFormat(date: string | number | Date, type: string, customFormat?: string) {
+  const tempDate = date;
+  // @ts-ignore
+  const tmpDate = isDate(tempDate) ? tempDate : (tempDate ? new Date(tempDate) : new Date());
+  if (type === 'datetime') {
+    // @ts-ignore
+    return tmpDate.formath(customFormat || "yyyy/MM/dd HH:mm:ss")
+  }
+  if (type === 'date') {
+    // @ts-ignore
+    return tmpDate.formath(customFormat || "yyyy/MM/dd")
+  }
+  if (type === 'year-month') {
+    // @ts-ignore
+    return tmpDate.formath(customFormat || "yyyy/MM")
+  }
+  if (type === 'time') {
+    // @ts-ignore
+    return tempDate
   }
 }
