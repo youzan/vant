@@ -209,6 +209,10 @@ export default createComponent({
     handleConfirm() {
       this.$emit('clickConfirm', this.currentValue);
     },
+    onNumberKeyboardInput(value) {
+      this.currentValue = value;
+      this.$emit('input', value);
+    },
   },
   watch: {
     // value: {
@@ -310,6 +314,7 @@ export default createComponent({
             zIndex="9999"
             hideOnClickOutside={!this.inDesigner()}
             onBlur={this.closeNumber}
+            onInput={this.onNumberKeyboardInput}
             onHandleConfirm={this.handleConfirm}
           />
         ) : null}
