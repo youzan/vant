@@ -107,6 +107,8 @@
           title: 滚动加载更多
         - value: load-more
           title: 点击加载更多
+        - value: pagination
+          title: 翻页器
       description: 是否需要分页
     - name: page-size
       title: 分页大小
@@ -223,6 +225,12 @@
           - concept: TypeAnnotation
             typeKind: typeParam
             typeName: T
+    - concept: Slot
+      name: prev
+      description: 自定义上一页
+    - concept: Slot
+      name: next
+      description: 自定义下一页
   events:
     - name: before-select
       description: 选择某一项前触发

@@ -16,7 +16,7 @@
     </u-input>
     <div :class="$style.scrollwrap" @scroll="onScroll">
       <van-pull-refresh :value="$env.VUE_APP_DESIGNER ? false : refreshing" :disabled="!pullRefresh"
-        :pullingText="pullingText" :loosingText="loosingText" :loadingText="loadingText" :successText="successText" :successDuration="successDuration" :pullDistance="pullDistance"
+        :pulling-text="pullingText" :loosing-text="loosingText" :loading-text="loadingText" :success-text="successText" :success-duration="successDuration" :pull-distance="pullDistance"
         @refresh="refresh">
         <div ref="body" :class="$style.body">
             <slot></slot>
@@ -52,16 +52,30 @@
                 <slot name="empty">{{ emptyText }}</slot>
             </div>
         </div>
-    </van-pull-refresh>
-    <!-- <div v-show="(showFoot || (pageable === true || pageable === 'pagination') && currentDataSource.total > currentDataSource.paging.size) && !notext" :class="$style.foot">
-        <slot name="foot"></slot>
-        <u-pagination :class="$style.pagination" v-if="pageable === true || pageable === 'pagination'"
-            :total-items="currentDataSource.total" :page="currentDataSource.paging.number"
-            :page-size="currentDataSource.paging.size" :side="1" :around="3"
-            @change="page($event.page)">
-        </u-pagination>
-    </div> -->
-  </div>
+      </van-pull-refresh>
+    </div>
+
+    <div
+        v-show="(pageable === 'pagination')" :class="$style.foot">
+            <van-pagination
+                :value="currentDataSource && currentDataSource.paging.number"
+                :total-items="currentDataSource && currentDataSource.total"
+                :items-per-page="currentDataSource && currentDataSource.paging.size"
+                mode="simple"
+                @change="page($event)"
+            >
+                <div slot="prev-text" vusion-slot-name="prev" style="width: 100%; display: flex; justify-content: center; align-items: center;">
+                    <slot name="prev">
+                        <van-empty-col v-if="$env.VUE_APP_DESIGNER"></van-empty-col>
+                    </slot>
+                </div>
+                <div slot="next-text" vusion-slot-name="next" style="width: 100%; display: flex; justify-content: center; align-items: center;">
+                    <slot name="next">
+                        <van-empty-col v-if="$env.VUE_APP_DESIGNER"></van-empty-col>
+                    </slot>
+                </div>
+            </van-pagination>
+    </div>
 </div>
 </template>
 
@@ -73,14 +87,14 @@ import USpinner from 'cloud-ui.vusion/src/components/u-spinner.vue/index.vue';
 import ULink from 'cloud-ui.vusion/src/components/u-link.vue/index.vue';
 import VanPullRefresh from '../../../src/pull-refresh';
 import VanEmptyCol from '../../../src/emptycol';
-
+import VanPagination from '../../../src/pagination';
 
 export default {
     name: 'van-list-view',
     groupName: 'van-list-view-group',
     childName: 'van-list-view-item',
     extends: UListView,
-    components: { VanPullRefresh, VanEmptyCol, UCheckbox, UInput, USpinner, ULink },
+    components: { VanPullRefresh, VanEmptyCol, VanPagination, UCheckbox, UInput, USpinner, ULink },
     props: {
         border: { type: Boolean, default: false },
         readonly: { type: Boolean, default: true },
@@ -102,7 +116,7 @@ export default {
     },
     getDataSourceOptions() {
         return {
-            viewMode: 'more',
+            viewMode: this.pageable === 'pagination' ? 'page' : 'more',
             paging: this.paging,
             remotePaging: this.remotePaging,
             filtering: this.filtering,
@@ -113,6 +127,10 @@ export default {
     },
     methods: {
         async refresh() {
+            // 分页器分页时忽略下拉刷新
+            if (this.pageable === 'pagination') {
+              return
+            }
             this.refreshing = true;
             const paging = {
                 size: this.currentDataSource.paging.size,
@@ -134,10 +152,11 @@ export default {
         onScroll(e) {
           if (this?.$env.VUE_APP_DESIGNER) return;
           this.throttledVirtualScroll(e);
-          if (!(this.pageable === 'auto-more' || (this.pageable === true && this.$options.isSelect)))
-              return;
           if (this.currentLoading)
               return;
+          if (!(this.pageable === 'auto-more' || (this.pageable === true && this.$options.isSelect)))
+            return;
+
           const el = e.target;
           if (el.scrollHeight <= el.scrollTop + el.clientHeight+30 && this.currentDataSource && this.currentDataSource.hasMore()) {
             this.debouncedLoad(true);

@@ -1,5 +1,5 @@
 import { createNamespace } from '../utils';
-import { BORDER } from '../utils/constant';
+import VanEmptyCol from '../emptycol';
 
 const [createComponent, bem, t] = createNamespace('pagination');
 
@@ -14,7 +14,7 @@ export default createComponent({
     forceEllipses: Boolean,
     mode: {
       type: String,
-      default: 'multi',
+      default: 'simple',
     },
     value: {
       type: Number,
@@ -37,7 +37,9 @@ export default createComponent({
       default: 5,
     },
   },
-
+  components: {
+    VanEmptyCol,
+  },
   computed: {
     count() {
       const count =
@@ -106,6 +108,10 @@ export default createComponent({
 
   methods: {
     select(page, emitChange) {
+      if (this.ifDesigner()) {
+        return;
+      }
+
       page = Math.min(this.count, Math.max(1, page));
       if (this.value !== page) {
         this.$emit('input', page);
@@ -114,6 +120,9 @@ export default createComponent({
           this.$emit('change', page);
         }
       }
+    },
+    ifDesigner() {
+      return this.$env && this.$env.VUE_APP_DESIGNER;
     },
   },
 
@@ -128,14 +137,18 @@ export default createComponent({
     return (
       <ul class={bem({ simple })}>
         <li
-          class={[bem('item', { disabled: value === 1 }), bem('prev'), BORDER]}
+          class={[bem('item', { disabled: value === 1 }), bem('prev')]}
           onClick={onSelect(value - 1)}
+          // vusion-slot-name="prev-text"
         >
-          {(this.slots('prev-text') ?? this.prevText) || t('prev')}
+          {this.slots('prev-text')}
+          {/* {!this.slots('prev-text') && this.ifDesigner() ? (
+            <van-empty-col></van-empty-col>
+          ) : null} */}
         </li>
         {this.pages.map((page) => (
           <li
-            class={[bem('item', { active: page.active }), bem('page'), BORDER]}
+            class={[bem('item', { active: page.active }), bem('page')]}
             onClick={onSelect(page.number)}
           >
             {this.slots('page', page) ?? page.text}
@@ -147,14 +160,14 @@ export default createComponent({
           </li>
         )}
         <li
-          class={[
-            bem('item', { disabled: value === this.count }),
-            bem('next'),
-            BORDER,
-          ]}
+          class={[bem('item', { disabled: value === this.count }), bem('next')]}
           onClick={onSelect(value + 1)}
+          // vusion-slot-name="next-text"
         >
-          {(this.slots('next-text') ?? this.nextText) || t('next')}
+          {this.slots('next-text')}
+          {/* {!this.slots('next-text') && this.ifDesigner() ? (
+            <van-empty-col></van-empty-col>
+          ) : null} */}
         </li>
       </ul>
     );
