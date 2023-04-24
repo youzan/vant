@@ -8504,6 +8504,16 @@
                 }
             ],
             "slots": false,
+            "methods": [
+                {
+                    "name": "open",
+                    "description": "打开"
+                },
+                {
+                    "name": "close",
+                    "description": "关闭"
+                }
+            ],
             "events": [
                 {
                     "name": "confirm",
