@@ -120,3 +120,8 @@
       description: 点击完成按钮时触发的事件
       params: []
   description: 时间选择器，支持日期、年月、时分等维度
+  methods:
+    - name: open
+      description: 打开
+    - name: close
+      description: 关闭

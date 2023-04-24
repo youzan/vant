@@ -56,6 +56,21 @@ export default createComponent({
       this.$refs.popforcas.togglePModal();
     },
     // @exposed-api
+    open() {
+      try {
+        this.valuepopup = true;
+        this.$refs.popforcas.openModal();
+      } catch (error) {
+        console.log(error);
+      }
+
+    },
+    // @exposed-api
+    close() {
+      this.valuepopup = false;
+      this.$refs.popforcas.closeModal();
+    },
+    // @exposed-api
     getPicker() {
       return this.$refs.root.getPicker();
     },
@@ -82,6 +97,7 @@ export default createComponent({
           nofi={true}
         />
         <Popup
+          get-container="body" // 放body下不易出现异常情况
           safe-area-inset-bottom
           round
           ref="popforcas"
