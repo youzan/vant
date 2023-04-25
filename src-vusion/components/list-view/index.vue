@@ -67,6 +67,10 @@
 
 <script>
 import UListView from 'cloud-ui.vusion/src/components/u-list-view.vue/index.vue';
+import UCheckbox from 'cloud-ui.vusion/src/components/u-checkbox.vue/index.vue';
+import UInput from 'cloud-ui.vusion/src/components/u-input.vue/index.vue';
+import USpinner from 'cloud-ui.vusion/src/components/u-spinner.vue/index.vue';
+import ULink from 'cloud-ui.vusion/src/components/u-link.vue/index.vue';
 import VanPullRefresh from '../../../src/pull-refresh';
 import VanEmptyCol from '../../../src/emptycol';
 
@@ -76,7 +80,7 @@ export default {
     groupName: 'van-list-view-group',
     childName: 'van-list-view-item',
     extends: UListView,
-    components: { VanPullRefresh, VanEmptyCol },
+    components: { VanPullRefresh, VanEmptyCol, UCheckbox, UInput, USpinner, ULink },
     props: {
         border: { type: Boolean, default: false },
         readonly: { type: Boolean, default: true },
