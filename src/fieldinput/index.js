@@ -198,7 +198,9 @@ export default createComponent({
       if (this.$env.VUE_APP_DESIGNER) {
         this.$nextTick(() => {
           document.getElementsByClassName('van-number-keyboard')?.forEach(item => item.style.display = 'none');
-          this.$refs.numberKeyboard.$el.style.display = 'block';
+          if (this.$refs.numberKeyboard) {
+            this.$refs.numberKeyboard.$el.style.display = 'block';
+          }
         })
       }
       !this.shownumber && (this.shownumber = true);
