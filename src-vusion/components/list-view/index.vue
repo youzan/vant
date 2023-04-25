@@ -15,7 +15,7 @@
         :value="filterText" @input="onInput">
     </u-input>
     <div :class="$style.scrollwrap" @scroll="onScroll">
-      <van-pull-refresh :value="$env.VUE_APP_DESIGNER ? false : refreshing" :disabled="!pullRefresh"
+      <van-pull-refresh :value="$env.VUE_APP_DESIGNER ? false : refreshing" :disabled="!pullRefresh || pageable === 'pagination'"
         :pulling-text="pullingText" :loosing-text="loosingText" :loading-text="loadingText" :success-text="successText" :success-duration="successDuration" :pull-distance="pullDistance"
         @refresh="refresh">
         <div ref="body" :class="$style.body">
