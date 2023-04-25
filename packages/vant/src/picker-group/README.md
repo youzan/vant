@@ -235,5 +235,30 @@ export default {
 The component exports the following type definitions:
 
 ```ts
-import type { DatePickerProps, DatePickerColumnType } from 'vant';
+import type {
+  PickerGroupProps,
+  PickerGroupInstance,
+  PickerGroupThemeVars,
+} from 'vant';
 ```
+
+`PickerGroupInstance` is the type of component instance:
+
+```ts
+import { ref } from 'vue';
+import type { PickerGroupInstance } from 'vant';
+
+const pickerGroupRef = ref<PickerGroupInstance>();
+
+pickerGroupRef.value?.setTabActive(1);
+```
+
+## Theming
+
+### CSS Variables
+
+The component provides the following CSS variables, which can be used to customize styles. Please refer to [ConfigProvider component](#/en-US/config-provider).
+
+| Name                          | Default Value        | Description |
+| ----------------------------- | -------------------- | ----------- |
+| --van-picker-group-background | _--van-background-2_ | -           |

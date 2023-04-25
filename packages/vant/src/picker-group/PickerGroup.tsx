@@ -6,10 +6,17 @@ import {
 } from 'vue';
 
 // Utils
-import { extend, pick, makeArrayProp, createNamespace } from '../utils';
+import {
+  extend,
+  pick,
+  makeArrayProp,
+  createNamespace,
+  type Numeric,
+} from '../utils';
 
 // Composables
 import { useChildren } from '@vant/use';
+import { useExpose } from '../composables/use-expose';
 
 // Components
 import { Tab } from '../tab';
@@ -63,6 +70,12 @@ export default defineComponent({
     };
 
     const onCancel = () => emit('cancel');
+
+    const setTabActive = (index: Numeric) => {
+      activeTab.value = +index;
+    };
+
+    useExpose({ setTabActive });
 
     return () => {
       const childNodes = slots.default?.();

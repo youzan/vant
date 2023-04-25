@@ -235,5 +235,30 @@ export default {
 组件导出以下类型定义：
 
 ```ts
-import type { PickerGroupProps } from 'vant';
+import type {
+  PickerGroupProps,
+  PickerGroupInstance,
+  PickerGroupThemeVars,
+} from 'vant';
 ```
+
+`PickerGroupInstance` 是组件实例的类型，用法如下：
+
+```ts
+import { ref } from 'vue';
+import type { PickerGroupInstance } from 'vant';
+
+const pickerGroupRef = ref<PickerGroupInstance>();
+
+pickerGroupRef.value?.setTabActive(1);
+```
+
+## 主题定制
+
+### 样式变量
+
+组件提供了下列 CSS 变量，可用于自定义样式，使用方法请参考 [ConfigProvider 组件](#/zh-CN/config-provider)。
+
+| 名称                          | 默认值               | 描述 |
+| ----------------------------- | -------------------- | ---- |
+| --van-picker-group-background | _--van-background-2_ | -    |
