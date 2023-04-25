@@ -7,7 +7,7 @@
     - name: labelField
       title: 左侧标题
       type: string
-      description: 左侧标题
+      description: 左侧文本插槽内容存在时优先展示插槽内容
     - name: type
       title: 时间类型
       type: string
@@ -83,9 +83,10 @@
       type: string
       description: 只用于页面上展示的格式，例如：yyyy年MM月dd日
     - name: title
+      title: 顶部栏标题
       type: string
       default: ""
-      description: 顶部栏标题
+      description: 左侧文本插槽内容存在时优先展示插槽内容
     - name: readonly
       title: 只读
       type: boolean

@@ -125,26 +125,43 @@
       type: boolean
       default: true
       description: 是否开启下拉刷新
+      dependency:
+        - '!pageable': pagination
     - name: pulling-text
       title: 下拉过程中提示文字
       type: string
       default: 下拉刷新
+      dependency:
+        - pull-refresh: true
+          '!pageable': pagination
     - name: loosing-text
       title: 释放过程中提示文字
       type: string
       default: 释放刷新
+      dependency:
+        - pull-refresh: true
+          '!pageable': pagination
     - name: success-text
       title: 刷新成功提示文字
       type: string
       default: 已刷新
+      dependency:
+        - pull-refresh: true
+          '!pageable': pagination
     - name: success-duration
       title: 刷新成功提示展示时长(ms)
       type: number
       default: 500
+      dependency:
+        - pull-refresh: true
+          '!pageable': pagination
     - name: pull-distance
       title: 触发下拉刷新的距离
       type: number
       default: 50
+      dependency:
+        - pull-refresh: true
+          '!pageable': pagination
     - name: filterable
       title: 可筛选
       type: boolean
