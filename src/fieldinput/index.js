@@ -195,6 +195,12 @@ export default createComponent({
       if (this.readonly || this.disabled) {
         return;
       }
+      if (this.$env.VUE_APP_DESIGNER) {
+        this.$nextTick(() => {
+          document.getElementsByClassName('van-number-keyboard')?.forEach(item => item.style.display = 'none');
+          this.$refs.numberKeyboard.$el.style.display = 'block';
+        })
+      }
       !this.shownumber && (this.shownumber = true);
     },
     getContain() {
@@ -301,6 +307,7 @@ export default createComponent({
         {this.shownumbertype ? (
           <NumberKeyboard
             vusionnp={this.$attrs['vusion-node-path']}
+            ref="numberKeyboard"
             vModel={this.currentValue}
             closeButtonText={this.confirmText}
             confirmSize={this.confirmSize}
