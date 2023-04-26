@@ -219,6 +219,10 @@ export default {
     background: #fff;
 }
 
+.root[vusion-empty-background] .foot {
+  display: none;;
+}
+
 .foot {
     /* background: var(--list-view-foot-background);
     padding: var(--list-view-foot-padding);
