@@ -424,7 +424,11 @@ export default defineComponent({
 
     const resize = () => {
       setLine();
-      nextTick(() => contentRef.value?.swipeRef.value?.resize());
+
+      nextTick(() => {
+        scrollIntoView(true);
+        contentRef.value?.swipeRef.value?.resize();
+      });
     };
 
     watch(
