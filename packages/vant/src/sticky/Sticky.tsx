@@ -2,12 +2,12 @@ import {
   ref,
   watch,
   computed,
+  nextTick,
   reactive,
   defineComponent,
   type PropType,
   type CSSProperties,
   type ExtractPropTypes,
-  nextTick,
 } from 'vue';
 
 // Utils
@@ -16,13 +16,13 @@ import {
   isHidden,
   unitToPx,
   numericProp,
+  windowWidth,
+  windowHeight,
   getScrollTop,
   getZIndexStyle,
   makeStringProp,
   makeNumericProp,
   createNamespace,
-  windowWidth,
-  windowHeight,
 } from '../utils';
 
 // Composables

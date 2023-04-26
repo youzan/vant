@@ -52,3 +52,17 @@ test('should emit change event after the page is changed', async () => {
   await wrapper.find('.van-pagination__item--next button').trigger('click');
   expect(wrapper.emitted('change')).toEqual([[3], [2], [3]]);
 });
+
+test('should allow to hide prev button and next button', () => {
+  const wrapper = mount(Pagination, {
+    props: {
+      totalItems: 50,
+      showPageSize: 5,
+      showPrevButton: false,
+      showNextButton: false,
+    },
+  });
+
+  expect(wrapper.find('.van-pagination__item--prev').exists()).toBeFalsy();
+  expect(wrapper.find('.van-pagination__item--next').exists()).toBeFalsy();
+});
