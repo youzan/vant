@@ -7,6 +7,7 @@ import {
   type PropType,
   type CSSProperties,
   type ExtractPropTypes,
+  nextTick,
 } from 'vue';
 
 // Utils
@@ -20,6 +21,8 @@ import {
   makeStringProp,
   makeNumericProp,
   createNamespace,
+  windowWidth,
+  windowHeight,
 } from '../utils';
 
 // Composables
@@ -56,12 +59,16 @@ export default defineComponent({
       height: 0, // root height
       transform: 0,
     });
+    const isReset = ref(false);
 
     const offset = computed(() =>
       unitToPx(props.position === 'top' ? props.offsetTop : props.offsetBottom)
     );
 
     const rootStyle = computed<CSSProperties | undefined>(() => {
+      if (isReset.value) {
+        return;
+      }
       const { fixed, height, width } = state;
       if (fixed) {
         return {
@@ -72,7 +79,7 @@ export default defineComponent({
     });
 
     const stickyStyle = computed<CSSProperties | undefined>(() => {
-      if (!state.fixed) {
+      if (!state.fixed || isReset.value) {
         return;
       }
 
@@ -146,9 +153,25 @@ export default defineComponent({
     });
     useVisibilityChange(root, onScroll);
 
+    watch([windowWidth, windowHeight], () => {
+      if (!root.value || isHidden(root) || !state.fixed) {
+        return;
+      }
+      isReset.value = true;
+      nextTick(() => {
+        const rootRect = useRect(root);
+        state.width = rootRect.width;
+        state.height = rootRect.height;
+        isReset.value = false;
+      });
+    });
+
     return () => (
       <div ref={root} style={rootStyle.value}>
-        <div class={bem({ fixed: state.fixed })} style={stickyStyle.value}>
+        <div
+          class={bem({ fixed: state.fixed && !isReset.value })}
+          style={stickyStyle.value}
+        >
           {slots.default?.()}
         </div>
       </div>
