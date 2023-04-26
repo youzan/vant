@@ -68,6 +68,10 @@ export default defineComponent({
     };
 
     onMounted(() => {
+      barrage.value?.style.setProperty(
+        '--move-distance',
+        `-${barrage.value?.offsetWidth}px`
+      );
       initBarrages();
     });
 

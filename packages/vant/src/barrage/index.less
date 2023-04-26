@@ -10,10 +10,11 @@
   width: 100%;
   position: relative;
   overflow: hidden;
+  backface-visibility: hidden;
   &__item {
     position: absolute;
     top: 0;
-    left: 100%;
+    right: 0;
     z-index: 99;
     opacity: 0.75;
     font-size: var(--van-barrage-font-size);
@@ -24,19 +25,17 @@
     font-weight: bold;
     text-shadow: var(--van-gray-8) 1px 1px 2px;
     white-space: nowrap;
-    transform: none;
+    transform: translateX(100%);
     user-select: none;
-    will-change: transform, left;
+    will-change: transform;
   }
 }
 
 @keyframes barrage {
   from {
-    left: 100%;
-    transform: none;
+    transform: translateX(100%);
   }
   to {
-    left: 0;
-    transform: translateX(-100%);
+    transform: translateX(var(--move-distance));
   }
 }
