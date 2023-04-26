@@ -6,6 +6,7 @@ import {
 } from 'vue';
 import {
   clamp,
+  truthProp,
   makeStringProp,
   makeNumberProp,
   makeNumericProp,
@@ -40,6 +41,8 @@ export const paginationProps = {
   showPageSize: makeNumericProp(5),
   itemsPerPage: makeNumericProp(10),
   forceEllipses: Boolean,
+  showPrevButton: truthProp,
+  showNextButton: truthProp,
 };
 
 export type PaginationProps = ExtractPropTypes<typeof paginationProps>;
@@ -128,7 +131,12 @@ export default defineComponent({
     );
 
     const renderPrevButton = () => {
-      const { mode, modelValue } = props;
+      const { mode, modelValue, showPrevButton } = props;
+
+      if (!showPrevButton) {
+        return;
+      }
+
       const slot = slots['prev-text'];
       const disabled = modelValue === 1;
       return (
@@ -150,7 +158,12 @@ export default defineComponent({
     };
 
     const renderNextButton = () => {
-      const { mode, modelValue } = props;
+      const { mode, modelValue, showNextButton } = props;
+
+      if (!showNextButton) {
+        return;
+      }
+
       const slot = slots['next-text'];
       const disabled = modelValue === count.value;
       return (
