@@ -75,9 +75,12 @@
     }
 
     &--disabled {
-      color: var(--van-pagination-item-disabled-color);
-      background-color: var(--van-pagination-item-disabled-background);
-      opacity: var(--van-pagination-disabled-opacity);
+      &,
+      &:active {
+        color: var(--van-pagination-item-disabled-color);
+        background-color: var(--van-pagination-item-disabled-background);
+        opacity: var(--van-pagination-disabled-opacity);
+      }
     }
   }
 
