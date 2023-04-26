@@ -4608,7 +4608,7 @@
             "Table"
         ],
         "screenShot": "",
-        "blocks": "[{\"title\":\"基本用法\",\"description\":\"\",\"code\":\"<template>\\n<van-list-view pageable=\\\"load-more\\\" vusion-disabled-addslot></van-list-view>\\n</template>\\n\"}]",
+        "blocks": "[{\"title\":\"基本用法\",\"description\":\"\",\"code\":\"<template>\\n<van-list-view pageable=\\\"load-more\\\" vusion-disabled-addslot>\\n    <template #prev>\\n        上一页\\n    </template>\\n    <template #next>\\n        下一页\\n    </template>\\n</van-list-view>\\n</template>\\n\"}]",
         "jsonSchema": {
             "name": "van-list-view",
             "title": "数据列表",
@@ -4620,7 +4620,7 @@
                 {
                     "title": "基本用法",
                     "description": "",
-                    "code": "<template>\n<van-list-view pageable=\"load-more\" vusion-disabled-addslot></van-list-view>\n</template>\n"
+                    "code": "<template>\n<van-list-view pageable=\"load-more\" vusion-disabled-addslot>\n    <template #prev>\n        上一页\n    </template>\n    <template #next>\n        下一页\n    </template>\n</van-list-view>\n</template>\n"
                 }
             ],
             "attrs": [
