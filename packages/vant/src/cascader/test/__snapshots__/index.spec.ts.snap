@@ -85,6 +85,7 @@ exports[`should update tabs when previous tab is clicked 1`] = `
              class="van-tab van-tab--line van-tab--shrink van-cascader__tab"
              tabindex="-1"
              aria-selected="false"
+             aria-controls="van-tab"
         >
           <span class="van-tab__text">
             Jiangsu
@@ -95,6 +96,7 @@ exports[`should update tabs when previous tab is clicked 1`] = `
              class="van-tab van-tab--line van-tab--shrink van-tab--active van-cascader__tab van-cascader__tab--unselected"
              tabindex="0"
              aria-selected="true"
+             aria-controls="van-tab"
         >
           <span class="van-tab__text">
             Select

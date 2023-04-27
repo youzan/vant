@@ -81,6 +81,8 @@ export default {
 | page-count | The total number of pages, if not set, will be calculated based on `total-items` and `items-per-page` | _number \| string_ | `-` |
 | show-page-size | Count of page size to show | _number \| string_ | `5` |
 | force-ellipses | Whether to show ellipses | _boolean_ | `false` |
+| show-prev-button `v4.2.1` | Whether to show prev button | _boolean_ | `true` |
+| show-next-button `v4.2.1` | Whether to show next button | _boolean_ | `true` |
 
 ### Events
 

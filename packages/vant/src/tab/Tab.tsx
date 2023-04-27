@@ -5,6 +5,7 @@ import {
   computed,
   nextTick,
   defineComponent,
+  getCurrentInstance,
   type PropType,
   type CSSProperties,
   type ExtractPropTypes,
@@ -12,11 +13,13 @@ import {
 
 // Utils
 import {
+  pick,
   extend,
   truthProp,
   unknownProp,
   numericProp,
   createNamespace,
+  ComponentInstance,
 } from '../utils';
 import { TABS_KEY } from '../tabs/Tabs';
 
@@ -28,6 +31,7 @@ import { routeProps } from '../composables/use-route';
 import { TAB_STATUS_KEY } from '../composables/use-tab-status';
 
 // Components
+import { TabTitle } from './TabTitle';
 import { SwipeItem } from '../swipe-item';
 
 const [name, bem] = createNamespace('tab');
@@ -53,6 +57,7 @@ export default defineComponent({
   setup(props, { slots }) {
     const id = useId();
     const inited = ref(false);
+    const instance = getCurrentInstance();
     const { parent, index } = useParent(TABS_KEY);
 
     if (!parent) {
@@ -84,6 +89,33 @@ export default defineComponent({
       return isActive;
     });
 
+    const renderTitle = (
+      onClickTab: (
+        instance: ComponentInstance,
+        index: number,
+        event: MouseEvent
+      ) => void
+    ) => (
+      <TabTitle
+        key={id}
+        v-slots={{ title: slots.title }}
+        id={`${parent.id}-${index.value}`}
+        ref={parent.setTitleRefs(index.value)}
+        style={props.titleStyle}
+        class={props.titleClass}
+        isActive={active.value}
+        controls={id}
+        scrollable={parent.scrollable.value}
+        activeColor={parent.props.titleActiveColor}
+        inactiveColor={parent.props.titleInactiveColor}
+        onClick={(event: MouseEvent) =>
+          onClickTab(instance!.proxy!, index.value, event)
+        }
+        {...pick(parent.props, ['type', 'color', 'shrink'])}
+        {...pick(props, ['dot', 'badge', 'title', 'disabled', 'showZeroBadge'])}
+      />
+    );
+
     const hasInactiveClass = ref(!active.value);
 
     watch(active, (val) => {
@@ -108,6 +140,11 @@ export default defineComponent({
     );
 
     provide(TAB_STATUS_KEY, active);
+
+    useExpose({
+      id,
+      renderTitle,
+    });
 
     return () => {
       const label = `${parent.id}-${index.value}`;
@@ -136,8 +173,6 @@ export default defineComponent({
 
       const shouldRender = inited.value || scrollspy || !lazyRender;
       const Content = shouldRender ? slots.default?.() : null;
-
-      useExpose({ id });
 
       return (
         <div

@@ -89,6 +89,8 @@ export default {
 | items-per-page | 每页记录数 | _number \| string_ | `10` |
 | show-page-size | 显示的页码个数 | _number \| string_ | `5` |
 | force-ellipses | 是否显示省略号 | _boolean_ | `false` |
+| show-prev-button `v4.2.1` | 是否展示上一页按钮 | _boolean_ | `true` |
+| show-next-button `v4.2.1` | 是否展示下一页按钮 | _boolean_ | `true` |
 
 ### Events
 

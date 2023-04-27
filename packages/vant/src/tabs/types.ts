@@ -15,9 +15,11 @@ export type TabsProvide = {
   id: string;
   props: TabsProps;
   setLine: () => void;
+  scrollable: ComputedRef<boolean>;
   onRendered: (name: Numeric, title?: string) => void;
-  scrollIntoView: (immediate?: boolean) => void;
   currentName: ComputedRef<Numeric | undefined>;
+  setTitleRefs: (index: number) => (el: unknown) => void;
+  scrollIntoView: (immediate?: boolean) => void;
 };
 
 export type TabsExpose = {
