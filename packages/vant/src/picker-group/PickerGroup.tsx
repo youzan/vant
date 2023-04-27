@@ -2,11 +2,11 @@ import { defineComponent, type InjectionKey, type ExtractPropTypes } from 'vue';
 
 // Utils
 import {
-  extend,
   pick,
+  extend,
   makeArrayProp,
-  createNamespace,
   makeNumericProp,
+  createNamespace,
 } from '../utils';
 
 // Composables
