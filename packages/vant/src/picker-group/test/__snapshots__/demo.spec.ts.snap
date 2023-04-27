@@ -5341,6 +5341,7 @@ exports[`should render demo and match snapshot 1`] = `
                class="van-tab van-tab--line van-tab--shrink van-tab--active van-picker-group__tab-title"
                tabindex="0"
                aria-selected="true"
+               aria-controls="van-tab"
           >
             <span class="van-tab__text">
               Date
@@ -5351,6 +5352,7 @@ exports[`should render demo and match snapshot 1`] = `
                class="van-tab van-tab--line van-tab--shrink van-picker-group__tab-title"
                tabindex="-1"
                aria-selected="false"
+               aria-controls="van-tab"
           >
             <span class="van-tab__text">
               Time
