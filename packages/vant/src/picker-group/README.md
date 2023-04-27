@@ -209,17 +209,73 @@ export default {
 };
 ```
 
+### 受控模式
+
+supports both uncontrolled and controlled modes:
+
+- When `v-model:tab-active` is not bound, the PickerGroup component completely controls the `tab` switching.
+- When `v-model:tab-active` is bound, PickerGroup supports controlled mode, and the `tab` switching is controlled by both the `v-model:tab-active` value and the component itself.
+
+```html
+<van-button type="primary" @click="setTabActive">
+  toggle tab, current {{ activeTab }}
+</van-button>
+<van-picker-group
+  title="Title"
+  :tabs="['Date', 'Time']"
+  v-model:tab-active="tabActive"
+  @confirm="onConfirm"
+  @cancel="onCancel"
+>
+  <van-date-picker
+    v-model="currentDate"
+    :min-date="minDate"
+    :max-date="maxDate"
+  />
+  <van-time-picker v-model="currentTime" />
+</van-picker-group>
+```
+
+```js
+import { ref } from 'vue';
+import { showToast } from 'vant';
+
+export default {
+  setup() {
+    const tabActive = ref(0);
+    const currentDate = ref(['2022', '06', '01']);
+    const currentTime = ref(['12', '00']);
+    const onConfirm = () => {
+      showToast(
+        `${currentDate.value.join('/')} ${currentTime.value.join(':')}`
+      );
+    };
+    const onCancel = () => {
+      showToast('cancel');
+    };
+
+    return {
+      minDate: new Date(2020, 0, 1),
+      maxDate: new Date(2025, 5, 1),
+      currentDate,
+      currentTime,
+    };
+  },
+};
+```
+
 ## API
 
 ### Props
 
-| Attribute               | Description              | Type       | Default   |
-| ----------------------- | ------------------------ | ---------- | --------- |
-| tabs                    | Titles of tabs           | _string[]_ | `[]`      |
-| title                   | Toolbar title            | _string_   | `''`      |
-| next-step-text `v4.0.8` | Text of next step button | _string_   | `''`      |
-| confirm-button-text     | Text of confirm button   | _string_   | `Confirm` |
-| cancel-button-text      | Text of cancel button    | _string_   | `Cancel`  |
+| Attribute | Description | Type | Default |
+| --- | --- | --- | --- |
+| v-model:tab-active | Set index of active tab | _number \| string_ | `0` |
+| tabs | Titles of tabs | _string[]_ | `[]` |
+| title | Toolbar title | _string_ | `''` |
+| next-step-text `v4.0.8` | Text of next step button | _string_ | `''` |
+| confirm-button-text | Text of confirm button | _string_ | `Confirm` |
+| cancel-button-text | Text of cancel button | _string_ | `Cancel` |
 
 ### Slots
 
@@ -235,22 +291,7 @@ export default {
 The component exports the following type definitions:
 
 ```ts
-import type {
-  PickerGroupProps,
-  PickerGroupInstance,
-  PickerGroupThemeVars,
-} from 'vant';
-```
-
-`PickerGroupInstance` is the type of component instance:
-
-```ts
-import { ref } from 'vue';
-import type { PickerGroupInstance } from 'vant';
-
-const pickerGroupRef = ref<PickerGroupInstance>();
-
-pickerGroupRef.value?.setTabActive(1);
+import type { PickerGroupProps, PickerGroupThemeVars } from 'vant';
 ```
 
 ## Theming

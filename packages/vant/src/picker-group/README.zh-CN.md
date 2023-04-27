@@ -209,17 +209,73 @@ export default {
 };
 ```
 
+### 受控模式
+
+`PickerGroup` 中 `tab` 的切换支持非受控模式和受控模式：
+
+- 当未绑定 `v-model:tab-active` 时，PickerGroup 组件 `tab` 的切换完全由组件自身控制。
+- 当绑定 `v-model:tab-active` 时，PickerGroup 支持受控模式，此时组件 `tab` 的切换同时支持 `v-model:tab-active` 的值和组件本身控制。
+
+```html
+<van-button type="primary" @click="setTabActive">
+  点击切换tab，当前为 {{ activeTab }}
+</van-button>
+<van-picker-group
+  title="预约日期"
+  :tabs="['选择日期', '选择时间']"
+  v-model:tab-active="tabActive"
+  @confirm="onConfirm"
+  @cancel="onCancel"
+>
+  <van-date-picker
+    v-model="currentDate"
+    :min-date="minDate"
+    :max-date="maxDate"
+  />
+  <van-time-picker v-model="currentTime" />
+</van-picker-group>
+```
+
+```js
+import { ref } from 'vue';
+import { showToast } from 'vant';
+
+export default {
+  setup() {
+    const tabActive = ref(0);
+    const currentDate = ref(['2022', '06', '01']);
+    const currentTime = ref(['12', '00']);
+    const onConfirm = () => {
+      showToast(
+        `${currentDate.value.join('/')} ${currentTime.value.join(':')}`
+      );
+    };
+    const onCancel = () => {
+      showToast('cancel');
+    };
+
+    return {
+      minDate: new Date(2020, 0, 1),
+      maxDate: new Date(2025, 5, 1),
+      currentDate,
+      currentTime,
+    };
+  },
+};
+```
+
 ## API
 
 ### Props
 
-| 参数                    | 说明             | 类型       | 默认值 |
-| ----------------------- | ---------------- | ---------- | ------ |
-| tabs                    | 设置标签页的标题 | _string[]_ | `[]`   |
-| title                   | 顶部栏标题       | _string_   | `''`   |
-| next-step-text `v4.0.8` | 下一步按钮的文字 | _string_   | `''`   |
-| confirm-button-text     | 确认按钮的文字   | _string_   | `确认` |
-| cancel-button-text      | 取消按钮的文字   | _string_   | `取消` |
+| 参数                    | 说明               | 类型               | 默认值 |
+| ----------------------- | ------------------ | ------------------ | ------ |
+| v-model:tab-active      | 设置当前选中的标签 | _number \| string_ | `0`    |
+| tabs                    | 设置标签页的标题   | _string[]_         | `[]`   |
+| title                   | 顶部栏标题         | _string_           | `''`   |
+| next-step-text `v4.0.8` | 下一步按钮的文字   | _string_           | `''`   |
+| confirm-button-text     | 确认按钮的文字     | _string_           | `确认` |
+| cancel-button-text      | 取消按钮的文字     | _string_           | `取消` |
 
 ### Slots
 
@@ -235,22 +291,7 @@ export default {
 组件导出以下类型定义：
 
 ```ts
-import type {
-  PickerGroupProps,
-  PickerGroupInstance,
-  PickerGroupThemeVars,
-} from 'vant';
-```
-
-`PickerGroupInstance` 是组件实例的类型，用法如下：
-
-```ts
-import { ref } from 'vue';
-import type { PickerGroupInstance } from 'vant';
-
-const pickerGroupRef = ref<PickerGroupInstance>();
-
-pickerGroupRef.value?.setTabActive(1);
+import type { PickerGroupProps, PickerGroupThemeVars } from 'vant';
 ```
 
 ## 主题定制

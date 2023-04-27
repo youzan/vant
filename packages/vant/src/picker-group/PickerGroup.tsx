@@ -1,9 +1,4 @@
-import {
-  ref,
-  defineComponent,
-  type InjectionKey,
-  type ExtractPropTypes,
-} from 'vue';
+import { defineComponent, type InjectionKey, type ExtractPropTypes } from 'vue';
 
 // Utils
 import {
@@ -11,12 +6,12 @@ import {
   pick,
   makeArrayProp,
   createNamespace,
-  type Numeric,
+  makeNumericProp,
 } from '../utils';
 
 // Composables
 import { useChildren } from '@vant/use';
-import { useExpose } from '../composables/use-expose';
+import { useSyncPropRef } from '../composables/use-sync-prop-ref';
 
 // Components
 import { Tab } from '../tab';
@@ -35,6 +30,7 @@ export const PICKER_GROUP_KEY: InjectionKey<PickerGroupProvide> = Symbol(name);
 export const pickerGroupProps = extend(
   {
     tabs: makeArrayProp<string>(),
+    activeTab: makeNumericProp(0),
     nextStepText: String,
   },
   pickerToolbarProps
@@ -47,20 +43,23 @@ export default defineComponent({
 
   props: pickerGroupProps,
 
-  emits: ['confirm', 'cancel'],
+  emits: ['confirm', 'cancel', 'update:activeTab'],
 
   setup(props, { emit, slots }) {
-    const activeTab = ref(0);
+    const activeTab = useSyncPropRef(
+      () => props.activeTab,
+      (value) => emit('update:activeTab', value)
+    );
     const { children, linkChildren } = useChildren(PICKER_GROUP_KEY);
 
     linkChildren();
 
     const showNextButton = () =>
-      activeTab.value < props.tabs.length - 1 && props.nextStepText;
+      +activeTab.value < props.tabs.length - 1 && props.nextStepText;
 
     const onConfirm = () => {
       if (showNextButton()) {
-        activeTab.value++;
+        activeTab.value = +activeTab.value + 1;
       } else {
         emit(
           'confirm',
@@ -70,12 +69,6 @@ export default defineComponent({
     };
 
     const onCancel = () => emit('cancel');
-
-    const setTabActive = (index: Numeric) => {
-      activeTab.value = +index;
-    };
-
-    useExpose({ setTabActive });
 
     return () => {
       const childNodes = slots.default?.();
