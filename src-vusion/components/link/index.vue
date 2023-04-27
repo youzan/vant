@@ -16,10 +16,14 @@
 </template>
 <script>
 import ULink from 'cloud-ui.vusion/src/components/u-link.vue/index.vue';
+import IIco from 'cloud-ui.vusion/src/components/i-ico.vue/index.vue';
 
 export default {
     name: 'van-link',
-    extends: ULink,
+    components: {
+      IIco
+    },
+    extends: ULink
 };
 </script>
 
