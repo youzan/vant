@@ -4,7 +4,7 @@ import { Badge } from '../badge';
 
 const [name, bem] = createNamespace('tab');
 
-export default defineComponent({
+export const TabTitle = defineComponent({
   name,
 
   props: {

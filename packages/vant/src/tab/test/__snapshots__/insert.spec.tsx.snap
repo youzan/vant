@@ -166,6 +166,7 @@ exports[`should render correctly after inserting a tab from an array 1`] = `
            class="van-tab van-tab--line"
            tabindex="-1"
            aria-selected="false"
+           aria-controls="van-tab"
       >
         <span class="van-tab__text van-tab__text--ellipsis">
           1
@@ -176,6 +177,7 @@ exports[`should render correctly after inserting a tab from an array 1`] = `
            class="van-tab van-tab--line van-tab--active"
            tabindex="0"
            aria-selected="true"
+           aria-controls="van-tab"
       >
         <span class="van-tab__text van-tab__text--ellipsis">
           2
@@ -186,6 +188,7 @@ exports[`should render correctly after inserting a tab from an array 1`] = `
            class="van-tab van-tab--line"
            tabindex="-1"
            aria-selected="false"
+           aria-controls="van-tab"
       >
         <span class="van-tab__text van-tab__text--ellipsis">
           3

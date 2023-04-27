@@ -896,6 +896,7 @@ exports[`should render demo and match snapshot 1`] = `
              class="van-tab van-tab--line van-tab--active"
              tabindex="0"
              aria-selected="true"
+             aria-controls="van-tab"
         >
           <span class="van-tab__text van-tab__text--ellipsis">
             Tab 1
@@ -906,6 +907,7 @@ exports[`should render demo and match snapshot 1`] = `
              class="van-tab van-tab--line"
              tabindex="-1"
              aria-selected="false"
+             aria-controls="van-tab"
         >
           <span class="van-tab__text van-tab__text--ellipsis">
             Tab 2
@@ -916,6 +918,7 @@ exports[`should render demo and match snapshot 1`] = `
              class="van-tab van-tab--line"
              tabindex="-1"
              aria-selected="false"
+             aria-controls="van-tab"
         >
           <span class="van-tab__text van-tab__text--ellipsis">
             Tab 3
@@ -926,6 +929,7 @@ exports[`should render demo and match snapshot 1`] = `
              class="van-tab van-tab--line"
              tabindex="-1"
              aria-selected="false"
+             aria-controls="van-tab"
         >
           <span class="van-tab__text van-tab__text--ellipsis">
             Tab 4
@@ -1001,6 +1005,7 @@ exports[`should render demo and match snapshot 1`] = `
              class="van-tab van-tab--line van-tab--active"
              tabindex="0"
              aria-selected="true"
+             aria-controls="van-tab"
         >
           <span class="van-tab__text van-tab__text--ellipsis">
             Tab 1
@@ -1011,6 +1016,7 @@ exports[`should render demo and match snapshot 1`] = `
              class="van-tab van-tab--line"
              tabindex="-1"
              aria-selected="false"
+             aria-controls="van-tab"
         >
           <span class="van-tab__text van-tab__text--ellipsis">
             Tab 2
@@ -1021,6 +1027,7 @@ exports[`should render demo and match snapshot 1`] = `
              class="van-tab van-tab--line"
              tabindex="-1"
              aria-selected="false"
+             aria-controls="van-tab"
         >
           <span class="van-tab__text van-tab__text--ellipsis">
             Tab 3
@@ -1031,6 +1038,7 @@ exports[`should render demo and match snapshot 1`] = `
              class="van-tab van-tab--line"
              tabindex="-1"
              aria-selected="false"
+             aria-controls="van-tab"
         >
           <span class="van-tab__text van-tab__text--ellipsis">
             Tab 4

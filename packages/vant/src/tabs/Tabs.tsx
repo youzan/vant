@@ -15,7 +15,6 @@ import {
 
 // Utils
 import {
-  pick,
   isDef,
   addUnit,
   isHidden,
@@ -53,7 +52,6 @@ import { useVisibilityChange } from '../composables/use-visibility-change';
 
 // Components
 import { Sticky } from '../sticky';
-import TabsTitle from './TabsTitle';
 import TabsContent from './TabsContent';
 
 // Types
@@ -352,34 +350,6 @@ export default defineComponent({
       }
     };
 
-    const renderNav = () =>
-      children.map((item, index) => (
-        <TabsTitle
-          key={item.id}
-          v-slots={{ title: item.$slots.title }}
-          id={`${id}-${index}`}
-          ref={setTitleRefs(index)}
-          type={props.type}
-          color={props.color}
-          style={item.titleStyle}
-          class={item.titleClass}
-          shrink={props.shrink}
-          isActive={index === state.currentIndex}
-          controls={item.id}
-          scrollable={scrollable.value}
-          activeColor={props.titleActiveColor}
-          inactiveColor={props.titleInactiveColor}
-          onClick={(event: MouseEvent) => onClickTab(item, index, event)}
-          {...pick(item, [
-            'dot',
-            'badge',
-            'title',
-            'disabled',
-            'showZeroBadge',
-          ])}
-        />
-      ));
-
     const renderLine = () => {
       if (props.type === 'line' && children.length) {
         return <div class={bem('line')} style={state.lineStyle} />;
@@ -408,7 +378,7 @@ export default defineComponent({
             aria-orientation="horizontal"
           >
             {slots['nav-left']?.()}
-            {renderNav()}
+            {children.map((item) => item.renderTitle(onClickTab))}
             {renderLine()}
             {slots['nav-right']?.()}
           </div>
@@ -422,7 +392,20 @@ export default defineComponent({
       return Header;
     };
 
-    watch([() => props.color, windowWidth], setLine);
+    const resize = () => {
+      setLine();
+
+      nextTick(() => {
+        scrollIntoView(true);
+        contentRef.value?.swipeRef.value?.resize();
+      });
+    };
+
+    watch(
+      () => [props.color, props.duration, props.lineWidth, props.lineHeight],
+      setLine
+    );
+    watch(windowWidth, resize);
 
     watch(
       () => props.active,
@@ -460,11 +443,6 @@ export default defineComponent({
     const onRendered = (name: Numeric, title?: string) =>
       emit('rendered', name, title);
 
-    const resize = () => {
-      setLine();
-      nextTick(() => contentRef.value?.swipeRef.value?.resize());
-    };
-
     useExpose({
       resize,
       scrollTo,
@@ -483,8 +461,10 @@ export default defineComponent({
       id,
       props,
       setLine,
+      scrollable,
       onRendered,
       currentName,
+      setTitleRefs,
       scrollIntoView,
     });
 
