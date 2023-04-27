@@ -146,7 +146,7 @@ export default {
 
     const filter = (type, options) => {
       if (type === 'minute') {
-        return options.filter((option) => Number(option) % 10 === 0);
+        return options.filter((option) => Number(option.value) % 10 === 0);
       }
       return options;
     };
