@@ -92,16 +92,16 @@ const encodeUrl = function (url) {
         return url;
     }
     try {
-      // 包含单个 '%' 的 query 参数会被 decodeURIComponent 解析报错，例如：ABC%DEF
-      const parsedPath = parsePath(url || '');
-      const { path } = parsedPath;
-      const { hash } = parsedPath;
-      const query = parseQuery(parsedPath.query || '');
-      return (path || '/') + stringifyQuery(query) + hash;
-  } catch (e) {
-      console.log(e);
-      return url;
-  }
+        // 包含单个 '%' 的 query 参数会被 decodeURIComponent 解析报错，例如：ABC%DEF
+        const parsedPath = parsePath(url || '');
+        const { path } = parsedPath;
+        const { hash } = parsedPath;
+        const query = parseQuery(parsedPath.query || '');
+        return (path || '/') + stringifyQuery(query) + hash;
+    } catch (e) {
+        console.log(e);
+        return url;
+    }
 };
 
 
