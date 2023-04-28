@@ -63,6 +63,10 @@
           advanced: true
       default: _self
       description: 父级窗口和顶级窗口仅适用于iframe组件嵌套的情况，若不存在嵌套，则打开方式同当前窗口。
+  slots:
+    - concept: Slot
+      name: default
+      description: 文本插槽
   events:
     - name: click
       title: 点击通知栏时触发

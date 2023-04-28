@@ -3632,7 +3632,7 @@
             "Display"
         ],
         "screenShot": "",
-        "blocks": "[{\"title\":\"基础用法\",\"description\":\"\",\"code\":\"<template>\\n<van-notice-bar scrollable>\\n  <template>技术是开发它的人的共同灵魂。</template>\\n</van-notice-bar>\\n</template>\\n\"}]",
+        "blocks": "[{\"title\":\"基础用法\",\"description\":\"\",\"code\":\"<template>\\n<van-notice-bar scrollable>\\n  <van-text text=\\\"技术是开发它的人的共同灵魂。\\\"></van-text>\\n</van-notice-bar>\\n</template>\\n\"}]",
         "jsonSchema": {
             "name": "van-notice-bar",
             "title": "通知栏",
@@ -3644,7 +3644,7 @@
                 {
                     "title": "基础用法",
                     "description": "",
-                    "code": "<template>\n<van-notice-bar scrollable>\n  <template>技术是开发它的人的共同灵魂。</template>\n</van-notice-bar>\n</template>\n"
+                    "code": "<template>\n<van-notice-bar scrollable>\n  <van-text text=\"技术是开发它的人的共同灵魂。\"></van-text>\n</van-notice-bar>\n</template>\n"
                 }
             ],
             "attrs": [
@@ -3740,6 +3740,13 @@
                     ],
                     "default": "_self",
                     "description": "父级窗口和顶级窗口仅适用于iframe组件嵌套的情况，若不存在嵌套，则打开方式同当前窗口。"
+                }
+            ],
+            "slots": [
+                {
+                    "concept": "Slot",
+                    "name": "default",
+                    "description": "文本插槽"
                 }
             ],
             "events": [
