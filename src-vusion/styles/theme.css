@@ -46,7 +46,7 @@
   --van-border-radius-sm: 2px;
   --van-border-radius-md: 4px;
   --van-border-radius-lg: 8px;
-  --van-border-radius-max: 999px;
+  --van-border-radius-max: 16px;
 
   /* Padding */
   --van-padding-base: 6px;
@@ -173,9 +173,7 @@
     --van-border-radius-md
   ); /* @desc 按钮边框圆角 */ /* @depStaticStyles ["border-top-left-radius", "border-top-right-radius", "border-bottom-left-radius", "border-bottom-right-radius"] */
   --van-button-border-radius2: var(--van-border-radius-md); /* @hidden */
-  --van-button-round-border-radius: var(
-    --van-border-radius-max
-  ); /* @desc 圆角按钮圆角 */ /* @depStaticStyles ["border-top-left-radius", "border-top-right-radius", "border-bottom-left-radius", "border-bottom-right-radius"] */
+  --van-button-round-border-radius: 999px; /* @desc 圆角按钮圆角 */ /* @depStaticStyles ["border-top-left-radius", "border-top-right-radius", "border-bottom-left-radius", "border-bottom-right-radius"] */
   --van-button-plain-background-color: #fff; /* @type color */ /* @hidden */
   --van-button-disabled-opacity: var(
     --van-component-disabled-opacity
@@ -734,7 +732,7 @@
     --van-border-radius-md
   ); /* @desc 大标签圆角 */ /* @depAttrs { "size": ["large"] } */
   --van-tag-large-font-size: var(--van-font-size-md); /* @hidden */
-  --van-tag-round-border-radius: var(--van-border-radius-max); /* @hidden */
+  --van-tag-round-border-radius: 999px; /* @hidden */
   --van-tag-danger-color: var(
     --van-brand-error
   ); /* @type color */ /* @desc 危险类型颜色 */ /* @depAttrs { "type": ["danger"] } */  /* @depStaticStyles ["background-color"] */
