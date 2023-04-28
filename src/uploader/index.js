@@ -182,11 +182,11 @@ export default createComponent({
     // 校验文件类型是否匹配
     /**
      *
-     * @param {*} file
-     * @param {*} accept
-     * @return {boolean}
+     * @param {File} file
+     * @param {String} accept
+     * @return {Boolean}
      */
-    validateFile(file, accept) {
+    validateFile(file, accept = '') {
       // 通配符* 直接不校验
       if ((accept || '').trim() === '*') {
         return true;
@@ -251,7 +251,7 @@ export default createComponent({
       if (Array.isArray(files)) {
         for (let i = 0; i < files.length; i++) {
           if (this.accept) {
-            const valid = this.validateFile(files[i]);
+            const valid = this.validateFile(files[i], this.accept);
             if (!valid) {
               this.resetInput();
               Toast('文件类型不匹配，请上传' + this.accept + '的文件类型');
@@ -260,7 +260,7 @@ export default createComponent({
           }
         }
       } else if (this.accept) {
-        const valid = this.validateFile(files);
+        const valid = this.validateFile(files, this.accept);
         if (!valid) {
           Toast('文件类型不匹配，请上传' + this.accept + '的文件类型');
           this.resetInput();
