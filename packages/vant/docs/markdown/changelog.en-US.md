@@ -19,6 +19,23 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 
 ## Details
 
+### [v4.2.1](https://github.com/vant-ui/vant/compare/v4.2.0...v4.2.1)
+
+`2023-04-30`
+
+**Feature**
+
+- Pagination: add show-prev-button, show-next-button props [#11780](https://github.com/vant-ui/vant/issues/11780)
+- Picker: add scroll-into event [#11757](https://github.com/vant-ui/vant/issues/11757)
+
+**Bug Fixes**
+
+- Pagination: don't show click feedback when button is disabled [#11779](https://github.com/vant-ui/vant/issues/11779)
+- Sticky: resize or orientationchange wrapper no reset width and height [#11753](https://github.com/vant-ui/vant/issues/11753)
+- Tabs: re-render when line-width or line-height changed [#11776](https://github.com/vant-ui/vant/issues/11776)
+- Tabs: should scroll active tab into view after resized [#11777](https://github.com/vant-ui/vant/issues/11777)
+- Watermark: add xlink namespace and fix blob MIME type [#11762](https://github.com/vant-ui/vant/issues/11762)
+
 ### [v4.2.0](https://github.com/vant-ui/vant/compare/v4.1.2...v4.2.0)
 
 `2023-04-16`
