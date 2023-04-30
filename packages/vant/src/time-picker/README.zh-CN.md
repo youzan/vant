@@ -124,7 +124,7 @@ export default {
     };
 
     return {
-      filter,
+      formatter,
       currentTime,
     };
   },
