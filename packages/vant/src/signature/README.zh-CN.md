@@ -69,7 +69,7 @@ export default {
 | 参数      | 说明                                 | 类型     | 默认值 |
 | --------- | ------------------------------------ | -------- | ------ |
 | type      | 导出图片类型                         | _string_ | `png`  |
-| penColor  | 笔触颜色，默认黑色。                 | _string_ | `#000` |
+| penColor  | 笔触颜色，默认黑色                   | _string_ | `#000` |
 | lineWidth | 线条宽度                             | _number_ | `3`    |
 | tips      | 当不支持 Canvas 的时候出现的提示文案 | _string_ | -      |
 
