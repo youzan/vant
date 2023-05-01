@@ -10,6 +10,7 @@ import {
   makeNumberProp,
   makeStringProp,
   createNamespace,
+  preventDefault,
 } from '../utils';
 import { Button } from '../button';
 
@@ -54,6 +55,8 @@ export default defineComponent({
         return false;
       }
 
+      preventDefault(event);
+
       const evt = event.changedTouches
         ? event.changedTouches[0]
         : event.targetTouches[0];
@@ -74,8 +77,8 @@ export default defineComponent({
       state.ctx?.stroke();
     };
 
-    const touchEnd = (event: { preventDefault: () => void }) => {
-      event.preventDefault();
+    const touchEnd = (event: TouchEvent) => {
+      preventDefault(event);
       emit('end');
     };
 
@@ -83,10 +86,11 @@ export default defineComponent({
       if (!state.ctx) {
         return false;
       }
-      emit('start');
+
       state.ctx.beginPath();
       state.ctx.lineWidth = props.lineWidth;
       state.ctx.strokeStyle = props.penColor;
+      emit('start');
     };
 
     const isCanvasEmpty = (canvas: HTMLCanvasElement) => {
@@ -141,7 +145,7 @@ export default defineComponent({
               width={state.width}
               height={state.height}
               onTouchstartPassive={touchStart}
-              onTouchmovePassive={touchMove}
+              onTouchmove={touchMove}
               onTouchend={touchEnd}
             />
           ) : (
