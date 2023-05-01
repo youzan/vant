@@ -21,11 +21,13 @@ test('should emit "signing" event when touch is moving', async () => {
 
   await canvas.trigger('touchstart');
   await canvas.trigger('touchmove', {
-    changedTouches: [{ clientX: 10, clientY: 20 }],
+    touches: [{ clientX: 10, clientY: 20 }],
   });
 
   expect(wrapper.emitted('signing')).toBeTruthy();
-  expect(wrapper.emitted('signing')![0][0]).toMatchObject({
+  expect(
+    wrapper.emitted<TouchEvent[]>('signing')![0][0].touches[0]
+  ).toMatchObject({
     clientX: 10,
     clientY: 20,
   });
