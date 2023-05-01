@@ -5,7 +5,12 @@ import {
   defineComponent,
   type ExtractPropTypes,
 } from 'vue';
-import { createNamespace, makeNumberProp, makeStringProp } from '../utils';
+import {
+  inBrowser,
+  makeNumberProp,
+  makeStringProp,
+  createNamespace,
+} from '../utils';
 import { Button } from '../button';
 
 const [name, bem, t] = createNamespace('signature');
@@ -18,6 +23,11 @@ export const signatureProps = {
 };
 
 export type SignatureProps = ExtractPropTypes<typeof signatureProps>;
+
+const hasCanvasSupport = () => {
+  const canvas = document.createElement('canvas');
+  return !!canvas.getContext?.('2d');
+};
 
 export default defineComponent({
   name,
@@ -37,10 +47,7 @@ export default defineComponent({
       isSupportTouch: 'ontouchstart' in window,
     });
 
-    const hasCanvasSupport = () => {
-      const canvas = document.createElement('canvas');
-      return !!(canvas.getContext && canvas.getContext('2d'));
-    };
+    const isRenderCanvas = inBrowser ? hasCanvasSupport() : true;
 
     const touchMove = (event: TouchEvent) => {
       if (!state.ctx) {
@@ -118,7 +125,7 @@ export default defineComponent({
     };
 
     onMounted(() => {
-      if (hasCanvasSupport()) {
+      if (isRenderCanvas) {
         state.ctx = canvasRef.value?.getContext('2d');
         state.width = wrapRef.value?.offsetWidth || 0;
         state.height = wrapRef.value?.offsetHeight || 0;
@@ -128,7 +135,7 @@ export default defineComponent({
     return () => (
       <div class={bem()}>
         <div class={bem('content')} ref={wrapRef}>
-          {(hasCanvasSupport() && (
+          {isRenderCanvas ? (
             <canvas
               ref={canvasRef}
               width={state.width}
@@ -137,10 +144,11 @@ export default defineComponent({
               onTouchmovePassive={touchMove}
               onTouchend={touchEnd}
             />
-          )) || <p>{props.tips}</p>}
+          ) : (
+            <p>{props.tips}</p>
+          )}
         </div>
         <div class={bem('footer')}>
-          <p>{props.tips}</p>
           <Button size="small" onClick={clear}>
             {t('cancel')}
           </Button>
