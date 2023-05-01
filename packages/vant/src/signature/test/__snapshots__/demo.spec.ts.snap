@@ -10,8 +10,6 @@ exports[`should render demo and match snapshot 1`] = `
       </canvas>
     </div>
     <div class="van-signature__footer">
-      <p>
-      </p>
       <button type="button"
               class="van-button van-button--default van-button--small"
       >
@@ -42,8 +40,6 @@ exports[`should render demo and match snapshot 1`] = `
       </canvas>
     </div>
     <div class="van-signature__footer">
-      <p>
-      </p>
       <button type="button"
               class="van-button van-button--default van-button--small"
       >
@@ -74,8 +70,6 @@ exports[`should render demo and match snapshot 1`] = `
       </canvas>
     </div>
     <div class="van-signature__footer">
-      <p>
-      </p>
       <button type="button"
               class="van-button van-button--default van-button--small"
       >

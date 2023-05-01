@@ -56,3 +56,24 @@ test('submit() should output a valid canvas', async () => {
   expect(data.canvas).toBeNull();
   expect(data.filePath).toBe('');
 });
+
+test('should render tips correctly', async () => {
+  const createElement = document.createElement.bind(document);
+
+  const spy = jest.spyOn(document, 'createElement');
+  spy.mockImplementation((tagName, options) => {
+    if (tagName === 'canvas') {
+      return {} as HTMLCanvasElement;
+    }
+    return createElement(tagName, options);
+  });
+
+  const wrapper = mount(Signature, {
+    props: {
+      tips: 'Canvas is not supported',
+    },
+  });
+
+  expect(wrapper.html()).toMatchSnapshot();
+  spy.mockRestore();
+});
