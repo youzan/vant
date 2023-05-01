@@ -1,8 +1,8 @@
 import {
-  defineComponent,
-  reactive,
   ref,
+  reactive,
   onMounted,
+  defineComponent,
   type ExtractPropTypes,
 } from 'vue';
 import { createNamespace, makeNumberProp, makeStringProp } from '../utils';
@@ -27,13 +27,13 @@ export default defineComponent({
   emits: ['submit', 'clear', 'start', 'end', 'signing'],
 
   setup(props, { emit }) {
-    const canvasRef = ref<HTMLCanvasElement | null>(null);
-    const wrapRef = ref<HTMLElement | null>(null);
+    const canvasRef = ref<HTMLCanvasElement>();
+    const wrapRef = ref<HTMLElement>();
 
     const state = reactive({
       width: 0,
       height: 0,
-      ctx: null as any,
+      ctx: null as CanvasRenderingContext2D | null | undefined,
       isSupportTouch: 'ontouchstart' in window,
     });
 
@@ -46,6 +46,7 @@ export default defineComponent({
       if (!state.ctx) {
         return false;
       }
+
       const evt = event.changedTouches
         ? event.changedTouches[0]
         : event.targetTouches[0];
@@ -59,6 +60,7 @@ export default defineComponent({
         mouseX = evt.clientX - (coverPos?.left || 0);
         mouseY = evt.clientY - (coverPos?.top || 0);
       }
+
       state.ctx.lineCap = 'round';
       state.ctx.lineJoin = 'round';
       state.ctx?.lineTo(mouseX, mouseY);
@@ -94,25 +96,24 @@ export default defineComponent({
       }
 
       const isEmpty = isCanvasEmpty(canvas);
-      const _canvas = isEmpty ? null : canvas;
-      const _filePath = isEmpty
+      const filePath = isEmpty
         ? ''
         : canvas.toDataURL(
             `image/${props.type}`,
             props.type === 'jpg' ? 0.9 : null
           );
 
-      const data = {
-        canvas: _canvas,
-        filePath: _filePath,
-      };
-
-      emit('submit', data);
+      emit('submit', {
+        canvas: isEmpty ? null : canvas,
+        filePath,
+      });
     };
 
     const clear = () => {
-      state.ctx.clearRect(0, 0, state.width, state.height);
-      state.ctx.closePath();
+      if (state.ctx) {
+        state.ctx.clearRect(0, 0, state.width, state.height);
+        state.ctx.closePath();
+      }
       emit('clear');
     };
 
