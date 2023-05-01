@@ -2,7 +2,7 @@
 
 ### 介绍
 
-用于签名场景的组件，基于 Canvas。
+用于签名场景的组件，基于 Canvas 实现。请升级 `vant` 到 >= 4.3.0 版本来使用该组件。
 
 ### 引入
 
@@ -66,12 +66,12 @@ export default {
 
 ### Props
 
-| 参数      | 说明                                 | 类型     | 默认值 |
-| --------- | ------------------------------------ | -------- | ------ |
-| type      | 导出图片类型                         | _string_ | `png`  |
-| penColor  | 笔触颜色，默认黑色                   | _string_ | `#000` |
-| lineWidth | 线条宽度                             | _number_ | `3`    |
-| tips      | 当不支持 Canvas 的时候出现的提示文案 | _string_ | -      |
+| 参数       | 说明                                 | 类型     | 默认值 |
+| ---------- | ------------------------------------ | -------- | ------ |
+| type       | 导出图片类型                         | _string_ | `png`  |
+| pen-color  | 笔触颜色，默认黑色                   | _string_ | `#000` |
+| line-width | 线条宽度                             | _number_ | `3`    |
+| tips       | 当不支持 Canvas 的时候出现的提示文案 | _string_ | -      |
 
 ### Events
 
@@ -100,6 +100,6 @@ import type { SignatureProps } from 'vant';
 | 名称 | 默认值 | 描述 |
 | --- | --- | --- |
 | --van-signature-padding | _var(--van-padding-xs)_ | - |
-| --van-signature-content-height | _160px_ | 画布高度 |
+| --van-signature-content-height | _200px_ | 画布高度 |
 | --van-signature-content-background | _var(--van-background-2)_ | 画布背景色 |
 | --van-signature-content-border | _1px dotted #dadada_ | 画布边框样式 |

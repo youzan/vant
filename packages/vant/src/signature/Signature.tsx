@@ -90,7 +90,7 @@ export default defineComponent({
     };
 
     const isCanvasEmpty = (canvas: HTMLCanvasElement) => {
-      const empty: HTMLCanvasElement = document.createElement('canvas');
+      const empty = document.createElement('canvas');
       empty.width = canvas.width;
       empty.height = canvas.height;
       return canvas.toDataURL() === empty.toDataURL();

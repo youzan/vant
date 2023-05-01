@@ -2,7 +2,7 @@
 
 ### Intro
 
-Component for signature scene, based on Canvas.
+Component for signature scene, based on Canvas. Please upgrade `vant` to >= v4.3.0 before using this component.
 
 ### Install
 
@@ -69,8 +69,8 @@ export default {
 | Parameter | Description | Type | Default |
 | --- | --- | --- | --- |
 | type | Export image type | _string_ | `png` |
-| penColor | Color of the brush stroke, default is black | _string_ | `#000` |
-| lineWidth | Width of the line | _number_ | `3` |
+| pen-color | Color of the brush stroke, default is black | _string_ | `#000` |
+| line-width | Width of the line | _number_ | `3` |
 | tips | Text that appears when Canvas is not supported | _string_ | - |
 
 ### Events
@@ -100,6 +100,6 @@ The component provides the following CSS variables, which can be used to customi
 | Name | Default Value | Description |
 | --- | --- | --- |
 | --van-signature-padding | _var(--van-padding-xs)_ | - |
-| --van-signature-content-height | _160px_ | Height of the canvas |
+| --van-signature-content-height | _200px_ | Height of the canvas |
 | --van-signature-content-background | _var(--van-background-2)_ | Background color of the canvas |
 | --van-signature-content-border | _1px dotted #dadada_ | Border style of the canvas |
