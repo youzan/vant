@@ -2,7 +2,6 @@
 import { ref } from 'vue';
 import VanSignature from '..';
 import VanImage from '../../image';
-
 import { useTranslate } from '../../../docs/site';
 
 const t = useTranslate({
@@ -43,7 +42,9 @@ const onSigning = (e) => console.log('signing', e);
       @signing="onSigning"
     />
   </demo-block>
+
   <van-image v-if="demoUrl" :src="demoUrl" />
+
   <demo-block :title="t('penColor')">
     <van-signature
       pen-color="#ff0000"
@@ -54,6 +55,7 @@ const onSigning = (e) => console.log('signing', e);
       @signing="onSigning"
     />
   </demo-block>
+
   <demo-block :title="t('lineWidth')">
     <van-signature
       :line-width="6"
