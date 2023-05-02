@@ -1,1 +1,8 @@
 blank_issues_enabled: true
+contact_links:
+  - name: Ask a question
+    url: https://github.com/youzan/vant/discussions
+    about: Ask a question about Vant
+  - name: 提问
+    url: https://github.com/youzan/vant/discussions
+    about: 询问 Vant 的用法问题

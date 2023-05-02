@@ -1,7 +1,12 @@
 import { nextTick } from 'vue';
 import { trigger } from './event';
+import { inBrowser } from '@vant/use';
 
 function mockHTMLElementOffset() {
+  if (!inBrowser) {
+    return;
+  }
+
   Object.defineProperties(HTMLElement.prototype, {
     offsetParent: {
       get() {
@@ -33,14 +38,19 @@ function mockHTMLElementOffset() {
 
 export function mockScrollIntoView() {
   const fn = jest.fn();
-  Element.prototype.scrollIntoView = fn;
+  if (inBrowser) {
+    Element.prototype.scrollIntoView = fn;
+  }
   return fn;
 }
 
 export function mockGetBoundingClientRect(rect: Partial<DOMRect>): () => void {
-  const spy = jest.spyOn(Element.prototype, 'getBoundingClientRect');
-  spy.mockReturnValue(rect as DOMRect);
-  return () => spy.mockRestore();
+  if (inBrowser) {
+    const spy = jest.spyOn(Element.prototype, 'getBoundingClientRect');
+    spy.mockReturnValue(rect as DOMRect);
+    return () => spy.mockRestore();
+  }
+  return () => {};
 }
 
 export async function mockScrollTop(value: number) {

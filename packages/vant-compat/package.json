@@ -42,7 +42,7 @@
     "esbuild": "^0.17.12",
     "release-it": "^15.1.1",
     "rimraf": "^5.0.0",
-    "typescript": "^5.0.2"
+    "typescript": "^5.0.4"
   },
   "release-it": {
     "git": {
