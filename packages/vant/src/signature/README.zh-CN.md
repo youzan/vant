@@ -77,7 +77,7 @@ export default {
 | pen-color | 笔触颜色，默认黑色 | _string_ | `#000` |
 | line-width | 线条宽度 | _number_ | `3` |
 | tips | 当不支持 Canvas 的时候出现的提示文案 | _string_ | - |
-| cancel-button-text | 取消按钮文案 | _string_ | `取消` |
+| clear-button-text | 清除按钮文案 | _string_ | `清空` |
 | confirm-button-text | 确认按钮文案 | _string_ | `确认` |
 
 ### Events

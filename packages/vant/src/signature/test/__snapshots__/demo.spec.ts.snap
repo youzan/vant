@@ -15,7 +15,7 @@ exports[`should render demo and match snapshot 1`] = `
       >
         <div class="van-button__content">
           <span class="van-button__text">
-            Cancel
+            Clear
           </span>
         </div>
       </button>
@@ -45,7 +45,7 @@ exports[`should render demo and match snapshot 1`] = `
       >
         <div class="van-button__content">
           <span class="van-button__text">
-            Cancel
+            Clear
           </span>
         </div>
       </button>
@@ -75,7 +75,7 @@ exports[`should render demo and match snapshot 1`] = `
       >
         <div class="van-button__content">
           <span class="van-button__text">
-            Cancel
+            Clear
           </span>
         </div>
       </button>

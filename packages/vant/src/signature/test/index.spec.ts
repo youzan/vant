@@ -84,7 +84,7 @@ test('should allow to custom button text', async () => {
   const wrapper = mount(Signature, {
     props: {
       confirmButtonText: 'Foo',
-      cancelButtonText: 'Bar',
+      clearButtonText: 'Bar',
     },
   });
 

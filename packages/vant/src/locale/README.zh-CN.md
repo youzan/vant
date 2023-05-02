@@ -69,8 +69,8 @@ Locale.add(messages);
 | 罗马尼亚语           | ro-RO        | -        |
 | 俄罗斯语             | ru-RU        | `v3.1.5` |
 | 瑞典语               | sv-SE        | `v3.4.7` |
-| 土耳其语             | tr-TR        | -        |
 | 泰语                 | th-TH        | -        |
+| 土耳其语             | tr-TR        | -        |
 | 乌克兰语             | uk-UA        | `v3.4.5` |
 | 越南语               | vi-VN        | `v3.4.5` |
 | 简体中文             | zh-CN        | -        |
