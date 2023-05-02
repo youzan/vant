@@ -92,16 +92,16 @@
       color: var(--van-field-placeholder-text-color);
     }
 
+    &:read-only {
+      cursor: default;
+    }
+
     &:disabled {
       color: var(--van-field-input-disabled-text-color);
       cursor: not-allowed;
       opacity: 1;
       // fix disabled color in mobile safari
       -webkit-text-fill-color: var(--van-field-input-disabled-text-color);
-    }
-
-    &:read-only {
-      cursor: default;
     }
 
     &--center {
