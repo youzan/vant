@@ -20,31 +20,32 @@ app.use(Signature);
 
 ### Basic Usage
 
+When the confirm button is clicked, the component will emit the `submit` event. The first parameter of the event is `data`, which contains the following fields:
+
+- `image`: The image corresponding to the signature, which is in base64 string format. Returns an empty string if the signature is empty.
+- `canvas`: The Canvas element.
+
 ```html
 <van-signature @submit="onSubmit" @clear="onClear" />
-<van-image v-if="demoUrl" :src="demoUrl" />
+<van-image v-if="image" :src="image" />
 ```
 
 ```js
 import { ref } from 'vue';
+import { showToast } from 'vant';
 
 export default {
   setup() {
-    const demoUrl = ref('');
-
+    const image = ref('');
     const onSubmit = (data) => {
-      const { filePath, canvas } = data;
-      demoUrl.value = filePath;
-
-      console.log('submit', canvas, filePath);
+      image.value = data.image;
     };
-
-    const onClear = () => console.log('clear');
+    const onClear = () => showToast('clear');
 
     return {
+      image,
       onSubmit,
       onClear,
-      demoUrl,
     };
   },
 };
@@ -52,11 +53,15 @@ export default {
 
 ### Pen Color
 
+Use `pen-color` prop to set the color of the brush stroke.
+
 ```html
 <van-signature pen-color="#ff0000" @submit="onSubmit" @clear="onClear" />
 ```
 
 ### LineWidth
+
+Use `line-width` prop to set the width of the line.
 
 ```html
 <van-signature :line-width="6" @submit="onSubmit" @clear="onClear" />
@@ -79,11 +84,11 @@ export default {
 
 | Event Name | Description | Callback Parameters |
 | --- | --- | --- |
-| start | Callback for start of signature | - |
-| end | Callback for end of signature | - |
-| signing | Callback for signature in progress | _event: TouchEvent_ |
-| submit | submit button click | _data: {canvas: HTMLCanvasElement, filePath: string}_ |
-| clear | clear button click | - |
+| start | Emitted when signing starts | - |
+| end | Emitted when signing ends | - |
+| signing | Emitted when signing | _event: TouchEvent_ |
+| submit | Emitted when clicking the confirm button | _data: { image: string; canvas: HTMLCanvasElement }_ |
+| clear | Emitted when clicking the cancel button | - |
 
 ### Types
 
