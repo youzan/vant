@@ -404,8 +404,8 @@ The component provides the following CSS variables, which can be used to customi
 | --van-field-input-error-text-color | _var(--van-danger-color)_ | - |
 | --van-field-input-disabled-text-color | _var(--van-text-color-3)_ | - |
 | --van-field-placeholder-text-color | _var(--van-text-color-3)_ | - |
-| --van-field-icon-size | _16px_ | - |
-| --van-field-clear-icon-size | _16px_ | - |
+| --van-field-icon-size | _18px_ | - |
+| --van-field-clear-icon-size | _18px_ | - |
 | --van-field-clear-icon-color | _var(--van-gray-5)_ | - |
 | --van-field-right-icon-color | _var(--van-gray-6)_ | - |
 | --van-field-error-message-color | _var(--van-danger-color)_ | - |
