@@ -2,7 +2,9 @@
 
 exports[`should render demo and match snapshot 1`] = `
 <div>
-  <div class="van-barrage">
+  <div class="van-barrage"
+       style="--move-distance: -100px;"
+  >
     <span class="van-barrage__item"
           style="animation-duration: 4000ms; animation-delay: 0ms; animation-name: barrage; animation-timing-function: linear; top: 10px;"
     >
@@ -49,7 +51,9 @@ exports[`should render demo and match snapshot 1`] = `
   </div>
 </div>
 <div>
-  <div class="van-barrage">
+  <div class="van-barrage"
+       style="--move-distance: -100px;"
+  >
     <span class="van-barrage__item"
           style="animation-duration: 4000ms; animation-delay: 0ms; animation-name: barrage; animation-timing-function: linear; animation-play-state: paused; top: 10px;"
     >

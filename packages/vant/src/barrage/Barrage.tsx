@@ -111,7 +111,7 @@ export default defineComponent({
 
     return () => (
       <div class={bem()} ref={barrage}>
-        {slots.default && slots.default()}
+        {slots.default?.()}
       </div>
     );
   },

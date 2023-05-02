@@ -69,7 +69,7 @@ test('should not auto play use play function when use play function', async () =
   ).toBe('paused');
 
   barrage.value?.play();
-  barrage.value?.add('Vant Nice');
+  barrage.value?.add('Barrage');
   expect(wrapper.findAll('.van-barrage__item')).toHaveLength(8);
 
   trigger(
