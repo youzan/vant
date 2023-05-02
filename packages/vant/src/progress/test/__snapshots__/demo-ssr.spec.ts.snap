@@ -1,0 +1,133 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render demo and match snapshot 1`] = `
+<!--[-->
+<div>
+  <!--[-->
+  <div class="van-progress"
+       style
+  >
+    <span class="van-progress__portion"
+          style="width:50%;"
+    >
+    </span>
+    <span style="left:50%;transform:translate(-50%,-50%);"
+          class="van-progress__pivot"
+    >
+      50%
+    </span>
+  </div>
+</div>
+<div>
+  <!--[-->
+  <div class="van-progress"
+       style="height:8px;"
+  >
+    <span class="van-progress__portion"
+          style="width:50%;"
+    >
+    </span>
+    <span style="left:50%;transform:translate(-50%,-50%);"
+          class="van-progress__pivot"
+    >
+      50%
+    </span>
+  </div>
+</div>
+<div>
+  <!--[-->
+  <div class="van-progress"
+       style
+  >
+    <span class="van-progress__portion van-progress__portion--inactive"
+          style="width:50%;"
+    >
+    </span>
+    <span style="left:50%;transform:translate(-50%,-50%);"
+          class="van-progress__pivot van-progress__pivot--inactive"
+    >
+      50%
+    </span>
+  </div>
+</div>
+<div>
+  <!--[-->
+  <div class="van-progress"
+       style
+  >
+    <span class="van-progress__portion"
+          style="width:25%;background:#f2826a;"
+    >
+    </span>
+    <span style="left:25%;transform:translate(-25%,-50%);background:#f2826a;"
+          class="van-progress__pivot"
+    >
+      Orange
+    </span>
+  </div>
+  <div class="van-progress"
+       style
+  >
+    <span class="van-progress__portion"
+          style="width:50%;background:#ee0a24;"
+    >
+    </span>
+    <span style="left:50%;transform:translate(-50%,-50%);background:#ee0a24;"
+          class="van-progress__pivot"
+    >
+      Red
+    </span>
+  </div>
+  <div class="van-progress"
+       style
+  >
+    <span class="van-progress__portion"
+          style="width:75%;background:linear-gradient(to right, #be99ff, #7232dd);"
+    >
+    </span>
+    <span style="left:75%;transform:translate(-75%,-50%);background:#7232dd;"
+          class="van-progress__pivot"
+    >
+      Purple
+    </span>
+  </div>
+</div>
+<div>
+  <!--[-->
+  <div class="van-progress"
+       style
+  >
+    <span class="van-progress__portion"
+          style="width:50%;"
+    >
+    </span>
+    <span style="left:50%;transform:translate(-50%,-50%);"
+          class="van-progress__pivot"
+    >
+      50%
+    </span>
+  </div>
+  <div style="margin-top:15px;">
+    <button type="button"
+            class="van-button van-button--primary van-button--small"
+            style
+    >
+      <div class="van-button__content">
+        <span class="van-button__text">
+          Add
+        </span>
+      </div>
+    </button>
+    <button type="button"
+            class="van-button van-button--danger van-button--small"
+            style
+    >
+      <div class="van-button__content">
+        <span class="van-button__text">
+          Decrease
+        </span>
+      </div>
+    </button>
+  </div>
+</div>
+`;

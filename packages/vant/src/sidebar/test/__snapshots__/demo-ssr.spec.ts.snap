@@ -1,0 +1,205 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render demo and match snapshot 1`] = `
+<div style
+     class="van-grid"
+>
+  <!--[-->
+  <div class="van-grid-item"
+       style="flex-basis:50%;"
+  >
+    <div class="van-grid-item__content van-grid-item__content--center"
+         style
+    >
+      <!--[-->
+      <h3 class="demo-sidebar-title">
+        Basic Usage
+      </h3>
+      <div role="tablist"
+           class="van-sidebar"
+      >
+        <!--[-->
+        <div role="tab"
+             class="van-sidebar-item van-sidebar-item--select"
+             tabindex="0"
+             aria-selected="true"
+        >
+          <div class="van-badge__wrapper van-sidebar-item__text">
+            <!--[-->
+            Title
+          </div>
+        </div>
+        <div role="tab"
+             class="van-sidebar-item"
+             tabindex="0"
+             aria-selected="false"
+        >
+          <div class="van-badge__wrapper van-sidebar-item__text">
+            <!--[-->
+            Title
+          </div>
+        </div>
+        <div role="tab"
+             class="van-sidebar-item"
+             tabindex="0"
+             aria-selected="false"
+        >
+          <div class="van-badge__wrapper van-sidebar-item__text">
+            <!--[-->
+            Title
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="van-grid-item"
+       style="flex-basis:50%;"
+  >
+    <div class="van-grid-item__content van-grid-item__content--center"
+         style
+    >
+      <!--[-->
+      <h3 class="demo-sidebar-title">
+        Show Badge
+      </h3>
+      <div role="tablist"
+           class="van-sidebar"
+      >
+        <!--[-->
+        <div role="tab"
+             class="van-sidebar-item van-sidebar-item--select"
+             tabindex="0"
+             aria-selected="true"
+        >
+          <div class="van-badge__wrapper van-sidebar-item__text">
+            <!--[-->
+            Title
+            <div class="van-badge van-badge--top-right van-badge--dot van-badge--fixed"
+                 style
+            >
+            </div>
+          </div>
+        </div>
+        <div role="tab"
+             class="van-sidebar-item"
+             tabindex="0"
+             aria-selected="false"
+        >
+          <div class="van-badge__wrapper van-sidebar-item__text">
+            <!--[-->
+            Title
+            <div class="van-badge van-badge--top-right van-badge--fixed"
+                 style
+            >
+              5
+            </div>
+          </div>
+        </div>
+        <div role="tab"
+             class="van-sidebar-item"
+             tabindex="0"
+             aria-selected="false"
+        >
+          <div class="van-badge__wrapper van-sidebar-item__text">
+            <!--[-->
+            Title
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="van-grid-item"
+       style="flex-basis:50%;"
+  >
+    <div class="van-grid-item__content van-grid-item__content--center"
+         style
+    >
+      <!--[-->
+      <h3 class="demo-sidebar-title">
+        Disabled
+      </h3>
+      <div role="tablist"
+           class="van-sidebar"
+      >
+        <!--[-->
+        <div role="tab"
+             class="van-sidebar-item van-sidebar-item--select"
+             tabindex="0"
+             aria-selected="true"
+        >
+          <div class="van-badge__wrapper van-sidebar-item__text">
+            <!--[-->
+            Title
+          </div>
+        </div>
+        <div role="tab"
+             class="van-sidebar-item van-sidebar-item--disabled"
+             aria-selected="false"
+        >
+          <div class="van-badge__wrapper van-sidebar-item__text">
+            <!--[-->
+            Title
+          </div>
+        </div>
+        <div role="tab"
+             class="van-sidebar-item"
+             tabindex="0"
+             aria-selected="false"
+        >
+          <div class="van-badge__wrapper van-sidebar-item__text">
+            <!--[-->
+            Title
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="van-grid-item"
+       style="flex-basis:50%;"
+  >
+    <div class="van-grid-item__content van-grid-item__content--center"
+         style
+    >
+      <!--[-->
+      <h3 class="demo-sidebar-title">
+        Change Event
+      </h3>
+      <div role="tablist"
+           class="van-sidebar"
+      >
+        <!--[-->
+        <div role="tab"
+             class="van-sidebar-item van-sidebar-item--select"
+             tabindex="0"
+             aria-selected="true"
+        >
+          <div class="van-badge__wrapper van-sidebar-item__text">
+            <!--[-->
+            Title 1
+          </div>
+        </div>
+        <div role="tab"
+             class="van-sidebar-item"
+             tabindex="0"
+             aria-selected="false"
+        >
+          <div class="van-badge__wrapper van-sidebar-item__text">
+            <!--[-->
+            Title 2
+          </div>
+        </div>
+        <div role="tab"
+             class="van-sidebar-item"
+             tabindex="0"
+             aria-selected="false"
+        >
+          <div class="van-badge__wrapper van-sidebar-item__text">
+            <!--[-->
+            Title 3
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

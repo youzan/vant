@@ -1,0 +1,184 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render demo and match snapshot 1`] = `
+<!--[-->
+<div>
+  <!--[-->
+  <div class="van-submit-bar van-safe-area-bottom">
+    <div class="van-submit-bar__bar">
+      <div class="van-submit-bar__text"
+           style
+      >
+        <span>
+          Total:
+        </span>
+        <span class="van-submit-bar__price">
+          ¥
+          <span class="van-submit-bar__price-integer">
+            30
+          </span>
+          .50
+        </span>
+      </div>
+      <button type="button"
+              class="van-button van-button--danger van-button--normal van-button--round van-submit-bar__button van-submit-bar__button--danger"
+              style
+      >
+        <div class="van-button__content">
+          <span class="van-button__text">
+            Submit
+          </span>
+        </div>
+      </button>
+    </div>
+  </div>
+</div>
+<div>
+  <!--[-->
+  <div class="van-submit-bar van-safe-area-bottom">
+    <div class="van-submit-bar__tip">
+      <i class="van-badge__wrapper van-icon van-icon-info-o van-submit-bar__tip-icon"
+         style
+      >
+        <!--[-->
+      </i>
+      <span class="van-submit-bar__tip-text">
+        Some tips
+      </span>
+    </div>
+    <div class="van-submit-bar__bar">
+      <div class="van-submit-bar__text"
+           style
+      >
+        <span>
+          Total:
+        </span>
+        <span class="van-submit-bar__price">
+          ¥
+          <span class="van-submit-bar__price-integer">
+            30
+          </span>
+          .50
+        </span>
+      </div>
+      <button type="button"
+              class="van-button van-button--danger van-button--normal van-button--round van-button--disabled van-submit-bar__button van-submit-bar__button--danger"
+              style
+              disabled
+      >
+        <div class="van-button__content">
+          <span class="van-button__text">
+            Submit
+          </span>
+        </div>
+      </button>
+    </div>
+  </div>
+</div>
+<div>
+  <!--[-->
+  <div class="van-submit-bar van-safe-area-bottom">
+    <div class="van-submit-bar__bar">
+      <div class="van-submit-bar__text"
+           style
+      >
+        <span>
+          Total:
+        </span>
+        <span class="van-submit-bar__price">
+          ¥
+          <span class="van-submit-bar__price-integer">
+            30
+          </span>
+          .50
+        </span>
+      </div>
+      <button type="button"
+              class="van-button van-button--danger van-button--normal van-button--round van-button--loading van-submit-bar__button van-submit-bar__button--danger"
+              style
+      >
+        <div class="van-button__content">
+          <div class="van-loading van-loading--circular van-button__loading"
+               aria-live="polite"
+               aria-busy="true"
+          >
+            <span class="van-loading__spinner van-loading__spinner--circular"
+                  style
+            >
+              <svg class="van-loading__circular"
+                   viewbox="25 25 50 50"
+              >
+                <circle cx="50"
+                        cy="50"
+                        r="20"
+                        fill="none"
+                >
+                </circle>
+              </svg>
+            </span>
+          </div>
+        </div>
+      </button>
+    </div>
+  </div>
+</div>
+<div>
+  <!--[-->
+  <div class="van-submit-bar van-safe-area-bottom">
+    <div class="van-submit-bar__tip">
+      <!--[-->
+      Some tips,
+      <span class="edit-address">
+        Link
+      </span>
+    </div>
+    <div class="van-submit-bar__bar">
+      <!--[-->
+      <div role="checkbox"
+           class="van-checkbox"
+           tabindex="0"
+           aria-checked="true"
+      >
+        <!--[-->
+        <div class="van-checkbox__icon van-checkbox__icon--round van-checkbox__icon--checked"
+             style
+        >
+          <i class="van-badge__wrapper van-icon van-icon-success"
+             style
+          >
+            <!--[-->
+          </i>
+        </div>
+        <span class="van-checkbox__label">
+          <!--[-->
+          Label
+        </span>
+      </div>
+      <div class="van-submit-bar__text"
+           style
+      >
+        <span>
+          Total:
+        </span>
+        <span class="van-submit-bar__price">
+          ¥
+          <span class="van-submit-bar__price-integer">
+            30
+          </span>
+          .50
+        </span>
+      </div>
+      <button type="button"
+              class="van-button van-button--danger van-button--normal van-button--round van-submit-bar__button van-submit-bar__button--danger"
+              style
+      >
+        <div class="van-button__content">
+          <span class="van-button__text">
+            Submit
+          </span>
+        </div>
+      </button>
+    </div>
+  </div>
+</div>
+`;
