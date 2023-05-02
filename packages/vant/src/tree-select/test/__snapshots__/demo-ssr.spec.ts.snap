@@ -1,0 +1,241 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render demo and match snapshot 1`] = `
+<!--[-->
+<div>
+  <!--[-->
+  <div class="van-tree-select"
+       style="height:300px;"
+  >
+    <div role="tablist"
+         class="van-sidebar van-tree-select__nav"
+    >
+      <!--[-->
+      <!--[-->
+      <div role="tab"
+           class="van-sidebar-item van-sidebar-item--select van-tree-select__nav-item"
+           tabindex="0"
+           aria-selected="true"
+      >
+        <div class="van-badge__wrapper van-sidebar-item__text">
+          <!--[-->
+          <!--[-->
+          Group 1
+        </div>
+      </div>
+      <div role="tab"
+           class="van-sidebar-item van-tree-select__nav-item"
+           tabindex="0"
+           aria-selected="false"
+      >
+        <div class="van-badge__wrapper van-sidebar-item__text">
+          <!--[-->
+          <!--[-->
+          Group 2
+        </div>
+      </div>
+      <div role="tab"
+           class="van-sidebar-item van-sidebar-item--disabled van-tree-select__nav-item"
+           aria-selected="false"
+      >
+        <div class="van-badge__wrapper van-sidebar-item__text">
+          <!--[-->
+          <!--[-->
+          Group 3
+        </div>
+      </div>
+    </div>
+    <div class="van-tree-select__content">
+      <!--[-->
+      <div class="van-ellipsis van-tree-select__item van-tree-select__item--active">
+        Delaware
+        <i class="van-badge__wrapper van-icon van-icon-success van-tree-select__selected"
+           style
+        >
+          <!--[-->
+        </i>
+      </div>
+      <div class="van-ellipsis van-tree-select__item">
+        Florida
+      </div>
+      <div class="van-ellipsis van-tree-select__item van-tree-select__item--disabled">
+        Georqia
+      </div>
+    </div>
+  </div>
+</div>
+<div>
+  <!--[-->
+  <div class="van-tree-select"
+       style="height:300px;"
+  >
+    <div role="tablist"
+         class="van-sidebar van-tree-select__nav"
+    >
+      <!--[-->
+      <!--[-->
+      <div role="tab"
+           class="van-sidebar-item van-sidebar-item--select van-tree-select__nav-item"
+           tabindex="0"
+           aria-selected="true"
+      >
+        <div class="van-badge__wrapper van-sidebar-item__text">
+          <!--[-->
+          <!--[-->
+          Group 1
+        </div>
+      </div>
+      <div role="tab"
+           class="van-sidebar-item van-tree-select__nav-item"
+           tabindex="0"
+           aria-selected="false"
+      >
+        <div class="van-badge__wrapper van-sidebar-item__text">
+          <!--[-->
+          <!--[-->
+          Group 2
+        </div>
+      </div>
+      <div role="tab"
+           class="van-sidebar-item van-sidebar-item--disabled van-tree-select__nav-item"
+           aria-selected="false"
+      >
+        <div class="van-badge__wrapper van-sidebar-item__text">
+          <!--[-->
+          <!--[-->
+          Group 3
+        </div>
+      </div>
+    </div>
+    <div class="van-tree-select__content">
+      <!--[-->
+      <div class="van-ellipsis van-tree-select__item van-tree-select__item--active">
+        Delaware
+        <i class="van-badge__wrapper van-icon van-icon-success van-tree-select__selected"
+           style
+        >
+          <!--[-->
+        </i>
+      </div>
+      <div class="van-ellipsis van-tree-select__item van-tree-select__item--active">
+        Florida
+        <i class="van-badge__wrapper van-icon van-icon-success van-tree-select__selected"
+           style
+        >
+          <!--[-->
+        </i>
+      </div>
+      <div class="van-ellipsis van-tree-select__item van-tree-select__item--disabled">
+        Georqia
+      </div>
+    </div>
+  </div>
+</div>
+<div>
+  <!--[-->
+  <div class="van-tree-select"
+       style="height:55vw;"
+  >
+    <div role="tablist"
+         class="van-sidebar van-tree-select__nav"
+    >
+      <!--[-->
+      <!--[-->
+      <div role="tab"
+           class="van-sidebar-item van-sidebar-item--select van-tree-select__nav-item"
+           tabindex="0"
+           aria-selected="true"
+      >
+        <div class="van-badge__wrapper van-sidebar-item__text">
+          <!--[-->
+          <!--[-->
+          Group 1
+        </div>
+      </div>
+      <div role="tab"
+           class="van-sidebar-item van-tree-select__nav-item"
+           tabindex="0"
+           aria-selected="false"
+      >
+        <div class="van-badge__wrapper van-sidebar-item__text">
+          <!--[-->
+          <!--[-->
+          Group 2
+        </div>
+      </div>
+    </div>
+    <div class="van-tree-select__content">
+      <!--[-->
+      <div class="van-image"
+           style
+      >
+        <img src="https://fastly.jsdelivr.net/npm/@vant/assets/apple-1.jpeg"
+             class="van-image__img"
+             style
+        >
+      </div>
+    </div>
+  </div>
+</div>
+<div>
+  <!--[-->
+  <div class="van-tree-select"
+       style="height:55vw;"
+  >
+    <div role="tablist"
+         class="van-sidebar van-tree-select__nav"
+    >
+      <!--[-->
+      <!--[-->
+      <div role="tab"
+           class="van-sidebar-item van-sidebar-item--select van-tree-select__nav-item"
+           tabindex="0"
+           aria-selected="true"
+      >
+        <div class="van-badge__wrapper van-sidebar-item__text">
+          <!--[-->
+          <!--[-->
+          Group 1
+          <div class="van-badge van-badge--top-right van-badge--dot van-badge--fixed"
+               style
+          >
+          </div>
+        </div>
+      </div>
+      <div role="tab"
+           class="van-sidebar-item van-tree-select__nav-item"
+           tabindex="0"
+           aria-selected="false"
+      >
+        <div class="van-badge__wrapper van-sidebar-item__text">
+          <!--[-->
+          <!--[-->
+          Group 2
+          <div class="van-badge van-badge--top-right van-badge--fixed"
+               style
+          >
+            5
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="van-tree-select__content">
+      <!--[-->
+      <div class="van-ellipsis van-tree-select__item van-tree-select__item--active">
+        Delaware
+        <i class="van-badge__wrapper van-icon van-icon-success van-tree-select__selected"
+           style
+        >
+          <!--[-->
+        </i>
+      </div>
+      <div class="van-ellipsis van-tree-select__item">
+        Florida
+      </div>
+      <div class="van-ellipsis van-tree-select__item van-tree-select__item--disabled">
+        Georqia
+      </div>
+    </div>
+  </div>
+</div>
+`;

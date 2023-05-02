@@ -1,0 +1,787 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render demo and match snapshot 1`] = `
+<!--[-->
+<div>
+  <!--[-->
+  <div class="van-tabs van-tabs--line">
+    <!--[-->
+    <div class="van-tabs__wrap">
+      <div role="tablist"
+           class="van-tabs__nav van-tabs__nav--line"
+           style
+           aria-orientation="horizontal"
+      >
+        <!--[-->
+      </div>
+    </div>
+    <div class="van-tabs__content">
+      <!--[-->
+      <!--[-->
+      <!--[-->
+      <div id="van-tab"
+           role="tabpanel"
+           class="van-tab__panel"
+           tabindex="-1"
+           aria-labelledby="van-tabs-0"
+           style="display:none;"
+      >
+      </div>
+      <div id="van-tab"
+           role="tabpanel"
+           class="van-tab__panel"
+           tabindex="-1"
+           aria-labelledby="van-tabs-1"
+           style="display:none;"
+      >
+      </div>
+      <div id="van-tab"
+           role="tabpanel"
+           class="van-tab__panel"
+           tabindex="-1"
+           aria-labelledby="van-tabs-2"
+           style="display:none;"
+      >
+      </div>
+      <div id="van-tab"
+           role="tabpanel"
+           class="van-tab__panel"
+           tabindex="-1"
+           aria-labelledby="van-tabs-3"
+           style="display:none;"
+      >
+      </div>
+    </div>
+  </div>
+</div>
+<div>
+  <!--[-->
+  <div class="van-tabs van-tabs--line">
+    <!--[-->
+    <div class="van-tabs__wrap">
+      <div role="tablist"
+           class="van-tabs__nav van-tabs__nav--line"
+           style
+           aria-orientation="horizontal"
+      >
+        <!--[-->
+      </div>
+    </div>
+    <div class="van-tabs__content">
+      <!--[-->
+      <!--[-->
+      <div id="van-tab"
+           role="tabpanel"
+           class="van-tab__panel"
+           tabindex="-1"
+           aria-labelledby="van-tabs-0"
+           style="display:none;"
+      >
+      </div>
+      <div id="van-tab"
+           role="tabpanel"
+           class="van-tab__panel"
+           tabindex="-1"
+           aria-labelledby="van-tabs-1"
+           style="display:none;"
+      >
+      </div>
+      <div id="van-tab"
+           role="tabpanel"
+           class="van-tab__panel"
+           tabindex="-1"
+           aria-labelledby="van-tabs-2"
+           style="display:none;"
+      >
+      </div>
+    </div>
+  </div>
+</div>
+<div>
+  <!--[-->
+  <div class="van-tabs van-tabs--line">
+    <!--[-->
+    <div class="van-tabs__wrap">
+      <div role="tablist"
+           class="van-tabs__nav van-tabs__nav--line"
+           style
+           aria-orientation="horizontal"
+      >
+        <!--[-->
+      </div>
+    </div>
+    <div class="van-tabs__content">
+      <!--[-->
+      <!--[-->
+      <!--[-->
+      <div id="van-tab"
+           role="tabpanel"
+           class="van-tab__panel"
+           tabindex="-1"
+           aria-labelledby="van-tabs-0"
+           style="display:none;"
+      >
+      </div>
+      <div id="van-tab"
+           role="tabpanel"
+           class="van-tab__panel"
+           tabindex="-1"
+           aria-labelledby="van-tabs-1"
+           style="display:none;"
+      >
+      </div>
+      <div id="van-tab"
+           role="tabpanel"
+           class="van-tab__panel"
+           tabindex="-1"
+           aria-labelledby="van-tabs-2"
+           style="display:none;"
+      >
+      </div>
+      <div id="van-tab"
+           role="tabpanel"
+           class="van-tab__panel"
+           tabindex="-1"
+           aria-labelledby="van-tabs-3"
+           style="display:none;"
+      >
+      </div>
+      <div id="van-tab"
+           role="tabpanel"
+           class="van-tab__panel"
+           tabindex="-1"
+           aria-labelledby="van-tabs-4"
+           style="display:none;"
+      >
+      </div>
+      <div id="van-tab"
+           role="tabpanel"
+           class="van-tab__panel"
+           tabindex="-1"
+           aria-labelledby="van-tabs-5"
+           style="display:none;"
+      >
+      </div>
+      <div id="van-tab"
+           role="tabpanel"
+           class="van-tab__panel"
+           tabindex="-1"
+           aria-labelledby="van-tabs-6"
+           style="display:none;"
+      >
+      </div>
+      <div id="van-tab"
+           role="tabpanel"
+           class="van-tab__panel"
+           tabindex="-1"
+           aria-labelledby="van-tabs-7"
+           style="display:none;"
+      >
+      </div>
+    </div>
+  </div>
+</div>
+<div>
+  <!--[-->
+  <div class="van-tabs van-tabs--line">
+    <!--[-->
+    <div class="van-tabs__wrap">
+      <div role="tablist"
+           class="van-tabs__nav van-tabs__nav--line"
+           style
+           aria-orientation="horizontal"
+      >
+        <!--[-->
+      </div>
+    </div>
+    <div class="van-tabs__content">
+      <!--[-->
+      <!--[-->
+      <!--[-->
+      <div id="van-tab"
+           role="tabpanel"
+           class="van-tab__panel"
+           tabindex="-1"
+           aria-labelledby="van-tabs-0"
+           style="display:none;"
+      >
+      </div>
+      <div id="van-tab"
+           role="tabpanel"
+           class="van-tab__panel"
+           tabindex="-1"
+           aria-labelledby="van-tabs-1"
+           style="display:none;"
+      >
+      </div>
+      <div id="van-tab"
+           role="tabpanel"
+           class="van-tab__panel"
+           tabindex="-1"
+           aria-labelledby="van-tabs-2"
+           style="display:none;"
+      >
+      </div>
+    </div>
+  </div>
+</div>
+<div>
+  <!--[-->
+  <div class="van-tabs van-tabs--card">
+    <!--[-->
+    <div class="van-tabs__wrap">
+      <div role="tablist"
+           class="van-tabs__nav van-tabs__nav--card"
+           style
+           aria-orientation="horizontal"
+      >
+        <!--[-->
+      </div>
+    </div>
+    <div class="van-tabs__content">
+      <!--[-->
+      <!--[-->
+      <!--[-->
+      <div id="van-tab"
+           role="tabpanel"
+           class="van-tab__panel"
+           tabindex="-1"
+           aria-labelledby="van-tabs-0"
+           style="display:none;"
+      >
+      </div>
+      <div id="van-tab"
+           role="tabpanel"
+           class="van-tab__panel"
+           tabindex="-1"
+           aria-labelledby="van-tabs-1"
+           style="display:none;"
+      >
+      </div>
+      <div id="van-tab"
+           role="tabpanel"
+           class="van-tab__panel"
+           tabindex="-1"
+           aria-labelledby="van-tabs-2"
+           style="display:none;"
+      >
+      </div>
+    </div>
+  </div>
+</div>
+<div>
+  <!--[-->
+  <div class="van-tabs van-tabs--line">
+    <!--[-->
+    <div class="van-tabs__wrap">
+      <div role="tablist"
+           class="van-tabs__nav van-tabs__nav--line"
+           style
+           aria-orientation="horizontal"
+      >
+        <!--[-->
+      </div>
+    </div>
+    <div class="van-tabs__content">
+      <!--[-->
+      <!--[-->
+      <!--[-->
+      <div id="van-tab"
+           role="tabpanel"
+           class="van-tab__panel"
+           tabindex="-1"
+           aria-labelledby="van-tabs-0"
+           style="display:none;"
+      >
+      </div>
+      <div id="van-tab"
+           role="tabpanel"
+           class="van-tab__panel"
+           tabindex="-1"
+           aria-labelledby="van-tabs-1"
+           style="display:none;"
+      >
+      </div>
+    </div>
+  </div>
+</div>
+<div>
+  <!--[-->
+  <div class="van-tabs van-tabs--line">
+    <div style>
+      <div class="van-sticky"
+           style
+      >
+        <!--[-->
+        <div>
+          <!--[-->
+          <div class="van-tabs__wrap">
+            <div role="tablist"
+                 class="van-tabs__nav van-tabs__nav--line"
+                 style
+                 aria-orientation="horizontal"
+            >
+              <!--[-->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="van-tabs__content">
+      <!--[-->
+      <!--[-->
+      <!--[-->
+      <div id="van-tab"
+           role="tabpanel"
+           class="van-tab__panel"
+           tabindex="-1"
+           aria-labelledby="van-tabs-0"
+           style="display:none;"
+      >
+      </div>
+      <div id="van-tab"
+           role="tabpanel"
+           class="van-tab__panel"
+           tabindex="-1"
+           aria-labelledby="van-tabs-1"
+           style="display:none;"
+      >
+      </div>
+      <div id="van-tab"
+           role="tabpanel"
+           class="van-tab__panel"
+           tabindex="-1"
+           aria-labelledby="van-tabs-2"
+           style="display:none;"
+      >
+      </div>
+      <div id="van-tab"
+           role="tabpanel"
+           class="van-tab__panel"
+           tabindex="-1"
+           aria-labelledby="van-tabs-3"
+           style="display:none;"
+      >
+      </div>
+    </div>
+  </div>
+</div>
+<div>
+  <!--[-->
+  <div class="van-tabs van-tabs--line">
+    <!--[-->
+    <div class="van-tabs__wrap">
+      <div role="tablist"
+           class="van-tabs__nav van-tabs__nav--line van-tabs__nav--shrink van-tabs__nav--complete"
+           style
+           aria-orientation="horizontal"
+      >
+        <!--[-->
+      </div>
+    </div>
+    <div class="van-tabs__content">
+      <!--[-->
+      <!--[-->
+      <!--[-->
+      <div id="van-tab"
+           role="tabpanel"
+           class="van-tab__panel"
+           tabindex="-1"
+           aria-labelledby="van-tabs-0"
+           style="display:none;"
+      >
+      </div>
+      <div id="van-tab"
+           role="tabpanel"
+           class="van-tab__panel"
+           tabindex="-1"
+           aria-labelledby="van-tabs-1"
+           style="display:none;"
+      >
+      </div>
+      <div id="van-tab"
+           role="tabpanel"
+           class="van-tab__panel"
+           tabindex="-1"
+           aria-labelledby="van-tabs-2"
+           style="display:none;"
+      >
+      </div>
+      <div id="van-tab"
+           role="tabpanel"
+           class="van-tab__panel"
+           tabindex="-1"
+           aria-labelledby="van-tabs-3"
+           style="display:none;"
+      >
+      </div>
+    </div>
+  </div>
+  <div class="van-tabs van-tabs--card"
+       style="margin-top:var(--van-padding-lg);"
+  >
+    <!--[-->
+    <div class="van-tabs__wrap">
+      <div role="tablist"
+           class="van-tabs__nav van-tabs__nav--card van-tabs__nav--shrink van-tabs__nav--complete"
+           style
+           aria-orientation="horizontal"
+      >
+        <!--[-->
+      </div>
+    </div>
+    <div class="van-tabs__content">
+      <!--[-->
+      <!--[-->
+      <!--[-->
+      <div id="van-tab"
+           role="tabpanel"
+           class="van-tab__panel"
+           tabindex="-1"
+           aria-labelledby="van-tabs-0"
+           style="display:none;"
+      >
+      </div>
+      <div id="van-tab"
+           role="tabpanel"
+           class="van-tab__panel"
+           tabindex="-1"
+           aria-labelledby="van-tabs-1"
+           style="display:none;"
+      >
+      </div>
+      <div id="van-tab"
+           role="tabpanel"
+           class="van-tab__panel"
+           tabindex="-1"
+           aria-labelledby="van-tabs-2"
+           style="display:none;"
+      >
+      </div>
+      <div id="van-tab"
+           role="tabpanel"
+           class="van-tab__panel"
+           tabindex="-1"
+           aria-labelledby="van-tabs-3"
+           style="display:none;"
+      >
+      </div>
+    </div>
+  </div>
+</div>
+<div>
+  <!--[-->
+  <div class="van-tabs van-tabs--line">
+    <!--[-->
+    <div class="van-tabs__wrap">
+      <div role="tablist"
+           class="van-tabs__nav van-tabs__nav--line"
+           style
+           aria-orientation="horizontal"
+      >
+        <!--[-->
+      </div>
+    </div>
+    <div class="van-tabs__content">
+      <!--[-->
+      <!--[-->
+      <!--[-->
+      <div id="van-tab"
+           role="tabpanel"
+           class="van-tab__panel"
+           tabindex="-1"
+           aria-labelledby="van-tabs-0"
+           style="display:none;"
+      >
+      </div>
+      <div id="van-tab"
+           role="tabpanel"
+           class="van-tab__panel"
+           tabindex="-1"
+           aria-labelledby="van-tabs-1"
+           style="display:none;"
+      >
+      </div>
+    </div>
+  </div>
+</div>
+<div>
+  <!--[-->
+  <div class="van-tabs van-tabs--line">
+    <!--[-->
+    <div class="van-tabs__wrap">
+      <div role="tablist"
+           class="van-tabs__nav van-tabs__nav--line"
+           style
+           aria-orientation="horizontal"
+      >
+        <!--[-->
+      </div>
+    </div>
+    <div class="van-tabs__content van-tabs__content--animated">
+      <div class="van-swipe van-tabs__track">
+        <div style="transition-duration:300ms;transform:translateX(0px);"
+             class="van-swipe__track"
+        >
+          <!--[-->
+          <!--[-->
+          <!--[-->
+          <!--[-->
+          <div class="van-swipe-item van-tab__panel-wrapper van-tab__panel-wrapper--inactive"
+               style
+               id="van-tab"
+               role="tabpanel"
+               tabindex="-1"
+               aria-hidden="true"
+               aria-labelledby="van-tabs-0"
+          >
+          </div>
+          <div class="van-swipe-item van-tab__panel-wrapper van-tab__panel-wrapper--inactive"
+               style
+               id="van-tab"
+               role="tabpanel"
+               tabindex="-1"
+               aria-hidden="true"
+               aria-labelledby="van-tabs-1"
+          >
+          </div>
+          <div class="van-swipe-item van-tab__panel-wrapper van-tab__panel-wrapper--inactive"
+               style
+               id="van-tab"
+               role="tabpanel"
+               tabindex="-1"
+               aria-hidden="true"
+               aria-labelledby="van-tabs-2"
+          >
+          </div>
+          <div class="van-swipe-item van-tab__panel-wrapper van-tab__panel-wrapper--inactive"
+               style
+               id="van-tab"
+               role="tabpanel"
+               tabindex="-1"
+               aria-hidden="true"
+               aria-labelledby="van-tabs-3"
+          >
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div>
+  <!--[-->
+  <div class="van-tabs van-tabs--line">
+    <!--[-->
+    <div class="van-tabs__wrap">
+      <div role="tablist"
+           class="van-tabs__nav van-tabs__nav--line"
+           style
+           aria-orientation="horizontal"
+      >
+        <!--[-->
+      </div>
+    </div>
+    <div class="van-tabs__content van-tabs__content--animated">
+      <div class="van-swipe van-tabs__track">
+        <div style="transition-duration:300ms;transform:translateX(0px);"
+             class="van-swipe__track"
+        >
+          <!--[-->
+          <!--[-->
+          <!--[-->
+          <!--[-->
+          <div class="van-swipe-item van-tab__panel-wrapper van-tab__panel-wrapper--inactive"
+               style
+               id="van-tab"
+               role="tabpanel"
+               tabindex="-1"
+               aria-hidden="true"
+               aria-labelledby="van-tabs-0"
+          >
+          </div>
+          <div class="van-swipe-item van-tab__panel-wrapper van-tab__panel-wrapper--inactive"
+               style
+               id="van-tab"
+               role="tabpanel"
+               tabindex="-1"
+               aria-hidden="true"
+               aria-labelledby="van-tabs-1"
+          >
+          </div>
+          <div class="van-swipe-item van-tab__panel-wrapper van-tab__panel-wrapper--inactive"
+               style
+               id="van-tab"
+               role="tabpanel"
+               tabindex="-1"
+               aria-hidden="true"
+               aria-labelledby="van-tabs-2"
+          >
+          </div>
+          <div class="van-swipe-item van-tab__panel-wrapper van-tab__panel-wrapper--inactive"
+               style
+               id="van-tab"
+               role="tabpanel"
+               tabindex="-1"
+               aria-hidden="true"
+               aria-labelledby="van-tabs-3"
+          >
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div>
+  <!--[-->
+  <div class="van-tabs van-tabs--line">
+    <div style>
+      <div class="van-sticky"
+           style
+      >
+        <!--[-->
+        <div>
+          <!--[-->
+          <div class="van-tabs__wrap">
+            <div role="tablist"
+                 class="van-tabs__nav van-tabs__nav--line"
+                 style
+                 aria-orientation="horizontal"
+            >
+              <!--[-->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="van-tabs__content">
+      <!--[-->
+      <!--[-->
+      <!--[-->
+      <div id="van-tab"
+           role="tabpanel"
+           class="van-tab__panel"
+           tabindex="0"
+           aria-labelledby="van-tabs-0"
+      >
+        <!--[-->
+        content of tab 1
+      </div>
+      <div id="van-tab"
+           role="tabpanel"
+           class="van-tab__panel"
+           tabindex="0"
+           aria-labelledby="van-tabs-1"
+      >
+        <!--[-->
+        content of tab 2
+      </div>
+      <div id="van-tab"
+           role="tabpanel"
+           class="van-tab__panel"
+           tabindex="0"
+           aria-labelledby="van-tabs-2"
+      >
+        <!--[-->
+        content of tab 3
+      </div>
+      <div id="van-tab"
+           role="tabpanel"
+           class="van-tab__panel"
+           tabindex="0"
+           aria-labelledby="van-tabs-3"
+      >
+        <!--[-->
+        content of tab 4
+      </div>
+      <div id="van-tab"
+           role="tabpanel"
+           class="van-tab__panel"
+           tabindex="0"
+           aria-labelledby="van-tabs-4"
+      >
+        <!--[-->
+        content of tab 5
+      </div>
+      <div id="van-tab"
+           role="tabpanel"
+           class="van-tab__panel"
+           tabindex="0"
+           aria-labelledby="van-tabs-5"
+      >
+        <!--[-->
+        content of tab 6
+      </div>
+      <div id="van-tab"
+           role="tabpanel"
+           class="van-tab__panel"
+           tabindex="0"
+           aria-labelledby="van-tabs-6"
+      >
+        <!--[-->
+        content of tab 7
+      </div>
+      <div id="van-tab"
+           role="tabpanel"
+           class="van-tab__panel"
+           tabindex="0"
+           aria-labelledby="van-tabs-7"
+      >
+        <!--[-->
+        content of tab 8
+      </div>
+    </div>
+  </div>
+</div>
+<div>
+  <!--[-->
+  <div class="van-tabs van-tabs--line">
+    <!--[-->
+    <div class="van-tabs__wrap">
+      <div role="tablist"
+           class="van-tabs__nav van-tabs__nav--line"
+           style
+           aria-orientation="horizontal"
+      >
+        <!--[-->
+      </div>
+    </div>
+    <div class="van-tabs__content">
+      <!--[-->
+      <!--[-->
+      <!--[-->
+      <div id="van-tab"
+           role="tabpanel"
+           class="van-tab__panel"
+           tabindex="-1"
+           aria-labelledby="van-tabs-0"
+           style="display:none;"
+      >
+      </div>
+      <div id="van-tab"
+           role="tabpanel"
+           class="van-tab__panel"
+           tabindex="-1"
+           aria-labelledby="van-tabs-1"
+           style="display:none;"
+      >
+      </div>
+      <div id="van-tab"
+           role="tabpanel"
+           class="van-tab__panel"
+           tabindex="-1"
+           aria-labelledby="van-tabs-2"
+           style="display:none;"
+      >
+      </div>
+      <div id="van-tab"
+           role="tabpanel"
+           class="van-tab__panel"
+           tabindex="-1"
+           aria-labelledby="van-tabs-3"
+           style="display:none;"
+      >
+      </div>
+    </div>
+  </div>
+</div>
+`;

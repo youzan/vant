@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render demo and match snapshot 1`] = `
+<!--[-->
+<div>
+  <!--[-->
+  <div class="van-text-ellipsis">
+  </div>
+</div>
+<div>
+  <!--[-->
+  <div class="van-text-ellipsis">
+  </div>
+</div>
+<div>
+  <!--[-->
+  <div class="van-text-ellipsis">
+  </div>
+</div>
+`;

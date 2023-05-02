@@ -1,3 +1,4 @@
+import { inBrowser } from '@vant/use';
 import Locale from '../../src/locale';
 import enUS from '../../src/locale/lang/en-US';
 import { camelize, createTranslate } from '../../src/utils';
@@ -17,7 +18,7 @@ export function initDemoLocale() {
   });
 
   // switch lang after routing
-  if (window.vueRouter) {
+  if (inBrowser && window.vueRouter) {
     window.vueRouter.afterEach((to) => {
       const { lang } = to.meta || {};
 

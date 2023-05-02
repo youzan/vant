@@ -1,0 +1,206 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render demo and match snapshot 1`] = `
+<!--[-->
+<div>
+  <!--[-->
+  <div class="van-badge__wrapper">
+    <!--[-->
+    <div class="child">
+    </div>
+    <div class="van-badge van-badge--top-right van-badge--fixed"
+         style
+    >
+      5
+    </div>
+  </div>
+  <div class="van-badge__wrapper">
+    <!--[-->
+    <div class="child">
+    </div>
+    <div class="van-badge van-badge--top-right van-badge--fixed"
+         style
+    >
+      10
+    </div>
+  </div>
+  <div class="van-badge__wrapper">
+    <!--[-->
+    <div class="child">
+    </div>
+    <div class="van-badge van-badge--top-right van-badge--fixed"
+         style
+    >
+      Hot
+    </div>
+  </div>
+  <div class="van-badge__wrapper">
+    <!--[-->
+    <div class="child">
+    </div>
+    <div class="van-badge van-badge--top-right van-badge--dot van-badge--fixed"
+         style
+    >
+    </div>
+  </div>
+</div>
+<div>
+  <!--[-->
+  <div class="van-badge__wrapper">
+    <!--[-->
+    <div class="child">
+    </div>
+    <div class="van-badge van-badge--top-right van-badge--fixed"
+         style
+    >
+      9+
+    </div>
+  </div>
+  <div class="van-badge__wrapper">
+    <!--[-->
+    <div class="child">
+    </div>
+    <div class="van-badge van-badge--top-right van-badge--fixed"
+         style
+    >
+      20+
+    </div>
+  </div>
+  <div class="van-badge__wrapper">
+    <!--[-->
+    <div class="child">
+    </div>
+    <div class="van-badge van-badge--top-right van-badge--fixed"
+         style
+    >
+      99+
+    </div>
+  </div>
+</div>
+<div>
+  <!--[-->
+  <div class="van-badge__wrapper">
+    <!--[-->
+    <div class="child">
+    </div>
+    <div class="van-badge van-badge--top-right van-badge--fixed"
+         style="background:#1989fa;"
+    >
+      5
+    </div>
+  </div>
+  <div class="van-badge__wrapper">
+    <!--[-->
+    <div class="child">
+    </div>
+    <div class="van-badge van-badge--top-right van-badge--fixed"
+         style="background:#1989fa;"
+    >
+      10
+    </div>
+  </div>
+  <div class="van-badge__wrapper">
+    <!--[-->
+    <div class="child">
+    </div>
+    <div class="van-badge van-badge--top-right van-badge--dot van-badge--fixed"
+         style="background:#1989fa;"
+    >
+    </div>
+  </div>
+</div>
+<div>
+  <!--[-->
+  <div class="van-badge__wrapper">
+    <!--[-->
+    <div class="child">
+    </div>
+    <div class="van-badge van-badge--top-right van-badge--fixed"
+         style
+    >
+      <!--[-->
+      <i class="van-badge__wrapper van-icon van-icon-success badge-icon"
+         style
+      >
+        <!--[-->
+      </i>
+    </div>
+  </div>
+  <div class="van-badge__wrapper">
+    <!--[-->
+    <div class="child">
+    </div>
+    <div class="van-badge van-badge--top-right van-badge--fixed"
+         style
+    >
+      <!--[-->
+      <i class="van-badge__wrapper van-icon van-icon-cross badge-icon"
+         style
+      >
+        <!--[-->
+      </i>
+    </div>
+  </div>
+  <div class="van-badge__wrapper">
+    <!--[-->
+    <div class="child">
+    </div>
+    <div class="van-badge van-badge--top-right van-badge--fixed"
+         style
+    >
+      <!--[-->
+      <i class="van-badge__wrapper van-icon van-icon-down badge-icon"
+         style
+      >
+        <!--[-->
+      </i>
+    </div>
+  </div>
+</div>
+<div>
+  <!--[-->
+  <div class="van-badge__wrapper">
+    <!--[-->
+    <div class="child">
+    </div>
+    <div class="van-badge van-badge--top-left van-badge--fixed"
+         style
+    >
+      10
+    </div>
+  </div>
+  <div class="van-badge__wrapper">
+    <!--[-->
+    <div class="child">
+    </div>
+    <div class="van-badge van-badge--bottom-left van-badge--fixed"
+         style
+    >
+      10
+    </div>
+  </div>
+  <div class="van-badge__wrapper">
+    <!--[-->
+    <div class="child">
+    </div>
+    <div class="van-badge van-badge--bottom-right van-badge--fixed"
+         style
+    >
+      10
+    </div>
+  </div>
+</div>
+<div>
+  <!--[-->
+  <div class="van-badge van-badge--top-right"
+       style="margin-left:16px;"
+  >
+    20
+  </div>
+  <div class="van-badge van-badge--top-right"
+       style="margin-left:16px;"
+  >
+    99+
+  </div>
+</div>
+`;
