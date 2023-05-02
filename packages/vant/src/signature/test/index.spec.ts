@@ -47,16 +47,16 @@ test('submit() should output a valid canvas', async () => {
 
   await wrapper.vm.$nextTick();
 
-  wrapper.vm.$emit('submit', { canvas: null, filePath: '' });
+  wrapper.vm.$emit('submit', { canvas: null, image: '' });
 
   const emitted = wrapper.emitted();
   expect(emitted.submit).toBeTruthy();
   const [data] = emitted.submit[0] as [
-    { canvas: HTMLCanvasElement | null; filePath: string }
+    { canvas: HTMLCanvasElement | null; image: string }
   ];
 
   expect(data.canvas).toBeNull();
-  expect(data.filePath).toBe('');
+  expect(data.image).toBe('');
 });
 
 test('should render tips correctly', async () => {

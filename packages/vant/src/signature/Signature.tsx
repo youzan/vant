@@ -104,7 +104,7 @@ export default defineComponent({
       }
 
       const isEmpty = isCanvasEmpty(canvas);
-      const filePath = isEmpty
+      const image = isEmpty
         ? ''
         : canvas.toDataURL(
             `image/${props.type}`,
@@ -112,8 +112,8 @@ export default defineComponent({
           );
 
       emit('submit', {
-        canvas: isEmpty ? null : canvas,
-        filePath,
+        image,
+        canvas,
       });
     };
 
