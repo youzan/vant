@@ -20,18 +20,59 @@ test('should format initial value correctly', () => {
   expect(onUpdate.mock.calls[0]).toEqual([['22', '58']]);
 });
 
-test('should update modelValue correctly when using max-hour and max-minute prop', () => {
-  const onUpdate = jest.fn();
-  mount(TimePicker, {
-    props: {
-      modelValue: ['23', '59'],
-      maxHour: 2,
-      maxMinute: 2,
-      'onUpdate:modelValue': onUpdate,
-    },
+describe('should update modelValue correctly', () => {
+  test('basic', async () => {
+    const onUpdate = jest.fn();
+    const wrapper = mount(TimePicker, {
+      props: {
+        modelValue: ['-10', '-10'],
+        'onUpdate:modelValue': onUpdate,
+      },
+    });
+
+    await wrapper.setProps({ modelValue: ['30', '80'] });
+    await wrapper.setProps({ modelValue: ['2', '2'] });
+
+    expect(onUpdate.mock.calls[0]).toEqual([['00', '00']]);
+    expect(onUpdate.mock.calls[1]).toEqual([['23', '59']]);
+    expect(onUpdate.mock.calls[2]).toEqual([['02', '02']]);
   });
 
-  expect(onUpdate.mock.calls[0]).toEqual([['00', '00']]);
+  test('when using max-hour and max-minute prop', async () => {
+    const onUpdate = jest.fn();
+    const wrapper = mount(TimePicker, {
+      props: {
+        modelValue: ['23', '59'],
+        maxHour: 2,
+        maxMinute: 2,
+        'onUpdate:modelValue': onUpdate,
+      },
+    });
+
+    await wrapper.setProps({ maxHour: 12, maxMinute: 12 });
+    await wrapper.setProps({ modelValue: ['23', '59'] });
+
+    expect(onUpdate.mock.calls[0]).toEqual([['02', '02']]);
+    expect(onUpdate.mock.calls[1]).toEqual([['12', '12']]);
+  });
+
+  test('when using min-hour and min-minute prop', async () => {
+    const onUpdate = jest.fn();
+    const wrapper = mount(TimePicker, {
+      props: {
+        modelValue: ['00', '00'],
+        minHour: 2,
+        minMinute: 2,
+        'onUpdate:modelValue': onUpdate,
+      },
+    });
+
+    await wrapper.setProps({ minHour: 12, minMinute: 12 });
+    await wrapper.setProps({ modelValue: ['00', '00'] });
+
+    expect(onUpdate.mock.calls[0]).toEqual([['02', '02']]);
+    expect(onUpdate.mock.calls[1]).toEqual([['12', '12']]);
+  });
 });
 
 test('should filter options when using filter prop', () => {
