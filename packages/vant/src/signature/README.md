@@ -72,6 +72,8 @@ export default {
 | pen-color | Color of the brush stroke, default is black | _string_ | `#000` |
 | line-width | Width of the line | _number_ | `3` |
 | tips | Text that appears when Canvas is not supported | _string_ | - |
+| cancel-button-text | Cancel button text | _string_ | `Cancel` |
+| confirm-button-text | Confirm button text | _string_ | `Confirm` |
 
 ### Events
 
