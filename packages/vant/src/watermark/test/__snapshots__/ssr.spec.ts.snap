@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render correctly when SSR 1`] = `
+<div class="van-watermark van-watermark--full"
+     style="background-image:url();"
+>
+  <div class="van-watermark__wrapper">
+    <svg viewbox="0 0 100 100"
+         width="100"
+         height="100"
+         xmlns="http://www.w3.org/2000/svg"
+         xmlns:xlink="http://www.w3.org/1999/xlink"
+         style="padding:0 0px 0px 0;"
+    >
+      <foreignObject x="0"
+                     y="0"
+                     width="100"
+                     height="100"
+      >
+        <div xmlns="http://www.w3.org/1999/xhtml"
+             style="transform-origin:center;transform:rotate(-22deg);"
+        >
+          <span style="color:#dcdee0;">
+          </span>
+        </div>
+      </foreignObject>
+    </svg>
+  </div>
+</div>
+`;
