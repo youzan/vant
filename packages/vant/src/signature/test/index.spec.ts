@@ -79,3 +79,14 @@ test('should render tips correctly', async () => {
   expect(wrapper.html()).toMatchSnapshot();
   spy.mockRestore();
 });
+
+test('should allow to custom button text', async () => {
+  const wrapper = mount(Signature, {
+    props: {
+      confirmButtonText: 'Foo',
+      cancelButtonText: 'Bar',
+    },
+  });
+
+  expect(wrapper.find('.van-signature__footer').html()).toMatchSnapshot();
+});

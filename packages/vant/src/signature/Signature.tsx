@@ -18,10 +18,12 @@ import { Button } from '../button';
 const [name, bem, t] = createNamespace('signature');
 
 export const signatureProps = {
-  type: makeStringProp('png'),
-  lineWidth: makeNumberProp(3),
-  penColor: makeStringProp('#000'),
   tips: String,
+  type: makeStringProp('png'),
+  penColor: makeStringProp('#000'),
+  lineWidth: makeNumberProp(3),
+  cancelButtonText: String,
+  confirmButtonText: String,
 };
 
 export type SignatureProps = ExtractPropTypes<typeof signatureProps>;
@@ -149,10 +151,10 @@ export default defineComponent({
         </div>
         <div class={bem('footer')}>
           <Button size="small" onClick={clear}>
-            {t('cancel')}
+            {props.cancelButtonText || t('cancel')}
           </Button>
           <Button type="primary" size="small" onClick={submit}>
-            {t('confirm')}
+            {props.confirmButtonText || t('confirm')}
           </Button>
         </div>
       </div>

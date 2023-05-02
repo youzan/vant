@@ -66,12 +66,14 @@ export default {
 
 ### Props
 
-| 参数       | 说明                                 | 类型     | 默认值 |
-| ---------- | ------------------------------------ | -------- | ------ |
-| type       | 导出图片类型                         | _string_ | `png`  |
-| pen-color  | 笔触颜色，默认黑色                   | _string_ | `#000` |
-| line-width | 线条宽度                             | _number_ | `3`    |
-| tips       | 当不支持 Canvas 的时候出现的提示文案 | _string_ | -      |
+| 参数 | 说明 | 类型 | 默认值 |
+| --- | --- | --- | --- |
+| type | 导出图片类型 | _string_ | `png` |
+| pen-color | 笔触颜色，默认黑色 | _string_ | `#000` |
+| line-width | 线条宽度 | _number_ | `3` |
+| tips | 当不支持 Canvas 的时候出现的提示文案 | _string_ | - |
+| cancel-button-text | 取消按钮文案 | _string_ | `取消` |
+| confirm-button-text | 确认按钮文案 | _string_ | `确认` |
 
 ### Events
 
