@@ -1,0 +1,110 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render demo and match snapshot 1`] = `
+<!--[-->
+<div>
+  <!--[-->
+  <div class="van-dropdown-menu">
+    <div style
+         class="van-dropdown-menu__bar"
+    >
+      <!--[-->
+    </div>
+    <!--[-->
+    <div style="top:0px;display:none;"
+         class="van-dropdown-item van-dropdown-item--down"
+    >
+      <!--[-->
+    </div>
+    <div style="top:0px;display:none;"
+         class="van-dropdown-item van-dropdown-item--down"
+    >
+      <!--[-->
+    </div>
+  </div>
+</div>
+<div>
+  <!--[-->
+  <div class="van-dropdown-menu">
+    <div style
+         class="van-dropdown-menu__bar"
+    >
+      <!--[-->
+    </div>
+    <!--[-->
+    <div style="top:0px;display:none;"
+         class="van-dropdown-item van-dropdown-item--down"
+    >
+      <!--[-->
+    </div>
+    <div style="top:0px;display:none;"
+         class="van-dropdown-item van-dropdown-item--down"
+    >
+      <!--[-->
+    </div>
+  </div>
+</div>
+<div>
+  <!--[-->
+  <div class="van-dropdown-menu">
+    <div style
+         class="van-dropdown-menu__bar"
+    >
+      <!--[-->
+    </div>
+    <!--[-->
+    <div style="top:0px;display:none;"
+         class="van-dropdown-item van-dropdown-item--down"
+    >
+      <!--[-->
+    </div>
+    <div style="top:0px;display:none;"
+         class="van-dropdown-item van-dropdown-item--down"
+    >
+      <!--[-->
+    </div>
+  </div>
+</div>
+<div>
+  <!--[-->
+  <div class="van-dropdown-menu">
+    <div style
+         class="van-dropdown-menu__bar"
+    >
+      <!--[-->
+    </div>
+    <!--[-->
+    <div style="bottom:0px;display:none;"
+         class="van-dropdown-item van-dropdown-item--up"
+    >
+      <!--[-->
+    </div>
+    <div style="bottom:0px;display:none;"
+         class="van-dropdown-item van-dropdown-item--up"
+    >
+      <!--[-->
+    </div>
+  </div>
+</div>
+<div>
+  <!--[-->
+  <div class="van-dropdown-menu">
+    <div style
+         class="van-dropdown-menu__bar"
+    >
+      <!--[-->
+    </div>
+    <!--[-->
+    <div style="top:0px;display:none;"
+         class="van-dropdown-item van-dropdown-item--down"
+    >
+      <!--[-->
+    </div>
+    <div style="top:0px;display:none;"
+         class="van-dropdown-item van-dropdown-item--down"
+    >
+      <!--[-->
+    </div>
+  </div>
+</div>
+`;

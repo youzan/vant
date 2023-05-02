@@ -1,0 +1,187 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render demo and match snapshot 1`] = `
+<!--[-->
+<div>
+  <!--[-->
+  <nav role="navigation"
+       class="van-pagination"
+  >
+    <ul class="van-pagination__items">
+      <li class="van-pagination__item van-pagination__item--disabled van-pagination__item--prev van-hairline--surround">
+        <button type="button"
+                disabled
+        >
+          Prev
+        </button>
+      </li>
+      <!--[-->
+      <li class="van-pagination__item van-pagination__item--active van-pagination__item--page van-hairline--surround">
+        <button type="button"
+                aria-current="true"
+        >
+          1
+        </button>
+      </li>
+      <li class="van-pagination__item van-pagination__item--page van-hairline--surround">
+        <button type="button">
+          2
+        </button>
+      </li>
+      <li class="van-pagination__item van-pagination__item--page van-hairline--surround">
+        <button type="button">
+          3
+        </button>
+      </li>
+      <li class="van-pagination__item van-pagination__item--page van-hairline--surround">
+        <button type="button">
+          4
+        </button>
+      </li>
+      <li class="van-pagination__item van-pagination__item--page van-hairline--surround">
+        <button type="button">
+          5
+        </button>
+      </li>
+      <li class="van-pagination__item van-pagination__item--next van-hairline--surround">
+        <button type="button">
+          Next
+        </button>
+      </li>
+    </ul>
+  </nav>
+</div>
+<div>
+  <!--[-->
+  <nav role="navigation"
+       class="van-pagination"
+       size="small"
+  >
+    <ul class="van-pagination__items">
+      <li class="van-pagination__item van-pagination__item--disabled van-pagination__item--border van-pagination__item--prev van-hairline--surround">
+        <button type="button"
+                disabled
+        >
+          Prev
+        </button>
+      </li>
+      <li class="van-pagination__page-desc">
+        1/12
+      </li>
+      <li class="van-pagination__item van-pagination__item--border van-pagination__item--next van-hairline--surround">
+        <button type="button">
+          Next
+        </button>
+      </li>
+    </ul>
+  </nav>
+</div>
+<div>
+  <!--[-->
+  <nav role="navigation"
+       class="van-pagination"
+  >
+    <ul class="van-pagination__items">
+      <li class="van-pagination__item van-pagination__item--disabled van-pagination__item--prev van-hairline--surround">
+        <button type="button"
+                disabled
+        >
+          Prev
+        </button>
+      </li>
+      <!--[-->
+      <li class="van-pagination__item van-pagination__item--active van-pagination__item--page van-hairline--surround">
+        <button type="button"
+                aria-current="true"
+        >
+          1
+        </button>
+      </li>
+      <li class="van-pagination__item van-pagination__item--page van-hairline--surround">
+        <button type="button">
+          2
+        </button>
+      </li>
+      <li class="van-pagination__item van-pagination__item--page van-hairline--surround">
+        <button type="button">
+          3
+        </button>
+      </li>
+      <li class="van-pagination__item van-pagination__item--page van-hairline--surround">
+        <button type="button">
+          ...
+        </button>
+      </li>
+      <li class="van-pagination__item van-pagination__item--next van-hairline--surround">
+        <button type="button">
+          Next
+        </button>
+      </li>
+    </ul>
+  </nav>
+</div>
+<div>
+  <!--[-->
+  <nav role="navigation"
+       class="van-pagination"
+  >
+    <ul class="van-pagination__items">
+      <li class="van-pagination__item van-pagination__item--disabled van-pagination__item--prev van-hairline--surround">
+        <button type="button"
+                disabled
+        >
+          <!--[-->
+          <i class="van-badge__wrapper van-icon van-icon-arrow-left"
+             style
+          >
+            <!--[-->
+          </i>
+        </button>
+      </li>
+      <!--[-->
+      <li class="van-pagination__item van-pagination__item--active van-pagination__item--page van-hairline--surround">
+        <button type="button"
+                aria-current="true"
+        >
+          <!--[-->
+          1
+        </button>
+      </li>
+      <li class="van-pagination__item van-pagination__item--page van-hairline--surround">
+        <button type="button">
+          <!--[-->
+          2
+        </button>
+      </li>
+      <li class="van-pagination__item van-pagination__item--page van-hairline--surround">
+        <button type="button">
+          <!--[-->
+          3
+        </button>
+      </li>
+      <li class="van-pagination__item van-pagination__item--page van-hairline--surround">
+        <button type="button">
+          <!--[-->
+          4
+        </button>
+      </li>
+      <li class="van-pagination__item van-pagination__item--page van-hairline--surround">
+        <button type="button">
+          <!--[-->
+          5
+        </button>
+      </li>
+      <li class="van-pagination__item van-pagination__item--next van-hairline--surround">
+        <button type="button">
+          <!--[-->
+          <i class="van-badge__wrapper van-icon van-icon-arrow"
+             style
+          >
+            <!--[-->
+          </i>
+        </button>
+      </li>
+    </ul>
+  </nav>
+</div>
+`;

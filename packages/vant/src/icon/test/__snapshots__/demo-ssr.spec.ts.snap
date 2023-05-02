@@ -1,0 +1,61 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render demo and match snapshot 1`] = `
+<div class="van-tabs van-tabs--line">
+  <div style>
+    <div class="van-sticky"
+         style
+    >
+      <!--[-->
+      <div>
+        <!--[-->
+        <div class="van-tabs__wrap">
+          <div role="tablist"
+               class="van-tabs__nav van-tabs__nav--line"
+               style
+               aria-orientation="horizontal"
+          >
+            <!--[-->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="van-tabs__content">
+    <!--[-->
+    <!--[-->
+    <div id="van-tab"
+         role="tabpanel"
+         class="van-tab__panel demo-icon-tab-panel"
+         tabindex="-1"
+         aria-labelledby="van-tabs-0"
+         style="display:none;"
+    >
+    </div>
+    <div id="van-tab"
+         role="tabpanel"
+         class="van-tab__panel demo-icon-tab-panel"
+         tabindex="-1"
+         aria-labelledby="van-tabs-1"
+         style="display:none;"
+    >
+    </div>
+    <div id="van-tab"
+         role="tabpanel"
+         class="van-tab__panel demo-icon-tab-panel"
+         tabindex="-1"
+         aria-labelledby="van-tabs-2"
+         style="display:none;"
+    >
+    </div>
+    <div id="van-tab"
+         role="tabpanel"
+         class="van-tab__panel demo-icon-tab-panel"
+         tabindex="-1"
+         aria-labelledby="van-tabs-3"
+         style="display:none;"
+    >
+    </div>
+  </div>
+</div>
+`;
