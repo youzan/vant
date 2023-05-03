@@ -19,6 +19,23 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 
 ## Details
 
+### [v4.3.0](https://github.com/vant-ui/vant/compare/v4.2.1...v4.3.0)
+
+`2023-05-03`
+
+**New Component**
+
+- add new Signature component, contributed by [@LIjiAngChen8](https://github.com/LIjiAngChen8) [#11733](https://github.com/vant-ui/vant/issues/11733)
+
+**Feature**
+
+- Field: increase default icon size to 18px [#11799](https://github.com/vant-ui/vant/issues/11799)
+
+**Bug Fixes**
+
+- Field: disabled cursor should be not-allowed [#11800](https://github.com/vant-ui/vant/issues/11800)
+- Image: failed to display loading when using lazy-load [#11809](https://github.com/vant-ui/vant/issues/11809)
+
 ### [v4.2.1](https://github.com/vant-ui/vant/compare/v4.2.0...v4.2.1)
 
 `2023-04-30`
