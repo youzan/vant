@@ -20,31 +20,32 @@ app.use(Signature);
 
 ### 基础用法
 
+当点击确认按钮时，组件会触发 `submit` 事件，事件的第一个参数为 `data`，包含以下字段：
+
+- `image`：签名对应的图片，为 base64 字符串格式。若签名为空，则返回空字符串。
+- `canvas`：Canvas 元素。
+
 ```html
 <van-signature @submit="onSubmit" @clear="onClear" />
-<van-image v-if="demoUrl" :src="demoUrl" />
+<van-image v-if="image" :src="image" />
 ```
 
 ```js
 import { ref } from 'vue';
+import { showToast } from 'vant';
 
 export default {
   setup() {
-    const demoUrl = ref('');
-
+    const image = ref('');
     const onSubmit = (data) => {
-      const { filePath, canvas } = data;
-      demoUrl.value = filePath;
-
-      console.log('submit', canvas, filePath);
+      image.value = data.image;
     };
-
-    const onClear = () => console.log('clear');
+    const onClear = () => showToast('clear');
 
     return {
+      image,
       onSubmit,
       onClear,
-      demoUrl,
     };
   },
 };
@@ -52,11 +53,15 @@ export default {
 
 ### 自定义颜色
 
+通过 `pen-color` 来自定义笔触颜色。
+
 ```html
 <van-signature pen-color="#ff0000" @submit="onSubmit" @clear="onClear" />
 ```
 
 ### 自定义线宽
+
+通过 `line-width` 来自定义线条宽度。
 
 ```html
 <van-signature :line-width="6" @submit="onSubmit" @clear="onClear" />
@@ -72,18 +77,18 @@ export default {
 | pen-color | 笔触颜色，默认黑色 | _string_ | `#000` |
 | line-width | 线条宽度 | _number_ | `3` |
 | tips | 当不支持 Canvas 的时候出现的提示文案 | _string_ | - |
-| cancel-button-text | 取消按钮文案 | _string_ | `取消` |
+| clear-button-text | 清除按钮文案 | _string_ | `清空` |
 | confirm-button-text | 确认按钮文案 | _string_ | `确认` |
 
 ### Events
 
 | 事件名 | 说明 | 回调参数 |
 | --- | --- | --- |
-| start | 签名开始事件回调 | - |
-| end | 签名结束事件回调 | - |
-| signing | 签名过程事件回调 | _event: TouchEvent_ |
-| submit | 确定按钮事件回调 | _data: {canvas: HTMLCanvasElement, filePath: string}_ |
-| clear | 取消按钮事件回调 | - |
+| start | 开始签名时触发 | - |
+| end | 结束签名时触发 | - |
+| signing | 签名过程中触发 | _event: TouchEvent_ |
+| submit | 点击确定按钮时触发 | _data: { image: string; canvas: HTMLCanvasElement }_ |
+| clear | 点击取消按钮时触发 | - |
 
 ### 类型定义
 

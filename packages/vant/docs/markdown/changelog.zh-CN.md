@@ -19,6 +19,23 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 
 ## 更新内容
 
+### [v4.3.0](https://github.com/vant-ui/vant/compare/v4.2.1...v4.3.0)
+
+`2023-05-03`
+
+**New Component**
+
+- 新增 Signature 组件, 由 [@LIjiAngChen8](https://github.com/LIjiAngChen8) 贡献 [#11733](https://github.com/vant-ui/vant/issues/11733)
+
+**Feature**
+
+- Field: 图标的默认大小增加为 18px [#11799](https://github.com/vant-ui/vant/issues/11799)
+
+**Bug Fixes**
+
+- Field: 修复禁用状态下光标显示不正确的问题 [#11800](https://github.com/vant-ui/vant/issues/11800)
+- Image: 修复开启 lazy-load 时无法显示加载中状态的问题 [#11809](https://github.com/vant-ui/vant/issues/11809)
+
 ### [v4.2.1](https://github.com/vant-ui/vant/compare/v4.2.0...v4.2.1)
 
 `2023-04-30`

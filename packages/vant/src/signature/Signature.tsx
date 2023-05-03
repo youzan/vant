@@ -22,7 +22,7 @@ export const signatureProps = {
   type: makeStringProp('png'),
   penColor: makeStringProp('#000'),
   lineWidth: makeNumberProp(3),
-  cancelButtonText: String,
+  clearButtonText: String,
   confirmButtonText: String,
 };
 
@@ -104,7 +104,7 @@ export default defineComponent({
       }
 
       const isEmpty = isCanvasEmpty(canvas);
-      const filePath = isEmpty
+      const image = isEmpty
         ? ''
         : canvas.toDataURL(
             `image/${props.type}`,
@@ -112,8 +112,8 @@ export default defineComponent({
           );
 
       emit('submit', {
-        canvas: isEmpty ? null : canvas,
-        filePath,
+        image,
+        canvas,
       });
     };
 
@@ -151,7 +151,7 @@ export default defineComponent({
         </div>
         <div class={bem('footer')}>
           <Button size="small" onClick={clear}>
-            {props.cancelButtonText || t('cancel')}
+            {props.clearButtonText || t('clear')}
           </Button>
           <Button type="primary" size="small" onClick={submit}>
             {props.confirmButtonText || t('confirm')}

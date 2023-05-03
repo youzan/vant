@@ -16,7 +16,7 @@ exports[`should render correctly when SSR 1`] = `
       <div class="van-button__content">
         <span class="van-button__text">
           <!--[-->
-          Cancel
+          Clear
         </span>
       </div>
     </button>
