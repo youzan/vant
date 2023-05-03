@@ -54,7 +54,7 @@ export const genOptions = <T extends string>(
   return filter ? filter(type, options) : options;
 };
 
-export const formatValueRange = (values: string[], columns: PickerOption[]) =>
+export const formatValueRange = (values: string[], columns: PickerOption[][]) =>
   values.map((value, index) => {
     const column = columns[index];
     if (column.length) {
