@@ -214,7 +214,7 @@ export default defineComponent({
     // https://github.com/youzan/vant/issues/11335
     onMounted(() => {
       nextTick(() => {
-        if (imageRef.value?.complete) {
+        if (imageRef.value?.complete && !props.lazyLoad) {
           triggerLoad();
         }
       });
