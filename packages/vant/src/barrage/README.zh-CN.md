@@ -23,7 +23,9 @@ app.use(Barrage);
 设置 `barrage-list` 属性后，`Barrage` 会在组件区域内播放文字弹幕，使用 `add()` 可以发送弹幕文字。
 
 ```html
-<van-barrage :barrage-list="list" ref="barrage"></van-barrage>
+<van-barrage :barrage-list="list" ref="barrage">
+  <div class="video" style="width: 100%; height: 150px"></div>
+</van-barrage>
 <van-space style="margin-top: 10px">
   <van-button @click="barrage?.add('Barrage')" type="primary" size="small">
     barrage
@@ -54,11 +56,9 @@ export default {
 设置 `auto-play` 为 `false` 属性后，需要使用 `play()` 进行弹幕播放，暂停可以使用 `pause()` 实现。
 
 ```html
-<van-barrage
-  :barrage-list="list"
-  ref="videoBarrage"
-  :auto-play="false"
-></van-barrage>
+<van-barrage :barrage-list="list" ref="videoBarrage" :auto-play="false">
+  <div class="video" style="width: 100%; height: 150px"></div>
+</van-barrage>
 <van-space style="margin-top: 10px">
   <van-button
     @click="videoBarrage?.add('Barrage')"
@@ -107,7 +107,7 @@ export default {
 
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
-| autoPlay | 是否自动播放弹幕 | _boolean_ | `true` |
+| auto-play | 是否自动播放弹幕 | _boolean_ | `true` |
 | rows | 弹幕文字行数 | _number \| string_ | `4` |
 | top | 弹幕文字区域顶部间距，单位 `px` | _number \| string_ | `10` |
 | speed | 文字滑过容器的时间，单位 `ms` | _number \| string_ | `4000` |

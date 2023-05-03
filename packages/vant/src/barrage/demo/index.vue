@@ -37,7 +37,9 @@ watch(isPlay, () => {
 
 <template>
   <demo-block :title="t('basicUsage')">
-    <van-barrage :barrage-list="list" ref="barrage"></van-barrage>
+    <van-barrage :barrage-list="list" ref="barrage">
+      <div class="video"></div>
+    </van-barrage>
     <van-space style="margin-top: 10px">
       <van-button @click="barrage?.add('Barrage')" type="primary" size="small">
         {{ t('barrage') }}
@@ -46,11 +48,9 @@ watch(isPlay, () => {
   </demo-block>
 
   <demo-block :title="t('videoBarrage')">
-    <van-barrage
-      :barrage-list="list"
-      ref="videoBarrage"
-      :auto-play="false"
-    ></van-barrage>
+    <van-barrage :barrage-list="list" ref="videoBarrage" :auto-play="false">
+      <div class="video"></div>
+    </van-barrage>
     <van-space style="margin-top: 10px">
       <van-button
         @click="videoBarrage?.add('Barrage')"
@@ -71,8 +71,10 @@ watch(isPlay, () => {
 .demo-barrage {
   padding: var(--van-padding-sm);
   background-color: var(--van-background-2);
-  .van-barrage {
+  .video {
     background-color: var(--van-gray-2);
+    width: 100%;
+    height: 150px;
   }
 }
 </style>

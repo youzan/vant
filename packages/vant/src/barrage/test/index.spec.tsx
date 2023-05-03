@@ -1,13 +1,14 @@
 import { ref } from 'vue';
 import { Barrage, BarrageInstance } from '..';
 import { mount, trigger } from '../../../test';
+import { flushPromises } from '@vue/test-utils';
 
 test('should auto play when only list props', async () => {
   const wrapper = mount({
     render() {
       return (
         <Barrage
-          barrage-list={[
+          barrageList={[
             '轻量',
             '可定制的',
             '移动端',
@@ -16,12 +17,15 @@ test('should auto play when only list props', async () => {
             'VantUI',
             '666',
           ]}
-        />
+        >
+          <div class="video" style="width: 100%; height: 150px"></div>
+        </Barrage>
       );
     },
   });
 
   expect(wrapper.html()).toMatchSnapshot();
+  await flushPromises();
   expect(wrapper.findAll('.van-barrage__item')).toHaveLength(7);
 });
 
@@ -33,7 +37,7 @@ test('should not auto play use play function when use play function', async () =
         <Barrage
           ref={barrage}
           autoPlay={false}
-          barrage-list={[
+          barrageList={[
             '轻量',
             '可定制的',
             '移动端',
@@ -42,12 +46,15 @@ test('should not auto play use play function when use play function', async () =
             'VantUI',
             '666',
           ]}
-        />
+        >
+          <div class="video" style="width: 100%; height: 150px"></div>
+        </Barrage>
       );
     },
   });
 
   expect(wrapper.html()).toMatchSnapshot();
+  await flushPromises();
   expect(wrapper.findAll('.van-barrage__item')).toHaveLength(7);
   expect(
     (wrapper.find('.van-barrage__item') as HTMLSpanElement).style

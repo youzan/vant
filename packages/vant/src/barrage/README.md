@@ -21,7 +21,9 @@ app.use(Barrage);
 ### Basic Usage
 
 ```html
-<van-barrage :barrage-list="list" ref="barrage"></van-barrage>
+<van-barrage :barrage-list="list" ref="barrage">
+  <div class="video" style="width: 100%; height: 150px"></div>
+</van-barrage>
 <van-space style="margin-top: 10px">
   <van-button @click="barrage?.add('Barrage')" type="primary" size="small">
     barrage
@@ -33,11 +35,11 @@ app.use(Barrage);
 export default {
   setup() {
     const list = [
-      '轻量',
-      '可定制的',
-      '移动端',
+      'Lightweight',
+      'Customizable',
+      'Mobile',
       'Vue',
-      '组件库',
+      'Library',
       'VantUI',
       '666',
     ];
@@ -50,11 +52,9 @@ export default {
 ### Imitate video barrage
 
 ```html
-<van-barrage
-  :barrage-list="list"
-  ref="videoBarrage"
-  :auto-play="false"
-></van-barrage>
+<van-barrage :barrage-list="list" ref="videoBarrage" :auto-play="false">
+  <div class="video" style="width: 100%; height: 150px"></div>
+</van-barrage>
 <van-space style="margin-top: 10px">
   <van-button
     @click="videoBarrage?.add('Barrage')"
@@ -74,11 +74,11 @@ export default {
 export default {
   setup() {
     const list = [
-      '轻量',
-      '可定制的',
-      '移动端',
+      'Lightweight',
+      'Customizable',
+      'Mobile',
       'Vue',
-      '组件库',
+      'Library',
       'VantUI',
       '666',
     ];
@@ -103,7 +103,7 @@ export default {
 
 | Attribute | Description | Type | Default |
 | --- | --- | --- | --- |
-| autoPlay | Whether to play the bullet screen automatically | _boolean_ | `true` |
+| auto-play | Whether to play the bullet screen automatically | _boolean_ | `true` |
 | rows | The number of lines of text | _number \| string_ | `4` |
 | top | Spacing between the top of the barrage area, unit `px` | _number \| string_ | `10` |
 | speed | Speed of passing, unit `ms` | _number \| string_ | `4000` |
@@ -131,8 +131,6 @@ import type { BarrageProps, BarrageInstance } from 'vant';
 The component provides the following CSS variables, which can be used to customize styles. Please refer to [ConfigProvider component](#/en-US/config-provider).
 
 | Name | Default Value | Description |
-| --- | --- | --- |
-| 名称 | 默认值 | 描述 |
 | --- | --- | --- |
 | --van-barrage-font-size | _16px_ | - |
 | --van-barrage-space | _10px_ | - |
