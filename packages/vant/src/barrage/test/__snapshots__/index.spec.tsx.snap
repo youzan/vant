@@ -1,19 +1,93 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`should auto play when only list props 1`] = `
-<div class="van-barrage">
+<div class="van-barrage"
+     style="--move-distance: -100px;"
+>
   <div class="video"
        style="width: 100%; height: 150px;"
   >
   </div>
+  <span class="van-barrage__item"
+        style="animation-duration: 4000ms; animation-delay: 0ms; animation-name: van-barrage; animation-timing-function: linear; top: 10px;"
+        data-index="0"
+  >
+  </span>
+  <span class="van-barrage__item"
+        style="animation-duration: 4000ms; animation-delay: 500ms; animation-name: van-barrage; animation-timing-function: linear; top: 110px;"
+        data-index="1"
+  >
+  </span>
+  <span class="van-barrage__item"
+        style="animation-duration: 4000ms; animation-delay: 1000ms; animation-name: van-barrage; animation-timing-function: linear; top: 210px;"
+        data-index="2"
+  >
+  </span>
+  <span class="van-barrage__item"
+        style="animation-duration: 4000ms; animation-delay: 1500ms; animation-name: van-barrage; animation-timing-function: linear; top: 310px;"
+        data-index="3"
+  >
+  </span>
+  <span class="van-barrage__item"
+        style="animation-duration: 4000ms; animation-delay: 2000ms; animation-name: van-barrage; animation-timing-function: linear; top: 10px;"
+        data-index="4"
+  >
+  </span>
+  <span class="van-barrage__item"
+        style="animation-duration: 4000ms; animation-delay: 2500ms; animation-name: van-barrage; animation-timing-function: linear; top: 110px;"
+        data-index="5"
+  >
+  </span>
+  <span class="van-barrage__item"
+        style="animation-duration: 4000ms; animation-delay: 3000ms; animation-name: van-barrage; animation-timing-function: linear; top: 210px;"
+        data-index="6"
+  >
+  </span>
 </div>
 `;
 
 exports[`should not auto play use play function when use play function 1`] = `
-<div class="van-barrage">
+<div class="van-barrage"
+     style="--move-distance: -100px;"
+>
   <div class="video"
        style="width: 100%; height: 150px;"
   >
   </div>
+  <span class="van-barrage__item"
+        style="animation-duration: 4000ms; animation-delay: 0ms; animation-name: van-barrage; animation-timing-function: linear; animation-play-state: paused; top: 10px;"
+        data-index="0"
+  >
+  </span>
+  <span class="van-barrage__item"
+        style="animation-duration: 4000ms; animation-delay: 500ms; animation-name: van-barrage; animation-timing-function: linear; animation-play-state: paused; top: 110px;"
+        data-index="1"
+  >
+  </span>
+  <span class="van-barrage__item"
+        style="animation-duration: 4000ms; animation-delay: 1000ms; animation-name: van-barrage; animation-timing-function: linear; animation-play-state: paused; top: 210px;"
+        data-index="2"
+  >
+  </span>
+  <span class="van-barrage__item"
+        style="animation-duration: 4000ms; animation-delay: 1500ms; animation-name: van-barrage; animation-timing-function: linear; animation-play-state: paused; top: 310px;"
+        data-index="3"
+  >
+  </span>
+  <span class="van-barrage__item"
+        style="animation-duration: 4000ms; animation-delay: 2000ms; animation-name: van-barrage; animation-timing-function: linear; animation-play-state: paused; top: 10px;"
+        data-index="4"
+  >
+  </span>
+  <span class="van-barrage__item"
+        style="animation-duration: 4000ms; animation-delay: 2500ms; animation-name: van-barrage; animation-timing-function: linear; animation-play-state: paused; top: 110px;"
+        data-index="5"
+  >
+  </span>
+  <span class="van-barrage__item"
+        style="animation-duration: 4000ms; animation-delay: 3000ms; animation-name: van-barrage; animation-timing-function: linear; animation-play-state: paused; top: 210px;"
+        data-index="6"
+  >
+  </span>
 </div>
 `;

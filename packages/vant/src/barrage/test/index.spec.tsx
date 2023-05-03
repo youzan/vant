@@ -24,8 +24,8 @@ test('should auto play when only list props', async () => {
     },
   });
 
-  expect(wrapper.html()).toMatchSnapshot();
   await flushPromises();
+  expect(wrapper.html()).toMatchSnapshot();
   expect(wrapper.findAll('.van-barrage__item')).toHaveLength(7);
 });
 
@@ -53,8 +53,8 @@ test('should not auto play use play function when use play function', async () =
     },
   });
 
-  expect(wrapper.html()).toMatchSnapshot();
   await flushPromises();
+  expect(wrapper.html()).toMatchSnapshot();
   expect(wrapper.findAll('.van-barrage__item')).toHaveLength(7);
   expect(
     (wrapper.find('.van-barrage__item') as HTMLSpanElement).style
