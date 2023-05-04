@@ -8,7 +8,7 @@
     <div v-if="showLoading" :class="$style.mask">
         <van-loading vertical
             :icon="loadingIcon"
-            :iconRotate="loadingIconRotate"
+            :icon-rotate="loadingIconRotate"
             :class="$style.loading">
         {{loadingText}}
         </van-loading>
@@ -18,11 +18,12 @@
 
 <script>
 import ULinearLayout from 'cloud-ui.vusion/src/components/u-linear-layout.vue/index.vue';
-
+import SEmpty from 'cloud-ui.vusion/src/components/s-empty.vue/index.vue';
 import VanLoading from '../../../src/loading';
 
 export default {
     name: 'van-linear-layout',
+    components: { VanLoading, SEmpty },
     extends: ULinearLayout,
     props:{
         wrap: {
@@ -30,7 +31,6 @@ export default {
             default: true,
         },
     },
-    components: { VanLoading },
 };
 </script>
 
