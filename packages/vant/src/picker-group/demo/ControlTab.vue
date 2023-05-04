@@ -34,13 +34,13 @@ const onCancel = () => {
   showToast('cancel');
 };
 
-const setTabActive = () => {
+const setActiveTab = () => {
   activeTab.value = activeTab.value ? 0 : 1;
 };
 </script>
 
 <template>
-  <van-button style="margin: 10px 0" type="primary" @click="setTabActive">
+  <van-button style="margin: 10px 0" type="primary" @click="setActiveTab">
     {{ t('btnText') + activeTab }}
   </van-button>
   <van-picker-group

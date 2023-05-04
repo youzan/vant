@@ -56,11 +56,13 @@ export default {
   setup() {
     const currentDate = ref(['2022', '06', '01']);
     const currentTime = ref(['12', '00']);
+
     const onConfirm = () => {
       showToast(
         `${currentDate.value.join('/')} ${currentTime.value.join(':')}`
       );
     };
+
     const onCancel = () => {
       showToast('cancel');
     };
@@ -70,6 +72,8 @@ export default {
       maxDate: new Date(2025, 5, 1),
       currentDate,
       currentTime,
+      onConfirm,
+      onCancel,
     };
   },
 };
@@ -104,11 +108,13 @@ export default {
   setup() {
     const currentDate = ref(['2022', '06', '01']);
     const currentTime = ref(['12', '00']);
+
     const onConfirm = () => {
       showToast(
         `${currentDate.value.join('/')} ${currentTime.value.join(':')}`
       );
     };
+
     const onCancel = () => {
       showToast('cancel');
     };
@@ -118,6 +124,8 @@ export default {
       maxDate: new Date(2025, 5, 1),
       currentDate,
       currentTime,
+      onConfirm,
+      onCancel,
     };
   },
 };
@@ -155,6 +163,7 @@ export default {
     const onConfirm = () => {
       showToast(`${startDate.value.join('/')} ${endDate.value.join('/')}`);
     };
+
     const onCancel = () => {
       showToast('cancel');
     };
@@ -164,6 +173,8 @@ export default {
       maxDate: new Date(2025, 5, 1),
       endDate,
       startDate,
+      onConfirm,
+      onCancel,
     };
   },
 };
@@ -197,6 +208,7 @@ export default {
     const onConfirm = () => {
       showToast(`${startTime.value.join(':')} ${endTime.value.join(':')}`);
     };
+
     const onCancel = () => {
       showToast('cancel');
     };
@@ -204,6 +216,8 @@ export default {
     return {
       endTime,
       startTime,
+      onConfirm,
+      onCancel,
     };
   },
 };
@@ -217,7 +231,7 @@ Supports both uncontrolled and controlled modes:
 - When `v-model:active-tab` is bound, PickerGroup supports controlled mode, and the `tab` switching is controlled by both the `v-model:active-tab` value and the component itself.
 
 ```html
-<van-button type="primary" @click="setTabActive">
+<van-button type="primary" @click="setActiveTab">
   toggle tab, current {{ activeTab }}
 </van-button>
 <van-picker-group
@@ -245,6 +259,11 @@ export default {
     const activeTab = ref(0);
     const currentDate = ref(['2022', '06', '01']);
     const currentTime = ref(['12', '00']);
+
+    const setActiveTab = () => {
+      activeTab.value = activeTab.value ? 0 : 1;
+    };
+
     const onConfirm = () => {
       showToast(
         `${currentDate.value.join('/')} ${currentTime.value.join(':')}`
@@ -257,8 +276,12 @@ export default {
     return {
       minDate: new Date(2020, 0, 1),
       maxDate: new Date(2025, 5, 1),
+      activeTab,
       currentDate,
       currentTime,
+      setActiveTab,
+      onConfirm,
+      onCancel,
     };
   },
 };
