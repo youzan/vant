@@ -9,37 +9,37 @@ exports[`should render demo and match snapshot 1`] = `
     </div>
     <span class="van-barrage__item"
           style="animation-duration: 4000ms; animation-delay: 0ms; animation-name: van-barrage; animation-timing-function: linear; top: 10px;"
-          data-index="0"
+          data-id="100"
     >
     </span>
     <span class="van-barrage__item"
-          style="animation-duration: 4000ms; animation-delay: 500ms; animation-name: van-barrage; animation-timing-function: linear; top: 110px;"
-          data-index="1"
+          style="animation-duration: 4000ms; animation-delay: 300ms; animation-name: van-barrage; animation-timing-function: linear; top: 110px;"
+          data-id="101"
     >
     </span>
     <span class="van-barrage__item"
-          style="animation-duration: 4000ms; animation-delay: 1000ms; animation-name: van-barrage; animation-timing-function: linear; top: 210px;"
-          data-index="2"
+          style="animation-duration: 4000ms; animation-delay: 600ms; animation-name: van-barrage; animation-timing-function: linear; top: 210px;"
+          data-id="102"
     >
     </span>
     <span class="van-barrage__item"
-          style="animation-duration: 4000ms; animation-delay: 1500ms; animation-name: van-barrage; animation-timing-function: linear; top: 310px;"
-          data-index="3"
+          style="animation-duration: 4000ms; animation-delay: 900ms; animation-name: van-barrage; animation-timing-function: linear; top: 310px;"
+          data-id="103"
     >
     </span>
     <span class="van-barrage__item"
-          style="animation-duration: 4000ms; animation-delay: 2000ms; animation-name: van-barrage; animation-timing-function: linear; top: 10px;"
-          data-index="4"
+          style="animation-duration: 4000ms; animation-delay: 1200ms; animation-name: van-barrage; animation-timing-function: linear; top: 10px;"
+          data-id="104"
     >
     </span>
     <span class="van-barrage__item"
-          style="animation-duration: 4000ms; animation-delay: 2500ms; animation-name: van-barrage; animation-timing-function: linear; top: 110px;"
-          data-index="5"
+          style="animation-duration: 4000ms; animation-delay: 1500ms; animation-name: van-barrage; animation-timing-function: linear; top: 110px;"
+          data-id="105"
     >
     </span>
     <span class="van-barrage__item"
-          style="animation-duration: 4000ms; animation-delay: 3000ms; animation-name: van-barrage; animation-timing-function: linear; top: 210px;"
-          data-index="6"
+          style="animation-duration: 4000ms; animation-delay: 1800ms; animation-name: van-barrage; animation-timing-function: linear; top: 210px;"
+          data-id="106"
     >
     </span>
   </div>
@@ -67,37 +67,37 @@ exports[`should render demo and match snapshot 1`] = `
     </div>
     <span class="van-barrage__item"
           style="animation-duration: 4000ms; animation-delay: 0ms; animation-name: van-barrage; animation-timing-function: linear; animation-play-state: paused; top: 10px;"
-          data-index="0"
+          data-id="100"
     >
     </span>
     <span class="van-barrage__item"
-          style="animation-duration: 4000ms; animation-delay: 500ms; animation-name: van-barrage; animation-timing-function: linear; animation-play-state: paused; top: 110px;"
-          data-index="1"
+          style="animation-duration: 4000ms; animation-delay: 300ms; animation-name: van-barrage; animation-timing-function: linear; animation-play-state: paused; top: 110px;"
+          data-id="101"
     >
     </span>
     <span class="van-barrage__item"
-          style="animation-duration: 4000ms; animation-delay: 1000ms; animation-name: van-barrage; animation-timing-function: linear; animation-play-state: paused; top: 210px;"
-          data-index="2"
+          style="animation-duration: 4000ms; animation-delay: 600ms; animation-name: van-barrage; animation-timing-function: linear; animation-play-state: paused; top: 210px;"
+          data-id="102"
     >
     </span>
     <span class="van-barrage__item"
-          style="animation-duration: 4000ms; animation-delay: 1500ms; animation-name: van-barrage; animation-timing-function: linear; animation-play-state: paused; top: 310px;"
-          data-index="3"
+          style="animation-duration: 4000ms; animation-delay: 900ms; animation-name: van-barrage; animation-timing-function: linear; animation-play-state: paused; top: 310px;"
+          data-id="103"
     >
     </span>
     <span class="van-barrage__item"
-          style="animation-duration: 4000ms; animation-delay: 2000ms; animation-name: van-barrage; animation-timing-function: linear; animation-play-state: paused; top: 10px;"
-          data-index="4"
+          style="animation-duration: 4000ms; animation-delay: 1200ms; animation-name: van-barrage; animation-timing-function: linear; animation-play-state: paused; top: 10px;"
+          data-id="104"
     >
     </span>
     <span class="van-barrage__item"
-          style="animation-duration: 4000ms; animation-delay: 2500ms; animation-name: van-barrage; animation-timing-function: linear; animation-play-state: paused; top: 110px;"
-          data-index="5"
+          style="animation-duration: 4000ms; animation-delay: 1500ms; animation-name: van-barrage; animation-timing-function: linear; animation-play-state: paused; top: 110px;"
+          data-id="105"
     >
     </span>
     <span class="van-barrage__item"
-          style="animation-duration: 4000ms; animation-delay: 3000ms; animation-name: van-barrage; animation-timing-function: linear; animation-play-state: paused; top: 210px;"
-          data-index="6"
+          style="animation-duration: 4000ms; animation-delay: 1800ms; animation-name: van-barrage; animation-timing-function: linear; animation-play-state: paused; top: 210px;"
+          data-id="106"
     >
     </span>
   </div>

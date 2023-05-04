@@ -20,33 +20,36 @@ app.use(Barrage);
 
 ### 基础用法
 
-设置 `barrage-list` 属性后，`Barrage` 会在组件区域内播放文字弹幕，使用 `add()` 可以发送弹幕文字。
+可以通过 `v-model` 双向绑定弹幕数据，`Barrage` 会在组件区域内播放文字弹幕，使用数组数据 `push()` 可以发送弹幕文字。
 
 ```html
-<van-barrage :barrage-list="list" ref="barrage">
+<van-barrage v-model="list">
   <div class="video" style="width: 100%; height: 150px"></div>
 </van-barrage>
 <van-space style="margin-top: 10px">
-  <van-button @click="barrage?.add('Barrage')" type="primary" size="small">
-    barrage
-  </van-button>
+  <van-button @click="add" type="primary" size="small"> 弹幕 </van-button>
 </van-space>
 ```
 
 ```ts
 export default {
   setup() {
-    const list = [
-      '轻量',
-      '可定制的',
-      '移动端',
-      'Vue',
-      '组件库',
-      'VantUI',
-      '666',
+    const defaultList = [
+      { id: 100, text: '轻量' },
+      { id: 101, text: '可定制的' },
+      { id: 102, text: '移动端' },
+      { id: 103, text: 'Vue' },
+      { id: 104, text: '组件库' },
+      { id: 105, text: 'VantUI' },
+      { id: 106, text: '666' },
     ];
-    const barrage = ref<BarrageInstance>();
-    return { list, barrage };
+
+    const list = ref([...defaultList]);
+    const add = () => {
+      list.value.push({ id: Math.random(), text: 'Barrage' });
+    };
+
+    return { list, add };
   },
 };
 ```
@@ -56,20 +59,15 @@ export default {
 设置 `auto-play` 为 `false` 属性后，需要使用 `play()` 进行弹幕播放，暂停可以使用 `pause()` 实现。
 
 ```html
-<van-barrage :barrage-list="list" ref="videoBarrage" :auto-play="false">
+<van-barrage v-model="list" ref="barrage" :auto-play="false">
   <div class="video" style="width: 100%; height: 150px"></div>
 </van-barrage>
 <van-space style="margin-top: 10px">
-  <van-button
-    @click="videoBarrage?.add('Barrage')"
-    type="primary"
-    size="small"
-    :disabled="!isPlay"
-  >
-    barrage
+  <van-button @click="add" type="primary" size="small" :disabled="!isPlay">
+    弹幕
   </van-button>
   <van-button @click="toggle()" size="small">
-    {{ isPlay ? 'pause' : 'play' }}
+    {{ isPlay ? '暂停' : '开始' }}
   </van-button>
 </van-space>
 ```
@@ -77,26 +75,30 @@ export default {
 ```ts
 export default {
   setup() {
-    const list = [
-      '轻量',
-      '可定制的',
-      '移动端',
-      'Vue',
-      '组件库',
-      'VantUI',
-      '666',
+    const defaultList = [
+      { id: 100, text: '轻量' },
+      { id: 101, text: '可定制的' },
+      { id: 102, text: '移动端' },
+      { id: 103, text: 'Vue' },
+      { id: 104, text: '组件库' },
+      { id: 105, text: 'VantUI' },
+      { id: 106, text: '666' },
     ];
 
-    const videoBarrage = ref<BarrageInstance>();
+    const list = ref([...defaultList]);
+    const barrage = ref<BarrageInstance>();
+    const add = () => {
+      list.value.push({ id: Math.random(), text: 'Barrage' });
+    };
 
     const [isPlay, toggle] = useToggle(false);
 
     watch(isPlay, () => {
-      if (isPlay.value) videoBarrage.value?.play();
-      else videoBarrage.value?.pause();
+      if (isPlay.value) barrage.value?.play();
+      else barrage.value?.pause();
     });
 
-    return { list, videoBarrage, isPlay, toggle };
+    return { list, barrage, isPlay, toggle, add };
   },
 };
 ```
@@ -105,14 +107,14 @@ export default {
 
 ### Props
 
-| 参数 | 说明 | 类型 | 默认值 |
-| --- | --- | --- | --- |
-| auto-play | 是否自动播放弹幕 | _boolean_ | `true` |
-| rows | 弹幕文字行数 | _number \| string_ | `4` |
-| top | 弹幕文字区域顶部间距，单位 `px` | _number \| string_ | `10` |
-| speed | 文字滑过容器的时间，单位 `ms` | _number \| string_ | `4000` |
-| delay | 弹幕动画延时，单位 `ms` | _number_ | `500` |
-| barrageList | 弹幕数据 | _string[]_ | `["Vant", "Nice"]` |
+| 参数      | 说明                            | 类型               | 默认值 |
+| --------- | ------------------------------- | ------------------ | ------ |
+| v-model   | 弹幕数据                        | _BarrageItem[]_    | -      |
+| auto-play | 是否自动播放弹幕                | _boolean_          | `true` |
+| rows      | 弹幕文字行数                    | _number \| string_ | `4`    |
+| top       | 弹幕文字区域顶部间距，单位 `px` | _number \| string_ | `10`   |
+| speed     | 文字滑过容器的时间，单位 `ms`   | _number \| string_ | `4000` |
+| delay     | 弹幕动画延时，单位 `ms`         | _number_           | `300`  |
 
 ### Slots
 
@@ -125,7 +127,7 @@ export default {
 组件导出以下类型定义：
 
 ```ts
-import type { BarrageProps, BarrageInstance } from 'vant';
+import type { BarrageProps, BarrageItem, BarrageInstance } from 'vant';
 ```
 
 ## 主题定制

@@ -5,7 +5,7 @@ export const Barrage = withInstall(_Barrage);
 export default Barrage;
 
 export { barrageProps } from './Barrage';
-export type { BarrageProps } from './Barrage';
+export type { BarrageProps, BarrageItem } from './Barrage';
 export type { BarrageInstance } from './types';
 
 declare module 'vue' {

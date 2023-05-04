@@ -16,13 +16,18 @@ import {
 } from '../utils';
 import { BarrageExpose } from './types';
 
+export interface BarrageItem {
+  id: string | number;
+  text: string | number;
+}
+
 export const barrageProps = {
   top: makeNumericProp(10),
   rows: makeNumericProp(4),
   speed: makeNumericProp(4000),
   autoPlay: truthProp,
-  delay: makeNumberProp(500),
-  barrageList: makeArrayProp<string | number>(),
+  delay: makeNumberProp(300),
+  modelValue: makeArrayProp<BarrageItem>(),
 };
 
 export type BarrageProps = ExtractPropTypes<typeof barrageProps>;
@@ -34,12 +39,13 @@ export default defineComponent({
 
   props: barrageProps,
 
-  setup(props, { slots }) {
-    const barrage = ref<HTMLDivElement>();
+  emits: ['update:modelValue'],
+
+  setup(props, { emit, slots }) {
+    const barrageWrapper = ref<HTMLDivElement>();
     const className = bem('item') as string;
-    const barrageIndex = ref(0);
+    const total = ref(0);
     const barrageItems: HTMLSpanElement[] = [];
-    const isInit = ref(false);
 
     const createBarrageItem = (
       text: string | number,
@@ -57,62 +63,80 @@ export default defineComponent({
       return item;
     };
 
-    const appendBarrageItem = (item: HTMLSpanElement, i: number) => {
-      barrage.value?.append(item);
-      const top = (i % +props.rows) * item.offsetHeight + +props.top;
+    const isInitBarrage = ref(true);
+    const isPlay = ref(props.autoPlay);
+
+    const appendBarrageItem = ({ id, text }: BarrageItem, i: number) => {
+      const item = createBarrageItem(
+        text,
+        isInitBarrage.value ? i * props.delay : undefined
+      );
+      if (!props.autoPlay && isPlay.value === false) {
+        item.style.animationPlayState = 'paused';
+      }
+      barrageWrapper.value?.append(item);
+      total.value++;
+
+      const top =
+        ((total.value - 1) % +props.rows) * item.offsetHeight + +props.top;
       item.style.top = `${top}px`;
-      item.dataset.index = String(i);
+      item.dataset.id = String(id);
       barrageItems.push(item);
 
       item.addEventListener('animationend', () => {
-        const itemIndex = barrageItems.findIndex(
-          (item) => item.dataset.index === String(i)
+        emit(
+          'update:modelValue',
+          [...props.modelValue].filter((v) => String(v.id) !== item.dataset.id)
         );
-        barrageItems.splice(itemIndex, 1);
-        item.remove();
+      });
+    };
+
+    const updateBarrages = (
+      newValue: BarrageItem[],
+      oldValue: BarrageItem[]
+    ) => {
+      const map = new Map(oldValue.map((item) => [item.id, item]));
+
+      newValue.forEach((item, i) => {
+        if (map.has(item.id)) {
+          map.delete(item.id);
+        } else {
+          // add
+          appendBarrageItem(item, i);
+        }
       });
 
-      barrageIndex.value++;
+      map.forEach((item) => {
+        // remove
+        const index = barrageItems.findIndex(
+          (span) => span.dataset.id === String(item.id)
+        );
+        if (index > -1) {
+          barrageItems[index].remove();
+          barrageItems.splice(index, 1);
+        }
+      });
+
+      isInitBarrage.value = false;
     };
 
-    const initBarrages = () => {
-      if (props.barrageList.length > 0) {
-        props.barrageList.forEach((text, i) => {
-          const item = createBarrageItem(text, i * props.delay);
-          if (!props.autoPlay) {
-            item.style.animationPlayState = 'paused';
-          }
-          appendBarrageItem(item, i);
-        });
-        // once use props.barrageList
-        isInit.value = true;
-      }
-    };
+    watch(
+      () => props.modelValue.slice(),
+      (newValue, oldValue) => updateBarrages(newValue ?? [], oldValue ?? []),
+      { deep: true }
+    );
 
     const rootStyle = ref<{
       '--move-distance'?: string;
     }>({});
 
     onMounted(async () => {
-      rootStyle.value['--move-distance'] = `-${barrage.value?.offsetWidth}px`;
+      rootStyle.value[
+        '--move-distance'
+      ] = `-${barrageWrapper.value?.offsetWidth}px`;
       await nextTick();
-      initBarrages();
+      updateBarrages(props.modelValue, []);
     });
-
-    watch(
-      () => props.barrageList,
-      () => {
-        !isInit.value && initBarrages();
-      }
-    );
-
-    const isPlay = ref(true);
-
-    const add = (text: string | number) => {
-      if (!isPlay.value) return;
-      const item = createBarrageItem(text);
-      appendBarrageItem(item, barrageIndex.value);
-    };
 
     const play = () => {
       isPlay.value = true;
@@ -131,11 +155,10 @@ export default defineComponent({
     useExpose<BarrageExpose>({
       play,
       pause,
-      add,
     });
 
     return () => (
-      <div class={bem()} ref={barrage} style={rootStyle.value}>
+      <div class={bem()} ref={barrageWrapper} style={rootStyle.value}>
         {slots.default?.()}
       </div>
     );

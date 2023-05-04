@@ -21,30 +21,33 @@ app.use(Barrage);
 ### Basic Usage
 
 ```html
-<van-barrage :barrage-list="list" ref="barrage">
+<van-barrage v-model="list">
   <div class="video" style="width: 100%; height: 150px"></div>
 </van-barrage>
 <van-space style="margin-top: 10px">
-  <van-button @click="barrage?.add('Barrage')" type="primary" size="small">
-    barrage
-  </van-button>
+  <van-button @click="add" type="primary" size="small"> barrage </van-button>
 </van-space>
 ```
 
 ```ts
 export default {
   setup() {
-    const list = [
-      'Lightweight',
-      'Customizable',
-      'Mobile',
-      'Vue',
-      'Library',
-      'VantUI',
-      '666',
+    const defaultList = [
+      { id: 100, text: 'Lightweight' },
+      { id: 101, text: 'Customizable' },
+      { id: 102, text: 'Mobile' },
+      { id: 103, text: 'Vue' },
+      { id: 104, text: 'Library' },
+      { id: 105, text: 'VantUI' },
+      { id: 106, text: '666' },
     ];
+
+    const list = ref([...defaultList]);
     const barrage = ref<BarrageInstance>();
-    return { list, barrage };
+    const add = () => {
+      list.value.push({ id: Math.random(), text: 'Barrage' });
+    };
+    return { list, add };
   },
 };
 ```
@@ -52,16 +55,11 @@ export default {
 ### Imitate video barrage
 
 ```html
-<van-barrage :barrage-list="list" ref="videoBarrage" :auto-play="false">
+<van-barrage v-model="list" ref="barrage" :auto-play="false">
   <div class="video" style="width: 100%; height: 150px"></div>
 </van-barrage>
 <van-space style="margin-top: 10px">
-  <van-button
-    @click="videoBarrage?.add('Barrage')"
-    type="primary"
-    size="small"
-    :disabled="!isPlay"
-  >
+  <van-button @click="add" type="primary" size="small" :disabled="!isPlay">
     barrage
   </van-button>
   <van-button @click="toggle()" size="small">
@@ -73,26 +71,30 @@ export default {
 ```ts
 export default {
   setup() {
-    const list = [
-      'Lightweight',
-      'Customizable',
-      'Mobile',
-      'Vue',
-      'Library',
-      'VantUI',
-      '666',
+    const defaultList = [
+      { id: 100, text: 'Lightweight' },
+      { id: 101, text: 'Customizable' },
+      { id: 102, text: 'Mobile' },
+      { id: 103, text: 'Vue' },
+      { id: 104, text: 'Library' },
+      { id: 105, text: 'VantUI' },
+      { id: 106, text: '666' },
     ];
 
-    const videoBarrage = ref<BarrageInstance>();
+    const list = ref([...defaultList]);
+    const barrage = ref<BarrageInstance>();
+    const add = () => {
+      list.value.push({ id: Math.random(), text: 'Barrage' });
+    };
 
     const [isPlay, toggle] = useToggle(false);
 
     watch(isPlay, () => {
-      if (isPlay.value) videoBarrage.value?.play();
-      else videoBarrage.value?.pause();
+      if (isPlay.value) barrage.value?.play();
+      else barrage.value?.pause();
     });
 
-    return { list, videoBarrage, isPlay, toggle };
+    return { list, barrage, isPlay, toggle, add };
   },
 };
 ```
@@ -103,12 +105,12 @@ export default {
 
 | Attribute | Description | Type | Default |
 | --- | --- | --- | --- |
+| v-model | Barrage data | _BarrageItem[]_ | - |
 | auto-play | Whether to play the bullet screen automatically | _boolean_ | `true` |
 | rows | The number of lines of text | _number \| string_ | `4` |
 | top | Spacing between the top of the barrage area, unit `px` | _number \| string_ | `10` |
 | speed | Speed of passing, unit `ms` | _number \| string_ | `4000` |
-| delay | Barrage animation delay, unit `ms` | _number_ | `500` |
-| barrageList | Barrage data | _string_ | `["Vant", "Nice"]` |
+| delay | Barrage animation delay, unit `ms` | _number_ | `300` |
 
 ### Slots
 
@@ -121,7 +123,7 @@ export default {
 The component exports the following type definitions:
 
 ```ts
-import type { BarrageProps, BarrageInstance } from 'vant';
+import type { BarrageProps, BarrageItem, BarrageInstance } from 'vant';
 ```
 
 ## Theming
