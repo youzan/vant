@@ -1,11 +1,16 @@
-import { raf } from '@vant/use';
+import { raf, cancelRaf } from '@vant/use';
 import { ScrollElement, getScrollTop, setScrollTop } from '../utils';
+
+let scrollLeftToRafId: number;
+let scrollTopToRafId: number;
 
 export function scrollLeftTo(
   scroller: HTMLElement,
   to: number,
   duration: number
 ) {
+  cancelRaf(scrollLeftToRafId);
+
   let count = 0;
   const from = scroller.scrollLeft;
   const frames = duration === 0 ? 1 : Math.round((duration * 1000) / 16);
@@ -14,7 +19,7 @@ export function scrollLeftTo(
     scroller.scrollLeft += (to - from) / frames;
 
     if (++count < frames) {
-      raf(animate);
+      scrollLeftToRafId = raf(animate);
     }
   }
 
@@ -27,8 +32,9 @@ export function scrollTopTo(
   duration: number,
   callback: () => void
 ) {
-  let current = getScrollTop(scroller);
+  cancelRaf(scrollTopToRafId);
 
+  let current = getScrollTop(scroller);
   const isDown = current < to;
   const frames = duration === 0 ? 1 : Math.round((duration * 1000) / 16);
   const step = (to - current) / frames;
@@ -43,9 +49,9 @@ export function scrollTopTo(
     setScrollTop(scroller, current);
 
     if ((isDown && current < to) || (!isDown && current > to)) {
-      raf(animate);
+      scrollTopToRafId = raf(animate);
     } else if (callback) {
-      raf(callback as FrameRequestCallback);
+      scrollTopToRafId = raf(callback as FrameRequestCallback);
     }
   }
 
