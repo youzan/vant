@@ -45,8 +45,8 @@
     "components"
   ],
   "dependencies": {
-    "@vant/popperjs": "workspace:^",
-    "@vant/use": "workspace:^"
+    "@vant/popperjs": "^1.3.0",
+    "@vant/use": "^1.5.1"
   },
   "peerDependencies": {
     "vue": "^3.0.0"
