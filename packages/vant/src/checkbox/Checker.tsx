@@ -20,7 +20,7 @@ export type CheckerParent = {
     iconSize?: Numeric;
     direction?: CheckerDirection;
     checkedColor?: string;
-    modelValue: unknown[];
+    modelValue?: unknown | unknown[];
     max?: Numeric;
   };
 };
@@ -61,7 +61,8 @@ export default defineComponent({
         const disabled = getParentProp('disabled') || props.disabled;
 
         if (props.role === 'checkbox') {
-          const checkedCount = getParentProp('modelValue')!.length;
+          const checkedCount = (getParentProp('modelValue') as unknown[])
+            .length;
           const max = getParentProp('max');
           const overlimit = max && checkedCount >= +max;
 
