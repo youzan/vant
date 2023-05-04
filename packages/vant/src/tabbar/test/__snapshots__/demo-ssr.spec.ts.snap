@@ -1,0 +1,513 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render demo and match snapshot 1`] = `
+<!--[-->
+<div>
+  <!--[-->
+  <div role="tablist"
+       style
+       class="van-tabbar van-tabbar--fixed van-hairline--top-bottom van-safe-area-bottom"
+  >
+    <!--[-->
+    <div role="tab"
+         class="van-tabbar-item van-tabbar-item--active"
+         style
+         tabindex="0"
+         aria-selected="true"
+    >
+      <div class="van-badge__wrapper van-tabbar-item__icon">
+        <!--[-->
+        <i class="van-badge__wrapper van-icon van-icon-home-o"
+           style
+        >
+          <!--[-->
+        </i>
+      </div>
+      <div class="van-tabbar-item__text">
+        <!--[-->
+        Tab
+      </div>
+    </div>
+    <div role="tab"
+         class="van-tabbar-item"
+         style
+         tabindex="0"
+         aria-selected="false"
+    >
+      <div class="van-badge__wrapper van-tabbar-item__icon">
+        <!--[-->
+        <i class="van-badge__wrapper van-icon van-icon-search"
+           style
+        >
+          <!--[-->
+        </i>
+      </div>
+      <div class="van-tabbar-item__text">
+        <!--[-->
+        Tab
+      </div>
+    </div>
+    <div role="tab"
+         class="van-tabbar-item"
+         style
+         tabindex="0"
+         aria-selected="false"
+    >
+      <div class="van-badge__wrapper van-tabbar-item__icon">
+        <!--[-->
+        <i class="van-badge__wrapper van-icon van-icon-friends-o"
+           style
+        >
+          <!--[-->
+        </i>
+      </div>
+      <div class="van-tabbar-item__text">
+        <!--[-->
+        Tab
+      </div>
+    </div>
+    <div role="tab"
+         class="van-tabbar-item"
+         style
+         tabindex="0"
+         aria-selected="false"
+    >
+      <div class="van-badge__wrapper van-tabbar-item__icon">
+        <!--[-->
+        <i class="van-badge__wrapper van-icon van-icon-setting-o"
+           style
+        >
+          <!--[-->
+        </i>
+      </div>
+      <div class="van-tabbar-item__text">
+        <!--[-->
+        Tab
+      </div>
+    </div>
+  </div>
+</div>
+<div>
+  <!--[-->
+  <div role="tablist"
+       style
+       class="van-tabbar van-tabbar--fixed van-hairline--top-bottom van-safe-area-bottom"
+  >
+    <!--[-->
+    <div role="tab"
+         class="van-tabbar-item van-tabbar-item--active"
+         style
+         tabindex="0"
+         aria-selected="true"
+    >
+      <div class="van-badge__wrapper van-tabbar-item__icon">
+        <!--[-->
+        <i class="van-badge__wrapper van-icon van-icon-home-o"
+           style
+        >
+          <!--[-->
+        </i>
+      </div>
+      <div class="van-tabbar-item__text">
+        <!--[-->
+        Tab
+      </div>
+    </div>
+    <div role="tab"
+         class="van-tabbar-item"
+         style
+         tabindex="0"
+         aria-selected="false"
+    >
+      <div class="van-badge__wrapper van-tabbar-item__icon">
+        <!--[-->
+        <i class="van-badge__wrapper van-icon van-icon-search"
+           style
+        >
+          <!--[-->
+        </i>
+      </div>
+      <div class="van-tabbar-item__text">
+        <!--[-->
+        Tab
+      </div>
+    </div>
+    <div role="tab"
+         class="van-tabbar-item"
+         style
+         tabindex="0"
+         aria-selected="false"
+    >
+      <div class="van-badge__wrapper van-tabbar-item__icon">
+        <!--[-->
+        <i class="van-badge__wrapper van-icon van-icon-friends-o"
+           style
+        >
+          <!--[-->
+        </i>
+      </div>
+      <div class="van-tabbar-item__text">
+        <!--[-->
+        Tab
+      </div>
+    </div>
+    <div role="tab"
+         class="van-tabbar-item"
+         style
+         tabindex="0"
+         aria-selected="false"
+    >
+      <div class="van-badge__wrapper van-tabbar-item__icon">
+        <!--[-->
+        <i class="van-badge__wrapper van-icon van-icon-setting-o"
+           style
+        >
+          <!--[-->
+        </i>
+      </div>
+      <div class="van-tabbar-item__text">
+        <!--[-->
+        Tab
+      </div>
+    </div>
+  </div>
+</div>
+<div>
+  <!--[-->
+  <div role="tablist"
+       style
+       class="van-tabbar van-tabbar--fixed van-hairline--top-bottom van-safe-area-bottom"
+  >
+    <!--[-->
+    <div role="tab"
+         class="van-tabbar-item van-tabbar-item--active"
+         style
+         tabindex="0"
+         aria-selected="true"
+    >
+      <div class="van-badge__wrapper van-tabbar-item__icon">
+        <!--[-->
+        <i class="van-badge__wrapper van-icon van-icon-home-o"
+           style
+        >
+          <!--[-->
+        </i>
+      </div>
+      <div class="van-tabbar-item__text">
+        <!--[-->
+        Tab
+      </div>
+    </div>
+    <div role="tab"
+         class="van-tabbar-item"
+         style
+         tabindex="0"
+         aria-selected="false"
+    >
+      <div class="van-badge__wrapper van-tabbar-item__icon">
+        <!--[-->
+        <i class="van-badge__wrapper van-icon van-icon-search"
+           style
+        >
+          <!--[-->
+        </i>
+        <div class="van-badge van-badge--top-right van-badge--dot van-badge--fixed"
+             style
+        >
+        </div>
+      </div>
+      <div class="van-tabbar-item__text">
+        <!--[-->
+        Tab
+      </div>
+    </div>
+    <div role="tab"
+         class="van-tabbar-item"
+         style
+         tabindex="0"
+         aria-selected="false"
+    >
+      <div class="van-badge__wrapper van-tabbar-item__icon">
+        <!--[-->
+        <i class="van-badge__wrapper van-icon van-icon-friends-o"
+           style
+        >
+          <!--[-->
+        </i>
+        <div class="van-badge van-badge--top-right van-badge--fixed"
+             style
+        >
+          5
+        </div>
+      </div>
+      <div class="van-tabbar-item__text">
+        <!--[-->
+        Tab
+      </div>
+    </div>
+    <div role="tab"
+         class="van-tabbar-item"
+         style
+         tabindex="0"
+         aria-selected="false"
+    >
+      <div class="van-badge__wrapper van-tabbar-item__icon">
+        <!--[-->
+        <i class="van-badge__wrapper van-icon van-icon-setting-o"
+           style
+        >
+          <!--[-->
+        </i>
+        <div class="van-badge van-badge--top-right van-badge--fixed"
+             style
+        >
+          20
+        </div>
+      </div>
+      <div class="van-tabbar-item__text">
+        <!--[-->
+        Tab
+      </div>
+    </div>
+  </div>
+</div>
+<div>
+  <!--[-->
+  <div role="tablist"
+       style
+       class="van-tabbar van-tabbar--fixed van-hairline--top-bottom van-safe-area-bottom"
+  >
+    <!--[-->
+    <div role="tab"
+         class="van-tabbar-item van-tabbar-item--active"
+         style
+         tabindex="0"
+         aria-selected="true"
+    >
+      <div class="van-badge__wrapper van-tabbar-item__icon">
+        <!--[-->
+        <img src="https://fastly.jsdelivr.net/npm/@vant/assets/user-active.png">
+        <div class="van-badge van-badge--top-right van-badge--fixed"
+             style
+        >
+          3
+        </div>
+      </div>
+      <div class="van-tabbar-item__text">
+        <!--[-->
+        <span>
+          Custom
+        </span>
+      </div>
+    </div>
+    <div role="tab"
+         class="van-tabbar-item"
+         style
+         tabindex="0"
+         aria-selected="false"
+    >
+      <div class="van-badge__wrapper van-tabbar-item__icon">
+        <!--[-->
+        <i class="van-badge__wrapper van-icon van-icon-search"
+           style
+        >
+          <!--[-->
+        </i>
+      </div>
+      <div class="van-tabbar-item__text">
+        <!--[-->
+        Tab
+      </div>
+    </div>
+    <div role="tab"
+         class="van-tabbar-item"
+         style
+         tabindex="0"
+         aria-selected="false"
+    >
+      <div class="van-badge__wrapper van-tabbar-item__icon">
+        <!--[-->
+        <i class="van-badge__wrapper van-icon van-icon-setting-o"
+           style
+        >
+          <!--[-->
+        </i>
+      </div>
+      <div class="van-tabbar-item__text">
+        <!--[-->
+        Tab
+      </div>
+    </div>
+  </div>
+</div>
+<div>
+  <!--[-->
+  <div role="tablist"
+       style
+       class="van-tabbar van-tabbar--fixed van-hairline--top-bottom van-safe-area-bottom"
+  >
+    <!--[-->
+    <div role="tab"
+         class="van-tabbar-item van-tabbar-item--active"
+         style="color:#ee0a24;"
+         tabindex="0"
+         aria-selected="true"
+    >
+      <div class="van-badge__wrapper van-tabbar-item__icon">
+        <!--[-->
+        <i class="van-badge__wrapper van-icon van-icon-home-o"
+           style
+        >
+          <!--[-->
+        </i>
+      </div>
+      <div class="van-tabbar-item__text">
+        <!--[-->
+        Tab
+      </div>
+    </div>
+    <div role="tab"
+         class="van-tabbar-item"
+         style
+         tabindex="0"
+         aria-selected="false"
+    >
+      <div class="van-badge__wrapper van-tabbar-item__icon">
+        <!--[-->
+        <i class="van-badge__wrapper van-icon van-icon-search"
+           style
+        >
+          <!--[-->
+        </i>
+      </div>
+      <div class="van-tabbar-item__text">
+        <!--[-->
+        Tab
+      </div>
+    </div>
+    <div role="tab"
+         class="van-tabbar-item"
+         style
+         tabindex="0"
+         aria-selected="false"
+    >
+      <div class="van-badge__wrapper van-tabbar-item__icon">
+        <!--[-->
+        <i class="van-badge__wrapper van-icon van-icon-friends-o"
+           style
+        >
+          <!--[-->
+        </i>
+      </div>
+      <div class="van-tabbar-item__text">
+        <!--[-->
+        Tab
+      </div>
+    </div>
+    <div role="tab"
+         class="van-tabbar-item"
+         style
+         tabindex="0"
+         aria-selected="false"
+    >
+      <div class="van-badge__wrapper van-tabbar-item__icon">
+        <!--[-->
+        <i class="van-badge__wrapper van-icon van-icon-setting-o"
+           style
+        >
+          <!--[-->
+        </i>
+      </div>
+      <div class="van-tabbar-item__text">
+        <!--[-->
+        Tab
+      </div>
+    </div>
+  </div>
+</div>
+<div>
+  <!--[-->
+  <div role="tablist"
+       style
+       class="van-tabbar van-tabbar--fixed van-hairline--top-bottom van-safe-area-bottom"
+  >
+    <!--[-->
+    <div role="tab"
+         class="van-tabbar-item van-tabbar-item--active"
+         style
+         tabindex="0"
+         aria-selected="true"
+    >
+      <div class="van-badge__wrapper van-tabbar-item__icon">
+        <!--[-->
+        <i class="van-badge__wrapper van-icon van-icon-home-o"
+           style
+        >
+          <!--[-->
+        </i>
+      </div>
+      <div class="van-tabbar-item__text">
+        <!--[-->
+        Tab 1
+      </div>
+    </div>
+    <div role="tab"
+         class="van-tabbar-item"
+         style
+         tabindex="0"
+         aria-selected="false"
+    >
+      <div class="van-badge__wrapper van-tabbar-item__icon">
+        <!--[-->
+        <i class="van-badge__wrapper van-icon van-icon-search"
+           style
+        >
+          <!--[-->
+        </i>
+      </div>
+      <div class="van-tabbar-item__text">
+        <!--[-->
+        Tab 2
+      </div>
+    </div>
+    <div role="tab"
+         class="van-tabbar-item"
+         style
+         tabindex="0"
+         aria-selected="false"
+    >
+      <div class="van-badge__wrapper van-tabbar-item__icon">
+        <!--[-->
+        <i class="van-badge__wrapper van-icon van-icon-friends-o"
+           style
+        >
+          <!--[-->
+        </i>
+      </div>
+      <div class="van-tabbar-item__text">
+        <!--[-->
+        Tab 3
+      </div>
+    </div>
+    <div role="tab"
+         class="van-tabbar-item"
+         style
+         tabindex="0"
+         aria-selected="false"
+    >
+      <div class="van-badge__wrapper van-tabbar-item__icon">
+        <!--[-->
+        <i class="van-badge__wrapper van-icon van-icon-setting-o"
+           style
+        >
+          <!--[-->
+        </i>
+      </div>
+      <div class="van-tabbar-item__text">
+        <!--[-->
+        Tab 4
+      </div>
+    </div>
+  </div>
+</div>
+`;

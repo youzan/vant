@@ -19,6 +19,48 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 
 ## 更新内容
 
+### [v4.3.1](https://github.com/vant-ui/vant/compare/v4.3.0...v4.3.1)
+
+`2023-05-04`
+
+**Bug Fixes**
+
+- Fix failed to install Vant v4.3.0 [#11815](https://github.com/vant-ui/vant/issues/11815)
+
+### [v4.3.0](https://github.com/vant-ui/vant/compare/v4.2.1...v4.3.0)
+
+`2023-05-03`
+
+**New Component**
+
+- 新增 Signature 组件, 由 [@LIjiAngChen8](https://github.com/LIjiAngChen8) 贡献 [#11733](https://github.com/vant-ui/vant/issues/11733)
+
+**Feature**
+
+- Field: 图标的默认大小增加为 18px [#11799](https://github.com/vant-ui/vant/issues/11799)
+
+**Bug Fixes**
+
+- Field: 修复禁用状态下光标显示不正确的问题 [#11800](https://github.com/vant-ui/vant/issues/11800)
+- Image: 修复开启 lazy-load 时无法显示加载中状态的问题 [#11809](https://github.com/vant-ui/vant/issues/11809)
+
+### [v4.2.1](https://github.com/vant-ui/vant/compare/v4.2.0...v4.2.1)
+
+`2023-04-30`
+
+**Feature**
+
+- Pagination: 新增 show-prev-button, show-next-button 属性 [#11780](https://github.com/vant-ui/vant/issues/11780)
+- Picker: 新增 scroll-into 事件 [#11757](https://github.com/vant-ui/vant/issues/11757)
+
+**Bug Fixes**
+
+- Pagination: 修复点击禁用后的按钮时存在点击反馈的问题 [#11779](https://github.com/vant-ui/vant/issues/11779)
+- Sticky: 修复屏幕宽度变化时不会更新组件宽度的问题 [#11753](https://github.com/vant-ui/vant/issues/11753)
+- Tabs: 修复动态设置 line-width 或 line-height 不会重新渲染的问题 [#11776](https://github.com/vant-ui/vant/issues/11776)
+- Tabs: 修复屏幕宽度变化时不会自动滚动到激活的标签页的问题 [#11777](https://github.com/vant-ui/vant/issues/11777)
+- Watermark: 修复 iOS 12 系统的兼容性问题 [#11762](https://github.com/vant-ui/vant/issues/11762)
+
 ### [v4.2.0](https://github.com/vant-ui/vant/compare/v4.1.2...v4.2.0)
 
 `2023-04-16`

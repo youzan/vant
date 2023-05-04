@@ -1,0 +1,54 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should allow to custom button text 1`] = `
+<div class="van-signature__footer">
+  <button type="button"
+          class="van-button van-button--default van-button--small"
+  >
+    <div class="van-button__content">
+      <span class="van-button__text">
+        Bar
+      </span>
+    </div>
+  </button>
+  <button type="button"
+          class="van-button van-button--primary van-button--small"
+  >
+    <div class="van-button__content">
+      <span class="van-button__text">
+        Foo
+      </span>
+    </div>
+  </button>
+</div>
+`;
+
+exports[`should render tips correctly 1`] = `
+<div class="van-signature">
+  <div class="van-signature__content">
+    <p>
+      Canvas is not supported
+    </p>
+  </div>
+  <div class="van-signature__footer">
+    <button type="button"
+            class="van-button van-button--default van-button--small"
+    >
+      <div class="van-button__content">
+        <span class="van-button__text">
+          Clear
+        </span>
+      </div>
+    </button>
+    <button type="button"
+            class="van-button van-button--primary van-button--small"
+    >
+      <div class="van-button__content">
+        <span class="van-button__text">
+          Confirm
+        </span>
+      </div>
+    </button>
+  </div>
+</div>
+`;

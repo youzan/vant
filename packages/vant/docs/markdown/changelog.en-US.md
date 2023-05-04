@@ -19,6 +19,48 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 
 ## Details
 
+### [v4.3.1](https://github.com/vant-ui/vant/compare/v4.3.0...v4.3.1)
+
+`2023-05-04`
+
+**Bug Fixes**
+
+- 修复安装 Vant v4.3.0 失败的问题 [#11815](https://github.com/vant-ui/vant/issues/11815)
+
+### [v4.3.0](https://github.com/vant-ui/vant/compare/v4.2.1...v4.3.0)
+
+`2023-05-03`
+
+**New Component**
+
+- add new Signature component, contributed by [@LIjiAngChen8](https://github.com/LIjiAngChen8) [#11733](https://github.com/vant-ui/vant/issues/11733)
+
+**Feature**
+
+- Field: increase default icon size to 18px [#11799](https://github.com/vant-ui/vant/issues/11799)
+
+**Bug Fixes**
+
+- Field: disabled cursor should be not-allowed [#11800](https://github.com/vant-ui/vant/issues/11800)
+- Image: failed to display loading when using lazy-load [#11809](https://github.com/vant-ui/vant/issues/11809)
+
+### [v4.2.1](https://github.com/vant-ui/vant/compare/v4.2.0...v4.2.1)
+
+`2023-04-30`
+
+**Feature**
+
+- Pagination: add show-prev-button, show-next-button props [#11780](https://github.com/vant-ui/vant/issues/11780)
+- Picker: add scroll-into event [#11757](https://github.com/vant-ui/vant/issues/11757)
+
+**Bug Fixes**
+
+- Pagination: don't show click feedback when button is disabled [#11779](https://github.com/vant-ui/vant/issues/11779)
+- Sticky: resize or orientationchange wrapper no reset width and height [#11753](https://github.com/vant-ui/vant/issues/11753)
+- Tabs: re-render when line-width or line-height changed [#11776](https://github.com/vant-ui/vant/issues/11776)
+- Tabs: should scroll active tab into view after resized [#11777](https://github.com/vant-ui/vant/issues/11777)
+- Watermark: add xlink namespace and fix blob MIME type [#11762](https://github.com/vant-ui/vant/issues/11762)
+
 ### [v4.2.0](https://github.com/vant-ui/vant/compare/v4.1.2...v4.2.0)
 
 `2023-04-16`

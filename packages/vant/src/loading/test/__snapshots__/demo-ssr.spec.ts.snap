@@ -1,0 +1,306 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render demo and match snapshot 1`] = `
+<!--[-->
+<div>
+  <!--[-->
+  <div class="van-loading van-loading--circular"
+       aria-live="polite"
+       aria-busy="true"
+  >
+    <span class="van-loading__spinner van-loading__spinner--circular"
+          style
+    >
+      <svg class="van-loading__circular"
+           viewbox="25 25 50 50"
+      >
+        <circle cx="50"
+                cy="50"
+                r="20"
+                fill="none"
+        >
+        </circle>
+      </svg>
+    </span>
+  </div>
+  <div class="van-loading van-loading--spinner"
+       aria-live="polite"
+       aria-busy="true"
+  >
+    <span class="van-loading__spinner van-loading__spinner--spinner"
+          style
+    >
+      <!--[-->
+      <i class="van-loading__line van-loading__line--1">
+      </i>
+      <i class="van-loading__line van-loading__line--2">
+      </i>
+      <i class="van-loading__line van-loading__line--3">
+      </i>
+      <i class="van-loading__line van-loading__line--4">
+      </i>
+      <i class="van-loading__line van-loading__line--5">
+      </i>
+      <i class="van-loading__line van-loading__line--6">
+      </i>
+      <i class="van-loading__line van-loading__line--7">
+      </i>
+      <i class="van-loading__line van-loading__line--8">
+      </i>
+      <i class="van-loading__line van-loading__line--9">
+      </i>
+      <i class="van-loading__line van-loading__line--10">
+      </i>
+      <i class="van-loading__line van-loading__line--11">
+      </i>
+      <i class="van-loading__line van-loading__line--12">
+      </i>
+    </span>
+  </div>
+</div>
+<div>
+  <!--[-->
+  <div class="van-loading van-loading--circular"
+       aria-live="polite"
+       aria-busy="true"
+  >
+    <span class="van-loading__spinner van-loading__spinner--circular"
+          style="color:#1989fa;"
+    >
+      <svg class="van-loading__circular"
+           viewbox="25 25 50 50"
+      >
+        <circle cx="50"
+                cy="50"
+                r="20"
+                fill="none"
+        >
+        </circle>
+      </svg>
+    </span>
+  </div>
+  <div class="van-loading van-loading--spinner"
+       aria-live="polite"
+       aria-busy="true"
+  >
+    <span class="van-loading__spinner van-loading__spinner--spinner"
+          style="color:#1989fa;"
+    >
+      <!--[-->
+      <i class="van-loading__line van-loading__line--1">
+      </i>
+      <i class="van-loading__line van-loading__line--2">
+      </i>
+      <i class="van-loading__line van-loading__line--3">
+      </i>
+      <i class="van-loading__line van-loading__line--4">
+      </i>
+      <i class="van-loading__line van-loading__line--5">
+      </i>
+      <i class="van-loading__line van-loading__line--6">
+      </i>
+      <i class="van-loading__line van-loading__line--7">
+      </i>
+      <i class="van-loading__line van-loading__line--8">
+      </i>
+      <i class="van-loading__line van-loading__line--9">
+      </i>
+      <i class="van-loading__line van-loading__line--10">
+      </i>
+      <i class="van-loading__line van-loading__line--11">
+      </i>
+      <i class="van-loading__line van-loading__line--12">
+      </i>
+    </span>
+  </div>
+</div>
+<div>
+  <!--[-->
+  <div class="van-loading van-loading--circular"
+       aria-live="polite"
+       aria-busy="true"
+  >
+    <span class="van-loading__spinner van-loading__spinner--circular"
+          style="width:24px;height:24px;"
+    >
+      <svg class="van-loading__circular"
+           viewbox="25 25 50 50"
+      >
+        <circle cx="50"
+                cy="50"
+                r="20"
+                fill="none"
+        >
+        </circle>
+      </svg>
+    </span>
+  </div>
+  <div class="van-loading van-loading--spinner"
+       aria-live="polite"
+       aria-busy="true"
+  >
+    <span class="van-loading__spinner van-loading__spinner--spinner"
+          style="width:24px;height:24px;"
+    >
+      <!--[-->
+      <i class="van-loading__line van-loading__line--1">
+      </i>
+      <i class="van-loading__line van-loading__line--2">
+      </i>
+      <i class="van-loading__line van-loading__line--3">
+      </i>
+      <i class="van-loading__line van-loading__line--4">
+      </i>
+      <i class="van-loading__line van-loading__line--5">
+      </i>
+      <i class="van-loading__line van-loading__line--6">
+      </i>
+      <i class="van-loading__line van-loading__line--7">
+      </i>
+      <i class="van-loading__line van-loading__line--8">
+      </i>
+      <i class="van-loading__line van-loading__line--9">
+      </i>
+      <i class="van-loading__line van-loading__line--10">
+      </i>
+      <i class="van-loading__line van-loading__line--11">
+      </i>
+      <i class="van-loading__line van-loading__line--12">
+      </i>
+    </span>
+  </div>
+</div>
+<div>
+  <!--[-->
+  <div class="van-loading van-loading--circular"
+       aria-live="polite"
+       aria-busy="true"
+  >
+    <span class="van-loading__spinner van-loading__spinner--circular"
+          style="width:24px;height:24px;"
+    >
+      <svg class="van-loading__circular"
+           viewbox="25 25 50 50"
+      >
+        <circle cx="50"
+                cy="50"
+                r="20"
+                fill="none"
+        >
+        </circle>
+      </svg>
+    </span>
+    <span class="van-loading__text"
+          style
+    >
+      <!--[-->
+      Loading...
+    </span>
+  </div>
+</div>
+<div>
+  <!--[-->
+  <div class="van-loading van-loading--circular van-loading--vertical"
+       aria-live="polite"
+       aria-busy="true"
+  >
+    <span class="van-loading__spinner van-loading__spinner--circular"
+          style="width:24px;height:24px;"
+    >
+      <svg class="van-loading__circular"
+           viewbox="25 25 50 50"
+      >
+        <circle cx="50"
+                cy="50"
+                r="20"
+                fill="none"
+        >
+        </circle>
+      </svg>
+    </span>
+    <span class="van-loading__text"
+          style
+    >
+      <!--[-->
+      Loading...
+    </span>
+  </div>
+</div>
+<div>
+  <!--[-->
+  <div class="van-loading van-loading--circular van-loading--vertical"
+       aria-live="polite"
+       aria-busy="true"
+  >
+    <span class="van-loading__spinner van-loading__spinner--circular"
+          style="color:#0094ff;width:24px;height:24px;"
+    >
+      <svg class="van-loading__circular"
+           viewbox="25 25 50 50"
+      >
+        <circle cx="50"
+                cy="50"
+                r="20"
+                fill="none"
+        >
+        </circle>
+      </svg>
+    </span>
+    <span class="van-loading__text"
+          style="color:#0094ff;"
+    >
+      <!--[-->
+      Loading...
+    </span>
+  </div>
+  <div class="van-loading van-loading--circular van-loading--vertical"
+       aria-live="polite"
+       aria-busy="true"
+  >
+    <span class="van-loading__spinner van-loading__spinner--circular"
+          style="width:24px;height:24px;"
+    >
+      <svg class="van-loading__circular"
+           viewbox="25 25 50 50"
+      >
+        <circle cx="50"
+                cy="50"
+                r="20"
+                fill="none"
+        >
+        </circle>
+      </svg>
+    </span>
+    <span class="van-loading__text"
+          style="color:#0094ff;"
+    >
+      <!--[-->
+      Loading...
+    </span>
+  </div>
+</div>
+<div>
+  <!--[-->
+  <div class="van-loading van-loading--circular van-loading--vertical"
+       aria-live="polite"
+       aria-busy="true"
+  >
+    <span class="van-loading__spinner van-loading__spinner--circular"
+          style
+    >
+      <!--[-->
+      <i class="van-badge__wrapper van-icon van-icon-star-o"
+         style="font-size:30px;"
+      >
+        <!--[-->
+      </i>
+    </span>
+    <span class="van-loading__text"
+          style
+    >
+      <!--[-->
+      Loading...
+    </span>
+  </div>
+</div>
+`;

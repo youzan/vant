@@ -1,0 +1,104 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render demo and match snapshot 1`] = `
+<!--[-->
+<div>
+  <!--[-->
+  <div class="van-cell van-cell--clickable"
+       role="button"
+       tabindex="0"
+  >
+    <div class="van-cell__title"
+         style
+    >
+      <span>
+        Basic Usage
+      </span>
+    </div>
+    <i class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon"
+       style
+    >
+      <!--[-->
+    </i>
+  </div>
+  <div class="van-cell van-cell--clickable"
+       role="button"
+       tabindex="0"
+  >
+    <div class="van-cell__title"
+         style
+    >
+      <span>
+        Show Cancel Button
+      </span>
+    </div>
+    <i class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon"
+       style
+    >
+      <!--[-->
+    </i>
+  </div>
+  <div class="van-cell van-cell--clickable"
+       role="button"
+       tabindex="0"
+  >
+    <div class="van-cell__title"
+         style
+    >
+      <span>
+        Show Description
+      </span>
+    </div>
+    <i class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon"
+       style
+    >
+      <!--[-->
+    </i>
+  </div>
+</div>
+<div>
+  <!--[-->
+  <div class="van-cell van-cell--clickable"
+       role="button"
+       tabindex="0"
+  >
+    <div class="van-cell__title"
+         style
+    >
+      <span>
+        Option Status
+      </span>
+    </div>
+    <i class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon"
+       style
+    >
+      <!--[-->
+    </i>
+  </div>
+</div>
+<div>
+  <!--[-->
+  <div class="van-cell van-cell--clickable"
+       role="button"
+       tabindex="0"
+  >
+    <div class="van-cell__title"
+         style
+    >
+      <span>
+        Custom Panel
+      </span>
+    </div>
+    <i class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon"
+       style
+    >
+      <!--[-->
+    </i>
+  </div>
+</div>
+<!--[-->
+<!--[-->
+<!--[-->
+<!--[-->
+<!--[-->
+`;

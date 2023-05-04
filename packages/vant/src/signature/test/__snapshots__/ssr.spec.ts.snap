@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render correctly when SSR 1`] = `
+<div class="van-signature">
+  <div class="van-signature__content">
+    <canvas width="0"
+            height="0"
+    >
+    </canvas>
+  </div>
+  <div class="van-signature__footer">
+    <button type="button"
+            class="van-button van-button--default van-button--small"
+            style
+    >
+      <div class="van-button__content">
+        <span class="van-button__text">
+          <!--[-->
+          Clear
+        </span>
+      </div>
+    </button>
+    <button type="button"
+            class="van-button van-button--primary van-button--small"
+            style
+    >
+      <div class="van-button__content">
+        <span class="van-button__text">
+          <!--[-->
+          Confirm
+        </span>
+      </div>
+    </button>
+  </div>
+</div>
+`;

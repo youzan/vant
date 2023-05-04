@@ -1,3 +1,5 @@
+import { createSSRApp } from 'vue';
+import { renderToString } from 'vue/server-renderer';
 import './plugin';
 import Locale from '../src/locale';
 import enUS from '../src/locale/lang/en-US';
@@ -10,6 +12,14 @@ export function later(delay = 0): Promise<void> {
     setTimeout(resolve, delay);
   });
 }
+
+export const renderComponentToString = async (
+  ...args: Parameters<typeof createSSRApp>
+) => {
+  const app = createSSRApp(...args);
+  const html = await renderToString(app);
+  return html;
+};
 
 export * from './dom';
 export * from './event';

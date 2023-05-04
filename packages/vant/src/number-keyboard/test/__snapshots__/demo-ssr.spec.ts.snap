@@ -1,0 +1,869 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render demo and match snapshot 1`] = `
+<!--[-->
+<div>
+  <!--[-->
+  <div class="van-cell van-cell--clickable"
+       role="button"
+       tabindex="0"
+  >
+    <div class="van-cell__title"
+         style
+    >
+      <span>
+        Show Default Keyboard
+      </span>
+    </div>
+    <i class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon"
+       style
+    >
+      <!--[-->
+    </i>
+  </div>
+  <div class="van-cell van-cell--clickable"
+       role="button"
+       tabindex="0"
+  >
+    <div class="van-cell__title"
+         style
+    >
+      <span>
+        Show Keyboard With Sidebar
+      </span>
+    </div>
+    <i class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon"
+       style
+    >
+      <!--[-->
+    </i>
+  </div>
+  <div class="van-cell van-cell--clickable"
+       role="button"
+       tabindex="0"
+  >
+    <div class="van-cell__title"
+         style
+    >
+      <span>
+        Show IdNumber Keyboard
+      </span>
+    </div>
+    <i class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon"
+       style
+    >
+      <!--[-->
+    </i>
+  </div>
+  <div class="van-cell van-cell--clickable"
+       role="button"
+       tabindex="0"
+  >
+    <div class="van-cell__title"
+         style
+    >
+      <span>
+        Show Keyboard With Title
+      </span>
+    </div>
+    <i class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon"
+       style
+    >
+      <!--[-->
+    </i>
+  </div>
+  <div class="van-cell van-cell--clickable"
+       role="button"
+       tabindex="0"
+  >
+    <div class="van-cell__title"
+         style
+    >
+      <span>
+        Show Keyboard With Multiple ExtraKey
+      </span>
+    </div>
+    <i class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon"
+       style
+    >
+      <!--[-->
+    </i>
+  </div>
+  <div class="van-cell van-cell--clickable"
+       role="button"
+       tabindex="0"
+  >
+    <div class="van-cell__title"
+         style
+    >
+      <span>
+        Show Keyboard With Random Key Order
+      </span>
+    </div>
+    <i class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon"
+       style
+    >
+      <!--[-->
+    </i>
+  </div>
+  <div class="van-cell van-cell--clickable van-field"
+       role="button"
+       tabindex="0"
+  >
+    <div class="van-cell__title van-field__label"
+         style
+    >
+      <!--[-->
+      <label id="van-field-label"
+             for="van-field-input"
+             style
+      >
+        Bind Value
+      </label>
+    </div>
+    <div class="van-cell__value van-field__value">
+      <!--[-->
+      <div class="van-field__body">
+        <input type="text"
+               id="van-field-input"
+               class="van-field__control"
+               readonly
+               placeholder="Click To Input"
+               aria-labelledby="van-field-label"
+        >
+      </div>
+    </div>
+  </div>
+</div>
+<div style
+     class="van-number-keyboard"
+>
+  <div class="van-number-keyboard__body">
+    <div class="van-number-keyboard__keys">
+      <!--[-->
+      <div class="van-key__wrapper">
+        <div role="button"
+             tabindex="0"
+             class="van-key"
+        >
+          1
+        </div>
+      </div>
+      <div class="van-key__wrapper">
+        <div role="button"
+             tabindex="0"
+             class="van-key"
+        >
+          2
+        </div>
+      </div>
+      <div class="van-key__wrapper">
+        <div role="button"
+             tabindex="0"
+             class="van-key"
+        >
+          3
+        </div>
+      </div>
+      <div class="van-key__wrapper">
+        <div role="button"
+             tabindex="0"
+             class="van-key"
+        >
+          4
+        </div>
+      </div>
+      <div class="van-key__wrapper">
+        <div role="button"
+             tabindex="0"
+             class="van-key"
+        >
+          5
+        </div>
+      </div>
+      <div class="van-key__wrapper">
+        <div role="button"
+             tabindex="0"
+             class="van-key"
+        >
+          6
+        </div>
+      </div>
+      <div class="van-key__wrapper">
+        <div role="button"
+             tabindex="0"
+             class="van-key"
+        >
+          7
+        </div>
+      </div>
+      <div class="van-key__wrapper">
+        <div role="button"
+             tabindex="0"
+             class="van-key"
+        >
+          8
+        </div>
+      </div>
+      <div class="van-key__wrapper">
+        <div role="button"
+             tabindex="0"
+             class="van-key"
+        >
+          9
+        </div>
+      </div>
+      <div class="van-key__wrapper">
+        <div role="button"
+             tabindex="0"
+             class="van-key"
+        >
+          <svg class="van-key__collapse-icon"
+               viewbox="0 0 30 24"
+          >
+            <path d="M26 13h-2v2h2v-2zm-8-3h2V8h-2v2zm2-4h2V4h-2v2zm2 4h4V4h-2v4h-2v2zm-7 14 3-3h-6l3 3zM6 13H4v2h2v-2zm16 0H8v2h14v-2zm-12-3h2V8h-2v2zM28 0l1 1 1 1v15l-1 2H1l-1-2V2l1-1 1-1zm0 2H2v15h26V2zM6 4v2H4V4zm10 2h2V4h-2v2zM8 9v1H4V8zm8 0v1h-2V8zm-6-5v2H8V4zm4 0v2h-2V4z"
+                  fill="currentColor"
+            >
+            </path>
+          </svg>
+        </div>
+      </div>
+      <div class="van-key__wrapper">
+        <div role="button"
+             tabindex="0"
+             class="van-key"
+        >
+          0
+        </div>
+      </div>
+      <div class="van-key__wrapper">
+        <div role="button"
+             tabindex="0"
+             class="van-key van-key--delete"
+        >
+          <svg class="van-key__delete-icon"
+               viewbox="0 0 32 22"
+          >
+            <path d="M28 0a4 4 0 0 1 4 4v14a4 4 0 0 1-4 4H10.4a2 2 0 0 1-1.4-.6L1 13.1c-.6-.5-.9-1.3-.9-2 0-1 .3-1.7.9-2.2L9 .6a2 2 0 0 1 1.4-.6zm0 2H10.4l-8.2 8.3a1 1 0 0 0-.3.7c0 .3.1.5.3.7l8.2 8.4H28a2 2 0 0 0 2-2V4c0-1.1-.9-2-2-2zm-5 4a1 1 0 0 1 .7.3 1 1 0 0 1 0 1.4L20.4 11l3.3 3.3c.2.2.3.5.3.7 0 .3-.1.5-.3.7a1 1 0 0 1-.7.3 1 1 0 0 1-.7-.3L19 12.4l-3.4 3.3a1 1 0 0 1-.6.3 1 1 0 0 1-.7-.3 1 1 0 0 1-.3-.7c0-.2.1-.5.3-.7l3.3-3.3-3.3-3.3A1 1 0 0 1 14 7c0-.3.1-.5.3-.7A1 1 0 0 1 15 6a1 1 0 0 1 .6.3L19 9.6l3.3-3.3A1 1 0 0 1 23 6z"
+                  fill="currentColor"
+            >
+            </path>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div style="display:none;"
+     class="van-number-keyboard"
+>
+  <div class="van-number-keyboard__body">
+    <div class="van-number-keyboard__keys">
+      <!--[-->
+      <div class="van-key__wrapper">
+        <div role="button"
+             tabindex="0"
+             class="van-key"
+        >
+          1
+        </div>
+      </div>
+      <div class="van-key__wrapper">
+        <div role="button"
+             tabindex="0"
+             class="van-key"
+        >
+          2
+        </div>
+      </div>
+      <div class="van-key__wrapper">
+        <div role="button"
+             tabindex="0"
+             class="van-key"
+        >
+          3
+        </div>
+      </div>
+      <div class="van-key__wrapper">
+        <div role="button"
+             tabindex="0"
+             class="van-key"
+        >
+          4
+        </div>
+      </div>
+      <div class="van-key__wrapper">
+        <div role="button"
+             tabindex="0"
+             class="van-key"
+        >
+          5
+        </div>
+      </div>
+      <div class="van-key__wrapper">
+        <div role="button"
+             tabindex="0"
+             class="van-key"
+        >
+          6
+        </div>
+      </div>
+      <div class="van-key__wrapper">
+        <div role="button"
+             tabindex="0"
+             class="van-key"
+        >
+          7
+        </div>
+      </div>
+      <div class="van-key__wrapper">
+        <div role="button"
+             tabindex="0"
+             class="van-key"
+        >
+          8
+        </div>
+      </div>
+      <div class="van-key__wrapper">
+        <div role="button"
+             tabindex="0"
+             class="van-key"
+        >
+          9
+        </div>
+      </div>
+      <div class="van-key__wrapper van-key__wrapper--wider">
+        <div role="button"
+             tabindex="0"
+             class="van-key"
+        >
+          0
+        </div>
+      </div>
+      <div class="van-key__wrapper">
+        <div role="button"
+             tabindex="0"
+             class="van-key"
+        >
+          .
+        </div>
+      </div>
+    </div>
+    <div class="van-number-keyboard__sidebar">
+      <div class="van-key__wrapper">
+        <div role="button"
+             tabindex="0"
+             class="van-key van-key--large van-key--delete"
+        >
+          <svg class="van-key__delete-icon"
+               viewbox="0 0 32 22"
+          >
+            <path d="M28 0a4 4 0 0 1 4 4v14a4 4 0 0 1-4 4H10.4a2 2 0 0 1-1.4-.6L1 13.1c-.6-.5-.9-1.3-.9-2 0-1 .3-1.7.9-2.2L9 .6a2 2 0 0 1 1.4-.6zm0 2H10.4l-8.2 8.3a1 1 0 0 0-.3.7c0 .3.1.5.3.7l8.2 8.4H28a2 2 0 0 0 2-2V4c0-1.1-.9-2-2-2zm-5 4a1 1 0 0 1 .7.3 1 1 0 0 1 0 1.4L20.4 11l3.3 3.3c.2.2.3.5.3.7 0 .3-.1.5-.3.7a1 1 0 0 1-.7.3 1 1 0 0 1-.7-.3L19 12.4l-3.4 3.3a1 1 0 0 1-.6.3 1 1 0 0 1-.7-.3 1 1 0 0 1-.3-.7c0-.2.1-.5.3-.7l3.3-3.3-3.3-3.3A1 1 0 0 1 14 7c0-.3.1-.5.3-.7A1 1 0 0 1 15 6a1 1 0 0 1 .6.3L19 9.6l3.3-3.3A1 1 0 0 1 23 6z"
+                  fill="currentColor"
+            >
+            </path>
+          </svg>
+        </div>
+      </div>
+      <div class="van-key__wrapper">
+        <div role="button"
+             tabindex="0"
+             class="van-key van-key--blue van-key--large"
+        >
+          Close
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div style="display:none;"
+     class="van-number-keyboard van-number-keyboard--with-title"
+>
+  <div class="van-number-keyboard__header">
+    <button type="button"
+            class="van-number-keyboard__close van-haptics-feedback"
+    >
+      Close
+    </button>
+  </div>
+  <div class="van-number-keyboard__body">
+    <div class="van-number-keyboard__keys">
+      <!--[-->
+      <div class="van-key__wrapper">
+        <div role="button"
+             tabindex="0"
+             class="van-key"
+        >
+          1
+        </div>
+      </div>
+      <div class="van-key__wrapper">
+        <div role="button"
+             tabindex="0"
+             class="van-key"
+        >
+          2
+        </div>
+      </div>
+      <div class="van-key__wrapper">
+        <div role="button"
+             tabindex="0"
+             class="van-key"
+        >
+          3
+        </div>
+      </div>
+      <div class="van-key__wrapper">
+        <div role="button"
+             tabindex="0"
+             class="van-key"
+        >
+          4
+        </div>
+      </div>
+      <div class="van-key__wrapper">
+        <div role="button"
+             tabindex="0"
+             class="van-key"
+        >
+          5
+        </div>
+      </div>
+      <div class="van-key__wrapper">
+        <div role="button"
+             tabindex="0"
+             class="van-key"
+        >
+          6
+        </div>
+      </div>
+      <div class="van-key__wrapper">
+        <div role="button"
+             tabindex="0"
+             class="van-key"
+        >
+          7
+        </div>
+      </div>
+      <div class="van-key__wrapper">
+        <div role="button"
+             tabindex="0"
+             class="van-key"
+        >
+          8
+        </div>
+      </div>
+      <div class="van-key__wrapper">
+        <div role="button"
+             tabindex="0"
+             class="van-key"
+        >
+          9
+        </div>
+      </div>
+      <div class="van-key__wrapper">
+        <div role="button"
+             tabindex="0"
+             class="van-key"
+        >
+          X
+        </div>
+      </div>
+      <div class="van-key__wrapper">
+        <div role="button"
+             tabindex="0"
+             class="van-key"
+        >
+          0
+        </div>
+      </div>
+      <div class="van-key__wrapper">
+        <div role="button"
+             tabindex="0"
+             class="van-key van-key--delete"
+        >
+          <svg class="van-key__delete-icon"
+               viewbox="0 0 32 22"
+          >
+            <path d="M28 0a4 4 0 0 1 4 4v14a4 4 0 0 1-4 4H10.4a2 2 0 0 1-1.4-.6L1 13.1c-.6-.5-.9-1.3-.9-2 0-1 .3-1.7.9-2.2L9 .6a2 2 0 0 1 1.4-.6zm0 2H10.4l-8.2 8.3a1 1 0 0 0-.3.7c0 .3.1.5.3.7l8.2 8.4H28a2 2 0 0 0 2-2V4c0-1.1-.9-2-2-2zm-5 4a1 1 0 0 1 .7.3 1 1 0 0 1 0 1.4L20.4 11l3.3 3.3c.2.2.3.5.3.7 0 .3-.1.5-.3.7a1 1 0 0 1-.7.3 1 1 0 0 1-.7-.3L19 12.4l-3.4 3.3a1 1 0 0 1-.6.3 1 1 0 0 1-.7-.3 1 1 0 0 1-.3-.7c0-.2.1-.5.3-.7l3.3-3.3-3.3-3.3A1 1 0 0 1 14 7c0-.3.1-.5.3-.7A1 1 0 0 1 15 6a1 1 0 0 1 .6.3L19 9.6l3.3-3.3A1 1 0 0 1 23 6z"
+                  fill="currentColor"
+            >
+            </path>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div style="display:none;"
+     class="van-number-keyboard van-number-keyboard--with-title"
+>
+  <div class="van-number-keyboard__header">
+    <h2 class="van-number-keyboard__title">
+      Keyboard Title
+    </h2>
+    <button type="button"
+            class="van-number-keyboard__close van-haptics-feedback"
+    >
+      Close
+    </button>
+  </div>
+  <div class="van-number-keyboard__body">
+    <div class="van-number-keyboard__keys">
+      <!--[-->
+      <div class="van-key__wrapper">
+        <div role="button"
+             tabindex="0"
+             class="van-key"
+        >
+          1
+        </div>
+      </div>
+      <div class="van-key__wrapper">
+        <div role="button"
+             tabindex="0"
+             class="van-key"
+        >
+          2
+        </div>
+      </div>
+      <div class="van-key__wrapper">
+        <div role="button"
+             tabindex="0"
+             class="van-key"
+        >
+          3
+        </div>
+      </div>
+      <div class="van-key__wrapper">
+        <div role="button"
+             tabindex="0"
+             class="van-key"
+        >
+          4
+        </div>
+      </div>
+      <div class="van-key__wrapper">
+        <div role="button"
+             tabindex="0"
+             class="van-key"
+        >
+          5
+        </div>
+      </div>
+      <div class="van-key__wrapper">
+        <div role="button"
+             tabindex="0"
+             class="van-key"
+        >
+          6
+        </div>
+      </div>
+      <div class="van-key__wrapper">
+        <div role="button"
+             tabindex="0"
+             class="van-key"
+        >
+          7
+        </div>
+      </div>
+      <div class="van-key__wrapper">
+        <div role="button"
+             tabindex="0"
+             class="van-key"
+        >
+          8
+        </div>
+      </div>
+      <div class="van-key__wrapper">
+        <div role="button"
+             tabindex="0"
+             class="van-key"
+        >
+          9
+        </div>
+      </div>
+      <div class="van-key__wrapper">
+        <div role="button"
+             tabindex="0"
+             class="van-key"
+        >
+          .
+        </div>
+      </div>
+      <div class="van-key__wrapper">
+        <div role="button"
+             tabindex="0"
+             class="van-key"
+        >
+          0
+        </div>
+      </div>
+      <div class="van-key__wrapper">
+        <div role="button"
+             tabindex="0"
+             class="van-key van-key--delete"
+        >
+          <svg class="van-key__delete-icon"
+               viewbox="0 0 32 22"
+          >
+            <path d="M28 0a4 4 0 0 1 4 4v14a4 4 0 0 1-4 4H10.4a2 2 0 0 1-1.4-.6L1 13.1c-.6-.5-.9-1.3-.9-2 0-1 .3-1.7.9-2.2L9 .6a2 2 0 0 1 1.4-.6zm0 2H10.4l-8.2 8.3a1 1 0 0 0-.3.7c0 .3.1.5.3.7l8.2 8.4H28a2 2 0 0 0 2-2V4c0-1.1-.9-2-2-2zm-5 4a1 1 0 0 1 .7.3 1 1 0 0 1 0 1.4L20.4 11l3.3 3.3c.2.2.3.5.3.7 0 .3-.1.5-.3.7a1 1 0 0 1-.7.3 1 1 0 0 1-.7-.3L19 12.4l-3.4 3.3a1 1 0 0 1-.6.3 1 1 0 0 1-.7-.3 1 1 0 0 1-.3-.7c0-.2.1-.5.3-.7l3.3-3.3-3.3-3.3A1 1 0 0 1 14 7c0-.3.1-.5.3-.7A1 1 0 0 1 15 6a1 1 0 0 1 .6.3L19 9.6l3.3-3.3A1 1 0 0 1 23 6z"
+                  fill="currentColor"
+            >
+            </path>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div style="display:none;"
+     class="van-number-keyboard"
+>
+  <div class="van-number-keyboard__body">
+    <div class="van-number-keyboard__keys">
+      <!--[-->
+      <div class="van-key__wrapper">
+        <div role="button"
+             tabindex="0"
+             class="van-key"
+        >
+          1
+        </div>
+      </div>
+      <div class="van-key__wrapper">
+        <div role="button"
+             tabindex="0"
+             class="van-key"
+        >
+          2
+        </div>
+      </div>
+      <div class="van-key__wrapper">
+        <div role="button"
+             tabindex="0"
+             class="van-key"
+        >
+          3
+        </div>
+      </div>
+      <div class="van-key__wrapper">
+        <div role="button"
+             tabindex="0"
+             class="van-key"
+        >
+          4
+        </div>
+      </div>
+      <div class="van-key__wrapper">
+        <div role="button"
+             tabindex="0"
+             class="van-key"
+        >
+          5
+        </div>
+      </div>
+      <div class="van-key__wrapper">
+        <div role="button"
+             tabindex="0"
+             class="van-key"
+        >
+          6
+        </div>
+      </div>
+      <div class="van-key__wrapper">
+        <div role="button"
+             tabindex="0"
+             class="van-key"
+        >
+          7
+        </div>
+      </div>
+      <div class="van-key__wrapper">
+        <div role="button"
+             tabindex="0"
+             class="van-key"
+        >
+          8
+        </div>
+      </div>
+      <div class="van-key__wrapper">
+        <div role="button"
+             tabindex="0"
+             class="van-key"
+        >
+          9
+        </div>
+      </div>
+      <div class="van-key__wrapper">
+        <div role="button"
+             tabindex="0"
+             class="van-key"
+        >
+          00
+        </div>
+      </div>
+      <div class="van-key__wrapper">
+        <div role="button"
+             tabindex="0"
+             class="van-key"
+        >
+          0
+        </div>
+      </div>
+      <div class="van-key__wrapper">
+        <div role="button"
+             tabindex="0"
+             class="van-key"
+        >
+          .
+        </div>
+      </div>
+    </div>
+    <div class="van-number-keyboard__sidebar">
+      <div class="van-key__wrapper">
+        <div role="button"
+             tabindex="0"
+             class="van-key van-key--large van-key--delete"
+        >
+          <svg class="van-key__delete-icon"
+               viewbox="0 0 32 22"
+          >
+            <path d="M28 0a4 4 0 0 1 4 4v14a4 4 0 0 1-4 4H10.4a2 2 0 0 1-1.4-.6L1 13.1c-.6-.5-.9-1.3-.9-2 0-1 .3-1.7.9-2.2L9 .6a2 2 0 0 1 1.4-.6zm0 2H10.4l-8.2 8.3a1 1 0 0 0-.3.7c0 .3.1.5.3.7l8.2 8.4H28a2 2 0 0 0 2-2V4c0-1.1-.9-2-2-2zm-5 4a1 1 0 0 1 .7.3 1 1 0 0 1 0 1.4L20.4 11l3.3 3.3c.2.2.3.5.3.7 0 .3-.1.5-.3.7a1 1 0 0 1-.7.3 1 1 0 0 1-.7-.3L19 12.4l-3.4 3.3a1 1 0 0 1-.6.3 1 1 0 0 1-.7-.3 1 1 0 0 1-.3-.7c0-.2.1-.5.3-.7l3.3-3.3-3.3-3.3A1 1 0 0 1 14 7c0-.3.1-.5.3-.7A1 1 0 0 1 15 6a1 1 0 0 1 .6.3L19 9.6l3.3-3.3A1 1 0 0 1 23 6z"
+                  fill="currentColor"
+            >
+            </path>
+          </svg>
+        </div>
+      </div>
+      <div class="van-key__wrapper">
+        <div role="button"
+             tabindex="0"
+             class="van-key van-key--blue van-key--large"
+        >
+          Close
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div style="display:none;"
+     class="van-number-keyboard"
+>
+  <div class="van-number-keyboard__body">
+    <div class="van-number-keyboard__keys">
+      <!--[-->
+      <div class="van-key__wrapper">
+        <div role="button"
+             tabindex="0"
+             class="van-key"
+        >
+          1
+        </div>
+      </div>
+      <div class="van-key__wrapper">
+        <div role="button"
+             tabindex="0"
+             class="van-key"
+        >
+          2
+        </div>
+      </div>
+      <div class="van-key__wrapper">
+        <div role="button"
+             tabindex="0"
+             class="van-key"
+        >
+          3
+        </div>
+      </div>
+      <div class="van-key__wrapper">
+        <div role="button"
+             tabindex="0"
+             class="van-key"
+        >
+          4
+        </div>
+      </div>
+      <div class="van-key__wrapper">
+        <div role="button"
+             tabindex="0"
+             class="van-key"
+        >
+          5
+        </div>
+      </div>
+      <div class="van-key__wrapper">
+        <div role="button"
+             tabindex="0"
+             class="van-key"
+        >
+          6
+        </div>
+      </div>
+      <div class="van-key__wrapper">
+        <div role="button"
+             tabindex="0"
+             class="van-key"
+        >
+          7
+        </div>
+      </div>
+      <div class="van-key__wrapper">
+        <div role="button"
+             tabindex="0"
+             class="van-key"
+        >
+          8
+        </div>
+      </div>
+      <div class="van-key__wrapper">
+        <div role="button"
+             tabindex="0"
+             class="van-key"
+        >
+          9
+        </div>
+      </div>
+      <div class="van-key__wrapper">
+        <div role="button"
+             tabindex="0"
+             class="van-key"
+        >
+          <svg class="van-key__collapse-icon"
+               viewbox="0 0 30 24"
+          >
+            <path d="M26 13h-2v2h2v-2zm-8-3h2V8h-2v2zm2-4h2V4h-2v2zm2 4h4V4h-2v4h-2v2zm-7 14 3-3h-6l3 3zM6 13H4v2h2v-2zm16 0H8v2h14v-2zm-12-3h2V8h-2v2zM28 0l1 1 1 1v15l-1 2H1l-1-2V2l1-1 1-1zm0 2H2v15h26V2zM6 4v2H4V4zm10 2h2V4h-2v2zM8 9v1H4V8zm8 0v1h-2V8zm-6-5v2H8V4zm4 0v2h-2V4z"
+                  fill="currentColor"
+            >
+            </path>
+          </svg>
+        </div>
+      </div>
+      <div class="van-key__wrapper">
+        <div role="button"
+             tabindex="0"
+             class="van-key"
+        >
+          0
+        </div>
+      </div>
+      <div class="van-key__wrapper">
+        <div role="button"
+             tabindex="0"
+             class="van-key van-key--delete"
+        >
+          <svg class="van-key__delete-icon"
+               viewbox="0 0 32 22"
+          >
+            <path d="M28 0a4 4 0 0 1 4 4v14a4 4 0 0 1-4 4H10.4a2 2 0 0 1-1.4-.6L1 13.1c-.6-.5-.9-1.3-.9-2 0-1 .3-1.7.9-2.2L9 .6a2 2 0 0 1 1.4-.6zm0 2H10.4l-8.2 8.3a1 1 0 0 0-.3.7c0 .3.1.5.3.7l8.2 8.4H28a2 2 0 0 0 2-2V4c0-1.1-.9-2-2-2zm-5 4a1 1 0 0 1 .7.3 1 1 0 0 1 0 1.4L20.4 11l3.3 3.3c.2.2.3.5.3.7 0 .3-.1.5-.3.7a1 1 0 0 1-.7.3 1 1 0 0 1-.7-.3L19 12.4l-3.4 3.3a1 1 0 0 1-.6.3 1 1 0 0 1-.7-.3 1 1 0 0 1-.3-.7c0-.2.1-.5.3-.7l3.3-3.3-3.3-3.3A1 1 0 0 1 14 7c0-.3.1-.5.3-.7A1 1 0 0 1 15 6a1 1 0 0 1 .6.3L19 9.6l3.3-3.3A1 1 0 0 1 23 6z"
+                  fill="currentColor"
+            >
+            </path>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

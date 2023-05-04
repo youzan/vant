@@ -1,0 +1,174 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render demo and match snapshot 1`] = `
+<!--[-->
+<div>
+  <!--[-->
+  <div class="van-cell van-cell--clickable"
+       role="button"
+       tabindex="0"
+  >
+    <div class="van-cell__title"
+         style
+    >
+      <span>
+        Alert
+      </span>
+    </div>
+    <i class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon"
+       style
+    >
+      <!--[-->
+    </i>
+  </div>
+  <div class="van-cell van-cell--clickable"
+       role="button"
+       tabindex="0"
+  >
+    <div class="van-cell__title"
+         style
+    >
+      <span>
+        Alert without title
+      </span>
+    </div>
+    <i class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon"
+       style
+    >
+      <!--[-->
+    </i>
+  </div>
+  <div class="van-cell van-cell--clickable"
+       role="button"
+       tabindex="0"
+  >
+    <div class="van-cell__title"
+         style
+    >
+      <span>
+        Confirm dialog
+      </span>
+    </div>
+    <i class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon"
+       style
+    >
+      <!--[-->
+    </i>
+  </div>
+</div>
+<div>
+  <!--[-->
+  <div class="van-cell van-cell--clickable"
+       role="button"
+       tabindex="0"
+  >
+    <div class="van-cell__title"
+         style
+    >
+      <span>
+        Alert
+      </span>
+    </div>
+    <i class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon"
+       style
+    >
+      <!--[-->
+    </i>
+  </div>
+  <div class="van-cell van-cell--clickable"
+       role="button"
+       tabindex="0"
+  >
+    <div class="van-cell__title"
+         style
+    >
+      <span>
+        Alert without title
+      </span>
+    </div>
+    <i class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon"
+       style
+    >
+      <!--[-->
+    </i>
+  </div>
+</div>
+<div>
+  <!--[-->
+  <div class="van-cell van-cell--clickable"
+       role="button"
+       tabindex="0"
+  >
+    <div class="van-cell__title"
+         style
+    >
+      <span>
+        Before Close
+      </span>
+    </div>
+    <i class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon"
+       style
+    >
+      <!--[-->
+    </i>
+  </div>
+</div>
+<div>
+  <!--[-->
+  <div class="van-cell van-cell--clickable"
+       role="button"
+       tabindex="0"
+  >
+    <div class="van-cell__title"
+         style
+    >
+      <span>
+        Use Dialog Component
+      </span>
+    </div>
+    <i class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon"
+       style
+    >
+      <!--[-->
+    </i>
+  </div>
+  <!--[-->
+  <div style="display:none;"
+       role="dialog"
+       tabindex="0"
+       class="van-popup van-popup--center van-dialog"
+       aria-labelledby="Title"
+  >
+    <!--[-->
+    <div class="van-dialog__header">
+      Title
+    </div>
+    <div class="van-dialog__content">
+      <!--[-->
+      <img src="https://fastly.jsdelivr.net/npm/@vant/assets/apple-3.jpeg">
+    </div>
+    <div class="van-hairline--top van-dialog__footer">
+      <button type="button"
+              class="van-button van-button--default van-button--large van-dialog__cancel"
+              style
+      >
+        <div class="van-button__content">
+          <span class="van-button__text">
+            Cancel
+          </span>
+        </div>
+      </button>
+      <button type="button"
+              class="van-button van-button--default van-button--large van-dialog__confirm van-hairline--left"
+              style
+      >
+        <div class="van-button__content">
+          <span class="van-button__text">
+            Confirm
+          </span>
+        </div>
+      </button>
+    </div>
+  </div>
+</div>
+`;

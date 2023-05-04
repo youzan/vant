@@ -211,6 +211,10 @@ location.href = location.href.replace('youzan.github.io', 'vant-ui.github.io');
                 title: 'Slider 滑块',
               },
               {
+                path: 'signature',
+                title: 'Signature 签名',
+              },
+              {
                 path: 'stepper',
                 title: 'Stepper 步进器',
               },
@@ -653,6 +657,10 @@ location.href = location.href.replace('youzan.github.io', 'vant-ui.github.io');
               {
                 path: 'slider',
                 title: 'Slider',
+              },
+              {
+                path: 'signature',
+                title: 'Signature',
               },
               {
                 path: 'stepper',
