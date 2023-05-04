@@ -142,9 +142,8 @@ export default createComponent({
     fromValue(value) {
       if (this.converter === 'json')
         try {
-          if (value === null || value === '') return [];
-          if (typeof value === 'string') return JSON.parse(value || '[]');
-          if (typeof value === 'object') return value;
+          const parsedValue = JSON.parse(value || '[]');
+          return Array.isArray(parsedValue) ? parsedValue : [];
         } catch (err) {
           return [];
         }
