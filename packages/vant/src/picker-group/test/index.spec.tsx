@@ -109,7 +109,7 @@ test('should switch to next step when click confirm button', async () => {
   ]);
 });
 
-test('support controlled mode to set activeTab', async () => {
+test('support controlled mode to set active-tab', async () => {
   const value1 = ref(['1']);
   const value2 = ref(['2']);
   const activeTab = ref(0);
@@ -118,8 +118,8 @@ test('support controlled mode to set activeTab', async () => {
     render() {
       return (
         <PickerGroup
-          title="Title"
           activeTab={activeTab.value}
+          title="Title"
           tabs={['Tab1', 'Tab2']}
         >
           <Picker

@@ -213,17 +213,17 @@ export default {
 
 `PickerGroup` 中 `tab` 的切换支持非受控模式和受控模式：
 
-- 当未绑定 `v-model:tab-active` 时，PickerGroup 组件 `tab` 的切换完全由组件自身控制。
-- 当绑定 `v-model:tab-active` 时，PickerGroup 支持受控模式，此时组件 `tab` 的切换同时支持 `v-model:tab-active` 的值和组件本身控制。
+- 当未绑定 `v-model:active-tab` 时，PickerGroup 组件 `tab` 的切换完全由组件自身控制。
+- 当绑定 `v-model:active-tab` 时，PickerGroup 支持受控模式，此时组件 `tab` 的切换同时支持 `v-model:active-tab` 的值和组件本身控制。
 
 ```html
 <van-button type="primary" @click="setTabActive">
-  点击切换tab，当前为 {{ activeTab }}
+  点击切换 tab，当前为 {{ activeTab }}
 </van-button>
 <van-picker-group
+  v-model:active-tab="activeTab"
   title="预约日期"
   :tabs="['选择日期', '选择时间']"
-  v-model:tab-active="tabActive"
   @confirm="onConfirm"
   @cancel="onCancel"
 >
@@ -242,7 +242,7 @@ import { showToast } from 'vant';
 
 export default {
   setup() {
-    const tabActive = ref(0);
+    const activeTab = ref(0);
     const currentDate = ref(['2022', '06', '01']);
     const currentTime = ref(['12', '00']);
     const onConfirm = () => {
@@ -270,7 +270,7 @@ export default {
 
 | 参数                    | 说明               | 类型               | 默认值 |
 | ----------------------- | ------------------ | ------------------ | ------ |
-| v-model:tab-active      | 设置当前选中的标签 | _number \| string_ | `0`    |
+| v-model:active-tab      | 设置当前选中的标签 | _number \| string_ | `0`    |
 | tabs                    | 设置标签页的标题   | _string[]_         | `[]`   |
 | title                   | 顶部栏标题         | _string_           | `''`   |
 | next-step-text `v4.0.8` | 下一步按钮的文字   | _string_           | `''`   |

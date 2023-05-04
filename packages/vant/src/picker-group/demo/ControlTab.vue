@@ -44,9 +44,9 @@ const setTabActive = () => {
     {{ t('btnText') + activeTab }}
   </van-button>
   <van-picker-group
+    v-model:active-tab="activeTab"
     :title="t('title')"
     :tabs="[t('date'), t('time')]"
-    v-model:active-tab="activeTab"
     @confirm="onConfirm"
     @cancel="onCancel"
   >

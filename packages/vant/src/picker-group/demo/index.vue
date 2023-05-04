@@ -19,7 +19,7 @@ const t = useTranslate({
     selectDateRange: 'Select Date Range',
     selectTimeRange: 'Select Time Range',
     nextStepButton: 'Next Step Button',
-    controlled: 'controlled mode',
+    controlled: 'Controlled Mode',
   },
 });
 </script>

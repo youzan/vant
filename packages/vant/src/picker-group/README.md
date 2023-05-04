@@ -209,21 +209,21 @@ export default {
 };
 ```
 
-### 受控模式
+### Controlled Mode
 
-supports both uncontrolled and controlled modes:
+Supports both uncontrolled and controlled modes:
 
-- When `v-model:tab-active` is not bound, the PickerGroup component completely controls the `tab` switching.
-- When `v-model:tab-active` is bound, PickerGroup supports controlled mode, and the `tab` switching is controlled by both the `v-model:tab-active` value and the component itself.
+- When `v-model:active-tab` is not bound, the PickerGroup component completely controls the `tab` switching.
+- When `v-model:active-tab` is bound, PickerGroup supports controlled mode, and the `tab` switching is controlled by both the `v-model:active-tab` value and the component itself.
 
 ```html
 <van-button type="primary" @click="setTabActive">
   toggle tab, current {{ activeTab }}
 </van-button>
 <van-picker-group
+  v-model:active-tab="activeTab"
   title="Title"
   :tabs="['Date', 'Time']"
-  v-model:tab-active="tabActive"
   @confirm="onConfirm"
   @cancel="onCancel"
 >
@@ -242,7 +242,7 @@ import { showToast } from 'vant';
 
 export default {
   setup() {
-    const tabActive = ref(0);
+    const activeTab = ref(0);
     const currentDate = ref(['2022', '06', '01']);
     const currentTime = ref(['12', '00']);
     const onConfirm = () => {
@@ -270,7 +270,7 @@ export default {
 
 | Attribute | Description | Type | Default |
 | --- | --- | --- | --- |
-| v-model:tab-active | Set index of active tab | _number \| string_ | `0` |
+| v-model:active-tab | Set index of active tab | _number \| string_ | `0` |
 | tabs | Titles of tabs | _string[]_ | `[]` |
 | title | Toolbar title | _string_ | `''` |
 | next-step-text `v4.0.8` | Text of next step button | _string_ | `''` |
