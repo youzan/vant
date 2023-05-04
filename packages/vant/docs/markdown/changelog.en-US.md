@@ -19,6 +19,14 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 
 ## Details
 
+### [v4.3.1](https://github.com/vant-ui/vant/compare/v4.3.0...v4.3.1)
+
+`2023-05-04`
+
+**Bug Fixes**
+
+- 修复安装 Vant v4.3.0 失败的问题 [#11815](https://github.com/vant-ui/vant/issues/11815)
+
 ### [v4.3.0](https://github.com/vant-ui/vant/compare/v4.2.1...v4.3.0)
 
 `2023-05-03`
