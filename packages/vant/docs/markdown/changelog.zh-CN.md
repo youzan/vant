@@ -25,7 +25,7 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 
 **Bug Fixes**
 
-- Fix failed to install Vant v4.3.0 [#11815](https://github.com/vant-ui/vant/issues/11815)
+- 修复安装 Vant v4.3.0 失败的问题 [#11815](https://github.com/vant-ui/vant/issues/11815)
 
 ### [v4.3.0](https://github.com/vant-ui/vant/compare/v4.2.1...v4.3.0)
 
