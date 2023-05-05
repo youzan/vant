@@ -142,9 +142,8 @@ export default createComponent({
     fromValue(value) {
       if (this.converter === 'json')
         try {
-          if (value === null || value === '') return [];
-          if (typeof value === 'string') return JSON.parse(value || '[]');
-          if (typeof value === 'object') return value;
+          const parsedValue = JSON.parse(value || '[]');
+          return Array.isArray(parsedValue) ? parsedValue : [];
         } catch (err) {
           return [];
         }
@@ -177,6 +176,45 @@ export default createComponent({
         name: this.name,
         index,
       };
+    },
+
+    // 校验文件类型是否匹配
+    /**
+     *
+     * @param {File} file
+     * @param {String} accept
+     * @return {Boolean}
+     */
+    validateFile(file, accept = '') {
+      // 通配符* 直接不校验
+      if ((accept || '').trim() === '*') {
+        return true;
+      }
+
+      const extension = (file.name.indexOf('.') > -1
+        ? `.${file.name.split('.').pop()}`
+        : ''
+      ).toLowerCase();
+      const type = file.type.toLowerCase();
+      const baseType = type.replace(/\/.*$/, '').toLowerCase();
+      const valid = accept.split(',')
+        .map((type) => type.trim())
+        .filter((type) => type)
+        .some((acceptedType) => {
+          acceptedType = acceptedType.toLowerCase();
+          if (/^\..+$/.test(acceptedType)) {
+            return extension.toLowerCase() === acceptedType;
+          }
+          if (/\/\*$/.test(acceptedType)) {
+            return baseType === acceptedType.replace(/\/\*$/, '');
+          }
+          if (/^[^\/]+\/[^\/]+$/.test(acceptedType)) {
+            return type === acceptedType;
+          }
+          return false;
+        });
+
+        return valid;
     },
 
     onChange(event) {
@@ -212,58 +250,21 @@ export default createComponent({
       if (Array.isArray(files)) {
         for (let i = 0; i < files.length; i++) {
           if (this.accept) {
-            const extension = (files[i].name.indexOf('.') > -1 ? `.${files[i].name.split('.').pop()}` : '').toLowerCase();
-            const type = files[i].type.toLowerCase();
-            const baseType = type.replace(/\/.*$/, '').toLowerCase();
-            const accept = this.accept.split(',')
-                .map((type) => type.trim())
-                .filter((type) => type)
-                .some((acceptedType) => {
-                    acceptedType = acceptedType.toLowerCase();
-                    if (/^\..+$/.test(acceptedType)) {
-                        return extension.toLowerCase() === acceptedType;
-                    }
-                    if (/\/\*$/.test(acceptedType)) {
-                        return baseType === acceptedType.replace(/\/\*$/, '');
-                    }
-                    if (/^[^\/]+\/[^\/]+$/.test(acceptedType)) {
-                        return type === acceptedType;
-                    }
-                    return false;
-                });
-            if (!accept) {
-                this.resetInput();
-                Toast('文件类型不匹配，请上传' + this.accept + '的文件类型');
-                return null;
+            const valid = this.validateFile(files[i], this.accept);
+            if (!valid) {
+              this.resetInput();
+              Toast('文件类型不匹配，请上传' + this.accept + '的文件类型');
+              return null;
             }
           }
         }
       } else if (this.accept) {
-          const file = files;
-          const extension = (file.name.indexOf('.') > -1 ? `.${file.name.split('.').pop()}` : '').toLowerCase();
-          const type = file.type.toLowerCase();
-          const baseType = type.replace(/\/.*$/, '').toLowerCase();
-          const accept = this.accept.split(',')
-              .map((type) => type.trim())
-              .filter((type) => type)
-              .some((acceptedType) => {
-                  acceptedType = acceptedType.toLowerCase();
-                  if (/^\..+$/.test(acceptedType)) {
-                      return extension.toLowerCase() === acceptedType;
-                  }
-                  if (/\/\*$/.test(acceptedType)) {
-                      return baseType === acceptedType.replace(/\/\*$/, '');
-                  }
-                  if (/^[^\/]+\/[^\/]+$/.test(acceptedType)) {
-                      return type === acceptedType;
-                  }
-                  return false;
-              });
-          if (!accept) {
-              Toast('文件类型不匹配，请上传' + this.accept + '的文件类型');
-              this.resetInput();
-              return null;
-          }
+        const valid = this.validateFile(files, this.accept);
+        if (!valid) {
+          Toast('文件类型不匹配，请上传' + this.accept + '的文件类型');
+          this.resetInput();
+          return null;
+        }
       }
       this.readFile(files);
     },
@@ -613,7 +614,7 @@ export default createComponent({
         }
       }
 
-      if(window.appInfo && window.appInfo.domainName)
+      if (window.appInfo && window.appInfo.domainName)
         headers.DomainName = window.appInfo.domainName;
 
       const xhr = ajax({

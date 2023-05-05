@@ -6,6 +6,7 @@ import { preventDefault } from '../utils/dom/event';
 // Mixins
 import { TouchMixin } from '../mixins/touch';
 import { ClickOutsideMixin } from '../mixins/click-outside';
+// eslint-disable-next-line import/no-named-as-default
 import EmptyCol from '../emptycol';
 
 const [createComponent, bem] = createNamespace('swipe-cell');
@@ -45,34 +46,33 @@ export default createComponent({
     };
   },
   components: {
-    EmptyCol
+    EmptyCol,
   },
 
-  computed: {
-
-  },
+  computed: {},
   mounted() {
     this.bindTouchEvent(this.$el);
   },
   updated() {
-    if(this.opened && this.inDesigner()) {
+    if (this.opened && this.inDesigner()) {
       const offset =
-      this.position === 'left' ? this.computedLeftWidth() : -this.computedRightWidth();
+        this.position === 'left'
+          ? this.computedLeftWidth()
+          : -this.computedRightWidth();
       this.offset = offset;
     }
   },
   methods: {
     computedLeftWidth() {
-      console.log(this.leftWidth, 777)
       if (isDef(this.leftWidth) && this.leftWidth !== 'auto') {
-        return +this.leftWidth
+        return +this.leftWidth;
       }
       return this.getWidthByRef('left');
     },
 
     computedRightWidth() {
       if (isDef(this.rightWidth) && this.leftWidth !== 'auto') {
-        return +this.rightWidth
+        return +this.rightWidth;
       }
       return this.getWidthByRef('right');
     },
@@ -87,7 +87,9 @@ export default createComponent({
     // @exposed-api
     open(position) {
       const offset =
-        position === 'left' ? this.computedLeftWidth() : -this.computedRightWidth();
+        position === 'left'
+          ? this.computedLeftWidth()
+          : -this.computedRightWidth();
 
       this.opened = true;
       this.offset = offset;
@@ -236,8 +238,10 @@ export default createComponent({
             class={bem('left')}
             onClick={this.getClickHandler('left', true)}
             vusion-slot-name="left"
-            style={{width: `${Math.abs(this.offset)}px`}}
-            vusion-template-left-node-path={this.$attrs['vusion-template-left-node-path']}
+            style={{ width: `${Math.abs(this.offset)}px` }}
+            vusion-template-left-node-path={
+              this.$attrs['vusion-template-left-node-path']
+            }
           >
             <van-empty-col></van-empty-col>
           </div>
@@ -253,7 +257,7 @@ export default createComponent({
             ref="right"
             class={bem('right')}
             onClick={this.getClickHandler('right', true)}
-            >
+          >
             {content}
           </div>
         );
@@ -265,8 +269,10 @@ export default createComponent({
             class={bem('right')}
             onClick={this.getClickHandler('right', true)}
             vusion-slot-name="right"
-            style={{width: `${Math.abs(this.offset)}px`}}
-            vusion-template-right-node-path={this.$attrs['vusion-template-right-node-path']}
+            style={{ width: `${Math.abs(this.offset)}px` }}
+            vusion-template-right-node-path={
+              this.$attrs['vusion-template-right-node-path']
+            }
           >
             <van-empty-col></van-empty-col>
           </div>
@@ -286,7 +292,11 @@ export default createComponent({
         <div class={bem('wrapper')} style={wrapperStyle}>
           {this.genLeftPart()}
           {this.slots()}
-          {this.inDesigner() && !this.slots() ? <div vusion-slot-name="default"><van-empty-col></van-empty-col></div> : null}
+          {this.inDesigner() && !this.slots() ? (
+            <div vusion-slot-name="default">
+              <van-empty-col></van-empty-col>
+            </div>
+          ) : null}
           {this.genRightPart()}
         </div>
       </div>

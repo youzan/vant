@@ -1,6 +1,6 @@
 {
   "name": "@lcap/mobile-ui",
-  "version": "0.12.28",
+  "version": "0.12.29",
   "lcapname": "@lcap/mobile-ui",
   "lcapversion": "0.6.3",
   "description": "Mobile UI Components built on Vue",
@@ -41,22 +41,11 @@
     "genThemeConfig": "node ./scripts/genThemeConfig/index.js",
     "deploy:dev": "lcap deploy dist-theme --platform http://defaulttenant.lcap.dev.env.com && node bin/deploy-lcp-images --platform=http://defaulttenant.lcap.dev.env.com",
     "deploy:test": "lcap deploy dist-theme --platform http://defaulttenant.lcap.ha.test.com && node bin/deploy-lcp-images --platform=http://defaulttenant.lcap.ha.test.com",
-    "deploy:pre": "lcap deploy dist-theme --platform http://defaulttenant.lcap.ha.dri.com && node bin/deploy-lcp-images --platform=http://defaulttenant.lcap.ha.dri.com",
+    "deploy:pre": "lcap deploy dist-theme --platform https://defaulttenant.lcap.hadri.163yun.com && node bin/deploy-lcp-images --platform=https://defaulttenant.lcap.hadri.163yun.com",
     "deploy:online": "lcap deploy dist-theme --platform http://netease-template.lcap.163yun.com &&  node bin/deploy-lcp-images --platform=http://netease-template.lcap.163yun.com",
     "prepublishOnly": "npm run build:vusion && git add .",
     "postpublish": "npm run deploy:online",
     "deploy:qz": "lcap deploy dist-theme --platform=https://defaulttenant.lcap.qz.163yun.com --username=admin --password=Netease123 && node bin/deploy-lcp-images --platform=https://defaulttenant.lcap.qz.163yun.com"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
-  "lint-staged": {
-    "*.md": "prettier --write",
-    "*.{ts,tsx,js,vue,less}": "prettier --write",
-    "*.{ts,tsx,js,vue}": "eslint --fix",
-    "*.{vue,css,less}": "stylelint --fix"
   },
   "repository": {
     "type": "git",

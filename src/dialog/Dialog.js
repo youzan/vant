@@ -73,6 +73,9 @@ export default createComponent({
         confirm: false,
         cancel: false,
       },
+
+      // 用来控制内部内容挂载与卸载
+      visible: false,
     };
   },
 
@@ -112,12 +115,19 @@ export default createComponent({
       }
     },
 
+    onBeforeEnter() {
+      this.visible = true;
+    },
+
     onOpened() {
       this.$emit('opened');
     },
 
     onClosed() {
       this.$emit('closed');
+
+      // 销毁dom， 为了能保证内容每次打开能重新执行生命周期
+      this.visible = false;
     },
 
     genRoundButtons() {
@@ -156,9 +166,11 @@ export default createComponent({
     genButtons(footerSlot) {
       const multiple = this.showCancelButton && this.showConfirmButton;
       if (footerSlot) {
-        return <div class={[BORDER_TOP, bem('footer')]} vusion-slot-name="footer">
-          {footerSlot}
-        </div>
+        return (
+          <div class={[BORDER_TOP, bem('footer')]} vusion-slot-name="footer">
+            {footerSlot}
+          </div>
+        );
       }
 
       if (this.nomattershowfoot) {
@@ -180,7 +192,7 @@ export default createComponent({
             )}
             {this.showConfirmButton && (
               <Button
-                {...{attrs:{vusionnodeyytag: 'bbb'}}}
+                {...{ attrs: { vusionnodeyytag: 'bbb' } }}
                 size="large"
                 class={[bem('confirm'), { [BORDER_LEFT]: multiple }]}
                 loading={this.loading.confirm}
@@ -199,12 +211,15 @@ export default createComponent({
 
     genContent(hasTitle, messageSlot, empty) {
       if (messageSlot) {
-        if(messageSlot[0]?.data?.attrs?.env==='alone' && !messageSlot[0]?.children && this.$env && this.$env.VUE_APP_DESIGNER) {
+        if (
+          messageSlot[0]?.data?.attrs?.env === 'alone' &&
+          !messageSlot[0]?.children &&
+          this.$env &&
+          this.$env.VUE_APP_DESIGNER
+        ) {
           messageSlot[0].children = empty;
         }
-        return <div class={bem('content')}>
-          {messageSlot}
-        </div>;
+        return <div class={bem('content')}>{messageSlot}</div>;
       }
 
       // if (!messageSlot && this.$env && this.$env.VUE_APP_DESIGNER) {
@@ -235,10 +250,10 @@ export default createComponent({
     },
     closeModal() {
       this.realValue = false;
-    }
+    },
   },
 
-  render() {
+  render(h) {
     if (!this.shouldRender) {
       return;
     }
@@ -251,7 +266,10 @@ export default createComponent({
       // <div class={bem('header', { isolated: !message && !messageSlot })}>
       //   {title}
       // </div>
-      <Text class={bem('header', { isolated: !message && !messageSlot })} style={{'display': 'block'}}>
+      <Text
+        class={bem('header', { isolated: !message && !messageSlot })}
+        style={{ display: 'block' }}
+      >
         {title}
       </Text>
     );
@@ -259,6 +277,7 @@ export default createComponent({
     return (
       <transition
         name={this.transition}
+        onBeforeEnter={this.onBeforeEnter}
         onAfterEnter={this.onOpened}
         onAfterLeave={this.onClosed}
       >
@@ -270,14 +289,16 @@ export default createComponent({
           style={{ width: addUnit(this.width) }}
         >
           {this.slots('inject')}
-          <div class={bem('wrap')}>
-            {Title}
-            {this.genContent(title, messageSlot, empty)}
-            {/* {this.genButtons(footerSlot)} */}
-            {this.theme === 'round-button'
-              ? this.genRoundButtons()
-              : this.genButtons(footerSlot)}
-          </div>
+          {this.visible ? (
+            <div class={bem('wrap')}>
+              {Title}
+              {this.genContent(title, messageSlot, empty)}
+              {/* {this.genButtons(footerSlot)} */}
+              {this.theme === 'round-button'
+                ? this.genRoundButtons()
+                : this.genButtons(footerSlot)}
+            </div>
+          ) : null}
         </div>
       </transition>
     );

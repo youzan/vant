@@ -7,7 +7,7 @@
     - name: labelField
       title: 左侧标题
       type: string
-      description: 左侧标题
+      description: 左侧文本插槽内容存在时优先展示插槽内容
     - name: type
       title: 时间类型
       type: string
@@ -24,6 +24,7 @@
     - name: converter
       title: 转换器
       type: string
+      description: 转换绑定的值类型
       options:
         - title: yyyy/MM/dd HH:mm:ss
           value: format
@@ -40,6 +41,8 @@
           value: datetime
         - name: type
           value: date
+        - name: type
+          value: year-month
     - name: value
       title: 值
       type: string,number,Date
@@ -75,10 +78,15 @@
       type: string, number
       default: 0
       description: 当时间选择器类型为 time 时
+    - name: displayFormat
+      title: 自定义展示格式
+      type: string
+      description: 只用于页面上展示的格式，例如：yyyy年MM月dd日
     - name: title
+      title: 顶部栏标题
       type: string
       default: ""
-      description: 顶部栏标题
+      description: 左侧文本插槽内容存在时优先展示插槽内容
     - name: readonly
       title: 只读
       type: boolean
@@ -113,3 +121,8 @@
       description: 点击完成按钮时触发的事件
       params: []
   description: 时间选择器，支持日期、年月、时分等维度
+  methods:
+    - name: open
+      description: 打开
+    - name: close
+      description: 关闭

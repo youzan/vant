@@ -61,6 +61,14 @@ export default createComponent({
       type: String,
       default: 'input',
     },
+    confirmText: {
+      type: String,
+      default: '完成',
+    },
+    confirmSize: {
+      type: String,
+      default: 'default',
+    },
   },
   data() {
     const defaultValue = this.value ?? this.defaultValue;
@@ -187,6 +195,14 @@ export default createComponent({
       if (this.readonly || this.disabled) {
         return;
       }
+      if (this.$env.VUE_APP_DESIGNER) {
+        this.$nextTick(() => {
+          document.getElementsByClassName('van-number-keyboard')?.forEach(item => item.style.display = 'none');
+          if (this.$refs.numberKeyboard) {
+            this.$refs.numberKeyboard.$el.style.display = 'block';
+          }
+        })
+      }
       !this.shownumber && (this.shownumber = true);
     },
     getContain() {
@@ -197,7 +213,14 @@ export default createComponent({
     },
     closeNumber() {
       this.shownumber = false;
-    }
+    },
+    handleConfirm() {
+      this.$emit('clickConfirm', this.currentValue);
+    },
+    onNumberKeyboardInput(value) {
+      this.currentValue = value;
+      this.$emit('input', value);
+    },
   },
   watch: {
     // value: {
@@ -286,8 +309,10 @@ export default createComponent({
         {this.shownumbertype ? (
           <NumberKeyboard
             vusionnp={this.$attrs['vusion-node-path']}
+            ref="numberKeyboard"
             vModel={this.currentValue}
-            closeButtonText={'完成'}
+            closeButtonText={this.confirmText}
+            confirmSize={this.confirmSize}
             show={this.shownumber}
             title={this.keyboardTitle}
             randomKeyOrder={this.type === 'rndinteger'}
@@ -298,6 +323,8 @@ export default createComponent({
             zIndex="9999"
             hideOnClickOutside={!this.inDesigner()}
             onBlur={this.closeNumber}
+            onInput={this.onNumberKeyboardInput}
+            onHandleConfirm={this.handleConfirm}
           />
         ) : null}
       </div>

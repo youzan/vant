@@ -16,6 +16,10 @@ export default createComponent({
     wider: Boolean,
     large: Boolean,
     loading: Boolean,
+    huge: {
+      type: Boolean,
+      default: false,
+    }
   },
 
   data() {
@@ -88,6 +92,7 @@ export default createComponent({
             this.color,
             {
               large: this.large,
+              huge: this.huge,
               active: this.active,
               delete: this.type === 'delete',
             },

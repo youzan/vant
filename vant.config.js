@@ -159,6 +159,10 @@ module.exports = {
                 title: 'Checkbox 复选框',
               },
               {
+                path: 'checkbox-group',
+                title: 'CheckboxGroup 复选组',
+              },
+              {
                 path: 'datetime-picker',
                 title: 'DatetimePicker 时间选择',
               },

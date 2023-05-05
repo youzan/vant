@@ -10,7 +10,7 @@ import { CreateElement, RenderContext } from 'vue/types';
 import { DefaultSlots, ScopedSlot } from '../utils/types';
 import VanEmptyCol from '../emptycol';
 
-const [createComponent, bem, t] = createNamespace('search');
+const [createComponent, bem] = createNamespace('search');
 
 export type SearchProps = {
   shape: 'sqaure' | 'round';
@@ -65,7 +65,7 @@ function Search(
     }
 
     function onCancel() {
-      if (slots.action) {
+      if (slots.action && slots.action()) {
         return;
       }
       // 平台这里 定义为按钮 不是清空操作
@@ -76,9 +76,27 @@ function Search(
     }
 
     return (
-      <div class={bem('action')} role="button" tabindex="0" onClick={onCancel} vusion-slot-name="action">
-        {!designer ? ((slots.action && slots.action()) ? slots.action() : props.actiontext) : null}
-        {designer ? ((slots.action && !slots.action() && !props.actiontext) ? <VanEmptyCol></VanEmptyCol> : ((slots.action && slots.action()) ? slots.action() : props.actiontext)) : null}
+      <div
+        class={bem('action')}
+        role="button"
+        tabindex="0"
+        onClick={onCancel}
+        vusion-slot-name="action"
+      >
+        {!designer
+          ? slots.action && slots.action()
+            ? slots.action()
+            : props.actiontext
+          : null}
+        {designer ? (
+          slots.action && !slots.action() && !props.actiontext ? (
+            <VanEmptyCol></VanEmptyCol>
+          ) : slots.action && slots.action() ? (
+            slots.action()
+          ) : (
+            props.actiontext
+          )
+        ) : null}
       </div>
     );
   }
