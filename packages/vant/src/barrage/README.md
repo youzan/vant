@@ -43,7 +43,6 @@ export default {
     ];
 
     const list = ref([...defaultList]);
-    const barrage = ref<BarrageInstance>();
     const add = () => {
       list.value.push({ id: Math.random(), text: 'Barrage' });
     };
