@@ -56,11 +56,13 @@ export default {
   setup() {
     const currentDate = ref(['2022', '06', '01']);
     const currentTime = ref(['12', '00']);
+
     const onConfirm = () => {
       showToast(
         `${currentDate.value.join('/')} ${currentTime.value.join(':')}`
       );
     };
+
     const onCancel = () => {
       showToast('cancel');
     };
@@ -70,6 +72,8 @@ export default {
       maxDate: new Date(2025, 5, 1),
       currentDate,
       currentTime,
+      onConfirm,
+      onCancel,
     };
   },
 };
@@ -104,11 +108,13 @@ export default {
   setup() {
     const currentDate = ref(['2022', '06', '01']);
     const currentTime = ref(['12', '00']);
+
     const onConfirm = () => {
       showToast(
         `${currentDate.value.join('/')} ${currentTime.value.join(':')}`
       );
     };
+
     const onCancel = () => {
       showToast('cancel');
     };
@@ -118,6 +124,8 @@ export default {
       maxDate: new Date(2025, 5, 1),
       currentDate,
       currentTime,
+      onConfirm,
+      onCancel,
     };
   },
 };
@@ -155,6 +163,7 @@ export default {
     const onConfirm = () => {
       showToast(`${startDate.value.join('/')} ${endDate.value.join('/')}`);
     };
+
     const onCancel = () => {
       showToast('cancel');
     };
@@ -164,6 +173,8 @@ export default {
       maxDate: new Date(2025, 5, 1),
       endDate,
       startDate,
+      onConfirm,
+      onCancel,
     };
   },
 };
@@ -197,6 +208,7 @@ export default {
     const onConfirm = () => {
       showToast(`${startTime.value.join(':')} ${endTime.value.join(':')}`);
     };
+
     const onCancel = () => {
       showToast('cancel');
     };
@@ -204,6 +216,72 @@ export default {
     return {
       endTime,
       startTime,
+      onConfirm,
+      onCancel,
+    };
+  },
+};
+```
+
+### Controlled Mode
+
+Supports both uncontrolled and controlled modes:
+
+- When `v-model:active-tab` is not bound, the PickerGroup component completely controls the `tab` switching.
+- When `v-model:active-tab` is bound, PickerGroup supports controlled mode, and the `tab` switching is controlled by both the `v-model:active-tab` value and the component itself.
+
+```html
+<van-button type="primary" @click="setActiveTab">
+  toggle tab, current {{ activeTab }}
+</van-button>
+<van-picker-group
+  v-model:active-tab="activeTab"
+  title="Title"
+  :tabs="['Date', 'Time']"
+  @confirm="onConfirm"
+  @cancel="onCancel"
+>
+  <van-date-picker
+    v-model="currentDate"
+    :min-date="minDate"
+    :max-date="maxDate"
+  />
+  <van-time-picker v-model="currentTime" />
+</van-picker-group>
+```
+
+```js
+import { ref } from 'vue';
+import { showToast } from 'vant';
+
+export default {
+  setup() {
+    const activeTab = ref(0);
+    const currentDate = ref(['2022', '06', '01']);
+    const currentTime = ref(['12', '00']);
+
+    const setActiveTab = () => {
+      activeTab.value = activeTab.value ? 0 : 1;
+    };
+
+    const onConfirm = () => {
+      showToast(
+        `${currentDate.value.join('/')} ${currentTime.value.join(':')}`
+      );
+    };
+    const onCancel = () => {
+      showToast('cancel');
+    };
+
+    return {
+      minDate: new Date(2020, 0, 1),
+      maxDate: new Date(2025, 5, 1),
+      activeTab,
+      currentDate,
+      currentTime,
+      setActiveTab,
+      onConfirm,
+      onCancel,
     };
   },
 };
@@ -213,13 +291,14 @@ export default {
 
 ### Props
 
-| Attribute               | Description              | Type       | Default   |
-| ----------------------- | ------------------------ | ---------- | --------- |
-| tabs                    | Titles of tabs           | _string[]_ | `[]`      |
-| title                   | Toolbar title            | _string_   | `''`      |
-| next-step-text `v4.0.8` | Text of next step button | _string_   | `''`      |
-| confirm-button-text     | Text of confirm button   | _string_   | `Confirm` |
-| cancel-button-text      | Text of cancel button    | _string_   | `Cancel`  |
+| Attribute | Description | Type | Default |
+| --- | --- | --- | --- |
+| v-model:active-tab | Set index of active tab | _number \| string_ | `0` |
+| tabs | Titles of tabs | _string[]_ | `[]` |
+| title | Toolbar title | _string_ | `''` |
+| next-step-text `v4.0.8` | Text of next step button | _string_ | `''` |
+| confirm-button-text | Text of confirm button | _string_ | `Confirm` |
+| cancel-button-text | Text of cancel button | _string_ | `Cancel` |
 
 ### Slots
 
@@ -235,5 +314,15 @@ export default {
 The component exports the following type definitions:
 
 ```ts
-import type { DatePickerProps, DatePickerColumnType } from 'vant';
+import type { PickerGroupProps, PickerGroupThemeVars } from 'vant';
 ```
+
+## Theming
+
+### CSS Variables
+
+The component provides the following CSS variables, which can be used to customize styles. Please refer to [ConfigProvider component](#/en-US/config-provider).
+
+| Name                          | Default Value        | Description |
+| ----------------------------- | -------------------- | ----------- |
+| --van-picker-group-background | _--van-background-2_ | -           |
