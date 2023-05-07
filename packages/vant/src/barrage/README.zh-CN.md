@@ -116,6 +116,15 @@ export default {
 | speed     | 文字滑过容器的时间，单位 `ms`   | _number \| string_ | `4000` |
 | delay     | 弹幕动画延时，单位 `ms`         | _number_           | `300`  |
 
+### 方法
+
+通过 ref 可以获取到 Barrage 实例并调用实例方法，详见[组件实例方法](#/zh-CN/advanced-usage#zu-jian-shi-li-fang-fa)。
+
+| 方法名 | 说明     | 参数 | 返回值 |
+| ------ | -------- | ---- | ------ |
+| play   | 播放弹幕 | -    | -      |
+| pause  | 暂停弹幕 | -    | -      |
+
 ### Slots
 
 | 名称    | 说明           |

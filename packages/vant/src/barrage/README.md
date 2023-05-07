@@ -111,6 +111,15 @@ export default {
 | speed | Speed of passing, unit `ms` | _number \| string_ | `4000` |
 | delay | Barrage animation delay, unit `ms` | _number_ | `300` |
 
+### Methods
+
+Use [ref](https://v3.vuejs.org/guide/component-template-refs.html) to get Barrage instance and call instance methods.
+
+| Name  | Description   | Attribute | Return value |
+| ----- | ------------- | --------- | ------------ |
+| play  | Play barrage  | -         | -            |
+| pause | Pause barrage | -         | -            |
+
 ### Slots
 
 | Name    | Description  |

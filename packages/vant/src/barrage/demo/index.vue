@@ -12,21 +12,29 @@ const t = useTranslate({
     play: '开始',
     pause: '暂停',
     videoBarrage: '模仿视频弹幕',
+    lightweight: '轻量',
+    customizable: '可定制的',
+    mobile: '移动端',
+    library: '组件库',
   },
   'en-US': {
     barrage: 'barrage',
     play: 'play',
     pause: 'pause',
     videoBarrage: 'Imitate video barrage',
+    lightweight: 'Lightweight',
+    customizable: 'Customizable',
+    mobile: 'Mobile',
+    library: 'Library',
   },
 });
 
 const defaultList = [
-  { id: 100, text: '轻量' },
-  { id: 101, text: '可定制的' },
-  { id: 102, text: '移动端' },
+  { id: 100, text: t('lightweight') },
+  { id: 101, text: t('customizable') },
+  { id: 102, text: t('mobile') },
   { id: 103, text: 'Vue' },
-  { id: 104, text: '组件库' },
+  { id: 104, text: t('library') },
   { id: 105, text: 'VantUI' },
   { id: 106, text: '666' },
 ];
