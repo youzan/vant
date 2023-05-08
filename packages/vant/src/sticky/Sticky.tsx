@@ -8,7 +8,6 @@ import {
   type PropType,
   type CSSProperties,
   type ExtractPropTypes,
-  nextTick,
 } from 'vue';
 
 // Utils
@@ -24,8 +23,6 @@ import {
   makeStringProp,
   makeNumericProp,
   createNamespace,
-  windowWidth,
-  windowHeight,
 } from '../utils';
 
 // Composables
