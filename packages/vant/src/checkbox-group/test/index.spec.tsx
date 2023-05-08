@@ -3,6 +3,8 @@ import { mount } from '../../../test';
 import { Checkbox } from '../../checkbox';
 import { CheckboxGroup, CheckboxGroupToggleAllOptions } from '..';
 
+const disabledClass = 'van-checkbox--disabled';
+
 test('should emit "update:modelValue" event when checkbox is clicked', async () => {
   const wrapper = mount({
     setup() {
@@ -47,6 +49,39 @@ test('should change icon size when using icon-size prop', () => {
   const icons = wrapper.findAll('.van-checkbox__icon');
   expect(icons[0].style.fontSize).toEqual('10rem');
   expect(icons[1].style.fontSize).toEqual('5rem');
+});
+
+test('should limit the number of checked items when using max prop', async () => {
+  const wrapper = mount({
+    setup() {
+      const groupValue = ref(['a']);
+
+      return {
+        groupValue,
+      };
+    },
+    render() {
+      return (
+        <CheckboxGroup v-model={this.groupValue} max={2}>
+          <Checkbox name="a" />
+          <Checkbox name="b" />
+          <Checkbox name="c" />
+          <Checkbox name="d" />
+        </CheckboxGroup>
+      );
+    },
+  });
+
+  const items = wrapper.findAll('.van-checkbox');
+  await items[1].trigger('click');
+  expect(wrapper.vm.groupValue).toEqual(['a', 'b']);
+  expect(items[2].classes()).toContain(disabledClass);
+
+  await items[2].trigger('click');
+  expect(wrapper.vm.groupValue).toEqual(['a', 'b']);
+
+  await items[1].trigger('click');
+  expect(items[2].classes()).not.toContain(disabledClass);
 });
 
 test('should change checked color when using checked-color prop', () => {

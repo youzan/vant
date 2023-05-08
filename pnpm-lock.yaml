@@ -57,10 +57,10 @@ importers:
   packages/vant:
     dependencies:
       '@vant/popperjs':
-        specifier: workspace:^
+        specifier: ^1.3.0
         version: link:../vant-popperjs
       '@vant/use':
-        specifier: workspace:^
+        specifier: ^1.5.1
         version: link:../vant-use
     devDependencies:
       '@types/jest':

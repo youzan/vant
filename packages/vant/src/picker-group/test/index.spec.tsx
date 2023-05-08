@@ -1,5 +1,5 @@
 import { ref } from 'vue';
-import { mount } from '../../../test';
+import { later, mount } from '../../../test';
 import { Picker, PickerConfirmEventParams } from '../../picker';
 import { PickerGroup } from '..';
 
@@ -107,4 +107,39 @@ test('should switch to next step when click confirm button', async () => {
       },
     ],
   ]);
+});
+
+test('support controlled mode to set active-tab', async () => {
+  const value1 = ref(['1']);
+  const value2 = ref(['2']);
+  const activeTab = ref(0);
+
+  const wrapper = mount({
+    render() {
+      return (
+        <PickerGroup
+          activeTab={activeTab.value}
+          title="Title"
+          tabs={['Tab1', 'Tab2']}
+        >
+          <Picker
+            v-model={value1.value}
+            columns={[{ text: '1', value: '1' }]}
+          />
+          <Picker
+            v-model={value2.value}
+            columns={[{ text: '2', value: '2' }]}
+          />
+        </PickerGroup>
+      );
+    },
+  });
+
+  await later();
+  const tabs = wrapper.findAll('.van-tab');
+  expect(tabs[0]?.classes()).toContain('van-tab--active');
+
+  activeTab.value = 1;
+  await later();
+  expect(tabs[1]?.classes()).toContain('van-tab--active');
 });

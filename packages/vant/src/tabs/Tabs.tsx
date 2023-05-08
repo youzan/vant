@@ -97,6 +97,8 @@ export default defineComponent({
     let tabHeight: number;
     let lockScroll: boolean;
     let stickyFixed: boolean;
+    let cancelScrollLeftToRaf: (() => void) | undefined;
+    let cancelScrollTopToRaf: (() => void) | undefined;
 
     const root = ref<HTMLElement>();
     const navRef = ref<HTMLElement>();
@@ -160,7 +162,12 @@ export default defineComponent({
       const title = titles[state.currentIndex].$el;
       const to = title.offsetLeft - (nav.offsetWidth - title.offsetWidth) / 2;
 
-      scrollLeftTo(nav, to, immediate ? 0 : +props.duration);
+      if (cancelScrollLeftToRaf) cancelScrollLeftToRaf();
+      cancelScrollLeftToRaf = scrollLeftTo(
+        nav,
+        to,
+        immediate ? 0 : +props.duration
+      );
     };
 
     // update nav bar style
@@ -275,7 +282,9 @@ export default defineComponent({
           const to = getElementTop(target, scroller.value) - scrollOffset.value;
 
           lockScroll = true;
-          scrollTopTo(
+
+          if (cancelScrollTopToRaf) cancelScrollTopToRaf();
+          cancelScrollTopToRaf = scrollTopTo(
             scroller.value,
             to,
             immediate ? 0 : +props.duration,
