@@ -54,7 +54,7 @@ jobs:
             vant-use/**/*
 
       - name: Deploy for GitHub 🚀
-        uses: JamesIves/github-pages-deploy-action@v4.4.0
+        uses: JamesIves/github-pages-deploy-action@v4.4.1
         with:
           branch: main
           folder: packages/vant/site-dist
