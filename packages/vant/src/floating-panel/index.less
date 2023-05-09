@@ -1,19 +1,19 @@
 :root {
   --van-floating-panel-border-radius: 16px;
-  --van-floating-panel-header-height: 24px;
+  --van-floating-panel-header-height: 30px;
   --van-floating-panel-z-index: 999;
+  --van-floating-panel-background: var(--van-background-2);
 }
 
 .van-floating-panel {
   position: fixed;
   left: 0;
   bottom: 0;
-  z-index: var(--van-floating-panel-z-index);
   width: 100vw;
+  z-index: var(--van-floating-panel-z-index);
   display: flex;
   flex-direction: column;
   touch-action: none;
-  transform: translateY(100%);
 
   &::after {
     content: '';
@@ -22,7 +22,7 @@
     bottom: -100vh;
     height: 100vh;
     width: 100vw;
-    background: var(--van-white);
+    background: var(--van-floating-panel-background);
   }
 
   &__header {
@@ -35,6 +35,7 @@
     background-color: var(--van-white);
     border-top-left-radius: var(--van-floating-panel-border-radius);
     border-top-right-radius: var(--van-floating-panel-border-radius);
+    background: var(--van-floating-panel-background);
 
     &-bar {
       height: 3px;
@@ -47,6 +48,6 @@
   &__content {
     flex: 1;
     overflow-y: auto;
-    background-color: var(--van-white);
+    background-color: var(--van-floating-panel-background);
   }
 }
