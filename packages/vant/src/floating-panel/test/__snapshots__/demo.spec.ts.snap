@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render demo and match snapshot 1`] = `
+<div class="van-floating-panel van-safe-area-bottom"
+     style="height: 400px; transform: translateY(calc(100% + -100px)); transition: none;"
+>
+  <div class="van-floating-panel__header">
+    <div class="van-floating-panel__header-bar">
+    </div>
+  </div>
+  <div class="van-floating-panel__content">
+    <div style="text-align: center; padding: 15px;">
+      <p>
+        面板显示高度 100 px
+      </p>
+    </div>
+  </div>
+</div>
+`;

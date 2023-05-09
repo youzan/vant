@@ -1,0 +1,52 @@
+:root {
+  --van-floating-panel-border-radius: 16px;
+  --van-floating-panel-header-height: 24px;
+  --van-floating-panel-z-index: 999;
+}
+
+.van-floating-panel {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  z-index: var(--van-floating-panel-z-index);
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  touch-action: none;
+  transform: translateY(100%);
+
+  &::after {
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: -100vh;
+    height: 100vh;
+    width: 100vw;
+    background: var(--van-white);
+  }
+
+  &__header {
+    height: var(--van-floating-panel-header-height);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: grab;
+    user-select: none;
+    background-color: var(--van-white);
+    border-top-left-radius: var(--van-floating-panel-border-radius);
+    border-top-right-radius: var(--van-floating-panel-border-radius);
+
+    &-bar {
+      height: 3px;
+      width: 20px;
+      border-radius: 4px;
+      background: var(--van-gray-5);
+    }
+  }
+
+  &__content {
+    flex: 1;
+    overflow-y: auto;
+    background-color: var(--van-white);
+  }
+}
