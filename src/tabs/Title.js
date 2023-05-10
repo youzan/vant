@@ -1,9 +1,13 @@
 import { createNamespace, isDef } from '../utils';
 import Info from '../info';
+import VanEmptyCol from '../emptycol';
 
 const [createComponent, bem] = createNamespace('tab');
 
 export default createComponent({
+  components: {
+    VanEmptyCol,
+  },
   props: {
     dot: Boolean,
     type: String,
@@ -53,9 +57,10 @@ export default createComponent({
     },
 
     genText() {
+      const ifDesigner = (this.$env && this.$env.VUE_APP_DESIGNER);
       const Text = (
         <span class={bem('text', { ellipsis: !this.scrollable })} vusion-slot-name-edit="title">
-          {this.slots() || this.title}
+          {this.slots() || this.title || (ifDesigner && <van-empty-col style="width:auto"></van-empty-col>)}
         </span>
       );
 
