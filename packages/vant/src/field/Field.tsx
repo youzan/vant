@@ -584,6 +584,7 @@ export default defineComponent({
           <label
             id={`${id}-label`}
             for={getInputId()}
+            onClick={(e) => e.stopPropagation()}
             style={
               labelAlign === 'top' && labelWidth
                 ? { width: addUnit(labelWidth) }
