@@ -53,6 +53,7 @@ export default defineComponent({
 
   setup(props, { emit, slots }) {
     const currentValues = ref<string[]>(props.modelValue);
+    const updatedByExternalSources = ref(false);
 
     const genYearOptions = () => {
       const minYear = props.minDate.getFullYear();
@@ -76,7 +77,9 @@ export default defineComponent({
     const getValue = (type: DatePickerColumnType) => {
       const { minDate, columnsType } = props;
       const index = columnsType.indexOf(type);
-      const value = currentValues.value[index];
+      const value = updatedByExternalSources.value
+        ? props.modelValue[index]
+        : currentValues.value[index];
       if (value) {
         return +value;
       }
@@ -139,6 +142,7 @@ export default defineComponent({
     );
 
     watch(currentValues, (newValues) => {
+      updatedByExternalSources.value = false;
       if (!isSameValue(newValues, props.modelValue)) {
         emit('update:modelValue', newValues);
       }
@@ -146,7 +150,11 @@ export default defineComponent({
 
     watch(
       () => props.modelValue,
-      (newValues) => {
+      (newValues, oldValues) => {
+        updatedByExternalSources.value = isSameValue(
+          oldValues,
+          currentValues.value
+        );
         newValues = formatValueRange(newValues, columns.value);
         if (!isSameValue(newValues, currentValues.value)) {
           currentValues.value = newValues;
