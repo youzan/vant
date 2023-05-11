@@ -2,6 +2,7 @@ import {
   ref,
   reactive,
   onMounted,
+  nextTick,
   defineComponent,
   type ExtractPropTypes,
 } from 'vue';
@@ -23,6 +24,7 @@ export const signatureProps = {
   penColor: makeStringProp('#000'),
   lineWidth: makeNumberProp(3),
   clearButtonText: String,
+  backgroundColor: makeStringProp(''),
   confirmButtonText: String,
 };
 
@@ -48,6 +50,7 @@ export default defineComponent({
       width: 0,
       height: 0,
       ctx: null as CanvasRenderingContext2D | null | undefined,
+      ratio: inBrowser ? window.devicePixelRatio : 1,
     });
 
     let canvasRect: DOMRect;
@@ -59,7 +62,7 @@ export default defineComponent({
       }
 
       state.ctx.beginPath();
-      state.ctx.lineWidth = props.lineWidth;
+      state.ctx.lineWidth = props.lineWidth * state.ratio;
       state.ctx.strokeStyle = props.penColor;
       canvasRect = useRect(canvasRef);
 
@@ -74,8 +77,8 @@ export default defineComponent({
       preventDefault(event);
 
       const touch = event.touches[0];
-      const mouseX = touch.clientX - (canvasRect?.left || 0);
-      const mouseY = touch.clientY - (canvasRect?.top || 0);
+      const mouseX = (touch.clientX - (canvasRect?.left || 0)) * state.ratio;
+      const mouseY = (touch.clientY - (canvasRect?.top || 0)) * state.ratio;
 
       state.ctx.lineCap = 'round';
       state.ctx.lineJoin = 'round';
@@ -97,6 +100,13 @@ export default defineComponent({
       return canvas.toDataURL() === empty.toDataURL();
     };
 
+    const setCanvasBgColor = () => {
+      if (state.ctx && props.backgroundColor) {
+        state.ctx.fillStyle = props.backgroundColor;
+        state.ctx.fillRect(0, 0, state.width, state.height);
+      }
+    };
+
     const submit = () => {
       const canvas = canvasRef.value;
       if (!canvas) {
@@ -104,12 +114,16 @@ export default defineComponent({
       }
 
       const isEmpty = isCanvasEmpty(canvas);
-      const image = isEmpty
+
+      const image: string = isEmpty
         ? ''
-        : canvas.toDataURL(
-            `image/${props.type}`,
-            props.type === 'jpg' ? 0.9 : null
-          );
+        : (
+            {
+              png: (): string => canvas.toDataURL('image/png'),
+              jpg: (): string => canvas.toDataURL('image/jpeg', 0.8),
+              jpeg: (): string => canvas.toDataURL('image/jpeg', 0.8),
+            }[props.type] as () => string
+          )?.() || canvas.toDataURL(`image/${props.type}`);
 
       emit('submit', {
         image,
@@ -121,6 +135,7 @@ export default defineComponent({
       if (state.ctx) {
         state.ctx.clearRect(0, 0, state.width, state.height);
         state.ctx.closePath();
+        setCanvasBgColor();
       }
       emit('clear');
     };
@@ -128,8 +143,12 @@ export default defineComponent({
     onMounted(() => {
       if (isRenderCanvas) {
         state.ctx = canvasRef.value?.getContext('2d');
-        state.width = wrapRef.value?.offsetWidth || 0;
-        state.height = wrapRef.value?.offsetHeight || 0;
+        state.width = (wrapRef.value?.offsetWidth || 0) * state.ratio;
+        state.height = (wrapRef.value?.offsetHeight || 0) * state.ratio;
+
+        nextTick(() => {
+          setCanvasBgColor();
+        });
       }
     });
 
