@@ -16,7 +16,7 @@
 </template>
 
 <script>
-import { copy } from 'cloud-ui.vusion/src/utils/edit/clipboard';
+import ClipboardJS from 'clipboard';
 // import i18n from '@/utils/i18n';
 import { SEmpty } from 'cloud-ui.vusion/src/components/s-empty.vue';
 import { UTooltip } from 'cloud-ui.vusion/src/components/u-tooltip.vue';
@@ -43,7 +43,7 @@ export default {
         copy() {
             if (this.disabled)
                 return;
-            this.success = copy(this.value);
+            this.success = ClipboardJS.copy(this.value);
             if (this.success) {
                 if (this.feedback === 'toast')
                     this.$toast.show(this.successText, this.hideDelay);
