@@ -584,7 +584,10 @@ export default defineComponent({
           <label
             id={`${id}-label`}
             for={getInputId()}
-            onClick={(e) => e.stopPropagation()}
+            onClick={(event: MouseEvent) => {
+              preventDefault(event);
+              focus();
+            }}
             style={
               labelAlign === 'top' && labelWidth
                 ? { width: addUnit(labelWidth) }
