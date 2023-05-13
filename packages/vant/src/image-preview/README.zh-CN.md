@@ -188,9 +188,9 @@ export default {
 
 Vant 中导出了以下 ImagePreview 相关的辅助函数：
 
-| 方法名           | 说明         | 参数      | 返回值               |
-| ---------------- | ------------ | --------- | -------------------- | ----------------- |
-| showImagePreview | 展示图片预览 | `string[] | ImagePreviewOptions` | imagePreview 实例 |
+| 方法名 | 说明 | 参数 | 返回值 |
+| --- | --- | --- | --- |
+| showImagePreview | 展示图片预览 | _string[] \| ImagePreviewOptions_ | ImagePreview 实例 |
 
 ### ImagePreviewOptions
 

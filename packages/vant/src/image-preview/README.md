@@ -177,9 +177,9 @@ export default {
 
 Vant exports following ImagePreview utility functions:
 
-| Methods          | Description        | Attribute | Return value         |
-| ---------------- | ------------------ | --------- | -------------------- | --------------------- |
-| showImagePreview | Show image preview | `string[] | ImagePreviewOptions` | imagePreview Instance |
+| Methods | Description | Attribute | Return value |
+| --- | --- | --- | --- |
+| showImagePreview | Show image preview | _string[] \| ImagePreviewOptions_ | ImagePreview Instance |
 
 ### ImagePreviewOptions
 
