@@ -97,7 +97,7 @@ function useCountDown(options: UseCountDownOptions): CountDown;
 | time | 倒计时时长，单位毫秒 | _number_ | - |
 | millisecond | 是否开启毫秒级渲染 | _boolean_ | `false` |
 | onChange | 倒计时改变时触发的回调函数 | _(current: CurrentTime) => void_ | - |
-| onFinish | 倒计时结束时触发的回调函数 | - |
+| onFinish | 倒计时结束时触发的回调函数 | _() => void_ | - |
 
 ### 返回值
 

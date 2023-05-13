@@ -93,7 +93,7 @@ function useCountDown(options: UseCountDownOptions): CountDown;
 | time | Total time, unit milliseconds | _number_ | - |
 | millisecond | Whether to enable millisecond render | _boolean_ | `false` |
 | onChange | Triggered when count down changed | _(current: CurrentTime) => void_ | - |
-| onFinish | Triggered when count down finished | - |
+| onFinish | Triggered when count down finished | _() => void_ | - |
 
 ### Return Value
 
