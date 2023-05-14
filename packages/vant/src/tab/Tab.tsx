@@ -54,7 +54,7 @@ export default defineComponent({
 
   props: tabProps,
 
-  setup(props, { slots }) {
+  setup(props, { slots, attrs }) {
     const id = useId();
     const inited = ref(false);
     const instance = getCurrentInstance();
@@ -166,7 +166,9 @@ export default defineComponent({
             aria-hidden={!active.value}
             aria-labelledby={label}
           >
-            <div class={bem('panel')}>{slots.default?.()}</div>
+            <div class={bem('panel')} {...attrs}>
+              {slots.default?.()}
+            </div>
           </SwipeItem>
         );
       }
