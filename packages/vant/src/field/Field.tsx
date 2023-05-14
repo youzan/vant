@@ -584,6 +584,11 @@ export default defineComponent({
           <label
             id={`${id}-label`}
             for={getInputId()}
+            onClick={(event: MouseEvent) => {
+              // https://github.com/youzan/vant/issues/11831
+              preventDefault(event);
+              focus();
+            }}
             style={
               labelAlign === 'top' && labelWidth
                 ? { width: addUnit(labelWidth) }
