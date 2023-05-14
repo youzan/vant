@@ -240,6 +240,10 @@ location.href = location.href.replace('youzan.github.io', 'vant-ui.github.io');
                 title: 'ActionSheet 动作面板',
               },
               {
+                path: 'barrage',
+                title: 'Barrage 弹幕',
+              },
+              {
                 path: 'dialog',
                 title: 'Dialog 弹出框',
               },
@@ -686,6 +690,10 @@ location.href = location.href.replace('youzan.github.io', 'vant-ui.github.io');
               {
                 path: 'action-sheet',
                 title: 'ActionSheet',
+              },
+              {
+                path: 'barrage',
+                title: 'Barrage',
               },
               {
                 path: 'dialog',
