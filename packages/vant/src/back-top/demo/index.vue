@@ -30,7 +30,7 @@ const targetEl = ref<HTMLElement>();
 
 <template>
   <van-tabs v-model:active="activeTab" :ellipsis="false">
-    <van-tab :title="t('basicUsage')" class="abc">
+    <van-tab :title="t('basicUsage')">
       <van-cell v-for="item in list" :key="item" :title="item" />
       <van-back-top v-if="activeTab === 0" />
     </van-tab>
