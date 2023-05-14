@@ -19,6 +19,23 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 
 ## 更新内容
 
+### [v4.3.2](https://github.com/vant-ui/vant/compare/v4.3.1...v4.3.2)
+
+`2023-05-14`
+
+**Feature**
+
+- ImagePreview: 支持基于手指位置进行缩放 [#11848](https://github.com/vant-ui/vant/issues/11848)
+- PickerGroup: 支持控制当前 Tab 的位置 [#11771](https://github.com/vant-ui/vant/issues/11771)
+- Checkbox: 支持在达到最大选择数量时自动禁用其他选项 [#11814](https://github.com/vant-ui/vant/issues/11814)
+
+**Bug Fixes**
+
+- Filed: 修复点击 label 会触发两次 click 事件的问题 [#11838](https://github.com/vant-ui/vant/issues/11838)
+- Steps: 修复只有一个 Step 时样式错误的问题 [#11822](https://github.com/vant-ui/vant/issues/11822)
+- SubmitBar: 移除多余的 CSS 变量 [#11845](https://github.com/vant-ui/vant/issues/11845)
+- Tab: 修复下划线动画可能错误的问题 [#11819](https://github.com/vant-ui/vant/issues/11819)
+
 ### [v4.3.1](https://github.com/vant-ui/vant/compare/v4.3.0...v4.3.1)
 
 `2023-05-04`
