@@ -66,7 +66,10 @@ type Options = {
 };
 
 function useClickAway(
-  target: Element | Ref<Element | undefined>,
+  target:
+    | Element
+    | Ref<Element | undefined>
+    | Array<Element | Ref<Element | undefined>>,
   listener: EventListener,
   options?: Options
 ): void;
