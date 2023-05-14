@@ -19,6 +19,23 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 
 ## Details
 
+### [v4.3.2](https://github.com/vant-ui/vant/compare/v4.3.1...v4.3.2)
+
+`2023-05-14`
+
+**Feature**
+
+- ImagePreview: use the touched point as the center of zooming [#11848](https://github.com/vant-ui/vant/issues/11848)
+- PickerGroup: the tab of PickerGroup supports controlled mode [#11771](https://github.com/vant-ui/vant/issues/11771)
+- Checkbox: disabled unchecked options when the limit is exceeded [#11814](https://github.com/vant-ui/vant/issues/11814)
+
+**Bug Fixes**
+
+- Filed: onclick label execute twice [#11838](https://github.com/vant-ui/vant/issues/11838)
+- Steps: fix the style that occurs when there is only one step [#11822](https://github.com/vant-ui/vant/issues/11822)
+- SubmitBar: Unused CSS variables [#11845](https://github.com/vant-ui/vant/issues/11845)
+- Tab: should cancel raf before the next scroll [#11819](https://github.com/vant-ui/vant/issues/11819)
+
 ### [v4.3.1](https://github.com/vant-ui/vant/compare/v4.3.0...v4.3.1)
 
 `2023-05-04`
