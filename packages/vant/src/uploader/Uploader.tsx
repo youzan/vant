@@ -140,6 +140,7 @@ export default defineComponent({
         const arr = [...props.modelValue];
         arr.splice(reuploadIndex.value, 1, items as UploaderFileListItem);
         emit('update:modelValue', arr);
+        reuploadIndex.value = -1;
       } else {
         emit('update:modelValue', [...props.modelValue, ...toArray(items)]);
       }
@@ -321,10 +322,7 @@ export default defineComponent({
       }
     };
 
-    const onClickUpload = (event: MouseEvent) => {
-      reuploadIndex.value = -1;
-      emit('clickUpload', event);
-    };
+    const onClickUpload = (event: MouseEvent) => emit('clickUpload', event);
 
     const renderUpload = () => {
       if (props.modelValue.length >= +props.maxCount && !props.reupload) {
