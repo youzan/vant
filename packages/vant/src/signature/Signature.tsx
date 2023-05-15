@@ -119,7 +119,6 @@ export default defineComponent({
         ? ''
         : (
             {
-              png: (): string => canvas.toDataURL('image/png'),
               jpg: (): string => canvas.toDataURL('image/jpeg', 0.8),
               jpeg: (): string => canvas.toDataURL('image/jpeg', 0.8),
             }[props.type] as () => string
