@@ -85,6 +85,9 @@
 import icons from '@vant/icons';
 import { RED } from '../../utils/constant';
 
+
+const fromVantWeapp = location.href.indexOf('from=vant-weapp') !== -1;
+
 // from https://30secondsofcode.org
 function copyToClipboard(str) {
   const el = document.createElement('textarea');
@@ -152,7 +155,7 @@ export default {
         tag = `${tag} ${option.dot ? 'dot' : ''}`;
       }
       if ('badge' in option) {
-        tag = `${tag} badge="${option.badge}"`;
+        tag = `${tag} ${fromVantWeapp ? 'info' : 'badge'}="${option.badge}"`;
       }
       if ('color' in option) {
         tag = `${tag} color="${option.color}"`;
