@@ -298,6 +298,26 @@ export default {
 };
 ```
 
+### Open Reupload
+
+```html
+<van-uploader v-model="fileList" reupload max-count="2" />
+```
+
+```ts
+import { ref } from 'vue';
+
+export default {
+  setup() {
+    const fileList = ref([
+      { url: 'https://fastly.jsdelivr.net/npm/@vant/assets/leaf.jpeg' },
+    ]);
+
+    return { fileList };
+  },
+};
+```
+
 ## API
 
 ### Props
@@ -315,6 +335,7 @@ export default {
 | disabled | Whether to disabled the upload | _boolean_ | `false` |
 | readonly | Whether to make upload area readonly | _boolean_ | `false` |
 | deletable | Whether to show delete icon | _boolean_ | `true` |
+| reupload | Whether to open reupload, when enabled, preview is closed | _boolean_ | `false` |
 | show-upload | Whether to show upload area | _boolean_ | `true` |
 | lazy-load | Whether to enable lazy load, should register [Lazyload](#/en-US/lazyload) component | _boolean_ | `false` |
 | capture | Capture, can be set to `camera` | _string_ | - |
@@ -337,6 +358,7 @@ export default {
 | oversize | Emitted when file size over limit | Same as after-read |
 | click-upload | Emitted when click upload area | _event: MouseEvent_ |
 | click-preview | Emitted when preview image is clicked | Same as after-read |
+| click-reupload | Emitted when reupload image is clicked | Same as after-read |
 | close-preview | Emitted when the full screen image preview is closed | - |
 | delete | Emitted when preview file is deleted | Same as after-read |
 
