@@ -145,6 +145,7 @@ export default defineComponent({
         state.width = (wrapRef.value?.offsetWidth || 0) * state.ratio;
         state.height = (wrapRef.value?.offsetHeight || 0) * state.ratio;
 
+        // ensure canvas is rendered
         nextTick(() => {
           setCanvasBgColor();
         });
