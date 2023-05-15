@@ -200,3 +200,24 @@ test('should update value correctly when dynamically change min-date', async () 
     wrapper.emitted<[PickerConfirmEventParams]>('confirm')![0][0].selectedValues
   ).toEqual(['2020', '12', '20']);
 });
+
+test('should be displayed correctly when modelValue updated by external sources', async () => {
+  const wrapper = mount(DatePicker, {
+    props: {
+      modelValue: ['2023', '12'],
+      columnsType: ['year', 'month'],
+      minDate: new Date(2023, 5, 1),
+      maxDate: new Date(2024, 5, 1),
+    },
+  });
+
+  await wrapper.setProps({ modelValue: ['2024', '01'] });
+  const selectedItems = wrapper.findAll('.van-picker-column__item--selected');
+  expect(selectedItems[0].text()).toEqual('2024');
+  expect(selectedItems[1].text()).toEqual('01');
+
+  await wrapper.find('.van-picker__confirm').trigger('click');
+  expect(
+    wrapper.emitted<[PickerConfirmEventParams]>('confirm')![0][0].selectedValues
+  ).toEqual(['2024', '01']);
+});
