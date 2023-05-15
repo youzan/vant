@@ -142,7 +142,6 @@ export default defineComponent({
     );
 
     watch(currentValues, (newValues) => {
-      updatedByExternalSources.value = false;
       if (!isSameValue(newValues, props.modelValue)) {
         emit('update:modelValue', newValues);
       }
@@ -159,6 +158,7 @@ export default defineComponent({
         if (!isSameValue(newValues, currentValues.value)) {
           currentValues.value = newValues;
         }
+        updatedByExternalSources.value = false;
       },
       {
         immediate: true,
