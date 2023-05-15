@@ -152,7 +152,7 @@ export default {
         tag = `${tag} ${option.dot ? 'dot' : ''}`;
       }
       if ('badge' in option) {
-        tag = `${tag} badge="${option.badge}"`;
+        tag = `${tag} ${this.isWeapp ? 'info' : 'badge'}="${option.badge}"`;
       }
       if ('color' in option) {
         tag = `${tag} color="${option.color}"`;
