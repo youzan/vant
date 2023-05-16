@@ -407,7 +407,7 @@ export default createComponent({
       Object.assign(style, vnodeStyle);
       return <Title
         {...{attrs: {...aIdo}}}
-        vusion-slot-name="extra"
+        vusion-slot-name="title"
         ref="titles"
         refInFor
         type={type}

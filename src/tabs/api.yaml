@@ -1,5 +1,5 @@
 - name: van-tabs
-  title: tabs选项卡
+  title: 选项卡
   icon: tabsh5
   labels:
     - Selector
@@ -71,7 +71,7 @@
       description: 当前激活的标签改变时触发
       params: []
 - name: van-tab
-  title: tab标签页
+  title: 标签页
   control: button
   is-sub: true
   attrs:
