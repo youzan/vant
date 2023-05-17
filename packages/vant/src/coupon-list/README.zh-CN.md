@@ -105,8 +105,8 @@ export default {
 | --- | --- | --- | --- |
 | v-model:code | 当前输入的兑换码 | _string_ | - |
 | chosen-coupon | 当前选中优惠券的索引 | _number_ | `-1` |
-| coupons | 可用优惠券列表 | _Coupon[]_ | `[]` |
-| disabled-coupons | 不可用优惠券列表 | _Coupon[]_ | `[]` |
+| coupons | 可用优惠券列表 | _CouponInfo[]_ | `[]` |
+| disabled-coupons | 不可用优惠券列表 | _CouponInfo[]_ | `[]` |
 | enabled-title | 可用优惠券列表标题 | _string_ | `可使用优惠券` |
 | disabled-title | 不可用优惠券列表标题 | _string_ | `不可使用优惠券` |
 | exchange-button-text | 兑换按钮文字 | _string_ | `兑换` |
@@ -136,7 +136,7 @@ export default {
 | list-footer          | 优惠券列表底部       |
 | disabled-list-footer | 不可用优惠券列表底部 |
 
-### Coupon 数据结构
+### CouponInfo 数据结构
 
 | 键名        | 说明                            | 类型     |
 | ----------- | ------------------------------- | -------- |
@@ -156,7 +156,7 @@ export default {
 组件导出以下类型定义：
 
 ```ts
-import type { CouponCellProps, CouponListProps } from 'vant';
+import type { CouponCellProps, CouponListProps, CouponInfo } from 'vant';
 ```
 
 ## 主题定制
