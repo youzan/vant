@@ -100,6 +100,7 @@
     height: var(--van-dialog-button-height);
     margin: 0;
     border: 0;
+    border-radius: 0;
   }
 
   &__confirm {
@@ -128,6 +129,18 @@
 
     .van-dialog__confirm {
       color: var(--van-white);
+    }
+    
+    .van-action-bar-button {
+      &--first {
+        border-top-left-radius: var(--van-radius-max);
+        border-bottom-left-radius: var(--van-radius-max);
+      }
+
+      &--last {
+        border-top-right-radius: var(--van-radius-max);
+        border-bottom-right-radius: var(--van-radius-max);
+      }
     }
   }
 
