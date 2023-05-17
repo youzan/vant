@@ -255,12 +255,12 @@ export default {
 
 | Attribute | Description | Type | Default |
 | --- | --- | --- | --- |
+| v-model | Value of selected option | _string \| number_ | - |
 | title | Title | _string_ | - |
-| value | Value of selected option | _string \| number_ | - |
 | options | Options | _CascaderOption[]_ | `[]` |
 | placeholder | Placeholder of unselected tab | _string_ | `Select` |
 | active-color | Active color | _string_ | `#1989fa` |
-| swipeable | Whether to enable gestures to slide left and right | _boolean_ | `false` |
+| swipeable | Whether to enable gestures to slide left and right | _boolean_ | `true` |
 | closeable | Whether to show close icon | _boolean_ | `true` |
 | show-header | Whether to show header | _boolean_ | `true` |
 | close-icon | Close icon name | _string_ | `cross` |

@@ -327,12 +327,12 @@ export default {
 
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
+| v-model | 选中项的值 | _string \| number_ | - |
 | title | 顶部标题 | _string_ | - |
-| value | 选中项的值 | _string \| number_ | - |
 | options | 可选项数据源 | _CascaderOption[]_ | `[]` |
 | placeholder | 未选中时的提示文案 | _string_ | `请选择` |
 | active-color | 选中状态的高亮颜色 | _string_ | `#1989fa` |
-| swipeable | 是否开启手势左右滑动切换 | _boolean_ | `false` |
+| swipeable | 是否开启手势左右滑动切换 | _boolean_ | `true` |
 | closeable | 是否显示关闭图标 | _boolean_ | `true` |
 | show-header | 是否展示标题栏 | _boolean_ | `true` |
 | close-icon | 关闭图标名称或图片链接，等同于 Icon 组件的 [name 属性](#/zh-CN/icon#props) | _string_ | `cross` |
