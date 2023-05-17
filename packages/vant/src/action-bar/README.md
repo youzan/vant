@@ -113,7 +113,7 @@ Use `badge` prop to show badge in icon.
 | Attribute | Description | Type | Default |
 | --- | --- | --- | --- |
 | text | Button text | _string_ | - |
-| type | Button type, Can be set to `primary` `info` `warning` `danger` | _string_ | `default` |
+| type | Button type, Can be set to `default` `primary` `success` `warning` `danger` | _string_ | `default` |
 | color | Button color, support linear-gradient | _string_ | - |
 | icon | Left Icon | _string_ | - |
 | disabled | Whether to disable button | _boolean_ | `false` |
