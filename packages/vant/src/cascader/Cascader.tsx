@@ -17,6 +17,9 @@ import {
   type Numeric,
 } from '../utils';
 
+// Composables
+import { useRefs } from '../composables/use-refs';
+
 // Components
 import { Tab } from '../tab';
 import { Tabs } from '../tabs';
@@ -53,6 +56,8 @@ export default defineComponent({
   setup(props, { slots, emit }) {
     const tabs = ref<CascaderTab[]>([]);
     const activeTab = ref(0);
+    const [selectedElementRefs, setSelectedElementRefs] =
+      useRefs<HTMLElement>();
 
     const {
       text: textKey,
@@ -222,6 +227,7 @@ export default defineComponent({
 
       return (
         <li
+          ref={selected ? setSelectedElementRefs(tabIndex) : undefined}
           role="menuitemradio"
           class={[bem('option', { selected, disabled }), option.className]}
           style={{ color }}
@@ -283,7 +289,20 @@ export default defineComponent({
       </Tabs>
     );
 
+    const scrollIntoView = (el: HTMLElement) => {
+      const scrollParent = el.parentElement;
+
+      if (scrollParent) {
+        scrollParent.scrollTop =
+          el.offsetTop - (scrollParent.offsetHeight - el.offsetHeight) / 2;
+      }
+    };
+
     updateTabs();
+    watch(activeTab, (value) => {
+      const el = selectedElementRefs.value[value];
+      if (el) scrollIntoView(el);
+    });
     watch(() => props.options, updateTabs, { deep: true });
     watch(
       () => props.modelValue,
