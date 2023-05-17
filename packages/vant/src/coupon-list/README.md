@@ -105,8 +105,8 @@ export default {
 | --- | --- | --- | --- |
 | v-model | Current exchange code | _string_ | - |
 | chosen-coupon | Index of chosen coupon | _number_ | `-1` |
-| coupons | Coupon list | _Coupon[]_ | `[]` |
-| disabled-coupons | Disabled coupon list | _Coupon[]_ | `[]` |
+| coupons | Coupon list | _CouponInfo[]_ | `[]` |
+| disabled-coupons | Disabled coupon list | _CouponInfo[]_ | `[]` |
 | enabled-title | Title of coupon list | _string_ | `Available` |
 | disabled-title | Title of disabled coupon list | _string_ | `Unavailable` |
 | exchange-button-text | Exchange button text | _string_ | `Exchange` |
@@ -134,7 +134,7 @@ export default {
 | list-footer          | Coupon list bottom              |
 | disabled-list-footer | Unavailable coupons list bottom |
 
-### Data Structure of Coupon
+### Data Structure of CouponInfo
 
 | Key         | Description                         | Type     |
 | ----------- | ----------------------------------- | -------- |
@@ -154,7 +154,7 @@ export default {
 The component exports the following type definitions:
 
 ```ts
-import type { CouponCellProps, CouponListProps } from 'vant';
+import type { CouponCellProps, CouponListProps, CouponInfo } from 'vant';
 ```
 
 ## Theming
