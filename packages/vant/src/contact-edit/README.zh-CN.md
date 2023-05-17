@@ -58,7 +58,7 @@ export default {
 
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
-| contact-info | 联系人信息 | _Contact_ | `{}` |
+| contact-info | 联系人信息 | _ContactEditInfo_ | `{}` |
 | is-edit | 是否为编辑联系人 | _boolean_ | `false` |
 | is-saving | 是否显示保存按钮加载动画 | _boolean_ | `false` |
 | is-deleting | 是否显示删除按钮加载动画 | _boolean_ | `false` |
@@ -68,17 +68,19 @@ export default {
 
 ### Events
 
-| 事件名 | 说明               | 回调参数          |
-| ------ | ------------------ | ----------------- |
-| save   | 点击保存按钮时触发 | content：表单内容 |
-| delete | 点击删除按钮时触发 | content：表单内容 |
+| 事件名         | 说明                       | 回调参数          |
+| -------------- | -------------------------- | ----------------- |
+| save           | 点击保存按钮时触发         | content：表单内容 |
+| delete         | 点击删除按钮时触发         | content：表单内容 |
+| change-default | 切换是否为默认联系人时触发 | checked：是否默认 |
 
-### Contact 数据结构
+### ContactEditInfo 数据结构
 
-| 键名 | 说明         | 类型               |
-| ---- | ------------ | ------------------ |
-| name | 联系人姓名   | _string_           |
-| tel  | 联系人手机号 | _number \| string_ |
+| 键名      | 说明         | 类型                   |
+| --------- | ------------ | ---------------------- |
+| name      | 联系人姓名   | _string_               |
+| tel       | 联系人手机号 | _string_               |
+| isDefault | 是否默认     | _boolean \| undefined_ |
 
 ### 类型定义
 

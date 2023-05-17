@@ -58,7 +58,7 @@ export default {
 
 | Attribute | Description | Type | Default |
 | --- | --- | --- | --- |
-| contact-info | Contact Info | _Contact_ | `[]` |
+| contact-info | Contact Info | _ContactEditInfo_ | `{}` |
 | is-edit | Whether is editing | _boolean_ | `false` |
 | is-saving | Whether to show save button loading status | _boolean_ | `false` |
 | is-deleting | Whether to show delete button loading status | _boolean_ | `false` |
@@ -68,17 +68,19 @@ export default {
 
 ### Events
 
-| Event  | Description                               | Arguments             |
-| ------ | ----------------------------------------- | --------------------- |
-| save   | Emitted when the save button is clicked   | content: contact info |
+| Event | Description | Arguments |
+| --- | --- | --- |
+| save | Emitted when the save button is clicked | content: contact info |
 | delete | Emitted when the delete button is clicked | content: contact info |
+| change-default | Emitted when the default contact is switched | checked：contact is not the default |
 
-### Data Structure of Contact
+### Data Structure of ContactEditInfo
 
-| key  | Description | Type     |
-| ---- | ----------- | -------- |
-| name | Name        | _string_ |
-| tel  | Phone       | _string_ |
+| key       | Description | Type                   |
+| --------- | ----------- | ---------------------- |
+| name      | Name        | _string_               |
+| tel       | Phone       | _string_               |
+| isDefault | Is Default  | _boolean \| undefined_ |
 
 ### Types
 
