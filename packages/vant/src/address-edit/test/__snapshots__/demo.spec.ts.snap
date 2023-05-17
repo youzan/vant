@@ -89,7 +89,7 @@ exports[`should render demo and match snapshot 1`] = `
         </div>
       </div>
     </div>
-    <div class="van-cell van-cell--center van-address-edit__default">
+    <div class="van-cell van-cell--center van-cell--borderless van-address-edit__default">
       <div class="van-cell__title">
         <span>
           Set as the default address
