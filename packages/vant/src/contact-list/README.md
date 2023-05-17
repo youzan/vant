@@ -111,6 +111,7 @@ The component provides the following CSS variables, which can be used to customi
 
 | Name | Default Value | Description |
 | --- | --- | --- |
+| --van-contact-list-padding | _var(--van-padding-sm) var(--van-padding-sm) 80px_ | - |
 | --van-contact-list-edit-icon-size | _16px_ | - |
 | --van-contact-list-add-button-z-index | _999_ | - |
 | --van-contact-list-radio-color | _var(--van-primary-color)_ | - |
