@@ -44,7 +44,7 @@ export default defineComponent({
       };
 
       const renderRightIcon = () => (
-        <Radio class={bem('radio')} name={item.id} iconSize={16} />
+        <Radio class={bem('radio')} name={item.id} iconSize={18} />
       );
 
       const renderEditIcon = () => (
