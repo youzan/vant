@@ -1,0 +1,38 @@
+:root {
+  --van-floating-bubble-size: 48px;
+  --van-floating-bubble-initial-space: 24px;
+  --van-floating-bubble-background: var(--van-primary-color);
+  --van-floating-bubble-color: var(--van-background-2);
+  --van-floating-bubble-z-index: 999;
+}
+
+.van-floating-bubble {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: var(--van-floating-bubble-initial-space);
+  bottom: var(--van-floating-bubble-initial-space);
+  width: var(--van-floating-bubble-size);
+  height: var(--van-floating-bubble-size);
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  cursor: pointer;
+  user-select: none;
+  touch-action: none;
+  background: var(--van-floating-bubble-background);
+  color: var(--van-floating-bubble-color);
+  border-radius: 50%;
+  z-index: var(--van-floating-bubble-z-index);
+  transition: transform 0.3s;
+
+  &:active {
+    opacity: 0.9;
+  }
+
+  &__icon {
+    font-size: 28px;
+  }
+}
