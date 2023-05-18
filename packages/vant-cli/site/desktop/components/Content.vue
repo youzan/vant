@@ -12,6 +12,11 @@ import { copyToClipboard } from '../../common';
 
 export default {
   name: 'VanDocContent',
+  data() {
+    return {
+      iframeDocument: null,
+    };
+  },
 
   computed: {
     currentPage() {
@@ -50,6 +55,19 @@ export default {
           name: this.$route.name,
           hash: '#' + target.id,
         });
+
+        this.syncMobilePos(target.id);
+      }
+    },
+
+    syncMobilePos(id) {
+      // Getting the document at this point is to ensure that the target has been fully rendered.
+      if (this.iframeDocument) {
+        const target = this.iframeDocument.getElementById(id);
+        target && target.scrollIntoView(true);
+      } else {
+        const iframe = document.querySelector('iframe');
+        this.iframeDocument = iframe.contentWindow.document;
       }
     },
 
