@@ -59,12 +59,20 @@ Use `pen-color` prop to set the color of the brush stroke.
 <van-signature pen-color="#ff0000" @submit="onSubmit" @clear="onClear" />
 ```
 
-### LineWidth
+### Line Width
 
 Use `line-width` prop to set the width of the line.
 
 ```html
 <van-signature :line-width="6" @submit="onSubmit" @clear="onClear" />
+```
+
+### Background Color
+
+Use `background-color` prop to set the color of the background.
+
+```html
+<van-signature background-color="#eee" @submit="onSubmit" @clear="onClear" />
 ```
 
 ## API
