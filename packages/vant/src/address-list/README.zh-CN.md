@@ -83,7 +83,7 @@ export default {
 
 | 参数             | 说明              | 类型                   | 默认值     |
 | ---------------- | ----------------- | ---------------------- | ---------- |
-| v-model          | 当前选中地址的 id | _string_               | -          |
+| v-model          | 当前选中地址的 id | _number \| string_     | -          |
 | list             | 地址列表          | _AddressListAddress[]_ | `[]`       |
 | disabled-list    | 不可配送地址列表  | _AddressListAddress[]_ | `[]`       |
 | disabled-text    | 不可配送提示文案  | _string_               | -          |
