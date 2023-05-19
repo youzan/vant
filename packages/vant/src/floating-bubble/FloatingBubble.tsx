@@ -92,7 +92,7 @@ export default defineComponent({
 
       const x = addUnit(state.value.x);
       const y = addUnit(state.value.y);
-      style.transform = `translate3d(${x}, ${y},0)`;
+      style.transform = `translate3d(${x}, ${y}, 0)`;
 
       if (dragging.value || !initialized) {
         style.transition = 'none';
@@ -184,9 +184,9 @@ export default defineComponent({
         initialized = true;
       });
     });
-    watch([windowWidth, windowHeight], () => updateState());
+
     watch(
-      () => props.offset,
+      [windowWidth, windowHeight, () => props.space, () => props.offset],
       () => updateState(),
       { deep: true }
     );
