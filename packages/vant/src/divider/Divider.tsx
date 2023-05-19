@@ -31,7 +31,7 @@ export default defineComponent({
             !!slots.default && !props.vertical,
         })}
       >
-        {!props.vertical ? slots.default?.() : null}
+        {!props.vertical && slots.default?.()}
       </div>
     );
   },
