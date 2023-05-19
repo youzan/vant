@@ -81,11 +81,11 @@ test('should only y axis direction move when axis is default', async () => {
   restore();
 });
 
-test('should only x axis direction move when axis is "x" ', async () => {
+test('should only x axis direction adn emit offsetChange move when axis is "x" ', async () => {
   const restore = mockGetBoundingClientRect({ width: 48, height: 48 });
 
   const root = document.createElement('div');
-  mount(FloatingBubble, {
+  const wrapper = mount(FloatingBubble, {
     props: {
       teleport: root,
       axis: 'x',
@@ -103,6 +103,11 @@ test('should only x axis direction move when axis is "x" ', async () => {
       window.innerHeight - 48 - 24
     }px, 0)`
   );
+
+  expect(wrapper.emitted('offsetChange')?.[0][0]).toEqual({
+    x: window.innerWidth - 48 - 24 - 100,
+    y: window.innerHeight - 48 - 24,
+  });
 
   restore();
 });
