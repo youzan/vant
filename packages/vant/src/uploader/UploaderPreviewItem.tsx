@@ -29,13 +29,14 @@ export default defineComponent({
     imageFit: String as PropType<ImageFit>,
     lazyLoad: Boolean,
     deletable: Boolean,
+    reupload: Boolean,
     previewSize: [Number, String, Array] as PropType<
       Numeric | [Numeric, Numeric]
     >,
     beforeDelete: Function as PropType<Interceptor>,
   },
 
-  emits: ['delete', 'preview'],
+  emits: ['delete', 'preview', 'reupload'],
 
   setup(props, { emit, slots }) {
     const renderMask = () => {
@@ -71,6 +72,8 @@ export default defineComponent({
 
     const onPreview = () => emit('preview');
 
+    const onReupload = () => emit('reupload');
+
     const renderDeleteIcon = () => {
       if (props.deletable && props.item.status !== 'uploading') {
         const slot = slots['preview-delete'];
@@ -104,7 +107,7 @@ export default defineComponent({
     };
 
     const renderPreview = () => {
-      const { item, lazyLoad, imageFit, previewSize } = props;
+      const { item, lazyLoad, imageFit, previewSize, reupload } = props;
 
       if (isImageFile(item)) {
         return (
@@ -116,7 +119,7 @@ export default defineComponent({
             width={Array.isArray(previewSize) ? previewSize[0] : previewSize}
             height={Array.isArray(previewSize) ? previewSize[1] : previewSize}
             lazyLoad={lazyLoad}
-            onClick={onPreview}
+            onClick={reupload ? onReupload : onPreview}
           />
         );
       }

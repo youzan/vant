@@ -556,4 +556,54 @@ exports[`should render demo and match snapshot 1`] = `
     </div>
   </div>
 </div>
+<div>
+  <!--[-->
+  <div class="van-uploader">
+    <div class="van-uploader__wrapper">
+      <!--[-->
+      <div class="van-uploader__preview">
+        <div class="van-image van-uploader__preview-image"
+             style
+        >
+          <img src="https://fastly.jsdelivr.net/npm/@vant/assets/leaf.jpeg"
+               class="van-image__img"
+               style="object-fit:cover;"
+          >
+          <div class="van-image__loading">
+            <i class="van-badge__wrapper van-icon van-icon-photo van-image__loading-icon"
+               style
+            >
+              <!--[-->
+            </i>
+          </div>
+          <!--[-->
+        </div>
+        <div role="button"
+             class="van-uploader__preview-delete van-uploader__preview-delete--shadow"
+             tabindex="0"
+             aria-label="Delete"
+        >
+          <i class="van-badge__wrapper van-icon van-icon-cross van-uploader__preview-delete-icon"
+             style
+          >
+            <!--[-->
+          </i>
+        </div>
+      </div>
+      <div class="van-uploader__upload"
+           style
+      >
+        <i class="van-badge__wrapper van-icon van-icon-photograph van-uploader__upload-icon"
+           style
+        >
+          <!--[-->
+        </i>
+        <input type="file"
+               class="van-uploader__input"
+               accept="image/*"
+        >
+      </div>
+    </div>
+  </div>
+</div>
 `;

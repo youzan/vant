@@ -1,7 +1,7 @@
 import { nextTick } from 'vue';
 import { cdnURL } from '../../../docs/site';
 import Uploader, { type UploaderFileListItem } from '..';
-import { mount, later, triggerDrag } from '../../../test';
+import { mount, later, triggerDrag, trigger } from '../../../test';
 import type { Numeric } from '../../utils';
 
 const mockFileDataUrl = 'data:image/test';
@@ -669,4 +669,30 @@ test('should emit clickUpload event when upload area is clicked', async () => {
   const wrapper = mount(Uploader);
   wrapper.find('.van-uploader__upload').trigger('click');
   expect(wrapper.emitted('clickUpload')).toBeTruthy();
+});
+
+test('should emit clickReUpload event when props reupload true', async () => {
+  const wrapper = mount(Uploader, {
+    props: {
+      maxCount: 1,
+      modelValue: [{ url: IMAGE }],
+    },
+  });
+
+  expect(wrapper.find('.van-uploader__upload').exists()).toBeFalsy();
+  await wrapper.setProps({ reupload: true });
+  expect(wrapper.find('.van-uploader__upload').style.display).toBe('none');
+
+  const previewItem = wrapper.find<HTMLDivElement>(
+    '.van-uploader__preview-image'
+  );
+  await trigger(previewItem, 'click');
+  expect(wrapper.emitted('clickReupload')).toBeTruthy();
+
+  const input = wrapper.find<HTMLInputElement>('.van-uploader__input');
+  Object.defineProperty(input.element, 'files', {
+    get: jest.fn().mockReturnValue([mockFile]),
+  });
+  await trigger(input, 'change');
+  expect(wrapper.emitted('update:modelValue')?.[0][0]).toHaveLength(1);
 });
