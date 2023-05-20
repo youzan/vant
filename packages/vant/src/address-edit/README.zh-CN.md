@@ -91,9 +91,9 @@ export default {
 | detail-maxlength | 详细地址最大长度 | _number \| string_ | `200` |
 | is-saving | 是否显示保存按钮加载动画 | _boolean_ | `false` |
 | is-deleting | 是否显示删除按钮加载动画 | _boolean_ | `false` |
-| tel-validator | 手机号格式校验函数 | _string => boolean_ | - |
+| tel-validator | 手机号格式校验函数 | _(val: string) => boolean_ | - |
 | tel-maxlength | 手机号最大长度 | _number \| string_ | - |
-| validator | 自定义校验函数 | _(key, val) => string_ | - |
+| validator | 自定义校验函数 | _(key: string, val: string) => string_ | - |
 
 ### Events
 
@@ -121,6 +121,7 @@ export default {
 | 方法名           | 说明         | 参数                    | 返回值 |
 | ---------------- | ------------ | ----------------------- | ------ |
 | setAddressDetail | 设置详细地址 | _addressDetail: string_ | -      |
+| setAreaCode      | 设置地区编号 | _code: string_          | -      |
 
 ### 类型定义
 
