@@ -40,7 +40,7 @@ const getCenter = (touches: TouchList) => ({
 
 const bem = createNamespace('image-preview')[1];
 
-const longImageRatio = 2;
+const longImageRatio = 2.6;
 
 export default defineComponent({
   props: {
