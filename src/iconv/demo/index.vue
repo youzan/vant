@@ -4,7 +4,7 @@
       <van-tab :title="t('demo')">
         <demo-block :title="t('basicUsage')">
           <van-col span="6" @click="copy(demoIcon)">
-            <van-iconv badge="9" name="https://static-vusion.nos-eastchina1.126.net/h5-template/svgviewer-output.svg"></van-iconv>
+            <van-iconv badge="9" name="https://static-vusion.163yun.com/h5-template/svgviewer-output.svg"></van-iconv>
           </van-col>
           <van-col span="6" @click="copy(demoIcon)">
             <van-iconv :name="demoIcon"></van-iconv>
