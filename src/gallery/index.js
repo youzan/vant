@@ -39,10 +39,8 @@ export default createComponent({
       return this.$env && this.$env.VUE_APP_DESIGNER;
     },
     getUrl(item) {
-      const type = typeof item === 'object';
-      if (type) {
+      if (typeof item === 'object')
         return item.url;
-      }
       return item;
     },
     fromValue(value) {
