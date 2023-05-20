@@ -40,7 +40,7 @@ const getCenter = (touches: TouchList) => ({
 
 const bem = createNamespace('image-preview')[1];
 
-const longImageRatio = 1.6;
+const longImageRatio = 2;
 
 export default defineComponent({
   props: {
@@ -326,7 +326,8 @@ export default defineComponent({
 
       vertical.value =
         state.imageRatio > rootRatio && imageRatio < longImageRatio;
-      isLongImage.value = imageRatio >= longImageRatio;
+      isLongImage.value =
+        state.imageRatio > rootRatio && imageRatio >= longImageRatio;
 
       if (isLongImage.value) {
         initialMoveY = (imageRatio * rootWidth - rootHeight) / 2;
