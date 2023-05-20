@@ -1,6 +1,8 @@
 <template>
   <div class="van-doc-demo-block">
-    <h2 v-if="title" class="van-doc-demo-block__title">{{ title }}</h2>
+    <h2 v-if="title" class="van-doc-demo-block__title" :id="slugifyTitle">
+      {{ title }}
+    </h2>
     <div v-if="card" class="van-doc-demo-block__card">
       <slot />
     </div>
@@ -9,12 +11,19 @@
 </template>
 
 <script>
+import { slugify } from 'transliteration';
+
 export default {
   name: 'DemoBlock',
 
   props: {
     card: Boolean,
     title: String,
+  },
+  computed: {
+    slugifyTitle() {
+      return slugify(this.title);
+    },
   },
 };
 </script>
