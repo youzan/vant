@@ -121,7 +121,7 @@ export default defineComponent({
     return () => {
       const Content = (
         <div
-          ref={root}
+          ref={!props.teleport ? root : undefined}
           class={bem({ active: show.value })}
           style={style.value}
           onClick={onClick}
@@ -136,7 +136,10 @@ export default defineComponent({
       );
 
       if (props.teleport) {
-        return <Teleport to={props.teleport}>{Content}</Teleport>;
+        return [
+          <div ref={root} class={bem('placeholder')}></div>,
+          <Teleport to={props.teleport}>{Content}</Teleport>,
+        ];
       }
       return Content;
     };

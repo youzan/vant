@@ -120,7 +120,7 @@ Add `immediate` prop to scroll to top immediately.
 
 | Attribute | Description | Type | Default |
 | --- | --- | --- | --- |
-| target | Can be a selector or a DOM ELement | _string \| HTMLElement_ | - |
+| target | Can be a selector or a DOM ELement, default closest parent scrolling container | _string \| HTMLElement_ | - |
 | right | Right distance of the page, the default unit is px | _number \| string_ | `30` |
 | bottom | Bottom distance of the page, the default unit is px | _number \| string_ | `40` |
 | offset | The component will not display until the scroll offset reaches this value | _number_ | `200` |
