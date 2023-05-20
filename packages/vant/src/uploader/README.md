@@ -298,7 +298,7 @@ export default {
 };
 ```
 
-### Open Reupload
+### Enable Reupload
 
 ```html
 <van-uploader v-model="fileList" reupload max-count="2" />
