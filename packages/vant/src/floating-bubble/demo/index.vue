@@ -43,7 +43,7 @@ const offset = ref<OffsetType>({ x: 200, y: 400 });
   <van-tabs v-model:active="activeName">
     <van-tab :title="t('basicUsage')">
       <p class="text">{{ t('basicUsageText') }}</p>
-      <van-floating-bubble v-if="activeName === 0" axis="y" @click="onClick" />
+      <van-floating-bubble v-if="activeName === 0" @click="onClick" />
     </van-tab>
     <van-tab :title="t('freeMagnetic')">
       <p class="text">{{ t('freeMagneticText') }}</p>
