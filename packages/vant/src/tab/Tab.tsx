@@ -91,12 +91,18 @@ export default defineComponent({
 
     // If it's an array, convert it to a string
     // see: https://github.com/vant-ui/vant/issues/11763
-    const parserClass = computed(() => {
-      if (Array.isArray(props.titleClass)) {
-        return props.titleClass.join(' ');
-      }
-      return props.titleClass;
-    });
+    const parserClass = ref();
+    watch(
+      () => props.titleClass,
+      (newVal) => {
+        if (Array.isArray(newVal)) {
+          parserClass.value = newVal.join(' ');
+        } else {
+          parserClass.value = newVal;
+        }
+      },
+      { immediate: true }
+    );
 
     const renderTitle = (
       onClickTab: (
@@ -111,7 +117,7 @@ export default defineComponent({
         id={`${parent.id}-${index.value}`}
         ref={parent.setTitleRefs(index.value)}
         style={props.titleStyle}
-        class={parserClass}
+        class={parserClass.value}
         isActive={active.value}
         controls={id}
         scrollable={parent.scrollable.value}
