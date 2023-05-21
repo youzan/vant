@@ -45,7 +45,7 @@ const t = useTranslate({
     previewCover: 'Preview Cover',
     deleteMessage: 'Before Delete',
     customPreviewImage: 'Custom single preview image',
-    reupload: 'Open Reupload',
+    reupload: 'Enable Reupload',
   },
 });
 
