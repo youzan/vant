@@ -1,5 +1,6 @@
 :root {
   --van-divider-margin: var(--van-padding-md) 0;
+  --van-divider-vertical-margin: 0 var(--van-padding-xs);
   --van-divider-text-color: var(--van-text-color-2);
   --van-divider-font-size: var(--van-font-size-md);
   --van-divider-line-height: 24px;
@@ -68,6 +69,29 @@
   &--content-right {
     &::after {
       max-width: var(--van-divider-content-right-width);
+    }
+  }
+
+  &--vertical {
+    display: inline-block;
+    width: var(--van-border-width);
+    height: 1em;
+    margin: var(--van-divider-vertical-margin);
+    vertical-align: middle;
+
+    &::before {
+      height: 100%;
+      border-width: 0 0 0 var(--van-border-width);
+    }
+
+    &::after {
+      display: none;
+    }
+
+    &.van-divider--hairline {
+      &::before {
+        transform: scaleX(0.5);
+      }
     }
   }
 }
