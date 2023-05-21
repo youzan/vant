@@ -20,6 +20,8 @@ import {
   numericProp,
   createNamespace,
   ComponentInstance,
+  isObject,
+  kebabCase,
 } from '../utils';
 import { TABS_KEY } from '../tabs/Tabs';
 
@@ -92,13 +94,21 @@ export default defineComponent({
     // If it's an array, convert it to a string
     // see: https://github.com/vant-ui/vant/issues/11763
     const parserClass = ref();
+    const parserStyle = ref();
     watch(
-      () => props.titleClass,
-      (newVal) => {
-        if (Array.isArray(newVal)) {
-          parserClass.value = newVal.join(' ');
+      [() => props.titleClass, () => props.titleStyle],
+      ([newClass, newStyle]) => {
+        if (Array.isArray(newClass)) {
+          parserClass.value = newClass.join(' ');
         } else {
-          parserClass.value = newVal;
+          parserClass.value = newClass;
+        }
+        if (isObject(newStyle)) {
+          parserStyle.value = Object.entries(newStyle)
+            .map(([key, val]) => `${kebabCase(key)}: ${val}`)
+            .join('; ');
+        } else {
+          parserStyle.value = newStyle;
         }
       },
       { immediate: true }
@@ -116,7 +126,7 @@ export default defineComponent({
         v-slots={{ title: slots.title }}
         id={`${parent.id}-${index.value}`}
         ref={parent.setTitleRefs(index.value)}
-        style={props.titleStyle}
+        style={parserStyle.value}
         class={parserClass.value}
         isActive={active.value}
         controls={id}
