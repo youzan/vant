@@ -19,6 +19,32 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 
 ## Details
 
+### [v4.4.0](https://github.com/vant-ui/vant/compare/v4.3.2...v4.4.0)
+
+`2023-05-21`
+
+**New Component**
+
+- add new Barrage component, contributed by [@zhousg](https://github.com/zhousg) ❤️ [#11760](https://github.com/vant-ui/vant/issues/11760)
+
+**Feature**
+
+- Cascader: scroll the selected option into view when switching tabs [#11869](https://github.com/vant-ui/vant/issues/11869)
+- Divider: add vertical prop [#11883](https://github.com/vant-ui/vant/issues/11883)
+- Document: sync mobile position on anchor click [#11879](https://github.com/vant-ui/vant/issues/11879)
+- ImagePreview: optimize the preview effect of long images [#11857](https://github.com/vant-ui/vant/issues/11857)
+- Signature: improve signature clarity by devicePixelRatio [#11835](https://github.com/vant-ui/vant/issues/11835)
+- Uploader: add reupload prop [#11854](https://github.com/vant-ui/vant/issues/11854)
+
+**Bug Fixes**
+
+- AddressEdit: should hide border of the last cell [#11872](https://github.com/vant-ui/vant/issues/11872)
+- Area: areaProps omit allow-html show-toolbar [#11871](https://github.com/vant-ui/vant/issues/11871)
+- BackTop: use the closest parent scroll element as target [#11858](https://github.com/vant-ui/vant/issues/11858)
+- ContactList: increase right icon size and optimize styles [#11873](https://github.com/vant-ui/vant/issues/11873)
+- DatePicker: should display correctly when modelValue is updated from external [#11839](https://github.com/vant-ui/vant/issues/11839)
+- Dialog: fix the rounded corners of shadow when button is clicked [#11863](https://github.com/vant-ui/vant/issues/11863)
+
 ### [v4.3.2](https://github.com/vant-ui/vant/compare/v4.3.1...v4.3.2)
 
 `2023-05-14`
@@ -50,7 +76,7 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 
 **New Component**
 
-- add new Signature component, contributed by [@LIjiAngChen8](https://github.com/LIjiAngChen8) [#11733](https://github.com/vant-ui/vant/issues/11733)
+- add new Signature component, contributed by [@LIjiAngChen8](https://github.com/LIjiAngChen8) ❤️ [#11733](https://github.com/vant-ui/vant/issues/11733)
 
 **Feature**
 
@@ -84,7 +110,7 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 
 **New Component**
 
-- add new Watermark component, contributed by [@HuberTRoy](https://github.com/HuberTRoy) [#11721](https://github.com/vant-ui/vant/issues/11721)
+- add new Watermark component, contributed by [@HuberTRoy](https://github.com/HuberTRoy) ❤️ [#11721](https://github.com/vant-ui/vant/issues/11721)
 
 **Feature**
 
@@ -130,7 +156,7 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 
 **New Component**
 
-- add new TextEllipsis component, contributed by [@wjw-gavin](https://github.com/wjw-gavin) [#11593](https://github.com/vant-ui/vant/issues/11593)
+- add new TextEllipsis component, contributed by [@wjw-gavin](https://github.com/wjw-gavin) ❤️ [#11593](https://github.com/vant-ui/vant/issues/11593)
 
 **Feature**
 
@@ -475,7 +501,7 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 
 **New Component**
 
-- Add new component [Space](#/en-US/space), contributed by [@LadyChatterleyLover](https://github.com/LadyChatterleyLover) [#10857](https://github.com/vant-ui/vant/issues/10857)
+- Add new component [Space](#/en-US/space), contributed by [@LadyChatterleyLover](https://github.com/LadyChatterleyLover) [#10857](https://github.com/vant-ui/vant/issues/10857) ❤️
 
 **Feature**
 
