@@ -64,8 +64,6 @@ export default defineComponent({
       moving: false,
       zooming: false,
       imageRatio: 0,
-      displayWidth: 0,
-      displayHeight: 0,
     });
 
     const touch = useTouch();
