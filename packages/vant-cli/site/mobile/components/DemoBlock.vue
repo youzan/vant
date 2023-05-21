@@ -11,8 +11,6 @@
 </template>
 
 <script>
-import { slugify } from 'transliteration';
-
 export default {
   name: 'DemoBlock',
 
@@ -20,10 +18,22 @@ export default {
     card: Boolean,
     title: String,
   },
+
+  data() {
+    return {
+      slugify: null,
+    };
+  },
+
   computed: {
     slugifyTitle() {
-      return slugify(this.title);
+      return this.slugify ? this.slugify(this.title) : '';
     },
+  },
+
+  async mounted() {
+    const { slugify } = await import('transliteration');
+    this.slugify = slugify;
   },
 };
 </script>

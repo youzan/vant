@@ -62,12 +62,15 @@ export default {
 
     syncMobilePos(id) {
       // Getting the document at this point is to ensure that the target has been fully rendered.
-      if (this.iframeDocument) {
-        const target = this.iframeDocument.getElementById(id);
-        target && target.scrollIntoView(true);
-      } else {
+      if (!this.iframeDocument) {
         const iframe = document.querySelector('iframe');
         this.iframeDocument = iframe.contentWindow.document;
+      }
+      if (this.iframeDocument) {
+        const target = this.iframeDocument.getElementById(id);
+        if (target) {
+          target.scrollIntoView(true);
+        }
       }
     },
 
