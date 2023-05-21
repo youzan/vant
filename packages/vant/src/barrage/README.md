@@ -140,9 +140,9 @@ import type { BarrageProps, BarrageItem, BarrageInstance } from 'vant';
 
 The component provides the following CSS variables, which can be used to customize styles. Please refer to [ConfigProvider component](#/en-US/config-provider).
 
-| Name | Default Value | Description |
-| --- | --- | --- |
-| --van-barrage-font-size | _16px_ | - |
-| --van-barrage-space | _10px_ | - |
-| --van-barrage-color | _var(--van-white)_ | - |
-| --van-barrage-font | _-apple-system-font, Helvetica Neue, Arial, sans-serif_ | - |
+| Name                    | Default Value      | Description |
+| ----------------------- | ------------------ | ----------- |
+| --van-barrage-font-size | _16px_             | -           |
+| --van-barrage-space     | _10px_             | -           |
+| --van-barrage-color     | _var(--van-white)_ | -           |
+| --van-barrage-font      | _inherit_          | -           |

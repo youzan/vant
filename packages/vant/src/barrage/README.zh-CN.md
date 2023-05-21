@@ -145,9 +145,9 @@ import type { BarrageProps, BarrageItem, BarrageInstance } from 'vant';
 
 组件提供了下列 CSS 变量，可用于自定义样式，使用方法请参考 [ConfigProvider 组件](#/zh-CN/config-provider)。
 
-| 名称 | 默认值 | 描述 |
-| --- | --- | --- |
-| --van-barrage-font-size | _16px_ | - |
-| --van-barrage-space | _10px_ | - |
-| --van-barrage-color | _var(--van-white)_ | - |
-| --van-barrage-font | _-apple-system-font, Helvetica Neue, Arial, sans-serif_ | - |
+| 名称                    | 默认值             | 描述 |
+| ----------------------- | ------------------ | ---- |
+| --van-barrage-font-size | _16px_             | -    |
+| --van-barrage-space     | _10px_             | -    |
+| --van-barrage-color     | _var(--van-white)_ | -    |
+| --van-barrage-font      | _inherit_          | -    |
