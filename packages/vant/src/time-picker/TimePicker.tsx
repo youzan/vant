@@ -29,6 +29,9 @@ const [name] = createNamespace('time-picker');
 
 export type TimePickerColumnType = 'hour' | 'minute' | 'second';
 
+const validatorTime = (val: string) => /^([01]\d|2[0-3]):([0-5]\d)$/.test(val);
+const DefaultColumns = ['hour', 'minute'];
+
 export const timePickerProps = extend({}, sharedProps, {
   minHour: makeNumericProp(0),
   maxHour: makeNumericProp(23),
@@ -36,9 +39,17 @@ export const timePickerProps = extend({}, sharedProps, {
   maxMinute: makeNumericProp(59),
   minSecond: makeNumericProp(0),
   maxSecond: makeNumericProp(59),
+  minTime: {
+    type: String,
+    validator: validatorTime,
+  },
+  maxTime: {
+    type: String,
+    validator: validatorTime,
+  },
   columnsType: {
     type: Array as PropType<TimePickerColumnType[]>,
-    default: () => ['hour', 'minute'],
+    default: () => DefaultColumns,
   },
 });
 
@@ -54,26 +65,30 @@ export default defineComponent({
   setup(props, { emit, slots }) {
     const currentValues = ref<string[]>(props.modelValue);
 
-    const columns = computed(() =>
-      props.columnsType.map((type) => {
+    const columns = computed(() => {
+      // Only default columns support minTime and maxTime
+      let { minHour, maxHour, minMinute, maxMinute } = props;
+      const currentHour = props.modelValue[0];
+      if (isSameValue(props.columnsType, DefaultColumns)) {
+        if (props.minTime) {
+          const [minH, minM] = props.minTime.split(':');
+          minHour = minH;
+          minMinute = +currentHour <= +minHour ? minM : '00';
+        }
+        if (props.maxTime) {
+          const [maxH, maxM] = props.maxTime.split(':');
+          maxHour = maxH;
+          maxMinute = +currentHour >= +maxHour ? maxM : '59';
+        }
+      }
+
+      return props.columnsType.map((type) => {
         const { filter, formatter } = props;
         switch (type) {
           case 'hour':
-            return genOptions(
-              +props.minHour,
-              +props.maxHour,
-              type,
-              formatter,
-              filter
-            );
+            return genOptions(+minHour, +maxHour, type, formatter, filter);
           case 'minute':
-            return genOptions(
-              +props.minMinute,
-              +props.maxMinute,
-              type,
-              formatter,
-              filter
-            );
+            return genOptions(+minMinute, +maxMinute, type, formatter, filter);
           case 'second':
             return genOptions(
               +props.minSecond,
@@ -90,8 +105,8 @@ export default defineComponent({
             }
             return [];
         }
-      })
-    );
+      });
+    });
 
     watch(currentValues, (newValues) => {
       if (!isSameValue(newValues, props.modelValue)) {
