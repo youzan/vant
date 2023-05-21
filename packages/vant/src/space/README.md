@@ -2,7 +2,7 @@
 
 ### Intro
 
-Set the spacing between elements, requires `vant >= v3.6.0`.
+Set the spacing between elements.
 
 ### Install
 
