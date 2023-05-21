@@ -19,6 +19,32 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 
 ## 更新内容
 
+### [v4.4.0](https://github.com/vant-ui/vant/compare/v4.3.2...v4.4.0)
+
+`2023-05-21`
+
+**New Component**
+
+- 新增 Barrage 组件，由 [@zhousg](https://github.com/zhousg) 贡献 ❤️ [#11760](https://github.com/vant-ui/vant/issues/11760)
+
+**Feature**
+
+- Cascader: 切换 Tab 时自动滚动到选中项 [#11869](https://github.com/vant-ui/vant/issues/11869)
+- Divider: 新增 vertical 属性 [#11883](https://github.com/vant-ui/vant/issues/11883)
+- Document: 支持点击标题时自动调整右侧示例到相应的位置 [#11879](https://github.com/vant-ui/vant/issues/11879)
+- ImagePreview: 优化长图的默认展示效果 [#11857](https://github.com/vant-ui/vant/issues/11857)
+- Signature: 优化签名的清晰度 [#11835](https://github.com/vant-ui/vant/issues/11835)
+- Uploader: 新增 reupload prop [#11854](https://github.com/vant-ui/vant/issues/11854)
+
+**Bug Fixes**
+
+- AddressEdit: 修复多余的底部边框 [#11872](https://github.com/vant-ui/vant/issues/11872)
+- Area: 修复多余的 allow-html 和 show-toolbar props 定义 [#11871](https://github.com/vant-ui/vant/issues/11871)
+- BackTop: 默认使用最近的父级滚动元素作为 target [#11858](https://github.com/vant-ui/vant/issues/11858)
+- ContactList: 优化样式和图标大小 [#11873](https://github.com/vant-ui/vant/issues/11873)
+- DatePicker: 修复外部设置 modelValue 时展示错误的问题 [#11839](https://github.com/vant-ui/vant/issues/11839)
+- Dialog: 修复点击按钮时圆角错误的问题 [#11863](https://github.com/vant-ui/vant/issues/11863)
+
 ### [v4.3.2](https://github.com/vant-ui/vant/compare/v4.3.1...v4.3.2)
 
 `2023-05-14`
@@ -50,7 +76,7 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 
 **New Component**
 
-- 新增 Signature 组件, 由 [@LIjiAngChen8](https://github.com/LIjiAngChen8) 贡献 [#11733](https://github.com/vant-ui/vant/issues/11733)
+- 新增 Signature 组件, 由 [@LIjiAngChen8](https://github.com/LIjiAngChen8) 贡献 ❤️ [#11733](https://github.com/vant-ui/vant/issues/11733)
 
 **Feature**
 
@@ -84,7 +110,7 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 
 **New Component**
 
-- 新增 Watermark 水印组件，由 [@HuberTRoy](https://github.com/HuberTRoy) 贡献 [#11721](https://github.com/vant-ui/vant/issues/11721)
+- 新增 Watermark 水印组件，由 [@HuberTRoy](https://github.com/HuberTRoy) 贡献 ❤️ [#11721](https://github.com/vant-ui/vant/issues/11721)
 
 **Feature**
 
@@ -130,7 +156,7 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 
 **New Component**
 
-- 新增 TextEllipsis 文本省略组件，由 [@wjw-gavin](https://github.com/wjw-gavin) 贡献 [#11593](https://github.com/vant-ui/vant/issues/11593)
+- 新增 TextEllipsis 文本省略组件，由 [@wjw-gavin](https://github.com/wjw-gavin) 贡献 ❤️ [#11593](https://github.com/vant-ui/vant/issues/11593)
 
 **Feature**
 
@@ -478,7 +504,7 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 
 **New Component**
 
-- 新增 [Space 间距](#/zh-CN/space) 组件, 由 [@LadyChatterleyLover](https://github.com/LadyChatterleyLover) 贡献 [#10857](https://github.com/vant-ui/vant/issues/10857)
+- 新增 [Space 间距](#/zh-CN/space) 组件, 由 [@LadyChatterleyLover](https://github.com/LadyChatterleyLover) 贡献 ❤️ [#10857](https://github.com/vant-ui/vant/issues/10857)
 
 **Feature**
 
