@@ -91,7 +91,6 @@ export default defineComponent({
       return isActive;
     });
 
-    // If it's an array, convert it to a string
     // see: https://github.com/vant-ui/vant/issues/11763
     const parserClass = ref();
     const parserStyle = ref();
