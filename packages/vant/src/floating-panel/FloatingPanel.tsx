@@ -1,7 +1,7 @@
-import { ExtractPropTypes, computed, defineComponent, ref } from 'vue';
+import { computed, defineComponent, ref, type ExtractPropTypes } from 'vue';
 import { useLockScroll } from '../composables/use-lock-scroll';
-import { addUnit, createNamespace, makeArrayProp, truthProp } from '../utils';
 import { useTouch } from '../composables/use-touch';
+import { addUnit, createNamespace, makeArrayProp, truthProp } from '../utils';
 
 export const floatingPanelProps = {
   anchors: makeArrayProp<number>(),
@@ -12,6 +12,8 @@ export const floatingPanelProps = {
 export type FloatingPanelProps = ExtractPropTypes<typeof floatingPanelProps>;
 
 const [name, bem] = createNamespace('floating-panel');
+
+const DAMP = 0.2;
 
 export default defineComponent({
   name,
@@ -24,27 +26,39 @@ export default defineComponent({
     const rootRef = ref<HTMLDivElement>();
     const contentRef = ref<HTMLDivElement>();
 
-    const maxHeight =
-      props.anchors[props.anchors.length - 1] ?? window.innerHeight * 0.6;
-    const minHeight = props.anchors[0] ?? 100;
+    const boundary = computed(() => ({
+      min: props.anchors[0] ?? 100,
+      max: props.anchors[props.anchors.length - 1] ?? window.innerHeight * 0.6,
+    }));
 
-    const heightArr = computed(() =>
-      props.anchors.length >= 2 ? props.anchors : [minHeight, maxHeight]
+    const anchors = computed(() =>
+      props.anchors.length >= 2
+        ? props.anchors
+        : [boundary.value.min, boundary.value.max]
     );
 
-    let initHeight = -minHeight;
-    const showHeight = ref(initHeight);
+    const dragging = ref(false);
+    const currentY = ref(-boundary.value.min);
 
-    const ease = (moveDistance: number): number => {
-      const absDistance = Math.abs(moveDistance);
-      const damp = 0.2;
-      if (absDistance > maxHeight) {
-        return -(maxHeight + (absDistance - maxHeight) * damp);
+    const rootStyle = computed(() => ({
+      height: addUnit(boundary.value.max),
+      transform: `translateY(calc(100% + ${addUnit(currentY.value)}))`,
+      transition: !dragging.value ? 'transform .3s' : 'none',
+    }));
+
+    const ease = (moveY: number): number => {
+      const absDistance = Math.abs(moveY);
+      const { min, max } = boundary.value;
+
+      if (absDistance > max) {
+        return -(max + (absDistance - max) * DAMP);
       }
-      if (absDistance < minHeight) {
-        return -(minHeight - (minHeight - absDistance) * damp);
+
+      if (absDistance < min) {
+        return -(min - (min - absDistance) * DAMP);
       }
-      return moveDistance;
+
+      return moveY;
     };
 
     const closest = (arr: number[], target: number) =>
@@ -52,12 +66,12 @@ export default defineComponent({
         Math.abs(pre - target) < Math.abs(cur - target) ? pre : cur
       );
 
-    const isTransition = ref(false);
+    let startY = currentY.value;
     const touch = useTouch();
 
     const onTouchstart = (e: TouchEvent) => {
       touch.start(e);
-      isTransition.value = false;
+      dragging.value = true;
     };
 
     const onTouchmove = (e: TouchEvent) => {
@@ -67,7 +81,7 @@ export default defineComponent({
       if (contentRef.value === target || contentRef.value?.contains(target)) {
         if (!props.allowDraggingContent) return;
 
-        if (-initHeight < maxHeight) {
+        if (-startY < boundary.value.max) {
           if (e.cancelable) e.preventDefault();
           e.stopPropagation();
         } else if (
@@ -77,21 +91,23 @@ export default defineComponent({
         }
       }
 
-      const moveDistance = touch.deltaY.value + initHeight;
-      showHeight.value = ease(moveDistance);
+      const moveY = touch.deltaY.value + startY;
+
+      currentY.value = ease(moveY);
     };
 
     const onTouchend = () => {
-      isTransition.value = true;
-      const absHeight = Math.abs(showHeight.value);
-      const closestHeight = closest(heightArr.value, absHeight);
-      showHeight.value = -closestHeight;
+      dragging.value = false;
 
-      if (showHeight.value !== initHeight) {
+      const height = Math.abs(currentY.value);
+      const closestHeight = closest(anchors.value, height);
+      currentY.value = -closestHeight;
+
+      if (currentY.value !== startY) {
         emit('heightChange', closestHeight);
       }
 
-      initHeight = showHeight.value;
+      startY = currentY.value;
     };
 
     useLockScroll(rootRef, () => true);
@@ -100,11 +116,7 @@ export default defineComponent({
       <div
         class={[bem(), { 'van-safe-area-bottom': props.safeAreaInsetBottom }]}
         ref={rootRef}
-        style={{
-          height: addUnit(maxHeight),
-          transform: `translateY(calc(100% + ${addUnit(showHeight.value)}))`,
-          transition: isTransition.value ? 'transform .3s' : 'none',
-        }}
+        style={rootStyle.value}
         onTouchstartPassive={onTouchstart}
         onTouchmove={onTouchmove}
         onTouchend={onTouchend}
