@@ -1,3 +1,5 @@
+import _camelCase  from 'lodash/camelCase'
+
 // Utils
 import { createNamespace } from '../utils';
 import { inherit, emit } from '../utils/functional';
@@ -47,10 +49,29 @@ function Tag(
   }
 
   // 组件上写style，组件里不生效，这里需要合并style
-  const vnodeStaticStyle = ctx.data && ctx.data.staticStyle || {};
-  const vnodeStyle = ctx.data && ctx.data.style || {};
-  Object.assign(style, vnodeStaticStyle);
-  Object.assign(style, vnodeStyle);
+  const vnodeStaticStyle: any = ctx.data && ctx.data.staticStyle || {};
+  const vnodeStyle: any = ctx.data && ctx.data.style || {};
+
+  // Object.assign(style, vnodeStaticStyle);
+  // Object.assign(style, vnodeStyle);
+
+  // fix background-color -> backgroundColor
+  // issue: http://projectmanage.netease-official.lcap.163yun.com/dashboard/BugDetail?id=2612632479860224
+
+  // eslint-disable-next-line no-restricted-syntax
+  for (const key in vnodeStaticStyle) {
+    if (Object.prototype.hasOwnProperty.call(vnodeStaticStyle, key)) {
+      const value = vnodeStaticStyle[key];
+      style[_camelCase(key)] = value;
+    }
+  }
+  // eslint-disable-next-line no-restricted-syntax
+  for (const key in vnodeStyle) {
+    if (Object.prototype.hasOwnProperty.call(vnodeStyle, key)) {
+      const value = vnodeStyle[key];
+      style[_camelCase(key)] = value;
+    }
+  }
 
   const classes: { [key: string]: any } = { mark, plain, round };
   if (size) {
