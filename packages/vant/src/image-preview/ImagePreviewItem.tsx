@@ -20,7 +20,7 @@ import {
 
 // Composables
 import { useTouch } from '../composables/use-touch';
-import { useEventListener, useRect } from '@vant/use';
+import { raf, useEventListener, useRect } from '@vant/use';
 
 // Components
 import { Image } from '../image';
@@ -63,6 +63,7 @@ export default defineComponent({
       moveY: 0,
       moving: false,
       zooming: false,
+      initializing: false,
       imageRatio: 0,
     });
 
@@ -75,9 +76,9 @@ export default defineComponent({
     let initialMoveY = 0;
 
     const imageStyle = computed(() => {
-      const { scale, moveX, moveY, moving, zooming } = state;
+      const { scale, moveX, moveY, moving, zooming, initializing } = state;
       const style: CSSProperties = {
-        transitionDuration: zooming || moving ? '0s' : '.3s',
+        transitionDuration: zooming || moving || initializing ? '0s' : '.3s',
       };
 
       if (scale !== 1 || isLongImage.value) {
@@ -330,6 +331,10 @@ export default defineComponent({
       if (isLongImage.value) {
         initialMoveY = (imageRatio * rootWidth - rootHeight) / 2;
         state.moveY = initialMoveY;
+        state.initializing = true;
+        raf(() => {
+          state.initializing = false;
+        });
       }
 
       resetScale();
