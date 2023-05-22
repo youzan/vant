@@ -82,7 +82,9 @@ export default defineComponent({
     const zIndex = ref<number>();
     const popupRef = ref<HTMLElement>();
 
-    const lazyRender = useLazyRender(() => props.show || !props.lazyRender);
+    const lazyRender = useLazyRender(
+      () => props.show || !props.lazyRender || props.duration === 0
+    );
 
     const style = computed(() => {
       const style: CSSProperties = {
