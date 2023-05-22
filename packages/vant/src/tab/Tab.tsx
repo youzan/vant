@@ -6,6 +6,8 @@ import {
   nextTick,
   defineComponent,
   getCurrentInstance,
+  normalizeClass,
+  normalizeStyle,
   type PropType,
   type CSSProperties,
   type ExtractPropTypes,
@@ -21,7 +23,6 @@ import {
   createNamespace,
   ComponentInstance,
   isObject,
-  kebabCase,
 } from '../utils';
 import { TABS_KEY } from '../tabs/Tabs';
 
@@ -92,22 +93,19 @@ export default defineComponent({
     });
 
     // see: https://github.com/vant-ui/vant/issues/11763
-    const parserClass = ref();
-    const parserStyle = ref();
+    const parserClass = ref('');
+    const parserStyle = ref('');
     watch(
       [() => props.titleClass, () => props.titleStyle],
       ([newClass, newStyle]) => {
-        if (Array.isArray(newClass)) {
-          parserClass.value = newClass.join(' ');
+        parserClass.value = normalizeClass(newClass);
+        const style = normalizeStyle(newStyle);
+        if (isObject(style)) {
+          parserStyle.value = Object.entries(style)
+            .map(([key, val]) => `${key}:${val}; `)
+            .join('');
         } else {
-          parserClass.value = newClass;
-        }
-        if (isObject(newStyle)) {
-          parserStyle.value = Object.entries(newStyle)
-            .map(([key, val]) => `${kebabCase(key)}: ${val}`)
-            .join('; ');
-        } else {
-          parserStyle.value = newStyle;
+          parserStyle.value = style ?? '';
         }
       },
       { immediate: true }
