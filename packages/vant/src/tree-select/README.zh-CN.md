@@ -202,10 +202,10 @@ export default {
 
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
+| v-model:main-active-index | 左侧选中项的索引 | _number \| string_ | `0` |
+| v-model:active-id | 右侧选中项的 id，支持传入数组 | _number \| string \|<br>(number \| string)[]_ | `0` |
 | items | 分类显示所需的数据 | _TreeSelectItem[]_ | `[]` |
 | height | 高度，默认单位为`px` | _number \| string_ | `300` |
-| main-active-index | 左侧选中项的索引 | _number \| string_ | `0` |
-| active-id | 右侧选中项的 id，支持传入数组 | _number \| string \|<br>(number \| string)[]_ | `0` |
 | max | 右侧项最大选中个数 | _number \| string_ | `Infinity` |
 | selected-icon | 自定义右侧栏选中状态的图标 | _string_ | `success` |
 
