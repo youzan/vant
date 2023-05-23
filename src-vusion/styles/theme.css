@@ -780,7 +780,7 @@
   --van-list-view-input-border-radius: 3px; /* @desc 筛选框圆角 */
   --van-list-view-input-color: #333; /* @type color */ /* @desc 筛选框文字颜色 */
   --van-list-view-placeholder-color: #c8c9cc; /* @type color */ /* @desc 筛选框占位提示文字颜色 */
-
+  --van-list-view-striped-background: #f4f6f9; /* @type color */ /* @desc 斑马纹颜色 */
 
   /* @component van-fieldinput */
   --van-fieldinput-text-color: #333; /* @type color */ /* @desc 输入框文字颜色 */
@@ -793,6 +793,13 @@
   --van-fieldtextarea-placeholder-color: #c8c9cc; /* @type color */ /* @desc 输入框占位提示文字颜色 */
   --van-fieldtextarea-disabled-color: #c8c9cc; /* @type color */ /* @desc 输入框禁用态文字颜色 */
   --van-fieldtextarea-line-height: 24px; /* @desc 输入框最小高度 */
+
+  /* @component van-popup-combination */
+  --popup-padding: 5px 12px; /* @desc 弹出层的内边距,如 1px */ /* @prefix popup */
+  --popup-arrow-size: 4px; /* @desc 弹出层的内层三角箭头大小,如 1px */ /* @prefix popup */
+  --popup-arrow-offset: 17px; /* @desc 弹出层的三角箭头平移位置,如 1px */ /* @prefix popup */
+  --popup-outer-arrow-size: calc(var(--popup-arrow-size) + 1px); /* @desc 弹出层的外层三角箭头大小,如 1px */ /* @prefix popup */
+  --popup-background: white; /* @type color */ /* @desc 弹出层的背景色,如 #223325 */ /* @prefix popup */
+  --popup-box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1); /* @desc 弹出层的阴影效果,如 2px 2px 2px 1px rgba(0, 0, 0, 0.2); */ /* @prefix popup */
+  --popup-border-color: var(--border-color-base); /* @type color */ /* @desc 弹出层的边框颜色,如 #223325 */ /* @prefix popup */
 }
-
-

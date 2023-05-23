@@ -20,8 +20,12 @@
         @refresh="refresh">
         <div ref="body" :class="$style.body">
             <slot></slot>
-            <div ref="virtual" v-if="(!currentLoading && !currentError || pageable === 'auto-more' || pageable === 'load-more') && currentData && currentData.length"
-                :style="{ paddingTop: virtualTop + 'px', paddingBottom: virtualBottom + 'px' }">
+            <div
+              :class="$style.list"
+              :striped="striped"
+              ref="virtual"
+              v-if="(!currentLoading && !currentError || pageable === 'auto-more' || pageable === 'load-more') && currentData && currentData.length"
+              :style="{ paddingTop: virtualTop + 'px', paddingBottom: virtualBottom + 'px' }">
                 <component :is="ChildComponent"
                     v-for="(item, index) in virtualList"
                     v-if="item"
@@ -108,6 +112,7 @@ export default {
         pullDistance: 50,
         notext: { type: Boolean, default: false },
         hiddenempty: { type: Boolean, default: false },
+        striped: { type: Boolean, default: false }
     },
     data() {
       return {
@@ -209,6 +214,10 @@ export default {
     user-select: none;
     /* overflow: auto; */
     position: relative;
+}
+
+.body .list[striped] div:nth-of-type(2n) {
+  background: var(--van-list-view-striped-background);
 }
 
 .root[readonly-mode="initial"] .body {

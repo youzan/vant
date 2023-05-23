@@ -1889,6 +1889,10 @@
                     "--van-list-view-placeholder-color": {
                         "type": "color",
                         "desc": "筛选框占位提示文字颜色"
+                    },
+                    "--van-list-view-striped-background": {
+                        "type": "color",
+                        "desc": "斑马纹颜色"
                     }
                 },
                 "preview": {
@@ -1949,6 +1953,53 @@
                 },
                 "preview": {
                     "template": "<van-fieldtextarea placeholder=\"请输入\"></van-fieldtextarea>"
+                }
+            },
+            {
+                "id": "4fcd4dfd-683b-4d7e-9211f-gv9sdf08e0899nbnanb112eeeea3",
+                "name": "van-popup-combination",
+                "title": "气泡弹出框",
+                "toPosition": "popup-combination",
+                "type": [],
+                "cssProperty": {
+                    "--popup-padding": {
+                        "type": "input",
+                        "desc": "弹出层的内边距,如 1px",
+                        "prefix": "popup"
+                    },
+                    "--popup-arrow-size": {
+                        "type": "input",
+                        "desc": "弹出层的内层三角箭头大小,如 1px",
+                        "prefix": "popup"
+                    },
+                    "--popup-arrow-offset": {
+                        "type": "input",
+                        "desc": "弹出层的三角箭头平移位置,如 1px",
+                        "prefix": "popup"
+                    },
+                    "--popup-outer-arrow-size": {
+                        "type": "input",
+                        "desc": "弹出层的外层三角箭头大小,如 1px",
+                        "prefix": "popup"
+                    },
+                    "--popup-background": {
+                        "type": "color",
+                        "desc": "弹出层的背景色,如 #223325",
+                        "prefix": "popup"
+                    },
+                    "--popup-box-shadow": {
+                        "type": "input",
+                        "desc": "弹出层的阴影效果,如 2px 2px 2px 1px rgba(0, 0, 0, 0.2)",
+                        "prefix": "popup"
+                    },
+                    "--popup-border-color": {
+                        "type": "color",
+                        "desc": "弹出层的边框颜色,如 #223325",
+                        "prefix": "popup"
+                    }
+                },
+                "preview": {
+                    "template": "<van-popup-combination><template #reference><van-button type=\"primary\" text=\"触发弹出框组件，可删除替换\"></van-button></template><van-text text=\"内容\"></van-text></van-popup-combination>"
                 }
             }
         ]

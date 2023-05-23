@@ -241,7 +241,8 @@
                             "name": "title",
                             "title": "标题",
                             "type": "string",
-                            "description": "标题"
+                            "description": "标题",
+                            "advanced": true
                         },
                         {
                             "name": "is-link",
@@ -1022,7 +1023,8 @@
                     "name": "title",
                     "title": "文本",
                     "type": "string",
-                    "description": "文本"
+                    "description": "文本",
+                    "advanced": true
                 }
             ],
             "slots": [
@@ -2212,7 +2214,8 @@
                             "title": "标题",
                             "type": "string",
                             "default": "标题",
-                            "description": "标题"
+                            "description": "标题",
+                            "advanced": true
                         },
                         {
                             "name": "showbaget",
@@ -3127,7 +3130,8 @@
                             "title": "标题",
                             "type": "string",
                             "default": "标题",
-                            "description": "自定义标题"
+                            "description": "自定义标题",
+                            "advanced": true
                         },
                         {
                             "name": "disabled",
@@ -3673,7 +3677,8 @@
                     "name": "text",
                     "title": "通知文本内容",
                     "type": "string",
-                    "description": "通知文本内"
+                    "description": "通知文本内",
+                    "advanced": true
                 },
                 {
                     "name": "scrollable",
@@ -4290,7 +4295,8 @@
                 {
                     "name": "text",
                     "title": "文字",
-                    "type": "string"
+                    "type": "string",
+                    "advanced": true
                 },
                 {
                     "name": "stroke-width",
@@ -4945,6 +4951,14 @@
                     "multi": true,
                     "maxSelect": 2,
                     "advanced": true
+                },
+                {
+                    "name": "striped",
+                    "title": "斑马条纹",
+                    "type": "boolean",
+                    "default": false,
+                    "description": "是否按斑马线条纹显示",
+                    "group": "样式属性"
                 }
             ],
             "slots": [
@@ -5651,7 +5665,7 @@
             "Display"
         ],
         "screenShot": "",
-        "blocks": "[{\"title\":\"基本用法\",\"description\":\"\",\"code\":\"<template>\\n<van-gallery :data-source=\\\"'https://static-vusion.nos-eastchina1.126.net/h5-template/cat.jpeg'\\\">\\n</van-gallery>\\n</template>\\n\"}]",
+        "blocks": "[{\"title\":\"基本用法\",\"description\":\"\",\"code\":\"<template>\\n<van-gallery :data-source=\\\"'https://static-vusion.163yun.com/h5-template/cat.jpeg'\\\">\\n</van-gallery>\\n</template>\\n\"}]",
         "jsonSchema": {
             "name": "van-gallery",
             "title": "画廊",
@@ -5663,7 +5677,7 @@
                 {
                     "title": "基本用法",
                     "description": "",
-                    "code": "<template>\n<van-gallery :data-source=\"'https://static-vusion.nos-eastchina1.126.net/h5-template/cat.jpeg'\">\n</van-gallery>\n</template>\n"
+                    "code": "<template>\n<van-gallery :data-source=\"'https://static-vusion.163yun.com/h5-template/cat.jpeg'\">\n</van-gallery>\n</template>\n"
                 }
             ],
             "attrs": [
@@ -5671,7 +5685,7 @@
                     "name": "data-source",
                     "title": "数据源",
                     "type": "Array<Item> | Function | object",
-                    "value": "https://static-vusion.nos-eastchina1.126.net/h5-template/cat.jpeg",
+                    "value": "https://static-vusion.163yun.com/h5-template/cat.jpeg",
                     "description": "数据源"
                 }
             ],
@@ -6524,7 +6538,8 @@
                     "name": "actiontext",
                     "title": "按钮文字",
                     "type": "string",
-                    "description": "按钮文字"
+                    "description": "按钮文字",
+                    "advanced": true
                 },
                 {
                     "name": "readonly",
@@ -6764,7 +6779,8 @@
                             "name": "title",
                             "title": "文本",
                             "type": "string",
-                            "description": "文本"
+                            "description": "文本",
+                            "advanced": true
                         },
                         {
                             "name": "name",
@@ -7006,7 +7022,7 @@
                         {
                             "name": "van-checkbox",
                             "title": "复选项",
-                            "snippet": "<van-checkbox name=\"n\" shape=\"square\"><van-text text=\"节点\"></van-text></van-radio>"
+                            "snippet": "<van-checkbox name=\"n\" shape=\"square\"><van-text text=\"节点\"></van-text></van-checkbox>"
                         }
                     ]
                 },
@@ -7050,7 +7066,8 @@
                             "name": "title",
                             "title": "文本",
                             "type": "string",
-                            "description": "文本"
+                            "description": "文本",
+                            "advanced": true
                         },
                         {
                             "name": "name",
@@ -7956,7 +7973,8 @@
                     "name": "labelField",
                     "title": "左侧标题",
                     "type": "string",
-                    "description": "左侧标题"
+                    "description": "左侧标题",
+                    "advanced": true
                 },
                 {
                     "name": "columnsprop",
@@ -8116,7 +8134,8 @@
                     "name": "labelField",
                     "title": "左侧标题",
                     "type": "string",
-                    "description": "左侧标题"
+                    "description": "左侧标题",
+                    "advanced": true
                 },
                 {
                     "name": "areaListprop",
@@ -8249,7 +8268,8 @@
                     "name": "labelField",
                     "title": "左侧标题",
                     "type": "string",
-                    "description": "左侧标题"
+                    "description": "左侧标题",
+                    "advanced": true
                 },
                 {
                     "name": "data-source",
@@ -8376,7 +8396,8 @@
                     "name": "labelField",
                     "title": "左侧标题",
                     "type": "string",
-                    "description": "左侧文本插槽内容存在时优先展示插槽内容"
+                    "description": "左侧文本插槽内容存在时优先展示插槽内容",
+                    "advanced": true
                 },
                 {
                     "name": "type",
@@ -8598,7 +8619,8 @@
                     "name": "labelField",
                     "title": "左侧标题",
                     "type": "string",
-                    "description": "左侧标题"
+                    "description": "左侧标题",
+                    "advanced": true
                 },
                 {
                     "name": "default-date",

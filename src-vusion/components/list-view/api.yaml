@@ -218,6 +218,12 @@
       multi: true
       maxSelect: 2
       advanced: true
+    - name: striped
+      title: 斑马条纹
+      type: boolean
+      default: false
+      description: 是否按斑马线条纹显示
+      group: 样式属性
   slots:
     - concept: Slot
       name: default
