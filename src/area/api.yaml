@@ -16,6 +16,7 @@
       title: 左侧标题
       type: string
       description: 左侧标题
+      advanced: true
     - name: areaListprop
       title: 数据源(默认全部)
       type: array

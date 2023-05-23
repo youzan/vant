@@ -43,6 +43,7 @@
       type: string
       default: 标题
       description: 标题
+      advanced: true
     - name: showbaget
       title: 是否显示徽章
       type: boolean

@@ -29,6 +29,7 @@
     - name: text
       title: 文字
       type: string
+      advanced: true
     - name: stroke-width
       title: 进度条宽度
       type: number | string

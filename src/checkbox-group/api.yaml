@@ -70,7 +70,7 @@
       support:
         - name: van-checkbox
           title: 复选项
-          snippet: <van-checkbox name="n" shape="square"><van-text text="节点"></van-text></van-radio>
+          snippet: <van-checkbox name="n" shape="square"><van-text text="节点"></van-text></van-checkbox>
     - concept: Slot
       name: item
       description: 自定义选项的结构和样式
@@ -99,6 +99,7 @@
       title: 文本
       type: string
       description: 文本
+      advanced: true
     - name: name
       title: 选中的值
       type: string
