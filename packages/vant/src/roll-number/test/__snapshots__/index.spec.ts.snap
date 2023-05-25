@@ -1,0 +1,669 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render comp 1`] = `
+<div class="van-roll-number">
+  <div style="height: 40px; --translate: -1640px; --duration: 2s; --delay: 0s;"
+       class="van-roll-single-down"
+  >
+    <div class="van-roll-single-down__box">
+      <div class="van-roll-single-down__item"
+           style="line-height: 40px;"
+      >
+        1
+      </div>
+      <div class="van-roll-single-down__item"
+           style="line-height: 40px;"
+      >
+        0
+      </div>
+      <div class="van-roll-single-down__item"
+           style="line-height: 40px;"
+      >
+        9
+      </div>
+      <div class="van-roll-single-down__item"
+           style="line-height: 40px;"
+      >
+        8
+      </div>
+      <div class="van-roll-single-down__item"
+           style="line-height: 40px;"
+      >
+        7
+      </div>
+      <div class="van-roll-single-down__item"
+           style="line-height: 40px;"
+      >
+        6
+      </div>
+      <div class="van-roll-single-down__item"
+           style="line-height: 40px;"
+      >
+        5
+      </div>
+      <div class="van-roll-single-down__item"
+           style="line-height: 40px;"
+      >
+        4
+      </div>
+      <div class="van-roll-single-down__item"
+           style="line-height: 40px;"
+      >
+        3
+      </div>
+      <div class="van-roll-single-down__item"
+           style="line-height: 40px;"
+      >
+        2
+      </div>
+      <div class="van-roll-single-down__item"
+           style="line-height: 40px;"
+      >
+        1
+      </div>
+      <div class="van-roll-single-down__item"
+           style="line-height: 40px;"
+      >
+        0
+      </div>
+      <div class="van-roll-single-down__item"
+           style="line-height: 40px;"
+      >
+        9
+      </div>
+      <div class="van-roll-single-down__item"
+           style="line-height: 40px;"
+      >
+        8
+      </div>
+      <div class="van-roll-single-down__item"
+           style="line-height: 40px;"
+      >
+        7
+      </div>
+      <div class="van-roll-single-down__item"
+           style="line-height: 40px;"
+      >
+        6
+      </div>
+      <div class="van-roll-single-down__item"
+           style="line-height: 40px;"
+      >
+        5
+      </div>
+      <div class="van-roll-single-down__item"
+           style="line-height: 40px;"
+      >
+        4
+      </div>
+      <div class="van-roll-single-down__item"
+           style="line-height: 40px;"
+      >
+        3
+      </div>
+      <div class="van-roll-single-down__item"
+           style="line-height: 40px;"
+      >
+        2
+      </div>
+      <div class="van-roll-single-down__item"
+           style="line-height: 40px;"
+      >
+        1
+      </div>
+      <div class="van-roll-single-down__item"
+           style="line-height: 40px;"
+      >
+        0
+      </div>
+      <div class="van-roll-single-down__item"
+           style="line-height: 40px;"
+      >
+        9
+      </div>
+      <div class="van-roll-single-down__item"
+           style="line-height: 40px;"
+      >
+        8
+      </div>
+      <div class="van-roll-single-down__item"
+           style="line-height: 40px;"
+      >
+        7
+      </div>
+      <div class="van-roll-single-down__item"
+           style="line-height: 40px;"
+      >
+        6
+      </div>
+      <div class="van-roll-single-down__item"
+           style="line-height: 40px;"
+      >
+        5
+      </div>
+      <div class="van-roll-single-down__item"
+           style="line-height: 40px;"
+      >
+        4
+      </div>
+      <div class="van-roll-single-down__item"
+           style="line-height: 40px;"
+      >
+        3
+      </div>
+      <div class="van-roll-single-down__item"
+           style="line-height: 40px;"
+      >
+        2
+      </div>
+      <div class="van-roll-single-down__item"
+           style="line-height: 40px;"
+      >
+        1
+      </div>
+      <div class="van-roll-single-down__item"
+           style="line-height: 40px;"
+      >
+        0
+      </div>
+      <div class="van-roll-single-down__item"
+           style="line-height: 40px;"
+      >
+        9
+      </div>
+      <div class="van-roll-single-down__item"
+           style="line-height: 40px;"
+      >
+        8
+      </div>
+      <div class="van-roll-single-down__item"
+           style="line-height: 40px;"
+      >
+        7
+      </div>
+      <div class="van-roll-single-down__item"
+           style="line-height: 40px;"
+      >
+        6
+      </div>
+      <div class="van-roll-single-down__item"
+           style="line-height: 40px;"
+      >
+        5
+      </div>
+      <div class="van-roll-single-down__item"
+           style="line-height: 40px;"
+      >
+        4
+      </div>
+      <div class="van-roll-single-down__item"
+           style="line-height: 40px;"
+      >
+        3
+      </div>
+      <div class="van-roll-single-down__item"
+           style="line-height: 40px;"
+      >
+        2
+      </div>
+      <div class="van-roll-single-down__item"
+           style="line-height: 40px;"
+      >
+        1
+      </div>
+      <div class="van-roll-single-down__item"
+           style="line-height: 40px;"
+      >
+        0
+      </div>
+    </div>
+  </div>
+  <div style="height: 40px; --translate: -1680px; --duration: 2s; --delay: 0.2s;"
+       class="van-roll-single-down"
+  >
+    <div class="van-roll-single-down__box">
+      <div class="van-roll-single-down__item"
+           style="line-height: 40px;"
+      >
+        2
+      </div>
+      <div class="van-roll-single-down__item"
+           style="line-height: 40px;"
+      >
+        1
+      </div>
+      <div class="van-roll-single-down__item"
+           style="line-height: 40px;"
+      >
+        0
+      </div>
+      <div class="van-roll-single-down__item"
+           style="line-height: 40px;"
+      >
+        9
+      </div>
+      <div class="van-roll-single-down__item"
+           style="line-height: 40px;"
+      >
+        8
+      </div>
+      <div class="van-roll-single-down__item"
+           style="line-height: 40px;"
+      >
+        7
+      </div>
+      <div class="van-roll-single-down__item"
+           style="line-height: 40px;"
+      >
+        6
+      </div>
+      <div class="van-roll-single-down__item"
+           style="line-height: 40px;"
+      >
+        5
+      </div>
+      <div class="van-roll-single-down__item"
+           style="line-height: 40px;"
+      >
+        4
+      </div>
+      <div class="van-roll-single-down__item"
+           style="line-height: 40px;"
+      >
+        3
+      </div>
+      <div class="van-roll-single-down__item"
+           style="line-height: 40px;"
+      >
+        2
+      </div>
+      <div class="van-roll-single-down__item"
+           style="line-height: 40px;"
+      >
+        1
+      </div>
+      <div class="van-roll-single-down__item"
+           style="line-height: 40px;"
+      >
+        0
+      </div>
+      <div class="van-roll-single-down__item"
+           style="line-height: 40px;"
+      >
+        9
+      </div>
+      <div class="van-roll-single-down__item"
+           style="line-height: 40px;"
+      >
+        8
+      </div>
+      <div class="van-roll-single-down__item"
+           style="line-height: 40px;"
+      >
+        7
+      </div>
+      <div class="van-roll-single-down__item"
+           style="line-height: 40px;"
+      >
+        6
+      </div>
+      <div class="van-roll-single-down__item"
+           style="line-height: 40px;"
+      >
+        5
+      </div>
+      <div class="van-roll-single-down__item"
+           style="line-height: 40px;"
+      >
+        4
+      </div>
+      <div class="van-roll-single-down__item"
+           style="line-height: 40px;"
+      >
+        3
+      </div>
+      <div class="van-roll-single-down__item"
+           style="line-height: 40px;"
+      >
+        2
+      </div>
+      <div class="van-roll-single-down__item"
+           style="line-height: 40px;"
+      >
+        1
+      </div>
+      <div class="van-roll-single-down__item"
+           style="line-height: 40px;"
+      >
+        0
+      </div>
+      <div class="van-roll-single-down__item"
+           style="line-height: 40px;"
+      >
+        9
+      </div>
+      <div class="van-roll-single-down__item"
+           style="line-height: 40px;"
+      >
+        8
+      </div>
+      <div class="van-roll-single-down__item"
+           style="line-height: 40px;"
+      >
+        7
+      </div>
+      <div class="van-roll-single-down__item"
+           style="line-height: 40px;"
+      >
+        6
+      </div>
+      <div class="van-roll-single-down__item"
+           style="line-height: 40px;"
+      >
+        5
+      </div>
+      <div class="van-roll-single-down__item"
+           style="line-height: 40px;"
+      >
+        4
+      </div>
+      <div class="van-roll-single-down__item"
+           style="line-height: 40px;"
+      >
+        3
+      </div>
+      <div class="van-roll-single-down__item"
+           style="line-height: 40px;"
+      >
+        2
+      </div>
+      <div class="van-roll-single-down__item"
+           style="line-height: 40px;"
+      >
+        1
+      </div>
+      <div class="van-roll-single-down__item"
+           style="line-height: 40px;"
+      >
+        0
+      </div>
+      <div class="van-roll-single-down__item"
+           style="line-height: 40px;"
+      >
+        9
+      </div>
+      <div class="van-roll-single-down__item"
+           style="line-height: 40px;"
+      >
+        8
+      </div>
+      <div class="van-roll-single-down__item"
+           style="line-height: 40px;"
+      >
+        7
+      </div>
+      <div class="van-roll-single-down__item"
+           style="line-height: 40px;"
+      >
+        6
+      </div>
+      <div class="van-roll-single-down__item"
+           style="line-height: 40px;"
+      >
+        5
+      </div>
+      <div class="van-roll-single-down__item"
+           style="line-height: 40px;"
+      >
+        4
+      </div>
+      <div class="van-roll-single-down__item"
+           style="line-height: 40px;"
+      >
+        3
+      </div>
+      <div class="van-roll-single-down__item"
+           style="line-height: 40px;"
+      >
+        2
+      </div>
+      <div class="van-roll-single-down__item"
+           style="line-height: 40px;"
+      >
+        1
+      </div>
+      <div class="van-roll-single-down__item"
+           style="line-height: 40px;"
+      >
+        0
+      </div>
+    </div>
+  </div>
+  <div style="height: 40px; --translate: -1720px; --duration: 2s; --delay: 0.4s;"
+       class="van-roll-single-down"
+  >
+    <div class="van-roll-single-down__box">
+      <div class="van-roll-single-down__item"
+           style="line-height: 40px;"
+      >
+        3
+      </div>
+      <div class="van-roll-single-down__item"
+           style="line-height: 40px;"
+      >
+        2
+      </div>
+      <div class="van-roll-single-down__item"
+           style="line-height: 40px;"
+      >
+        1
+      </div>
+      <div class="van-roll-single-down__item"
+           style="line-height: 40px;"
+      >
+        0
+      </div>
+      <div class="van-roll-single-down__item"
+           style="line-height: 40px;"
+      >
+        9
+      </div>
+      <div class="van-roll-single-down__item"
+           style="line-height: 40px;"
+      >
+        8
+      </div>
+      <div class="van-roll-single-down__item"
+           style="line-height: 40px;"
+      >
+        7
+      </div>
+      <div class="van-roll-single-down__item"
+           style="line-height: 40px;"
+      >
+        6
+      </div>
+      <div class="van-roll-single-down__item"
+           style="line-height: 40px;"
+      >
+        5
+      </div>
+      <div class="van-roll-single-down__item"
+           style="line-height: 40px;"
+      >
+        4
+      </div>
+      <div class="van-roll-single-down__item"
+           style="line-height: 40px;"
+      >
+        3
+      </div>
+      <div class="van-roll-single-down__item"
+           style="line-height: 40px;"
+      >
+        2
+      </div>
+      <div class="van-roll-single-down__item"
+           style="line-height: 40px;"
+      >
+        1
+      </div>
+      <div class="van-roll-single-down__item"
+           style="line-height: 40px;"
+      >
+        0
+      </div>
+      <div class="van-roll-single-down__item"
+           style="line-height: 40px;"
+      >
+        9
+      </div>
+      <div class="van-roll-single-down__item"
+           style="line-height: 40px;"
+      >
+        8
+      </div>
+      <div class="van-roll-single-down__item"
+           style="line-height: 40px;"
+      >
+        7
+      </div>
+      <div class="van-roll-single-down__item"
+           style="line-height: 40px;"
+      >
+        6
+      </div>
+      <div class="van-roll-single-down__item"
+           style="line-height: 40px;"
+      >
+        5
+      </div>
+      <div class="van-roll-single-down__item"
+           style="line-height: 40px;"
+      >
+        4
+      </div>
+      <div class="van-roll-single-down__item"
+           style="line-height: 40px;"
+      >
+        3
+      </div>
+      <div class="van-roll-single-down__item"
+           style="line-height: 40px;"
+      >
+        2
+      </div>
+      <div class="van-roll-single-down__item"
+           style="line-height: 40px;"
+      >
+        1
+      </div>
+      <div class="van-roll-single-down__item"
+           style="line-height: 40px;"
+      >
+        0
+      </div>
+      <div class="van-roll-single-down__item"
+           style="line-height: 40px;"
+      >
+        9
+      </div>
+      <div class="van-roll-single-down__item"
+           style="line-height: 40px;"
+      >
+        8
+      </div>
+      <div class="van-roll-single-down__item"
+           style="line-height: 40px;"
+      >
+        7
+      </div>
+      <div class="van-roll-single-down__item"
+           style="line-height: 40px;"
+      >
+        6
+      </div>
+      <div class="van-roll-single-down__item"
+           style="line-height: 40px;"
+      >
+        5
+      </div>
+      <div class="van-roll-single-down__item"
+           style="line-height: 40px;"
+      >
+        4
+      </div>
+      <div class="van-roll-single-down__item"
+           style="line-height: 40px;"
+      >
+        3
+      </div>
+      <div class="van-roll-single-down__item"
+           style="line-height: 40px;"
+      >
+        2
+      </div>
+      <div class="van-roll-single-down__item"
+           style="line-height: 40px;"
+      >
+        1
+      </div>
+      <div class="van-roll-single-down__item"
+           style="line-height: 40px;"
+      >
+        0
+      </div>
+      <div class="van-roll-single-down__item"
+           style="line-height: 40px;"
+      >
+        9
+      </div>
+      <div class="van-roll-single-down__item"
+           style="line-height: 40px;"
+      >
+        8
+      </div>
+      <div class="van-roll-single-down__item"
+           style="line-height: 40px;"
+      >
+        7
+      </div>
+      <div class="van-roll-single-down__item"
+           style="line-height: 40px;"
+      >
+        6
+      </div>
+      <div class="van-roll-single-down__item"
+           style="line-height: 40px;"
+      >
+        5
+      </div>
+      <div class="van-roll-single-down__item"
+           style="line-height: 40px;"
+      >
+        4
+      </div>
+      <div class="van-roll-single-down__item"
+           style="line-height: 40px;"
+      >
+        3
+      </div>
+      <div class="van-roll-single-down__item"
+           style="line-height: 40px;"
+      >
+        2
+      </div>
+      <div class="van-roll-single-down__item"
+           style="line-height: 40px;"
+      >
+        1
+      </div>
+      <div class="van-roll-single-down__item"
+           style="line-height: 40px;"
+      >
+        0
+      </div>
+    </div>
+  </div>
+</div>
+`;
