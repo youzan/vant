@@ -274,7 +274,7 @@ Notify.clear();
 
 ### ImagePreview calling method adjustment
 
-In Vant 4, the calling method of the `ImagePreview` component has also been adjusted, which is consistent with the changes of the `ImagePreview` component:
+In Vant 4, the calling method of the `ImagePreview` component has also been adjusted, which is consistent with the changes of the `Dialog` component:
 
 ```js
 // Vant 3
