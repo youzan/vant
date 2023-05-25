@@ -1,0 +1,78 @@
+:root {
+  --van-roll-number-bg-color: black;
+  --van-roll-number-color: white;
+  --van-roll-number-gap: 5px;
+  --van-roll-number-single-width: 20px;
+  --van-roll-number-single-border-r: 0px;
+}
+.van-roll-number {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--van-roll-number-gap);
+}
+
+.van-roll-single-down {
+  width: var(--van-roll-number-single-width);
+  border-radius: var(--van-roll-number-single-border-r);
+  background-color: var(--van-roll-number-bg-color);
+  color: var(--van-roll-number-color);
+  overflow: hidden;
+  // 如果向下滚动，则起始是translate负值，到0
+  @keyframes down {
+    0% {
+      transform: translateY(var(--translate));
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+  &__box {
+    overflow: hidden;
+    transform: translateY(var(--translate));
+  }
+  &__ani {
+    animation: up var(--duration) ease-in-out var(--delay);
+    animation-name: down;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: 1;
+    animation-duration: var(--duration);
+    animation-fill-mode: both;
+    animation-delay: var(--delay);
+  }
+  &__item {
+    text-align: center;
+  }
+}
+
+.van-roll-single-up {
+  width: var(--van-roll-number-single-width);
+  border-radius: var(--van-roll-number-single-border-r);
+  background-color: var(--van-roll-number-bg-color);
+  color: var(--van-roll-number-color);
+  overflow: hidden;
+  // 如果是向上翻滚，则起始是0，到translate负值
+  @keyframes up {
+    0% {
+      transform: translateY(0);
+    }
+    100% {
+      transform: translateY(var(--translate));
+    }
+  }
+  &__box {
+    overflow: hidden;
+  }
+  &__ani {
+    animation: up var(--duration) ease-in-out var(--delay);
+    //animation-name: up;
+    //animation-timing-function: ease-in-out;
+    animation-iteration-count: 1;
+    //animation-duration: var(--duration);
+    animation-fill-mode: both;
+    //animation-delay: var(--delay);
+  }
+  &__item {
+    text-align: center;
+  }
+}

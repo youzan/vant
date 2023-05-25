@@ -329,6 +329,10 @@ location.href = location.href.replace('youzan.github.io', 'vant-ui.github.io');
                 title: 'Progress 进度条',
               },
               {
+                path: 'roll-number',
+                title: 'RollNumber 翻滚数字',
+              },
+              {
                 path: 'skeleton',
                 title: 'Skeleton 骨架屏',
               },
@@ -779,6 +783,10 @@ location.href = location.href.replace('youzan.github.io', 'vant-ui.github.io');
               {
                 path: 'progress',
                 title: 'Progress',
+              },
+              {
+                path: 'roll-number',
+                title: 'Roll Number',
               },
               {
                 path: 'skeleton',
