@@ -48,15 +48,10 @@ export default {
     },
     mounted() {
       this.tempP = this.$slots.default;
-
       this.staticStyleVar = this.getStaticStyleVar(this.$vnode.data.staticStyle)
     },
     updated() {
       this.staticStyleVar = this.getStaticStyleVar(this.$vnode.data.staticStyle)
-
-      if (this.ifDesigner()) {
-        this.$refs.popup.$forceUpdate();
-      }
     },
     methods: {
       ifDesigner() {
