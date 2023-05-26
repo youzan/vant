@@ -58,10 +58,10 @@
     "@vant/cli": "workspace:*",
     "@vant/eslint-config": "workspace:*",
     "@vant/icons": "workspace:*",
-    "@vue/runtime-core": "^3.2.47",
+    "@vue/runtime-core": "^3.3.4",
     "@vue/test-utils": "^2.3.2",
     "typescript": "^5.0.4",
-    "vue": "^3.2.47",
+    "vue": "^3.3.4",
     "vue-router": "^4.1.6"
   },
   "sideEffects": [
