@@ -82,9 +82,7 @@ export default defineComponent({
     const zIndex = ref<number>();
     const popupRef = ref<HTMLElement>();
 
-    const lazyRender = useLazyRender(
-      () => props.show || !props.lazyRender || props.duration === 0
-    );
+    const lazyRender = useLazyRender(() => props.show || !props.lazyRender);
 
     const style = computed(() => {
       const style: CSSProperties = {
@@ -174,7 +172,14 @@ export default defineComponent({
       }
     };
 
-    const onOpened = () => emit('opened');
+    // see: https://github.com/youzan/vant/issues/11901
+    let timer: ReturnType<typeof setTimeout> | null;
+    const onOpened = () => {
+      if (timer) clearTimeout(timer);
+      timer = setTimeout(() => {
+        emit('opened');
+      });
+    };
     const onClosed = () => emit('closed');
     const onKeydown = (event: KeyboardEvent) => emit('keydown', event);
 
