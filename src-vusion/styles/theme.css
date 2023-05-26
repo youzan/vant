@@ -34,9 +34,9 @@
   --van-line-height-sm: 18px;
   --van-line-height-md: 20px;
   --van-line-height-lg: 22px;
-  --van-base-font-family: -apple-system, blinkmacsystemfont, 'Helvetica Neue',
+  --van-base-font-family: blinkmacsystemfont, 'Helvetica Neue',
     helvetica, segoe ui, arial, roboto, 'PingFang SC', 'miui',
-    'Hiragino Sans GB', 'Microsoft Yahei', sans-serif;
+    'Hiragino Sans GB', 'Microsoft Yahei', sans-serif, -apple-system;
   --van-price-integer-font-family: avenir-heavy, pingfang sc, helvetica neue,
     arial, sans-serif;
 
