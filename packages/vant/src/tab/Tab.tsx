@@ -6,6 +6,8 @@ import {
   nextTick,
   defineComponent,
   getCurrentInstance,
+  normalizeClass,
+  normalizeStyle,
   type PropType,
   type CSSProperties,
   type ExtractPropTypes,
@@ -20,6 +22,7 @@ import {
   numericProp,
   createNamespace,
   ComponentInstance,
+  isObject,
 } from '../utils';
 import { TABS_KEY } from '../tabs/Tabs';
 
@@ -89,6 +92,25 @@ export default defineComponent({
       return isActive;
     });
 
+    // see: https://github.com/vant-ui/vant/issues/11763
+    const parserClass = ref('');
+    const parserStyle = ref('');
+    watch(
+      [() => props.titleClass, () => props.titleStyle],
+      ([newClass, newStyle]) => {
+        parserClass.value = normalizeClass(newClass);
+        const style = normalizeStyle(newStyle);
+        if (isObject(style)) {
+          parserStyle.value = Object.entries(style)
+            .map(([key, val]) => `${key}:${val}; `)
+            .join('');
+        } else {
+          parserStyle.value = style ?? '';
+        }
+      },
+      { immediate: true }
+    );
+
     const renderTitle = (
       onClickTab: (
         instance: ComponentInstance,
@@ -101,8 +123,8 @@ export default defineComponent({
         v-slots={{ title: slots.title }}
         id={`${parent.id}-${index.value}`}
         ref={parent.setTitleRefs(index.value)}
-        style={props.titleStyle}
-        class={props.titleClass}
+        style={parserStyle.value}
+        class={parserClass.value}
         isActive={active.value}
         controls={id}
         scrollable={parent.scrollable.value}
