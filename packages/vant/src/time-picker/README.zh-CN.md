@@ -133,7 +133,7 @@ export default {
 
 ### 过滤选项
 
-通过传入 `filter` 函数，可以对选项数组进行过滤，剔除不需要的时间，实现自定义时间间隔。
+通过传入 `filter` 函数，可以对选项数组进行过滤，剔除不需要的时间，实现自定义时间间隔以及可选时间范围。
 
 ```html
 <van-time-picker v-model="currentTime" title="选择时间" :filter="filter" />
@@ -145,10 +145,27 @@ import { ref } from 'vue';
 export default {
   setup() {
     const currentTime = ref(['12', '00']);
-    const filter = (type, options) => {
-      if (type === 'minute') {
-        return options.filter((option) => Number(option.value) % 10 === 0);
+    const filter = (type, options, values) => {
+      const hour = +values[0];
+
+      if (type === 'hour') {
+        return options.filter(
+          (option) => Number(option.value) >= 8 && Number(option.value) <= 18
+        );
       }
+
+      if (type === 'minute') {
+        options = options.filter((option) => Number(option.value) % 10 === 0);
+
+        if (hour === 8) {
+          return options.filter((option) => Number(option.value) >= 40);
+        }
+
+        if (hour === 18) {
+          return options.filter((option) => Number(option.value) <= 20);
+        }
+      }
+
       return options;
     };
 
@@ -180,7 +197,7 @@ export default {
 | show-toolbar | 是否显示顶部栏 | _boolean_ | `true` |
 | loading | 是否显示加载状态 | _boolean_ | `false` |
 | readonly | 是否为只读状态，只读状态下无法切换选项 | _boolean_ | `false` |
-| filter | 选项过滤函数 | _(type: string, options: PickerOption[]) => PickerOption[]_ | - |
+| filter | 选项过滤函数 | _(type: string, options: PickerOption[], values: string[]) => PickerOption[]_ | - |
 | formatter | 选项格式化函数 | _(type: string, option: PickerOption) => PickerOption_ | - |
 | option-height | 选项高度，支持 `px` `vw` `vh` `rem` 单位，默认 `px` | _number \| string_ | `44` |
 | visible-option-num | 可见的选项个数 | _number \| string_ | `6` |

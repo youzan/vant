@@ -34,10 +34,27 @@ const formatterTime = ref(['12', '00']);
 
 const columnsType: TimePickerColumnType[] = ['hour', 'minute', 'second'];
 
-const filter = (type: string, options: PickerOption[]) => {
-  if (type === 'minute') {
-    return options.filter((option) => Number(option.value) % 10 === 0);
+const filter = (type: string, options: PickerOption[], values: string[]) => {
+  const hour = +values[0];
+
+  if (type === 'hour') {
+    return options.filter(
+      (option) => Number(option.value) >= 8 && Number(option.value) <= 18
+    );
   }
+
+  if (type === 'minute') {
+    options = options.filter((option) => Number(option.value) % 10 === 0);
+
+    if (hour === 8) {
+      return options.filter((option) => Number(option.value) >= 40);
+    }
+
+    if (hour === 18) {
+      return options.filter((option) => Number(option.value) <= 20);
+    }
+  }
+
   return options;
 };
 

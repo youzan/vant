@@ -144,10 +144,27 @@ export default {
   setup() {
     const currentTime = ref(['12', '00']);
 
-    const filter = (type, options) => {
-      if (type === 'minute') {
-        return options.filter((option) => Number(option.value) % 10 === 0);
+    const filter = (type, options, values) => {
+      const hour = +values[0];
+
+      if (type === 'hour') {
+        return options.filter(
+          (option) => Number(option.value) >= 8 && Number(option.value) <= 18
+        );
       }
+
+      if (type === 'minute') {
+        options = options.filter((option) => Number(option.value) % 10 === 0);
+
+        if (hour === 8) {
+          return options.filter((option) => Number(option.value) >= 40);
+        }
+
+        if (hour === 18) {
+          return options.filter((option) => Number(option.value) <= 20);
+        }
+      }
+
       return options;
     };
 
@@ -179,7 +196,7 @@ export default {
 | show-toolbar | Whether to show toolbar | _boolean_ | `true` |
 | loading | Whether to show loading prompt | _boolean_ | `false` |
 | readonly | Whether to be readonly | _boolean_ | `false` |
-| filter | Option filter | _(type: string, options: PickerOption[]) => PickerOption[]_ | - |
+| filter | Option filter | _(type: string, options: PickerOption[], values: string[]) => PickerOption[]_ | - |
 | formatter | Option text formatter | _(type: string, option: PickerOption) => PickerOption_ | - |
 | option-height | Option height, supports `px` `vw` `vh` `rem` unit, default `px` | _number \| string_ | `44` |
 | visible-option-num | Count of visible columns | _number \| string_ | `6` |
