@@ -96,10 +96,14 @@ export default defineComponent({
 
     // see: https://github.com/vant-ui/vant/issues/11763
     const parsedClass = ref('');
-    const parsedStyle = ref('');
+    const parsedStyle = ref<string | undefined>('');
     watchEffect(() => {
-      parsedClass.value = normalizeClass(props.titleClass);
-      parsedStyle.value = stringifyStyle(normalizeStyle(props.titleStyle));
+      const { titleClass, titleStyle } = props;
+      parsedClass.value = titleClass ? normalizeClass(titleClass) : '';
+      parsedStyle.value =
+        titleStyle && typeof titleStyle !== 'string'
+          ? stringifyStyle(normalizeStyle(titleStyle))
+          : titleStyle;
     });
 
     const renderTitle = (
