@@ -41,14 +41,16 @@
 
     &--horizontal {
       display: flex;
+      width: max-content;
 
       .van-popover__action {
+        flex: none;
         width: auto;
         height: var(--van-popover-horizontal-action-height);
-        padding: 0 0 0 var(--van-padding-sm);
+        padding: 0 var(--van-padding-sm);
 
-        &-text {
-          padding-right: var(--van-padding-sm);
+        &:last-child::after {
+          display: none;
         }
 
         &-icon {

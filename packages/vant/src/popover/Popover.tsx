@@ -199,9 +199,7 @@ export default defineComponent({
         <div
           class={[
             bem('action-text'),
-            props.actionsDirection === 'horizontal'
-              ? BORDER_RIGHT
-              : BORDER_BOTTOM,
+            { [BORDER_BOTTOM]: props.actionsDirection === 'vertical' },
           ]}
         >
           {action.text}
@@ -214,7 +212,11 @@ export default defineComponent({
       return (
         <div
           role="menuitem"
-          class={[bem('action', { disabled, 'with-icon': icon }), className]}
+          class={[
+            bem('action', { disabled, 'with-icon': icon }),
+            { [BORDER_RIGHT]: props.actionsDirection === 'horizontal' },
+            className,
+          ]}
           style={{ color }}
           tabindex={disabled ? undefined : 0}
           aria-disabled={disabled || undefined}
@@ -266,7 +268,7 @@ export default defineComponent({
           {...pick(props, popupProps)}
         >
           {props.showArrow && <div class={bem('arrow')} />}
-          <div role="menu" class={bem('content', [props.actionsDirection])}>
+          <div role="menu" class={bem('content', props.actionsDirection)}>
             {slots.default ? slots.default() : props.actions.map(renderAction)}
           </div>
         </Popup>

@@ -94,7 +94,7 @@ After setting the `actions-direction` prop to `horizontal`, the actions will be 
   actions-direction="horizontal"
 >
   <template #reference>
-    <van-button type="primary">horizontal</van-button>
+    <van-button type="primary">Horizontal</van-button>
   </template>
 </van-popover>
 ```
@@ -262,9 +262,9 @@ import { showToast } from 'vant';
 export default {
   setup() {
     const actions = [
-      { text: '选项一' },
-      { text: '选项二' },
-      { text: '选项三' },
+      { text: 'Option 1' },
+      { text: 'Option 2' },
+      { text: 'Option 3' },
     ];
     const onSelect = (action) => showToast(action.text);
     return {
@@ -283,7 +283,7 @@ export default {
 | --- | --- | --- | --- |
 | v-model:show | Whether to show Popover | _boolean_ | `false` |
 | actions | Actions | _PopoverAction[]_ | `[]` |
-| actions-direction | Direction, can be set to `horizontal` | _PopoverActionsDirection_ | `vertical` |
+| actions-direction | Direction of actions, can be set to `horizontal` | _PopoverActionsDirection_ | `vertical` |
 | placement | Placement | _PopoverPlacement_ | `bottom` |
 | theme | Theme, can be set to `dark` | _PopoverTheme_ | `light` |
 | trigger | Trigger mode, can be set to `manual` | _PopoverTrigger_ | `click` |
