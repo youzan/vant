@@ -162,14 +162,15 @@ export default {
 
 ### 限制时间范围
 
-使用 `min-time` `max-time` 限制时间范围。
+使用 `min-time` 和 `max-time` 来限制时间范围。
 
 ```html
 <van-time-picker
   v-model="currentTime"
-  min-time="10:30"
-  max-time="12:50"
   title="选择时间"
+  :columns-type="['hour', 'minute', 'second']"
+  min-time="09:40:10"
+  max-time="20:20:50"
 />
 ```
 
@@ -178,7 +179,7 @@ import { ref } from 'vue';
 
 export default {
   setup() {
-    const currentTime = ref(['12', '00']);
+    const currentTime = ref(['12', '00', '00']);
     return { currentTime };
   },
 };
@@ -198,8 +199,8 @@ export default {
 | max-minute | 可选的最大分钟 | _number \| string_ | `59` |
 | min-second | 可选的最小秒数 | _number \| string_ | `0` |
 | max-second | 可选的最大秒数 | _number \| string_ | `59` |
-| min-time | 可选的最小时间，格式参考 `07:40`，使用时 `min-hour` `min-minute` 无效 | _string_ | - |
-| max-time | 可选的最大时间，格式参考 `10:20`，使用时 `max-hour` `max-minute` 无效 | _string_ | - |
+| min-time | 可选的最小时间，格式参考 `07:40`，使用时 `min-hour` `min-minute` `min-second` 无效 | _string_ | - |
+| max-time | 可选的最大时间，格式参考 `10:20`，使用时 `max-hour` `max-minute` `max-second` 无效 | _string_ | - |
 | title | 顶部栏标题 | _string_ | `''` |
 | confirm-button-text | 确认按钮文字 | _string_ | `确认` |
 | cancel-button-text | 取消按钮文字 | _string_ | `取消` |

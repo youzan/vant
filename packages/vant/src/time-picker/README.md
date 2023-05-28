@@ -159,16 +159,17 @@ export default {
 };
 ```
 
-### limited time range
+### Limit Time Range
 
-Using `min-time` `max-time` prop to limited time range.
+Using `min-time` and `max-time` props to limit the time range, Convention format `10:00:00`.
 
 ```html
 <van-time-picker
   v-model="currentTime"
-  min-time="10:30"
-  max-time="12:50"
   title="Choose Time"
+  :columns-type="['hour', 'minute', 'second']"
+  min-time="09:40:10"
+  max-time="20:20:50"
 />
 ```
 
@@ -177,7 +178,7 @@ import { ref } from 'vue';
 
 export default {
   setup() {
-    const currentTime = ref(['12', '00']);
+    const currentTime = ref(['12', '00', '00']);
     return { currentTime };
   },
 };
@@ -197,8 +198,8 @@ export default {
 | max-minute | Max minute | _number \| string_ | `59` |
 | min-second | Min second | _number \| string_ | `0` |
 | max-second | Max second | _number \| string_ | `59` |
-| min-time | Min time, format reference `07:40`, `min-hour` `min-minute` is invalid when used | _string_ | - |
-| max-time | Max time, format reference `10:20`, `min-hour` `min-minute` is invalid when used | _string_ | - |
+| min-time | Min time, format reference `07:40:00`, `min-hour` `min-minute` `min-second` is invalid when used | _string_ | - |
+| max-time | Max time, format reference `10:20:00`, `min-hour` `min-minute` `max-second` is invalid when used | _string_ | - |
 | title | Toolbar title | _string_ | `''` |
 | confirm-button-text | Text of confirm button | _string_ | `Confirm` |
 | cancel-button-text | Text of cancel button | _string_ | `Cancel` |

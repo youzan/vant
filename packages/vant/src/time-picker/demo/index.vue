@@ -33,7 +33,7 @@ const secondTime = ref(['12', '00', '00']);
 const rangeTime = ref(['12', '35']);
 const filterTime = ref(['12', ' 00']);
 const formatterTime = ref(['12', '00']);
-const hourMinuteTime = ref(['12', '00']);
+const hourMinuteTime = ref(['12', '00', '00']);
 
 const columnsType: TimePickerColumnType[] = ['hour', 'minute', 'second'];
 
@@ -99,8 +99,9 @@ const formatter = (type: string, option: PickerOption) => {
     <van-time-picker
       v-model="hourMinuteTime"
       :title="t('chooseTime')"
-      min-time="10:30"
-      max-time="12:50"
+      :columns-type="['hour', 'minute', 'second']"
+      min-time="09:40:10"
+      max-time="20:20:50"
     />
   </demo-block>
 </template>

@@ -1,26 +1,26 @@
 import {
-  ref,
-  watch,
   computed,
   defineComponent,
-  type PropType,
+  ref,
+  watch,
   type ExtractPropTypes,
+  type PropType,
 } from 'vue';
 
 // Utils
 import {
-  pick,
-  extend,
-  createNamespace,
-  makeNumericProp,
-  isSameValue,
-} from '../utils';
-import {
-  genOptions,
-  sharedProps,
-  pickerInheritKeys,
   formatValueRange,
+  genOptions,
+  pickerInheritKeys,
+  sharedProps,
 } from '../date-picker/utils';
+import {
+  createNamespace,
+  extend,
+  isSameValue,
+  makeNumericProp,
+  pick,
+} from '../utils';
 
 // Components
 import { Picker } from '../picker';
@@ -29,8 +29,9 @@ const [name] = createNamespace('time-picker');
 
 export type TimePickerColumnType = 'hour' | 'minute' | 'second';
 
-const validatorTime = (val: string) => /^([01]\d|2[0-3]):([0-5]\d)$/.test(val);
-const DefaultColumns = ['hour', 'minute'];
+const validateTime = (val: string) =>
+  /^([01]\d|2[0-3]):([0-5]\d):([0-5]\d)$/.test(val);
+const fullColumns: TimePickerColumnType[] = ['hour', 'minute', 'second'];
 
 export const timePickerProps = extend({}, sharedProps, {
   minHour: makeNumericProp(0),
@@ -41,15 +42,15 @@ export const timePickerProps = extend({}, sharedProps, {
   maxSecond: makeNumericProp(59),
   minTime: {
     type: String,
-    validator: validatorTime,
+    validator: validateTime,
   },
   maxTime: {
     type: String,
-    validator: validatorTime,
+    validator: validateTime,
   },
   columnsType: {
     type: Array as PropType<TimePickerColumnType[]>,
-    default: () => DefaultColumns,
+    default: () => ['hour', 'minute'],
   },
 });
 
@@ -65,20 +66,38 @@ export default defineComponent({
   setup(props, { emit, slots }) {
     const currentValues = ref<string[]>(props.modelValue);
 
+    const getValidTime = (time: string) => {
+      const timeLimitArr = time.split(':');
+      return fullColumns.map((col, i) =>
+        props.columnsType.includes(col) ? timeLimitArr[i] : '00'
+      );
+    };
+
     const columns = computed(() => {
-      // Only default columns support minTime and maxTime
-      let { minHour, maxHour, minMinute, maxMinute } = props;
-      const currentHour = props.modelValue[0];
-      if (isSameValue(props.columnsType, DefaultColumns)) {
+      let { minHour, maxHour, minMinute, maxMinute, minSecond, maxSecond } =
+        props;
+
+      if (props.minTime || props.maxTime) {
+        const fullTime: Record<TimePickerColumnType, string | number> = {
+          hour: 0,
+          minute: 0,
+          second: 0,
+        };
+        props.columnsType.forEach((col, i) => {
+          fullTime[col] = currentValues.value[i] ?? 0;
+        });
+        const { hour, minute } = fullTime;
         if (props.minTime) {
-          const [minH, minM] = props.minTime.split(':');
+          const [minH, minM, minS] = getValidTime(props.minTime);
           minHour = minH;
-          minMinute = +currentHour <= +minHour ? minM : '00';
+          minMinute = +hour <= +minHour ? minM : '00';
+          minSecond = +hour <= +minHour && +minute <= +minMinute ? minS : '00';
         }
         if (props.maxTime) {
-          const [maxH, maxM] = props.maxTime.split(':');
+          const [maxH, maxM, maxS] = getValidTime(props.maxTime);
           maxHour = maxH;
-          maxMinute = +currentHour >= +maxHour ? maxM : '59';
+          maxMinute = +hour >= +maxHour ? maxM : '59';
+          maxSecond = +hour >= +maxHour && +minute >= +maxMinute ? maxS : '59';
         }
       }
 
@@ -90,13 +109,7 @@ export default defineComponent({
           case 'minute':
             return genOptions(+minMinute, +maxMinute, type, formatter, filter);
           case 'second':
-            return genOptions(
-              +props.minSecond,
-              +props.maxSecond,
-              type,
-              formatter,
-              filter
-            );
+            return genOptions(+minSecond, +maxSecond, type, formatter, filter);
           default:
             if (process.env.NODE_ENV !== 'production') {
               throw new Error(
