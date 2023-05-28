@@ -133,6 +133,15 @@ export default defineComponent({
       return addNumber(min, diff);
     };
 
+    const updateStartValue = () => {
+      const current = props.modelValue;
+      if (isRange(current)) {
+        startValue = current.map(format) as NumberRange;
+      } else {
+        startValue = format(current);
+      }
+    };
+
     const handleRangeValue = (value: NumberRange) => {
       // 设置默认值
       const left = value[0] ?? Number(props.min);
@@ -163,6 +172,8 @@ export default defineComponent({
       if (props.disabled || props.readonly) {
         return;
       }
+
+      updateStartValue();
 
       const { min, reverse, vertical, modelValue } = props;
       const rect = useRect(root);
@@ -204,12 +215,7 @@ export default defineComponent({
 
       touch.start(event);
       current = props.modelValue;
-
-      if (isRange(current)) {
-        startValue = current.map(format) as NumberRange;
-      } else {
-        startValue = format(current);
-      }
+      updateStartValue();
 
       dragStatus.value = 'start';
     };
