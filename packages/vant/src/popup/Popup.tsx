@@ -172,7 +172,14 @@ export default defineComponent({
       }
     };
 
-    const onOpened = () => emit('opened');
+    // see: https://github.com/youzan/vant/issues/11901
+    let timer: ReturnType<typeof setTimeout> | null;
+    const onOpened = () => {
+      if (timer) clearTimeout(timer);
+      timer = setTimeout(() => {
+        emit('opened');
+      });
+    };
     const onClosed = () => emit('closed');
     const onKeydown = (event: KeyboardEvent) => emit('keydown', event);
 
