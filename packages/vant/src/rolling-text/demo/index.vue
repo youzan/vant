@@ -17,6 +17,7 @@ const t = useTranslate({
     customStyle: '自定义样式',
     noNumberType: '翻转非数字内容',
     start: '开始',
+    reset: '重置',
   },
   'en-US': {
     direction: 'Set Roll Direction',
@@ -28,6 +29,7 @@ const t = useTranslate({
     customStyle: 'Custom Style',
     noNumberType: 'Roll non-number type text',
     start: 'Start',
+    rest: 'Reset',
   },
 });
 
