@@ -2,10 +2,13 @@ import { computed, defineComponent, ref, type ExtractPropTypes } from 'vue';
 import { useLockScroll } from '../composables/use-lock-scroll';
 import { useTouch } from '../composables/use-touch';
 import { addUnit, createNamespace, makeArrayProp, truthProp } from '../utils';
+import { useWindowSize } from '@vant/use';
+
+const { height: windowHeight } = useWindowSize();
 
 export const floatingPanelProps = {
   anchors: makeArrayProp<number>(),
-  allowDraggingContent: truthProp,
+  contentDraggable: truthProp,
   safeAreaInsetBottom: truthProp,
 };
 
@@ -28,7 +31,9 @@ export default defineComponent({
 
     const boundary = computed(() => ({
       min: props.anchors[0] ?? 100,
-      max: props.anchors[props.anchors.length - 1] ?? window.innerHeight * 0.6,
+      max:
+        props.anchors[props.anchors.length - 1] ??
+        Math.round(windowHeight.value * 0.6),
     }));
 
     const anchors = computed(() =>
@@ -79,7 +84,7 @@ export default defineComponent({
 
       const target = e.target as Element;
       if (contentRef.value === target || contentRef.value?.contains(target)) {
-        if (!props.allowDraggingContent) return;
+        if (!props.contentDraggable) return;
 
         if (-startY < boundary.value.max) {
           if (e.cancelable) e.preventDefault();
@@ -123,7 +128,7 @@ export default defineComponent({
         onTouchcancel={onTouchend}
       >
         <div class={bem('header')}>
-          <div class={bem('header-bar')}></div>
+          <div class={bem('header-bar')} />
         </div>
         <div class={bem('content')} ref={contentRef}>
           {slots.default?.()}

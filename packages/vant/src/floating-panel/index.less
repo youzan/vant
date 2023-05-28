@@ -14,6 +14,9 @@
   display: flex;
   flex-direction: column;
   touch-action: none;
+  border-top-left-radius: var(--van-floating-panel-border-radius);
+  border-top-right-radius: var(--van-floating-panel-border-radius);
+  background: var(--van-floating-panel-background);
 
   &::after {
     content: '';
@@ -22,7 +25,7 @@
     bottom: -100vh;
     height: 100vh;
     width: 100vw;
-    background: var(--van-floating-panel-background);
+    background-color: inherit;
   }
 
   &__header {
@@ -32,10 +35,6 @@
     align-items: center;
     cursor: grab;
     user-select: none;
-    background-color: var(--van-white);
-    border-top-left-radius: var(--van-floating-panel-border-radius);
-    border-top-right-radius: var(--van-floating-panel-border-radius);
-    background: var(--van-floating-panel-background);
 
     &-bar {
       height: 3px;

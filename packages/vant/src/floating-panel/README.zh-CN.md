@@ -2,7 +2,7 @@
 
 ### 介绍
 
-浮动在页面底部的面板，常用于提供额外的功能或信息。
+浮动在页面底部的面板，可以上下拖动来浏览内容，常用于提供额外的功能或信息。
 
 ### 引入
 
@@ -58,7 +58,7 @@ const onHeightChange = (h: number) => {
 ### 仅头部拖拽
 
 ```html
-<van-floating-panel :allow-sliding-content="false">
+<van-floating-panel :content-draggable="false">
   <div style="text-align: center; padding: 15px">
     <p>内容不可拖拽</p>
   </div>
@@ -72,14 +72,14 @@ const onHeightChange = (h: number) => {
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
 | anchors | 设置自定义锚点, 单位 `px` | _number[]_ | `[100, window.innerWidth * 0.6]` |
-| allow-dragging-content | 允许拖拽内容容器 | _boolean_ | `true` |
+| content-draggable | 允许拖拽内容容器 | _boolean_ | `true` |
 | safe-area-inset-bottom | 是否开启[底部安全区适配](#/zh-CN/advanced-usage#di-bu-an-quan-qu-gua-pei) | _boolean_ | `true` |
 
 ### Events
 
-| 事件名        | 说明             | 回调参数         |
-| ------------- | ---------------- | ---------------- |
-| height-change | 面板显示高度改变 | _height: number_ |
+| 事件名        | 说明                   | 回调参数         |
+| ------------- | ---------------------- | ---------------- |
+| height-change | 面板显示高度改变时触发 | _height: number_ |
 
 ### Slots
 

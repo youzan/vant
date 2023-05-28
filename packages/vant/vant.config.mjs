@@ -248,6 +248,10 @@ location.href = location.href.replace('youzan.github.io', 'vant-ui.github.io');
                 title: 'DropdownMenu 下拉菜单',
               },
               {
+                path: 'floating-panel',
+                title: 'FloatingPanel 浮动面板',
+              },
+              {
                 path: 'loading',
                 title: 'Loading 加载',
               },
@@ -299,10 +303,6 @@ location.href = location.href.replace('youzan.github.io', 'vant-ui.github.io');
               {
                 path: 'empty',
                 title: 'Empty 空状态',
-              },
-              {
-                path: 'floating-panel',
-                title: 'FloatingPanel 浮动面板',
               },
               {
                 path: 'image-preview',
@@ -700,6 +700,10 @@ location.href = location.href.replace('youzan.github.io', 'vant-ui.github.io');
                 title: 'DropdownMenu',
               },
               {
+                path: 'floating-panel',
+                title: 'FloatingPanel',
+              },
+              {
                 path: 'loading',
                 title: 'Loading',
               },
@@ -751,10 +755,6 @@ location.href = location.href.replace('youzan.github.io', 'vant-ui.github.io');
               {
                 path: 'empty',
                 title: 'Empty',
-              },
-              {
-                path: 'floating-panel',
-                title: 'FloatingPanel',
               },
               {
                 path: 'image-preview',

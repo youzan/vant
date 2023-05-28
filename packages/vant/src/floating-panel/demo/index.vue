@@ -6,6 +6,9 @@ import VanCell from '../../cell';
 import VanCellGroup from '../../cell-group';
 import VanFloatingPanel from '..';
 import { useTranslate } from '../../../docs/site';
+import { useWindowSize } from '@vant/use';
+
+const { height: windowHeight } = useWindowSize();
 
 const t = useTranslate({
   'zh-CN': {
@@ -24,9 +27,10 @@ const t = useTranslate({
 
 const anchors = [
   100,
-  Math.round(0.4 * window.innerHeight),
-  Math.round(0.7 * window.innerHeight),
+  Math.round(0.4 * windowHeight.value),
+  Math.round(0.7 * windowHeight.value),
 ];
+
 const height = ref(anchors[0]);
 const onHeightChange = (h: number) => {
   height.value = h;
@@ -55,7 +59,7 @@ const onHeightChange = (h: number) => {
       </van-floating-panel>
     </van-tab>
     <van-tab :title="t('headDragOnly')">
-      <van-floating-panel :allow-dragging-content="false">
+      <van-floating-panel :content-draggable="false">
         <div style="text-align: center; padding: 15px">
           <p>{{ t('contentUnDrag') }}</p>
         </div>

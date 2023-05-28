@@ -1,20 +1,18 @@
 import { later, mount, triggerDrag } from '../../../test';
 import FloatingPanel from '..';
 
-beforeEach(() => {
-  global.innerHeight = 600;
-});
-
 test('should minHeight 100 and maxHeight 0.6 innerHeight when anchors props do not', async () => {
   const wrapper = mount({
     render() {
-      return <FloatingPanel>内容</FloatingPanel>;
+      return <FloatingPanel>Content</FloatingPanel>;
     },
   });
 
   expect(wrapper.html()).toMatchSnapshot();
 
-  expect((wrapper.element as HTMLDivElement).style.height).toBe('360px');
+  expect((wrapper.element as HTMLDivElement).style.height).toBe(
+    `${Math.round(window.innerHeight * 0.6)}px`
+  );
 
   expect((wrapper.element as HTMLDivElement).style.transform).toContain(
     '-100px'
@@ -79,7 +77,7 @@ test('should emit height-change when height change in anchors', async () => {
           anchors={[100, 200, 400]}
           onHeightChange={(h) => this.$emit('change', h)}
         >
-          内容
+          Content
         </FloatingPanel>
       );
     },
@@ -102,9 +100,9 @@ test('should only drag header when allowDraggingContent is false', async () => {
         <FloatingPanel
           anchors={[100, 200, 400]}
           onHeightChange={(h) => this.$emit('change', h)}
-          allowDraggingContent={false}
+          contentDraggable={false}
         >
-          内容
+          Content
         </FloatingPanel>
       );
     },

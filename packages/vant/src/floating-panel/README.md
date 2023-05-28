@@ -2,7 +2,7 @@
 
 ### Intro
 
-A panel that floats at the bottom of a page and is often used to provide additional functionality or information.
+A panel that floats at the bottom of a page, which can be dragged up and down to browse content, often used to provide additional functionality or information.
 
 ### Install
 
@@ -58,7 +58,7 @@ const onHeightChange = (h: number) => {
 ### Head Drag Only
 
 ```html
-<van-floating-panel :allow-sliding-content="false">
+<van-floating-panel :content-draggable="false">
   <div style="text-align: center; padding: 15px">
     <p>Content cannot be dragged</p>
   </div>
@@ -72,14 +72,14 @@ const onHeightChange = (h: number) => {
 | Attribute | Description | Type | Default |
 | --- | --- | --- | --- |
 | anchors | Setting custom anchors, unit `px` | _number[]_ | `[100, window.innerWidth * 0.6]` |
-| allow-dragging-content | Allow dragging content | _boolean_ | `true` |
+| content-draggable | Allow dragging content | _boolean_ | `true` |
 | safe-area-inset-bottom | Whether to enable bottom safe area adaptation | _boolean_ | `true` |
 
 ### Events
 
-| Event         | Description               | Arguments        |
-| ------------- | ------------------------- | ---------------- |
-| height-change | Panel show height changed | _height: number_ |
+| Event         | Description                          | Arguments        |
+| ------------- | ------------------------------------ | ---------------- |
+| height-change | Emitted when panel height is changed | _height: number_ |
 
 ### Slots
 
