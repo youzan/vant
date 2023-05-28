@@ -59,6 +59,30 @@ exports[`should render demo and match snapshot 1`] = `
     >
       <div class="van-button__content">
         <span class="van-button__text">
+          Horizontal
+        </span>
+      </div>
+    </button>
+  </span>
+  <span class="van-popover__wrapper">
+    <button type="button"
+            class="van-button van-button--primary van-button--normal"
+    >
+      <div class="van-button__content">
+        <span class="van-button__text">
+          Vertical
+        </span>
+      </div>
+    </button>
+  </span>
+</div>
+<div>
+  <span class="van-popover__wrapper">
+    <button type="button"
+            class="van-button van-button--primary van-button--normal"
+    >
+      <div class="van-button__content">
+        <span class="van-button__text">
           Show Icon
         </span>
       </div>
