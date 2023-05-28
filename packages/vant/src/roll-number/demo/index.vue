@@ -3,6 +3,8 @@ import VanRollNumber from '..';
 import Button from '../../button';
 import { ref } from 'vue';
 import { useTranslate } from '../../../docs/site';
+import VanGrid from '../../grid';
+import VanGridItem from '../../grid-item';
 
 const t = useTranslate({
   'zh-CN': {
@@ -10,72 +12,141 @@ const t = useTranslate({
     stopOrder: '各数位停止顺序',
     rollDown: '向下翻滚',
     rollUp: '向上翻滚',
+    stopFrom: '从个位停止',
+    manualControl: '手动控制',
+    customStyle: '自定义样式',
   },
   'en-US': {
     direction: 'Change Roll Direction',
     stopOrder: 'stopOrder',
     rollDown: 'rollDown',
     rollUp: 'rollUp',
+    stopFrom: 'right-side stop first',
+    manualControl: 'Manual Control',
+    customStyle: 'Custom Style',
   },
 });
 
 const isStart = ref(false);
 const isStart2 = ref(false);
 const isStart3 = ref(false);
+const isStart4 = ref(false);
+
+const rollNumberEl = ref(null);
+const start = () => {
+  rollNumberEl.value.start();
+};
+const reset = () => {
+  rollNumberEl.value.reset();
+};
 </script>
 
 <template>
   <demo-block :title="t('basicUsage')">
-    <div style="text-align: center">
-      <div style="margin-bottom: 10px">
-        <Button @click="() => (isStart = true)" type="primary">{{
-          t('rollDown')
-        }}</Button>
-      </div>
+    <div style="">
       <VanRollNumber
         :start-num="0"
         :target-num="123"
         :duration="2"
-        :is-start="isStart"
-        :direction="'down'"
+        :auto-start="isStart"
+        direction="down"
       />
+      <div style="margin-top: 10px">
+        <Button @click="() => (isStart = true)" type="primary">{{
+          t('rollDown')
+        }}</Button>
+      </div>
     </div>
   </demo-block>
 
   <demo-block :title="t('direction')">
-    <div style="text-align: center">
-      <div style="margin-bottom: 10px">
+    <div>
+      <van-roll-number
+        :start-num="0"
+        :target-num="432"
+        :duration="2"
+        :auto-start="isStart2"
+        direction="up"
+      />
+      <div style="margin-top: 10px">
         <Button @click="() => (isStart2 = true)" type="primary">{{
           t('rollUp')
         }}</Button>
       </div>
-      <van-roll-number
-        :start-num="0"
-        :target-num="432"
-        :duration="2"
-        :is-start="isStart2"
-        :direction="'up'"
-      />
     </div>
   </demo-block>
 
   <demo-block :title="t('stopOrder')">
-    <div style="text-align: center">
-      <div style="margin-bottom: 10px">
-        <Button @click="() => (isStart3 = true)" type="primary"
-          >right-side stop first</Button
-        >
-      </div>
+    <div>
       <van-roll-number
         :start-num="0"
-        :target-num="432"
+        :target-num="54321"
         :duration="2"
-        :is-start="isStart3"
-        :stop-order="'rtl'"
-        :direction="'up'"
+        :auto-start="isStart3"
+        stop-order="rtl"
+        direction="up"
       />
+      <div style="margin-top: 10px">
+        <Button @click="() => (isStart3 = true)" type="primary">{{
+          t('stopFrom')
+        }}</Button>
+      </div>
+    </div>
+  </demo-block>
+
+  <demo-block :title="t('customStyle')">
+    <div>
+      <van-roll-number
+        class="my-roll-number"
+        :start-num="12345"
+        :target-num="54321"
+        :duration="2"
+        :auto-start="isStart4"
+        stop-order="rtl"
+        direction="up"
+      />
+    </div>
+  </demo-block>
+
+  <demo-block :title="t('manualControl')">
+    <div>
+      <van-roll-number
+        class="my-roll-number"
+        ref="rollNumberEl"
+        :start-num="0"
+        :target-num="54321"
+        :duration="2"
+        :auto-start="false"
+        stop-order="rtl"
+        direction="up"
+      />
+      <van-grid clickable :column-num="3" style="margin-top: 10px">
+        <van-grid-item icon="play-circle-o" :text="t('start')" @click="start" />
+        <van-grid-item icon="replay" :text="t('reset')" @click="reset" />
+      </van-grid>
     </div>
   </demo-block>
 </template>
 
-<style lang="less"></style>
+<style lang="less">
+.van-button {
+  margin-left: var(--van-padding-md);
+}
+.van-roll-number {
+  margin-left: var(--van-padding-md);
+}
+.van-grid {
+  margin-left: var(--van-padding-md);
+}
+
+.my-roll-number {
+  gap: 6px;
+  .van-roll-single {
+    color: white;
+    background: deepskyblue;
+    border-radius: 5px;
+    width: 25px;
+    font-size: 20px;
+  }
+}
+</style>

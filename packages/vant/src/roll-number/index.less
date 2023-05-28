@@ -1,10 +1,17 @@
 :root {
-  --van-roll-number-bg-color: black;
-  --van-roll-number-color: white;
-  --van-roll-number-gap: 5px;
-  --van-roll-number-single-width: 20px;
+  //--van-roll-number-bg-color: black;
+  //--van-roll-number-color: white;
+  //--van-roll-number-gap: 5px;
+  //--van-roll-number-single-width: 20px;
+  //--van-roll-number-single-border-r: 0px;
+
+  --van-roll-number-bg-color: inherit;
+  --van-roll-number-color: black;
+  --van-roll-number-gap: 0px;
+  --van-roll-number-single-width: 15px;
   --van-roll-number-single-border-r: 0px;
 }
+
 .van-roll-number {
   display: inline-flex;
   justify-content: center;
@@ -19,27 +26,30 @@
   color: var(--van-roll-number-color);
   overflow: hidden;
   // 如果向下滚动，则起始是translate负值，到0
-  @keyframes down {
+  @keyframes van-down {
     0% {
-      transform: translateY(var(--translate));
+      transform: translateY(var(--van-translate));
     }
     100% {
       transform: translateY(0);
     }
   }
+
   &__box {
     overflow: hidden;
-    transform: translateY(var(--translate));
+    transform: translateY(var(--van-translate));
   }
+
   &__ani {
-    animation: up var(--duration) ease-in-out var(--delay);
-    animation-name: down;
+    animation: van-down var(--van-duration) ease-in-out var(--van-delay);
+    animation-name: van-down;
     animation-timing-function: ease-in-out;
     animation-iteration-count: 1;
-    animation-duration: var(--duration);
+    animation-duration: var(--van-duration);
     animation-fill-mode: both;
-    animation-delay: var(--delay);
+    animation-delay: var(--van-delay);
   }
+
   &__item {
     text-align: center;
   }
@@ -52,26 +62,29 @@
   color: var(--van-roll-number-color);
   overflow: hidden;
   // 如果是向上翻滚，则起始是0，到translate负值
-  @keyframes up {
+  @keyframes van-up {
     0% {
       transform: translateY(0);
     }
     100% {
-      transform: translateY(var(--translate));
+      transform: translateY(var(--van-translate));
     }
   }
+
   &__box {
     overflow: hidden;
   }
+
   &__ani {
-    animation: up var(--duration) ease-in-out var(--delay);
-    //animation-name: up;
-    //animation-timing-function: ease-in-out;
+    animation: van-up var(--van-duration) ease-in-out var(--van-delay);
     animation-iteration-count: 1;
-    //animation-duration: var(--duration);
     animation-fill-mode: both;
-    //animation-delay: var(--delay);
+    //animation-name: van-up;
+    //animation-timing-function: ease-in-out;
+    //animation-duration: var(--van-duration);
+    //animation-delay: var(--van-delay);
   }
+
   &__item {
     text-align: center;
   }

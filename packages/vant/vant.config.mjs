@@ -786,7 +786,7 @@ location.href = location.href.replace('youzan.github.io', 'vant-ui.github.io');
               },
               {
                 path: 'roll-number',
-                title: 'Roll Number',
+                title: 'RollNumber',
               },
               {
                 path: 'skeleton',

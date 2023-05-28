@@ -1,21 +1,30 @@
-import { defineComponent, computed, type ExtractPropTypes } from 'vue';
+import { ref, defineComponent, computed, type ExtractPropTypes } from 'vue';
 import DownSingleNumber from './DownSingleNumber';
 import UpSingleNumber from './UpSingleNumber';
 // Utils
-import { createNamespace, makeNumberProp, makeStringProp } from '../utils';
+import {
+  createNamespace,
+  makeNumberProp,
+  makeStringProp,
+  truthProp,
+} from '../utils';
+import { useExpose } from '../composables/use-expose';
 
 const [name, bem] = createNamespace('roll-number');
+
+export type RollNumberDirection = 'up' | 'down';
+export type StopOrder = 'ltr' | 'rtl';
 
 export const rollNumberProps = {
   startNum: makeNumberProp(0),
   targetNum: Number,
   duration: makeNumberProp(2),
-  isStart: Boolean,
-  direction: makeStringProp('down'), // up down
-  stopOrder: makeStringProp('ltr'), // rtl
+  autoStart: truthProp,
+  direction: makeStringProp<RollNumberDirection>('down'),
+  stopOrder: makeStringProp<StopOrder>('ltr'),
 };
 
-const circleNum = 2;
+const CIRCLE_NUM = 2;
 
 export type RollNumberProps = ExtractPropTypes<typeof rollNumberProps>;
 
@@ -46,7 +55,7 @@ export default defineComponent({
       for (let i = +start; i <= 9; i++) {
         result.push(i);
       }
-      for (let i = 0; i <= circleNum; i++) {
+      for (let i = 0; i <= CIRCLE_NUM; i++) {
         for (let j = 0; j <= 9; j++) {
           result.push(j);
         }
@@ -61,6 +70,20 @@ export default defineComponent({
       if (props.stopOrder === 'ltr') return 0.2 * i;
       return 0.2 * (len - 1 - i);
     };
+
+    const isStart = ref(false);
+    const start = () => {
+      isStart.value = true;
+    };
+
+    const reset = () => {
+      isStart.value = false;
+    };
+    useExpose({
+      start,
+      reset,
+    });
+
     return () => (
       <div class={bem()}>
         {targetNumArr.value.map((figure, i) =>
@@ -68,14 +91,14 @@ export default defineComponent({
             <DownSingleNumber
               figureArr={getFigureArr(i)}
               duration={props.duration}
-              isStart={props.isStart}
+              isStart={props.autoStart || isStart.value}
               delay={getDelay(i, targetNumArr.value.length)}
             />
           ) : (
             <UpSingleNumber
               figureArr={getFigureArr(i)}
               duration={props.duration}
-              isStart={props.isStart}
+              isStart={props.autoStart || isStart.value}
               delay={getDelay(i, targetNumArr.value.length)}
             />
           )

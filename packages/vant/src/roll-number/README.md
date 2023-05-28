@@ -1,4 +1,4 @@
-# RollNumber Rolling Number Animation
+# RollNumber
 
 ### Introduction
 
@@ -25,8 +25,8 @@ app.use(RollNumber);
   :start-num="0"
   :target-num="123"
   :duration="2"
-  :is-start="true"
-  :direction="'down'"
+  :auto-start="false"
+  direction="down"
 />
 ```
 
@@ -37,10 +37,10 @@ You can set the rolling direction of the number by using the `direction` propert
 ```html
 <van-roll-number
   :start-num="0"
-  :target-num="123"
+  :target-num="432"
   :duration="2"
-  :is-start="true"
-  :direction="'up'"
+  :auto-start="false"
+  direction="up"
 />
 ```
 
@@ -51,12 +51,68 @@ You can set the order of stopping the animation of each digit through the `stop-
 ```html
 <van-roll-number
   :start-num="0"
-  :target-num="123"
+  :target-num="54321"
   :duration="2"
-  :is-start="true"
+  :auto-start="false"
   stop-order="rtl"
-  :direction="'up'"
+  direction="up"
 />
+```
+
+### Custom Style
+
+```html
+<van-roll-number
+  class="my-roll-number"
+  :start-num="12345"
+  :target-num="54321"
+  :duration="2"
+  stop-order="rtl"
+  direction="up"
+/>
+```
+
+```css
+.my-roll-number {
+  gap: 6px;
+  .van-roll-single {
+    color: white;
+    background: deepskyblue;
+    border-radius: 5px;
+    width: 25px;
+    font-size: 20px;
+  }
+}
+```
+
+### Manual Control
+
+After getting the component instance through `ref`, you can call the `start` and `reset` methods.
+
+```html
+<van-roll-number
+  ref="rollNumberEl"
+  :start-num="0"
+  :target-num="54321"
+  :duration="2"
+  :auto-start="false"
+  stop-order="rtl"
+  direction="up"
+/>
+<van-grid clickable :column-num="3">
+  <van-grid-item icon="play-circle-o" :text="start" @click="start" />
+  <van-grid-item icon="replay" :text="reset" @click="reset" />
+</van-grid>
+```
+
+```javascript
+const rollNumberEl = ref(null);
+const start = () => {
+  rollNumberEl.value.start();
+};
+const reset = () => {
+  rollNumberEl.value.reset();
+};
 ```
 
 ## API
@@ -69,14 +125,8 @@ You can set the order of stopping the animation of each digit through the `stop-
 | target-num | Target number | _number_ | - |
 | duration | Duration of the animation, in seconds | _number_ | 2 |
 | direction | Rolling direction of the number, with `down` and `up` as the values | _string_ | `down` |
-| is-start | Whether to start the animation | _boolean_ | false |
-| stop-order | Order of stopping the animation of each digit, with `ltr` and `rtl` as the values | _string_ | 'ltr' |
-
-### Events
-
-| Event Name | Description | Parameters |
-| ---------- | ----------- | ---------- |
-|            |             |            |
+| auto-start | Whether to start the animation | _boolean_ | true |
+| stop-order | Order of stopping the animation of each digit, with `ltr` and `rtl` as the values | _string_ | `ltr` |
 
 ### Type Definition
 

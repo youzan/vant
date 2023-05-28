@@ -1,7 +1,12 @@
 import { defineComponent, computed } from 'vue';
 
 // Utils
-import { createNamespace, makeNumberProp, makeArrayProp } from '../utils';
+import {
+  createNamespace,
+  makeNumberProp,
+  makeArrayProp,
+  addUnit,
+} from '../utils';
 
 const [name, bem] = createNamespace('roll-single-down');
 
@@ -12,7 +17,7 @@ export const props = {
   isStart: Boolean,
 };
 
-const height = 40;
+const HEIGHT = 40;
 
 export default defineComponent({
   name,
@@ -20,36 +25,29 @@ export default defineComponent({
   props,
 
   setup(props) {
-    const newFigureArr = computed(() => {
-      const arr = [];
-      for (let i = props.figureArr.length - 1; i >= 0; i--) {
-        arr.push(props.figureArr[i]);
-      }
-      return arr;
-    });
-    const heightPx = computed(() => `${height}px`);
+    const reverseFigureArr = computed(() => props.figureArr.slice().reverse());
     const totalHeight = computed(
-      () => height * props.figureArr.length - height
+      () => HEIGHT * props.figureArr.length - HEIGHT
     );
     const translateValPx = computed(() => `-${totalHeight.value}px`);
     const itemStyleObj = {
-      lineHeight: heightPx.value,
+      lineHeight: addUnit(HEIGHT),
     };
 
     const getStyle = () => ({
-      height: heightPx.value,
-      '--translate': translateValPx.value,
-      '--duration': props.duration + 's',
-      '--delay': props.delay + 's',
+      height: addUnit(HEIGHT),
+      '--van-translate': translateValPx.value,
+      '--van-duration': props.duration + 's',
+      '--van-delay': props.delay + 's',
     });
 
     return () => (
-      <div style={getStyle()} class={bem()}>
+      <div style={getStyle()} class={[bem(), 'van-roll-single']}>
         <div
           class={[bem('box'), { 'van-roll-single-down__ani': props.isStart }]}
         >
-          {Array.isArray(newFigureArr.value) &&
-            newFigureArr.value.map((figure) => (
+          {Array.isArray(reverseFigureArr.value) &&
+            reverseFigureArr.value.map((figure) => (
               <div class={bem('item')} style={itemStyleObj}>
                 {figure}
               </div>
