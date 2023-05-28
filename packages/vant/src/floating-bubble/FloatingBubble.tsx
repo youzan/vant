@@ -1,6 +1,4 @@
 import {
-  CSSProperties,
-  ExtractPropTypes,
   PropType,
   Teleport,
   TeleportProps,
@@ -10,7 +8,12 @@ import {
   onMounted,
   ref,
   watch,
+  type CSSProperties,
+  type ExtractPropTypes,
 } from 'vue';
+import { useRect, useWindowSize } from '@vant/use';
+import { useTouch } from '../composables/use-touch';
+import Icon from '../icon';
 import {
   addUnit,
   closest,
@@ -19,9 +22,6 @@ import {
   makeStringProp,
   pick,
 } from '../utils';
-import Icon from '../icon';
-import { useTouch } from '../composables/use-touch';
-import { useRect, useWindowSize } from '@vant/use';
 
 const [name, bem] = createNamespace('floating-bubble');
 
