@@ -8,23 +8,37 @@ import {
   addUnit,
 } from '../utils';
 
-const [name, bem] = createNamespace('roll-single-up');
-
 export const props = {
   figureArr: makeArrayProp(),
   delay: Number,
   duration: makeNumberProp(2),
   isStart: Boolean,
+  direction: String,
 };
 
 const HEIGHT = 40;
 
 export default defineComponent({
-  name,
+  name: 'RollSingle',
 
   props,
 
   setup(props) {
+    const downConfig = {
+      classNameSpace: 'roll-single-down',
+      aniClass: 'van-roll-single-down__ani',
+      dataHandle: () => props.figureArr.slice().reverse(),
+    };
+    const upConfig = {
+      classNameSpace: 'roll-single-up',
+      aniClass: 'van-roll-single-up__ani',
+      dataHandle: () => props.figureArr,
+    };
+    const directionConfig = props.direction === 'down' ? downConfig : upConfig;
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    const [_, bem] = createNamespace(directionConfig.classNameSpace);
+
+    const newFigureArr = computed(directionConfig.dataHandle);
     const totalHeight = computed(
       () => HEIGHT * props.figureArr.length - HEIGHT
     );
@@ -42,9 +56,11 @@ export default defineComponent({
 
     return () => (
       <div style={getStyle()} class={[bem(), 'van-roll-single']}>
-        <div class={[bem('box'), { 'van-roll-single-up__ani': props.isStart }]}>
-          {Array.isArray(props.figureArr) &&
-            props.figureArr.map((figure) => (
+        <div
+          class={[bem('box'), { [directionConfig.aniClass]: props.isStart }]}
+        >
+          {Array.isArray(newFigureArr.value) &&
+            newFigureArr.value.map((figure) => (
               <div class={bem('item')} style={itemStyleObj}>
                 {figure}
               </div>

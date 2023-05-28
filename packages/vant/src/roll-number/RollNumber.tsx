@@ -1,6 +1,5 @@
 import { ref, defineComponent, computed, type ExtractPropTypes } from 'vue';
-import DownSingleNumber from './DownSingleNumber';
-import UpSingleNumber from './UpSingleNumber';
+import RollNumberItem from './RollNumberItem';
 // Utils
 import {
   createNamespace,
@@ -86,23 +85,15 @@ export default defineComponent({
 
     return () => (
       <div class={bem()}>
-        {targetNumArr.value.map((figure, i) =>
-          props.direction === 'down' ? (
-            <DownSingleNumber
-              figureArr={getFigureArr(i)}
-              duration={props.duration}
-              isStart={props.autoStart || isStart.value}
-              delay={getDelay(i, targetNumArr.value.length)}
-            />
-          ) : (
-            <UpSingleNumber
-              figureArr={getFigureArr(i)}
-              duration={props.duration}
-              isStart={props.autoStart || isStart.value}
-              delay={getDelay(i, targetNumArr.value.length)}
-            />
-          )
-        )}
+        {targetNumArr.value.map((figure, i) => (
+          <RollNumberItem
+            figureArr={getFigureArr(i)}
+            duration={props.duration}
+            direction={props.direction}
+            isStart={props.autoStart || isStart.value}
+            delay={getDelay(i, targetNumArr.value.length)}
+          />
+        ))}
       </div>
     );
   },
