@@ -8,8 +8,8 @@ import VanGridItem from '../../grid-item';
 
 const t = useTranslate({
   'zh-CN': {
-    direction: '改变翻滚方向',
-    stopOrder: '各数位停止顺序',
+    direction: '设置翻滚方向',
+    stopOrder: '设置各数位停止顺序',
     rollDown: '向下翻滚',
     rollUp: '向上翻滚',
     stopFrom: '从个位停止',
@@ -19,8 +19,8 @@ const t = useTranslate({
     start: '开始',
   },
   'en-US': {
-    direction: 'Change Roll Direction',
-    stopOrder: 'StopOrder',
+    direction: 'Set Roll Direction',
+    stopOrder: 'Set StopOrder',
     rollDown: 'rollDown',
     rollUp: 'rollUp',
     stopFrom: 'right-side stop first',

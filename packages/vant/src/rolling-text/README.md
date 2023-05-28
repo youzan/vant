@@ -30,7 +30,7 @@ app.use(RollingText);
 />
 ```
 
-### Rolling Up
+### Set Rolling Direction
 
 You can set the rolling direction of the number by using the `direction` property. `up` represents rolling up.
 
@@ -44,7 +44,7 @@ You can set the rolling direction of the number by using the `direction` propert
 />
 ```
 
-### Stop the Animation of Ones Digit First
+### Set StopOrder
 
 You can set the order of stopping the animation of each digit through the `stop-order` attribute. By default, it stops from the higher digits. Setting `rtl` can stop from the ones digit.
 
