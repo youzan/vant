@@ -129,7 +129,7 @@ const reset = () => {
   <demo-block :title="t('customStyle')">
     <div>
       <VanRollingText
-        class="my-roll-number"
+        class="my-rolling-te11xt"
         :start-num="12345"
         :target-num="54321"
         :duration="2"
@@ -143,7 +143,7 @@ const reset = () => {
   <demo-block :title="t('manualControl')">
     <div>
       <VanRollingText
-        class="my-roll-number"
+        class="my-rolling-te11xt"
         ref="rollingTextEl"
         :start-num="0"
         :target-num="54321"
