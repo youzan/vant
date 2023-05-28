@@ -19,6 +19,21 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 
 ## Details
 
+### [v4.4.1](https://github.com/vant-ui/vant/compare/v4.4.0...v4.4.1)
+
+`2023-05-28`
+
+**Feature**
+
+- Popover: add actions-direction prop [#11888](https://github.com/vant-ui/vant/issues/11888)
+
+**Bug Fixes**
+
+- ImagePreview: stop animation during initialization [#11897](https://github.com/vant-ui/vant/issues/11897)
+- Popup: opened event is emitted twice when duration is 0 [#11902](https://github.com/vant-ui/vant/issues/11902)
+- Slider: should update startValue when the slider is clicked [#11904](https://github.com/vant-ui/vant/issues/11904)
+- Tab: maximum recursive updates exceeded in Tabs [#11898](https://github.com/vant-ui/vant/issues/11898)
+
 ### [v4.4.0](https://github.com/vant-ui/vant/compare/v4.3.2...v4.4.0)
 
 `2023-05-21`

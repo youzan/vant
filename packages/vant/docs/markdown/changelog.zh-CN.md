@@ -19,6 +19,21 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 
 ## 更新内容
 
+### [v4.4.1](https://github.com/vant-ui/vant/compare/v4.4.0...v4.4.1)
+
+`2023-05-28`
+
+**Feature**
+
+- Popover: 新增 actions-direction 熟悉 [#11888](https://github.com/vant-ui/vant/issues/11888)
+
+**Bug Fixes**
+
+- ImagePreview: 修复初始化时可能有过渡动画的问题 [#11897](https://github.com/vant-ui/vant/issues/11897)
+- Popup: 修复 duration 为 0 时 opened 事件触发两次的问题 [#11902](https://github.com/vant-ui/vant/issues/11902)
+- Slider: 修复点击可能无法触发 change 事件的问题 [#11904](https://github.com/vant-ui/vant/issues/11904)
+- Tab: 修复 title-class 和 title-style 属性可能导致死循环的问题 [#11898](https://github.com/vant-ui/vant/issues/11898)
+
 ### [v4.4.0](https://github.com/vant-ui/vant/compare/v4.3.2...v4.4.0)
 
 `2023-05-21`
