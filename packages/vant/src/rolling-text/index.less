@@ -1,23 +1,23 @@
 :root {
-  --van-roll-number-bg-color: inherit;
-  --van-roll-number-color: black;
-  --van-roll-number-gap: 0px;
-  --van-roll-number-single-width: 15px;
-  --van-roll-number-single-border-r: 0px;
+  --van-rolling-text-bg-color: inherit;
+  --van-rolling-text-color: black;
+  --van-rolling-text-gap: 0px;
+  --van-rolling-text-single-width: 15px;
+  --van-rolling-text-single-border-r: 0px;
 }
 
-.van-roll-number {
+.van-rolling-text {
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  gap: var(--van-roll-number-gap);
+  gap: var(--van-rolling-text-gap);
 }
 
 .van-roll-single-down {
-  width: var(--van-roll-number-single-width);
-  border-radius: var(--van-roll-number-single-border-r);
-  background-color: var(--van-roll-number-bg-color);
-  color: var(--van-roll-number-color);
+  width: var(--van-rolling-text-single-width);
+  border-radius: var(--van-rolling-text-single-border-r);
+  background-color: var(--van-rolling-text-bg-color);
+  color: var(--van-rolling-text-color);
   overflow: hidden;
   // 如果向下滚动，则起始是translate负值，到0
   @keyframes van-down {
@@ -50,10 +50,10 @@
 }
 
 .van-roll-single-up {
-  width: var(--van-roll-number-single-width);
-  border-radius: var(--van-roll-number-single-border-r);
-  background-color: var(--van-roll-number-bg-color);
-  color: var(--van-roll-number-color);
+  width: var(--van-rolling-text-single-width);
+  border-radius: var(--van-rolling-text-single-border-r);
+  background-color: var(--van-rolling-text-bg-color);
+  color: var(--van-rolling-text-color);
   overflow: hidden;
   // 如果是向上翻滚，则起始是0，到translate负值
   @keyframes van-up {

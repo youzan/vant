@@ -329,8 +329,8 @@ location.href = location.href.replace('youzan.github.io', 'vant-ui.github.io');
                 title: 'Progress 进度条',
               },
               {
-                path: 'roll-number',
-                title: 'RollNumber 翻滚数字',
+                path: 'rolling-text',
+                title: 'RollingText 翻滚文本',
               },
               {
                 path: 'skeleton',
@@ -785,8 +785,8 @@ location.href = location.href.replace('youzan.github.io', 'vant-ui.github.io');
                 title: 'Progress',
               },
               {
-                path: 'roll-number',
-                title: 'RollNumber',
+                path: 'rolling-text',
+                title: 'RollingText',
               },
               {
                 path: 'skeleton',

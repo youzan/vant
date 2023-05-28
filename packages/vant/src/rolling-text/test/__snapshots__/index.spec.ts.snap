@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`should render comp 1`] = `
-<div class="van-roll-number">
+<div class="van-rolling-text">
   <div style="height: 40px; --van-translate: -1640px; --van-duration: 2s; --van-delay: 0s;"
        class="van-roll-single-down van-roll-single"
   >

@@ -1,8 +1,8 @@
-# RollNumber
+# RollingText
 
 ### Introduction
 
-Rolling number animation
+Rolling text animation
 
 ### Import
 
@@ -10,10 +10,10 @@ Import component globally using the following methods. For more ways to register
 
 ```js
 import { createApp } from 'vue';
-import { RollNumber } from 'vant';
+import { RollingText } from 'vant';
 
 const app = createApp();
-app.use(RollNumber);
+app.use(RollingText);
 ```
 
 ## Code Demo
@@ -21,7 +21,7 @@ app.use(RollNumber);
 ### Basic Usage
 
 ```html
-<van-roll-number
+<van-rolling-text
   :start-num="0"
   :target-num="123"
   :duration="2"
@@ -35,7 +35,7 @@ app.use(RollNumber);
 You can set the rolling direction of the number by using the `direction` property. `up` represents rolling up.
 
 ```html
-<van-roll-number
+<van-rolling-text
   :start-num="0"
   :target-num="432"
   :duration="2"
@@ -49,7 +49,7 @@ You can set the rolling direction of the number by using the `direction` propert
 You can set the order of stopping the animation of each digit through the `stop-order` attribute. By default, it stops from the higher digits. Setting `rtl` can stop from the ones digit.
 
 ```html
-<van-roll-number
+<van-rolling-text
   :start-num="0"
   :target-num="54321"
   :duration="2"
@@ -59,10 +59,36 @@ You can set the order of stopping the animation of each digit through the `stop-
 />
 ```
 
+### Rolling non-number text
+
+You can set non-numeric content flip using the `text-array` props.
+
+```html
+<van-rolling-text
+  :text-array="textArray"
+  :duration="1"
+  :auto-start="false"
+  stop-order="rtl"
+  direction="up"
+/>
+```
+
+```javascript
+const textArray = ref([
+  'aaaaa',
+  'bbbbb',
+  'ccccc',
+  'ddddd',
+  'eeeee',
+  'fffff',
+  'ggggg',
+]);
+```
+
 ### Custom Style
 
 ```html
-<van-roll-number
+<van-rolling-text
   class="my-roll-number"
   :start-num="12345"
   :target-num="54321"
@@ -73,7 +99,7 @@ You can set the order of stopping the animation of each digit through the `stop-
 ```
 
 ```css
-.my-roll-number {
+.my-rolling-text {
   gap: 6px;
   .van-roll-single {
     color: white;
@@ -90,8 +116,8 @@ You can set the order of stopping the animation of each digit through the `stop-
 After getting the component instance through `ref`, you can call the `start` and `reset` methods.
 
 ```html
-<van-roll-number
-  ref="rollNumberEl"
+<van-rolling-text
+  ref="rollTextEl"
   :start-num="0"
   :target-num="54321"
   :duration="2"
@@ -106,12 +132,12 @@ After getting the component instance through `ref`, you can call the `start` and
 ```
 
 ```javascript
-const rollNumberEl = ref(null);
+const rollTextEl = ref(null);
 const start = () => {
-  rollNumberEl.value.start();
+  rollTextEl.value.start();
 };
 const reset = () => {
-  rollNumberEl.value.reset();
+  rollTextEl.value.reset();
 };
 ```
 
@@ -123,6 +149,7 @@ const reset = () => {
 | --- | --- | --- | --- |
 | start-num | Start number | _number_ | 0 |
 | target-num | Target number | _number_ | - |
+| text-array | Text array | _Array_ | [] |
 | duration | Duration of the animation, in seconds | _number_ | 2 |
 | direction | Rolling direction of the number, with `down` and `up` as the values | _string_ | `down` |
 | auto-start | Whether to start the animation | _boolean_ | true |
@@ -133,7 +160,7 @@ const reset = () => {
 The component exports the following type definitions:
 
 ```ts
-import type { RollNumberProps } from 'vant';
+import type { RollingTextProps } from 'vant';
 ```
 
 ## Theming
@@ -144,8 +171,8 @@ The component provides the following CSS variables, which can be used to customi
 
 | Name | Default Value | Description |
 | --- | --- | --- |
-| --van-roll-number-bg-color | _inherit_ | Background color of a single digit |
-| --van-roll-number-color | _white_ | Color of the number |
-| --van-roll-number-gap | _0px_ | Spacing between digits |
-| --van-roll-number-single-width | _15px_ | Width of a single digit |
-| --van-roll-number-single-border-r | _0px_ | Border radius of a single digit |
+| --van-rolling-text-bg-color | _inherit_ | Background color of a single digit |
+| --van-rolling-text-color | _white_ | Color of the number |
+| --van-rolling-text-gap | _0px_ | Spacing between digits |
+| --van-rolling-text-single-width | _15px_ | Width of a single digit |
+| --van-rolling-text-single-border-r | _0px_ | Border radius of a single digit |

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import VanRollNumber from '..';
+import VanRollingText from '..';
 import Button from '../../button';
 import { ref } from 'vue';
 import { useTranslate } from '../../../docs/site';
@@ -15,15 +15,19 @@ const t = useTranslate({
     stopFrom: '从个位停止',
     manualControl: '手动控制',
     customStyle: '自定义样式',
+    noNumberType: '翻转非数字内容',
+    start: '开始',
   },
   'en-US': {
     direction: 'Change Roll Direction',
-    stopOrder: 'stopOrder',
+    stopOrder: 'StopOrder',
     rollDown: 'rollDown',
     rollUp: 'rollUp',
     stopFrom: 'right-side stop first',
     manualControl: 'Manual Control',
     customStyle: 'Custom Style',
+    noNumberType: 'Roll non-number type text',
+    start: 'Start',
   },
 });
 
@@ -32,19 +36,30 @@ const isStart2 = ref(false);
 const isStart3 = ref(false);
 const isStart4 = ref(false);
 
-const rollNumberEl = ref(null);
+const isStartNoNumberType = ref(false);
+const textArray = ref([
+  'aaaaa',
+  'bbbbb',
+  'ccccc',
+  'ddddd',
+  'eeeee',
+  'fffff',
+  'ggggg',
+]);
+
+const rollingTextEl = ref(null);
 const start = () => {
-  rollNumberEl.value.start();
+  rollingTextEl.value.start();
 };
 const reset = () => {
-  rollNumberEl.value.reset();
+  rollingTextEl.value.reset();
 };
 </script>
 
 <template>
   <demo-block :title="t('basicUsage')">
     <div style="">
-      <VanRollNumber
+      <VanRollingText
         :start-num="0"
         :target-num="123"
         :duration="2"
@@ -61,7 +76,7 @@ const reset = () => {
 
   <demo-block :title="t('direction')">
     <div>
-      <van-roll-number
+      <VanRollingText
         :start-num="0"
         :target-num="432"
         :duration="2"
@@ -78,7 +93,7 @@ const reset = () => {
 
   <demo-block :title="t('stopOrder')">
     <div>
-      <van-roll-number
+      <VanRollingText
         :start-num="0"
         :target-num="54321"
         :duration="2"
@@ -94,9 +109,26 @@ const reset = () => {
     </div>
   </demo-block>
 
+  <demo-block :title="t('noNumberType')">
+    <div>
+      <VanRollingText
+        :text-array="textArray"
+        :duration="1"
+        :auto-start="isStartNoNumberType"
+        stop-order="rtl"
+        direction="up"
+      />
+      <div style="margin-top: 10px">
+        <Button @click="() => (isStartNoNumberType = true)" type="primary">{{
+          t('start')
+        }}</Button>
+      </div>
+    </div>
+  </demo-block>
+
   <demo-block :title="t('customStyle')">
     <div>
-      <van-roll-number
+      <VanRollingText
         class="my-roll-number"
         :start-num="12345"
         :target-num="54321"
@@ -110,9 +142,9 @@ const reset = () => {
 
   <demo-block :title="t('manualControl')">
     <div>
-      <van-roll-number
+      <VanRollingText
         class="my-roll-number"
-        ref="rollNumberEl"
+        ref="rollingTextEl"
         :start-num="0"
         :target-num="54321"
         :duration="2"
@@ -132,14 +164,14 @@ const reset = () => {
 .van-button {
   margin-left: var(--van-padding-md);
 }
-.van-roll-number {
+.van-rolling-text {
   margin-left: var(--van-padding-md);
 }
 .van-grid {
   margin-left: var(--van-padding-md);
 }
 
-.my-roll-number {
+.my-rolling-te11xt {
   gap: 6px;
   .van-roll-single {
     color: white;

@@ -1,39 +1,58 @@
 import { ref, defineComponent, computed, type ExtractPropTypes } from 'vue';
-import RollNumberItem from './RollNumberItem';
+import RollingTextItem from './RollingTextItem';
 // Utils
 import {
   createNamespace,
+  makeArrayProp,
   makeNumberProp,
   makeStringProp,
   truthProp,
 } from '../utils';
 import { useExpose } from '../composables/use-expose';
 
-const [name, bem] = createNamespace('roll-number');
+const [name, bem] = createNamespace('rolling-text');
 
-export type RollNumberDirection = 'up' | 'down';
+export type RollingDirection = 'up' | 'down';
 export type StopOrder = 'ltr' | 'rtl';
 
-export const rollNumberProps = {
+export const rollingTextProps = {
   startNum: makeNumberProp(0),
   targetNum: Number,
+  textArray: makeArrayProp<string>(),
   duration: makeNumberProp(2),
   autoStart: truthProp,
-  direction: makeStringProp<RollNumberDirection>('down'),
+  direction: makeStringProp<RollingDirection>('down'),
   stopOrder: makeStringProp<StopOrder>('ltr'),
 };
 
 const CIRCLE_NUM = 2;
 
-export type RollNumberProps = ExtractPropTypes<typeof rollNumberProps>;
+export type RollingTextProps = ExtractPropTypes<typeof rollingTextProps>;
 
 export default defineComponent({
   name,
 
-  props: rollNumberProps,
+  props: rollingTextProps,
 
   setup(props) {
-    const targetNumArr = computed(() => `${props.targetNum}`.split(''));
+    const isCustomType = computed(
+      () => Array.isArray(props.textArray) && props.textArray.length
+    );
+
+    const getTextArrByIdx = (idx: number) => {
+      if (!isCustomType.value) return [];
+      const result = [];
+      for (let i = 0; i < props.textArray.length; i++) {
+        result.push(props.textArray[i][idx]);
+      }
+      return result;
+    };
+
+    const targetNumArr = computed(() => {
+      if (isCustomType.value)
+        return props.textArray[props.textArray.length - 1].split('');
+      return `${props.targetNum}`.split('');
+    });
 
     const startNumArr = () => {
       const arr = `${props.startNum}`.split('');
@@ -86,8 +105,10 @@ export default defineComponent({
     return () => (
       <div class={bem()}>
         {targetNumArr.value.map((figure, i) => (
-          <RollNumberItem
-            figureArr={getFigureArr(i)}
+          <RollingTextItem
+            figureArr={
+              isCustomType.value ? getTextArrByIdx(i) : getFigureArr(i)
+            }
             duration={props.duration}
             direction={props.direction}
             isStart={props.autoStart || isStart.value}
