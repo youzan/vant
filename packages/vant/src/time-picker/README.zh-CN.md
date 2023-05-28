@@ -162,7 +162,7 @@ export default {
 
 ### 限制时间范围
 
-使用 `min-time` 和 `max-time` 来限制时间范围。
+使用 `min-time` 和 `max-time` 来限制时间范围，约定格式 `10:00:00`。
 
 ```html
 <van-time-picker
