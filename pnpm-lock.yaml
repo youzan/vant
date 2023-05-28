@@ -62,6 +62,9 @@ importers:
       '@vant/use':
         specifier: ^1.5.1
         version: link:../vant-use
+      '@vue/shared':
+        specifier: ^3.0.0
+        version: 3.3.4
     devDependencies:
       '@types/jest':
         specifier: ^29.5.1
