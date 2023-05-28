@@ -142,10 +142,10 @@ import type { RollNumberProps } from 'vant';
 
 组件提供了下列 CSS 变量，可用于自定义样式，使用方法请参考 [ConfigProvider 组件](#/zh-CN/config-provider)。
 
-| 名称                              | 默认值  | 描述             |
-| --------------------------------- | ------- | ---------------- |
-| --van-roll-number-bg-color        | _black_ | 单个数位背景色   |
-| --van-roll-number-color           | _white_ | 数字颜色         |
-| --van-roll-number-gap             | _5px_   | 数位之间的间隔   |
-| --van-roll-number-single-width    | _20px_  | 单个数位宽度     |
-| --van-roll-number-single-border-r | _0px_   | 单个数位边框圆角 |
+| 名称                              | 默认值    | 描述             |
+| --------------------------------- | --------- | ---------------- |
+| --van-roll-number-bg-color        | _inherit_ | 单个数位背景色   |
+| --van-roll-number-color           | _white_   | 数字颜色         |
+| --van-roll-number-gap             | _0px_     | 数位之间的间隔   |
+| --van-roll-number-single-width    | _15px_    | 单个数位宽度     |
+| --van-roll-number-single-border-r | _0px_     | 单个数位边框圆角 |

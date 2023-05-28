@@ -2,10 +2,10 @@
 
 exports[`should render comp 1`] = `
 <div class="van-roll-number">
-  <div style="height: 40px; --translate: -1640px; --duration: 2s; --delay: 0s;"
-       class="van-roll-single-down"
+  <div style="height: 40px; --van-translate: -1640px; --van-duration: 2s; --van-delay: 0s;"
+       class="van-roll-single-down van-roll-single"
   >
-    <div class="van-roll-single-down__box">
+    <div class="van-roll-single-down__box van-roll-single-down__ani">
       <div class="van-roll-single-down__item"
            style="line-height: 40px;"
       >
@@ -218,10 +218,10 @@ exports[`should render comp 1`] = `
       </div>
     </div>
   </div>
-  <div style="height: 40px; --translate: -1680px; --duration: 2s; --delay: 0.2s;"
-       class="van-roll-single-down"
+  <div style="height: 40px; --van-translate: -1680px; --van-duration: 2s; --van-delay: 0.2s;"
+       class="van-roll-single-down van-roll-single"
   >
-    <div class="van-roll-single-down__box">
+    <div class="van-roll-single-down__box van-roll-single-down__ani">
       <div class="van-roll-single-down__item"
            style="line-height: 40px;"
       >
@@ -439,10 +439,10 @@ exports[`should render comp 1`] = `
       </div>
     </div>
   </div>
-  <div style="height: 40px; --translate: -1720px; --duration: 2s; --delay: 0.4s;"
-       class="van-roll-single-down"
+  <div style="height: 40px; --van-translate: -1720px; --van-duration: 2s; --van-delay: 0.4s;"
+       class="van-roll-single-down van-roll-single"
   >
-    <div class="van-roll-single-down__box">
+    <div class="van-roll-single-down__box van-roll-single-down__ani">
       <div class="van-roll-single-down__item"
            style="line-height: 40px;"
       >

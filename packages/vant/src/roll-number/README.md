@@ -144,8 +144,8 @@ The component provides the following CSS variables, which can be used to customi
 
 | Name | Default Value | Description |
 | --- | --- | --- |
-| --van-roll-number-bg-color | _black_ | Background color of a single digit |
+| --van-roll-number-bg-color | _inherit_ | Background color of a single digit |
 | --van-roll-number-color | _white_ | Color of the number |
-| --van-roll-number-gap | _5px_ | Spacing between digits |
-| --van-roll-number-single-width | _20px_ | Width of a single digit |
+| --van-roll-number-gap | _0px_ | Spacing between digits |
+| --van-roll-number-single-width | _15px_ | Width of a single digit |
 | --van-roll-number-single-border-r | _0px_ | Border radius of a single digit |
