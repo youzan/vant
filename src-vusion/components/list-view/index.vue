@@ -253,7 +253,7 @@ export default {
     position: relative;
 }
 
-.body .list[striped] div:nth-of-type(2n+1) {
+.body .list[striped] > div:nth-of-type(odd) {
   background: var(--van-list-view-striped-background);
 }
 
