@@ -97,11 +97,11 @@
       type: string
       default: 暂无数据
     - name: pageable
-      title: 分页加载更多
+      title: 分页加载
       type: string
-      default: false
+      default: ""
       options:
-        - value: false
+        - value: ""
           title: 不分页
         - value: auto-more
           title: 滚动加载更多
@@ -110,16 +110,20 @@
         - value: pagination
           title: 翻页器
       description: 是否需要分页
+    - name: remote-paging
+      title: 后端分页
+      type: boolean
+      default: false
+      description: 是否使用后端分页
+      dependency:
+        - '!pageable': ""
     - name: page-size
       title: 分页大小
       type: number
       default: 20
       description: 分页过小可能会导致滚动加载更多失效
-    - name: remote-paging
-      title: 是否需要后端分页
-      type: boolean
-      default: false
-      description: 是否使用后端分页
+      dependency:
+        - '!pageable': ""
     - name: pull-refresh
       title: 下拉刷新
       type: boolean
@@ -172,6 +176,8 @@
       type: boolean
       default: false
       description: 是否使用后端过滤
+      dependency:
+        - filterable: true
     - name: hiddenempty
       title: 是否隐藏空态文案
       type: boolean

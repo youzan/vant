@@ -11,8 +11,16 @@
             </div>
         </slot>
     </div>
-    <u-input v-if="filterable" :class="$style.filter" :disabled="disabled" :placeholder="placeholder" size="small" suffix="search" :clearable="clearable"
-        :value="filterText" @input="onInput">
+    <u-input
+      v-if="filterable"
+      :class="$style.filter"
+      :disabled="disabled"
+      :placeholder="placeholder"
+      size="small"
+      suffix="search"
+      :clearable="clearable"
+      :value="filterText"
+      @input="onInput">
     </u-input>
     <div :class="$style.scrollwrap" @scroll="onScroll">
       <van-pull-refresh :value="$env.VUE_APP_DESIGNER ? false : refreshing" :disabled="!pullRefresh || pageable === 'pagination'"
@@ -89,6 +97,7 @@ import UCheckbox from 'cloud-ui.vusion/src/components/u-checkbox.vue/index.vue';
 import UInput from 'cloud-ui.vusion/src/components/u-input.vue/index.vue';
 import USpinner from 'cloud-ui.vusion/src/components/u-spinner.vue/index.vue';
 import ULink from 'cloud-ui.vusion/src/components/u-link.vue/index.vue';
+import DataSource from '../../../src/utils/DataSource';
 import VanPullRefresh from '../../../src/pull-refresh';
 import VanEmptyCol from '../../../src/emptycol';
 import VanPagination from '../../../src/pagination';
@@ -108,29 +117,57 @@ export default {
         pullingText: { type: String, default: '下拉刷新' },
         loosingText: { type: String, default: '释放刷新' },
         successText: { type: String, default: '已刷新' },
-        successDuration: 500,
-        pullDistance: 50,
+        successDuration: { type: Number, default: 500 },
+        pullDistance: { type: Number, default: 50 },
         notext: { type: Boolean, default: false },
         hiddenempty: { type: Boolean, default: false },
-        striped: { type: Boolean, default: false }
+        striped: { type: Boolean, default: false },
+        dataSource: [DataSource, Function, Object, Array],
     },
     data() {
       return {
         refreshing: false,
       }
     },
-    getDataSourceOptions() {
-        return {
+    methods: {
+        getDataSourceOptions() {
+          return {
             viewMode: this.pageable === 'pagination' ? 'page' : 'more',
             paging: this.paging,
             remotePaging: this.remotePaging,
             filtering: this.filtering,
-            remoteFiltering: this.remoteFiltering,
+            remoteFiltering: !!this.remotePaging,
             getExtraParams: this.getExtraParams,
             refreshing: false,
-        };
-    },
-    methods: {
+          };
+        },
+        normalizeDataSource(dataSource) {
+          const options = this.getDataSourceOptions();
+          if (dataSource instanceof DataSource)
+            return dataSource;
+          if (dataSource instanceof Array) {
+            options.data = Array.from(dataSource);
+            return new DataSource(options);
+          } if (dataSource instanceof Function) {
+            options.load = function load(params) {
+              const result = dataSource(params);
+              if (result instanceof Promise)
+                return result.catch(() => (this.currentLoading = false));
+              if (result instanceof Array)
+                return Promise.resolve(result);
+              return Promise.resolve(result);
+            };
+            return new DataSource(options);
+          } if (dataSource instanceof Object) {
+            if (dataSource.hasOwnProperty('list') && Array.isArray(dataSource.list)) {
+              return new DataSource(Object.assign(options, dataSource, {
+                data: dataSource.list,
+              }));
+            }
+            return new DataSource(Object.assign(options, dataSource));
+          }
+          return undefined;
+        },
         async refresh() {
             // 分页器分页时忽略下拉刷新
             if (this.pageable === 'pagination') {
@@ -216,7 +253,7 @@ export default {
     position: relative;
 }
 
-.body .list[striped] div:nth-of-type(2n) {
+.body .list[striped] div:nth-of-type(2n+1) {
   background: var(--van-list-view-striped-background);
 }
 
