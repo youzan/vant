@@ -31,6 +31,22 @@ export default {
     },
   },
 
+  watch: {
+    slugifyTitle(newVal) {
+      if (newVal) {
+        this.$nextTick(() => {
+          let hash = '';
+          if (top) hash = top.location.hash.split('#').pop();
+          else hash = location.hash.split('#').pop();
+          const target = document.getElementById(newVal);
+          if (target && newVal === hash) {
+            target.scrollIntoView(true);
+          }
+        });
+      }
+    },
+  },
+
   async mounted() {
     const { slugify } = await import('transliteration');
     this.slugify = slugify;
