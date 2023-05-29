@@ -1,8 +1,6 @@
 <template>
   <demo-section>
     <basic-usage />
-    <validate-rules />
-    <field-type />
   </demo-section>
 </template>
 

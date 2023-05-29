@@ -1,15 +1,21 @@
 <template>
   <demo-block :title="t('basicUsage')">
-    <van-form @submit="onSubmit" @failed="onFailed">
-      <van-field
-        :value.sync="username666"
-        name="username6666"
-        :label="t('username')"
-        rules="required | integer | range(1,65535) @i"
-        wga
-        :placeholder="t('username')"
-      />
+    <van-form>
+      <van-field required drole="other">
+        <template #title>
+          <van-text text="名称"></van-text>
+        </template>
+        <template #input>
+          <van-fieldtextarea :value.sync="xx" :maxlength="10" :autosize="{maxHeight: 100, minHeight: 50}" placeholder="请输入" clearable></van-fieldtextarea>
+        </template>
+      </van-field>
+      <div style="margin: 16px 16px 0">
+        <van-button round block="blockb" type="info" native-type="submit" text="提交">
+        </van-button>
+      </div>
     </van-form>
+
+    <!-- <van-fieldtextarea :value.sync="xxx" :maxlength="10" :autosize="{ maxHeight: 100, minHeight: 50 }" placeholder="请输入" clearable></van-fieldtextarea> -->
   </demo-block>
 </template>
 
@@ -37,6 +43,8 @@ export default {
       username: '',
       username666:'',
       password: '',
+      xx: '',
+      xxx: ''
     };
   },
 
