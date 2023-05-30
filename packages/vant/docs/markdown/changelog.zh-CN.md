@@ -25,7 +25,7 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 
 **Feature**
 
-- Popover: 新增 actions-direction 熟悉 [#11888](https://github.com/vant-ui/vant/issues/11888)
+- Popover: 新增 actions-direction 属性 [#11888](https://github.com/vant-ui/vant/issues/11888)
 
 **Bug Fixes**
 
