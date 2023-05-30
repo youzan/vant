@@ -71,7 +71,7 @@ export default {
 
 | Attribute | Description | Type | Default |
 | --- | --- | --- | --- |
-| index-list | Index List | _string[] \| number[]_ | `A-Z` |
+| index-list | Index List | _(string \| number)[]_ | `A-Z` |
 | z-index | z-index | _number \| string_ | `1` |
 | sticky | Whether to enable anchor sticky top | _boolean_ | `true` |
 | sticky-offset-top | Anchor offset top when sticky | _number_ | `0` |
