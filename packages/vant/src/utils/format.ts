@@ -97,14 +97,8 @@ export const kebabCase = (str: string) =>
     .toLowerCase()
     .replace(/^-/, '');
 
-export function padZero(num: Numeric, targetLength = 2): string {
-  let str = num + '';
-
-  while (str.length < targetLength) {
-    str = '0' + str;
-  }
-
-  return str;
+export function padZero(num: Numeric, targetLength = 2) {
+  return String(num).padStart(targetLength, '0');
 }
 
 /** clamps number within the inclusive lower and upper bounds */
