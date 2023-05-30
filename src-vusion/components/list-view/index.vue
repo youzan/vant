@@ -257,6 +257,11 @@ export default {
   background: var(--van-list-view-striped-background);
 }
 
+/* 为了斑马纹能生效， 如果出现非div的 在这边加 */
+.body .list[striped] > div:nth-of-type(odd) > div {
+  background: transparent;
+}
+
 .root[readonly-mode="initial"] .body {
     user-select: initial;
 }
