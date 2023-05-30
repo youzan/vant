@@ -22,6 +22,7 @@ import {
 
 // Composables
 import { useId } from '../composables/use-id';
+import { useExpose } from '../composables/use-expose';
 import {
   useRect,
   useChildren,
@@ -54,6 +55,8 @@ export default defineComponent({
 
   props: dropdownMenuProps,
 
+  emits: ['close'],
+
   setup(props, { slots }) {
     const id = useId();
     const root = ref<HTMLElement>();
@@ -75,11 +78,15 @@ export default defineComponent({
       }
     });
 
+    const close = () => {
+      children.forEach((item) => {
+        item.toggle(false);
+      });
+    };
+
     const onClickAway = () => {
       if (props.closeOnClickOutside) {
-        children.forEach((item) => {
-          item.toggle(false);
-        });
+        close();
       }
     };
 
@@ -142,6 +149,7 @@ export default defineComponent({
       );
     };
 
+    useExpose({ close });
     linkChildren({ id, props, offset, updateOffset });
     useClickAway(root, onClickAway);
     useEventListener('scroll', onScroll, {

@@ -59,7 +59,7 @@ export default {
 ### Custom Content
 
 ```html
-<van-dropdown-menu>
+<van-dropdown-menu ref="menuRef">
   <van-dropdown-item v-model="value" :options="options" />
   <van-dropdown-item title="Title" ref="item">
     <van-cell center title="Title">
@@ -86,7 +86,8 @@ import { ref } from 'vue';
 
 export default {
   setup() {
-    const item = ref(null);
+    const menuRef = ref(null);
+    const itemRef = ref(null);
     const value = ref(0);
     const switch1 = ref(false);
     const switch2 = ref(false);
@@ -97,10 +98,13 @@ export default {
     ];
     const onConfirm = () => {
       item.value.toggle();
+      // or
+      // menuRef.value.close();
     };
 
     return {
-      item,
+      menuRef,
+      itemRef,
       value,
       switch1,
       switch2,
@@ -183,6 +187,14 @@ Use `active-color` prop to custom active color of the title and options.
 | default | Content      |
 | title   | Custom title |
 
+### DropdownMenu Methods
+
+Use [ref](https://v3.vuejs.org/guide/component-template-refs.html) to get DropdownMenu instance and call instance methods.
+
+| Name  | Description   | Attribute | Return value |
+| ----- | ------------- | --------- | ------------ |
+| close | Close display | -         | -            |
+
 ### DropdownItem Methods
 
 Use [ref](https://v3.vuejs.org/guide/component-template-refs.html) to get DropdownItem instance and call instance methods.
@@ -201,18 +213,21 @@ import type {
   DropdownItemProps,
   DropdownItemOption,
   DropdownItemInstance,
+  DropdownMenuInstance,
   DropdownMenuDirection,
 } from 'vant';
 ```
 
-`DropdownItemInstance` is the type of component instance:
+`DropdownMenuInstance` and `DropdownItemInstance` are the types of component instances:
 
 ```ts
 import { ref } from 'vue';
-import type { DropdownItemInstance } from 'vant';
+import type { DropdownMenuInstance, DropdownItemInstance } from 'vant';
 
+const dropdownMenuRef = ref<DropdownMenuInstance>();
 const dropdownItemRef = ref<DropdownItemInstance>();
 
+dropdownMenuRef.value?.close();
 dropdownItemRef.value?.toggle();
 ```
 
