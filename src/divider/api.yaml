@@ -33,6 +33,7 @@
       title: 文本
       type: string
       description: 文本
+      advanced: true
   slots:
     - concept: Slot
       name: default

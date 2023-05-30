@@ -42,6 +42,7 @@
       title: 标题
       type: string
       description: 标题
+      advanced: true
     - name: is-link
       title: 是否显示箭头图标
       type: boolean

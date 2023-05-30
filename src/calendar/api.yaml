@@ -8,6 +8,7 @@
       title: 左侧标题
       type: string
       description: 左侧标题
+      advanced: true
     - name: default-date
       title: 值
       type: string, Date, Array

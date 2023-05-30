@@ -21,6 +21,7 @@
       title: 通知文本内容
       type: string
       description: 通知文本内
+      advanced: true
     - name: scrollable
       title: 是否开启滚动播放
       type: boolean

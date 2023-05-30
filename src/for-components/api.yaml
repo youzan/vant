@@ -19,11 +19,18 @@
       type: number
       default: 5
       description: 为空时自适应宽度，自动换行
+    - name: wrap
+      title: 自动换行
+      type: boolean
+      default: true
+      description: 是否自动换行，排列项数为空时生效
+      dependency:
+        - colnum: 0
     - name: equalWidth
       title: 是否均分宽度
       type: boolean
       default: true
-      description: 是否均分宽度
+      description: 是否均分宽度，排列项数不为空时生效
   slots:
     - concept: Slot
       name: default

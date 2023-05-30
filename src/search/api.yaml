@@ -48,6 +48,7 @@
       title: 按钮文字
       type: string
       description: 按钮文字
+      advanced: true
     - name: readonly
       title: 只读
       type: boolean

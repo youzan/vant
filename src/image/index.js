@@ -103,13 +103,15 @@ export default createComponent({
       if (src?.indexOf?.('base64') !== -1) {
         return src;
       }
-      if (typeof src === 'string') {
-        // 判断是否有多个 url
-        const srcList =
-          src.match(
-            /(https:|http:|ftp:|file:)?\/\/[-A-Za-z0-9+&@#/%?=~_|!:,.;]+[-A-Za-z0-9+&@#/%=~_|]/g
-          ) || [];
-        return srcList && srcList.length > 1 ? srcList[0] : src;
+
+      // 同步 PC 端图片链接的处理逻辑
+      // 正则表达式用于匹配以逗号分隔的字符串列表，其中每个字符串都不能包含[]
+      const reg = /^([^[\]]+)(,([^[\]]+)){0,}$/g;
+      if (typeof src === 'string' && reg.test(src)) {
+          const [a1, a2] = src.split(',');
+          if (/\/\//.test(a2)) {
+              return a1;
+          }
       }
 
       try {

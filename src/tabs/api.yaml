@@ -84,6 +84,7 @@
       type: string
       default: 标题
       description: 自定义标题
+      advanced: true
     - name: disabled
       title: 禁用
       type: boolean

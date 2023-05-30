@@ -78,6 +78,7 @@
       title: 文本
       type: string
       description: 文本
+      advanced: true
     - name: name
       title: 选中的值
       type: string

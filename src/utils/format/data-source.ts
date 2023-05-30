@@ -13,12 +13,12 @@ interface ListTotal {
   list: any[];
   total: number;
 }
-type Result = any[] | PageOf | ListTotal | String;
+type Result = any[] | PageOf | ListTotal | string;
 
 export function formatResult(result: Result): any[] {
-  if (!result) {
+  if (!result)
     return [];
-  } else if (typeof result === 'string') {
+  if (typeof result === 'string') {
     let list = [];
     try {
       list = formatResult(JSON.parse(result));
@@ -26,13 +26,12 @@ export function formatResult(result: Result): any[] {
       console.error(err);
     }
     return list;
-  } else if (Array.isArray(result)) {
-    return result;
-  } else if (Array.isArray((result as ListTotal)?.list)) {
-    return (result as ListTotal).list;
-  } else if (Array.isArray((result as PageOf)?.content)) {
-    return (result as PageOf).content;
-  } else {
-    return [];
   }
+  if (Array.isArray(result))
+    return result;
+  if (Array.isArray((result as ListTotal)?.list))
+    return (result as ListTotal).list;
+  if (Array.isArray((result as PageOf)?.content))
+    return (result as PageOf).content;
+  return [];
 }

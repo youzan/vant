@@ -777,7 +777,7 @@ export default createComponent({
           error: this.showError,
           disabled,
           [`label-${labelAlign}`]: labelAlign,
-          'min-height': ((this.type === 'textarea' && !this.autosize) || (this.children && this.children.type === 'textarea' && !this.children.autosize)),
+          // 'min-height': ((this.children && this.children.type === 'textarea' && !this.children.autosize)),
         })}
         onClick={this.onClick}
         vusionCut={vusionCut}
