@@ -266,145 +266,135 @@ const VueDataSource = Vue.extend({
         },
         // _load(params)
         load(offset, limit, newPageNumber) {
-            if (offset === undefined)
-                offset = this.offset;
-            if (limit === undefined)
-                limit = this.limit;
+          if (offset === undefined) offset = this.offset;
+          if (limit === undefined) limit = this.limit;
 
-            if (this.initialLoaded) {
-                // 后端数据已经全部获取，调用前端缓存数据
-                if (!this.remote || !this.mustRemote()) {
-                    if (this.queryChanged) {
-                      if (this.paging) {
-                        this.paging.number = 1;
-                      }
-
-                      offset = 0;
-                      this.queryChanged = false;
-                    }
-                    return Promise.resolve(
-                        this.arrange(this.data),
-                    );
-                }
+          // reload 或 query变化
+          if (!this.initialLoaded || this.queryChanged) {
+            if (this.paging) {
+              this.paging.number = 1;
             }
+            offset = 0;
+          }
 
-            // 调用后端数据
-            // 如果有新的 query 参数的变更，则清除缓存
-            if (this.queryChanged) {
-                this.clearLocalData();
-
-                if (this.paging) {
-                  this.paging.number = 1;
-                }
-
-                offset = 0;
-                this.queryChanged = false;
+          // 首次加载完
+          if (this.initialLoaded) {
+            // 后端数据已经全部获取，调用前端缓存数据
+            if (!this.remote || !this.mustRemote()) {
+              this.queryChanged && (this.queryChanged = false);
+              return Promise.resolve(this.arrange(this.data));
             }
+          }
 
-            const paging = {
-                offset,
-                limit: this.limit,
-                ...this.paging,
-            };
-            if (newPageNumber !== undefined) {
-                paging.number = newPageNumber;
-            }
+          // 调用后端数据
+          if (!this.initialLoaded || this.queryChanged) {
+            this.clearLocalData();
+            this.queryChanged && (this.queryChanged = false);
+          }
 
-            const params = {
-                paging: this.remotePaging ? paging : undefined,
-                    sorting: this.sorting,
-                    filtering: this.filtering,
-                ...this._getExtraParams(),
-            };
+          const paging = {
+            offset,
+            limit: this.limit,
+            ...this.paging,
+          };
+          if (newPageNumber !== undefined) {
+            paging.number = newPageNumber;
+          }
 
-            // 支持 JDL
-            if (this.remotePaging && this.paging) {
-                params.page = params.paging.number;
-                params.start = params.paging.offset;
-                params.size = params.paging.size;
-            }
-            if (this.sorting && this.sorting.field) {
-                params.sort = params.sorting.field;
-                params.order = params.sorting.order;
-            }
+          const params = {
+            paging: this.remotePaging ? paging : undefined,
+            sorting: this.sorting,
+            filtering: this.filtering,
+            ...this._getExtraParams(),
+          };
 
-            const extraParams = this._getExtraParams();
+          // 支持 JDL
+          if (this.remotePaging && this.paging) {
+            params.page = params.paging.number;
+            params.start = params.paging.offset;
+            params.size = params.paging.size;
+          }
+          if (this.sorting && this.sorting.field) {
+            params.sort = params.sorting.field;
+            params.order = params.sorting.order;
+          }
 
-            return this._load(params, extraParams).then((result) => {
-              this.initialLoaded = true;
-              const finalResult = {};
+          const extraParams = this._getExtraParams();
 
-              // 判断是否后端数据
-              if (getType(result) === 'Object') {
-                if (
-                  result.hasOwnProperty('list') &&
-                  result.hasOwnProperty('total')
-                ) {
-                  finalResult.data = result.list;
-                  finalResult.total = result.total;
-                } else if (
-                  result.hasOwnProperty('totalElements') &&
-                  result.hasOwnProperty('content')
-                ) {
-                  finalResult.data = result.content;
-                  finalResult.total = result.totalElements;
-                } else {
-                  finalResult.data = result.data;
-                  finalResult.total = result.total;
-                }
+          return this._load(params, extraParams).then((result) => {
+            this.initialLoaded = true;
+            const finalResult = {};
 
-                // 非后端数据
-                if (
-                  !finalResult.hasOwnProperty('data') ||
-                  !finalResult.hasOwnProperty('total')
-                ) {
-                  this.remote = false;
-                }
-              } else if (getType(result) === 'Array') {
-                finalResult.data = result;
-                finalResult.total = result.length;
-                this.remote = false;
+            // 判断是否后端数据
+            if (getType(result) === 'Object') {
+              if (
+                result.hasOwnProperty('list') &&
+                result.hasOwnProperty('total')
+              ) {
+                finalResult.data = result.list;
+                finalResult.total = result.total;
+              } else if (
+                result.hasOwnProperty('totalElements') &&
+                result.hasOwnProperty('content')
+              ) {
+                finalResult.data = result.content;
+                finalResult.total = result.totalElements;
               } else {
-                this.remote = false;
+                finalResult.data = result.data;
+                finalResult.total = result.total;
               }
 
+              // 非后端数据
+              if (
+                !finalResult.hasOwnProperty('data') ||
+                !finalResult.hasOwnProperty('total')
+              ) {
+                this.remote = false;
+              }
+            } else if (getType(result) === 'Array') {
+              finalResult.data = result;
+              finalResult.total = result.length;
+              this.remote = false;
+            } else {
+              this.remote = false;
+            }
 
-              if (!this.remote) {
-                this.remotePaging = false;
-                this.remoteSorting = false;
-                this.remoteFiltering = false;
+            if (!this.remote) {
+              this.remotePaging = false;
+              this.remoteSorting = false;
+              this.remoteFiltering = false;
 
+              this.data = finalResult.data;
+              this.originTotal = finalResult.total;
+            } else {
+              // 后端不分页
+              if (!this.remotePaging || limit === Infinity) {
                 this.data = finalResult.data;
-                this.originTotal = finalResult.total;
               } else {
-                // 后端不分页
-                if (!this.remotePaging) {
-                  this.data = finalResult.data;
-                } else {
-                  for (let i = 0; i < limit; i++) {
-                    const item = finalResult.data[i];
-                    if (item) {
-                      this.data[offset + i] = item;
-                    }
+                for (let i = 0; i < limit; i++) {
+                  const item = finalResult.data[i];
+                  if (item) {
+                    this.data[offset + i] = item;
                   }
                 }
-
-                this.originTotal = finalResult.total;
               }
 
-              // 树形展示处理一下
-              if (this.treeDisplay) {
-                this.data = this.listToTree(this.data, {
-                  valueField: this.treeDisplay.valueField,
-                  parentField: this.treeDisplay.parentField,
-                  childrenField: this.treeDisplay.childrenField,
-                });
+              this.originTotal = finalResult.total;
+            }
 
-                this.originTotal = this.data.length;
-              }
+            // 树形展示处理一下
+            if (this.treeDisplay) {
+              this.data = this.listToTree(this.data, {
+                valueField: this.treeDisplay.valueField,
+                parentField: this.treeDisplay.parentField,
+                childrenField: this.treeDisplay.childrenField,
+              });
 
-              return this.arrange(this.data);
-            });
+              this.originTotal = this.data.length;
+            }
+
+            return this.arrange(this.data);
+          });
         },
         loadMore() {
             if (!this.hasMore())
