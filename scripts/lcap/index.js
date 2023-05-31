@@ -6,7 +6,7 @@ const map = [];
 const getUsage = require('vusion/lib/lcap');
 const root = path.join(__dirname, '../../src');
 const root2 = path.join(__dirname, '../../src-vusion/components');
-const defaultTheme = require('../genThemeConfig/default.json');
+const defaultTheme = require('../genThemeConfig/property.json');
 const themeConfig = require('../genThemeConfig/result.json');
 
 components.forEach((component) => {

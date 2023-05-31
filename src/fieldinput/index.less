@@ -5,9 +5,17 @@
     display: flex;
     width: 100%;
     align-items: center;
+    box-sizing: border-box;
+
     &--clearwrap {
       position: relative;
       padding-right: 5px;
+    }
+
+    &--focused {
+      border-style: solid;
+      border-color: var(--van-fieldinput-focused-border-color);
+      border-width: var(--van-fieldinput-focused-border-width);
     }
   }
   &__control {

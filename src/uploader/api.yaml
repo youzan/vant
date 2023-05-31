@@ -146,6 +146,10 @@
       title: 删除预览
       description: 删除文件预览时触发
       params: []
+    - name: start
+      title: 上传开始时
+      description: 上传开始时触发
+      params: []
     - name: success
       title: 上传成功时
       description: 上传成功时触发

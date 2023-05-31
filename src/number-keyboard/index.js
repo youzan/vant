@@ -229,7 +229,7 @@ export default createComponent({
               huge={this.huge}
               text={this.closeButtonText}
               type="close"
-              color="blue"
+              color="finish"
               loading={this.closeButtonLoading}
               onPress={this.onPress}
             />
