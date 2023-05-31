@@ -1,11 +1,10 @@
 #!/usr/bin/env node
 
 const vusion = require('vusion-api');
-const pkg = require('../package.json');
-const version = pkg.version;
 const argv = require('minimist')(process.argv.slice(2));
 
 const config = require('../vusion.config.js');
+
 const components = config.docs.components.filter((component) => !component.href && !component.path && !component.deprecated);
 
 components.forEach((component) => {
