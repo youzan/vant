@@ -55,8 +55,6 @@ export default defineComponent({
 
   props: dropdownMenuProps,
 
-  emits: ['close'],
-
   setup(props, { slots }) {
     const id = useId();
     const root = ref<HTMLElement>();
