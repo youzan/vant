@@ -46,8 +46,7 @@
   ],
   "dependencies": {
     "@vant/popperjs": "^1.3.0",
-    "@vant/use": "^1.5.1",
-    "@vue/shared": "^3.0.0"
+    "@vant/use": "^1.5.1"
   },
   "peerDependencies": {
     "vue": "^3.0.0"
@@ -59,7 +58,6 @@
     "@vant/cli": "workspace:*",
     "@vant/eslint-config": "workspace:*",
     "@vant/icons": "workspace:*",
-    "@vue/runtime-core": "^3.3.4",
     "@vue/test-utils": "^2.3.2",
     "typescript": "^5.0.4",
     "vue": "^3.3.4",

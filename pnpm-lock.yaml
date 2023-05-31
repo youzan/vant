@@ -62,9 +62,6 @@ importers:
       '@vant/use':
         specifier: ^1.5.1
         version: link:../vant-use
-      '@vue/shared':
-        specifier: ^3.0.0
-        version: 3.3.4
     devDependencies:
       '@types/jest':
         specifier: ^29.5.1
@@ -84,9 +81,6 @@ importers:
       '@vant/icons':
         specifier: workspace:*
         version: link:../vant-icons
-      '@vue/runtime-core':
-        specifier: ^3.3.4
-        version: 3.3.4
       '@vue/test-utils':
         specifier: ^2.3.2
         version: 2.3.2(vue@3.3.4)
@@ -265,9 +259,6 @@ importers:
 
   packages/vant-compat:
     devDependencies:
-      '@vue/runtime-core':
-        specifier: ^3.3.4
-        version: 3.3.4
       esbuild:
         specifier: ^0.17.12
         version: 0.17.12
@@ -6092,6 +6083,7 @@ packages:
   /source-map@0.6.1:
     resolution: {integrity: sha512-UjgapumWlbMhkBgzT7Ykc5YXUT46F0iKu8SGXq0bcwP5dz/h0Plj6enJqjz1Zbq2l5WaqYnrVbwWOWMyF3F47g==}
     engines: {node: '>=0.10.0'}
+    requiresBuild: true
 
   /spdx-correct@3.1.1:
     resolution: {integrity: sha512-cOYcUWwhCuHCXi49RhFRCyJEK3iPj1Ziz9DpViV3tbZOwXD49QzIN3MpOLJNxh2qwq2lJJZaKMVw9qNi4jTC0w==}
