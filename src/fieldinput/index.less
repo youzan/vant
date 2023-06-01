@@ -2,6 +2,7 @@
 
 .van-fieldinput {
   &__newwrap {
+    position: relative;
     display: flex;
     width: 100%;
     align-items: center;
@@ -62,6 +63,15 @@
       display: flex;
       align-items: center;
       min-height: var(--van-fieldinput-line-height);
+    }
+
+    &--hide {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      opacity: 0 !important;
+      pointer-events: none !important;
     }
 
     // for ios wechat

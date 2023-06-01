@@ -6002,8 +6002,7 @@
                             "value": "password",
                             "updateData": {
                                 "clearable": false,
-                                "maxlength": 6,
-                                "keytheme": "custom"
+                                "maxlength": 6
                             }
                         }
                     ]
@@ -6066,12 +6065,7 @@
                     "options": [
                         {
                             "value": "native",
-                            "title": "默认键盘",
-                            "dependency": [
-                                {
-                                    "!inputstyle": "password"
-                                }
-                            ]
+                            "title": "默认键盘"
                         },
                         {
                             "value": "custom",

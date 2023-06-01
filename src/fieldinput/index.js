@@ -83,6 +83,7 @@ export default createComponent({
   },
   computed: {
     shownumbertype() {
+      // 定制键盘样式
       return this.keytheme === 'custom';
     },
     extraKey() {
@@ -146,11 +147,25 @@ export default createComponent({
       }
     },
 
+    onCompositionStart (e) {
+      e.target.composing = true;
+    },
+
+    onCompositionEnd (e) {
+      // prevent triggering an input event for no reason
+      if (!e.target.composing) return;
+
+      e.target.composing = false;
+      this.updateValue(e.target.value);
+      this.$emit('input', e);
+    },
+
     onInput(event) {
       // not update v-model when composing
       if (event.target.composing) {
         return;
       }
+
       this.updateValue(event.target.value);
       this.$emit('input', event);
     },
@@ -206,6 +221,7 @@ export default createComponent({
       if (this.readonly || this.disabled) {
         return;
       }
+
       if (this.$env?.VUE_APP_DESIGNER) {
         this.$nextTick(() => {
           document
@@ -216,6 +232,7 @@ export default createComponent({
           }
         });
       }
+
       !this.shownumber && (this.shownumber = true);
     },
     getContain() {
@@ -298,32 +315,38 @@ export default createComponent({
           focused: this.needFocusThemeStyle && this.focused,
         })}
       >
-        {this.inputstyle === 'input' ? (
-          <input
-            // vShow={this.showInput}
-            ref="input"
-            type={this.type}
-            role="fieldinput"
-            class={bem('control', [inputAlign, 'custom'])}
-            value={this.currentValue}
-            maxlength={this.maxlength}
-            // style={this.inputStyle}
-            disabled={this.disabled}
-            readonly={this.readonly || this.shownumbertype}
-            // set keyboard in modern browsers
-            // inputmode={this.integer ? 'numeric' : 'decimal'}
-            placeholder={this.placeholder}
-            // aria-valuemax={this.max}
-            // aria-valuemin={this.min}
-            // aria-valuenow={this.currentValue}
-            onInput={this.onInput}
-            onFocus={this.onFocus}
-            onBlur={this.onBlur}
-            // onMousedown={this.onMousedown}
-            vusion-click-enabled
-            onClick={this.onTouchstartinput}
-          />
-        ) : null}
+        <input
+          // vShow={this.showInput}
+          ref="input"
+          type={this.type}
+          role="fieldinput"
+          class={bem('control', [
+            inputAlign,
+            'custom',
+            this.inputstyle === 'password' ? 'hide' : '', // 格子展示时隐藏
+          ])}
+          value={this.currentValue}
+          // maxlength={this.maxlength}
+          // style={this.inputStyle}
+          disabled={this.disabled}
+          readonly={this.readonly || this.shownumbertype}
+          // set keyboard in modern browsers
+          // inputmode={this.integer ? 'numeric' : 'decimal'}
+          placeholder={this.placeholder}
+          // aria-valuemax={this.max}
+          // aria-valuemin={this.min}
+          // aria-valuenow={this.currentValue}
+          onInput={this.onInput}
+          onFocus={this.onFocus}
+          onBlur={this.onBlur}
+          // onMousedown={this.onMousedown}
+          vusion-click-enabled
+          onClick={this.onTouchstartinput}
+          onCompositionstart={this.onCompositionStart}
+          onCompositionend={this.onCompositionEnd}
+        />
+
+
         {this.showClear() && (
           <Icon name="clear" class={bem('clear')} onTouchstart={this.onClear} />
         )}
@@ -341,7 +364,11 @@ export default createComponent({
             disabled={this.disabled}
             readonly={this.readonly}
             vusion-click-enabled
-            onClick={this.onTouchstartinput}
+            onClick={() => {
+              this.onTouchstartinput;
+              // 系统键盘时调用
+              this.keytheme === 'native' && this.focus();
+            }}
           />
         ) : null}
         {this.shownumbertype ? (
