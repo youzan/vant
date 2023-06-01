@@ -11,7 +11,7 @@
 
     <van-fieldinput
       ref="fieldinput3"
-      style="--van-fieldinput-text-color:#a38989;height:50px; --van-fieldinput-focused-border-width: 1px; --van-fieldinput-focused-border-color: red;"
+      style="border: 1px solid blue; --van-fieldinput-text-color:#a38989;height:50px;"
       placeholder="请输入"
       type="text"
       keytheme="native"

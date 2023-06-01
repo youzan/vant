@@ -78,6 +78,7 @@ export default createComponent({
       currentValue: defaultValue,
       shownumber: false,
       staticStyleVar: '',
+      needFocusThemeStyle: false,
     };
   },
   computed: {
@@ -241,9 +242,16 @@ export default createComponent({
           if (/^--/.test(key)) {
             const value = staticStyle[key];
             style += `${key}: ${value};`;
+
           }
         }
       }
+
+      // 判断一下有没有配置聚焦时主题样式
+      if (style.indexOf('--van-fieldinput-focused-') !== -1) {
+        this.needFocusThemeStyle = true;
+      }
+
       return style;
     },
   },
@@ -287,7 +295,7 @@ export default createComponent({
       <div
         class={bem('newwrap', {
           clearwrap: this.clearable,
-          focused: this.focused,
+          focused: this.needFocusThemeStyle && this.focused,
         })}
       >
         {this.inputstyle === 'input' ? (
