@@ -144,6 +144,32 @@ export default {
   setup() {
     const currentTime = ref(['12', '00']);
 
+    const filter = (type, options) => {
+      if (type === 'minute') {
+        return options.filter((option) => Number(option.value) % 10 === 0);
+      }
+      return options;
+    };
+
+    return {
+      filter,
+      currentTime,
+    };
+  },
+};
+```
+
+### Advanced Usage
+
+The third parameter of the `filter` function can get the currently selected time, which can be used to filter unwanted times more flexibly when using the uncontrolled mode.
+
+```html
+<van-time-picker title="Choose Time" :filter="filter" />
+```
+
+```js
+export default {
+  setup() {
     const filter = (type, options, values) => {
       const hour = +values[0];
 
@@ -170,7 +196,6 @@ export default {
 
     return {
       filter,
-      currentTime,
     };
   },
 };

@@ -34,7 +34,18 @@ const formatterTime = ref(['12', '00']);
 
 const columnsType: TimePickerColumnType[] = ['hour', 'minute', 'second'];
 
-const filter = (type: string, options: PickerOption[], values: string[]) => {
+const filter = (type: string, options: PickerOption[]) => {
+  if (type === 'minute') {
+    return options.filter((option) => Number(option.value) % 10 === 0);
+  }
+  return options;
+};
+
+const timeFilter = (
+  type: string,
+  options: PickerOption[],
+  values: string[]
+) => {
   const hour = +values[0];
 
   if (type === 'hour') {
@@ -107,5 +118,9 @@ const formatter = (type: string, option: PickerOption) => {
       :title="t('chooseTime')"
       :filter="filter"
     />
+  </demo-block>
+
+  <demo-block card :title="t('advancedUsage')">
+    <van-time-picker :title="t('chooseTime')" :filter="timeFilter" />
   </demo-block>
 </template>

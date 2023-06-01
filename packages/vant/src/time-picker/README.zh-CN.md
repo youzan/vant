@@ -133,7 +133,7 @@ export default {
 
 ### 过滤选项
 
-通过传入 `filter` 函数，可以对选项数组进行过滤，剔除不需要的时间，实现自定义时间间隔以及可选时间范围。
+通过传入 `filter` 函数，可以对选项数组进行过滤，剔除不需要的时间，实现自定义时间间隔。
 
 ```html
 <van-time-picker v-model="currentTime" title="选择时间" :filter="filter" />
@@ -145,6 +145,32 @@ import { ref } from 'vue';
 export default {
   setup() {
     const currentTime = ref(['12', '00']);
+    const filter = (type, options) => {
+      if (type === 'minute') {
+        return options.filter((option) => Number(option.value) % 10 === 0);
+      }
+      return options;
+    };
+
+    return {
+      filter,
+      currentTime,
+    };
+  },
+};
+```
+
+### 高级用法
+
+`filter` 函数的第三个参数能获取到当前选择的时间，这在使用非受控模式时，可以更灵活地过滤掉不需要的时间。
+
+```html
+<van-time-picker title="选择时间" :filter="filter" />
+```
+
+```js
+export default {
+  setup() {
     const filter = (type, options, values) => {
       const hour = +values[0];
 
@@ -171,7 +197,6 @@ export default {
 
     return {
       filter,
-      currentTime,
     };
   },
 };
