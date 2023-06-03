@@ -2,23 +2,34 @@
   <demo-nav />
   <router-view v-slot="{ Component }">
     <demo-section>
-      <keep-alive>
+      <keep-alive v-if="shouldKeep">
         <component :is="Component" />
       </keep-alive>
+      <component v-else :is="Component" />
     </demo-section>
   </router-view>
 </template>
 
 <script>
-import { watch } from 'vue';
+import { watch, computed } from 'vue';
 import DemoNav from './components/DemoNav.vue';
 import { useCurrentTheme } from '../common/iframe-sync';
 import { config } from 'site-mobile-shared';
+import { router } from './router';
+
+const excludePath = ['floating-bubble', 'back-top'];
 
 export default {
   components: { DemoNav },
 
   setup() {
+    const shouldKeep = computed(
+      () =>
+        !excludePath.some((path) =>
+          router.currentRoute.value.path.includes(path)
+        )
+    );
+
     const theme = useCurrentTheme();
 
     watch(
@@ -43,6 +54,10 @@ export default {
       },
       { immediate: true }
     );
+
+    return {
+      shouldKeep,
+    };
   },
 };
 </script>
