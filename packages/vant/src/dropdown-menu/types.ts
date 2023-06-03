@@ -1,4 +1,4 @@
-import type { Ref } from 'vue';
+import type { ComponentPublicInstance, Ref } from 'vue';
 import type { DropdownMenuProps } from './DropdownMenu';
 
 export type DropdownMenuDirection = 'up' | 'down';
@@ -9,6 +9,15 @@ export type DropdownMenuProvide = {
   offset: Ref<number>;
   updateOffset: () => void;
 };
+
+export type DropdownMenuExpose = {
+  close: () => void;
+};
+
+export type DropdownMenuInstance = ComponentPublicInstance<
+  DropdownMenuProps,
+  DropdownMenuExpose
+>;
 
 export type DropdownMenuThemeVars = {
   dropdownMenuHeight?: string;
