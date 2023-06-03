@@ -367,8 +367,8 @@ export default {
 | Name | Description | SlotProps |
 | --- | --- | --- |
 | default | Custom upload area | - |
-| preview-delete `v.3.5.0` | Custom delete icon | `item: FileListItem` |
-| preview-cover | Custom content that covers the image preview | `item: FileListItem` |
+| preview-delete | Custom delete icon | - |
+| preview-cover | Custom content that covers the image preview | _item: FileListItem_ |
 
 ### Parameters of before-read、after-read、before-delete
 
