@@ -25,6 +25,10 @@ export function get(object: any, path: string): any {
 
 export type Writeable<T> = { -readonly [P in keyof T]: T[P] };
 
+export type RequiredParams<T> = T extends (...args: infer P) => infer R
+  ? (...args: { [K in keyof P]-?: NonNullable<P[K]> }) => R
+  : never;
+
 export function pick<T, U extends keyof T>(
   obj: T,
   keys: ReadonlyArray<U>,
