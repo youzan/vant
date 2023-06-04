@@ -91,7 +91,7 @@ export default {
 | content       | The text displayed       | _string_           | -       |
 | expand-text   | Expand operation text    | _string_           | -       |
 | collapse-text | Collapse operation text  | _string_           | -       |
-| dots          | Text content of ellipsis | _string_           | `'...'` |
+| dots `v4.2.0` | Text content of ellipsis | _string_           | `'...'` |
 
 ### Events
 
