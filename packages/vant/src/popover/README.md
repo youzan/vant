@@ -283,7 +283,7 @@ export default {
 | --- | --- | --- | --- |
 | v-model:show | Whether to show Popover | _boolean_ | `false` |
 | actions | Actions | _PopoverAction[]_ | `[]` |
-| actions-direction | Direction of actions, can be set to `horizontal` | _PopoverActionsDirection_ | `vertical` |
+| actions-direction `4.4.1` | Direction of actions, can be set to `horizontal` | _PopoverActionsDirection_ | `vertical` |
 | placement | Placement | _PopoverPlacement_ | `bottom` |
 | theme | Theme, can be set to `dark` | _PopoverTheme_ | `light` |
 | trigger | Trigger mode, can be set to `manual` | _PopoverTrigger_ | `click` |
