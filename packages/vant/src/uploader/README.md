@@ -335,7 +335,7 @@ export default {
 | disabled | Whether to disabled the upload | _boolean_ | `false` |
 | readonly | Whether to make upload area readonly | _boolean_ | `false` |
 | deletable | Whether to show delete icon | _boolean_ | `true` |
-| reupload | Whether to enable reupload, if enabled, the image preview will be disabled | _boolean_ | `false` |
+| reupload `4.4.0` | Whether to enable reupload, if enabled, the image preview will be disabled | _boolean_ | `false` |
 | show-upload | Whether to show upload area | _boolean_ | `true` |
 | lazy-load | Whether to enable lazy load, should register [Lazyload](#/en-US/lazyload) component | _boolean_ | `false` |
 | capture | Capture, can be set to `camera` | _string_ | - |

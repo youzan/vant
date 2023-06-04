@@ -84,7 +84,7 @@ app.use(Divider);
 | dashed           | 是否使用虚线                      | _boolean_ | `false`  |
 | hairline         | 是否使用 0.5px 线                 | _boolean_ | `true`   |
 | content-position | 内容位置，可选值为 `left` `right` | _string_  | `center` |
-| vertical         | 是否使用垂直                      | _boolean_ | `false`  |
+| vertical `4.4.0` | 是否使用垂直                      | _boolean_ | `false`  |
 
 ### Slots
 
