@@ -293,7 +293,7 @@ export default {
 | --- | --- | --- | --- |
 | v-model:show | 是否展示气泡弹出层 | _boolean_ | `false` |
 | actions | 选项列表 | _PopoverAction[]_ | `[]` |
-| actions-direction `4.4.1` | 选项列表的排列方向，可选值为 `horizontal` | _PopoverActionsDirection_ | `vertical` |
+| actions-direction `v4.4.1` | 选项列表的排列方向，可选值为 `horizontal` | _PopoverActionsDirection_ | `vertical` |
 | placement | 弹出位置 | _PopoverPlacement_ | `bottom` |
 | theme | 主题风格，可选值为 `dark` | _PopoverTheme_ | `light` |
 | trigger | 触发方式，可选值为 `manual` | _PopoverTrigger_ | `click` |

@@ -74,7 +74,7 @@ Text
 | dashed | Whether to use dashed border | _boolean_ | `false` |
 | hairline | Whether to use hairline | _boolean_ | `true` |
 | content-position | Content position, can be set to `left` `right` | _string_ | `center` |
-| vertical `4.4.0` | Whether to use vertical | _boolean_ | `false` |
+| vertical `v4.4.0` | Whether to use vertical | _boolean_ | `false` |
 
 ### Slots
 
