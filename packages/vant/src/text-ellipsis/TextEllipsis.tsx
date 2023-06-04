@@ -1,3 +1,5 @@
+/* eslint-disable no-lonely-if */
+/* eslint-disable no-else-return */
 import {
   ref,
   watch,
@@ -20,6 +22,7 @@ export const textEllipsisProps = {
   content: makeStringProp(''),
   expandText: makeStringProp(''),
   collapseText: makeStringProp(''),
+  position: makeStringProp('end'),
 };
 
 export type TextEllipsisProps = ExtractPropTypes<typeof textEllipsisProps>;
@@ -70,33 +73,97 @@ export default defineComponent({
         container: HTMLDivElement,
         maxHeight: number
       ) => {
-        const { dots, content, expandText } = props;
-
-        let left = 0;
-        let right = content.length;
-        let res = -1;
-
-        while (left <= right) {
-          const mid = Math.floor((left + right) / 2);
-          container.innerText = content.slice(0, mid) + dots + expandText;
-          if (container.offsetHeight <= maxHeight) {
-            left = mid + 1;
-            res = mid;
-          } else {
-            right = mid - 1;
+        const calcEllipse = () => {
+          // 结尾长度
+          const end = props.content.length;
+          // 计算省略底部或者头部文本
+          const tail = (left: number, right: number): string => {
+            const end = props.content.length;
+            if (right - left <= 1) {
+              if (props.position === 'end') {
+                return props.content.slice(0, left) + props.dots;
+              } else {
+                return props.dots + props.content.slice(right, end);
+              }
+            }
+            const middle = Math.round((left + right) >> 1);
+            // 设置截取位置
+            if (props.position === 'end') {
+              container.innerText = props.content.slice(0, middle);
+            } else {
+              container.innerText = props.content.slice(middle, end);
+            }
+            // 截取之后的高度还是达不到要求的高度
+            if (container.offsetHeight > maxHeight) {
+              if (props.position === 'end') {
+                return tail(left, middle);
+              } else {
+                return tail(middle, right);
+              }
+            } else {
+              if (props.position === 'end') {
+                return tail(middle, right);
+              } else {
+                return tail(left, middle);
+              }
+            }
+          };
+          container.innerText = tail(0, end);
+        };
+        const middleTail = (
+          leftPart: [number, number],
+          rightPart: [number, number]
+        ): any => {
+          const end = props.content.length;
+          if (
+            leftPart[1] - leftPart[0] <= 1 &&
+            rightPart[1] - rightPart[0] <= 1
+          ) {
+            return (
+              props.content.slice(0, leftPart[1]) +
+              props.dots +
+              props.dots +
+              props.content.slice(rightPart[1], end)
+            );
           }
-        }
-        return content.slice(0, res) + dots;
+          const leftMiddle = Math.floor((leftPart[0] + leftPart[1]) >> 1);
+          const rightMiddle = Math.ceil((rightPart[0] + rightPart[1]) >> 1);
+          container.innerText =
+            props.content.slice(0, leftMiddle) +
+            props.dots +
+            props.expandText +
+            props.dots +
+            props.content.slice(rightMiddle, end);
+          if (container.offsetHeight >= maxHeight) {
+            return middleTail(
+              [leftPart[0], leftMiddle],
+              [rightMiddle, rightPart[1]]
+            );
+          } else {
+            return middleTail(
+              [leftMiddle, leftPart[1]],
+              [rightPart[0], rightMiddle]
+            );
+          }
+        };
+        const end = props.content.length;
+        const middle = (0 + end) >> 1;
+        props.position === 'middle'
+          ? (container.innerText = middleTail([0, middle], [middle, end]))
+          : calcEllipse();
+        return container.innerText;
       };
+      // 计算折叠文本
 
       const container = cloneContainer();
       if (!container) return;
-
       const { paddingBottom, paddingTop, lineHeight } = container.style;
-      const maxHeight =
+      const maxHeight = Math.ceil(
         (Number(props.rows) + 0.5) * pxToNum(lineHeight) +
-        pxToNum(paddingTop) +
-        pxToNum(paddingBottom);
+          pxToNum(paddingTop) +
+          pxToNum(paddingBottom)
+      );
+      console.log(maxHeight);
       if (maxHeight < container.offsetHeight) {
         hasAction.value = true;
         text.value = calcEllipsisText(container, maxHeight);
@@ -121,7 +188,7 @@ export default defineComponent({
 
     onMounted(calcEllipsised);
 
-    watch(() => [props.content, props.rows], calcEllipsised);
+    watch(() => [props.content, props.rows, props.position], calcEllipsised);
 
     useEventListener('resize', calcEllipsised);
 
