@@ -159,8 +159,12 @@ export default {
 | content       | The text displayed       | _string_           | -       |
 | expand-text   | Expand operation text    | _string_           | -       |
 | collapse-text | Collapse operation text  | _string_           | -       |
+<<<<<<< HEAD
 | dots          | Text content of ellipsis | _string_           | `'...'` |
 | position      | The postion of ellipsis  | _string_           | `'end'` |
+=======
+| dots `v4.2.0` | Text content of ellipsis | _string_           | `'...'` |
+>>>>>>> cfdf3a811e77b39db74c46f1513792d98c096751
 
 ### Events
 
