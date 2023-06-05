@@ -71,36 +71,36 @@ export default defineComponent({
         container: HTMLDivElement,
         maxHeight: number
       ) => {
-        const calcEllipse = () => {
-          // 结尾长度
-          const end = props.content.length;
+        const { content, position, dots } = props;
+        // the length of the content
+        const end = content.length;
 
-          // 计算省略底部或者头部文本
+        const calcEllipse = () => {
+          // calculate the former or later content
           const tail = (left: number, right: number): string => {
-            const end = props.content.length;
             if (right - left <= 1) {
-              if (props.position === 'end') {
-                return props.content.slice(0, left) + props.dots;
+              if (position === 'end') {
+                return content.slice(0, left) + dots;
               }
-              return props.dots + props.content.slice(right, end);
+              return dots + content.slice(right, end);
             }
             const middle = Math.round((left + right) >> 1);
 
-            // 设置截取位置
-            if (props.position === 'end') {
-              container.innerText = props.content.slice(0, middle);
+            // Set the interception location
+            if (position === 'end') {
+              container.innerText = content.slice(0, middle);
             } else {
-              container.innerText = props.content.slice(middle, end);
+              container.innerText = content.slice(middle, end);
             }
 
-            // 截取之后的高度还是达不到要求的高度
+            // The height after interception still does not match the rquired height
             if (container.offsetHeight > maxHeight) {
-              if (props.position === 'end') {
+              if (position === 'end') {
                 return tail(left, middle);
               }
               return tail(middle, right);
             }
-            if (props.position === 'end') {
+            if (position === 'end') {
               return tail(middle, right);
             }
             return tail(left, middle);
@@ -111,16 +111,15 @@ export default defineComponent({
           leftPart: [number, number],
           rightPart: [number, number]
         ): string => {
-          const end = props.content.length;
           if (
             leftPart[1] - leftPart[0] <= 1 &&
             rightPart[1] - rightPart[0] <= 1
           ) {
             return (
-              props.content.slice(0, leftPart[1]) +
-              props.dots +
-              props.dots +
-              props.content.slice(rightPart[1], end)
+              content.slice(0, leftPart[1]) +
+              dots +
+              dots +
+              content.slice(rightPart[1], end)
             );
           }
           const leftMiddle = Math.floor((leftPart[0] + leftPart[1]) >> 1);
@@ -142,7 +141,6 @@ export default defineComponent({
             [rightPart[0], rightMiddle]
           );
         };
-        const end = props.content.length;
         const middle = (0 + end) >> 1;
         props.position === 'middle'
           ? (container.innerText = middleTail([0, middle], [middle, end]))
@@ -150,7 +148,7 @@ export default defineComponent({
         return container.innerText;
       };
 
-      // 计算折叠文本
+      // Calculate the interceptional text
       const container = cloneContainer();
       if (!container) return;
       const { paddingBottom, paddingTop, lineHeight } = container.style;

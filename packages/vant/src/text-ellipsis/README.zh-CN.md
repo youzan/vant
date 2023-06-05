@@ -131,6 +131,7 @@ export default {
   :content="text"
   expand-text="展开"
   collapse-text="收起"
+  position="middle"
 />
 ```
 
