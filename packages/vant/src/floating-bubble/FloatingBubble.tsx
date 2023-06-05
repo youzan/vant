@@ -8,6 +8,8 @@ import {
   onMounted,
   ref,
   watch,
+  onActivated,
+  onDeactivated,
   type CSSProperties,
   type ExtractPropTypes,
 } from 'vue';
@@ -191,6 +193,18 @@ export default defineComponent({
       { deep: true }
     );
 
+    const show = ref(true);
+
+    onActivated(() => {
+      show.value = true;
+    });
+
+    onDeactivated(() => {
+      if (props.teleport) {
+        show.value = false;
+      }
+    });
+
     return () => {
       const Content = (
         <div
@@ -202,6 +216,7 @@ export default defineComponent({
           onTouchcancel={onTouchend}
           onClick={onClick}
           style={rootStyle.value}
+          v-show={show.value}
         >
           {slots.default ? (
             slots.default()
