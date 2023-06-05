@@ -1,5 +1,3 @@
-/* eslint-disable no-lonely-if */
-/* eslint-disable no-else-return */
 import {
   ref,
   watch,
@@ -76,44 +74,43 @@ export default defineComponent({
         const calcEllipse = () => {
           // 结尾长度
           const end = props.content.length;
+
           // 计算省略底部或者头部文本
           const tail = (left: number, right: number): string => {
             const end = props.content.length;
             if (right - left <= 1) {
               if (props.position === 'end') {
                 return props.content.slice(0, left) + props.dots;
-              } else {
-                return props.dots + props.content.slice(right, end);
               }
+              return props.dots + props.content.slice(right, end);
             }
             const middle = Math.round((left + right) >> 1);
+
             // 设置截取位置
             if (props.position === 'end') {
               container.innerText = props.content.slice(0, middle);
             } else {
               container.innerText = props.content.slice(middle, end);
             }
+
             // 截取之后的高度还是达不到要求的高度
             if (container.offsetHeight > maxHeight) {
               if (props.position === 'end') {
                 return tail(left, middle);
-              } else {
-                return tail(middle, right);
               }
-            } else {
-              if (props.position === 'end') {
-                return tail(middle, right);
-              } else {
-                return tail(left, middle);
-              }
+              return tail(middle, right);
             }
+            if (props.position === 'end') {
+              return tail(middle, right);
+            }
+            return tail(left, middle);
           };
           container.innerText = tail(0, end);
         };
         const middleTail = (
           leftPart: [number, number],
           rightPart: [number, number]
-        ): any => {
+        ): string => {
           const end = props.content.length;
           if (
             leftPart[1] - leftPart[0] <= 1 &&
@@ -139,12 +136,11 @@ export default defineComponent({
               [leftPart[0], leftMiddle],
               [rightMiddle, rightPart[1]]
             );
-          } else {
-            return middleTail(
-              [leftMiddle, leftPart[1]],
-              [rightPart[0], rightMiddle]
-            );
           }
+          return middleTail(
+            [leftMiddle, leftPart[1]],
+            [rightPart[0], rightMiddle]
+          );
         };
         const end = props.content.length;
         const middle = (0 + end) >> 1;
@@ -153,8 +149,8 @@ export default defineComponent({
           : calcEllipse();
         return container.innerText;
       };
-      // 计算折叠文本
 
+      // 计算折叠文本
       const container = cloneContainer();
       if (!container) return;
       const { paddingBottom, paddingTop, lineHeight } = container.style;
@@ -163,7 +159,6 @@ export default defineComponent({
           pxToNum(paddingTop) +
           pxToNum(paddingBottom)
       );
-      console.log(maxHeight);
       if (maxHeight < container.offsetHeight) {
         hasAction.value = true;
         text.value = calcEllipsisText(container, maxHeight);

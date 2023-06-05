@@ -6,7 +6,7 @@ import type { PropType } from 'vue';
 
 export const unknownProp = null as unknown as PropType<unknown>;
 
-export const numericProp = [Number, String]; // 可能是number类型或者string类型
+export const numericProp = [Number, String];
 
 export const truthProp = {
   type: Boolean,
