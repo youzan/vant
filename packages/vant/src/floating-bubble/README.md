@@ -1,4 +1,4 @@
-# FloatingBubble 浮动气泡
+# FloatingBubble
 
 ### Intro
 
@@ -32,7 +32,7 @@ import { showToast } from 'vant';
 export default {
   setup() {
     const onClick = () => {
-      showToast('点击气泡');
+      showToast('Click Bubble');
     };
     return { onClick };
   },
@@ -102,7 +102,7 @@ export default {
 | ------- | ------------------------------------ |
 | default | Customize the bubble display content |
 
-### 类型定义
+### Types
 
 The component exports the following type definitions:
 
