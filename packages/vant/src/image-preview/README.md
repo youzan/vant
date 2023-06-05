@@ -277,9 +277,9 @@ imagePreviewRef.value?.swipeTo(1);
 
 | Name | Description | SlotProps |
 | --- | --- | --- |
-| index | Custom index | { index: index of current image } |
+| index | Custom index | _{ index: index of current image }_ |
 | cover | Custom content that covers the image preview | - |
-| image | Custom image content | { src: current image src } |
+| image | Custom image content | _{ src: current image src }_ |
 
 ### onClose Parameters
 

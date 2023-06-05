@@ -25,6 +25,7 @@ const t = useTranslate({
     previewCover: '自定义预览样式',
     deleteMessage: '删除前置处理',
     customPreviewImage: '自定义单个图片预览',
+    reupload: '开启覆盖上传',
   },
   'en-US': {
     status: 'Upload Status',
@@ -44,6 +45,7 @@ const t = useTranslate({
     previewCover: 'Preview Cover',
     deleteMessage: 'Before Delete',
     customPreviewImage: 'Custom single preview image',
+    reupload: 'Enable Reupload',
   },
 });
 
@@ -142,6 +144,8 @@ const onOversize = (file: UploaderFileListItem, detail: unknown) => {
   console.log(file, detail);
   showToast(t('overSizeTip'));
 };
+
+const fileList6 = ref([{ url: cdnURL('leaf.jpeg') }]);
 </script>
 
 <template>
@@ -200,6 +204,10 @@ const onOversize = (file: UploaderFileListItem, detail: unknown) => {
 
   <demo-block :title="t('customPreviewImage')">
     <van-uploader v-model="fileList5" multiple accept="*" :deletable="false" />
+  </demo-block>
+
+  <demo-block :title="t('reupload')">
+    <van-uploader v-model="fileList6" reupload max-count="2" />
   </demo-block>
 </template>
 

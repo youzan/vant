@@ -1,10 +1,37 @@
 import TimePicker from '../TimePicker';
+import { Picker } from '../../picker';
 import { mount } from '../../../test';
 import type { PickerOption } from '../../picker';
 
 function filter(type: string, options: PickerOption[]): PickerOption[] {
   const mod = type === 'minute' ? 20 : 10;
   return options.filter((option) => Number(option.value) % mod === 0);
+}
+
+function timeRangeFilter(
+  type: string,
+  options: PickerOption[],
+  values: string[]
+): PickerOption[] {
+  const hour = +values[0];
+
+  if (type === 'hour') {
+    return options.filter(
+      (option) => Number(option.value) >= 8 && Number(option.value) <= 18
+    );
+  }
+
+  if (type === 'minute') {
+    if (hour === 8) {
+      return options.filter((option) => Number(option.value) >= 40);
+    }
+
+    if (hour === 18) {
+      return options.filter((option) => Number(option.value) <= 20);
+    }
+  }
+
+  return options;
 }
 
 test('should format initial value correctly', () => {
@@ -84,6 +111,31 @@ test('should filter options when using filter prop', () => {
   });
 
   expect(wrapper.html()).toMatchSnapshot();
+});
+
+test('should filter options when using filter prop to filter a time range', async () => {
+  const wrapper = mount(TimePicker, {
+    props: {
+      filter: timeRangeFilter,
+      modelValue: ['08', '40'],
+    },
+  });
+
+  const picker = wrapper.findComponent(Picker);
+  let columns = picker.props('columns');
+  expect(columns[0].length).toEqual(11);
+  expect(columns[1].length).toEqual(20);
+  expect(columns[0][0].value).toEqual('08');
+  expect(columns[1][0].value).toEqual('40');
+
+  await wrapper.setProps({ modelValue: ['09', '00'] });
+  columns = picker.props('columns');
+  expect(columns[1].length).toEqual(60);
+
+  await wrapper.setProps({ modelValue: ['18', '00'] });
+  columns = picker.props('columns');
+  expect(columns[1].length).toEqual(21);
+  expect(columns[1][20].value).toEqual('20');
 });
 
 test('should format options correctly when using formatter prop', async () => {

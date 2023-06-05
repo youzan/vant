@@ -2,7 +2,7 @@
 
 ### Intro
 
-To realize the critical subtitle function when watching the video.
+To realize the critical subtitle function when watching the video. Please upgrade `vant` to >= v4.4.0 before using this component.
 
 ### Install
 
@@ -108,7 +108,7 @@ export default {
 | auto-play | Whether to play the bullet screen automatically | _boolean_ | `true` |
 | rows | The number of lines of text | _number \| string_ | `4` |
 | top | Spacing between the top of the barrage area, unit `px` | _number \| string_ | `10` |
-| speed | Speed of passing, unit `ms` | _number \| string_ | `4000` |
+| duration | Text animation duration, unit `ms` | _number \| string_ | `4000` |
 | delay | Barrage animation delay, unit `ms` | _number_ | `300` |
 
 ### Methods
@@ -140,9 +140,9 @@ import type { BarrageProps, BarrageItem, BarrageInstance } from 'vant';
 
 The component provides the following CSS variables, which can be used to customize styles. Please refer to [ConfigProvider component](#/en-US/config-provider).
 
-| Name | Default Value | Description |
-| --- | --- | --- |
-| --van-barrage-font-size | _16px_ | - |
-| --van-barrage-space | _10px_ | - |
-| --van-barrage-color | _var(--van-white)_ | - |
-| --van-barrage-font | _-apple-system-font, Helvetica Neue, Arial, sans-serif_ | - |
+| Name                    | Default Value      | Description |
+| ----------------------- | ------------------ | ----------- |
+| --van-barrage-font-size | _16px_             | -           |
+| --van-barrage-space     | _10px_             | -           |
+| --van-barrage-color     | _var(--van-white)_ | -           |
+| --van-barrage-font      | _inherit_          | -           |

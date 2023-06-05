@@ -83,6 +83,42 @@ export default {
 };
 ```
 
+### Horizontal
+
+After setting the `actions-direction` prop to `horizontal`, the actions will be arranged horizontally.
+
+```html
+<van-popover
+  v-model:show="showPopover"
+  :actions="actions"
+  actions-direction="horizontal"
+>
+  <template #reference>
+    <van-button type="primary">Horizontal</van-button>
+  </template>
+</van-popover>
+```
+
+```js
+import { ref } from 'vue';
+
+export default {
+  setup() {
+    const showPopover = ref(false);
+    const actions = [
+      { text: 'Option 1' },
+      { text: 'Option 2' },
+      { text: 'Option 3' },
+    ];
+
+    return {
+      actions,
+      showPopover,
+    };
+  },
+};
+```
+
 ### Placement
 
 ```html
@@ -226,9 +262,9 @@ import { showToast } from 'vant';
 export default {
   setup() {
     const actions = [
-      { text: '选项一' },
-      { text: '选项二' },
-      { text: '选项三' },
+      { text: 'Option 1' },
+      { text: 'Option 2' },
+      { text: 'Option 3' },
     ];
     const onSelect = (action) => showToast(action.text);
     return {
@@ -247,6 +283,7 @@ export default {
 | --- | --- | --- | --- |
 | v-model:show | Whether to show Popover | _boolean_ | `false` |
 | actions | Actions | _PopoverAction[]_ | `[]` |
+| actions-direction `v4.4.1` | Direction of actions, can be set to `horizontal` | _PopoverActionsDirection_ | `vertical` |
 | placement | Placement | _PopoverPlacement_ | `bottom` |
 | theme | Theme, can be set to `dark` | _PopoverTheme_ | `light` |
 | trigger | Trigger mode, can be set to `manual` | _PopoverTrigger_ | `click` |
@@ -300,6 +337,7 @@ import type {
   PopoverProps,
   PopoverTheme,
   PopoverAction,
+  PopoverActionsDirection,
   PopoverTrigger,
   PopoverPlacement,
 } from 'vant';
@@ -320,6 +358,8 @@ The component provides the following CSS variables, which can be used to customi
 | --van-popover-action-font-size | _var(--van-font-size-md)_ | - |
 | --van-popover-action-line-height | _var(--van-line-height-md)_ | - |
 | --van-popover-action-icon-size | _20px_ | - |
+| --van-popover-horizontal-action-height | _34px_ | - |
+| --van-popover-horizontal-action-icon-size | _16px_ | - |
 | --van-popover-light-text-color | _var(--van-text-color)_ | - |
 | --van-popover-light-background | _var(--van-background-2)_ | - |
 | --van-popover-light-action-disabled-text-color | _var(--van-text-color-3)_ | - |

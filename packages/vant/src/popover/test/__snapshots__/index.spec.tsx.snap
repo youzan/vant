@@ -26,7 +26,7 @@ exports[`should change icon class prefix when using icon-prefix prop 1`] = `
     <div class="van-popover__arrow">
     </div>
     <div role="menu"
-         class="van-popover__content"
+         class="van-popover__content van-popover__content--vertical"
     >
       <div role="menuitem"
            class="van-popover__action van-popover__action--with-icon"
@@ -67,7 +67,7 @@ exports[`should locate to reference element when showed 2`] = `
     <div class="van-popover__arrow">
     </div>
     <div role="menu"
-         class="van-popover__content"
+         class="van-popover__content van-popover__content--vertical"
     >
     </div>
   </div>
@@ -89,7 +89,7 @@ exports[`should locate to reference element when showed 3`] = `
     <div class="van-popover__arrow">
     </div>
     <div role="menu"
-         class="van-popover__content"
+         class="van-popover__content van-popover__content--vertical"
     >
     </div>
   </div>
@@ -120,7 +120,7 @@ exports[`should watch placement prop and update location 1`] = `
     <div class="van-popover__arrow">
     </div>
     <div role="menu"
-         class="van-popover__content"
+         class="van-popover__content van-popover__content--vertical"
     >
     </div>
   </div>

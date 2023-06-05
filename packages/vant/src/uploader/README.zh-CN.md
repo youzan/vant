@@ -317,6 +317,26 @@ export default {
 };
 ```
 
+### 开启覆盖上传
+
+```html
+<van-uploader v-model="fileList" reupload max-count="2" />
+```
+
+```ts
+import { ref } from 'vue';
+
+export default {
+  setup() {
+    const fileList = ref([
+      { url: 'https://fastly.jsdelivr.net/npm/@vant/assets/leaf.jpeg' },
+    ]);
+
+    return { fileList };
+  },
+};
+```
+
 ## API
 
 ### Props
@@ -334,6 +354,7 @@ export default {
 | disabled | 是否禁用文件上传 | _boolean_ | `false` |
 | readonly | 是否将上传区域设置为只读状态 | _boolean_ | `false` |
 | deletable | 是否展示删除按钮 | _boolean_ | `true` |
+| reupload `v4.4.0` | 是否开启覆盖上传，开启后会关闭图片预览 | _boolean_ | `false` |
 | show-upload | 是否展示上传区域 | _boolean_ | `true` |
 | lazy-load | 是否开启图片懒加载，须配合 [Lazyload](#/zh-CN/lazyload) 组件使用 | _boolean_ | `false` |
 | capture | 图片选取模式，可选值为 `camera` (直接调起摄像头) | _string_ | - |
@@ -351,13 +372,14 @@ export default {
 
 ### Events
 
-| 事件名        | 说明                   | 回调参数            |
-| ------------- | ---------------------- | ------------------- |
-| oversize      | 文件大小超过限制时触发 | 同 `after-read`     |
-| click-upload  | 点击上传区域时触发     | _event: MouseEvent_ |
-| click-preview | 点击预览图时触发       | 同 `after-read`     |
-| close-preview | 关闭全屏图片预览时触发 | -                   |
-| delete        | 删除文件预览时触发     | 同 `after-read`     |
+| 事件名         | 说明                   | 回调参数            |
+| -------------- | ---------------------- | ------------------- |
+| oversize       | 文件大小超过限制时触发 | 同 `after-read`     |
+| click-upload   | 点击上传区域时触发     | _event: MouseEvent_ |
+| click-preview  | 点击预览图时触发       | 同 `after-read`     |
+| click-reupload | 点击覆盖上传时触发     | 同 `after-read`     |
+| close-preview  | 关闭全屏图片预览时触发 | -                   |
+| delete         | 删除文件预览时触发     | 同 `after-read`     |
 
 ### Slots
 

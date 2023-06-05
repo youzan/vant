@@ -182,6 +182,8 @@ test('should emit "update:modelValue" event after clicking vertical slider', () 
 });
 
 test('should not emit change event when value not changed', async () => {
+  const restoreMock = mockRect();
+
   const wrapper = mount(Slider, {
     props: {
       modelValue: 50,
@@ -196,8 +198,16 @@ test('should not emit change event when value not changed', async () => {
   await wrapper.setProps({ modelValue: 100 });
   trigger(button, 'touchstart');
   trigger(wrapper, 'click', 100, 0);
-
   expect(wrapper.emitted('change')).toHaveLength(1);
+
+  trigger(wrapper, 'click', 50, 0);
+  expect(wrapper.emitted('change')).toHaveLength(2);
+
+  await wrapper.setProps({ modelValue: 50 });
+  trigger(wrapper, 'click', 100, 0);
+  expect(wrapper.emitted('change')).toHaveLength(3);
+
+  restoreMock();
 });
 
 // https://github.com/vant-ui/vant/issues/8889

@@ -74,7 +74,7 @@ export default {
 | Attribute | Description | Type | Default |
 | --- | --- | --- | --- |
 | v-model | Id of chosen contact | _number \| string_ | - |
-| list | Contact list | _Contact[]_ | `[]` |
+| list | Contact list | _ContactListItem[]_ | `[]` |
 | add-text | Add button text | _string_ | `Add new contact` |
 | default-tag-text | Default tag text | _string_ | - |
 
@@ -83,17 +83,17 @@ export default {
 | Event | Description | Arguments |
 | --- | --- | --- |
 | add | Emitted when the add button is clicked | - |
-| edit | Emitted when the edit button is clicked | _contact: Contact, index: number_ |
-| select | Emitted when a contact is selected | _contact: Contact, index: number_ |
+| edit | Emitted when the edit button is clicked | _contact: ContactListItem, index: number_ |
+| select | Emitted when a contact is selected | _contact: ContactListItem, index: number_ |
 
-### Data Structure of Contact
+### Data Structure of ContactListItem
 
-| key       | Description        | Type               |
-| --------- | ------------------ | ------------------ |
-| id        | ID                 | _number \| string_ |
-| name      | Name               | _string_           |
-| tel       | Phone              | _string_           |
-| isDefault | Is default contact | _boolean_          |
+| key       | Description        | Type                   |
+| --------- | ------------------ | ---------------------- |
+| id        | ID                 | _number \| string_     |
+| name      | Name               | _string_               |
+| tel       | Phone              | _string_               |
+| isDefault | Is default contact | _boolean \| undefined_ |
 
 ### Types
 
@@ -111,6 +111,7 @@ The component provides the following CSS variables, which can be used to customi
 
 | Name | Default Value | Description |
 | --- | --- | --- |
+| --van-contact-list-padding | _var(--van-padding-sm) var(--van-padding-sm) 80px_ | - |
 | --van-contact-list-edit-icon-size | _16px_ | - |
 | --van-contact-list-add-button-z-index | _999_ | - |
 | --van-contact-list-radio-color | _var(--van-primary-color)_ | - |

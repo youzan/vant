@@ -426,6 +426,8 @@ exports[`should render demo and match snapshot 1`] = `
           </span>
         </div>
       </div>
+      <div class="van-back-top__placeholder">
+      </div>
     </div>
     <div id="van-tab"
          role="tabpanel"

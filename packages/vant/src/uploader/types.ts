@@ -14,6 +14,7 @@ export type UploaderFileListItem = {
   message?: string;
   imageFit?: ImageFit;
   deletable?: boolean;
+  reupload?: boolean;
   previewSize?: Numeric;
   beforeDelete?: Interceptor;
 };

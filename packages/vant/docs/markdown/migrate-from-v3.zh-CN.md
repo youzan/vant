@@ -274,7 +274,7 @@ Notify.clear();
 
 ### ImagePreview 调用方式调整
 
-Vant 4 中，`ImagePreview` 组件的调用方式也进行了调整，与 `ImagePreview` 组件的改动一致：
+Vant 4 中，`ImagePreview` 组件的调用方式也进行了调整，与 `Dialog` 组件的改动一致：
 
 ```js
 // Vant 3

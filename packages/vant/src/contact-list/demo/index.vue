@@ -72,10 +72,9 @@ const onSelect = (contact: { id: string }) => {
 </template>
 
 <style lang="less">
-.demo-contact-card {
-  .van-popup {
-    height: 100%;
-    background-color: var(--van-background);
+.demo-contact-list {
+  .van-doc-demo-block__title {
+    padding-bottom: 0;
   }
 }
 </style>

@@ -24,7 +24,7 @@ export interface BarrageItem {
 export const barrageProps = {
   top: makeNumericProp(10),
   rows: makeNumericProp(4),
-  speed: makeNumericProp(4000),
+  duration: makeNumericProp(4000),
   autoPlay: truthProp,
   delay: makeNumberProp(300),
   modelValue: makeArrayProp<BarrageItem>(),
@@ -55,7 +55,7 @@ export default defineComponent({
       item.className = className;
       item.innerText = String(text);
 
-      item.style.animationDuration = `${props.speed}ms`;
+      item.style.animationDuration = `${props.duration}ms`;
       item.style.animationDelay = `${delay}ms`;
       item.style.animationName = 'van-barrage';
       item.style.animationTimingFunction = 'linear';

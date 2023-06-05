@@ -67,6 +67,14 @@ export default {
 <van-signature :line-width="6" @submit="onSubmit" @clear="onClear" />
 ```
 
+### 自定义背景颜色
+
+通过 `background-color` 来自定义背景颜色。
+
+```html
+<van-signature background-color="#eee" @submit="onSubmit" @clear="onClear" />
+```
+
 ## API
 
 ### Props

@@ -6,6 +6,8 @@
   --van-popover-action-font-size: var(--van-font-size-md);
   --van-popover-action-line-height: var(--van-line-height-md);
   --van-popover-action-icon-size: 20px;
+  --van-popover-horizontal-action-height: 34px;
+  --van-popover-horizontal-action-icon-size: 16px;
   --van-popover-light-text-color: var(--van-text-color);
   --van-popover-light-background: var(--van-background-2);
   --van-popover-light-action-disabled-text-color: var(--van-text-color-3);
@@ -36,6 +38,27 @@
   &__content {
     overflow: hidden;
     border-radius: var(--van-popover-radius);
+
+    &--horizontal {
+      display: flex;
+      width: max-content;
+
+      .van-popover__action {
+        flex: none;
+        width: auto;
+        height: var(--van-popover-horizontal-action-height);
+        padding: 0 var(--van-padding-sm);
+
+        &:last-child::after {
+          display: none;
+        }
+
+        &-icon {
+          margin-right: var(--van-padding-base);
+          font-size: var(--van-popover-horizontal-action-icon-size);
+        }
+      }
+    }
   }
 
   &__action {

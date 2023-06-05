@@ -122,7 +122,7 @@ export default {
 
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
-| target | 触发滚动的目标对象，支持传入选择器或 DOM 元素 | _string \| HTMLElement_ | - |
+| target | 触发滚动的目标对象，支持传入选择器或 DOM 元素，默认最近的父级滚动容器 | _string \| HTMLElement_ | - |
 | right | 距离页面右侧的距离，默认单位为 `px` | _number \| string_ | `30` |
 | bottom | 距离页面底部的距离，默认单位为 `px` | _number \| string_ | `40` |
 | offset | 滚动高度达到此参数值时才显示组件 | _number_ | `200` |
