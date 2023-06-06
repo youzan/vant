@@ -71,6 +71,13 @@ export default defineComponent({
         Math.abs(pre - target) < Math.abs(cur - target) ? pre : cur
       );
 
+    const onHeightChange = (height: number) => {
+      if (currentY.value !== -height) {
+        currentY.value = -height;
+        emit('heightChange', height, dragging.value);
+      }
+    };
+
     let startY = currentY.value;
     const touch = useTouch();
 
@@ -97,8 +104,7 @@ export default defineComponent({
       }
 
       const moveY = touch.deltaY.value + startY;
-
-      currentY.value = ease(moveY);
+      onHeightChange(-ease(moveY));
     };
 
     const onTouchend = () => {
@@ -106,12 +112,8 @@ export default defineComponent({
 
       const height = Math.abs(currentY.value);
       const closestHeight = closest(anchors.value, height);
-      currentY.value = -closestHeight;
 
-      if (currentY.value !== startY) {
-        emit('heightChange', closestHeight);
-      }
-
+      onHeightChange(closestHeight);
       startY = currentY.value;
     };
 

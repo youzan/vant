@@ -77,9 +77,9 @@ const onHeightChange = (h: number) => {
 
 ### Events
 
-| 事件名        | 说明                   | 回调参数         |
-| ------------- | ---------------------- | ---------------- |
-| height-change | 面板显示高度改变时触发 | _height: number_ |
+| 事件名        | 说明                   | 回调参数                            |
+| ------------- | ---------------------- | ----------------------------------- |
+| height-change | 面板显示高度改变时触发 | _height: number, dragging: boolean_ |
 
 ### Slots
 

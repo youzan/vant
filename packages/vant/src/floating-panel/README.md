@@ -77,9 +77,9 @@ const onHeightChange = (h: number) => {
 
 ### Events
 
-| Event         | Description                          | Arguments        |
-| ------------- | ------------------------------------ | ---------------- |
-| height-change | Emitted when panel height is changed | _height: number_ |
+| Event | Description | Arguments |
+| --- | --- | --- |
+| height-change | Emitted when panel height is changed | _height: number, dragging: boolean_ |
 
 ### Slots
 
