@@ -67,7 +67,7 @@
     "@vant/popperjs": "^1.1.0",
     "@vue/babel-helper-vue-jsx-merge-props": "^1.0.0",
     "clipboard": "^2.0.11",
-    "cloud-ui.vusion": "^0.14.27-beta.4",
+    "cloud-ui.vusion": "^0.14.33",
     "lodash": "^4.17.21",
     "online-svg-icon-vue2": "^1.2.3",
     "vconsole": "^3.9.3",
