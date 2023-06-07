@@ -158,6 +158,10 @@ export default {
 | dots `v4.2.0`     | 省略号的文本内容 | _string_           | `'...'` |
 | position `v4.4.2` | 省略位置         | _string_           | `'end'` |
 
+# <<<<<<< HEAD
+
+> > > > > > > 4a5088de9e123f78e43134200b22284788e0ef3d
+
 ### Events
 
 | 事件         | 说明                | 回调参数            |
