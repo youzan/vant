@@ -162,12 +162,16 @@ module.exports = {
     process.env.scene === 'desktop'
       ? []
       : [
-          // eslint-disable-next-line global-require
-          require('postcss-px-to-viewport')({
+          require('./postcss-plugins/px2vw')({
+            unitToConvert: 'px',
             viewportWidth: 375,
             propList: ['*'],
-            // propList: ["*"],
             selectorBlackList: ['nov', /^m401$/, /^m404$/],
+
+            landscape: true,
+            landscapeUnit: 'vw',
+            landscapeWidth: 812,
+            // exclude: [/node_modules/],
           }),
         ],
 };
