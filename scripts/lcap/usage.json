@@ -3935,6 +3935,13 @@
                     "type": "boolean",
                     "default": true,
                     "description": "设置是否自动开始计时器"
+                },
+                {
+                    "name": "hideMinute",
+                    "title": "隐藏分钟",
+                    "type": "boolean",
+                    "default": false,
+                    "description": "设置是否隐藏分钟"
                 }
             ],
             "methods": [
@@ -6043,8 +6050,7 @@
                             "value": "password",
                             "updateData": {
                                 "clearable": false,
-                                "maxlength": 6,
-                                "keytheme": "custom"
+                                "maxlength": 6
                             }
                         }
                     ]
@@ -6107,12 +6113,7 @@
                     "options": [
                         {
                             "value": "native",
-                            "title": "默认键盘",
-                            "dependency": [
-                                {
-                                    "!inputstyle": "password"
-                                }
-                            ]
+                            "title": "默认键盘"
                         },
                         {
                             "value": "custom",
@@ -7943,6 +7944,12 @@
                     "name": "delete",
                     "title": "删除预览",
                     "description": "删除文件预览时触发",
+                    "params": []
+                },
+                {
+                    "name": "start",
+                    "title": "上传开始时",
+                    "description": "上传开始时触发",
                     "params": []
                 },
                 {

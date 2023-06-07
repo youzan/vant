@@ -32,7 +32,7 @@ export default function upload(options) {
       return;
 
   const xhr = new XMLHttpRequest();
-  const url = options.url;
+  const {url} = options;
 
   if (xhr.upload) {
       xhr.upload.onprogress = function onprogress(e) {
@@ -67,6 +67,10 @@ export default function upload(options) {
 
       options.onSuccess(getBody(xhr));
   };
+
+  xhr.onloadstart = function onloadstart() {
+     options.onStart();
+  }
 
   xhr.open('post', url, true);
 

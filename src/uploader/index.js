@@ -624,6 +624,9 @@ export default createComponent({
         file,
         data: this.data,
         name: 'file',
+        onStart: () => {
+          this.$emit('start');
+        },
         onProgress: (e) => {
           // file.status = 'uploading';
           // file.message = e.percent + '%' || '上传中...';

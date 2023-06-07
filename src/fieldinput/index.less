@@ -2,12 +2,21 @@
 
 .van-fieldinput {
   &__newwrap {
+    position: relative;
     display: flex;
     width: 100%;
     align-items: center;
+    box-sizing: border-box;
+
     &--clearwrap {
       position: relative;
       padding-right: 5px;
+    }
+
+    &--focused {
+      border-style: solid !important;
+      border-color: var(--van-fieldinput-focused-border-color) !important;
+      border-width: var(--van-fieldinput-focused-border-width) !important;
     }
   }
   &__control {
@@ -54,6 +63,15 @@
       display: flex;
       align-items: center;
       min-height: var(--van-fieldinput-line-height);
+    }
+
+    &--hide {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      opacity: 0 !important;
+      pointer-events: none !important;
     }
 
     // for ios wechat

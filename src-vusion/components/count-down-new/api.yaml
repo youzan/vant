@@ -27,6 +27,11 @@
       type: boolean
       default: true
       description: 设置是否自动开始计时器
+    - name: hideMinute
+      title: 隐藏分钟
+      type: boolean
+      default: false
+      description: 设置是否隐藏分钟
   events:
     - name: start
       title: 计时器开始

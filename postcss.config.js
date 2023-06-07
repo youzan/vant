@@ -1,18 +1,24 @@
-if (process.env.scene == 'desktop') {
+if (process.env.scene === 'desktop') {
   module.exports = {
     plugins: {
     }
   };
 } else {
   module.exports = {
-    plugins: {
-      'postcss-px-to-viewport': {
+    plugins: [
+      require('./postcss-plugins/px2vw')({
+        unitToConvert: 'px',
         viewportWidth: 375,
-        // propList: ["*", "!font-size", "!line-height"],
-        propList: ["*"],
-        selectorBlackList: ["nov"]
-      }
-    }
+        propList: ['*'],
+        selectorBlackList: ['nov', /^m401$/, /^m404$/],
+
+        landscape: true,
+        landscapeUnit: 'vw',
+        landscapeWidth: 812,
+        exclude: [
+          /\/cli\/site\//
+        ],
+      }),
+    ],
   };
 }
-
