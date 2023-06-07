@@ -149,18 +149,16 @@ export default {
 
 ### Props
 
-| 参数          | 说明             | 类型               | 默认值  |
-| ------------- | ---------------- | ------------------ | ------- |
-| rows          | 展示的行数       | _number \| string_ | `1`     |
-| content       | 需要展示的文本   | _string_           | -       |
-| expand-text   | 展开操作的文案   | _string_           | -       |
-| collapse-text | 收起操作的文案   | _string_           | -       |
-<<<<<<< HEAD
-| dots          | 省略号的文本内容 | _string_           | `'...'` |
-| position      | 省略位置         | _string_           | `'end'` |
-=======
-| dots `v4.2.0` | 省略号的文本内容 | _string_           | `'...'` |
->>>>>>> cfdf3a811e77b39db74c46f1513792d98c096751
+| 参数              | 说明             | 类型               | 默认值  |
+| ----------------- | ---------------- | ------------------ | ------- |
+| rows              | 展示的行数       | _number \| string_ | `1`     |
+| content           | 需要展示的文本   | _string_           | -       |
+| expand-text       | 展开操作的文案   | _string_           | -       |
+| collapse-text     | 收起操作的文案   | _string_           | -       |
+| dots `v4.2.0`     | 省略号的文本内容 | _string_           | `'...'` |
+| position `v4.4.2` | 省略位置         | _string_           | `'end'` |
+
+> > > > > > > cfdf3a811e77b39db74c46f1513792d98c096751
 
 ### Events
 

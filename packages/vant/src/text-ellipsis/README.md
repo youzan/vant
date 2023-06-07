@@ -80,11 +80,12 @@ export default {
   },
 };
 ```
-### Custom omit locations
+
+### Custom Collapse Position
 
 Omit location by setting `position` restrictions.
 
-Default Collapse Position
+Default tail omitted
 
 ```html
 <van-text-ellipsis
@@ -99,7 +100,7 @@ Default Collapse Position
 export default {
   setup() {
     const text =
-        "That day, I turned twenty-one. In the golden age of my life, I was full of dreams. I wanted to love, to eat, and to instantly transform into one of these clouds, part alight, part darkened. It was only later that I understood life is but a slow, drawn-out process of getting your balls crushed. Day by day, you get older. Day by day, your dreams fade. In the end you are no different from a crushed ox. But I hadn't foreseen any of it on my twenty-first birthday. I thought I would be vigorous forever, and that nothing could ever crush me.";
+      "That day, I turned twenty-one. In the golden age of my life, I was full of dreams. I wanted to love, to eat, and to instantly transform into one of these clouds, part alight, part darkened. It was only later that I understood life is but a slow, drawn-out process of getting your balls crushed. Day by day, you get older. Day by day, your dreams fade. In the end you are no different from a crushed ox. But I hadn't foreseen any of it on my twenty-first birthday. I thought I would be vigorous forever, and that nothing could ever crush me.";
     return { text };
   },
 };
@@ -121,7 +122,7 @@ Head Area Collapse Position
 export default {
   setup() {
     const text =
-       "That day, I turned twenty-one. In the golden age of my life, I was full of dreams. I wanted to love, to eat, and to instantly transform into one of these clouds, part alight, part darkened. It was only later that I understood life is but a slow, drawn-out process of getting your balls crushed. Day by day, you get older. Day by day, your dreams fade. In the end you are no different from a crushed ox. But I hadn't foreseen any of it on my twenty-first birthday. I thought I would be vigorous forever, and that nothing could ever crush me.";
+      "That day, I turned twenty-one. In the golden age of my life, I was full of dreams. I wanted to love, to eat, and to instantly transform into one of these clouds, part alight, part darkened. It was only later that I understood life is but a slow, drawn-out process of getting your balls crushed. Day by day, you get older. Day by day, your dreams fade. In the end you are no different from a crushed ox. But I hadn't foreseen any of it on my twenty-first birthday. I thought I would be vigorous forever, and that nothing could ever crush me.";
     return { text };
   },
 };
@@ -153,18 +154,14 @@ export default {
 
 ### Props
 
-| Attribute     | Description              | Type               | Default |
-| ------------- | ------------------------ | ------------------ | ------- |
-| rows          | Number of rows displayed | _number \| string_ | `1`     |
-| content       | The text displayed       | _string_           | -       |
-| expand-text   | Expand operation text    | _string_           | -       |
-| collapse-text | Collapse operation text  | _string_           | -       |
-<<<<<<< HEAD
-| dots          | Text content of ellipsis | _string_           | `'...'` |
-| position      | The postion of ellipsis  | _string_           | `'end'` |
-=======
-| dots `v4.2.0` | Text content of ellipsis | _string_           | `'...'` |
->>>>>>> cfdf3a811e77b39db74c46f1513792d98c096751
+| Attribute         | Description              | Type               | Default |
+| ----------------- | ------------------------ | ------------------ | ------- |
+| rows              | Number of rows displayed | _number \| string_ | `1`     |
+| content           | The text displayed       | _string_           | -       |
+| expand-text       | Expand operation text    | _string_           | -       |
+| collapse-text     | Collapse operation text  | _string_           | -       |
+| dots              | Text content of ellipsis | _string_           | `'...'` |
+| position `v4.4.2` | The postion of ellipsis  | _string_           | `'end'` |
 
 ### Events
 
