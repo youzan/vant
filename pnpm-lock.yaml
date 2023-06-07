@@ -3,6 +3,10 @@ lockfileVersion: '6.0'
 importers:
 
   .:
+    dependencies:
+      jest-serializer-html:
+        specifier: ^7.1.0
+        version: 7.1.0
     devDependencies:
       '@vant/cli':
         specifier: workspace:*

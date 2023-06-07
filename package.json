@@ -26,5 +26,8 @@
     "husky": "^8.0.1",
     "nano-staged": "^0.8.0",
     "prettier": "^2.7.1"
+  },
+  "dependencies": {
+    "jest-serializer-html": "^7.1.0"
   }
 }
