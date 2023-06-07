@@ -5,6 +5,7 @@ const path = require('path');
 const postcss = require('postcss');
 
 const themeComponentsMap = {};
+const themePropertiesMap = {};
 
 const cssContent = fs.readFileSync(
   path.join(__dirname, '../../src-vusion/styles/theme.css'),
@@ -88,6 +89,7 @@ _root.nodes.forEach((node) => {
       }
     }
   } else if (node.type === 'decl') {
+    themePropertiesMap[node.prop] = node.value;
     if (!lastComponent) return;
     lastComponent.cssProperty[node.prop] = {
       type: 'input',
@@ -121,5 +123,10 @@ if (Array.isArray(resultList)) {
 }
 
 fs.writeJsonSync(resultPath, resultList, {
+  spaces: 4,
+});
+
+const propertyPath = path.join(__dirname, './property.json');
+fs.writeJsonSync(propertyPath, themePropertiesMap, {
   spaces: 4,
 });

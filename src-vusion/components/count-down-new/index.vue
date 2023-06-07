@@ -54,6 +54,7 @@ export default {
     timer: { type: Number, default: 60 },
     reverse: { type: String, default: 'positive' },
     autostart: { type: Boolean, default: true },
+    hideMinute: { type: Boolean, default: false },
   },
   data() {
     return {
@@ -72,11 +73,11 @@ export default {
       if (this.reverse === 'negative') {
         const min = String(Math.floor(second / 60)).padStart(2, "0");
         const sec = String(second % 60).padStart(2, "0");
-        return `${min}:${sec}`;
+        return this.hideMinute ? `${second}` : `${min}:${sec}`;
       } else {
         const min = String(Math.floor((totalSecond - second) / 60)).padStart(2, "0");
         const sec = String((totalSecond - second) % 60).padStart(2, "0");
-        return `${min}:${sec}`;
+        return this.hideMinute ? `${totalSecond - second}` : `${min}:${sec}`;
       }
 
     },
@@ -85,9 +86,9 @@ export default {
       if (this.reverse === 'negative') {
         const min = String(Math.floor(totalSecond / 60)).padStart(2, "0");
         const sec = String(totalSecond % 60).padStart(2, "0");
-        return `${min}:${sec}`;
+        return this.hideMinute ? `${totalSecond}` : `${min}:${sec}`;
       } else {
-        return '00:00';
+        return this.hideMinute ? '0' : '00:00';
       }
     }
   },

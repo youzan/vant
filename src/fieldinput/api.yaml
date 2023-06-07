@@ -47,7 +47,6 @@
           updateData:
             clearable: false
             maxlength: 6
-            keytheme: custom
     - name: clearable
       title: 清除按钮
       type: boolean
@@ -86,8 +85,6 @@
       options:
         - value: native
           title: 默认键盘
-          dependency:
-            - '!inputstyle': password
         - value: custom
           title: 定制键盘
       default: native

@@ -74,12 +74,16 @@ export default createComponent({
     const defaultValue = this.value ?? this.defaultValue;
 
     return {
+      focused: false,
       currentValue: defaultValue,
       shownumber: false,
+      staticStyleVar: '',
+      needFocusThemeStyle: false,
     };
   },
   computed: {
     shownumbertype() {
+      // 定制键盘样式
       return this.keytheme === 'custom';
     },
     extraKey() {
@@ -92,6 +96,10 @@ export default createComponent({
     },
   },
   mounted() {
+    this.staticStyleVar = this.getStaticStyleVar(this.$vnode.data.staticStyle);
+  },
+  updated() {
+    this.staticStyleVar = this.getStaticStyleVar(this.$vnode.data.staticStyle);
   },
   methods: {
     getProp(key) {
@@ -139,11 +147,25 @@ export default createComponent({
       }
     },
 
+    onCompositionStart (e) {
+      e.target.composing = true;
+    },
+
+    onCompositionEnd (e) {
+      // prevent triggering an input event for no reason
+      if (!e.target.composing) return;
+
+      e.target.composing = false;
+      this.updateValue(e.target.value);
+      this.$emit('input', e);
+    },
+
     onInput(event) {
       // not update v-model when composing
       if (event.target.composing) {
         return;
       }
+
       this.updateValue(event.target.value);
       this.$emit('input', event);
     },
@@ -161,7 +183,11 @@ export default createComponent({
     },
 
     onBlur(event) {
-      this.focused = false;
+      // 自定义键盘由closeNumber改变
+      if (!this.shownumbertype) {
+        this.focused = false;
+      }
+
       this.updateValue(this.currentValue, 'onBlur');
       this.$emit('blur', event);
       // this.validateWithTrigger('onBlur');
@@ -212,6 +238,7 @@ export default createComponent({
       return document.querySelector('body');
     },
     closeNumber() {
+      this.focused = false;
       this.shownumber = false;
     },
     handleConfirm() {
@@ -220,6 +247,25 @@ export default createComponent({
     onNumberKeyboardInput(value) {
       this.currentValue = value;
       this.$emit('input', value);
+    },
+    getStaticStyleVar(staticStyle) {
+      let style = '';
+      for (const key in staticStyle) {
+        if (Object.prototype.hasOwnProperty.call(staticStyle, key)) {
+          if (/^--/.test(key)) {
+            const value = staticStyle[key];
+            style += `${key}: ${value};`;
+
+          }
+        }
+      }
+
+      // 判断一下有没有配置聚焦时主题样式
+      if (style.indexOf('--van-fieldinput-focused-') !== -1) {
+        this.needFocusThemeStyle = true;
+      }
+
+      return style;
     },
   },
   watch: {
@@ -237,8 +283,8 @@ export default createComponent({
     currentValue(val) {
       this.$emit('update:value', val);
       this.$emit('change', val, this);
-      if (this.maxlength && this.maxlength===val?.length) {
-        this.$emit('enoughkey', val)
+      if (this.maxlength && this.maxlength === val?.length) {
+        this.$emit('enoughkey', val);
       }
     },
     type() {
@@ -254,48 +300,59 @@ export default createComponent({
           this.shownumber = false;
         }
       }
-    }
+    },
   },
   render() {
     const inputAlign = this.vanField?.getProp('inputAlign');
     return (
-      <div class={bem('newwrap', { clearwrap: this.clearable })}>
-        {this.inputstyle === 'input' ? (
-          <input
-            // vShow={this.showInput}
-            ref="input"
-            type={this.type}
-            role="fieldinput"
-            class={bem('control', [inputAlign, 'custom'])}
-            value={this.currentValue}
-            maxlength={this.maxlength}
-            // style={this.inputStyle}
-            disabled={this.disabled}
-            readonly={this.readonly || this.shownumbertype}
-            // set keyboard in modern browsers
-            // inputmode={this.integer ? 'numeric' : 'decimal'}
-            placeholder={this.placeholder}
-            // aria-valuemax={this.max}
-            // aria-valuemin={this.min}
-            // aria-valuenow={this.currentValue}
-            onInput={this.onInput}
-            onFocus={this.onFocus}
-            onBlur={this.onBlur}
-            // onMousedown={this.onMousedown}
-            vusion-click-enabled
-            onClick={this.onTouchstartinput}
-          />
-        ) : null}
+      <div
+        class={bem('newwrap', {
+          clearwrap: this.clearable,
+          focused: this.needFocusThemeStyle && this.focused,
+        })}
+      >
+        <input
+          // vShow={this.showInput}
+          ref="input"
+          type={this.type}
+          role="fieldinput"
+          class={bem('control', [
+            inputAlign,
+            'custom',
+            this.inputstyle === 'password' ? 'hide' : '', // 格子展示时隐藏
+          ])}
+          value={this.currentValue}
+          // maxlength={this.maxlength}
+          // style={this.inputStyle}
+          disabled={this.disabled}
+          readonly={this.readonly || this.shownumbertype}
+          // set keyboard in modern browsers
+          // inputmode={this.integer ? 'numeric' : 'decimal'}
+          placeholder={this.placeholder}
+          // aria-valuemax={this.max}
+          // aria-valuemin={this.min}
+          // aria-valuenow={this.currentValue}
+          onInput={this.onInput}
+          onFocus={this.onFocus}
+          onBlur={this.onBlur}
+          // onMousedown={this.onMousedown}
+          vusion-click-enabled
+          onClick={this.onTouchstartinput}
+          onCompositionstart={this.onCompositionStart}
+          onCompositionend={this.onCompositionEnd}
+        />
+
+
         {this.showClear() && (
           <Icon name="clear" class={bem('clear')} onTouchstart={this.onClear} />
         )}
-        {(this.inputstyle === 'password') ? (
+        {this.inputstyle === 'password' ? (
           <PasswordInput
             value={this.currentValue}
             length={this.maxlength}
             onFocus={() => {
               if (this.readonly || this.disabled) {
-                return
+                return;
               }
               this.shownumber = true;
             }}
@@ -303,11 +360,16 @@ export default createComponent({
             disabled={this.disabled}
             readonly={this.readonly}
             vusion-click-enabled
-            onClick={this.onTouchstartinput}
+            onClick={() => {
+              this.onTouchstartinput;
+              // 系统键盘时调用
+              this.keytheme === 'native' && this.focus();
+            }}
           />
         ) : null}
         {this.shownumbertype ? (
           <NumberKeyboard
+            style={this.staticStyleVar}
             vusionnp={this.$attrs['vusion-node-path']}
             ref="numberKeyboard"
             vModel={this.currentValue}
