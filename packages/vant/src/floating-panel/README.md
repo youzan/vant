@@ -36,22 +36,27 @@ app.use(FloatingPanel);
 ### Custom Anchors
 
 ```html
-<van-floating-panel :anchors="anchors" @height-change="onHeightChange">
+<van-floating-panel v-model:height="height" :anchors="anchors">
   <div style="text-align: center; padding: 15px">
     <p>Panel Show Height {{ height }} px</p>
   </div>
 </van-floating-panel>
 ```
 
-```ts
-const anchors = [
-  100,
-  Math.round(0.4 * window.innerHeight),
-  Math.round(0.7 * window.innerHeight),
-];
-const height = ref(anchors[0]);
-const onHeightChange = (h: number) => {
-  height.value = h;
+```js
+import { ref } from 'vue';
+
+export default {
+  setup() {
+    const anchors = [
+      100,
+      Math.round(0.4 * window.innerHeight),
+      Math.round(0.7 * window.innerHeight),
+    ];
+    const height = ref(anchors[0]);
+
+    return { anchors, height };
+  },
 };
 ```
 
@@ -71,6 +76,7 @@ const onHeightChange = (h: number) => {
 
 | Attribute | Description | Type | Default |
 | --- | --- | --- | --- |
+| v-model:height | The current display height of the panel | _number \| string_ | `0` |
 | anchors | Setting custom anchors, unit `px` | _number[]_ | `[100, window.innerWidth * 0.6]` |
 | content-draggable | Allow dragging content | _boolean_ | `true` |
 | safe-area-inset-bottom | Whether to enable bottom safe area adaptation | _boolean_ | `true` |
@@ -79,7 +85,7 @@ const onHeightChange = (h: number) => {
 
 | Event | Description | Arguments |
 | --- | --- | --- |
-| height-change | Emitted when panel height is changed | _height: number, dragging: boolean_ |
+| height-change | Emitted when panel height is changed and the dragging is finished | _{ height: number }_ |
 
 ### Slots
 

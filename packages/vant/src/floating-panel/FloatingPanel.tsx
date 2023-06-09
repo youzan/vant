@@ -1,14 +1,32 @@
-import { computed, defineComponent, ref, type ExtractPropTypes } from 'vue';
+import {
+  computed,
+  defineComponent,
+  ref,
+  watch,
+  type ExtractPropTypes,
+} from 'vue';
+
+// Utils
+import {
+  addUnit,
+  createNamespace,
+  makeArrayProp,
+  makeNumericProp,
+  truthProp,
+} from '../utils';
+
+// Composables
+import { useWindowSize } from '@vant/use';
 import { useLockScroll } from '../composables/use-lock-scroll';
 import { useTouch } from '../composables/use-touch';
-import { addUnit, createNamespace, makeArrayProp, truthProp } from '../utils';
-import { useWindowSize } from '@vant/use';
+import { useSyncPropRef } from '../composables/use-sync-prop-ref';
 
 const { height: windowHeight } = useWindowSize();
 
 export const floatingPanelProps = {
   anchors: makeArrayProp<number>(),
   contentDraggable: truthProp,
+  height: makeNumericProp(0),
   safeAreaInsetBottom: truthProp,
 };
 
@@ -23,11 +41,15 @@ export default defineComponent({
 
   props: floatingPanelProps,
 
-  emits: ['heightChange'],
+  emits: ['heightChange', 'update:height'],
 
   setup(props, { emit, slots }) {
     const rootRef = ref<HTMLDivElement>();
     const contentRef = ref<HTMLDivElement>();
+    const height = useSyncPropRef(
+      () => +props.height,
+      (value) => emit('update:height', value)
+    );
 
     const boundary = computed(() => ({
       min: props.anchors[0] ?? 100,
@@ -43,11 +65,10 @@ export default defineComponent({
     );
 
     const dragging = ref(false);
-    const currentY = ref(-boundary.value.min);
 
     const rootStyle = computed(() => ({
       height: addUnit(boundary.value.max),
-      transform: `translateY(calc(100% + ${addUnit(currentY.value)}))`,
+      transform: `translateY(calc(100% + ${addUnit(-height.value)}))`,
       transition: !dragging.value ? 'transform .3s' : 'none',
     }));
 
@@ -71,19 +92,13 @@ export default defineComponent({
         Math.abs(pre - target) < Math.abs(cur - target) ? pre : cur
       );
 
-    const onHeightChange = (height: number) => {
-      if (currentY.value !== -height) {
-        currentY.value = -height;
-        emit('heightChange', height, dragging.value);
-      }
-    };
-
-    let startY = currentY.value;
+    let startY: number;
     const touch = useTouch();
 
     const onTouchstart = (e: TouchEvent) => {
       touch.start(e);
       dragging.value = true;
+      startY = -height.value;
     };
 
     const onTouchmove = (e: TouchEvent) => {
@@ -104,18 +119,25 @@ export default defineComponent({
       }
 
       const moveY = touch.deltaY.value + startY;
-      onHeightChange(-ease(moveY));
+      height.value = -ease(moveY);
     };
 
     const onTouchend = () => {
       dragging.value = false;
+      height.value = closest(anchors.value, height.value);
 
-      const height = Math.abs(currentY.value);
-      const closestHeight = closest(anchors.value, height);
-
-      onHeightChange(closestHeight);
-      startY = currentY.value;
+      if (height.value !== -startY) {
+        emit('heightChange', { height: height.value });
+      }
     };
+
+    watch(
+      boundary,
+      () => {
+        height.value = closest(anchors.value, height.value);
+      },
+      { immediate: true }
+    );
 
     useLockScroll(rootRef, () => true);
 

@@ -86,11 +86,11 @@ test('should emit height-change when height change in anchors', async () => {
   await triggerDrag(wrapper.find('.van-floating-panel__header'), 0, -199);
   await later();
 
-  const triggerCounts = wrapper.emitted('change')?.length ?? 0;
   expect((wrapper.element as HTMLDivElement).style.transform).toContain(
     '-200px'
   );
-  expect(wrapper.emitted('change')?.[triggerCounts - 1][0]).toEqual(200);
+
+  expect(wrapper.emitted('change')?.[0][0]).toEqual({ height: 200 });
 });
 
 test('should only drag header when allowDraggingContent is false', async () => {
