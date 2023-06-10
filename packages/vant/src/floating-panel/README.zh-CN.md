@@ -36,22 +36,27 @@ app.use(FloatingPanel);
 ### 自定义锚点
 
 ```html
-<van-floating-panel :anchors="anchors" @height-change="onHeightChange">
+<van-floating-panel v-model:height="height" :anchors="anchors">
   <div style="text-align: center; padding: 15px">
     <p>面板显示高度 {{ height }} px</p>
   </div>
 </van-floating-panel>
 ```
 
-```ts
-const anchors = [
-  100,
-  Math.round(0.4 * window.innerHeight),
-  Math.round(0.7 * window.innerHeight),
-];
-const height = ref(anchors[0]);
-const onHeightChange = (h: number) => {
-  height.value = h;
+```js
+import { ref } from 'vue';
+
+export default {
+  setup() {
+    const anchors = [
+      100,
+      Math.round(0.4 * window.innerHeight),
+      Math.round(0.7 * window.innerHeight),
+    ];
+    const height = ref(anchors[0]);
+
+    return { anchors, height };
+  },
 };
 ```
 
@@ -71,15 +76,16 @@ const onHeightChange = (h: number) => {
 
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
+| v-model:height | 当前面板的显示高度 | _number \| string_ | `0` |
 | anchors | 设置自定义锚点, 单位 `px` | _number[]_ | `[100, window.innerWidth * 0.6]` |
 | content-draggable | 允许拖拽内容容器 | _boolean_ | `true` |
 | safe-area-inset-bottom | 是否开启[底部安全区适配](#/zh-CN/advanced-usage#di-bu-an-quan-qu-gua-pei) | _boolean_ | `true` |
 
 ### Events
 
-| 事件名        | 说明                   | 回调参数         |
-| ------------- | ---------------------- | ---------------- |
-| height-change | 面板显示高度改变时触发 | _height: number_ |
+| 事件名        | 说明                             | 回调参数             |
+| ------------- | -------------------------------- | -------------------- |
+| height-change | 面板显示高度改变且结束拖动后触发 | _{ height: number }_ |
 
 ### Slots
 
