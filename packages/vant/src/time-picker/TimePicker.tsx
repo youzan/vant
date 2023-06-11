@@ -13,7 +13,6 @@ import {
   genOptions,
   pickerInheritKeys,
   sharedProps,
-  formatValueRange,
   type TimeFilter,
 } from '../date-picker/utils';
 import {
@@ -108,11 +107,32 @@ export default defineComponent({
         const { filter, formatter } = props;
         switch (type) {
           case 'hour':
-            return genOptions(+minHour, +maxHour, type, formatter, filter, currentValues.value);
+            return genOptions(
+              +minHour,
+              +maxHour,
+              type,
+              formatter,
+              filter,
+              currentValues.value
+            );
           case 'minute':
-            return genOptions(+minMinute, +maxMinute, type, formatter, filter, currentValues.value);
+            return genOptions(
+              +minMinute,
+              +maxMinute,
+              type,
+              formatter,
+              filter,
+              currentValues.value
+            );
           case 'second':
-            return genOptions(+minSecond, +maxSecond, type, formatter, filter, currentValues.value);
+            return genOptions(
+              +minSecond,
+              +maxSecond,
+              type,
+              formatter,
+              filter,
+              currentValues.value
+            );
           default:
             if (process.env.NODE_ENV !== 'production') {
               throw new Error(
