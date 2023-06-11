@@ -121,3 +121,6 @@ The component provides the following CSS variables, which can be used to customi
 | --van-floating-panel-header-height | _30px_                    | -           |
 | --van-floating-panel-z-index       | _999_                     | -           |
 | --van-floating-panel-background    | _var(--van-background-2)_ | -           |
+| --van-floating-panel-bar-width     | _20px_                    | -           |
+| --van-floating-panel-bar-height    | _3px_                     | -           |
+| --van-floating-panel-bar-color     | _var(--van-gray-5)_       | -           |

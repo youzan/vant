@@ -48,6 +48,7 @@ const height = ref(anchors[0]);
         </van-cell-group>
       </van-floating-panel>
     </van-tab>
+
     <van-tab :title="t('customAnchors')">
       <van-floating-panel v-model:height="height" :anchors="anchors">
         <div style="text-align: center; padding: 15px">
@@ -55,6 +56,7 @@ const height = ref(anchors[0]);
         </div>
       </van-floating-panel>
     </van-tab>
+
     <van-tab :title="t('headDragOnly')">
       <van-floating-panel :content-draggable="false">
         <div style="text-align: center; padding: 15px">

@@ -3,6 +3,9 @@
   --van-floating-panel-header-height: 30px;
   --van-floating-panel-z-index: 999;
   --van-floating-panel-background: var(--van-background-2);
+  --van-floating-panel-bar-width: 20px;
+  --van-floating-panel-bar-height: 3px;
+  --van-floating-panel-bar-color: var(--van-gray-5);
 }
 
 .van-floating-panel {
@@ -37,10 +40,10 @@
     user-select: none;
 
     &-bar {
-      height: 3px;
-      width: 20px;
-      border-radius: 4px;
-      background: var(--van-gray-5);
+      height: var(--van-floating-panel-bar-height);
+      width: var(--van-floating-panel-bar-width);
+      border-radius: var(--van-radius-md);
+      background: var(--van-floating-panel-bar-color);
     }
   }
 
