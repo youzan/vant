@@ -182,9 +182,9 @@ export default {
     const currentTime = ref(['12', '00', '00']);
     return { currentTime };
   },
-};   
+};
 ```
-    
+
 ### 高级用法
 
 `filter` 函数的第三个参数能获取到当前选择的时间，这在使用非受控模式时，可以更灵活地过滤掉不需要的时间。
@@ -241,8 +241,8 @@ export default {
 | max-minute | 可选的最大分钟 | _number \| string_ | `59` |
 | min-second | 可选的最小秒数 | _number \| string_ | `0` |
 | max-second | 可选的最大秒数 | _number \| string_ | `59` |
-| min-time | 可选的最小时间，格式参考 `07:40:00`，使用时 `min-hour` `min-minute` `min-second` 无效 | _string_ | - |
-| max-time | 可选的最大时间，格式参考 `10:20:00`，使用时 `max-hour` `max-minute` `max-second` 无效 | _string_ | - |
+| min-time `v4.4.2` | 可选的最小时间，格式参考 `07:40:00`，使用时 `min-hour` `min-minute` `min-second` 无效 | _string_ | - |
+| max-time `v4.4.2` | 可选的最大时间，格式参考 `10:20:00`，使用时 `max-hour` `max-minute` `max-second` 无效 | _string_ | - |
 | title | 顶部栏标题 | _string_ | `''` |
 | confirm-button-text | 确认按钮文字 | _string_ | `确认` |
 | cancel-button-text | 取消按钮文字 | _string_ | `取消` |
