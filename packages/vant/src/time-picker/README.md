@@ -71,6 +71,10 @@ export default {
 
 ### Time Range
 
+You can use props like `min-hour` and `max-hour` to limit the range of hours, `min-minute` and `max-minute` to limit the range of minutes, and `min-second` and `max-second` to limit the range of seconds.
+
+For example, in the following example, users can only select hours between `10` and `20`, and minutes between `30` and `40`.
+
 ```html
 <van-time-picker
   v-model="currentTime"
@@ -88,6 +92,36 @@ import { ref } from 'vue';
 export default {
   setup() {
     const currentTime = ref(['12', '35']);
+    return { currentTime };
+  },
+};
+```
+
+### Overall Time Range
+
+You can use `min-time` and `max-time` attributes to limit the overall time range, with the format `10:00:00`.
+
+- When `min-time` is set, attributes like `min-hour`, `min-minute`, and `min-second` will not take effect.
+- When `max-time` is set, attributes like `max-hour`, `max-minute`, and `max-second` will not take effect.
+
+For example, in the following example, users can select any time between `09:40:10` and `20:20:50`.
+
+```html
+<van-time-picker
+  v-model="currentTime"
+  title="Choose Time"
+  :columns-type="['hour', 'minute', 'second']"
+  min-time="09:40:10"
+  max-time="20:20:50"
+/>
+```
+
+```js
+import { ref } from 'vue';
+
+export default {
+  setup() {
+    const currentTime = ref(['12', '00', '00']);
     return { currentTime };
   },
 };
@@ -155,31 +189,6 @@ export default {
       filter,
       currentTime,
     };
-  },
-};
-```
-
-### Limit Time Range
-
-Using `min-time` and `max-time` props to limit the time range, Convention format `10:00:00`.
-
-```html
-<van-time-picker
-  v-model="currentTime"
-  title="Choose Time"
-  :columns-type="['hour', 'minute', 'second']"
-  min-time="09:40:10"
-  max-time="20:20:50"
-/>
-```
-
-```js
-import { ref } from 'vue';
-
-export default {
-  setup() {
-    const currentTime = ref(['12', '00', '00']);
-    return { currentTime };
   },
 };
 ```

@@ -14,7 +14,7 @@ const t = useTranslate({
     columnsType: '选项类型',
     optionsFilter: '过滤选项',
     optionsFormatter: '格式化选项',
-    timeUniteRange: '时分时间范围',
+    overallTimeRange: '整体时间范围',
   },
   'en-US': {
     hour: 'h',
@@ -24,7 +24,7 @@ const t = useTranslate({
     columnsType: 'Columns Type',
     optionsFilter: 'Options Filter',
     optionsFormatter: 'Options Formatter',
-    timeUniteRange: 'Hour Minute Range',
+    overallTimeRange: 'Overall Time Range',
   },
 });
 
@@ -107,6 +107,16 @@ const formatter = (type: string, option: PickerOption) => {
     />
   </demo-block>
 
+  <demo-block card :title="t('overallTimeRange')">
+    <van-time-picker
+      v-model="hourMinuteTime"
+      :title="t('chooseTime')"
+      :columns-type="['hour', 'minute', 'second']"
+      min-time="09:40:10"
+      max-time="20:20:50"
+    />
+  </demo-block>
+
   <demo-block card :title="t('optionsFormatter')">
     <van-time-picker
       v-model="formatterTime"
@@ -123,16 +133,6 @@ const formatter = (type: string, option: PickerOption) => {
     />
   </demo-block>
 
-  <demo-block card :title="t('timeUniteRange')">
-    <van-time-picker
-      v-model="hourMinuteTime"
-      :title="t('chooseTime')"
-      :columns-type="['hour', 'minute', 'second']"
-      min-time="09:40:10"
-      max-time="20:20:50"
-    />
-  </demo-block>
-  
   <demo-block card :title="t('advancedUsage')">
     <van-time-picker :title="t('chooseTime')" :filter="timeFilter" />
   </demo-block>
