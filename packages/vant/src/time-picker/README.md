@@ -159,13 +159,39 @@ export default {
 };
 ```
 
+### Limit Time Range
+
+Using `min-time` and `max-time` props to limit the time range, Convention format `10:00:00`.
+
+```html
+<van-time-picker
+  v-model="currentTime"
+  title="Choose Time"
+  :columns-type="['hour', 'minute', 'second']"
+  min-time="09:40:10"
+  max-time="20:20:50"
+/>
+```
+
+````js
+import { ref } from 'vue';
+
+export default {
+  setup() {
+    const currentTime = ref(['12', '00', '00']);
+    return { currentTime };
+  },
+};
+
+
+
 ### Advanced Usage
 
 The third parameter of the `filter` function can get the currently selected time, which can be used to filter unwanted times more flexibly when using the uncontrolled mode.
 
 ```html
 <van-time-picker title="Choose Time" :filter="filter" />
-```
+````
 
 ```js
 export default {
@@ -215,6 +241,8 @@ export default {
 | max-minute | Max minute | _number \| string_ | `59` |
 | min-second | Min second | _number \| string_ | `0` |
 | max-second | Max second | _number \| string_ | `59` |
+| min-time `v4.4.2` | Min time, format reference `07:40:00`, `min-hour` `min-minute` `min-second` is invalid when used | _string_ | - |
+| max-time `v4.4.2` | Max time, format reference `10:20:00`, `min-hour` `min-minute` `max-second` is invalid when used | _string_ | - |
 | title | Toolbar title | _string_ | `''` |
 | confirm-button-text | Text of confirm button | _string_ | `Confirm` |
 | cancel-button-text | Text of cancel button | _string_ | `Cancel` |
