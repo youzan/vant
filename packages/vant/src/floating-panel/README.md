@@ -20,6 +20,8 @@ app.use(FloatingPanel);
 
 ### Basic Usage
 
+The default height of FloatingPanel is `100px`, and users can drag it to expand the panel to a height of `60%` of the screen height.
+
 ```html
 <van-floating-panel>
   <van-cell-group>
@@ -34,6 +36,10 @@ app.use(FloatingPanel);
 ```
 
 ### Custom Anchors
+
+You can set the anchor position of FloatingPanel through the `anchors` attribute, and control the display height of the current panel through `v-model:height`.
+
+For example, you can make the panel stop at three positions: `100px`, 40% of the screen height, and 70% of the screen height.
 
 ```html
 <van-floating-panel v-model:height="height" :anchors="anchors">
@@ -61,6 +67,8 @@ export default {
 ```
 
 ### Head Drag Only
+
+By default, both the header and content areas of FloatingPanel can be dragged, but you can disable dragging of the content area through the `content-draggable` attribute.
 
 ```html
 <van-floating-panel :content-draggable="false">
