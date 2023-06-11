@@ -1,6 +1,6 @@
 {
   "name": "vant",
-  "version": "4.3.2",
+  "version": "4.4.1",
   "description": "Mobile UI Components built on Vue",
   "main": "lib/vant.cjs.js",
   "module": "es/index.mjs",
@@ -46,7 +46,8 @@
   ],
   "dependencies": {
     "@vant/popperjs": "^1.3.0",
-    "@vant/use": "^1.5.1"
+    "@vant/use": "^1.5.1",
+    "@vue/shared": "^3.0.0"
   },
   "peerDependencies": {
     "vue": "^3.0.0"
@@ -58,10 +59,10 @@
     "@vant/cli": "workspace:*",
     "@vant/eslint-config": "workspace:*",
     "@vant/icons": "workspace:*",
-    "@vue/runtime-core": "^3.2.47",
+    "@vue/runtime-core": "^3.3.4",
     "@vue/test-utils": "^2.3.2",
     "typescript": "^5.0.4",
-    "vue": "^3.2.47",
+    "vue": "^3.3.4",
     "vue-router": "^4.1.6"
   },
   "sideEffects": [

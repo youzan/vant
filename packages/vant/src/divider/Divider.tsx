@@ -8,6 +8,7 @@ export type DividerContentPosition = 'left' | 'center' | 'right';
 export const dividerProps = {
   dashed: Boolean,
   hairline: truthProp,
+  vertical: Boolean,
   contentPosition: makeStringProp<DividerContentPosition>('center'),
 };
 
@@ -25,10 +26,12 @@ export default defineComponent({
         class={bem({
           dashed: props.dashed,
           hairline: props.hairline,
-          [`content-${props.contentPosition}`]: !!slots.default,
+          vertical: props.vertical,
+          [`content-${props.contentPosition}`]:
+            !!slots.default && !props.vertical,
         })}
       >
-        {slots.default?.()}
+        {!props.vertical && slots.default?.()}
       </div>
     );
   },

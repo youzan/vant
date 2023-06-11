@@ -4,12 +4,17 @@ import {
   provide,
   computed,
   nextTick,
+  watchEffect,
+  normalizeClass,
+  normalizeStyle,
   defineComponent,
   getCurrentInstance,
   type PropType,
   type CSSProperties,
   type ExtractPropTypes,
 } from 'vue';
+// eslint-disable-next-line vue/prefer-import-from-vue
+import { stringifyStyle } from '@vue/shared';
 
 // Utils
 import {
@@ -89,6 +94,18 @@ export default defineComponent({
       return isActive;
     });
 
+    // see: https://github.com/vant-ui/vant/issues/11763
+    const parsedClass = ref('');
+    const parsedStyle = ref<string | undefined>('');
+    watchEffect(() => {
+      const { titleClass, titleStyle } = props;
+      parsedClass.value = titleClass ? normalizeClass(titleClass) : '';
+      parsedStyle.value =
+        titleStyle && typeof titleStyle !== 'string'
+          ? stringifyStyle(normalizeStyle(titleStyle))
+          : titleStyle;
+    });
+
     const renderTitle = (
       onClickTab: (
         instance: ComponentInstance,
@@ -101,8 +118,8 @@ export default defineComponent({
         v-slots={{ title: slots.title }}
         id={`${parent.id}-${index.value}`}
         ref={parent.setTitleRefs(index.value)}
-        style={props.titleStyle}
-        class={props.titleClass}
+        style={parsedStyle.value}
+        class={parsedClass.value}
         isActive={active.value}
         controls={id}
         scrollable={parent.scrollable.value}

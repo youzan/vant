@@ -99,6 +99,7 @@ Use the `content` slot to pass HTML as watermark. Only supports inline styles, a
 | z-index | Watermark's z-index | _number \| string_ | `100` |
 | content | Text watermark content | _string_ | - |
 | image | Image watermark content. If `content` and `image` are passed at the same time, use the `image` watermark first | _string_ | - |
+| rotate | Watermark rotation angle | _number \| string_ | `-22` |
 | full-page | Whether to display the watermark in full screen | _boolean_ | `true` |
 | gap-x | Horizontal spacing between watermarks | _number_ | `0` |
 | gap-y | Vertical spacing between watermarks | _number_ | `0` |

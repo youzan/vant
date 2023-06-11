@@ -6,6 +6,7 @@ import {
   createNamespace,
   makeRequiredProp,
   type Numeric,
+  makeStringProp,
 } from '../utils';
 
 // Components
@@ -32,6 +33,7 @@ export default defineComponent({
     disabled: Boolean,
     switchable: Boolean,
     defaultTagText: String,
+    rightIcon: makeStringProp('edit'),
   },
 
   emits: ['edit', 'click', 'select'],
@@ -46,7 +48,7 @@ export default defineComponent({
 
     const renderRightIcon = () => (
       <Icon
-        name="edit"
+        name={props.rightIcon}
         class={bem('edit')}
         onClick={(event) => {
           event.stopPropagation();

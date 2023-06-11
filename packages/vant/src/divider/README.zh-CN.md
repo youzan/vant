@@ -26,12 +26,12 @@ app.use(Divider);
 <van-divider />
 ```
 
-### 展示文字
+### 展示文本
 
 通过插槽在可以分割线中间插入内容。
 
 ```html
-<van-divider>文字</van-divider>
+<van-divider>文本</van-divider>
 ```
 
 ### 内容位置
@@ -39,8 +39,8 @@ app.use(Divider);
 通过 `content-position` 指定内容所在位置。
 
 ```html
-<van-divider content-position="left">文字</van-divider>
-<van-divider content-position="right">文字</van-divider>
+<van-divider content-position="left">文本</van-divider>
+<van-divider content-position="right">文本</van-divider>
 ```
 
 ### 虚线
@@ -48,7 +48,7 @@ app.use(Divider);
 添加 `dashed` 属性使分割线渲染为虚线。
 
 ```html
-<van-divider dashed>文字</van-divider>
+<van-divider dashed>文本</van-divider>
 ```
 
 ### 自定义样式
@@ -59,19 +59,32 @@ app.use(Divider);
 <van-divider
   :style="{ color: '#1989fa', borderColor: '#1989fa', padding: '0 16px' }"
 >
-  文字
+  文本
 </van-divider>
+```
+
+### 垂直
+
+```html
+<van-divider vertical />
+文本
+<van-divider vertical dashed />
+文本
+<van-divider vertical :hairline="false" />
+文本
+<van-divider vertical :style="{ borderColor: '#1989fa' }" />
 ```
 
 ## API
 
 ### Props
 
-| 参数             | 说明                              | 类型      | 默认值   |
-| ---------------- | --------------------------------- | --------- | -------- |
-| dashed           | 是否使用虚线                      | _boolean_ | `false`  |
-| hairline         | 是否使用 0.5px 线                 | _boolean_ | `true`   |
-| content-position | 内容位置，可选值为 `left` `right` | _string_  | `center` |
+| 参数              | 说明                              | 类型      | 默认值   |
+| ----------------- | --------------------------------- | --------- | -------- |
+| dashed            | 是否使用虚线                      | _boolean_ | `false`  |
+| hairline          | 是否使用 0.5px 线                 | _boolean_ | `true`   |
+| content-position  | 内容位置，可选值为 `left` `right` | _string_  | `center` |
+| vertical `v4.4.0` | 是否使用垂直                      | _boolean_ | `false`  |
 
 ### Slots
 
@@ -96,6 +109,7 @@ import type { DividerProps, DividerContentPosition } from 'vant';
 | 名称                              | 默认值                    | 描述 |
 | --------------------------------- | ------------------------- | ---- |
 | --van-divider-margin              | _var(--van-padding-md) 0_ | -    |
+| --van-divider-vertical-margin     | _0 var(--van-padding-xs)_ | -    |
 | --van-divider-text-color          | _var(--van-text-color-2)_ | -    |
 | --van-divider-font-size           | _var(--van-font-size-md)_ | -    |
 | --van-divider-line-height         | _24px_                    | -    |

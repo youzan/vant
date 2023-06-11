@@ -53,6 +53,18 @@ app.use(Divider);
 </van-divider>
 ```
 
+### Vertical
+
+```html
+<van-divider vertical />
+Text
+<van-divider vertical dashed />
+Text
+<van-divider vertical :hairline="false" />
+Text
+<van-divider vertical :style="{ borderColor: '#1989fa' }" />
+```
+
 ## API
 
 ### Props
@@ -62,6 +74,7 @@ app.use(Divider);
 | dashed | Whether to use dashed border | _boolean_ | `false` |
 | hairline | Whether to use hairline | _boolean_ | `true` |
 | content-position | Content position, can be set to `left` `right` | _string_ | `center` |
+| vertical `v4.4.0` | Whether to use vertical | _boolean_ | `false` |
 
 ### Slots
 
@@ -86,6 +99,7 @@ The component provides the following CSS variables, which can be used to customi
 | Name                              | Default Value             | Description |
 | --------------------------------- | ------------------------- | ----------- |
 | --van-divider-margin              | _var(--van-padding-md) 0_ | -           |
+| --van-divider-vertical-margin     | _0 var(--van-padding-xs)_ | -           |
 | --van-divider-text-color          | _var(--van-text-color-2)_ | -           |
 | --van-divider-font-size           | _var(--van-font-size-md)_ | -           |
 | --van-divider-line-height         | _24px_                    | -           |

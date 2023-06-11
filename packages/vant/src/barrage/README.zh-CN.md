@@ -2,7 +2,7 @@
 
 ### 介绍
 
-实现观看视频时弹出的评论性字幕功能。
+实现观看视频时弹出的评论性字幕功能。请升级 `vant` 到 >= 4.4.0 版本来使用该组件。
 
 ### 引入
 
@@ -107,14 +107,14 @@ export default {
 
 ### Props
 
-| 参数      | 说明                            | 类型               | 默认值 |
-| --------- | ------------------------------- | ------------------ | ------ |
-| v-model   | 弹幕数据                        | _BarrageItem[]_    | -      |
-| auto-play | 是否自动播放弹幕                | _boolean_          | `true` |
-| rows      | 弹幕文字行数                    | _number \| string_ | `4`    |
-| top       | 弹幕文字区域顶部间距，单位 `px` | _number \| string_ | `10`   |
-| speed     | 文字滑过容器的时间，单位 `ms`   | _number \| string_ | `4000` |
-| delay     | 弹幕动画延时，单位 `ms`         | _number_           | `300`  |
+| 参数      | 说明                              | 类型               | 默认值 |
+| --------- | --------------------------------- | ------------------ | ------ |
+| v-model   | 弹幕数据                          | _BarrageItem[]_    | -      |
+| auto-play | 是否自动播放弹幕                  | _boolean_          | `true` |
+| rows      | 弹幕文字行数                      | _number \| string_ | `4`    |
+| top       | 弹幕文字区域顶部间距，单位 `px`   | _number \| string_ | `10`   |
+| duration  | 弹幕文字滑过容器的时间，单位 `ms` | _number \| string_ | `4000` |
+| delay     | 弹幕动画延时，单位 `ms`           | _number_           | `300`  |
 
 ### 方法
 
@@ -145,9 +145,9 @@ import type { BarrageProps, BarrageItem, BarrageInstance } from 'vant';
 
 组件提供了下列 CSS 变量，可用于自定义样式，使用方法请参考 [ConfigProvider 组件](#/zh-CN/config-provider)。
 
-| 名称 | 默认值 | 描述 |
-| --- | --- | --- |
-| --van-barrage-font-size | _16px_ | - |
-| --van-barrage-space | _10px_ | - |
-| --van-barrage-color | _var(--van-white)_ | - |
-| --van-barrage-font | _-apple-system-font, Helvetica Neue, Arial, sans-serif_ | - |
+| 名称                    | 默认值             | 描述 |
+| ----------------------- | ------------------ | ---- |
+| --van-barrage-font-size | _16px_             | -    |
+| --van-barrage-space     | _10px_             | -    |
+| --van-barrage-color     | _var(--van-white)_ | -    |
+| --van-barrage-font      | _inherit_          | -    |

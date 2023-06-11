@@ -44,6 +44,34 @@ const filter = (type: string, options: PickerOption[]) => {
   return options;
 };
 
+const timeFilter = (
+  type: string,
+  options: PickerOption[],
+  values: string[]
+) => {
+  const hour = +values[0];
+
+  if (type === 'hour') {
+    return options.filter(
+      (option) => Number(option.value) >= 8 && Number(option.value) <= 18
+    );
+  }
+
+  if (type === 'minute') {
+    options = options.filter((option) => Number(option.value) % 10 === 0);
+
+    if (hour === 8) {
+      return options.filter((option) => Number(option.value) >= 40);
+    }
+
+    if (hour === 18) {
+      return options.filter((option) => Number(option.value) <= 20);
+    }
+  }
+
+  return options;
+};
+
 const formatter = (type: string, option: PickerOption) => {
   if (type === 'hour') {
     option.text += t('hour');
@@ -103,5 +131,9 @@ const formatter = (type: string, option: PickerOption) => {
       min-time="09:40:10"
       max-time="20:20:50"
     />
+  </demo-block>
+  
+  <demo-block card :title="t('advancedUsage')">
+    <van-time-picker :title="t('chooseTime')" :filter="timeFilter" />
   </demo-block>
 </template>

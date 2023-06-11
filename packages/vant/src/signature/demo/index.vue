@@ -7,14 +7,14 @@ import { showToast } from '../../toast';
 
 const t = useTranslate({
   'zh-CN': {
-    basic: '基础用法',
     penColor: '自定义颜色',
     lineWidth: '自定义线宽',
+    backgroundColor: '自定义背景颜色',
   },
   'en-US': {
-    basic: 'basic',
-    penColor: 'penColor',
-    lineWidth: 'lineWidth',
+    penColor: 'Pen Color',
+    lineWidth: 'Line Width',
+    backgroundColor: 'Background Color',
   },
 });
 
@@ -28,7 +28,7 @@ const onClear = () => showToast('clear');
 </script>
 
 <template>
-  <demo-block :title="t('basic')">
+  <demo-block :title="t('basicUsage')">
     <van-signature @submit="onSubmit" @clear="onClear" />
   </demo-block>
 
@@ -40,5 +40,13 @@ const onClear = () => showToast('clear');
 
   <demo-block :title="t('lineWidth')">
     <van-signature :line-width="6" @clear="onClear" @submit="onSubmit" />
+  </demo-block>
+
+  <demo-block :title="t('backgroundColor')">
+    <van-signature
+      background-color="#eee"
+      @clear="onClear"
+      @submit="onSubmit"
+    />
   </demo-block>
 </template>

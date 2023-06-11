@@ -86,7 +86,7 @@ export default {
 | content       | 需要展示的文本   | _string_           | -       |
 | expand-text   | 展开操作的文案   | _string_           | -       |
 | collapse-text | 收起操作的文案   | _string_           | -       |
-| dots          | 省略号的文本内容 | _string_           | `'...'` |
+| dots `v4.2.0` | 省略号的文本内容 | _string_           | `'...'` |
 
 ### Events
 

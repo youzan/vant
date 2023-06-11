@@ -365,7 +365,7 @@ export default {
 
 | Name | Description | SlotProps |
 | --- | --- | --- |
-| toolbar `3.1.2` | Custom toolbar content | - |
+| toolbar | Custom toolbar content | - |
 | title | Custom title | - |
 | confirm | Custom confirm button text | - |
 | cancel | Custom cancel button text | - |

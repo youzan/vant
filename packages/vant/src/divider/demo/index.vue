@@ -9,6 +9,7 @@ const t = useTranslate({
     withText: '展示文本',
     contentPosition: '内容位置',
     customStyle: '自定义样式',
+    vertical: '垂直',
   },
   'en-US': {
     text: 'Text',
@@ -16,6 +17,7 @@ const t = useTranslate({
     withText: 'With Text',
     contentPosition: 'Content Position',
     customStyle: 'Custom Style',
+    vertical: 'Vertical',
   },
 });
 </script>
@@ -54,6 +56,18 @@ const t = useTranslate({
       {{ t('text') }}
     </van-divider>
   </demo-block>
+
+  <demo-block :title="t('vertical')">
+    <div class="content">
+      <van-divider vertical />
+      {{ t('text') }}
+      <van-divider vertical dashed />
+      {{ t('text') }}
+      <van-divider vertical :hairline="false" />
+      {{ t('text') }}
+      <van-divider vertical :style="{ borderColor: '#1989fa' }" />
+    </div>
+  </demo-block>
 </template>
 
 <style lang="less">
@@ -62,6 +76,12 @@ const t = useTranslate({
 
   .van-doc-demo-block__title {
     padding-top: var(--van-padding-md);
+  }
+
+  .content {
+    padding: 0 var(--van-padding-md);
+    color: var(--van-text-color-2);
+    font-size: var(--van-font-size-md);
   }
 }
 </style>

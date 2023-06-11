@@ -41,7 +41,7 @@
     "release-it": "^15.4.1",
     "rimraf": "^5.0.0",
     "typescript": "^5.0.4",
-    "vue": "^3.2.47"
+    "vue": "^3.3.4"
   },
   "peerDependencies": {
     "vue": "^3.0.0"

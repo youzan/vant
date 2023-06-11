@@ -1,0 +1,55 @@
+:root {
+  --van-floating-panel-border-radius: 16px;
+  --van-floating-panel-header-height: 30px;
+  --van-floating-panel-z-index: 999;
+  --van-floating-panel-background: var(--van-background-2);
+  --van-floating-panel-bar-width: 20px;
+  --van-floating-panel-bar-height: 3px;
+  --van-floating-panel-bar-color: var(--van-gray-5);
+}
+
+.van-floating-panel {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100vw;
+  z-index: var(--van-floating-panel-z-index);
+  display: flex;
+  flex-direction: column;
+  touch-action: none;
+  border-top-left-radius: var(--van-floating-panel-border-radius);
+  border-top-right-radius: var(--van-floating-panel-border-radius);
+  background: var(--van-floating-panel-background);
+
+  &::after {
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: -100vh;
+    height: 100vh;
+    width: 100vw;
+    background-color: inherit;
+  }
+
+  &__header {
+    height: var(--van-floating-panel-header-height);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: grab;
+    user-select: none;
+
+    &-bar {
+      height: var(--van-floating-panel-bar-height);
+      width: var(--van-floating-panel-bar-width);
+      border-radius: var(--van-radius-md);
+      background: var(--van-floating-panel-bar-color);
+    }
+  }
+
+  &__content {
+    flex: 1;
+    overflow-y: auto;
+    background-color: var(--van-floating-panel-background);
+  }
+}

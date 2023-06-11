@@ -13,6 +13,8 @@ import {
   genOptions,
   pickerInheritKeys,
   sharedProps,
+  formatValueRange,
+  type TimeFilter,
 } from '../date-picker/utils';
 import {
   createNamespace,
@@ -52,6 +54,7 @@ export const timePickerProps = extend({}, sharedProps, {
     type: Array as PropType<TimePickerColumnType[]>,
     default: () => ['hour', 'minute'],
   },
+  filter: Function as PropType<TimeFilter>,
 });
 
 export type TimePickerProps = ExtractPropTypes<typeof timePickerProps>;
@@ -105,11 +108,11 @@ export default defineComponent({
         const { filter, formatter } = props;
         switch (type) {
           case 'hour':
-            return genOptions(+minHour, +maxHour, type, formatter, filter);
+            return genOptions(+minHour, +maxHour, type, formatter, filter, currentValues.value);
           case 'minute':
-            return genOptions(+minMinute, +maxMinute, type, formatter, filter);
+            return genOptions(+minMinute, +maxMinute, type, formatter, filter, currentValues.value);
           case 'second':
-            return genOptions(+minSecond, +maxSecond, type, formatter, filter);
+            return genOptions(+minSecond, +maxSecond, type, formatter, filter, currentValues.value);
           default:
             if (process.env.NODE_ENV !== 'production') {
               throw new Error(

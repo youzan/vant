@@ -20,7 +20,7 @@ import {
 
 // Composables
 import { useTouch } from '../composables/use-touch';
-import { useEventListener, useRect } from '@vant/use';
+import { raf, useEventListener, useRect } from '@vant/use';
 
 // Components
 import { Image } from '../image';
@@ -39,6 +39,8 @@ const getCenter = (touches: TouchList) => ({
 });
 
 const bem = createNamespace('image-preview')[1];
+
+const longImageRatio = 2.6;
 
 export default defineComponent({
   props: {
@@ -61,28 +63,25 @@ export default defineComponent({
       moveY: 0,
       moving: false,
       zooming: false,
+      initializing: false,
       imageRatio: 0,
-      displayWidth: 0,
-      displayHeight: 0,
     });
 
     const touch = useTouch();
     const imageRef = ref<ComponentInstance>();
     const swipeItem = ref<ComponentInstance>();
+    const vertical = ref(false);
+    const isLongImage = ref(false);
 
-    const vertical = computed(() => {
-      const { rootWidth, rootHeight } = props;
-      const rootRatio = rootHeight / rootWidth;
-      return state.imageRatio > rootRatio;
-    });
+    let initialMoveY = 0;
 
     const imageStyle = computed(() => {
-      const { scale, moveX, moveY, moving, zooming } = state;
+      const { scale, moveX, moveY, moving, zooming, initializing } = state;
       const style: CSSProperties = {
-        transitionDuration: zooming || moving ? '0s' : '.3s',
+        transitionDuration: zooming || moving || initializing ? '0s' : '.3s',
       };
 
-      if (scale !== 1) {
+      if (scale !== 1 || isLongImage.value) {
         // use matrix to solve the problem of elements not rendering due to safari optimization
         style.transform = `matrix(${scale}, 0, 0, ${scale}, ${moveX}, ${moveY})`;
       }
@@ -138,7 +137,7 @@ export default defineComponent({
           state.moveY = clamp(moveY, -maxMoveY.value, maxMoveY.value);
         } else {
           state.moveX = 0;
-          state.moveY = 0;
+          state.moveY = isLongImage.value ? initialMoveY : 0;
         }
 
         emit('scale', {
@@ -157,7 +156,7 @@ export default defineComponent({
 
       setScale(
         scale,
-        scale === 2
+        scale === 2 || isLongImage.value
           ? { x: touch.startX.value, y: touch.startY.value }
           : undefined
       );
@@ -192,7 +191,8 @@ export default defineComponent({
       // whether the image position is moved after scaling
       isImageMoved = false;
 
-      state.moving = fingerNum === 1 && state.scale !== 1;
+      state.moving =
+        fingerNum === 1 && (state.scale !== 1 || isLongImage.value);
       state.zooming = fingerNum === 2 && !offsetX.value;
 
       if (state.zooming) {
@@ -318,9 +318,32 @@ export default defineComponent({
       touch.reset();
     };
 
+    const resize = () => {
+      const { rootWidth, rootHeight } = props;
+      const rootRatio = rootHeight / rootWidth;
+      const { imageRatio } = state;
+
+      vertical.value =
+        state.imageRatio > rootRatio && imageRatio < longImageRatio;
+      isLongImage.value =
+        state.imageRatio > rootRatio && imageRatio >= longImageRatio;
+
+      if (isLongImage.value) {
+        initialMoveY = (imageRatio * rootWidth - rootHeight) / 2;
+        state.moveY = initialMoveY;
+        state.initializing = true;
+        raf(() => {
+          state.initializing = false;
+        });
+      }
+
+      resetScale();
+    };
+
     const onLoad = (event: Event) => {
       const { naturalWidth, naturalHeight } = event.target as HTMLImageElement;
       state.imageRatio = naturalHeight / naturalWidth;
+      resize();
     };
 
     watch(() => props.active, resetScale);
@@ -332,6 +355,7 @@ export default defineComponent({
         }
       }
     );
+    watch(() => [props.rootWidth, props.rootHeight], resize);
 
     // useEventListener will set passive to `false` to eliminate the warning of Chrome
     useEventListener('touchmove', onTouchMove, {
