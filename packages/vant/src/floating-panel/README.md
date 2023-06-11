@@ -2,7 +2,7 @@
 
 ### Intro
 
-A panel that floats at the bottom of a page, which can be dragged up and down to browse content, often used to provide additional functionality or information.
+A panel that floats at the bottom of a page, which can be dragged up and down to browse content, often used to provide additional functionality or information. Please upgrade `vant` to >= v4.5.0 before using this component.
 
 ### Install
 
