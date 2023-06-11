@@ -24,9 +24,10 @@ import { useSyncPropRef } from '../composables/use-sync-prop-ref';
 const { height: windowHeight } = useWindowSize();
 
 export const floatingPanelProps = {
-  anchors: makeArrayProp<number>(),
-  contentDraggable: truthProp,
   height: makeNumericProp(0),
+  anchors: makeArrayProp<number>(),
+  duration: makeNumericProp(0.2),
+  contentDraggable: truthProp,
   safeAreaInsetBottom: truthProp,
 };
 
@@ -69,7 +70,7 @@ export default defineComponent({
     const rootStyle = computed(() => ({
       height: addUnit(boundary.value.max),
       transform: `translateY(calc(100% + ${addUnit(-height.value)}))`,
-      transition: !dragging.value ? 'transform .3s' : 'none',
+      transition: !dragging.value ? `transform ${props.duration}s` : 'none',
     }));
 
     const ease = (moveY: number): number => {
