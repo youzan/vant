@@ -73,6 +73,10 @@ export default {
 
 ### 时间范围
 
+你可以使用 `min-hour` 和 `max-hour` 等属性来限制小时（hour）范围、分钟（minute）范围和秒（second）范围。
+
+比如以下示例，用户可以选择的小时是 `10 ~ 20` ，分钟是 `30 ~ 40`。
+
 ```html
 <van-time-picker
   v-model="currentTime"
@@ -90,6 +94,36 @@ import { ref } from 'vue';
 export default {
   setup() {
     const currentTime = ref(['12', '35']);
+    return { currentTime };
+  },
+};
+```
+
+### 整体时间范围
+
+你可以使用 `min-time` 和 `max-time` 属性来限制整体时间范围，约定格式 `10:00:00`。
+
+- 设置 `min-time` 后，`min-hour`、`min-minute`、`min-second` 属性将不会生效。
+- 设置 `max-time` 后，`max-hour`、`max-minute`、`max-second` 属性将不会生效。
+
+比如以下示例，用户可以选择从 `09:40:10` 到 `20:20:50` 的任意时间。
+
+```html
+<van-time-picker
+  v-model="currentTime"
+  title="选择时间"
+  :columns-type="['hour', 'minute', 'second']"
+  min-time="09:40:10"
+  max-time="20:20:50"
+/>
+```
+
+```js
+import { ref } from 'vue';
+
+export default {
+  setup() {
+    const currentTime = ref(['12', '00', '00']);
     return { currentTime };
   },
 };
@@ -216,6 +250,8 @@ export default {
 | max-minute | 可选的最大分钟 | _number \| string_ | `59` |
 | min-second | 可选的最小秒数 | _number \| string_ | `0` |
 | max-second | 可选的最大秒数 | _number \| string_ | `59` |
+| min-time `v4.5.0` | 可选的最小时间，格式参考 `07:40:00`，使用时 `min-hour` `min-minute` `min-second` 不会生效 | _string_ | - |
+| max-time `v4.5.0` | 可选的最大时间，格式参考 `10:20:00`，使用时 `max-hour` `max-minute` `max-second` 不会生效 | _string_ | - |
 | title | 顶部栏标题 | _string_ | `''` |
 | confirm-button-text | 确认按钮文字 | _string_ | `确认` |
 | cancel-button-text | 取消按钮文字 | _string_ | `取消` |

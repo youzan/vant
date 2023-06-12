@@ -175,11 +175,11 @@ export default {
 
 ### Slots
 
-| Name         | Description                       | SlotProps           |
-| ------------ | --------------------------------- | ------------------- |
-| button       | Custom button                     | _{ value: number }_ |
-| left-button  | Custom left button in range mode  | _{ value: number }_ |
-| right-button | Custom right button in range mode | _{ value: number }_ |
+| Name | Description | SlotProps |
+| --- | --- | --- |
+| button | Custom button | _{ value: number, dragging: boolean }_ |
+| left-button | Custom left button in range mode | _{ value: number, dragging: boolean, dragIndex?: number }_ |
+| right-button | Custom right button in range mode | _{ value: number, dragging: boolean, dragIndex?: number }_ |
 
 ### Types
 

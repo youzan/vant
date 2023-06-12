@@ -269,3 +269,51 @@ test('should emit confirm event correctly after setting smaller max-hour and max
     ],
   ]);
 });
+
+test('should time range when set props min-time', async () => {
+  const wrapper = mount(TimePicker, {
+    props: {
+      minTime: '09:40:10',
+      maxTime: '20:20:50',
+      modelValue: ['08', '30', '00'],
+      columnsType: ['hour', 'minute', 'second'],
+    },
+  });
+
+  await wrapper.find('.van-picker__confirm').trigger('click');
+  expect(wrapper.emitted('confirm')?.[0]).toEqual([
+    {
+      selectedOptions: [
+        { text: '09', value: '09' },
+        { text: '40', value: '40' },
+        { text: '10', value: '10' },
+      ],
+      selectedValues: ['09', '40', '10'],
+      selectedIndexes: [0, 0, 0],
+    },
+  ]);
+});
+
+test('should time range when set props max-time', async () => {
+  const wrapper = mount(TimePicker, {
+    props: {
+      minTime: '09:40:10',
+      maxTime: '20:20:50',
+      modelValue: ['23', '30', '55'],
+      columnsType: ['hour', 'minute', 'second'],
+    },
+  });
+
+  await wrapper.find('.van-picker__confirm').trigger('click');
+  expect(wrapper.emitted('confirm')?.[0]).toEqual([
+    {
+      selectedOptions: [
+        { text: '20', value: '20' },
+        { text: '20', value: '20' },
+        { text: '50', value: '50' },
+      ],
+      selectedValues: ['20', '20', '50'],
+      selectedIndexes: [11, 20, 50],
+    },
+  ]);
+});

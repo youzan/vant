@@ -90,7 +90,7 @@ test('should emit height-change when height change in anchors', async () => {
     '-200px'
   );
 
-  expect(wrapper.emitted('change')?.[0][0]).toEqual(200);
+  expect(wrapper.emitted('change')?.[0][0]).toEqual({ height: 200 });
 });
 
 test('should only drag header when allowDraggingContent is false', async () => {
