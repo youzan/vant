@@ -76,6 +76,14 @@ export default {
 <van-rate v-model="value" :count="6" />
 ```
 
+### Clearable
+
+When the `clearable` prop is set to `true`, clicking on the same value again will reset the value to `0`.
+
+```html
+<van-rate v-model="value" clearable />
+```
+
 ### Disabled
 
 ```html
@@ -144,6 +152,7 @@ export default {
 | void-icon | Void icon | _string_ | `star-o` |
 | icon-prefix | Icon className prefix | _string_ | `van-icon` |
 | allow-half | Whether to allow half star | _boolean_ | `false` |
+| clearable | Whether to allow clear when click again | _boolean_ | `false` |
 | readonly | Whether to be readonly | _boolean_ | `false` |
 | disabled | Whether to disable rate | _boolean_ | `false` |
 | touchable | Whether to allow select rate by touch gesture | _boolean_ | `true` |

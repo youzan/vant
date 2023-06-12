@@ -86,6 +86,14 @@ export default {
 <van-rate v-model="value" :count="6" />
 ```
 
+### 可清空
+
+当 `clearable` 属性设置为 `true`，再次点击相同的值时，可以将值重置为 `0`。
+
+```html
+<van-rate v-model="value" clearable />
+```
+
 ### 禁用状态
 
 通过 `disabled` 属性来禁用评分。
@@ -162,6 +170,7 @@ export default {
 | void-icon | 未选中时的图标名称或图片链接，等同于 Icon 组件的 [name 属性](#/zh-CN/icon#props) | _string_ | `star-o` |
 | icon-prefix | 图标类名前缀，等同于 Icon 组件的 [class-prefix 属性](#/zh-CN/icon#props) | _string_ | `van-icon` |
 | allow-half | 是否允许半选 | _boolean_ | `false` |
+| clearable | 是否允许再次点击后清除 | _boolean_ | `false` |
 | readonly | 是否为只读状态，只读状态下无法修改评分 | _boolean_ | `false` |
 | disabled | 是否禁用评分 | _boolean_ | `false` |
 | touchable | 是否可以通过滑动手势选择评分 | _boolean_ | `true` |

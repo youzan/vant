@@ -141,3 +141,19 @@ test('should render correct count when using string prop', () => {
 
   expect(icons).toHaveLength(4);
 });
+
+test('should reset value to 0 when using clearable prop', () => {
+  const wrapper = mount(Rate, {
+    props: {
+      modelValue: 4,
+      clearable: true,
+    },
+  });
+
+  const item4 = wrapper.findAll('.van-rate__icon')[3];
+  item4.trigger('click');
+  expect(wrapper.emitted('change')).toHaveLength(1);
+  expect(wrapper.emitted('update:modelValue')).toHaveLength(1);
+  expect(wrapper.emitted('change')![0]).toEqual([0]);
+  expect(wrapper.emitted('update:modelValue')![0]).toEqual([0]);
+});
