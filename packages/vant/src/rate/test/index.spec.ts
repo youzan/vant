@@ -1,5 +1,5 @@
 import { Rate } from '..';
-import { mount, triggerDrag } from '../../../test';
+import { mount, trigger, triggerDrag } from '../../../test';
 import type { DOMWrapper } from '@vue/test-utils';
 
 function mockGetBoundingClientRect(items: DOMWrapper<Element>[]) {
@@ -149,11 +149,19 @@ test('should reset value to 0 when using clearable prop', () => {
       clearable: true,
     },
   });
-
+  const icons = wrapper.findAll('.van-rate__item');
   const item4 = wrapper.findAll('.van-rate__icon')[3];
+  mockGetBoundingClientRect(icons);
+
+  trigger(wrapper, 'touchstart', 80, 0);
+  trigger(wrapper, 'touchmove', 83, 0);
+  item4.trigger('click');
+  expect(wrapper.emitted('change')![0]).toEqual([0]);
+  expect(wrapper.emitted('update:modelValue')![0]).toEqual([0]);
+
+  trigger(wrapper, 'touchstart', 80, 0);
+  trigger(wrapper, 'touchmove', 84, 0);
   item4.trigger('click');
   expect(wrapper.emitted('change')).toHaveLength(1);
   expect(wrapper.emitted('update:modelValue')).toHaveLength(1);
-  expect(wrapper.emitted('change')![0]).toEqual([0]);
-  expect(wrapper.emitted('update:modelValue')![0]).toEqual([0]);
 });

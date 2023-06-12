@@ -113,6 +113,7 @@ export default defineComponent({
     let groupRefRect: DOMRect;
     let minRectTop = Number.MAX_SAFE_INTEGER;
     let maxRectTop = Number.MIN_SAFE_INTEGER;
+    let onlyTap = false;
 
     const updateRanges = () => {
       groupRefRect = useRect(groupRef);
@@ -183,6 +184,7 @@ export default defineComponent({
       }
 
       touch.start(event);
+      onlyTap = true;
       updateRanges();
     };
 
@@ -197,6 +199,16 @@ export default defineComponent({
         const { clientX, clientY } = event.touches[0];
         preventDefault(event);
         select(getScoreByPosition(clientX, clientY));
+      }
+
+      const TAP_THRESHOLD_DISTANCE = 3;
+
+      if (
+        onlyTap &&
+        (touch.offsetX.value > TAP_THRESHOLD_DISTANCE ||
+          touch.offsetY.value > TAP_THRESHOLD_DISTANCE)
+      ) {
+        onlyTap = false;
       }
     };
 
@@ -231,7 +243,7 @@ export default defineComponent({
         let value = allowHalf
           ? getScoreByPosition(event.clientX, event.clientY)
           : score;
-        if (props.clearable && value === props.modelValue) value = 0;
+        if (props.clearable && onlyTap && value === props.modelValue) value = 0;
         select(value);
       };
 
