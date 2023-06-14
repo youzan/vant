@@ -2,11 +2,11 @@
 
 ### Introduction
 
-Rolling text animation
+Rolling text animation, which can roll numbers and other types of text.
 
-### Import
+### Install
 
-Import component globally using the following methods. For more ways to register components, please refer to [component registration](#/en-US/advanced-usage#component-registration).
+Register component globally via `app.use`, refer to [Component Registration](#/en-US/advanced-usage#zu-jian-zhu-ce) for more registration ways.
 
 ```js
 import { createApp } from 'vue';
@@ -16,7 +16,7 @@ const app = createApp();
 app.use(RollingText);
 ```
 
-## Code Demo
+## Usage
 
 ### Basic Usage
 
@@ -44,9 +44,9 @@ You can set the rolling direction of the number by using the `direction` propert
 />
 ```
 
-### Set StopOrder
+### Set Stop Order
 
-You can set the order of stopping the animation of each digit through the `stop-order` attribute. By default, it stops from the higher digits. Setting `rtl` can stop from the ones digit.
+You can set the order of stopping the animation of each digit through the `stop-order` prop. By default, it stops from the higher digits. Setting `rtl` can stop from the ones digit.
 
 ```html
 <van-rolling-text
@@ -59,7 +59,7 @@ You can set the order of stopping the animation of each digit through the `stop-
 />
 ```
 
-### Rolling non-number text
+### Rolling Non-numeric Text
 
 You can set non-numeric content flip using the `text-array` props.
 
@@ -73,16 +73,22 @@ You can set non-numeric content flip using the `text-array` props.
 />
 ```
 
-```javascript
-const textArray = ref([
-  'aaaaa',
-  'bbbbb',
-  'ccccc',
-  'ddddd',
-  'eeeee',
-  'fffff',
-  'ggggg',
-]);
+```js
+import { ref } from 'vue';
+export default {
+  setup() {
+    const textArray = ref([
+      'aaaaa',
+      'bbbbb',
+      'ccccc',
+      'ddddd',
+      'eeeee',
+      'fffff',
+      'ggggg',
+    ]);
+    return { textArray };
+  },
+};
 ```
 
 ### Custom Style
@@ -101,6 +107,7 @@ const textArray = ref([
 ```css
 .my-rolling-text {
   gap: 6px;
+
   .van-roll-single {
     color: white;
     background: deepskyblue;
@@ -131,13 +138,20 @@ After getting the component instance through `ref`, you can call the `start` and
 </van-grid>
 ```
 
-```javascript
-const rollTextEl = ref(null);
-const start = () => {
-  rollTextEl.value.start();
-};
-const reset = () => {
-  rollTextEl.value.reset();
+```js
+import { ref } from 'vue';
+
+export default {
+  setup() {
+    const rollTextEl = ref(null);
+    const start = () => {
+      rollTextEl.value.start();
+    };
+    const reset = () => {
+      rollTextEl.value.reset();
+    };
+    return { rollTextEl, start, reset };
+  },
 };
 ```
 

@@ -73,16 +73,22 @@ app.use(RollingText);
 />
 ```
 
-```javascript
-const textArray = ref([
-  'aaaaa',
-  'bbbbb',
-  'ccccc',
-  'ddddd',
-  'eeeee',
-  'fffff',
-  'ggggg',
-]);
+```js
+import { ref } from 'vue';
+export default {
+  setup() {
+    const textArray = ref([
+      'aaaaa',
+      'bbbbb',
+      'ccccc',
+      'ddddd',
+      'eeeee',
+      'fffff',
+      'ggggg',
+    ]);
+    return { textArray };
+  },
+};
 ```
 
 ### 自定义样式
@@ -101,6 +107,7 @@ const textArray = ref([
 ```css
 .my-rolling-text {
   gap: 6px;
+
   .van-roll-single {
     color: white;
     background: deepskyblue;
@@ -131,13 +138,20 @@ const textArray = ref([
 </van-grid>
 ```
 
-```javascript
-const rollTextEl = ref(null);
-const start = () => {
-  rollTextEl.value.start();
-};
-const reset = () => {
-  rollTextEl.value.reset();
+```js
+import { ref } from 'vue';
+
+export default {
+  setup() {
+    const rollTextEl = ref(null);
+    const start = () => {
+      rollTextEl.value.start();
+    };
+    const reset = () => {
+      rollTextEl.value.reset();
+    };
+    return { rollTextEl, start, reset };
+  },
 };
 ```
 

@@ -12,8 +12,8 @@ import { useExpose } from '../composables/use-expose';
 
 const [name, bem] = createNamespace('rolling-text');
 
-export type RollingDirection = 'up' | 'down';
-export type StopOrder = 'ltr' | 'rtl';
+export type RollingTextDirection = 'up' | 'down';
+export type RollingTextStopOrder = 'ltr' | 'rtl';
 
 export const rollingTextProps = {
   startNum: makeNumberProp(0),
@@ -21,8 +21,8 @@ export const rollingTextProps = {
   textArray: makeArrayProp<string>(),
   duration: makeNumberProp(2),
   autoStart: truthProp,
-  direction: makeStringProp<RollingDirection>('down'),
-  stopOrder: makeStringProp<StopOrder>('ltr'),
+  direction: makeStringProp<RollingTextDirection>('down'),
+  stopOrder: makeStringProp<RollingTextStopOrder>('ltr'),
 };
 
 const CIRCLE_NUM = 2;
