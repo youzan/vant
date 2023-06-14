@@ -27,6 +27,9 @@ const t = useTranslate({
       { text: '选项二', disabled: true },
       { text: '选项三' },
     ],
+    actionsDirection: '排列方向',
+    horizontal: '水平排列',
+    vertical: '垂直排列',
     showIcon: '展示图标',
     placement: '弹出位置',
     darkTheme: '深色风格',
@@ -51,6 +54,9 @@ const t = useTranslate({
       { text: 'Option 2', disabled: true },
       { text: 'Option 3' },
     ],
+    actionsDirection: 'Actions Direction',
+    horizontal: 'Horizontal',
+    vertical: 'Vertical',
     showIcon: 'Show Icon',
     placement: 'Placement',
     darkTheme: 'Dark Theme',
@@ -80,6 +86,8 @@ const placements: PickerOption[] = [
 ].map((item) => ({ text: item, value: item }));
 
 const show = ref({
+  horizontal: false,
+  vertical: false,
   showIcon: false,
   placement: false,
   darkTheme: false,
@@ -174,6 +182,34 @@ const onSelect = (action: { text: string }) => showToast(action.text);
         @change="onPickerChange"
       />
     </van-popup>
+  </demo-block>
+
+  <demo-block :title="t('actionsDirection')">
+    <van-popover
+      v-model:show="show.horizontal"
+      :actions="t('actions')"
+      actions-direction="horizontal"
+      placement="bottom-start"
+      @select="onSelect"
+    >
+      <template #reference>
+        <van-button type="primary">
+          {{ t('horizontal') }}
+        </van-button>
+      </template>
+    </van-popover>
+
+    <van-popover
+      v-model:show="show.vertical"
+      :actions="t('actions')"
+      @select="onSelect"
+    >
+      <template #reference>
+        <van-button type="primary">
+          {{ t('vertical') }}
+        </van-button>
+      </template>
+    </van-popover>
   </demo-block>
 
   <demo-block :title="t('actionOptions')">

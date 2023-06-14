@@ -19,6 +19,42 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 
 ## Details
 
+### [v4.5.0](https://github.com/vant-ui/vant/compare/v4.4.1...v4.5.0)
+
+`2023-06-11`
+
+**New Component**
+
+- add new FloatingPanel component, contributed by [@zhousg](https://github.com/zhousg) ❤️ [#11832](https://github.com/vant-ui/vant/issues/11832)
+
+**Feature**
+
+- AddressList: add new right-icon props [#11959](https://github.com/vant-ui/vant/issues/11959)
+- DropdownMenu: add close method [#11921](https://github.com/vant-ui/vant/issues/11921)
+- Slider: add dragging param for button slot [#11946](https://github.com/vant-ui/vant/issues/11946)
+- TimePicker: add min-time and max-time prop [#11887](https://github.com/vant-ui/vant/issues/11887)
+- TimePicker: add values param for filter method [#11916](https://github.com/vant-ui/vant/issues/11916)
+- CI: add issue helper [#11963](https://github.com/vant-ui/vant/issues/11963)
+
+**Bug Fixes**
+
+- BackTop: should hide when deactivated [#11938](https://github.com/vant-ui/vant/issues/11938)
+
+### [v4.4.1](https://github.com/vant-ui/vant/compare/v4.4.0...v4.4.1)
+
+`2023-05-28`
+
+**Feature**
+
+- Popover: add actions-direction prop [#11888](https://github.com/vant-ui/vant/issues/11888)
+
+**Bug Fixes**
+
+- ImagePreview: stop animation during initialization [#11897](https://github.com/vant-ui/vant/issues/11897)
+- Popup: opened event is emitted twice when duration is 0 [#11902](https://github.com/vant-ui/vant/issues/11902)
+- Slider: should update startValue when the slider is clicked [#11904](https://github.com/vant-ui/vant/issues/11904)
+- Tab: maximum recursive updates exceeded in Tabs [#11898](https://github.com/vant-ui/vant/issues/11898)
+
 ### [v4.4.0](https://github.com/vant-ui/vant/compare/v4.3.2...v4.4.0)
 
 `2023-05-21`

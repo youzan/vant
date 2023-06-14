@@ -14,6 +14,7 @@ const t = useTranslate({
     columnsType: '选项类型',
     optionsFilter: '过滤选项',
     optionsFormatter: '格式化选项',
+    overallTimeRange: '整体时间范围',
   },
   'en-US': {
     hour: 'h',
@@ -23,6 +24,7 @@ const t = useTranslate({
     columnsType: 'Columns Type',
     optionsFilter: 'Options Filter',
     optionsFormatter: 'Options Formatter',
+    overallTimeRange: 'Overall Time Range',
   },
 });
 
@@ -31,6 +33,7 @@ const secondTime = ref(['12', '00', '00']);
 const rangeTime = ref(['12', '35']);
 const filterTime = ref(['12', ' 00']);
 const formatterTime = ref(['12', '00']);
+const hourMinuteTime = ref(['12', '00', '00']);
 
 const columnsType: TimePickerColumnType[] = ['hour', 'minute', 'second'];
 
@@ -38,6 +41,34 @@ const filter = (type: string, options: PickerOption[]) => {
   if (type === 'minute') {
     return options.filter((option) => Number(option.value) % 10 === 0);
   }
+  return options;
+};
+
+const timeFilter = (
+  type: string,
+  options: PickerOption[],
+  values: string[]
+) => {
+  const hour = +values[0];
+
+  if (type === 'hour') {
+    return options.filter(
+      (option) => Number(option.value) >= 8 && Number(option.value) <= 18
+    );
+  }
+
+  if (type === 'minute') {
+    options = options.filter((option) => Number(option.value) % 10 === 0);
+
+    if (hour === 8) {
+      return options.filter((option) => Number(option.value) >= 40);
+    }
+
+    if (hour === 18) {
+      return options.filter((option) => Number(option.value) <= 20);
+    }
+  }
+
   return options;
 };
 
@@ -76,6 +107,16 @@ const formatter = (type: string, option: PickerOption) => {
     />
   </demo-block>
 
+  <demo-block card :title="t('overallTimeRange')">
+    <van-time-picker
+      v-model="hourMinuteTime"
+      :title="t('chooseTime')"
+      :columns-type="['hour', 'minute', 'second']"
+      min-time="09:40:10"
+      max-time="20:20:50"
+    />
+  </demo-block>
+
   <demo-block card :title="t('optionsFormatter')">
     <van-time-picker
       v-model="formatterTime"
@@ -90,5 +131,9 @@ const formatter = (type: string, option: PickerOption) => {
       :title="t('chooseTime')"
       :filter="filter"
     />
+  </demo-block>
+
+  <demo-block card :title="t('advancedUsage')">
+    <van-time-picker :title="t('chooseTime')" :filter="timeFilter" />
   </demo-block>
 </template>

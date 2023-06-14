@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should drag adsorption effect when anchors props is [100, 200, 400] 1`] = `
+<div class="van-floating-panel van-safe-area-bottom"
+     style="height: 400px; transform: translateY(calc(100% + -100px)); transition: transform 0.2s;"
+>
+  <div class="van-floating-panel__header">
+    <div class="van-floating-panel__header-bar">
+    </div>
+  </div>
+  <div class="van-floating-panel__content">
+    内容
+  </div>
+</div>
+`;
+
+exports[`should minHeight 100 and maxHeight 0.6 innerHeight when anchors props do not 1`] = `
+<div class="van-floating-panel van-safe-area-bottom"
+     style="height: 461px; transform: translateY(calc(100% + -100px)); transition: transform 0.2s;"
+>
+  <div class="van-floating-panel__header">
+    <div class="van-floating-panel__header-bar">
+    </div>
+  </div>
+  <div class="van-floating-panel__content">
+    Content
+  </div>
+</div>
+`;

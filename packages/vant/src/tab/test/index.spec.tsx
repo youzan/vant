@@ -189,13 +189,18 @@ test('should change title style when using title-style prop', async () => {
           <Tab title="title1" titleStyle="color: red;">
             Text
           </Tab>
+          <Tab title="title1" titleStyle={{ color: 'blue' }}>
+            Text
+          </Tab>
         </Tabs>
       );
     },
   });
 
   await later();
-  expect(wrapper.find('.van-tab').style.color).toEqual('red');
+  const tabs = wrapper.findAll('.van-tab');
+  expect(tabs.at(0)!.style.color).toEqual('red');
+  expect(tabs.at(1)!.style.color).toEqual('blue');
 });
 
 test('should allot to hide bottom border by border prop', async () => {

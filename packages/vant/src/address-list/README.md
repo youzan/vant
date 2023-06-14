@@ -90,6 +90,7 @@ export default {
 | switchable | Whether to allow switch address | _boolean_ | `true` |
 | add-button-text | Add button text | _string_ | `Add new address` |
 | default-tag-text | Default tag text | _string_ | - |
+| right-icon `v4.5.0` | Right Icon | _string_ | `edit` |
 
 ### Events
 

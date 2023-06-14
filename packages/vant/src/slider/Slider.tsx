@@ -133,6 +133,15 @@ export default defineComponent({
       return addNumber(min, diff);
     };
 
+    const updateStartValue = () => {
+      const current = props.modelValue;
+      if (isRange(current)) {
+        startValue = current.map(format) as NumberRange;
+      } else {
+        startValue = format(current);
+      }
+    };
+
     const handleRangeValue = (value: NumberRange) => {
       // 设置默认值
       const left = value[0] ?? Number(props.min);
@@ -163,6 +172,8 @@ export default defineComponent({
       if (props.disabled || props.readonly) {
         return;
       }
+
+      updateStartValue();
 
       const { min, reverse, vertical, modelValue } = props;
       const rect = useRect(root);
@@ -204,12 +215,7 @@ export default defineComponent({
 
       touch.start(event);
       current = props.modelValue;
-
-      if (isRange(current)) {
-        startValue = current.map(format) as NumberRange;
-      } else {
-        startValue = format(current);
-      }
+      updateStartValue();
 
       dragStatus.value = 'start';
     };
@@ -267,15 +273,23 @@ export default defineComponent({
     };
 
     const renderButtonContent = (value: number, index?: 0 | 1) => {
+      const dragging = dragStatus.value === 'dragging';
+
       if (typeof index === 'number') {
         const slot = slots[index === 0 ? 'left-button' : 'right-button'];
+        let dragIndex;
+
+        if (dragging && Array.isArray(current)) {
+          dragIndex = current[0] > current[1] ? buttonIndex ^ 1 : buttonIndex;
+        }
+
         if (slot) {
-          return slot({ value });
+          return slot({ value, dragging, dragIndex });
         }
       }
 
       if (slots.button) {
-        return slots.button({ value });
+        return slots.button({ value, dragging });
       }
 
       return (

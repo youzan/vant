@@ -16,6 +16,16 @@ function mockRect(vertical?: boolean) {
   });
 }
 
+function testSlotReceivedParams(
+  slot: ReturnType<typeof jest.fn>,
+  dragging: boolean,
+  dragIndex?: number
+) {
+  const latestParams = slot.mock.calls.at(-1)![0];
+  expect(latestParams.dragging).toEqual(dragging);
+  expect(latestParams.dragIndex).toEqual(dragIndex);
+}
+
 test('should emit "update:modelValue" event after dragging button', () => {
   const wrapper = mount(Slider, {
     props: {
@@ -182,6 +192,8 @@ test('should emit "update:modelValue" event after clicking vertical slider', () 
 });
 
 test('should not emit change event when value not changed', async () => {
+  const restoreMock = mockRect();
+
   const wrapper = mount(Slider, {
     props: {
       modelValue: 50,
@@ -196,8 +208,16 @@ test('should not emit change event when value not changed', async () => {
   await wrapper.setProps({ modelValue: 100 });
   trigger(button, 'touchstart');
   trigger(wrapper, 'click', 100, 0);
-
   expect(wrapper.emitted('change')).toHaveLength(1);
+
+  trigger(wrapper, 'click', 50, 0);
+  expect(wrapper.emitted('change')).toHaveLength(2);
+
+  await wrapper.setProps({ modelValue: 50 });
+  trigger(wrapper, 'click', 100, 0);
+  expect(wrapper.emitted('change')).toHaveLength(3);
+
+  restoreMock();
 });
 
 // https://github.com/vant-ui/vant/issues/8889
@@ -215,20 +235,84 @@ test('should format v-model with step correctly', async () => {
   expect(wrapper.emitted('update:modelValue')![0]).toEqual([31]);
 });
 
+test('should render button slot correctly', async () => {
+  const buttonSlot = jest.fn();
+  const wrapper = mount(Slider, {
+    props: {
+      modelValue: 30,
+    },
+    slots: {
+      button: buttonSlot,
+    },
+  });
+
+  expect(buttonSlot.mock.calls[0]).toEqual([{ value: 30, dragging: false }]);
+
+  const button = wrapper.find('.van-slider__button-wrapper');
+
+  trigger(button, 'touchstart', 50, 0);
+  trigger(button, 'touchmove', 50, 0);
+  await later();
+  testSlotReceivedParams(buttonSlot, true);
+
+  trigger(button, 'touchend', 50, 0);
+  await later();
+  testSlotReceivedParams(buttonSlot, false);
+});
+
 test('should render left-button、right-button slot correctly', async () => {
+  const leftButtonSlot = jest.fn();
+  const rightButtonSlot = jest.fn();
   const wrapper = mount(Slider, {
     props: {
       range: true,
       modelValue: [30, 80],
     },
     slots: {
-      'left-button': ({ value }) => `left-${value}`,
-      'right-button': ({ value }) => `right-${value}`,
+      'left-button': (params) => {
+        leftButtonSlot(params);
+        return `left-${params.value}`;
+      },
+      'right-button': (params) => {
+        rightButtonSlot(params);
+        return `right-${params.value}`;
+      },
     },
   });
 
-  await later();
+  expect(leftButtonSlot.mock.calls[0]).toEqual([
+    { value: 30, dragging: false, dragIndex: undefined },
+  ]);
+  expect(rightButtonSlot.mock.calls[0]).toEqual([
+    { value: 80, dragging: false, dragIndex: undefined },
+  ]);
   expect(wrapper.html()).toMatchSnapshot();
+
+  const [leftButton, rightButton] = wrapper.findAll(
+    '.van-slider__button-wrapper'
+  );
+
+  trigger(leftButton, 'touchstart', 50, 0);
+  trigger(leftButton, 'touchmove', 50, 0);
+  await later();
+  testSlotReceivedParams(leftButtonSlot, true, 0);
+  testSlotReceivedParams(rightButtonSlot, true, 0);
+
+  trigger(leftButton, 'touchend', 50, 0);
+  await later();
+  testSlotReceivedParams(leftButtonSlot, false, undefined);
+  testSlotReceivedParams(rightButtonSlot, false, undefined);
+
+  trigger(rightButton, 'touchstart', 50, 0);
+  trigger(rightButton, 'touchmove', 50, 0);
+  await later();
+  testSlotReceivedParams(leftButtonSlot, true, 1);
+  testSlotReceivedParams(rightButtonSlot, true, 1);
+
+  trigger(rightButton, 'touchend', 50, 0);
+  await later();
+  testSlotReceivedParams(leftButtonSlot, false, undefined);
+  testSlotReceivedParams(rightButtonSlot, false, undefined);
 });
 
 test('should render reversed slider correctly', () => {
