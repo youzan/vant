@@ -1,5 +1,5 @@
 import { ref, defineComponent, computed, type ExtractPropTypes } from 'vue';
-import RollingTextItem from './RollingTextItem';
+
 // Utils
 import {
   createNamespace,
@@ -8,12 +8,21 @@ import {
   makeStringProp,
   truthProp,
 } from '../utils';
+
+// Composables
 import { useExpose } from '../composables/use-expose';
 
-const [name, bem] = createNamespace('rolling-text');
+// Components
+import RollingTextItem from './RollingTextItem';
 
-export type RollingTextDirection = 'up' | 'down';
-export type RollingTextStopOrder = 'ltr' | 'rtl';
+// Types
+import {
+  RollingTextDirection,
+  RollingTextStopOrder,
+  RollingTextExpose,
+} from './types';
+
+const [name, bem] = createNamespace('rolling-text');
 
 export const rollingTextProps = {
   startNum: makeNumberProp(0),
@@ -90,6 +99,7 @@ export default defineComponent({
     };
 
     const isStart = ref(false);
+
     const start = () => {
       isStart.value = true;
     };
@@ -97,7 +107,8 @@ export default defineComponent({
     const reset = () => {
       isStart.value = false;
     };
-    useExpose({
+
+    useExpose<RollingTextExpose>({
       start,
       reset,
     });
