@@ -75,6 +75,7 @@ app.use(RollingText);
 
 ```js
 import { ref } from 'vue';
+
 export default {
   setup() {
     const textArray = ref([
@@ -104,17 +105,17 @@ export default {
 />
 ```
 
-```less
+```css
 .my-rolling-text {
   gap: 6px;
+}
 
-  .van-roll-single {
-    color: white;
-    background: deepskyblue;
-    border-radius: 5px;
-    width: 25px;
-    font-size: 20px;
-  }
+.my-rolling-text .van-roll-single {
+  color: white;
+  background: deepskyblue;
+  border-radius: 5px;
+  width: 25px;
+  font-size: 20px;
 }
 ```
 
