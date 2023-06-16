@@ -107,15 +107,12 @@ export default {
 
 ```css
 .my-rolling-text {
-  gap: 6px;
-}
-
-.my-rolling-text .van-roll-single {
-  color: white;
-  background: deepskyblue;
-  border-radius: 5px;
-  width: 25px;
-  font-size: 20px;
+  --van-rolling-text-background: deepskyblue;
+  --van-rolling-text-color: white;
+  --van-rolling-text-font-size: 20px;
+  --van-rolling-text-gap: 6px;
+  --van-rolling-text-single-border-radius: 5px;
+  --van-rolling-text-single-width: 25px;
 }
 ```
 
@@ -209,10 +206,11 @@ rollingTextRef.value?.start();
 
 组件提供了下列 CSS 变量，可用于自定义样式，使用方法请参考 [ConfigProvider 组件](#/zh-CN/config-provider)。
 
-| 名称                               | 默认值    | 描述             |
-| ---------------------------------- | --------- | ---------------- |
-| --van-rolling-text-bg-color        | _inherit_ | 单个数位背景色   |
-| --van-rolling-text-color           | _white_   | 数字颜色         |
-| --van-rolling-text-gap             | _0px_     | 数位之间的间隔   |
-| --van-rolling-text-single-width    | _15px_    | 单个数位宽度     |
-| --van-rolling-text-single-border-r | _0px_     | 单个数位边框圆角 |
+| 名称 | 默认值 | 描述 |
+| --- | --- | --- |
+| --van-rolling-text-background | _inherit_ | 单个数位背景色 |
+| --van-rolling-text-color | _var(--van-text-color)_ | 数字颜色 |
+| --van-rolling-text-font-size | _var(--van-font-size-md)_ | 字体大小 |
+| --van-rolling-text-gap | _0px_ | 数位之间的间隔 |
+| --van-rolling-text-single-width | _15px_ | 单个数位宽度 |
+| --van-rolling-text-single-border-radius | _0px_ | 单个数位边框圆角 |

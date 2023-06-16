@@ -1,68 +1,30 @@
 :root {
-  --van-rolling-text-bg-color: inherit;
-  --van-rolling-text-color: black;
+  --van-rolling-text-background: inherit;
+  --van-rolling-text-color: var(--van-text-color);
+  --van-rolling-text-font-size: var(--van-font-size-md);
   --van-rolling-text-gap: 0px;
   --van-rolling-text-single-width: 15px;
-  --van-rolling-text-single-border-r: 0px;
+  --van-rolling-text-single-border-radius: 0px;
 }
 
 .van-rolling-text {
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  gap: var(--van-rolling-text-gap);
-}
-
-.van-roll-single-down {
-  width: var(--van-rolling-text-single-width);
-  border-radius: var(--van-rolling-text-single-border-r);
-  background-color: var(--van-rolling-text-bg-color);
+  font-size: var(--van-rolling-text-font-size);
   color: var(--van-rolling-text-color);
-  overflow: hidden;
-  // 如果向下滚动，则起始是translate负值，到0
-  @keyframes van-down {
-    0% {
-      transform: translateY(var(--van-translate));
-    }
-    100% {
-      transform: translateY(0);
-    }
-  }
-
-  &__box {
-    overflow: hidden;
-    transform: translateY(var(--van-translate));
-  }
-
-  &__ani {
-    animation: van-down var(--van-duration) ease-in-out var(--van-delay);
-    animation-name: van-down;
-    animation-timing-function: ease-in-out;
-    animation-iteration-count: 1;
-    animation-duration: var(--van-duration);
-    animation-fill-mode: both;
-    animation-delay: var(--van-delay);
-  }
-
-  &__item {
-    text-align: center;
-  }
 }
 
+.van-roll-single-down,
 .van-roll-single-up {
+  margin-right: var(--van-rolling-text-gap);
   width: var(--van-rolling-text-single-width);
-  border-radius: var(--van-rolling-text-single-border-r);
-  background-color: var(--van-rolling-text-bg-color);
-  color: var(--van-rolling-text-color);
+  border-radius: var(--van-rolling-text-single-border-radius);
+  background: var(--van-rolling-text-background);
   overflow: hidden;
-  // 如果是向上翻滚，则起始是0，到translate负值
-  @keyframes van-up {
-    0% {
-      transform: translateY(0);
-    }
-    100% {
-      transform: translateY(var(--van-translate));
-    }
+
+  &:last-child {
+    margin-right: 0;
   }
 
   &__box {
@@ -73,13 +35,39 @@
     animation: van-up var(--van-duration) ease-in-out var(--van-delay);
     animation-iteration-count: 1;
     animation-fill-mode: both;
-    //animation-name: van-up;
-    //animation-timing-function: ease-in-out;
-    //animation-duration: var(--van-duration);
-    //animation-delay: var(--van-delay);
   }
 
   &__item {
     text-align: center;
+  }
+}
+
+.van-roll-single-down {
+  &__box {
+    transform: translateY(var(--van-translate));
+  }
+
+  &__ani {
+    animation-name: van-down;
+  }
+}
+
+@keyframes van-down {
+  0% {
+    transform: translateY(var(--van-translate));
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes van-up {
+  0% {
+    transform: translateY(0);
+  }
+
+  100% {
+    transform: translateY(var(--van-translate));
   }
 }

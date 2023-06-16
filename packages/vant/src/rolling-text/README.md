@@ -107,15 +107,12 @@ export default {
 
 ```css
 .my-rolling-text {
-  gap: 6px;
-}
-
-.my-rolling-text .van-roll-single {
-  color: white;
-  background: deepskyblue;
-  border-radius: 5px;
-  width: 25px;
-  font-size: 20px;
+  --van-rolling-text-background: deepskyblue;
+  --van-rolling-text-color: white;
+  --van-rolling-text-font-size: 20px;
+  --van-rolling-text-gap: 6px;
+  --van-rolling-text-single-border-radius: 5px;
+  --van-rolling-text-single-width: 25px;
 }
 ```
 
@@ -211,8 +208,9 @@ The component provides the following CSS variables, which can be used to customi
 
 | Name | Default Value | Description |
 | --- | --- | --- |
-| --van-rolling-text-bg-color | _inherit_ | Background color of a single digit |
-| --van-rolling-text-color | _white_ | Color of the number |
+| --van-rolling-text-background | _inherit_ | Background color of a single digit |
+| --van-rolling-text-color | _var(--van-text-color)_ | Color of the number |
+| --van-rolling-text-font-size | _var(--van-font-size-md)_ | Font size of the number |
 | --van-rolling-text-gap | _0px_ | Spacing between digits |
 | --van-rolling-text-single-width | _15px_ | Width of a single digit |
-| --van-rolling-text-single-border-r | _0px_ | Border radius of a single digit |
+| --van-rolling-text-single-border-radius | _0px_ | Border radius of a single digit |

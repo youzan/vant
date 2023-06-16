@@ -176,14 +176,11 @@ const reset = () => {
 }
 
 .my-rolling-text {
-  gap: 6px;
-
-  .van-roll-single {
-    color: white;
-    background: deepskyblue;
-    border-radius: 5px;
-    width: 25px;
-    font-size: 20px;
-  }
+  --van-rolling-text-background: deepskyblue;
+  --van-rolling-text-color: white;
+  --van-rolling-text-font-size: 20px;
+  --van-rolling-text-gap: 6px;
+  --van-rolling-text-single-border-radius: 5px;
+  --van-rolling-text-single-width: 25px;
 }
 </style>
