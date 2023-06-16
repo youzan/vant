@@ -59,7 +59,7 @@ You can set the order of stopping the animation of each digit through the `stop-
 />
 ```
 
-### Rolling Non-numeric Text
+### Roll Non-numeric Text
 
 You can set non-numeric content flip using the `text-array` props.
 
@@ -75,6 +75,7 @@ You can set non-numeric content flip using the `text-array` props.
 
 ```js
 import { ref } from 'vue';
+
 export default {
   setup() {
     const textArray = ref([
@@ -95,7 +96,7 @@ export default {
 
 ```html
 <van-rolling-text
-  class="my-roll-number"
+  class="my-rolling-text"
   :start-num="12345"
   :target-num="54321"
   :duration="2"
@@ -107,14 +108,14 @@ export default {
 ```css
 .my-rolling-text {
   gap: 6px;
+}
 
-  .van-roll-single {
-    color: white;
-    background: deepskyblue;
-    border-radius: 5px;
-    width: 25px;
-    font-size: 20px;
-  }
+.my-rolling-text .van-roll-single {
+  color: white;
+  background: deepskyblue;
+  border-radius: 5px;
+  width: 25px;
+  font-size: 20px;
 }
 ```
 
@@ -124,7 +125,7 @@ After getting the component instance through `ref`, you can call the `start` and
 
 ```html
 <van-rolling-text
-  ref="rollTextEl"
+  ref="rollingTextRef"
   :start-num="0"
   :target-num="54321"
   :duration="2"
@@ -143,14 +144,14 @@ import { ref } from 'vue';
 
 export default {
   setup() {
-    const rollTextEl = ref(null);
+    const rollingTextRef = ref(null);
     const start = () => {
-      rollTextEl.value.start();
+      rollingTextRef.value.start();
     };
     const reset = () => {
-      rollTextEl.value.reset();
+      rollingTextRef.value.reset();
     };
-    return { rollTextEl, start, reset };
+    return { rollingTextRef, start, reset };
   },
 };
 ```
@@ -161,20 +162,45 @@ export default {
 
 | Attribute | Description | Type | Default |
 | --- | --- | --- | --- |
-| start-num | Start number | _number_ | 0 |
+| start-num | Start number | _number_ | `0` |
 | target-num | Target number | _number_ | - |
-| text-array | Text array | _Array_ | [] |
-| duration | Duration of the animation, in seconds | _number_ | 2 |
+| text-array | Text array | _Array_ | `[]` |
+| duration | Duration of the animation, in seconds | _number_ | `2` |
 | direction | Rolling direction of the number, with `down` and `up` as the values | _string_ | `down` |
-| auto-start | Whether to start the animation | _boolean_ | true |
+| auto-start | Whether to start the animation | _boolean_ | `true` |
 | stop-order | Order of stopping the animation of each digit, with `ltr` and `rtl` as the values | _string_ | `ltr` |
 
-### Type Definition
+### Methods
+
+Use [ref](https://v3.vuejs.org/guide/component-template-refs.html) to get RollingText instance and call instance methods.
+
+| Name  | Description         | Attribute | Return value |
+| ----- | ------------------- | --------- | ------------ |
+| start | Start the animation | -         | -            |
+| reset | Reset the animation | -         | -            |
+
+### Types
 
 The component exports the following type definitions:
 
 ```ts
-import type { RollingTextProps } from 'vant';
+import type {
+  RollingTextProps,
+  RollingTextInstance,
+  RollingTextDirection,
+  RollingTextStopOrder,
+} from 'vant';
+```
+
+`RollingTextInstance` is the type of component instance:
+
+```ts
+import { ref } from 'vue';
+import type { RollingTextInstance } from 'vant';
+
+const rollingTextRef = ref<RollingTextInstance>();
+
+rollingTextRef.value?.start();
 ```
 
 ## Theming

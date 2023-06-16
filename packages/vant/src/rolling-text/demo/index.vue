@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import VanRollingText from '..';
+import VanRollingText, { type RollingTextInstance } from '..';
 import Button from '../../button';
 import { ref } from 'vue';
 import { useTranslate } from '../../../docs/site';
@@ -20,16 +20,16 @@ const t = useTranslate({
     reset: '重置',
   },
   'en-US': {
-    direction: 'Set Roll Direction',
-    stopOrder: 'Set StopOrder',
-    rollDown: 'rollDown',
-    rollUp: 'rollUp',
-    stopFrom: 'right-side stop first',
+    direction: 'Set Rolling Direction',
+    stopOrder: 'Set Stop Order',
+    rollDown: 'Roll Down',
+    rollUp: 'Roll Up',
+    stopFrom: 'Right Side Stop First',
     manualControl: 'Manual Control',
     customStyle: 'Custom Style',
-    noNumberType: 'Roll non-number type text',
+    noNumberType: 'Roll Non-numeric Text',
     start: 'Start',
-    rest: 'Reset',
+    reset: 'Reset',
   },
 });
 
@@ -49,12 +49,12 @@ const textArray = ref([
   'ggggg',
 ]);
 
-const rollingTextEl = ref(null);
+const rollingTextRef = ref<RollingTextInstance>();
 const start = () => {
-  rollingTextEl.value.start();
+  rollingTextRef.value?.start();
 };
 const reset = () => {
-  rollingTextEl.value.reset();
+  rollingTextRef.value?.reset();
 };
 </script>
 
@@ -131,7 +131,7 @@ const reset = () => {
   <demo-block :title="t('customStyle')">
     <div>
       <VanRollingText
-        class="my-rolling-te11xt"
+        class="my-rolling-text"
         :start-num="12345"
         :target-num="54321"
         :duration="2"
@@ -145,8 +145,8 @@ const reset = () => {
   <demo-block :title="t('manualControl')">
     <div>
       <VanRollingText
-        class="my-rolling-te11xt"
-        ref="rollingTextEl"
+        class="my-rolling-text"
+        ref="rollingTextRef"
         :start-num="0"
         :target-num="54321"
         :duration="2"
@@ -166,15 +166,18 @@ const reset = () => {
 .van-button {
   margin-left: var(--van-padding-md);
 }
+
 .van-rolling-text {
   margin-left: var(--van-padding-md);
 }
+
 .van-grid {
   margin-left: var(--van-padding-md);
 }
 
-.my-rolling-te11xt {
+.my-rolling-text {
   gap: 6px;
+
   .van-roll-single {
     color: white;
     background: deepskyblue;

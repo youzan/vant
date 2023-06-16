@@ -75,6 +75,7 @@ app.use(RollingText);
 
 ```js
 import { ref } from 'vue';
+
 export default {
   setup() {
     const textArray = ref([
@@ -95,7 +96,7 @@ export default {
 
 ```html
 <van-rolling-text
-  class="my-roll-number"
+  class="my-rolling-text"
   :start-num="12345"
   :target-num="54321"
   :duration="2"
@@ -107,14 +108,14 @@ export default {
 ```css
 .my-rolling-text {
   gap: 6px;
+}
 
-  .van-roll-single {
-    color: white;
-    background: deepskyblue;
-    border-radius: 5px;
-    width: 25px;
-    font-size: 20px;
-  }
+.my-rolling-text .van-roll-single {
+  color: white;
+  background: deepskyblue;
+  border-radius: 5px;
+  width: 25px;
+  font-size: 20px;
 }
 ```
 
@@ -124,7 +125,7 @@ export default {
 
 ```html
 <van-rolling-text
-  ref="rollTextEl"
+  ref="rollingTextRef"
   :start-num="0"
   :target-num="54321"
   :duration="2"
@@ -143,14 +144,14 @@ import { ref } from 'vue';
 
 export default {
   setup() {
-    const rollTextEl = ref(null);
+    const rollingTextRef = ref(null);
     const start = () => {
-      rollTextEl.value.start();
+      rollingTextRef.value.start();
     };
     const reset = () => {
-      rollTextEl.value.reset();
+      rollingTextRef.value.reset();
     };
-    return { rollTextEl, start, reset };
+    return { rollingTextRef, start, reset };
   },
 };
 ```
@@ -161,20 +162,45 @@ export default {
 
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
-| start-num | 开始数值 | _number_ | 0 |
+| start-num | 开始数值 | _number_ | `0` |
 | target-num | 目标数值 | _number_ | - |
-| text-array | 内容数组，翻转非数字内容，需要传此参数 | _Array_ | [] |
-| duration | 动画时长，单位为秒 | _number_ | 2 |
+| text-array | 内容数组，翻转非数字内容，需要传此参数 | _Array_ | `[]` |
+| duration | 动画时长，单位为秒 | _number_ | `2` |
 | direction | 数值翻滚方向，值为 `down` 和 `up` | _string_ | `down` |
-| auto-start | 是否自动开始动画 | _boolean_ | true |
+| auto-start | 是否自动开始动画 | _boolean_ | `true` |
 | stop-order | 各个数位动画停止先后顺序，值为 `ltr` 和 `rtl` | _string_ | `ltr` |
+
+### 方法
+
+通过 ref 可以获取到 RollingText 实例并调用实例方法，详见[组件实例方法](#/zh-CN/advanced-usage#zu-jian-shi-li-fang-fa)。
+
+| 方法名 | 说明     | 参数 | 返回值 |
+| ------ | -------- | ---- | ------ |
+| start  | 开始动画 | -    | -      |
+| reset  | 重置动画 | -    | -      |
 
 ### 类型定义
 
 组件导出以下类型定义：
 
 ```ts
-import type { RollingTextProps } from 'vant';
+import type {
+  RollingTextProps,
+  RollingTextInstance,
+  RollingTextDirection,
+  RollingTextStopOrder,
+} from 'vant';
+```
+
+`RollingTextInstance` 是组件实例的类型，用法如下：
+
+```ts
+import { ref } from 'vue';
+import type { RollingTextInstance } from 'vant';
+
+const rollingTextRef = ref<RollingTextInstance>();
+
+rollingTextRef.value?.start();
 ```
 
 ## 主题定制
