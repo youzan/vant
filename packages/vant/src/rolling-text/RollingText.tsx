@@ -1,6 +1,13 @@
-import { ref, defineComponent, computed, type ExtractPropTypes } from 'vue';
+import {
+  ref,
+  defineComponent,
+  computed,
+  watch,
+  type ExtractPropTypes,
+} from 'vue';
 
 // Utils
+import { raf } from '@vant/use';
 import {
   createNamespace,
   makeArrayProp,
@@ -98,15 +105,28 @@ export default defineComponent({
       return 0.2 * (len - 1 - i);
     };
 
-    const isStart = ref(false);
+    const rolling = ref(props.autoStart);
 
     const start = () => {
-      isStart.value = true;
+      rolling.value = true;
     };
 
     const reset = () => {
-      isStart.value = false;
+      rolling.value = false;
+
+      if (props.autoStart) {
+        raf(() => start());
+      }
     };
+
+    watch(
+      () => props.autoStart,
+      (value) => {
+        if (value) {
+          start();
+        }
+      }
+    );
 
     useExpose<RollingTextExpose>({
       start,
@@ -122,7 +142,7 @@ export default defineComponent({
             }
             duration={props.duration}
             direction={props.direction}
-            isStart={props.autoStart || isStart.value}
+            isStart={rolling.value}
             delay={getDelay(i, targetNumArr.value.length)}
           />
         ))}
