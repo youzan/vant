@@ -28,7 +28,7 @@ const t = useTranslate({
 });
 
 const onOffsetChange = (offset: OffsetType) => {
-  showToast(offset.x + '__' + offset.y);
+  showToast(offset.x.toFixed(0) + '__' + offset.y.toFixed(0));
 };
 
 const onClick = () => {
@@ -56,7 +56,8 @@ const offset = ref<OffsetType>({ x: 200, y: 400 });
     </van-tab>
     <van-tab :title="t('vModel')">
       <p class="text">
-        {{ t('vModelText') }} x：{{ offset.x }} y: {{ offset.y }}
+        {{ t('vModelText') }} x：{{ offset.x.toFixed(0) }} y:
+        {{ offset.y.toFixed(0) }}
       </p>
       <van-floating-bubble
         v-if="activeName === 2"

@@ -228,7 +228,8 @@ test('should offset control positioning when use v-model:offset ', async () => {
     `translate3d(${300}px, ${300}px, 0)`
   );
 
-  expect(wrapper.emitted('update:offset')?.[0][0]).toEqual({
+  const emitList = wrapper.emitted('update:offset');
+  expect(emitList?.[emitList.length - 1][0]).toEqual({
     x: 300,
     y: 300,
   });

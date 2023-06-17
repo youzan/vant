@@ -13,7 +13,7 @@ import {
   type CSSProperties,
   type ExtractPropTypes,
 } from 'vue';
-import { useRect, useWindowSize } from '@vant/use';
+import { useRect, useWindowSize, useEventListener } from '@vant/use';
 import { useTouch } from '../composables/use-touch';
 import Icon from '../icon';
 import {
@@ -117,14 +117,16 @@ export default defineComponent({
     const touch = useTouch();
     let prevX = 0;
     let prevY = 0;
-    const onTouchstart = (e: TouchEvent) => {
+
+    const onTouchStart = (e: TouchEvent) => {
       touch.start(e);
       dragging.value = true;
 
       prevX = state.value.x;
       prevY = state.value.y;
     };
-    const onTouchmove = (e: TouchEvent) => {
+
+    const onTouchMove = (e: TouchEvent) => {
       e.preventDefault();
 
       moving = true;
@@ -143,8 +145,17 @@ export default defineComponent({
         if (nextY > boundary.value.bottom) nextY = boundary.value.bottom;
         state.value.y = nextY;
       }
+
+      const offset = pick(state.value, ['x', 'y']);
+      emit('update:offset', offset);
     };
-    const onTouchend = async () => {
+
+    // useEventListener will set passive to `false` to eliminate the warning of Chrome
+    useEventListener('touchmove', onTouchMove, {
+      target: rootRef,
+    });
+
+    const onTouchEnd = async () => {
       dragging.value = false;
 
       await nextTick();
@@ -210,10 +221,9 @@ export default defineComponent({
         <div
           class={bem()}
           ref={rootRef}
-          onTouchstart={onTouchstart}
-          onTouchmove={onTouchmove}
-          onTouchend={onTouchend}
-          onTouchcancel={onTouchend}
+          onTouchstartPassive={onTouchStart}
+          onTouchend={onTouchEnd}
+          onTouchcancel={onTouchEnd}
           onClick={onClick}
           style={rootStyle.value}
           v-show={show.value}
