@@ -92,4 +92,6 @@ test('should restart rolling after calling the reset method when auto-start prop
   expect(wrapper.find(itemWrapperClass).classes()).not.toContain(
     animationClass
   );
+  await later(50);
+  expect(wrapper.find(itemWrapperClass).classes()).toContain(animationClass);
 });
