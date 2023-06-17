@@ -208,7 +208,6 @@ exports[`should render demo and match snapshot 1`] = `
         >
           <!--[-->
           <label id="van-field-label"
-                 for="van-field-input"
                  style
           >
             Switch
@@ -238,7 +237,6 @@ exports[`should render demo and match snapshot 1`] = `
         >
           <!--[-->
           <label id="van-field-label"
-                 for="van-field-input"
                  style
           >
             Checkbox
@@ -275,7 +273,6 @@ exports[`should render demo and match snapshot 1`] = `
         >
           <!--[-->
           <label id="van-field-label"
-                 for="van-field-input"
                  style
           >
             Checkbox Group
@@ -339,7 +336,6 @@ exports[`should render demo and match snapshot 1`] = `
         >
           <!--[-->
           <label id="van-field-label"
-                 for="van-field-input"
                  style
           >
             Radio
@@ -405,7 +401,6 @@ exports[`should render demo and match snapshot 1`] = `
         >
           <!--[-->
           <label id="van-field-label"
-                 for="van-field-input"
                  style
           >
             Stepper
@@ -451,7 +446,6 @@ exports[`should render demo and match snapshot 1`] = `
         >
           <!--[-->
           <label id="van-field-label"
-                 for="van-field-input"
                  style
           >
             Rate
@@ -550,7 +544,6 @@ exports[`should render demo and match snapshot 1`] = `
         >
           <!--[-->
           <label id="van-field-label"
-                 for="van-field-input"
                  style
           >
             Slider
@@ -592,7 +585,6 @@ exports[`should render demo and match snapshot 1`] = `
         >
           <!--[-->
           <label id="van-field-label"
-                 for="van-field-input"
                  style
           >
             Uploader

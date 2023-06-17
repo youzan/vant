@@ -583,7 +583,7 @@ export default defineComponent({
         return (
           <label
             id={`${id}-label`}
-            for={getInputId()}
+            for={slots.input ? undefined : getInputId()}
             onClick={(event: MouseEvent) => {
               // https://github.com/youzan/vant/issues/11831
               preventDefault(event);

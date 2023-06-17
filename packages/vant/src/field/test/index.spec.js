@@ -533,3 +533,18 @@ test('should render label correctly when dynamically set empty label', async () 
   await wrapper.setProps({ label: '' });
   expect(wrapper.find('.van-field__label').exists()).toBeFalsy();
 });
+
+test("should not be set label's for attribute when using input slot", async () => {
+  const wrapper = mount(Field, {
+    props: {
+      label: 'abc',
+    },
+    slots: {
+      input: '',
+    },
+  });
+
+  expect(
+    wrapper.find('.van-field__label label').attributes('for')
+  ).toBeUndefined();
+});
