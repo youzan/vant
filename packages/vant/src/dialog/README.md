@@ -165,7 +165,7 @@ Vant exports following Dialog utility functions:
 | lockScroll | Whether to lock body scroll | _boolean_ | `true` |
 | allowHtml | Whether to allow HTML rendering in message | _boolean_ | `false` |
 | beforeClose | Callback function before close | _(action: string) => boolean \| Promise\<boolean\>_ | - |
-| transition | Transition, equivalent to `name` prop of [transition](https://v3.vuejs.org/api/built-in-components.html#transition) | _string_ | - |
+| transition | Transition, equivalent to `name` prop of [transition](https://vuejs.org/api/built-in-components.html#transition) | _string_ | - |
 | teleport | Specifies a target element where Dialog will be mounted | _string \| Element_ | `body` |
 
 ### Props
@@ -196,7 +196,7 @@ Vant exports following Dialog utility functions:
 | lock-scroll | Whether to lock background scroll | _boolean_ | `true` |
 | allow-html | Whether to allow HTML rendering in message | _boolean_ | `false` |
 | before-close | Callback function before close | _(action: string) => boolean \| Promise\<boolean\>_ | - |
-| transition | Transition, equivalent to `name` prop of [transition](https://v3.vuejs.org/api/built-in-components.html#transition) | _string_ | - |
+| transition | Transition, equivalent to `name` prop of [transition](https://vuejs.org/api/built-in-components.html#transition) | _string_ | - |
 | teleport | Specifies a target element where Dialog will be mounted | _string \| Element_ | - |
 
 ### Events
