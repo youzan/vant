@@ -24,7 +24,7 @@ export default defineComponent({
       if (!root.value) return;
       const originStyle = window.getComputedStyle(root.value);
       const heightWithPx = originStyle.getPropertyValue('height');
-      singleHeight.value = +heightWithPx.replace('px', '');
+      singleHeight.value = +(heightWithPx.match(/\d+/)?.[0] || 40);
     });
 
     const downConfig = {
