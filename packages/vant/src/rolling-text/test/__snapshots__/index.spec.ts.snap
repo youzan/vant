@@ -2,665 +2,407 @@
 
 exports[`should render comp 1`] = `
 <div class="van-rolling-text">
-  <div style="height: 40px; --van-translate: -1640px; --van-duration: 2s; --van-delay: 0s;"
+  <div style="--van-translate: -1640px; --van-duration: 2s; --van-delay: 0s;"
        class="van-roll-single-down van-roll-single"
   >
     <div class="van-roll-single-down__box van-roll-single-down__ani">
-      <div class="van-roll-single-down__item"
-           style="line-height: 40px;"
-      >
+      <div class="van-roll-single-down__item">
         1
       </div>
-      <div class="van-roll-single-down__item"
-           style="line-height: 40px;"
-      >
+      <div class="van-roll-single-down__item">
         0
       </div>
-      <div class="van-roll-single-down__item"
-           style="line-height: 40px;"
-      >
+      <div class="van-roll-single-down__item">
         9
       </div>
-      <div class="van-roll-single-down__item"
-           style="line-height: 40px;"
-      >
+      <div class="van-roll-single-down__item">
         8
       </div>
-      <div class="van-roll-single-down__item"
-           style="line-height: 40px;"
-      >
+      <div class="van-roll-single-down__item">
         7
       </div>
-      <div class="van-roll-single-down__item"
-           style="line-height: 40px;"
-      >
+      <div class="van-roll-single-down__item">
         6
       </div>
-      <div class="van-roll-single-down__item"
-           style="line-height: 40px;"
-      >
+      <div class="van-roll-single-down__item">
         5
       </div>
-      <div class="van-roll-single-down__item"
-           style="line-height: 40px;"
-      >
+      <div class="van-roll-single-down__item">
         4
       </div>
-      <div class="van-roll-single-down__item"
-           style="line-height: 40px;"
-      >
+      <div class="van-roll-single-down__item">
         3
       </div>
-      <div class="van-roll-single-down__item"
-           style="line-height: 40px;"
-      >
+      <div class="van-roll-single-down__item">
         2
       </div>
-      <div class="van-roll-single-down__item"
-           style="line-height: 40px;"
-      >
+      <div class="van-roll-single-down__item">
         1
       </div>
-      <div class="van-roll-single-down__item"
-           style="line-height: 40px;"
-      >
+      <div class="van-roll-single-down__item">
         0
       </div>
-      <div class="van-roll-single-down__item"
-           style="line-height: 40px;"
-      >
+      <div class="van-roll-single-down__item">
         9
       </div>
-      <div class="van-roll-single-down__item"
-           style="line-height: 40px;"
-      >
+      <div class="van-roll-single-down__item">
         8
       </div>
-      <div class="van-roll-single-down__item"
-           style="line-height: 40px;"
-      >
+      <div class="van-roll-single-down__item">
         7
       </div>
-      <div class="van-roll-single-down__item"
-           style="line-height: 40px;"
-      >
+      <div class="van-roll-single-down__item">
         6
       </div>
-      <div class="van-roll-single-down__item"
-           style="line-height: 40px;"
-      >
+      <div class="van-roll-single-down__item">
         5
       </div>
-      <div class="van-roll-single-down__item"
-           style="line-height: 40px;"
-      >
+      <div class="van-roll-single-down__item">
         4
       </div>
-      <div class="van-roll-single-down__item"
-           style="line-height: 40px;"
-      >
+      <div class="van-roll-single-down__item">
         3
       </div>
-      <div class="van-roll-single-down__item"
-           style="line-height: 40px;"
-      >
+      <div class="van-roll-single-down__item">
         2
       </div>
-      <div class="van-roll-single-down__item"
-           style="line-height: 40px;"
-      >
+      <div class="van-roll-single-down__item">
         1
       </div>
-      <div class="van-roll-single-down__item"
-           style="line-height: 40px;"
-      >
+      <div class="van-roll-single-down__item">
         0
       </div>
-      <div class="van-roll-single-down__item"
-           style="line-height: 40px;"
-      >
+      <div class="van-roll-single-down__item">
         9
       </div>
-      <div class="van-roll-single-down__item"
-           style="line-height: 40px;"
-      >
+      <div class="van-roll-single-down__item">
         8
       </div>
-      <div class="van-roll-single-down__item"
-           style="line-height: 40px;"
-      >
+      <div class="van-roll-single-down__item">
         7
       </div>
-      <div class="van-roll-single-down__item"
-           style="line-height: 40px;"
-      >
+      <div class="van-roll-single-down__item">
         6
       </div>
-      <div class="van-roll-single-down__item"
-           style="line-height: 40px;"
-      >
+      <div class="van-roll-single-down__item">
         5
       </div>
-      <div class="van-roll-single-down__item"
-           style="line-height: 40px;"
-      >
+      <div class="van-roll-single-down__item">
         4
       </div>
-      <div class="van-roll-single-down__item"
-           style="line-height: 40px;"
-      >
+      <div class="van-roll-single-down__item">
         3
       </div>
-      <div class="van-roll-single-down__item"
-           style="line-height: 40px;"
-      >
+      <div class="van-roll-single-down__item">
         2
       </div>
-      <div class="van-roll-single-down__item"
-           style="line-height: 40px;"
-      >
+      <div class="van-roll-single-down__item">
         1
       </div>
-      <div class="van-roll-single-down__item"
-           style="line-height: 40px;"
-      >
+      <div class="van-roll-single-down__item">
         0
       </div>
-      <div class="van-roll-single-down__item"
-           style="line-height: 40px;"
-      >
+      <div class="van-roll-single-down__item">
         9
       </div>
-      <div class="van-roll-single-down__item"
-           style="line-height: 40px;"
-      >
+      <div class="van-roll-single-down__item">
         8
       </div>
-      <div class="van-roll-single-down__item"
-           style="line-height: 40px;"
-      >
+      <div class="van-roll-single-down__item">
         7
       </div>
-      <div class="van-roll-single-down__item"
-           style="line-height: 40px;"
-      >
+      <div class="van-roll-single-down__item">
         6
       </div>
-      <div class="van-roll-single-down__item"
-           style="line-height: 40px;"
-      >
+      <div class="van-roll-single-down__item">
         5
       </div>
-      <div class="van-roll-single-down__item"
-           style="line-height: 40px;"
-      >
+      <div class="van-roll-single-down__item">
         4
       </div>
-      <div class="van-roll-single-down__item"
-           style="line-height: 40px;"
-      >
+      <div class="van-roll-single-down__item">
         3
       </div>
-      <div class="van-roll-single-down__item"
-           style="line-height: 40px;"
-      >
+      <div class="van-roll-single-down__item">
         2
       </div>
-      <div class="van-roll-single-down__item"
-           style="line-height: 40px;"
-      >
+      <div class="van-roll-single-down__item">
         1
       </div>
-      <div class="van-roll-single-down__item"
-           style="line-height: 40px;"
-      >
+      <div class="van-roll-single-down__item">
         0
       </div>
     </div>
   </div>
-  <div style="height: 40px; --van-translate: -1680px; --van-duration: 2s; --van-delay: 0.2s;"
+  <div style="--van-translate: -1680px; --van-duration: 2s; --van-delay: 0.2s;"
        class="van-roll-single-down van-roll-single"
   >
     <div class="van-roll-single-down__box van-roll-single-down__ani">
-      <div class="van-roll-single-down__item"
-           style="line-height: 40px;"
-      >
+      <div class="van-roll-single-down__item">
         2
       </div>
-      <div class="van-roll-single-down__item"
-           style="line-height: 40px;"
-      >
+      <div class="van-roll-single-down__item">
         1
       </div>
-      <div class="van-roll-single-down__item"
-           style="line-height: 40px;"
-      >
+      <div class="van-roll-single-down__item">
         0
       </div>
-      <div class="van-roll-single-down__item"
-           style="line-height: 40px;"
-      >
+      <div class="van-roll-single-down__item">
         9
       </div>
-      <div class="van-roll-single-down__item"
-           style="line-height: 40px;"
-      >
+      <div class="van-roll-single-down__item">
         8
       </div>
-      <div class="van-roll-single-down__item"
-           style="line-height: 40px;"
-      >
+      <div class="van-roll-single-down__item">
         7
       </div>
-      <div class="van-roll-single-down__item"
-           style="line-height: 40px;"
-      >
+      <div class="van-roll-single-down__item">
         6
       </div>
-      <div class="van-roll-single-down__item"
-           style="line-height: 40px;"
-      >
+      <div class="van-roll-single-down__item">
         5
       </div>
-      <div class="van-roll-single-down__item"
-           style="line-height: 40px;"
-      >
+      <div class="van-roll-single-down__item">
         4
       </div>
-      <div class="van-roll-single-down__item"
-           style="line-height: 40px;"
-      >
+      <div class="van-roll-single-down__item">
         3
       </div>
-      <div class="van-roll-single-down__item"
-           style="line-height: 40px;"
-      >
+      <div class="van-roll-single-down__item">
         2
       </div>
-      <div class="van-roll-single-down__item"
-           style="line-height: 40px;"
-      >
+      <div class="van-roll-single-down__item">
         1
       </div>
-      <div class="van-roll-single-down__item"
-           style="line-height: 40px;"
-      >
+      <div class="van-roll-single-down__item">
         0
       </div>
-      <div class="van-roll-single-down__item"
-           style="line-height: 40px;"
-      >
+      <div class="van-roll-single-down__item">
         9
       </div>
-      <div class="van-roll-single-down__item"
-           style="line-height: 40px;"
-      >
+      <div class="van-roll-single-down__item">
         8
       </div>
-      <div class="van-roll-single-down__item"
-           style="line-height: 40px;"
-      >
+      <div class="van-roll-single-down__item">
         7
       </div>
-      <div class="van-roll-single-down__item"
-           style="line-height: 40px;"
-      >
+      <div class="van-roll-single-down__item">
         6
       </div>
-      <div class="van-roll-single-down__item"
-           style="line-height: 40px;"
-      >
+      <div class="van-roll-single-down__item">
         5
       </div>
-      <div class="van-roll-single-down__item"
-           style="line-height: 40px;"
-      >
+      <div class="van-roll-single-down__item">
         4
       </div>
-      <div class="van-roll-single-down__item"
-           style="line-height: 40px;"
-      >
+      <div class="van-roll-single-down__item">
         3
       </div>
-      <div class="van-roll-single-down__item"
-           style="line-height: 40px;"
-      >
+      <div class="van-roll-single-down__item">
         2
       </div>
-      <div class="van-roll-single-down__item"
-           style="line-height: 40px;"
-      >
+      <div class="van-roll-single-down__item">
         1
       </div>
-      <div class="van-roll-single-down__item"
-           style="line-height: 40px;"
-      >
+      <div class="van-roll-single-down__item">
         0
       </div>
-      <div class="van-roll-single-down__item"
-           style="line-height: 40px;"
-      >
+      <div class="van-roll-single-down__item">
         9
       </div>
-      <div class="van-roll-single-down__item"
-           style="line-height: 40px;"
-      >
+      <div class="van-roll-single-down__item">
         8
       </div>
-      <div class="van-roll-single-down__item"
-           style="line-height: 40px;"
-      >
+      <div class="van-roll-single-down__item">
         7
       </div>
-      <div class="van-roll-single-down__item"
-           style="line-height: 40px;"
-      >
+      <div class="van-roll-single-down__item">
         6
       </div>
-      <div class="van-roll-single-down__item"
-           style="line-height: 40px;"
-      >
+      <div class="van-roll-single-down__item">
         5
       </div>
-      <div class="van-roll-single-down__item"
-           style="line-height: 40px;"
-      >
+      <div class="van-roll-single-down__item">
         4
       </div>
-      <div class="van-roll-single-down__item"
-           style="line-height: 40px;"
-      >
+      <div class="van-roll-single-down__item">
         3
       </div>
-      <div class="van-roll-single-down__item"
-           style="line-height: 40px;"
-      >
+      <div class="van-roll-single-down__item">
         2
       </div>
-      <div class="van-roll-single-down__item"
-           style="line-height: 40px;"
-      >
+      <div class="van-roll-single-down__item">
         1
       </div>
-      <div class="van-roll-single-down__item"
-           style="line-height: 40px;"
-      >
+      <div class="van-roll-single-down__item">
         0
       </div>
-      <div class="van-roll-single-down__item"
-           style="line-height: 40px;"
-      >
+      <div class="van-roll-single-down__item">
         9
       </div>
-      <div class="van-roll-single-down__item"
-           style="line-height: 40px;"
-      >
+      <div class="van-roll-single-down__item">
         8
       </div>
-      <div class="van-roll-single-down__item"
-           style="line-height: 40px;"
-      >
+      <div class="van-roll-single-down__item">
         7
       </div>
-      <div class="van-roll-single-down__item"
-           style="line-height: 40px;"
-      >
+      <div class="van-roll-single-down__item">
         6
       </div>
-      <div class="van-roll-single-down__item"
-           style="line-height: 40px;"
-      >
+      <div class="van-roll-single-down__item">
         5
       </div>
-      <div class="van-roll-single-down__item"
-           style="line-height: 40px;"
-      >
+      <div class="van-roll-single-down__item">
         4
       </div>
-      <div class="van-roll-single-down__item"
-           style="line-height: 40px;"
-      >
+      <div class="van-roll-single-down__item">
         3
       </div>
-      <div class="van-roll-single-down__item"
-           style="line-height: 40px;"
-      >
+      <div class="van-roll-single-down__item">
         2
       </div>
-      <div class="van-roll-single-down__item"
-           style="line-height: 40px;"
-      >
+      <div class="van-roll-single-down__item">
         1
       </div>
-      <div class="van-roll-single-down__item"
-           style="line-height: 40px;"
-      >
+      <div class="van-roll-single-down__item">
         0
       </div>
     </div>
   </div>
-  <div style="height: 40px; --van-translate: -1720px; --van-duration: 2s; --van-delay: 0.4s;"
+  <div style="--van-translate: -1720px; --van-duration: 2s; --van-delay: 0.4s;"
        class="van-roll-single-down van-roll-single"
   >
     <div class="van-roll-single-down__box van-roll-single-down__ani">
-      <div class="van-roll-single-down__item"
-           style="line-height: 40px;"
-      >
+      <div class="van-roll-single-down__item">
         3
       </div>
-      <div class="van-roll-single-down__item"
-           style="line-height: 40px;"
-      >
+      <div class="van-roll-single-down__item">
         2
       </div>
-      <div class="van-roll-single-down__item"
-           style="line-height: 40px;"
-      >
+      <div class="van-roll-single-down__item">
         1
       </div>
-      <div class="van-roll-single-down__item"
-           style="line-height: 40px;"
-      >
+      <div class="van-roll-single-down__item">
         0
       </div>
-      <div class="van-roll-single-down__item"
-           style="line-height: 40px;"
-      >
+      <div class="van-roll-single-down__item">
         9
       </div>
-      <div class="van-roll-single-down__item"
-           style="line-height: 40px;"
-      >
+      <div class="van-roll-single-down__item">
         8
       </div>
-      <div class="van-roll-single-down__item"
-           style="line-height: 40px;"
-      >
+      <div class="van-roll-single-down__item">
         7
       </div>
-      <div class="van-roll-single-down__item"
-           style="line-height: 40px;"
-      >
+      <div class="van-roll-single-down__item">
         6
       </div>
-      <div class="van-roll-single-down__item"
-           style="line-height: 40px;"
-      >
+      <div class="van-roll-single-down__item">
         5
       </div>
-      <div class="van-roll-single-down__item"
-           style="line-height: 40px;"
-      >
+      <div class="van-roll-single-down__item">
         4
       </div>
-      <div class="van-roll-single-down__item"
-           style="line-height: 40px;"
-      >
+      <div class="van-roll-single-down__item">
         3
       </div>
-      <div class="van-roll-single-down__item"
-           style="line-height: 40px;"
-      >
+      <div class="van-roll-single-down__item">
         2
       </div>
-      <div class="van-roll-single-down__item"
-           style="line-height: 40px;"
-      >
+      <div class="van-roll-single-down__item">
         1
       </div>
-      <div class="van-roll-single-down__item"
-           style="line-height: 40px;"
-      >
+      <div class="van-roll-single-down__item">
         0
       </div>
-      <div class="van-roll-single-down__item"
-           style="line-height: 40px;"
-      >
+      <div class="van-roll-single-down__item">
         9
       </div>
-      <div class="van-roll-single-down__item"
-           style="line-height: 40px;"
-      >
+      <div class="van-roll-single-down__item">
         8
       </div>
-      <div class="van-roll-single-down__item"
-           style="line-height: 40px;"
-      >
+      <div class="van-roll-single-down__item">
         7
       </div>
-      <div class="van-roll-single-down__item"
-           style="line-height: 40px;"
-      >
+      <div class="van-roll-single-down__item">
         6
       </div>
-      <div class="van-roll-single-down__item"
-           style="line-height: 40px;"
-      >
+      <div class="van-roll-single-down__item">
         5
       </div>
-      <div class="van-roll-single-down__item"
-           style="line-height: 40px;"
-      >
+      <div class="van-roll-single-down__item">
         4
       </div>
-      <div class="van-roll-single-down__item"
-           style="line-height: 40px;"
-      >
+      <div class="van-roll-single-down__item">
         3
       </div>
-      <div class="van-roll-single-down__item"
-           style="line-height: 40px;"
-      >
+      <div class="van-roll-single-down__item">
         2
       </div>
-      <div class="van-roll-single-down__item"
-           style="line-height: 40px;"
-      >
+      <div class="van-roll-single-down__item">
         1
       </div>
-      <div class="van-roll-single-down__item"
-           style="line-height: 40px;"
-      >
+      <div class="van-roll-single-down__item">
         0
       </div>
-      <div class="van-roll-single-down__item"
-           style="line-height: 40px;"
-      >
+      <div class="van-roll-single-down__item">
         9
       </div>
-      <div class="van-roll-single-down__item"
-           style="line-height: 40px;"
-      >
+      <div class="van-roll-single-down__item">
         8
       </div>
-      <div class="van-roll-single-down__item"
-           style="line-height: 40px;"
-      >
+      <div class="van-roll-single-down__item">
         7
       </div>
-      <div class="van-roll-single-down__item"
-           style="line-height: 40px;"
-      >
+      <div class="van-roll-single-down__item">
         6
       </div>
-      <div class="van-roll-single-down__item"
-           style="line-height: 40px;"
-      >
+      <div class="van-roll-single-down__item">
         5
       </div>
-      <div class="van-roll-single-down__item"
-           style="line-height: 40px;"
-      >
+      <div class="van-roll-single-down__item">
         4
       </div>
-      <div class="van-roll-single-down__item"
-           style="line-height: 40px;"
-      >
+      <div class="van-roll-single-down__item">
         3
       </div>
-      <div class="van-roll-single-down__item"
-           style="line-height: 40px;"
-      >
+      <div class="van-roll-single-down__item">
         2
       </div>
-      <div class="van-roll-single-down__item"
-           style="line-height: 40px;"
-      >
+      <div class="van-roll-single-down__item">
         1
       </div>
-      <div class="van-roll-single-down__item"
-           style="line-height: 40px;"
-      >
+      <div class="van-roll-single-down__item">
         0
       </div>
-      <div class="van-roll-single-down__item"
-           style="line-height: 40px;"
-      >
+      <div class="van-roll-single-down__item">
         9
       </div>
-      <div class="van-roll-single-down__item"
-           style="line-height: 40px;"
-      >
+      <div class="van-roll-single-down__item">
         8
       </div>
-      <div class="van-roll-single-down__item"
-           style="line-height: 40px;"
-      >
+      <div class="van-roll-single-down__item">
         7
       </div>
-      <div class="van-roll-single-down__item"
-           style="line-height: 40px;"
-      >
+      <div class="van-roll-single-down__item">
         6
       </div>
-      <div class="van-roll-single-down__item"
-           style="line-height: 40px;"
-      >
+      <div class="van-roll-single-down__item">
         5
       </div>
-      <div class="van-roll-single-down__item"
-           style="line-height: 40px;"
-      >
+      <div class="van-roll-single-down__item">
         4
       </div>
-      <div class="van-roll-single-down__item"
-           style="line-height: 40px;"
-      >
+      <div class="van-roll-single-down__item">
         3
       </div>
-      <div class="van-roll-single-down__item"
-           style="line-height: 40px;"
-      >
+      <div class="van-roll-single-down__item">
         2
       </div>
-      <div class="van-roll-single-down__item"
-           style="line-height: 40px;"
-      >
+      <div class="van-roll-single-down__item">
         1
       </div>
-      <div class="van-roll-single-down__item"
-           style="line-height: 40px;"
-      >
+      <div class="van-roll-single-down__item">
         0
       </div>
     </div>
