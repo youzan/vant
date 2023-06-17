@@ -102,6 +102,7 @@ export default {
   :duration="2"
   stop-order="rtl"
   direction="up"
+  :height="70"
 />
 ```
 
@@ -109,10 +110,10 @@ export default {
 .my-rolling-text {
   --van-rolling-text-background: deepskyblue;
   --van-rolling-text-color: white;
-  --van-rolling-text-font-size: 20px;
+  --van-rolling-text-font-size: 40px;
   --van-rolling-text-gap: 6px;
   --van-rolling-text-single-border-radius: 5px;
-  --van-rolling-text-single-width: 25px;
+  --van-rolling-text-single-width: 50px;
 }
 ```
 
@@ -166,6 +167,7 @@ export default {
 | direction | Rolling direction of the text, with `down` and `up` as the values | _string_ | `down` |
 | auto-start | Whether to start the animation | _boolean_ | `true` |
 | stop-order | Order of stopping the animation of each digit, with `ltr` and `rtl` as the values | _string_ | `ltr` |
+| height | Height of digit, `px` as unit | _number_ | `40` |
 
 ### Methods
 

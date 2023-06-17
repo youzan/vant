@@ -102,6 +102,7 @@ export default {
   :duration="2"
   stop-order="rtl"
   direction="up"
+  :height="70"
 />
 ```
 
@@ -109,10 +110,10 @@ export default {
 .my-rolling-text {
   --van-rolling-text-background: deepskyblue;
   --van-rolling-text-color: white;
-  --van-rolling-text-font-size: 20px;
+  --van-rolling-text-font-size: 40px;
   --van-rolling-text-gap: 6px;
   --van-rolling-text-single-border-radius: 5px;
-  --van-rolling-text-single-width: 25px;
+  --van-rolling-text-single-width: 50px;
 }
 ```
 
@@ -166,6 +167,7 @@ export default {
 | direction | 文本翻滚方向，值为 `down` 和 `up` | _string_ | `down` |
 | auto-start | 是否自动开始动画 | _boolean_ | `true` |
 | stop-order | 各个数位动画停止先后顺序，值为 `ltr` 和 `rtl` | _string_ | `ltr` |
+| height | 数位高度，单位为 `px` | _number_ | `40` |
 
 ### 方法
 

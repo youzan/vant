@@ -14,9 +14,8 @@ export const props = {
   duration: makeNumberProp(2),
   isStart: Boolean,
   direction: String,
+  height: makeNumberProp(40),
 };
-
-const HEIGHT = 40;
 
 export default defineComponent({
   name: 'RollSingle',
@@ -40,15 +39,16 @@ export default defineComponent({
 
     const newFigureArr = computed(directionConfig.dataHandle);
     const totalHeight = computed(
-      () => HEIGHT * props.figureArr.length - HEIGHT
+      () => props.height * props.figureArr.length - props.height
     );
     const translateValPx = computed(() => `-${totalHeight.value}px`);
+
     const itemStyleObj = {
-      lineHeight: addUnit(HEIGHT),
+      lineHeight: addUnit(props.height),
     };
 
     const getStyle = () => ({
-      height: addUnit(HEIGHT),
+      height: addUnit(props.height),
       '--van-translate': translateValPx.value,
       '--van-duration': props.duration + 's',
       '--van-delay': props.delay + 's',

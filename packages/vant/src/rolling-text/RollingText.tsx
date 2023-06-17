@@ -39,6 +39,7 @@ export const rollingTextProps = {
   autoStart: truthProp,
   direction: makeStringProp<RollingTextDirection>('down'),
   stopOrder: makeStringProp<RollingTextStopOrder>('ltr'),
+  height: makeNumberProp(40),
 };
 
 const CIRCLE_NUM = 2;
@@ -143,6 +144,7 @@ export default defineComponent({
             duration={props.duration}
             direction={props.direction}
             isStart={rolling.value}
+            height={props.height}
             delay={getDelay(i, targetNumArr.value.length)}
           />
         ))}
