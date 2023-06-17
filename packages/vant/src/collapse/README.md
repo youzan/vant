@@ -187,7 +187,7 @@ export default {
 
 ### Collapse Methods
 
-Use [ref](https://v3.vuejs.org/guide/component-template-refs.html) to get Collapse instance and call instance methods.
+Use [ref](https://vuejs.org/guide/essentials/template-refs.html) to get Collapse instance and call instance methods.
 
 | Name | Description | Attribute | Return value |
 | --- | --- | --- | --- |
@@ -221,7 +221,7 @@ collapseRef.value?.toggleAll({
 
 ### CollapseItem Methods
 
-Use [ref](https://v3.vuejs.org/guide/component-template-refs.html) to get CollapseItem instance and call instance methods.
+Use [ref](https://vuejs.org/guide/essentials/template-refs.html) to get CollapseItem instance and call instance methods.
 
 | Name   | Description            | Attribute           | Return value |
 | ------ | ---------------------- | ------------------- | ------------ |
