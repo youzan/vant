@@ -138,6 +138,7 @@ const reset = () => {
         :auto-start="isStart4"
         stop-order="rtl"
         direction="up"
+        :height="70"
       />
     </div>
   </demo-block>
@@ -153,6 +154,7 @@ const reset = () => {
         :auto-start="false"
         stop-order="rtl"
         direction="up"
+        :height="70"
       />
       <van-grid clickable :column-num="3" style="margin-top: 10px">
         <van-grid-item icon="play-circle-o" :text="t('start')" @click="start" />
@@ -182,6 +184,5 @@ const reset = () => {
   --van-rolling-text-gap: 6px;
   --van-rolling-text-single-border-radius: 5px;
   --van-rolling-text-single-width: 50px;
-  --van-rolling-text-height: 70px;
 }
 </style>

@@ -102,6 +102,7 @@ export default {
   :duration="2"
   stop-order="rtl"
   direction="up"
+  :height="70"
 />
 ```
 
@@ -113,7 +114,6 @@ export default {
   --van-rolling-text-gap: 6px;
   --van-rolling-text-single-border-radius: 5px;
   --van-rolling-text-single-width: 50px;
-  --van-rolling-text-height: 70px;
 }
 ```
 
@@ -167,6 +167,7 @@ export default {
 | direction | Rolling direction of the text, with `down` and `up` as the values | _string_ | `down` |
 | auto-start | Whether to start the animation | _boolean_ | `true` |
 | stop-order | Order of stopping the animation of each digit, with `ltr` and `rtl` as the values | _string_ | `ltr` |
+| height | Height of digit, `px` as unit | _number_ | `40` |
 
 ### Methods
 
@@ -213,6 +214,5 @@ The component provides the following CSS variables, which can be used to customi
 | --van-rolling-text-color | _var(--van-text-color)_ | Color of the number |
 | --van-rolling-text-font-size | _var(--van-font-size-md)_ | Font size of the number |
 | --van-rolling-text-gap | _0px_ | Spacing between digits |
-| --van-rolling-text-height | _40px_ | Height of a single digit |
 | --van-rolling-text-single-width | _15px_ | Width of a single digit |
 | --van-rolling-text-single-border-radius | _0px_ | Border radius of a single digit |

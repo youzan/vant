@@ -102,6 +102,7 @@ export default {
   :duration="2"
   stop-order="rtl"
   direction="up"
+  :height="70"
 />
 ```
 
@@ -113,7 +114,6 @@ export default {
   --van-rolling-text-gap: 6px;
   --van-rolling-text-single-border-radius: 5px;
   --van-rolling-text-single-width: 50px;
-  --van-rolling-text-height: 70px;
 }
 ```
 
@@ -158,15 +158,7 @@ export default {
 
 ### Props
 
-| 参数 | 说明 | 类型 | 默认值 |
-| --- | --- | --- | --- |
-| start-num | 开始数值 | _number_ | `0` |
-| target-num | 目标数值 | _number_ | - |
-| text-array | 内容数组，翻转非数字内容，需要传此参数 | _Array_ | `[]` |
-| duration | 动画时长，单位为秒 | _number_ | `2` |
-| direction | 文本翻滚方向，值为 `down` 和 `up` | _string_ | `down` |
-| auto-start | 是否自动开始动画 | _boolean_ | `true` |
-| stop-order | 各个数位动画停止先后顺序，值为 `ltr` 和 `rtl` | _string_ | `ltr` |
+| 参数 | 说明 | 类型 | 默认值 | | | --- | --- | --- | | start-num | 开始数值 | _number_ | `0` | | target-num | 目标数值 | _number_ | - | | text-array | 内容数组，翻转非数字内容，需要传此参数 | _Array_ | `[]` | | duration | 动画时长，单位为秒 | _number_ | `2` | | direction | 文本翻滚方向，值为 `down` 和 `up` | _string_ | `down` | | auto-start | 是否自动开始动画 | _boolean_ | `true` | | stop-order | 各个数位动画停止先后顺序，值为 `ltr` 和 `rtl` | _string_ | `ltr` | | height | 数位高度，单位为 `px` | _number_ | `40` |
 
 ### 方法
 
@@ -213,6 +205,5 @@ rollingTextRef.value?.start();
 | --van-rolling-text-color | _var(--van-text-color)_ | 数字颜色 |
 | --van-rolling-text-font-size | _var(--van-font-size-md)_ | 字体大小 |
 | --van-rolling-text-gap | _0px_ | 数位之间的间隔 |
-| --van-rolling-text-height | _40px_ | 数位高度 |
 | --van-rolling-text-single-width | _15px_ | 单个数位宽度 |
 | --van-rolling-text-single-border-radius | _0px_ | 单个数位边框圆角 |

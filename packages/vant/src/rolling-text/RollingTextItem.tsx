@@ -1,7 +1,12 @@
-import { defineComponent, computed, ref, onMounted } from 'vue';
+import { defineComponent, computed } from 'vue';
 
 // Utils
-import { createNamespace, makeNumberProp, makeArrayProp } from '../utils';
+import {
+  createNamespace,
+  makeNumberProp,
+  makeArrayProp,
+  addUnit,
+} from '../utils';
 
 export const props = {
   figureArr: makeArrayProp(),
@@ -9,6 +14,7 @@ export const props = {
   duration: makeNumberProp(2),
   isStart: Boolean,
   direction: String,
+  height: makeNumberProp(40),
 };
 
 export default defineComponent({
@@ -17,16 +23,6 @@ export default defineComponent({
   props,
 
   setup(props) {
-    const root = ref<HTMLElement>();
-
-    const singleHeight = ref(40);
-    onMounted(() => {
-      if (!root.value) return;
-      const originStyle = window.getComputedStyle(root.value);
-      const heightWithPx = originStyle.getPropertyValue('height');
-      singleHeight.value = +(heightWithPx.match(/\d+/)?.[0] || 40);
-    });
-
     const downConfig = {
       classNameSpace: 'roll-single-down',
       aniClass: 'van-roll-single-down__ani',
@@ -43,24 +39,31 @@ export default defineComponent({
 
     const newFigureArr = computed(directionConfig.dataHandle);
     const totalHeight = computed(
-      () => singleHeight.value * props.figureArr.length - singleHeight.value
+      () => props.height * props.figureArr.length - props.height
     );
     const translateValPx = computed(() => `-${totalHeight.value}px`);
 
+    const itemStyleObj = {
+      lineHeight: addUnit(props.height),
+    };
+
     const getStyle = () => ({
+      height: addUnit(props.height),
       '--van-translate': translateValPx.value,
       '--van-duration': props.duration + 's',
       '--van-delay': props.delay + 's',
     });
 
     return () => (
-      <div ref={root} style={getStyle()} class={[bem(), 'van-roll-single']}>
+      <div style={getStyle()} class={[bem(), 'van-roll-single']}>
         <div
           class={[bem('box'), { [directionConfig.aniClass]: props.isStart }]}
         >
           {Array.isArray(newFigureArr.value) &&
             newFigureArr.value.map((figure) => (
-              <div class={bem('item')}>{figure}</div>
+              <div class={bem('item')} style={itemStyleObj}>
+                {figure}
+              </div>
             ))}
         </div>
       </div>
