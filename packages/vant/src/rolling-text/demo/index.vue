@@ -178,9 +178,10 @@ const reset = () => {
 .my-rolling-text {
   --van-rolling-text-background: deepskyblue;
   --van-rolling-text-color: white;
-  --van-rolling-text-font-size: 20px;
+  --van-rolling-text-font-size: 40px;
   --van-rolling-text-gap: 6px;
   --van-rolling-text-single-border-radius: 5px;
-  --van-rolling-text-single-width: 25px;
+  --van-rolling-text-single-width: 50px;
+  --van-rolling-text-height: 70px;
 }
 </style>

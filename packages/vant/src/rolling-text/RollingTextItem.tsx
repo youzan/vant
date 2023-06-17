@@ -1,12 +1,7 @@
-import { defineComponent, computed } from 'vue';
+import { defineComponent, computed, ref, onMounted } from 'vue';
 
 // Utils
-import {
-  createNamespace,
-  makeNumberProp,
-  makeArrayProp,
-  addUnit,
-} from '../utils';
+import { createNamespace, makeNumberProp, makeArrayProp } from '../utils';
 
 export const props = {
   figureArr: makeArrayProp(),
@@ -16,14 +11,22 @@ export const props = {
   direction: String,
 };
 
-const HEIGHT = 40;
-
 export default defineComponent({
   name: 'RollSingle',
 
   props,
 
   setup(props) {
+    const root = ref<HTMLElement>();
+
+    const singleHeight = ref(40);
+    onMounted(() => {
+      if (!root.value) return;
+      const originStyle = window.getComputedStyle(root.value);
+      const heightWithPx = originStyle.getPropertyValue('height');
+      singleHeight.value = +heightWithPx.replace('px', '');
+    });
+
     const downConfig = {
       classNameSpace: 'roll-single-down',
       aniClass: 'van-roll-single-down__ani',
@@ -40,30 +43,24 @@ export default defineComponent({
 
     const newFigureArr = computed(directionConfig.dataHandle);
     const totalHeight = computed(
-      () => HEIGHT * props.figureArr.length - HEIGHT
+      () => singleHeight.value * props.figureArr.length - singleHeight.value
     );
     const translateValPx = computed(() => `-${totalHeight.value}px`);
-    const itemStyleObj = {
-      lineHeight: addUnit(HEIGHT),
-    };
 
     const getStyle = () => ({
-      height: addUnit(HEIGHT),
       '--van-translate': translateValPx.value,
       '--van-duration': props.duration + 's',
       '--van-delay': props.delay + 's',
     });
 
     return () => (
-      <div style={getStyle()} class={[bem(), 'van-roll-single']}>
+      <div ref={root} style={getStyle()} class={[bem(), 'van-roll-single']}>
         <div
           class={[bem('box'), { [directionConfig.aniClass]: props.isStart }]}
         >
           {Array.isArray(newFigureArr.value) &&
             newFigureArr.value.map((figure) => (
-              <div class={bem('item')} style={itemStyleObj}>
-                {figure}
-              </div>
+              <div class={bem('item')}>{figure}</div>
             ))}
         </div>
       </div>
