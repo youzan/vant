@@ -10,6 +10,7 @@ import {
   makeNumberProp,
   makeNumericProp,
   createNamespace,
+  TAP_OFFSET,
 } from '../utils';
 
 // Composables
@@ -201,12 +202,9 @@ export default defineComponent({
         select(getScoreByPosition(clientX, clientY));
       }
 
-      const TAP_THRESHOLD_DISTANCE = 3;
-
       if (
         onlyTap &&
-        (touch.offsetX.value > TAP_THRESHOLD_DISTANCE ||
-          touch.offsetY.value > TAP_THRESHOLD_DISTANCE)
+        (touch.offsetX.value > TAP_OFFSET || touch.offsetY.value > TAP_OFFSET)
       ) {
         onlyTap = false;
       }
