@@ -44,7 +44,7 @@ FloatingPanel 的默认高度为 `100px`，用户可以拖动来展开面板，�
 ```html
 <van-floating-panel v-model:height="height" :anchors="anchors">
   <div style="text-align: center; padding: 15px">
-    <p>面板显示高度 {{ height }} px</p>
+    <p>面板显示高度 {{ height.toFixed(0) }} px</p>
   </div>
 </van-floating-panel>
 ```

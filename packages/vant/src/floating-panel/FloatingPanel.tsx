@@ -16,7 +16,7 @@ import {
 } from '../utils';
 
 // Composables
-import { useWindowSize } from '@vant/use';
+import { useWindowSize, useEventListener } from '@vant/use';
 import { useLockScroll } from '../composables/use-lock-scroll';
 import { useTouch } from '../composables/use-touch';
 import { useSyncPropRef } from '../composables/use-sync-prop-ref';
@@ -142,13 +142,15 @@ export default defineComponent({
 
     useLockScroll(rootRef, () => true);
 
+    // useEventListener will set passive to `false` to eliminate the warning of Chrome
+    useEventListener('touchmove', onTouchmove, { target: rootRef });
+
     return () => (
       <div
         class={[bem(), { 'van-safe-area-bottom': props.safeAreaInsetBottom }]}
         ref={rootRef}
         style={rootStyle.value}
         onTouchstartPassive={onTouchstart}
-        onTouchmove={onTouchmove}
         onTouchend={onTouchend}
         onTouchcancel={onTouchend}
       >

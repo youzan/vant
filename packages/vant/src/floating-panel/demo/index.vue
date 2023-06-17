@@ -52,7 +52,7 @@ const height = ref(anchors[0]);
     <van-tab :title="t('customAnchors')">
       <van-floating-panel v-model:height="height" :anchors="anchors">
         <div style="text-align: center; padding: 15px">
-          <p>{{ t('panelShowHeight') }} {{ height }} px</p>
+          <p>{{ t('panelShowHeight') }} {{ height.toFixed(0) }} px</p>
         </div>
       </van-floating-panel>
     </van-tab>

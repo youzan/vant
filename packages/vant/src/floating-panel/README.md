@@ -44,7 +44,7 @@ For example, you can make the panel stop at three positions: `100px`, 40% of the
 ```html
 <van-floating-panel v-model:height="height" :anchors="anchors">
   <div style="text-align: center; padding: 15px">
-    <p>Panel Show Height {{ height }} px</p>
+    <p>Panel Show Height {{ height.toFixed(0) }} px</p>
   </div>
 </van-floating-panel>
 ```
