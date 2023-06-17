@@ -158,7 +158,16 @@ export default {
 
 ### Props
 
-| 参数 | 说明 | 类型 | 默认值 | | | --- | --- | --- | | start-num | 开始数值 | _number_ | `0` | | target-num | 目标数值 | _number_ | - | | text-array | 内容数组，翻转非数字内容，需要传此参数 | _Array_ | `[]` | | duration | 动画时长，单位为秒 | _number_ | `2` | | direction | 文本翻滚方向，值为 `down` 和 `up` | _string_ | `down` | | auto-start | 是否自动开始动画 | _boolean_ | `true` | | stop-order | 各个数位动画停止先后顺序，值为 `ltr` 和 `rtl` | _string_ | `ltr` | | height | 数位高度，单位为 `px` | _number_ | `40` |
+| 参数 | 说明 | 类型 | 默认值 |
+| --- | --- | --- | --- |
+| start-num | 开始数值 | _number_ | `0` |
+| target-num | 目标数值 | _number_ | - |
+| text-array | 内容数组，翻转非数字内容，需要传此参数 | _Array_ | `[]` |
+| duration | 动画时长，单位为秒 | _number_ | `2` |
+| direction | 文本翻滚方向，值为 `down` 和 `up` | _string_ | `down` |
+| auto-start | 是否自动开始动画 | _boolean_ | `true` |
+| stop-order | 各个数位动画停止先后顺序，值为 `ltr` 和 `rtl` | _string_ | `ltr` |
+| height | 数位高度，单位为 `px` | _number_ | `40` |
 
 ### 方法
 
