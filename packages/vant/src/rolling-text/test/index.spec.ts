@@ -1,8 +1,8 @@
 import { RollingText, type RollingTextInstance } from '..';
 import { later, mount } from '../../../test';
 
-const itemWrapperClass = '.van-roll-single-down__box';
-const animationClass = 'van-roll-single-down__ani';
+const itemWrapperClass = '.van-rolling-text-item__box';
+const animationClass = 'van-rolling-text-item__box--animate';
 
 test('should render comp', () => {
   const wrapper = mount(RollingText, {

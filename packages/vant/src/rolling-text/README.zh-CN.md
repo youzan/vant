@@ -112,8 +112,8 @@ export default {
   --van-rolling-text-color: white;
   --van-rolling-text-font-size: 40px;
   --van-rolling-text-gap: 6px;
-  --van-rolling-text-single-border-radius: 5px;
-  --van-rolling-text-single-width: 50px;
+  --van-rolling-text-item-border-radius: 5px;
+  --van-rolling-text-item-width: 25px;
 }
 ```
 
@@ -214,5 +214,5 @@ rollingTextRef.value?.start();
 | --van-rolling-text-color | _var(--van-text-color)_ | 数字颜色 |
 | --van-rolling-text-font-size | _var(--van-font-size-md)_ | 字体大小 |
 | --van-rolling-text-gap | _0px_ | 数位之间的间隔 |
-| --van-rolling-text-single-width | _15px_ | 单个数位宽度 |
-| --van-rolling-text-single-border-radius | _0px_ | 单个数位边框圆角 |
+| --van-rolling-text-item-width | _15px_ | 单个数位宽度 |
+| --van-rolling-text-item-border-radius | _0px_ | 单个数位边框圆角 |

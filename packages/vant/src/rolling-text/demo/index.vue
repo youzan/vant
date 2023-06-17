@@ -182,7 +182,7 @@ const reset = () => {
   --van-rolling-text-color: white;
   --van-rolling-text-font-size: 40px;
   --van-rolling-text-gap: 6px;
-  --van-rolling-text-single-border-radius: 5px;
-  --van-rolling-text-single-width: 50px;
+  --van-rolling-text-item-border-radius: 5px;
+  --van-rolling-text-item-width: 50px;
 }
 </style>
