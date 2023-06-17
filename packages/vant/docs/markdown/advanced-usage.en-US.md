@@ -37,7 +37,7 @@ export default {
 };
 ```
 
-> For more information, please refer to [Vue.js - Component Registration](https://v3.vuejs.org/guide/component-registration.html#component-registration)。
+> For more information, please refer to [Vue.js - Component Registration](https://vuejs.org/guide/components/registration.html)。
 
 #### \<script setup\>
 

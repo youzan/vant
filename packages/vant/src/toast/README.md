@@ -232,7 +232,7 @@ Vant exports following Toast utility functions:
 | overlayStyle | Custom overlay style | _object_ | - |
 | onOpened | Callback function after opened | _Function_ | - |
 | onClose | Callback function after close | _Function_ | - |
-| transition | Transition, equivalent to `name` prop of [transition](https://v3.vuejs.org/api/built-in-components.html#transition) | _string_ | `van-fade` |
+| transition | Transition, equivalent to `name` prop of [transition](https://vuejs.org/api/built-in-components.html#transition) | _string_ | `van-fade` |
 | teleport | Specifies a target element where Toast will be mounted | _string \| Element_ | `body` |
 
 ### Slots

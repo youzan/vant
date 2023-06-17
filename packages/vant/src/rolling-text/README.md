@@ -164,13 +164,13 @@ export default {
 | target-num | Target number | _number_ | - |
 | text-array | Text array | _Array_ | `[]` |
 | duration | Duration of the animation, in seconds | _number_ | `2` |
-| direction | Rolling direction of the number, with `down` and `up` as the values | _string_ | `down` |
+| direction | Rolling direction of the text, with `down` and `up` as the values | _string_ | `down` |
 | auto-start | Whether to start the animation | _boolean_ | `true` |
 | stop-order | Order of stopping the animation of each digit, with `ltr` and `rtl` as the values | _string_ | `ltr` |
 
 ### Methods
 
-Use [ref](https://v3.vuejs.org/guide/component-template-refs.html) to get RollingText instance and call instance methods.
+Use [ref](https://vuejs.org/guide/essentials/template-refs.html) to get RollingText instance and call instance methods.
 
 | Name  | Description         | Attribute | Return value |
 | ----- | ------------------- | --------- | ------------ |

@@ -202,7 +202,7 @@ Vant exports following ImagePreview utility functions:
 | closeable | Whether to show close icon | _boolean_ | `false` |
 | closeIcon | Close icon name | _string_ | `clear` |
 | closeIconPosition | Close icon position, can be set to `top-left` `bottom-left` `bottom-right` | _string_ | `top-right` |
-| transition | Transition, equivalent to `name` prop of [transition](https://v3.vuejs.org/api/built-in-components.html#transition) | _string_ | `van-fade` |
+| transition | Transition, equivalent to `name` prop of [transition](https://vuejs.org/api/built-in-components.html#transition) | _string_ | `van-fade` |
 | overlayClass | Custom overlay class | _string \| Array \| object_ | - |
 | overlayStyle | Custom overlay style | _object_ | - |
 | teleport | Specifies a target element where ImagePreview will be mounted | _string \| Element_ | - |
@@ -226,7 +226,7 @@ Vant exports following ImagePreview utility functions:
 | closeable | Whether to show close icon | _boolean_ | `false` |
 | close-icon | Close icon name | _string_ | `clear` |
 | close-icon-position | Close icon position, can be set to `top-left` `bottom-left` `bottom-right` | _string_ | `top-right` |
-| transition | Transition, equivalent to `name` prop of [transition](https://v3.vuejs.org/api/built-in-components.html#transition) | _string_ | `van-fade` |
+| transition | Transition, equivalent to `name` prop of [transition](https://vuejs.org/api/built-in-components.html#transition) | _string_ | `van-fade` |
 | overlay-class | Custom overlay class | _string \| Array \| object_ | - |
 | overlay-style | Custom overlay style | _object_ | - |
 | teleport | Specifies a target element where ImagePreview will be mounted | _string \| Element_ | - |
