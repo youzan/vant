@@ -163,7 +163,7 @@ export default {
 | target-num | Target number | _number_ | - |
 | text-array | Text array | _Array_ | `[]` |
 | duration | Duration of the animation, in seconds | _number_ | `2` |
-| direction | Rolling direction of the number, with `down` and `up` as the values | _string_ | `down` |
+| direction | Rolling direction of the text, with `down` and `up` as the values | _string_ | `down` |
 | auto-start | Whether to start the animation | _boolean_ | `true` |
 | stop-order | Order of stopping the animation of each digit, with `ltr` and `rtl` as the values | _string_ | `ltr` |
 
