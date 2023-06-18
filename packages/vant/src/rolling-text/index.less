@@ -3,8 +3,8 @@
   --van-rolling-text-color: var(--van-text-color);
   --van-rolling-text-font-size: var(--van-font-size-md);
   --van-rolling-text-gap: 0px;
-  --van-rolling-text-single-width: 15px;
-  --van-rolling-text-single-border-radius: 0px;
+  --van-rolling-text-item-width: 15px;
+  --van-rolling-text-item-border-radius: 0px;
 }
 
 .van-rolling-text {
@@ -15,11 +15,10 @@
   color: var(--van-rolling-text-color);
 }
 
-.van-roll-single-down,
-.van-roll-single-up {
+.van-rolling-text-item {
   margin-right: var(--van-rolling-text-gap);
-  width: var(--van-rolling-text-single-width);
-  border-radius: var(--van-rolling-text-single-border-radius);
+  width: var(--van-rolling-text-item-width);
+  border-radius: var(--van-rolling-text-item-border-radius);
   background: var(--van-rolling-text-background);
   overflow: hidden;
 
@@ -29,12 +28,12 @@
 
   &__box {
     overflow: hidden;
-  }
 
-  &__ani {
-    animation: van-up var(--van-duration) ease-in-out var(--van-delay);
-    animation-iteration-count: 1;
-    animation-fill-mode: both;
+    &--animate {
+      animation: van-up var(--van-duration) ease-in-out var(--van-delay);
+      animation-iteration-count: 1;
+      animation-fill-mode: both;
+    }
   }
 
   &__item {
@@ -42,13 +41,13 @@
   }
 }
 
-.van-roll-single-down {
-  &__box {
+.van-rolling-text-item--down {
+  .van-rolling-text-item__box {
     transform: translateY(var(--van-translate));
-  }
 
-  &__ani {
-    animation-name: van-down;
+    &--animate {
+      animation-name: van-down;
+    }
   }
 }
 

@@ -112,8 +112,8 @@ export default {
   --van-rolling-text-color: white;
   --van-rolling-text-font-size: 40px;
   --van-rolling-text-gap: 6px;
-  --van-rolling-text-single-border-radius: 5px;
-  --van-rolling-text-single-width: 50px;
+  --van-rolling-text-item-border-radius: 5px;
+  --van-rolling-text-item-width: 50px;
 }
 ```
 
@@ -214,5 +214,5 @@ The component provides the following CSS variables, which can be used to customi
 | --van-rolling-text-color | _var(--van-text-color)_ | Color of the number |
 | --van-rolling-text-font-size | _var(--van-font-size-md)_ | Font size of the number |
 | --van-rolling-text-gap | _0px_ | Spacing between digits |
-| --van-rolling-text-single-width | _15px_ | Width of a single digit |
-| --van-rolling-text-single-border-radius | _0px_ | Border radius of a single digit |
+| --van-rolling-text-item-width | _15px_ | Width of a single digit |
+| --van-rolling-text-item-border-radius | _0px_ | Border radius of a single digit |
