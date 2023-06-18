@@ -160,9 +160,7 @@ exports[`should render demo and match snapshot 1`] = `
     <div class="van-cell-group van-cell-group--inset">
       <div class="van-cell van-field">
         <div class="van-cell__title van-field__label">
-          <label id="van-field-label"
-                 for="van-field-input"
-          >
+          <label id="van-field-label">
             Switch
           </label>
         </div>
@@ -183,9 +181,7 @@ exports[`should render demo and match snapshot 1`] = `
       </div>
       <div class="van-cell van-field">
         <div class="van-cell__title van-field__label">
-          <label id="van-field-label"
-                 for="van-field-input"
-          >
+          <label id="van-field-label">
             Checkbox
           </label>
         </div>
@@ -208,9 +204,7 @@ exports[`should render demo and match snapshot 1`] = `
       </div>
       <div class="van-cell van-field">
         <div class="van-cell__title van-field__label">
-          <label id="van-field-label"
-                 for="van-field-input"
-          >
+          <label id="van-field-label">
             Checkbox Group
           </label>
         </div>
@@ -251,9 +245,7 @@ exports[`should render demo and match snapshot 1`] = `
       </div>
       <div class="van-cell van-field">
         <div class="van-cell__title van-field__label">
-          <label id="van-field-label"
-                 for="van-field-input"
-          >
+          <label id="van-field-label">
             Radio
           </label>
         </div>
@@ -296,9 +288,7 @@ exports[`should render demo and match snapshot 1`] = `
       </div>
       <div class="van-cell van-field">
         <div class="van-cell__title van-field__label">
-          <label id="van-field-label"
-                 for="van-field-input"
-          >
+          <label id="van-field-label">
             Stepper
           </label>
         </div>
@@ -332,9 +322,7 @@ exports[`should render demo and match snapshot 1`] = `
       </div>
       <div class="van-cell van-field">
         <div class="van-cell__title van-field__label">
-          <label id="van-field-label"
-                 for="van-field-input"
-          >
+          <label id="van-field-label">
             Rate
           </label>
         </div>
@@ -404,9 +392,7 @@ exports[`should render demo and match snapshot 1`] = `
       </div>
       <div class="van-cell van-field">
         <div class="van-cell__title van-field__label">
-          <label id="van-field-label"
-                 for="van-field-input"
-          >
+          <label id="van-field-label">
             Slider
           </label>
         </div>
@@ -436,9 +422,7 @@ exports[`should render demo and match snapshot 1`] = `
       </div>
       <div class="van-cell van-field">
         <div class="van-cell__title van-field__label">
-          <label id="van-field-label"
-                 for="van-field-input"
-          >
+          <label id="van-field-label">
             Uploader
           </label>
         </div>

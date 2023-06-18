@@ -19,6 +19,27 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 
 ## 更新内容
 
+### [v4.5.0](https://github.com/vant-ui/vant/compare/v4.4.1...v4.5.0)
+
+`2023-06-11`
+
+**New Component**
+
+- 新增 FloatingPanel 组件，由 [@zhousg](https://github.com/zhousg) 贡献 ❤️ [#11832](https://github.com/vant-ui/vant/issues/11832)
+
+**Feature**
+
+- AddressList: 新增 right-icon 属性 [#11959](https://github.com/vant-ui/vant/issues/11959)
+- DropdownMenu: 新增 close 方法 [#11921](https://github.com/vant-ui/vant/issues/11921)
+- Slider: 新增 button 插槽的 dragging 参数 [#11946](https://github.com/vant-ui/vant/issues/11946)
+- TimePicker: 新增 min-time 和 max-time 属性 [#11887](https://github.com/vant-ui/vant/issues/11887)
+- TimePicker: 新增 filter 属性的 values 参数 [#11916](https://github.com/vant-ui/vant/issues/11916)
+- CI: 增加 issue helper [#11963](https://github.com/vant-ui/vant/issues/11963)
+
+**Bug Fixes**
+
+- BackTop: 修复 deactivated 时未隐藏的问题 [#11938](https://github.com/vant-ui/vant/issues/11938)
+
 ### [v4.4.1](https://github.com/vant-ui/vant/compare/v4.4.0...v4.4.1)
 
 `2023-05-28`

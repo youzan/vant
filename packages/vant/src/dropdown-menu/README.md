@@ -189,7 +189,7 @@ Use `active-color` prop to custom active color of the title and options.
 
 ### DropdownMenu Methods
 
-Use [ref](https://v3.vuejs.org/guide/component-template-refs.html) to get DropdownMenu instance and call instance methods.
+Use [ref](https://vuejs.org/guide/essentials/template-refs.html) to get DropdownMenu instance and call instance methods.
 
 | Name  | Description              | Attribute | Return value |
 | ----- | ------------------------ | --------- | ------------ |
@@ -197,7 +197,7 @@ Use [ref](https://v3.vuejs.org/guide/component-template-refs.html) to get Dropdo
 
 ### DropdownItem Methods
 
-Use [ref](https://v3.vuejs.org/guide/component-template-refs.html) to get DropdownItem instance and call instance methods.
+Use [ref](https://vuejs.org/guide/essentials/template-refs.html) to get DropdownItem instance and call instance methods.
 
 | Name   | Description    | Attribute        | Return value |
 | ------ | -------------- | ---------------- | ------------ |

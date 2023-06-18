@@ -24,7 +24,6 @@ exports[`should render demo and match snapshot 1`] = `
         >
           <!--[-->
           <label id="van-field-label"
-                 for="van-field-input"
                  style
           >
             Rate
@@ -123,7 +122,6 @@ exports[`should render demo and match snapshot 1`] = `
         >
           <!--[-->
           <label id="van-field-label"
-                 for="van-field-input"
                  style
           >
             Slider
@@ -188,7 +186,6 @@ exports[`should render demo and match snapshot 1`] = `
           >
             <!--[-->
             <label id="van-field-label"
-                   for="van-field-input"
                    style
             >
               Rate
@@ -287,7 +284,6 @@ exports[`should render demo and match snapshot 1`] = `
           >
             <!--[-->
             <label id="van-field-label"
-                   for="van-field-input"
                    style
             >
               Slider
