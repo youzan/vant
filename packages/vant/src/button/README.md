@@ -109,7 +109,7 @@ app.use(Button);
 </van-button>
 ```
 
-### Animation Button
+### Animated Button
 
 ```html
 <van-button type="danger" round>

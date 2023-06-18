@@ -33,7 +33,7 @@ const t = useTranslate({
     pure: '单色按钮',
     gradient: '渐变色按钮',
     blockElement: '块级元素',
-    aniButton: '动画按钮',
+    animatedButton: '动画按钮',
     doTask: '做任务',
     lottery: '抽大奖',
   },
@@ -65,7 +65,7 @@ const t = useTranslate({
     pure: 'Pure',
     gradient: 'Gradient',
     blockElement: 'Block Element',
-    aniButton: 'aniButton',
+    animatedButton: 'AnimatedButton',
     doTask: 'Do Task',
     lottery: 'Lottery',
   },
@@ -149,7 +149,7 @@ const t = useTranslate({
     />
   </demo-block>
 
-  <demo-block :title="t('aniButton')">
+  <demo-block :title="t('animatedButton')">
     <van-button type="danger" round>
       <van-swipe
         vertical
