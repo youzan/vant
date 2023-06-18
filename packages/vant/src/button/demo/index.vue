@@ -65,7 +65,7 @@ const t = useTranslate({
     pure: 'Pure',
     gradient: 'Gradient',
     blockElement: 'Block Element',
-    animatedButton: 'AnimatedButton',
+    animatedButton: 'Animated Button',
     doTask: 'Do Task',
     lottery: 'Lottery',
   },
