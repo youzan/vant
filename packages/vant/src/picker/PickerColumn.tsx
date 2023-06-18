@@ -264,7 +264,7 @@ export default defineComponent({
 
     watchEffect(() => {
       const index = moving
-        ? (-currentOffset.value / props.optionHeight) | 0
+        ? Math.floor(-currentOffset.value / props.optionHeight)
         : props.options.findIndex(
             (option) => option[props.fields.value] === props.value
           );
