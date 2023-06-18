@@ -109,6 +109,30 @@ app.use(Button);
 </van-button>
 ```
 
+### Animated Button
+
+```html
+<van-button type="danger" round>
+  <van-swipe
+    vertical
+    class="notice-swipe"
+    :autoplay="2000"
+    :touchable="false"
+    :show-indicators="false"
+  >
+    <van-swipe-item>Do Task</van-swipe-item>
+    <van-swipe-item>Lottery</van-swipe-item>
+  </van-swipe>
+</van-button>
+
+<style>
+  .notice-swipe {
+    height: 40px;
+    line-height: 40px;
+  }
+</style>
+```
+
 ## API
 
 ### Props
