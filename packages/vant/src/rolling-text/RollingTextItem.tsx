@@ -34,28 +34,26 @@ export default defineComponent({
         ? props.figureArr.slice().reverse()
         : props.figureArr
     );
-    const totalHeight = computed(
-      () => props.height * props.figureArr.length - props.height
-    );
-    const translateValPx = computed(() => `-${totalHeight.value}px`);
-
-    const itemStyleObj = {
+    const translatePx = computed(() => {
+      const totalHeight = props.height * (props.figureArr.length - 1);
+      return `-${totalHeight}px`;
+    });
+    const itemStyle = computed(() => ({
       lineHeight: addUnit(props.height),
-    };
-
-    const getStyle = () => ({
+    }));
+    const rootStyle = computed(() => ({
       height: addUnit(props.height),
-      '--van-translate': translateValPx.value,
+      '--van-translate': translatePx.value,
       '--van-duration': props.duration + 's',
       '--van-delay': props.delay + 's',
-    });
+    }));
 
     return () => (
-      <div class={bem([props.direction])} style={getStyle()}>
+      <div class={bem([props.direction])} style={rootStyle.value}>
         <div class={bem('box', { animate: props.isStart })}>
           {Array.isArray(newFigureArr.value) &&
             newFigureArr.value.map((figure) => (
-              <div class={bem('item')} style={itemStyleObj}>
+              <div class={bem('item')} style={itemStyle.value}>
                 {figure}
               </div>
             ))}
