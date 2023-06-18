@@ -356,4 +356,30 @@ exports[`should render demo and match snapshot 1`] = `
     </div>
   </button>
 </div>
+<div>
+  <button type="button"
+          class="van-button van-button--danger van-button--normal van-button--round"
+  >
+    <div class="van-button__content">
+      <span class="van-button__text">
+        <div class="van-swipe notice-swipe">
+          <div style="transition-duration: 0ms; transform: translateY(0px); height: 200px;"
+               class="van-swipe__track van-swipe__track--vertical"
+          >
+            <div class="van-swipe-item"
+                 style="height: 100px;"
+            >
+              Do Task
+            </div>
+            <div class="van-swipe-item"
+                 style="height: 100px;"
+            >
+              Lottery
+            </div>
+          </div>
+        </div>
+      </span>
+    </div>
+  </button>
+</div>
 `;
