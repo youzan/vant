@@ -32,9 +32,6 @@ const anchors = [
 ];
 
 const height = ref(anchors[0]);
-const onHeightChange = (h: number) => {
-  height.value = h;
-};
 </script>
 
 <template>
@@ -51,13 +48,15 @@ const onHeightChange = (h: number) => {
         </van-cell-group>
       </van-floating-panel>
     </van-tab>
+
     <van-tab :title="t('customAnchors')">
-      <van-floating-panel :anchors="anchors" @height-change="onHeightChange">
+      <van-floating-panel v-model:height="height" :anchors="anchors">
         <div style="text-align: center; padding: 15px">
           <p>{{ t('panelShowHeight') }} {{ height }} px</p>
         </div>
       </van-floating-panel>
     </van-tab>
+
     <van-tab :title="t('headDragOnly')">
       <van-floating-panel :content-draggable="false">
         <div style="text-align: center; padding: 15px">

@@ -14,6 +14,7 @@ const t = useTranslate({
     columnsType: '选项类型',
     optionsFilter: '过滤选项',
     optionsFormatter: '格式化选项',
+    overallTimeRange: '整体时间范围',
   },
   'en-US': {
     hour: 'h',
@@ -23,6 +24,7 @@ const t = useTranslate({
     columnsType: 'Columns Type',
     optionsFilter: 'Options Filter',
     optionsFormatter: 'Options Formatter',
+    overallTimeRange: 'Overall Time Range',
   },
 });
 
@@ -31,6 +33,7 @@ const secondTime = ref(['12', '00', '00']);
 const rangeTime = ref(['12', '35']);
 const filterTime = ref(['12', ' 00']);
 const formatterTime = ref(['12', '00']);
+const hourMinuteTime = ref(['12', '00', '00']);
 
 const columnsType: TimePickerColumnType[] = ['hour', 'minute', 'second'];
 
@@ -101,6 +104,16 @@ const formatter = (type: string, option: PickerOption) => {
       :max-hour="20"
       :min-minute="30"
       :max-minute="40"
+    />
+  </demo-block>
+
+  <demo-block card :title="t('overallTimeRange')">
+    <van-time-picker
+      v-model="hourMinuteTime"
+      :title="t('chooseTime')"
+      :columns-type="['hour', 'minute', 'second']"
+      min-time="09:40:10"
+      max-time="20:20:50"
     />
   </demo-block>
 
