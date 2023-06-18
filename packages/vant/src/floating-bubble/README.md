@@ -83,18 +83,19 @@ export default {
 
 | Attribute | Description | Type | Default |
 | --- | --- | --- | --- |
-| v-model:offset | Control bubble position | _OffsetType_ | `{x: -1, y: -1}` |
-| axis | Drag direction, 'xy' stands for free drag | _'x' \| 'y' \| 'xy'_ | `y` |
+| v-model:offset | Control bubble position | _OffsetType_ | `Default right-bottom coordinate` |
+| axis | Drag direction, `xy` stands for free drag, `lock` stands for disable drag | _'x' \| 'y' \| 'xy' \| 'lock'_ | `y` |
 | magnetic | Direction of automatic magnetic absorption | _'x' \| 'y'_ | - |
-| space | Minimum space between the bubble and the window, unit `px` | _number_ | `24` |
+| icon | Bubble icon | _string_ | - |
+| gap | Minimum gap between the bubble and the window, unit `px` | _number_ | `24` |
 | teleport | Specifies a target element where BackTop will be mounted | _string \| Element_ | `body` |
 
 ### Events
 
 | Event | Description | Arguments |
 | --- | --- | --- |
-| click | Triggered when a component is clicked | - |
-| offset-change | Triggered after position change | _{x: string, y: string}_ |
+| click | Triggered when a component is clicked | _MouseEvent_ |
+| offset-change | Triggered when the position changes due to user dragging | _{x: string, y: string}_ |
 
 ### Slots
 
@@ -122,4 +123,4 @@ The component provides the following CSS variables, which can be used to customi
 | --van-floating-bubble-initial-space | _24px_ | - |
 | --van-floating-bubble-background | _var(--van-primary-color)_ | - |
 | --van-floating-bubble-color | _var(--van-background-2)_ | - |
-| --van-floating-bubble-z-index | _9999_ | - |
+| --van-floating-bubble-z-index | _999_ | - |

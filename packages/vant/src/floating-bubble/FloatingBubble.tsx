@@ -13,9 +13,9 @@ import {
   type CSSProperties,
   type ExtractPropTypes,
 } from 'vue';
-import { useRect, useWindowSize, useEventListener } from '@vant/use';
+
+import { useRect, useEventListener } from '@vant/use';
 import { useTouch } from '../composables/use-touch';
-import Icon from '../icon';
 import {
   addUnit,
   closest,
@@ -23,20 +23,23 @@ import {
   makeNumberProp,
   makeStringProp,
   pick,
+  windowWidth,
+  windowHeight,
+  TAP_OFFSET,
 } from '../utils';
 
-const [name, bem] = createNamespace('floating-bubble');
+import Icon from '../icon';
 
-export type AxisType = 'x' | 'y' | 'xy';
+export type FloatingBubbleAxis = 'x' | 'y' | 'xy' | 'lock';
 
-export type MagneticType = 'x' | 'y';
+export type FloatingBubbleMagnetic = 'x' | 'y';
 
-export type OffsetType = {
+export type FloatingBubbleOffset = {
   x: number;
   y: number;
 };
 
-export type BoundaryType = {
+export type FloatingBubbleBoundary = {
   top: number;
   right: number;
   bottom: number;
@@ -44,11 +47,12 @@ export type BoundaryType = {
 };
 
 export const floatingBubbleProps = {
-  axis: makeStringProp<AxisType>('y'),
-  magnetic: String as PropType<MagneticType>,
-  space: makeNumberProp(24),
+  axis: makeStringProp<FloatingBubbleAxis>('y'),
+  magnetic: String as PropType<FloatingBubbleMagnetic>,
+  icon: String,
+  gap: makeNumberProp(24),
   offset: {
-    type: Object as unknown as PropType<OffsetType>,
+    type: Object as unknown as PropType<FloatingBubbleOffset>,
     default: () => ({ x: -1, y: -1 }),
   },
   teleport: {
@@ -59,7 +63,7 @@ export const floatingBubbleProps = {
 
 export type FloatingBubbleProps = ExtractPropTypes<typeof floatingBubbleProps>;
 
-const { width: windowWidth, height: windowHeight } = useWindowSize();
+const [name, bem] = createNamespace('floating-bubble');
 
 export default defineComponent({
   name,
@@ -78,11 +82,11 @@ export default defineComponent({
       height: 0,
     });
 
-    const boundary = computed<BoundaryType>(() => ({
-      top: props.space,
-      right: windowWidth.value - state.value.height - props.space,
-      bottom: windowHeight.value - state.value.width - props.space,
-      left: props.space,
+    const boundary = computed<FloatingBubbleBoundary>(() => ({
+      top: props.gap,
+      right: windowWidth.value - state.value.height - props.gap,
+      bottom: windowHeight.value - state.value.width - props.gap,
+      left: props.gap,
     }));
 
     const dragging = ref(false);
@@ -103,12 +107,12 @@ export default defineComponent({
       return style;
     });
 
-    const updateState = async () => {
+    const updateState = () => {
       const { width, height } = useRect(rootRef.value!);
       const { offset } = props;
       state.value = {
-        x: offset.x > -1 ? offset.x : windowWidth.value - width - props.space,
-        y: offset.y > -1 ? offset.y : windowHeight.value - height - props.space,
+        x: offset.x > -1 ? offset.x : windowWidth.value - width - props.gap,
+        y: offset.y > -1 ? offset.y : windowHeight.value - height - props.gap,
         width,
         height,
       };
@@ -117,6 +121,9 @@ export default defineComponent({
     const touch = useTouch();
     let prevX = 0;
     let prevY = 0;
+    let touchStartTime: number;
+    // Same as the default value of iOS double tap timeout
+    const TAP_TIME = 250;
 
     const onTouchStart = (e: TouchEvent) => {
       touch.start(e);
@@ -124,13 +131,18 @@ export default defineComponent({
 
       prevX = state.value.x;
       prevY = state.value.y;
+
+      touchStartTime = Date.now();
     };
 
     const onTouchMove = (e: TouchEvent) => {
       e.preventDefault();
 
-      moving = true;
       touch.move(e);
+
+      moving = true;
+
+      if (props.axis === 'lock') return;
 
       if (props.axis === 'x' || props.axis === 'xy') {
         let nextX = prevX + touch.deltaX.value;
@@ -155,40 +167,51 @@ export default defineComponent({
       target: rootRef,
     });
 
-    const onTouchEnd = async () => {
+    const onTouchEnd = () => {
       dragging.value = false;
+      const deltaTime = Date.now() - touchStartTime;
 
-      await nextTick();
-      if (props.magnetic === 'x') {
-        const nextX = closest(
-          [boundary.value.left, boundary.value.right],
-          state.value.x
-        );
-        state.value.x = nextX;
-      }
-      if (props.magnetic === 'y') {
-        const nextY = closest(
-          [boundary.value.top, boundary.value.bottom],
-          state.value.y
-        );
-        state.value.y = nextY;
-      }
-
-      if (moving) {
-        const offset = pick(state.value, ['x', 'y']);
-        emit('update:offset', offset);
-        emit('offsetChange', offset);
-      }
-
-      // compatible with desktop scenario
-      setTimeout(() => {
+      if (
+        deltaTime < TAP_TIME &&
+        touch.offsetX.value < TAP_OFFSET &&
+        touch.offsetY.value < TAP_OFFSET
+      ) {
         moving = false;
-      }, 0);
+      }
+
+      nextTick(() => {
+        if (props.magnetic === 'x') {
+          const nextX = closest(
+            [boundary.value.left, boundary.value.right],
+            state.value.x
+          );
+          state.value.x = nextX;
+        }
+        if (props.magnetic === 'y') {
+          const nextY = closest(
+            [boundary.value.top, boundary.value.bottom],
+            state.value.y
+          );
+          state.value.y = nextY;
+        }
+
+        const offset = pick(state.value, ['x', 'y']);
+        if (prevX !== offset.x || prevY !== offset.y) {
+          emit('offsetChange', offset);
+        }
+
+        // compatible with desktop scenario
+        setTimeout(() => {
+          moving = false;
+        }, 0);
+
+        touch.reset();
+      });
     };
 
-    const onClick = () => {
+    const onClick = (e: MouseEvent) => {
       if (moving) return;
-      emit('click');
+      emit('click', e);
     };
 
     onMounted(() => {
@@ -199,7 +222,7 @@ export default defineComponent({
     });
 
     watch(
-      [windowWidth, windowHeight, () => props.space, () => props.offset],
+      [windowWidth, windowHeight, () => props.gap, () => props.offset],
       () => updateState(),
       { deep: true }
     );
@@ -231,7 +254,7 @@ export default defineComponent({
           {slots.default ? (
             slots.default()
           ) : (
-            <Icon name="chat" class={bem('icon')} />
+            <Icon name={props.icon} class={bem('icon')} />
           )}
         </div>
       );

@@ -33,7 +33,7 @@ test('should render correctly when all props set', async () => {
   );
 
   await wrapper.setProps({
-    space: 50,
+    gap: 50,
   });
 
   expect(floatingBubbleEl.style.transform).toEqual(
@@ -52,6 +52,12 @@ test('should render correctly when all props set', async () => {
   expect(floatingBubbleEl.style.transform).toEqual(
     `translate3d(${400}px, ${400}px, 0)`
   );
+
+  await wrapper.setProps({
+    icon: 'chat',
+  });
+
+  expect(floatingBubbleEl.querySelector('.van-icon-chat')).not.toBeNull();
 
   restore();
 });

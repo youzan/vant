@@ -83,18 +83,19 @@ export default {
 
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
-| v-model:offset | 控制气泡位置 | _OffsetType_ | `{x: -1, y: -1}` |
-| axis | 拖拽的方向，`xy` 代表自由拖拽 | _'x' \| 'y' \| 'xy'_ | `y` |
+| v-model:offset | 控制气泡位置 | _OffsetType_ | `默认右下角坐标` |
+| axis | 拖拽的方向，`xy` 代表自由拖拽，`lock` 代表禁止拖拽 | _'x' \| 'y' \| 'xy' \| 'lock'_ | `y` |
 | magnetic | 自动磁吸的方向 | _'x' \| 'y'_ | - |
-| space | 气泡与窗口的最小间距，单位为 `px` | _number_ | `24` |
-| teleport | 指定挂载的节点，<br> 等同于 Teleport 组件的 [to 属性](https://v3.cn.vuejs.org/api/built-in-components.html#teleport) | _string \| Element_ | `body` |
+| icon | 气泡图标名称或图片链接，等同于 Icon 组件的 [name 属性](#/zh-CN/icon#props) | _string_ | - |
+| gap | 气泡与窗口的最小间距，单位为 `px` | _number_ | `24` |
+| teleport | 指定挂载的节点，等同于 Teleport 组件的 [to 属性](https://cn.vuejs.org/api/built-in-components.html#teleport) | _string \| Element_ | `body` |
 
 ### Events
 
-| 事件          | 说明           | 回调参数                 |
-| ------------- | -------------- | ------------------------ |
-| click         | 点击组件时触发 | -                        |
-| offset-change | 位置改变后触发 | _{x: string, y: string}_ |
+| 事件          | 说明                         | 回调参数                 |
+| ------------- | ---------------------------- | ------------------------ |
+| click         | 点击组件时触发               | _MouseEvent_             |
+| offset-change | 由用户拖拽导致位置改变后触发 | _{x: string, y: string}_ |
 
 ### Slots
 
@@ -122,4 +123,4 @@ import type { FloatingBubbleProps, OffsetType } from 'vant';
 | --van-floating-bubble-initial-space | _24px_                     | -    |
 | --van-floating-bubble-background    | _var(--van-primary-color)_ | -    |
 | --van-floating-bubble-color         | _var(--van-background-2)_  | -    |
-| --van-floating-bubble-z-index       | _9999_                     | -    |
+| --van-floating-bubble-z-index       | _999_                      | -    |

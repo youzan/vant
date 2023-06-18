@@ -3,7 +3,7 @@
   --van-floating-bubble-initial-space: 24px;
   --van-floating-bubble-background: var(--van-primary-color);
   --van-floating-bubble-color: var(--van-background-2);
-  --van-floating-bubble-z-index: 9999;
+  --van-floating-bubble-z-index: 999;
 }
 
 .van-floating-bubble {
@@ -24,7 +24,7 @@
   touch-action: none;
   background: var(--van-floating-bubble-background);
   color: var(--van-floating-bubble-color);
-  border-radius: 50%;
+  border-radius: var(--van-radius-max);
   z-index: var(--van-floating-bubble-z-index);
   transition: transform 0.3s;
 
