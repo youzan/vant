@@ -91,7 +91,6 @@ export default defineComponent({
 
     const dragging = ref(false);
     let initialized = false;
-    let moving = false;
 
     const rootStyle = computed(() => {
       const style: CSSProperties = {};
@@ -119,11 +118,21 @@ export default defineComponent({
     };
 
     const touch = useTouch();
+    let onlyTap = true;
     let prevX = 0;
     let prevY = 0;
     let touchStartTime: number;
     // Same as the default value of iOS double tap timeout
     const TAP_TIME = 250;
+
+    const checkTap = () => {
+      const deltaTime = Date.now() - touchStartTime;
+      return (
+        deltaTime < TAP_TIME &&
+        touch.offsetX.value < TAP_OFFSET &&
+        touch.offsetY.value < TAP_OFFSET
+      );
+    };
 
     const onTouchStart = (e: TouchEvent) => {
       touch.start(e);
@@ -139,8 +148,6 @@ export default defineComponent({
       e.preventDefault();
 
       touch.move(e);
-
-      moving = true;
 
       if (props.axis === 'lock') return;
 
@@ -158,8 +165,13 @@ export default defineComponent({
         state.value.y = nextY;
       }
 
-      const offset = pick(state.value, ['x', 'y']);
-      emit('update:offset', offset);
+      if (checkTap()) {
+        onlyTap = true;
+      } else {
+        onlyTap = false;
+        const offset = pick(state.value, ['x', 'y']);
+        emit('update:offset', offset);
+      }
     };
 
     // useEventListener will set passive to `false` to eliminate the warning of Chrome
@@ -169,15 +181,6 @@ export default defineComponent({
 
     const onTouchEnd = () => {
       dragging.value = false;
-      const deltaTime = Date.now() - touchStartTime;
-
-      if (
-        deltaTime < TAP_TIME &&
-        touch.offsetX.value < TAP_OFFSET &&
-        touch.offsetY.value < TAP_OFFSET
-      ) {
-        moving = false;
-      }
 
       nextTick(() => {
         if (props.magnetic === 'x') {
@@ -195,14 +198,17 @@ export default defineComponent({
           state.value.y = nextY;
         }
 
-        const offset = pick(state.value, ['x', 'y']);
-        if (prevX !== offset.x || prevY !== offset.y) {
-          emit('offsetChange', offset);
+        if (!onlyTap) {
+          const offset = pick(state.value, ['x', 'y']);
+          if (prevX !== offset.x || prevY !== offset.y) {
+            emit('update:offset', offset);
+            emit('offsetChange', offset);
+          }
         }
 
         // compatible with desktop scenario
         setTimeout(() => {
-          moving = false;
+          onlyTap = true;
         }, 0);
 
         touch.reset();
@@ -210,8 +216,7 @@ export default defineComponent({
     };
 
     const onClick = (e: MouseEvent) => {
-      if (moving) return;
-      emit('click', e);
+      if (onlyTap) emit('click', e);
     };
 
     onMounted(() => {
