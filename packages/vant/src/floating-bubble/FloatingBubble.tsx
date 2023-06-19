@@ -151,24 +151,25 @@ export default defineComponent({
 
       if (props.axis === 'lock') return;
 
-      if (props.axis === 'x' || props.axis === 'xy') {
-        let nextX = prevX + touch.deltaX.value;
-        if (nextX < boundary.value.left) nextX = boundary.value.left;
-        if (nextX > boundary.value.right) nextX = boundary.value.right;
-        state.value.x = nextX;
-      }
-
-      if (props.axis === 'y' || props.axis === 'xy') {
-        let nextY = prevY + touch.deltaY.value;
-        if (nextY < boundary.value.top) nextY = boundary.value.top;
-        if (nextY > boundary.value.bottom) nextY = boundary.value.bottom;
-        state.value.y = nextY;
-      }
-
       if (checkTap()) {
         onlyTap = true;
       } else {
         onlyTap = false;
+
+        if (props.axis === 'x' || props.axis === 'xy') {
+          let nextX = prevX + touch.deltaX.value;
+          if (nextX < boundary.value.left) nextX = boundary.value.left;
+          if (nextX > boundary.value.right) nextX = boundary.value.right;
+          state.value.x = nextX;
+        }
+
+        if (props.axis === 'y' || props.axis === 'xy') {
+          let nextY = prevY + touch.deltaY.value;
+          if (nextY < boundary.value.top) nextY = boundary.value.top;
+          if (nextY > boundary.value.bottom) nextY = boundary.value.bottom;
+          state.value.y = nextY;
+        }
+
         const offset = pick(state.value, ['x', 'y']);
         emit('update:offset', offset);
       }
@@ -200,8 +201,8 @@ export default defineComponent({
 
         if (!onlyTap) {
           const offset = pick(state.value, ['x', 'y']);
+          emit('update:offset', offset);
           if (prevX !== offset.x || prevY !== offset.y) {
-            emit('update:offset', offset);
             emit('offsetChange', offset);
           }
         }
