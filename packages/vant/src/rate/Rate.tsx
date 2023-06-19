@@ -10,7 +10,6 @@ import {
   makeNumberProp,
   makeNumericProp,
   createNamespace,
-  TAP_OFFSET,
 } from '../utils';
 
 // Composables
@@ -114,7 +113,6 @@ export default defineComponent({
     let groupRefRect: DOMRect;
     let minRectTop = Number.MAX_SAFE_INTEGER;
     let maxRectTop = Number.MIN_SAFE_INTEGER;
-    let onlyTap = false;
 
     const updateRanges = () => {
       groupRefRect = useRect(groupRef);
@@ -185,7 +183,6 @@ export default defineComponent({
       }
 
       touch.start(event);
-      onlyTap = true;
       updateRanges();
     };
 
@@ -196,17 +193,10 @@ export default defineComponent({
 
       touch.move(event);
 
-      if (touch.isHorizontal()) {
+      if (touch.isHorizontal() && !touch.onlyTap.value) {
         const { clientX, clientY } = event.touches[0];
         preventDefault(event);
         select(getScoreByPosition(clientX, clientY));
-      }
-
-      if (
-        onlyTap &&
-        (touch.offsetX.value > TAP_OFFSET || touch.offsetY.value > TAP_OFFSET)
-      ) {
-        onlyTap = false;
       }
     };
 
@@ -241,7 +231,13 @@ export default defineComponent({
         let value = allowHalf
           ? getScoreByPosition(event.clientX, event.clientY)
           : score;
-        if (props.clearable && onlyTap && value === props.modelValue) value = 0;
+        if (
+          props.clearable &&
+          touch.onlyTap.value &&
+          value === props.modelValue
+        ) {
+          value = 0;
+        }
         select(value);
       };
 
