@@ -193,7 +193,7 @@ export default defineComponent({
 
       touch.move(event);
 
-      if (touch.isHorizontal() && !touch.onlyTap.value) {
+      if (touch.isHorizontal() && !touch.isTap.value) {
         const { clientX, clientY } = event.touches[0];
         preventDefault(event);
         select(getScoreByPosition(clientX, clientY));
@@ -233,7 +233,7 @@ export default defineComponent({
           : score;
         if (
           props.clearable &&
-          touch.onlyTap.value &&
+          touch.isTap.value &&
           value === props.modelValue
         ) {
           value = 0;

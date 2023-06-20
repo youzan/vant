@@ -21,7 +21,7 @@ export function useTouch() {
   const offsetX = ref(0);
   const offsetY = ref(0);
   const direction = ref<Direction>('');
-  const onlyTap = ref(true);
+  const isTap = ref(true);
 
   const isVertical = () => direction.value === 'vertical';
   const isHorizontal = () => direction.value === 'horizontal';
@@ -32,7 +32,7 @@ export function useTouch() {
     offsetX.value = 0;
     offsetY.value = 0;
     direction.value = '';
-    onlyTap.value = true;
+    isTap.value = true;
   };
 
   const start = ((event: TouchEvent) => {
@@ -60,10 +60,10 @@ export function useTouch() {
     }
 
     if (
-      onlyTap.value &&
+      isTap.value &&
       (offsetX.value > TAP_OFFSET || offsetY.value > TAP_OFFSET)
     ) {
-      onlyTap.value = false;
+      isTap.value = false;
     }
   }) as EventListener;
 
@@ -80,6 +80,6 @@ export function useTouch() {
     direction,
     isVertical,
     isHorizontal,
-    onlyTap,
+    isTap,
   };
 }
