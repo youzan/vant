@@ -118,11 +118,11 @@ export default defineComponent({
     };
 
     const touch = useTouch();
-    let onlyTap = true;
+    let isTap = true;
     let prevX = 0;
     let prevY = 0;
     let touchStartTime: number;
-    // Same as the default value of iOS double tap timeout
+    // Tap Press Max Time
     const TAP_TIME = 250;
 
     const checkTap = () => {
@@ -152,9 +152,9 @@ export default defineComponent({
       if (props.axis === 'lock') return;
 
       if (checkTap()) {
-        onlyTap = true;
+        isTap = true;
       } else {
-        onlyTap = false;
+        isTap = false;
 
         if (props.axis === 'x' || props.axis === 'xy') {
           let nextX = prevX + touch.deltaX.value;
@@ -199,7 +199,7 @@ export default defineComponent({
           state.value.y = nextY;
         }
 
-        if (!onlyTap) {
+        if (!isTap) {
           const offset = pick(state.value, ['x', 'y']);
           emit('update:offset', offset);
           if (prevX !== offset.x || prevY !== offset.y) {
@@ -209,7 +209,7 @@ export default defineComponent({
 
         // compatible with desktop scenario
         setTimeout(() => {
-          onlyTap = true;
+          isTap = true;
         }, 0);
 
         touch.reset();
@@ -217,7 +217,7 @@ export default defineComponent({
     };
 
     const onClick = (e: MouseEvent) => {
-      if (onlyTap) emit('click', e);
+      if (isTap) emit('click', e);
     };
 
     onMounted(() => {

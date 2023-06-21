@@ -108,7 +108,13 @@ export default {
 The component exports the following type definitions:
 
 ```ts
-import type { FloatingBubbleProps, OffsetType } from 'vant';
+export type {
+  FloatingBubbleProps,
+  FloatingBubbleAxis,
+  FloatingBubbleMagnetic,
+  FloatingBubbleOffset,
+  FloatingBubbleBoundary,
+} from 'vant';
 ```
 
 ## Theming
