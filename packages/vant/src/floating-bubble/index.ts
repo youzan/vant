@@ -10,7 +10,6 @@ export type {
   FloatingBubbleAxis,
   FloatingBubbleMagnetic,
   FloatingBubbleOffset,
-  FloatingBubbleBoundary,
 } from './FloatingBubble';
 
 declare module 'vue' {
