@@ -256,6 +256,10 @@ location.href = location.href.replace('youzan.github.io', 'vant-ui.github.io');
                 title: 'FloatingPanel 浮动面板',
               },
               {
+                path: 'floating-bubble',
+                title: 'FloatingBubble 浮动气泡',
+              },
+              {
                 path: 'loading',
                 title: 'Loading 加载',
               },
@@ -714,6 +718,10 @@ location.href = location.href.replace('youzan.github.io', 'vant-ui.github.io');
               {
                 path: 'floating-panel',
                 title: 'FloatingPanel',
+              },
+              {
+                path: 'floating-bubble',
+                title: 'FloatingBubble',
               },
               {
                 path: 'loading',
