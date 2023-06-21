@@ -25,7 +25,6 @@ import {
   pick,
   windowWidth,
   windowHeight,
-  TAP_OFFSET,
 } from '../utils';
 
 import Icon from '../icon';
@@ -118,21 +117,8 @@ export default defineComponent({
     };
 
     const touch = useTouch();
-    let isTap = true;
     let prevX = 0;
     let prevY = 0;
-    let touchStartTime: number;
-    // Tap Press Max Time
-    const TAP_TIME = 250;
-
-    const checkTap = () => {
-      const deltaTime = Date.now() - touchStartTime;
-      return (
-        deltaTime < TAP_TIME &&
-        touch.offsetX.value < TAP_OFFSET &&
-        touch.offsetY.value < TAP_OFFSET
-      );
-    };
 
     const onTouchStart = (e: TouchEvent) => {
       touch.start(e);
@@ -140,8 +126,6 @@ export default defineComponent({
 
       prevX = state.value.x;
       prevY = state.value.y;
-
-      touchStartTime = Date.now();
     };
 
     const onTouchMove = (e: TouchEvent) => {
@@ -151,11 +135,7 @@ export default defineComponent({
 
       if (props.axis === 'lock') return;
 
-      if (checkTap()) {
-        isTap = true;
-      } else {
-        isTap = false;
-
+      if (!touch.isTap.value) {
         if (props.axis === 'x' || props.axis === 'xy') {
           let nextX = prevX + touch.deltaX.value;
           if (nextX < boundary.value.left) nextX = boundary.value.left;
@@ -199,25 +179,18 @@ export default defineComponent({
           state.value.y = nextY;
         }
 
-        if (!isTap) {
+        if (!touch.isTap.value) {
           const offset = pick(state.value, ['x', 'y']);
           emit('update:offset', offset);
           if (prevX !== offset.x || prevY !== offset.y) {
             emit('offsetChange', offset);
           }
         }
-
-        // compatible with desktop scenario
-        setTimeout(() => {
-          isTap = true;
-        }, 0);
-
-        touch.reset();
       });
     };
 
     const onClick = (e: MouseEvent) => {
-      if (isTap) emit('click', e);
+      if (touch.isTap.value) emit('click', e);
     };
 
     onMounted(() => {
