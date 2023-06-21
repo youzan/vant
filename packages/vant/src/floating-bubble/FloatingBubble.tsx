@@ -38,7 +38,7 @@ export type FloatingBubbleOffset = {
   y: number;
 };
 
-export type FloatingBubbleBoundary = {
+type FloatingBubbleBoundary = {
   top: number;
   right: number;
   bottom: number;

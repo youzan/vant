@@ -113,7 +113,6 @@ export type {
   FloatingBubbleAxis,
   FloatingBubbleMagnetic,
   FloatingBubbleOffset,
-  FloatingBubbleBoundary,
 } from 'vant';
 ```
 
