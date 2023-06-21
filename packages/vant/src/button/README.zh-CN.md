@@ -131,6 +131,32 @@ app.use(Button);
 </van-button>
 ```
 
+### 动画按钮
+
+搭配 Button 和 Swipe 组件，可以实现垂直滚动的动画按钮效果。
+
+```html
+<van-button type="danger" round>
+  <van-swipe
+    vertical
+    class="notice-swipe"
+    :autoplay="2000"
+    :touchable="false"
+    :show-indicators="false"
+  >
+    <van-swipe-item>做任务</van-swipe-item>
+    <van-swipe-item>抽大奖</van-swipe-item>
+  </van-swipe>
+</van-button>
+
+<style>
+  .notice-swipe {
+    height: 40px;
+    line-height: 40px;
+  }
+</style>
+```
+
 ## API
 
 ### Props

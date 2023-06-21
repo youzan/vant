@@ -1,4 +1,5 @@
 import { ref } from 'vue';
+import { TAP_OFFSET } from '../utils';
 
 type Direction = '' | 'vertical' | 'horizontal';
 
@@ -20,6 +21,7 @@ export function useTouch() {
   const offsetX = ref(0);
   const offsetY = ref(0);
   const direction = ref<Direction>('');
+  const isTap = ref(true);
 
   const isVertical = () => direction.value === 'vertical';
   const isHorizontal = () => direction.value === 'horizontal';
@@ -30,6 +32,7 @@ export function useTouch() {
     offsetX.value = 0;
     offsetY.value = 0;
     direction.value = '';
+    isTap.value = true;
   };
 
   const start = ((event: TouchEvent) => {
@@ -55,6 +58,13 @@ export function useTouch() {
     ) {
       direction.value = getDirection(offsetX.value, offsetY.value);
     }
+
+    if (
+      isTap.value &&
+      (offsetX.value > TAP_OFFSET || offsetY.value > TAP_OFFSET)
+    ) {
+      isTap.value = false;
+    }
   }) as EventListener;
 
   return {
@@ -70,5 +80,6 @@ export function useTouch() {
     direction,
     isVertical,
     isHorizontal,
+    isTap,
   };
 }
