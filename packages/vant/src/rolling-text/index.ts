@@ -13,6 +13,6 @@ export type {
 
 declare module 'vue' {
   export interface GlobalComponents {
-    Van_RollingText: typeof _RollingText;
+    VanRollingText: typeof _RollingText;
   }
 }
