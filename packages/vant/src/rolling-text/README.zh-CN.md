@@ -61,11 +61,11 @@ app.use(RollingText);
 
 ### 翻转非数字内容
 
-可以通过 `text-array` 属性设置非数字内容的翻转。
+你可以使用 `text-list` 属性设置非数字内容的翻转。组件会从数组的第一项翻转到最后一项，请确保数组长度大于等于 2，以及每一项的长度一致。
 
 ```html
 <van-rolling-text
-  :text-array="textArray"
+  :text-list="textList"
   :duration="1"
   :auto-start="false"
   stop-order="rtl"
@@ -78,7 +78,7 @@ import { ref } from 'vue';
 
 export default {
   setup() {
-    const textArray = ref([
+    const textList = ref([
       'aaaaa',
       'bbbbb',
       'ccccc',
@@ -87,7 +87,7 @@ export default {
       'fffff',
       'ggggg',
     ]);
-    return { textArray };
+    return { textList };
   },
 };
 ```
@@ -102,18 +102,18 @@ export default {
   :duration="2"
   stop-order="rtl"
   direction="up"
-  :height="70"
+  :height="54"
 />
 ```
 
 ```css
 .my-rolling-text {
-  --van-rolling-text-background: deepskyblue;
+  --van-rolling-text-background: #1989fa;
   --van-rolling-text-color: white;
-  --van-rolling-text-font-size: 40px;
+  --van-rolling-text-font-size: 24px;
   --van-rolling-text-gap: 6px;
   --van-rolling-text-item-border-radius: 5px;
-  --van-rolling-text-item-width: 50px;
+  --van-rolling-text-item-width: 40px;
 }
 ```
 
@@ -162,7 +162,7 @@ export default {
 | --- | --- | --- | --- |
 | start-num | 开始数值 | _number_ | `0` |
 | target-num | 目标数值 | _number_ | - |
-| text-array | 内容数组，翻转非数字内容，需要传此参数 | _Array_ | `[]` |
+| text-list | 内容数组，翻转非数字内容，需要传此参数 | _Array_ | `[]` |
 | duration | 动画时长，单位为秒 | _number_ | `2` |
 | direction | 文本翻滚方向，值为 `down` 和 `up` | _string_ | `down` |
 | auto-start | 是否自动开始动画 | _boolean_ | `true` |

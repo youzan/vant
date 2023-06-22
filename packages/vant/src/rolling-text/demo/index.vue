@@ -39,7 +39,7 @@ const isStart3 = ref(false);
 const isStart4 = ref(false);
 
 const isStartNoNumberType = ref(false);
-const textArray = ref([
+const textList = ref([
   'aaaaa',
   'bbbbb',
   'ccccc',
@@ -114,7 +114,7 @@ const reset = () => {
   <demo-block :title="t('noNumberType')">
     <div>
       <VanRollingText
-        :text-array="textArray"
+        :text-list="textList"
         :duration="1"
         :auto-start="isStartNoNumberType"
         stop-order="rtl"
@@ -138,7 +138,7 @@ const reset = () => {
         :auto-start="isStart4"
         stop-order="rtl"
         direction="up"
-        :height="70"
+        :height="54"
       />
     </div>
   </demo-block>
@@ -154,9 +154,9 @@ const reset = () => {
         :auto-start="false"
         stop-order="rtl"
         direction="up"
-        :height="70"
+        :height="54"
       />
-      <van-grid clickable :column-num="3" style="margin-top: 10px">
+      <van-grid clickable :column-num="2" style="margin-top: 10px">
         <van-grid-item icon="play-circle-o" :text="t('start')" @click="start" />
         <van-grid-item icon="replay" :text="t('reset')" @click="reset" />
       </van-grid>
@@ -178,11 +178,11 @@ const reset = () => {
 }
 
 .my-rolling-text {
-  --van-rolling-text-background: deepskyblue;
+  --van-rolling-text-background: #1989fa;
   --van-rolling-text-color: white;
-  --van-rolling-text-font-size: 40px;
+  --van-rolling-text-font-size: 24px;
   --van-rolling-text-gap: 6px;
   --van-rolling-text-item-border-radius: 5px;
-  --van-rolling-text-item-width: 50px;
+  --van-rolling-text-item-width: 40px;
 }
 </style>
