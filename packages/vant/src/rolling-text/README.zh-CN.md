@@ -162,7 +162,7 @@ export default {
 | --- | --- | --- | --- |
 | start-num | 开始数值 | _number_ | `0` |
 | target-num | 目标数值 | _number_ | - |
-| text-list | 内容数组，翻转非数字内容，需要传此参数 | _Array_ | `[]` |
+| text-list | 内容数组，用于翻转非数字内容 | _string[]_ | `[]` |
 | duration | 动画时长，单位为秒 | _number_ | `2` |
 | direction | 文本翻滚方向，值为 `down` 和 `up` | _string_ | `down` |
 | auto-start | 是否自动开始动画 | _boolean_ | `true` |

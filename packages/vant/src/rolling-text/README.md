@@ -162,7 +162,7 @@ export default {
 | --- | --- | --- | --- |
 | start-num | Start number | _number_ | `0` |
 | target-num | Target number | _number_ | - |
-| text-list | Text array | _Array_ | `[]` |
+| text-list | Text array | _string[]_ | `[]` |
 | duration | Duration of the animation, in seconds | _number_ | `2` |
 | direction | Rolling direction of the text, with `down` and `up` as the values | _string_ | `down` |
 | auto-start | Whether to start the animation | _boolean_ | `true` |
