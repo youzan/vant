@@ -14,6 +14,7 @@ import {
   makeNumberProp,
   makeStringProp,
   truthProp,
+  padZero,
 } from '../utils';
 
 // Composables
@@ -56,8 +57,12 @@ export default defineComponent({
       () => Array.isArray(props.textList) && props.textList.length
     );
 
+    const itemLength = computed(() => {
+      if (isCustomType.value) return props.textList[0].length;
+      return `${Math.max(props.startNum, props.targetNum!)}`.length;
+    });
+
     const getTextArrByIdx = (idx: number) => {
-      if (!isCustomType.value) return [];
       const result = [];
       for (let i = 0; i < props.textList.length; i++) {
         result.push(props.textList[i][idx]);
@@ -66,28 +71,19 @@ export default defineComponent({
     };
 
     const targetNumArr = computed(() => {
-      if (isCustomType.value)
-        return props.textList[props.textList.length - 1].split('');
-      return `${props.targetNum}`.split('');
+      if (isCustomType.value) return new Array(itemLength.value).fill('');
+      return padZero(props.targetNum!, itemLength.value).split('');
     });
 
-    const startNumArr = () => {
-      const arr = `${props.startNum}`.split('');
-      while (arr.length < targetNumArr.value.length) {
-        arr.unshift('0');
-      }
-      return arr;
-    };
-
-    const getTwoFigure = (i: number) => [
-      startNumArr()[i],
-      targetNumArr.value[i],
-    ];
+    const startNumArr = computed(() =>
+      padZero(props.startNum, itemLength.value).split('')
+    );
 
     const getFigureArr = (i: number) => {
-      const [start, target] = getTwoFigure(i);
+      const start = +startNumArr.value[i];
+      const target = +targetNumArr.value[i];
       const result = [];
-      for (let i = +start; i <= 9; i++) {
+      for (let i = start; i <= 9; i++) {
         result.push(i);
       }
       for (let i = 0; i <= CIRCLE_NUM; i++) {
@@ -95,7 +91,7 @@ export default defineComponent({
           result.push(j);
         }
       }
-      for (let i = 0; i <= +target; i++) {
+      for (let i = 0; i <= target; i++) {
         result.push(i);
       }
       return result;
@@ -136,7 +132,7 @@ export default defineComponent({
 
     return () => (
       <div class={bem()}>
-        {targetNumArr.value.map((figure, i) => (
+        {targetNumArr.value.map((_, i) => (
           <RollingTextItem
             figureArr={
               isCustomType.value ? getTextArrByIdx(i) : getFigureArr(i)
@@ -145,7 +141,7 @@ export default defineComponent({
             direction={props.direction}
             isStart={rolling.value}
             height={props.height}
-            delay={getDelay(i, targetNumArr.value.length)}
+            delay={getDelay(i, itemLength.value)}
           />
         ))}
       </div>
