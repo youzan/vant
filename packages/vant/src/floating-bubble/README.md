@@ -122,10 +122,11 @@ export type {
 
 The component provides the following CSS variables, which can be used to customize styles. Please refer to [ConfigProvider component](#/en-US/config-provider).
 
-| Name | Default Value | Description |
-| --- | --- | --- |
-| --van-floating-bubble-size | _48px_ | - |
-| --van-floating-bubble-initial-space | _24px_ | - |
-| --van-floating-bubble-background | _var(--van-primary-color)_ | - |
-| --van-floating-bubble-color | _var(--van-background-2)_ | - |
-| --van-floating-bubble-z-index | _999_ | - |
+| Name                              | Default Value              | Description |
+| --------------------------------- | -------------------------- | ----------- |
+| --van-floating-bubble-size        | _48px_                     | -           |
+| --van-floating-bubble-initial-gap | _24px_                     | -           |
+| --van-floating-bubble-icon-size   | _28px_                     | -           |
+| --van-floating-bubble-background  | _var(--van-primary-color)_ | -           |
+| --van-floating-bubble-color       | _var(--van-background-2)_  | -           |
+| --van-floating-bubble-z-index     | _999_                      | -           |
