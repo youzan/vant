@@ -34,7 +34,7 @@ const [name, bem] = createNamespace('rolling-text');
 export const rollingTextProps = {
   startNum: makeNumberProp(0),
   targetNum: Number,
-  textArray: makeArrayProp<string>(),
+  textList: makeArrayProp<string>(),
   duration: makeNumberProp(2),
   autoStart: truthProp,
   direction: makeStringProp<RollingTextDirection>('down'),
@@ -53,21 +53,21 @@ export default defineComponent({
 
   setup(props) {
     const isCustomType = computed(
-      () => Array.isArray(props.textArray) && props.textArray.length
+      () => Array.isArray(props.textList) && props.textList.length
     );
 
     const getTextArrByIdx = (idx: number) => {
       if (!isCustomType.value) return [];
       const result = [];
-      for (let i = 0; i < props.textArray.length; i++) {
-        result.push(props.textArray[i][idx]);
+      for (let i = 0; i < props.textList.length; i++) {
+        result.push(props.textList[i][idx]);
       }
       return result;
     };
 
     const targetNumArr = computed(() => {
       if (isCustomType.value)
-        return props.textArray[props.textArray.length - 1].split('');
+        return props.textList[props.textList.length - 1].split('');
       return `${props.targetNum}`.split('');
     });
 

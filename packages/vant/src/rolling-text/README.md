@@ -61,11 +61,11 @@ You can set the order of stopping the animation of each digit through the `stop-
 
 ### Roll Non-numeric Text
 
-You can set non-numeric content flip using the `text-array` props.
+You can reverse non-numeric content by using the `text-list` prop. The component will rolling from the first item to the last item in the array. Please make sure that the array length is greater than or equal to 2, and that each item has the same length.
 
 ```html
 <van-rolling-text
-  :text-array="textArray"
+  :text-list="textList"
   :duration="1"
   :auto-start="false"
   stop-order="rtl"
@@ -78,7 +78,7 @@ import { ref } from 'vue';
 
 export default {
   setup() {
-    const textArray = ref([
+    const textList = ref([
       'aaaaa',
       'bbbbb',
       'ccccc',
@@ -87,7 +87,7 @@ export default {
       'fffff',
       'ggggg',
     ]);
-    return { textArray };
+    return { textList };
   },
 };
 ```
@@ -102,18 +102,18 @@ export default {
   :duration="2"
   stop-order="rtl"
   direction="up"
-  :height="70"
+  :height="54"
 />
 ```
 
 ```css
 .my-rolling-text {
-  --van-rolling-text-background: deepskyblue;
+  --van-rolling-text-background: #1989fa;
   --van-rolling-text-color: white;
-  --van-rolling-text-font-size: 40px;
+  --van-rolling-text-font-size: 24px;
   --van-rolling-text-gap: 6px;
   --van-rolling-text-item-border-radius: 5px;
-  --van-rolling-text-item-width: 50px;
+  --van-rolling-text-item-width: 40px;
 }
 ```
 
@@ -162,7 +162,7 @@ export default {
 | --- | --- | --- | --- |
 | start-num | Start number | _number_ | `0` |
 | target-num | Target number | _number_ | - |
-| text-array | Text array | _Array_ | `[]` |
+| text-list | Text array | _string[]_ | `[]` |
 | duration | Duration of the animation, in seconds | _number_ | `2` |
 | direction | Rolling direction of the text, with `down` and `up` as the values | _string_ | `down` |
 | auto-start | Whether to start the animation | _boolean_ | `true` |
