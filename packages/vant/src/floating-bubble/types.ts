@@ -1,8 +1,8 @@
 export type FloatingBubbleThemeVars = {
-  FloatingBubbleSize?: string;
-  FloatingBubbleInitialGap?: string;
-  FloatingBubbleIconSize?: string;
-  FloatingBubbleBackground: string;
-  FloatingBubbleColor?: string;
-  FloatingBubbleZIndex?: number | string;
+  floatingBubbleSize?: string;
+  floatingBubbleInitialGap?: string;
+  floatingBubbleIconSize?: string;
+  floatingBubbleBackground: string;
+  floatingBubbleColor?: string;
+  floatingBubbleZIndex?: number | string;
 };
