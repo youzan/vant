@@ -72,4 +72,5 @@ export type ConfigProviderThemeVars =
     import('../tag').TagThemeVars &
     import('../toast').ToastThemeVars &
     import('../tree-select').TreeSelectThemeVars &
-    import('../uploader').UploaderThemeVars;
+    import('../uploader').UploaderThemeVars &
+    import('../watermark').WatermarkThemeVars;
