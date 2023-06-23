@@ -6,7 +6,7 @@ export default Barrage;
 
 export { barrageProps } from './Barrage';
 export type { BarrageProps, BarrageItem } from './Barrage';
-export type { BarrageInstance } from './types';
+export type { BarrageInstance, BarrageThemeVars } from './types';
 
 declare module 'vue' {
   export interface GlobalComponents {

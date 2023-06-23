@@ -10,3 +10,10 @@ export type BarrageInstance = ComponentPublicInstance<
   BarrageProps,
   BarrageExpose
 >;
+
+export type BarrageThemeVars = {
+  barrageFontSize: string;
+  barrageSpace: string;
+  barrageFont: string;
+  barrageColor: string;
+};

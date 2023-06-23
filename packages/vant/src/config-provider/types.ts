@@ -6,6 +6,7 @@ export type ConfigProviderThemeVars =
     import('../address-edit').AddressEditThemeVars &
     import('../address-list').AddressListThemeVars &
     import('../badge').BadgeThemeVars &
+    import('../barrage').BarrageThemeVars &
     import('../button').ButtonThemeVars &
     import('../calendar').CalendarThemeVars &
     import('../card').CardThemeVars &
