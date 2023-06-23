@@ -54,6 +54,7 @@ export type ConfigProviderThemeVars =
     import('../share-sheet').ShareSheetThemeVars &
     import('../sidebar').SidebarThemeVars &
     import('../sidebar-item').SidebarItemThemeVars &
+    import('../signature').SignatureThemeVars &
     import('../skeleton').SkeletonThemeVars &
     import('../slider').SliderThemeVars &
     import('../step').StepThemeVars &
