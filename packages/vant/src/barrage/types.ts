@@ -12,8 +12,8 @@ export type BarrageInstance = ComponentPublicInstance<
 >;
 
 export type BarrageThemeVars = {
-  barrageFontSize: string;
-  barrageSpace: string;
-  barrageFont: string;
-  barrageColor: string;
+  barrageFontSize?: string;
+  barrageSpace?: string;
+  barrageFont?: string;
+  barrageColor?: string;
 };
