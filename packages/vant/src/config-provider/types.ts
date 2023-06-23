@@ -30,6 +30,7 @@ export type ConfigProviderThemeVars =
     import('../empty').EmptyThemeVars &
     import('../field').FieldThemeVars &
     import('../floating-bubble').FloatingBubbleThemeVars &
+    import('../floating-panel').FloatingPanelThemeVars &
     import('../grid-item').GridItemThemeVars &
     import('../image').ImageThemeVars &
     import('../image-preview').ImagePreviewThemeVars &
