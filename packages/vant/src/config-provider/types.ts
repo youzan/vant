@@ -28,6 +28,7 @@ export type ConfigProviderThemeVars =
     import('../dropdown-menu').DropdownMenuThemeVars &
     import('../empty').EmptyThemeVars &
     import('../field').FieldThemeVars &
+    import('../floating-bubble').FloatingBubbleThemeVars &
     import('../grid-item').GridItemThemeVars &
     import('../image').ImageThemeVars &
     import('../image-preview').ImagePreviewThemeVars &

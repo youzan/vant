@@ -11,6 +11,7 @@ export type {
   FloatingBubbleMagnetic,
   FloatingBubbleOffset,
 } from './FloatingBubble';
+export type { FloatingBubbleThemeVars } from './types';
 
 declare module 'vue' {
   export interface GlobalComponents {
