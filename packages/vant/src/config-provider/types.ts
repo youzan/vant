@@ -50,6 +50,7 @@ export type ConfigProviderThemeVars =
     import('../pull-refresh').PullRefreshThemeVars &
     import('../radio').RadioThemeVars &
     import('../rate').RateThemeVars &
+    import('../rolling-text').RollingTextThemeVars &
     import('../search').SearchThemeVars &
     import('../share-sheet').ShareSheetThemeVars &
     import('../sidebar').SidebarThemeVars &

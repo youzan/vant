@@ -13,3 +13,12 @@ export type RollingTextInstance = ComponentPublicInstance<
   RollingTextProps,
   RollingTextExpose
 >;
+
+export type RollingTextThemeVars = {
+  rollingTextBackground?: string;
+  rollingTextColor?: string;
+  rollingTextFontSize?: string;
+  rollingTextGap?: string;
+  rollingTextItemWidth?: string;
+  rollingTextItemBorderRadius?: string;
+};
