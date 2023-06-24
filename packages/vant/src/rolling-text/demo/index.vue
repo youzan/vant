@@ -148,24 +148,22 @@ const reset = () => {
 </template>
 
 <style lang="less">
-.van-button {
-  margin-left: var(--van-padding-md);
-}
+.demo-rolling-text {
+  .van-button {
+    margin-left: var(--van-padding-md);
+  }
 
-.van-rolling-text {
-  margin-left: var(--van-padding-md);
-}
+  .van-rolling-text {
+    margin-left: var(--van-padding-md);
+  }
 
-.van-grid {
-  margin-left: var(--van-padding-md);
-}
-
-.my-rolling-text {
-  --van-rolling-text-background: #1989fa;
-  --van-rolling-text-color: white;
-  --van-rolling-text-font-size: 24px;
-  --van-rolling-text-gap: 6px;
-  --van-rolling-text-item-border-radius: 5px;
-  --van-rolling-text-item-width: 40px;
+  .my-rolling-text {
+    --van-rolling-text-background: #1989fa;
+    --van-rolling-text-color: white;
+    --van-rolling-text-font-size: 24px;
+    --van-rolling-text-gap: 6px;
+    --van-rolling-text-item-border-radius: 5px;
+    --van-rolling-text-item-width: 40px;
+  }
 }
 </style>
