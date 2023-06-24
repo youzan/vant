@@ -19,6 +19,28 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 
 ## Details
 
+### [v4.6.0](https://github.com/vant-ui/vant/compare/v4.5.0...v4.6.0)
+
+`2023-06-24`
+
+**New Component**
+
+- add new FloatingBubble component, contributed by [@zhousg](https://github.com/zhousg) ❤️ [#11880](https://github.com/vant-ui/vant/issues/11880)
+- add new RollingText component, contributed by [@cunzaizhuyi](https://github.com/cunzaizhuyi) ❤️ [#11911](https://github.com/vant-ui/vant/issues/11911)
+
+**Feature**
+
+- Rate: add clearable prop [#11969](https://github.com/vant-ui/vant/issues/11969)
+
+**Bug Fixes**
+
+- DropdownMenu: fix missing exported type [#11979](https://github.com/vant-ui/vant/issues/11979)
+- Field: should not set `for` attr to label when using input slot [#11966](https://github.com/vant-ui/vant/issues/11966)
+- FloatingPanel: fix missing floatingPanelProps export [#11978](https://github.com/vant-ui/vant/issues/11978)
+- FloatingPanel: remove passive event warning [#11992](https://github.com/vant-ui/vant/issues/11992)
+- Picker: optimize the animation effect of sliding multiple columns simultaneously [#11945](https://github.com/vant-ui/vant/issues/11945)
+- Rate: should change value when half icon is touchmoved [#12002](https://github.com/vant-ui/vant/issues/12002)
+
 ### [v4.5.0](https://github.com/vant-ui/vant/compare/v4.4.1...v4.5.0)
 
 `2023-06-11`

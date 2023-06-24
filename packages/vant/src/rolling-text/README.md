@@ -2,7 +2,7 @@
 
 ### Introduction
 
-Rolling text animation, which can roll numbers and other types of text.
+Rolling text animation, which can roll numbers and other types of text. Please upgrade `vant` to >= v4.6.0 before using this component.
 
 ### Install
 

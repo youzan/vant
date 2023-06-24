@@ -19,6 +19,28 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 
 ## 更新内容
 
+### [v4.6.0](https://github.com/vant-ui/vant/compare/v4.5.0...v4.6.0)
+
+`2023-06-24`
+
+**New Component**
+
+- 新增 FloatingBubble 组件，由 [@zhousg](https://github.com/zhousg) 贡献 ❤️ [#11880](https://github.com/vant-ui/vant/issues/11880)
+- 新增 RollingText 组件，由 [@cunzaizhuyi](https://github.com/cunzaizhuyi) 贡献 ❤️ [#11911](https://github.com/vant-ui/vant/issues/11911)
+
+**Feature**
+
+- Rate: 新增 clearable 属性 [#11969](https://github.com/vant-ui/vant/issues/11969)
+
+**Bug Fixes**
+
+- DropdownMenu: 修复缺少类型导出的问题 [#11979](https://github.com/vant-ui/vant/issues/11979)
+- Field: 修复使用 input 插槽时设置了多余的 label `for` 属性的问题 [#11966](https://github.com/vant-ui/vant/issues/11966)
+- FloatingPanel: 修复缺少 floatingPanelProps 类型导出的问题 [#11978](https://github.com/vant-ui/vant/issues/11978)
+- FloatingPanel: 修复 passive event warning [#11992](https://github.com/vant-ui/vant/issues/11992)
+- Picker: 修复多列同时滚动时的问题 [#11945](https://github.com/vant-ui/vant/issues/11945)
+- Rate: 修复半星拖动时断触的问题 [#12002](https://github.com/vant-ui/vant/issues/12002)
+
 ### [v4.5.0](https://github.com/vant-ui/vant/compare/v4.4.1...v4.5.0)
 
 `2023-06-11`

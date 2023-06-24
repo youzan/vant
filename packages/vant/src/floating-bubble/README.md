@@ -2,7 +2,7 @@
 
 ### Intro
 
-Clickable bubbles that hover around the edge of the page.
+Clickable bubbles that hover around the edge of the page. Please upgrade `vant` to >= v4.6.0 before using this component.
 
 ### Install
 
