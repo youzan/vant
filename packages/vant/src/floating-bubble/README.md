@@ -20,10 +20,10 @@ app.use(FloatingBubble);
 
 ### Basic Usage
 
-In the default x position, drag in the y direction is allowed.
+The floating bubble is displayed by default in the bottom right corner and allows vertical dragging in the y-axis direction. You can set the icon of the bubble using the `icon` prop.
 
 ```html
-<van-floating-bubble @click="onClick" />
+<van-floating-bubble icon="chat" @click="onClick" />
 ```
 
 ```js
@@ -44,7 +44,12 @@ export default {
 Allow x and y drags to attach to the nearest side of the x axis.
 
 ```html
-<van-floating-bubble axis="xy" magnetic="x" @offset-change="onOffsetChange" />
+<van-floating-bubble
+  axis="xy"
+  icon="chat"
+  magnetic="x"
+  @offset-change="onOffsetChange"
+/>
 ```
 
 ```js
@@ -65,7 +70,7 @@ export default {
 Use `v-model:offset` control the position.
 
 ```html
-<van-floating-bubble v-model:offset="offset" axis="xy" />
+<van-floating-bubble v-model:offset="offset" axis="xy" icon="chat" />
 ```
 
 ```js

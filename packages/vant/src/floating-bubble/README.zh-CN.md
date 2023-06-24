@@ -20,10 +20,10 @@ app.use(FloatingBubble);
 
 ### 基础用法
 
-在 x 轴默认位置，允许 y 轴方向拖拽。
+浮动气泡默认展示在右下角，并允许在 y 轴方向上下拖拽，你可以通过 `icon` 属性设置气泡的图标。
 
 ```html
-<van-floating-bubble @click="onClick" />
+<van-floating-bubble icon="chat" @click="onClick" />
 ```
 
 ```js
@@ -44,7 +44,12 @@ export default {
 允许 x 和 y 轴方向拖拽，吸附到 x 轴方向最近一边。
 
 ```html
-<van-floating-bubble axis="xy" magnetic="x" @offset-change="onOffsetChange" />
+<van-floating-bubble
+  axis="xy"
+  icon="chat"
+  magnetic="x"
+  @offset-change="onOffsetChange"
+/>
 ```
 
 ```js
@@ -65,7 +70,7 @@ export default {
 使用 `v-model:offset` 控制位置。
 
 ```html
-<van-floating-bubble v-model:offset="offset" axis="xy" />
+<van-floating-bubble v-model:offset="offset" axis="xy" icon="chat" />
 ```
 
 ```js
