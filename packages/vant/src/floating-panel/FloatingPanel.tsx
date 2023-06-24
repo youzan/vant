@@ -14,15 +14,14 @@ import {
   makeArrayProp,
   makeNumericProp,
   truthProp,
+  windowHeight,
 } from '../utils';
 
 // Composables
-import { useWindowSize, useEventListener } from '@vant/use';
+import { useEventListener } from '@vant/use';
 import { useLockScroll } from '../composables/use-lock-scroll';
 import { useTouch } from '../composables/use-touch';
 import { useSyncPropRef } from '../composables/use-sync-prop-ref';
-
-const { height: windowHeight } = useWindowSize();
 
 export const floatingPanelProps = {
   height: makeNumericProp(0),
