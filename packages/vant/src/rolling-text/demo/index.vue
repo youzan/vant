@@ -61,13 +61,7 @@ const reset = () => {
 <template>
   <demo-block :title="t('basicUsage')">
     <div style="">
-      <VanRollingText
-        :start-num="0"
-        :target-num="123"
-        :duration="2"
-        :auto-start="isStart"
-        direction="down"
-      />
+      <VanRollingText :start-num="0" :target-num="123" :auto-start="isStart" />
       <div style="margin-top: 10px">
         <Button @click="() => (isStart = true)" type="primary">{{
           t('rollDown')
@@ -81,7 +75,6 @@ const reset = () => {
       <VanRollingText
         :start-num="0"
         :target-num="432"
-        :duration="2"
         :auto-start="isStart2"
         direction="up"
       />
@@ -98,10 +91,8 @@ const reset = () => {
       <VanRollingText
         :start-num="0"
         :target-num="54321"
-        :duration="2"
         :auto-start="isStart3"
         stop-order="rtl"
-        direction="up"
       />
       <div style="margin-top: 10px">
         <Button @click="() => (isStart3 = true)" type="primary">{{
@@ -117,8 +108,6 @@ const reset = () => {
         :text-list="textList"
         :duration="1"
         :auto-start="isStartNoNumberType"
-        stop-order="rtl"
-        direction="up"
       />
       <div style="margin-top: 10px">
         <Button @click="() => (isStartNoNumberType = true)" type="primary">{{
@@ -134,10 +123,7 @@ const reset = () => {
         class="my-rolling-text"
         :start-num="12345"
         :target-num="54321"
-        :duration="2"
         :auto-start="isStart4"
-        stop-order="rtl"
-        direction="up"
         :height="54"
       />
     </div>
@@ -150,10 +136,7 @@ const reset = () => {
         ref="rollingTextRef"
         :start-num="0"
         :target-num="54321"
-        :duration="2"
         :auto-start="false"
-        stop-order="rtl"
-        direction="up"
         :height="54"
       />
       <van-grid clickable :column-num="2" style="margin-top: 10px">
