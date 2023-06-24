@@ -6,6 +6,7 @@ export type ConfigProviderThemeVars =
     import('../address-edit').AddressEditThemeVars &
     import('../address-list').AddressListThemeVars &
     import('../badge').BadgeThemeVars &
+    import('../barrage').BarrageThemeVars &
     import('../button').ButtonThemeVars &
     import('../calendar').CalendarThemeVars &
     import('../card').CardThemeVars &
@@ -28,6 +29,8 @@ export type ConfigProviderThemeVars =
     import('../dropdown-menu').DropdownMenuThemeVars &
     import('../empty').EmptyThemeVars &
     import('../field').FieldThemeVars &
+    import('../floating-bubble').FloatingBubbleThemeVars &
+    import('../floating-panel').FloatingPanelThemeVars &
     import('../grid-item').GridItemThemeVars &
     import('../image').ImageThemeVars &
     import('../image-preview').ImagePreviewThemeVars &
@@ -50,10 +53,12 @@ export type ConfigProviderThemeVars =
     import('../pull-refresh').PullRefreshThemeVars &
     import('../radio').RadioThemeVars &
     import('../rate').RateThemeVars &
+    import('../rolling-text').RollingTextThemeVars &
     import('../search').SearchThemeVars &
     import('../share-sheet').ShareSheetThemeVars &
     import('../sidebar').SidebarThemeVars &
     import('../sidebar-item').SidebarItemThemeVars &
+    import('../signature').SignatureThemeVars &
     import('../skeleton').SkeletonThemeVars &
     import('../slider').SliderThemeVars &
     import('../step').StepThemeVars &
@@ -69,4 +74,5 @@ export type ConfigProviderThemeVars =
     import('../tag').TagThemeVars &
     import('../toast').ToastThemeVars &
     import('../tree-select').TreeSelectThemeVars &
-    import('../uploader').UploaderThemeVars;
+    import('../uploader').UploaderThemeVars &
+    import('../watermark').WatermarkThemeVars;

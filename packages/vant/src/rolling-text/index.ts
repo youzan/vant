@@ -9,6 +9,7 @@ export type {
   RollingTextDirection,
   RollingTextInstance,
   RollingTextStopOrder,
+  RollingTextThemeVars,
 } from './types';
 
 declare module 'vue' {
