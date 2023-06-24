@@ -189,9 +189,10 @@ const t = useTranslate({
   &-row {
     margin-bottom: var(--van-padding-sm);
   }
-}
-.notice-swipe {
-  height: 40px;
-  line-height: 40px;
+
+  .notice-swipe {
+    height: 40px;
+    line-height: 40px;
+  }
 }
 </style>
