@@ -7,7 +7,6 @@ export type SubmitBarThemeVars = {
   submitBarPriceFontSize?: string;
   submitBarPriceIntegerFontSize?: string;
   submitBarPriceFont?: string;
-  submitBarCurrencyFontSize?: string;
   submitBarTextColor?: string;
   submitBarTextFontSize?: string;
   submitBarTipPadding?: string;
