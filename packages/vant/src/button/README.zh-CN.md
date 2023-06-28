@@ -183,7 +183,7 @@ app.use(Button);
 | loading-type | [加载图标类型](#/zh-CN/loading)，可选值为 `spinner` | _string_ | `circular` |
 | loading-size | 加载图标大小，默认单位为 `px` | _number \| string_ | `20px` |
 | url | 点击后跳转的链接地址 | _string_ | - |
-| to | 点击后跳转的目标路由对象，等同于 vue-router 的 [to 属性](https://router.vuejs.org/zh/api/interfaces/RouterLinkProps.html#Properties-to) | _string \| object_ | - |
+| to | 点击后跳转的目标路由对象，等同于 Vue Router 的 [to 属性](https://router.vuejs.org/zh/api/interfaces/RouterLinkProps.html#Properties-to) | _string \| object_ | - |
 | replace | 是否在跳转时替换当前页面历史 | _boolean_ | `false` |
 
 ### Events

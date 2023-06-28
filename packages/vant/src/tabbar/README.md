@@ -193,7 +193,7 @@ export default {
 | badge | Content of the badge | _number \| string_ | `''` |
 | badge-props | Props of Badge, see [Badge - props](#/en-US/badge#props) | _BadgeProps_ | - |
 | url | Link | _string_ | - |
-| to | Target route of the link, same as to of vue-router | _string \| object_ | - |
+| to | The target route should navigate to when clicked on, same as the [to prop](https://router.vuejs.org/api/interfaces/RouterLinkProps.html#Properties-to) of Vue Router | _string \| object_ | - |
 | replace | If true, the navigation will not leave a history record | _boolean_ | `false` |
 
 ### TabbarItem Slots

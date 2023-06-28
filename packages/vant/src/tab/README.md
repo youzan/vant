@@ -268,7 +268,7 @@ export default {
 | badge | Content of the badge on the title | _number \| string_ | - |
 | name | Identifier | _number \| string_ | Index of tab |
 | url | Link | _string_ | - |
-| to | Target route of the link, same as to of vue-router | _string \| object_ | - |
+| to | The target route should navigate to when clicked on, same as the [to prop](https://router.vuejs.org/api/interfaces/RouterLinkProps.html#Properties-to) of Vue Router | _string \| object_ | - |
 | replace | If true, the navigation will not leave a history record | _boolean_ | `false` |
 | title-style | Custom title style | _string \| Array \| object_ | - |
 | title-class | Custom title class name | _string \| Array \| object_ | - |

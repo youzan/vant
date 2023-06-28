@@ -158,7 +158,7 @@ app.use(Button);
 | loading-type | Loading type, can be set to `spinner` | _string_ | `circular` |
 | loading-size | Loading icon size | _number \| string_ | `20px` |
 | url | Link URL | _string_ | - |
-| to | Target route of the link, same as using vue-router | _string \| object_ | - |
+| to | The target route should navigate to when clicked on, same as the [to prop](https://router.vuejs.org/api/interfaces/RouterLinkProps.html#Properties-to) of Vue Router | _string \| object_ | - |
 | replace | If true, the navigation will not leave a history record | _boolean_ | `false` |
 
 ### Events
