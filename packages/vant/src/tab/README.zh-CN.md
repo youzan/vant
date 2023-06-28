@@ -281,7 +281,7 @@ export default {
 | badge | 图标右上角徽标的内容 | _number \| string_ | - |
 | name | 标签名称，作为匹配的标识符 | _number \| string_ | 标签的索引值 |
 | url | 点击后跳转的链接地址 | _string_ | - |
-| to | 点击后跳转的目标路由对象，等同于 vue-router 的 [to 属性](https://router.vuejs.org/zh/api/#to) | _string \| object_ | - |
+| to | 点击后跳转的目标路由对象，等同于 vue-router 的 [to 属性](https://router.vuejs.org/zh/api/interfaces/RouterLinkProps.html#Properties-to) | _string \| object_ | - |
 | replace | 是否在跳转时替换当前页面历史 | _boolean_ | `false` |
 | title-style | 自定义标题样式 | _string \| Array \| object_ | - |
 | title-class | 自定义标题类名 | _string \| Array \| object_ | - |
