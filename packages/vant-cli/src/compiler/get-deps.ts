@@ -8,11 +8,17 @@ let existsCache: Record<string, boolean> = {};
 // https://regexr.com/47jlq
 const IMPORT_RE =
   /import\s+?(?:(?:(?:[\w*\s{},]*)\s+from(\s+)?)|)(?:(?:".*?")|(?:'.*?'))[\s]*?(?:;|$|)/g;
+const IMPORT_NOF_RE = /import.*?\(['|"].+?['|"]\)/g;
 const EXPORT_FROM_RE =
   /@?export\s+?(?:(?:(?:[\w*\s{},]*)\s+from(\s+)?)|)(?:(?:".*?")|(?:'.*?'))[\s]*?(?:;|$|)/g;
 
 function matchImports(code: string): string[] {
   const imports = code.match(IMPORT_RE) || [];
+  return imports.filter((line) => !line.includes('import type'));
+}
+
+function matchImportsNof(code: string): string[] {
+  const imports = code.match(IMPORT_NOF_RE) || [];
   return imports.filter((line) => !line.includes('import type'));
 }
 
@@ -97,17 +103,23 @@ export function getDeps(filePath: string) {
 /**
  * 1. Replace .vue extension
  * @example "import App from 'App.vue';" => "import App from 'App.xxx';"
+ * @example "defineAsyncComponent(() => import('../xxx.vue'))" => "defineAsyncComponent(() => import('../xxx.xxx'));"
  *
  * 2. if using .mjs or .cjs, complete the import path
  * @example import './foo' -> import './foo.mjs'
  * @example import './foo' -> import './foo/index.mjs'
+ * @example "defineAsyncComponent(() => import('../foo.vue'))" => "defineAsyncComponent(() => import('../foo.mjs'));"
  */
 export function replaceScriptImportExt(
   code: string,
   filePath: string,
   ext: string
 ) {
-  const imports = [...matchImports(code), ...matchExportFroms(code)];
+  const imports = [
+    ...matchImports(code),
+    ...matchImportsNof(code),
+    ...matchExportFroms(code),
+  ];
 
   const updateImport = (index: number, newImport: string) => {
     code = code.replace(imports[index], newImport);
@@ -131,7 +143,6 @@ export function replaceScriptImportExt(
       if (isExistExt) {
         return;
       }
-
 
       const pathInfo = getPathByImport(line, filePath);
 
