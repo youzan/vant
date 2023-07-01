@@ -59,6 +59,9 @@ export async function mockScrollTop(value: number) {
   return nextTick();
 }
 
+// js-dom do not implement `URL.createObjectURL`
+global.URL.createObjectURL = jest.fn();
+
 mockScrollIntoView();
 mockHTMLElementOffset();
 mockGetBoundingClientRect({
