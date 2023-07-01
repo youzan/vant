@@ -168,6 +168,7 @@ export default defineComponent({
               file,
               status: '',
               message: '',
+              objectUrl: URL.createObjectURL(file),
             };
 
             if (contents[index]) {
@@ -185,6 +186,7 @@ export default defineComponent({
             file: files as File,
             status: '',
             message: '',
+            objectUrl: URL.createObjectURL(files as File),
           };
 
           if (content) {
@@ -240,8 +242,8 @@ export default defineComponent({
         const imageFiles = props.modelValue.filter(isImageFile);
         const images = imageFiles
           .map((item) => {
-            if (item.file && !item.url && item.status !== 'failed') {
-              item.url = URL.createObjectURL(item.file);
+            if (item.objectUrl && !item.url && item.status !== 'failed') {
+              item.url = item.objectUrl;
               urls.push(item.url);
             }
             return item.url;
