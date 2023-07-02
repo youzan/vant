@@ -1,6 +1,6 @@
 {
   "name": "@vant/eslint-config",
-  "version": "3.5.0",
+  "version": "4.0.0",
   "description": "eslint config of vant",
   "main": "index.js",
   "publishConfig": {
@@ -8,8 +8,7 @@
     "registry": "https://registry.npmjs.org/"
   },
   "scripts": {
-    "update:deps": "pnpm update --latest --interactive",
-    "test": "jest"
+    "update:deps": "pnpm update --latest --interactive"
   },
   "repository": {
     "type": "git",

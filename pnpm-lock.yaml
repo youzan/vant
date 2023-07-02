@@ -1,5 +1,9 @@
 lockfileVersion: '6.0'
 
+settings:
+  autoInstallPeers: false
+  excludeLinksFromLockfile: false
+
 importers:
 
   .:
@@ -127,7 +131,7 @@ importers:
         specifier: ^29.5.1
         version: 29.5.2
       '@vant/eslint-config':
-        specifier: ^3.5.0
+        specifier: ^4.0.0
         version: link:../vant-eslint-config
       '@vant/touch-emulator':
         specifier: ^1.4.0
