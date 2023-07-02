@@ -19,6 +19,20 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 
 ## Details
 
+### [v4.6.1](https://github.com/vant-ui/vant/compare/v4.6.0...v4.6.1)
+
+`2023-07-02`
+
+**Feature**
+
+- ellipsis: improve break lines of Chinese, Japanese, or Korean text [#12030](https://github.com/vant-ui/vant/issues/12030)
+
+**Bug Fixes**
+
+- FloatingBubble: floatingBubbleBackground type should be optional [#12029](https://github.com/vant-ui/vant/issues/12029)
+- SubmitBar: remove redundant theme types [#12031](https://github.com/vant-ui/vant/issues/12031)
+- Uploader: render objectUrl to avoid perf issue [#12051](https://github.com/vant-ui/vant/issues/12051)
+
 ### [v4.6.0](https://github.com/vant-ui/vant/compare/v4.5.0...v4.6.0)
 
 `2023-06-24`
