@@ -2,11 +2,11 @@ import { watch, computed, defineComponent, type ExtractPropTypes } from 'vue';
 
 // Utils
 import {
-  createNamespace,
-  extend,
   pick,
+  extend,
   truthProp,
   makeStringProp,
+  createNamespace,
 } from '../utils';
 import { CHECKBOX_GROUP_KEY } from '../checkbox-group/CheckboxGroup';
 
