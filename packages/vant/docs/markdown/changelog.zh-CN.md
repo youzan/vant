@@ -19,6 +19,20 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 
 ## 更新内容
 
+### [v4.6.1](https://github.com/vant-ui/vant/compare/v4.6.0...v4.6.1)
+
+`2023-07-02`
+
+**Feature**
+
+- ellipsis: 改进中文、日文或韩文文本的换行符 [#12030](https://github.com/vant-ui/vant/issues/12030)
+
+**Bug Fixes**
+
+- FloatingBubble: 修复 floatingBubbleBackground 类型问题 [#12029](https://github.com/vant-ui/vant/issues/12029)
+- SubmitBar: 移除多余的 theme 类型定义 [#12031](https://github.com/vant-ui/vant/issues/12031)
+- Uploader: 修复 base64 图片预览导致的性能问题 [#12051](https://github.com/vant-ui/vant/issues/12051)
+
 ### [v4.6.0](https://github.com/vant-ui/vant/compare/v4.5.0...v4.6.0)
 
 `2023-06-24`

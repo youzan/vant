@@ -7,7 +7,6 @@ if (window.app) {
 </script>
 
 <script setup lang="ts">
-// eslint-disable-next-line import/first
 import { cdnURL, useTranslate } from '../../../docs/site';
 
 const t = useTranslate({
