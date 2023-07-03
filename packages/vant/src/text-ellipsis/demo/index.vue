@@ -13,6 +13,9 @@ const t = useTranslate({
     collapseText: '收起',
     expandCollapse: '展开/收起',
     customRows: '自定义展示行数',
+    collapsePosition: '自定义省略位置',
+    collapseStart: '头部省略',
+    collapseMiddle: '中部省略',
   },
   'en-US': {
     text1:
@@ -25,6 +28,9 @@ const t = useTranslate({
     collapseText: 'collapse',
     expandCollapse: 'Expand/Collapse',
     customRows: 'Customize Rows',
+    collapsePosition: 'Custom Collapse Position',
+    collapseStart: 'Head Area Collapse Position',
+    collapseMiddle: 'Middle Area Collapse Position',
   },
 });
 </script>
@@ -49,6 +55,28 @@ const t = useTranslate({
       :expand-text="t('expandText')"
       :collapse-text="t('collapseText')"
     />
+  </demo-block>
+
+  <demo-block :title="t('collapsePosition')">
+    <demo-block :title="t('collapseStart')">
+      <van-text-ellipsis
+        rows="1"
+        :content="t('text3')"
+        :expand-text="t('expandText')"
+        :collapse-text="t('collapseText')"
+        position="start"
+      />
+    </demo-block>
+
+    <demo-block :title="t('collapseMiddle')">
+      <van-text-ellipsis
+        rows="2"
+        :content="t('text3')"
+        :expand-text="t('expandText')"
+        :collapse-text="t('collapseText')"
+        position="middle"
+      />
+    </demo-block>
   </demo-block>
 </template>
 

@@ -76,17 +76,66 @@ export default {
 };
 ```
 
+### 自定义省略位置
+
+通过设置 `position` 控制省略位置。
+
+头部省略
+
+```html
+<van-text-ellipsis
+  rows="1"
+  :content="text"
+  expand-text="展开"
+  collapse-text="收起"
+  position="start"
+/>
+```
+
+```js
+export default {
+  setup() {
+    const text =
+      '那一天我二十一岁，在我一生的黄金时代。我有好多奢望。我想爱，想吃，还想在一瞬间变成天上半明半暗的云。后来我才知道，生活就是个缓慢受锤的过程，人一天天老下去，奢望也一天天消失，最后变得像挨了锤的牛一样。可是我过二十一岁生日时没有预见到这一点。我觉得自己会永远生猛下去，什么也锤不了我。';
+    return { text };
+  },
+};
+```
+
+中部省略
+
+```html
+<van-text-ellipsis
+  rows="2"
+  :content="text"
+  expand-text="展开"
+  collapse-text="收起"
+  position="middle"
+/>
+```
+
+```js
+export default {
+  setup() {
+    const text =
+      '那一天我二十一岁，在我一生的黄金时代。我有好多奢望。我想爱，想吃，还想在一瞬间变成天上半明半暗的云。后来我才知道，生活就是个缓慢受锤的过程，人一天天老下去，奢望也一天天消失，最后变得像挨了锤的牛一样。可是我过二十一岁生日时没有预见到这一点。我觉得自己会永远生猛下去，什么也锤不了我。';
+    return { text };
+  },
+};
+```
+
 ## API
 
 ### Props
 
-| 参数          | 说明             | 类型               | 默认值  |
-| ------------- | ---------------- | ------------------ | ------- |
-| rows          | 展示的行数       | _number \| string_ | `1`     |
-| content       | 需要展示的文本   | _string_           | -       |
-| expand-text   | 展开操作的文案   | _string_           | -       |
-| collapse-text | 收起操作的文案   | _string_           | -       |
-| dots `v4.2.0` | 省略号的文本内容 | _string_           | `'...'` |
+| 参数 | 说明 | 类型 | 默认值 |
+| --- | --- | --- | --- |
+| rows | 展示的行数 | _number \| string_ | `1` |
+| content | 需要展示的文本 | _string_ | - |
+| expand-text | 展开操作的文案 | _string_ | - |
+| collapse-text | 收起操作的文案 | _string_ | - |
+| dots `v4.2.0` | 省略号的文本内容 | _string_ | `'...'` |
+| position `v4.6.2` | 省略位置，可选值为 `start` `middle` | _string_ | `'end'` |
 
 ### Events
 
