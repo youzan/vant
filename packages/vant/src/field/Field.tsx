@@ -91,7 +91,10 @@ export const fieldSharedProps = {
   autocorrect: String,
   errorMessage: String,
   enterkeyhint: String,
-  spellcheck: Boolean,
+  spellcheck: {
+    type: Boolean,
+    default: null,
+  },
   clearTrigger: makeStringProp<FieldClearTrigger>('focus'),
   formatTrigger: makeStringProp<FieldFormatTrigger>('onChange'),
   error: {
