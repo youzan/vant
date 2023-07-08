@@ -65,12 +65,17 @@ export default {
 
 ### 自定义形状
 
-将 `shape` 属性设置为 `square`，单选框的形状会变成方形。
+`shape` 属性可选值为 `square` 和 `dot`，单选框形状分别对应方形和圆形。
 
 ```html
 <van-radio-group v-model="checked">
   <van-radio name="1" shape="square">单选框 1</van-radio>
   <van-radio name="2" shape="square">单选框 2</van-radio>
+</van-radio-group>
+
+<van-radio-group v-model="checked">
+  <van-radio name="1" shape="dot">Radio 1</van-radio>
+  <van-radio name="2" shape="dot">Radio 2</van-radio>
 </van-radio-group>
 ```
 
@@ -190,7 +195,7 @@ export default {
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
 | name | 标识符，通常为一个唯一的字符串或数字 | _any_ | - |
-| shape | 形状，可选值为 `square` | _string_ | `round` |
+| shape | 形状，可选值为 `square` `dot` | _string_ | `round` |
 | disabled | 是否为禁用状态 | _boolean_ | `false` |
 | label-disabled | 是否禁用文本内容点击 | _boolean_ | `false` |
 | label-position | 文本位置，可选值为 `left` | _string_ | `right` |
@@ -249,6 +254,7 @@ import type {
 | 名称                             | 默认值                     | 描述 |
 | -------------------------------- | -------------------------- | ---- |
 | --van-radio-size                 | _20px_                     | -    |
+| --van-radio-dot-size             | _8px_                      | -    |
 | --van-radio-border-color         | _var(--van-gray-5)_        | -    |
 | --van-radio-duration             | _var(--van-duration-fast)_ | -    |
 | --van-radio-label-margin         | _var(--van-padding-xs)_    | -    |

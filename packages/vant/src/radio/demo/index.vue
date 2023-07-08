@@ -41,7 +41,8 @@ const radio3 = ref('1');
 const radio4 = ref('1');
 const radio5 = ref('1');
 const radioLabel = ref('1');
-const radioShape = ref('1');
+const radioSquare = ref('1');
+const radioDot = ref('1');
 const radioIconSize = ref('1');
 const radioHorizontal = ref('1');
 const radioLeftLabel = ref('1');
@@ -76,9 +77,17 @@ const inactiveIcon = cdnURL('user-inactive.png');
   </demo-block>
 
   <demo-block :title="t('customShape')">
-    <van-radio-group v-model="radioShape" class="demo-radio-group">
+    <van-radio-group v-model="radioSquare" class="demo-radio-group">
       <van-radio name="1" shape="square">{{ t('radio') }} 1</van-radio>
       <van-radio name="2" shape="square">{{ t('radio') }} 2</van-radio>
+    </van-radio-group>
+    <van-radio-group
+      v-model="radioDot"
+      class="demo-radio-group"
+      style="margin-top: 20px"
+    >
+      <van-radio name="1" shape="dot">{{ t('radio') }} 1</van-radio>
+      <van-radio name="2" shape="dot">{{ t('radio') }} 2</van-radio>
     </van-radio-group>
   </demo-block>
 

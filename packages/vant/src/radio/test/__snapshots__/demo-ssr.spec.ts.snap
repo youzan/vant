@@ -191,6 +191,50 @@ exports[`should render demo and match snapshot 1`] = `
       </span>
     </div>
   </div>
+  <div class="van-radio-group demo-radio-group"
+       role="radiogroup"
+       style="margin-top:20px;"
+  >
+    <!--[-->
+    <div role="radio"
+         class="van-radio"
+         tabindex="0"
+         aria-checked="true"
+    >
+      <!--[-->
+      <div class="van-radio__icon van-radio__icon--dot van-radio__icon--checked"
+           style
+      >
+        <div class="van-radio__icon--dot__icon"
+             style
+        >
+        </div>
+      </div>
+      <span class="van-radio__label">
+        <!--[-->
+        Radio 1
+      </span>
+    </div>
+    <div role="radio"
+         class="van-radio"
+         tabindex="0"
+         aria-checked="false"
+    >
+      <!--[-->
+      <div class="van-radio__icon van-radio__icon--dot"
+           style
+      >
+        <div class="van-radio__icon--dot__icon"
+             style
+        >
+        </div>
+      </div>
+      <span class="van-radio__label">
+        <!--[-->
+        Radio 2
+      </span>
+    </div>
+  </div>
 </div>
 <div>
   <!--[-->

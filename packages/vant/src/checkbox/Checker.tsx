@@ -11,6 +11,8 @@ import {
 } from '../utils';
 import { Icon } from '../icon';
 
+import type { RadioShape } from '../radio';
+
 export type CheckerShape = 'square' | 'round';
 export type CheckerDirection = 'horizontal' | 'vertical';
 export type CheckerLabelPosition = 'left' | 'right';
@@ -27,7 +29,6 @@ export type CheckerParent = {
 
 export const checkerProps = {
   name: unknownProp,
-  shape: makeStringProp<CheckerShape>('round'),
   disabled: Boolean,
   iconSize: numericProp,
   modelValue: unknownProp,
@@ -40,6 +41,7 @@ export default defineComponent({
   props: extend({}, checkerProps, {
     bem: makeRequiredProp(Function),
     role: String,
+    shape: makeStringProp<CheckerShape | RadioShape>('round'),
     parent: Object as PropType<CheckerParent | null>,
     checked: Boolean,
     bindGroup: truthProp,
@@ -107,12 +109,25 @@ export default defineComponent({
         <div
           ref={iconRef}
           class={bem('icon', [shape, { disabled: disabled.value, checked }])}
-          style={{ fontSize: addUnit(iconSize) }}
+          style={
+            shape !== 'dot'
+              ? { fontSize: addUnit(iconSize) }
+              : {
+                  width: addUnit(iconSize),
+                  height: addUnit(iconSize),
+                  borderColor: iconStyle.value?.borderColor,
+                }
+          }
         >
           {slots.icon ? (
             slots.icon({ checked, disabled: disabled.value })
-          ) : (
+          ) : shape !== 'dot' ? (
             <Icon name="success" style={iconStyle.value} />
+          ) : (
+            <div
+              class={bem('icon--dot__icon')}
+              style={{ backgroundColor: iconStyle.value?.backgroundColor }}
+            ></div>
           )}
         </div>
       );
