@@ -1,6 +1,7 @@
 import {
   ref,
   watch,
+  computed,
   onMounted,
   defineComponent,
   type ExtractPropTypes,
@@ -11,7 +12,6 @@ import { useEventListener } from '@vant/use';
 
 // Utils
 import { makeNumericProp, makeStringProp, createNamespace } from '../utils';
-import { computed } from 'vue';
 
 const [name, bem] = createNamespace('text-ellipsis');
 
@@ -97,7 +97,7 @@ export default defineComponent({
                 content.slice(0, middle) + dots + actionText.value;
             } else {
               container.innerText =
-                content.slice(middle, end) + dots + actionText.value;
+                dots + content.slice(middle, end) + actionText.value;
             }
 
             // The height after interception still does not match the rquired height
@@ -140,7 +140,7 @@ export default defineComponent({
           container.innerText =
             props.content.slice(0, leftMiddle) +
             props.dots +
-            props.expandText +
+            actionText.value +
             props.dots +
             props.content.slice(rightMiddle, end);
 
