@@ -83,8 +83,8 @@ export default defineComponent({
 
     const boundary = computed<FloatingBubbleBoundary>(() => ({
       top: props.gap,
-      right: windowWidth.value - state.value.height - props.gap,
-      bottom: windowHeight.value - state.value.width - props.gap,
+      right: windowWidth.value - state.value.width - props.gap,
+      bottom: windowHeight.value - state.value.height - props.gap,
       left: props.gap,
     }));
 
