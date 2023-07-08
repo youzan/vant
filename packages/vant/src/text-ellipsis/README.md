@@ -83,7 +83,7 @@ export default {
 
 ### Custom Collapse Position
 
-Head Area Collapse Position
+- Collapse the beginning part of the content:
 
 ```html
 <van-text-ellipsis
@@ -105,7 +105,7 @@ export default {
 };
 ```
 
-Middle Area Collapse Position
+- Collapse the middle part of the content:
 
 ```html
 <van-text-ellipsis

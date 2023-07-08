@@ -80,7 +80,7 @@ export default {
 
 通过设置 `position` 控制省略位置。
 
-头部省略
+- 头部省略：
 
 ```html
 <van-text-ellipsis
@@ -102,7 +102,7 @@ export default {
 };
 ```
 
-中部省略
+- 中部省略：
 
 ```html
 <van-text-ellipsis
