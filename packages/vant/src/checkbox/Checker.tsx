@@ -18,12 +18,13 @@ export type CheckerDirection = 'horizontal' | 'vertical';
 export type CheckerLabelPosition = 'left' | 'right';
 export type CheckerParent = {
   props: {
+    max?: Numeric;
+    shape?: CheckerShape | RadioShape;
     disabled?: boolean;
     iconSize?: Numeric;
     direction?: CheckerDirection;
-    checkedColor?: string;
     modelValue?: unknown | unknown[];
-    max?: Numeric;
+    checkedColor?: string;
   };
 };
 
@@ -90,6 +91,10 @@ export default defineComponent({
       }
     });
 
+    const shape = computed(() => {
+      return getParentProp('shape') || props.shape;
+    });
+
     const onClick = (event: MouseEvent) => {
       const { target } = event;
       const icon = iconRef.value;
@@ -102,15 +107,18 @@ export default defineComponent({
     };
 
     const renderIcon = () => {
-      const { bem, shape, checked } = props;
+      const { bem, checked } = props;
       const iconSize = props.iconSize || getParentProp('iconSize');
 
       return (
         <div
           ref={iconRef}
-          class={bem('icon', [shape, { disabled: disabled.value, checked }])}
+          class={bem('icon', [
+            shape.value,
+            { disabled: disabled.value, checked },
+          ])}
           style={
-            shape !== 'dot'
+            shape.value !== 'dot'
               ? { fontSize: addUnit(iconSize) }
               : {
                   width: addUnit(iconSize),
@@ -121,7 +129,7 @@ export default defineComponent({
         >
           {slots.icon ? (
             slots.icon({ checked, disabled: disabled.value })
-          ) : shape !== 'dot' ? (
+          ) : shape.value !== 'dot' ? (
             <Icon name="success" style={iconStyle.value} />
           ) : (
             <div

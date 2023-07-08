@@ -65,7 +65,7 @@ export default {
 
 ### 自定义形状
 
-`shape` 属性可选值为 `square` 和 `dot`，单选框形状分别对应方形和圆形。
+`shape` 属性可选值为 `square` 和 `dot`，单选框形状分别对应方形和圆点形。
 
 ```html
 <van-radio-group v-model="checked">
