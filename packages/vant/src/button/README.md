@@ -20,6 +20,8 @@ app.use(Button);
 
 ### Type
 
+The Button supports five types: `default`, `primary`, `success`, `warning`, and `danger`. The default type is `default`.
+
 ```html
 <van-button type="primary">Primary</van-button>
 <van-button type="success">Success</van-button>
@@ -30,12 +32,16 @@ app.use(Button);
 
 ### Plain
 
+Use the `plain` prop to set the button as a plain button. The text color of a plain button is the same as the button color, and the background is white.
+
 ```html
 <van-button plain type="primary">Plain</van-button>
 <van-button plain type="success">Plain</van-button>
 ```
 
 ### Hairline
+
+Setting the `hairline` prop to display a border with a thickness of 0.5px.
 
 ```html
 <van-button plain hairline type="primary">Hairline</van-button>
@@ -44,12 +50,16 @@ app.use(Button);
 
 ### Disabled
 
+Use the `disabled` prop to disable the button. In the disabled state, the button cannot be clicked.
+
 ```html
 <van-button disabled type="primary">Disabled</van-button>
 <van-button disabled type="success">Disabled</van-button>
 ```
 
 ### Loading
+
+Set the button as a loading state using the `loading` prop. In the loading state, the button text is hidden by default. You can set the text for the loading state using the `loading-text` property.
 
 ```html
 <van-button loading type="primary" />
@@ -59,12 +69,16 @@ app.use(Button);
 
 ### Shape
 
+Use the `square` prop to set the button as square-shaped and the `round` prop to set it as round-shaped.
+
 ```html
 <van-button square type="primary">Square</van-button>
 <van-button round type="success">Round</van-button>
 ```
 
 ### Icon
+
+Use the `icon` prop to set the button icon. It supports all icons from the Icon component or you can pass a custom icon URL.
 
 ```html
 <van-button icon="plus" type="primary" />
@@ -79,6 +93,8 @@ app.use(Button);
 
 ### Size
 
+Four sizes are supported: `large`, `normal`, `small`, and `mini`. The default size is `normal`.
+
 ```html
 <van-button type="primary" size="large">Large</van-button>
 <van-button type="primary" size="normal">Normal</van-button>
@@ -88,11 +104,15 @@ app.use(Button);
 
 ### Block Element
 
+By default, the button is an inline-block element. Use the `block` prop to change the button element type to a block-level element.
+
 ```html
 <van-button type="primary" block>Block Element</van-button>
 ```
 
 ### Route
+
+You can use the `url` prop for URL redirection or the `to` prop for route navigation.
 
 ```html
 <van-button type="primary" url="https://github.com">URL</van-button>
@@ -100,6 +120,8 @@ app.use(Button);
 ```
 
 ### Custom Color
+
+Customize the button color using the `color` prop.
 
 ```html
 <van-button color="#7232dd">Pure</van-button>
@@ -110,6 +132,8 @@ app.use(Button);
 ```
 
 ### Animated Button
+
+With the combination of the Button and [Swipe component](<(/#/en-US/swipe)>), you can create an animated button effect with vertical scrolling.
 
 ```html
 <van-button type="danger" round>
