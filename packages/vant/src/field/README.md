@@ -317,10 +317,10 @@ Use `label-align` prop to align the input value, can be set to `center`, `right`
 | icon-prefix | Icon className prefix | _string_ | `van-icon` |
 | rules | Form validation rules | _FieldRule[]_ | - |
 | autocomplete | HTML native attribute, see [MDN - autocomplete](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/autocomplete) | _string_ | - |
-| autocapitalize | HTML native attribute, see [MDN - autocapitalize](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/autocapitalize)<br> | _string_ | - |
+| autocapitalize `v4.6.2` | HTML native attribute, see [MDN - autocapitalize](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/autocapitalize)<br> | _string_ | - |
 | enterkeyhint | HTML native attribute, see [MDN - enterkeyhint](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/enterkeyhint)<br> | _string_ | - |
-| spellcheck | HTML native attribute, see [MDN - spellcheck](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/spellcheck)<br> | _boolean_ | - |
-| autocorrect | Safari only, see [MDN - autocorrect](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#autocorrect)<br> | _string_ | - |
+| spellcheck `v4.6.2` | HTML native attribute, see [MDN - spellcheck](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/spellcheck)<br> | _boolean_ | - |
+| autocorrect `v4.6.2` | Safari only, see [MDN - autocorrect](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#autocorrect)<br> | _string_ | - |
 
 ### Events
 
