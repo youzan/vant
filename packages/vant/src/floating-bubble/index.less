@@ -5,6 +5,7 @@
   --van-floating-bubble-background: var(--van-primary-color);
   --van-floating-bubble-color: var(--van-background-2);
   --van-floating-bubble-z-index: 999;
+  --van-floating-bubble-border-radius: var(--van-radius-max);
 }
 
 .van-floating-bubble {
@@ -25,12 +26,12 @@
   touch-action: none;
   background: var(--van-floating-bubble-background);
   color: var(--van-floating-bubble-color);
-  border-radius: var(--van-radius-max);
+  border-radius: var(--van-floating-bubble-border-radius);
   z-index: var(--van-floating-bubble-z-index);
-  transition: transform 0.3s;
+  transition: transform var(--van-duration-base);
 
   &:active {
-    opacity: 0.9;
+    opacity: 0.8;
   }
 
   &__icon {
