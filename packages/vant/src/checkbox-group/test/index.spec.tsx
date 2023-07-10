@@ -180,3 +180,29 @@ test('should toggle all checkboxes when toggleAll method is called', async () =>
   wrapper.vm.toggleAll({ checked: true, skipDisabled: true });
   expect(wrapper.vm.value).toEqual(['a', 'b', 'c']);
 });
+
+test('should render shape correctly when using shape prop', () => {
+  const wrapper = mount({
+    setup() {
+      const groupValue = ref([]);
+
+      return {
+        groupValue,
+      };
+    },
+    render() {
+      return (
+        <CheckboxGroup modelValue={this.groupValue} shape="square">
+          <Checkbox name="a" />
+          <Checkbox name="b" shape="round" />
+        </CheckboxGroup>
+      );
+    },
+  });
+
+  const shapeClass = 'van-checkbox__icon--square';
+  const shapeClass1 = 'van-checkbox__icon--round';
+  const iconBoxs = wrapper.findAll('.van-checkbox__icon');
+  expect(iconBoxs[0].classes()).toContain(shapeClass);
+  expect(iconBoxs[1].classes()).toContain(shapeClass1);
+});

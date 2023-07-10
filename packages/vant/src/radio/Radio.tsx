@@ -1,7 +1,7 @@
-import { defineComponent, type ExtractPropTypes } from 'vue';
+import { defineComponent, type PropType, type ExtractPropTypes } from 'vue';
 
 // Utils
-import { pick, extend, createNamespace, makeStringProp } from '../utils';
+import { pick, extend, createNamespace } from '../utils';
 import { RADIO_KEY } from '../radio-group/RadioGroup';
 
 // Composables
@@ -17,7 +17,7 @@ import Checker, {
 export type RadioShape = CheckerShape | 'dot';
 
 export const radioProps = extend({}, checkerProps, {
-  shape: makeStringProp<RadioShape>('round'),
+  shape: String as PropType<RadioShape>,
 });
 
 export type RadioLabelPosition = CheckerLabelPosition;

@@ -5,7 +5,6 @@ import {
   truthProp,
   numericProp,
   unknownProp,
-  makeStringProp,
   makeRequiredProp,
   type Numeric,
 } from '../utils';
@@ -42,7 +41,7 @@ export default defineComponent({
   props: extend({}, checkerProps, {
     bem: makeRequiredProp(Function),
     role: String,
-    shape: makeStringProp<CheckerShape | RadioShape>('round'),
+    shape: String as PropType<CheckerShape | RadioShape>,
     parent: Object as PropType<CheckerParent | null>,
     checked: Boolean,
     bindGroup: truthProp,
@@ -92,7 +91,7 @@ export default defineComponent({
     });
 
     const shape = computed(() => {
-      return getParentProp('shape') || props.shape;
+      return props.shape || getParentProp('shape') || 'round';
     });
 
     const onClick = (event: MouseEvent) => {
@@ -109,6 +108,7 @@ export default defineComponent({
     const renderIcon = () => {
       const { bem, checked } = props;
       const iconSize = props.iconSize || getParentProp('iconSize');
+      // console.log(shape.value);
 
       return (
         <div
