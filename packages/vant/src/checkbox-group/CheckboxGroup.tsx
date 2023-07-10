@@ -9,9 +9,9 @@ import {
 // Utils
 import {
   numericProp,
-  createNamespace,
   makeArrayProp,
   makeStringProp,
+  createNamespace,
 } from '../utils';
 
 // Composables

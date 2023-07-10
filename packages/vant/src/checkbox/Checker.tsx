@@ -108,7 +108,6 @@ export default defineComponent({
     const renderIcon = () => {
       const { bem, checked } = props;
       const iconSize = props.iconSize || getParentProp('iconSize');
-      // console.log(shape.value);
 
       return (
         <div
