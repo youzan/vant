@@ -277,6 +277,7 @@ export default {
 | direction | Direction, can be set to `horizontal` | _string_ | `vertical` |
 | icon-size | Icon size of all checkboxes | _number \| string_ | `20px` |
 | checked-color | Checked color of all checkboxes | _string_ | `#1989fa` |
+| shape `v4.6.3` | Can be set to `square` | _string_ | `round` |
 
 ### Checkbox Events
 

@@ -211,6 +211,7 @@ export default {
 | direction | 排列方向，可选值为 `horizontal` | _string_ | `vertical` |
 | icon-size | 所有单选框的图标大小，默认单位为 `px` | _number \| string_ | `20px` |
 | checked-color | 所有单选框的选中状态颜色 | _string_ | `#1989fa` |
+| shape `v4.6.3` | 形状，可选值为 `square` `dot` | _string_ | `round` |
 
 ### Radio Events
 

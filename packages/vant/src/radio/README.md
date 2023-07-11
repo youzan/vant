@@ -211,6 +211,7 @@ import type {
 | direction | Direction, can be set to `horizontal` | _string_ | `vertical` |
 | icon-size | Icon size of all radios | _number \| string_ | `20px` |
 | checked-color | Checked color of all radios | _string_ | `#1989fa` |
+| shape `v4.6.3` | Can be set to `square` `dot` | _string_ | `round` |
 
 ### Radio Events
 
