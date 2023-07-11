@@ -8,7 +8,8 @@ let existsCache: Record<string, boolean> = {};
 // https://regexr.com/47jlq
 const IMPORT_RE =
   /import\s+?(?:(?:(?:[\w*\s{},]*)\s+from(\s+)?)|)(?:(?:".*?")|(?:'.*?'))[\s]*?(?:;|$|)/g;
-const IMPORT_NOF_RE = /import\s*\(\s*?['"].+?['"]\)/g;
+const IMPORT_NOF_RE =
+  /import\s*\(\s*?\S*?(\/\*)?\s*?\S*?.+?\s*?\S*?(\*\/)?['"].+?['"]\s*?\S*?\)/g;
 const EXPORT_FROM_RE =
   /@?export\s+?(?:(?:(?:[\w*\s{},]*)\s+from(\s+)?)|)(?:(?:".*?")|(?:'.*?'))[\s]*?(?:;|$|)/g;
 
@@ -103,7 +104,7 @@ export function getDeps(filePath: string) {
 /**
  * 1. Replace .vue extension
  * @example "import App from 'App.vue';" => "import App from 'App.xxx';"
- * @example "defineAsyncComponent(() => import('../xx.vue'))" => "defineAsyncComponent(() => import('../xxx.xxx'));"
+ * @example "defineAsyncComponent(() => import('../xxx.vue'))" => "defineAsyncComponent(() => import('../xxx.xxx'));"
  *
  * 2. if using .mjs or .cjs, complete the import path
  * @example import './foo' -> import './foo.mjs'
