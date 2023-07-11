@@ -103,7 +103,7 @@ export function getDeps(filePath: string) {
 /**
  * 1. Replace .vue extension
  * @example "import App from 'App.vue';" => "import App from 'App.xxx';"
- * @example "defineAsyncComponent(() => import('../xxx.vue'))" => "defineAsyncComponent(() => import('../xxx.xxx'));"
+ * @example "defineAsyncComponent(() => import('../xx.vue'))" => "defineAsyncComponent(() => import('../xxx.xxx'));"
  *
  * 2. if using .mjs or .cjs, complete the import path
  * @example import './foo' -> import './foo.mjs'
