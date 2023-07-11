@@ -8,8 +8,9 @@ let existsCache: Record<string, boolean> = {};
 // https://regexr.com/47jlq
 const IMPORT_RE =
   /import\s+?(?:(?:(?:[\w*\s{},]*)\s+from(\s+)?)|)(?:(?:".*?")|(?:'.*?'))[\s]*?(?:;|$|)/g;
-const IMPORT_NOF_RE =
-  /import\s*\(\s*?\S*?(\/\*)?\s*?\S*?.+?\s*?\S*?(\*\/)?['"].+?['"]\s*?\S*?\)/g;
+
+const IMPORT_NOF_RE = /import\s*\(\s*?['"].+?['"]\)/g;
+
 const EXPORT_FROM_RE =
   /@?export\s+?(?:(?:(?:[\w*\s{},]*)\s+from(\s+)?)|)(?:(?:".*?")|(?:'.*?'))[\s]*?(?:;|$|)/g;
 
