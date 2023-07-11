@@ -14,42 +14,38 @@ import {
   type ExtractPropTypes,
 } from 'vue';
 
-import { useRect, useEventListener } from '@vant/use';
-import { useTouch } from '../composables/use-touch';
+// Utils
 import {
+  pick,
   addUnit,
   closest,
   createNamespace,
   makeNumberProp,
   makeStringProp,
-  pick,
   windowWidth,
   windowHeight,
 } from '../utils';
 
+// Composables
+import { useRect, useEventListener } from '@vant/use';
+import { useTouch } from '../composables/use-touch';
+
+// Components
 import Icon from '../icon';
 
-export type FloatingBubbleAxis = 'x' | 'y' | 'xy' | 'lock';
-
-export type FloatingBubbleMagnetic = 'x' | 'y';
-
-export type FloatingBubbleOffset = {
-  x: number;
-  y: number;
-};
-
-type FloatingBubbleBoundary = {
-  top: number;
-  right: number;
-  bottom: number;
-  left: number;
-};
+// Types
+import {
+  FloatingBubbleAxis,
+  FloatingBubbleMagnetic,
+  FloatingBubbleOffset,
+  FloatingBubbleBoundary,
+} from './types';
 
 export const floatingBubbleProps = {
+  gap: makeNumberProp(24),
+  icon: String,
   axis: makeStringProp<FloatingBubbleAxis>('y'),
   magnetic: String as PropType<FloatingBubbleMagnetic>,
-  icon: String,
-  gap: makeNumberProp(24),
   offset: {
     type: Object as unknown as PropType<FloatingBubbleOffset>,
     default: () => ({ x: -1, y: -1 }),
@@ -83,8 +79,8 @@ export default defineComponent({
 
     const boundary = computed<FloatingBubbleBoundary>(() => ({
       top: props.gap,
-      right: windowWidth.value - state.value.height - props.gap,
-      bottom: windowHeight.value - state.value.width - props.gap,
+      right: windowWidth.value - state.value.width - props.gap,
+      bottom: windowHeight.value - state.value.height - props.gap,
       left: props.gap,
     }));
 
@@ -202,8 +198,7 @@ export default defineComponent({
 
     watch(
       [windowWidth, windowHeight, () => props.gap, () => props.offset],
-      () => updateState(),
-      { deep: true }
+      updateState
     );
 
     const show = ref(true);

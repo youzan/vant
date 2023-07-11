@@ -39,7 +39,7 @@ export default {
 };
 ```
 
-### Free drag and magnetic
+### Free Magnetic
 
 Allow x and y drags to attach to the nearest side of the x axis.
 
@@ -57,8 +57,8 @@ import { showToast } from 'vant';
 
 export default {
   setup() {
-    const onOffsetChange = (offset: OffsetType) => {
-      showToast(offset.x + '__' + offset.y);
+    const onOffsetChange = (offset) => {
+      showToast(`x: ${offset.x.toFixed(0)}, y: ${offset.y.toFixed(0)}`);
     };
     return { onOffsetChange };
   },
@@ -74,9 +74,11 @@ Use `v-model:offset` control the position.
 ```
 
 ```js
+import { ref } from 'vue';
+
 export default {
   setup() {
-    const offset = ref < OffsetType > { x: 200, y: 400 };
+    const offset = ref({ x: 200, y: 400 });
     return { offset };
   },
 };
@@ -127,11 +129,12 @@ export type {
 
 The component provides the following CSS variables, which can be used to customize styles. Please refer to [ConfigProvider component](#/en-US/config-provider).
 
-| Name                              | Default Value              | Description |
-| --------------------------------- | -------------------------- | ----------- |
-| --van-floating-bubble-size        | _48px_                     | -           |
-| --van-floating-bubble-initial-gap | _24px_                     | -           |
-| --van-floating-bubble-icon-size   | _28px_                     | -           |
-| --van-floating-bubble-background  | _var(--van-primary-color)_ | -           |
-| --van-floating-bubble-color       | _var(--van-background-2)_  | -           |
-| --van-floating-bubble-z-index     | _999_                      | -           |
+| Name | Default Value | Description |
+| --- | --- | --- |
+| --van-floating-bubble-size | _48px_ | - |
+| --van-floating-bubble-initial-gap | _24px_ | - |
+| --van-floating-bubble-icon-size | _28px_ | - |
+| --van-floating-bubble-background | _var(--van-primary-color)_ | - |
+| --van-floating-bubble-color | _var(--van-background-2)_ | - |
+| --van-floating-bubble-z-index | _999_ | - |
+| --van-floating-bubble-border-radius | _--van-floating-bubble-border-radius_ | - |

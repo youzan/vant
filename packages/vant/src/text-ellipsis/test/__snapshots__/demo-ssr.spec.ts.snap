@@ -17,4 +17,17 @@ exports[`should render demo and match snapshot 1`] = `
   <div class="van-text-ellipsis">
   </div>
 </div>
+<div>
+  <!--[-->
+  <div>
+    <!--[-->
+    <div class="van-text-ellipsis">
+    </div>
+  </div>
+  <div>
+    <!--[-->
+    <div class="van-text-ellipsis">
+    </div>
+  </div>
+</div>
 `;

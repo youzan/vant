@@ -26,7 +26,7 @@ exports[`should render demo and match snapshot 1`] = `
            aria-controls="van-tab"
       >
         <span class="van-tab__text van-tab__text--ellipsis">
-          Free magnetic
+          Free Magnetic
         </span>
       </div>
       <div id="van-tabs-2"

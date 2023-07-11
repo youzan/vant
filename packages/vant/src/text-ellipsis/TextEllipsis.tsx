@@ -1,6 +1,7 @@
 import {
   ref,
   watch,
+  computed,
   onMounted,
   defineComponent,
   type ExtractPropTypes,
@@ -20,6 +21,7 @@ export const textEllipsisProps = {
   content: makeStringProp(''),
   expandText: makeStringProp(''),
   collapseText: makeStringProp(''),
+  position: makeStringProp('end'),
 };
 
 export type TextEllipsisProps = ExtractPropTypes<typeof textEllipsisProps>;
@@ -36,6 +38,10 @@ export default defineComponent({
     const expanded = ref(false);
     const hasAction = ref(false);
     const root = ref<HTMLElement>();
+
+    const actionText = computed(() =>
+      expanded.value ? props.expandText : props.collapseText
+    );
 
     const pxToNum = (value: string | null) => {
       if (!value) return 0;
@@ -70,33 +76,104 @@ export default defineComponent({
         container: HTMLDivElement,
         maxHeight: number
       ) => {
-        const { dots, content, expandText } = props;
+        const { content, position, dots } = props;
+        const end = content.length;
 
-        let left = 0;
-        let right = content.length;
-        let res = -1;
+        const calcEllipse = () => {
+          // calculate the former or later content
+          const tail = (left: number, right: number): string => {
+            if (right - left <= 1) {
+              if (position === 'end') {
+                return content.slice(0, left) + dots;
+              }
+              return dots + content.slice(right, end);
+            }
 
-        while (left <= right) {
-          const mid = Math.floor((left + right) / 2);
-          container.innerText = content.slice(0, mid) + dots + expandText;
-          if (container.offsetHeight <= maxHeight) {
-            left = mid + 1;
-            res = mid;
-          } else {
-            right = mid - 1;
+            const middle = Math.round((left + right) >> 1);
+
+            // Set the interception location
+            if (position === 'end') {
+              container.innerText =
+                content.slice(0, middle) + dots + actionText.value;
+            } else {
+              container.innerText =
+                dots + content.slice(middle, end) + actionText.value;
+            }
+
+            // The height after interception still does not match the rquired height
+            if (container.offsetHeight > maxHeight) {
+              if (position === 'end') {
+                return tail(left, middle);
+              }
+              return tail(middle, right);
+            }
+
+            if (position === 'end') {
+              return tail(middle, right);
+            }
+
+            return tail(left, middle);
+          };
+
+          container.innerText = tail(0, end);
+        };
+
+        const middleTail = (
+          leftPart: [number, number],
+          rightPart: [number, number]
+        ): string => {
+          if (
+            leftPart[1] - leftPart[0] <= 1 &&
+            rightPart[1] - rightPart[0] <= 1
+          ) {
+            return (
+              content.slice(0, leftPart[1]) +
+              dots +
+              dots +
+              content.slice(rightPart[1], end)
+            );
           }
-        }
-        return content.slice(0, res) + dots;
+
+          const leftMiddle = Math.floor((leftPart[0] + leftPart[1]) >> 1);
+          const rightMiddle = Math.ceil((rightPart[0] + rightPart[1]) >> 1);
+
+          container.innerText =
+            props.content.slice(0, leftMiddle) +
+            props.dots +
+            actionText.value +
+            props.dots +
+            props.content.slice(rightMiddle, end);
+
+          if (container.offsetHeight >= maxHeight) {
+            return middleTail(
+              [leftPart[0], leftMiddle],
+              [rightMiddle, rightPart[1]]
+            );
+          }
+
+          return middleTail(
+            [leftMiddle, leftPart[1]],
+            [rightPart[0], rightMiddle]
+          );
+        };
+
+        const middle = (0 + end) >> 1;
+        props.position === 'middle'
+          ? (container.innerText = middleTail([0, middle], [middle, end]))
+          : calcEllipse();
+        return container.innerText;
       };
 
+      // Calculate the interceptional text
       const container = cloneContainer();
       if (!container) return;
-
       const { paddingBottom, paddingTop, lineHeight } = container.style;
-      const maxHeight =
+      const maxHeight = Math.ceil(
         (Number(props.rows) + 0.5) * pxToNum(lineHeight) +
-        pxToNum(paddingTop) +
-        pxToNum(paddingBottom);
+          pxToNum(paddingTop) +
+          pxToNum(paddingBottom)
+      );
+
       if (maxHeight < container.offsetHeight) {
         hasAction.value = true;
         text.value = calcEllipsisText(container, maxHeight);
@@ -121,7 +198,7 @@ export default defineComponent({
 
     onMounted(calcEllipsised);
 
-    watch(() => [props.content, props.rows], calcEllipsised);
+    watch(() => [props.content, props.rows, props.position], calcEllipsised);
 
     useEventListener('resize', calcEllipsised);
 

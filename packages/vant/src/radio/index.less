@@ -1,5 +1,6 @@
 :root {
   --van-radio-size: 20px;
+  --van-radio-dot-size: 8px;
   --van-radio-border-color: var(--van-gray-5);
   --van-radio-duration: var(--van-duration-fast);
   --van-radio-label-margin: var(--van-padding-xs);
@@ -56,11 +57,41 @@
       }
     }
 
+    &--dot {
+      position: relative;
+      border-radius: 100%;
+      box-sizing: border-box;
+      width: var(--van-radio-size);
+      height: var(--van-radio-size);
+      border: 1px solid var(--van-radio-border-color);
+      transition-duration: var(--van-radio-duration);
+      transition-property: border-color;
+
+      &__icon {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border-radius: 100%;
+        height: calc(100% - var(--van-radio-dot-size));
+        width: calc(100% - var(--van-radio-dot-size));
+        transition-duration: var(--van-radio-duration);
+        transition-property: border-color, background-color;
+      }
+    }
+
     &--checked {
       .van-icon {
         color: var(--van-white);
         background-color: var(--van-radio-checked-icon-color);
         border-color: var(--van-radio-checked-icon-color);
+      }
+
+      &.van-radio__icon--dot {
+        border-color: var(--van-radio-checked-icon-color);
+        .van-radio__icon--dot__icon {
+          background: var(--van-radio-checked-icon-color);
+        }
       }
     }
 
