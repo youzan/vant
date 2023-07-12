@@ -174,7 +174,7 @@ export default defineComponent({
 
     const renderText = () => {
       if (slots.default) {
-        return slots.default();
+        return <div class={bem('text')}>{slots.default()}</div>;
       }
       if (props.text) {
         return <div class={bem('text')}>{props.text}</div>;
