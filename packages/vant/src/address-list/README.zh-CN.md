@@ -88,6 +88,7 @@ export default {
 | disabled-list | 不可配送地址列表 | _AddressListAddress[]_ | `[]` |
 | disabled-text | 不可配送提示文案 | _string_ | - |
 | switchable | 是否允许切换地址 | _boolean_ | `true` |
+| show-add-button | 是否显示底部按钮 | _boolean_ | `true` |
 | add-button-text | 底部按钮文字 | _string_ | `新增地址` |
 | default-tag-text | 默认地址标签文字 | _string_ | - |
 | right-icon `v4.5.0` | 右侧图标名称或图片链接，等同于 Icon 组件的 [name 属性](#/zh-CN/icon#props) | _string_ | `edit` |
