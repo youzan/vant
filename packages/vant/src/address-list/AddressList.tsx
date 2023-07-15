@@ -22,6 +22,7 @@ export const addressListProps = {
   switchable: truthProp,
   disabledText: String,
   disabledList: makeArrayProp<AddressListAddress>(),
+  showAddButton: truthProp,
   addButtonText: String,
   defaultTagText: String,
   rightIcon: makeStringProp('edit'),
@@ -88,18 +89,19 @@ export default defineComponent({
       }
     };
 
-    const renderBottom = () => (
-      <div class={[bem('bottom'), 'van-safe-area-bottom']}>
-        <Button
-          round
-          block
-          type="primary"
-          text={props.addButtonText || t('add')}
-          class={bem('add')}
-          onClick={() => emit('add')}
-        />
-      </div>
-    );
+    const renderBottom = () =>
+      props.showAddButton ? (
+        <div class={[bem('bottom'), 'van-safe-area-bottom']}>
+          <Button
+            round
+            block
+            type="primary"
+            text={props.addButtonText || t('add')}
+            class={bem('add')}
+            onClick={() => emit('add')}
+          />
+        </div>
+      ) : undefined;
 
     return () => {
       const List = renderList(props.list);

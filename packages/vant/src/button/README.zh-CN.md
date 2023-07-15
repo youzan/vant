@@ -133,7 +133,7 @@ app.use(Button);
 
 ### 动画按钮
 
-搭配 Button 和 Swipe 组件，可以实现垂直滚动的动画按钮效果。
+搭配 Button 和 [Swipe 组件](/#/zh-CN/swipe)，可以实现垂直滚动的动画按钮效果。
 
 ```html
 <van-button type="danger" round>

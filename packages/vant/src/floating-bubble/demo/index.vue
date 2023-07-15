@@ -17,7 +17,7 @@ const t = useTranslate({
   },
   'en-US': {
     clickBubble: 'Click bubble',
-    freeMagnetic: 'Free magnetic',
+    freeMagnetic: 'Free Magnetic',
     vModel: 'vModel',
     basicUsageText:
       'In the default x position, drag in the y direction is allowed',
@@ -28,7 +28,7 @@ const t = useTranslate({
 });
 
 const onOffsetChange = (offset: FloatingBubbleOffset) => {
-  showToast(offset.x.toFixed(0) + '__' + offset.y.toFixed(0));
+  showToast(`x: ${offset.x.toFixed(0)}, y: ${offset.y.toFixed(0)}`);
 };
 
 const onClick = () => {

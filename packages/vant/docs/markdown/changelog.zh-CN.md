@@ -13,11 +13,27 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 
 **发布节奏**
 
-- 修订号：每周发布，包含新特性和问题修复。
-- 次版本号：每隔一至二个月发布，包含新特性和较大的功能更新，向下兼容。
+- 修订号：通常每隔 1 ~ 2 周发布，包含新特性和问题修复。
+- 次版本号：通常每隔 1 ~ 2 月发布，包含新组件或较大的功能更新，向下兼容。
 - 主版本号：无固定的发布时间，包含不兼容更新和重大功能更新。
 
 ## 更新内容
+
+### [v4.6.2](https://github.com/vant-ui/vant/compare/v4.6.1...v4.6.2)
+
+`2023-07-09`
+
+**Feature**
+
+- Field: 新增 autocapitalize，autocorrect 和 spellcheck 属性 [#12065](https://github.com/vant-ui/vant/issues/12065)
+- FloatingBubble: 新增 CSS 变量用于自定义圆角 [#12070](https://github.com/vant-ui/vant/issues/12070)
+- Radio: 新增 dot 属性 [#12057](https://github.com/vant-ui/vant/issues/12057)
+- TextEllipsis: 新增 position 属性，由 [cxybd](https://github.com/cxybd) 贡献 ❤️ [#12058](https://github.com/vant-ui/vant/issues/12058)
+
+**Bug Fixes**
+
+- FloatingBubble: 修复边界错误 [#12067](https://github.com/vant-ui/vant/issues/12067)
+- Pagination: 修复边框渲染错误 [#12062](https://github.com/vant-ui/vant/issues/12062)
 
 ### [v4.6.1](https://github.com/vant-ui/vant/compare/v4.6.0...v4.6.1)
 

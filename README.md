@@ -26,7 +26,7 @@
 ## Features
 
 - 🚀 1KB Component average size (min+gzip)
-- 🚀 70+ High quality components
+- 🚀 80+ High quality components
 - 🚀 Zero third-party dependencies
 - 💪 90%+ Unit test coverage
 - 💪 Written in TypeScript

@@ -37,7 +37,7 @@
   "author": "chenjiahan",
   "license": "MIT",
   "devDependencies": {
-    "esbuild": "^0.17.12",
+    "esbuild": "^0.18.11",
     "release-it": "^15.4.1",
     "rimraf": "^5.0.0",
     "typescript": "^5.0.4"

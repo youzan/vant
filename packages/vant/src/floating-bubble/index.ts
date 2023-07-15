@@ -5,13 +5,13 @@ export const FloatingBubble = withInstall(_FloatingBubble);
 export default FloatingBubble;
 
 export { floatingBubbleProps } from './FloatingBubble';
+export type { FloatingBubbleProps } from './FloatingBubble';
 export type {
-  FloatingBubbleProps,
+  FloatingBubbleThemeVars,
   FloatingBubbleAxis,
   FloatingBubbleMagnetic,
   FloatingBubbleOffset,
-} from './FloatingBubble';
-export type { FloatingBubbleThemeVars } from './types';
+} from './types';
 
 declare module 'vue' {
   export interface GlobalComponents {

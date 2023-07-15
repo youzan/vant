@@ -60,7 +60,7 @@
     "commander": "^10.0.0",
     "consola": "^3.0.2",
     "conventional-changelog": "^3.1.25",
-    "esbuild": "^0.17.12",
+    "esbuild": "^0.18.11",
     "eslint": "^8.31.0",
     "execa": "^6.1.0",
     "fast-glob": "^3.2.11",
@@ -86,7 +86,7 @@
     "terser": "^5.16.1",
     "transliteration": "^2.3.5",
     "typescript": "^5.0.4",
-    "vite": "^4.3.9",
+    "vite": "^4.4.2",
     "vite-plugin-md": "^0.11.9",
     "vue-router": "^4.1.6"
   },

@@ -13,11 +13,27 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 
 **Release Schedule**
 
-- Patch version：released weekly, including features and bug fixes.
-- Minor version：released every one to two months, including backwards compatible features.
-- Major version：including breaking changes and new features.
+- Patch version：Typically released every 1 to 2 weeks, including new features and bug fixes.
+- Minor version：Typically released every 1 to 2 months, including new components or significant feature updates, with backward compatibility.
+- Major version：No fixed release time, includes breaking changes and major feature updates.
 
 ## Details
+
+### [v4.6.2](https://github.com/vant-ui/vant/compare/v4.6.1...v4.6.2)
+
+`2023-07-09`
+
+**Feature**
+
+- Field: add autocapitalize, autocorrect and spellcheck props [#12065](https://github.com/vant-ui/vant/issues/12065)
+- FloatingBubble: add CSS vars to override border radius [#12070](https://github.com/vant-ui/vant/issues/12070)
+- Radio: add dot shape [#12057](https://github.com/vant-ui/vant/issues/12057)
+- TextEllipsis: add position prop, contributed by [cxybd](https://github.com/cxybd) ❤️ [#12058](https://github.com/vant-ui/vant/issues/12058)
+
+**Bug Fixes**
+
+- FloatingBubble: fix wrong value of boundary [#12067](https://github.com/vant-ui/vant/issues/12067)
+- Pagination: display the border correctly [#12062](https://github.com/vant-ui/vant/issues/12062)
 
 ### [v4.6.1](https://github.com/vant-ui/vant/compare/v4.6.0...v4.6.1)
 
