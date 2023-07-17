@@ -54,6 +54,7 @@ const state = reactive({
   leftLabel: false,
   list: ['a', 'b'],
   result: ['a', 'b'],
+  checkboxShape: ['a', 'b'],
   result2: [],
   result3: [],
   checkAllResult: [],
@@ -94,7 +95,7 @@ const toggleAll = () => {
   </demo-block>
 
   <demo-block :title="t('customShape')">
-    <van-checkbox-group v-model="state.result" shape="square">
+    <van-checkbox-group v-model="state.checkboxShape" shape="square">
       <van-checkbox name="a">{{ t('customShape') }} a</van-checkbox>
       <van-checkbox name="b">{{ t('customShape') }} b</van-checkbox>
     </van-checkbox-group>
