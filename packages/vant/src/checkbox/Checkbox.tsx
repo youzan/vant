@@ -1,13 +1,13 @@
-import { watch, computed, defineComponent, type ExtractPropTypes } from 'vue';
+import {
+  watch,
+  computed,
+  defineComponent,
+  type PropType,
+  type ExtractPropTypes,
+} from 'vue';
 
 // Utils
-import {
-  pick,
-  extend,
-  truthProp,
-  makeStringProp,
-  createNamespace,
-} from '../utils';
+import { pick, extend, truthProp, createNamespace } from '../utils';
 import { CHECKBOX_GROUP_KEY } from '../checkbox-group/CheckboxGroup';
 
 // Composables
@@ -23,7 +23,7 @@ import type { CheckboxExpose } from './types';
 const [name, bem] = createNamespace('checkbox');
 
 export const checkboxProps = extend({}, checkerProps, {
-  shape: makeStringProp<CheckerShape>('round'),
+  shape: String as PropType<CheckerShape>,
   bindGroup: truthProp,
 });
 

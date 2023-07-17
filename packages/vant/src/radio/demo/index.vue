@@ -77,17 +77,22 @@ const inactiveIcon = cdnURL('user-inactive.png');
   </demo-block>
 
   <demo-block :title="t('customShape')">
-    <van-radio-group v-model="radioSquare" class="demo-radio-group">
-      <van-radio name="1" shape="square">{{ t('radio') }} 1</van-radio>
-      <van-radio name="2" shape="square">{{ t('radio') }} 2</van-radio>
+    <van-radio-group
+      v-model="radioSquare"
+      class="demo-radio-group"
+      shape="square"
+    >
+      <van-radio name="1">{{ t('radio') }} 1</van-radio>
+      <van-radio name="2">{{ t('radio') }} 2</van-radio>
     </van-radio-group>
     <van-radio-group
       v-model="radioDot"
       class="demo-radio-group"
+      shape="dot"
       style="margin-top: 20px"
     >
-      <van-radio name="1" shape="dot">{{ t('radio') }} 1</van-radio>
-      <van-radio name="2" shape="dot">{{ t('radio') }} 2</van-radio>
+      <van-radio name="1">{{ t('radio') }} 1</van-radio>
+      <van-radio name="2">{{ t('radio') }} 2</van-radio>
     </van-radio-group>
   </demo-block>
 

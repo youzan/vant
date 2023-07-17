@@ -47,7 +47,21 @@ export default {
 ### Custom Shape
 
 ```html
-<van-checkbox v-model="checked" shape="square">Checkbox</van-checkbox>
+<van-checkbox-group v-model="checked" shape="square">
+  <van-checkbox name="a">复选框 a</van-checkbox>
+  <van-checkbox name="b">复选框 b</van-checkbox>
+</van-checkbox-group>
+```
+
+```js
+import { ref } from 'vue';
+
+export default {
+  setup() {
+    const checked = ref(['a', 'b']);
+    return { checked };
+  },
+};
 ```
 
 ### Custom Color
@@ -277,6 +291,7 @@ export default {
 | direction | Direction, can be set to `horizontal` | _string_ | `vertical` |
 | icon-size | Icon size of all checkboxes | _number \| string_ | `20px` |
 | checked-color | Checked color of all checkboxes | _string_ | `#1989fa` |
+| shape `v4.6.3` | Can be set to `square` | _string_ | `round` |
 
 ### Checkbox Events
 

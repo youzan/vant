@@ -65,17 +65,17 @@ export default {
 
 ### 自定义形状
 
-`shape` 属性可选值为 `square` 和 `dot`，单选框形状分别对应方形和圆形。
+`shape` 属性可选值为 `square` 和 `dot`，单选框形状分别对应方形和圆点形。
 
 ```html
-<van-radio-group v-model="checked">
-  <van-radio name="1" shape="square">单选框 1</van-radio>
-  <van-radio name="2" shape="square">单选框 2</van-radio>
+<van-radio-group v-model="checked" shape="square">
+  <van-radio name="1">单选框 1</van-radio>
+  <van-radio name="2">单选框 2</van-radio>
 </van-radio-group>
 
-<van-radio-group v-model="checked">
-  <van-radio name="1" shape="dot">Radio 1</van-radio>
-  <van-radio name="2" shape="dot">Radio 2</van-radio>
+<van-radio-group v-model="checked" shape="dot">
+  <van-radio name="1">Radio 1</van-radio>
+  <van-radio name="2">Radio 2</van-radio>
 </van-radio-group>
 ```
 
@@ -211,6 +211,7 @@ export default {
 | direction | 排列方向，可选值为 `horizontal` | _string_ | `vertical` |
 | icon-size | 所有单选框的图标大小，默认单位为 `px` | _number \| string_ | `20px` |
 | checked-color | 所有单选框的选中状态颜色 | _string_ | `#1989fa` |
+| shape `v4.6.3` | 形状，可选值为 `square` `dot` | _string_ | `round` |
 
 ### Radio Events
 

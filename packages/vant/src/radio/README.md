@@ -62,14 +62,14 @@ export default {
 ### Custom Shape
 
 ```html
-<van-radio-group v-model="checked">
-  <van-radio name="1" shape="square">Radio 1</van-radio>
-  <van-radio name="2" shape="square">Radio 2</van-radio>
+<van-radio-group v-model="checked" shape="square">
+  <van-radio name="1">Radio 1</van-radio>
+  <van-radio name="2">Radio 2</van-radio>
 </van-radio-group>
 
-<van-radio-group v-model="checked">
-  <van-radio name="1" shape="dot">Radio 1</van-radio>
-  <van-radio name="2" shape="dot">Radio 2</van-radio>
+<van-radio-group v-model="checked" shape="dot">
+  <van-radio name="1">Radio 1</van-radio>
+  <van-radio name="2">Radio 2</van-radio>
 </van-radio-group>
 ```
 
@@ -211,6 +211,7 @@ import type {
 | direction | Direction, can be set to `horizontal` | _string_ | `vertical` |
 | icon-size | Icon size of all radios | _number \| string_ | `20px` |
 | checked-color | Checked color of all radios | _string_ | `#1989fa` |
+| shape `v4.6.3` | Can be set to `square` `dot` | _string_ | `round` |
 
 ### Radio Events
 

@@ -113,3 +113,23 @@ test('should change checked color when using checked-color prop', () => {
   expect(icons[0].style.backgroundColor).toEqual('black');
   expect(icons[1].style.backgroundColor).toEqual('white');
 });
+
+test('should render shape correctly when using shape prop', () => {
+  const wrapper = mount({
+    render() {
+      return (
+        <RadioGroup shape="dot">
+          <Radio modelValue={true} />
+          <Radio modelValue={true} shape="round" />
+        </RadioGroup>
+      );
+    },
+  });
+
+  const shapeClass = 'van-radio__icon--dot';
+  // The priority of the sub component shape prop is higher than parent component
+  const shapeClass1 = 'van-radio__icon--round';
+  const iconBoxs = wrapper.findAll('.van-radio__icon');
+  expect(iconBoxs[0].classes()).toContain(shapeClass);
+  expect(iconBoxs[1].classes()).toContain(shapeClass1);
+});

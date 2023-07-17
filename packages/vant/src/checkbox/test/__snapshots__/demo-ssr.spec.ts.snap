@@ -68,25 +68,48 @@ exports[`should render demo and match snapshot 1`] = `
 </div>
 <div>
   <!--[-->
-  <div role="checkbox"
-       class="van-checkbox"
-       tabindex="0"
-       aria-checked="true"
-  >
+  <div class="van-checkbox-group">
     <!--[-->
-    <div class="van-checkbox__icon van-checkbox__icon--square van-checkbox__icon--checked"
-         style
+    <div role="checkbox"
+         class="van-checkbox"
+         tabindex="0"
+         aria-checked="true"
     >
-      <i class="van-badge__wrapper van-icon van-icon-success"
-         style
-      >
-        <!--[-->
-      </i>
-    </div>
-    <span class="van-checkbox__label">
       <!--[-->
-      Custom Shape
-    </span>
+      <div class="van-checkbox__icon van-checkbox__icon--square van-checkbox__icon--checked"
+           style
+      >
+        <i class="van-badge__wrapper van-icon van-icon-success"
+           style
+        >
+          <!--[-->
+        </i>
+      </div>
+      <span class="van-checkbox__label">
+        <!--[-->
+        Custom Shape a
+      </span>
+    </div>
+    <div role="checkbox"
+         class="van-checkbox"
+         tabindex="0"
+         aria-checked="true"
+    >
+      <!--[-->
+      <div class="van-checkbox__icon van-checkbox__icon--square van-checkbox__icon--checked"
+           style
+      >
+        <i class="van-badge__wrapper van-icon van-icon-success"
+           style
+        >
+          <!--[-->
+        </i>
+      </div>
+      <span class="van-checkbox__label">
+        <!--[-->
+        Custom Shape b
+      </span>
+    </div>
   </div>
 </div>
 <div>
