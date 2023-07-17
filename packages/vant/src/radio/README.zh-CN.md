@@ -68,14 +68,14 @@ export default {
 `shape` 属性可选值为 `square` 和 `dot`，单选框形状分别对应方形和圆点形。
 
 ```html
-<van-radio-group v-model="checked">
-  <van-radio name="1" shape="square">单选框 1</van-radio>
-  <van-radio name="2" shape="square">单选框 2</van-radio>
+<van-radio-group v-model="checked" shape="square">
+  <van-radio name="1">单选框 1</van-radio>
+  <van-radio name="2">单选框 2</van-radio>
 </van-radio-group>
 
-<van-radio-group v-model="checked">
-  <van-radio name="1" shape="dot">Radio 1</van-radio>
-  <van-radio name="2" shape="dot">Radio 2</van-radio>
+<van-radio-group v-model="checked" shape="dot">
+  <van-radio name="1">Radio 1</van-radio>
+  <van-radio name="2">Radio 2</van-radio>
 </van-radio-group>
 ```
 

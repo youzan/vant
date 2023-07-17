@@ -49,7 +49,6 @@ const state = reactive({
   checkbox1: true,
   checkbox2: true,
   checkbox3: true,
-  checkboxShape: true,
   checkboxLabel: true,
   checkboxIcon: true,
   leftLabel: false,
@@ -95,9 +94,10 @@ const toggleAll = () => {
   </demo-block>
 
   <demo-block :title="t('customShape')">
-    <van-checkbox v-model="state.checkboxShape" shape="square">
-      {{ t('customShape') }}
-    </van-checkbox>
+    <van-checkbox-group v-model="state.result" shape="square">
+      <van-checkbox name="a">{{ t('customShape') }} a</van-checkbox>
+      <van-checkbox name="b">{{ t('customShape') }} b</van-checkbox>
+    </van-checkbox-group>
   </demo-block>
 
   <demo-block :title="t('customColor')">

@@ -62,14 +62,14 @@ export default {
 ### Custom Shape
 
 ```html
-<van-radio-group v-model="checked">
-  <van-radio name="1" shape="square">Radio 1</van-radio>
-  <van-radio name="2" shape="square">Radio 2</van-radio>
+<van-radio-group v-model="checked" shape="square">
+  <van-radio name="1">Radio 1</van-radio>
+  <van-radio name="2">Radio 2</van-radio>
 </van-radio-group>
 
-<van-radio-group v-model="checked">
-  <van-radio name="1" shape="dot">Radio 1</van-radio>
-  <van-radio name="2" shape="dot">Radio 2</van-radio>
+<van-radio-group v-model="checked" shape="dot">
+  <van-radio name="1">Radio 1</van-radio>
+  <van-radio name="2">Radio 2</van-radio>
 </van-radio-group>
 ```
 
