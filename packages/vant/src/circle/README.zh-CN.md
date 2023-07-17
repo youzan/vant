@@ -152,7 +152,7 @@ export default {
 <van-circle
   v-model:current-rate="currentRate"
   :rate="rate"
-  :text="左侧"
+  text="左侧"
   start-position="left"
 />
 <van-circle
