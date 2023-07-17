@@ -140,7 +140,7 @@ export default {
 <van-circle
   v-model:current-rate="currentRate"
   :rate="rate"
-  :text="Left"
+  text="Left"
   start-position="left"
 />
 <van-circle
