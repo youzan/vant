@@ -139,7 +139,7 @@ export default {
 
 ### Events
 
-| 事件 | 说明 | 回调参数 |
+| 事件名 | 说明 | 回调参数 |
 | --- | --- | --- |
 | confirm | 点击完成按钮时触发 | _{ selectedValues, selectedOptions, selectedIndexes }_ |
 | cancel | 点击取消按钮时触发 | _{ selectedValues, selectedOptions, selectedIndexes }_ |
