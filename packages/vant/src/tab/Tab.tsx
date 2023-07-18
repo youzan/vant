@@ -5,8 +5,6 @@ import {
   computed,
   nextTick,
   watchEffect,
-  normalizeClass,
-  normalizeStyle,
   defineComponent,
   getCurrentInstance,
   type PropType,
@@ -14,7 +12,7 @@ import {
   type ExtractPropTypes,
 } from 'vue';
 // eslint-disable-next-line vue/prefer-import-from-vue
-import { stringifyStyle } from '@vue/shared';
+import { normalizeClass, normalizeStyle, stringifyStyle } from '@vue/shared';
 
 // Utils
 import {
