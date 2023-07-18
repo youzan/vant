@@ -15,6 +15,6 @@ export type {
 
 declare module 'vue' {
   export interface GlobalComponents {
-    FloatingBubble: typeof FloatingBubble;
+    VanFloatingBubble: typeof FloatingBubble;
   }
 }
