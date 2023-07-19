@@ -32,7 +32,7 @@ app.use(ConfigProvider);
 
 ```css
 .van-theme-dark body {
-  text-color: #f5f5f5;
+  color: #f5f5f5;
   background-color: black;
 }
 ```

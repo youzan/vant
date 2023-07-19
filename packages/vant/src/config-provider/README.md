@@ -32,7 +32,7 @@ The theme prop will not change the text-color or background-color of the page, y
 
 ```css
 .van-theme-dark body {
-  text-color: #f5f5f5;
+  color: #f5f5f5;
   background-color: black;
 }
 ```
