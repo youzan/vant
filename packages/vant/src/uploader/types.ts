@@ -8,6 +8,7 @@ export type UploaderResultType = 'dataUrl' | 'text' | 'file';
 export type UploaderFileListItem = {
   url?: string;
   file?: File;
+  objectUrl?: string;
   content?: string;
   isImage?: boolean;
   status?: '' | 'uploading' | 'done' | 'failed';
