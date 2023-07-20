@@ -19,6 +19,18 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 
 ## 更新内容
 
+### [v3.6.12](https://github.com/vant-ui/vant/compare/v3.6.11...v3.6.12)
+
+`2023-07-20`
+
+**Feature**
+
+- Uploader: 支持 avif 格式 [#11655](https://github.com/vant-ui/vant/issues/11655)
+
+**Bug Fixes**
+
+- Uploader: 修复性能问题 [#12106](https://github.com/vant-ui/vant/issues/12106)
+
 ### [v3.6.11](https://github.com/vant-ui/vant/compare/v3.6.10...v3.6.11)
 
 `2022-12-25`

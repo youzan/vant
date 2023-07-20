@@ -19,6 +19,18 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 
 ## Details
 
+### [v3.6.12](https://github.com/vant-ui/vant/compare/v3.6.11...v3.6.12)
+
+`2023-07-20`
+
+**Feature**
+
+- Uploader: support avif image format [#11655](https://github.com/vant-ui/vant/issues/11655)
+
+**Bug Fixes**
+
+- Uploader: render objectUrl to avoid perf issue [#12106](https://github.com/vant-ui/vant/issues/12106)
+
 ### [v3.6.11](https://github.com/vant-ui/vant/compare/v3.6.10...v3.6.11)
 
 `2022-12-25`
