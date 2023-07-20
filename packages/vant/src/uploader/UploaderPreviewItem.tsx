@@ -111,7 +111,7 @@ export default defineComponent({
           <Image
             v-slots={{ default: renderCover }}
             fit={imageFit}
-            src={item.content || item.url}
+            src={item.objectUrl || item.content || item.url}
             class={bem('preview-image')}
             width={Array.isArray(previewSize) ? previewSize[0] : previewSize}
             height={Array.isArray(previewSize) ? previewSize[1] : previewSize}
