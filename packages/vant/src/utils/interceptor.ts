@@ -1,5 +1,4 @@
-import { noop } from './basic';
-import { isPromise } from './validate';
+import { noop, isPromise } from './basic';
 
 export type Interceptor = (
   ...args: any[]
@@ -15,7 +14,7 @@ export function callInterceptor(
     args?: unknown[];
     done: () => void;
     canceled?: () => void;
-  }
+  },
 ) {
   if (interceptor) {
     // eslint-disable-next-line prefer-spread

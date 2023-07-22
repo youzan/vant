@@ -1,7 +1,6 @@
-import { get, noop } from '../basic';
+import { get, noop, isDef, isMobile, isNumeric } from '../basic';
 import { deepClone } from '../deep-clone';
 import { deepAssign } from '../deep-assign';
-import { isDef, isMobile, isNumeric } from '../validate';
 import { addUnit, unitToPx, camelize, formatNumber } from '../format';
 import { trigger } from '../../../test';
 
@@ -23,7 +22,7 @@ test('deepAssign', () => {
   expect(deepAssign({ noop: null }, { noop })).toEqual({ noop });
   expect(deepAssign({ foo: 0 }, { bar: 1 })).toEqual({ foo: 0, bar: 1 });
   expect(
-    deepAssign({ foo: { bar: false } }, { foo: { bar: true, foo: false } })
+    deepAssign({ foo: { bar: false } }, { foo: { bar: true, foo: false } }),
   ).toEqual({
     foo: {
       bar: true,

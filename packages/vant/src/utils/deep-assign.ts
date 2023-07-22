@@ -1,4 +1,4 @@
-import { isDef, isObject } from './validate';
+import { isDef, isObject } from './basic';
 
 type ObjectIndex = Record<string, unknown>;
 
