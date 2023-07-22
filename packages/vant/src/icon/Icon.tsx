@@ -40,7 +40,7 @@ export default defineComponent({
     const config = inject(CONFIG_PROVIDER_KEY, null);
 
     const classPrefix = computed(
-      () => props.classPrefix || config?.iconPrefix || bem()
+      () => props.classPrefix || config?.iconPrefix || bem(),
     );
 
     return () => {

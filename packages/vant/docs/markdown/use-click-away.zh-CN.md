@@ -48,7 +48,7 @@ export default {
       () => {
         console.log('touch outside!');
       },
-      { eventName: 'touchstart' }
+      { eventName: 'touchstart' },
     );
 
     return { root };
@@ -71,7 +71,7 @@ function useClickAway(
     | Ref<Element | undefined>
     | Array<Element | Ref<Element | undefined>>,
   listener: EventListener,
-  options?: Options
+  options?: Options,
 ): void;
 ```
 

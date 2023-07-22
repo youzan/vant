@@ -64,7 +64,7 @@ export async function changelog(): Promise<void> {
         headerPartial,
         commitPartial,
         transform,
-      }
+      },
     )
       .pipe(createWriteStream(DIST_FILE))
       .on('close', () => {

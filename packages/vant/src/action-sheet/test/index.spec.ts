@@ -181,7 +181,7 @@ test('should render description correctly', () => {
   });
 
   expect(
-    wrapper.find('.van-action-sheet__description').html()
+    wrapper.find('.van-action-sheet__description').html(),
   ).toMatchSnapshot();
 });
 
@@ -209,7 +209,7 @@ test('should render description slot when match snapshot', () => {
   });
 
   expect(
-    wrapper.find('.van-action-sheet__description').html()
+    wrapper.find('.van-action-sheet__description').html(),
   ).toMatchSnapshot();
 });
 
@@ -251,14 +251,14 @@ test('should allow to control safe-area with safe-area-inset-bottom prop', async
   });
 
   expect(wrapper.find('.van-action-sheet').classes()).toContain(
-    'van-safe-area-bottom'
+    'van-safe-area-bottom',
   );
 
   await wrapper.setProps({
     safeAreaInsetBottom: false,
   });
   expect(wrapper.find('.van-action-sheet').classes()).not.toContain(
-    'van-safe-area-bottom'
+    'van-safe-area-bottom',
   );
 });
 

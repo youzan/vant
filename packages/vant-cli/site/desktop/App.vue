@@ -107,11 +107,11 @@ export default {
 
       const navItems = this.config.nav.reduce(
         (result, nav) => [...result, ...nav.items],
-        []
+        [],
       );
 
       const current = navItems.find(
-        (item) => item.path === this.$route.meta.name
+        (item) => item.path === this.$route.meta.name,
       );
 
       if (current && current.title) {

@@ -65,7 +65,7 @@ test('select event when type is single', async () => {
   wrapper.findAll('.van-calendar__day')[15].trigger('click');
 
   expect(wrapper.emitted<[Date]>('select')![0][0]).toEqual(
-    new Date(2010, 0, 16)
+    new Date(2010, 0, 16),
   );
 });
 
@@ -166,7 +166,7 @@ test('select event when type is multiple', async () => {
   days[15].trigger('click');
 
   expect(wrapper.emitted<[Date]>('unselect')![0][0]).toEqual(
-    new Date(2010, 0, 16)
+    new Date(2010, 0, 16),
   );
 });
 
@@ -205,7 +205,7 @@ test('confirm event when type is single', async () => {
 
   wrapper.find('.van-calendar__confirm').trigger('click');
   expect(wrapper.emitted<[Date]>('confirm')![0][0]).toEqual(
-    new Date(2010, 0, 16)
+    new Date(2010, 0, 16),
   );
 });
 
@@ -382,7 +382,7 @@ test('should render subtitle slot with params', async () => {
   await later();
 
   expect(
-    wrapper.find('.van-calendar__header-subtitle').html()
+    wrapper.find('.van-calendar__header-subtitle').html(),
   ).toMatchSnapshot();
 });
 
@@ -420,7 +420,7 @@ test('should reset when type changed', async () => {
 
   wrapper.find('.van-calendar__confirm').trigger('click');
   expect(wrapper.emitted<[Date]>('confirm')![0][0]).toEqual(
-    new Date(2010, 0, 10)
+    new Date(2010, 0, 10),
   );
 
   await wrapper.setProps({
@@ -449,13 +449,13 @@ test('default-date prop in single type', async () => {
 
   wrapper.find('.van-calendar__confirm').trigger('click');
   expect(wrapper.emitted<[Date]>('confirm')![0][0]).toEqual(
-    new Date(2010, 0, 11)
+    new Date(2010, 0, 11),
   );
 
   await wrapper.setProps({ defaultDate: maxDate });
   wrapper.find('.van-calendar__confirm').trigger('click');
   expect(wrapper.emitted<[Date]>('confirm')![1][0]).toEqual(
-    new Date(2010, 0, 20)
+    new Date(2010, 0, 20),
   );
 });
 

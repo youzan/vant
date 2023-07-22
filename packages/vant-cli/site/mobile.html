@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -15,16 +15,12 @@
     <meta http-equiv="Cache-Control" content="no-cache" />
     <meta http-equiv="Pragma" content="no-cache" />
     <meta http-equiv="Expires" content="0" />
-    <% if (headHtml) { %>
-      <%= headHtml %>
-    <% } %>
-    <% if (enableVConsole) { %>
+    <% if (headHtml) { %> <%= headHtml %> <% } %> <% if (enableVConsole) { %>
     <script src="https://unpkg.com/vconsole/dist/vconsole.min.js"></script>
     <script>
       var vConsole = new window.VConsole();
     </script>
-    <% } %>
-    <% if (baiduAnalytics) { %>
+    <% } %> <% if (baiduAnalytics) { %>
     <script>
       // avoid to load analytics in iframe
       if (window.top === window) {

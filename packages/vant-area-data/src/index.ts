@@ -3900,7 +3900,7 @@ type CascaderOption = {
 const makeOption = (
   text: string,
   value: string,
-  children?: CascaderOption[]
+  children?: CascaderOption[],
 ): CascaderOption => ({
   text,
   value,

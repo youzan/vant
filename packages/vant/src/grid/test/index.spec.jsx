@@ -71,7 +71,7 @@ test('should render ".van-grid-item__content--reverse" class when using reverse 
   });
 
   expect(wrapper.find('.van-grid-item__content').classes()).toContain(
-    'van-grid-item__content--reverse'
+    'van-grid-item__content--reverse',
   );
 });
 

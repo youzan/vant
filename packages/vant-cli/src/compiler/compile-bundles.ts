@@ -38,9 +38,9 @@ export async function compileBundles() {
       build(
         await mergeCustomViteConfig(
           getViteConfigForPackage(config),
-          'production'
-        )
-      )
-    )
+          'production',
+        ),
+      ),
+    ),
   );
 }

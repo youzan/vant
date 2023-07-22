@@ -145,7 +145,7 @@ test('should change loading icon size when using icon-size prop', () => {
     },
   });
   expect(wrapper.find('.van-image__loading-icon').style.fontSize).toEqual(
-    '3rem'
+    '3rem',
   );
 });
 

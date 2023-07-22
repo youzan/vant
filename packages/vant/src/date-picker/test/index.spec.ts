@@ -27,7 +27,7 @@ test('should emit confirm event correctly', async () => {
       ],
       selectedValues: ['2030', '01', '01'],
       selectedIndexes: [0, 0, 0],
-    }
+    },
   );
 });
 
@@ -66,10 +66,12 @@ test('should allow to dynamically set value', async () => {
   await wrapper.find('.van-picker__confirm').trigger('click');
 
   expect(
-    wrapper.emitted<[PickerConfirmEventParams]>('confirm')![0][0].selectedValues
+    wrapper.emitted<[PickerConfirmEventParams]>('confirm')![0][0]
+      .selectedValues,
   ).toEqual(['2020', '02', '02']);
   expect(
-    wrapper.emitted<[PickerConfirmEventParams]>('confirm')![1][0].selectedValues
+    wrapper.emitted<[PickerConfirmEventParams]>('confirm')![1][0]
+      .selectedValues,
   ).toEqual(['2020', '03', '03']);
 });
 
@@ -94,7 +96,8 @@ test('should render with max-date correctly', async () => {
   await later();
   await wrapper.find('.van-picker__confirm').trigger('click');
   expect(
-    wrapper.emitted<[PickerConfirmEventParams]>('confirm')![0][0].selectedValues
+    wrapper.emitted<[PickerConfirmEventParams]>('confirm')![0][0]
+      .selectedValues,
   ).toEqual(['2010', '01', '10']);
 });
 
@@ -119,7 +122,8 @@ test('should render with min-date correctly', async () => {
   await later();
   await wrapper.find('.van-picker__confirm').trigger('click');
   expect(
-    wrapper.emitted<[PickerConfirmEventParams]>('confirm')![0][0].selectedValues
+    wrapper.emitted<[PickerConfirmEventParams]>('confirm')![0][0]
+      .selectedValues,
   ).toEqual(['2000', '10', '10']);
 });
 
@@ -197,7 +201,8 @@ test('should update value correctly when dynamically change min-date', async () 
 
   await wrapper.find('.van-picker__confirm').trigger('click');
   expect(
-    wrapper.emitted<[PickerConfirmEventParams]>('confirm')![0][0].selectedValues
+    wrapper.emitted<[PickerConfirmEventParams]>('confirm')![0][0]
+      .selectedValues,
   ).toEqual(['2020', '12', '20']);
 });
 
@@ -218,6 +223,7 @@ test('should be displayed correctly when modelValue updated by external sources'
 
   await wrapper.find('.van-picker__confirm').trigger('click');
   expect(
-    wrapper.emitted<[PickerConfirmEventParams]>('confirm')![0][0].selectedValues
+    wrapper.emitted<[PickerConfirmEventParams]>('confirm')![0][0]
+      .selectedValues,
   ).toEqual(['2024', '01']);
 });

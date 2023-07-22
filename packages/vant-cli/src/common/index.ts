@@ -42,7 +42,7 @@ export function getComponents() {
         }
 
         return false;
-      })
+      }),
     );
 }
 
@@ -65,7 +65,7 @@ export function camelize(str: string): string {
 export function pascalize(str: string): string {
   return camelize(str).replace(
     pascalizeRE,
-    (_, c1, c2) => c1.toUpperCase() + c2
+    (_, c1, c2) => c1.toUpperCase() + c2,
   );
 }
 
@@ -116,7 +116,7 @@ export function smartOutputFile(filePath: string, content: string) {
 
 export async function mergeCustomViteConfig(
   config: InlineConfig,
-  mode: 'production' | 'development'
+  mode: 'production' | 'development',
 ): Promise<InlineConfig> {
   const vantConfig = getVantConfig();
   const configureVite = vantConfig.build?.configureVite;
@@ -127,7 +127,7 @@ export async function mergeCustomViteConfig(
       command: mode === 'development' ? 'serve' : 'build',
     },
     undefined,
-    process.cwd()
+    process.cwd(),
   );
 
   if (configureVite) {

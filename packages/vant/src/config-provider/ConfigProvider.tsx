@@ -66,9 +66,9 @@ export default defineComponent({
         extend(
           {},
           props.themeVars,
-          props.theme === 'dark' ? props.themeVarsDark : props.themeVarsLight
-        )
-      )
+          props.theme === 'dark' ? props.themeVarsDark : props.themeVarsLight,
+        ),
+      ),
     );
 
     if (inBrowser) {
@@ -87,7 +87,7 @@ export default defineComponent({
           }
           addTheme();
         },
-        { immediate: true }
+        { immediate: true },
       );
 
       onActivated(addTheme);

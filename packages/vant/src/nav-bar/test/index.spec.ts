@@ -11,7 +11,7 @@ test('should render left slot correctly', () => {
 
   expect(wrapper.find('.van-nav-bar__left').html()).toMatchSnapshot();
   expect(
-    wrapper.find('.van-nav-bar__left').classes(HAPTICS_FEEDBACK)
+    wrapper.find('.van-nav-bar__left').classes(HAPTICS_FEEDBACK),
   ).toBeTruthy();
 });
 
@@ -24,7 +24,7 @@ test('should render left slot correctly', () => {
 
   expect(wrapper.find('.van-nav-bar__right').html()).toMatchSnapshot();
   expect(
-    wrapper.find('.van-nav-bar__right').classes(HAPTICS_FEEDBACK)
+    wrapper.find('.van-nav-bar__right').classes(HAPTICS_FEEDBACK),
   ).toBeTruthy();
 });
 

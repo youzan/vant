@@ -65,7 +65,7 @@ export default defineComponent({
     if (!parent) {
       if (process.env.NODE_ENV !== 'production') {
         console.error(
-          '[Vant] <DropdownItem> must be a child component of <DropdownMenu>.'
+          '[Vant] <DropdownItem> must be a child component of <DropdownMenu>.',
         );
       }
       return;
@@ -90,7 +90,7 @@ export default defineComponent({
 
     const toggle = (
       show = !state.showPopup,
-      options: { immediate?: boolean } = {}
+      options: { immediate?: boolean } = {},
     ) => {
       if (show === state.showPopup) {
         return;
@@ -115,7 +115,7 @@ export default defineComponent({
       }
 
       const match = props.options.find(
-        (option) => option.value === props.modelValue
+        (option) => option.value === props.modelValue,
       );
 
       return match ? match.text : '';

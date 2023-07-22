@@ -176,7 +176,7 @@ export default defineComponent({
       const newOffset = clamp(
         startOffset + touch.deltaY.value,
         -(count() * props.optionHeight),
-        props.optionHeight
+        props.optionHeight,
       );
 
       const newIndex = getIndexByOffset(newOffset);
@@ -266,7 +266,7 @@ export default defineComponent({
       const index = moving
         ? Math.floor(-currentOffset.value / props.optionHeight)
         : props.options.findIndex(
-            (option) => option[props.fields.value] === props.value
+            (option) => option[props.fields.value] === props.value,
           );
       const enabledIndex = findIndexOfEnabledOption(props.options, index);
       const offset = -enabledIndex * props.optionHeight;

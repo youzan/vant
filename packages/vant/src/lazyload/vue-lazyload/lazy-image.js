@@ -22,7 +22,7 @@ export default (lazyManager) => ({
       {
         src: this.renderSrc,
       },
-      this.$slots.default?.()
+      this.$slots.default?.(),
     );
   },
   data() {
@@ -85,7 +85,7 @@ export default (lazyManager) => ({
           !lazyManager.options.silent
         ) {
           console.log(
-            `[@vant/lazyload] ${this.options.src} tried too more than ${this.options.attempt} times`
+            `[@vant/lazyload] ${this.options.src} tried too more than ${this.options.attempt} times`,
           );
         }
 
@@ -103,7 +103,7 @@ export default (lazyManager) => ({
           this.state.attempt++;
           this.renderSrc = this.options.error;
           this.state.error = true;
-        }
+        },
       );
     },
   },

@@ -11,7 +11,7 @@ export const images = [
 function triggerTwoFingerTouchmove(
   el: Element | DOMWrapper<Element>,
   x: number,
-  y: number
+  y: number,
 ) {
   trigger(el, 'touchmove', -x, -y, { x, y });
 }
@@ -20,7 +20,7 @@ export function triggerZoom(
   el: Element | DOMWrapper<Element>,
   x: number,
   y: number,
-  direction = 'in'
+  direction = 'in',
 ) {
   trigger(el, 'touchstart', 0, 0, { x, y });
 

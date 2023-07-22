@@ -65,7 +65,7 @@ export default defineComponent({
           nodes.push(
             <Tag type="primary" round class={bem('item-tag')}>
               {props.defaultTagText}
-            </Tag>
+            </Tag>,
           );
         }
 

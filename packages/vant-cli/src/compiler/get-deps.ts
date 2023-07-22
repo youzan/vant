@@ -105,7 +105,7 @@ export function getDeps(filePath: string) {
 export function replaceScriptImportExt(
   code: string,
   filePath: string,
-  ext: string
+  ext: string,
 ) {
   const imports = [...matchImports(code), ...matchExportFroms(code)];
 
@@ -132,7 +132,6 @@ export function replaceScriptImportExt(
         return;
       }
 
-
       const pathInfo = getPathByImport(line, filePath);
 
       if (pathInfo) {
@@ -141,7 +140,7 @@ export function replaceScriptImportExt(
         if (pathInfo.isIndex) {
           const newLine = line.replace(
             relativePath,
-            `${relativePath}/index${ext}`
+            `${relativePath}/index${ext}`,
           );
 
           updateImport(index, newLine);

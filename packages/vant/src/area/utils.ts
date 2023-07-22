@@ -25,7 +25,7 @@ export const INHERIT_PROPS = [
 const makeOption = (
   text = '',
   value = AREA_EMPTY_CODE,
-  children: PickerOption[] | undefined = undefined
+  children: PickerOption[] | undefined = undefined,
 ): PickerOption => ({
   text,
   value,
@@ -52,7 +52,7 @@ export function formatDataForCascade({
             makeOption(
               placeholder[0],
               AREA_EMPTY_CODE,
-              showCounty ? [] : undefined
+              showCounty ? [] : undefined,
             ),
           ]
         : [];
@@ -63,7 +63,7 @@ export function formatDataForCascade({
   Object.keys(province).forEach((code) => {
     provinceMap.set(
       code.slice(0, 2),
-      makeOption(province[code], code, getProvinceChildren())
+      makeOption(province[code], code, getProvinceChildren()),
     );
   });
 

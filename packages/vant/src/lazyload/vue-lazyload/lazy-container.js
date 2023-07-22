@@ -44,7 +44,7 @@ class LazyContainer {
                 : el.getAttribute('data-loading')) || this.options.loading,
           },
         }),
-        this.vnode
+        this.vnode,
       );
     });
   }

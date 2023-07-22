@@ -31,13 +31,13 @@ export async function compileSite(production = false) {
   if (production) {
     const config = await mergeCustomViteConfig(
       getViteConfigForSiteProd(),
-      'production'
+      'production',
     );
     await build(config);
   } else {
     const config = await mergeCustomViteConfig(
       getViteConfigForSiteDev(),
-      'development'
+      'development',
     );
     const server = await createServer(config);
     await server.listen(config.server?.port);

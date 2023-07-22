@@ -42,7 +42,7 @@ test('callInterceptor', async () => {
     {
       args: ['foo'],
       done,
-    }
+    },
   );
 
   expect(done).toHaveBeenCalledTimes(3);

@@ -209,7 +209,7 @@ export default {
 
       if (type === 'hour') {
         return options.filter(
-          (option) => Number(option.value) >= 8 && Number(option.value) <= 18
+          (option) => Number(option.value) >= 8 && Number(option.value) <= 18,
         );
       }
 

@@ -19,7 +19,7 @@ function mockRect(vertical?: boolean) {
 function testSlotReceivedParams(
   slot: ReturnType<typeof jest.fn>,
   dragging: boolean,
-  dragIndex?: number
+  dragIndex?: number,
 ) {
   const latestParams = slot.mock.calls.at(-1)![0];
   expect(latestParams.dragging).toEqual(dragging);
@@ -289,7 +289,7 @@ test('should render left-button、right-button slot correctly', async () => {
   expect(wrapper.html()).toMatchSnapshot();
 
   const [leftButton, rightButton] = wrapper.findAll(
-    '.van-slider__button-wrapper'
+    '.van-slider__button-wrapper',
   );
 
   trigger(leftButton, 'touchstart', 50, 0);

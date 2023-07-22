@@ -126,13 +126,13 @@ export default defineComponent({
       if (extraKeys.length === 1) {
         keys.push(
           { text: 0, wider: true },
-          { text: extraKeys[0], type: 'extra' }
+          { text: extraKeys[0], type: 'extra' },
         );
       } else if (extraKeys.length === 2) {
         keys.push(
           { text: extraKeys[0], type: 'extra' },
           { text: 0 },
-          { text: extraKeys[1], type: 'extra' }
+          { text: extraKeys[1], type: 'extra' },
         );
       }
 
@@ -140,7 +140,7 @@ export default defineComponent({
     };
 
     const keys = computed(() =>
-      props.theme === 'custom' ? genCustomKeys() : genDefaultKeys()
+      props.theme === 'custom' ? genCustomKeys() : genDefaultKeys(),
     );
 
     const onBlur = () => {
@@ -263,7 +263,7 @@ export default defineComponent({
         if (!props.transition) {
           emit(value ? 'show' : 'hide');
         }
-      }
+      },
     );
 
     if (props.hideOnClickOutside) {

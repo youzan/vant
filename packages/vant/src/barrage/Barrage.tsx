@@ -49,7 +49,7 @@ export default defineComponent({
 
     const createBarrageItem = (
       text: string | number,
-      delay: number = props.delay
+      delay: number = props.delay,
     ) => {
       const item = document.createElement('span');
       item.className = className;
@@ -69,7 +69,7 @@ export default defineComponent({
     const appendBarrageItem = ({ id, text }: BarrageItem, i: number) => {
       const item = createBarrageItem(
         text,
-        isInitBarrage.value ? i * props.delay : undefined
+        isInitBarrage.value ? i * props.delay : undefined,
       );
       if (!props.autoPlay && isPlay.value === false) {
         item.style.animationPlayState = 'paused';
@@ -86,14 +86,14 @@ export default defineComponent({
       item.addEventListener('animationend', () => {
         emit(
           'update:modelValue',
-          [...props.modelValue].filter((v) => String(v.id) !== item.dataset.id)
+          [...props.modelValue].filter((v) => String(v.id) !== item.dataset.id),
         );
       });
     };
 
     const updateBarrages = (
       newValue: BarrageItem[],
-      oldValue: BarrageItem[]
+      oldValue: BarrageItem[],
     ) => {
       const map = new Map(oldValue.map((item) => [item.id, item]));
 
@@ -109,7 +109,7 @@ export default defineComponent({
       map.forEach((item) => {
         // remove
         const index = barrageItems.findIndex(
-          (span) => span.dataset.id === String(item.id)
+          (span) => span.dataset.id === String(item.id),
         );
         if (index > -1) {
           barrageItems[index].remove();
@@ -123,7 +123,7 @@ export default defineComponent({
     watch(
       () => props.modelValue.slice(),
       (newValue, oldValue) => updateBarrages(newValue ?? [], oldValue ?? []),
-      { deep: true }
+      { deep: true },
     );
 
     const rootStyle = ref<{

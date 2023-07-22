@@ -54,7 +54,7 @@ test('should match active tab by route path in route mode', async () => {
       global: {
         mocks: getMockRouter(),
       },
-    }
+    },
   );
 
   const items = wrapper.findAll('.van-tabbar-item');
@@ -89,7 +89,7 @@ test('should allow to use before-change prop in route mode', async () => {
       global: {
         mocks: getMockRouter(),
       },
-    }
+    },
   );
 
   const items = wrapper.findAll('.van-tabbar-item');
@@ -113,7 +113,7 @@ test('should match active tab by route name in route mode', async () => {
       global: {
         mocks: getMockRouter(),
       },
-    }
+    },
   );
 
   const items = wrapper.findAll('.van-tabbar-item');

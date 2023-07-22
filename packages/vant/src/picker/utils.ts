@@ -7,13 +7,13 @@ const [name, bem, t] = createNamespace('picker');
 export { name, bem, t };
 
 export const getFirstEnabledOption = (
-  options: PickerOption[]
+  options: PickerOption[],
 ): PickerOption | undefined =>
   options.find((option) => !option.disabled) || options[0];
 
 export function getColumnsType(
   columns: PickerColumn | PickerColumn[],
-  fields: Required<PickerFieldNames>
+  fields: Required<PickerFieldNames>,
 ) {
   const firstColumn = columns[0];
   if (firstColumn) {
@@ -29,7 +29,7 @@ export function getColumnsType(
 
 export function findIndexOfEnabledOption(
   options: PickerOption[],
-  index: number
+  index: number,
 ) {
   index = clamp(index, 0, options.length);
 
@@ -46,7 +46,7 @@ export function findIndexOfEnabledOption(
 export const isOptionExist = (
   options: PickerOption[],
   value: Numeric | undefined,
-  fields: Required<PickerFieldNames>
+  fields: Required<PickerFieldNames>,
 ) =>
   value !== undefined &&
   !!options.find((option) => option[fields.value] === value);
@@ -54,7 +54,7 @@ export const isOptionExist = (
 export function findOptionByValue(
   options: PickerOption[],
   value: Numeric,
-  fields: Required<PickerFieldNames>
+  fields: Required<PickerFieldNames>,
 ): PickerOption | undefined {
   const index = options.findIndex((option) => option[fields.value] === value);
   const enabledIndex = findIndexOfEnabledOption(options, index);
@@ -64,7 +64,7 @@ export function findOptionByValue(
 export function formatCascadeColumns(
   columns: PickerColumn | PickerColumn[],
   fields: Required<PickerFieldNames>,
-  selectedValues: Ref<Numeric[]>
+  selectedValues: Ref<Numeric[]>,
 ) {
   const formatted: PickerColumn[] = [];
 
@@ -100,7 +100,7 @@ export function getElementTranslateY(element: Element) {
 }
 
 export function assignDefaultFields(
-  fields: PickerFieldNames | undefined
+  fields: PickerFieldNames | undefined,
 ): Required<PickerFieldNames> {
   return extend(
     {
@@ -108,6 +108,6 @@ export function assignDefaultFields(
       value: 'value',
       children: 'children',
     },
-    fields
+    fields,
   );
 }

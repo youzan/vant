@@ -63,7 +63,7 @@ export default defineComponent({
         maxYear,
         'year',
         props.formatter,
-        props.filter
+        props.filter,
       );
     };
 
@@ -104,7 +104,7 @@ export default defineComponent({
         maxMonth,
         'month',
         props.formatter,
-        props.filter
+        props.filter,
       );
     };
 
@@ -133,12 +133,12 @@ export default defineComponent({
           default:
             if (process.env.NODE_ENV !== 'production') {
               throw new Error(
-                `[Vant] DatePicker: unsupported columns type: ${type}`
+                `[Vant] DatePicker: unsupported columns type: ${type}`,
               );
             }
             return [];
         }
-      })
+      }),
     );
 
     watch(currentValues, (newValues) => {
@@ -152,7 +152,7 @@ export default defineComponent({
       (newValues, oldValues) => {
         updatedByExternalSources.value = isSameValue(
           oldValues,
-          currentValues.value
+          currentValues.value,
         );
         newValues = formatValueRange(newValues, columns.value);
         if (!isSameValue(newValues, currentValues.value)) {
@@ -162,7 +162,7 @@ export default defineComponent({
       },
       {
         immediate: true,
-      }
+      },
     );
 
     const onChange = (...args: unknown[]) => emit('change', ...args);

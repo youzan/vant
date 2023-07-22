@@ -38,7 +38,7 @@ function genConfig(demos: DemoItem[]) {
   function demoFilter(nav: any[]) {
     return nav.filter((group) => {
       group.items = group.items.filter((item: any) =>
-        demoNames.includes(item.path)
+        demoNames.includes(item.path),
       );
       return group.items.length;
     });

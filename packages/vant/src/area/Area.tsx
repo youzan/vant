@@ -66,7 +66,7 @@ export default defineComponent({
           emit('update:modelValue', lastCode);
         }
       },
-      { deep: true }
+      { deep: true },
     );
 
     watch(
@@ -87,7 +87,7 @@ export default defineComponent({
           codes.value = [];
         }
       },
-      { immediate: true }
+      { immediate: true },
     );
 
     useExpose<PickerExpose>({

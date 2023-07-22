@@ -79,7 +79,7 @@ export default function () {
       this.imageCache = new ImageCache({ max: 200 });
       this.lazyLoadHandler = throttle(
         this.lazyLoadHandler.bind(this),
-        this.options.throttleWait
+        this.options.throttleWait,
       );
 
       this.setMode(this.options.observer ? modeType.observer : modeType.event);
@@ -318,7 +318,7 @@ export default function () {
      */
     initListen(el, start) {
       this.options.ListenEvents.forEach((evt) =>
-        (start ? on : off)(el, evt, this.lazyLoadHandler)
+        (start ? on : off)(el, evt, this.lazyLoadHandler),
       );
     }
 
@@ -391,7 +391,7 @@ export default function () {
 
       this.observer = new IntersectionObserver(
         this.observerHandler.bind(this),
-        this.options.observerOptions
+        this.options.observerOptions,
       );
 
       if (this.listeners.length) {

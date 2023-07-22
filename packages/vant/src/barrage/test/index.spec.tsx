@@ -59,21 +59,21 @@ test('should not auto play use play function when use play function', async () =
 
   expect(
     (wrapper.find('.van-barrage__item') as HTMLSpanElement).style
-      .animationPlayState
+      .animationPlayState,
   ).toBe('paused');
 
   barrage.value?.play();
 
   expect(
     (wrapper.find('.van-barrage__item') as HTMLSpanElement).style
-      .animationPlayState
+      .animationPlayState,
   ).toBe('running');
 
   barrage.value?.pause();
 
   expect(
     (wrapper.find('.van-barrage__item') as HTMLSpanElement).style
-      .animationPlayState
+      .animationPlayState,
   ).toBe('paused');
 });
 
@@ -110,7 +110,7 @@ test('should emit "update:modelValue" when animationend', async () => {
 
   expect(
     (wrapper.find('.van-barrage__item') as HTMLSpanElement).style
-      .animationPlayState
+      .animationPlayState,
   ).toBe('running');
 
   await wrapper.setProps({
@@ -130,7 +130,7 @@ test('should emit "update:modelValue" when animationend', async () => {
 
   await trigger(
     wrapper.find('.van-barrage__item') as HTMLSpanElement,
-    'animationend'
+    'animationend',
   );
 
   expect(wrapper.emitted('change')?.[0][0]).toEqual([

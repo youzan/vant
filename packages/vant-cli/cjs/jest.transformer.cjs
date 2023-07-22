@@ -35,7 +35,7 @@ const transformSFC = (code, path) => {
   if (descriptor.script) {
     const content = descriptor.script.content.replace(
       'export default',
-      'const script ='
+      'const script =',
     );
     output.push(content);
   } else if (descriptor.scriptSetup) {
@@ -88,7 +88,7 @@ module.exports = {
       code = transformJsx(code, path);
     }
     return {
-      code: transformScript(code)
+      code: transformScript(code),
     };
   },
 };

@@ -26,7 +26,7 @@ export default {
       () => {
         console.log('click body');
       },
-      { target: document.body }
+      { target: document.body },
     );
   },
 };
@@ -65,7 +65,7 @@ type Options = {
 function useEventListener(
   type: string,
   listener: EventListener,
-  options?: Options
+  options?: Options,
 ): () => void;
 ```
 

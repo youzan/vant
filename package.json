@@ -25,6 +25,6 @@
     "eslint": "^8.31.0",
     "husky": "^8.0.1",
     "nano-staged": "^0.8.0",
-    "prettier": "^2.7.1"
+    "prettier": "^3.0.0"
   }
 }

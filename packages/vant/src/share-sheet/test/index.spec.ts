@@ -27,7 +27,7 @@ test('should render description when using description prop', async () => {
   });
 
   expect(
-    wrapper.find('.van-share-sheet__description').html()
+    wrapper.find('.van-share-sheet__description').html(),
   ).toMatchSnapshot();
 
   await wrapper.setProps({ description: '' });
@@ -147,6 +147,6 @@ test('should allow to custom the icon of option', () => {
   });
 
   expect(
-    wrapper.element.querySelectorAll('.van-share-sheet__option').length
+    wrapper.element.querySelectorAll('.van-share-sheet__option').length,
   ).toEqual(2);
 });

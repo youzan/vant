@@ -33,7 +33,7 @@ export const pickerGroupProps = extend(
     activeTab: makeNumericProp(0),
     nextStepText: String,
   },
-  pickerToolbarProps
+  pickerToolbarProps,
 );
 
 export type PickerGroupProps = ExtractPropTypes<typeof pickerGroupProps>;
@@ -48,7 +48,7 @@ export default defineComponent({
   setup(props, { emit, slots }) {
     const activeTab = useSyncPropRef(
       () => props.activeTab,
-      (value) => emit('update:activeTab', value)
+      (value) => emit('update:activeTab', value),
     );
     const { children, linkChildren } = useChildren(PICKER_GROUP_KEY);
 
@@ -63,7 +63,7 @@ export default defineComponent({
       } else {
         emit(
           'confirm',
-          children.map((item) => item.confirm())
+          children.map((item) => item.confirm()),
         );
       }
     };

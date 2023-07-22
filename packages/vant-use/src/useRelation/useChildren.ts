@@ -45,7 +45,7 @@ const findVNodeIndex = (vnodes: VNode[], vnode: VNode) => {
         vnode.key !== undefined &&
         vnode.key !== null &&
         item.type === vnode.type &&
-        item.key === vnode.key
+        item.key === vnode.key,
     );
   }
   return index;
@@ -55,12 +55,12 @@ const findVNodeIndex = (vnodes: VNode[], vnode: VNode) => {
 export function sortChildren(
   parent: ComponentInternalInstance,
   publicChildren: ComponentPublicInstance[],
-  internalChildren: ComponentInternalInstance[]
+  internalChildren: ComponentInternalInstance[],
 ) {
   const vnodes = flattenVNodes(parent.subTree.children);
 
   internalChildren.sort(
-    (a, b) => findVNodeIndex(vnodes, a.vnode) - findVNodeIndex(vnodes, b.vnode)
+    (a, b) => findVNodeIndex(vnodes, a.vnode) - findVNodeIndex(vnodes, b.vnode),
   );
 
   const orderedPublicChildren = internalChildren.map((item) => item.proxy!);
@@ -75,7 +75,7 @@ export function sortChildren(
 export function useChildren<
   // eslint-disable-next-line
   Child extends ComponentPublicInstance = ComponentPublicInstance<{}, any>,
-  ProvideValue = never
+  ProvideValue = never,
 >(key: InjectionKey<ProvideValue>) {
   const publicChildren: Child[] = reactive([]);
   const internalChildren: ComponentInternalInstance[] = reactive([]);
@@ -105,8 +105,8 @@ export function useChildren<
           children: publicChildren,
           internalChildren,
         },
-        value
-      )
+        value,
+      ),
     );
   };
 

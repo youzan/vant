@@ -66,7 +66,7 @@ export const pickerSharedProps = extend(
     swipeDuration: makeNumericProp(1000),
     visibleOptionNum: makeNumericProp(6),
   },
-  pickerToolbarProps
+  pickerToolbarProps,
 );
 
 export const pickerProps = extend({}, pickerSharedProps, {
@@ -104,7 +104,7 @@ export default defineComponent({
     const fields = computed(() => assignDefaultFields(props.columnsFieldNames));
     const optionHeight = computed(() => unitToPx(props.optionHeight));
     const columnsType = computed(() =>
-      getColumnsType(props.columns, fields.value)
+      getColumnsType(props.columns, fields.value),
     );
 
     const currentColumns = computed<PickerColumn[]>(() => {
@@ -120,21 +120,22 @@ export default defineComponent({
     });
 
     const hasOptions = computed(() =>
-      currentColumns.value.some((options) => options.length)
+      currentColumns.value.some((options) => options.length),
     );
 
     const selectedOptions = computed(() =>
       currentColumns.value.map((options, index) =>
-        findOptionByValue(options, selectedValues.value[index], fields.value)
-      )
+        findOptionByValue(options, selectedValues.value[index], fields.value),
+      ),
     );
 
     const selectedIndexes = computed(() =>
       currentColumns.value.map((options, index) =>
         options.findIndex(
-          (option) => option[fields.value.value] === selectedValues.value[index]
-        )
-      )
+          (option) =>
+            option[fields.value.value] === selectedValues.value[index],
+        ),
+      ),
     );
 
     const setValue = (index: number, value: Numeric) => {
@@ -161,7 +162,7 @@ export default defineComponent({
           if (!isOptionExist(options, value, fields.value)) {
             setValue(
               index,
-              options.length ? options[0][fields.value.value] : undefined
+              options.length ? options[0][fields.value.value] : undefined,
             );
           }
         });
@@ -174,7 +175,7 @@ export default defineComponent({
 
     const onClickOption = (
       currentOption: PickerOption,
-      columnIndex: number
+      columnIndex: number,
     ) => {
       const params = { columnIndex, currentOption };
       emit('clickOption', extend(getEventParams(), params));
@@ -271,12 +272,12 @@ export default defineComponent({
           ) {
             setValue(
               index,
-              getFirstEnabledOption(options)![fields.value.value]
+              getFirstEnabledOption(options)![fields.value.value],
             );
           }
         });
       },
-      { immediate: true }
+      { immediate: true },
     );
 
     // preserve last emitted model value
@@ -294,7 +295,7 @@ export default defineComponent({
           lastEmittedModelValue = newValues.slice(0);
         }
       },
-      { deep: true }
+      { deep: true },
     );
     watch(
       selectedValues,
@@ -304,7 +305,7 @@ export default defineComponent({
           emit('update:modelValue', lastEmittedModelValue);
         }
       },
-      { immediate: true }
+      { immediate: true },
     );
 
     // useEventListener will set passive to `false` to eliminate the warning of Chrome

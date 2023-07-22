@@ -10,7 +10,7 @@ Object.defineProperty(window.HTMLElement.prototype, 'clientHeight', {
 
 function mockStickyRect(
   wrapper: VueWrapper<ComponentInstance>,
-  rect: Partial<DOMRect>
+  rect: Partial<DOMRect>,
 ) {
   const mocked = jest
     .spyOn(wrapper.element, 'getBoundingClientRect')
@@ -104,7 +104,7 @@ test('should add offset top when using offset-top prop', async () => {
 test('should allow to using offset-top prop with rem unit', async () => {
   const originGetComputedStyle = window.getComputedStyle;
 
-  window.getComputedStyle = () => ({ fontSize: '16px' } as CSSStyleDeclaration);
+  window.getComputedStyle = () => ({ fontSize: '16px' }) as CSSStyleDeclaration;
 
   const wrapper = mount({
     render() {
@@ -289,7 +289,7 @@ test('should emit scroll event when visibility changed', async () => {
   const onScroll = jest.fn();
 
   type ObserverCallback = (
-    entries: Partial<IntersectionObserverEntry>[]
+    entries: Partial<IntersectionObserverEntry>[],
   ) => void;
   let observerCallback: ObserverCallback = () => {};
 

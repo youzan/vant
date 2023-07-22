@@ -18,7 +18,7 @@ function isElement(node: Element) {
 // https://github.com/vant-ui/vant/issues/3823
 export function getScrollParent(
   el: Element,
-  root: ScrollElement | undefined = defaultRoot
+  root: ScrollElement | undefined = defaultRoot,
 ) {
   let node = el;
 
@@ -35,7 +35,7 @@ export function getScrollParent(
 
 export function useScrollParent(
   el: Ref<Element | undefined>,
-  root: ScrollElement | undefined = defaultRoot
+  root: ScrollElement | undefined = defaultRoot,
 ) {
   const scrollParent = ref<Element | Window>();
 

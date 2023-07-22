@@ -19,7 +19,7 @@ beforeAll(() => {
     get() {
       if (this.innerText.includes('...')) {
         const row = Math.ceil(
-          (this.innerText.replace(/\.\.\./g, '中').length / content.length) * 4
+          (this.innerText.replace(/\.\.\./g, '中').length / content.length) * 4,
         );
         return lineHeight * row;
       }

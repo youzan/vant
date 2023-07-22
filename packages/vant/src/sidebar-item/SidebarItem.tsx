@@ -37,7 +37,7 @@ export default defineComponent({
     if (!parent) {
       if (process.env.NODE_ENV !== 'production') {
         console.error(
-          '[Vant] <SidebarItem> must be a child component of <Sidebar>.'
+          '[Vant] <SidebarItem> must be a child component of <Sidebar>.',
         );
       }
       return;

@@ -54,7 +54,7 @@ export default defineComponent({
 
   setup(props) {
     const isCustomType = computed(
-      () => Array.isArray(props.textList) && props.textList.length
+      () => Array.isArray(props.textList) && props.textList.length,
     );
 
     const itemLength = computed(() => {
@@ -76,7 +76,7 @@ export default defineComponent({
     });
 
     const startNumArr = computed(() =>
-      padZero(props.startNum, itemLength.value).split('')
+      padZero(props.startNum, itemLength.value).split(''),
     );
 
     const getFigureArr = (i: number) => {
@@ -122,7 +122,7 @@ export default defineComponent({
         if (value) {
           start();
         }
-      }
+      },
     );
 
     useExpose<RollingTextExpose>({

@@ -71,7 +71,7 @@ export default defineComponent({
     const getValidTime = (time: string) => {
       const timeLimitArr = time.split(':');
       return fullColumns.map((col, i) =>
-        props.columnsType.includes(col) ? timeLimitArr[i] : '00'
+        props.columnsType.includes(col) ? timeLimitArr[i] : '00',
       );
     };
 
@@ -113,7 +113,7 @@ export default defineComponent({
               type,
               formatter,
               filter,
-              currentValues.value
+              currentValues.value,
             );
           case 'minute':
             return genOptions(
@@ -122,7 +122,7 @@ export default defineComponent({
               type,
               formatter,
               filter,
-              currentValues.value
+              currentValues.value,
             );
           case 'second':
             return genOptions(
@@ -131,12 +131,12 @@ export default defineComponent({
               type,
               formatter,
               filter,
-              currentValues.value
+              currentValues.value,
             );
           default:
             if (process.env.NODE_ENV !== 'production') {
               throw new Error(
-                `[Vant] DatePicker: unsupported columns type: ${type}`
+                `[Vant] DatePicker: unsupported columns type: ${type}`,
               );
             }
             return [];
@@ -158,7 +158,7 @@ export default defineComponent({
           currentValues.value = newValues;
         }
       },
-      { immediate: true }
+      { immediate: true },
     );
 
     const onChange = (...args: unknown[]) => emit('change', ...args);

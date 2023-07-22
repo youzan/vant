@@ -134,7 +134,7 @@ test('min-date after current time', () => {
 
   wrapper.find('.van-calendar__confirm').trigger('click');
   expect(wrapper.emitted<[Date]>('confirm')![0][0]).toEqual(
-    new Date(2200, 0, 1)
+    new Date(2200, 0, 1),
   );
 });
 
@@ -150,7 +150,7 @@ test('min-date before current time', () => {
 
   wrapper.find('.van-calendar__confirm').trigger('click');
   expect(wrapper.emitted<[Date]>('confirm')![0][0]).toEqual(
-    new Date(1800, 0, 2)
+    new Date(1800, 0, 2),
   );
 });
 
@@ -195,7 +195,7 @@ test('first day of week', async () => {
   expect(wrapper.findAll('.van-calendar__weekday')[0].text()).toEqual('Tue');
 
   const day = wrapper.find(
-    '.van-calendar__month:first-of-type .van-calendar__day'
+    '.van-calendar__month:first-of-type .van-calendar__day',
   );
   expect(day.text()).toEqual('1');
   expect(day.attributes('style')).toContain(`margin-left: ${(100 * 4) / 7}%`);

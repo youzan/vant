@@ -59,7 +59,7 @@ test('result-type as text', (done) => {
       resultType: 'text',
       afterRead(readFile: UploaderFileListItem | UploaderFileListItem[]) {
         expect((readFile as UploaderFileListItem).content).toEqual(
-          mockFileDataUrl
+          mockFileDataUrl,
         );
         done();
       },
@@ -98,14 +98,14 @@ test('set input name', (done) => {
       name: 'uploader',
       beforeRead: (
         file: File | File[],
-        detail: { name: Numeric; index: number }
+        detail: { name: Numeric; index: number },
       ) => {
         expect(detail.name).toEqual('uploader');
         return true;
       },
       afterRead: (
         readFile: UploaderFileListItem | UploaderFileListItem[],
-        detail: { name: Numeric; index: number }
+        detail: { name: Numeric; index: number },
       ) => {
         expect(detail.name).toEqual('uploader');
         done();
@@ -356,7 +356,7 @@ test('max-count prop', async () => {
   input.trigger('change');
   await later();
   expect(
-    wrapper.emitted<[File | File[]]>('update:modelValue')![0][0]
+    wrapper.emitted<[File | File[]]>('update:modelValue')![0][0],
   ).toHaveLength(1);
 });
 
@@ -496,7 +496,7 @@ test('click to preview image', async () => {
   expect(document.querySelector('.van-image-preview')).toBeTruthy();
 
   const images = document.querySelectorAll<HTMLImageElement>(
-    '.van-image-preview .van-image-preview__image'
+    '.van-image-preview .van-image-preview__image',
   );
   expect(images).toHaveLength(1);
 });
@@ -549,8 +549,8 @@ test('clickPreview event', () => {
   });
   expect(
     wrapper.emitted<[File, { name: string; index: number }]>(
-      'clickPreview'
-    )![0][1]
+      'clickPreview',
+    )![0][1],
   ).toEqual({
     name: '',
     index: 0,
@@ -569,7 +569,7 @@ test('closePreview event', async () => {
 
   const preview = document.querySelector<HTMLDivElement>('.van-image-preview');
   const swipe = preview?.querySelector<HTMLDivElement>(
-    '.van-swipe-item'
+    '.van-swipe-item',
   ) as HTMLDivElement;
   triggerDrag(swipe, 0, 0);
 
@@ -651,7 +651,7 @@ test('should render preview-delete slot correctly', async () => {
   });
 
   expect(
-    wrapper.find('.van-uploader__preview-delete').html()
+    wrapper.find('.van-uploader__preview-delete').html(),
   ).toMatchSnapshot();
 });
 
@@ -684,7 +684,7 @@ test('should emit clickReUpload event when props reupload true', async () => {
   expect(wrapper.find('.van-uploader__upload').style.display).toBe('none');
 
   const previewItem = wrapper.find<HTMLDivElement>(
-    '.van-uploader__preview-image'
+    '.van-uploader__preview-image',
   );
   await trigger(previewItem, 'click');
   expect(wrapper.emitted('clickReupload')).toBeTruthy();

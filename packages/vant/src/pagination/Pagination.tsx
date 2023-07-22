@@ -26,7 +26,7 @@ type PageItem = {
 const makePage = (
   number: number,
   text: Numeric,
-  active?: boolean
+  active?: boolean,
 ): PageItem => ({ number, text, active });
 
 export type PaginationMode = 'simple' | 'multi';

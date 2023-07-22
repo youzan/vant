@@ -106,13 +106,13 @@ export async function genStyleDepsMap() {
 
     Object.keys(map).forEach((key) => {
       map[key] = map[key].sort(
-        (a, b) => sequence.indexOf(a) - sequence.indexOf(b)
+        (a, b) => sequence.indexOf(a) - sequence.indexOf(b),
       );
     });
 
     smartOutputFile(
       STYLE_DEPS_JSON_FILE,
-      JSON.stringify({ map, sequence }, null, 2)
+      JSON.stringify({ map, sequence }, null, 2),
     );
 
     resolve();

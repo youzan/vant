@@ -284,7 +284,7 @@ test('should not reset index when columns unchanged', async () => {
 test('should allow to set rem option height', async () => {
   const originGetComputedStyle = window.getComputedStyle;
 
-  window.getComputedStyle = () => ({ fontSize: '16px' } as CSSStyleDeclaration);
+  window.getComputedStyle = () => ({ fontSize: '16px' }) as CSSStyleDeclaration;
 
   const wrapper = mount(Picker, {
     props: {
@@ -295,7 +295,7 @@ test('should allow to set rem option height', async () => {
 
   await later();
   expect(wrapper.find('.van-picker-column__item').style.height).toEqual(
-    '160px'
+    '160px',
   );
 
   window.getComputedStyle = originGetComputedStyle;
@@ -381,13 +381,15 @@ test('should be displayed correctly whhen the component is reused', async () => 
   await wrapper.setProps({ modelValue: ['1990', '01'] });
   await wrapper.find('.van-picker__confirm').trigger('click');
   expect(
-    wrapper.emitted<[PickerConfirmEventParams]>('confirm')![0][0].selectedValues
+    wrapper.emitted<[PickerConfirmEventParams]>('confirm')![0][0]
+      .selectedValues,
   ).toEqual(['1990', '01']);
 
   await wrapper.setProps({ modelValue: ['1992', '03'] });
   await wrapper.find('.van-picker__confirm').trigger('click');
   expect(
-    wrapper.emitted<[PickerConfirmEventParams]>('confirm')![1][0].selectedValues
+    wrapper.emitted<[PickerConfirmEventParams]>('confirm')![1][0]
+      .selectedValues,
   ).toEqual(['1992', '03']);
 
   // Test the scenario when a component is assigned multiple times in multiple columns
@@ -395,12 +397,14 @@ test('should be displayed correctly whhen the component is reused', async () => 
   await wrapper.setProps({ modelValue: ['1990', '01'] });
   await wrapper.find('.van-picker__confirm').trigger('click');
   expect(
-    wrapper.emitted<[PickerConfirmEventParams]>('confirm')![2][0].selectedValues
+    wrapper.emitted<[PickerConfirmEventParams]>('confirm')![2][0]
+      .selectedValues,
   ).toEqual(['1990', '01']);
 
   await wrapper.setProps({ modelValue: ['1992', '03'] });
   await wrapper.find('.van-picker__confirm').trigger('click');
   expect(
-    wrapper.emitted<[PickerConfirmEventParams]>('confirm')![3][0].selectedValues
+    wrapper.emitted<[PickerConfirmEventParams]>('confirm')![3][0]
+      .selectedValues,
   ).toEqual(['1992', '03']);
 });

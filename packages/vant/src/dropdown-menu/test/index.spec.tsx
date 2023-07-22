@@ -10,7 +10,7 @@ function renderWrapper(
     direction?: DropdownMenuDirection | undefined;
     closeOnClickOutside?: boolean;
     icon?: string;
-  } = {}
+  } = {},
 ) {
   return mount({
     setup() {
@@ -242,14 +242,14 @@ test('toggle method', (done) => {
         await later();
 
         expect(
-          wrapper.find('.van-dropdown-item__content').style.display
+          wrapper.find('.van-dropdown-item__content').style.display,
         ).toEqual('');
 
         // hide
         item.value.toggle(false, { immediate: true });
         await later();
         expect(
-          wrapper.find('.van-dropdown-item__content').style.display
+          wrapper.find('.van-dropdown-item__content').style.display,
         ).toEqual('none');
 
         done();

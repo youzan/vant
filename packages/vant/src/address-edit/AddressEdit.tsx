@@ -111,7 +111,7 @@ export default defineComponent({
     const detailFocused = ref(false);
 
     const areaListLoaded = computed(
-      () => isObject(props.areaList) && Object.keys(props.areaList).length
+      () => isObject(props.areaList) && Object.keys(props.areaList).length,
     );
 
     const areaText = computed(() => {
@@ -128,7 +128,7 @@ export default defineComponent({
 
     // hide bottom field when use search && detail get focused
     const hideBottomFields = computed(
-      () => props.searchResult?.length && detailFocused.value
+      () => props.searchResult?.length && detailFocused.value,
     );
 
     const onFocus = (key: string) => {
@@ -247,7 +247,7 @@ export default defineComponent({
           if (
             options &&
             options.every(
-              (option) => option && option.value !== AREA_EMPTY_CODE
+              (option) => option && option.value !== AREA_EMPTY_CODE,
             )
           ) {
             assignAreaText(options as PickerOption[]);
@@ -257,7 +257,7 @@ export default defineComponent({
       {
         deep: true,
         immediate: true,
-      }
+      },
     );
 
     return () => {

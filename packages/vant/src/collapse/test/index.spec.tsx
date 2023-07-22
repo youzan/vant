@@ -231,7 +231,7 @@ test('should be readonly when using readonly prop', async () => {
   await titles[0].trigger('click');
   expect(wrapper.vm.active).toEqual([]);
   expect(wrapper.find('.van-collapse-item__title').classes()).not.toContain(
-    'van-cell--clickable'
+    'van-cell--clickable',
   );
 
   wrapper.unmount();

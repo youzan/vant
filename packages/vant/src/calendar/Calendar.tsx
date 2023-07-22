@@ -122,7 +122,7 @@ export default defineComponent({
     const limitDateRange = (
       date: Date,
       minDate = props.minDate,
-      maxDate = props.maxDate
+      maxDate = props.maxDate,
     ) => {
       if (compareDay(date, minDate) === -1) {
         return minDate;
@@ -149,11 +149,11 @@ export default defineComponent({
         const start = limitDateRange(
           defaultDate[0] || now,
           minDate,
-          allowSameDay ? maxDate : getPrevDay(maxDate)
+          allowSameDay ? maxDate : getPrevDay(maxDate),
         );
         const end = limitDateRange(
           defaultDate[1] || now,
-          allowSameDay ? minDate : getNextDay(minDate)
+          allowSameDay ? minDate : getNextDay(minDate),
         );
         return [start, end];
       }
@@ -184,7 +184,7 @@ export default defineComponent({
     const [monthRefs, setMonthRefs] = useRefs<CalendarMonthInstance>();
 
     const dayOffset = computed(() =>
-      props.firstDayOfWeek ? +props.firstDayOfWeek % 7 : 0
+      props.firstDayOfWeek ? +props.firstDayOfWeek % 7 : 0,
     );
 
     const months = computed(() => {
@@ -225,7 +225,7 @@ export default defineComponent({
       const bottom = top + bodyHeight;
 
       const heights = months.value.map((item, index) =>
-        monthRefs.value[index].getHeight()
+        monthRefs.value[index].getHeight(),
       );
       const heightSum = heights.reduce((a, b) => a + b, 0);
 
@@ -377,12 +377,12 @@ export default defineComponent({
     const getDisabledDate = (
       disabledDays: CalendarDayItem[],
       startDay: Date,
-      date: Date
+      date: Date,
     ): Date | undefined =>
       disabledDays.find(
         (day) =>
           compareDay(startDay, day.date!) === -1 &&
-          compareDay(day.date!, date) === -1
+          compareDay(day.date!, date) === -1,
       )?.date;
 
     // disabled calendarDay
@@ -390,7 +390,7 @@ export default defineComponent({
       monthRefs.value.reduce((arr, ref) => {
         arr.push(...(ref.disabledDays?.value ?? []));
         return arr;
-      }, [] as CalendarDayItem[])
+      }, [] as CalendarDayItem[]),
     );
 
     const onClickDay = (item: CalendarDayItem) => {
@@ -416,7 +416,7 @@ export default defineComponent({
             const disabledDay = getDisabledDate(
               disabledDays.value,
               startDay,
-              date
+              date,
             );
 
             if (disabledDay) {
@@ -445,7 +445,7 @@ export default defineComponent({
         const dates = currentDate.value as Date[];
 
         const selectedIndex = dates.findIndex(
-          (dateItem: Date) => compareDay(dateItem, date) === 0
+          (dateItem: Date) => compareDay(dateItem, date) === 0,
         );
 
         if (selectedIndex !== -1) {
@@ -549,14 +549,14 @@ export default defineComponent({
     watch(() => props.show, init);
     watch(
       () => [props.type, props.minDate, props.maxDate],
-      () => reset(getInitialDate(currentDate.value))
+      () => reset(getInitialDate(currentDate.value)),
     );
     watch(
       () => props.defaultDate,
       (value = null) => {
         currentDate.value = value;
         scrollToCurrentDate();
-      }
+      },
     );
 
     useExpose<CalendarExpose>({

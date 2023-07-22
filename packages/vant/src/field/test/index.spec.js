@@ -422,7 +422,7 @@ test('should allow to set autocomplete attribute', () => {
     },
   });
   expect(wrapper.find('input').element.getAttribute('autocomplete')).toEqual(
-    'on'
+    'on',
   );
 });
 
@@ -433,7 +433,7 @@ test('should allow to set enterkeyhint attribute', () => {
     },
   });
   expect(wrapper.find('input').element.getAttribute('enterkeyhint')).toEqual(
-    'done'
+    'done',
   );
 });
 
@@ -545,6 +545,6 @@ test("should not be set label's for attribute when using input slot", async () =
   });
 
   expect(
-    wrapper.find('.van-field__label label').attributes('for')
+    wrapper.find('.van-field__label label').attributes('for'),
   ).toBeUndefined();
 });

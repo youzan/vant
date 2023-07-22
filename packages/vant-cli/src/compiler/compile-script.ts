@@ -10,7 +10,7 @@ const { readFileSync, removeSync, outputFileSync } = fse;
 
 export async function compileScript(
   filePath: string,
-  format: Format
+  format: Format,
 ): Promise<void> {
   if (filePath.includes('.d.ts')) {
     return;

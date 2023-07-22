@@ -53,7 +53,7 @@ export default defineComponent({
     if (!parent) {
       if (process.env.NODE_ENV !== 'production') {
         console.error(
-          '[Vant] <CollapseItem> must be a child component of <Collapse>.'
+          '[Vant] <CollapseItem> must be a child component of <Collapse>.',
         );
       }
       return;
@@ -122,7 +122,7 @@ export default defineComponent({
       const { border, disabled, readonly } = props;
       const attrs = pick(
         props,
-        Object.keys(cellSharedProps) as Array<keyof typeof cellSharedProps>
+        Object.keys(cellSharedProps) as Array<keyof typeof cellSharedProps>,
       );
 
       if (readonly) {

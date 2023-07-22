@@ -11,7 +11,7 @@ type RunCommandMessages = {
 function runCommand(
   cmd: string,
   options: string[],
-  messages: RunCommandMessages
+  messages: RunCommandMessages,
 ) {
   const spinner = createSpinner(messages.start).start();
 
@@ -40,7 +40,7 @@ function eslint() {
       start: 'Running eslint...',
       succeed: 'ESLint Passed.',
       failed: 'ESLint failed!',
-    }
+    },
   );
 }
 

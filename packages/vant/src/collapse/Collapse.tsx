@@ -47,17 +47,17 @@ export type CollapseInstance = ComponentPublicInstance<{
 
 function validateModelValue(
   modelValue: Numeric | Numeric[],
-  accordion: boolean
+  accordion: boolean,
 ) {
   if (accordion && Array.isArray(modelValue)) {
     console.error(
-      '[Vant] Collapse: "v-model" should not be Array in accordion mode'
+      '[Vant] Collapse: "v-model" should not be Array in accordion mode',
     );
     return false;
   }
   if (!accordion && !Array.isArray(modelValue)) {
     console.error(
-      '[Vant] Collapse: "v-model" should be Array in non-accordion mode'
+      '[Vant] Collapse: "v-model" should be Array in non-accordion mode',
     );
     return false;
   }
@@ -87,7 +87,7 @@ export default defineComponent({
         updateName((modelValue as Numeric[]).concat(name));
       } else {
         updateName(
-          (modelValue as Numeric[]).filter((activeName) => activeName !== name)
+          (modelValue as Numeric[]).filter((activeName) => activeName !== name),
         );
       }
     };
