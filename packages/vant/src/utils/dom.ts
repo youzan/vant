@@ -1,6 +1,6 @@
 import { useRect, useWindowSize } from '@vant/use';
 import { unref, Ref } from 'vue';
-import { isIOS as checkIsIOS } from './validate';
+import { isIOS as checkIsIOS } from './basic';
 
 export type ScrollElement = Element | Window;
 
@@ -67,7 +67,7 @@ export function preventDefault(event: Event, isStopPropagation?: boolean) {
 }
 
 export function isHidden(
-  elementRef: HTMLElement | Ref<HTMLElement | undefined>
+  elementRef: HTMLElement | Ref<HTMLElement | undefined>,
 ) {
   const el = unref(elementRef);
   if (!el) {

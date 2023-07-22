@@ -1,7 +1,7 @@
 import type { CSSProperties } from 'vue';
 import { inBrowser, type Numeric } from './basic';
 import { windowWidth, windowHeight } from './dom';
-import { isDef, isNumeric } from './validate';
+import { isDef, isNumeric } from './basic';
 
 export function addUnit(value?: Numeric): string | undefined {
   if (isDef(value)) {
@@ -11,7 +11,7 @@ export function addUnit(value?: Numeric): string | undefined {
 }
 
 export function getSizeStyle(
-  originSize?: Numeric | Numeric[]
+  originSize?: Numeric | Numeric[],
 ): CSSProperties | undefined {
   if (isDef(originSize)) {
     if (Array.isArray(originSize)) {
@@ -128,7 +128,7 @@ function trimExtraChar(value: string, char: string, regExp: RegExp) {
 export function formatNumber(
   value: string,
   allowDot = true,
-  allowMinus = true
+  allowMinus = true,
 ) {
   if (allowDot) {
     value = trimExtraChar(value, '.', /\./g);
