@@ -1,4 +1,4 @@
-import { inBrowser, type Numeric } from './basic';
+import { inBrowser, isObject, type Numeric } from './basic';
 
 export const isDef = <T>(val: T): val is NonNullable<T> =>
   val !== undefined && val !== null;
@@ -6,9 +6,6 @@ export const isDef = <T>(val: T): val is NonNullable<T> =>
 // eslint-disable-next-line @typescript-eslint/ban-types
 export const isFunction = (val: unknown): val is Function =>
   typeof val === 'function';
-
-export const isObject = (val: unknown): val is Record<any, any> =>
-  val !== null && typeof val === 'object';
 
 export const isPromise = <T = any>(val: unknown): val is Promise<T> =>
   isObject(val) && isFunction(val.then) && isFunction(val.catch);
