@@ -229,7 +229,7 @@ export default defineComponent({
               });
             }
           }),
-        Promise.resolve()
+        Promise.resolve(),
       );
 
     const resetValidation = () => {
@@ -308,7 +308,7 @@ export default defineComponent({
 
     const updateValue = (
       value: string,
-      trigger: FieldFormatTrigger = 'onChange'
+      trigger: FieldFormatTrigger = 'onChange',
     ) => {
       const originalValue = value;
       value = limitValueLength(value);
@@ -361,7 +361,7 @@ export default defineComponent({
 
             inputRef.value.setSelectionRange(
               Math.min(selectionStart, valueLen),
-              Math.min(selectionEnd, valueLen)
+              Math.min(selectionEnd, valueLen),
             );
           }
         } else {
@@ -649,7 +649,7 @@ export default defineComponent({
         resetValidation();
         validateWithTrigger('onChange');
         nextTick(adjustTextareaSize);
-      }
+      },
     );
 
     onMounted(() => {

@@ -66,7 +66,7 @@ export default defineComponent({
               char
             )}
             {showCursor && <div class={bem('cursor')} />}
-          </li>
+          </li>,
         );
       }
 

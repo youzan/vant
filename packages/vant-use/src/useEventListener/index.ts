@@ -21,17 +21,17 @@ export type UseEventListenerOptions = {
 export function useEventListener<K extends keyof DocumentEventMap>(
   type: K,
   listener: (event: DocumentEventMap[K]) => void,
-  options?: UseEventListenerOptions
+  options?: UseEventListenerOptions,
 ): () => void;
 export function useEventListener(
   type: string,
   listener: EventListener,
-  options?: UseEventListenerOptions
+  options?: UseEventListenerOptions,
 ): () => void;
 export function useEventListener(
   type: string,
   listener: EventListener,
-  options: UseEventListenerOptions = {}
+  options: UseEventListenerOptions = {},
 ) {
   if (!inBrowser) {
     return;

@@ -2,7 +2,7 @@ import { Ref, ref, watch } from 'vue';
 
 export const useSyncPropRef = <T>(
   getProp: () => T,
-  setProp: (value: T) => void
+  setProp: (value: T) => void,
 ) => {
   const propRef = ref<T>(getProp()) as Ref<T>;
 

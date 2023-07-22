@@ -26,7 +26,7 @@ export default {
       () => {
         console.log('scroll');
       },
-      { target: scrollParent }
+      { target: scrollParent },
     );
 
     return { root };
@@ -40,7 +40,7 @@ export default {
 
 ```ts
 function useScrollParent(
-  element: Ref<Element | undefined>
+  element: Ref<Element | undefined>,
 ): Ref<Element | Window | undefined>;
 ```
 

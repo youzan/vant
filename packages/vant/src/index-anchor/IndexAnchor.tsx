@@ -50,7 +50,7 @@ export default defineComponent({
     if (!parent) {
       if (process.env.NODE_ENV !== 'production') {
         console.error(
-          '[Vant] <IndexAnchor> must be a child component of <IndexBar>.'
+          '[Vant] <IndexAnchor> must be a child component of <IndexBar>.',
         );
       }
       return;
@@ -75,7 +75,7 @@ export default defineComponent({
 
     const getRect = (
       scrollParent: Window | Element,
-      scrollParentRect: { top: number }
+      scrollParentRect: { top: number },
     ) => {
       const rootRect = useRect(root);
       state.rect.height = rootRect.height;

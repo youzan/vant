@@ -8,7 +8,7 @@ export type FormExpose = {
   getValues: () => Record<string, unknown>;
   scrollToField: (
     name: string,
-    options?: boolean | ScrollIntoViewOptions | undefined
+    options?: boolean | ScrollIntoViewOptions | undefined,
   ) => void;
   resetValidation: (name?: string | string[] | undefined) => void;
   getValidationStatus: () => Record<string, FieldValidationStatus>;

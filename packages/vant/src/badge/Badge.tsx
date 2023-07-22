@@ -84,7 +84,7 @@ export default defineComponent({
         const { position } = props;
         const [offsetY, offsetX] = position.split('-') as [
           'top' | 'bottom',
-          'left' | 'right'
+          'left' | 'right',
         ];
 
         if (slots.default) {

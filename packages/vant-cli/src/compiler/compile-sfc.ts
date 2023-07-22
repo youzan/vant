@@ -127,7 +127,7 @@ export async function compileSfc(filePath: string): Promise<any> {
         }
 
         outputFile(scriptFilePath, script).then(resolve);
-      })
+      }),
     );
   }
 
@@ -150,7 +150,7 @@ export async function compileSfc(filePath: string): Promise<any> {
       // }
 
       return outputFile(cssFilePath, styleSource);
-    })
+    }),
   );
 
   return Promise.all(tasks);

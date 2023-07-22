@@ -101,7 +101,7 @@ export default defineComponent({
 
     const show = useSyncPropRef(
       () => props.show,
-      (value) => emit('update:show', value)
+      (value) => emit('update:show', value),
     );
 
     const getPopoverOptions = () => ({
@@ -127,7 +127,7 @@ export default defineComponent({
         return createPopper(
           wrapperRef.value,
           popoverRef.value.popupRef.value,
-          getPopoverOptions()
+          getPopoverOptions(),
         );
       }
       return null;

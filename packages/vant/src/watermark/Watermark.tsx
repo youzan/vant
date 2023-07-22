@@ -166,7 +166,7 @@ export default defineComponent({
       },
       {
         immediate: true,
-      }
+      },
     );
 
     onUnmounted(() => {
@@ -178,7 +178,7 @@ export default defineComponent({
     return () => {
       const style = extend(
         { backgroundImage: `url(${watermarkUrl.value})` },
-        getZIndexStyle(props.zIndex)
+        getZIndexStyle(props.zIndex),
       );
 
       return (

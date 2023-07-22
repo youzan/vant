@@ -15,7 +15,7 @@ export const pickerToolbarSlots = ['cancel', 'confirm', 'title', 'toolbar'];
 export type PickerToolbarPropKeys = Array<keyof typeof pickerToolbarProps>;
 
 export const pickerToolbarPropKeys = Object.keys(
-  pickerToolbarProps
+  pickerToolbarProps,
 ) as PickerToolbarPropKeys;
 
 export default defineComponent({

@@ -34,7 +34,7 @@ export default defineComponent({
 
   setup(props) {
     const background = computed(() =>
-      props.inactive ? undefined : props.color
+      props.inactive ? undefined : props.color,
     );
 
     const renderPivot = () => {

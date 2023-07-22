@@ -142,7 +142,7 @@ export default {
       const action = val ? 'add' : 'remove';
       document.body[`${action}EventListener`](
         'click',
-        this.checkHideVersionPop
+        this.checkHideVersionPop,
       );
 
       this.showVersionPop = val;

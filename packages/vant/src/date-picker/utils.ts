@@ -12,7 +12,7 @@ import type { PickerOption } from '../picker';
 type Filter = (
   columnType: string,
   options: PickerOption[],
-  values?: string[]
+  values?: string[],
 ) => PickerOption[];
 export type TimeFilter = RequiredParams<Filter>;
 type Formatter = (type: string, option: PickerOption) => PickerOption;
@@ -54,7 +54,7 @@ export const genOptions = <T extends string>(
   type: T,
   formatter: Formatter,
   filter?: Filter | TimeFilter,
-  values?: string[]
+  values?: string[],
 ) => {
   const options = times(max - min + 1, (index) => {
     const value = padZero(min + index);

@@ -84,7 +84,7 @@ export default defineComponent({
 
     watch(
       () => props.modelValue,
-      (value) => emit('change', value)
+      (value) => emit('change', value),
     );
 
     useExpose<CheckboxExpose>({ toggle, props, checked });

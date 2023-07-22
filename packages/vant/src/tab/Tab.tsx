@@ -108,8 +108,8 @@ export default defineComponent({
       onClickTab: (
         instance: ComponentInstance,
         index: number,
-        event: MouseEvent
-      ) => void
+        event: MouseEvent,
+      ) => void,
     ) => (
       <TabTitle
         key={id}
@@ -151,7 +151,7 @@ export default defineComponent({
       () => {
         parent.setLine();
         parent.scrollIntoView();
-      }
+      },
     );
 
     provide(TAB_STATUS_KEY, active);

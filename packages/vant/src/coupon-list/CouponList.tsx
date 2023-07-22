@@ -75,7 +75,7 @@ export default defineComponent({
         !props.exchangeButtonLoading &&
         (props.exchangeButtonDisabled ||
           !currentCode.value ||
-          currentCode.value.length < props.exchangeMinLength)
+          currentCode.value.length < props.exchangeMinLength),
     );
 
     const updateListHeight = () => {
@@ -190,7 +190,7 @@ export default defineComponent({
       () => props.code,
       (value) => {
         currentCode.value = value;
-      }
+      },
     );
 
     watch(windowHeight, updateListHeight);

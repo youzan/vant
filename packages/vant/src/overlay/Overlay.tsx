@@ -55,7 +55,7 @@ export default defineComponent({
     const renderOverlay = lazyRender(() => {
       const style: CSSProperties = extend(
         getZIndexStyle(props.zIndex),
-        props.customStyle
+        props.customStyle,
       );
 
       if (isDef(props.duration)) {

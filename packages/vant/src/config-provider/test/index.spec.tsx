@@ -56,7 +56,7 @@ test('should apply theme-vars-light in light mode', () => {
   });
 
   expect(wrapper.element.getAttribute('style')).toEqual(
-    '--van-rate-icon-full-color: blue;'
+    '--van-rate-icon-full-color: blue;',
   );
 });
 
@@ -75,6 +75,6 @@ test('should apply theme-vars-dark in dark mode', () => {
   });
 
   expect(wrapper.element.getAttribute('style')).toEqual(
-    '--van-rate-icon-full-color: green;'
+    '--van-rate-icon-full-color: green;',
   );
 });

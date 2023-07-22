@@ -33,7 +33,7 @@ function getRateStatus(
   value: number,
   index: number,
   allowHalf: boolean,
-  readonly: boolean
+  readonly: boolean,
 ): RateListItem {
   if (value >= index) {
     return { status: 'full', value: 1 };
@@ -98,9 +98,9 @@ export default defineComponent({
             props.modelValue,
             i + 1,
             props.allowHalf,
-            props.readonly
-          )
-        )
+            props.readonly,
+          ),
+        ),
     );
 
     let ranges: Array<{
@@ -137,7 +137,7 @@ export default defineComponent({
               left: rect.left + rect.width / 2,
               top: rect.top,
               height: rect.height,
-            }
+            },
           );
         } else {
           ranges.push({

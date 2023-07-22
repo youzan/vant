@@ -12,7 +12,7 @@ export function useClickAway(
     | Ref<Element | undefined>
     | Array<Element | Ref<Element | undefined>>,
   listener: EventListener,
-  options: UseClickAwayOptions = {}
+  options: UseClickAwayOptions = {},
 ) {
   if (!inBrowser) {
     return;

@@ -21,7 +21,7 @@ test('should render correctly when all props set', async () => {
   });
 
   const floatingBubbleEl = root.querySelector<HTMLDivElement>(
-    '.van-floating-bubble'
+    '.van-floating-bubble',
   )!;
 
   await later();
@@ -29,7 +29,7 @@ test('should render correctly when all props set', async () => {
   expect(floatingBubbleEl.style.transform).toEqual(
     `translate3d(${window.innerWidth - 48 - 24}px, ${
       window.innerHeight - 48 - 24
-    }px, 0)`
+    }px, 0)`,
   );
 
   await wrapper.setProps({
@@ -39,7 +39,7 @@ test('should render correctly when all props set', async () => {
   expect(floatingBubbleEl.style.transform).toEqual(
     `translate3d(${window.innerWidth - 48 - 50}px, ${
       window.innerHeight - 48 - 50
-    }px, 0)`
+    }px, 0)`,
   );
 
   await wrapper.setProps({
@@ -50,7 +50,7 @@ test('should render correctly when all props set', async () => {
   });
 
   expect(floatingBubbleEl.style.transform).toEqual(
-    `translate3d(${400}px, ${400}px, 0)`
+    `translate3d(${400}px, ${400}px, 0)`,
   );
 
   await wrapper.setProps({
@@ -73,7 +73,7 @@ test('should only y axis direction move when axis is default', async () => {
   });
 
   const floatingBubbleEl = root.querySelector<HTMLDivElement>(
-    '.van-floating-bubble'
+    '.van-floating-bubble',
   )!;
 
   await triggerDrag(floatingBubbleEl, -100, -100);
@@ -81,7 +81,7 @@ test('should only y axis direction move when axis is default', async () => {
   expect(floatingBubbleEl.style.transform).toEqual(
     `translate3d(${window.innerWidth - 48 - 24}px, ${
       window.innerHeight - 48 - 24 - 100
-    }px, 0)`
+    }px, 0)`,
   );
 
   restore();
@@ -99,7 +99,7 @@ test('should only x axis direction adn emit offsetChange move when axis is "x" '
   });
 
   const floatingBubbleEl = root.querySelector<HTMLDivElement>(
-    '.van-floating-bubble'
+    '.van-floating-bubble',
   )!;
 
   await triggerDrag(floatingBubbleEl, -100, -100);
@@ -107,7 +107,7 @@ test('should only x axis direction adn emit offsetChange move when axis is "x" '
   expect(floatingBubbleEl.style.transform).toEqual(
     `translate3d(${window.innerWidth - 48 - 24 - 100}px, ${
       window.innerHeight - 48 - 24
-    }px, 0)`
+    }px, 0)`,
   );
 
   expect(wrapper.emitted('offsetChange')?.[0][0]).toEqual({
@@ -130,7 +130,7 @@ test('should free direction move when axis is "xy" ', async () => {
   });
 
   const floatingBubbleEl = root.querySelector<HTMLDivElement>(
-    '.van-floating-bubble'
+    '.van-floating-bubble',
   )!;
 
   await triggerDrag(floatingBubbleEl, -100, -100);
@@ -138,7 +138,7 @@ test('should free direction move when axis is "xy" ', async () => {
   expect(floatingBubbleEl.style.transform).toEqual(
     `translate3d(${window.innerWidth - 48 - 24 - 100}px, ${
       window.innerHeight - 48 - 24 - 100
-    }px, 0)`
+    }px, 0)`,
   );
 
   restore();
@@ -156,7 +156,7 @@ test('should free direction move when axis is "xy" ', async () => {
   });
 
   const floatingBubbleEl = root.querySelector<HTMLDivElement>(
-    '.van-floating-bubble'
+    '.van-floating-bubble',
   )!;
 
   await triggerDrag(floatingBubbleEl, -100, -100);
@@ -164,7 +164,7 @@ test('should free direction move when axis is "xy" ', async () => {
   expect(floatingBubbleEl.style.transform).toEqual(
     `translate3d(${window.innerWidth - 48 - 24 - 100}px, ${
       window.innerHeight - 48 - 24 - 100
-    }px, 0)`
+    }px, 0)`,
   );
 
   restore();
@@ -183,7 +183,7 @@ test('should free direction move and  magnetic to x axios when magnetic is "x" '
   });
 
   const floatingBubbleEl = root.querySelector<HTMLDivElement>(
-    '.van-floating-bubble'
+    '.van-floating-bubble',
   )!;
 
   await triggerDrag(floatingBubbleEl, -100, -100);
@@ -193,7 +193,7 @@ test('should free direction move and  magnetic to x axios when magnetic is "x" '
   expect(floatingBubbleEl.style.transform).toEqual(
     `translate3d(${window.innerWidth - 48 - 24}px, ${
       window.innerHeight - 48 - 24 - 100
-    }px, 0)`
+    }px, 0)`,
   );
 
   await triggerDrag(floatingBubbleEl, -600, -100);
@@ -201,7 +201,7 @@ test('should free direction move and  magnetic to x axios when magnetic is "x" '
   await later(400);
 
   expect(floatingBubbleEl.style.transform).toEqual(
-    `translate3d(${24}px, ${window.innerHeight - 48 - 24 - 200}px, 0)`
+    `translate3d(${24}px, ${window.innerHeight - 48 - 24 - 200}px, 0)`,
   );
 
   restore();
@@ -223,7 +223,7 @@ test('should offset control positioning when use v-model:offset ', async () => {
   });
 
   const floatingBubbleEl = root.querySelector<HTMLDivElement>(
-    '.van-floating-bubble'
+    '.van-floating-bubble',
   )!;
 
   await triggerDrag(floatingBubbleEl, 100, 100);
@@ -231,7 +231,7 @@ test('should offset control positioning when use v-model:offset ', async () => {
   await later(400);
 
   expect(floatingBubbleEl.style.transform).toEqual(
-    `translate3d(${300}px, ${300}px, 0)`
+    `translate3d(${300}px, ${300}px, 0)`,
   );
 
   const emitList = wrapper.emitted('update:offset');

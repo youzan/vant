@@ -20,7 +20,7 @@ function getPathByName(name: string, pathResolver?: PathResolver) {
 function genImports(
   names: string[],
   pathResolver?: PathResolver,
-  namedExport?: boolean
+  namedExport?: boolean,
 ): string {
   return names
     .map((name) => {
@@ -36,7 +36,7 @@ function genImports(
 function genExports(
   names: string[],
   pathResolver?: PathResolver,
-  namedExport?: boolean
+  namedExport?: boolean,
 ): string {
   if (namedExport) {
     const exports = names

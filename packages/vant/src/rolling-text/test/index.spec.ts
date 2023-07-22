@@ -37,7 +37,7 @@ test('should not start rolling when auto-start prop is false', async () => {
   });
 
   expect(wrapper.find(itemWrapperClass).classes()).not.toContain(
-    animationClass
+    animationClass,
   );
 });
 
@@ -73,7 +73,7 @@ test('should reset the animation after calling the reset method', async () => {
   instance.reset();
   await later();
   expect(wrapper.find(itemWrapperClass).classes()).not.toContain(
-    animationClass
+    animationClass,
   );
 });
 
@@ -90,7 +90,7 @@ test('should restart rolling after calling the reset method when auto-start prop
   instance.reset();
   await later();
   expect(wrapper.find(itemWrapperClass).classes()).not.toContain(
-    animationClass
+    animationClass,
   );
   await later(50);
   expect(wrapper.find(itemWrapperClass).classes()).toContain(animationClass);

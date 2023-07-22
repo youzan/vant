@@ -65,7 +65,7 @@ export default defineComponent({
     const scrollParent = useScrollParent(root);
 
     const opened = computed(() =>
-      children.some((item) => item.state.showWrapper)
+      children.some((item) => item.state.showWrapper),
     );
 
     const barStyle = computed<CSSProperties | undefined>(() => {

@@ -163,14 +163,14 @@ export default defineComponent({
         if (props.magnetic === 'x') {
           const nextX = closest(
             [boundary.value.left, boundary.value.right],
-            state.value.x
+            state.value.x,
           );
           state.value.x = nextX;
         }
         if (props.magnetic === 'y') {
           const nextY = closest(
             [boundary.value.top, boundary.value.bottom],
-            state.value.y
+            state.value.y,
           );
           state.value.y = nextY;
         }
@@ -198,7 +198,7 @@ export default defineComponent({
 
     watch(
       [windowWidth, windowHeight, () => props.gap, () => props.offset],
-      updateState
+      updateState,
     );
 
     const show = ref(true);

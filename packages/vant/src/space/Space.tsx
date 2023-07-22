@@ -52,7 +52,7 @@ function filterEmpty(children: VNode[] = []) {
         (c.type === Comment ||
           (c.type === Fragment && c.children?.length === 0) ||
           (c.type === Text && (c.children as string).trim() === ''))
-      )
+      ),
   );
 }
 
@@ -61,7 +61,7 @@ export default defineComponent({
   props: spaceProps,
   setup(props, { slots }) {
     const mergedAlign = computed(
-      () => props.align ?? (props.direction === 'horizontal' ? 'center' : '')
+      () => props.align ?? (props.direction === 'horizontal' ? 'center' : ''),
     );
 
     const getMargin = (size: SpaceSize) => {
@@ -74,10 +74,10 @@ export default defineComponent({
       const style: CSSProperties = {};
 
       const marginRight = `${getMargin(
-        Array.isArray(props.size) ? props.size[0] : props.size
+        Array.isArray(props.size) ? props.size[0] : props.size,
       )}`;
       const marginBottom = `${getMargin(
-        Array.isArray(props.size) ? props.size[1] : props.size
+        Array.isArray(props.size) ? props.size[1] : props.size,
       )}`;
 
       if (isLast) {

@@ -11,7 +11,7 @@ function mockGetBoundingClientRect(items: DOMWrapper<Element>[]) {
         width: 25,
         top: 0,
         height: 25,
-      } as DOMRect);
+      }) as DOMRect;
     return true;
   });
 }

@@ -77,7 +77,7 @@ function findTag(vueTags: VueTag[], name: string) {
 export function formatter(
   vueTags: VueTag[],
   articles: Articles,
-  tagPrefix = ''
+  tagPrefix = '',
 ) {
   if (!articles.length) {
     return;

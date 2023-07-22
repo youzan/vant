@@ -36,7 +36,7 @@ export default {
 
 ```ts
 function useRect(
-  element: Element | Window | Ref<Element | Window | undefined>
+  element: Element | Window | Ref<Element | Window | undefined>,
 ): DOMRect;
 ```
 

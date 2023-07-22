@@ -49,7 +49,7 @@ export default defineComponent({
     const renderItem = (
       item: AddressListAddress,
       index: number,
-      disabled?: boolean
+      disabled?: boolean,
     ) => {
       const onEdit = () =>
         emit(disabled ? 'editDisabled' : 'edit', item, index);

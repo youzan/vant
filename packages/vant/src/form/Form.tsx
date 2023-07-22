@@ -81,7 +81,7 @@ export default defineComponent({
                   });
                 }
               }),
-            Promise.resolve()
+            Promise.resolve(),
           )
           .then(() => {
             if (errors.length) {
@@ -150,7 +150,7 @@ export default defineComponent({
 
     const scrollToField = (
       name: string,
-      options?: boolean | ScrollIntoViewOptions
+      options?: boolean | ScrollIntoViewOptions,
     ) => {
       children.some((item) => {
         if (item.name === name) {

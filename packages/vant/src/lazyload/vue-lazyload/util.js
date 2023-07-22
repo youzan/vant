@@ -45,7 +45,7 @@ export function getBestSelectionFromSrcset(el, scale) {
       tmpSrc = item.substr(0, spaceIndex);
       tmpWidth = parseInt(
         item.substr(spaceIndex + 1, item.length - spaceIndex - 2),
-        10
+        10,
       );
     }
     return [tmpWidth, tmpSrc];

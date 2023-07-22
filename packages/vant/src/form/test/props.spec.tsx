@@ -409,7 +409,7 @@ test('should allow to custom trigger in rules', async () => {
   await wrapper.setData({ valueA: '' });
   await later();
   expect(
-    wrapper.element.querySelectorAll('.van-field__error-message').length
+    wrapper.element.querySelectorAll('.van-field__error-message').length,
   ).toEqual(2);
 });
 

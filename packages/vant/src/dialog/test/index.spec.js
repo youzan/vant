@@ -152,7 +152,7 @@ test('should allow to disable confirm button', () => {
     },
   });
   expect(wrapper.find('.van-dialog__confirm').classes()).toContain(
-    'van-button--disabled'
+    'van-button--disabled',
   );
 });
 
@@ -166,6 +166,6 @@ test('should allow to disable cancel button', () => {
     },
   });
   expect(wrapper.find('.van-dialog__cancel').classes()).toContain(
-    'van-button--disabled'
+    'van-button--disabled',
   );
 });

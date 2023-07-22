@@ -26,7 +26,7 @@ test('should emit "signing" event when touch is moving', async () => {
 
   expect(wrapper.emitted('signing')).toBeTruthy();
   expect(
-    wrapper.emitted<TouchEvent[]>('signing')![0][0].touches[0]
+    wrapper.emitted<TouchEvent[]>('signing')![0][0].touches[0],
   ).toMatchObject({
     clientX: 10,
     clientY: 20,
@@ -52,7 +52,7 @@ test('submit() should output a valid canvas', async () => {
   const emitted = wrapper.emitted();
   expect(emitted.submit).toBeTruthy();
   const [data] = emitted.submit[0] as [
-    { canvas: HTMLCanvasElement | null; image: string }
+    { canvas: HTMLCanvasElement | null; image: string },
   ];
 
   expect(data.canvas).toBeNull();

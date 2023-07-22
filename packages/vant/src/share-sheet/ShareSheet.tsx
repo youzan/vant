@@ -131,7 +131,7 @@ export default defineComponent({
       const { options } = props;
       if (Array.isArray(options[0])) {
         return (options as ShareSheetOption[][]).map((item, index) =>
-          renderOptions(item, index !== 0)
+          renderOptions(item, index !== 0),
         );
       }
       return renderOptions(options as ShareSheetOption[]);

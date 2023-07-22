@@ -93,7 +93,7 @@ export default defineComponent({
       () => {
         error.value = false;
         loading.value = true;
-      }
+      },
     );
 
     const onLoad = (event: Event) => {

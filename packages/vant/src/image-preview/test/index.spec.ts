@@ -85,7 +85,7 @@ test('should change close icon when using close-icon prop', () => {
   });
 
   expect(
-    wrapper.find('.van-image-preview__close-icon').html()
+    wrapper.find('.van-image-preview__close-icon').html(),
   ).toMatchSnapshot();
 });
 
@@ -99,7 +99,7 @@ test('should change close icon position when using close-icon-position prop', ()
   });
 
   expect(
-    wrapper.find('.van-image-preview__close-icon').html()
+    wrapper.find('.van-image-preview__close-icon').html(),
   ).toMatchSnapshot();
 });
 

@@ -244,7 +244,7 @@ export default defineComponent({
           opened = false;
           emit('close');
         }
-      }
+      },
     );
 
     useExpose({ popupRef });

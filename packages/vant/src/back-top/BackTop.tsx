@@ -68,7 +68,7 @@ export default defineComponent({
       extend(getZIndexStyle(props.zIndex), {
         right: addUnit(props.right),
         bottom: addUnit(props.bottom),
-      })
+      }),
     );
 
     const onClick = (event: MouseEvent) => {
@@ -97,7 +97,7 @@ export default defineComponent({
 
         if (process.env.NODE_ENV !== 'production') {
           console.error(
-            `[Vant] BackTop: target element "${target}" was not found, the BackTop component will not be rendered.`
+            `[Vant] BackTop: target element "${target}" was not found, the BackTop component will not be rendered.`,
           );
         }
       } else {

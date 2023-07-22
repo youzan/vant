@@ -81,7 +81,7 @@
     "picocolors": "^1.0.0",
     "postcss": "^8.4.23",
     "postcss-load-config": "^4.0.1",
-    "prettier": "^2.7.1",
+    "prettier": "^3.0.0",
     "release-it": "^15.4.1",
     "terser": "^5.16.1",
     "transliteration": "^2.3.5",

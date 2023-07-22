@@ -27,7 +27,7 @@ export type UploaderBeforeRead = (
   detail: {
     name: Numeric;
     index: number;
-  }
+  },
 ) => boolean | undefined | Promise<File | File[] | undefined>;
 
 export type UploaderAfterRead = (
@@ -35,7 +35,7 @@ export type UploaderAfterRead = (
   detail: {
     name: Numeric;
     index: number;
-  }
+  },
 ) => void;
 
 export type UploaderExpose = {

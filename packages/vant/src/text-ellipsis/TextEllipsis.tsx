@@ -40,7 +40,7 @@ export default defineComponent({
     const root = ref<HTMLElement>();
 
     const actionText = computed(() =>
-      expanded.value ? props.expandText : props.collapseText
+      expanded.value ? props.expandText : props.collapseText,
     );
 
     const pxToNum = (value: string | null) => {
@@ -74,7 +74,7 @@ export default defineComponent({
 
       const calcEllipsisText = (
         container: HTMLDivElement,
-        maxHeight: number
+        maxHeight: number,
       ) => {
         const { content, position, dots } = props;
         const end = content.length;
@@ -120,7 +120,7 @@ export default defineComponent({
 
         const middleTail = (
           leftPart: [number, number],
-          rightPart: [number, number]
+          rightPart: [number, number],
         ): string => {
           if (
             leftPart[1] - leftPart[0] <= 1 &&
@@ -147,13 +147,13 @@ export default defineComponent({
           if (container.offsetHeight >= maxHeight) {
             return middleTail(
               [leftPart[0], leftMiddle],
-              [rightMiddle, rightPart[1]]
+              [rightMiddle, rightPart[1]],
             );
           }
 
           return middleTail(
             [leftMiddle, leftPart[1]],
-            [rightPart[0], rightMiddle]
+            [rightPart[0], rightMiddle],
           );
         };
 
@@ -171,7 +171,7 @@ export default defineComponent({
       const maxHeight = Math.ceil(
         (Number(props.rows) + 0.5) * pxToNum(lineHeight) +
           pxToNum(paddingTop) +
-          pxToNum(paddingBottom)
+          pxToNum(paddingBottom),
       );
 
       if (maxHeight < container.offsetHeight) {

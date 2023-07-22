@@ -62,7 +62,7 @@ export function showDialog(options: DialogOptions) {
         callback: (action: DialogAction) => {
           (action === 'confirm' ? resolve : reject)(action);
         },
-      })
+      }),
     );
   });
 }

@@ -143,7 +143,7 @@ export default defineComponent({
             updateShow(false);
           }, props.duration);
         }
-      }
+      },
     );
 
     onMounted(toggleClickable);

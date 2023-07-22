@@ -239,6 +239,6 @@ test('should add "van-popover__content--horizontal" class when actions-direction
   });
 
   expect(wrapper.find('.van-popover__content').classes()).toContain(
-    'van-popover__content--horizontal'
+    'van-popover__content--horizontal',
   );
 });

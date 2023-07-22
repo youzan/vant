@@ -46,7 +46,7 @@ export default {
 
 ```ts
 function useToggle(
-  defaultValue: boolean
+  defaultValue: boolean,
 ): [Ref<boolean>, (newValue: boolean) => void];
 ```
 

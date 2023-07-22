@@ -31,5 +31,5 @@ export const popupSharedProps = {
 export type PopupSharedPropKeys = Array<keyof typeof popupSharedProps>;
 
 export const popupSharedPropKeys = Object.keys(
-  popupSharedProps
+  popupSharedProps,
 ) as PopupSharedPropKeys;

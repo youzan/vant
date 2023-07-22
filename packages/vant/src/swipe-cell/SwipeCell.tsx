@@ -72,11 +72,11 @@ export default defineComponent({
       ref.value ? useRect(ref).width : 0;
 
     const leftWidth = computed(() =>
-      isDef(props.leftWidth) ? +props.leftWidth : getWidthByRef(leftRef)
+      isDef(props.leftWidth) ? +props.leftWidth : getWidthByRef(leftRef),
     );
 
     const rightWidth = computed(() =>
-      isDef(props.rightWidth) ? +props.rightWidth : getWidthByRef(rightRef)
+      isDef(props.rightWidth) ? +props.rightWidth : getWidthByRef(rightRef),
     );
 
     const open = (side: SwipeCellSide) => {
@@ -143,7 +143,7 @@ export default defineComponent({
         state.offset = clamp(
           deltaX.value + startOffset,
           -rightWidth.value,
-          leftWidth.value
+          leftWidth.value,
         );
       }
     };
@@ -186,7 +186,7 @@ export default defineComponent({
 
     const renderSideContent = (
       side: SwipeCellSide,
-      ref: Ref<HTMLElement | undefined>
+      ref: Ref<HTMLElement | undefined>,
     ) => {
       const contentSlot = slots[side];
       if (contentSlot) {

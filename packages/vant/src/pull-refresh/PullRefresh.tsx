@@ -144,7 +144,7 @@ export default defineComponent({
           <Loading
             v-slots={{ default: getStatusText }}
             class={bem('loading')}
-          />
+          />,
         );
       }
 
@@ -218,7 +218,7 @@ export default defineComponent({
         } else {
           setStatus(0, false);
         }
-      }
+      },
     );
 
     // useEventListener will set passive to `false` to eliminate the warning of Chrome

@@ -59,7 +59,7 @@ export default {
 
     const onConfirm = () => {
       showToast(
-        `${currentDate.value.join('/')} ${currentTime.value.join(':')}`
+        `${currentDate.value.join('/')} ${currentTime.value.join(':')}`,
       );
     };
 
@@ -111,7 +111,7 @@ export default {
 
     const onConfirm = () => {
       showToast(
-        `${currentDate.value.join('/')} ${currentTime.value.join(':')}`
+        `${currentDate.value.join('/')} ${currentTime.value.join(':')}`,
       );
     };
 
@@ -266,7 +266,7 @@ export default {
 
     const onConfirm = () => {
       showToast(
-        `${currentDate.value.join('/')} ${currentTime.value.join(':')}`
+        `${currentDate.value.join('/')} ${currentTime.value.join(':')}`,
       );
     };
     const onCancel = () => {

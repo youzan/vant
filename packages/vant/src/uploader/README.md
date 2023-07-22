@@ -283,7 +283,7 @@ export default {
         deletable: true,
         beforeDelete: () => {
           showToast(
-            'Customize the events and styles of a single preview image'
+            'Customize the events and styles of a single preview image',
           );
         },
       },

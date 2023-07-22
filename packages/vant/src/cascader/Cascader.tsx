@@ -69,12 +69,12 @@ export default defineComponent({
         value: 'value',
         children: 'children',
       },
-      props.fieldNames
+      props.fieldNames,
     );
 
     const getSelectedOptionsByValue = (
       options: CascaderOption[],
-      value: Numeric
+      value: Numeric,
     ): CascaderOption[] | undefined => {
       for (const option of options) {
         if (option[valueKey] === value) {
@@ -84,7 +84,7 @@ export default defineComponent({
         if (option[childrenKey]) {
           const selectedOptions = getSelectedOptionsByValue(
             option[childrenKey],
-            value
+            value,
           );
           if (selectedOptions) {
             return [option, ...selectedOptions];
@@ -109,7 +109,7 @@ export default defineComponent({
             };
 
             const next = optionsCursor.find(
-              (item) => item[valueKey] === option[valueKey]
+              (item) => item[valueKey] === option[valueKey],
             );
             if (next) {
               optionsCursor = next[childrenKey];
@@ -211,7 +211,7 @@ export default defineComponent({
     const renderOption = (
       option: CascaderOption,
       selectedOption: CascaderOption | null,
-      tabIndex: number
+      tabIndex: number,
     ) => {
       const { disabled } = option;
       const selected = !!(
@@ -247,11 +247,11 @@ export default defineComponent({
     const renderOptions = (
       options: CascaderOption[],
       selectedOption: CascaderOption | null,
-      tabIndex: number
+      tabIndex: number,
     ) => (
       <ul role="menu" class={bem('options')}>
         {options.map((option) =>
-          renderOption(option, selectedOption, tabIndex)
+          renderOption(option, selectedOption, tabIndex),
         )}
       </ul>
     );
@@ -314,7 +314,7 @@ export default defineComponent({
           }
         }
         updateTabs();
-      }
+      },
     );
 
     return () => (

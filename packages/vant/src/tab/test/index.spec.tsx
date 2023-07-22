@@ -26,7 +26,7 @@ test('should emit clickTab event when tab is clicked', async () => {
       name: 0,
       title: 'title1',
       disabled: false,
-    })
+    }),
   );
 });
 

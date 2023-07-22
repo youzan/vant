@@ -4,7 +4,7 @@ import { ScrollElement, getScrollTop, setScrollTop } from '../utils';
 export function scrollLeftTo(
   scroller: HTMLElement,
   to: number,
-  duration: number
+  duration: number,
 ) {
   let rafId: number;
   let count = 0;
@@ -32,7 +32,7 @@ export function scrollTopTo(
   scroller: ScrollElement,
   to: number,
   duration: number,
-  callback: () => void
+  callback: () => void,
 ) {
   let rafId: number;
   let current = getScrollTop(scroller);

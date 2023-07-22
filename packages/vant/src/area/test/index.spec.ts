@@ -40,17 +40,17 @@ test('should watch modelValue prop and render correctly', async () => {
 
   await later();
   expect(
-    wrapper.find('.van-picker-column__item--selected').html()
+    wrapper.find('.van-picker-column__item--selected').html(),
   ).toMatchSnapshot();
 
   await wrapper.setProps({ modelValue: '120225' });
   expect(
-    wrapper.find('.van-picker-column__item--selected').html()
+    wrapper.find('.van-picker-column__item--selected').html(),
   ).toMatchSnapshot();
 
   await wrapper.setProps({ modelValue: '' });
   expect(
-    wrapper.find('.van-picker-column__item--selected').html()
+    wrapper.find('.van-picker-column__item--selected').html(),
   ).toMatchSnapshot();
 });
 

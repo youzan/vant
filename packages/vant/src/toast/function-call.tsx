@@ -102,8 +102,8 @@ export function showToast(options: string | ToastOptions = {}) {
       {},
       currentOptions,
       defaultOptionsMap.get(parsedOptions.type || currentOptions.type!),
-      parsedOptions
-    )
+      parsedOptions,
+    ),
   );
 
   return toast;
@@ -134,11 +134,11 @@ export const closeToast = (all?: boolean) => {
 export function setToastDefaultOptions(options: ToastOptions): void;
 export function setToastDefaultOptions(
   type: ToastType,
-  options: ToastOptions
+  options: ToastOptions,
 ): void;
 export function setToastDefaultOptions(
   type: ToastType | ToastOptions,
-  options?: ToastOptions
+  options?: ToastOptions,
 ) {
   if (typeof type === 'string') {
     defaultOptionsMap.set(type, options!);

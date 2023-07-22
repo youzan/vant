@@ -40,7 +40,7 @@ export function syncPathToParent() {
       type: 'replacePath',
       value: getCurrentDir(),
     },
-    '*'
+    '*',
   );
 }
 
@@ -53,7 +53,7 @@ export function syncPathToChild() {
           type: 'replacePath',
           value: getCurrentDir(),
         },
-        '*'
+        '*',
       );
     });
   }
@@ -68,7 +68,7 @@ export function syncThemeToChild(theme) {
           type: 'updateTheme',
           value: theme,
         },
-        '*'
+        '*',
       );
     });
   }

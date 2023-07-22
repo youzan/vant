@@ -11,13 +11,13 @@ function filter(type: string, options: PickerOption[]): PickerOption[] {
 function timeRangeFilter(
   type: string,
   options: PickerOption[],
-  values: string[]
+  values: string[],
 ): PickerOption[] {
   const hour = +values[0];
 
   if (type === 'hour') {
     return options.filter(
-      (option) => Number(option.value) >= 8 && Number(option.value) <= 18
+      (option) => Number(option.value) >= 8 && Number(option.value) <= 18,
     );
   }
 

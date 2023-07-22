@@ -81,7 +81,7 @@ function genEntry(params: {
 }
 
 export function genComponentStyle(
-  options: { cache: boolean } = { cache: true }
+  options: { cache: boolean } = { cache: true },
 ) {
   if (!options.cache) {
     const require = createRequire(import.meta.url);

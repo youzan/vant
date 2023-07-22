@@ -32,7 +32,7 @@ export default defineComponent({
     const newFigureArr = computed(() =>
       props.direction === 'down'
         ? props.figureArr.slice().reverse()
-        : props.figureArr
+        : props.figureArr,
     );
     const translatePx = computed(() => {
       const totalHeight = props.height * (props.figureArr.length - 1);

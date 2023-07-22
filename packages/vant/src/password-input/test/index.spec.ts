@@ -14,6 +14,6 @@ test('should render error info correctly', () => {
     },
   });
   expect(
-    wrapper.find('.van-password-input__error-info').html()
+    wrapper.find('.van-password-input__error-info').html(),
   ).toMatchSnapshot();
 });

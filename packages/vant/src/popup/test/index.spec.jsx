@@ -280,6 +280,6 @@ test('should have safe-area-inset-bottom class when using safe-area-inset-bottom
   });
 
   expect(wrapper.find('.van-popup').classes()).toContain(
-    'van-safe-area-bottom'
+    'van-safe-area-bottom',
   );
 });

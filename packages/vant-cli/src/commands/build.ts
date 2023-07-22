@@ -66,7 +66,7 @@ async function preCompileDir(dir: string) {
         return compileSfc(filePath);
       }
       return Promise.resolve();
-    })
+    }),
   );
 }
 
@@ -78,7 +78,7 @@ async function compileDir(dir: string, format: Format) {
       return isDir(filePath)
         ? compileDir(filePath, format)
         : compileFile(filePath, format);
-    })
+    }),
   );
 }
 

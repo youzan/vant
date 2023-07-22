@@ -31,7 +31,7 @@ import { SwipeItem } from '../swipe-item';
 const getDistance = (touches: TouchList) =>
   Math.sqrt(
     (touches[0].clientX - touches[1].clientX) ** 2 +
-      (touches[0].clientY - touches[1].clientY) ** 2
+      (touches[0].clientY - touches[1].clientY) ** 2,
   );
 
 const getCenter = (touches: TouchList) => ({
@@ -159,7 +159,7 @@ export default defineComponent({
         scale,
         scale === 2 || isLongImage.value
           ? { x: touch.startX.value, y: touch.startY.value }
-          : undefined
+          : undefined,
       );
     };
 
@@ -353,7 +353,7 @@ export default defineComponent({
         if (!value) {
           resetScale();
         }
-      }
+      },
     );
     watch(() => [props.rootWidth, props.rootHeight], resize);
 

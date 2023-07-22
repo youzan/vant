@@ -210,7 +210,7 @@ export default defineComponent({
 
     watch(
       () => props.startPosition,
-      (value) => setActive(+value)
+      (value) => setActive(+value),
     );
 
     watch(
@@ -229,7 +229,7 @@ export default defineComponent({
             url: images[state.active],
           });
         }
-      }
+      },
     );
 
     return () => (

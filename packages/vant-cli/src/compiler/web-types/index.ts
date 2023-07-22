@@ -36,7 +36,7 @@ export async function parseAndWrite(options: Options) {
   const webTypes = genWebTypes(vueTags, options);
   fse.outputFileSync(
     join(options.outputDir, 'web-types.json'),
-    JSON.stringify(webTypes)
+    JSON.stringify(webTypes),
   );
 }
 

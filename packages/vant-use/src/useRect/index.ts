@@ -10,10 +10,10 @@ const makeDOMRect = (width: number, height: number) =>
     bottom: height,
     width,
     height,
-  } as DOMRect);
+  }) as DOMRect;
 
 export const useRect = (
-  elementOrRef: Element | Window | Ref<Element | Window | undefined>
+  elementOrRef: Element | Window | Ref<Element | Window | undefined>,
 ) => {
   const element = unref(elementOrRef);
 

@@ -26,7 +26,7 @@ test('show loading toast', async () => {
 
   await later();
   expect(
-    document.querySelector('.van-toast.van-toast--loading.loading-toast')
+    document.querySelector('.van-toast.van-toast--loading.loading-toast'),
   ).toBeTruthy();
 });
 
@@ -39,7 +39,7 @@ test('show html toast', async () => {
 
   await later(1000);
   const toastText = document.querySelector(
-    '.html-toast .van-toast__text'
+    '.html-toast .van-toast__text',
   ) as HTMLDivElement;
   expect(toastText.innerHTML).toEqual('<div>Message</div>');
 });

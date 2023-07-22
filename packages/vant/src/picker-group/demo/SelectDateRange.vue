@@ -27,8 +27,8 @@ const endMinDate = computed(
     new Date(
       Number(startDate.value[0]),
       Number(startDate.value[1]) - 1,
-      Number(startDate.value[2])
-    )
+      Number(startDate.value[2]),
+    ),
 );
 
 const onConfirm = () => {

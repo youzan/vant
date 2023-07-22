@@ -5,7 +5,7 @@ import { onPopupReopen } from './on-popup-reopen';
 
 export const useHeight = (
   element: Element | Ref<Element | undefined>,
-  withSafeArea?: boolean
+  withSafeArea?: boolean,
 ) => {
   const height = ref<number>();
 

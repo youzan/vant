@@ -77,7 +77,7 @@ const onDelete = () => {
 
   values.value[current.value] = values.value[current.value].slice(
     0,
-    values.value[current.value].length - 1
+    values.value[current.value].length - 1,
   );
 
   if (current.value === 'showInfo') {

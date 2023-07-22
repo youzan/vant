@@ -57,11 +57,11 @@ test('should start scrolling when content width > wrap width ', async () => {
   wrap.element.getBoundingClientRect = () =>
     ({
       width: 50,
-    } as DOMRect);
+    }) as DOMRect;
   content.element.getBoundingClientRect = () =>
     ({
       width: 100,
-    } as DOMRect);
+    }) as DOMRect;
 
   await later(50);
 
@@ -82,11 +82,11 @@ test('should not start scrolling when content width > wrap width ', async () => 
   wrap.element.getBoundingClientRect = () =>
     ({
       width: 200,
-    } as DOMRect);
+    }) as DOMRect;
   content.element.getBoundingClientRect = () =>
     ({
       width: 100,
-    } as DOMRect);
+    }) as DOMRect;
 
   await later(50);
 

@@ -146,7 +146,7 @@ const onFinish = (
   {
     value,
     selectedOptions,
-  }: { value: Numeric; selectedOptions: CascaderOption[] }
+  }: { value: Numeric; selectedOptions: CascaderOption[] },
 ) => {
   const result = selectedOptions
     .map((option) => option.text || option.name)

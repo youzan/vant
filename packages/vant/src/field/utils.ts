@@ -68,7 +68,7 @@ export function endComposing({ target }: Event) {
 
 export function resizeTextarea(
   input: HTMLInputElement,
-  autosize: true | FieldAutosizeConfig
+  autosize: true | FieldAutosizeConfig,
 ) {
   const scrollTop = getRootScrollTop();
   input.style.height = 'auto';

@@ -40,7 +40,7 @@ export default defineComponent({
 
   setup(props, { slots }) {
     const spinnerStyle = computed(() =>
-      extend({ color: props.color }, getSizeStyle(props.size))
+      extend({ color: props.color }, getSizeStyle(props.size)),
     );
 
     const renderIcon = () => {

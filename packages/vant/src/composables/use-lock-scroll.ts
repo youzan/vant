@@ -9,7 +9,7 @@ const BODY_LOCK_CLASS = 'van-overflow-hidden';
 
 export function useLockScroll(
   rootRef: Ref<HTMLElement | undefined>,
-  shouldLock: () => boolean
+  shouldLock: () => boolean,
 ) {
   const touch = useTouch();
   const DIRECTION_UP = '01';
@@ -21,7 +21,7 @@ export function useLockScroll(
     const direction = touch.deltaY.value > 0 ? DIRECTION_DOWN : DIRECTION_UP;
     const el = getScrollParent(
       event.target as Element,
-      rootRef.value
+      rootRef.value,
     ) as HTMLElement;
     const { scrollHeight, offsetHeight, scrollTop } = el;
     let status = '11';

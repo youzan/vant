@@ -14,14 +14,12 @@ function getPostcssPlugins(rootConfig) {
   const plugins = rootConfig.plugins || [];
 
   if (Array.isArray(plugins)) {
-    const hasAutoprefixerPlugin = plugins.find(
-      (plugin) => {
-        if (typeof plugin === 'object')  {
-          return plugin.postcssPlugin === 'autoprefixer';
-        }
-        return plugin === 'autoprefixer';
+    const hasAutoprefixerPlugin = plugins.find((plugin) => {
+      if (typeof plugin === 'object') {
+        return plugin.postcssPlugin === 'autoprefixer';
       }
-    );
+      return plugin === 'autoprefixer';
+    });
     if (hasAutoprefixerPlugin) {
       return plugins;
     }

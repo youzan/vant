@@ -20,7 +20,7 @@
       pageX,
       pageY,
       screenX,
-      screenY
+      screenY,
     ) {
       // auto set
       return new Touch(
@@ -35,7 +35,7 @@
           clientY: pageY - window.pageYOffset,
         },
         0,
-        0
+        0,
       );
     };
   }

@@ -158,7 +158,7 @@ test('should allow to set autocomplete attribute', () => {
     },
   });
   expect(wrapper.find('input').element.getAttribute('autocomplete')).toEqual(
-    'on'
+    'on',
   );
 });
 

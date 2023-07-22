@@ -31,17 +31,17 @@ export default {
         if (darkModeClass) {
           document.documentElement.classList.toggle(
             darkModeClass,
-            newVal === 'dark'
+            newVal === 'dark',
           );
         }
         if (lightModeClass) {
           document.documentElement.classList.toggle(
             lightModeClass,
-            newVal === 'light'
+            newVal === 'light',
           );
         }
       },
-      { immediate: true }
+      { immediate: true },
     );
   },
 };

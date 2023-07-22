@@ -117,7 +117,7 @@ export default defineComponent({
     };
 
     const onAfterRead = (
-      items: UploaderFileListItem | UploaderFileListItem[]
+      items: UploaderFileListItem | UploaderFileListItem[],
     ) => {
       resetInput();
 
@@ -161,7 +161,7 @@ export default defineComponent({
         }
 
         Promise.all(
-          files.map((file) => readFileContent(file, resultType))
+          files.map((file) => readFileContent(file, resultType)),
         ).then((contents) => {
           const fileList = (files as File[]).map((file, index) => {
             const result: UploaderFileListItem = {
@@ -257,8 +257,8 @@ export default defineComponent({
               startPosition: imageFiles.indexOf(item),
               onClose: onClosePreview,
             },
-            props.previewOptions
-          )
+            props.previewOptions,
+          ),
         );
       }
     };
@@ -294,7 +294,7 @@ export default defineComponent({
 
       const previewData = extend(
         pick(props, needPickData),
-        pick(item, needPickData, true)
+        pick(item, needPickData, true),
       );
 
       return (
@@ -306,7 +306,7 @@ export default defineComponent({
             emit(
               props.reupload ? 'clickReupload' : 'clickPreview',
               item,
-              getDetail(index)
+              getDetail(index),
             )
           }
           onDelete={() => deleteFile(item, index)}

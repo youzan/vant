@@ -3,7 +3,7 @@ import { padZero } from '../utils';
 export function getDate(timeStamp: number) {
   const date = new Date(timeStamp * 1000);
   return `${date.getFullYear()}.${padZero(date.getMonth() + 1)}.${padZero(
-    date.getDate()
+    date.getDate(),
   )}`;
 }
 

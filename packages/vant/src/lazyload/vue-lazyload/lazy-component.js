@@ -19,7 +19,7 @@ export default (lazy) => ({
   render() {
     return h(
       this.tag,
-      this.show && this.$slots.default ? this.$slots.default() : null
+      this.show && this.$slots.default ? this.$slots.default() : null,
     );
   },
 

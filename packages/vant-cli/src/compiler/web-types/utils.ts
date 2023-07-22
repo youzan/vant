@@ -2,7 +2,7 @@
 export function toKebabCase(input: string): string {
   return input.replace(
     /[A-Z]/g,
-    (val, index) => (index === 0 ? '' : '-') + val.toLowerCase()
+    (val, index) => (index === 0 ? '' : '-') + val.toLowerCase(),
   );
 }
 

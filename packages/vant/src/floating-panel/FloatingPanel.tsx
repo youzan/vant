@@ -49,7 +49,7 @@ export default defineComponent({
     const contentRef = ref<HTMLDivElement>();
     const height = useSyncPropRef(
       () => +props.height,
-      (value) => emit('update:height', value)
+      (value) => emit('update:height', value),
     );
 
     const boundary = computed(() => ({
@@ -62,7 +62,7 @@ export default defineComponent({
     const anchors = computed(() =>
       props.anchors.length >= 2
         ? props.anchors
-        : [boundary.value.min, boundary.value.max]
+        : [boundary.value.min, boundary.value.max],
     );
 
     const dragging = ref(false);
@@ -132,7 +132,7 @@ export default defineComponent({
       () => {
         height.value = closest(anchors.value, height.value);
       },
-      { immediate: true }
+      { immediate: true },
     );
 
     useLockScroll(rootRef, () => true);

@@ -62,7 +62,7 @@ export default defineComponent({
     const isReset = ref(false);
 
     const offset = computed(() =>
-      unitToPx(props.position === 'top' ? props.offsetTop : props.offsetBottom)
+      unitToPx(props.position === 'top' ? props.offsetTop : props.offsetBottom),
     );
 
     const rootStyle = computed<CSSProperties | undefined>(() => {
@@ -144,7 +144,7 @@ export default defineComponent({
 
     watch(
       () => state.fixed,
-      (value) => emit('change', value)
+      (value) => emit('change', value),
     );
 
     useEventListener('scroll', onScroll, {

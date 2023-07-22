@@ -32,7 +32,7 @@ export function readFileContent(file: File, resultType: UploaderResultType) {
 
 export function isOversize(
   items: UploaderFileListItem | UploaderFileListItem[],
-  maxSize: UploaderMaxSize
+  maxSize: UploaderMaxSize,
 ): boolean {
   return toArray(items).some((item) => {
     if (item.file) {
@@ -47,7 +47,7 @@ export function isOversize(
 
 export function filterFiles(
   items: UploaderFileListItem[],
-  maxSize: UploaderMaxSize
+  maxSize: UploaderMaxSize,
 ) {
   const valid: UploaderFileListItem[] = [];
   const invalid: UploaderFileListItem[] = [];

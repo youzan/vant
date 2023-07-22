@@ -50,7 +50,7 @@ test('should emit save event after submitting form', async () => {
 
   await submitForm(wrapper);
   expect(wrapper.emitted<[ContactEditInfo]>('save')![0][0]).toEqual(
-    contactInfo
+    contactInfo,
   );
 });
 
@@ -59,7 +59,7 @@ test('should watch contact info', async () => {
   await wrapper.setProps({ contactInfo });
   await submitForm(wrapper);
   expect(wrapper.emitted<[ContactEditInfo]>('save')![0][0]).toEqual(
-    contactInfo
+    contactInfo,
   );
 });
 

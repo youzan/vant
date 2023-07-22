@@ -53,12 +53,12 @@ test('create a forbidClick toast', async () => {
   await later();
   expect(wrapper.html()).toMatchSnapshot();
   expect(
-    document.body.classList.contains('van-toast--unclickable')
+    document.body.classList.contains('van-toast--unclickable'),
   ).toBeTruthy();
 
   await wrapper.setProps({ forbidClick: false });
   expect(
-    document.body.classList.contains('van-toast--unclickable')
+    document.body.classList.contains('van-toast--unclickable'),
   ).toBeFalsy();
 });
 

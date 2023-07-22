@@ -135,7 +135,7 @@ export default defineComponent({
         onEventType[event.key]();
         emit('keydown', event);
       },
-      ['enter', 'esc']
+      ['enter', 'esc'],
     );
 
     const renderTitle = () => {

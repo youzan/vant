@@ -115,7 +115,7 @@ const beforeRead = (file: File | File[]) => {
 
 const afterRead = (
   file: UploaderFileListItem | UploaderFileListItem[],
-  detail: unknown
+  detail: unknown,
 ) => {
   console.log(file, detail);
 };
@@ -131,7 +131,7 @@ const setItemLoading = (item: UploaderFileListItem) => {
 };
 
 const afterReadFailed = (
-  item: UploaderFileListItem | UploaderFileListItem[]
+  item: UploaderFileListItem | UploaderFileListItem[],
 ) => {
   if (Array.isArray(item)) {
     item.forEach(setItemLoading);
