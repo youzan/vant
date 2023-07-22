@@ -1,0 +1,22 @@
+:root {
+  --van-watermark-z-index: 100;
+}
+
+.van-watermark {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0;
+  z-index: var(--van-watermark-z-index);
+  background-repeat: repeat;
+  pointer-events: none;
+
+  &__wrapper {
+    display: none;
+  }
+
+  &--full {
+    position: fixed;
+  }
+}

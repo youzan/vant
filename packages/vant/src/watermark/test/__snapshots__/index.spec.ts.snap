@@ -1,0 +1,141 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`watermark should render content 1`] = `
+<div class="van-watermark van-watermark--full"
+     style="background-image: url();"
+>
+  <div class="van-watermark__wrapper">
+    <svg viewbox="0 0 100 100"
+         width="100"
+         height="100"
+         xmlns="http://www.w3.org/2000/svg"
+         xmlns:xlink="http://www.w3.org/1999/xlink"
+         style="padding: 0px 0px 0px 0px;"
+    >
+      <foreignObject x="0"
+                     y="0"
+                     width="100"
+                     height="100"
+      >
+        <div xmlns="http://www.w3.org/1999/xhtml"
+             style="transform-origin: center; transform: rotate(-22deg);"
+        >
+          <span style="color: red;">
+            Vant
+          </span>
+        </div>
+      </foreignObject>
+    </svg>
+  </div>
+</div>
+`;
+
+exports[`watermark should render html 1`] = `
+<div class="van-watermark van-watermark--full"
+     style="background-image: url();"
+>
+  <div class="van-watermark__wrapper">
+    <svg viewbox="0 0 100 100"
+         width="100"
+         height="100"
+         xmlns="http://www.w3.org/2000/svg"
+         xmlns:xlink="http://www.w3.org/1999/xlink"
+         style="padding: 0px 0px 0px 0px;"
+    >
+      <foreignObject x="0"
+                     y="0"
+                     width="100"
+                     height="100"
+      >
+        <div xmlns="http://www.w3.org/1999/xhtml"
+             style="transform-origin: center; transform: rotate(-22deg);"
+        >
+          vant watermark test
+        </div>
+      </foreignObject>
+    </svg>
+  </div>
+</div>
+`;
+
+exports[`watermark should render image 1`] = `
+<div class="van-watermark van-watermark--full"
+     style="background-image: url();"
+>
+  <div class="van-watermark__wrapper">
+    <svg viewbox="0 0 100 100"
+         width="100"
+         height="100"
+         xmlns="http://www.w3.org/2000/svg"
+         xmlns:xlink="http://www.w3.org/1999/xlink"
+         style="padding: 0px 0px 0px 0px; opacity: 0.5;"
+    >
+      <image href="base64Url"
+             xlink:href="base64Url"
+             x="0"
+             y="0"
+             width="100"
+             height="100"
+             style="transform-origin: center; transform: rotate(-22deg);"
+      >
+      </image>
+    </svg>
+  </div>
+</div>
+`;
+
+exports[`watermark test false value fullPage 1`] = `
+<div class="van-watermark"
+     style="background-image: url();"
+>
+  <div class="van-watermark__wrapper">
+    <svg viewbox="0 0 100 100"
+         width="100"
+         height="100"
+         xmlns="http://www.w3.org/2000/svg"
+         xmlns:xlink="http://www.w3.org/1999/xlink"
+         style="padding: 0px 0px 0px 0px;"
+    >
+      <foreignObject x="0"
+                     y="0"
+                     width="100"
+                     height="100"
+      >
+        <div xmlns="http://www.w3.org/1999/xhtml"
+             style="transform-origin: center; transform: rotate(-22deg);"
+        >
+          vant watermark test
+        </div>
+      </foreignObject>
+    </svg>
+  </div>
+</div>
+`;
+
+exports[`watermark test width, height, rotate, zIndex 1`] = `
+<div class="van-watermark van-watermark--full"
+     style="background-image: url(); z-index: 200;"
+>
+  <div class="van-watermark__wrapper">
+    <svg viewbox="0 0 20 20"
+         width="20"
+         height="20"
+         xmlns="http://www.w3.org/2000/svg"
+         xmlns:xlink="http://www.w3.org/1999/xlink"
+         style="padding: 0px 0px 0px 0px;"
+    >
+      <foreignObject x="0"
+                     y="0"
+                     width="20"
+                     height="20"
+      >
+        <div xmlns="http://www.w3.org/1999/xhtml"
+             style="transform-origin: center; transform: rotate(20deg);"
+        >
+          vant watermark test
+        </div>
+      </foreignObject>
+    </svg>
+  </div>
+</div>
+`;
