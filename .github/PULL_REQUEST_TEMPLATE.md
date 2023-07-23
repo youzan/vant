@@ -1,30 +1,3 @@
-### Before submitting a pull request, please make sure the following is done:
+Before submitting a pull request, please read the [contributing guide](https://vant-contrib.gitee.io/vant/#/en-US/contribution).
 
-1. Read the [contributing guide](https://github.com/vant-ui/vant/blob/main/.github/CONTRIBUTING.md).
-2. If you've added code that should be tested, add tests.
-3. If you've changed APIs, update the documentation.
-4. Ensure the test suite passes (`npm test`).
-
-#### Title Format
-
-type(ComponentName?)：commit message
-
-Example：
-
-- docs: fix typo in quickstart
-- build: optimize build speed
-- fix(Button): incorrect style
-- feat(Button): add color prop
-
-Allowed Types:
-
-- fix
-- feat
-- docs
-- perf
-- test
-- types
-- build
-- chore
-- refactor
-- breaking change
+在提交 pull request 之前，请阅读 [贡献指南](https://vant-contrib.gitee.io/vant/#/zh-CN/contribution)。

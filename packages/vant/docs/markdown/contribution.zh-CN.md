@@ -15,7 +15,7 @@
 
 ### 本地开发
 
-在进行本地开发前，请先确保你的开发环境中安装了 [Node.js >= 14.19.0](https://nodejs.org)。
+在进行本地开发前，请先确保你的开发环境中安装了 [Node.js >= 18](https://nodejs.org)。
 
 按照下面的步骤操作，即可在本地开发 Vant 组件。
 
@@ -119,6 +119,37 @@ src
 3. 在新分支上进行开发，开发完成后，提 Pull Request 到主仓库的 main 分支。
 4. Pull Request 会在 Review 通过后被合并到主仓库。
 5. 等待 Vant 发布新版本，一般是每周一次。
+
+### Pull Request 标题格式
+
+Pull Request 的标题应该遵循以下格式：
+
+```bash
+type(ComponentName?)：commit message
+```
+
+示例：
+
+- docs: fix typo in quickstart
+- build: optimize build speed
+- fix(Button): incorrect style
+- feat(Button): add color prop
+
+可选的类型：
+
+- fix
+- feat
+- docs
+- perf
+- test
+- types
+- style
+- build
+- chore
+- release
+- refactor
+- breaking change
+- revert:
 
 ### 同步最新代码
 
