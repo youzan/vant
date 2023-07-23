@@ -82,7 +82,7 @@
     "postcss": "^8.4.23",
     "postcss-load-config": "^4.0.1",
     "prettier": "^3.0.0",
-    "release-it": "^15.4.1",
+    "release-it": "^16.1.3",
     "terser": "^5.16.1",
     "transliteration": "^2.3.5",
     "typescript": "^5.0.4",

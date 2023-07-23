@@ -23,7 +23,7 @@
   "author": "chenjiahan",
   "license": "MIT",
   "devDependencies": {
-    "release-it": "^15.4.1"
+    "release-it": "^16.1.3"
   },
   "release-it": {
     "git": {
