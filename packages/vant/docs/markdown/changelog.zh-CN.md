@@ -19,6 +19,21 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 
 ## 更新内容
 
+### [v4.6.3](https://github.com/vant-ui/vant/compare/v4.6.2...v4.6.3)
+
+`2023-07-23`
+
+**Feature**
+
+- AddressList: 新增 show-add-button 属性 [#12090](https://github.com/vant-ui/vant/issues/12090)
+- CheckboxGroup: 新增 shape 属性 [#12092](https://github.com/vant-ui/vant/issues/12092)
+- RadioGroup: 新增 shape 属性 [#12092](https://github.com/vant-ui/vant/issues/12092)
+
+**Bug Fixes**
+
+- FloatingBubble: 修复全局组件类型定义错误 [#12101](https://github.com/vant-ui/vant/issues/12101)
+- Tab: 修复导入路径错误 [#12103](https://github.com/vant-ui/vant/issues/12103)
+
 ### [v4.6.2](https://github.com/vant-ui/vant/compare/v4.6.1...v4.6.2)
 
 `2023-07-09`
