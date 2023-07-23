@@ -15,7 +15,7 @@ Below are the guidelines for submitting feedback or code to Vant. Please take a 
 
 ### Local development
 
-Before developing locally, please make sure that [Node.js >= 14.19.0](https://nodejs.org) is installed in your development environment.
+Before developing locally, please make sure that [Node.js >= 18](https://nodejs.org) is installed in your development environment.
 
 Follow the steps below to develop Vant components locally.
 
@@ -118,6 +118,34 @@ When submitting a Pull Request, please note:
 3. Develop on the new branch. When development is complete, submit a pull request to the main branch of the main repository.
 4. The pull request is merged into the main repository after the review is approved.
 5. Wait for Vant to release a new version, usually once a week.
+
+### Pull Request Title Format
+
+The title of the Pull Request should be in the following format:
+
+```bash
+type(ComponentName?)：commit message
+```
+
+Example：
+
+- docs: fix typo in quickstart
+- build: optimize build speed
+- fix(Button): incorrect style
+- feat(Button): add color prop
+
+Allowed Types:
+
+- fix
+- feat
+- docs
+- perf
+- test
+- types
+- build
+- chore
+- refactor
+- breaking change
 
 ### Synchronize the latest code
 
