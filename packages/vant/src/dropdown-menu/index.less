@@ -25,6 +25,18 @@
     &--opened {
       z-index: calc(var(--van-dropdown-item-z-index) + 1);
     }
+
+    &--scrollable {
+      padding-left: var(--van-padding-base);
+      padding-right: var(--van-padding-xs);
+      overflow-x: auto;
+      overflow-y: hidden;
+      -webkit-overflow-scrolling: touch;
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
+    }
   }
 
   &__item {
@@ -38,6 +50,12 @@
       .van-dropdown-menu__title {
         color: var(--van-dropdown-menu-title-disabled-text-color);
       }
+    }
+
+    &--grow {
+      flex: 1 0 auto;
+      padding-left: var(--van-padding-base);
+      padding-right: var(--van-padding-sm);
     }
   }
 
