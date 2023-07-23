@@ -143,10 +143,13 @@ type(ComponentName?)：commit message
 - perf
 - test
 - types
+- style
 - build
 - chore
+- release
 - refactor
 - breaking change
+- revert:
 
 ### 同步最新代码
 

@@ -142,10 +142,13 @@ Allowed Types:
 - perf
 - test
 - types
+- style
 - build
 - chore
+- release
 - refactor
 - breaking change
+- revert:
 
 ### Synchronize the latest code
 
