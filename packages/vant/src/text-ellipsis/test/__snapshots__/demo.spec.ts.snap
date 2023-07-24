@@ -35,7 +35,7 @@ exports[`should render demo and match snapshot 1`] = `
   </div>
   <div>
     <div class="van-text-ellipsis">
-      ......
+      ...
       <span class="van-text-ellipsis__action">
         expand
       </span>
