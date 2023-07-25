@@ -129,7 +129,6 @@ export default defineComponent({
             return (
               content.slice(0, leftPart[1]) +
               dots +
-              dots +
               content.slice(rightPart[1], end)
             );
           }
