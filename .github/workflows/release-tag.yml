@@ -11,15 +11,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@master
+        uses: actions/checkout@v3
+
       - name: Create Release for Tag
         id: release_tag
-        uses: yyx990803/release-tag@master
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          tag_name: ${{ github.ref }}
-          body: |
-            更新内容参见 [CHANGELOG](https://vant-ui.github.io/vant/#/zh-CN/changelog)。
-
-            Please refer to [CHANGELOG](https://vant-ui.github.io/vant/#/en-US/changelog) for details.
+        uses: ncipollo/release-action@v1
+          with:
+            generateReleaseNotes: true
+            body: |
+              Please refer to [CHANGELOG](https://vant-ui.github.io/vant/#/en-US/changelog) for all changelogs.
+              请参阅 [CHANGELOG](https://vant-ui.github.io/vant/#/zh-CN/changelog) 了解所有更新日志。

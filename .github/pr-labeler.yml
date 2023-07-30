@@ -1,0 +1,8 @@
+"change: feat":
+  - "/^(feat|perf|types|style)/"
+"change: fix":
+  - "/^fix/"
+"change: breaking":
+  - "/^breaking change/"
+"change: docs":
+  - "/^docs/"
