@@ -1,0 +1,20 @@
+name: PR Labeler
+
+on:
+  pull_request_target:
+    types:
+      - opened
+      - edited
+
+jobs:
+  change-labeling:
+    name: Labeling for changes
+    runs-on: ubuntu-latest
+    steps:
+      - uses: github/issue-labeler@v3.1
+        with:
+          repo-token: "${{ secrets.GITHUB_TOKEN }}"
+          configuration-path: .github/pr-labeler.yml
+          enable-versioned-regex: 0
+          include-title: 1
+          sync-labels: 1
