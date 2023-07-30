@@ -19,5 +19,4 @@ jobs:
         with:
           generateReleaseNotes: "true"
           body: |
-            Please refer to [CHANGELOG](https://vant-ui.github.io/vant/#/en-US/changelog) for all changelogs.
-            请参阅 [CHANGELOG](https://vant-ui.github.io/vant/#/zh-CN/changelog) 了解所有更新日志。
+            > Please refer to [Changelog](https://vant-ui.github.io/vant/#/en-US/changelog) for all changes.  |  请访问 [更新日志](https://vant-ui.github.io/vant/#/zh-CN/changelog) 了解所有更新。
