@@ -63,7 +63,12 @@ function generateChangelog() {
 }
 
 function publishPackage(packageManager: string, tag: string) {
-  const command = `${packageManager} publish --tag ${tag}`;
+  let command = `${packageManager} publish --tag ${tag}`;
+
+  if (packageManager === 'pnpm') {
+    command += ' --no-git-checks';
+  }
+
   execSync(command, { stdio: 'inherit' });
 }
 
@@ -75,7 +80,6 @@ function commitChanges(pkgName: string, version: string) {
 export async function release(command: { tag?: string }) {
   const cwd = process.cwd();
   const pkgName = logCurrentVersion(cwd);
-
   const version = await getNewVersion();
   const tag = getNpmTag(version, command.tag);
   const packageManager = getPackageManager();
