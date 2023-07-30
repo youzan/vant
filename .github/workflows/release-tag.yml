@@ -16,8 +16,8 @@ jobs:
       - name: Create Release for Tag
         id: release_tag
         uses: ncipollo/release-action@v1
-          with:
-            generateReleaseNotes: true
-            body: |
-              Please refer to [CHANGELOG](https://vant-ui.github.io/vant/#/en-US/changelog) for all changelogs.
-              请参阅 [CHANGELOG](https://vant-ui.github.io/vant/#/zh-CN/changelog) 了解所有更新日志。
+        with:
+          generateReleaseNotes: "true"
+          body: |
+            Please refer to [CHANGELOG](https://vant-ui.github.io/vant/#/en-US/changelog) for all changelogs.
+            请参阅 [CHANGELOG](https://vant-ui.github.io/vant/#/zh-CN/changelog) 了解所有更新日志。
