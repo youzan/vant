@@ -75,12 +75,30 @@ function publishPackage(packageManager: string, tag: string) {
   execSync(command, { stdio: 'inherit' });
 }
 
-function commitChanges(pkgName: string, version: string) {
+function commitChanges(pkgName: string, version: string, gitTag?: boolean) {
   const message = `release: ${pkgName} v${version}`;
   execSync(`git add -A && git commit -m "${message}"`, { stdio: 'inherit' });
+
+  if (gitTag) {
+    execSync(`git tag -a v${version} -m "${message}"`, { stdio: 'inherit' });
+  }
 }
 
-export async function release(command: { tag?: string }) {
+function getCurrentBranch() {
+  const branch = execSync('git rev-parse --abbrev-ref HEAD').toString().trim();
+  return branch;
+}
+
+function pushChanges(gitTag?: boolean) {
+  const branch = getCurrentBranch();
+  execSync(`git push origin ${branch}`, { stdio: 'inherit' });
+
+  if (gitTag) {
+    execSync(`git push origin ${branch} --tags`, { stdio: 'inherit' });
+  }
+}
+
+export async function release(command: { tag?: string; gitTag?: boolean }) {
   const cwd = process.cwd();
   const { pkgName, currentVersion } = logCurrentVersion(cwd);
   const version = await getNewVersion();
@@ -99,5 +117,6 @@ export async function release(command: { tag?: string }) {
   }
 
   publishPackage(packageManager, tag);
-  commitChanges(pkgName, version);
+  commitChanges(pkgName, version, command.gitTag);
+  pushChanges(command.gitTag);
 }
