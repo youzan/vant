@@ -13,7 +13,10 @@ function logCurrentVersion(cwd: string) {
   consola.success(
     `${color.bold('Current version:')} ${color.green(pkg.version)}`,
   );
-  return pkg.name;
+  return {
+    pkgName: pkg.name,
+    currentVersion: pkg.version,
+  };
 }
 
 async function getNewVersion() {
@@ -79,14 +82,22 @@ function commitChanges(pkgName: string, version: string) {
 
 export async function release(command: { tag?: string }) {
   const cwd = process.cwd();
-  const pkgName = logCurrentVersion(cwd);
+  const { pkgName, currentVersion } = logCurrentVersion(cwd);
   const version = await getNewVersion();
   const tag = getNpmTag(version, command.tag);
   const packageManager = getPackageManager();
 
   setPkgVersion(version, cwd);
-  buildPackage(packageManager);
-  generateChangelog();
+
+  try {
+    buildPackage(packageManager);
+    generateChangelog();
+  } catch (err) {
+    consola.error('Failed to build package, rollback to the previous version.');
+    setPkgVersion(currentVersion, cwd);
+    throw err;
+  }
+
   publishPackage(packageManager, tag);
   commitChanges(pkgName, version);
 }
