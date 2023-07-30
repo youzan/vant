@@ -22,7 +22,7 @@
     "build:types": "tsc -p ./tsconfig.json --emitDeclarationOnly",
     "build:bundle": "node ./build.js",
     "build": "pnpm clean && pnpm build:bundle && pnpm build:types",
-    "release": "pnpm build && vant-cli release",
+    "release": "vant-cli release",
     "prepare": "pnpm build"
   },
   "publishConfig": {

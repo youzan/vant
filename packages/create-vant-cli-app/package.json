@@ -9,7 +9,7 @@
   "scripts": {
     "dev": "tsc --watch",
     "build": "rimraf ./lib && tsc",
-    "release": "pnpm build & vant-cli release",
+    "release": "vant-cli release",
     "prepare": "pnpm build"
   },
   "files": [
