@@ -17,3 +17,6 @@ lib
 dist
 **/site-dist
 changelog.generated.md
+
+# temp file
+packages/vant/README.md

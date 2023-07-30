@@ -75,6 +75,7 @@ program
   .command('release')
   .description('Compile components and release it')
   .option('--tag <tag>', 'Release tag')
+  .option('--gitTag', 'Generate git tag')
   .action(async (options) => {
     const { release } = await import('./commands/release.js');
     return release(options);
