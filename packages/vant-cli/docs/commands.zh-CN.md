@@ -50,7 +50,7 @@ npx vant-cli dev
 
 ### release
 
-发布组件库，发布前会自动执行 build 和 changelog 命令，并通过 [release-it](https://github.com/release-it/release-it) 发布 npm 包。
+发布组件库，发布前会自动执行 build 和 changelog 命令，并按照流程发布 npm 包。
 
 ### changelog
 

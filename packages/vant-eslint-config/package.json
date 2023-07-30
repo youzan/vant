@@ -8,6 +8,7 @@
     "registry": "https://registry.npmjs.org/"
   },
   "scripts": {
+    "release": "vant-cli release",
     "update:deps": "pnpm update --latest --interactive"
   },
   "repository": {

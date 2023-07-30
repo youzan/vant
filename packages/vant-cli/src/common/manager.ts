@@ -18,7 +18,7 @@ export function hasYarn() {
   return hasYarnCache;
 }
 
-function getPackageManager() {
+export function getPackageManager() {
   const { build } = getVantConfig();
 
   if (build?.packageManager) {
