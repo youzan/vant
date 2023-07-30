@@ -22,7 +22,7 @@
     "build:types": "tsc -p ./tsconfig.json --emitDeclarationOnly",
     "build:bundle": "node ./build.js",
     "build": "pnpm clean && pnpm build:bundle && pnpm build:types",
-    "release": "pnpm build && release-it",
+    "release": "pnpm build && vant-cli release",
     "prepare": "pnpm build"
   },
   "publishConfig": {
@@ -39,18 +39,11 @@
   "license": "MIT",
   "devDependencies": {
     "esbuild": "^0.18.11",
-    "release-it": "^16.1.3",
     "rimraf": "^5.0.0",
     "typescript": "^5.0.4",
     "vue": "^3.3.4"
   },
   "peerDependencies": {
     "vue": "^3.0.0"
-  },
-  "release-it": {
-    "git": {
-      "tag": false,
-      "commitMessage": "release: @vant/use v${version}"
-    }
   }
 }

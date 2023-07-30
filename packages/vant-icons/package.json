@@ -8,7 +8,7 @@
     "src"
   ],
   "scripts": {
-    "release": "release-it"
+    "release": "vant-cli release"
   },
   "publishConfig": {
     "access": "public",
@@ -21,16 +21,5 @@
   },
   "bugs": "https://github.com/vant-ui/vant/issues",
   "author": "chenjiahan",
-  "license": "MIT",
-  "devDependencies": {
-    "release-it": "^16.1.3"
-  },
-  "release-it": {
-    "git": {
-      "tag": false,
-      "commitMessage": "release: @vant/icons v${version}",
-      "addUntrackedFiles": true,
-      "requireCleanWorkingDir": false
-    }
-  }
+  "license": "MIT"
 }
