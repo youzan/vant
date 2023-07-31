@@ -190,7 +190,7 @@ export default defineComponent({
 
     const renderAction = () => (
       <span class={bem('action')} onClick={onClickAction}>
-        {expanded.value ? props.collapseText : props.expandText}
+        {actionText.value}
       </span>
     );
 
