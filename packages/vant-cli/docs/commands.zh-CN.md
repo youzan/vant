@@ -50,11 +50,7 @@ npx vant-cli dev
 
 ### release
 
-发布组件库，发布前会自动执行 build 和 changelog 命令，并按照流程发布 npm 包。
-
-### changelog
-
-基于 commit 记录生成更新日志，基于 [conventional-changelog](https://github.com/conventional-changelog/conventional-changelog) 实现。
+发布组件库，发布前会自动执行 build 命令，并按照流程发布 npm 包。
 
 ### commit-lint
 

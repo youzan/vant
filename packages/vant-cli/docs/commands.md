@@ -48,11 +48,7 @@ Build documentation website. Files will be output to `site` directory.
 
 ### release
 
-Publish to npm. `build` and `changelog` will be automatically execute when run `release`.
-
-### changelog
-
-Generate changelog based on commit records.
+Publish to npm. `build` will be automatically execute when run `release`.
 
 ### commit-lint
 

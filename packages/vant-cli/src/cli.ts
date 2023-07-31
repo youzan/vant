@@ -90,14 +90,6 @@ program
   });
 
 program
-  .command('changelog')
-  .description('Generate changelog')
-  .action(async () => {
-    const { changelog } = await import('./commands/changelog.js');
-    return changelog();
-  });
-
-program
   .command('commit-lint <gitParams>')
   .description('Lint commit message')
   .action(async (gitParams) => {

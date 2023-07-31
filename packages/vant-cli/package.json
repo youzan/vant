@@ -20,7 +20,6 @@
     "lib",
     "cjs",
     "site",
-    "template",
     "bin.js"
   ],
   "keywords": [
@@ -59,7 +58,6 @@
     "autoprefixer": "^10.4.8",
     "commander": "^10.0.0",
     "consola": "^3.0.2",
-    "conventional-changelog": "^3.1.25",
     "esbuild": "^0.18.11",
     "eslint": "^8.31.0",
     "execa": "^6.1.0",
