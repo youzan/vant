@@ -61,10 +61,6 @@ function buildPackage(packageManager: string) {
   execSync(command, { stdio: 'inherit' });
 }
 
-function generateChangelog() {
-  execSync('vant-cli changelog', { stdio: 'inherit' });
-}
-
 function publishPackage(packageManager: string, tag: string) {
   let command = `${packageManager} publish --tag ${tag}`;
 
@@ -109,7 +105,6 @@ export async function release(command: { tag?: string; gitTag?: boolean }) {
 
   try {
     buildPackage(packageManager);
-    generateChangelog();
   } catch (err) {
     consola.error('Failed to build package, rollback to the previous version.');
     setPkgVersion(currentVersion, cwd);
