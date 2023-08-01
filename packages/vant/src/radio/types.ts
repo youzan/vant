@@ -1,6 +1,6 @@
 export type RadioThemeVars = {
   radioSize?: string;
-  radioDotSize?: string;
+  radioBorderDotSpace?: string;
   radioBorderColor?: string;
   radioDuration?: string;
   radioLabelMargin?: string;

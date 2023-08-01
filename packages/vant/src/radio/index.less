@@ -1,6 +1,6 @@
 :root {
   --van-radio-size: 20px;
-  --van-radio-dot-size: 8px;
+  --van-radio-border-dot-space: 8px;
   --van-radio-border-color: var(--van-gray-5);
   --van-radio-duration: var(--van-duration-fast);
   --van-radio-label-margin: var(--van-padding-xs);
@@ -73,8 +73,8 @@
         left: 50%;
         transform: translate(-50%, -50%);
         border-radius: 100%;
-        height: calc(100% - var(--van-radio-dot-size));
-        width: calc(100% - var(--van-radio-dot-size));
+        height: calc(100% - var(--van-radio-border-dot-space));
+        width: calc(100% - var(--van-radio-border-dot-space));
         transition-duration: var(--van-radio-duration);
         transition-property: background-color;
       }
