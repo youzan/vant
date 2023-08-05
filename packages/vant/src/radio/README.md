@@ -238,6 +238,8 @@ import type {
 
 The component provides the following CSS variables, which can be used to customize styles. Please refer to [ConfigProvider component](#/en-US/config-provider).
 
+> Tip: '--van-radio-dot-size' is not the size of the inner dot icon, but the distance between the dot and the outer border.
+
 | Name                             | Default Value              | Description |
 | -------------------------------- | -------------------------- | ----------- |
 | --van-radio-size                 | _20px_                     | -           |
