@@ -6,11 +6,11 @@ import {
   trigger,
 } from '../../../test';
 import { LONG_PRESS_START_TIME } from '../../utils';
-import ImagePreviewComponent from '../ImagePreview';
+import ImagePreview from '../ImagePreview';
 import { images, triggerZoom } from './shared';
 
 test('should swipe to current index after calling the swipeTo method', async () => {
-  const wrapper = mount(ImagePreviewComponent, {
+  const wrapper = mount(ImagePreview, {
     props: {
       show: true,
       images,
@@ -26,7 +26,7 @@ test('should swipe to current index after calling the swipeTo method', async () 
 
 test('should allow to use the teleport prop', () => {
   const root = document.createElement('div');
-  mount(ImagePreviewComponent, {
+  mount(ImagePreview, {
     props: {
       show: true,
       teleport: root,
@@ -37,7 +37,7 @@ test('should allow to use the teleport prop', () => {
 });
 
 test('should render cover slot correctly', () => {
-  const wrapper = mount(ImagePreviewComponent, {
+  const wrapper = mount(ImagePreview, {
     props: {
       show: true,
     },
@@ -50,7 +50,7 @@ test('should render cover slot correctly', () => {
 });
 
 test('should render index slot correctly', () => {
-  const wrapper = mount(ImagePreviewComponent, {
+  const wrapper = mount(ImagePreview, {
     props: {
       show: true,
     },
@@ -63,7 +63,7 @@ test('should render index slot correctly', () => {
 });
 
 test('should render close icon when using closeable prop', () => {
-  const wrapper = mount(ImagePreviewComponent, {
+  const wrapper = mount(ImagePreview, {
     props: {
       show: true,
       images,
@@ -76,7 +76,7 @@ test('should render close icon when using closeable prop', () => {
 });
 
 test('should change close icon when using close-icon prop', () => {
-  const wrapper = mount(ImagePreviewComponent, {
+  const wrapper = mount(ImagePreview, {
     props: {
       show: true,
       closeable: true,
@@ -90,7 +90,7 @@ test('should change close icon when using close-icon prop', () => {
 });
 
 test('should change close icon position when using close-icon-position prop', () => {
-  const wrapper = mount(ImagePreviewComponent, {
+  const wrapper = mount(ImagePreview, {
     props: {
       show: true,
       closeable: true,
@@ -104,7 +104,7 @@ test('should change close icon position when using close-icon-position prop', ()
 });
 
 test('should hide index when show-index prop is false', async () => {
-  const wrapper = mount(ImagePreviewComponent, {
+  const wrapper = mount(ImagePreview, {
     props: {
       show: true,
     },
@@ -116,7 +116,7 @@ test('should hide index when show-index prop is false', async () => {
 });
 
 test('should hide ImagePreview after popstate', async () => {
-  const wrapper = mount(ImagePreviewComponent, {
+  const wrapper = mount(ImagePreview, {
     props: {
       images,
       show: true,
@@ -128,7 +128,7 @@ test('should hide ImagePreview after popstate', async () => {
 });
 
 test('should not hide ImagePreview after popstate when close-on-popstate is false', async () => {
-  const wrapper = mount(ImagePreviewComponent, {
+  const wrapper = mount(ImagePreview, {
     props: {
       images,
       show: true,
@@ -141,7 +141,7 @@ test('should not hide ImagePreview after popstate when close-on-popstate is fals
 });
 
 test('render image', async () => {
-  const wrapper = mount(ImagePreviewComponent, {
+  const wrapper = mount(ImagePreview, {
     props: { images, show: true },
   });
 
@@ -160,7 +160,7 @@ test('render image', async () => {
 });
 
 test('before close prop', async () => {
-  const wrapper = mount(ImagePreviewComponent, {
+  const wrapper = mount(ImagePreview, {
     props: {
       images,
       show: true,
@@ -180,9 +180,46 @@ test('before close prop', async () => {
   expect(wrapper.emitted('close')![0]).toBeTruthy();
 });
 
+test('should close when overlay is clicked', async () => {
+  const wrapper = mount(ImagePreview, {
+    props: {
+      images,
+      show: true,
+      'onUpdate:show': (show) => {
+        wrapper.setProps({ show });
+      },
+    },
+  });
+
+  const swipe = wrapper.find('.van-swipe-item');
+
+  await triggerDrag(swipe, 0, 0);
+  await later(300);
+  expect(wrapper.emitted('close')).toBeTruthy();
+});
+
+test('should not close when overlay is clicked and closeOnClickOverlay is false', async () => {
+  const wrapper = mount(ImagePreview, {
+    props: {
+      images,
+      show: true,
+      closeOnClickOverlay: false,
+      'onUpdate:show': (show) => {
+        wrapper.setProps({ show });
+      },
+    },
+  });
+
+  const swipe = wrapper.find('.van-swipe-item');
+
+  triggerDrag(swipe, 0, 0);
+  await later(300);
+  expect(wrapper.emitted('close')).toBeFalsy();
+});
+
 test('double click', async () => {
   const onScale = jest.fn();
-  const wrapper = mount(ImagePreviewComponent, {
+  const wrapper = mount(ImagePreview, {
     props: {
       images,
       show: true,
@@ -211,7 +248,7 @@ test('double click', async () => {
 test('zoom in and drag image to move', async () => {
   const restore = mockGetBoundingClientRect({ width: 100, height: 100 });
 
-  const wrapper = mount(ImagePreviewComponent, {
+  const wrapper = mount(ImagePreview, {
     props: { images, show: true },
   });
 
@@ -240,7 +277,7 @@ test('zoom out', async () => {
   const restore = mockGetBoundingClientRect({ width: 100, height: 100 });
 
   const onScale = jest.fn();
-  const wrapper = mount(ImagePreviewComponent, {
+  const wrapper = mount(ImagePreview, {
     props: {
       images,
       show: true,
@@ -258,7 +295,7 @@ test('zoom out', async () => {
 });
 
 test('should render image slot correctly', async () => {
-  const wrapper = mount(ImagePreviewComponent, {
+  const wrapper = mount(ImagePreview, {
     props: {
       show: true,
       images,
@@ -274,7 +311,7 @@ test('should render image slot correctly', async () => {
 });
 
 test('should render image slot correctly 2', async () => {
-  const wrapper = mount(ImagePreviewComponent, {
+  const wrapper = mount(ImagePreview, {
     props: {
       show: true,
       images,
@@ -292,7 +329,7 @@ test('should render image slot correctly 2', async () => {
 
 test('should emit long-press event after long press', async () => {
   const onLongPress = jest.fn();
-  const wrapper = mount(ImagePreviewComponent, {
+  const wrapper = mount(ImagePreview, {
     props: {
       images,
       show: true,

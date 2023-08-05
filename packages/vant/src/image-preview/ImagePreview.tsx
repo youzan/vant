@@ -69,6 +69,7 @@ export const imagePreviewProps = {
   startPosition: makeNumericProp(0),
   showIndicators: Boolean,
   closeOnPopstate: truthProp,
+  closeOnClickOverlay: truthProp,
   closeIconPosition: makeStringProp<PopupCloseIconPosition>('top-right'),
   teleport: [String, Object] as PropType<TeleportProps['to']>,
 };
@@ -173,6 +174,7 @@ export default defineComponent({
             rootWidth={state.rootWidth}
             rootHeight={state.rootHeight}
             disableZoom={state.disableZoom}
+            closeOnClickOverlay={props.closeOnClickOverlay}
             onScale={emitScale}
             onClose={emitClose}
             onLongPress={() => emit('longPress', { index })}
