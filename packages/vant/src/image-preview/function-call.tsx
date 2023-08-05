@@ -26,6 +26,7 @@ const defaultConfig: ImagePreviewOptions = {
   swipeDuration: 300,
   showIndicators: false,
   closeOnPopstate: true,
+  closeOnClickOverlay: true,
   closeIconPosition: 'top-right',
 };
 
