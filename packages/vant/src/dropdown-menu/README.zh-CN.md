@@ -161,6 +161,7 @@ export default {
 | overlay | 是否显示遮罩层 | _boolean_ | `true` |
 | close-on-click-overlay | 是否在点击遮罩层后关闭菜单 | _boolean_ | `true` |
 | close-on-click-outside | 是否在点击外部元素后关闭菜单 | _boolean_ | `true` |
+| swipe-threshold | 滚动阈值，选项数量超过阈值且总宽度超过菜单栏宽度时可以横向滚动 | _number \| string_ | - |
 
 ### DropdownItem Props
 

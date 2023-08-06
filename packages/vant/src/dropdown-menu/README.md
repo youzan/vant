@@ -157,6 +157,7 @@ Use `active-color` prop to custom active color of the title and options.
 | overlay | Whether to show overlay | _boolean_ | `true` |
 | close-on-click-overlay | Whether to close when overlay is clicked | _boolean_ | `true` |
 | close-on-click-outside | Whether to close when outside is clicked | _boolean_ | `true` |
+| swipe-threshold | Horizontal scrolling is allowed when the number of items exceeds the threshold and the total width exceeds the width of the menu. | _number \| string_ | - |
 
 ### DropdownItem Props
 
