@@ -19,6 +19,38 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 
 ## 更新内容
 
+### v4.6.4
+
+`2023-08-06`
+
+#### 新功能 🎉
+
+- feat(area-data): 更新芜湖的县区数据，由 [nivin-studio](https://github.com/nivin-studio) 在 [#12122](https://github.com/youzan/vant/pull/12122) 中贡献
+- feat(Locale): 添加塞尔维亚语到国际化，由 [RogerZXY](https://github.com/RogerZXY) 在 [#12145](https://github.com/youzan/vant/pull/12145) 中贡献
+- feat(ImagePreview): 添加 closeOnClickOverlay 选项，由 [chenjiahan](https://github.com/chenjiahan) 在 [#12153](https://github.com/youzan/vant/pull/12153) 中贡献
+- feat(List): 添加 scroller 属性，由 [chenjiahan](https://github.com/chenjiahan) 在 [#12154](https://github.com/youzan/vant/pull/12154) 中贡献
+- feat(FloatingPanel): 添加 lock-scroll 属性，由 [inottn](https://github.com/inottn) 在 [#12157](https://github.com/youzan/vant/pull/12157) 中贡献
+
+#### Bug 修复 🐞
+
+- fix(TextEllipsis): 修复省略号重复出现的问题，由 [muzaisimao](https://github.com/muzaisimao) 在 [#12120](https://github.com/youzan/vant/pull/12120) 中贡献
+- fix(TextEllipsis): 修复计算省略号位置的逻辑问题，由 [inottn](https://github.com/inottn) 在 [#12137](https://github.com/youzan/vant/pull/12137) 中贡献
+
+#### 文档 📖
+
+- docs: 将 PR 标题格式移至贡献指南，由 [chenjiahan](https://github.com/chenjiahan) 在 [#12114](https://github.com/youzan/vant/pull/12114) 中贡献
+- docs(Radio): 添加对 css 变量 '--van-radio-dot-size' 的文档描述，由 [wjw-gavin](https://github.com/wjw-gavin) 在 [#12152](https://github.com/youzan/vant/pull/12152) 中贡献
+
+#### 其他变更
+
+- chore: 避免 prettier 破坏 hbs 模板，由 [chenjiahan](https://github.com/chenjiahan) 在 [#12113](https://github.com/youzan/vant/pull/12113) 中贡献
+- chore(deps): 升级 release-it 到 v16，由 [chenjiahan](https://github.com/chenjiahan) 在 [#12115](https://github.com/youzan/vant/pull/12115) 中贡献
+- feat(get-deps): 将 import('../foo.vue') 替换为 import('../foo.mjs')，由 [suncohey](https://github.com/suncohey) 在 [#12046](https://github.com/youzan/vant/pull/12046) 中贡献
+- refactor(cli): 重写 release 命令，由 [chenjiahan](https://github.com/chenjiahan) 在 [#12133](https://github.com/youzan/vant/pull/12133) 中贡献
+- feat(cli): 支持 release 命令的 gitTag 选项，由 [chenjiahan](https://github.com/chenjiahan) 在 [#12134](https://github.com/youzan/vant/pull/12134) 中贡献
+- chore(CI): 通过 GitHub 自动生成变更日志，由 [chenjiahan](https://github.com/chenjiahan) 在 [#12135](https://github.com/youzan/vant/pull/12135) 中贡献
+- chore: 添加 PR 标签动作，由 [chenjiahan](https://github.com/chenjiahan) 在 [#12136](https://github.com
+
 ### [v4.6.3](https://github.com/vant-ui/vant/compare/v4.6.2...v4.6.3)
 
 `2023-07-23`
