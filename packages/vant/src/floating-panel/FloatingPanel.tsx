@@ -88,28 +88,44 @@ export default defineComponent({
       return moveY;
     };
 
-    let startY: number;
+    let startY: number,
+      startScrollTop: number = -1,
+      maxScroll: number = -1;
     const touch = useTouch();
 
     const onTouchstart = (e: TouchEvent) => {
       touch.start(e);
       dragging.value = true;
       startY = -height.value;
+      moveCount = 0;
+      moveCount = -1;
+      startScrollTop = contentRef.value?.scrollTop || 0;
     };
 
+    let moveCount = 0;
     const onTouchmove = (e: TouchEvent) => {
+      moveCount += 1;
       touch.move(e);
 
       const target = e.target as Element;
       if (contentRef.value === target || contentRef.value?.contains(target)) {
+        const { scrollTop } = contentRef.value;
+        const ms = (maxScroll = Math.max(maxScroll, scrollTop));
+
+        // starts scrolling at a position other than zero
+        const isNotStartWithTop = startScrollTop > 0 && moveCount > 0;
+
+        // starts scrolling down, then reverses the scrolling
+        const isStartWithTopButInvert = moveCount > scrollTop && ms > 0;
+
         if (!props.contentDraggable) return;
 
         if (-startY < boundary.value.max) {
           if (e.cancelable) e.preventDefault();
           e.stopPropagation();
-        } else if (
-          !(contentRef.value.scrollTop <= 0 && touch.deltaY.value > 0)
-        ) {
+        } else if (!(scrollTop <= 0 && touch.deltaY.value > 0)) {
+          return;
+        } else if (isNotStartWithTop || isStartWithTopButInvert) {
           return;
         }
       }
@@ -119,6 +135,8 @@ export default defineComponent({
     };
 
     const onTouchend = () => {
+      moveCount = 0;
+      maxScroll = -1;
       dragging.value = false;
       height.value = closest(anchors.value, height.value);
 
