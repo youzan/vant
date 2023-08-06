@@ -4,7 +4,7 @@ import {
   ref,
   watch,
   type ExtractPropTypes,
-} from "vue";
+} from 'vue';
 
 // Utils
 import {
@@ -15,13 +15,13 @@ import {
   makeNumericProp,
   truthProp,
   windowHeight,
-} from "../utils";
+} from '../utils';
 
 // Composables
-import { useEventListener } from "@vant/use";
-import { useLockScroll } from "../composables/use-lock-scroll";
-import { useTouch } from "../composables/use-touch";
-import { useSyncPropRef } from "../composables/use-sync-prop-ref";
+import { useEventListener } from '@vant/use';
+import { useLockScroll } from '../composables/use-lock-scroll';
+import { useTouch } from '../composables/use-touch';
+import { useSyncPropRef } from '../composables/use-sync-prop-ref';
 
 export const floatingPanelProps = {
   height: makeNumericProp(0),
@@ -33,7 +33,7 @@ export const floatingPanelProps = {
 
 export type FloatingPanelProps = ExtractPropTypes<typeof floatingPanelProps>;
 
-const [name, bem] = createNamespace("floating-panel");
+const [name, bem] = createNamespace('floating-panel');
 
 const DAMP = 0.2;
 
@@ -42,14 +42,14 @@ export default defineComponent({
 
   props: floatingPanelProps,
 
-  emits: ["heightChange", "update:height"],
+  emits: ['heightChange', 'update:height'],
 
   setup(props, { emit, slots }) {
     const rootRef = ref<HTMLDivElement>();
     const contentRef = ref<HTMLDivElement>();
     const height = useSyncPropRef(
       () => +props.height,
-      (value) => emit("update:height", value)
+      (value) => emit('update:height', value),
     );
 
     const boundary = computed(() => ({
@@ -62,7 +62,7 @@ export default defineComponent({
     const anchors = computed(() =>
       props.anchors.length >= 2
         ? props.anchors
-        : [boundary.value.min, boundary.value.max]
+        : [boundary.value.min, boundary.value.max],
     );
 
     const dragging = ref(false);
@@ -70,7 +70,7 @@ export default defineComponent({
     const rootStyle = computed(() => ({
       height: addUnit(boundary.value.max),
       transform: `translateY(calc(100% + ${addUnit(-height.value)}))`,
-      transition: !dragging.value ? `transform ${props.duration}s` : "none",
+      transition: !dragging.value ? `transform ${props.duration}s` : 'none',
     }));
 
     const ease = (moveY: number): number => {
@@ -126,7 +126,7 @@ export default defineComponent({
       height.value = closest(anchors.value, height.value);
 
       if (height.value !== -startY) {
-        emit("heightChange", { height: height.value });
+        emit('heightChange', { height: height.value });
       }
     };
 
@@ -135,27 +135,27 @@ export default defineComponent({
       () => {
         height.value = closest(anchors.value, height.value);
       },
-      { immediate: true }
+      { immediate: true },
     );
 
     useLockScroll(rootRef, () => true);
 
     // useEventListener will set passive to `false` to eliminate the warning of Chrome
-    useEventListener("touchmove", onTouchmove, { target: rootRef });
+    useEventListener('touchmove', onTouchmove, { target: rootRef });
 
     return () => (
       <div
-        class={[bem(), { "van-safe-area-bottom": props.safeAreaInsetBottom }]}
+        class={[bem(), { 'van-safe-area-bottom': props.safeAreaInsetBottom }]}
         ref={rootRef}
         style={rootStyle.value}
         onTouchstartPassive={onTouchstart}
         onTouchend={onTouchend}
         onTouchcancel={onTouchend}
       >
-        <div class={bem("header")}>
-          <div class={bem("header-bar")} />
+        <div class={bem('header')}>
+          <div class={bem('header-bar')} />
         </div>
-        <div class={bem("content")} ref={contentRef}>
+        <div class={bem('content')} ref={contentRef}>
           {slots.default?.()}
         </div>
       </div>
