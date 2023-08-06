@@ -28,6 +28,7 @@ export const floatingPanelProps = {
   anchors: makeArrayProp<number>(),
   duration: makeNumericProp(0.2),
   contentDraggable: truthProp,
+  lockScroll: truthProp,
   safeAreaInsetBottom: truthProp,
 };
 
@@ -135,7 +136,7 @@ export default defineComponent({
       { immediate: true },
     );
 
-    useLockScroll(rootRef, () => true);
+    useLockScroll(rootRef, () => props.lockScroll);
 
     // useEventListener will set passive to `false` to eliminate the warning of Chrome
     useEventListener('touchmove', onTouchmove, { target: rootRef });
