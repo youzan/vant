@@ -28,7 +28,7 @@ export const floatingPanelProps = {
   anchors: makeArrayProp<number>(),
   duration: makeNumericProp(0.2),
   contentDraggable: truthProp,
-  lockScroll: truthProp,
+  lockScroll: Boolean,
   safeAreaInsetBottom: truthProp,
 };
 
