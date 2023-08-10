@@ -273,6 +273,7 @@ import type {
   ToastOptions,
   ToastPosition,
   ToastWordBreak,
+  ToastWrapperInstance,
 } from 'vant';
 ```
 
