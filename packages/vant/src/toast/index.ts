@@ -22,6 +22,7 @@ export type {
   ToastPosition,
   ToastThemeVars,
   ToastWordBreak,
+  ToastWrapperInstance,
 } from './types';
 
 declare module 'vue' {
