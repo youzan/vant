@@ -67,7 +67,7 @@ export default defineComponent({
 
   emits: ['click', 'update:offset', 'offsetChange'],
 
-  setup(props, { slots, emit }) {
+  setup(props, { slots, emit, attrs }) {
     const rootRef = ref<HTMLDivElement>();
 
     const state = ref({
@@ -224,6 +224,7 @@ export default defineComponent({
           onClick={onClick}
           style={rootStyle.value}
           v-show={show.value}
+          {...attrs}
         >
           {slots.default ? (
             slots.default()
