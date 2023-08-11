@@ -63,6 +63,8 @@ const [name, bem] = createNamespace('floating-bubble');
 export default defineComponent({
   name,
 
+  inheritAttrs: false,
+
   props: floatingBubbleProps,
 
   emits: ['click', 'update:offset', 'offsetChange'],
