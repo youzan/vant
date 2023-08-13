@@ -1,8 +1,8 @@
 import {
-  computed,
-  defineComponent,
   ref,
   watch,
+  computed,
+  defineComponent,
   type ExtractPropTypes,
 } from 'vue';
 
@@ -13,6 +13,7 @@ import {
   createNamespace,
   makeArrayProp,
   makeNumericProp,
+  preventDefault,
   truthProp,
   windowHeight,
 } from '../utils';
@@ -36,8 +37,6 @@ export type FloatingPanelProps = ExtractPropTypes<typeof floatingPanelProps>;
 
 const [name, bem] = createNamespace('floating-panel');
 
-const DAMP = 0.2;
-
 export default defineComponent({
   name,
 
@@ -46,6 +45,7 @@ export default defineComponent({
   emits: ['heightChange', 'update:height'],
 
   setup(props, { emit, slots }) {
+    const DAMP = 0.2;
     const rootRef = ref<HTMLDivElement>();
     const contentRef = ref<HTMLDivElement>();
     const height = useSyncPropRef(
@@ -89,8 +89,8 @@ export default defineComponent({
       return moveY;
     };
 
-    let startY: number,
-      maxScroll: number = -1;
+    let startY: number;
+    let maxScroll: number = -1;
     const touch = useTouch();
 
     const onTouchstart = (e: TouchEvent) => {
@@ -112,11 +112,11 @@ export default defineComponent({
         if (!props.contentDraggable) return;
 
         if (-startY < boundary.value.max) {
-          if (e.cancelable) e.preventDefault();
-          e.stopPropagation();
-        } else if (!(scrollTop <= 0 && touch.deltaY.value > 0)) {
-          return;
-        } else if (maxScroll > 0) {
+          preventDefault(e, true);
+        } else if (
+          !(scrollTop <= 0 && touch.deltaY.value > 0) ||
+          maxScroll > 0
+        ) {
           return;
         }
       }
