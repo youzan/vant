@@ -1,5 +1,12 @@
 # 更新日志
 
+## Unreleased
+
+- 移除 vant-cli release 命令
+- 移除 vant-cli changelog 命令
+- 升级 commander v11
+- 升级 markdown-it v13
+
 ## v6.2.0
 
 `2023-07-29`
