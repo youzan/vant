@@ -128,6 +128,20 @@ export default {
 </van-dropdown-menu>
 ```
 
+### 横向滚动
+
+通过 `swipe-threshold` 属性可以自定义滚动阈值。
+
+```html
+<van-dropdown-menu swipe-threshold="4">
+  <van-dropdown-item v-model="value1" :options="option1" />
+  <van-dropdown-item v-model="value2" :options="option2" />
+  <van-dropdown-item v-model="value2" :options="option2" />
+  <van-dropdown-item v-model="value2" :options="option2" />
+  <van-dropdown-item v-model="value2" :options="option2" />
+</van-dropdown-menu>
+```
+
 ### 向上展开
 
 将 `direction` 属性值设置为 `up`，菜单即可向上展开。
@@ -161,7 +175,7 @@ export default {
 | overlay | 是否显示遮罩层 | _boolean_ | `true` |
 | close-on-click-overlay | 是否在点击遮罩层后关闭菜单 | _boolean_ | `true` |
 | close-on-click-outside | 是否在点击外部元素后关闭菜单 | _boolean_ | `true` |
-| swipe-threshold | 滚动阈值，选项数量超过阈值且总宽度超过菜单栏宽度时可以横向滚动 | _number \| string_ | - |
+| swipe-threshold | 滚动阈值，选项数量超过阈值且总宽度超过菜单栏宽度时，可以横向滚动 | _number \| string_ | - |
 
 ### DropdownItem Props
 

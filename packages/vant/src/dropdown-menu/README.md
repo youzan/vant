@@ -126,6 +126,20 @@ Use `active-color` prop to custom active color of the title and options.
 </van-dropdown-menu>
 ```
 
+### Swipe Items
+
+You can set `swipe-threshold` prop to customize threshold number.
+
+```html
+<van-dropdown-menu swipe-threshold="4">
+  <van-dropdown-item v-model="value1" :options="option1" />
+  <van-dropdown-item v-model="value2" :options="option2" />
+  <van-dropdown-item v-model="value2" :options="option2" />
+  <van-dropdown-item v-model="value2" :options="option2" />
+  <van-dropdown-item v-model="value2" :options="option2" />
+</van-dropdown-menu>
+```
+
 ### Expand Direction
 
 ```html
