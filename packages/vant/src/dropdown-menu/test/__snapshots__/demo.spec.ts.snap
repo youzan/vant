@@ -195,6 +195,157 @@ exports[`should render demo and match snapshot 1`] = `
 </div>
 <div>
   <div class="van-dropdown-menu">
+    <div class="van-dropdown-menu__bar van-dropdown-menu__bar--scrollable">
+      <div id="van-dropdown-menu-0"
+           role="button"
+           tabindex="0"
+           class="van-dropdown-menu__item van-dropdown-menu__item--grow van-haptics-feedback"
+      >
+        <span class="van-dropdown-menu__title">
+          <div class="van-ellipsis">
+            Option1
+          </div>
+        </span>
+      </div>
+      <div id="van-dropdown-menu-1"
+           role="button"
+           tabindex="0"
+           class="van-dropdown-menu__item van-dropdown-menu__item--grow van-haptics-feedback"
+      >
+        <span class="van-dropdown-menu__title">
+          <div class="van-ellipsis">
+            Option A
+          </div>
+        </span>
+      </div>
+      <div id="van-dropdown-menu-2"
+           role="button"
+           tabindex="0"
+           class="van-dropdown-menu__item van-dropdown-menu__item--grow van-haptics-feedback"
+      >
+        <span class="van-dropdown-menu__title">
+          <div class="van-ellipsis">
+            Option A
+          </div>
+        </span>
+      </div>
+      <div id="van-dropdown-menu-3"
+           role="button"
+           tabindex="0"
+           class="van-dropdown-menu__item van-dropdown-menu__item--grow van-haptics-feedback"
+      >
+        <span class="van-dropdown-menu__title">
+          <div class="van-ellipsis">
+            Option A
+          </div>
+        </span>
+      </div>
+      <div id="van-dropdown-menu-4"
+           role="button"
+           tabindex="0"
+           class="van-dropdown-menu__item van-dropdown-menu__item--grow van-haptics-feedback"
+      >
+        <span class="van-dropdown-menu__title">
+          <div class="van-ellipsis">
+            Option A
+          </div>
+        </span>
+      </div>
+    </div>
+    <div style="top: 0px; display: none;"
+         class="van-dropdown-item van-dropdown-item--down"
+    >
+      <transition-stub name="van-fade"
+                       appear="true"
+                       persisted="false"
+                       css="true"
+                       role="button"
+                       tabindex="0"
+      >
+      </transition-stub>
+      <transition-stub name="van-popup-slide-top"
+                       appear="false"
+                       persisted="false"
+                       css="true"
+      >
+      </transition-stub>
+    </div>
+    <div style="top: 0px; display: none;"
+         class="van-dropdown-item van-dropdown-item--down"
+    >
+      <transition-stub name="van-fade"
+                       appear="true"
+                       persisted="false"
+                       css="true"
+                       role="button"
+                       tabindex="0"
+      >
+      </transition-stub>
+      <transition-stub name="van-popup-slide-top"
+                       appear="false"
+                       persisted="false"
+                       css="true"
+      >
+      </transition-stub>
+    </div>
+    <div style="top: 0px; display: none;"
+         class="van-dropdown-item van-dropdown-item--down"
+    >
+      <transition-stub name="van-fade"
+                       appear="true"
+                       persisted="false"
+                       css="true"
+                       role="button"
+                       tabindex="0"
+      >
+      </transition-stub>
+      <transition-stub name="van-popup-slide-top"
+                       appear="false"
+                       persisted="false"
+                       css="true"
+      >
+      </transition-stub>
+    </div>
+    <div style="top: 0px; display: none;"
+         class="van-dropdown-item van-dropdown-item--down"
+    >
+      <transition-stub name="van-fade"
+                       appear="true"
+                       persisted="false"
+                       css="true"
+                       role="button"
+                       tabindex="0"
+      >
+      </transition-stub>
+      <transition-stub name="van-popup-slide-top"
+                       appear="false"
+                       persisted="false"
+                       css="true"
+      >
+      </transition-stub>
+    </div>
+    <div style="top: 0px; display: none;"
+         class="van-dropdown-item van-dropdown-item--down"
+    >
+      <transition-stub name="van-fade"
+                       appear="true"
+                       persisted="false"
+                       css="true"
+                       role="button"
+                       tabindex="0"
+      >
+      </transition-stub>
+      <transition-stub name="van-popup-slide-top"
+                       appear="false"
+                       persisted="false"
+                       css="true"
+      >
+      </transition-stub>
+    </div>
+  </div>
+</div>
+<div>
+  <div class="van-dropdown-menu">
     <div class="van-dropdown-menu__bar">
       <div id="van-dropdown-menu-0"
            role="button"
