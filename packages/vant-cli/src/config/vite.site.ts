@@ -1,63 +1,15 @@
 import { join } from 'node:path';
-import { createRequire } from 'node:module';
-import hljs from 'highlight.js';
-import vitePluginMd from 'vite-plugin-md';
 import vitePluginVue from '@vitejs/plugin-vue';
 import vitePluginJsx from '@vitejs/plugin-vue-jsx';
+import { vitePluginMd } from '../compiler/vite-plugin-md.js';
 import { setBuildTarget, getVantConfig, isDev } from '../common/index.js';
 import { SITE_DIST_DIR, SITE_SRC_DIR } from '../common/constant.js';
 import lodash from 'lodash';
 import type { InlineConfig, PluginOption } from 'vite';
-import type MarkdownIt from 'markdown-it';
 import { genSiteMobileShared } from '../compiler/gen-site-mobile-shared.js';
 import { genSiteDesktopShared } from '../compiler/gen-site-desktop-shared.js';
 import { genPackageStyle } from '../compiler/gen-package-style.js';
 import { CSS_LANG } from '../common/css.js';
-
-function markdownHighlight(str: string, lang: string) {
-  if (lang && hljs.getLanguage(lang)) {
-    // https://github.com/highlightjs/highlight.js/issues/2277
-    return hljs.highlight(str, { language: lang, ignoreIllegals: true }).value;
-  }
-
-  return '';
-}
-
-function markdownCardWrapper(htmlCode: string) {
-  const group = htmlCode
-    .replace(/<h3/g, ':::<h3')
-    .replace(/<h2/g, ':::<h2')
-    .split(':::');
-
-  return group
-    .map((fragment) => {
-      if (fragment.indexOf('<h3') !== -1) {
-        return `<div class="van-doc-card">${fragment}</div>`;
-      }
-
-      return fragment;
-    })
-    .join('');
-}
-
-// add target="_blank" to all links
-function markdownLinkOpen(md: MarkdownIt) {
-  const defaultRender = md.renderer.rules.link_open;
-
-  md.renderer.rules.link_open = (tokens, idx, options, env, self) => {
-    const aIndex = tokens[idx].attrIndex('target');
-
-    if (aIndex < 0) {
-      tokens[idx].attrPush(['target', '_blank']); // add new attribute
-    }
-
-    if (defaultRender) {
-      return defaultRender(tokens, idx, options, env, self);
-    }
-
-    return self.renderToken(tokens, idx, options);
-  };
-}
 
 function getSiteConfig(vantConfig: any) {
   const siteConfig = vantConfig.site;
@@ -166,28 +118,7 @@ export function getViteConfigForSiteDev(): InlineConfig {
       vitePluginVue({
         include: [/\.vue$/, /\.md$/],
       }),
-      vitePluginMd({
-        wrapperClasses: 'van-doc-markdown-body',
-        transforms: {
-          after: markdownCardWrapper,
-        },
-        markdownItOptions: {
-          typographer: false, // https://markdown-it.github.io/markdown-it/#MarkdownIt
-          highlight: markdownHighlight,
-        },
-        markdownItSetup(md: MarkdownIt) {
-          const require = createRequire(import.meta.url);
-          const { slugify } = require('transliteration');
-          const markdownItAnchor = require('markdown-it-anchor');
-
-          markdownLinkOpen(md);
-
-          md.use(markdownItAnchor, {
-            level: 2,
-            slugify,
-          });
-        },
-      }),
+      vitePluginMd(),
       vitePluginJsx(),
       vitePluginHTML({
         ...siteConfig,
