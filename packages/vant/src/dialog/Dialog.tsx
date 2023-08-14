@@ -170,7 +170,7 @@ export default defineComponent({
     };
 
     const renderContent = () => {
-      if (slots.default) {
+      if (slots.default?.()) {
         return <div class={bem('content')}>{slots.default()}</div>;
       }
 
