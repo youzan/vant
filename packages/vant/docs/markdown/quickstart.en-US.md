@@ -14,7 +14,7 @@ npm i vant
 npm i vant@latest-v2
 ```
 
-Using `yarn` or `pnpm`:
+Using `yarn`, `pnpm`, or `bun`:
 
 ```bash
 # with yarn
@@ -22,6 +22,9 @@ yarn add vant
 
 # with pnpm
 pnpm add vant
+
+# with Bun
+bun add vant
 ```
 
 ### CDN
@@ -126,6 +129,9 @@ yarn add unplugin-vue-components -D
 
 # with pnpm
 pnpm add unplugin-vue-components -D
+
+# with Bun
+bun add unplugin-vue-components -D
 ```
 
 #### 2. Configure Plugin
@@ -235,6 +241,9 @@ yarn add @vant/nuxt -D
 
 # with pnpm
 pnpm add @vant/nuxt -D
+
+# with Bun
+bun add @vant/nuxt -D
 ```
 
 #### 2. Add Module

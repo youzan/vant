@@ -53,7 +53,7 @@ npm i vant
 npm i vant@latest-v2
 ```
 
-Using `yarn` or `pnpm`:
+Using `yarn`, `pnpm`, or `bun`:
 
 ```bash
 # with yarn
@@ -61,6 +61,9 @@ yarn add vant
 
 # with pnpm
 pnpm add vant
+
+# with Bun
+bun add vant
 ```
 
 ## Quickstart

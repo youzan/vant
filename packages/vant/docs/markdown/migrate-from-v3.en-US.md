@@ -19,6 +19,9 @@ yarn add vant@^4 @vant/compat@^1
 
 # Install via pnpm
 pnpm add vant@^4 @vant/compat@^1
+
+# Install via Bun
+bun add vant@^4 @vant/compat@^1
 ```
 
 You can also change the version directly in the `dependencies` field of `package.json`, and you will need to reinstall the dependencies after the change.

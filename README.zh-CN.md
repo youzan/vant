@@ -57,7 +57,7 @@ npm i vant
 npm i vant@latest-v2
 ```
 
-当然，你也可以通过 `yarn` 或 `pnpm` 进行安装：
+当然，你也可以通过 `yarn` 或 `pnpm` 或 `bun` 进行安装：
 
 ```bash
 # 通过 yarn 安装
@@ -65,6 +65,9 @@ yarn add vant
 
 # 通过 pnpm 安装
 pnpm add vant
+
+# 通过 bun 安装
+bun add vant
 ```
 
 ## 快速上手

@@ -19,6 +19,9 @@ yarn add vant@^4 @vant/compat@^1
 
 # 通过 pnpm 安装
 pnpm add vant@^4 @vant/compat@^1
+
+# 通过 Bun 安装
+bun add vant@^4 @vant/compat@^1
 ```
 
 你也可以直接修改 `package.json` 的 `dependencies` 字段中的版本号，修改完成后需要重新安装依赖。

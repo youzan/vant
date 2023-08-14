@@ -11,4 +11,7 @@ yarn add <%= name %>
 
 # 通过 pnpm
 pnpm add <%= name %>
+
+# 通过 bun
+bun add <%= name %>
 ```

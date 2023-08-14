@@ -17,6 +17,9 @@ yarn add @vant/use
 
 # with pnpm
 pnpm add @vant/use
+
+# with Bun
+bun add @vant/use
 ```
 
 ### 示例

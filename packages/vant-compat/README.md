@@ -13,6 +13,9 @@ yarn add @vant/compat
 
 # with pnpm
 pnpm add @vant/compat
+
+# with Bun
+bun add @vant/compat
 ```
 
 ## Usage
