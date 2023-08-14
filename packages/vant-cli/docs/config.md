@@ -218,7 +218,7 @@ If you need to configure some vite plugins, please create a `vite.config.ts` fil
 
 ### build.packageManager
 
-- Type: `'npm' | 'yarn' | 'pnpm'`
+- Type: `'npm' | 'yarn' | 'pnpm' | 'bun'`
 - Default: `yarn`
 
 `npm` package manager.

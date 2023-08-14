@@ -11,6 +11,9 @@ yarn add @vant/icons
 
 # with pnpm
 pnpm add @vant/icons
+
+# with Bun
+bun add @vant/icons
 ```
 
 ## Document

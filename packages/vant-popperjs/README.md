@@ -13,6 +13,9 @@ yarn add @vant/popperjs
 
 # with pnpm
 pnpm add @vant/popperjs
+
+# with Bun
+bun add @vant/popperjs
 ```
 
 ## Usage
