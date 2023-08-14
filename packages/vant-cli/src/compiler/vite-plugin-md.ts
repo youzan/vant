@@ -64,6 +64,8 @@ const markdownToVue = ({
   let html = md.render(raw, { id });
   html = `<div class="van-doc-markdown-body">${html}</div>`;
   html = markdownCardWrapper(html);
+  // escape curly brackets
+  html = html.replace(/<code(.*?)>/g, '<code$1 v-pre>');
   return `<template>${html}</template>`;
 };
 
