@@ -170,9 +170,8 @@ export default defineComponent({
     };
 
     const renderContent = () => {
-      const defaultSlot = slots.default?.();
-      if (defaultSlot) {
-        return <div class={bem("content")}>{defaultSlot}</div>;
+      if (slots.default) {
+        return <div class={bem('content')}>{slots.default()}</div>;
       }
 
       const { title, message, allowHtml } = props;
