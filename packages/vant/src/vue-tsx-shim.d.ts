@@ -19,5 +19,6 @@ declare module 'vue' {
   interface HTMLAttributes {
     onTouchmovePassive?: EventHandler;
     onTouchstartPassive?: EventHandler;
+    onClickCapture?: EventHandler;
   }
 }
