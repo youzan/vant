@@ -37,19 +37,17 @@ const onClick = () => {
 
 const activeName = ref(0);
 const offset = ref<FloatingBubbleOffset>({ x: 200, y: 400 });
-
-const onTest = () => {
-  console.log('test');
-};
 </script>
 
 <template>
   <van-tabs v-model:active="activeName">
     <van-tab :title="t('basicUsage')">
       <p class="text">{{ t('basicUsageText') }}</p>
-      <van-floating-bubble v-if="activeName === 0" icon="chat" @click="onClick">
-        <span @click="onTest">test</span>
-      </van-floating-bubble>
+      <van-floating-bubble
+        v-if="activeName === 0"
+        icon="chat"
+        @click="onClick"
+      />
     </van-tab>
     <van-tab :title="t('freeMagnetic')">
       <p class="text">{{ t('freeMagneticText') }}</p>
