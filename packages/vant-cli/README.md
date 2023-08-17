@@ -32,6 +32,9 @@ yarn add @vant/cli -D
 
 # via pnpm
 pnpm add @vant/cli -D
+
+# via Bun
+bun add @vant/cli -D
 ```
 
 Please add the followed config to `package.json` file.

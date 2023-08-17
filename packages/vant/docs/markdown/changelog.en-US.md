@@ -19,48 +19,83 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 
 ## Details
 
+### v4.6.5
+
+`2023-08-16`
+
+#### New Features 🎉
+
+- feat(DropdownMenu): add swipe-threshold prop by [@inottn](https://github.com/inottn) in [#12117](https://github.com/youzan/vant/pull/12117)
+- types(Toast): add `ToastWrapperInstance` export by [@long-woo](https://github.com/long-woo) in [#12166](https://github.com/youzan/vant/pull/12166)
+- feat(FloatingBubble): use component attrs by [@zhousg](https://github.com/zhousg) in [#12171](https://github.com/youzan/vant/pull/12171)
+
+#### Bug Fixes 🐞
+
+- fix(FloatingPanel): Lag caused by scrollbar and panel movement #12146 by [@yue1123](https://github.com/yue1123) in [#12161](https://github.com/youzan/vant/pull/12161)
+- fix(FloatingPanel): change the default value of lock-scroll to false by [@inottn](https://github.com/inottn) in [#12162](https://github.com/youzan/vant/pull/12162)
+- fix(cli): should escape curly brackets in markdown by [@chenjiahan](https://github.com/chenjiahan) in [#12188](https://github.com/youzan/vant/pull/12188)
+
+#### Document 📖
+
+- docs: add instructions for bun package manager by [@colinhacks](https://github.com/colinhacks) in [#12182](https://github.com/youzan/vant/pull/12182)
+
+#### Other Changes
+
+- chore: add script to format GitHub changelog by [@chenjiahan](https://github.com/chenjiahan) in [#12158](https://github.com/youzan/vant/pull/12158)
+- chore(FloatingPanel): improve code style by [@chenjiahan](https://github.com/chenjiahan) in [#12175](https://github.com/youzan/vant/pull/12175)
+- refactor(cli): rewrite vite-plugin-md by [@chenjiahan](https://github.com/chenjiahan) in [#12179](https://github.com/youzan/vant/pull/12179)
+- chore(deps): bump markdown-it v13 and commander v11 by [@chenjiahan](https://github.com/chenjiahan) in [#12180](https://github.com/youzan/vant/pull/12180)
+- chore(CI): do not run codeql for pull request by [@chenjiahan](https://github.com/chenjiahan) in [#12181](https://github.com/youzan/vant/pull/12181)
+
+#### New Contributors
+
+- [@long-woo](https://github.com/long-woo) made their first contribution in [#12166](https://github.com/youzan/vant/pull/12166)
+- [@yue1123](https://github.com/yue1123) made their first contribution in [#12161](https://github.com/youzan/vant/pull/12161)
+- [@colinhacks](https://github.com/colinhacks) made their first contribution in [#12182](https://github.com/youzan/vant/pull/12182)
+- [@xincheng-1999](https://github.com/xincheng-1999) made their first contribution in [#12189](https://github.com/youzan/vant/pull/12189)
+
 ### v4.6.4
 
 `2023-08-06`
 
 #### New Features 🎉
 
-- feat(area-data): update counties of WuHu by [nivin-studio](https://github.com/nivin-studio) in [#12122](https://github.com/youzan/vant/pull/12122)
-- feat(Locale): add Serbian language to internationalization by [RogerZXY](https://github.com/RogerZXY) in [#12145](https://github.com/youzan/vant/pull/12145)
-- feat(ImagePreview): add closeOnClickOverlay option by [chenjiahan](https://github.com/chenjiahan) in [#12153](https://github.com/youzan/vant/pull/12153)
-- feat(List): add scroller prop by [chenjiahan](https://github.com/chenjiahan) in [#12154](https://github.com/youzan/vant/pull/12154)
-- feat(FloatingPanel): add lock-scroll prop by [inottn](https://github.com/inottn) in [#12157](https://github.com/youzan/vant/pull/12157)
+- feat(area-data): update counties of WuHu by [@nivin-studio](https://github.com/nivin-studio) in [#12122](https://github.com/youzan/vant/pull/12122)
+- feat(Locale): add Serbian language to internationalization by [@RogerZXY](https://github.com/RogerZXY) in [#12145](https://github.com/youzan/vant/pull/12145)
+- feat(ImagePreview): add closeOnClickOverlay option by [@chenjiahan](https://github.com/chenjiahan) in [#12153](https://github.com/youzan/vant/pull/12153)
+- feat(List): add scroller prop by [@chenjiahan](https://github.com/chenjiahan) in [#12154](https://github.com/youzan/vant/pull/12154)
+- feat(FloatingPanel): add lock-scroll prop by [@inottn](https://github.com/inottn) in [#12157](https://github.com/youzan/vant/pull/12157)
 
 #### Bug Fixes 🐞
 
-- fix(TextEllipsis): dots repeated by [muzaisimao](https://github.com/muzaisimao) in [#12120](https://github.com/youzan/vant/pull/12120)
-- fix(TextEllipsis): fix the logic of calculating the position of ellipsis by [inottn](https://github.com/inottn) in [#12137](https://github.com/youzan/vant/pull/12137)
+- fix(TextEllipsis): dots repeated by [@muzaisimao](https://github.com/muzaisimao) in [#12120](https://github.com/youzan/vant/pull/12120)
+- fix(TextEllipsis): fix the logic of calculating the position of ellipsis by [@inottn](https://github.com/inottn) in [#12137](https://github.com/youzan/vant/pull/12137)
 
 #### Document 📖
 
-- docs: move PR title format to contribution guide by [chenjiahan](https://github.com/chenjiahan) in [#12114](https://github.com/youzan/vant/pull/12114)
-- docs(Radio): add document description for the css var '--van-radio-dot-size' by [wjw-gavin](https://github.com/wjw-gavin) in [#12152](https://github.com/youzan/vant/pull/12152)
+- docs: move PR title format to contribution guide by [@chenjiahan](https://github.com/chenjiahan) in [#12114](https://github.com/youzan/vant/pull/12114)
+- docs(Radio): add document description for the css var '--van-radio-dot-size' by [@wjw-gavin](https://github.com/wjw-gavin) in [#12152](https://github.com/youzan/vant/pull/12152)
 
 #### Other Changes
 
-- chore: avoid prettier breaking hbs template by [chenjiahan](https://github.com/chenjiahan) in [#12113](https://github.com/youzan/vant/pull/12113)
-- chore(deps): bump release-it v16 by [chenjiahan](https://github.com/chenjiahan) in [#12115](https://github.com/youzan/vant/pull/12115)
-- feat(get-deps): import('../foo.vue') => import('../foo.mjs') 的替换 by [suncohey](https://github.com/suncohey) in [#12046](https://github.com/youzan/vant/pull/12046)
-- refactor(cli): rewrite release command by [chenjiahan](https://github.com/chenjiahan) in [#12133](https://github.com/youzan/vant/pull/12133)
-- feat(cli): support gitTag option for release command by [chenjiahan](https://github.com/chenjiahan) in [#12134](https://github.com/youzan/vant/pull/12134)
-- chore(CI): automatically generate changelog via GitHub by [chenjiahan](https://github.com/chenjiahan) in [#12135](https://github.com/youzan/vant/pull/12135)
-- chore: add PR labeler action by [chenjiahan](https://github.com/chenjiahan) in [#12136](https://github.com/youzan/vant/pull/12136)
-- chore(TextEllipsis): reuse actionText variable by [chenjiahan](https://github.com/chenjiahan) in [#12138](https://github.com/youzan/vant/pull/12138)
-- refactor(cli): use GitHub changelog instead of conventional-changelog by [chenjiahan](https://github.com/chenjiahan) in [#12139](https://github.com/youzan/vant/pull/12139)
-- chore: add Serbian to doc and rename the file by [chenjiahan](https://github.com/chenjiahan) in [#12150](https://github.com/youzan/vant/pull/12150)
-- chore(eslint-config): bump dependencies by [chenjiahan](https://github.com/chenjiahan) in [#12155](https://github.com/youzan/vant/pull/12155)
+- chore: avoid prettier breaking hbs template by [@chenjiahan](https://github.com/chenjiahan) in [#12113](https://github.com/youzan/vant/pull/12113)
+- chore(deps): bump release-it v16 by [@chenjiahan](https://github.com/chenjiahan) in [#12115](https://github.com/youzan/vant/pull/12115)
+- feat(get-deps): import('../foo.vue') => import('../foo.mjs') 的替换 by [@suncohey](https://github.com/suncohey) in [#12046](https://github.com/youzan/vant/pull/12046)
+- refactor(cli): rewrite release command by [@chenjiahan](https://github.com/chenjiahan) in [#12133](https://github.com/youzan/vant/pull/12133)
+- feat(cli): support gitTag option for release command by [@chenjiahan](https://github.com/chenjiahan) in [#12134](https://github.com/youzan/vant/pull/12134)
+- chore(CI): automatically generate changelog via GitHub by [@chenjiahan](https://github.com/chenjiahan) in [#12135](https://github.com/youzan/vant/pull/12135)
+- chore: add PR labeler action by [@chenjiahan](https://github.com/chenjiahan) in [#12136](https://github.com/youzan/vant/pull/12136)
+- chore(TextEllipsis): reuse actionText variable by [@chenjiahan](https://github.com/chenjiahan) in [#12138](https://github.com/youzan/vant/pull/12138)
+- refactor(cli): use GitHub changelog instead of conventional-changelog by [@chenjiahan](https://github.com/chenjiahan) in [#12139](https://github.com/youzan/vant/pull/12139)
+- chore: add Serbian to doc and rename the file by [@chenjiahan](https://github.com/chenjiahan) in [#12150](https://github.com/youzan/vant/pull/12150)
+- chore(eslint-config): bump dependencies by [@chenjiahan](https://github.com/chenjiahan) in [#12155](https://github.com/youzan/vant/pull/12155)
 
 #### New Contributors
 
-- [muzaisimao](https://github.com/muzaisimao) made their first contribution in [#12120](https://github.com/youzan/vant/pull/12120)
-- [suncohey](https://github.com/suncohey) made their first contribution in [#12046](https://github.com/youzan/vant/pull/12046)
-- [nivin-studio](https://github.com/nivin-studio) made their first contribution in [#12122](https://github.com/youzan/vant/pull/12122)
-- [RogerZXY](https://github.com/RogerZXY) made their first contribution in [#12145](https://github.com/youzan/vant/pull/12145)
+- [@muzaisimao](https://github.com/muzaisimao) made their first contribution in [#12120](https://github.com/youzan/vant/pull/12120)
+- [@suncohey](https://github.com/suncohey) made their first contribution in [#12046](https://github.com/youzan/vant/pull/12046)
+- [@nivin-studio](https://github.com/nivin-studio) made their first contribution in [#12122](https://github.com/youzan/vant/pull/12122)
+- [@RogerZXY](https://github.com/RogerZXY) made their first contribution in [#12145](https://github.com/youzan/vant/pull/12145)
 
 ### [v4.6.3](https://github.com/vant-ui/vant/compare/v4.6.2...v4.6.3)
 

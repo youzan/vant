@@ -13,6 +13,9 @@ yarn add @vant/area-data
 
 # 通过 pnpm
 pnpm add @vant/area-data
+
+# 通过 Bun
+bun add @vant/area-data
 ```
 
 ## 使用

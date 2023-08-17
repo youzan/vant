@@ -13,6 +13,9 @@ yarn add @vant/touch-emulator
 
 # with pnpm
 pnpm add @vant/touch-emulator
+
+# with Bun
+bun add @vant/touch-emulator
 ```
 
 ## 使用指南
