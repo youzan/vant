@@ -189,6 +189,7 @@ export default defineComponent({
 
     const onClick = (e: MouseEvent) => {
       if (touch.isTap.value) emit('click', e);
+      else e.stopPropagation();
     };
 
     onMounted(() => {
@@ -223,7 +224,7 @@ export default defineComponent({
           onTouchstartPassive={onTouchStart}
           onTouchend={onTouchEnd}
           onTouchcancel={onTouchEnd}
-          onClick={onClick}
+          onClickCapture={onClick}
           style={rootStyle.value}
           v-show={show.value}
           {...attrs}
