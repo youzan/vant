@@ -20,9 +20,9 @@ jobs:
           actions: 'create-comment'
           issue-number: ${{ github.event.issue.number }}
           body: |
-            Hello @${{ github.event.issue.user.login }}. We totally like your proposal/feedback, welcome to [send us a Pull Request](https://help.github.com/en/articles/creating-a-pull-request) for it. Please send your Pull Request to `main` branch, fill the [Pull Request Template](https://github.com/vant-ui/vant/blob/main/.github/PULL_REQUEST_TEMPLATE.md) here, provide changelog/TypeScript/documentation/test cases if needed and make sure CI passed, we will review it soon. We appreciate your effort in advance and looking forward to your contribution!
+            Hello @${{ github.event.issue.user.login }}. We totally like your proposal/feedback, welcome to [send us a Pull Request](https://help.github.com/en/articles/creating-a-pull-request) for it. Please send your Pull Request to `main` branch, provide changelog/TypeScript/documentation/test cases if needed and make sure CI passed, we will review it soon. We appreciate your effort in advance and looking forward to your contribution!
 
-            你好 @${{ github.event.issue.user.login }}，我们完全同意你的提议/反馈，欢迎直接在此仓库 [创建一个 Pull Request](https://help.github.com/en/articles/creating-a-pull-request) 来解决这个问题。请将 Pull Request 发到 `main` 分支，务必填写 Pull Request 内的[预设模板](https://github.com/vant-ui/vant/blob/main/.github/PULL_REQUEST_TEMPLATE.md)，提供改动所需相应的 changelog、TypeScript 定义、测试用例、文档等，并确保 CI 通过，我们会尽快进行 Review，提前感谢和期待您的贡献。
+            你好 @${{ github.event.issue.user.login }}，我们完全同意你的提议/反馈，欢迎直接在此仓库 [创建一个 Pull Request](https://help.github.com/en/articles/creating-a-pull-request) 来解决这个问题。请将 Pull Request 发到 `main` 分支，提供改动所需相应的 changelog、TypeScript 定义、测试用例、文档等，并确保 CI 通过，我们会尽快进行 Review，提前感谢和期待你的贡献。
 
       - name: need reproduce
         if: github.event.label.name == 'need reproduce'
@@ -31,9 +31,9 @@ jobs:
           actions: 'create-comment'
           issue-number: ${{ github.event.issue.number }}
           body: |
-            Hello @${{ github.event.issue.user.login }}. Please provide an online reproduction demo by clicking this [link](https://codesandbox.io/s/vant-3-issue-template-8fuq5o) or a minimal GitHub repository. Issues marked with `need reproduce` will be closed if they have no activity within 3 days.
+            Hello @${{ github.event.issue.user.login }}. Please provide an online reproduction demo by [codesandbox](https://codesandbox.io/s/vant-3-issue-template-8fuq5o) or a minimal GitHub repository. Issues marked with `need reproduce` will be closed if there is no activity within 3 days. For background, please refer to [Why reproductions are required](https://antfu.me/posts/why-reproductions-are-required).
 
-            你好 @${{ github.event.issue.user.login }}, 我们需要你提供一个在线的重现实例以便于我们帮你排查问题。可以通过点击 [此处](https://codesandbox.io/s/vant-3-issue-template-8fuq5o) 创建或者提供一个最小化的 GitHub 仓库。3 天内未跟进此 issue 将会被自动关闭。
+            你好 @${{ github.event.issue.user.login }}, 我们需要你提供一个在线的重现示例，以便于我们帮你排查问题。你可以通过点击 [codesandbox](https://codesandbox.io/s/vant-3-issue-template-8fuq5o) 创建，或者提供一个最小化的 GitHub 仓库。如果 3 天内未跟进，此 issue 将会被自动关闭。背景请参考 [为什么需要最小重现](https://antfu.me/posts/why-reproductions-are-required-zh)。
 
       - name: question
         if: github.event.label.name == 'question'
@@ -42,9 +42,9 @@ jobs:
           actions: 'create-comment, close-issue'
           issue-number: ${{ github.event.issue.number }}
           body: |
-            Hello @${{ github.event.issue.user.login }}, we use GitHub issues to trace bugs or discuss plans of Vant. So, please don't ask usage questions here. You can try to open a new discussion in [vant discussions](https://github.com/vant-ui/vant/discussions), select `Q&A` to ask questions.
+            Hello @${{ github.event.issue.user.login }}, we use GitHub issues to trace bugs or discuss plans of Vant. So, please don't ask usage questions here. You can open a new discussion in [Vant Discussions](https://github.com/vant-ui/vant/discussions), select `Q&A` to ask questions.
 
-            你好 @${{ github.event.issue.user.login }}，Vant Issue 板块是用于 bug 反馈与需求讨论的地方。请勿在这里询问如何使用等相关问题，你可以试着在 [vant discussions](https://github.com/vant-ui/vant/discussions) 新开一个 discussion，选择 `Q&A` 类别进行提问。
+            你好 @${{ github.event.issue.user.login }}，Vant Issue 板块是用于 bug 反馈与需求讨论的地方。请勿在这里询问如何使用等相关问题，你可以在 [Vant Discussions](https://github.com/vant-ui/vant/discussions) 新开一个 discussion，选择 `Q&A` 类别进行提问。
 
       - name: 2.x
         if: github.event.label.name == '2.x'

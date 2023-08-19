@@ -20,6 +20,6 @@ jobs:
           labels: 'need reproduce'
           inactive-day: 3
           body: |
-            Since the issue was labeled with `need reproduce`, but no response in 3 days. This issue will be closed. If you have any questions, you can comment and reply.
+            As the issue was labeled with `need reproduce`, but no response in 3 days. This issue will be closed. Feel free to comment and reopen it if you have any further questions. For background, please refer to [Why reproductions are required](https://antfu.me/posts/why-reproductions-are-required).
 
-            由于该 issue 被标记为需要复现，却 3 天未收到回应。现关闭 issue，若有任何问题，可评论回复。
+            由于该 issue 被标记为 "需要重现"，但在 3 天内没有回应，因此该 issue 将被关闭。如果你有任何进一步的问题，请随时发表评论并重新打开该 issue。背景请参考 [为什么需要最小重现](https://antfu.me/posts/why-reproductions-are-required-zh)。
