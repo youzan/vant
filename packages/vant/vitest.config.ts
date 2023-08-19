@@ -22,8 +22,6 @@ export default defineConfig({
     environment: 'jsdom',
     include: ['**/*.spec.[jt]s?(x)'],
     restoreMocks: true,
-    // disable threads on CI to speed it up
-    threads: !isCI,
     // disable experimentalVmThreads on CI because it causes OOM
     experimentalVmThreads: !isCI,
   },
