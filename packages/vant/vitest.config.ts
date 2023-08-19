@@ -21,6 +21,7 @@ export default defineConfig({
     environment: 'jsdom',
     include: ['**/*.spec.[jt]s?(x)'],
     restoreMocks: true,
+    experimentalVmThreads: true,
   },
   plugins: [vitePluginVue(), vitePluginJsx()],
 });
