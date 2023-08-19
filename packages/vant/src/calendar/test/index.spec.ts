@@ -339,7 +339,7 @@ test('formatter prop', async () => {
     },
   });
 
-  await later();
+  await later(50);
 
   expect(wrapper.html()).toMatchSnapshot();
 });

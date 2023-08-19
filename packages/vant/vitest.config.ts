@@ -2,6 +2,8 @@ import { defineConfig } from 'vitest/config';
 import vitePluginVue from '@vitejs/plugin-vue';
 import vitePluginJsx from '@vitejs/plugin-vue-jsx';
 
+const isCI = Boolean(process.env.GITHUB_ACTIONS);
+
 export default defineConfig({
   test: {
     globals: true,
@@ -20,7 +22,10 @@ export default defineConfig({
     environment: 'jsdom',
     include: ['**/*.spec.[jt]s?(x)'],
     restoreMocks: true,
-    experimentalVmThreads: true,
+    // disable threads on CI to speed it up
+    threads: !isCI,
+    // disable experimentalVmThreads on CI because it causes OOM
+    experimentalVmThreads: !isCI,
   },
   plugins: [vitePluginVue(), vitePluginJsx()],
 });

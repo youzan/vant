@@ -7,6 +7,7 @@ exports[`formatter prop 1`] = `
       Calendar
     </div>
     <div class="van-calendar__header-subtitle">
+      2010/1
     </div>
     <div class="van-calendar__weekdays">
       <span class="van-calendar__weekday">
