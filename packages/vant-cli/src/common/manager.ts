@@ -1,4 +1,3 @@
-import { execa } from 'execa';
 import { consola } from './logger.js';
 import { execSync } from 'child_process';
 import { getVantConfig } from './constant.js';
@@ -34,7 +33,7 @@ export async function installDependencies() {
   try {
     const manager = getPackageManager();
 
-    await execa(manager, ['install', '--prod=false'], {
+    execSync(`${manager} install --prod=false`, {
       stdio: 'inherit',
     });
 

@@ -1,5 +1,5 @@
 import fse from 'fs-extra';
-import { execa } from 'execa';
+import { execSync } from 'child_process';
 import { join, relative } from 'node:path';
 import { clean } from './clean.js';
 import { CSS_LANG } from '../common/css.js';
@@ -104,9 +104,8 @@ async function buildTypeDeclarations() {
   const tsConfig = join(process.cwd(), 'tsconfig.declaration.json');
 
   if (existsSync(tsConfig)) {
-    await execa('tsc', ['-p', tsConfig], {
-      stdout: 'inherit',
-      stderr: 'inherit',
+    execSync(`tsc -p ${tsConfig}`, {
+      stdio: 'inherit',
     });
   }
 }

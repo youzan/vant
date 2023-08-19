@@ -60,7 +60,6 @@
     "consola": "^3.0.2",
     "esbuild": "^0.18.11",
     "eslint": "^8.46.0",
-    "execa": "^6.1.0",
     "enquirer": "2.3.6",
     "fast-glob": "^3.2.11",
     "fs-extra": "^11.1.0",
