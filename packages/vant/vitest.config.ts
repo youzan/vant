@@ -5,9 +5,9 @@ import vitePluginJsx from '@vitejs/plugin-vue-jsx';
 export default defineConfig({
   test: {
     globals: true,
+    threads: !process.env.GITHUB_ACTIONS,
     coverage: {
       enabled: true,
-
       include: ['src/**/*.[jt]s?(x)'],
       exclude: [
         'src/lazyload/vue-lazyload/**',
