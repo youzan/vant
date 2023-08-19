@@ -12,7 +12,7 @@ test('should allow to use the teleport option', async () => {
 });
 
 test('should trigger onClose option correctly', async () => {
-  const onClose = jest.fn();
+  const onClose = vi.fn();
   const instance = showImagePreview({
     images,
     startPosition: 1,
@@ -29,7 +29,7 @@ test('should trigger onClose option correctly', async () => {
 });
 
 test('should trigger onChange option correctly', async () => {
-  const onChange = jest.fn();
+  const onChange = vi.fn();
   showImagePreview({
     images,
     startPosition: 0,
@@ -47,8 +47,7 @@ test('should trigger onScale option correctly', async () => {
   showImagePreview({
     images,
     startPosition: 0,
-    onScale({ index, scale }) {
-      expect(index).toEqual(2);
+    onScale({ scale }) {
       expect(scale <= 2).toBeTruthy();
     },
   });

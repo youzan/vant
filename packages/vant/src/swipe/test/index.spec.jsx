@@ -51,7 +51,7 @@ const Component = {
 };
 
 test('should swipe to specific swipe after calling the swipeTo method', async () => {
-  const onChange = jest.fn();
+  const onChange = vi.fn();
   const wrapper = mount(Component, {
     props: {
       onChange,
@@ -66,7 +66,7 @@ test('should swipe to specific swipe after calling the swipeTo method', async ()
 });
 
 test('should allow to call swipeTo method with immediate option', async () => {
-  const onChange = jest.fn();
+  const onChange = vi.fn();
   const wrapper = mount(Component, {
     props: {
       onChange,
@@ -83,7 +83,7 @@ test('should allow to call swipeTo method with immediate option', async () => {
 });
 
 test('should swipe to next swipe after calling next method', async () => {
-  const onChange = jest.fn();
+  const onChange = vi.fn();
   const wrapper = mount(Component, {
     props: {
       onChange,
@@ -97,7 +97,7 @@ test('should swipe to next swipe after calling next method', async () => {
 });
 
 test('should swipe to prev swipe after calling prev method', async () => {
-  const onChange = jest.fn();
+  const onChange = vi.fn();
   const wrapper = mount(Component, {
     props: {
       onChange,
@@ -132,7 +132,7 @@ test('should render vertical swipe when using vertical prop', async () => {
 });
 
 test('should not allow to drag swipe when touchable is false', async () => {
-  const onChange = jest.fn();
+  const onChange = vi.fn();
   const wrapper = mount(Component, {
     props: {
       onChange,
@@ -148,7 +148,7 @@ test('should not allow to drag swipe when touchable is false', async () => {
 });
 
 test('should render swipe looply when using loop prop', async () => {
-  const onChange = jest.fn();
+  const onChange = vi.fn();
   const wrapper = mount(Component, {
     props: {
       onChange,
@@ -173,7 +173,7 @@ test('should render swipe looply when using loop prop', async () => {
 });
 
 test('should pause auto play when page is hidden', async () => {
-  const onChange = jest.fn();
+  const onChange = vi.fn();
   mount(Component, {
     props: {
       loop: true,
@@ -333,8 +333,8 @@ test('should render indicator slot correctly', async () => {
 });
 
 test('should emit drag-start and drag-end events correctly', async () => {
-  const dragStart = jest.fn();
-  const dragEnd = jest.fn();
+  const dragStart = vi.fn();
+  const dragEnd = vi.fn();
   const wrapper = mount({
     render() {
       return (

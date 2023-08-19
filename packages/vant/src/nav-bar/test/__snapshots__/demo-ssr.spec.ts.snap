@@ -1,11 +1,12 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`should render demo and match snapshot 1`] = `
 <!--[-->
 <div>
   <!--[-->
-  <div style
-       class="van-nav-bar van-hairline--bottom"
+  <div
+    style
+    class="van-nav-bar van-hairline--bottom"
   >
     <div class="van-nav-bar__content">
       <div class="van-nav-bar__title van-ellipsis">
@@ -16,14 +17,16 @@ exports[`should render demo and match snapshot 1`] = `
 </div>
 <div>
   <!--[-->
-  <div style
-       class="van-nav-bar van-hairline--bottom"
+  <div
+    style
+    class="van-nav-bar van-hairline--bottom"
   >
     <div class="van-nav-bar__content">
       <div class="van-nav-bar__left van-haptics-feedback">
         <!--[-->
-        <i class="van-badge__wrapper van-icon van-icon-arrow-left van-nav-bar__arrow"
-           style
+        <i
+          class="van-badge__wrapper van-icon van-icon-arrow-left van-nav-bar__arrow"
+          style
         >
           <!--[-->
         </i>
@@ -39,14 +42,16 @@ exports[`should render demo and match snapshot 1`] = `
 </div>
 <div>
   <!--[-->
-  <div style
-       class="van-nav-bar van-hairline--bottom"
+  <div
+    style
+    class="van-nav-bar van-hairline--bottom"
   >
     <div class="van-nav-bar__content">
       <div class="van-nav-bar__left van-haptics-feedback">
         <!--[-->
-        <i class="van-badge__wrapper van-icon van-icon-arrow-left van-nav-bar__arrow"
-           style
+        <i
+          class="van-badge__wrapper van-icon van-icon-arrow-left van-nav-bar__arrow"
+          style
         >
           <!--[-->
         </i>
@@ -67,14 +72,16 @@ exports[`should render demo and match snapshot 1`] = `
 </div>
 <div>
   <!--[-->
-  <div style
-       class="van-nav-bar van-hairline--bottom"
+  <div
+    style
+    class="van-nav-bar van-hairline--bottom"
   >
     <div class="van-nav-bar__content">
       <div class="van-nav-bar__left van-haptics-feedback">
         <!--[-->
-        <i class="van-badge__wrapper van-icon van-icon-arrow-left van-nav-bar__arrow"
-           style
+        <i
+          class="van-badge__wrapper van-icon van-icon-arrow-left van-nav-bar__arrow"
+          style
         >
           <!--[-->
         </i>
@@ -87,8 +94,9 @@ exports[`should render demo and match snapshot 1`] = `
       </div>
       <div class="van-nav-bar__right van-haptics-feedback">
         <!--[-->
-        <i class="van-badge__wrapper van-icon van-icon-search"
-           style="font-size:18px;"
+        <i
+          class="van-badge__wrapper van-icon van-icon-search"
+          style="font-size:18px;"
         >
           <!--[-->
         </i>

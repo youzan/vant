@@ -1,4 +1,4 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`should render demo and match snapshot 1`] = `
 <div>
@@ -6,163 +6,191 @@ exports[`should render demo and match snapshot 1`] = `
     <div class="van-empty__image">
       <svg viewbox="0 0 160 160">
         <defs>
-          <linearGradient x1="50%"
-                          x2="50%"
-                          y2="100%"
-                          id="van-empty-5"
+          <linearGradient
+            x1="50%"
+            x2="50%"
+            y2="100%"
+            id="van-empty-5"
           >
-            <stop stop-color="#F2F3F5"
-                  offset="0%"
+            <stop
+              stop-color="#F2F3F5"
+              offset="0%"
             >
             </stop>
-            <stop stop-color="#DCDEE0"
-                  offset="100%"
+            <stop
+              stop-color="#DCDEE0"
+              offset="100%"
             >
             </stop>
           </linearGradient>
-          <linearGradient x1="95%"
-                          y1="48%"
-                          x2="5.5%"
-                          y2="51%"
-                          id="van-empty-6"
+          <linearGradient
+            x1="95%"
+            y1="48%"
+            x2="5.5%"
+            y2="51%"
+            id="van-empty-6"
           >
-            <stop stop-color="#EAEDF1"
-                  offset="0%"
+            <stop
+              stop-color="#EAEDF1"
+              offset="0%"
             >
             </stop>
-            <stop stop-color="#DCDEE0"
-                  offset="100%"
+            <stop
+              stop-color="#DCDEE0"
+              offset="100%"
             >
             </stop>
           </linearGradient>
-          <linearGradient y1="45%"
-                          x2="100%"
-                          y2="54%"
-                          id="van-empty-7"
+          <linearGradient
+            y1="45%"
+            x2="100%"
+            y2="54%"
+            id="van-empty-7"
           >
-            <stop stop-color="#EAEDF1"
-                  offset="0%"
+            <stop
+              stop-color="#EAEDF1"
+              offset="0%"
             >
             </stop>
-            <stop stop-color="#DCDEE0"
-                  offset="100%"
+            <stop
+              stop-color="#DCDEE0"
+              offset="100%"
             >
             </stop>
           </linearGradient>
         </defs>
         <defs>
-          <linearGradient id="van-empty-a"
-                          x1="64%"
-                          y1="100%"
-                          x2="64%"
+          <linearGradient
+            id="van-empty-a"
+            x1="64%"
+            y1="100%"
+            x2="64%"
           >
-            <stop stop-color="#FFF"
-                  offset="0%"
-                  stop-opacity="0.5"
+            <stop
+              stop-color="#FFF"
+              offset="0%"
+              stop-opacity="0.5"
             >
             </stop>
-            <stop stop-color="#F2F3F5"
-                  offset="100%"
+            <stop
+              stop-color="#F2F3F5"
+              offset="100%"
             >
             </stop>
           </linearGradient>
         </defs>
         <g opacity=".8">
-          <path d="M36 131V53H16v20H2v58h34z"
-                fill="url(#van-empty-a)"
+          <path
+            d="M36 131V53H16v20H2v58h34z"
+            fill="url(#van-empty-a)"
           >
           </path>
-          <path d="M123 15h22v14h9v77h-31V15z"
-                fill="url(#van-empty-a)"
+          <path
+            d="M123 15h22v14h9v77h-31V15z"
+            fill="url(#van-empty-a)"
           >
           </path>
         </g>
         <defs>
-          <linearGradient id="van-empty-b"
-                          x1="64%"
-                          y1="97%"
-                          x2="64%"
-                          y2="0%"
+          <linearGradient
+            id="van-empty-b"
+            x1="64%"
+            y1="97%"
+            x2="64%"
+            y2="0%"
           >
-            <stop stop-color="#F2F3F5"
-                  offset="0%"
-                  stop-opacity="0.3"
+            <stop
+              stop-color="#F2F3F5"
+              offset="0%"
+              stop-opacity="0.3"
             >
             </stop>
-            <stop stop-color="#F2F3F5"
-                  offset="100%"
+            <stop
+              stop-color="#F2F3F5"
+              offset="100%"
             >
             </stop>
           </linearGradient>
         </defs>
         <g opacity=".8">
-          <path d="M87 6c3 0 7 3 8 6a8 8 0 1 1-1 16H80a7 7 0 0 1-8-6c0-4 3-7 6-7 0-5 4-9 9-9Z"
-                fill="url(#van-empty-b)"
+          <path
+            d="M87 6c3 0 7 3 8 6a8 8 0 1 1-1 16H80a7 7 0 0 1-8-6c0-4 3-7 6-7 0-5 4-9 9-9Z"
+            fill="url(#van-empty-b)"
           >
           </path>
-          <path d="M19 23c2 0 3 1 4 3 2 0 4 2 4 4a4 4 0 0 1-4 3v1h-7v-1l-1 1c-2 0-3-2-3-4 0-1 1-3 3-3 0-2 2-4 4-4Z"
-                fill="url(#van-empty-b)"
+          <path
+            d="M19 23c2 0 3 1 4 3 2 0 4 2 4 4a4 4 0 0 1-4 3v1h-7v-1l-1 1c-2 0-3-2-3-4 0-1 1-3 3-3 0-2 2-4 4-4Z"
+            fill="url(#van-empty-b)"
           >
           </path>
         </g>
-        <g transform="translate(36 50)"
-           fill="none"
+        <g
+          transform="translate(36 50)"
+          fill="none"
         >
           <g transform="translate(8)">
-            <rect fill="#EBEDF0"
-                  opacity=".6"
-                  x="38"
-                  y="13"
-                  width="36"
-                  height="53"
-                  rx="2"
+            <rect
+              fill="#EBEDF0"
+              opacity=".6"
+              x="38"
+              y="13"
+              width="36"
+              height="53"
+              rx="2"
             >
             </rect>
-            <rect fill="url(#van-empty-5)"
-                  width="64"
-                  height="66"
-                  rx="2"
+            <rect
+              fill="url(#van-empty-5)"
+              width="64"
+              height="66"
+              rx="2"
             >
             </rect>
-            <rect fill="#FFF"
-                  x="6"
-                  y="6"
-                  width="52"
-                  height="55"
-                  rx="1"
+            <rect
+              fill="#FFF"
+              x="6"
+              y="6"
+              width="52"
+              height="55"
+              rx="1"
             >
             </rect>
-            <g transform="translate(15 17)"
-               fill="url(#van-empty-6)"
+            <g
+              transform="translate(15 17)"
+              fill="url(#van-empty-6)"
             >
-              <rect width="34"
-                    height="6"
-                    rx="1"
+              <rect
+                width="34"
+                height="6"
+                rx="1"
               >
               </rect>
               <path d="M0 14h34v6H0z">
               </path>
-              <rect y="28"
-                    width="34"
-                    height="6"
-                    rx="1"
+              <rect
+                y="28"
+                width="34"
+                height="6"
+                rx="1"
               >
               </rect>
             </g>
           </g>
-          <rect fill="url(#van-empty-7)"
-                y="61"
-                width="88"
-                height="28"
-                rx="1"
+          <rect
+            fill="url(#van-empty-7)"
+            y="61"
+            width="88"
+            height="28"
+            rx="1"
           >
           </rect>
-          <rect fill="#F7F8FA"
-                x="29"
-                y="72"
-                width="30"
-                height="6"
-                rx="1"
+          <rect
+            fill="#F7F8FA"
+            x="29"
+            y="72"
+            width="30"
+            height="6"
+            rx="1"
           >
           </rect>
         </g>
@@ -176,161 +204,185 @@ exports[`should render demo and match snapshot 1`] = `
 <div>
   <div class="van-tabs van-tabs--line">
     <div class="van-tabs__wrap">
-      <div role="tablist"
-           class="van-tabs__nav van-tabs__nav--line"
-           aria-orientation="horizontal"
+      <div
+        role="tablist"
+        class="van-tabs__nav van-tabs__nav--line"
+        aria-orientation="horizontal"
       >
-        <div id="van-tabs-0"
-             role="tab"
-             class="van-tab van-tab--line van-tab--active"
-             tabindex="0"
-             aria-selected="true"
-             aria-controls="van-tab"
+        <div
+          id="van-tabs-0"
+          role="tab"
+          class="van-tab van-tab--line van-tab--active"
+          tabindex="0"
+          aria-selected="true"
+          aria-controls="van-tab"
         >
           <span class="van-tab__text van-tab__text--ellipsis">
             Error
           </span>
         </div>
-        <div id="van-tabs-1"
-             role="tab"
-             class="van-tab van-tab--line"
-             tabindex="-1"
-             aria-selected="false"
-             aria-controls="van-tab"
+        <div
+          id="van-tabs-1"
+          role="tab"
+          class="van-tab van-tab--line"
+          tabindex="-1"
+          aria-selected="false"
+          aria-controls="van-tab"
         >
           <span class="van-tab__text van-tab__text--ellipsis">
             Network
           </span>
         </div>
-        <div id="van-tabs-2"
-             role="tab"
-             class="van-tab van-tab--line"
-             tabindex="-1"
-             aria-selected="false"
-             aria-controls="van-tab"
+        <div
+          id="van-tabs-2"
+          role="tab"
+          class="van-tab van-tab--line"
+          tabindex="-1"
+          aria-selected="false"
+          aria-controls="van-tab"
         >
           <span class="van-tab__text van-tab__text--ellipsis">
             Search
           </span>
         </div>
-        <div class="van-tabs__line"
-             style="transform: translateX(50px) translateX(-50%);"
+        <div
+          class="van-tabs__line"
+          style="transform: translateX(50px) translateX(-50%);"
         >
         </div>
       </div>
     </div>
     <div class="van-tabs__content">
-      <div id="van-tab"
-           role="tabpanel"
-           class="van-tab__panel"
-           tabindex="0"
-           aria-labelledby="van-tabs-0"
-           style
+      <div
+        id="van-tab"
+        role="tabpanel"
+        class="van-tab__panel"
+        tabindex="0"
+        aria-labelledby="van-tabs-0"
+        style
       >
         <div class="van-empty">
           <div class="van-empty__image">
             <svg viewbox="0 0 160 160">
               <defs>
-                <linearGradient x1="50%"
-                                x2="50%"
-                                y2="100%"
-                                id="van-empty-8"
+                <linearGradient
+                  x1="50%"
+                  x2="50%"
+                  y2="100%"
+                  id="van-empty-8"
                 >
-                  <stop stop-color="#EAEDF1"
-                        offset="0%"
+                  <stop
+                    stop-color="#EAEDF1"
+                    offset="0%"
                   >
                   </stop>
-                  <stop stop-color="#DCDEE0"
-                        offset="100%"
+                  <stop
+                    stop-color="#DCDEE0"
+                    offset="100%"
                   >
                   </stop>
                 </linearGradient>
               </defs>
               <defs>
-                <linearGradient id="van-empty-a"
-                                x1="64%"
-                                y1="100%"
-                                x2="64%"
+                <linearGradient
+                  id="van-empty-a"
+                  x1="64%"
+                  y1="100%"
+                  x2="64%"
                 >
-                  <stop stop-color="#FFF"
-                        offset="0%"
-                        stop-opacity="0.5"
+                  <stop
+                    stop-color="#FFF"
+                    offset="0%"
+                    stop-opacity="0.5"
                   >
                   </stop>
-                  <stop stop-color="#F2F3F5"
-                        offset="100%"
-                  >
-                  </stop>
-                </linearGradient>
-              </defs>
-              <g opacity=".8">
-                <path d="M36 131V53H16v20H2v58h34z"
-                      fill="url(#van-empty-a)"
-                >
-                </path>
-                <path d="M123 15h22v14h9v77h-31V15z"
-                      fill="url(#van-empty-a)"
-                >
-                </path>
-              </g>
-              <defs>
-                <linearGradient id="van-empty-b"
-                                x1="64%"
-                                y1="97%"
-                                x2="64%"
-                                y2="0%"
-                >
-                  <stop stop-color="#F2F3F5"
-                        offset="0%"
-                        stop-opacity="0.3"
-                  >
-                  </stop>
-                  <stop stop-color="#F2F3F5"
-                        offset="100%"
+                  <stop
+                    stop-color="#F2F3F5"
+                    offset="100%"
                   >
                   </stop>
                 </linearGradient>
               </defs>
               <g opacity=".8">
-                <path d="M87 6c3 0 7 3 8 6a8 8 0 1 1-1 16H80a7 7 0 0 1-8-6c0-4 3-7 6-7 0-5 4-9 9-9Z"
-                      fill="url(#van-empty-b)"
+                <path
+                  d="M36 131V53H16v20H2v58h34z"
+                  fill="url(#van-empty-a)"
                 >
                 </path>
-                <path d="M19 23c2 0 3 1 4 3 2 0 4 2 4 4a4 4 0 0 1-4 3v1h-7v-1l-1 1c-2 0-3-2-3-4 0-1 1-3 3-3 0-2 2-4 4-4Z"
-                      fill="url(#van-empty-b)"
+                <path
+                  d="M123 15h22v14h9v77h-31V15z"
+                  fill="url(#van-empty-a)"
                 >
                 </path>
               </g>
               <defs>
-                <radialGradient id="van-empty-c"
-                                cx="50%"
-                                cy="54%"
-                                fx="50%"
-                                fy="54%"
-                                r="297%"
-                                gradienttransform="matrix(-.16 0 0 -.33 .58 .72)"
+                <linearGradient
+                  id="van-empty-b"
+                  x1="64%"
+                  y1="97%"
+                  x2="64%"
+                  y2="0%"
                 >
-                  <stop stop-color="#EBEDF0"
-                        offset="0%"
+                  <stop
+                    stop-color="#F2F3F5"
+                    offset="0%"
+                    stop-opacity="0.3"
                   >
                   </stop>
-                  <stop stop-color="#F2F3F5"
-                        offset="100%"
-                        stop-opacity="0.3"
+                  <stop
+                    stop-color="#F2F3F5"
+                    offset="100%"
+                  >
+                  </stop>
+                </linearGradient>
+              </defs>
+              <g opacity=".8">
+                <path
+                  d="M87 6c3 0 7 3 8 6a8 8 0 1 1-1 16H80a7 7 0 0 1-8-6c0-4 3-7 6-7 0-5 4-9 9-9Z"
+                  fill="url(#van-empty-b)"
+                >
+                </path>
+                <path
+                  d="M19 23c2 0 3 1 4 3 2 0 4 2 4 4a4 4 0 0 1-4 3v1h-7v-1l-1 1c-2 0-3-2-3-4 0-1 1-3 3-3 0-2 2-4 4-4Z"
+                  fill="url(#van-empty-b)"
+                >
+                </path>
+              </g>
+              <defs>
+                <radialGradient
+                  id="van-empty-c"
+                  cx="50%"
+                  cy="54%"
+                  fx="50%"
+                  fy="54%"
+                  r="297%"
+                  gradienttransform="matrix(-.16 0 0 -.33 .58 .72)"
+                >
+                  <stop
+                    stop-color="#EBEDF0"
+                    offset="0%"
+                  >
+                  </stop>
+                  <stop
+                    stop-color="#F2F3F5"
+                    offset="100%"
+                    stop-opacity="0.3"
                   >
                   </stop>
                 </radialGradient>
               </defs>
-              <ellipse fill="url(#van-empty-c)"
-                       opacity=".8"
-                       cx="80"
-                       cy="140"
-                       rx="46"
-                       ry="8"
+              <ellipse
+                fill="url(#van-empty-c)"
+                opacity=".8"
+                cx="80"
+                cy="140"
+                rx="46"
+                ry="8"
               >
               </ellipse>
-              <path d="m59 60 21 21 21-21h3l9 9v3L92 93l21 21v3l-9 9h-3l-21-21-21 21h-3l-9-9v-3l21-21-21-21v-3l9-9h3Z"
-                    fill="url(#van-empty-8)"
+              <path
+                d="m59 60 21 21 21-21h3l9 9v3L92 93l21 21v3l-9 9h-3l-21-21-21 21h-3l-9-9v-3l21-21-21-21v-3l9-9h3Z"
+                fill="url(#van-empty-8)"
               >
               </path>
             </svg>
@@ -340,20 +392,22 @@ exports[`should render demo and match snapshot 1`] = `
           </p>
         </div>
       </div>
-      <div id="van-tab"
-           role="tabpanel"
-           class="van-tab__panel"
-           tabindex="-1"
-           aria-labelledby="van-tabs-1"
-           style="display: none;"
+      <div
+        id="van-tab"
+        role="tabpanel"
+        class="van-tab__panel"
+        tabindex="-1"
+        aria-labelledby="van-tabs-1"
+        style="display: none;"
       >
       </div>
-      <div id="van-tab"
-           role="tabpanel"
-           class="van-tab__panel"
-           tabindex="-1"
-           aria-labelledby="van-tabs-2"
-           style="display: none;"
+      <div
+        id="van-tab"
+        role="tabpanel"
+        class="van-tab__panel"
+        tabindex="-1"
+        aria-labelledby="van-tabs-2"
+        style="display: none;"
       >
       </div>
     </div>
@@ -361,168 +415,197 @@ exports[`should render demo and match snapshot 1`] = `
 </div>
 <div>
   <div class="van-empty">
-    <div class="van-empty__image"
-         style="width: 100px; height: 100px;"
+    <div
+      class="van-empty__image"
+      style="width: 100px; height: 100px;"
     >
       <svg viewbox="0 0 160 160">
         <defs>
-          <linearGradient x1="50%"
-                          x2="50%"
-                          y2="100%"
-                          id="van-empty-5"
+          <linearGradient
+            x1="50%"
+            x2="50%"
+            y2="100%"
+            id="van-empty-5"
           >
-            <stop stop-color="#F2F3F5"
-                  offset="0%"
+            <stop
+              stop-color="#F2F3F5"
+              offset="0%"
             >
             </stop>
-            <stop stop-color="#DCDEE0"
-                  offset="100%"
+            <stop
+              stop-color="#DCDEE0"
+              offset="100%"
             >
             </stop>
           </linearGradient>
-          <linearGradient x1="95%"
-                          y1="48%"
-                          x2="5.5%"
-                          y2="51%"
-                          id="van-empty-6"
+          <linearGradient
+            x1="95%"
+            y1="48%"
+            x2="5.5%"
+            y2="51%"
+            id="van-empty-6"
           >
-            <stop stop-color="#EAEDF1"
-                  offset="0%"
+            <stop
+              stop-color="#EAEDF1"
+              offset="0%"
             >
             </stop>
-            <stop stop-color="#DCDEE0"
-                  offset="100%"
+            <stop
+              stop-color="#DCDEE0"
+              offset="100%"
             >
             </stop>
           </linearGradient>
-          <linearGradient y1="45%"
-                          x2="100%"
-                          y2="54%"
-                          id="van-empty-7"
+          <linearGradient
+            y1="45%"
+            x2="100%"
+            y2="54%"
+            id="van-empty-7"
           >
-            <stop stop-color="#EAEDF1"
-                  offset="0%"
+            <stop
+              stop-color="#EAEDF1"
+              offset="0%"
             >
             </stop>
-            <stop stop-color="#DCDEE0"
-                  offset="100%"
+            <stop
+              stop-color="#DCDEE0"
+              offset="100%"
             >
             </stop>
           </linearGradient>
         </defs>
         <defs>
-          <linearGradient id="van-empty-a"
-                          x1="64%"
-                          y1="100%"
-                          x2="64%"
+          <linearGradient
+            id="van-empty-a"
+            x1="64%"
+            y1="100%"
+            x2="64%"
           >
-            <stop stop-color="#FFF"
-                  offset="0%"
-                  stop-opacity="0.5"
+            <stop
+              stop-color="#FFF"
+              offset="0%"
+              stop-opacity="0.5"
             >
             </stop>
-            <stop stop-color="#F2F3F5"
-                  offset="100%"
+            <stop
+              stop-color="#F2F3F5"
+              offset="100%"
             >
             </stop>
           </linearGradient>
         </defs>
         <g opacity=".8">
-          <path d="M36 131V53H16v20H2v58h34z"
-                fill="url(#van-empty-a)"
+          <path
+            d="M36 131V53H16v20H2v58h34z"
+            fill="url(#van-empty-a)"
           >
           </path>
-          <path d="M123 15h22v14h9v77h-31V15z"
-                fill="url(#van-empty-a)"
+          <path
+            d="M123 15h22v14h9v77h-31V15z"
+            fill="url(#van-empty-a)"
           >
           </path>
         </g>
         <defs>
-          <linearGradient id="van-empty-b"
-                          x1="64%"
-                          y1="97%"
-                          x2="64%"
-                          y2="0%"
+          <linearGradient
+            id="van-empty-b"
+            x1="64%"
+            y1="97%"
+            x2="64%"
+            y2="0%"
           >
-            <stop stop-color="#F2F3F5"
-                  offset="0%"
-                  stop-opacity="0.3"
+            <stop
+              stop-color="#F2F3F5"
+              offset="0%"
+              stop-opacity="0.3"
             >
             </stop>
-            <stop stop-color="#F2F3F5"
-                  offset="100%"
+            <stop
+              stop-color="#F2F3F5"
+              offset="100%"
             >
             </stop>
           </linearGradient>
         </defs>
         <g opacity=".8">
-          <path d="M87 6c3 0 7 3 8 6a8 8 0 1 1-1 16H80a7 7 0 0 1-8-6c0-4 3-7 6-7 0-5 4-9 9-9Z"
-                fill="url(#van-empty-b)"
+          <path
+            d="M87 6c3 0 7 3 8 6a8 8 0 1 1-1 16H80a7 7 0 0 1-8-6c0-4 3-7 6-7 0-5 4-9 9-9Z"
+            fill="url(#van-empty-b)"
           >
           </path>
-          <path d="M19 23c2 0 3 1 4 3 2 0 4 2 4 4a4 4 0 0 1-4 3v1h-7v-1l-1 1c-2 0-3-2-3-4 0-1 1-3 3-3 0-2 2-4 4-4Z"
-                fill="url(#van-empty-b)"
+          <path
+            d="M19 23c2 0 3 1 4 3 2 0 4 2 4 4a4 4 0 0 1-4 3v1h-7v-1l-1 1c-2 0-3-2-3-4 0-1 1-3 3-3 0-2 2-4 4-4Z"
+            fill="url(#van-empty-b)"
           >
           </path>
         </g>
-        <g transform="translate(36 50)"
-           fill="none"
+        <g
+          transform="translate(36 50)"
+          fill="none"
         >
           <g transform="translate(8)">
-            <rect fill="#EBEDF0"
-                  opacity=".6"
-                  x="38"
-                  y="13"
-                  width="36"
-                  height="53"
-                  rx="2"
+            <rect
+              fill="#EBEDF0"
+              opacity=".6"
+              x="38"
+              y="13"
+              width="36"
+              height="53"
+              rx="2"
             >
             </rect>
-            <rect fill="url(#van-empty-5)"
-                  width="64"
-                  height="66"
-                  rx="2"
+            <rect
+              fill="url(#van-empty-5)"
+              width="64"
+              height="66"
+              rx="2"
             >
             </rect>
-            <rect fill="#FFF"
-                  x="6"
-                  y="6"
-                  width="52"
-                  height="55"
-                  rx="1"
+            <rect
+              fill="#FFF"
+              x="6"
+              y="6"
+              width="52"
+              height="55"
+              rx="1"
             >
             </rect>
-            <g transform="translate(15 17)"
-               fill="url(#van-empty-6)"
+            <g
+              transform="translate(15 17)"
+              fill="url(#van-empty-6)"
             >
-              <rect width="34"
-                    height="6"
-                    rx="1"
+              <rect
+                width="34"
+                height="6"
+                rx="1"
               >
               </rect>
               <path d="M0 14h34v6H0z">
               </path>
-              <rect y="28"
-                    width="34"
-                    height="6"
-                    rx="1"
+              <rect
+                y="28"
+                width="34"
+                height="6"
+                rx="1"
               >
               </rect>
             </g>
           </g>
-          <rect fill="url(#van-empty-7)"
-                y="61"
-                width="88"
-                height="28"
-                rx="1"
+          <rect
+            fill="url(#van-empty-7)"
+            y="61"
+            width="88"
+            height="28"
+            rx="1"
           >
           </rect>
-          <rect fill="#F7F8FA"
-                x="29"
-                y="72"
-                width="30"
-                height="6"
-                rx="1"
+          <rect
+            fill="#F7F8FA"
+            x="29"
+            y="72"
+            width="30"
+            height="6"
+            rx="1"
           >
           </rect>
         </g>
@@ -535,8 +618,9 @@ exports[`should render demo and match snapshot 1`] = `
 </div>
 <div>
   <div class="van-empty">
-    <div class="van-empty__image"
-         style="width: 80px; height: 80px;"
+    <div
+      class="van-empty__image"
+      style="width: 80px; height: 80px;"
     >
       <img src="https://fastly.jsdelivr.net/npm/@vant/assets/custom-empty-image.png">
     </div>
@@ -550,163 +634,191 @@ exports[`should render demo and match snapshot 1`] = `
     <div class="van-empty__image">
       <svg viewbox="0 0 160 160">
         <defs>
-          <linearGradient x1="50%"
-                          x2="50%"
-                          y2="100%"
-                          id="van-empty-5"
+          <linearGradient
+            x1="50%"
+            x2="50%"
+            y2="100%"
+            id="van-empty-5"
           >
-            <stop stop-color="#F2F3F5"
-                  offset="0%"
+            <stop
+              stop-color="#F2F3F5"
+              offset="0%"
             >
             </stop>
-            <stop stop-color="#DCDEE0"
-                  offset="100%"
+            <stop
+              stop-color="#DCDEE0"
+              offset="100%"
             >
             </stop>
           </linearGradient>
-          <linearGradient x1="95%"
-                          y1="48%"
-                          x2="5.5%"
-                          y2="51%"
-                          id="van-empty-6"
+          <linearGradient
+            x1="95%"
+            y1="48%"
+            x2="5.5%"
+            y2="51%"
+            id="van-empty-6"
           >
-            <stop stop-color="#EAEDF1"
-                  offset="0%"
+            <stop
+              stop-color="#EAEDF1"
+              offset="0%"
             >
             </stop>
-            <stop stop-color="#DCDEE0"
-                  offset="100%"
+            <stop
+              stop-color="#DCDEE0"
+              offset="100%"
             >
             </stop>
           </linearGradient>
-          <linearGradient y1="45%"
-                          x2="100%"
-                          y2="54%"
-                          id="van-empty-7"
+          <linearGradient
+            y1="45%"
+            x2="100%"
+            y2="54%"
+            id="van-empty-7"
           >
-            <stop stop-color="#EAEDF1"
-                  offset="0%"
+            <stop
+              stop-color="#EAEDF1"
+              offset="0%"
             >
             </stop>
-            <stop stop-color="#DCDEE0"
-                  offset="100%"
+            <stop
+              stop-color="#DCDEE0"
+              offset="100%"
             >
             </stop>
           </linearGradient>
         </defs>
         <defs>
-          <linearGradient id="van-empty-a"
-                          x1="64%"
-                          y1="100%"
-                          x2="64%"
+          <linearGradient
+            id="van-empty-a"
+            x1="64%"
+            y1="100%"
+            x2="64%"
           >
-            <stop stop-color="#FFF"
-                  offset="0%"
-                  stop-opacity="0.5"
+            <stop
+              stop-color="#FFF"
+              offset="0%"
+              stop-opacity="0.5"
             >
             </stop>
-            <stop stop-color="#F2F3F5"
-                  offset="100%"
+            <stop
+              stop-color="#F2F3F5"
+              offset="100%"
             >
             </stop>
           </linearGradient>
         </defs>
         <g opacity=".8">
-          <path d="M36 131V53H16v20H2v58h34z"
-                fill="url(#van-empty-a)"
+          <path
+            d="M36 131V53H16v20H2v58h34z"
+            fill="url(#van-empty-a)"
           >
           </path>
-          <path d="M123 15h22v14h9v77h-31V15z"
-                fill="url(#van-empty-a)"
+          <path
+            d="M123 15h22v14h9v77h-31V15z"
+            fill="url(#van-empty-a)"
           >
           </path>
         </g>
         <defs>
-          <linearGradient id="van-empty-b"
-                          x1="64%"
-                          y1="97%"
-                          x2="64%"
-                          y2="0%"
+          <linearGradient
+            id="van-empty-b"
+            x1="64%"
+            y1="97%"
+            x2="64%"
+            y2="0%"
           >
-            <stop stop-color="#F2F3F5"
-                  offset="0%"
-                  stop-opacity="0.3"
+            <stop
+              stop-color="#F2F3F5"
+              offset="0%"
+              stop-opacity="0.3"
             >
             </stop>
-            <stop stop-color="#F2F3F5"
-                  offset="100%"
+            <stop
+              stop-color="#F2F3F5"
+              offset="100%"
             >
             </stop>
           </linearGradient>
         </defs>
         <g opacity=".8">
-          <path d="M87 6c3 0 7 3 8 6a8 8 0 1 1-1 16H80a7 7 0 0 1-8-6c0-4 3-7 6-7 0-5 4-9 9-9Z"
-                fill="url(#van-empty-b)"
+          <path
+            d="M87 6c3 0 7 3 8 6a8 8 0 1 1-1 16H80a7 7 0 0 1-8-6c0-4 3-7 6-7 0-5 4-9 9-9Z"
+            fill="url(#van-empty-b)"
           >
           </path>
-          <path d="M19 23c2 0 3 1 4 3 2 0 4 2 4 4a4 4 0 0 1-4 3v1h-7v-1l-1 1c-2 0-3-2-3-4 0-1 1-3 3-3 0-2 2-4 4-4Z"
-                fill="url(#van-empty-b)"
+          <path
+            d="M19 23c2 0 3 1 4 3 2 0 4 2 4 4a4 4 0 0 1-4 3v1h-7v-1l-1 1c-2 0-3-2-3-4 0-1 1-3 3-3 0-2 2-4 4-4Z"
+            fill="url(#van-empty-b)"
           >
           </path>
         </g>
-        <g transform="translate(36 50)"
-           fill="none"
+        <g
+          transform="translate(36 50)"
+          fill="none"
         >
           <g transform="translate(8)">
-            <rect fill="#EBEDF0"
-                  opacity=".6"
-                  x="38"
-                  y="13"
-                  width="36"
-                  height="53"
-                  rx="2"
+            <rect
+              fill="#EBEDF0"
+              opacity=".6"
+              x="38"
+              y="13"
+              width="36"
+              height="53"
+              rx="2"
             >
             </rect>
-            <rect fill="url(#van-empty-5)"
-                  width="64"
-                  height="66"
-                  rx="2"
+            <rect
+              fill="url(#van-empty-5)"
+              width="64"
+              height="66"
+              rx="2"
             >
             </rect>
-            <rect fill="#FFF"
-                  x="6"
-                  y="6"
-                  width="52"
-                  height="55"
-                  rx="1"
+            <rect
+              fill="#FFF"
+              x="6"
+              y="6"
+              width="52"
+              height="55"
+              rx="1"
             >
             </rect>
-            <g transform="translate(15 17)"
-               fill="url(#van-empty-6)"
+            <g
+              transform="translate(15 17)"
+              fill="url(#van-empty-6)"
             >
-              <rect width="34"
-                    height="6"
-                    rx="1"
+              <rect
+                width="34"
+                height="6"
+                rx="1"
               >
               </rect>
               <path d="M0 14h34v6H0z">
               </path>
-              <rect y="28"
-                    width="34"
-                    height="6"
-                    rx="1"
+              <rect
+                y="28"
+                width="34"
+                height="6"
+                rx="1"
               >
               </rect>
             </g>
           </g>
-          <rect fill="url(#van-empty-7)"
-                y="61"
-                width="88"
-                height="28"
-                rx="1"
+          <rect
+            fill="url(#van-empty-7)"
+            y="61"
+            width="88"
+            height="28"
+            rx="1"
           >
           </rect>
-          <rect fill="#F7F8FA"
-                x="29"
-                y="72"
-                width="30"
-                height="6"
-                rx="1"
+          <rect
+            fill="#F7F8FA"
+            x="29"
+            y="72"
+            width="30"
+            height="6"
+            rx="1"
           >
           </rect>
         </g>
@@ -716,8 +828,9 @@ exports[`should render demo and match snapshot 1`] = `
       Description
     </p>
     <div class="van-empty__bottom">
-      <button type="button"
-              class="van-button van-button--primary van-button--normal van-button--round bottom-button"
+      <button
+        type="button"
+        class="van-button van-button--primary van-button--normal van-button--round bottom-button"
       >
         <div class="van-button__content">
           <span class="van-button__text">

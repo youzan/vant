@@ -1,10 +1,11 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`should render demo and match snapshot 1`] = `
 <div>
-  <div class="van-cell van-cell--center van-cell--clickable van-cell--borderless van-contact-card van-contact-card--add"
-       role="button"
-       tabindex="0"
+  <div
+    class="van-cell van-cell--center van-cell--clickable van-cell--borderless van-contact-card van-contact-card--add"
+    role="button"
+    tabindex="0"
   >
     <i class="van-badge__wrapper van-icon van-icon-add-square van-cell__left-icon">
     </i>
@@ -16,9 +17,10 @@ exports[`should render demo and match snapshot 1`] = `
   </div>
 </div>
 <div>
-  <div class="van-cell van-cell--center van-cell--clickable van-cell--borderless van-contact-card van-contact-card--edit"
-       role="button"
-       tabindex="0"
+  <div
+    class="van-cell van-cell--center van-cell--clickable van-cell--borderless van-contact-card van-contact-card--edit"
+    role="button"
+    tabindex="0"
   >
     <i class="van-badge__wrapper van-icon van-icon-contact van-cell__left-icon">
     </i>

@@ -1,76 +1,86 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`should render demo and match snapshot 1`] = `
 <div class="van-tabs van-tabs--line">
   <div class="van-tabs__wrap">
-    <div role="tablist"
-         class="van-tabs__nav van-tabs__nav--line"
-         aria-orientation="horizontal"
+    <div
+      role="tablist"
+      class="van-tabs__nav van-tabs__nav--line"
+      aria-orientation="horizontal"
     >
-      <div id="van-tabs-0"
-           role="tab"
-           class="van-tab van-tab--line van-tab--active"
-           tabindex="0"
-           aria-selected="true"
-           aria-controls="van-tab"
+      <div
+        id="van-tabs-0"
+        role="tab"
+        class="van-tab van-tab--line van-tab--active"
+        tabindex="0"
+        aria-selected="true"
+        aria-controls="van-tab"
       >
         <span class="van-tab__text van-tab__text--ellipsis">
           Basic Usage
         </span>
       </div>
-      <div id="van-tabs-1"
-           role="tab"
-           class="van-tab van-tab--line"
-           tabindex="-1"
-           aria-selected="false"
-           aria-controls="van-tab"
+      <div
+        id="van-tabs-1"
+        role="tab"
+        class="van-tab van-tab--line"
+        tabindex="-1"
+        aria-selected="false"
+        aria-controls="van-tab"
       >
         <span class="van-tab__text van-tab__text--ellipsis">
           Error Info
         </span>
       </div>
-      <div id="van-tabs-2"
-           role="tab"
-           class="van-tab van-tab--line"
-           tabindex="-1"
-           aria-selected="false"
-           aria-controls="van-tab"
+      <div
+        id="van-tabs-2"
+        role="tab"
+        class="van-tab van-tab--line"
+        tabindex="-1"
+        aria-selected="false"
+        aria-controls="van-tab"
       >
         <span class="van-tab__text van-tab__text--ellipsis">
           PullRefresh
         </span>
       </div>
-      <div class="van-tabs__line"
-           style="transform: translateX(50px) translateX(-50%);"
+      <div
+        class="van-tabs__line"
+        style="transform: translateX(50px) translateX(-50%);"
       >
       </div>
     </div>
   </div>
   <div class="van-tabs__content">
-    <div id="van-tab"
-         role="tabpanel"
-         class="van-tab__panel"
-         tabindex="0"
-         aria-labelledby="van-tabs-0"
-         style
+    <div
+      id="van-tab"
+      role="tabpanel"
+      class="van-tab__panel"
+      tabindex="0"
+      aria-labelledby="van-tabs-0"
+      style
     >
-      <div role="feed"
-           class="van-list"
-           aria-busy="true"
+      <div
+        role="feed"
+        class="van-list"
+        aria-busy="true"
       >
         <div class="van-list__loading">
-          <div class="van-loading van-loading--circular van-list__loading-icon"
-               aria-live="polite"
-               aria-busy="true"
+          <div
+            class="van-loading van-loading--circular van-list__loading-icon"
+            aria-live="polite"
+            aria-busy="true"
           >
             <span class="van-loading__spinner van-loading__spinner--circular">
-              <svg class="van-loading__circular"
-                   viewbox="25 25 50 50"
+              <svg
+                class="van-loading__circular"
+                viewbox="25 25 50 50"
               >
-                <circle cx="50"
-                        cy="50"
-                        r="20"
-                        fill="none"
+                <circle
+                  cx="50"
+                  cy="50"
+                  r="20"
+                  fill="none"
                 >
                 </circle>
               </svg>
@@ -84,20 +94,22 @@ exports[`should render demo and match snapshot 1`] = `
         </div>
       </div>
     </div>
-    <div id="van-tab"
-         role="tabpanel"
-         class="van-tab__panel"
-         tabindex="-1"
-         aria-labelledby="van-tabs-1"
-         style="display: none;"
+    <div
+      id="van-tab"
+      role="tabpanel"
+      class="van-tab__panel"
+      tabindex="-1"
+      aria-labelledby="van-tabs-1"
+      style="display: none;"
     >
     </div>
-    <div id="van-tab"
-         role="tabpanel"
-         class="van-tab__panel"
-         tabindex="-1"
-         aria-labelledby="van-tabs-2"
-         style="display: none;"
+    <div
+      id="van-tab"
+      role="tabpanel"
+      class="van-tab__panel"
+      tabindex="-1"
+      aria-labelledby="van-tabs-2"
+      style="display: none;"
     >
     </div>
   </div>

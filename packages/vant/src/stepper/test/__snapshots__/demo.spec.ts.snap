@@ -1,4 +1,4 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`should render demo and match snapshot 1`] = `
 <div>
@@ -9,24 +9,28 @@ exports[`should render demo and match snapshot 1`] = `
       </span>
     </div>
     <div class="van-cell__value">
-      <div role="group"
-           class="van-stepper"
+      <div
+        role="group"
+        class="van-stepper"
       >
-        <button type="button"
-                class="van-stepper__minus van-stepper__minus--disabled"
-                aria-disabled="true"
+        <button
+          type="button"
+          class="van-stepper__minus van-stepper__minus--disabled"
+          aria-disabled="true"
         >
         </button>
-        <input type="text"
-               role="spinbutton"
-               class="van-stepper__input"
-               inputmode="decimal"
-               aria-valuemax="Infinity"
-               aria-valuemin="1"
-               aria-valuenow="1"
+        <input
+          type="text"
+          role="spinbutton"
+          class="van-stepper__input"
+          inputmode="decimal"
+          aria-valuemax="Infinity"
+          aria-valuemin="1"
+          aria-valuenow="1"
         >
-        <button type="button"
-                class="van-stepper__plus van-haptics-feedback"
+        <button
+          type="button"
+          class="van-stepper__plus van-haptics-feedback"
         >
         </button>
       </div>
@@ -39,24 +43,28 @@ exports[`should render demo and match snapshot 1`] = `
       </span>
     </div>
     <div class="van-cell__value">
-      <div role="group"
-           class="van-stepper"
+      <div
+        role="group"
+        class="van-stepper"
       >
-        <button type="button"
-                class="van-stepper__minus van-stepper__minus--disabled"
-                aria-disabled="true"
+        <button
+          type="button"
+          class="van-stepper__minus van-stepper__minus--disabled"
+          aria-disabled="true"
         >
         </button>
-        <input type="text"
-               role="spinbutton"
-               class="van-stepper__input"
-               inputmode="decimal"
-               aria-valuemax="Infinity"
-               aria-valuemin="1"
-               aria-valuenow="1"
+        <input
+          type="text"
+          role="spinbutton"
+          class="van-stepper__input"
+          inputmode="decimal"
+          aria-valuemax="Infinity"
+          aria-valuemin="1"
+          aria-valuenow="1"
         >
-        <button type="button"
-                class="van-stepper__plus van-haptics-feedback"
+        <button
+          type="button"
+          class="van-stepper__plus van-haptics-feedback"
         >
         </button>
       </div>
@@ -69,24 +77,28 @@ exports[`should render demo and match snapshot 1`] = `
       </span>
     </div>
     <div class="van-cell__value">
-      <div role="group"
-           class="van-stepper"
+      <div
+        role="group"
+        class="van-stepper"
       >
-        <button type="button"
-                class="van-stepper__minus van-stepper__minus--disabled"
-                aria-disabled="true"
+        <button
+          type="button"
+          class="van-stepper__minus van-stepper__minus--disabled"
+          aria-disabled="true"
         >
         </button>
-        <input type="text"
-               role="spinbutton"
-               class="van-stepper__input"
-               inputmode="decimal"
-               aria-valuemax="8"
-               aria-valuemin="5"
-               aria-valuenow="5"
+        <input
+          type="text"
+          role="spinbutton"
+          class="van-stepper__input"
+          inputmode="decimal"
+          aria-valuemax="8"
+          aria-valuemin="5"
+          aria-valuenow="5"
         >
-        <button type="button"
-                class="van-stepper__plus van-haptics-feedback"
+        <button
+          type="button"
+          class="van-stepper__plus van-haptics-feedback"
         >
         </button>
       </div>
@@ -99,24 +111,28 @@ exports[`should render demo and match snapshot 1`] = `
       </span>
     </div>
     <div class="van-cell__value">
-      <div role="group"
-           class="van-stepper"
+      <div
+        role="group"
+        class="van-stepper"
       >
-        <button type="button"
-                class="van-stepper__minus van-stepper__minus--disabled"
-                aria-disabled="true"
+        <button
+          type="button"
+          class="van-stepper__minus van-stepper__minus--disabled"
+          aria-disabled="true"
         >
         </button>
-        <input type="tel"
-               role="spinbutton"
-               class="van-stepper__input"
-               inputmode="numeric"
-               aria-valuemax="Infinity"
-               aria-valuemin="1"
-               aria-valuenow="1"
+        <input
+          type="tel"
+          role="spinbutton"
+          class="van-stepper__input"
+          inputmode="numeric"
+          aria-valuemax="Infinity"
+          aria-valuemin="1"
+          aria-valuenow="1"
         >
-        <button type="button"
-                class="van-stepper__plus van-haptics-feedback"
+        <button
+          type="button"
+          class="van-stepper__plus van-haptics-feedback"
         >
         </button>
       </div>
@@ -129,26 +145,30 @@ exports[`should render demo and match snapshot 1`] = `
       </span>
     </div>
     <div class="van-cell__value">
-      <div role="group"
-           class="van-stepper"
+      <div
+        role="group"
+        class="van-stepper"
       >
-        <button type="button"
-                class="van-stepper__minus van-stepper__minus--disabled"
-                aria-disabled="true"
+        <button
+          type="button"
+          class="van-stepper__minus van-stepper__minus--disabled"
+          aria-disabled="true"
         >
         </button>
-        <input type="text"
-               role="spinbutton"
-               class="van-stepper__input"
-               disabled
-               inputmode="decimal"
-               aria-valuemax="Infinity"
-               aria-valuemin="1"
-               aria-valuenow="1"
+        <input
+          type="text"
+          role="spinbutton"
+          class="van-stepper__input"
+          disabled
+          inputmode="decimal"
+          aria-valuemax="Infinity"
+          aria-valuemin="1"
+          aria-valuenow="1"
         >
-        <button type="button"
-                class="van-stepper__plus van-stepper__plus--disabled"
-                aria-disabled="true"
+        <button
+          type="button"
+          class="van-stepper__plus van-stepper__plus--disabled"
+          aria-disabled="true"
         >
         </button>
       </div>
@@ -161,25 +181,29 @@ exports[`should render demo and match snapshot 1`] = `
       </span>
     </div>
     <div class="van-cell__value">
-      <div role="group"
-           class="van-stepper"
+      <div
+        role="group"
+        class="van-stepper"
       >
-        <button type="button"
-                class="van-stepper__minus van-stepper__minus--disabled"
-                aria-disabled="true"
+        <button
+          type="button"
+          class="van-stepper__minus van-stepper__minus--disabled"
+          aria-disabled="true"
         >
         </button>
-        <input type="text"
-               role="spinbutton"
-               class="van-stepper__input"
-               readonly
-               inputmode="decimal"
-               aria-valuemax="Infinity"
-               aria-valuemin="1"
-               aria-valuenow="1"
+        <input
+          type="text"
+          role="spinbutton"
+          class="van-stepper__input"
+          readonly
+          inputmode="decimal"
+          aria-valuemax="Infinity"
+          aria-valuemin="1"
+          aria-valuenow="1"
         >
-        <button type="button"
-                class="van-stepper__plus van-haptics-feedback"
+        <button
+          type="button"
+          class="van-stepper__plus van-haptics-feedback"
         >
         </button>
       </div>
@@ -192,24 +216,28 @@ exports[`should render demo and match snapshot 1`] = `
       </span>
     </div>
     <div class="van-cell__value">
-      <div role="group"
-           class="van-stepper"
+      <div
+        role="group"
+        class="van-stepper"
       >
-        <button type="button"
-                class="van-stepper__minus van-stepper__minus--disabled"
-                aria-disabled="true"
+        <button
+          type="button"
+          class="van-stepper__minus van-stepper__minus--disabled"
+          aria-disabled="true"
         >
         </button>
-        <input type="text"
-               role="spinbutton"
-               class="van-stepper__input"
-               inputmode="decimal"
-               aria-valuemax="Infinity"
-               aria-valuemin="1"
-               aria-valuenow="1.0"
+        <input
+          type="text"
+          role="spinbutton"
+          class="van-stepper__input"
+          inputmode="decimal"
+          aria-valuemax="Infinity"
+          aria-valuemin="1"
+          aria-valuenow="1.0"
         >
-        <button type="button"
-                class="van-stepper__plus van-haptics-feedback"
+        <button
+          type="button"
+          class="van-stepper__plus van-haptics-feedback"
         >
         </button>
       </div>
@@ -222,27 +250,31 @@ exports[`should render demo and match snapshot 1`] = `
       </span>
     </div>
     <div class="van-cell__value">
-      <div role="group"
-           class="van-stepper"
+      <div
+        role="group"
+        class="van-stepper"
       >
-        <button type="button"
-                style="width: 32px; height: 32px;"
-                class="van-stepper__minus van-stepper__minus--disabled"
-                aria-disabled="true"
+        <button
+          type="button"
+          style="width: 32px; height: 32px;"
+          class="van-stepper__minus van-stepper__minus--disabled"
+          aria-disabled="true"
         >
         </button>
-        <input type="text"
-               role="spinbutton"
-               class="van-stepper__input"
-               style="width: 40px; height: 32px;"
-               inputmode="decimal"
-               aria-valuemax="Infinity"
-               aria-valuemin="1"
-               aria-valuenow="1"
+        <input
+          type="text"
+          role="spinbutton"
+          class="van-stepper__input"
+          style="width: 40px; height: 32px;"
+          inputmode="decimal"
+          aria-valuemax="Infinity"
+          aria-valuemin="1"
+          aria-valuenow="1"
         >
-        <button type="button"
-                style="width: 32px; height: 32px;"
-                class="van-stepper__plus van-haptics-feedback"
+        <button
+          type="button"
+          style="width: 32px; height: 32px;"
+          class="van-stepper__plus van-haptics-feedback"
         >
         </button>
       </div>
@@ -255,24 +287,28 @@ exports[`should render demo and match snapshot 1`] = `
       </span>
     </div>
     <div class="van-cell__value">
-      <div role="group"
-           class="van-stepper"
+      <div
+        role="group"
+        class="van-stepper"
       >
-        <button type="button"
-                class="van-stepper__minus van-stepper__minus--disabled"
-                aria-disabled="true"
+        <button
+          type="button"
+          class="van-stepper__minus van-stepper__minus--disabled"
+          aria-disabled="true"
         >
         </button>
-        <input type="text"
-               role="spinbutton"
-               class="van-stepper__input"
-               inputmode="decimal"
-               aria-valuemax="Infinity"
-               aria-valuemin="1"
-               aria-valuenow="1"
+        <input
+          type="text"
+          role="spinbutton"
+          class="van-stepper__input"
+          inputmode="decimal"
+          aria-valuemax="Infinity"
+          aria-valuemin="1"
+          aria-valuenow="1"
         >
-        <button type="button"
-                class="van-stepper__plus van-haptics-feedback"
+        <button
+          type="button"
+          class="van-stepper__plus van-haptics-feedback"
         >
         </button>
       </div>
@@ -285,28 +321,32 @@ exports[`should render demo and match snapshot 1`] = `
       </span>
     </div>
     <div class="van-cell__value">
-      <div role="group"
-           class="van-stepper van-stepper--round"
+      <div
+        role="group"
+        class="van-stepper van-stepper--round"
       >
-        <button type="button"
-                style="width: 22px; height: 22px;"
-                class="van-stepper__minus van-stepper__minus--disabled"
-                aria-disabled="true"
+        <button
+          type="button"
+          style="width: 22px; height: 22px;"
+          class="van-stepper__minus van-stepper__minus--disabled"
+          aria-disabled="true"
         >
         </button>
-        <input type="text"
-               role="spinbutton"
-               class="van-stepper__input"
-               style="height: 22px;"
-               readonly
-               inputmode="decimal"
-               aria-valuemax="Infinity"
-               aria-valuemin="1"
-               aria-valuenow="1"
+        <input
+          type="text"
+          role="spinbutton"
+          class="van-stepper__input"
+          style="height: 22px;"
+          readonly
+          inputmode="decimal"
+          aria-valuemax="Infinity"
+          aria-valuemin="1"
+          aria-valuenow="1"
         >
-        <button type="button"
-                style="width: 22px; height: 22px;"
-                class="van-stepper__plus van-haptics-feedback"
+        <button
+          type="button"
+          style="width: 22px; height: 22px;"
+          class="van-stepper__plus van-haptics-feedback"
         >
         </button>
       </div>

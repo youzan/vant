@@ -1,10 +1,11 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`should render demo and match snapshot 1`] = `
 <div>
-  <button type="button"
-          class="van-button van-button--primary van-button--normal"
-          style="margin-left: 16px;"
+  <button
+    type="button"
+    class="van-button van-button--primary van-button--normal"
+    style="margin-left: 16px;"
   >
     <div class="van-button__content">
       <span class="van-button__text">
@@ -12,17 +13,19 @@ exports[`should render demo and match snapshot 1`] = `
       </span>
     </div>
   </button>
-  <transition-stub name="van-fade"
-                   appear="true"
-                   persisted="false"
-                   css="true"
+  <transition-stub
+    name="van-fade"
+    appear="true"
+    persisted="false"
+    css="true"
   >
   </transition-stub>
 </div>
 <div>
-  <button type="button"
-          class="van-button van-button--primary van-button--normal"
-          style="margin-left: 16px;"
+  <button
+    type="button"
+    class="van-button van-button--primary van-button--normal"
+    style="margin-left: 16px;"
   >
     <div class="van-button__content">
       <span class="van-button__text">
@@ -30,10 +33,11 @@ exports[`should render demo and match snapshot 1`] = `
       </span>
     </div>
   </button>
-  <transition-stub name="van-fade"
-                   appear="true"
-                   persisted="false"
-                   css="true"
+  <transition-stub
+    name="van-fade"
+    appear="true"
+    persisted="false"
+    css="true"
   >
   </transition-stub>
 </div>

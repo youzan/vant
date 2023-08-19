@@ -94,7 +94,7 @@ test('hide close icon when there is no title', async () => {
 });
 
 test('allow-same-day prop', async () => {
-  const onSelect = jest.fn();
+  const onSelect = vi.fn();
   const wrapper = mount(Calendar, {
     props: {
       type: 'range',
@@ -249,7 +249,7 @@ test('should disabled prompt when using show-range-prompt prop', async () => {
 });
 
 test('should emit overRange when exceeded max range', async () => {
-  const onOverRange = jest.fn();
+  const onOverRange = vi.fn();
   const wrapper = mount(Calendar, {
     props: {
       type: 'range',

@@ -1,10 +1,11 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`should render demo and match snapshot 1`] = `
 <div>
   <div class="van-grid van-hairline--top">
-    <div class="van-grid-item"
-         style="flex-basis: 25%;"
+    <div
+      class="van-grid-item"
+      style="flex-basis: 25%;"
     >
       <div class="van-grid-item__content van-grid-item__content--center van-hairline">
         <i class="van-badge__wrapper van-icon van-icon-photo-o van-grid-item__icon">
@@ -14,8 +15,9 @@ exports[`should render demo and match snapshot 1`] = `
         </span>
       </div>
     </div>
-    <div class="van-grid-item"
-         style="flex-basis: 25%;"
+    <div
+      class="van-grid-item"
+      style="flex-basis: 25%;"
     >
       <div class="van-grid-item__content van-grid-item__content--center van-hairline">
         <i class="van-badge__wrapper van-icon van-icon-photo-o van-grid-item__icon">
@@ -25,8 +27,9 @@ exports[`should render demo and match snapshot 1`] = `
         </span>
       </div>
     </div>
-    <div class="van-grid-item"
-         style="flex-basis: 25%;"
+    <div
+      class="van-grid-item"
+      style="flex-basis: 25%;"
     >
       <div class="van-grid-item__content van-grid-item__content--center van-hairline">
         <i class="van-badge__wrapper van-icon van-icon-photo-o van-grid-item__icon">
@@ -36,8 +39,9 @@ exports[`should render demo and match snapshot 1`] = `
         </span>
       </div>
     </div>
-    <div class="van-grid-item"
-         style="flex-basis: 25%;"
+    <div
+      class="van-grid-item"
+      style="flex-basis: 25%;"
     >
       <div class="van-grid-item__content van-grid-item__content--center van-hairline">
         <i class="van-badge__wrapper van-icon van-icon-photo-o van-grid-item__icon">
@@ -51,8 +55,9 @@ exports[`should render demo and match snapshot 1`] = `
 </div>
 <div>
   <div class="van-grid van-hairline--top">
-    <div class="van-grid-item"
-         style="flex-basis: 33.333333333333336%;"
+    <div
+      class="van-grid-item"
+      style="flex-basis: 33.333333333333336%;"
     >
       <div class="van-grid-item__content van-grid-item__content--center van-hairline">
         <i class="van-badge__wrapper van-icon van-icon-photo-o van-grid-item__icon">
@@ -62,8 +67,9 @@ exports[`should render demo and match snapshot 1`] = `
         </span>
       </div>
     </div>
-    <div class="van-grid-item"
-         style="flex-basis: 33.333333333333336%;"
+    <div
+      class="van-grid-item"
+      style="flex-basis: 33.333333333333336%;"
     >
       <div class="van-grid-item__content van-grid-item__content--center van-hairline">
         <i class="van-badge__wrapper van-icon van-icon-photo-o van-grid-item__icon">
@@ -73,8 +79,9 @@ exports[`should render demo and match snapshot 1`] = `
         </span>
       </div>
     </div>
-    <div class="van-grid-item"
-         style="flex-basis: 33.333333333333336%;"
+    <div
+      class="van-grid-item"
+      style="flex-basis: 33.333333333333336%;"
     >
       <div class="van-grid-item__content van-grid-item__content--center van-hairline">
         <i class="van-badge__wrapper van-icon van-icon-photo-o van-grid-item__icon">
@@ -84,8 +91,9 @@ exports[`should render demo and match snapshot 1`] = `
         </span>
       </div>
     </div>
-    <div class="van-grid-item"
-         style="flex-basis: 33.333333333333336%;"
+    <div
+      class="van-grid-item"
+      style="flex-basis: 33.333333333333336%;"
     >
       <div class="van-grid-item__content van-grid-item__content--center van-hairline">
         <i class="van-badge__wrapper van-icon van-icon-photo-o van-grid-item__icon">
@@ -95,8 +103,9 @@ exports[`should render demo and match snapshot 1`] = `
         </span>
       </div>
     </div>
-    <div class="van-grid-item"
-         style="flex-basis: 33.333333333333336%;"
+    <div
+      class="van-grid-item"
+      style="flex-basis: 33.333333333333336%;"
     >
       <div class="van-grid-item__content van-grid-item__content--center van-hairline">
         <i class="van-badge__wrapper van-icon van-icon-photo-o van-grid-item__icon">
@@ -106,8 +115,9 @@ exports[`should render demo and match snapshot 1`] = `
         </span>
       </div>
     </div>
-    <div class="van-grid-item"
-         style="flex-basis: 33.333333333333336%;"
+    <div
+      class="van-grid-item"
+      style="flex-basis: 33.333333333333336%;"
     >
       <div class="van-grid-item__content van-grid-item__content--center van-hairline">
         <i class="van-badge__wrapper van-icon van-icon-photo-o van-grid-item__icon">
@@ -121,14 +131,16 @@ exports[`should render demo and match snapshot 1`] = `
 </div>
 <div>
   <div class="van-grid">
-    <div class="van-grid-item"
-         style="flex-basis: 33.333333333333336%;"
+    <div
+      class="van-grid-item"
+      style="flex-basis: 33.333333333333336%;"
     >
       <div class="van-grid-item__content van-grid-item__content--center">
         <div class="van-image">
-          <img src="https://fastly.jsdelivr.net/npm/@vant/assets/apple-1.jpeg"
-               class="van-image__img"
-               style="object-fit: contain;"
+          <img
+            src="https://fastly.jsdelivr.net/npm/@vant/assets/apple-1.jpeg"
+            class="van-image__img"
+            style="object-fit: contain;"
           >
           <div class="van-image__loading">
             <i class="van-badge__wrapper van-icon van-icon-photo van-image__loading-icon">
@@ -137,14 +149,16 @@ exports[`should render demo and match snapshot 1`] = `
         </div>
       </div>
     </div>
-    <div class="van-grid-item"
-         style="flex-basis: 33.333333333333336%;"
+    <div
+      class="van-grid-item"
+      style="flex-basis: 33.333333333333336%;"
     >
       <div class="van-grid-item__content van-grid-item__content--center">
         <div class="van-image">
-          <img src="https://fastly.jsdelivr.net/npm/@vant/assets/apple-2.jpeg"
-               class="van-image__img"
-               style="object-fit: contain;"
+          <img
+            src="https://fastly.jsdelivr.net/npm/@vant/assets/apple-2.jpeg"
+            class="van-image__img"
+            style="object-fit: contain;"
           >
           <div class="van-image__loading">
             <i class="van-badge__wrapper van-icon van-icon-photo van-image__loading-icon">
@@ -153,14 +167,16 @@ exports[`should render demo and match snapshot 1`] = `
         </div>
       </div>
     </div>
-    <div class="van-grid-item"
-         style="flex-basis: 33.333333333333336%;"
+    <div
+      class="van-grid-item"
+      style="flex-basis: 33.333333333333336%;"
     >
       <div class="van-grid-item__content van-grid-item__content--center">
         <div class="van-image">
-          <img src="https://fastly.jsdelivr.net/npm/@vant/assets/apple-3.jpeg"
-               class="van-image__img"
-               style="object-fit: contain;"
+          <img
+            src="https://fastly.jsdelivr.net/npm/@vant/assets/apple-3.jpeg"
+            class="van-image__img"
+            style="object-fit: contain;"
           >
           <div class="van-image__loading">
             <i class="van-badge__wrapper van-icon van-icon-photo van-image__loading-icon">
@@ -173,8 +189,9 @@ exports[`should render demo and match snapshot 1`] = `
 </div>
 <div>
   <div class="van-grid van-hairline--top">
-    <div class="van-grid-item van-grid-item--square"
-         style="flex-basis: 25%; padding-top: 25%;"
+    <div
+      class="van-grid-item van-grid-item--square"
+      style="flex-basis: 25%; padding-top: 25%;"
     >
       <div class="van-grid-item__content van-grid-item__content--center van-grid-item__content--square van-hairline">
         <i class="van-badge__wrapper van-icon van-icon-photo-o van-grid-item__icon">
@@ -184,8 +201,9 @@ exports[`should render demo and match snapshot 1`] = `
         </span>
       </div>
     </div>
-    <div class="van-grid-item van-grid-item--square"
-         style="flex-basis: 25%; padding-top: 25%;"
+    <div
+      class="van-grid-item van-grid-item--square"
+      style="flex-basis: 25%; padding-top: 25%;"
     >
       <div class="van-grid-item__content van-grid-item__content--center van-grid-item__content--square van-hairline">
         <i class="van-badge__wrapper van-icon van-icon-photo-o van-grid-item__icon">
@@ -195,8 +213,9 @@ exports[`should render demo and match snapshot 1`] = `
         </span>
       </div>
     </div>
-    <div class="van-grid-item van-grid-item--square"
-         style="flex-basis: 25%; padding-top: 25%;"
+    <div
+      class="van-grid-item van-grid-item--square"
+      style="flex-basis: 25%; padding-top: 25%;"
     >
       <div class="van-grid-item__content van-grid-item__content--center van-grid-item__content--square van-hairline">
         <i class="van-badge__wrapper van-icon van-icon-photo-o van-grid-item__icon">
@@ -206,8 +225,9 @@ exports[`should render demo and match snapshot 1`] = `
         </span>
       </div>
     </div>
-    <div class="van-grid-item van-grid-item--square"
-         style="flex-basis: 25%; padding-top: 25%;"
+    <div
+      class="van-grid-item van-grid-item--square"
+      style="flex-basis: 25%; padding-top: 25%;"
     >
       <div class="van-grid-item__content van-grid-item__content--center van-grid-item__content--square van-hairline">
         <i class="van-badge__wrapper van-icon van-icon-photo-o van-grid-item__icon">
@@ -217,8 +237,9 @@ exports[`should render demo and match snapshot 1`] = `
         </span>
       </div>
     </div>
-    <div class="van-grid-item van-grid-item--square"
-         style="flex-basis: 25%; padding-top: 25%;"
+    <div
+      class="van-grid-item van-grid-item--square"
+      style="flex-basis: 25%; padding-top: 25%;"
     >
       <div class="van-grid-item__content van-grid-item__content--center van-grid-item__content--square van-hairline">
         <i class="van-badge__wrapper van-icon van-icon-photo-o van-grid-item__icon">
@@ -228,8 +249,9 @@ exports[`should render demo and match snapshot 1`] = `
         </span>
       </div>
     </div>
-    <div class="van-grid-item van-grid-item--square"
-         style="flex-basis: 25%; padding-top: 25%;"
+    <div
+      class="van-grid-item van-grid-item--square"
+      style="flex-basis: 25%; padding-top: 25%;"
     >
       <div class="van-grid-item__content van-grid-item__content--center van-grid-item__content--square van-hairline">
         <i class="van-badge__wrapper van-icon van-icon-photo-o van-grid-item__icon">
@@ -239,8 +261,9 @@ exports[`should render demo and match snapshot 1`] = `
         </span>
       </div>
     </div>
-    <div class="van-grid-item van-grid-item--square"
-         style="flex-basis: 25%; padding-top: 25%;"
+    <div
+      class="van-grid-item van-grid-item--square"
+      style="flex-basis: 25%; padding-top: 25%;"
     >
       <div class="van-grid-item__content van-grid-item__content--center van-grid-item__content--square van-hairline">
         <i class="van-badge__wrapper van-icon van-icon-photo-o van-grid-item__icon">
@@ -250,8 +273,9 @@ exports[`should render demo and match snapshot 1`] = `
         </span>
       </div>
     </div>
-    <div class="van-grid-item van-grid-item--square"
-         style="flex-basis: 25%; padding-top: 25%;"
+    <div
+      class="van-grid-item van-grid-item--square"
+      style="flex-basis: 25%; padding-top: 25%;"
     >
       <div class="van-grid-item__content van-grid-item__content--center van-grid-item__content--square van-hairline">
         <i class="van-badge__wrapper van-icon van-icon-photo-o van-grid-item__icon">
@@ -264,11 +288,13 @@ exports[`should render demo and match snapshot 1`] = `
   </div>
 </div>
 <div>
-  <div style="padding-left: 10px;"
-       class="van-grid"
+  <div
+    style="padding-left: 10px;"
+    class="van-grid"
   >
-    <div class="van-grid-item"
-         style="flex-basis: 25%; padding-right: 10px;"
+    <div
+      class="van-grid-item"
+      style="flex-basis: 25%; padding-right: 10px;"
     >
       <div class="van-grid-item__content van-grid-item__content--center van-grid-item__content--surround van-hairline">
         <i class="van-badge__wrapper van-icon van-icon-photo-o van-grid-item__icon">
@@ -278,8 +304,9 @@ exports[`should render demo and match snapshot 1`] = `
         </span>
       </div>
     </div>
-    <div class="van-grid-item"
-         style="flex-basis: 25%; padding-right: 10px;"
+    <div
+      class="van-grid-item"
+      style="flex-basis: 25%; padding-right: 10px;"
     >
       <div class="van-grid-item__content van-grid-item__content--center van-grid-item__content--surround van-hairline">
         <i class="van-badge__wrapper van-icon van-icon-photo-o van-grid-item__icon">
@@ -289,8 +316,9 @@ exports[`should render demo and match snapshot 1`] = `
         </span>
       </div>
     </div>
-    <div class="van-grid-item"
-         style="flex-basis: 25%; padding-right: 10px;"
+    <div
+      class="van-grid-item"
+      style="flex-basis: 25%; padding-right: 10px;"
     >
       <div class="van-grid-item__content van-grid-item__content--center van-grid-item__content--surround van-hairline">
         <i class="van-badge__wrapper van-icon van-icon-photo-o van-grid-item__icon">
@@ -300,8 +328,9 @@ exports[`should render demo and match snapshot 1`] = `
         </span>
       </div>
     </div>
-    <div class="van-grid-item"
-         style="flex-basis: 25%; padding-right: 10px;"
+    <div
+      class="van-grid-item"
+      style="flex-basis: 25%; padding-right: 10px;"
     >
       <div class="van-grid-item__content van-grid-item__content--center van-grid-item__content--surround van-hairline">
         <i class="van-badge__wrapper van-icon van-icon-photo-o van-grid-item__icon">
@@ -311,8 +340,9 @@ exports[`should render demo and match snapshot 1`] = `
         </span>
       </div>
     </div>
-    <div class="van-grid-item"
-         style="flex-basis: 25%; padding-right: 10px; margin-top: 10px;"
+    <div
+      class="van-grid-item"
+      style="flex-basis: 25%; padding-right: 10px; margin-top: 10px;"
     >
       <div class="van-grid-item__content van-grid-item__content--center van-grid-item__content--surround van-hairline">
         <i class="van-badge__wrapper van-icon van-icon-photo-o van-grid-item__icon">
@@ -322,8 +352,9 @@ exports[`should render demo and match snapshot 1`] = `
         </span>
       </div>
     </div>
-    <div class="van-grid-item"
-         style="flex-basis: 25%; padding-right: 10px; margin-top: 10px;"
+    <div
+      class="van-grid-item"
+      style="flex-basis: 25%; padding-right: 10px; margin-top: 10px;"
     >
       <div class="van-grid-item__content van-grid-item__content--center van-grid-item__content--surround van-hairline">
         <i class="van-badge__wrapper van-icon van-icon-photo-o van-grid-item__icon">
@@ -333,8 +364,9 @@ exports[`should render demo and match snapshot 1`] = `
         </span>
       </div>
     </div>
-    <div class="van-grid-item"
-         style="flex-basis: 25%; padding-right: 10px; margin-top: 10px;"
+    <div
+      class="van-grid-item"
+      style="flex-basis: 25%; padding-right: 10px; margin-top: 10px;"
     >
       <div class="van-grid-item__content van-grid-item__content--center van-grid-item__content--surround van-hairline">
         <i class="van-badge__wrapper van-icon van-icon-photo-o van-grid-item__icon">
@@ -344,8 +376,9 @@ exports[`should render demo and match snapshot 1`] = `
         </span>
       </div>
     </div>
-    <div class="van-grid-item"
-         style="flex-basis: 25%; padding-right: 10px; margin-top: 10px;"
+    <div
+      class="van-grid-item"
+      style="flex-basis: 25%; padding-right: 10px; margin-top: 10px;"
     >
       <div class="van-grid-item__content van-grid-item__content--center van-grid-item__content--surround van-hairline">
         <i class="van-badge__wrapper van-icon van-icon-photo-o van-grid-item__icon">
@@ -359,8 +392,9 @@ exports[`should render demo and match snapshot 1`] = `
 </div>
 <div>
   <div class="van-grid van-hairline--top">
-    <div class="van-grid-item"
-         style="flex-basis: 33.333333333333336%;"
+    <div
+      class="van-grid-item"
+      style="flex-basis: 33.333333333333336%;"
     >
       <div class="van-grid-item__content van-grid-item__content--horizontal van-grid-item__content--center van-hairline">
         <i class="van-badge__wrapper van-icon van-icon-photo-o van-grid-item__icon">
@@ -370,8 +404,9 @@ exports[`should render demo and match snapshot 1`] = `
         </span>
       </div>
     </div>
-    <div class="van-grid-item"
-         style="flex-basis: 33.333333333333336%;"
+    <div
+      class="van-grid-item"
+      style="flex-basis: 33.333333333333336%;"
     >
       <div class="van-grid-item__content van-grid-item__content--horizontal van-grid-item__content--center van-hairline">
         <i class="van-badge__wrapper van-icon van-icon-photo-o van-grid-item__icon">
@@ -381,8 +416,9 @@ exports[`should render demo and match snapshot 1`] = `
         </span>
       </div>
     </div>
-    <div class="van-grid-item"
-         style="flex-basis: 33.333333333333336%;"
+    <div
+      class="van-grid-item"
+      style="flex-basis: 33.333333333333336%;"
     >
       <div class="van-grid-item__content van-grid-item__content--horizontal van-grid-item__content--center van-hairline">
         <i class="van-badge__wrapper van-icon van-icon-photo-o van-grid-item__icon">
@@ -396,12 +432,14 @@ exports[`should render demo and match snapshot 1`] = `
 </div>
 <div>
   <div class="van-grid van-hairline--top">
-    <div class="van-grid-item"
-         style="flex-basis: 50%;"
+    <div
+      class="van-grid-item"
+      style="flex-basis: 50%;"
     >
-      <div role="button"
-           class="van-grid-item__content van-grid-item__content--center van-grid-item__content--clickable van-hairline"
-           tabindex="0"
+      <div
+        role="button"
+        class="van-grid-item__content van-grid-item__content--center van-grid-item__content--clickable van-hairline"
+        tabindex="0"
       >
         <i class="van-badge__wrapper van-icon van-icon-home-o van-grid-item__icon">
         </i>
@@ -410,12 +448,14 @@ exports[`should render demo and match snapshot 1`] = `
         </span>
       </div>
     </div>
-    <div class="van-grid-item"
-         style="flex-basis: 50%;"
+    <div
+      class="van-grid-item"
+      style="flex-basis: 50%;"
     >
-      <div role="button"
-           class="van-grid-item__content van-grid-item__content--center van-grid-item__content--clickable van-hairline"
-           tabindex="0"
+      <div
+        role="button"
+        class="van-grid-item__content van-grid-item__content--center van-grid-item__content--clickable van-hairline"
+        tabindex="0"
       >
         <i class="van-badge__wrapper van-icon van-icon-search van-grid-item__icon">
         </i>
@@ -428,8 +468,9 @@ exports[`should render demo and match snapshot 1`] = `
 </div>
 <div>
   <div class="van-grid van-hairline--top">
-    <div class="van-grid-item"
-         style="flex-basis: 50%;"
+    <div
+      class="van-grid-item"
+      style="flex-basis: 50%;"
     >
       <div class="van-grid-item__content van-grid-item__content--center van-hairline">
         <i class="van-badge__wrapper van-icon van-icon-home-o van-grid-item__icon">
@@ -441,8 +482,9 @@ exports[`should render demo and match snapshot 1`] = `
         </span>
       </div>
     </div>
-    <div class="van-grid-item"
-         style="flex-basis: 50%;"
+    <div
+      class="van-grid-item"
+      style="flex-basis: 50%;"
     >
       <div class="van-grid-item__content van-grid-item__content--center van-hairline">
         <i class="van-badge__wrapper van-icon van-icon-search van-grid-item__icon">

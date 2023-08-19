@@ -1,1 +1,0 @@
-require('jest-canvas-mock');

@@ -123,7 +123,7 @@ test('should autosize textarea field', async () => {
 });
 
 test('should allow autosize prop be be an object', async () => {
-  window.scrollTo = jest.fn();
+  window.scrollTo = vi.fn();
 
   const wrapper = mount(Field, {
     props: {
@@ -143,7 +143,7 @@ test('should allow autosize prop be be an object', async () => {
 
 test('should call input.focus when vm.focus is called', () => {
   const wrapper = mount(Field);
-  const onFocus = jest.fn();
+  const onFocus = vi.fn();
   wrapper.find('input').element.focus = onFocus;
 
   wrapper.vm.focus();
@@ -152,7 +152,7 @@ test('should call input.focus when vm.focus is called', () => {
 
 test('should call input.blur when vm.blur is called', () => {
   const wrapper = mount(Field);
-  const onBlur = jest.fn();
+  const onBlur = vi.fn();
   wrapper.find('input').element.blur = onBlur;
 
   wrapper.vm.blur();
@@ -398,7 +398,7 @@ test('should blur search input after pressing enter', async () => {
     },
   });
 
-  const onBlur = jest.fn();
+  const onBlur = vi.fn();
   wrapper.find('input').element.blur = onBlur;
   await wrapper.find('input').trigger('keypress.enter');
   expect(onBlur).toHaveBeenCalledTimes(1);

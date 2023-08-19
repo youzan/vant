@@ -1,4 +1,4 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`should render demo and match snapshot 1`] = `
 <div>
@@ -6,16 +6,19 @@ exports[`should render demo and match snapshot 1`] = `
     <div class="van-skeleton__content">
       <h3 class="van-skeleton-title">
       </h3>
-      <div class="van-skeleton-paragraph"
-           style="width: 100%;"
+      <div
+        class="van-skeleton-paragraph"
+        style="width: 100%;"
       >
       </div>
-      <div class="van-skeleton-paragraph"
-           style="width: 100%;"
+      <div
+        class="van-skeleton-paragraph"
+        style="width: 100%;"
       >
       </div>
-      <div class="van-skeleton-paragraph"
-           style="width: 60%;"
+      <div
+        class="van-skeleton-paragraph"
+        style="width: 60%;"
       >
       </div>
     </div>
@@ -28,26 +31,30 @@ exports[`should render demo and match snapshot 1`] = `
     <div class="van-skeleton__content">
       <h3 class="van-skeleton-title">
       </h3>
-      <div class="van-skeleton-paragraph"
-           style="width: 100%;"
+      <div
+        class="van-skeleton-paragraph"
+        style="width: 100%;"
       >
       </div>
-      <div class="van-skeleton-paragraph"
-           style="width: 100%;"
+      <div
+        class="van-skeleton-paragraph"
+        style="width: 100%;"
       >
       </div>
-      <div class="van-skeleton-paragraph"
-           style="width: 60%;"
+      <div
+        class="van-skeleton-paragraph"
+        style="width: 60%;"
       >
       </div>
     </div>
   </div>
 </div>
 <div>
-  <div role="switch"
-       class="van-switch"
-       tabindex="0"
-       aria-checked="false"
+  <div
+    role="switch"
+    class="van-switch"
+    tabindex="0"
+    aria-checked="false"
   >
     <div class="van-switch__node">
     </div>
@@ -58,16 +65,19 @@ exports[`should render demo and match snapshot 1`] = `
     <div class="van-skeleton__content">
       <h3 class="van-skeleton-title">
       </h3>
-      <div class="van-skeleton-paragraph"
-           style="width: 100%;"
+      <div
+        class="van-skeleton-paragraph"
+        style="width: 100%;"
       >
       </div>
-      <div class="van-skeleton-paragraph"
-           style="width: 100%;"
+      <div
+        class="van-skeleton-paragraph"
+        style="width: 100%;"
       >
       </div>
-      <div class="van-skeleton-paragraph"
-           style="width: 60%;"
+      <div
+        class="van-skeleton-paragraph"
+        style="width: 60%;"
       >
       </div>
     </div>
@@ -81,20 +91,24 @@ exports[`should render demo and match snapshot 1`] = `
         </i>
       </div>
       <div style="flex: 1; margin-left: 16px;">
-        <div class="van-skeleton-paragraph"
-             style="width: 60%;"
+        <div
+          class="van-skeleton-paragraph"
+          style="width: 60%;"
         >
         </div>
-        <div class="van-skeleton-paragraph"
-             style="width: 100%;"
+        <div
+          class="van-skeleton-paragraph"
+          style="width: 100%;"
         >
         </div>
-        <div class="van-skeleton-paragraph"
-             style="width: 100%;"
+        <div
+          class="van-skeleton-paragraph"
+          style="width: 100%;"
         >
         </div>
-        <div class="van-skeleton-paragraph"
-             style="width: 100%;"
+        <div
+          class="van-skeleton-paragraph"
+          style="width: 100%;"
         >
         </div>
       </div>

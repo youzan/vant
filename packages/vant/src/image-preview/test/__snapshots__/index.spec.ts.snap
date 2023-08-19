@@ -1,29 +1,33 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`render image 1`] = `
-<transition-stub name="van-fade"
-                 appear="true"
-                 persisted="false"
-                 css="true"
-                 class="van-image-preview__overlay"
-                 role="button"
-                 tabindex="0"
+<transition-stub
+  name="van-fade"
+  appear="true"
+  persisted="false"
+  css="true"
+  class="van-image-preview__overlay"
+  role="button"
+  tabindex="0"
 >
   <div class="van-overlay">
   </div>
 </transition-stub>
-<transition-stub name="van-fade"
-                 appear="false"
-                 persisted="false"
-                 css="true"
+<transition-stub
+  name="van-fade"
+  appear="false"
+  persisted="false"
+  css="true"
 >
-  <div role="dialog"
-       tabindex="0"
-       class="van-popup van-popup--center van-image-preview"
+  <div
+    role="dialog"
+    tabindex="0"
+    class="van-popup van-popup--center van-image-preview"
   >
     <div class="van-swipe van-image-preview__swipe">
-      <div style="transition-duration: 300ms; transform: translateX(0px);"
-           class="van-swipe__track"
+      <div
+        style="transition-duration: 300ms; transform: translateX(0px);"
+        class="van-swipe__track"
       >
         <div class="van-swipe-item van-image-preview__swipe-item">
         </div>
@@ -41,43 +45,49 @@ exports[`render image 1`] = `
 `;
 
 exports[`should change close icon position when using close-icon-position prop 1`] = `
-<i class="van-badge__wrapper van-icon van-icon-clear van-image-preview__close-icon van-image-preview__close-icon--top-left van-haptics-feedback"
-   role="button"
->
-</i>
+"<i class=\\"van-badge__wrapper van-icon van-icon-clear van-image-preview__close-icon van-image-preview__close-icon--top-left van-haptics-feedback\\" role=\\"button\\">
+  <!---->
+  <!---->
+  <!---->
+</i>"
 `;
 
 exports[`should change close icon when using close-icon prop 1`] = `
-<i class="van-badge__wrapper van-icon van-icon-success van-image-preview__close-icon van-image-preview__close-icon--top-right van-haptics-feedback"
-   role="button"
->
-</i>
+"<i class=\\"van-badge__wrapper van-icon van-icon-success van-image-preview__close-icon van-image-preview__close-icon--top-right van-haptics-feedback\\" role=\\"button\\">
+  <!---->
+  <!---->
+  <!---->
+</i>"
 `;
 
 exports[`should render cover slot correctly 1`] = `
-<transition-stub name="van-fade"
-                 appear="true"
-                 persisted="false"
-                 css="true"
-                 class="van-image-preview__overlay"
-                 role="button"
-                 tabindex="0"
+<transition-stub
+  name="van-fade"
+  appear="true"
+  persisted="false"
+  css="true"
+  class="van-image-preview__overlay"
+  role="button"
+  tabindex="0"
 >
   <div class="van-overlay">
   </div>
 </transition-stub>
-<transition-stub name="van-fade"
-                 appear="false"
-                 persisted="false"
-                 css="true"
+<transition-stub
+  name="van-fade"
+  appear="false"
+  persisted="false"
+  css="true"
 >
-  <div role="dialog"
-       tabindex="0"
-       class="van-popup van-popup--center van-image-preview"
+  <div
+    role="dialog"
+    tabindex="0"
+    class="van-popup van-popup--center van-image-preview"
   >
     <div class="van-swipe van-image-preview__swipe">
-      <div style="transition-duration: 300ms; transform: translateX(0px);"
-           class="van-swipe__track"
+      <div
+        style="transition-duration: 300ms; transform: translateX(0px);"
+        class="van-swipe__track"
       >
       </div>
     </div>
@@ -104,17 +114,20 @@ exports[`should swipe to current index after calling the swipeTo method 1`] = `
 `;
 
 exports[`zoom in and drag image to move 1`] = `
-<div class="van-image van-image-preview__image"
-     style="transition-duration: .3s;"
+<div
+  class="van-image van-image-preview__image"
+  style="transition-duration: .3s;"
 >
-  <img src="https://fastly.jsdelivr.net/npm/@vant/assets/apple-1.jpeg"
-       class="van-image__img"
-       style="object-fit: contain;"
+  <img
+    src="https://fastly.jsdelivr.net/npm/@vant/assets/apple-1.jpeg"
+    class="van-image__img"
+    style="object-fit: contain;"
   >
   <div class="van-image__loading">
-    <div class="van-loading van-loading--spinner"
-         aria-live="polite"
-         aria-busy="true"
+    <div
+      class="van-loading van-loading--spinner"
+      aria-live="polite"
+      aria-busy="true"
     >
       <span class="van-loading__spinner van-loading__spinner--spinner">
         <i class="van-loading__line van-loading__line--1">
@@ -148,17 +161,20 @@ exports[`zoom in and drag image to move 1`] = `
 `;
 
 exports[`zoom in and drag image to move 2`] = `
-<div class="van-image van-image-preview__image"
-     style="transition-duration: .3s;"
+<div
+  class="van-image van-image-preview__image"
+  style="transition-duration: .3s;"
 >
-  <img src="https://fastly.jsdelivr.net/npm/@vant/assets/apple-1.jpeg"
-       class="van-image__img"
-       style="object-fit: contain;"
+  <img
+    src="https://fastly.jsdelivr.net/npm/@vant/assets/apple-1.jpeg"
+    class="van-image__img"
+    style="object-fit: contain;"
   >
   <div class="van-image__loading">
-    <div class="van-loading van-loading--spinner"
-         aria-live="polite"
-         aria-busy="true"
+    <div
+      class="van-loading van-loading--spinner"
+      aria-live="polite"
+      aria-busy="true"
     >
       <span class="van-loading__spinner van-loading__spinner--spinner">
         <i class="van-loading__line van-loading__line--1">

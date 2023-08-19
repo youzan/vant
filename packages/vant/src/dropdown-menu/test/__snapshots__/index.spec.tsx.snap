@@ -1,12 +1,13 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`click option 1`] = `
 <div class="van-dropdown-menu">
   <div class="van-dropdown-menu__bar van-dropdown-menu__bar--opened">
-    <div id="van-dropdown-menu-0"
-         role="button"
-         tabindex="0"
-         class="van-dropdown-menu__item van-haptics-feedback"
+    <div
+      id="van-dropdown-menu-0"
+      role="button"
+      tabindex="0"
+      class="van-dropdown-menu__item van-haptics-feedback"
     >
       <span class="van-dropdown-menu__title">
         <div class="van-ellipsis">
@@ -14,10 +15,11 @@ exports[`click option 1`] = `
         </div>
       </span>
     </div>
-    <div id="van-dropdown-menu-1"
-         role="button"
-         tabindex="0"
-         class="van-dropdown-menu__item van-haptics-feedback"
+    <div
+      id="van-dropdown-menu-1"
+      role="button"
+      tabindex="0"
+      class="van-dropdown-menu__item van-haptics-feedback"
     >
       <span class="van-dropdown-menu__title">
         <div class="van-ellipsis">
@@ -26,35 +28,41 @@ exports[`click option 1`] = `
       </span>
     </div>
   </div>
-  <div style="top: 100px;"
-       class="van-dropdown-item van-dropdown-item--down"
+  <div
+    style="top: 0px;"
+    class="van-dropdown-item van-dropdown-item--down"
   >
-    <transition-stub name="van-fade"
-                     appear="true"
-                     persisted="false"
-                     css="true"
-                     role="button"
-                     tabindex="0"
+    <transition-stub
+      name="van-fade"
+      appear="true"
+      persisted="false"
+      css="true"
+      role="button"
+      tabindex="0"
     >
-      <div style="z-index: 2007; position: absolute; animation-duration: 0.2s; display: none;"
-           class="van-overlay"
+      <div
+        style="z-index: 2007; position: absolute; animation-duration: 0.2s; display: none;"
+        class="van-overlay"
       >
       </div>
     </transition-stub>
-    <transition-stub name="van-popup-slide-top"
-                     appear="false"
-                     persisted="false"
-                     css="true"
+    <transition-stub
+      name="van-popup-slide-top"
+      appear="false"
+      persisted="false"
+      css="true"
     >
-      <div style="z-index: 2007; transition-duration: 0.2s; display: none;"
-           role="menu"
-           tabindex="0"
-           class="van-popup van-popup--top van-dropdown-item__content"
-           aria-labelledby="van-dropdown-menu-0"
+      <div
+        style="z-index: 2007; transition-duration: 0.2s; display: none;"
+        role="menu"
+        tabindex="0"
+        class="van-popup van-popup--top van-dropdown-item__content"
+        aria-labelledby="van-dropdown-menu-0"
       >
-        <div class="van-cell van-cell--clickable van-dropdown-item__option van-dropdown-item__option--active"
-             role="menuitem"
-             tabindex="0"
+        <div
+          class="van-cell van-cell--clickable van-dropdown-item__option van-dropdown-item__option--active"
+          role="menuitem"
+          tabindex="0"
         >
           <div class="van-cell__title">
             <span>
@@ -66,9 +74,10 @@ exports[`click option 1`] = `
             </i>
           </div>
         </div>
-        <div class="van-cell van-cell--clickable van-dropdown-item__option"
-             role="menuitem"
-             tabindex="-1"
+        <div
+          class="van-cell van-cell--clickable van-dropdown-item__option"
+          role="menuitem"
+          tabindex="-1"
         >
           <div class="van-cell__title">
             <span>
@@ -81,21 +90,24 @@ exports[`click option 1`] = `
       </div>
     </transition-stub>
   </div>
-  <div style="top: 100px; display: none;"
-       class="van-dropdown-item van-dropdown-item--down"
+  <div
+    style="top: 0px; display: none;"
+    class="van-dropdown-item van-dropdown-item--down"
   >
-    <transition-stub name="van-fade"
-                     appear="true"
-                     persisted="false"
-                     css="true"
-                     role="button"
-                     tabindex="0"
+    <transition-stub
+      name="van-fade"
+      appear="true"
+      persisted="false"
+      css="true"
+      role="button"
+      tabindex="0"
     >
     </transition-stub>
-    <transition-stub name="van-popup-slide-top"
-                     appear="false"
-                     persisted="false"
-                     css="true"
+    <transition-stub
+      name="van-popup-slide-top"
+      appear="false"
+      persisted="false"
+      css="true"
     >
     </transition-stub>
   </div>
@@ -105,10 +117,11 @@ exports[`click option 1`] = `
 exports[`close-on-click-outside 1`] = `
 <div class="van-dropdown-menu">
   <div class="van-dropdown-menu__bar van-dropdown-menu__bar--opened">
-    <div id="van-dropdown-menu-0"
-         role="button"
-         tabindex="0"
-         class="van-dropdown-menu__item van-haptics-feedback"
+    <div
+      id="van-dropdown-menu-0"
+      role="button"
+      tabindex="0"
+      class="van-dropdown-menu__item van-haptics-feedback"
     >
       <span class="van-dropdown-menu__title">
         <div class="van-ellipsis">
@@ -116,10 +129,11 @@ exports[`close-on-click-outside 1`] = `
         </div>
       </span>
     </div>
-    <div id="van-dropdown-menu-1"
-         role="button"
-         tabindex="0"
-         class="van-dropdown-menu__item van-haptics-feedback"
+    <div
+      id="van-dropdown-menu-1"
+      role="button"
+      tabindex="0"
+      class="van-dropdown-menu__item van-haptics-feedback"
     >
       <span class="van-dropdown-menu__title">
         <div class="van-ellipsis">
@@ -128,35 +142,41 @@ exports[`close-on-click-outside 1`] = `
       </span>
     </div>
   </div>
-  <div style="top: 100px;"
-       class="van-dropdown-item van-dropdown-item--down"
+  <div
+    style="top: 0px;"
+    class="van-dropdown-item van-dropdown-item--down"
   >
-    <transition-stub name="van-fade"
-                     appear="true"
-                     persisted="false"
-                     css="true"
-                     role="button"
-                     tabindex="0"
+    <transition-stub
+      name="van-fade"
+      appear="true"
+      persisted="false"
+      css="true"
+      role="button"
+      tabindex="0"
     >
-      <div style="z-index: 2004; position: absolute; animation-duration: 0.2s; display: none;"
-           class="van-overlay"
+      <div
+        style="z-index: 2004; position: absolute; animation-duration: 0.2s; display: none;"
+        class="van-overlay"
       >
       </div>
     </transition-stub>
-    <transition-stub name="van-popup-slide-top"
-                     appear="false"
-                     persisted="false"
-                     css="true"
+    <transition-stub
+      name="van-popup-slide-top"
+      appear="false"
+      persisted="false"
+      css="true"
     >
-      <div style="z-index: 2004; transition-duration: 0.2s; display: none;"
-           role="menu"
-           tabindex="0"
-           class="van-popup van-popup--top van-dropdown-item__content"
-           aria-labelledby="van-dropdown-menu-0"
+      <div
+        style="z-index: 2004; transition-duration: 0.2s; display: none;"
+        role="menu"
+        tabindex="0"
+        class="van-popup van-popup--top van-dropdown-item__content"
+        aria-labelledby="van-dropdown-menu-0"
       >
-        <div class="van-cell van-cell--clickable van-dropdown-item__option van-dropdown-item__option--active"
-             role="menuitem"
-             tabindex="0"
+        <div
+          class="van-cell van-cell--clickable van-dropdown-item__option van-dropdown-item__option--active"
+          role="menuitem"
+          tabindex="0"
         >
           <div class="van-cell__title">
             <span>
@@ -168,9 +188,10 @@ exports[`close-on-click-outside 1`] = `
             </i>
           </div>
         </div>
-        <div class="van-cell van-cell--clickable van-dropdown-item__option"
-             role="menuitem"
-             tabindex="-1"
+        <div
+          class="van-cell van-cell--clickable van-dropdown-item__option"
+          role="menuitem"
+          tabindex="-1"
         >
           <div class="van-cell__title">
             <span>
@@ -183,21 +204,24 @@ exports[`close-on-click-outside 1`] = `
       </div>
     </transition-stub>
   </div>
-  <div style="top: 100px; display: none;"
-       class="van-dropdown-item van-dropdown-item--down"
+  <div
+    style="top: 0px; display: none;"
+    class="van-dropdown-item van-dropdown-item--down"
   >
-    <transition-stub name="van-fade"
-                     appear="true"
-                     persisted="false"
-                     css="true"
-                     role="button"
-                     tabindex="0"
+    <transition-stub
+      name="van-fade"
+      appear="true"
+      persisted="false"
+      css="true"
+      role="button"
+      tabindex="0"
     >
     </transition-stub>
-    <transition-stub name="van-popup-slide-top"
-                     appear="false"
-                     persisted="false"
-                     css="true"
+    <transition-stub
+      name="van-popup-slide-top"
+      appear="false"
+      persisted="false"
+      css="true"
     >
     </transition-stub>
   </div>
@@ -207,10 +231,11 @@ exports[`close-on-click-outside 1`] = `
 exports[`destroy one item 1`] = `
 <div class="van-dropdown-menu">
   <div class="van-dropdown-menu__bar">
-    <div id="van-dropdown-menu-0"
-         role="button"
-         tabindex="0"
-         class="van-dropdown-menu__item van-haptics-feedback"
+    <div
+      id="van-dropdown-menu-0"
+      role="button"
+      tabindex="0"
+      class="van-dropdown-menu__item van-haptics-feedback"
     >
       <span class="van-dropdown-menu__title">
         <div class="van-ellipsis">
@@ -219,21 +244,24 @@ exports[`destroy one item 1`] = `
       </span>
     </div>
   </div>
-  <div style="top: 0px; display: none;"
-       class="van-dropdown-item van-dropdown-item--down"
+  <div
+    style="top: 0px; display: none;"
+    class="van-dropdown-item van-dropdown-item--down"
   >
-    <transition-stub name="van-fade"
-                     appear="true"
-                     persisted="false"
-                     css="true"
-                     role="button"
-                     tabindex="0"
+    <transition-stub
+      name="van-fade"
+      appear="true"
+      persisted="false"
+      css="true"
+      role="button"
+      tabindex="0"
     >
     </transition-stub>
-    <transition-stub name="van-popup-slide-top"
-                     appear="false"
-                     persisted="false"
-                     css="true"
+    <transition-stub
+      name="van-popup-slide-top"
+      appear="false"
+      persisted="false"
+      css="true"
     >
     </transition-stub>
   </div>
@@ -243,10 +271,11 @@ exports[`destroy one item 1`] = `
 exports[`direction up 1`] = `
 <div class="van-dropdown-menu">
   <div class="van-dropdown-menu__bar">
-    <div id="van-dropdown-menu-0"
-         role="button"
-         tabindex="0"
-         class="van-dropdown-menu__item van-haptics-feedback"
+    <div
+      id="van-dropdown-menu-0"
+      role="button"
+      tabindex="0"
+      class="van-dropdown-menu__item van-haptics-feedback"
     >
       <span class="van-dropdown-menu__title van-dropdown-menu__title--down">
         <div class="van-ellipsis">
@@ -254,10 +283,11 @@ exports[`direction up 1`] = `
         </div>
       </span>
     </div>
-    <div id="van-dropdown-menu-1"
-         role="button"
-         tabindex="0"
-         class="van-dropdown-menu__item van-haptics-feedback"
+    <div
+      id="van-dropdown-menu-1"
+      role="button"
+      tabindex="0"
+      class="van-dropdown-menu__item van-haptics-feedback"
     >
       <span class="van-dropdown-menu__title van-dropdown-menu__title--down">
         <div class="van-ellipsis">
@@ -266,39 +296,45 @@ exports[`direction up 1`] = `
       </span>
     </div>
   </div>
-  <div style="bottom: 0px; display: none;"
-       class="van-dropdown-item van-dropdown-item--up"
+  <div
+    style="bottom: 0px; display: none;"
+    class="van-dropdown-item van-dropdown-item--up"
   >
-    <transition-stub name="van-fade"
-                     appear="true"
-                     persisted="false"
-                     css="true"
-                     role="button"
-                     tabindex="0"
+    <transition-stub
+      name="van-fade"
+      appear="true"
+      persisted="false"
+      css="true"
+      role="button"
+      tabindex="0"
     >
     </transition-stub>
-    <transition-stub name="van-popup-slide-bottom"
-                     appear="false"
-                     persisted="false"
-                     css="true"
+    <transition-stub
+      name="van-popup-slide-bottom"
+      appear="false"
+      persisted="false"
+      css="true"
     >
     </transition-stub>
   </div>
-  <div style="bottom: 0px; display: none;"
-       class="van-dropdown-item van-dropdown-item--up"
+  <div
+    style="bottom: 0px; display: none;"
+    class="van-dropdown-item van-dropdown-item--up"
   >
-    <transition-stub name="van-fade"
-                     appear="true"
-                     persisted="false"
-                     css="true"
-                     role="button"
-                     tabindex="0"
+    <transition-stub
+      name="van-fade"
+      appear="true"
+      persisted="false"
+      css="true"
+      role="button"
+      tabindex="0"
     >
     </transition-stub>
-    <transition-stub name="van-popup-slide-bottom"
-                     appear="false"
-                     persisted="false"
-                     css="true"
+    <transition-stub
+      name="van-popup-slide-bottom"
+      appear="false"
+      persisted="false"
+      css="true"
     >
     </transition-stub>
   </div>
@@ -308,10 +344,11 @@ exports[`direction up 1`] = `
 exports[`direction up 2`] = `
 <div class="van-dropdown-menu">
   <div class="van-dropdown-menu__bar van-dropdown-menu__bar--opened">
-    <div id="van-dropdown-menu-0"
-         role="button"
-         tabindex="0"
-         class="van-dropdown-menu__item van-haptics-feedback"
+    <div
+      id="van-dropdown-menu-0"
+      role="button"
+      tabindex="0"
+      class="van-dropdown-menu__item van-haptics-feedback"
     >
       <span class="van-dropdown-menu__title van-dropdown-menu__title--active">
         <div class="van-ellipsis">
@@ -319,10 +356,11 @@ exports[`direction up 2`] = `
         </div>
       </span>
     </div>
-    <div id="van-dropdown-menu-1"
-         role="button"
-         tabindex="0"
-         class="van-dropdown-menu__item van-haptics-feedback"
+    <div
+      id="van-dropdown-menu-1"
+      role="button"
+      tabindex="0"
+      class="van-dropdown-menu__item van-haptics-feedback"
     >
       <span class="van-dropdown-menu__title van-dropdown-menu__title--down">
         <div class="van-ellipsis">
@@ -331,35 +369,41 @@ exports[`direction up 2`] = `
       </span>
     </div>
   </div>
-  <div style="bottom: 768px;"
-       class="van-dropdown-item van-dropdown-item--up"
+  <div
+    style="bottom: 768px;"
+    class="van-dropdown-item van-dropdown-item--up"
   >
-    <transition-stub name="van-fade"
-                     appear="true"
-                     persisted="false"
-                     css="true"
-                     role="button"
-                     tabindex="0"
+    <transition-stub
+      name="van-fade"
+      appear="true"
+      persisted="false"
+      css="true"
+      role="button"
+      tabindex="0"
     >
-      <div style="z-index: 2006; position: absolute; animation-duration: 0.2s;"
-           class="van-overlay"
+      <div
+        style="z-index: 2006; position: absolute; animation-duration: 0.2s;"
+        class="van-overlay"
       >
       </div>
     </transition-stub>
-    <transition-stub name="van-popup-slide-bottom"
-                     appear="false"
-                     persisted="false"
-                     css="true"
+    <transition-stub
+      name="van-popup-slide-bottom"
+      appear="false"
+      persisted="false"
+      css="true"
     >
-      <div style="z-index: 2006; transition-duration: 0.2s;"
-           role="menu"
-           tabindex="0"
-           class="van-popup van-popup--bottom van-dropdown-item__content"
-           aria-labelledby="van-dropdown-menu-0"
+      <div
+        style="z-index: 2006; transition-duration: 0.2s;"
+        role="menu"
+        tabindex="0"
+        class="van-popup van-popup--bottom van-dropdown-item__content"
+        aria-labelledby="van-dropdown-menu-0"
       >
-        <div class="van-cell van-cell--clickable van-dropdown-item__option van-dropdown-item__option--active"
-             role="menuitem"
-             tabindex="0"
+        <div
+          class="van-cell van-cell--clickable van-dropdown-item__option van-dropdown-item__option--active"
+          role="menuitem"
+          tabindex="0"
         >
           <div class="van-cell__title">
             <span>
@@ -371,9 +415,10 @@ exports[`direction up 2`] = `
             </i>
           </div>
         </div>
-        <div class="van-cell van-cell--clickable van-dropdown-item__option"
-             role="menuitem"
-             tabindex="-1"
+        <div
+          class="van-cell van-cell--clickable van-dropdown-item__option"
+          role="menuitem"
+          tabindex="-1"
         >
           <div class="van-cell__title">
             <span>
@@ -386,21 +431,24 @@ exports[`direction up 2`] = `
       </div>
     </transition-stub>
   </div>
-  <div style="bottom: 768px; display: none;"
-       class="van-dropdown-item van-dropdown-item--up"
+  <div
+    style="bottom: 768px; display: none;"
+    class="van-dropdown-item van-dropdown-item--up"
   >
-    <transition-stub name="van-fade"
-                     appear="true"
-                     persisted="false"
-                     css="true"
-                     role="button"
-                     tabindex="0"
+    <transition-stub
+      name="van-fade"
+      appear="true"
+      persisted="false"
+      css="true"
+      role="button"
+      tabindex="0"
     >
     </transition-stub>
-    <transition-stub name="van-popup-slide-bottom"
-                     appear="false"
-                     persisted="false"
-                     css="true"
+    <transition-stub
+      name="van-popup-slide-bottom"
+      appear="false"
+      persisted="false"
+      css="true"
     >
     </transition-stub>
   </div>
@@ -410,10 +458,11 @@ exports[`direction up 2`] = `
 exports[`disable close-on-click-outside 1`] = `
 <div class="van-dropdown-menu">
   <div class="van-dropdown-menu__bar van-dropdown-menu__bar--opened">
-    <div id="van-dropdown-menu-0"
-         role="button"
-         tabindex="0"
-         class="van-dropdown-menu__item van-haptics-feedback"
+    <div
+      id="van-dropdown-menu-0"
+      role="button"
+      tabindex="0"
+      class="van-dropdown-menu__item van-haptics-feedback"
     >
       <span class="van-dropdown-menu__title van-dropdown-menu__title--down van-dropdown-menu__title--active">
         <div class="van-ellipsis">
@@ -421,10 +470,11 @@ exports[`disable close-on-click-outside 1`] = `
         </div>
       </span>
     </div>
-    <div id="van-dropdown-menu-1"
-         role="button"
-         tabindex="0"
-         class="van-dropdown-menu__item van-haptics-feedback"
+    <div
+      id="van-dropdown-menu-1"
+      role="button"
+      tabindex="0"
+      class="van-dropdown-menu__item van-haptics-feedback"
     >
       <span class="van-dropdown-menu__title">
         <div class="van-ellipsis">
@@ -433,35 +483,41 @@ exports[`disable close-on-click-outside 1`] = `
       </span>
     </div>
   </div>
-  <div style="top: 100px;"
-       class="van-dropdown-item van-dropdown-item--down"
+  <div
+    style="top: 0px;"
+    class="van-dropdown-item van-dropdown-item--down"
   >
-    <transition-stub name="van-fade"
-                     appear="true"
-                     persisted="false"
-                     css="true"
-                     role="button"
-                     tabindex="0"
+    <transition-stub
+      name="van-fade"
+      appear="true"
+      persisted="false"
+      css="true"
+      role="button"
+      tabindex="0"
     >
-      <div style="z-index: 2005; position: absolute; animation-duration: 0.2s;"
-           class="van-overlay"
+      <div
+        style="z-index: 2005; position: absolute; animation-duration: 0.2s;"
+        class="van-overlay"
       >
       </div>
     </transition-stub>
-    <transition-stub name="van-popup-slide-top"
-                     appear="false"
-                     persisted="false"
-                     css="true"
+    <transition-stub
+      name="van-popup-slide-top"
+      appear="false"
+      persisted="false"
+      css="true"
     >
-      <div style="z-index: 2005; transition-duration: 0.2s;"
-           role="menu"
-           tabindex="0"
-           class="van-popup van-popup--top van-dropdown-item__content"
-           aria-labelledby="van-dropdown-menu-0"
+      <div
+        style="z-index: 2005; transition-duration: 0.2s;"
+        role="menu"
+        tabindex="0"
+        class="van-popup van-popup--top van-dropdown-item__content"
+        aria-labelledby="van-dropdown-menu-0"
       >
-        <div class="van-cell van-cell--clickable van-dropdown-item__option van-dropdown-item__option--active"
-             role="menuitem"
-             tabindex="0"
+        <div
+          class="van-cell van-cell--clickable van-dropdown-item__option van-dropdown-item__option--active"
+          role="menuitem"
+          tabindex="0"
         >
           <div class="van-cell__title">
             <span>
@@ -473,9 +529,10 @@ exports[`disable close-on-click-outside 1`] = `
             </i>
           </div>
         </div>
-        <div class="van-cell van-cell--clickable van-dropdown-item__option"
-             role="menuitem"
-             tabindex="-1"
+        <div
+          class="van-cell van-cell--clickable van-dropdown-item__option"
+          role="menuitem"
+          tabindex="-1"
         >
           <div class="van-cell__title">
             <span>
@@ -488,21 +545,24 @@ exports[`disable close-on-click-outside 1`] = `
       </div>
     </transition-stub>
   </div>
-  <div style="top: 100px; display: none;"
-       class="van-dropdown-item van-dropdown-item--down"
+  <div
+    style="top: 0px; display: none;"
+    class="van-dropdown-item van-dropdown-item--down"
   >
-    <transition-stub name="van-fade"
-                     appear="true"
-                     persisted="false"
-                     css="true"
-                     role="button"
-                     tabindex="0"
+    <transition-stub
+      name="van-fade"
+      appear="true"
+      persisted="false"
+      css="true"
+      role="button"
+      tabindex="0"
     >
     </transition-stub>
-    <transition-stub name="van-popup-slide-top"
-                     appear="false"
-                     persisted="false"
-                     css="true"
+    <transition-stub
+      name="van-popup-slide-top"
+      appear="false"
+      persisted="false"
+      css="true"
     >
     </transition-stub>
   </div>
@@ -512,9 +572,10 @@ exports[`disable close-on-click-outside 1`] = `
 exports[`disable dropdown item 1`] = `
 <div class="van-dropdown-menu">
   <div class="van-dropdown-menu__bar">
-    <div id="van-dropdown-menu-0"
-         role="button"
-         class="van-dropdown-menu__item van-dropdown-menu__item--disabled"
+    <div
+      id="van-dropdown-menu-0"
+      role="button"
+      class="van-dropdown-menu__item van-dropdown-menu__item--disabled"
     >
       <span class="van-dropdown-menu__title">
         <div class="van-ellipsis">
@@ -523,21 +584,24 @@ exports[`disable dropdown item 1`] = `
       </span>
     </div>
   </div>
-  <div style="top: 0px; display: none;"
-       class="van-dropdown-item van-dropdown-item--down"
+  <div
+    style="top: 0px; display: none;"
+    class="van-dropdown-item van-dropdown-item--down"
   >
-    <transition-stub name="van-fade"
-                     appear="true"
-                     persisted="false"
-                     css="true"
-                     role="button"
-                     tabindex="0"
+    <transition-stub
+      name="van-fade"
+      appear="true"
+      persisted="false"
+      css="true"
+      role="button"
+      tabindex="0"
     >
     </transition-stub>
-    <transition-stub name="van-popup-slide-top"
-                     appear="false"
-                     persisted="false"
-                     css="true"
+    <transition-stub
+      name="van-popup-slide-top"
+      appear="false"
+      persisted="false"
+      css="true"
     >
     </transition-stub>
   </div>
@@ -547,10 +611,11 @@ exports[`disable dropdown item 1`] = `
 exports[`render option icon 1`] = `
 <div class="van-dropdown-menu">
   <div class="van-dropdown-menu__bar van-dropdown-menu__bar--opened">
-    <div id="van-dropdown-menu-0"
-         role="button"
-         tabindex="0"
-         class="van-dropdown-menu__item van-haptics-feedback"
+    <div
+      id="van-dropdown-menu-0"
+      role="button"
+      tabindex="0"
+      class="van-dropdown-menu__item van-haptics-feedback"
     >
       <span class="van-dropdown-menu__title van-dropdown-menu__title--down van-dropdown-menu__title--active">
         <div class="van-ellipsis">
@@ -558,10 +623,11 @@ exports[`render option icon 1`] = `
         </div>
       </span>
     </div>
-    <div id="van-dropdown-menu-1"
-         role="button"
-         tabindex="0"
-         class="van-dropdown-menu__item van-haptics-feedback"
+    <div
+      id="van-dropdown-menu-1"
+      role="button"
+      tabindex="0"
+      class="van-dropdown-menu__item van-haptics-feedback"
     >
       <span class="van-dropdown-menu__title">
         <div class="van-ellipsis">
@@ -570,35 +636,41 @@ exports[`render option icon 1`] = `
       </span>
     </div>
   </div>
-  <div style="top: 100px;"
-       class="van-dropdown-item van-dropdown-item--down"
+  <div
+    style="top: 0px;"
+    class="van-dropdown-item van-dropdown-item--down"
   >
-    <transition-stub name="van-fade"
-                     appear="true"
-                     persisted="false"
-                     css="true"
-                     role="button"
-                     tabindex="0"
+    <transition-stub
+      name="van-fade"
+      appear="true"
+      persisted="false"
+      css="true"
+      role="button"
+      tabindex="0"
     >
-      <div style="z-index: 2003; position: absolute; animation-duration: 0.2s;"
-           class="van-overlay"
+      <div
+        style="z-index: 2003; position: absolute; animation-duration: 0.2s;"
+        class="van-overlay"
       >
       </div>
     </transition-stub>
-    <transition-stub name="van-popup-slide-top"
-                     appear="false"
-                     persisted="false"
-                     css="true"
+    <transition-stub
+      name="van-popup-slide-top"
+      appear="false"
+      persisted="false"
+      css="true"
     >
-      <div style="z-index: 2003; transition-duration: 0.2s;"
-           role="menu"
-           tabindex="0"
-           class="van-popup van-popup--top van-dropdown-item__content"
-           aria-labelledby="van-dropdown-menu-0"
+      <div
+        style="z-index: 2003; transition-duration: 0.2s;"
+        role="menu"
+        tabindex="0"
+        class="van-popup van-popup--top van-dropdown-item__content"
+        aria-labelledby="van-dropdown-menu-0"
       >
-        <div class="van-cell van-cell--clickable van-dropdown-item__option van-dropdown-item__option--active"
-             role="menuitem"
-             tabindex="0"
+        <div
+          class="van-cell van-cell--clickable van-dropdown-item__option van-dropdown-item__option--active"
+          role="menuitem"
+          tabindex="0"
         >
           <i class="van-badge__wrapper van-icon van-icon-success van-cell__left-icon">
           </i>
@@ -612,9 +684,10 @@ exports[`render option icon 1`] = `
             </i>
           </div>
         </div>
-        <div class="van-cell van-cell--clickable van-dropdown-item__option"
-             role="menuitem"
-             tabindex="-1"
+        <div
+          class="van-cell van-cell--clickable van-dropdown-item__option"
+          role="menuitem"
+          tabindex="-1"
         >
           <i class="van-badge__wrapper van-icon van-icon-success van-cell__left-icon">
           </i>
@@ -629,21 +702,24 @@ exports[`render option icon 1`] = `
       </div>
     </transition-stub>
   </div>
-  <div style="top: 100px; display: none;"
-       class="van-dropdown-item van-dropdown-item--down"
+  <div
+    style="top: 0px; display: none;"
+    class="van-dropdown-item van-dropdown-item--down"
   >
-    <transition-stub name="van-fade"
-                     appear="true"
-                     persisted="false"
-                     css="true"
-                     role="button"
-                     tabindex="0"
+    <transition-stub
+      name="van-fade"
+      appear="true"
+      persisted="false"
+      css="true"
+      role="button"
+      tabindex="0"
     >
     </transition-stub>
-    <transition-stub name="van-popup-slide-top"
-                     appear="false"
-                     persisted="false"
-                     css="true"
+    <transition-stub
+      name="van-popup-slide-top"
+      appear="false"
+      persisted="false"
+      css="true"
     >
     </transition-stub>
   </div>
@@ -653,10 +729,11 @@ exports[`render option icon 1`] = `
 exports[`show dropdown item 1`] = `
 <div class="van-dropdown-menu">
   <div class="van-dropdown-menu__bar van-dropdown-menu__bar--opened">
-    <div id="van-dropdown-menu-0"
-         role="button"
-         tabindex="0"
-         class="van-dropdown-menu__item van-haptics-feedback"
+    <div
+      id="van-dropdown-menu-0"
+      role="button"
+      tabindex="0"
+      class="van-dropdown-menu__item van-haptics-feedback"
     >
       <span class="van-dropdown-menu__title van-dropdown-menu__title--down van-dropdown-menu__title--active">
         <div class="van-ellipsis">
@@ -664,10 +741,11 @@ exports[`show dropdown item 1`] = `
         </div>
       </span>
     </div>
-    <div id="van-dropdown-menu-1"
-         role="button"
-         tabindex="0"
-         class="van-dropdown-menu__item van-haptics-feedback"
+    <div
+      id="van-dropdown-menu-1"
+      role="button"
+      tabindex="0"
+      class="van-dropdown-menu__item van-haptics-feedback"
     >
       <span class="van-dropdown-menu__title">
         <div class="van-ellipsis">
@@ -676,35 +754,41 @@ exports[`show dropdown item 1`] = `
       </span>
     </div>
   </div>
-  <div style="top: 100px;"
-       class="van-dropdown-item van-dropdown-item--down"
+  <div
+    style="top: 0px;"
+    class="van-dropdown-item van-dropdown-item--down"
   >
-    <transition-stub name="van-fade"
-                     appear="true"
-                     persisted="false"
-                     css="true"
-                     role="button"
-                     tabindex="0"
+    <transition-stub
+      name="van-fade"
+      appear="true"
+      persisted="false"
+      css="true"
+      role="button"
+      tabindex="0"
     >
-      <div style="z-index: 2001; position: absolute; animation-duration: 0.2s;"
-           class="van-overlay"
+      <div
+        style="z-index: 2001; position: absolute; animation-duration: 0.2s;"
+        class="van-overlay"
       >
       </div>
     </transition-stub>
-    <transition-stub name="van-popup-slide-top"
-                     appear="false"
-                     persisted="false"
-                     css="true"
+    <transition-stub
+      name="van-popup-slide-top"
+      appear="false"
+      persisted="false"
+      css="true"
     >
-      <div style="z-index: 2001; transition-duration: 0.2s;"
-           role="menu"
-           tabindex="0"
-           class="van-popup van-popup--top van-dropdown-item__content"
-           aria-labelledby="van-dropdown-menu-0"
+      <div
+        style="z-index: 2001; transition-duration: 0.2s;"
+        role="menu"
+        tabindex="0"
+        class="van-popup van-popup--top van-dropdown-item__content"
+        aria-labelledby="van-dropdown-menu-0"
       >
-        <div class="van-cell van-cell--clickable van-dropdown-item__option van-dropdown-item__option--active"
-             role="menuitem"
-             tabindex="0"
+        <div
+          class="van-cell van-cell--clickable van-dropdown-item__option van-dropdown-item__option--active"
+          role="menuitem"
+          tabindex="0"
         >
           <div class="van-cell__title">
             <span>
@@ -716,9 +800,10 @@ exports[`show dropdown item 1`] = `
             </i>
           </div>
         </div>
-        <div class="van-cell van-cell--clickable van-dropdown-item__option"
-             role="menuitem"
-             tabindex="-1"
+        <div
+          class="van-cell van-cell--clickable van-dropdown-item__option"
+          role="menuitem"
+          tabindex="-1"
         >
           <div class="van-cell__title">
             <span>
@@ -731,21 +816,24 @@ exports[`show dropdown item 1`] = `
       </div>
     </transition-stub>
   </div>
-  <div style="top: 100px; display: none;"
-       class="van-dropdown-item van-dropdown-item--down"
+  <div
+    style="top: 0px; display: none;"
+    class="van-dropdown-item van-dropdown-item--down"
   >
-    <transition-stub name="van-fade"
-                     appear="true"
-                     persisted="false"
-                     css="true"
-                     role="button"
-                     tabindex="0"
+    <transition-stub
+      name="van-fade"
+      appear="true"
+      persisted="false"
+      css="true"
+      role="button"
+      tabindex="0"
     >
     </transition-stub>
-    <transition-stub name="van-popup-slide-top"
-                     appear="false"
-                     persisted="false"
-                     css="true"
+    <transition-stub
+      name="van-popup-slide-top"
+      appear="false"
+      persisted="false"
+      css="true"
     >
     </transition-stub>
   </div>
@@ -755,10 +843,11 @@ exports[`show dropdown item 1`] = `
 exports[`show dropdown item 2`] = `
 <div class="van-dropdown-menu">
   <div class="van-dropdown-menu__bar van-dropdown-menu__bar--opened">
-    <div id="van-dropdown-menu-0"
-         role="button"
-         tabindex="0"
-         class="van-dropdown-menu__item van-haptics-feedback"
+    <div
+      id="van-dropdown-menu-0"
+      role="button"
+      tabindex="0"
+      class="van-dropdown-menu__item van-haptics-feedback"
     >
       <span class="van-dropdown-menu__title">
         <div class="van-ellipsis">
@@ -766,10 +855,11 @@ exports[`show dropdown item 2`] = `
         </div>
       </span>
     </div>
-    <div id="van-dropdown-menu-1"
-         role="button"
-         tabindex="0"
-         class="van-dropdown-menu__item van-haptics-feedback"
+    <div
+      id="van-dropdown-menu-1"
+      role="button"
+      tabindex="0"
+      class="van-dropdown-menu__item van-haptics-feedback"
     >
       <span class="van-dropdown-menu__title van-dropdown-menu__title--down van-dropdown-menu__title--active">
         <div class="van-ellipsis">
@@ -778,35 +868,41 @@ exports[`show dropdown item 2`] = `
       </span>
     </div>
   </div>
-  <div style="top: 100px;"
-       class="van-dropdown-item van-dropdown-item--down"
+  <div
+    style="top: 0px;"
+    class="van-dropdown-item van-dropdown-item--down"
   >
-    <transition-stub name="van-fade"
-                     appear="true"
-                     persisted="false"
-                     css="true"
-                     role="button"
-                     tabindex="0"
+    <transition-stub
+      name="van-fade"
+      appear="true"
+      persisted="false"
+      css="true"
+      role="button"
+      tabindex="0"
     >
-      <div style="z-index: 2001; position: absolute; animation-duration: 0s; display: none;"
-           class="van-overlay"
+      <div
+        style="z-index: 2001; position: absolute; animation-duration: 0s; display: none;"
+        class="van-overlay"
       >
       </div>
     </transition-stub>
-    <transition-stub name="van-popup-slide-top"
-                     appear="false"
-                     persisted="false"
-                     css="true"
+    <transition-stub
+      name="van-popup-slide-top"
+      appear="false"
+      persisted="false"
+      css="true"
     >
-      <div style="z-index: 2001; transition-duration: 0s; display: none;"
-           role="menu"
-           tabindex="0"
-           class="van-popup van-popup--top van-dropdown-item__content"
-           aria-labelledby="van-dropdown-menu-0"
+      <div
+        style="z-index: 2001; transition-duration: 0s; display: none;"
+        role="menu"
+        tabindex="0"
+        class="van-popup van-popup--top van-dropdown-item__content"
+        aria-labelledby="van-dropdown-menu-0"
       >
-        <div class="van-cell van-cell--clickable van-dropdown-item__option van-dropdown-item__option--active"
-             role="menuitem"
-             tabindex="0"
+        <div
+          class="van-cell van-cell--clickable van-dropdown-item__option van-dropdown-item__option--active"
+          role="menuitem"
+          tabindex="0"
         >
           <div class="van-cell__title">
             <span>
@@ -818,9 +914,10 @@ exports[`show dropdown item 2`] = `
             </i>
           </div>
         </div>
-        <div class="van-cell van-cell--clickable van-dropdown-item__option"
-             role="menuitem"
-             tabindex="-1"
+        <div
+          class="van-cell van-cell--clickable van-dropdown-item__option"
+          role="menuitem"
+          tabindex="-1"
         >
           <div class="van-cell__title">
             <span>
@@ -833,35 +930,41 @@ exports[`show dropdown item 2`] = `
       </div>
     </transition-stub>
   </div>
-  <div style="top: 100px;"
-       class="van-dropdown-item van-dropdown-item--down"
+  <div
+    style="top: 0px;"
+    class="van-dropdown-item van-dropdown-item--down"
   >
-    <transition-stub name="van-fade"
-                     appear="true"
-                     persisted="false"
-                     css="true"
-                     role="button"
-                     tabindex="0"
+    <transition-stub
+      name="van-fade"
+      appear="true"
+      persisted="false"
+      css="true"
+      role="button"
+      tabindex="0"
     >
-      <div style="z-index: 2002; position: absolute; animation-duration: 0.2s;"
-           class="van-overlay"
+      <div
+        style="z-index: 2002; position: absolute; animation-duration: 0.2s;"
+        class="van-overlay"
       >
       </div>
     </transition-stub>
-    <transition-stub name="van-popup-slide-top"
-                     appear="false"
-                     persisted="false"
-                     css="true"
+    <transition-stub
+      name="van-popup-slide-top"
+      appear="false"
+      persisted="false"
+      css="true"
     >
-      <div style="z-index: 2002; transition-duration: 0.2s;"
-           role="menu"
-           tabindex="0"
-           class="van-popup van-popup--top van-dropdown-item__content"
-           aria-labelledby="van-dropdown-menu-1"
+      <div
+        style="z-index: 2002; transition-duration: 0.2s;"
+        role="menu"
+        tabindex="0"
+        class="van-popup van-popup--top van-dropdown-item__content"
+        aria-labelledby="van-dropdown-menu-1"
       >
-        <div class="van-cell van-cell--clickable van-dropdown-item__option van-dropdown-item__option--active"
-             role="menuitem"
-             tabindex="0"
+        <div
+          class="van-cell van-cell--clickable van-dropdown-item__option van-dropdown-item__option--active"
+          role="menuitem"
+          tabindex="0"
         >
           <div class="van-cell__title">
             <span>
@@ -873,9 +976,10 @@ exports[`show dropdown item 2`] = `
             </i>
           </div>
         </div>
-        <div class="van-cell van-cell--clickable van-dropdown-item__option"
-             role="menuitem"
-             tabindex="-1"
+        <div
+          class="van-cell van-cell--clickable van-dropdown-item__option"
+          role="menuitem"
+          tabindex="-1"
         >
           <div class="van-cell__title">
             <span>
@@ -894,10 +998,11 @@ exports[`show dropdown item 2`] = `
 exports[`show dropdown item 3`] = `
 <div class="van-dropdown-menu">
   <div class="van-dropdown-menu__bar van-dropdown-menu__bar--opened">
-    <div id="van-dropdown-menu-0"
-         role="button"
-         tabindex="0"
-         class="van-dropdown-menu__item van-haptics-feedback"
+    <div
+      id="van-dropdown-menu-0"
+      role="button"
+      tabindex="0"
+      class="van-dropdown-menu__item van-haptics-feedback"
     >
       <span class="van-dropdown-menu__title">
         <div class="van-ellipsis">
@@ -905,10 +1010,11 @@ exports[`show dropdown item 3`] = `
         </div>
       </span>
     </div>
-    <div id="van-dropdown-menu-1"
-         role="button"
-         tabindex="0"
-         class="van-dropdown-menu__item van-haptics-feedback"
+    <div
+      id="van-dropdown-menu-1"
+      role="button"
+      tabindex="0"
+      class="van-dropdown-menu__item van-haptics-feedback"
     >
       <span class="van-dropdown-menu__title">
         <div class="van-ellipsis">
@@ -917,35 +1023,41 @@ exports[`show dropdown item 3`] = `
       </span>
     </div>
   </div>
-  <div style="top: 100px;"
-       class="van-dropdown-item van-dropdown-item--down"
+  <div
+    style="top: 0px;"
+    class="van-dropdown-item van-dropdown-item--down"
   >
-    <transition-stub name="van-fade"
-                     appear="true"
-                     persisted="false"
-                     css="true"
-                     role="button"
-                     tabindex="0"
+    <transition-stub
+      name="van-fade"
+      appear="true"
+      persisted="false"
+      css="true"
+      role="button"
+      tabindex="0"
     >
-      <div style="z-index: 2001; position: absolute; animation-duration: 0s; display: none;"
-           class="van-overlay"
+      <div
+        style="z-index: 2001; position: absolute; animation-duration: 0s; display: none;"
+        class="van-overlay"
       >
       </div>
     </transition-stub>
-    <transition-stub name="van-popup-slide-top"
-                     appear="false"
-                     persisted="false"
-                     css="true"
+    <transition-stub
+      name="van-popup-slide-top"
+      appear="false"
+      persisted="false"
+      css="true"
     >
-      <div style="z-index: 2001; transition-duration: 0s; display: none;"
-           role="menu"
-           tabindex="0"
-           class="van-popup van-popup--top van-dropdown-item__content"
-           aria-labelledby="van-dropdown-menu-0"
+      <div
+        style="z-index: 2001; transition-duration: 0s; display: none;"
+        role="menu"
+        tabindex="0"
+        class="van-popup van-popup--top van-dropdown-item__content"
+        aria-labelledby="van-dropdown-menu-0"
       >
-        <div class="van-cell van-cell--clickable van-dropdown-item__option van-dropdown-item__option--active"
-             role="menuitem"
-             tabindex="0"
+        <div
+          class="van-cell van-cell--clickable van-dropdown-item__option van-dropdown-item__option--active"
+          role="menuitem"
+          tabindex="0"
         >
           <div class="van-cell__title">
             <span>
@@ -957,9 +1069,10 @@ exports[`show dropdown item 3`] = `
             </i>
           </div>
         </div>
-        <div class="van-cell van-cell--clickable van-dropdown-item__option"
-             role="menuitem"
-             tabindex="-1"
+        <div
+          class="van-cell van-cell--clickable van-dropdown-item__option"
+          role="menuitem"
+          tabindex="-1"
         >
           <div class="van-cell__title">
             <span>
@@ -972,35 +1085,41 @@ exports[`show dropdown item 3`] = `
       </div>
     </transition-stub>
   </div>
-  <div style="top: 100px;"
-       class="van-dropdown-item van-dropdown-item--down"
+  <div
+    style="top: 0px;"
+    class="van-dropdown-item van-dropdown-item--down"
   >
-    <transition-stub name="van-fade"
-                     appear="true"
-                     persisted="false"
-                     css="true"
-                     role="button"
-                     tabindex="0"
+    <transition-stub
+      name="van-fade"
+      appear="true"
+      persisted="false"
+      css="true"
+      role="button"
+      tabindex="0"
     >
-      <div style="z-index: 2002; position: absolute; animation-duration: 0.2s; display: none;"
-           class="van-overlay"
+      <div
+        style="z-index: 2002; position: absolute; animation-duration: 0.2s; display: none;"
+        class="van-overlay"
       >
       </div>
     </transition-stub>
-    <transition-stub name="van-popup-slide-top"
-                     appear="false"
-                     persisted="false"
-                     css="true"
+    <transition-stub
+      name="van-popup-slide-top"
+      appear="false"
+      persisted="false"
+      css="true"
     >
-      <div style="z-index: 2002; transition-duration: 0.2s; display: none;"
-           role="menu"
-           tabindex="0"
-           class="van-popup van-popup--top van-dropdown-item__content"
-           aria-labelledby="van-dropdown-menu-1"
+      <div
+        style="z-index: 2002; transition-duration: 0.2s; display: none;"
+        role="menu"
+        tabindex="0"
+        class="van-popup van-popup--top van-dropdown-item__content"
+        aria-labelledby="van-dropdown-menu-1"
       >
-        <div class="van-cell van-cell--clickable van-dropdown-item__option van-dropdown-item__option--active"
-             role="menuitem"
-             tabindex="0"
+        <div
+          class="van-cell van-cell--clickable van-dropdown-item__option van-dropdown-item__option--active"
+          role="menuitem"
+          tabindex="0"
         >
           <div class="van-cell__title">
             <span>
@@ -1012,9 +1131,10 @@ exports[`show dropdown item 3`] = `
             </i>
           </div>
         </div>
-        <div class="van-cell van-cell--clickable van-dropdown-item__option"
-             role="menuitem"
-             tabindex="-1"
+        <div
+          class="van-cell van-cell--clickable van-dropdown-item__option"
+          role="menuitem"
+          tabindex="-1"
         >
           <div class="van-cell__title">
             <span>
@@ -1033,10 +1153,11 @@ exports[`show dropdown item 3`] = `
 exports[`title prop 1`] = `
 <div class="van-dropdown-menu">
   <div class="van-dropdown-menu__bar">
-    <div id="van-dropdown-menu-0"
-         role="button"
-         tabindex="0"
-         class="van-dropdown-menu__item van-haptics-feedback"
+    <div
+      id="van-dropdown-menu-0"
+      role="button"
+      tabindex="0"
+      class="van-dropdown-menu__item van-haptics-feedback"
     >
       <span class="van-dropdown-menu__title">
         <div class="van-ellipsis">
@@ -1044,10 +1165,11 @@ exports[`title prop 1`] = `
         </div>
       </span>
     </div>
-    <div id="van-dropdown-menu-1"
-         role="button"
-         tabindex="0"
-         class="van-dropdown-menu__item van-haptics-feedback"
+    <div
+      id="van-dropdown-menu-1"
+      role="button"
+      tabindex="0"
+      class="van-dropdown-menu__item van-haptics-feedback"
     >
       <span class="van-dropdown-menu__title">
         <div class="van-ellipsis">
@@ -1056,39 +1178,45 @@ exports[`title prop 1`] = `
       </span>
     </div>
   </div>
-  <div style="top: 0px; display: none;"
-       class="van-dropdown-item van-dropdown-item--down"
+  <div
+    style="top: 0px; display: none;"
+    class="van-dropdown-item van-dropdown-item--down"
   >
-    <transition-stub name="van-fade"
-                     appear="true"
-                     persisted="false"
-                     css="true"
-                     role="button"
-                     tabindex="0"
+    <transition-stub
+      name="van-fade"
+      appear="true"
+      persisted="false"
+      css="true"
+      role="button"
+      tabindex="0"
     >
     </transition-stub>
-    <transition-stub name="van-popup-slide-top"
-                     appear="false"
-                     persisted="false"
-                     css="true"
+    <transition-stub
+      name="van-popup-slide-top"
+      appear="false"
+      persisted="false"
+      css="true"
     >
     </transition-stub>
   </div>
-  <div style="top: 0px; display: none;"
-       class="van-dropdown-item van-dropdown-item--down"
+  <div
+    style="top: 0px; display: none;"
+    class="van-dropdown-item van-dropdown-item--down"
   >
-    <transition-stub name="van-fade"
-                     appear="true"
-                     persisted="false"
-                     css="true"
-                     role="button"
-                     tabindex="0"
+    <transition-stub
+      name="van-fade"
+      appear="true"
+      persisted="false"
+      css="true"
+      role="button"
+      tabindex="0"
     >
     </transition-stub>
-    <transition-stub name="van-popup-slide-top"
-                     appear="false"
-                     persisted="false"
-                     css="true"
+    <transition-stub
+      name="van-popup-slide-top"
+      appear="false"
+      persisted="false"
+      css="true"
     >
     </transition-stub>
   </div>
@@ -1098,10 +1226,11 @@ exports[`title prop 1`] = `
 exports[`title slot 1`] = `
 <div class="van-dropdown-menu">
   <div class="van-dropdown-menu__bar">
-    <div id="van-dropdown-menu-0"
-         role="button"
-         tabindex="0"
-         class="van-dropdown-menu__item van-haptics-feedback"
+    <div
+      id="van-dropdown-menu-0"
+      role="button"
+      tabindex="0"
+      class="van-dropdown-menu__item van-haptics-feedback"
     >
       <span class="van-dropdown-menu__title">
         <div class="van-ellipsis">
@@ -1110,21 +1239,24 @@ exports[`title slot 1`] = `
       </span>
     </div>
   </div>
-  <div style="top: 0px; display: none;"
-       class="van-dropdown-item van-dropdown-item--down"
+  <div
+    style="top: 0px; display: none;"
+    class="van-dropdown-item van-dropdown-item--down"
   >
-    <transition-stub name="van-fade"
-                     appear="true"
-                     persisted="false"
-                     css="true"
-                     role="button"
-                     tabindex="0"
+    <transition-stub
+      name="van-fade"
+      appear="true"
+      persisted="false"
+      css="true"
+      role="button"
+      tabindex="0"
     >
     </transition-stub>
-    <transition-stub name="van-popup-slide-top"
-                     appear="false"
-                     persisted="false"
-                     css="true"
+    <transition-stub
+      name="van-popup-slide-top"
+      appear="false"
+      persisted="false"
+      css="true"
     >
     </transition-stub>
   </div>

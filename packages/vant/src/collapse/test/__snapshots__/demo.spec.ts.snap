@@ -1,13 +1,14 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`should render demo and match snapshot 1`] = `
 <div>
   <div class="van-collapse van-hairline--top-bottom">
     <div class="van-collapse-item">
-      <div class="van-cell van-cell--clickable van-collapse-item__title van-collapse-item__title--expanded"
-           role="button"
-           tabindex="0"
-           aria-expanded="true"
+      <div
+        class="van-cell van-cell--clickable van-collapse-item__title van-collapse-item__title--expanded"
+        role="button"
+        tabindex="0"
+        aria-expanded="true"
       >
         <div class="van-cell__title">
           <span>
@@ -24,10 +25,11 @@ exports[`should render demo and match snapshot 1`] = `
       </div>
     </div>
     <div class="van-collapse-item van-collapse-item--border">
-      <div class="van-cell van-cell--clickable van-collapse-item__title"
-           role="button"
-           tabindex="0"
-           aria-expanded="false"
+      <div
+        class="van-cell van-cell--clickable van-collapse-item__title"
+        role="button"
+        tabindex="0"
+        aria-expanded="false"
       >
         <div class="van-cell__title">
           <span>
@@ -39,10 +41,11 @@ exports[`should render demo and match snapshot 1`] = `
       </div>
     </div>
     <div class="van-collapse-item van-collapse-item--border">
-      <div class="van-cell van-cell--clickable van-collapse-item__title"
-           role="button"
-           tabindex="0"
-           aria-expanded="false"
+      <div
+        class="van-cell van-cell--clickable van-collapse-item__title"
+        role="button"
+        tabindex="0"
+        aria-expanded="false"
       >
         <div class="van-cell__title">
           <span>
@@ -58,10 +61,11 @@ exports[`should render demo and match snapshot 1`] = `
 <div>
   <div class="van-collapse van-hairline--top-bottom">
     <div class="van-collapse-item">
-      <div class="van-cell van-cell--clickable van-collapse-item__title van-collapse-item__title--expanded"
-           role="button"
-           tabindex="0"
-           aria-expanded="true"
+      <div
+        class="van-cell van-cell--clickable van-collapse-item__title van-collapse-item__title--expanded"
+        role="button"
+        tabindex="0"
+        aria-expanded="true"
       >
         <div class="van-cell__title">
           <span>
@@ -78,10 +82,11 @@ exports[`should render demo and match snapshot 1`] = `
       </div>
     </div>
     <div class="van-collapse-item van-collapse-item--border">
-      <div class="van-cell van-cell--clickable van-collapse-item__title"
-           role="button"
-           tabindex="0"
-           aria-expanded="false"
+      <div
+        class="van-cell van-cell--clickable van-collapse-item__title"
+        role="button"
+        tabindex="0"
+        aria-expanded="false"
       >
         <div class="van-cell__title">
           <span>
@@ -93,10 +98,11 @@ exports[`should render demo and match snapshot 1`] = `
       </div>
     </div>
     <div class="van-collapse-item van-collapse-item--border">
-      <div class="van-cell van-cell--clickable van-collapse-item__title"
-           role="button"
-           tabindex="0"
-           aria-expanded="false"
+      <div
+        class="van-cell van-cell--clickable van-collapse-item__title"
+        role="button"
+        tabindex="0"
+        aria-expanded="false"
       >
         <div class="van-cell__title">
           <span>
@@ -112,10 +118,11 @@ exports[`should render demo and match snapshot 1`] = `
 <div>
   <div class="van-collapse van-hairline--top-bottom">
     <div class="van-collapse-item">
-      <div class="van-cell van-cell--clickable van-collapse-item__title"
-           role="button"
-           tabindex="0"
-           aria-expanded="false"
+      <div
+        class="van-cell van-cell--clickable van-collapse-item__title"
+        role="button"
+        tabindex="0"
+        aria-expanded="false"
       >
         <div class="van-cell__title">
           <span>
@@ -127,9 +134,10 @@ exports[`should render demo and match snapshot 1`] = `
       </div>
     </div>
     <div class="van-collapse-item van-collapse-item--border">
-      <div class="van-cell van-collapse-item__title van-collapse-item__title--disabled"
-           role="button"
-           aria-expanded="false"
+      <div
+        class="van-cell van-collapse-item__title van-collapse-item__title--disabled"
+        role="button"
+        aria-expanded="false"
       >
         <div class="van-cell__title">
           <span>
@@ -141,9 +149,10 @@ exports[`should render demo and match snapshot 1`] = `
       </div>
     </div>
     <div class="van-collapse-item van-collapse-item--border">
-      <div class="van-cell van-collapse-item__title van-collapse-item__title--disabled"
-           role="button"
-           aria-expanded="false"
+      <div
+        class="van-cell van-collapse-item__title van-collapse-item__title--disabled"
+        role="button"
+        aria-expanded="false"
       >
         <div class="van-cell__title">
           <span>
@@ -159,10 +168,11 @@ exports[`should render demo and match snapshot 1`] = `
 <div>
   <div class="van-collapse van-hairline--top-bottom">
     <div class="van-collapse-item">
-      <div class="van-cell van-cell--clickable van-collapse-item__title"
-           role="button"
-           tabindex="0"
-           aria-expanded="false"
+      <div
+        class="van-cell van-cell--clickable van-collapse-item__title"
+        role="button"
+        tabindex="0"
+        aria-expanded="false"
       >
         <div class="van-cell__title">
           Title1
@@ -174,10 +184,11 @@ exports[`should render demo and match snapshot 1`] = `
       </div>
     </div>
     <div class="van-collapse-item van-collapse-item--border">
-      <div class="van-cell van-cell--clickable van-collapse-item__title"
-           role="button"
-           tabindex="0"
-           aria-expanded="false"
+      <div
+        class="van-cell van-cell--clickable van-collapse-item__title"
+        role="button"
+        tabindex="0"
+        aria-expanded="false"
       >
         <i class="van-badge__wrapper van-icon van-icon-shop-o van-cell__left-icon">
         </i>
@@ -200,10 +211,11 @@ exports[`should render demo and match snapshot 1`] = `
 <div>
   <div class="van-collapse van-hairline--top-bottom">
     <div class="van-collapse-item">
-      <div class="van-cell van-cell--clickable van-collapse-item__title van-collapse-item__title--expanded"
-           role="button"
-           tabindex="0"
-           aria-expanded="true"
+      <div
+        class="van-cell van-cell--clickable van-collapse-item__title van-collapse-item__title--expanded"
+        role="button"
+        tabindex="0"
+        aria-expanded="true"
       >
         <div class="van-cell__title">
           <span>
@@ -220,10 +232,11 @@ exports[`should render demo and match snapshot 1`] = `
       </div>
     </div>
     <div class="van-collapse-item van-collapse-item--border">
-      <div class="van-cell van-cell--clickable van-collapse-item__title"
-           role="button"
-           tabindex="0"
-           aria-expanded="false"
+      <div
+        class="van-cell van-cell--clickable van-collapse-item__title"
+        role="button"
+        tabindex="0"
+        aria-expanded="false"
       >
         <div class="van-cell__title">
           <span>
@@ -235,10 +248,11 @@ exports[`should render demo and match snapshot 1`] = `
       </div>
     </div>
     <div class="van-collapse-item van-collapse-item--border">
-      <div class="van-cell van-cell--clickable van-collapse-item__title"
-           role="button"
-           tabindex="0"
-           aria-expanded="false"
+      <div
+        class="van-cell van-cell--clickable van-collapse-item__title"
+        role="button"
+        tabindex="0"
+        aria-expanded="false"
       >
         <div class="van-cell__title">
           <span>
@@ -251,8 +265,9 @@ exports[`should render demo and match snapshot 1`] = `
     </div>
   </div>
   <div class="demo-collapse-buttons">
-    <button type="button"
-            class="van-button van-button--primary van-button--normal"
+    <button
+      type="button"
+      class="van-button van-button--primary van-button--normal"
     >
       <div class="van-button__content">
         <span class="van-button__text">
@@ -260,8 +275,9 @@ exports[`should render demo and match snapshot 1`] = `
         </span>
       </div>
     </button>
-    <button type="button"
-            class="van-button van-button--primary van-button--normal"
+    <button
+      type="button"
+      class="van-button van-button--primary van-button--normal"
     >
       <div class="van-button__content">
         <span class="van-button__text">

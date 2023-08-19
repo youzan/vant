@@ -1,18 +1,20 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`should render extra key correctly when using extra-key prop 1`] = `
-<div role="button"
-     tabindex="0"
-     class="van-key"
+<div
+  role="button"
+  tabindex="0"
+  class="van-key"
 >
   foo
 </div>
 `;
 
 exports[`should render extra-key slot correctly 1`] = `
-<div role="button"
-     tabindex="0"
-     class="van-key"
+<div
+  role="button"
+  tabindex="0"
+  class="van-key"
 >
   Custom Extra Key
 </div>
@@ -23,8 +25,9 @@ exports[`should render title and close button correctly 1`] = `
   <h2 class="van-number-keyboard__title">
     Title
   </h2>
-  <button type="button"
-          class="van-number-keyboard__close van-haptics-feedback"
+  <button
+    type="button"
+    class="van-number-keyboard__close van-haptics-feedback"
   >
     Close
   </button>

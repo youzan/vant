@@ -1,80 +1,88 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`should render demo and match snapshot 1`] = `
 <div class="van-tabs van-tabs--line">
   <div class="van-tabs__wrap">
-    <div role="tablist"
-         class="van-tabs__nav van-tabs__nav--line van-tabs__nav--complete"
-         aria-orientation="horizontal"
+    <div
+      role="tablist"
+      class="van-tabs__nav van-tabs__nav--line van-tabs__nav--complete"
+      aria-orientation="horizontal"
     >
-      <div id="van-tabs-0"
-           role="tab"
-           class="van-tab van-tab--line van-tab--grow van-tab--active"
-           tabindex="0"
-           aria-selected="true"
-           aria-controls="van-tab"
+      <div
+        id="van-tabs-0"
+        role="tab"
+        class="van-tab van-tab--line van-tab--grow van-tab--active"
+        tabindex="0"
+        aria-selected="true"
+        aria-controls="van-tab"
       >
         <span class="van-tab__text">
           Basic Usage
         </span>
       </div>
-      <div id="van-tabs-1"
-           role="tab"
-           class="van-tab van-tab--line van-tab--grow"
-           tabindex="-1"
-           aria-selected="false"
-           aria-controls="van-tab"
+      <div
+        id="van-tabs-1"
+        role="tab"
+        class="van-tab van-tab--line van-tab--grow"
+        tabindex="-1"
+        aria-selected="false"
+        aria-controls="van-tab"
       >
         <span class="van-tab__text">
           Custom Position
         </span>
       </div>
-      <div id="van-tabs-2"
-           role="tab"
-           class="van-tab van-tab--line van-tab--grow"
-           tabindex="-1"
-           aria-selected="false"
-           aria-controls="van-tab"
+      <div
+        id="van-tabs-2"
+        role="tab"
+        class="van-tab van-tab--line van-tab--grow"
+        tabindex="-1"
+        aria-selected="false"
+        aria-controls="van-tab"
       >
         <span class="van-tab__text">
           Custom Content
         </span>
       </div>
-      <div id="van-tabs-3"
-           role="tab"
-           class="van-tab van-tab--line van-tab--grow"
-           tabindex="-1"
-           aria-selected="false"
-           aria-controls="van-tab"
+      <div
+        id="van-tabs-3"
+        role="tab"
+        class="van-tab van-tab--line van-tab--grow"
+        tabindex="-1"
+        aria-selected="false"
+        aria-controls="van-tab"
       >
         <span class="van-tab__text">
           Set Scroll Target
         </span>
       </div>
-      <div id="van-tabs-4"
-           role="tab"
-           class="van-tab van-tab--line van-tab--grow"
-           tabindex="-1"
-           aria-selected="false"
-           aria-controls="van-tab"
+      <div
+        id="van-tabs-4"
+        role="tab"
+        class="van-tab van-tab--line van-tab--grow"
+        tabindex="-1"
+        aria-selected="false"
+        aria-controls="van-tab"
       >
         <span class="van-tab__text">
           Immediate Scroll
         </span>
       </div>
-      <div class="van-tabs__line"
-           style="transform: translateX(50px) translateX(-50%);"
+      <div
+        class="van-tabs__line"
+        style="transform: translateX(50px) translateX(-50%);"
       >
       </div>
     </div>
   </div>
   <div class="van-tabs__content">
-    <div id="van-tab"
-         role="tabpanel"
-         class="van-tab__panel"
-         tabindex="0"
-         aria-labelledby="van-tabs-0"
-         style
+    <div
+      id="van-tab"
+      role="tabpanel"
+      class="van-tab__panel"
+      tabindex="0"
+      aria-labelledby="van-tabs-0"
+      style
     >
       <div class="van-cell">
         <div class="van-cell__title">
@@ -429,36 +437,40 @@ exports[`should render demo and match snapshot 1`] = `
       <div class="van-back-top__placeholder">
       </div>
     </div>
-    <div id="van-tab"
-         role="tabpanel"
-         class="van-tab__panel"
-         tabindex="-1"
-         aria-labelledby="van-tabs-1"
-         style="display: none;"
+    <div
+      id="van-tab"
+      role="tabpanel"
+      class="van-tab__panel"
+      tabindex="-1"
+      aria-labelledby="van-tabs-1"
+      style="display: none;"
     >
     </div>
-    <div id="van-tab"
-         role="tabpanel"
-         class="van-tab__panel"
-         tabindex="-1"
-         aria-labelledby="van-tabs-2"
-         style="display: none;"
+    <div
+      id="van-tab"
+      role="tabpanel"
+      class="van-tab__panel"
+      tabindex="-1"
+      aria-labelledby="van-tabs-2"
+      style="display: none;"
     >
     </div>
-    <div id="van-tab"
-         role="tabpanel"
-         class="van-tab__panel"
-         tabindex="-1"
-         aria-labelledby="van-tabs-3"
-         style="display: none;"
+    <div
+      id="van-tab"
+      role="tabpanel"
+      class="van-tab__panel"
+      tabindex="-1"
+      aria-labelledby="van-tabs-3"
+      style="display: none;"
     >
     </div>
-    <div id="van-tab"
-         role="tabpanel"
-         class="van-tab__panel"
-         tabindex="-1"
-         aria-labelledby="van-tabs-4"
-         style="display: none;"
+    <div
+      id="van-tab"
+      role="tabpanel"
+      class="van-tab__panel"
+      tabindex="-1"
+      aria-labelledby="van-tabs-4"
+      style="display: none;"
     >
     </div>
   </div>

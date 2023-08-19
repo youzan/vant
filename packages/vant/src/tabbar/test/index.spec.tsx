@@ -154,7 +154,7 @@ test('should watch model-value and update active tab', async () => {
 });
 
 test('should match active tab by name when using name prop', () => {
-  const onChange = jest.fn();
+  const onChange = vi.fn();
   const wrapper = mount({
     setup() {
       const active = ref('a');

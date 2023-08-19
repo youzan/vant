@@ -1,14 +1,18 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`should change clear icon when using clear-icon prop 1`] = `
-<i class="van-badge__wrapper van-icon van-icon-cross van-field__clear">
-</i>
+"<i class=\\"van-badge__wrapper van-icon van-icon-cross van-field__clear\\">
+  <!---->
+  <!---->
+  <!---->
+</i>"
 `;
 
 exports[`should render colon when using colon prop 1`] = `
 <div class="van-cell__title van-field__label">
-  <label id="van-field-label"
-         for="van-field-input"
+  <label
+    id="van-field-label"
+    for="van-field-input"
   >
     foo:
   </label>
@@ -25,9 +29,10 @@ exports[`should render extra slot correctly 1`] = `
 <div class="van-cell van-field">
   <div class="van-cell__value van-field__value">
     <div class="van-field__body">
-      <input type="text"
-             id="van-field-input"
-             class="van-field__control"
+      <input
+        type="text"
+        id="van-field-input"
+        class="van-field__control"
       >
     </div>
   </div>
@@ -43,8 +48,9 @@ exports[`should render input slot correctly 1`] = `
 
 exports[`should render label correctly when dynamically set empty label 1`] = `
 <div class="van-cell__title van-field__label">
-  <label id="van-field-label"
-         for="van-field-input"
+  <label
+    id="van-field-label"
+    for="van-field-input"
   >
     abc
   </label>
@@ -64,18 +70,20 @@ exports[`should render left icon inside label when label-align is top 1`] = `
       <i class="van-badge__wrapper van-icon van-icon-success">
       </i>
     </div>
-    <label id="van-field-label"
-           for="van-field-input"
+    <label
+      id="van-field-label"
+      for="van-field-input"
     >
       Label
     </label>
   </div>
   <div class="van-cell__value van-field__value">
     <div class="van-field__body">
-      <input type="text"
-             id="van-field-input"
-             class="van-field__control"
-             aria-labelledby="van-field-label"
+      <input
+        type="text"
+        id="van-field-input"
+        class="van-field__control"
+        aria-labelledby="van-field-label"
       >
     </div>
   </div>
@@ -86,9 +94,10 @@ exports[`should render textarea when type is textarea 1`] = `
 <div class="van-cell van-field">
   <div class="van-cell__value van-field__value">
     <div class="van-field__body">
-      <textarea id="van-field-input"
-                class="van-field__control"
-                style="height: auto;"
+      <textarea
+        id="van-field-input"
+        class="van-field__control"
+        style="height: auto;"
       >
       </textarea>
     </div>
@@ -109,9 +118,10 @@ exports[`should render word limit correctly when modelValue is null 1`] = `
 <div class="van-cell van-field">
   <div class="van-cell__value van-field__value">
     <div class="van-field__body">
-      <input type="text"
-             id="van-field-input"
-             class="van-field__control"
+      <input
+        type="text"
+        id="van-field-input"
+        class="van-field__control"
       >
     </div>
     <div class="van-field__word-limit">
@@ -128,9 +138,10 @@ exports[`should render word limit correctly when modelValue is undefined 1`] = `
 <div class="van-cell van-field">
   <div class="van-cell__value van-field__value">
     <div class="van-field__body">
-      <input type="text"
-             id="van-field-input"
-             class="van-field__control"
+      <input
+        type="text"
+        id="van-field-input"
+        class="van-field__control"
       >
     </div>
     <div class="van-field__word-limit">

@@ -1,23 +1,27 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`should render demo and match snapshot 1`] = `
 <!--[-->
 <div>
   <!--[-->
-  <div class="van-circle"
-       style
+  <div
+    class="van-circle"
+    style
   >
-    <svg viewbox="0 0 1040 1040"
-         style
+    <svg
+      viewbox="0 0 1040 1040"
+      style
     >
-      <path class="van-circle__layer"
-            style="fill:none;stroke-width:40px;"
-            d="M 520 520 m 0, -500 a 500, 500 0 1, 1 0, 1000 a 500, 500 0 1, 1 0, -1000"
+      <path
+        class="van-circle__layer"
+        style="fill:none;stroke-width:40px;"
+        d="M 520 520 m 0, -500 a 500, 500 0 1, 1 0, 1000 a 500, 500 0 1, 1 0, -1000"
       >
       </path>
-      <path d="M 520 520 m 0, -500 a 500, 500 0 1, 1 0, 1000 a 500, 500 0 1, 1 0, -1000"
-            style="stroke-width:41px;stroke-dasharray:2198px 3140px;"
-            class="van-circle__hover"
+      <path
+        d="M 520 520 m 0, -500 a 500, 500 0 1, 1 0, 1000 a 500, 500 0 1, 1 0, -1000"
+        style="stroke-width:41px;stroke-dasharray:2198px 3140px;"
+        class="van-circle__hover"
       >
       </path>
     </svg>
@@ -28,20 +32,24 @@ exports[`should render demo and match snapshot 1`] = `
 </div>
 <div>
   <!--[-->
-  <div class="van-circle"
-       style
+  <div
+    class="van-circle"
+    style
   >
-    <svg viewbox="0 0 1060 1060"
-         style
+    <svg
+      viewbox="0 0 1060 1060"
+      style
     >
-      <path class="van-circle__layer"
-            style="fill:none;stroke-width:60px;"
-            d="M 530 530 m 0, -500 a 500, 500 0 1, 1 0, 1000 a 500, 500 0 1, 1 0, -1000"
+      <path
+        class="van-circle__layer"
+        style="fill:none;stroke-width:60px;"
+        d="M 530 530 m 0, -500 a 500, 500 0 1, 1 0, 1000 a 500, 500 0 1, 1 0, -1000"
       >
       </path>
-      <path d="M 530 530 m 0, -500 a 500, 500 0 1, 1 0, 1000 a 500, 500 0 1, 1 0, -1000"
-            style="stroke-width:61px;stroke-dasharray:2198px 3140px;"
-            class="van-circle__hover"
+      <path
+        d="M 530 530 m 0, -500 a 500, 500 0 1, 1 0, 1000 a 500, 500 0 1, 1 0, -1000"
+        style="stroke-width:61px;stroke-dasharray:2198px 3140px;"
+        class="van-circle__hover"
       >
       </path>
     </svg>
@@ -49,21 +57,25 @@ exports[`should render demo and match snapshot 1`] = `
       Custom Width
     </div>
   </div>
-  <div class="van-circle"
-       style
+  <div
+    class="van-circle"
+    style
   >
-    <svg viewbox="0 0 1040 1040"
-         style
+    <svg
+      viewbox="0 0 1040 1040"
+      style
     >
-      <path class="van-circle__layer"
-            style="fill:none;stroke:#ebedf0;stroke-width:40px;"
-            d="M 520 520 m 0, -500 a 500, 500 0 1, 1 0, 1000 a 500, 500 0 1, 1 0, -1000"
+      <path
+        class="van-circle__layer"
+        style="fill:none;stroke:#ebedf0;stroke-width:40px;"
+        d="M 520 520 m 0, -500 a 500, 500 0 1, 1 0, 1000 a 500, 500 0 1, 1 0, -1000"
       >
       </path>
-      <path d="M 520 520 m 0, -500 a 500, 500 0 1, 1 0, 1000 a 500, 500 0 1, 1 0, -1000"
-            style="stroke:#ee0a24;stroke-width:41px;stroke-dasharray:2198px 3140px;"
-            class="van-circle__hover"
-            stroke="#ee0a24"
+      <path
+        d="M 520 520 m 0, -500 a 500, 500 0 1, 1 0, 1000 a 500, 500 0 1, 1 0, -1000"
+        style="stroke:#ee0a24;stroke-width:41px;stroke-dasharray:2198px 3140px;"
+        class="van-circle__hover"
+        stroke="#ee0a24"
       >
       </path>
     </svg>
@@ -71,39 +83,46 @@ exports[`should render demo and match snapshot 1`] = `
       Custom Color
     </div>
   </div>
-  <div class="van-circle"
-       style
+  <div
+    class="van-circle"
+    style
   >
-    <svg viewbox="0 0 1040 1040"
-         style
+    <svg
+      viewbox="0 0 1040 1040"
+      style
     >
       <defs>
-        <linearGradient id="van-circle-3"
-                        x1="100%"
-                        y1="0%"
-                        x2="0%"
-                        y2="0%"
+        <linearGradient
+          id="van-circle-3"
+          x1="100%"
+          y1="0%"
+          x2="0%"
+          y2="0%"
         >
           <!--[-->
-          <stop offset="0%"
-                stop-color="#3fecff"
+          <stop
+            offset="0%"
+            stop-color="#3fecff"
           >
           </stop>
-          <stop offset="100%"
-                stop-color="#6149f6"
+          <stop
+            offset="100%"
+            stop-color="#6149f6"
           >
           </stop>
         </linearGradient>
       </defs>
-      <path class="van-circle__layer"
-            style="fill:none;stroke-width:40px;"
-            d="M 520 520 m 0, -500 a 500, 500 0 1, 1 0, 1000 a 500, 500 0 1, 1 0, -1000"
+      <path
+        class="van-circle__layer"
+        style="fill:none;stroke-width:40px;"
+        d="M 520 520 m 0, -500 a 500, 500 0 1, 1 0, 1000 a 500, 500 0 1, 1 0, -1000"
       >
       </path>
-      <path d="M 520 520 m 0, -500 a 500, 500 0 1, 1 0, 1000 a 500, 500 0 1, 1 0, -1000"
-            style="stroke:url(#van-circle-3);stroke-width:41px;stroke-dasharray:2198px 3140px;"
-            class="van-circle__hover"
-            stroke="url(#van-circle-3)"
+      <path
+        d="M 520 520 m 0, -500 a 500, 500 0 1, 1 0, 1000 a 500, 500 0 1, 1 0, -1000"
+        style="stroke:url(#van-circle-3);stroke-width:41px;stroke-dasharray:2198px 3140px;"
+        class="van-circle__hover"
+        stroke="url(#van-circle-3)"
       >
       </path>
     </svg>
@@ -111,21 +130,25 @@ exports[`should render demo and match snapshot 1`] = `
       Gradient
     </div>
   </div>
-  <div class="van-circle"
-       style="margin-top:15px;"
+  <div
+    class="van-circle"
+    style="margin-top:15px;"
   >
-    <svg viewbox="0 0 1040 1040"
-         style
+    <svg
+      viewbox="0 0 1040 1040"
+      style
     >
-      <path class="van-circle__layer"
-            style="fill:none;stroke-width:40px;"
-            d="M 520 520 m 0, -500 a 500, 500 0 1, 0 0, 1000 a 500, 500 0 1, 0 0, -1000"
+      <path
+        class="van-circle__layer"
+        style="fill:none;stroke-width:40px;"
+        d="M 520 520 m 0, -500 a 500, 500 0 1, 0 0, 1000 a 500, 500 0 1, 0 0, -1000"
       >
       </path>
-      <path d="M 520 520 m 0, -500 a 500, 500 0 1, 0 0, 1000 a 500, 500 0 1, 0 0, -1000"
-            style="stroke:#07c160;stroke-width:41px;stroke-dasharray:2198px 3140px;"
-            class="van-circle__hover"
-            stroke="#07c160"
+      <path
+        d="M 520 520 m 0, -500 a 500, 500 0 1, 0 0, 1000 a 500, 500 0 1, 0 0, -1000"
+        style="stroke:#07c160;stroke-width:41px;stroke-dasharray:2198px 3140px;"
+        class="van-circle__hover"
+        stroke="#07c160"
       >
       </path>
     </svg>
@@ -133,21 +156,25 @@ exports[`should render demo and match snapshot 1`] = `
       Counter Clockwise
     </div>
   </div>
-  <div class="van-circle"
-       style="width:120px;height:120px;margin-top:15px;"
+  <div
+    class="van-circle"
+    style="width:120px;height:120px;margin-top:15px;"
   >
-    <svg viewbox="0 0 1040 1040"
-         style
+    <svg
+      viewbox="0 0 1040 1040"
+      style
     >
-      <path class="van-circle__layer"
-            style="fill:none;stroke-width:40px;"
-            d="M 520 520 m 0, -500 a 500, 500 0 1, 0 0, 1000 a 500, 500 0 1, 0 0, -1000"
+      <path
+        class="van-circle__layer"
+        style="fill:none;stroke-width:40px;"
+        d="M 520 520 m 0, -500 a 500, 500 0 1, 0 0, 1000 a 500, 500 0 1, 0 0, -1000"
       >
       </path>
-      <path d="M 520 520 m 0, -500 a 500, 500 0 1, 0 0, 1000 a 500, 500 0 1, 0 0, -1000"
-            style="stroke:#7232dd;stroke-width:41px;stroke-dasharray:2198px 3140px;"
-            class="van-circle__hover"
-            stroke="#7232dd"
+      <path
+        d="M 520 520 m 0, -500 a 500, 500 0 1, 0 0, 1000 a 500, 500 0 1, 0 0, -1000"
+        style="stroke:#7232dd;stroke-width:41px;stroke-dasharray:2198px 3140px;"
+        class="van-circle__hover"
+        stroke="#7232dd"
       >
       </path>
     </svg>
@@ -157,9 +184,10 @@ exports[`should render demo and match snapshot 1`] = `
   </div>
 </div>
 <div style="margin-top:15px;">
-  <button type="button"
-          class="van-button van-button--primary van-button--small"
-          style
+  <button
+    type="button"
+    class="van-button van-button--primary van-button--small"
+    style
   >
     <div class="van-button__content">
       <span class="van-button__text">
@@ -167,9 +195,10 @@ exports[`should render demo and match snapshot 1`] = `
       </span>
     </div>
   </button>
-  <button type="button"
-          class="van-button van-button--danger van-button--small"
-          style
+  <button
+    type="button"
+    class="van-button van-button--danger van-button--small"
+    style
   >
     <div class="van-button__content">
       <span class="van-button__text">
@@ -180,20 +209,24 @@ exports[`should render demo and match snapshot 1`] = `
 </div>
 <div>
   <!--[-->
-  <div class="van-circle"
-       style
+  <div
+    class="van-circle"
+    style
   >
-    <svg viewbox="0 0 1040 1040"
-         style="transform:rotate(270deg);"
+    <svg
+      viewbox="0 0 1040 1040"
+      style="transform:rotate(270deg);"
     >
-      <path class="van-circle__layer"
-            style="fill:none;stroke-width:40px;"
-            d="M 520 520 m 0, -500 a 500, 500 0 1, 1 0, 1000 a 500, 500 0 1, 1 0, -1000"
+      <path
+        class="van-circle__layer"
+        style="fill:none;stroke-width:40px;"
+        d="M 520 520 m 0, -500 a 500, 500 0 1, 1 0, 1000 a 500, 500 0 1, 1 0, -1000"
       >
       </path>
-      <path d="M 520 520 m 0, -500 a 500, 500 0 1, 1 0, 1000 a 500, 500 0 1, 1 0, -1000"
-            style="stroke-width:41px;stroke-dasharray:2355px 3140px;"
-            class="van-circle__hover"
+      <path
+        d="M 520 520 m 0, -500 a 500, 500 0 1, 1 0, 1000 a 500, 500 0 1, 1 0, -1000"
+        style="stroke-width:41px;stroke-dasharray:2355px 3140px;"
+        class="van-circle__hover"
       >
       </path>
     </svg>
@@ -201,20 +234,24 @@ exports[`should render demo and match snapshot 1`] = `
       Left
     </div>
   </div>
-  <div class="van-circle"
-       style
+  <div
+    class="van-circle"
+    style
   >
-    <svg viewbox="0 0 1040 1040"
-         style="transform:rotate(90deg);"
+    <svg
+      viewbox="0 0 1040 1040"
+      style="transform:rotate(90deg);"
     >
-      <path class="van-circle__layer"
-            style="fill:none;stroke-width:40px;"
-            d="M 520 520 m 0, -500 a 500, 500 0 1, 1 0, 1000 a 500, 500 0 1, 1 0, -1000"
+      <path
+        class="van-circle__layer"
+        style="fill:none;stroke-width:40px;"
+        d="M 520 520 m 0, -500 a 500, 500 0 1, 1 0, 1000 a 500, 500 0 1, 1 0, -1000"
       >
       </path>
-      <path d="M 520 520 m 0, -500 a 500, 500 0 1, 1 0, 1000 a 500, 500 0 1, 1 0, -1000"
-            style="stroke-width:41px;stroke-dasharray:2355px 3140px;"
-            class="van-circle__hover"
+      <path
+        d="M 520 520 m 0, -500 a 500, 500 0 1, 1 0, 1000 a 500, 500 0 1, 1 0, -1000"
+        style="stroke-width:41px;stroke-dasharray:2355px 3140px;"
+        class="van-circle__hover"
       >
       </path>
     </svg>
@@ -222,20 +259,24 @@ exports[`should render demo and match snapshot 1`] = `
       Right
     </div>
   </div>
-  <div class="van-circle"
-       style
+  <div
+    class="van-circle"
+    style
   >
-    <svg viewbox="0 0 1040 1040"
-         style="transform:rotate(180deg);"
+    <svg
+      viewbox="0 0 1040 1040"
+      style="transform:rotate(180deg);"
     >
-      <path class="van-circle__layer"
-            style="fill:none;stroke-width:40px;"
-            d="M 520 520 m 0, -500 a 500, 500 0 1, 1 0, 1000 a 500, 500 0 1, 1 0, -1000"
+      <path
+        class="van-circle__layer"
+        style="fill:none;stroke-width:40px;"
+        d="M 520 520 m 0, -500 a 500, 500 0 1, 1 0, 1000 a 500, 500 0 1, 1 0, -1000"
       >
       </path>
-      <path d="M 520 520 m 0, -500 a 500, 500 0 1, 1 0, 1000 a 500, 500 0 1, 1 0, -1000"
-            style="stroke-width:41px;stroke-dasharray:2355px 3140px;"
-            class="van-circle__hover"
+      <path
+        d="M 520 520 m 0, -500 a 500, 500 0 1, 1 0, 1000 a 500, 500 0 1, 1 0, -1000"
+        style="stroke-width:41px;stroke-dasharray:2355px 3140px;"
+        class="van-circle__hover"
       >
       </path>
     </svg>

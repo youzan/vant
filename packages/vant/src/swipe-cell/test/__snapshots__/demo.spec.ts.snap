@@ -1,14 +1,16 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`should render demo and match snapshot 1`] = `
 <div>
   <div class="van-swipe-cell">
-    <div class="van-swipe-cell__wrapper"
-         style="transform: translate3d(0px, 0, 0); transition-duration: .6s;"
+    <div
+      class="van-swipe-cell__wrapper"
+      style="transform: translate3d(0px, 0, 0); transition-duration: .6s;"
     >
       <div class="van-swipe-cell__left">
-        <button type="button"
-                class="van-button van-button--primary van-button--normal van-button--square"
+        <button
+          type="button"
+          class="van-button van-button--primary van-button--normal van-button--square"
         >
           <div class="van-button__content">
             <span class="van-button__text">
@@ -30,8 +32,9 @@ exports[`should render demo and match snapshot 1`] = `
         </div>
       </div>
       <div class="van-swipe-cell__right">
-        <button type="button"
-                class="van-button van-button--danger van-button--normal van-button--square"
+        <button
+          type="button"
+          class="van-button van-button--danger van-button--normal van-button--square"
         >
           <div class="van-button__content">
             <span class="van-button__text">
@@ -39,8 +42,9 @@ exports[`should render demo and match snapshot 1`] = `
             </span>
           </div>
         </button>
-        <button type="button"
-                class="van-button van-button--primary van-button--normal van-button--square"
+        <button
+          type="button"
+          class="van-button van-button--primary van-button--normal van-button--square"
         >
           <div class="van-button__content">
             <span class="van-button__text">
@@ -54,18 +58,21 @@ exports[`should render demo and match snapshot 1`] = `
 </div>
 <div>
   <div class="van-swipe-cell">
-    <div class="van-swipe-cell__wrapper"
-         style="transform: translate3d(0px, 0, 0); transition-duration: .6s;"
+    <div
+      class="van-swipe-cell__wrapper"
+      style="transform: translate3d(0px, 0, 0); transition-duration: .6s;"
     >
       <div class="van-card">
         <div class="van-card__header">
           <a class="van-card__thumb">
-            <div class="van-image"
-                 style="width: 100%; height: 100%;"
+            <div
+              class="van-image"
+              style="width: 100%; height: 100%;"
             >
-              <img src="https://fastly.jsdelivr.net/npm/@vant/assets/ipad.jpeg"
-                   class="van-image__img"
-                   style="object-fit: cover;"
+              <img
+                src="https://fastly.jsdelivr.net/npm/@vant/assets/ipad.jpeg"
+                class="van-image__img"
+                style="object-fit: cover;"
               >
               <div class="van-image__loading">
                 <i class="van-badge__wrapper van-icon van-icon-photo van-image__loading-icon">
@@ -105,8 +112,9 @@ exports[`should render demo and match snapshot 1`] = `
         </div>
       </div>
       <div class="van-swipe-cell__right">
-        <button type="button"
-                class="van-button van-button--danger van-button--normal van-button--square delete-button"
+        <button
+          type="button"
+          class="van-button van-button--danger van-button--normal van-button--square delete-button"
         >
           <div class="van-button__content">
             <span class="van-button__text">
@@ -120,12 +128,14 @@ exports[`should render demo and match snapshot 1`] = `
 </div>
 <div>
   <div class="van-swipe-cell">
-    <div class="van-swipe-cell__wrapper"
-         style="transform: translate3d(0px, 0, 0); transition-duration: .6s;"
+    <div
+      class="van-swipe-cell__wrapper"
+      style="transform: translate3d(0px, 0, 0); transition-duration: .6s;"
     >
       <div class="van-swipe-cell__left">
-        <button type="button"
-                class="van-button van-button--primary van-button--normal van-button--square"
+        <button
+          type="button"
+          class="van-button van-button--primary van-button--normal van-button--square"
         >
           <div class="van-button__content">
             <span class="van-button__text">
@@ -147,8 +157,9 @@ exports[`should render demo and match snapshot 1`] = `
         </div>
       </div>
       <div class="van-swipe-cell__right">
-        <button type="button"
-                class="van-button van-button--danger van-button--normal van-button--square"
+        <button
+          type="button"
+          class="van-button van-button--danger van-button--normal van-button--square"
         >
           <div class="van-button__content">
             <span class="van-button__text">

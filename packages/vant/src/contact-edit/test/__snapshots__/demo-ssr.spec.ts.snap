@@ -1,4 +1,4 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`should render demo and match snapshot 1`] = `
 <div>
@@ -7,13 +7,15 @@ exports[`should render demo and match snapshot 1`] = `
     <!--[-->
     <div class="van-contact-edit__fields">
       <div class="van-cell van-field">
-        <div class="van-cell__title van-field__label"
-             style
+        <div
+          class="van-cell__title van-field__label"
+          style
         >
           <!--[-->
-          <label id="van-field-label"
-                 for="van-field-input"
-                 style
+          <label
+            id="van-field-label"
+            for="van-field-input"
+            style
           >
             Name
           </label>
@@ -21,23 +23,26 @@ exports[`should render demo and match snapshot 1`] = `
         <div class="van-cell__value van-field__value">
           <!--[-->
           <div class="van-field__body">
-            <input type="text"
-                   id="van-field-input"
-                   class="van-field__control"
-                   placeholder="Name"
-                   aria-labelledby="van-field-label"
+            <input
+              type="text"
+              id="van-field-input"
+              class="van-field__control"
+              placeholder="Name"
+              aria-labelledby="van-field-label"
             >
           </div>
         </div>
       </div>
       <div class="van-cell van-field">
-        <div class="van-cell__title van-field__label"
-             style
+        <div
+          class="van-cell__title van-field__label"
+          style
         >
           <!--[-->
-          <label id="van-field-label"
-                 for="van-field-input"
-                 style
+          <label
+            id="van-field-label"
+            for="van-field-input"
+            style
           >
             Phone
           </label>
@@ -45,39 +50,43 @@ exports[`should render demo and match snapshot 1`] = `
         <div class="van-cell__value van-field__value">
           <!--[-->
           <div class="van-field__body">
-            <input type="tel"
-                   id="van-field-input"
-                   class="van-field__control"
-                   placeholder="Phone"
-                   aria-labelledby="van-field-label"
+            <input
+              type="tel"
+              id="van-field-input"
+              class="van-field__control"
+              placeholder="Phone"
+              aria-labelledby="van-field-label"
             >
           </div>
         </div>
       </div>
     </div>
     <div class="van-cell van-cell--borderless van-contact-edit__switch-cell">
-      <div class="van-cell__title"
-           style
+      <div
+        class="van-cell__title"
+        style
       >
         <span>
           Set as the default contact
         </span>
       </div>
       <!--[-->
-      <div role="switch"
-           class="van-switch"
-           style
-           tabindex="0"
-           aria-checked="false"
+      <div
+        role="switch"
+        class="van-switch"
+        style
+        tabindex="0"
+        aria-checked="false"
       >
         <div class="van-switch__node">
         </div>
       </div>
     </div>
     <div class="van-contact-edit__buttons">
-      <button type="submit"
-              class="van-button van-button--primary van-button--normal van-button--block van-button--round van-contact-edit__button"
-              style
+      <button
+        type="submit"
+        class="van-button van-button--primary van-button--normal van-button--block van-button--round van-contact-edit__button"
+        style
       >
         <div class="van-button__content">
           <span class="van-button__text">
@@ -85,9 +94,10 @@ exports[`should render demo and match snapshot 1`] = `
           </span>
         </div>
       </button>
-      <button type="button"
-              class="van-button van-button--default van-button--normal van-button--block van-button--round van-contact-edit__button"
-              style
+      <button
+        type="button"
+        class="van-button van-button--default van-button--normal van-button--block van-button--round van-contact-edit__button"
+        style
       >
         <div class="van-button__content">
           <span class="van-button__text">

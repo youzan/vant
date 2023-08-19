@@ -1,16 +1,18 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`should render cancel slot correctly 1`] = `
-<button type="button"
-        class="van-share-sheet__cancel"
+<button
+  type="button"
+  class="van-share-sheet__cancel"
 >
   Custom Cancel
 </button>
 `;
 
 exports[`should render cancel text when using cancel-text prop 1`] = `
-<button type="button"
-        class="van-share-sheet__cancel"
+<button
+  type="button"
+  class="van-share-sheet__cancel"
 >
   foo
 </button>
@@ -23,24 +25,27 @@ exports[`should render description when using description prop 1`] = `
 `;
 
 exports[`should render title and description slot correctly 1`] = `
-<transition-stub name="van-fade"
-                 appear="true"
-                 persisted="false"
-                 css="true"
-                 role="button"
-                 tabindex="0"
+<transition-stub
+  name="van-fade"
+  appear="true"
+  persisted="false"
+  css="true"
+  role="button"
+  tabindex="0"
 >
   <div class="van-overlay">
   </div>
 </transition-stub>
-<transition-stub name="van-popup-slide-bottom"
-                 appear="false"
-                 persisted="false"
-                 css="true"
+<transition-stub
+  name="van-popup-slide-bottom"
+  appear="false"
+  persisted="false"
+  css="true"
 >
-  <div role="dialog"
-       tabindex="0"
-       class="van-popup van-popup--round van-popup--bottom van-safe-area-bottom van-share-sheet"
+  <div
+    role="dialog"
+    tabindex="0"
+    class="van-popup van-popup--round van-popup--bottom van-safe-area-bottom van-share-sheet"
   >
     <div class="van-share-sheet__header">
       <h2 class="van-share-sheet__title">
@@ -52,8 +57,9 @@ exports[`should render title and description slot correctly 1`] = `
     </div>
     <div class="van-share-sheet__options">
     </div>
-    <button type="button"
-            class="van-share-sheet__cancel"
+    <button
+      type="button"
+      class="van-share-sheet__cancel"
     >
       Cancel
     </button>

@@ -1,56 +1,65 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`should render demo and match snapshot 1`] = `
 <!--[-->
 <div>
   <!--[-->
-  <div class="van-cell van-cell--clickable"
-       role="button"
-       tabindex="0"
+  <div
+    class="van-cell van-cell--clickable"
+    role="button"
+    tabindex="0"
   >
-    <div class="van-cell__title"
-         style
+    <div
+      class="van-cell__title"
+      style
     >
       <span>
         Select Single Date
       </span>
     </div>
-    <i class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon"
-       style
+    <i
+      class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon"
+      style
     >
       <!--[-->
     </i>
   </div>
-  <div class="van-cell van-cell--clickable"
-       role="button"
-       tabindex="0"
+  <div
+    class="van-cell van-cell--clickable"
+    role="button"
+    tabindex="0"
   >
-    <div class="van-cell__title"
-         style
+    <div
+      class="van-cell__title"
+      style
     >
       <span>
         Select Multiple Date
       </span>
     </div>
-    <i class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon"
-       style
+    <i
+      class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon"
+      style
     >
       <!--[-->
     </i>
   </div>
-  <div class="van-cell van-cell--clickable"
-       role="button"
-       tabindex="0"
+  <div
+    class="van-cell van-cell--clickable"
+    role="button"
+    tabindex="0"
   >
-    <div class="van-cell__title"
-         style
+    <div
+      class="van-cell__title"
+      style
     >
       <span>
         Select Date Range
       </span>
     </div>
-    <i class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon"
-       style
+    <i
+      class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon"
+      style
     >
       <!--[-->
     </i>
@@ -58,36 +67,42 @@ exports[`should render demo and match snapshot 1`] = `
 </div>
 <div>
   <!--[-->
-  <div class="van-cell van-cell--clickable"
-       role="button"
-       tabindex="0"
+  <div
+    class="van-cell van-cell--clickable"
+    role="button"
+    tabindex="0"
   >
-    <div class="van-cell__title"
-         style
+    <div
+      class="van-cell__title"
+      style
     >
       <span>
         Select Single Date
       </span>
     </div>
-    <i class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon"
-       style
+    <i
+      class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon"
+      style
     >
       <!--[-->
     </i>
   </div>
-  <div class="van-cell van-cell--clickable"
-       role="button"
-       tabindex="0"
+  <div
+    class="van-cell van-cell--clickable"
+    role="button"
+    tabindex="0"
   >
-    <div class="van-cell__title"
-         style
+    <div
+      class="van-cell__title"
+      style
     >
       <span>
         Select Date Range
       </span>
     </div>
-    <i class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon"
-       style
+    <i
+      class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon"
+      style
     >
       <!--[-->
     </i>
@@ -95,121 +110,142 @@ exports[`should render demo and match snapshot 1`] = `
 </div>
 <div>
   <!--[-->
-  <div class="van-cell van-cell--clickable"
-       role="button"
-       tabindex="0"
+  <div
+    class="van-cell van-cell--clickable"
+    role="button"
+    tabindex="0"
   >
-    <div class="van-cell__title"
-         style
+    <div
+      class="van-cell__title"
+      style
     >
       <span>
         Custom Color
       </span>
     </div>
-    <i class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon"
-       style
+    <i
+      class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon"
+      style
     >
       <!--[-->
     </i>
   </div>
-  <div class="van-cell van-cell--clickable"
-       role="button"
-       tabindex="0"
+  <div
+    class="van-cell van-cell--clickable"
+    role="button"
+    tabindex="0"
   >
-    <div class="van-cell__title"
-         style
+    <div
+      class="van-cell__title"
+      style
     >
       <span>
         Custom Date Range
       </span>
     </div>
-    <i class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon"
-       style
+    <i
+      class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon"
+      style
     >
       <!--[-->
     </i>
   </div>
-  <div class="van-cell van-cell--clickable"
-       role="button"
-       tabindex="0"
+  <div
+    class="van-cell van-cell--clickable"
+    role="button"
+    tabindex="0"
   >
-    <div class="van-cell__title"
-         style
+    <div
+      class="van-cell__title"
+      style
     >
       <span>
         Custom Confirm Text
       </span>
     </div>
-    <i class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon"
-       style
+    <i
+      class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon"
+      style
     >
       <!--[-->
     </i>
   </div>
-  <div class="van-cell van-cell--clickable"
-       role="button"
-       tabindex="0"
+  <div
+    class="van-cell van-cell--clickable"
+    role="button"
+    tabindex="0"
   >
-    <div class="van-cell__title"
-         style
+    <div
+      class="van-cell__title"
+      style
     >
       <span>
         Custom Day Text
       </span>
     </div>
-    <i class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon"
-       style
+    <i
+      class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon"
+      style
     >
       <!--[-->
     </i>
   </div>
-  <div class="van-cell van-cell--clickable"
-       role="button"
-       tabindex="0"
+  <div
+    class="van-cell van-cell--clickable"
+    role="button"
+    tabindex="0"
   >
-    <div class="van-cell__title"
-         style
+    <div
+      class="van-cell__title"
+      style
     >
       <span>
         Custom Position
       </span>
     </div>
-    <i class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon"
-       style
+    <i
+      class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon"
+      style
     >
       <!--[-->
     </i>
   </div>
-  <div class="van-cell van-cell--clickable"
-       role="button"
-       tabindex="0"
+  <div
+    class="van-cell van-cell--clickable"
+    role="button"
+    tabindex="0"
   >
-    <div class="van-cell__title"
-         style
+    <div
+      class="van-cell__title"
+      style
     >
       <span>
         Max Range
       </span>
     </div>
-    <i class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon"
-       style
+    <i
+      class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon"
+      style
     >
       <!--[-->
     </i>
   </div>
-  <div class="van-cell van-cell--clickable"
-       role="button"
-       tabindex="0"
+  <div
+    class="van-cell van-cell--clickable"
+    role="button"
+    tabindex="0"
   >
-    <div class="van-cell__title"
-         style
+    <div
+      class="van-cell__title"
+      style
     >
       <span>
         Custom First Day Of Week
       </span>
     </div>
-    <i class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon"
-       style
+    <i
+      class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon"
+      style
     >
       <!--[-->
     </i>
@@ -217,8 +253,9 @@ exports[`should render demo and match snapshot 1`] = `
 </div>
 <div>
   <!--[-->
-  <div class="van-calendar"
-       style="height:500px;"
+  <div
+    class="van-calendar"
+    style="height:500px;"
   >
     <div class="van-calendar__header">
       <div class="van-calendar__header-title">
@@ -254,28 +291,34 @@ exports[`should render demo and match snapshot 1`] = `
     <div class="van-calendar__body">
       <!--[-->
       <div class="van-calendar__month">
-        <div role="grid"
-             class="van-calendar__days"
+        <div
+          role="grid"
+          class="van-calendar__days"
         >
           <!--[-->
-          <div class="van-calendar__day"
-               style="width:100%;"
+          <div
+            class="van-calendar__day"
+            style="width:100%;"
           >
           </div>
-          <div class="van-calendar__day"
-               style="width:100%;"
+          <div
+            class="van-calendar__day"
+            style="width:100%;"
           >
           </div>
-          <div class="van-calendar__day"
-               style="width:100%;"
+          <div
+            class="van-calendar__day"
+            style="width:100%;"
           >
           </div>
-          <div class="van-calendar__day"
-               style="width:100%;"
+          <div
+            class="van-calendar__day"
+            style="width:100%;"
           >
           </div>
-          <div class="van-calendar__day"
-               style="width:100%;"
+          <div
+            class="van-calendar__day"
+            style="width:100%;"
           >
           </div>
         </div>
@@ -284,28 +327,34 @@ exports[`should render demo and match snapshot 1`] = `
         <div class="van-calendar__month-title">
           2012/2
         </div>
-        <div role="grid"
-             class="van-calendar__days"
+        <div
+          role="grid"
+          class="van-calendar__days"
         >
           <!--[-->
-          <div class="van-calendar__day"
-               style="width:100%;"
+          <div
+            class="van-calendar__day"
+            style="width:100%;"
           >
           </div>
-          <div class="van-calendar__day"
-               style="width:100%;"
+          <div
+            class="van-calendar__day"
+            style="width:100%;"
           >
           </div>
-          <div class="van-calendar__day"
-               style="width:100%;"
+          <div
+            class="van-calendar__day"
+            style="width:100%;"
           >
           </div>
-          <div class="van-calendar__day"
-               style="width:100%;"
+          <div
+            class="van-calendar__day"
+            style="width:100%;"
           >
           </div>
-          <div class="van-calendar__day"
-               style="width:100%;"
+          <div
+            class="van-calendar__day"
+            style="width:100%;"
           >
           </div>
         </div>
@@ -314,28 +363,34 @@ exports[`should render demo and match snapshot 1`] = `
         <div class="van-calendar__month-title">
           2012/3
         </div>
-        <div role="grid"
-             class="van-calendar__days"
+        <div
+          role="grid"
+          class="van-calendar__days"
         >
           <!--[-->
-          <div class="van-calendar__day"
-               style="width:100%;"
+          <div
+            class="van-calendar__day"
+            style="width:100%;"
           >
           </div>
-          <div class="van-calendar__day"
-               style="width:100%;"
+          <div
+            class="van-calendar__day"
+            style="width:100%;"
           >
           </div>
-          <div class="van-calendar__day"
-               style="width:100%;"
+          <div
+            class="van-calendar__day"
+            style="width:100%;"
           >
           </div>
-          <div class="van-calendar__day"
-               style="width:100%;"
+          <div
+            class="van-calendar__day"
+            style="width:100%;"
           >
           </div>
-          <div class="van-calendar__day"
-               style="width:100%;"
+          <div
+            class="van-calendar__day"
+            style="width:100%;"
           >
           </div>
         </div>

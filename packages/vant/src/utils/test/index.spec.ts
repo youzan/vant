@@ -104,9 +104,7 @@ test('addUnit', () => {
 
 test('unitToPx', () => {
   const mockedStyle = { fontSize: '16px' } as CSSStyleDeclaration;
-  const spy = jest
-    .spyOn(window, 'getComputedStyle')
-    .mockReturnValue(mockedStyle);
+  const spy = vi.spyOn(window, 'getComputedStyle').mockReturnValue(mockedStyle);
 
   Object.defineProperty(window, 'innerWidth', { value: 100 });
   Object.defineProperty(window, 'innerHeight', { value: 200 });

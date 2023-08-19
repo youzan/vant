@@ -1,4 +1,4 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`should render demo and match snapshot 1`] = `
 <div>
@@ -50,8 +50,9 @@ exports[`should render demo and match snapshot 1`] = `
       </div>
     </div>
   </div>
-  <button type="button"
-          class="van-button van-button--default van-button--normal"
+  <button
+    type="button"
+    class="van-button van-button--default van-button--normal"
   >
     <div class="van-button__content">
       <span class="van-button__text">
@@ -71,20 +72,23 @@ exports[`should render demo and match snapshot 1`] = `
           <i class="van-badge__wrapper van-icon van-icon-arrow van-step__icon">
           </i>
         </div>
-        <div class="van-step__line"
-             style="background: rgb(7, 193, 96);"
+        <div
+          class="van-step__line"
+          style="background: rgb(7, 193, 96);"
         >
         </div>
       </div>
       <div class="van-hairline van-step van-step--horizontal van-step--process">
-        <div class="van-step__title van-step__title--active"
-             style="color: rgb(7, 193, 96);"
+        <div
+          class="van-step__title van-step__title--active"
+          style="color: rgb(7, 193, 96);"
         >
           Step2
         </div>
         <div class="van-step__circle-container">
-          <i class="van-badge__wrapper van-icon van-icon-success van-step__icon van-step__icon--active"
-             style="color: rgb(7, 193, 96);"
+          <i
+            class="van-badge__wrapper van-icon van-icon-success van-step__icon van-step__icon--active"
+            style="color: rgb(7, 193, 96);"
           >
           </i>
         </div>

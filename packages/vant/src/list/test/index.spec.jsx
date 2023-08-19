@@ -110,7 +110,7 @@ test('should emit load event when the scroll parent is not window', async () => 
     bottom: 200,
     height: 100,
   });
-  const onLoad = jest.fn();
+  const onLoad = vi.fn();
 
   mount({
     render: () => (
@@ -150,8 +150,8 @@ test('should render correctly when direction is up', async () => {
 });
 
 test('should not emit load event when inside an inactive tab', async () => {
-  const onLoad1 = jest.fn();
-  const onLoad2 = jest.fn();
+  const onLoad1 = vi.fn();
+  const onLoad2 = vi.fn();
 
   mount({
     render: () => (
@@ -173,8 +173,8 @@ test('should not emit load event when inside an inactive tab', async () => {
 
 // https://github.com/vant-ui/vant/issues/9017
 test('should emit load event when parent tab is activated', async () => {
-  const onLoad1 = jest.fn();
-  const onLoad2 = jest.fn();
+  const onLoad1 = vi.fn();
+  const onLoad2 = vi.fn();
 
   const wrapper = mount({
     data() {

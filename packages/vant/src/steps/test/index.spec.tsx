@@ -19,7 +19,7 @@ test('should render icon slot correctly', () => {
 });
 
 test('should emit clickStep event when step is clicked', () => {
-  const onClickStep = jest.fn();
+  const onClickStep = vi.fn();
   const wrapper = mount({
     setup() {
       return () => (

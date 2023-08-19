@@ -17,7 +17,7 @@ describe('watermark', () => {
       }
       return createElement(tagName);
     };
-    global.URL.createObjectURL = jest.fn(() => 'run to here');
+    global.URL.createObjectURL = vi.fn(() => 'run to here');
     global.Image = class {
       crossOrigin = 'anonymous';
 

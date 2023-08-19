@@ -148,7 +148,7 @@ test('should close popover when touch outside content', async () => {
 });
 
 test('should emit clickOverlay event when overlay is clicked', () => {
-  const onClickOverlay = jest.fn();
+  const onClickOverlay = vi.fn();
   const wrapper = mount(Popover, {
     props: {
       show: true,

@@ -1,13 +1,15 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`should render demo and match snapshot 1`] = `
 <div>
   <div class="van-row">
-    <div class="van-image"
-         style="width: 100px; height: 100px;"
+    <div
+      class="van-image"
+      style="width: 100px; height: 100px;"
     >
-      <img src="https://fastly.jsdelivr.net/npm/@vant/assets/cat.jpeg"
-           class="van-image__img"
+      <img
+        src="https://fastly.jsdelivr.net/npm/@vant/assets/cat.jpeg"
+        class="van-image__img"
       >
       <div class="van-image__loading">
         <i class="van-badge__wrapper van-icon van-icon-photo van-image__loading-icon">
@@ -18,15 +20,18 @@ exports[`should render demo and match snapshot 1`] = `
 </div>
 <div>
   <div class="van-row">
-    <div class="van-col van-col--8"
-         style="padding-right: 13.333333333333334px;"
+    <div
+      class="van-col van-col--8"
+      style="padding-right: 13.333333333333334px;"
     >
-      <div class="van-image"
-           style="width: 100%; height: 27vw;"
+      <div
+        class="van-image"
+        style="width: 100%; height: 27vw;"
       >
-        <img src="https://fastly.jsdelivr.net/npm/@vant/assets/cat.jpeg"
-             class="van-image__img"
-             style="object-fit: contain;"
+        <img
+          src="https://fastly.jsdelivr.net/npm/@vant/assets/cat.jpeg"
+          class="van-image__img"
+          style="object-fit: contain;"
         >
         <div class="van-image__loading">
           <i class="van-badge__wrapper van-icon van-icon-photo van-image__loading-icon">
@@ -37,15 +42,18 @@ exports[`should render demo and match snapshot 1`] = `
         contain
       </div>
     </div>
-    <div style="padding-left: 6.666666666666666px; padding-right: 6.666666666666668px;"
-         class="van-col van-col--8"
+    <div
+      style="padding-left: 6.666666666666666px; padding-right: 6.666666666666668px;"
+      class="van-col van-col--8"
     >
-      <div class="van-image"
-           style="width: 100%; height: 27vw;"
+      <div
+        class="van-image"
+        style="width: 100%; height: 27vw;"
       >
-        <img src="https://fastly.jsdelivr.net/npm/@vant/assets/cat.jpeg"
-             class="van-image__img"
-             style="object-fit: cover;"
+        <img
+          src="https://fastly.jsdelivr.net/npm/@vant/assets/cat.jpeg"
+          class="van-image__img"
+          style="object-fit: cover;"
         >
         <div class="van-image__loading">
           <i class="van-badge__wrapper van-icon van-icon-photo van-image__loading-icon">
@@ -56,15 +64,18 @@ exports[`should render demo and match snapshot 1`] = `
         cover
       </div>
     </div>
-    <div style="padding-left: 13.333333333333332px;"
-         class="van-col van-col--8"
+    <div
+      style="padding-left: 13.333333333333332px;"
+      class="van-col van-col--8"
     >
-      <div class="van-image"
-           style="width: 100%; height: 27vw;"
+      <div
+        class="van-image"
+        style="width: 100%; height: 27vw;"
       >
-        <img src="https://fastly.jsdelivr.net/npm/@vant/assets/cat.jpeg"
-             class="van-image__img"
-             style="object-fit: fill;"
+        <img
+          src="https://fastly.jsdelivr.net/npm/@vant/assets/cat.jpeg"
+          class="van-image__img"
+          style="object-fit: fill;"
         >
         <div class="van-image__loading">
           <i class="van-badge__wrapper van-icon van-icon-photo van-image__loading-icon">
@@ -75,15 +86,18 @@ exports[`should render demo and match snapshot 1`] = `
         fill
       </div>
     </div>
-    <div class="van-col van-col--8"
-         style="padding-right: 10px;"
+    <div
+      class="van-col van-col--8"
+      style="padding-right: 10px;"
     >
-      <div class="van-image"
-           style="width: 100%; height: 27vw;"
+      <div
+        class="van-image"
+        style="width: 100%; height: 27vw;"
       >
-        <img src="https://fastly.jsdelivr.net/npm/@vant/assets/cat.jpeg"
-             class="van-image__img"
-             style="object-fit: none;"
+        <img
+          src="https://fastly.jsdelivr.net/npm/@vant/assets/cat.jpeg"
+          class="van-image__img"
+          style="object-fit: none;"
         >
         <div class="van-image__loading">
           <i class="van-badge__wrapper van-icon van-icon-photo van-image__loading-icon">
@@ -94,15 +108,18 @@ exports[`should render demo and match snapshot 1`] = `
         none
       </div>
     </div>
-    <div style="padding-left: 10px;"
-         class="van-col van-col--8"
+    <div
+      style="padding-left: 10px;"
+      class="van-col van-col--8"
     >
-      <div class="van-image"
-           style="width: 100%; height: 27vw;"
+      <div
+        class="van-image"
+        style="width: 100%; height: 27vw;"
       >
-        <img src="https://fastly.jsdelivr.net/npm/@vant/assets/cat.jpeg"
-             class="van-image__img"
-             style="object-fit: scale-down;"
+        <img
+          src="https://fastly.jsdelivr.net/npm/@vant/assets/cat.jpeg"
+          class="van-image__img"
+          style="object-fit: scale-down;"
         >
         <div class="van-image__loading">
           <i class="van-badge__wrapper van-icon van-icon-photo van-image__loading-icon">
@@ -117,15 +134,18 @@ exports[`should render demo and match snapshot 1`] = `
 </div>
 <div>
   <div class="van-row">
-    <div class="van-col van-col--8"
-         style="padding-right: 13.333333333333334px;"
+    <div
+      class="van-col van-col--8"
+      style="padding-right: 13.333333333333334px;"
     >
-      <div class="van-image"
-           style="width: 100%; height: 27vw;"
+      <div
+        class="van-image"
+        style="width: 100%; height: 27vw;"
       >
-        <img src="https://fastly.jsdelivr.net/npm/@vant/assets/cat.jpeg"
-             class="van-image__img"
-             style="object-fit: cover; object-position: left;"
+        <img
+          src="https://fastly.jsdelivr.net/npm/@vant/assets/cat.jpeg"
+          class="van-image__img"
+          style="object-fit: cover; object-position: left;"
         >
         <div class="van-image__loading">
           <i class="van-badge__wrapper van-icon van-icon-photo van-image__loading-icon">
@@ -139,15 +159,18 @@ exports[`should render demo and match snapshot 1`] = `
         left
       </div>
     </div>
-    <div style="padding-left: 6.666666666666666px; padding-right: 6.666666666666668px;"
-         class="van-col van-col--8"
+    <div
+      style="padding-left: 6.666666666666666px; padding-right: 6.666666666666668px;"
+      class="van-col van-col--8"
     >
-      <div class="van-image"
-           style="width: 100%; height: 27vw;"
+      <div
+        class="van-image"
+        style="width: 100%; height: 27vw;"
       >
-        <img src="https://fastly.jsdelivr.net/npm/@vant/assets/cat.jpeg"
-             class="van-image__img"
-             style="object-fit: cover; object-position: center;"
+        <img
+          src="https://fastly.jsdelivr.net/npm/@vant/assets/cat.jpeg"
+          class="van-image__img"
+          style="object-fit: cover; object-position: center;"
         >
         <div class="van-image__loading">
           <i class="van-badge__wrapper van-icon van-icon-photo van-image__loading-icon">
@@ -161,15 +184,18 @@ exports[`should render demo and match snapshot 1`] = `
         center
       </div>
     </div>
-    <div style="padding-left: 13.333333333333332px;"
-         class="van-col van-col--8"
+    <div
+      style="padding-left: 13.333333333333332px;"
+      class="van-col van-col--8"
     >
-      <div class="van-image"
-           style="width: 100%; height: 27vw;"
+      <div
+        class="van-image"
+        style="width: 100%; height: 27vw;"
       >
-        <img src="https://fastly.jsdelivr.net/npm/@vant/assets/cat.jpeg"
-             class="van-image__img"
-             style="object-fit: cover; object-position: right;"
+        <img
+          src="https://fastly.jsdelivr.net/npm/@vant/assets/cat.jpeg"
+          class="van-image__img"
+          style="object-fit: cover; object-position: right;"
         >
         <div class="van-image__loading">
           <i class="van-badge__wrapper van-icon van-icon-photo van-image__loading-icon">
@@ -183,15 +209,18 @@ exports[`should render demo and match snapshot 1`] = `
         right
       </div>
     </div>
-    <div class="van-col van-col--8"
-         style="padding-right: 13.333333333333334px;"
+    <div
+      class="van-col van-col--8"
+      style="padding-right: 13.333333333333334px;"
     >
-      <div class="van-image"
-           style="width: 100%; height: 27vw;"
+      <div
+        class="van-image"
+        style="width: 100%; height: 27vw;"
       >
-        <img src="https://fastly.jsdelivr.net/npm/@vant/assets/cat.jpeg"
-             class="van-image__img"
-             style="object-fit: contain; object-position: top;"
+        <img
+          src="https://fastly.jsdelivr.net/npm/@vant/assets/cat.jpeg"
+          class="van-image__img"
+          style="object-fit: contain; object-position: top;"
         >
         <div class="van-image__loading">
           <i class="van-badge__wrapper van-icon van-icon-photo van-image__loading-icon">
@@ -205,15 +234,18 @@ exports[`should render demo and match snapshot 1`] = `
         top
       </div>
     </div>
-    <div style="padding-left: 6.666666666666666px; padding-right: 6.666666666666668px;"
-         class="van-col van-col--8"
+    <div
+      style="padding-left: 6.666666666666666px; padding-right: 6.666666666666668px;"
+      class="van-col van-col--8"
     >
-      <div class="van-image"
-           style="width: 100%; height: 27vw;"
+      <div
+        class="van-image"
+        style="width: 100%; height: 27vw;"
       >
-        <img src="https://fastly.jsdelivr.net/npm/@vant/assets/cat.jpeg"
-             class="van-image__img"
-             style="object-fit: contain; object-position: center;"
+        <img
+          src="https://fastly.jsdelivr.net/npm/@vant/assets/cat.jpeg"
+          class="van-image__img"
+          style="object-fit: contain; object-position: center;"
         >
         <div class="van-image__loading">
           <i class="van-badge__wrapper van-icon van-icon-photo van-image__loading-icon">
@@ -227,15 +259,18 @@ exports[`should render demo and match snapshot 1`] = `
         center
       </div>
     </div>
-    <div style="padding-left: 13.333333333333332px;"
-         class="van-col van-col--8"
+    <div
+      style="padding-left: 13.333333333333332px;"
+      class="van-col van-col--8"
     >
-      <div class="van-image"
-           style="width: 100%; height: 27vw;"
+      <div
+        class="van-image"
+        style="width: 100%; height: 27vw;"
       >
-        <img src="https://fastly.jsdelivr.net/npm/@vant/assets/cat.jpeg"
-             class="van-image__img"
-             style="object-fit: contain; object-position: bottom;"
+        <img
+          src="https://fastly.jsdelivr.net/npm/@vant/assets/cat.jpeg"
+          class="van-image__img"
+          style="object-fit: contain; object-position: bottom;"
         >
         <div class="van-image__loading">
           <i class="van-badge__wrapper van-icon van-icon-photo van-image__loading-icon">
@@ -253,15 +288,18 @@ exports[`should render demo and match snapshot 1`] = `
 </div>
 <div>
   <div class="van-row">
-    <div class="van-col van-col--8"
-         style="padding-right: 13.333333333333334px;"
+    <div
+      class="van-col van-col--8"
+      style="padding-right: 13.333333333333334px;"
     >
-      <div class="van-image van-image--round"
-           style="width: 100%; height: 27vw;"
+      <div
+        class="van-image van-image--round"
+        style="width: 100%; height: 27vw;"
       >
-        <img src="https://fastly.jsdelivr.net/npm/@vant/assets/cat.jpeg"
-             class="van-image__img"
-             style="object-fit: contain;"
+        <img
+          src="https://fastly.jsdelivr.net/npm/@vant/assets/cat.jpeg"
+          class="van-image__img"
+          style="object-fit: contain;"
         >
         <div class="van-image__loading">
           <i class="van-badge__wrapper van-icon van-icon-photo van-image__loading-icon">
@@ -272,15 +310,18 @@ exports[`should render demo and match snapshot 1`] = `
         contain
       </div>
     </div>
-    <div style="padding-left: 6.666666666666666px; padding-right: 6.666666666666668px;"
-         class="van-col van-col--8"
+    <div
+      style="padding-left: 6.666666666666666px; padding-right: 6.666666666666668px;"
+      class="van-col van-col--8"
     >
-      <div class="van-image van-image--round"
-           style="width: 100%; height: 27vw;"
+      <div
+        class="van-image van-image--round"
+        style="width: 100%; height: 27vw;"
       >
-        <img src="https://fastly.jsdelivr.net/npm/@vant/assets/cat.jpeg"
-             class="van-image__img"
-             style="object-fit: cover;"
+        <img
+          src="https://fastly.jsdelivr.net/npm/@vant/assets/cat.jpeg"
+          class="van-image__img"
+          style="object-fit: cover;"
         >
         <div class="van-image__loading">
           <i class="van-badge__wrapper van-icon van-icon-photo van-image__loading-icon">
@@ -291,15 +332,18 @@ exports[`should render demo and match snapshot 1`] = `
         cover
       </div>
     </div>
-    <div style="padding-left: 13.333333333333332px;"
-         class="van-col van-col--8"
+    <div
+      style="padding-left: 13.333333333333332px;"
+      class="van-col van-col--8"
     >
-      <div class="van-image van-image--round"
-           style="width: 100%; height: 27vw;"
+      <div
+        class="van-image van-image--round"
+        style="width: 100%; height: 27vw;"
       >
-        <img src="https://fastly.jsdelivr.net/npm/@vant/assets/cat.jpeg"
-             class="van-image__img"
-             style="object-fit: fill;"
+        <img
+          src="https://fastly.jsdelivr.net/npm/@vant/assets/cat.jpeg"
+          class="van-image__img"
+          style="object-fit: fill;"
         >
         <div class="van-image__loading">
           <i class="van-badge__wrapper van-icon van-icon-photo van-image__loading-icon">
@@ -310,15 +354,18 @@ exports[`should render demo and match snapshot 1`] = `
         fill
       </div>
     </div>
-    <div class="van-col van-col--8"
-         style="padding-right: 10px;"
+    <div
+      class="van-col van-col--8"
+      style="padding-right: 10px;"
     >
-      <div class="van-image van-image--round"
-           style="width: 100%; height: 27vw;"
+      <div
+        class="van-image van-image--round"
+        style="width: 100%; height: 27vw;"
       >
-        <img src="https://fastly.jsdelivr.net/npm/@vant/assets/cat.jpeg"
-             class="van-image__img"
-             style="object-fit: none;"
+        <img
+          src="https://fastly.jsdelivr.net/npm/@vant/assets/cat.jpeg"
+          class="van-image__img"
+          style="object-fit: none;"
         >
         <div class="van-image__loading">
           <i class="van-badge__wrapper van-icon van-icon-photo van-image__loading-icon">
@@ -329,15 +376,18 @@ exports[`should render demo and match snapshot 1`] = `
         none
       </div>
     </div>
-    <div style="padding-left: 10px;"
-         class="van-col van-col--8"
+    <div
+      style="padding-left: 10px;"
+      class="van-col van-col--8"
     >
-      <div class="van-image van-image--round"
-           style="width: 100%; height: 27vw;"
+      <div
+        class="van-image van-image--round"
+        style="width: 100%; height: 27vw;"
       >
-        <img src="https://fastly.jsdelivr.net/npm/@vant/assets/cat.jpeg"
-             class="van-image__img"
-             style="object-fit: scale-down;"
+        <img
+          src="https://fastly.jsdelivr.net/npm/@vant/assets/cat.jpeg"
+          class="van-image__img"
+          style="object-fit: scale-down;"
         >
         <div class="van-image__loading">
           <i class="van-badge__wrapper van-icon van-icon-photo van-image__loading-icon">
@@ -352,11 +402,13 @@ exports[`should render demo and match snapshot 1`] = `
 </div>
 <div>
   <div class="van-row">
-    <div class="van-col van-col--8"
-         style="padding-right: 10px;"
+    <div
+      class="van-col van-col--8"
+      style="padding-right: 10px;"
     >
-      <div class="van-image"
-           style="width: 100%; height: 27vw;"
+      <div
+        class="van-image"
+        style="width: 100%; height: 27vw;"
       >
         <div class="van-image__loading">
           <i class="van-badge__wrapper van-icon van-icon-photo van-image__loading-icon">
@@ -367,19 +419,23 @@ exports[`should render demo and match snapshot 1`] = `
         Default Tip
       </div>
     </div>
-    <div style="padding-left: 10px;"
-         class="van-col van-col--8"
+    <div
+      style="padding-left: 10px;"
+      class="van-col van-col--8"
     >
-      <div class="van-image"
-           style="width: 100%; height: 27vw;"
+      <div
+        class="van-image"
+        style="width: 100%; height: 27vw;"
       >
         <div class="van-image__loading">
-          <div class="van-loading van-loading--spinner"
-               aria-live="polite"
-               aria-busy="true"
+          <div
+            class="van-loading van-loading--spinner"
+            aria-live="polite"
+            aria-busy="true"
           >
-            <span class="van-loading__spinner van-loading__spinner--spinner"
-                  style="width: 20px; height: 20px;"
+            <span
+              class="van-loading__spinner van-loading__spinner--spinner"
+              style="width: 20px; height: 20px;"
             >
               <i class="van-loading__line van-loading__line--1">
               </i>
@@ -417,14 +473,17 @@ exports[`should render demo and match snapshot 1`] = `
 </div>
 <div>
   <div class="van-row">
-    <div class="van-col van-col--8"
-         style="padding-right: 10px;"
+    <div
+      class="van-col van-col--8"
+      style="padding-right: 10px;"
     >
-      <div class="van-image"
-           style="width: 100%; height: 27vw;"
+      <div
+        class="van-image"
+        style="width: 100%; height: 27vw;"
       >
-        <img src="http://x"
-             class="van-image__img"
+        <img
+          src="http://x"
+          class="van-image__img"
         >
         <div class="van-image__loading">
           <i class="van-badge__wrapper van-icon van-icon-photo van-image__loading-icon">
@@ -435,14 +494,17 @@ exports[`should render demo and match snapshot 1`] = `
         Default Tip
       </div>
     </div>
-    <div style="padding-left: 10px;"
-         class="van-col van-col--8"
+    <div
+      style="padding-left: 10px;"
+      class="van-col van-col--8"
     >
-      <div class="van-image"
-           style="width: 100%; height: 27vw;"
+      <div
+        class="van-image"
+        style="width: 100%; height: 27vw;"
       >
-        <img src="http://x"
-             class="van-image__img"
+        <img
+          src="http://x"
+          class="van-image__img"
         >
         <div class="van-image__loading">
           <i class="van-badge__wrapper van-icon van-icon-photo van-image__loading-icon">

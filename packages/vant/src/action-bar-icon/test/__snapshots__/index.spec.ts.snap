@@ -1,9 +1,10 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`should render default slot correctly 1`] = `
-<div role="button"
-     class="van-action-bar-icon"
-     tabindex="0"
+<div
+  role="button"
+  class="van-action-bar-icon"
+  tabindex="0"
 >
   <div class="van-badge__wrapper van-icon van-icon-undefined van-action-bar-icon__icon">
   </div>
@@ -12,9 +13,10 @@ exports[`should render default slot correctly 1`] = `
 `;
 
 exports[`should render icon slot correctly 1`] = `
-<div role="button"
-     class="van-action-bar-icon"
-     tabindex="0"
+<div
+  role="button"
+  class="van-action-bar-icon"
+  tabindex="0"
 >
   <div class="van-badge__wrapper van-action-bar-icon__icon">
     Custom Icon
@@ -24,9 +26,10 @@ exports[`should render icon slot correctly 1`] = `
 `;
 
 exports[`should render icon slot with badge correctly 1`] = `
-<div role="button"
-     class="van-action-bar-icon"
-     tabindex="0"
+<div
+  role="button"
+  class="van-action-bar-icon"
+  tabindex="0"
 >
   <div class="van-badge__wrapper van-action-bar-icon__icon">
     Custom Icon
@@ -39,9 +42,10 @@ exports[`should render icon slot with badge correctly 1`] = `
 `;
 
 exports[`should render icon slot with dot correctly 1`] = `
-<div role="button"
-     class="van-action-bar-icon"
-     tabindex="0"
+<div
+  role="button"
+  class="van-action-bar-icon"
+  tabindex="0"
 >
   <div class="van-badge__wrapper van-action-bar-icon__icon">
     Custom Icon
@@ -53,9 +57,10 @@ exports[`should render icon slot with dot correctly 1`] = `
 `;
 
 exports[`should render icon-prefix correctly 1`] = `
-<div role="button"
-     class="van-action-bar-icon"
-     tabindex="0"
+<div
+  role="button"
+  class="van-action-bar-icon"
+  tabindex="0"
 >
   <div class="van-badge__wrapper my-icon my-icon-success van-action-bar-icon__icon">
   </div>

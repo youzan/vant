@@ -1,4 +1,4 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`should render demo and match snapshot 1`] = `
 <!--[-->
@@ -7,21 +7,25 @@ exports[`should render demo and match snapshot 1`] = `
   <div class="van-skeleton van-skeleton--animate">
     <!--[-->
     <div class="van-skeleton__content">
-      <h3 class="van-skeleton-title"
-          style
+      <h3
+        class="van-skeleton-title"
+        style
       >
       </h3>
       <!--[-->
-      <div class="van-skeleton-paragraph"
-           style="width:100%;"
+      <div
+        class="van-skeleton-paragraph"
+        style="width:100%;"
       >
       </div>
-      <div class="van-skeleton-paragraph"
-           style="width:100%;"
+      <div
+        class="van-skeleton-paragraph"
+        style="width:100%;"
       >
       </div>
-      <div class="van-skeleton-paragraph"
-           style="width:60%;"
+      <div
+        class="van-skeleton-paragraph"
+        style="width:60%;"
       >
       </div>
     </div>
@@ -31,26 +35,31 @@ exports[`should render demo and match snapshot 1`] = `
   <!--[-->
   <div class="van-skeleton van-skeleton--animate">
     <!--[-->
-    <div class="van-skeleton-avatar van-skeleton-avatar--round"
-         style
+    <div
+      class="van-skeleton-avatar van-skeleton-avatar--round"
+      style
     >
     </div>
     <div class="van-skeleton__content">
-      <h3 class="van-skeleton-title"
-          style
+      <h3
+        class="van-skeleton-title"
+        style
       >
       </h3>
       <!--[-->
-      <div class="van-skeleton-paragraph"
-           style="width:100%;"
+      <div
+        class="van-skeleton-paragraph"
+        style="width:100%;"
       >
       </div>
-      <div class="van-skeleton-paragraph"
-           style="width:100%;"
+      <div
+        class="van-skeleton-paragraph"
+        style="width:100%;"
       >
       </div>
-      <div class="van-skeleton-paragraph"
-           style="width:60%;"
+      <div
+        class="van-skeleton-paragraph"
+        style="width:60%;"
       >
       </div>
     </div>
@@ -58,37 +67,43 @@ exports[`should render demo and match snapshot 1`] = `
 </div>
 <div>
   <!--[-->
-  <div role="switch"
-       class="van-switch"
-       style
-       tabindex="0"
-       aria-checked="false"
+  <div
+    role="switch"
+    class="van-switch"
+    style
+    tabindex="0"
+    aria-checked="false"
   >
     <div class="van-switch__node">
     </div>
   </div>
   <div class="van-skeleton van-skeleton--animate">
     <!--[-->
-    <div class="van-skeleton-avatar van-skeleton-avatar--round"
-         style
+    <div
+      class="van-skeleton-avatar van-skeleton-avatar--round"
+      style
     >
     </div>
     <div class="van-skeleton__content">
-      <h3 class="van-skeleton-title"
-          style
+      <h3
+        class="van-skeleton-title"
+        style
       >
       </h3>
       <!--[-->
-      <div class="van-skeleton-paragraph"
-           style="width:100%;"
+      <div
+        class="van-skeleton-paragraph"
+        style="width:100%;"
       >
       </div>
-      <div class="van-skeleton-paragraph"
-           style="width:100%;"
+      <div
+        class="van-skeleton-paragraph"
+        style="width:100%;"
       >
       </div>
-      <div class="van-skeleton-paragraph"
-           style="width:60%;"
+      <div
+        class="van-skeleton-paragraph"
+        style="width:60%;"
       >
       </div>
     </div>
@@ -99,30 +114,36 @@ exports[`should render demo and match snapshot 1`] = `
   <div class="van-skeleton van-skeleton--animate">
     <!--[-->
     <div style="display:flex;width:100%;">
-      <div class="van-skeleton-image van-skeleton-image--square"
-           style
+      <div
+        class="van-skeleton-image van-skeleton-image--square"
+        style
       >
-        <i class="van-badge__wrapper van-icon van-icon-photo van-skeleton-image__icon"
-           style
+        <i
+          class="van-badge__wrapper van-icon van-icon-photo van-skeleton-image__icon"
+          style
         >
           <!--[-->
         </i>
       </div>
       <div style="flex:1;margin-left:16px;">
-        <div class="van-skeleton-paragraph"
-             style="width:60%;"
+        <div
+          class="van-skeleton-paragraph"
+          style="width:60%;"
         >
         </div>
-        <div class="van-skeleton-paragraph"
-             style="width:100%;"
+        <div
+          class="van-skeleton-paragraph"
+          style="width:100%;"
         >
         </div>
-        <div class="van-skeleton-paragraph"
-             style="width:100%;"
+        <div
+          class="van-skeleton-paragraph"
+          style="width:100%;"
         >
         </div>
-        <div class="van-skeleton-paragraph"
-             style="width:100%;"
+        <div
+          class="van-skeleton-paragraph"
+          style="width:100%;"
         >
         </div>
       </div>

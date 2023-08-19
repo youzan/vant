@@ -1,11 +1,13 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`should render correctly when SSR 1`] = `
-<div class="van-back-top"
-     style
+<div
+  class="van-back-top"
+  style
 >
-  <i class="van-badge__wrapper van-icon van-icon-back-top van-back-top__icon"
-     style
+  <i
+    class="van-badge__wrapper van-icon van-icon-back-top van-back-top__icon"
+    style
   >
     <!--[-->
   </i>

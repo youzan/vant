@@ -1,8 +1,11 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`should change arrow direction when using arrow-direction prop 1`] = `
-<i class="van-badge__wrapper van-icon van-icon-arrow-down van-cell__right-icon">
-</i>
+"<i class=\\"van-badge__wrapper van-icon van-icon-arrow-down van-cell__right-icon\\">
+  <!---->
+  <!---->
+  <!---->
+</i>"
 `;
 
 exports[`should change icon class prefix when using icon-prefix prop 1`] = `
@@ -38,8 +41,13 @@ exports[`should render label slot correctly 1`] = `
 `;
 
 exports[`should render tag prop correctly 1`] = `
-<a class="van-cell">
-</a>
+"<a class=\\"van-cell\\">
+  <!---->
+  <!---->
+  <!---->
+  <!---->
+  <!---->
+</a>"
 `;
 
 exports[`should render title slot correctly 1`] = `

@@ -1,21 +1,23 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`should render colon when using colon prop 1`] = `
 <form class="van-form">
   <div class="van-cell van-field">
     <div class="van-cell__title van-field__label">
-      <label id="van-field-label"
-             for="van-field-input"
+      <label
+        id="van-field-label"
+        for="van-field-input"
       >
         Label:
       </label>
     </div>
     <div class="van-cell__value van-field__value">
       <div class="van-field__body">
-        <input type="text"
-               id="van-field-input"
-               class="van-field__control"
-               aria-labelledby="van-field-label"
+        <input
+          type="text"
+          id="van-field-input"
+          class="van-field__control"
+          aria-labelledby="van-field-label"
         >
       </div>
     </div>
@@ -26,9 +28,10 @@ exports[`should render colon when using colon prop 1`] = `
     </div>
     <div class="van-cell__value van-field__value">
       <div class="van-field__body">
-        <input type="text"
-               id="van-field-input"
-               class="van-field__control"
+        <input
+          type="text"
+          id="van-field-input"
+          class="van-field__control"
         >
       </div>
     </div>
@@ -41,9 +44,10 @@ exports[`should render error-message-align prop correctly 1`] = `
   <div class="van-cell van-field">
     <div class="van-cell__value van-field__value">
       <div class="van-field__body">
-        <input type="text"
-               id="van-field-input"
-               class="van-field__control"
+        <input
+          type="text"
+          id="van-field-input"
+          class="van-field__control"
         >
       </div>
       <div class="van-field__error-message van-field__error-message--right">
@@ -59,9 +63,10 @@ exports[`should render input-align prop correctly 1`] = `
   <div class="van-cell van-field">
     <div class="van-cell__value van-field__value">
       <div class="van-field__body">
-        <input type="text"
-               id="van-field-input"
-               class="van-field__control van-field__control--right"
+        <input
+          type="text"
+          id="van-field-input"
+          class="van-field__control van-field__control--right"
         >
       </div>
     </div>
@@ -83,36 +88,40 @@ exports[`should render label-align prop correctly 1`] = `
 <form class="van-form">
   <div class="van-cell van-field van-field--label-right">
     <div class="van-cell__title van-field__label van-field__label--right">
-      <label id="van-field-label"
-             for="van-field-input"
+      <label
+        id="van-field-label"
+        for="van-field-input"
       >
         Label
       </label>
     </div>
     <div class="van-cell__value van-field__value">
       <div class="van-field__body">
-        <input type="text"
-               id="van-field-input"
-               class="van-field__control"
-               aria-labelledby="van-field-label"
+        <input
+          type="text"
+          id="van-field-input"
+          class="van-field__control"
+          aria-labelledby="van-field-label"
         >
       </div>
     </div>
   </div>
   <div class="van-cell van-field van-field--label-center">
     <div class="van-cell__title van-field__label van-field__label--center">
-      <label id="van-field-label"
-             for="van-field-input"
+      <label
+        id="van-field-label"
+        for="van-field-input"
       >
         Label
       </label>
     </div>
     <div class="van-cell__value van-field__value">
       <div class="van-field__body">
-        <input type="text"
-               id="van-field-input"
-               class="van-field__control"
-               aria-labelledby="van-field-label"
+        <input
+          type="text"
+          id="van-field-input"
+          class="van-field__control"
+          aria-labelledby="van-field-label"
         >
       </div>
     </div>
@@ -123,60 +132,68 @@ exports[`should render label-align prop correctly 1`] = `
 exports[`should render label-width prop correctly 1`] = `
 <form class="van-form">
   <div class="van-cell van-field">
-    <div class="van-cell__title van-field__label"
-         style="width: 5rem;"
+    <div
+      class="van-cell__title van-field__label"
+      style="width: 5rem;"
     >
-      <label id="van-field-label"
-             for="van-field-input"
+      <label
+        id="van-field-label"
+        for="van-field-input"
       >
         Label
       </label>
     </div>
     <div class="van-cell__value van-field__value">
       <div class="van-field__body">
-        <input type="text"
-               id="van-field-input"
-               class="van-field__control"
-               aria-labelledby="van-field-label"
+        <input
+          type="text"
+          id="van-field-input"
+          class="van-field__control"
+          aria-labelledby="van-field-label"
         >
       </div>
     </div>
   </div>
   <div class="van-cell van-field">
-    <div class="van-cell__title van-field__label"
-         style="width: 10vw;"
+    <div
+      class="van-cell__title van-field__label"
+      style="width: 10vw;"
     >
-      <label id="van-field-label"
-             for="van-field-input"
+      <label
+        id="van-field-label"
+        for="van-field-input"
       >
         Label
       </label>
     </div>
     <div class="van-cell__value van-field__value">
       <div class="van-field__body">
-        <input type="text"
-               id="van-field-input"
-               class="van-field__control"
-               aria-labelledby="van-field-label"
+        <input
+          type="text"
+          id="van-field-input"
+          class="van-field__control"
+          aria-labelledby="van-field-label"
         >
       </div>
     </div>
   </div>
   <div class="van-cell van-field van-field--label-top">
     <div class="van-cell__title van-field__label van-field__label--top">
-      <label id="van-field-label"
-             for="van-field-input"
-             style="width: 10vw;"
+      <label
+        id="van-field-label"
+        for="van-field-input"
+        style="width: 10vw;"
       >
         Label
       </label>
     </div>
     <div class="van-cell__value van-field__value">
       <div class="van-field__body">
-        <input type="text"
-               id="van-field-input"
-               class="van-field__control"
-               aria-labelledby="van-field-label"
+        <input
+          type="text"
+          id="van-field-input"
+          class="van-field__control"
+          aria-labelledby="van-field-label"
         >
       </div>
     </div>
@@ -189,10 +206,11 @@ exports[`should validate first field when using validate-first prop 1`] = `
   <div class="van-cell van-field">
     <div class="van-cell__value van-field__value">
       <div class="van-field__body">
-        <input type="text"
-               id="van-field-input"
-               name="A"
-               class="van-field__control"
+        <input
+          type="text"
+          id="van-field-input"
+          name="A"
+          class="van-field__control"
         >
       </div>
       <div class="van-field__error-message">
@@ -203,10 +221,11 @@ exports[`should validate first field when using validate-first prop 1`] = `
   <div class="van-cell van-field">
     <div class="van-cell__value van-field__value">
       <div class="van-field__body">
-        <input type="text"
-               id="van-field-input"
-               name="B"
-               class="van-field__control"
+        <input
+          type="text"
+          id="van-field-input"
+          name="B"
+          class="van-field__control"
         >
       </div>
     </div>

@@ -1,13 +1,15 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`should render error slot correctly 1`] = `
-<div role="feed"
-     class="van-list"
-     aria-busy="false"
+<div
+  role="feed"
+  class="van-list"
+  aria-busy="false"
 >
-  <div role="button"
-       class="van-list__error-text"
-       tabindex="0"
+  <div
+    role="button"
+    class="van-list__error-text"
+    tabindex="0"
   >
     Custom Error
   </div>
@@ -17,9 +19,10 @@ exports[`should render error slot correctly 1`] = `
 `;
 
 exports[`should render finished slot correctly 1`] = `
-<div role="feed"
-     class="van-list"
-     aria-busy="false"
+<div
+  role="feed"
+  class="van-list"
+  aria-busy="false"
 >
   <div class="van-list__finished-text">
     Custom Finished

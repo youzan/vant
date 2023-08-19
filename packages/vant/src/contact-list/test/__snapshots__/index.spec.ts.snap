@@ -1,35 +1,40 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`should render ContactList correctly 1`] = `
 <div class="van-contact-list">
-  <div class="van-radio-group van-contact-list__group"
-       role="radiogroup"
+  <div
+    class="van-radio-group van-contact-list__group"
+    role="radiogroup"
   >
-    <div class="van-cell van-cell--center van-cell--clickable van-contact-list__item"
-         role="button"
-         tabindex="0"
+    <div
+      class="van-cell van-cell--center van-cell--clickable van-contact-list__item"
+      role="button"
+      tabindex="0"
     >
       <i class="van-badge__wrapper van-icon van-icon-edit van-contact-list__edit">
       </i>
       <div class="van-cell__title van-contact-list__item-title">
         jack，12345678
-        <transition-stub appear="false"
-                         persisted="false"
-                         css="true"
-                         class="van-contact-list__item-tag"
+        <transition-stub
+          appear="false"
+          persisted="false"
+          css="true"
+          class="van-contact-list__item-tag"
         >
           <span class="van-tag van-tag--round van-tag--primary">
             默认
           </span>
         </transition-stub>
       </div>
-      <div role="radio"
-           class="van-radio van-contact-list__radio"
-           tabindex="0"
-           aria-checked="true"
+      <div
+        role="radio"
+        class="van-radio van-contact-list__radio"
+        tabindex="0"
+        aria-checked="true"
       >
-        <div class="van-radio__icon van-radio__icon--round van-radio__icon--checked"
-             style="font-size: 18px;"
+        <div
+          class="van-radio__icon van-radio__icon--round van-radio__icon--checked"
+          style="font-size: 18px;"
         >
           <i class="van-badge__wrapper van-icon van-icon-success">
           </i>
@@ -38,8 +43,9 @@ exports[`should render ContactList correctly 1`] = `
     </div>
   </div>
   <div class="van-contact-list__bottom van-safe-area-bottom">
-    <button type="button"
-            class="van-button van-button--primary van-button--normal van-button--block van-button--round van-contact-list__add"
+    <button
+      type="button"
+      class="van-button van-button--primary van-button--normal van-button--block van-button--round van-contact-list__add"
     >
       <div class="van-button__content">
         <span class="van-button__text">

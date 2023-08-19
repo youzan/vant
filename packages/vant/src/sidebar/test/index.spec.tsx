@@ -4,7 +4,7 @@ import { Sidebar } from '..';
 import { SidebarItem } from '../../sidebar-item';
 
 test('should emit change event when active item changed', () => {
-  const onChange = jest.fn();
+  const onChange = vi.fn();
   const wrapper = mount({
     render() {
       return (
@@ -26,7 +26,7 @@ test('should emit change event when active item changed', () => {
 });
 
 test('should emit click event when SidebarItem is clicked', () => {
-  const onClick = jest.fn();
+  const onClick = vi.fn();
   const wrapper = mount({
     render() {
       return (
@@ -42,7 +42,7 @@ test('should emit click event when SidebarItem is clicked', () => {
 });
 
 test('should update v-model when active item changed', () => {
-  const onChange = jest.fn();
+  const onChange = vi.fn();
   const wrapper = mount({
     setup() {
       return {

@@ -91,7 +91,7 @@ test('should render title and description slot correctly', () => {
 
 test('should emit clickOverlay event when overlay is clicked', async () => {
   const root = document.createElement('div');
-  const onClickOverlay = jest.fn();
+  const onClickOverlay = vi.fn();
   const wrapper = mount(ShareSheet, {
     props: {
       show: true,

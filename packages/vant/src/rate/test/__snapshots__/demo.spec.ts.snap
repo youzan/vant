@@ -1,59 +1,65 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`should render demo and match snapshot 1`] = `
 <div>
-  <div role="radiogroup"
-       class="van-rate"
-       tabindex="0"
-       aria-disabled="false"
-       aria-readonly="false"
+  <div
+    role="radiogroup"
+    class="van-rate"
+    tabindex="0"
+    aria-disabled="false"
+    aria-readonly="false"
   >
-    <div role="radio"
-         class="van-rate__item"
-         tabindex="0"
-         aria-setsize="5"
-         aria-posinset="1"
-         aria-checked="true"
+    <div
+      role="radio"
+      class="van-rate__item"
+      tabindex="0"
+      aria-setsize="5"
+      aria-posinset="1"
+      aria-checked="true"
     >
       <i class="van-badge__wrapper van-icon van-icon-star van-rate__icon van-rate__icon--full">
       </i>
     </div>
-    <div role="radio"
-         class="van-rate__item"
-         tabindex="0"
-         aria-setsize="5"
-         aria-posinset="2"
-         aria-checked="true"
+    <div
+      role="radio"
+      class="van-rate__item"
+      tabindex="0"
+      aria-setsize="5"
+      aria-posinset="2"
+      aria-checked="true"
     >
       <i class="van-badge__wrapper van-icon van-icon-star van-rate__icon van-rate__icon--full">
       </i>
     </div>
-    <div role="radio"
-         class="van-rate__item"
-         tabindex="0"
-         aria-setsize="5"
-         aria-posinset="3"
-         aria-checked="true"
+    <div
+      role="radio"
+      class="van-rate__item"
+      tabindex="0"
+      aria-setsize="5"
+      aria-posinset="3"
+      aria-checked="true"
     >
       <i class="van-badge__wrapper van-icon van-icon-star van-rate__icon van-rate__icon--full">
       </i>
     </div>
-    <div role="radio"
-         class="van-rate__item"
-         tabindex="0"
-         aria-setsize="5"
-         aria-posinset="4"
-         aria-checked="false"
+    <div
+      role="radio"
+      class="van-rate__item"
+      tabindex="0"
+      aria-setsize="5"
+      aria-posinset="4"
+      aria-checked="false"
     >
       <i class="van-badge__wrapper van-icon van-icon-star-o van-rate__icon">
       </i>
     </div>
-    <div role="radio"
-         class="van-rate__item"
-         tabindex="0"
-         aria-setsize="5"
-         aria-posinset="5"
-         aria-checked="false"
+    <div
+      role="radio"
+      class="van-rate__item"
+      tabindex="0"
+      aria-setsize="5"
+      aria-posinset="5"
+      aria-checked="false"
     >
       <i class="van-badge__wrapper van-icon van-icon-star-o van-rate__icon">
       </i>
@@ -61,58 +67,64 @@ exports[`should render demo and match snapshot 1`] = `
   </div>
 </div>
 <div>
-  <div role="radiogroup"
-       class="van-rate"
-       tabindex="0"
-       aria-disabled="false"
-       aria-readonly="false"
+  <div
+    role="radiogroup"
+    class="van-rate"
+    tabindex="0"
+    aria-disabled="false"
+    aria-readonly="false"
   >
-    <div role="radio"
-         class="van-rate__item"
-         tabindex="0"
-         aria-setsize="5"
-         aria-posinset="1"
-         aria-checked="true"
+    <div
+      role="radio"
+      class="van-rate__item"
+      tabindex="0"
+      aria-setsize="5"
+      aria-posinset="1"
+      aria-checked="true"
     >
       <i class="van-badge__wrapper van-icon van-icon-like van-rate__icon van-rate__icon--full">
       </i>
     </div>
-    <div role="radio"
-         class="van-rate__item"
-         tabindex="0"
-         aria-setsize="5"
-         aria-posinset="2"
-         aria-checked="true"
+    <div
+      role="radio"
+      class="van-rate__item"
+      tabindex="0"
+      aria-setsize="5"
+      aria-posinset="2"
+      aria-checked="true"
     >
       <i class="van-badge__wrapper van-icon van-icon-like van-rate__icon van-rate__icon--full">
       </i>
     </div>
-    <div role="radio"
-         class="van-rate__item"
-         tabindex="0"
-         aria-setsize="5"
-         aria-posinset="3"
-         aria-checked="true"
+    <div
+      role="radio"
+      class="van-rate__item"
+      tabindex="0"
+      aria-setsize="5"
+      aria-posinset="3"
+      aria-checked="true"
     >
       <i class="van-badge__wrapper van-icon van-icon-like van-rate__icon van-rate__icon--full">
       </i>
     </div>
-    <div role="radio"
-         class="van-rate__item"
-         tabindex="0"
-         aria-setsize="5"
-         aria-posinset="4"
-         aria-checked="false"
+    <div
+      role="radio"
+      class="van-rate__item"
+      tabindex="0"
+      aria-setsize="5"
+      aria-posinset="4"
+      aria-checked="false"
     >
       <i class="van-badge__wrapper van-icon van-icon-like-o van-rate__icon">
       </i>
     </div>
-    <div role="radio"
-         class="van-rate__item"
-         tabindex="0"
-         aria-setsize="5"
-         aria-posinset="5"
-         aria-checked="false"
+    <div
+      role="radio"
+      class="van-rate__item"
+      tabindex="0"
+      aria-setsize="5"
+      aria-posinset="5"
+      aria-checked="false"
     >
       <i class="van-badge__wrapper van-icon van-icon-like-o van-rate__icon">
       </i>
@@ -120,200 +132,149 @@ exports[`should render demo and match snapshot 1`] = `
   </div>
 </div>
 <div>
-  <div role="radiogroup"
-       class="van-rate"
-       tabindex="0"
-       aria-disabled="false"
-       aria-readonly="false"
+  <div
+    role="radiogroup"
+    class="van-rate"
+    tabindex="0"
+    aria-disabled="false"
+    aria-readonly="false"
   >
-    <div role="radio"
-         class="van-rate__item"
-         tabindex="0"
-         aria-setsize="5"
-         aria-posinset="1"
-         aria-checked="true"
+    <div
+      role="radio"
+      class="van-rate__item"
+      tabindex="0"
+      aria-setsize="5"
+      aria-posinset="1"
+      aria-checked="true"
     >
-      <i class="van-badge__wrapper van-icon van-icon-star van-rate__icon van-rate__icon--full"
-         style="color: rgb(255, 210, 30); font-size: 25px;"
+      <i
+        class="van-badge__wrapper van-icon van-icon-star van-rate__icon van-rate__icon--full"
+        style="color: rgb(255, 210, 30); font-size: 25px;"
       >
       </i>
     </div>
-    <div role="radio"
-         class="van-rate__item"
-         tabindex="0"
-         aria-setsize="5"
-         aria-posinset="2"
-         aria-checked="true"
+    <div
+      role="radio"
+      class="van-rate__item"
+      tabindex="0"
+      aria-setsize="5"
+      aria-posinset="2"
+      aria-checked="true"
     >
-      <i class="van-badge__wrapper van-icon van-icon-star van-rate__icon van-rate__icon--full"
-         style="color: rgb(255, 210, 30); font-size: 25px;"
+      <i
+        class="van-badge__wrapper van-icon van-icon-star van-rate__icon van-rate__icon--full"
+        style="color: rgb(255, 210, 30); font-size: 25px;"
       >
       </i>
     </div>
-    <div role="radio"
-         class="van-rate__item"
-         tabindex="0"
-         aria-setsize="5"
-         aria-posinset="3"
-         aria-checked="true"
+    <div
+      role="radio"
+      class="van-rate__item"
+      tabindex="0"
+      aria-setsize="5"
+      aria-posinset="3"
+      aria-checked="true"
     >
-      <i class="van-badge__wrapper van-icon van-icon-star van-rate__icon van-rate__icon--full"
-         style="color: rgb(255, 210, 30); font-size: 25px;"
+      <i
+        class="van-badge__wrapper van-icon van-icon-star van-rate__icon van-rate__icon--full"
+        style="color: rgb(255, 210, 30); font-size: 25px;"
       >
       </i>
     </div>
-    <div role="radio"
-         class="van-rate__item"
-         tabindex="0"
-         aria-setsize="5"
-         aria-posinset="4"
-         aria-checked="false"
+    <div
+      role="radio"
+      class="van-rate__item"
+      tabindex="0"
+      aria-setsize="5"
+      aria-posinset="4"
+      aria-checked="false"
     >
-      <i class="van-badge__wrapper van-icon van-icon-star van-rate__icon"
-         style="color: rgb(238, 238, 238); font-size: 25px;"
+      <i
+        class="van-badge__wrapper van-icon van-icon-star van-rate__icon"
+        style="color: rgb(238, 238, 238); font-size: 25px;"
       >
       </i>
     </div>
-    <div role="radio"
-         class="van-rate__item"
-         tabindex="0"
-         aria-setsize="5"
-         aria-posinset="5"
-         aria-checked="false"
+    <div
+      role="radio"
+      class="van-rate__item"
+      tabindex="0"
+      aria-setsize="5"
+      aria-posinset="5"
+      aria-checked="false"
     >
-      <i class="van-badge__wrapper van-icon van-icon-star van-rate__icon"
-         style="color: rgb(238, 238, 238); font-size: 25px;"
+      <i
+        class="van-badge__wrapper van-icon van-icon-star van-rate__icon"
+        style="color: rgb(238, 238, 238); font-size: 25px;"
       >
       </i>
     </div>
   </div>
 </div>
 <div>
-  <div role="radiogroup"
-       class="van-rate"
-       tabindex="0"
-       aria-disabled="false"
-       aria-readonly="false"
+  <div
+    role="radiogroup"
+    class="van-rate"
+    tabindex="0"
+    aria-disabled="false"
+    aria-readonly="false"
   >
-    <div role="radio"
-         class="van-rate__item"
-         tabindex="0"
-         aria-setsize="5"
-         aria-posinset="1"
-         aria-checked="true"
+    <div
+      role="radio"
+      class="van-rate__item"
+      tabindex="0"
+      aria-setsize="5"
+      aria-posinset="1"
+      aria-checked="true"
     >
       <i class="van-badge__wrapper van-icon van-icon-star van-rate__icon van-rate__icon--full">
       </i>
     </div>
-    <div role="radio"
-         class="van-rate__item"
-         tabindex="0"
-         aria-setsize="5"
-         aria-posinset="2"
-         aria-checked="true"
+    <div
+      role="radio"
+      class="van-rate__item"
+      tabindex="0"
+      aria-setsize="5"
+      aria-posinset="2"
+      aria-checked="true"
     >
       <i class="van-badge__wrapper van-icon van-icon-star van-rate__icon van-rate__icon--full">
       </i>
     </div>
-    <div role="radio"
-         class="van-rate__item"
-         tabindex="0"
-         aria-setsize="5"
-         aria-posinset="3"
-         aria-checked="true"
+    <div
+      role="radio"
+      class="van-rate__item"
+      tabindex="0"
+      aria-setsize="5"
+      aria-posinset="3"
+      aria-checked="true"
     >
       <i class="van-badge__wrapper van-icon van-icon-star-o van-rate__icon">
       </i>
-      <i class="van-badge__wrapper van-icon van-icon-star van-rate__icon van-rate__icon--half van-rate__icon--full"
-         style="width: 0.5em;"
+      <i
+        class="van-badge__wrapper van-icon van-icon-star van-rate__icon van-rate__icon--half van-rate__icon--full"
+        style="width: 0.5em;"
       >
       </i>
     </div>
-    <div role="radio"
-         class="van-rate__item"
-         tabindex="0"
-         aria-setsize="5"
-         aria-posinset="4"
-         aria-checked="false"
+    <div
+      role="radio"
+      class="van-rate__item"
+      tabindex="0"
+      aria-setsize="5"
+      aria-posinset="4"
+      aria-checked="false"
     >
       <i class="van-badge__wrapper van-icon van-icon-star-o van-rate__icon">
       </i>
     </div>
-    <div role="radio"
-         class="van-rate__item"
-         tabindex="0"
-         aria-setsize="5"
-         aria-posinset="5"
-         aria-checked="false"
-    >
-      <i class="van-badge__wrapper van-icon van-icon-star-o van-rate__icon">
-      </i>
-    </div>
-  </div>
-</div>
-<div>
-  <div role="radiogroup"
-       class="van-rate"
-       tabindex="0"
-       aria-disabled="false"
-       aria-readonly="false"
-  >
-    <div role="radio"
-         class="van-rate__item"
-         tabindex="0"
-         aria-setsize="6"
-         aria-posinset="1"
-         aria-checked="true"
-    >
-      <i class="van-badge__wrapper van-icon van-icon-star van-rate__icon van-rate__icon--full">
-      </i>
-    </div>
-    <div role="radio"
-         class="van-rate__item"
-         tabindex="0"
-         aria-setsize="6"
-         aria-posinset="2"
-         aria-checked="true"
-    >
-      <i class="van-badge__wrapper van-icon van-icon-star van-rate__icon van-rate__icon--full">
-      </i>
-    </div>
-    <div role="radio"
-         class="van-rate__item"
-         tabindex="0"
-         aria-setsize="6"
-         aria-posinset="3"
-         aria-checked="true"
-    >
-      <i class="van-badge__wrapper van-icon van-icon-star van-rate__icon van-rate__icon--full">
-      </i>
-    </div>
-    <div role="radio"
-         class="van-rate__item"
-         tabindex="0"
-         aria-setsize="6"
-         aria-posinset="4"
-         aria-checked="true"
-    >
-      <i class="van-badge__wrapper van-icon van-icon-star van-rate__icon van-rate__icon--full">
-      </i>
-    </div>
-    <div role="radio"
-         class="van-rate__item"
-         tabindex="0"
-         aria-setsize="6"
-         aria-posinset="5"
-         aria-checked="false"
-    >
-      <i class="van-badge__wrapper van-icon van-icon-star-o van-rate__icon">
-      </i>
-    </div>
-    <div role="radio"
-         class="van-rate__item"
-         tabindex="0"
-         aria-setsize="6"
-         aria-posinset="6"
-         aria-checked="false"
+    <div
+      role="radio"
+      class="van-rate__item"
+      tabindex="0"
+      aria-setsize="5"
+      aria-posinset="5"
+      aria-checked="false"
     >
       <i class="van-badge__wrapper van-icon van-icon-star-o van-rate__icon">
       </i>
@@ -321,58 +282,75 @@ exports[`should render demo and match snapshot 1`] = `
   </div>
 </div>
 <div>
-  <div role="radiogroup"
-       class="van-rate"
-       tabindex="0"
-       aria-disabled="false"
-       aria-readonly="false"
+  <div
+    role="radiogroup"
+    class="van-rate"
+    tabindex="0"
+    aria-disabled="false"
+    aria-readonly="false"
   >
-    <div role="radio"
-         class="van-rate__item"
-         tabindex="0"
-         aria-setsize="5"
-         aria-posinset="1"
-         aria-checked="true"
+    <div
+      role="radio"
+      class="van-rate__item"
+      tabindex="0"
+      aria-setsize="6"
+      aria-posinset="1"
+      aria-checked="true"
     >
       <i class="van-badge__wrapper van-icon van-icon-star van-rate__icon van-rate__icon--full">
       </i>
     </div>
-    <div role="radio"
-         class="van-rate__item"
-         tabindex="0"
-         aria-setsize="5"
-         aria-posinset="2"
-         aria-checked="true"
+    <div
+      role="radio"
+      class="van-rate__item"
+      tabindex="0"
+      aria-setsize="6"
+      aria-posinset="2"
+      aria-checked="true"
     >
       <i class="van-badge__wrapper van-icon van-icon-star van-rate__icon van-rate__icon--full">
       </i>
     </div>
-    <div role="radio"
-         class="van-rate__item"
-         tabindex="0"
-         aria-setsize="5"
-         aria-posinset="3"
-         aria-checked="true"
+    <div
+      role="radio"
+      class="van-rate__item"
+      tabindex="0"
+      aria-setsize="6"
+      aria-posinset="3"
+      aria-checked="true"
     >
       <i class="van-badge__wrapper van-icon van-icon-star van-rate__icon van-rate__icon--full">
       </i>
     </div>
-    <div role="radio"
-         class="van-rate__item"
-         tabindex="0"
-         aria-setsize="5"
-         aria-posinset="4"
-         aria-checked="false"
+    <div
+      role="radio"
+      class="van-rate__item"
+      tabindex="0"
+      aria-setsize="6"
+      aria-posinset="4"
+      aria-checked="true"
+    >
+      <i class="van-badge__wrapper van-icon van-icon-star van-rate__icon van-rate__icon--full">
+      </i>
+    </div>
+    <div
+      role="radio"
+      class="van-rate__item"
+      tabindex="0"
+      aria-setsize="6"
+      aria-posinset="5"
+      aria-checked="false"
     >
       <i class="van-badge__wrapper van-icon van-icon-star-o van-rate__icon">
       </i>
     </div>
-    <div role="radio"
-         class="van-rate__item"
-         tabindex="0"
-         aria-setsize="5"
-         aria-posinset="5"
-         aria-checked="false"
+    <div
+      role="radio"
+      class="van-rate__item"
+      tabindex="0"
+      aria-setsize="6"
+      aria-posinset="6"
+      aria-checked="false"
     >
       <i class="van-badge__wrapper van-icon van-icon-star-o van-rate__icon">
       </i>
@@ -380,52 +358,123 @@ exports[`should render demo and match snapshot 1`] = `
   </div>
 </div>
 <div>
-  <div role="radiogroup"
-       class="van-rate van-rate--disabled"
-       aria-disabled="true"
-       aria-readonly="false"
+  <div
+    role="radiogroup"
+    class="van-rate"
+    tabindex="0"
+    aria-disabled="false"
+    aria-readonly="false"
   >
-    <div role="radio"
-         class="van-rate__item"
-         aria-setsize="5"
-         aria-posinset="1"
-         aria-checked="true"
+    <div
+      role="radio"
+      class="van-rate__item"
+      tabindex="0"
+      aria-setsize="5"
+      aria-posinset="1"
+      aria-checked="true"
+    >
+      <i class="van-badge__wrapper van-icon van-icon-star van-rate__icon van-rate__icon--full">
+      </i>
+    </div>
+    <div
+      role="radio"
+      class="van-rate__item"
+      tabindex="0"
+      aria-setsize="5"
+      aria-posinset="2"
+      aria-checked="true"
+    >
+      <i class="van-badge__wrapper van-icon van-icon-star van-rate__icon van-rate__icon--full">
+      </i>
+    </div>
+    <div
+      role="radio"
+      class="van-rate__item"
+      tabindex="0"
+      aria-setsize="5"
+      aria-posinset="3"
+      aria-checked="true"
+    >
+      <i class="van-badge__wrapper van-icon van-icon-star van-rate__icon van-rate__icon--full">
+      </i>
+    </div>
+    <div
+      role="radio"
+      class="van-rate__item"
+      tabindex="0"
+      aria-setsize="5"
+      aria-posinset="4"
+      aria-checked="false"
+    >
+      <i class="van-badge__wrapper van-icon van-icon-star-o van-rate__icon">
+      </i>
+    </div>
+    <div
+      role="radio"
+      class="van-rate__item"
+      tabindex="0"
+      aria-setsize="5"
+      aria-posinset="5"
+      aria-checked="false"
+    >
+      <i class="van-badge__wrapper van-icon van-icon-star-o van-rate__icon">
+      </i>
+    </div>
+  </div>
+</div>
+<div>
+  <div
+    role="radiogroup"
+    class="van-rate van-rate--disabled"
+    aria-disabled="true"
+    aria-readonly="false"
+  >
+    <div
+      role="radio"
+      class="van-rate__item"
+      aria-setsize="5"
+      aria-posinset="1"
+      aria-checked="true"
     >
       <i class="van-badge__wrapper van-icon van-icon-star van-rate__icon van-rate__icon--disabled van-rate__icon--full">
       </i>
     </div>
-    <div role="radio"
-         class="van-rate__item"
-         aria-setsize="5"
-         aria-posinset="2"
-         aria-checked="true"
+    <div
+      role="radio"
+      class="van-rate__item"
+      aria-setsize="5"
+      aria-posinset="2"
+      aria-checked="true"
     >
       <i class="van-badge__wrapper van-icon van-icon-star van-rate__icon van-rate__icon--disabled van-rate__icon--full">
       </i>
     </div>
-    <div role="radio"
-         class="van-rate__item"
-         aria-setsize="5"
-         aria-posinset="3"
-         aria-checked="true"
+    <div
+      role="radio"
+      class="van-rate__item"
+      aria-setsize="5"
+      aria-posinset="3"
+      aria-checked="true"
     >
       <i class="van-badge__wrapper van-icon van-icon-star van-rate__icon van-rate__icon--disabled van-rate__icon--full">
       </i>
     </div>
-    <div role="radio"
-         class="van-rate__item"
-         aria-setsize="5"
-         aria-posinset="4"
-         aria-checked="false"
+    <div
+      role="radio"
+      class="van-rate__item"
+      aria-setsize="5"
+      aria-posinset="4"
+      aria-checked="false"
     >
       <i class="van-badge__wrapper van-icon van-icon-star-o van-rate__icon van-rate__icon--disabled">
       </i>
     </div>
-    <div role="radio"
-         class="van-rate__item"
-         aria-setsize="5"
-         aria-posinset="5"
-         aria-checked="false"
+    <div
+      role="radio"
+      class="van-rate__item"
+      aria-setsize="5"
+      aria-posinset="5"
+      aria-checked="false"
     >
       <i class="van-badge__wrapper van-icon van-icon-star-o van-rate__icon van-rate__icon--disabled">
       </i>
@@ -433,58 +482,64 @@ exports[`should render demo and match snapshot 1`] = `
   </div>
 </div>
 <div>
-  <div role="radiogroup"
-       class="van-rate van-rate--readonly"
-       tabindex="0"
-       aria-disabled="false"
-       aria-readonly="true"
+  <div
+    role="radiogroup"
+    class="van-rate van-rate--readonly"
+    tabindex="0"
+    aria-disabled="false"
+    aria-readonly="true"
   >
-    <div role="radio"
-         class="van-rate__item"
-         tabindex="0"
-         aria-setsize="5"
-         aria-posinset="1"
-         aria-checked="true"
+    <div
+      role="radio"
+      class="van-rate__item"
+      tabindex="0"
+      aria-setsize="5"
+      aria-posinset="1"
+      aria-checked="true"
     >
       <i class="van-badge__wrapper van-icon van-icon-star van-rate__icon van-rate__icon--full">
       </i>
     </div>
-    <div role="radio"
-         class="van-rate__item"
-         tabindex="0"
-         aria-setsize="5"
-         aria-posinset="2"
-         aria-checked="true"
+    <div
+      role="radio"
+      class="van-rate__item"
+      tabindex="0"
+      aria-setsize="5"
+      aria-posinset="2"
+      aria-checked="true"
     >
       <i class="van-badge__wrapper van-icon van-icon-star van-rate__icon van-rate__icon--full">
       </i>
     </div>
-    <div role="radio"
-         class="van-rate__item"
-         tabindex="0"
-         aria-setsize="5"
-         aria-posinset="3"
-         aria-checked="true"
+    <div
+      role="radio"
+      class="van-rate__item"
+      tabindex="0"
+      aria-setsize="5"
+      aria-posinset="3"
+      aria-checked="true"
     >
       <i class="van-badge__wrapper van-icon van-icon-star van-rate__icon van-rate__icon--full">
       </i>
     </div>
-    <div role="radio"
-         class="van-rate__item"
-         tabindex="0"
-         aria-setsize="5"
-         aria-posinset="4"
-         aria-checked="false"
+    <div
+      role="radio"
+      class="van-rate__item"
+      tabindex="0"
+      aria-setsize="5"
+      aria-posinset="4"
+      aria-checked="false"
     >
       <i class="van-badge__wrapper van-icon van-icon-star-o van-rate__icon">
       </i>
     </div>
-    <div role="radio"
-         class="van-rate__item"
-         tabindex="0"
-         aria-setsize="5"
-         aria-posinset="5"
-         aria-checked="false"
+    <div
+      role="radio"
+      class="van-rate__item"
+      tabindex="0"
+      aria-setsize="5"
+      aria-posinset="5"
+      aria-checked="false"
     >
       <i class="van-badge__wrapper van-icon van-icon-star-o van-rate__icon">
       </i>
@@ -492,62 +547,69 @@ exports[`should render demo and match snapshot 1`] = `
   </div>
 </div>
 <div>
-  <div role="radiogroup"
-       class="van-rate van-rate--readonly"
-       tabindex="0"
-       aria-disabled="false"
-       aria-readonly="true"
+  <div
+    role="radiogroup"
+    class="van-rate van-rate--readonly"
+    tabindex="0"
+    aria-disabled="false"
+    aria-readonly="true"
   >
-    <div role="radio"
-         class="van-rate__item"
-         tabindex="0"
-         aria-setsize="5"
-         aria-posinset="1"
-         aria-checked="true"
+    <div
+      role="radio"
+      class="van-rate__item"
+      tabindex="0"
+      aria-setsize="5"
+      aria-posinset="1"
+      aria-checked="true"
     >
       <i class="van-badge__wrapper van-icon van-icon-star van-rate__icon van-rate__icon--full">
       </i>
     </div>
-    <div role="radio"
-         class="van-rate__item"
-         tabindex="0"
-         aria-setsize="5"
-         aria-posinset="2"
-         aria-checked="true"
+    <div
+      role="radio"
+      class="van-rate__item"
+      tabindex="0"
+      aria-setsize="5"
+      aria-posinset="2"
+      aria-checked="true"
     >
       <i class="van-badge__wrapper van-icon van-icon-star van-rate__icon van-rate__icon--full">
       </i>
     </div>
-    <div role="radio"
-         class="van-rate__item"
-         tabindex="0"
-         aria-setsize="5"
-         aria-posinset="3"
-         aria-checked="true"
+    <div
+      role="radio"
+      class="van-rate__item"
+      tabindex="0"
+      aria-setsize="5"
+      aria-posinset="3"
+      aria-checked="true"
     >
       <i class="van-badge__wrapper van-icon van-icon-star van-rate__icon van-rate__icon--full">
       </i>
     </div>
-    <div role="radio"
-         class="van-rate__item"
-         tabindex="0"
-         aria-setsize="5"
-         aria-posinset="4"
-         aria-checked="true"
+    <div
+      role="radio"
+      class="van-rate__item"
+      tabindex="0"
+      aria-setsize="5"
+      aria-posinset="4"
+      aria-checked="true"
     >
       <i class="van-badge__wrapper van-icon van-icon-star-o van-rate__icon">
       </i>
-      <i class="van-badge__wrapper van-icon van-icon-star van-rate__icon van-rate__icon--half van-rate__icon--full"
-         style="width: 0.3em;"
+      <i
+        class="van-badge__wrapper van-icon van-icon-star van-rate__icon van-rate__icon--half van-rate__icon--full"
+        style="width: 0.3em;"
       >
       </i>
     </div>
-    <div role="radio"
-         class="van-rate__item"
-         tabindex="0"
-         aria-setsize="5"
-         aria-posinset="5"
-         aria-checked="false"
+    <div
+      role="radio"
+      class="van-rate__item"
+      tabindex="0"
+      aria-setsize="5"
+      aria-posinset="5"
+      aria-checked="false"
     >
       <i class="van-badge__wrapper van-icon van-icon-star-o van-rate__icon">
       </i>
@@ -555,58 +617,64 @@ exports[`should render demo and match snapshot 1`] = `
   </div>
 </div>
 <div>
-  <div role="radiogroup"
-       class="van-rate"
-       tabindex="0"
-       aria-disabled="false"
-       aria-readonly="false"
+  <div
+    role="radiogroup"
+    class="van-rate"
+    tabindex="0"
+    aria-disabled="false"
+    aria-readonly="false"
   >
-    <div role="radio"
-         class="van-rate__item"
-         tabindex="0"
-         aria-setsize="5"
-         aria-posinset="1"
-         aria-checked="true"
+    <div
+      role="radio"
+      class="van-rate__item"
+      tabindex="0"
+      aria-setsize="5"
+      aria-posinset="1"
+      aria-checked="true"
     >
       <i class="van-badge__wrapper van-icon van-icon-star van-rate__icon van-rate__icon--full">
       </i>
     </div>
-    <div role="radio"
-         class="van-rate__item"
-         tabindex="0"
-         aria-setsize="5"
-         aria-posinset="2"
-         aria-checked="true"
+    <div
+      role="radio"
+      class="van-rate__item"
+      tabindex="0"
+      aria-setsize="5"
+      aria-posinset="2"
+      aria-checked="true"
     >
       <i class="van-badge__wrapper van-icon van-icon-star van-rate__icon van-rate__icon--full">
       </i>
     </div>
-    <div role="radio"
-         class="van-rate__item"
-         tabindex="0"
-         aria-setsize="5"
-         aria-posinset="3"
-         aria-checked="false"
+    <div
+      role="radio"
+      class="van-rate__item"
+      tabindex="0"
+      aria-setsize="5"
+      aria-posinset="3"
+      aria-checked="false"
     >
       <i class="van-badge__wrapper van-icon van-icon-star-o van-rate__icon">
       </i>
     </div>
-    <div role="radio"
-         class="van-rate__item"
-         tabindex="0"
-         aria-setsize="5"
-         aria-posinset="4"
-         aria-checked="false"
+    <div
+      role="radio"
+      class="van-rate__item"
+      tabindex="0"
+      aria-setsize="5"
+      aria-posinset="4"
+      aria-checked="false"
     >
       <i class="van-badge__wrapper van-icon van-icon-star-o van-rate__icon">
       </i>
     </div>
-    <div role="radio"
-         class="van-rate__item"
-         tabindex="0"
-         aria-setsize="5"
-         aria-posinset="5"
-         aria-checked="false"
+    <div
+      role="radio"
+      class="van-rate__item"
+      tabindex="0"
+      aria-setsize="5"
+      aria-posinset="5"
+      aria-checked="false"
     >
       <i class="van-badge__wrapper van-icon van-icon-star-o van-rate__icon">
       </i>

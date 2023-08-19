@@ -62,7 +62,7 @@ test('should render default slot correctly', () => {
 });
 
 test('should allow to touchmove when lock-scroll is false', async () => {
-  const onTouchMove = jest.fn();
+  const onTouchMove = vi.fn();
   const wrapper = mount({
     render() {
       return (
@@ -79,7 +79,7 @@ test('should allow to touchmove when lock-scroll is false', async () => {
 });
 
 test('should not allow to touchmove when lock-scroll is true', async () => {
-  const onTouchMove = jest.fn();
+  const onTouchMove = vi.fn();
   const wrapper = mount({
     render() {
       return (

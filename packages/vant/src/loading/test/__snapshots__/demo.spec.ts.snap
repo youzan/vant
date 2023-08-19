@@ -1,27 +1,31 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`should render demo and match snapshot 1`] = `
 <div>
-  <div class="van-loading van-loading--circular"
-       aria-live="polite"
-       aria-busy="true"
+  <div
+    class="van-loading van-loading--circular"
+    aria-live="polite"
+    aria-busy="true"
   >
     <span class="van-loading__spinner van-loading__spinner--circular">
-      <svg class="van-loading__circular"
-           viewbox="25 25 50 50"
+      <svg
+        class="van-loading__circular"
+        viewbox="25 25 50 50"
       >
-        <circle cx="50"
-                cy="50"
-                r="20"
-                fill="none"
+        <circle
+          cx="50"
+          cy="50"
+          r="20"
+          fill="none"
         >
         </circle>
       </svg>
     </span>
   </div>
-  <div class="van-loading van-loading--spinner"
-       aria-live="polite"
-       aria-busy="true"
+  <div
+    class="van-loading van-loading--spinner"
+    aria-live="polite"
+    aria-busy="true"
   >
     <span class="van-loading__spinner van-loading__spinner--spinner">
       <i class="van-loading__line van-loading__line--1">
@@ -52,31 +56,37 @@ exports[`should render demo and match snapshot 1`] = `
   </div>
 </div>
 <div>
-  <div class="van-loading van-loading--circular"
-       aria-live="polite"
-       aria-busy="true"
+  <div
+    class="van-loading van-loading--circular"
+    aria-live="polite"
+    aria-busy="true"
   >
-    <span class="van-loading__spinner van-loading__spinner--circular"
-          style="color: rgb(25, 137, 250);"
+    <span
+      class="van-loading__spinner van-loading__spinner--circular"
+      style="color: rgb(25, 137, 250);"
     >
-      <svg class="van-loading__circular"
-           viewbox="25 25 50 50"
+      <svg
+        class="van-loading__circular"
+        viewbox="25 25 50 50"
       >
-        <circle cx="50"
-                cy="50"
-                r="20"
-                fill="none"
+        <circle
+          cx="50"
+          cy="50"
+          r="20"
+          fill="none"
         >
         </circle>
       </svg>
     </span>
   </div>
-  <div class="van-loading van-loading--spinner"
-       aria-live="polite"
-       aria-busy="true"
+  <div
+    class="van-loading van-loading--spinner"
+    aria-live="polite"
+    aria-busy="true"
   >
-    <span class="van-loading__spinner van-loading__spinner--spinner"
-          style="color: rgb(25, 137, 250);"
+    <span
+      class="van-loading__spinner van-loading__spinner--spinner"
+      style="color: rgb(25, 137, 250);"
     >
       <i class="van-loading__line van-loading__line--1">
       </i>
@@ -106,31 +116,37 @@ exports[`should render demo and match snapshot 1`] = `
   </div>
 </div>
 <div>
-  <div class="van-loading van-loading--circular"
-       aria-live="polite"
-       aria-busy="true"
+  <div
+    class="van-loading van-loading--circular"
+    aria-live="polite"
+    aria-busy="true"
   >
-    <span class="van-loading__spinner van-loading__spinner--circular"
-          style="width: 24px; height: 24px;"
+    <span
+      class="van-loading__spinner van-loading__spinner--circular"
+      style="width: 24px; height: 24px;"
     >
-      <svg class="van-loading__circular"
-           viewbox="25 25 50 50"
+      <svg
+        class="van-loading__circular"
+        viewbox="25 25 50 50"
       >
-        <circle cx="50"
-                cy="50"
-                r="20"
-                fill="none"
+        <circle
+          cx="50"
+          cy="50"
+          r="20"
+          fill="none"
         >
         </circle>
       </svg>
     </span>
   </div>
-  <div class="van-loading van-loading--spinner"
-       aria-live="polite"
-       aria-busy="true"
+  <div
+    class="van-loading van-loading--spinner"
+    aria-live="polite"
+    aria-busy="true"
   >
-    <span class="van-loading__spinner van-loading__spinner--spinner"
-          style="width: 24px; height: 24px;"
+    <span
+      class="van-loading__spinner van-loading__spinner--spinner"
+      style="width: 24px; height: 24px;"
     >
       <i class="van-loading__line van-loading__line--1">
       </i>
@@ -160,20 +176,24 @@ exports[`should render demo and match snapshot 1`] = `
   </div>
 </div>
 <div>
-  <div class="van-loading van-loading--circular"
-       aria-live="polite"
-       aria-busy="true"
+  <div
+    class="van-loading van-loading--circular"
+    aria-live="polite"
+    aria-busy="true"
   >
-    <span class="van-loading__spinner van-loading__spinner--circular"
-          style="width: 24px; height: 24px;"
+    <span
+      class="van-loading__spinner van-loading__spinner--circular"
+      style="width: 24px; height: 24px;"
     >
-      <svg class="van-loading__circular"
-           viewbox="25 25 50 50"
+      <svg
+        class="van-loading__circular"
+        viewbox="25 25 50 50"
       >
-        <circle cx="50"
-                cy="50"
-                r="20"
-                fill="none"
+        <circle
+          cx="50"
+          cy="50"
+          r="20"
+          fill="none"
         >
         </circle>
       </svg>
@@ -184,20 +204,24 @@ exports[`should render demo and match snapshot 1`] = `
   </div>
 </div>
 <div>
-  <div class="van-loading van-loading--circular van-loading--vertical"
-       aria-live="polite"
-       aria-busy="true"
+  <div
+    class="van-loading van-loading--circular van-loading--vertical"
+    aria-live="polite"
+    aria-busy="true"
   >
-    <span class="van-loading__spinner van-loading__spinner--circular"
-          style="width: 24px; height: 24px;"
+    <span
+      class="van-loading__spinner van-loading__spinner--circular"
+      style="width: 24px; height: 24px;"
     >
-      <svg class="van-loading__circular"
-           viewbox="25 25 50 50"
+      <svg
+        class="van-loading__circular"
+        viewbox="25 25 50 50"
       >
-        <circle cx="50"
-                cy="50"
-                r="20"
-                fill="none"
+        <circle
+          cx="50"
+          cy="50"
+          r="20"
+          fill="none"
         >
         </circle>
       </svg>
@@ -208,63 +232,75 @@ exports[`should render demo and match snapshot 1`] = `
   </div>
 </div>
 <div>
-  <div class="van-loading van-loading--circular van-loading--vertical"
-       aria-live="polite"
-       aria-busy="true"
+  <div
+    class="van-loading van-loading--circular van-loading--vertical"
+    aria-live="polite"
+    aria-busy="true"
   >
-    <span class="van-loading__spinner van-loading__spinner--circular"
-          style="color: rgb(0, 148, 255); width: 24px; height: 24px;"
+    <span
+      class="van-loading__spinner van-loading__spinner--circular"
+      style="color: rgb(0, 148, 255); width: 24px; height: 24px;"
     >
-      <svg class="van-loading__circular"
-           viewbox="25 25 50 50"
+      <svg
+        class="van-loading__circular"
+        viewbox="25 25 50 50"
       >
-        <circle cx="50"
-                cy="50"
-                r="20"
-                fill="none"
+        <circle
+          cx="50"
+          cy="50"
+          r="20"
+          fill="none"
         >
         </circle>
       </svg>
     </span>
-    <span class="van-loading__text"
-          style="color: rgb(0, 148, 255);"
+    <span
+      class="van-loading__text"
+      style="color: rgb(0, 148, 255);"
     >
       Loading...
     </span>
   </div>
-  <div class="van-loading van-loading--circular van-loading--vertical"
-       aria-live="polite"
-       aria-busy="true"
+  <div
+    class="van-loading van-loading--circular van-loading--vertical"
+    aria-live="polite"
+    aria-busy="true"
   >
-    <span class="van-loading__spinner van-loading__spinner--circular"
-          style="width: 24px; height: 24px;"
+    <span
+      class="van-loading__spinner van-loading__spinner--circular"
+      style="width: 24px; height: 24px;"
     >
-      <svg class="van-loading__circular"
-           viewbox="25 25 50 50"
+      <svg
+        class="van-loading__circular"
+        viewbox="25 25 50 50"
       >
-        <circle cx="50"
-                cy="50"
-                r="20"
-                fill="none"
+        <circle
+          cx="50"
+          cy="50"
+          r="20"
+          fill="none"
         >
         </circle>
       </svg>
     </span>
-    <span class="van-loading__text"
-          style="color: rgb(0, 148, 255);"
+    <span
+      class="van-loading__text"
+      style="color: rgb(0, 148, 255);"
     >
       Loading...
     </span>
   </div>
 </div>
 <div>
-  <div class="van-loading van-loading--circular van-loading--vertical"
-       aria-live="polite"
-       aria-busy="true"
+  <div
+    class="van-loading van-loading--circular van-loading--vertical"
+    aria-live="polite"
+    aria-busy="true"
   >
     <span class="van-loading__spinner van-loading__spinner--circular">
-      <i class="van-badge__wrapper van-icon van-icon-star-o"
-         style="font-size: 30px;"
+      <i
+        class="van-badge__wrapper van-icon van-icon-star-o"
+        style="font-size: 30px;"
       >
       </i>
     </span>

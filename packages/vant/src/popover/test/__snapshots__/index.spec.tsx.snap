@@ -1,9 +1,10 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`should allow to custom the className of action 1`] = `
-<div role="menuitem"
-     class="van-popover__action foo"
-     tabindex="0"
+<div
+  role="menuitem"
+  class="van-popover__action foo"
+  tabindex="0"
 >
   <div class="van-popover__action-text van-hairline--bottom">
     Option
@@ -14,23 +15,27 @@ exports[`should allow to custom the className of action 1`] = `
 exports[`should change icon class prefix when using icon-prefix prop 1`] = `
 <span class="van-popover__wrapper">
 </span>
-<transition-stub name="van-popover-zoom"
-                 appear="false"
-                 persisted="false"
-                 css="true"
+<transition-stub
+  name="van-popover-zoom"
+  appear="false"
+  persisted="false"
+  css="true"
 >
-  <div role="dialog"
-       tabindex="0"
-       class="van-popup van-popover van-popover--light"
+  <div
+    role="dialog"
+    tabindex="0"
+    class="van-popup van-popover van-popover--light"
   >
     <div class="van-popover__arrow">
     </div>
-    <div role="menu"
-         class="van-popover__content van-popover__content--vertical"
+    <div
+      role="menu"
+      class="van-popover__content van-popover__content--vertical"
     >
-      <div role="menuitem"
-           class="van-popover__action van-popover__action--with-icon"
-           tabindex="0"
+      <div
+        role="menuitem"
+        class="van-popover__action van-popover__action--with-icon"
+        tabindex="0"
       >
         <i class="van-badge__wrapper my-icon my-icon-success van-popover__action-icon">
         </i>
@@ -43,31 +48,27 @@ exports[`should change icon class prefix when using icon-prefix prop 1`] = `
 </transition-stub>
 `;
 
-exports[`should locate to reference element when showed 1`] = `
-<transition-stub name="van-popover-zoom"
-                 appear="false"
-                 persisted="false"
-                 css="true"
->
-</transition-stub>
-`;
+exports[`should locate to reference element when showed 1`] = `"<!----><transition-stub name=\\"van-popover-zoom\\" appear=\\"false\\" persisted=\\"false\\" css=\\"true\\"><!----></transition-stub>"`;
 
 exports[`should locate to reference element when showed 2`] = `
-<transition-stub name="van-popover-zoom"
-                 appear="false"
-                 persisted="false"
-                 css="true"
+<transition-stub
+  name="van-popover-zoom"
+  appear="false"
+  persisted="false"
+  css="true"
 >
-  <div style="z-index: 2007; position: absolute; left: 0px; top: 108px; margin: 0px;"
-       role="dialog"
-       tabindex="0"
-       class="van-popup van-popover van-popover--light"
-       data-popper-placement="bottom"
+  <div
+    style="z-index: 2007; position: absolute; left: -50px; top: 8px; margin: 0px;"
+    role="dialog"
+    tabindex="0"
+    class="van-popup van-popover van-popover--light"
+    data-popper-placement="bottom"
   >
     <div class="van-popover__arrow">
     </div>
-    <div role="menu"
-         class="van-popover__content van-popover__content--vertical"
+    <div
+      role="menu"
+      class="van-popover__content van-popover__content--vertical"
     >
     </div>
   </div>
@@ -75,21 +76,24 @@ exports[`should locate to reference element when showed 2`] = `
 `;
 
 exports[`should locate to reference element when showed 3`] = `
-<transition-stub name="van-popover-zoom"
-                 appear="false"
-                 persisted="false"
-                 css="true"
+<transition-stub
+  name="van-popover-zoom"
+  appear="false"
+  persisted="false"
+  css="true"
 >
-  <div style="z-index: 2007; position: absolute; left: 0px; top: 108px; margin: 0px; display: none;"
-       role="dialog"
-       tabindex="0"
-       class="van-popup van-popover van-popover--light"
-       data-popper-placement="bottom"
+  <div
+    style="z-index: 2007; position: absolute; left: -50px; top: 8px; margin: 0px; display: none;"
+    role="dialog"
+    tabindex="0"
+    class="van-popup van-popover van-popover--light"
+    data-popper-placement="bottom"
   >
     <div class="van-popover__arrow">
     </div>
-    <div role="menu"
-         class="van-popover__content van-popover__content--vertical"
+    <div
+      role="menu"
+      class="van-popover__content van-popover__content--vertical"
     >
     </div>
   </div>
@@ -97,30 +101,34 @@ exports[`should locate to reference element when showed 3`] = `
 `;
 
 exports[`should render action slot correctly 1`] = `
-<div role="menuitem"
-     class="van-popover__action"
-     tabindex="0"
+<div
+  role="menuitem"
+  class="van-popover__action"
+  tabindex="0"
 >
   name: Text, index: 0
 </div>
 `;
 
 exports[`should watch placement prop and update location 1`] = `
-<transition-stub name="van-popover-zoom"
-                 appear="false"
-                 persisted="false"
-                 css="true"
+<transition-stub
+  name="van-popover-zoom"
+  appear="false"
+  persisted="false"
+  css="true"
 >
-  <div role="dialog"
-       tabindex="0"
-       class="van-popup van-popover van-popover--light"
-       style="z-index: 2008; position: absolute; left: 0px; top: -108px; margin: 0px;"
-       data-popper-placement="top"
+  <div
+    role="dialog"
+    tabindex="0"
+    class="van-popup van-popover van-popover--light"
+    style="z-index: 2008; position: absolute; left: -50px; top: -108px; margin: 0px;"
+    data-popper-placement="top"
   >
     <div class="van-popover__arrow">
     </div>
-    <div role="menu"
-         class="van-popover__content van-popover__content--vertical"
+    <div
+      role="menu"
+      class="van-popover__content van-popover__content--vertical"
     >
     </div>
   </div>

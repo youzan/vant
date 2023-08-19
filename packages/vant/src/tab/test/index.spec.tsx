@@ -4,7 +4,7 @@ import { Tab } from '..';
 import { Tabs, TabsInstance } from '../../tabs';
 
 test('should emit clickTab event when tab is clicked', async () => {
-  const onClickTab = jest.fn();
+  const onClickTab = vi.fn();
 
   const wrapper = mount({
     render() {
@@ -48,7 +48,7 @@ test('should not render zero badge when show-zero-badge prop is false', async ()
 });
 
 test('should switch tab after click the tab title', async () => {
-  const onChange = jest.fn();
+  const onChange = vi.fn();
   const wrapper = mount({
     render() {
       return (
@@ -75,7 +75,7 @@ test('should switch tab after click the tab title', async () => {
 });
 
 test('swipe switch tab after swiping tab content', async () => {
-  const onChange = jest.fn();
+  const onChange = vi.fn();
   const wrapper = mount({
     data() {
       return {
@@ -237,7 +237,7 @@ test('should render nav-left、nav-right slot correctly', async () => {
 });
 
 test('should emit rendered event after tab is rendered', async () => {
-  const onRendered = jest.fn();
+  const onRendered = vi.fn();
 
   const wrapper = mount({
     data() {
@@ -272,7 +272,7 @@ test('should emit rendered event after tab is rendered', async () => {
 });
 
 test('should not trigger rendered event when lazy-render prop is disabled', async () => {
-  const onRendered = jest.fn();
+  const onRendered = vi.fn();
 
   mount({
     render() {
@@ -290,8 +290,8 @@ test('should not trigger rendered event when lazy-render prop is disabled', asyn
 });
 
 test('should allow to set name prop', async () => {
-  const onChange = jest.fn();
-  const onClickTab = jest.fn();
+  const onChange = vi.fn();
+  const onClickTab = vi.fn();
 
   const wrapper = mount({
     data() {
@@ -336,7 +336,7 @@ test('should allow to set name prop', async () => {
 });
 
 test('should allow name prop to be zero', async () => {
-  const onClickTab = jest.fn();
+  const onClickTab = vi.fn();
 
   const wrapper = mount({
     render() {
@@ -360,8 +360,8 @@ test('should allow name prop to be zero', async () => {
 });
 
 test('should change active tab after scrolling when using scrollspy prop', async () => {
-  const onChange = jest.fn();
-  window.scrollTo = jest.fn();
+  const onChange = vi.fn();
+  window.scrollTo = vi.fn();
 
   mount({
     data() {
@@ -390,7 +390,7 @@ test('should change active tab after scrolling when using scrollspy prop', async
 });
 
 test('should allow to call scrollTo method when scrollspy is enabled', async () => {
-  const onChange = jest.fn();
+  const onChange = vi.fn();
   const tabs = ref<TabsInstance>();
 
   mount({
@@ -418,7 +418,7 @@ test('should allow to call scrollTo method when scrollspy is enabled', async () 
 });
 
 test('should call before-change prop before changing', async () => {
-  const onChange = jest.fn();
+  const onChange = vi.fn();
   const beforeChange = (name: number) => {
     switch (name) {
       case 1:

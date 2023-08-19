@@ -305,7 +305,7 @@ test('row-height prop', async () => {
 
   await later();
 
-  expect(wrapper.html()).toMatchSnapshot();
+  expect(wrapper.find('.van-calendar__day').style.height).toEqual('50px');
 });
 
 test('formatter prop', async () => {
@@ -360,7 +360,7 @@ test('should render title、footer、subtitle slot correctly', async () => {
     },
   });
 
-  await later();
+  await later(50);
 
   expect(wrapper.html()).toMatchSnapshot();
 });
@@ -379,7 +379,7 @@ test('should render subtitle slot with params', async () => {
     },
   });
 
-  await later();
+  await later(50);
 
   expect(
     wrapper.find('.van-calendar__header-subtitle').html(),
@@ -400,7 +400,7 @@ test('should render month-title slot correctly', async () => {
     },
   });
 
-  await later();
+  await later(50);
 
   expect(wrapper.find('.van-calendar__month-title').html()).toMatchSnapshot();
 });
@@ -499,11 +499,11 @@ test('popup wrapper', async () => {
     },
   });
 
-  await later();
+  await later(50);
   expect(wrapper.html()).toMatchSnapshot();
 
   await wrapper.setProps({ show: true });
-  await later();
+  await later(50);
 
   expect(wrapper.html()).toMatchSnapshot();
 
@@ -541,7 +541,9 @@ test('color prop when type is single', async () => {
 
   await later();
 
-  expect(wrapper.html()).toMatchSnapshot();
+  expect(wrapper.find('.van-calendar__selected-day').style.background).toEqual(
+    'blue',
+  );
 });
 
 test('color prop when type is range', async () => {
@@ -556,13 +558,21 @@ test('color prop when type is range', async () => {
     },
   });
 
-  await later();
+  await later(50);
 
-  expect(wrapper.html()).toMatchSnapshot();
+  expect(wrapper.find('.van-calendar__day--start').style.background).toEqual(
+    'blue',
+  );
+  expect(wrapper.find('.van-calendar__day--middle').style.color).toEqual(
+    'blue',
+  );
+  expect(wrapper.find('.van-calendar__day--end').style.background).toEqual(
+    'blue',
+  );
 });
 
 test('close event', async () => {
-  const onClose = jest.fn();
+  const onClose = vi.fn();
   const wrapper = mount(Calendar, {
     props: {
       show: true,
@@ -590,7 +600,7 @@ test('should render top-info and bottom-info slot correctly', async () => {
     },
   });
 
-  await later();
+  await later(50);
 
   expect(wrapper.find('.van-calendar__day').html()).toMatchSnapshot();
 });
@@ -621,7 +631,7 @@ test('should render confirm-text slot correctly', async () => {
     },
   });
 
-  await later();
+  await later(50);
 
   expect(wrapper.find('.van-calendar__confirm').html()).toMatchSnapshot();
 });

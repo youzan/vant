@@ -1,4 +1,4 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`should render demo and match snapshot 1`] = `
 <div>
@@ -6,48 +6,53 @@ exports[`should render demo and match snapshot 1`] = `
     <div class="van-cell-group van-cell-group--inset">
       <div class="van-cell van-field">
         <div class="van-cell__title van-field__label">
-          <label id="van-field-label"
-                 for="van-field-input"
+          <label
+            id="van-field-label"
+            for="van-field-input"
           >
             Username
           </label>
         </div>
         <div class="van-cell__value van-field__value">
           <div class="van-field__body">
-            <input type="text"
-                   id="van-field-input"
-                   name="username"
-                   class="van-field__control"
-                   placeholder="Username"
-                   aria-labelledby="van-field-label"
+            <input
+              type="text"
+              id="van-field-input"
+              name="username"
+              class="van-field__control"
+              placeholder="Username"
+              aria-labelledby="van-field-label"
             >
           </div>
         </div>
       </div>
       <div class="van-cell van-field">
         <div class="van-cell__title van-field__label">
-          <label id="van-field-label"
-                 for="van-field-input"
+          <label
+            id="van-field-label"
+            for="van-field-input"
           >
             Password
           </label>
         </div>
         <div class="van-cell__value van-field__value">
           <div class="van-field__body">
-            <input type="password"
-                   id="van-field-input"
-                   name="password"
-                   class="van-field__control"
-                   placeholder="Password"
-                   aria-labelledby="van-field-label"
+            <input
+              type="password"
+              id="van-field-input"
+              name="password"
+              class="van-field__control"
+              placeholder="Password"
+              aria-labelledby="van-field-label"
             >
           </div>
         </div>
       </div>
     </div>
     <div style="margin: 16px 16px 0px;">
-      <button type="submit"
-              class="van-button van-button--primary van-button--normal van-button--block van-button--round"
+      <button
+        type="submit"
+        class="van-button van-button--primary van-button--normal van-button--block van-button--round"
       >
         <div class="van-button__content">
           <span class="van-button__text">
@@ -63,88 +68,97 @@ exports[`should render demo and match snapshot 1`] = `
     <div class="van-cell-group van-cell-group--inset">
       <div class="van-cell van-field">
         <div class="van-cell__title van-field__label">
-          <label id="van-field-label"
-                 for="van-field-input"
+          <label
+            id="van-field-label"
+            for="van-field-input"
           >
             Label
           </label>
         </div>
         <div class="van-cell__value van-field__value">
           <div class="van-field__body">
-            <input type="text"
-                   id="van-field-input"
-                   name="pattern"
-                   class="van-field__control"
-                   placeholder="Use pattern"
-                   aria-labelledby="van-field-label"
+            <input
+              type="text"
+              id="van-field-input"
+              name="pattern"
+              class="van-field__control"
+              placeholder="Use pattern"
+              aria-labelledby="van-field-label"
             >
           </div>
         </div>
       </div>
       <div class="van-cell van-field">
         <div class="van-cell__title van-field__label">
-          <label id="van-field-label"
-                 for="van-field-input"
+          <label
+            id="van-field-label"
+            for="van-field-input"
           >
             Label
           </label>
         </div>
         <div class="van-cell__value van-field__value">
           <div class="van-field__body">
-            <input type="text"
-                   id="van-field-input"
-                   name="validator"
-                   class="van-field__control"
-                   placeholder="Use validator"
-                   aria-labelledby="van-field-label"
+            <input
+              type="text"
+              id="van-field-input"
+              name="validator"
+              class="van-field__control"
+              placeholder="Use validator"
+              aria-labelledby="van-field-label"
             >
           </div>
         </div>
       </div>
       <div class="van-cell van-field">
         <div class="van-cell__title van-field__label">
-          <label id="van-field-label"
-                 for="van-field-input"
+          <label
+            id="van-field-label"
+            for="van-field-input"
           >
             Label
           </label>
         </div>
         <div class="van-cell__value van-field__value">
           <div class="van-field__body">
-            <input type="text"
-                   id="van-field-input"
-                   name="validatorMessage"
-                   class="van-field__control"
-                   placeholder="Use validator to return message"
-                   aria-labelledby="van-field-label"
+            <input
+              type="text"
+              id="van-field-input"
+              name="validatorMessage"
+              class="van-field__control"
+              placeholder="Use validator to return message"
+              aria-labelledby="van-field-label"
             >
           </div>
         </div>
       </div>
       <div class="van-cell van-field">
         <div class="van-cell__title van-field__label">
-          <label id="van-field-label"
-                 for="van-field-input"
+          <label
+            id="van-field-label"
+            for="van-field-input"
           >
             Label
           </label>
         </div>
         <div class="van-cell__value van-field__value">
           <div class="van-field__body">
-            <input type="text"
-                   id="van-field-input"
-                   name="asyncValidator"
-                   class="van-field__control"
-                   placeholder="Use async validator"
-                   aria-labelledby="van-field-label"
+            <input
+              type="text"
+              id="van-field-input"
+              name="asyncValidator"
+              class="van-field__control"
+              placeholder="Use async validator"
+              aria-labelledby="van-field-label"
             >
           </div>
         </div>
       </div>
     </div>
     <div style="margin: 16px 16px 0px;">
-      <button type="submit"
-              class="van-button van-button--primary van-button--normal van-button--block van-button--round"
+      <button
+        type="submit"
+        class="van-button van-button--primary van-button--normal van-button--block van-button--round"
       >
         <div class="van-button__content">
           <span class="van-button__text">
@@ -167,10 +181,11 @@ exports[`should render demo and match snapshot 1`] = `
         <div class="van-cell__value van-field__value">
           <div class="van-field__body">
             <div class="van-field__control van-field__control--custom">
-              <div role="switch"
-                   class="van-switch"
-                   tabindex="0"
-                   aria-checked="false"
+              <div
+                role="switch"
+                class="van-switch"
+                tabindex="0"
+                aria-checked="false"
               >
                 <div class="van-switch__node">
                 </div>
@@ -188,10 +203,11 @@ exports[`should render demo and match snapshot 1`] = `
         <div class="van-cell__value van-field__value">
           <div class="van-field__body">
             <div class="van-field__control van-field__control--custom">
-              <div role="checkbox"
-                   class="van-checkbox"
-                   tabindex="0"
-                   aria-checked="false"
+              <div
+                role="checkbox"
+                class="van-checkbox"
+                tabindex="0"
+                aria-checked="false"
               >
                 <div class="van-checkbox__icon van-checkbox__icon--square">
                   <i class="van-badge__wrapper van-icon van-icon-success">
@@ -212,10 +228,11 @@ exports[`should render demo and match snapshot 1`] = `
           <div class="van-field__body">
             <div class="van-field__control van-field__control--custom">
               <div class="van-checkbox-group van-checkbox-group--horizontal">
-                <div role="checkbox"
-                     class="van-checkbox van-checkbox--horizontal"
-                     tabindex="0"
-                     aria-checked="false"
+                <div
+                  role="checkbox"
+                  class="van-checkbox van-checkbox--horizontal"
+                  tabindex="0"
+                  aria-checked="false"
                 >
                   <div class="van-checkbox__icon van-checkbox__icon--square">
                     <i class="van-badge__wrapper van-icon van-icon-success">
@@ -225,10 +242,11 @@ exports[`should render demo and match snapshot 1`] = `
                     Checkbox 1
                   </span>
                 </div>
-                <div role="checkbox"
-                     class="van-checkbox van-checkbox--horizontal"
-                     tabindex="0"
-                     aria-checked="false"
+                <div
+                  role="checkbox"
+                  class="van-checkbox van-checkbox--horizontal"
+                  tabindex="0"
+                  aria-checked="false"
                 >
                   <div class="van-checkbox__icon van-checkbox__icon--square">
                     <i class="van-badge__wrapper van-icon van-icon-success">
@@ -252,13 +270,15 @@ exports[`should render demo and match snapshot 1`] = `
         <div class="van-cell__value van-field__value">
           <div class="van-field__body">
             <div class="van-field__control van-field__control--custom">
-              <div class="van-radio-group van-radio-group--horizontal"
-                   role="radiogroup"
+              <div
+                class="van-radio-group van-radio-group--horizontal"
+                role="radiogroup"
               >
-                <div role="radio"
-                     class="van-radio van-radio--horizontal"
-                     tabindex="0"
-                     aria-checked="true"
+                <div
+                  role="radio"
+                  class="van-radio van-radio--horizontal"
+                  tabindex="0"
+                  aria-checked="true"
                 >
                   <div class="van-radio__icon van-radio__icon--round van-radio__icon--checked">
                     <i class="van-badge__wrapper van-icon van-icon-success">
@@ -268,10 +288,11 @@ exports[`should render demo and match snapshot 1`] = `
                     Radio 1
                   </span>
                 </div>
-                <div role="radio"
-                     class="van-radio van-radio--horizontal"
-                     tabindex="0"
-                     aria-checked="false"
+                <div
+                  role="radio"
+                  class="van-radio van-radio--horizontal"
+                  tabindex="0"
+                  aria-checked="false"
                 >
                   <div class="van-radio__icon van-radio__icon--round">
                     <i class="van-badge__wrapper van-icon van-icon-success">
@@ -295,24 +316,28 @@ exports[`should render demo and match snapshot 1`] = `
         <div class="van-cell__value van-field__value">
           <div class="van-field__body">
             <div class="van-field__control van-field__control--custom">
-              <div role="group"
-                   class="van-stepper"
+              <div
+                role="group"
+                class="van-stepper"
               >
-                <button type="button"
-                        class="van-stepper__minus van-stepper__minus--disabled"
-                        aria-disabled="true"
+                <button
+                  type="button"
+                  class="van-stepper__minus van-stepper__minus--disabled"
+                  aria-disabled="true"
                 >
                 </button>
-                <input type="text"
-                       role="spinbutton"
-                       class="van-stepper__input"
-                       inputmode="decimal"
-                       aria-valuemax="Infinity"
-                       aria-valuemin="1"
-                       aria-valuenow="1"
+                <input
+                  type="text"
+                  role="spinbutton"
+                  class="van-stepper__input"
+                  inputmode="decimal"
+                  aria-valuemax="Infinity"
+                  aria-valuemin="1"
+                  aria-valuenow="1"
                 >
-                <button type="button"
-                        class="van-stepper__plus van-haptics-feedback"
+                <button
+                  type="button"
+                  class="van-stepper__plus van-haptics-feedback"
                 >
                 </button>
               </div>
@@ -329,58 +354,64 @@ exports[`should render demo and match snapshot 1`] = `
         <div class="van-cell__value van-field__value">
           <div class="van-field__body">
             <div class="van-field__control van-field__control--custom">
-              <div role="radiogroup"
-                   class="van-rate"
-                   tabindex="0"
-                   aria-disabled="false"
-                   aria-readonly="false"
+              <div
+                role="radiogroup"
+                class="van-rate"
+                tabindex="0"
+                aria-disabled="false"
+                aria-readonly="false"
               >
-                <div role="radio"
-                     class="van-rate__item"
-                     tabindex="0"
-                     aria-setsize="5"
-                     aria-posinset="1"
-                     aria-checked="true"
+                <div
+                  role="radio"
+                  class="van-rate__item"
+                  tabindex="0"
+                  aria-setsize="5"
+                  aria-posinset="1"
+                  aria-checked="true"
                 >
                   <i class="van-badge__wrapper van-icon van-icon-star van-rate__icon van-rate__icon--full">
                   </i>
                 </div>
-                <div role="radio"
-                     class="van-rate__item"
-                     tabindex="0"
-                     aria-setsize="5"
-                     aria-posinset="2"
-                     aria-checked="true"
+                <div
+                  role="radio"
+                  class="van-rate__item"
+                  tabindex="0"
+                  aria-setsize="5"
+                  aria-posinset="2"
+                  aria-checked="true"
                 >
                   <i class="van-badge__wrapper van-icon van-icon-star van-rate__icon van-rate__icon--full">
                   </i>
                 </div>
-                <div role="radio"
-                     class="van-rate__item"
-                     tabindex="0"
-                     aria-setsize="5"
-                     aria-posinset="3"
-                     aria-checked="true"
+                <div
+                  role="radio"
+                  class="van-rate__item"
+                  tabindex="0"
+                  aria-setsize="5"
+                  aria-posinset="3"
+                  aria-checked="true"
                 >
                   <i class="van-badge__wrapper van-icon van-icon-star van-rate__icon van-rate__icon--full">
                   </i>
                 </div>
-                <div role="radio"
-                     class="van-rate__item"
-                     tabindex="0"
-                     aria-setsize="5"
-                     aria-posinset="4"
-                     aria-checked="false"
+                <div
+                  role="radio"
+                  class="van-rate__item"
+                  tabindex="0"
+                  aria-setsize="5"
+                  aria-posinset="4"
+                  aria-checked="false"
                 >
                   <i class="van-badge__wrapper van-icon van-icon-star-o van-rate__icon">
                   </i>
                 </div>
-                <div role="radio"
-                     class="van-rate__item"
-                     tabindex="0"
-                     aria-setsize="5"
-                     aria-posinset="5"
-                     aria-checked="false"
+                <div
+                  role="radio"
+                  class="van-rate__item"
+                  tabindex="0"
+                  aria-setsize="5"
+                  aria-posinset="5"
+                  aria-checked="false"
                 >
                   <i class="van-badge__wrapper van-icon van-icon-star-o van-rate__icon">
                   </i>
@@ -400,16 +431,18 @@ exports[`should render demo and match snapshot 1`] = `
           <div class="van-field__body">
             <div class="van-field__control van-field__control--custom">
               <div class="van-slider">
-                <div class="van-slider__bar"
-                     style="width: 50%; left: 0%;"
+                <div
+                  class="van-slider__bar"
+                  style="width: 50%; left: 0%;"
                 >
-                  <div role="slider"
-                       class="van-slider__button-wrapper van-slider__button-wrapper--right"
-                       tabindex="0"
-                       aria-valuemin="0"
-                       aria-valuenow="50"
-                       aria-valuemax="100"
-                       aria-orientation="horizontal"
+                  <div
+                    role="slider"
+                    class="van-slider__button-wrapper van-slider__button-wrapper--right"
+                    tabindex="0"
+                    aria-valuemin="0"
+                    aria-valuenow="50"
+                    aria-valuemax="100"
+                    aria-orientation="horizontal"
                   >
                     <div class="van-slider__button">
                     </div>
@@ -433,19 +466,21 @@ exports[`should render demo and match snapshot 1`] = `
                 <div class="van-uploader__wrapper">
                   <div class="van-uploader__preview">
                     <div class="van-image van-uploader__preview-image">
-                      <img src="https://fastly.jsdelivr.net/npm/@vant/assets/leaf.jpeg"
-                           class="van-image__img"
-                           style="object-fit: cover;"
+                      <img
+                        src="https://fastly.jsdelivr.net/npm/@vant/assets/leaf.jpeg"
+                        class="van-image__img"
+                        style="object-fit: cover;"
                       >
                       <div class="van-image__loading">
                         <i class="van-badge__wrapper van-icon van-icon-photo van-image__loading-icon">
                         </i>
                       </div>
                     </div>
-                    <div role="button"
-                         class="van-uploader__preview-delete van-uploader__preview-delete--shadow"
-                         tabindex="0"
-                         aria-label="Delete"
+                    <div
+                      role="button"
+                      class="van-uploader__preview-delete van-uploader__preview-delete--shadow"
+                      tabindex="0"
+                      aria-label="Delete"
                     >
                       <i class="van-badge__wrapper van-icon van-icon-cross van-uploader__preview-delete-icon">
                       </i>
@@ -454,9 +489,10 @@ exports[`should render demo and match snapshot 1`] = `
                   <div class="van-uploader__upload">
                     <i class="van-badge__wrapper van-icon van-icon-photograph van-uploader__upload-icon">
                     </i>
-                    <input type="file"
-                           class="van-uploader__input"
-                           accept="image/*"
+                    <input
+                      type="file"
+                      class="van-uploader__input"
+                      accept="image/*"
                     >
                   </div>
                 </div>
@@ -465,104 +501,116 @@ exports[`should render demo and match snapshot 1`] = `
           </div>
         </div>
       </div>
-      <div class="van-cell van-cell--clickable van-field"
-           role="button"
-           tabindex="0"
+      <div
+        class="van-cell van-cell--clickable van-field"
+        role="button"
+        tabindex="0"
       >
         <div class="van-cell__title van-field__label">
-          <label id="van-field-label"
-                 for="van-field-input"
+          <label
+            id="van-field-label"
+            for="van-field-input"
           >
             Picker
           </label>
         </div>
         <div class="van-cell__value van-field__value">
           <div class="van-field__body">
-            <input type="text"
-                   id="van-field-input"
-                   name="picker"
-                   class="van-field__control"
-                   readonly
-                   placeholder="Select city"
-                   aria-labelledby="van-field-label"
+            <input
+              type="text"
+              id="van-field-input"
+              name="picker"
+              class="van-field__control"
+              readonly
+              placeholder="Select city"
+              aria-labelledby="van-field-label"
             >
           </div>
         </div>
         <i class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon">
         </i>
       </div>
-      <div class="van-cell van-cell--clickable van-field"
-           role="button"
-           tabindex="0"
+      <div
+        class="van-cell van-cell--clickable van-field"
+        role="button"
+        tabindex="0"
       >
         <div class="van-cell__title van-field__label">
-          <label id="van-field-label"
-                 for="van-field-input"
+          <label
+            id="van-field-label"
+            for="van-field-input"
           >
             Datetime Picker
           </label>
         </div>
         <div class="van-cell__value van-field__value">
           <div class="van-field__body">
-            <input type="text"
-                   id="van-field-input"
-                   name="datePicker"
-                   class="van-field__control"
-                   readonly
-                   placeholder="Select time"
-                   aria-labelledby="van-field-label"
+            <input
+              type="text"
+              id="van-field-input"
+              name="datePicker"
+              class="van-field__control"
+              readonly
+              placeholder="Select time"
+              aria-labelledby="van-field-label"
             >
           </div>
         </div>
         <i class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon">
         </i>
       </div>
-      <div class="van-cell van-cell--clickable van-field"
-           role="button"
-           tabindex="0"
+      <div
+        class="van-cell van-cell--clickable van-field"
+        role="button"
+        tabindex="0"
       >
         <div class="van-cell__title van-field__label">
-          <label id="van-field-label"
-                 for="van-field-input"
+          <label
+            id="van-field-label"
+            for="van-field-input"
           >
             Area Picker
           </label>
         </div>
         <div class="van-cell__value van-field__value">
           <div class="van-field__body">
-            <input type="text"
-                   id="van-field-input"
-                   name="area"
-                   class="van-field__control"
-                   readonly
-                   placeholder="Select area"
-                   aria-labelledby="van-field-label"
+            <input
+              type="text"
+              id="van-field-input"
+              name="area"
+              class="van-field__control"
+              readonly
+              placeholder="Select area"
+              aria-labelledby="van-field-label"
             >
           </div>
         </div>
         <i class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon">
         </i>
       </div>
-      <div class="van-cell van-cell--clickable van-field"
-           role="button"
-           tabindex="0"
+      <div
+        class="van-cell van-cell--clickable van-field"
+        role="button"
+        tabindex="0"
       >
         <div class="van-cell__title van-field__label">
-          <label id="van-field-label"
-                 for="van-field-input"
+          <label
+            id="van-field-label"
+            for="van-field-input"
           >
             Calendar
           </label>
         </div>
         <div class="van-cell__value van-field__value">
           <div class="van-field__body">
-            <input type="text"
-                   id="van-field-input"
-                   name="calendar"
-                   class="van-field__control"
-                   readonly
-                   placeholder="Select date"
-                   aria-labelledby="van-field-label"
+            <input
+              type="text"
+              id="van-field-input"
+              name="calendar"
+              class="van-field__control"
+              readonly
+              placeholder="Select date"
+              aria-labelledby="van-field-label"
             >
           </div>
         </div>
@@ -571,8 +619,9 @@ exports[`should render demo and match snapshot 1`] = `
       </div>
     </div>
     <div style="margin: 16px 16px 0px;">
-      <button type="submit"
-              class="van-button van-button--primary van-button--normal van-button--block van-button--round"
+      <button
+        type="submit"
+        class="van-button van-button--primary van-button--normal van-button--block van-button--round"
       >
         <div class="van-button__content">
           <span class="van-button__text">

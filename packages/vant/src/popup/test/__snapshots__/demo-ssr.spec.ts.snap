@@ -1,22 +1,25 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`should render demo and match snapshot 1`] = `
 <!--[-->
 <div>
   <!--[-->
-  <div class="van-cell van-cell--clickable"
-       role="button"
-       tabindex="0"
+  <div
+    class="van-cell van-cell--clickable"
+    role="button"
+    tabindex="0"
   >
-    <div class="van-cell__title"
-         style
+    <div
+      class="van-cell__title"
+      style
     >
       <span>
         Show Popup
       </span>
     </div>
-    <i class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon"
-       style
+    <i
+      class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon"
+      style
     >
       <!--[-->
     </i>
@@ -25,21 +28,25 @@ exports[`should render demo and match snapshot 1`] = `
 </div>
 <div>
   <!--[-->
-  <div style
-       class="van-grid van-hairline--top"
+  <div
+    style
+    class="van-grid van-hairline--top"
   >
     <!--[-->
-    <div class="van-grid-item"
-         style="flex-basis:25%;"
+    <div
+      class="van-grid-item"
+      style="flex-basis:25%;"
     >
-      <div role="button"
-           class="van-grid-item__content van-grid-item__content--center van-grid-item__content--clickable van-hairline"
-           style
-           tabindex="0"
+      <div
+        role="button"
+        class="van-grid-item__content van-grid-item__content--center van-grid-item__content--clickable van-hairline"
+        style
+        tabindex="0"
       >
         <!--[-->
-        <i class="van-badge__wrapper van-icon van-icon-arrow-up van-grid-item__icon"
-           style
+        <i
+          class="van-badge__wrapper van-icon van-icon-arrow-up van-grid-item__icon"
+          style
         >
           <!--[-->
         </i>
@@ -48,17 +55,20 @@ exports[`should render demo and match snapshot 1`] = `
         </span>
       </div>
     </div>
-    <div class="van-grid-item"
-         style="flex-basis:25%;"
+    <div
+      class="van-grid-item"
+      style="flex-basis:25%;"
     >
-      <div role="button"
-           class="van-grid-item__content van-grid-item__content--center van-grid-item__content--clickable van-hairline"
-           style
-           tabindex="0"
+      <div
+        role="button"
+        class="van-grid-item__content van-grid-item__content--center van-grid-item__content--clickable van-hairline"
+        style
+        tabindex="0"
       >
         <!--[-->
-        <i class="van-badge__wrapper van-icon van-icon-arrow-down van-grid-item__icon"
-           style
+        <i
+          class="van-badge__wrapper van-icon van-icon-arrow-down van-grid-item__icon"
+          style
         >
           <!--[-->
         </i>
@@ -67,17 +77,20 @@ exports[`should render demo and match snapshot 1`] = `
         </span>
       </div>
     </div>
-    <div class="van-grid-item"
-         style="flex-basis:25%;"
+    <div
+      class="van-grid-item"
+      style="flex-basis:25%;"
     >
-      <div role="button"
-           class="van-grid-item__content van-grid-item__content--center van-grid-item__content--clickable van-hairline"
-           style
-           tabindex="0"
+      <div
+        role="button"
+        class="van-grid-item__content van-grid-item__content--center van-grid-item__content--clickable van-hairline"
+        style
+        tabindex="0"
       >
         <!--[-->
-        <i class="van-badge__wrapper van-icon van-icon-arrow-left van-grid-item__icon"
-           style
+        <i
+          class="van-badge__wrapper van-icon van-icon-arrow-left van-grid-item__icon"
+          style
         >
           <!--[-->
         </i>
@@ -86,17 +99,20 @@ exports[`should render demo and match snapshot 1`] = `
         </span>
       </div>
     </div>
-    <div class="van-grid-item"
-         style="flex-basis:25%;"
+    <div
+      class="van-grid-item"
+      style="flex-basis:25%;"
     >
-      <div role="button"
-           class="van-grid-item__content van-grid-item__content--center van-grid-item__content--clickable van-hairline"
-           style
-           tabindex="0"
+      <div
+        role="button"
+        class="van-grid-item__content van-grid-item__content--center van-grid-item__content--clickable van-hairline"
+        style
+        tabindex="0"
       >
         <!--[-->
-        <i class="van-badge__wrapper van-icon van-icon-arrow van-grid-item__icon"
-           style
+        <i
+          class="van-badge__wrapper van-icon van-icon-arrow van-grid-item__icon"
+          style
         >
           <!--[-->
         </i>
@@ -113,53 +129,62 @@ exports[`should render demo and match snapshot 1`] = `
 </div>
 <div>
   <!--[-->
-  <div class="van-cell van-cell--clickable"
-       role="button"
-       tabindex="0"
+  <div
+    class="van-cell van-cell--clickable"
+    role="button"
+    tabindex="0"
   >
-    <div class="van-cell__title"
-         style
+    <div
+      class="van-cell__title"
+      style
     >
       <span>
         Close Icon
       </span>
     </div>
-    <i class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon"
-       style
+    <i
+      class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon"
+      style
     >
       <!--[-->
     </i>
   </div>
-  <div class="van-cell van-cell--clickable"
-       role="button"
-       tabindex="0"
+  <div
+    class="van-cell van-cell--clickable"
+    role="button"
+    tabindex="0"
   >
-    <div class="van-cell__title"
-         style
+    <div
+      class="van-cell__title"
+      style
     >
       <span>
         Custom Icon
       </span>
     </div>
-    <i class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon"
-       style
+    <i
+      class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon"
+      style
     >
       <!--[-->
     </i>
   </div>
-  <div class="van-cell van-cell--clickable"
-       role="button"
-       tabindex="0"
+  <div
+    class="van-cell van-cell--clickable"
+    role="button"
+    tabindex="0"
   >
-    <div class="van-cell__title"
-         style
+    <div
+      class="van-cell__title"
+      style
     >
       <span>
         Icon Position
       </span>
     </div>
-    <i class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon"
-       style
+    <i
+      class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon"
+      style
     >
       <!--[-->
     </i>
@@ -170,37 +195,43 @@ exports[`should render demo and match snapshot 1`] = `
 </div>
 <div>
   <!--[-->
-  <div class="van-cell van-cell--clickable"
-       role="button"
-       tabindex="0"
+  <div
+    class="van-cell van-cell--clickable"
+    role="button"
+    tabindex="0"
   >
-    <div class="van-cell__title"
-         style
+    <div
+      class="van-cell__title"
+      style
     >
       <span>
         Round Corner (center)
       </span>
     </div>
-    <i class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon"
-       style
+    <i
+      class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon"
+      style
     >
       <!--[-->
     </i>
   </div>
   <!--[-->
-  <div class="van-cell van-cell--clickable"
-       role="button"
-       tabindex="0"
+  <div
+    class="van-cell van-cell--clickable"
+    role="button"
+    tabindex="0"
   >
-    <div class="van-cell__title"
-         style
+    <div
+      class="van-cell__title"
+      style
     >
       <span>
         Round Corner (bottom)
       </span>
     </div>
-    <i class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon"
-       style
+    <i
+      class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon"
+      style
     >
       <!--[-->
     </i>
@@ -209,37 +240,43 @@ exports[`should render demo and match snapshot 1`] = `
 </div>
 <div>
   <!--[-->
-  <div class="van-cell van-cell--clickable"
-       role="button"
-       tabindex="0"
+  <div
+    class="van-cell van-cell--clickable"
+    role="button"
+    tabindex="0"
   >
-    <div class="van-cell__title"
-         style
+    <div
+      class="van-cell__title"
+      style
     >
       <span>
         Listen To Click Events
       </span>
     </div>
-    <i class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon"
-       style
+    <i
+      class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon"
+      style
     >
       <!--[-->
     </i>
   </div>
   <!--[-->
-  <div class="van-cell van-cell--clickable"
-       role="button"
-       tabindex="0"
+  <div
+    class="van-cell van-cell--clickable"
+    role="button"
+    tabindex="0"
   >
-    <div class="van-cell__title"
-         style
+    <div
+      class="van-cell__title"
+      style
     >
       <span>
         Listen To Display Events
       </span>
     </div>
-    <i class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon"
-       style
+    <i
+      class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon"
+      style
     >
       <!--[-->
     </i>
@@ -248,19 +285,22 @@ exports[`should render demo and match snapshot 1`] = `
 </div>
 <div>
   <!--[-->
-  <div class="van-cell van-cell--clickable"
-       role="button"
-       tabindex="0"
+  <div
+    class="van-cell van-cell--clickable"
+    role="button"
+    tabindex="0"
   >
-    <div class="van-cell__title"
-         style
+    <div
+      class="van-cell__title"
+      style
     >
       <span>
         Get Container
       </span>
     </div>
-    <i class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon"
-       style
+    <i
+      class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon"
+      style
     >
       <!--[-->
     </i>

@@ -1,12 +1,13 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`should render slots of CollapseItem correctly 1`] = `
 <div class="van-collapse van-hairline--top-bottom">
   <div class="van-collapse-item">
-    <div class="van-cell van-cell--clickable van-collapse-item__title"
-         role="button"
-         tabindex="0"
-         aria-expanded="false"
+    <div
+      class="van-cell van-cell--clickable van-collapse-item__title"
+      role="button"
+      tabindex="0"
+      aria-expanded="false"
     >
       this is icon
       <div class="van-cell__title">

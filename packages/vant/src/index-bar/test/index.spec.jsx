@@ -22,7 +22,7 @@ test('should allow to custom anchor content', () => {
 });
 
 test('should scroll to anchor and emit select event after clicking the index-bar', () => {
-  const onSelect = jest.fn();
+  const onSelect = vi.fn();
   const wrapper = mount({
     render: () => (
       <IndexBar onSelect={onSelect}>
@@ -41,7 +41,7 @@ test('should scroll to anchor and emit select event after clicking the index-bar
 });
 
 test('should scroll to anchor after touching the index-bar', () => {
-  const onSelect = jest.fn();
+  const onSelect = vi.fn();
   const wrapper = mount({
     render: () => (
       <IndexBar onSelect={onSelect}>
@@ -136,7 +136,7 @@ test('should emit change event when active index changed', async () => {
     };
   };
 
-  const onChange = jest.fn();
+  const onChange = vi.fn();
 
   mount({
     render() {
@@ -163,7 +163,7 @@ test('should emit change event when active index changed', async () => {
 });
 
 test('should scroll to target element after calling scrollTo method', () => {
-  const onSelect = jest.fn();
+  const onSelect = vi.fn();
   const scrollIntoView = mockScrollIntoView();
 
   mount({

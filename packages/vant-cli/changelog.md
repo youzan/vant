@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+- 移除 vant-cli test 命令
 - 移除 vant-cli release 命令
 - 移除 vant-cli changelog 命令
 - 升级 commander v11

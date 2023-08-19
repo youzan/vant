@@ -6,11 +6,20 @@ export default defineConfig({
   test: {
     globals: true,
     coverage: {
-      enabled: false,
+      enabled: true,
+
       include: ['src/**/*.[jt]s?(x)'],
+      exclude: [
+        'src/lazyload/vue-lazyload/**',
+        '**/demo/**',
+        '**/test/**',
+        '**/lang/**',
+      ],
+      reporter: ['html', 'lcov', 'text-summary'],
+      reportsDirectory: './test/coverage',
     },
     environment: 'jsdom',
-    include: ['**/action-bar/**/*.spec.[jt]s?(x)'],
+    include: ['**/*.spec.[jt]s?(x)'],
     restoreMocks: true,
   },
   plugins: [vitePluginVue(), vitePluginJsx()],

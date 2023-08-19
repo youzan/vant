@@ -1,18 +1,20 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`should render demo and match snapshot 1`] = `
 <!--[-->
 <div>
   <!--[-->
   <div class="van-swipe-cell">
-    <div class="van-swipe-cell__wrapper"
-         style="transform:translate3d(0px, 0, 0);transition-duration:.6s;"
+    <div
+      class="van-swipe-cell__wrapper"
+      style="transform:translate3d(0px, 0, 0);transition-duration:.6s;"
     >
       <div class="van-swipe-cell__left">
         <!--[-->
-        <button type="button"
-                class="van-button van-button--primary van-button--normal van-button--square"
-                style
+        <button
+          type="button"
+          class="van-button van-button--primary van-button--normal van-button--square"
+          style
         >
           <div class="van-button__content">
             <span class="van-button__text">
@@ -23,8 +25,9 @@ exports[`should render demo and match snapshot 1`] = `
       </div>
       <!--[-->
       <div class="van-cell van-cell--borderless">
-        <div class="van-cell__title"
-             style
+        <div
+          class="van-cell__title"
+          style
         >
           <span>
             Cell
@@ -38,9 +41,10 @@ exports[`should render demo and match snapshot 1`] = `
       </div>
       <div class="van-swipe-cell__right">
         <!--[-->
-        <button type="button"
-                class="van-button van-button--danger van-button--normal van-button--square"
-                style
+        <button
+          type="button"
+          class="van-button van-button--danger van-button--normal van-button--square"
+          style
         >
           <div class="van-button__content">
             <span class="van-button__text">
@@ -48,9 +52,10 @@ exports[`should render demo and match snapshot 1`] = `
             </span>
           </div>
         </button>
-        <button type="button"
-                class="van-button van-button--primary van-button--normal van-button--square"
-                style
+        <button
+          type="button"
+          class="van-button van-button--primary van-button--normal van-button--square"
+          style
         >
           <div class="van-button__content">
             <span class="van-button__text">
@@ -65,23 +70,27 @@ exports[`should render demo and match snapshot 1`] = `
 <div>
   <!--[-->
   <div class="van-swipe-cell">
-    <div class="van-swipe-cell__wrapper"
-         style="transform:translate3d(0px, 0, 0);transition-duration:.6s;"
+    <div
+      class="van-swipe-cell__wrapper"
+      style="transform:translate3d(0px, 0, 0);transition-duration:.6s;"
     >
       <!--[-->
       <div class="van-card">
         <div class="van-card__header">
           <a class="van-card__thumb">
-            <div class="van-image"
-                 style="width:100%;height:100%;"
+            <div
+              class="van-image"
+              style="width:100%;height:100%;"
             >
-              <img src="https://fastly.jsdelivr.net/npm/@vant/assets/ipad.jpeg"
-                   class="van-image__img"
-                   style="object-fit:cover;"
+              <img
+                src="https://fastly.jsdelivr.net/npm/@vant/assets/ipad.jpeg"
+                class="van-image__img"
+                style="object-fit:cover;"
               >
               <div class="van-image__loading">
-                <i class="van-badge__wrapper van-icon van-icon-photo van-image__loading-icon"
-                   style
+                <i
+                  class="van-badge__wrapper van-icon van-icon-photo van-image__loading-icon"
+                  style
                 >
                   <!--[-->
                 </i>
@@ -121,9 +130,10 @@ exports[`should render demo and match snapshot 1`] = `
       </div>
       <div class="van-swipe-cell__right">
         <!--[-->
-        <button type="button"
-                class="van-button van-button--danger van-button--normal van-button--square delete-button"
-                style
+        <button
+          type="button"
+          class="van-button van-button--danger van-button--normal van-button--square delete-button"
+          style
         >
           <div class="van-button__content">
             <span class="van-button__text">
@@ -138,14 +148,16 @@ exports[`should render demo and match snapshot 1`] = `
 <div>
   <!--[-->
   <div class="van-swipe-cell">
-    <div class="van-swipe-cell__wrapper"
-         style="transform:translate3d(0px, 0, 0);transition-duration:.6s;"
+    <div
+      class="van-swipe-cell__wrapper"
+      style="transform:translate3d(0px, 0, 0);transition-duration:.6s;"
     >
       <div class="van-swipe-cell__left">
         <!--[-->
-        <button type="button"
-                class="van-button van-button--primary van-button--normal van-button--square"
-                style
+        <button
+          type="button"
+          class="van-button van-button--primary van-button--normal van-button--square"
+          style
         >
           <div class="van-button__content">
             <span class="van-button__text">
@@ -156,8 +168,9 @@ exports[`should render demo and match snapshot 1`] = `
       </div>
       <!--[-->
       <div class="van-cell van-cell--borderless">
-        <div class="van-cell__title"
-             style
+        <div
+          class="van-cell__title"
+          style
         >
           <span>
             Cell
@@ -171,9 +184,10 @@ exports[`should render demo and match snapshot 1`] = `
       </div>
       <div class="van-swipe-cell__right">
         <!--[-->
-        <button type="button"
-                class="van-button van-button--danger van-button--normal van-button--square"
-                style
+        <button
+          type="button"
+          class="van-button van-button--danger van-button--normal van-button--square"
+          style
         >
           <div class="van-button__content">
             <span class="van-button__text">

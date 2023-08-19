@@ -4,6 +4,9 @@
   "rules": {
     "prefer-object-spread": "off"
   },
+  "globals": {
+    "vi": true
+  },
   "overrides": [
     {
       "files": ["src/**/*"],

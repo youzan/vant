@@ -1,9 +1,10 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`should change the color of submit button when using button-color prop 1`] = `
-<button type="button"
-        class="van-button van-button--danger van-button--normal van-button--round van-submit-bar__button van-submit-bar__button--danger"
-        style="color: white; background: red; border-color: red;"
+<button
+  type="button"
+  class="van-button van-button--danger van-button--normal van-button--round van-submit-bar__button van-submit-bar__button--danger"
+  style="color: white; background: red; border-color: red;"
 >
   <div class="van-button__content">
   </div>
@@ -38,9 +39,10 @@ exports[`should render decimal length correctly when using decimal-length prop 2
 `;
 
 exports[`should render disabled submit button correctly 1`] = `
-<button type="button"
-        class="van-button van-button--danger van-button--normal van-button--round van-button--disabled van-submit-bar__button van-submit-bar__button--danger"
-        disabled
+<button
+  type="button"
+  class="van-button van-button--danger van-button--normal van-button--round van-button--disabled van-submit-bar__button van-submit-bar__button--danger"
+  disabled
 >
   <div class="van-button__content">
   </div>
@@ -48,13 +50,15 @@ exports[`should render disabled submit button correctly 1`] = `
 `;
 
 exports[`should render placeholder element when using placeholder prop 1`] = `
-<div class="van-submit-bar__placeholder"
-     style="height: 50px;"
+<div
+  class="van-submit-bar__placeholder"
+  style="height: 50px;"
 >
   <div class="van-submit-bar van-safe-area-bottom">
     <div class="van-submit-bar__bar">
-      <button type="button"
-              class="van-button van-button--danger van-button--normal van-button--round van-submit-bar__button van-submit-bar__button--danger"
+      <button
+        type="button"
+        class="van-button van-button--danger van-button--normal van-button--round van-submit-bar__button van-submit-bar__button--danger"
       >
         <div class="van-button__content">
         </div>
@@ -86,8 +90,9 @@ exports[`should render top slot correctly 1`] = `
 <div class="van-submit-bar van-safe-area-bottom">
   Custom Top
   <div class="van-submit-bar__bar">
-    <button type="button"
-            class="van-button van-button--danger van-button--normal van-button--round van-submit-bar__button van-submit-bar__button--danger"
+    <button
+      type="button"
+      class="van-button van-button--danger van-button--normal van-button--round van-submit-bar__button van-submit-bar__button--danger"
     >
       <div class="van-button__content">
       </div>

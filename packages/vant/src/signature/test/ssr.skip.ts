@@ -1,5 +1,5 @@
 /**
- * @jest-environment node
+ * @vitest-environment node
  */
 import { Signature } from '..';
 import { renderComponentToString } from '../../../test';

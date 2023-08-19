@@ -1,17 +1,19 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`should render demo and match snapshot 1`] = `
 <!--[-->
 <div>
   <!--[-->
   <div style>
-    <div class="van-sticky"
-         style
+    <div
+      class="van-sticky"
+      style
     >
       <!--[-->
-      <button type="button"
-              class="van-button van-button--primary van-button--normal"
-              style="margin-left:15px;"
+      <button
+        type="button"
+        class="van-button van-button--primary van-button--normal"
+        style="margin-left:15px;"
       >
         <div class="van-button__content">
           <span class="van-button__text">
@@ -26,13 +28,15 @@ exports[`should render demo and match snapshot 1`] = `
 <div>
   <!--[-->
   <div style>
-    <div class="van-sticky"
-         style
+    <div
+      class="van-sticky"
+      style
     >
       <!--[-->
-      <button type="button"
-              class="van-button van-button--primary van-button--normal"
-              style="margin-left:115px;"
+      <button
+        type="button"
+        class="van-button van-button--primary van-button--normal"
+        style="margin-left:115px;"
       >
         <div class="van-button__content">
           <span class="van-button__text">
@@ -48,13 +52,15 @@ exports[`should render demo and match snapshot 1`] = `
   <!--[-->
   <div style="height:150px;background-color:var(--van-background-2);">
     <div style>
-      <div class="van-sticky"
-           style
+      <div
+        class="van-sticky"
+        style
       >
         <!--[-->
-        <button type="button"
-                class="van-button van-button--warning van-button--normal"
-                style="margin-left:215px;"
+        <button
+          type="button"
+          class="van-button van-button--warning van-button--normal"
+          style="margin-left:215px;"
         >
           <div class="van-button__content">
             <span class="van-button__text">
@@ -72,13 +78,15 @@ exports[`should render demo and match snapshot 1`] = `
   <div style="height:200px;">
   </div>
   <div style>
-    <div class="van-sticky"
-         style
+    <div
+      class="van-sticky"
+      style
     >
       <!--[-->
-      <button type="button"
-              class="van-button van-button--primary van-button--normal"
-              style="margin-left:15px;"
+      <button
+        type="button"
+        class="van-button van-button--primary van-button--normal"
+        style="margin-left:15px;"
       >
         <div class="van-button__content">
           <span class="van-button__text">

@@ -1,4 +1,4 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`should change icon class-prefix when using icon-prefix prop 1`] = `
 <div class="van-config-provider">
@@ -8,6 +8,7 @@ exports[`should change icon class-prefix when using icon-prefix prop 1`] = `
 `;
 
 exports[`should render tag prop correctly 1`] = `
-<section class="van-config-provider">
-</section>
+"<section class=\\"van-config-provider\\">
+  <!---->
+</section>"
 `;

@@ -1,4 +1,4 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`should render demo and match snapshot 1`] = `
 <div>
@@ -29,18 +29,21 @@ exports[`should render demo and match snapshot 1`] = `
 </div>
 <div>
   <div class="van-row">
-    <div class="van-col van-col--8"
-         style="padding-right: 13.333333333333334px;"
+    <div
+      class="van-col van-col--8"
+      style="padding-right: 13.333333333333334px;"
     >
       span: 8
     </div>
-    <div style="padding-left: 6.666666666666666px; padding-right: 6.666666666666668px;"
-         class="van-col van-col--8"
+    <div
+      style="padding-left: 6.666666666666666px; padding-right: 6.666666666666668px;"
+      class="van-col van-col--8"
     >
       span: 8
     </div>
-    <div style="padding-left: 13.333333333333332px;"
-         class="van-col van-col--8"
+    <div
+      style="padding-left: 13.333333333333332px;"
+      class="van-col van-col--8"
     >
       span: 8
     </div>

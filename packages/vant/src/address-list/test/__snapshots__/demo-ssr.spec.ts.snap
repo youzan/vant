@@ -1,31 +1,36 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`should render demo and match snapshot 1`] = `
 <div>
   <!--[-->
   <div class="van-address-list">
-    <div class="van-radio-group"
-         role="radiogroup"
+    <div
+      class="van-radio-group"
+      role="radiogroup"
     >
       <!--[-->
       <!--[-->
       <div class="van-address-item">
         <div class="van-cell van-cell--borderless">
-          <div class="van-cell__title van-address-item__title"
-               style
+          <div
+            class="van-cell__title van-address-item__title"
+            style
           >
             <!--[-->
-            <div role="radio"
-                 class="van-radio"
-                 tabindex="0"
-                 aria-checked="true"
+            <div
+              role="radio"
+              class="van-radio"
+              tabindex="0"
+              aria-checked="true"
             >
               <!--[-->
-              <div class="van-radio__icon van-radio__icon--round van-radio__icon--checked"
-                   style="font-size:18px;"
+              <div
+                class="van-radio__icon van-radio__icon--round van-radio__icon--checked"
+                style="font-size:18px;"
               >
-                <i class="van-badge__wrapper van-icon van-icon-success"
-                   style
+                <i
+                  class="van-badge__wrapper van-icon van-icon-success"
+                  style
                 >
                   <!--[-->
                 </i>
@@ -35,8 +40,9 @@ exports[`should render demo and match snapshot 1`] = `
                 <!--[-->
                 <div class="van-address-item__name">
                   John Snow 13000000000
-                  <span style
-                        class="van-tag van-tag--round van-tag--primary van-address-item__tag"
+                  <span
+                    style
+                    class="van-tag van-tag--round van-tag--primary van-address-item__tag"
                   >
                     <!--[-->
                     Default
@@ -49,8 +55,9 @@ exports[`should render demo and match snapshot 1`] = `
             </div>
           </div>
           <!--[-->
-          <i class="van-badge__wrapper van-icon van-icon-edit van-address-item__edit"
-             style
+          <i
+            class="van-badge__wrapper van-icon van-icon-edit van-address-item__edit"
+            style
           >
             <!--[-->
           </i>
@@ -58,21 +65,25 @@ exports[`should render demo and match snapshot 1`] = `
       </div>
       <div class="van-address-item">
         <div class="van-cell van-cell--borderless">
-          <div class="van-cell__title van-address-item__title"
-               style
+          <div
+            class="van-cell__title van-address-item__title"
+            style
           >
             <!--[-->
-            <div role="radio"
-                 class="van-radio"
-                 tabindex="0"
-                 aria-checked="false"
+            <div
+              role="radio"
+              class="van-radio"
+              tabindex="0"
+              aria-checked="false"
             >
               <!--[-->
-              <div class="van-radio__icon van-radio__icon--round"
-                   style="font-size:18px;"
+              <div
+                class="van-radio__icon van-radio__icon--round"
+                style="font-size:18px;"
               >
-                <i class="van-badge__wrapper van-icon van-icon-success"
-                   style
+                <i
+                  class="van-badge__wrapper van-icon van-icon-success"
+                  style
                 >
                   <!--[-->
                 </i>
@@ -90,8 +101,9 @@ exports[`should render demo and match snapshot 1`] = `
             </div>
           </div>
           <!--[-->
-          <i class="van-badge__wrapper van-icon van-icon-edit van-address-item__edit"
-             style
+          <i
+            class="van-badge__wrapper van-icon van-icon-edit van-address-item__edit"
+            style
           >
             <!--[-->
           </i>
@@ -104,8 +116,9 @@ exports[`should render demo and match snapshot 1`] = `
     <!--[-->
     <div class="van-address-item van-address-item--disabled">
       <div class="van-cell van-cell--borderless">
-        <div class="van-cell__title van-address-item__title"
-             style
+        <div
+          class="van-cell__title van-address-item__title"
+          style
         >
           <!--[-->
           <div class="van-address-item__name">
@@ -116,17 +129,19 @@ exports[`should render demo and match snapshot 1`] = `
           </div>
         </div>
         <!--[-->
-        <i class="van-badge__wrapper van-icon van-icon-edit van-address-item__edit"
-           style
+        <i
+          class="van-badge__wrapper van-icon van-icon-edit van-address-item__edit"
+          style
         >
           <!--[-->
         </i>
       </div>
     </div>
     <div class="van-address-list__bottom van-safe-area-bottom">
-      <button type="button"
-              class="van-button van-button--primary van-button--normal van-button--block van-button--round van-address-list__add"
-              style
+      <button
+        type="button"
+        class="van-button van-button--primary van-button--normal van-button--block van-button--round van-address-list__add"
+        style
       >
         <div class="van-button__content">
           <span class="van-button__text">
