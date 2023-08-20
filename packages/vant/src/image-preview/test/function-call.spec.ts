@@ -29,20 +29,23 @@ test('should trigger onClose option correctly', async () => {
 });
 
 test('should trigger onChange option correctly', async () => {
+  const root = document.createElement('div');
   const onChange = vi.fn();
   showImagePreview({
     images,
     startPosition: 0,
     onChange,
+    teleport: root,
   });
 
   await nextTick();
-  const swipe = document.querySelector('.van-swipe__track') as HTMLDivElement;
+  const swipe = root.querySelector('.van-swipe__track') as HTMLDivElement;
   triggerDrag(swipe, 1000, 0);
   expect(onChange).toHaveBeenCalledWith(2);
 });
 
 test('should trigger onScale option correctly', async () => {
+  const root = document.createElement('div');
   const restore = mockGetBoundingClientRect({ width: 100 });
   showImagePreview({
     images,
@@ -50,10 +53,11 @@ test('should trigger onScale option correctly', async () => {
     onScale({ scale }) {
       expect(scale <= 2).toBeTruthy();
     },
+    teleport: root,
   });
 
   await later();
-  const image = document.querySelector('img') as HTMLImageElement;
+  const image = root.querySelector('img') as HTMLImageElement;
   triggerZoom(image, 300, 300);
   restore();
 });
