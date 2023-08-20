@@ -248,11 +248,11 @@ dropdownItemRef.value?.toggle();
 
 ### Data Structure of Option
 
-| Key   | Description | Type               |
-| ----- | ----------- | ------------------ |
-| text  | Text        | _string_           |
-| value | Value       | _number \| string_ |
-| icon  | Left icon   | _string_           |
+| Key   | Description | Type                          |
+| ----- | ----------- | ----------------------------- |
+| text  | Text        | _string_                      |
+| value | Value       | _number \| string \| boolean_ |
+| icon  | Left icon   | _string_                      |
 
 ## Theming
 
