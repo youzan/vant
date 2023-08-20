@@ -20,8 +20,9 @@ export default defineConfig({
       reportsDirectory: './test/coverage',
     },
     environment: 'jsdom',
-    include: ['**/*.spec.[jt]s?(x)'],
+    include: ['src/**/*.spec.[jt]s?(x)'],
     restoreMocks: true,
+    // enable single thread in CI because it is faster
     singleThread: isCI,
     // disable experimentalVmThreads on CI because it causes OOM
     experimentalVmThreads: !isCI,
