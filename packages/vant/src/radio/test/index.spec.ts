@@ -73,7 +73,7 @@ test('should adjust label position when using label-position prop', () => {
 });
 
 test('should emit click event when radio icon is clicked', async () => {
-  const onClick = jest.fn();
+  const onClick = vi.fn();
   const wrapper = mount(Radio, {
     props: {
       onClick,

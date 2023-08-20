@@ -1,4 +1,4 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`should render demo and match snapshot 1`] = `
 <div class="van-tabs van-tabs--line">
@@ -6,56 +6,62 @@ exports[`should render demo and match snapshot 1`] = `
     <div class="van-sticky">
       <div>
         <div class="van-tabs__wrap">
-          <div role="tablist"
-               class="van-tabs__nav van-tabs__nav--line"
-               aria-orientation="horizontal"
+          <div
+            role="tablist"
+            class="van-tabs__nav van-tabs__nav--line"
+            aria-orientation="horizontal"
           >
-            <div id="van-tabs-0"
-                 role="tab"
-                 class="van-tab van-tab--line van-tab--active"
-                 tabindex="0"
-                 aria-selected="true"
-                 aria-controls="van-tab"
+            <div
+              id="van-tabs-0"
+              role="tab"
+              class="van-tab van-tab--line van-tab--active"
+              tabindex="0"
+              aria-selected="true"
+              aria-controls="van-tab"
             >
               <span class="van-tab__text van-tab__text--ellipsis">
                 Demo
               </span>
             </div>
-            <div id="van-tabs-1"
-                 role="tab"
-                 class="van-tab van-tab--line"
-                 tabindex="-1"
-                 aria-selected="false"
-                 aria-controls="van-tab"
+            <div
+              id="van-tabs-1"
+              role="tab"
+              class="van-tab van-tab--line"
+              tabindex="-1"
+              aria-selected="false"
+              aria-controls="van-tab"
             >
               <span class="van-tab__text van-tab__text--ellipsis">
                 Basic
               </span>
             </div>
-            <div id="van-tabs-2"
-                 role="tab"
-                 class="van-tab van-tab--line"
-                 tabindex="-1"
-                 aria-selected="false"
-                 aria-controls="van-tab"
+            <div
+              id="van-tabs-2"
+              role="tab"
+              class="van-tab van-tab--line"
+              tabindex="-1"
+              aria-selected="false"
+              aria-controls="van-tab"
             >
               <span class="van-tab__text van-tab__text--ellipsis">
                 Outline
               </span>
             </div>
-            <div id="van-tabs-3"
-                 role="tab"
-                 class="van-tab van-tab--line"
-                 tabindex="-1"
-                 aria-selected="false"
-                 aria-controls="van-tab"
+            <div
+              id="van-tabs-3"
+              role="tab"
+              class="van-tab van-tab--line"
+              tabindex="-1"
+              aria-selected="false"
+              aria-controls="van-tab"
             >
               <span class="van-tab__text van-tab__text--ellipsis">
                 Filled
               </span>
             </div>
-            <div class="van-tabs__line"
-                 style="transform: translateX(50px) translateX(-50%);"
+            <div
+              class="van-tabs__line"
+              style="transform: translateX(50px) translateX(-50%);"
             >
             </div>
           </div>
@@ -64,12 +70,13 @@ exports[`should render demo and match snapshot 1`] = `
     </div>
   </div>
   <div class="van-tabs__content">
-    <div id="van-tab"
-         role="tabpanel"
-         class="van-tab__panel demo-icon-tab-panel"
-         tabindex="0"
-         aria-labelledby="van-tabs-0"
-         style
+    <div
+      id="van-tab"
+      role="tabpanel"
+      class="van-tab__panel demo-icon-tab-panel"
+      tabindex="0"
+      aria-labelledby="van-tabs-0"
+      style
     >
       <div>
         <div class="van-row">
@@ -83,8 +90,9 @@ exports[`should render demo and match snapshot 1`] = `
         <div class="van-row">
           <div class="van-col van-col--6">
             <i class="van-badge__wrapper van-icon">
-              <img class="van-icon__image"
-                   src="https://fastly.jsdelivr.net/npm/@vant/assets/icon-demo.png"
+              <img
+                class="van-icon__image"
+                src="https://fastly.jsdelivr.net/npm/@vant/assets/icon-demo.png"
               >
             </i>
           </div>
@@ -117,14 +125,16 @@ exports[`should render demo and match snapshot 1`] = `
       <div>
         <div class="van-row">
           <div class="van-col van-col--6">
-            <i class="van-badge__wrapper van-icon van-icon-cart-o"
-               style="color: rgb(25, 137, 250);"
+            <i
+              class="van-badge__wrapper van-icon van-icon-cart-o"
+              style="color: rgb(25, 137, 250);"
             >
             </i>
           </div>
           <div class="van-col van-col--6">
-            <i class="van-badge__wrapper van-icon van-icon-fire-o"
-               style="color: rgb(238, 10, 36);"
+            <i
+              class="van-badge__wrapper van-icon van-icon-fire-o"
+              style="color: rgb(238, 10, 36);"
             >
             </i>
           </div>
@@ -133,42 +143,47 @@ exports[`should render demo and match snapshot 1`] = `
       <div>
         <div class="van-row">
           <div class="van-col van-col--6">
-            <i class="van-badge__wrapper van-icon van-icon-chat-o"
-               style="font-size: 40px;"
+            <i
+              class="van-badge__wrapper van-icon van-icon-chat-o"
+              style="font-size: 40px;"
             >
             </i>
           </div>
           <div class="van-col van-col--6">
-            <i class="van-badge__wrapper van-icon van-icon-chat-o"
-               style="font-size: 3rem;"
+            <i
+              class="van-badge__wrapper van-icon van-icon-chat-o"
+              style="font-size: 3rem;"
             >
             </i>
           </div>
         </div>
       </div>
     </div>
-    <div id="van-tab"
-         role="tabpanel"
-         class="van-tab__panel demo-icon-tab-panel"
-         tabindex="-1"
-         aria-labelledby="van-tabs-1"
-         style="display: none;"
+    <div
+      id="van-tab"
+      role="tabpanel"
+      class="van-tab__panel demo-icon-tab-panel"
+      tabindex="-1"
+      aria-labelledby="van-tabs-1"
+      style="display: none;"
     >
     </div>
-    <div id="van-tab"
-         role="tabpanel"
-         class="van-tab__panel demo-icon-tab-panel"
-         tabindex="-1"
-         aria-labelledby="van-tabs-2"
-         style="display: none;"
+    <div
+      id="van-tab"
+      role="tabpanel"
+      class="van-tab__panel demo-icon-tab-panel"
+      tabindex="-1"
+      aria-labelledby="van-tabs-2"
+      style="display: none;"
     >
     </div>
-    <div id="van-tab"
-         role="tabpanel"
-         class="van-tab__panel demo-icon-tab-panel"
-         tabindex="-1"
-         aria-labelledby="van-tabs-3"
-         style="display: none;"
+    <div
+      id="van-tab"
+      role="tabpanel"
+      class="van-tab__panel demo-icon-tab-panel"
+      tabindex="-1"
+      aria-labelledby="van-tabs-3"
+      style="display: none;"
     >
     </div>
   </div>

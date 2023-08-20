@@ -1,21 +1,24 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`should render demo and match snapshot 1`] = `
 <div>
   <div class="van-address-list">
-    <div class="van-radio-group"
-         role="radiogroup"
+    <div
+      class="van-radio-group"
+      role="radiogroup"
     >
       <div class="van-address-item">
         <div class="van-cell van-cell--borderless">
           <div class="van-cell__title van-address-item__title">
-            <div role="radio"
-                 class="van-radio"
-                 tabindex="0"
-                 aria-checked="true"
+            <div
+              role="radio"
+              class="van-radio"
+              tabindex="0"
+              aria-checked="true"
             >
-              <div class="van-radio__icon van-radio__icon--round van-radio__icon--checked"
-                   style="font-size: 18px;"
+              <div
+                class="van-radio__icon van-radio__icon--round van-radio__icon--checked"
+                style="font-size: 18px;"
               >
                 <i class="van-badge__wrapper van-icon van-icon-success">
                 </i>
@@ -23,10 +26,11 @@ exports[`should render demo and match snapshot 1`] = `
               <span class="van-radio__label">
                 <div class="van-address-item__name">
                   John Snow 13000000000
-                  <transition-stub appear="false"
-                                   persisted="false"
-                                   css="true"
-                                   class="van-address-item__tag"
+                  <transition-stub
+                    appear="false"
+                    persisted="false"
+                    css="true"
+                    class="van-address-item__tag"
                   >
                     <span class="van-tag van-tag--round van-tag--primary">
                       Default
@@ -46,13 +50,15 @@ exports[`should render demo and match snapshot 1`] = `
       <div class="van-address-item">
         <div class="van-cell van-cell--borderless">
           <div class="van-cell__title van-address-item__title">
-            <div role="radio"
-                 class="van-radio"
-                 tabindex="0"
-                 aria-checked="false"
+            <div
+              role="radio"
+              class="van-radio"
+              tabindex="0"
+              aria-checked="false"
             >
-              <div class="van-radio__icon van-radio__icon--round"
-                   style="font-size: 18px;"
+              <div
+                class="van-radio__icon van-radio__icon--round"
+                style="font-size: 18px;"
               >
                 <i class="van-badge__wrapper van-icon van-icon-success">
                 </i>
@@ -90,8 +96,9 @@ exports[`should render demo and match snapshot 1`] = `
       </div>
     </div>
     <div class="van-address-list__bottom van-safe-area-bottom">
-      <button type="button"
-              class="van-button van-button--primary van-button--normal van-button--block van-button--round van-address-list__add"
+      <button
+        type="button"
+        class="van-button van-button--primary van-button--normal van-button--block van-button--round van-address-list__add"
       >
         <div class="van-button__content">
           <span class="van-button__text">

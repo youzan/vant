@@ -1,4 +1,4 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`should render demo and match snapshot 1`] = `
 <!--[-->
@@ -7,51 +7,58 @@ exports[`should render demo and match snapshot 1`] = `
   <div class="van-picker van-area">
     <div class="van-picker__toolbar">
       <!--[-->
-      <button type="button"
-              class="van-picker__cancel van-haptics-feedback"
+      <button
+        type="button"
+        class="van-picker__cancel van-haptics-feedback"
       >
         Cancel
       </button>
       <div class="van-picker__title van-ellipsis">
         Title
       </div>
-      <button type="button"
-              class="van-picker__confirm van-haptics-feedback"
+      <button
+        type="button"
+        class="van-picker__confirm van-haptics-feedback"
       >
         Confirm
       </button>
     </div>
-    <div class="van-picker__columns"
-         style="height:264px;"
+    <div
+      class="van-picker__columns"
+      style="height:264px;"
     >
       <!--[-->
       <div class="van-picker-column">
-        <ul style="transform:translate3d(0, 110px, 0);transition-duration:0ms;transition-property:none;"
-            class="van-picker-column__wrapper"
+        <ul
+          style="transform:translate3d(0, 110px, 0);transition-duration:0ms;transition-property:none;"
+          class="van-picker-column__wrapper"
         >
           <!--[-->
-          <li role="button"
-              style="height:44px;"
-              tabindex="0"
-              class="van-picker-column__item van-picker-column__item--selected"
+          <li
+            role="button"
+            style="height:44px;"
+            tabindex="0"
+            class="van-picker-column__item van-picker-column__item--selected"
           >
             <div class="van-ellipsis">
               Beijing
             </div>
           </li>
-          <li role="button"
-              style="height:44px;"
-              tabindex="0"
-              class="van-picker-column__item"
+          <li
+            role="button"
+            style="height:44px;"
+            tabindex="0"
+            class="van-picker-column__item"
           >
             <div class="van-ellipsis">
               Zhejiang
             </div>
           </li>
-          <li role="button"
-              style="height:44px;"
-              tabindex="0"
-              class="van-picker-column__item"
+          <li
+            role="button"
+            style="height:44px;"
+            tabindex="0"
+            class="van-picker-column__item"
           >
             <div class="van-ellipsis">
               Hong Kong
@@ -60,14 +67,16 @@ exports[`should render demo and match snapshot 1`] = `
         </ul>
       </div>
       <div class="van-picker-column">
-        <ul style="transform:translate3d(0, 110px, 0);transition-duration:0ms;transition-property:none;"
-            class="van-picker-column__wrapper"
+        <ul
+          style="transform:translate3d(0, 110px, 0);transition-duration:0ms;transition-property:none;"
+          class="van-picker-column__wrapper"
         >
           <!--[-->
-          <li role="button"
-              style="height:44px;"
-              tabindex="0"
-              class="van-picker-column__item van-picker-column__item--selected"
+          <li
+            role="button"
+            style="height:44px;"
+            tabindex="0"
+            class="van-picker-column__item van-picker-column__item--selected"
           >
             <div class="van-ellipsis">
               Beijing City
@@ -76,95 +85,106 @@ exports[`should render demo and match snapshot 1`] = `
         </ul>
       </div>
       <div class="van-picker-column">
-        <ul style="transform:translate3d(0, 110px, 0);transition-duration:0ms;transition-property:none;"
-            class="van-picker-column__wrapper"
+        <ul
+          style="transform:translate3d(0, 110px, 0);transition-duration:0ms;transition-property:none;"
+          class="van-picker-column__wrapper"
         >
           <!--[-->
-          <li role="button"
-              style="height:44px;"
-              tabindex="0"
-              class="van-picker-column__item van-picker-column__item--selected"
+          <li
+            role="button"
+            style="height:44px;"
+            tabindex="0"
+            class="van-picker-column__item van-picker-column__item--selected"
           >
             <div class="van-ellipsis">
               Dongcheng
             </div>
           </li>
-          <li role="button"
-              style="height:44px;"
-              tabindex="0"
-              class="van-picker-column__item"
+          <li
+            role="button"
+            style="height:44px;"
+            tabindex="0"
+            class="van-picker-column__item"
           >
             <div class="van-ellipsis">
               Xicheng
             </div>
           </li>
-          <li role="button"
-              style="height:44px;"
-              tabindex="0"
-              class="van-picker-column__item"
+          <li
+            role="button"
+            style="height:44px;"
+            tabindex="0"
+            class="van-picker-column__item"
           >
             <div class="van-ellipsis">
               Chaoyang
             </div>
           </li>
-          <li role="button"
-              style="height:44px;"
-              tabindex="0"
-              class="van-picker-column__item"
+          <li
+            role="button"
+            style="height:44px;"
+            tabindex="0"
+            class="van-picker-column__item"
           >
             <div class="van-ellipsis">
               Fengtai
             </div>
           </li>
-          <li role="button"
-              style="height:44px;"
-              tabindex="0"
-              class="van-picker-column__item"
+          <li
+            role="button"
+            style="height:44px;"
+            tabindex="0"
+            class="van-picker-column__item"
           >
             <div class="van-ellipsis">
               Haidian
             </div>
           </li>
-          <li role="button"
-              style="height:44px;"
-              tabindex="0"
-              class="van-picker-column__item"
+          <li
+            role="button"
+            style="height:44px;"
+            tabindex="0"
+            class="van-picker-column__item"
           >
             <div class="van-ellipsis">
               Fangshan
             </div>
           </li>
-          <li role="button"
-              style="height:44px;"
-              tabindex="0"
-              class="van-picker-column__item"
+          <li
+            role="button"
+            style="height:44px;"
+            tabindex="0"
+            class="van-picker-column__item"
           >
             <div class="van-ellipsis">
               Tongzhou
             </div>
           </li>
-          <li role="button"
-              style="height:44px;"
-              tabindex="0"
-              class="van-picker-column__item"
+          <li
+            role="button"
+            style="height:44px;"
+            tabindex="0"
+            class="van-picker-column__item"
           >
             <div class="van-ellipsis">
               Shunyi
             </div>
           </li>
-          <li role="button"
-              style="height:44px;"
-              tabindex="0"
-              class="van-picker-column__item"
+          <li
+            role="button"
+            style="height:44px;"
+            tabindex="0"
+            class="van-picker-column__item"
           >
             <div class="van-ellipsis">
               Changping
             </div>
           </li>
-          <li role="button"
-              style="height:44px;"
-              tabindex="0"
-              class="van-picker-column__item"
+          <li
+            role="button"
+            style="height:44px;"
+            tabindex="0"
+            class="van-picker-column__item"
           >
             <div class="van-ellipsis">
               Daxing
@@ -173,12 +193,14 @@ exports[`should render demo and match snapshot 1`] = `
         </ul>
       </div>
       <!--[-->
-      <div class="van-picker__mask"
-           style="background-size:100% 110px;"
+      <div
+        class="van-picker__mask"
+        style="background-size:100% 110px;"
       >
       </div>
-      <div class="van-hairline-unset--top-bottom van-picker__frame"
-           style="height:44px;"
+      <div
+        class="van-hairline-unset--top-bottom van-picker__frame"
+        style="height:44px;"
       >
       </div>
     </div>
@@ -189,51 +211,58 @@ exports[`should render demo and match snapshot 1`] = `
   <div class="van-picker van-area">
     <div class="van-picker__toolbar">
       <!--[-->
-      <button type="button"
-              class="van-picker__cancel van-haptics-feedback"
+      <button
+        type="button"
+        class="van-picker__cancel van-haptics-feedback"
       >
         Cancel
       </button>
       <div class="van-picker__title van-ellipsis">
         Title
       </div>
-      <button type="button"
-              class="van-picker__confirm van-haptics-feedback"
+      <button
+        type="button"
+        class="van-picker__confirm van-haptics-feedback"
       >
         Confirm
       </button>
     </div>
-    <div class="van-picker__columns"
-         style="height:264px;"
+    <div
+      class="van-picker__columns"
+      style="height:264px;"
     >
       <!--[-->
       <div class="van-picker-column">
-        <ul style="transform:translate3d(0, 66px, 0);transition-duration:0ms;transition-property:none;"
-            class="van-picker-column__wrapper"
+        <ul
+          style="transform:translate3d(0, 66px, 0);transition-duration:0ms;transition-property:none;"
+          class="van-picker-column__wrapper"
         >
           <!--[-->
-          <li role="button"
-              style="height:44px;"
-              tabindex="0"
-              class="van-picker-column__item"
+          <li
+            role="button"
+            style="height:44px;"
+            tabindex="0"
+            class="van-picker-column__item"
           >
             <div class="van-ellipsis">
               Beijing
             </div>
           </li>
-          <li role="button"
-              style="height:44px;"
-              tabindex="0"
-              class="van-picker-column__item van-picker-column__item--selected"
+          <li
+            role="button"
+            style="height:44px;"
+            tabindex="0"
+            class="van-picker-column__item van-picker-column__item--selected"
           >
             <div class="van-ellipsis">
               Zhejiang
             </div>
           </li>
-          <li role="button"
-              style="height:44px;"
-              tabindex="0"
-              class="van-picker-column__item"
+          <li
+            role="button"
+            style="height:44px;"
+            tabindex="0"
+            class="van-picker-column__item"
           >
             <div class="van-ellipsis">
               Hong Kong
@@ -242,50 +271,56 @@ exports[`should render demo and match snapshot 1`] = `
         </ul>
       </div>
       <div class="van-picker-column">
-        <ul style="transform:translate3d(0, 22px, 0);transition-duration:0ms;transition-property:none;"
-            class="van-picker-column__wrapper"
+        <ul
+          style="transform:translate3d(0, 22px, 0);transition-duration:0ms;transition-property:none;"
+          class="van-picker-column__wrapper"
         >
           <!--[-->
-          <li role="button"
-              style="height:44px;"
-              tabindex="0"
-              class="van-picker-column__item"
+          <li
+            role="button"
+            style="height:44px;"
+            tabindex="0"
+            class="van-picker-column__item"
           >
             <div class="van-ellipsis">
               Hangzhou
             </div>
           </li>
-          <li role="button"
-              style="height:44px;"
-              tabindex="0"
-              class="van-picker-column__item"
+          <li
+            role="button"
+            style="height:44px;"
+            tabindex="0"
+            class="van-picker-column__item"
           >
             <div class="van-ellipsis">
               Ningbo
             </div>
           </li>
-          <li role="button"
-              style="height:44px;"
-              tabindex="0"
-              class="van-picker-column__item van-picker-column__item--selected"
+          <li
+            role="button"
+            style="height:44px;"
+            tabindex="0"
+            class="van-picker-column__item van-picker-column__item--selected"
           >
             <div class="van-ellipsis">
               Wenzhou
             </div>
           </li>
-          <li role="button"
-              style="height:44px;"
-              tabindex="0"
-              class="van-picker-column__item"
+          <li
+            role="button"
+            style="height:44px;"
+            tabindex="0"
+            class="van-picker-column__item"
           >
             <div class="van-ellipsis">
               Jiaxin
             </div>
           </li>
-          <li role="button"
-              style="height:44px;"
-              tabindex="0"
-              class="van-picker-column__item"
+          <li
+            role="button"
+            style="height:44px;"
+            tabindex="0"
+            class="van-picker-column__item"
           >
             <div class="van-ellipsis">
               Lishui
@@ -294,50 +329,56 @@ exports[`should render demo and match snapshot 1`] = `
         </ul>
       </div>
       <div class="van-picker-column">
-        <ul style="transform:translate3d(0, 110px, 0);transition-duration:0ms;transition-property:none;"
-            class="van-picker-column__wrapper"
+        <ul
+          style="transform:translate3d(0, 110px, 0);transition-duration:0ms;transition-property:none;"
+          class="van-picker-column__wrapper"
         >
           <!--[-->
-          <li role="button"
-              style="height:44px;"
-              tabindex="0"
-              class="van-picker-column__item van-picker-column__item--selected"
+          <li
+            role="button"
+            style="height:44px;"
+            tabindex="0"
+            class="van-picker-column__item van-picker-column__item--selected"
           >
             <div class="van-ellipsis">
               Lucheng
             </div>
           </li>
-          <li role="button"
-              style="height:44px;"
-              tabindex="0"
-              class="van-picker-column__item"
+          <li
+            role="button"
+            style="height:44px;"
+            tabindex="0"
+            class="van-picker-column__item"
           >
             <div class="van-ellipsis">
               Wencheng
             </div>
           </li>
-          <li role="button"
-              style="height:44px;"
-              tabindex="0"
-              class="van-picker-column__item"
+          <li
+            role="button"
+            style="height:44px;"
+            tabindex="0"
+            class="van-picker-column__item"
           >
             <div class="van-ellipsis">
               Shuntai
             </div>
           </li>
-          <li role="button"
-              style="height:44px;"
-              tabindex="0"
-              class="van-picker-column__item"
+          <li
+            role="button"
+            style="height:44px;"
+            tabindex="0"
+            class="van-picker-column__item"
           >
             <div class="van-ellipsis">
               Ruian
             </div>
           </li>
-          <li role="button"
-              style="height:44px;"
-              tabindex="0"
-              class="van-picker-column__item"
+          <li
+            role="button"
+            style="height:44px;"
+            tabindex="0"
+            class="van-picker-column__item"
           >
             <div class="van-ellipsis">
               Yueqing
@@ -346,12 +387,14 @@ exports[`should render demo and match snapshot 1`] = `
         </ul>
       </div>
       <!--[-->
-      <div class="van-picker__mask"
-           style="background-size:100% 110px;"
+      <div
+        class="van-picker__mask"
+        style="background-size:100% 110px;"
       >
       </div>
-      <div class="van-hairline-unset--top-bottom van-picker__frame"
-           style="height:44px;"
+      <div
+        class="van-hairline-unset--top-bottom van-picker__frame"
+        style="height:44px;"
       >
       </div>
     </div>
@@ -362,51 +405,58 @@ exports[`should render demo and match snapshot 1`] = `
   <div class="van-picker van-area">
     <div class="van-picker__toolbar">
       <!--[-->
-      <button type="button"
-              class="van-picker__cancel van-haptics-feedback"
+      <button
+        type="button"
+        class="van-picker__cancel van-haptics-feedback"
       >
         Cancel
       </button>
       <div class="van-picker__title van-ellipsis">
         Title
       </div>
-      <button type="button"
-              class="van-picker__confirm van-haptics-feedback"
+      <button
+        type="button"
+        class="van-picker__confirm van-haptics-feedback"
       >
         Confirm
       </button>
     </div>
-    <div class="van-picker__columns"
-         style="height:264px;"
+    <div
+      class="van-picker__columns"
+      style="height:264px;"
     >
       <!--[-->
       <div class="van-picker-column">
-        <ul style="transform:translate3d(0, 110px, 0);transition-duration:0ms;transition-property:none;"
-            class="van-picker-column__wrapper"
+        <ul
+          style="transform:translate3d(0, 110px, 0);transition-duration:0ms;transition-property:none;"
+          class="van-picker-column__wrapper"
         >
           <!--[-->
-          <li role="button"
-              style="height:44px;"
-              tabindex="0"
-              class="van-picker-column__item van-picker-column__item--selected"
+          <li
+            role="button"
+            style="height:44px;"
+            tabindex="0"
+            class="van-picker-column__item van-picker-column__item--selected"
           >
             <div class="van-ellipsis">
               Beijing
             </div>
           </li>
-          <li role="button"
-              style="height:44px;"
-              tabindex="0"
-              class="van-picker-column__item"
+          <li
+            role="button"
+            style="height:44px;"
+            tabindex="0"
+            class="van-picker-column__item"
           >
             <div class="van-ellipsis">
               Zhejiang
             </div>
           </li>
-          <li role="button"
-              style="height:44px;"
-              tabindex="0"
-              class="van-picker-column__item"
+          <li
+            role="button"
+            style="height:44px;"
+            tabindex="0"
+            class="van-picker-column__item"
           >
             <div class="van-ellipsis">
               Hong Kong
@@ -415,14 +465,16 @@ exports[`should render demo and match snapshot 1`] = `
         </ul>
       </div>
       <div class="van-picker-column">
-        <ul style="transform:translate3d(0, 110px, 0);transition-duration:0ms;transition-property:none;"
-            class="van-picker-column__wrapper"
+        <ul
+          style="transform:translate3d(0, 110px, 0);transition-duration:0ms;transition-property:none;"
+          class="van-picker-column__wrapper"
         >
           <!--[-->
-          <li role="button"
-              style="height:44px;"
-              tabindex="0"
-              class="van-picker-column__item van-picker-column__item--selected"
+          <li
+            role="button"
+            style="height:44px;"
+            tabindex="0"
+            class="van-picker-column__item van-picker-column__item--selected"
           >
             <div class="van-ellipsis">
               Beijing City
@@ -431,12 +483,14 @@ exports[`should render demo and match snapshot 1`] = `
         </ul>
       </div>
       <!--[-->
-      <div class="van-picker__mask"
-           style="background-size:100% 110px;"
+      <div
+        class="van-picker__mask"
+        style="background-size:100% 110px;"
       >
       </div>
-      <div class="van-hairline-unset--top-bottom van-picker__frame"
-           style="height:44px;"
+      <div
+        class="van-hairline-unset--top-bottom van-picker__frame"
+        style="height:44px;"
       >
       </div>
     </div>
@@ -447,60 +501,68 @@ exports[`should render demo and match snapshot 1`] = `
   <div class="van-picker van-area">
     <div class="van-picker__toolbar">
       <!--[-->
-      <button type="button"
-              class="van-picker__cancel van-haptics-feedback"
+      <button
+        type="button"
+        class="van-picker__cancel van-haptics-feedback"
       >
         Cancel
       </button>
       <div class="van-picker__title van-ellipsis">
         Title
       </div>
-      <button type="button"
-              class="van-picker__confirm van-haptics-feedback"
+      <button
+        type="button"
+        class="van-picker__confirm van-haptics-feedback"
       >
         Confirm
       </button>
     </div>
-    <div class="van-picker__columns"
-         style="height:264px;"
+    <div
+      class="van-picker__columns"
+      style="height:264px;"
     >
       <!--[-->
       <div class="van-picker-column">
-        <ul style="transform:translate3d(0, 110px, 0);transition-duration:0ms;transition-property:none;"
-            class="van-picker-column__wrapper"
+        <ul
+          style="transform:translate3d(0, 110px, 0);transition-duration:0ms;transition-property:none;"
+          class="van-picker-column__wrapper"
         >
           <!--[-->
-          <li role="button"
-              style="height:44px;"
-              tabindex="0"
-              class="van-picker-column__item van-picker-column__item--selected"
+          <li
+            role="button"
+            style="height:44px;"
+            tabindex="0"
+            class="van-picker-column__item van-picker-column__item--selected"
           >
             <div class="van-ellipsis">
               Choose
             </div>
           </li>
-          <li role="button"
-              style="height:44px;"
-              tabindex="0"
-              class="van-picker-column__item"
+          <li
+            role="button"
+            style="height:44px;"
+            tabindex="0"
+            class="van-picker-column__item"
           >
             <div class="van-ellipsis">
               Beijing
             </div>
           </li>
-          <li role="button"
-              style="height:44px;"
-              tabindex="0"
-              class="van-picker-column__item"
+          <li
+            role="button"
+            style="height:44px;"
+            tabindex="0"
+            class="van-picker-column__item"
           >
             <div class="van-ellipsis">
               Zhejiang
             </div>
           </li>
-          <li role="button"
-              style="height:44px;"
-              tabindex="0"
-              class="van-picker-column__item"
+          <li
+            role="button"
+            style="height:44px;"
+            tabindex="0"
+            class="van-picker-column__item"
           >
             <div class="van-ellipsis">
               Hong Kong
@@ -509,14 +571,16 @@ exports[`should render demo and match snapshot 1`] = `
         </ul>
       </div>
       <div class="van-picker-column">
-        <ul style="transform:translate3d(0, 110px, 0);transition-duration:0ms;transition-property:none;"
-            class="van-picker-column__wrapper"
+        <ul
+          style="transform:translate3d(0, 110px, 0);transition-duration:0ms;transition-property:none;"
+          class="van-picker-column__wrapper"
         >
           <!--[-->
-          <li role="button"
-              style="height:44px;"
-              tabindex="0"
-              class="van-picker-column__item van-picker-column__item--selected"
+          <li
+            role="button"
+            style="height:44px;"
+            tabindex="0"
+            class="van-picker-column__item van-picker-column__item--selected"
           >
             <div class="van-ellipsis">
               Choose
@@ -525,14 +589,16 @@ exports[`should render demo and match snapshot 1`] = `
         </ul>
       </div>
       <div class="van-picker-column">
-        <ul style="transform:translate3d(0, 110px, 0);transition-duration:0ms;transition-property:none;"
-            class="van-picker-column__wrapper"
+        <ul
+          style="transform:translate3d(0, 110px, 0);transition-duration:0ms;transition-property:none;"
+          class="van-picker-column__wrapper"
         >
           <!--[-->
-          <li role="button"
-              style="height:44px;"
-              tabindex="0"
-              class="van-picker-column__item van-picker-column__item--selected"
+          <li
+            role="button"
+            style="height:44px;"
+            tabindex="0"
+            class="van-picker-column__item van-picker-column__item--selected"
           >
             <div class="van-ellipsis">
               Choose
@@ -541,12 +607,14 @@ exports[`should render demo and match snapshot 1`] = `
         </ul>
       </div>
       <!--[-->
-      <div class="van-picker__mask"
-           style="background-size:100% 110px;"
+      <div
+        class="van-picker__mask"
+        style="background-size:100% 110px;"
       >
       </div>
-      <div class="van-hairline-unset--top-bottom van-picker__frame"
-           style="height:44px;"
+      <div
+        class="van-hairline-unset--top-bottom van-picker__frame"
+        style="height:44px;"
       >
       </div>
     </div>

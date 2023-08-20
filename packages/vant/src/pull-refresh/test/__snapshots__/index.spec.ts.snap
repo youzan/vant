@@ -1,9 +1,10 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`should allow to custom pull distance 1`] = `
 <div class="van-pull-refresh">
-  <div class="van-pull-refresh__track"
-       style="transition-duration: 0ms; transform: translate3d(0,100px, 0);"
+  <div
+    class="van-pull-refresh__track"
+    style="transition-duration: 0ms; transform: translate3d(0,100px, 0);"
   >
     <div class="van-pull-refresh__head">
       <div class="van-pull-refresh__text">
@@ -16,8 +17,9 @@ exports[`should allow to custom pull distance 1`] = `
 
 exports[`should render different head content in different pulling status 1`] = `
 <div class="van-pull-refresh">
-  <div class="van-pull-refresh__track"
-       style="transition-duration: 0ms; transform: translate3d(0,20px, 0);"
+  <div
+    class="van-pull-refresh__track"
+    style="transition-duration: 0ms; transform: translate3d(0,20px, 0);"
   >
     <div class="van-pull-refresh__head">
       <div class="van-pull-refresh__text">
@@ -30,8 +32,9 @@ exports[`should render different head content in different pulling status 1`] = 
 
 exports[`should render different head content in different pulling status 2`] = `
 <div class="van-pull-refresh">
-  <div class="van-pull-refresh__track"
-       style="transition-duration: 0ms; transform: translate3d(0,75px, 0);"
+  <div
+    class="van-pull-refresh__track"
+    style="transition-duration: 0ms; transform: translate3d(0,75px, 0);"
   >
     <div class="van-pull-refresh__head">
       <div class="van-pull-refresh__text">
@@ -44,22 +47,26 @@ exports[`should render different head content in different pulling status 2`] = 
 
 exports[`should render different head content in different pulling status 3`] = `
 <div class="van-pull-refresh">
-  <div class="van-pull-refresh__track"
-       style="transition-duration: 300ms; transform: translate3d(0,50px, 0);"
+  <div
+    class="van-pull-refresh__track"
+    style="transition-duration: 300ms; transform: translate3d(0,50px, 0);"
   >
     <div class="van-pull-refresh__head">
-      <div class="van-loading van-loading--circular van-pull-refresh__loading"
-           aria-live="polite"
-           aria-busy="true"
+      <div
+        class="van-loading van-loading--circular van-pull-refresh__loading"
+        aria-live="polite"
+        aria-busy="true"
       >
         <span class="van-loading__spinner van-loading__spinner--circular">
-          <svg class="van-loading__circular"
-               viewbox="25 25 50 50"
+          <svg
+            class="van-loading__circular"
+            viewbox="25 25 50 50"
           >
-            <circle cx="50"
-                    cy="50"
-                    r="20"
-                    fill="none"
+            <circle
+              cx="50"
+              cy="50"
+              r="20"
+              fill="none"
             >
             </circle>
           </svg>
@@ -75,22 +82,26 @@ exports[`should render different head content in different pulling status 3`] = 
 
 exports[`should render different head content in different pulling status 4`] = `
 <div class="van-pull-refresh">
-  <div class="van-pull-refresh__track"
-       style="transition-duration: 300ms; transform: translate3d(0,50px, 0);"
+  <div
+    class="van-pull-refresh__track"
+    style="transition-duration: 300ms; transform: translate3d(0,50px, 0);"
   >
     <div class="van-pull-refresh__head">
-      <div class="van-loading van-loading--circular van-pull-refresh__loading"
-           aria-live="polite"
-           aria-busy="true"
+      <div
+        class="van-loading van-loading--circular van-pull-refresh__loading"
+        aria-live="polite"
+        aria-busy="true"
       >
         <span class="van-loading__spinner van-loading__spinner--circular">
-          <svg class="van-loading__circular"
-               viewbox="25 25 50 50"
+          <svg
+            class="van-loading__circular"
+            viewbox="25 25 50 50"
           >
-            <circle cx="50"
-                    cy="50"
-                    r="20"
-                    fill="none"
+            <circle
+              cx="50"
+              cy="50"
+              r="20"
+              fill="none"
             >
             </circle>
           </svg>
@@ -106,8 +117,9 @@ exports[`should render different head content in different pulling status 4`] = 
 
 exports[`should render different head content in different pulling status 5`] = `
 <div class="van-pull-refresh">
-  <div class="van-pull-refresh__track"
-       style="transition-duration: 300ms;"
+  <div
+    class="van-pull-refresh__track"
+    style="transition-duration: 300ms;"
   >
     <div class="van-pull-refresh__head">
     </div>
@@ -117,8 +129,9 @@ exports[`should render different head content in different pulling status 5`] = 
 
 exports[`should render status slots correctly 1`] = `
 <div class="van-pull-refresh">
-  <div class="van-pull-refresh__track"
-       style="transition-duration: 0ms; transform: translate3d(0,20px, 0);"
+  <div
+    class="van-pull-refresh__track"
+    style="transition-duration: 0ms; transform: translate3d(0,20px, 0);"
   >
     <div class="van-pull-refresh__head">
       pulling 20
@@ -129,8 +142,9 @@ exports[`should render status slots correctly 1`] = `
 
 exports[`should render status slots correctly 2`] = `
 <div class="van-pull-refresh">
-  <div class="van-pull-refresh__track"
-       style="transition-duration: 0ms; transform: translate3d(0,75px, 0);"
+  <div
+    class="van-pull-refresh__track"
+    style="transition-duration: 0ms; transform: translate3d(0,75px, 0);"
   >
     <div class="van-pull-refresh__head">
       loosing 75
@@ -141,8 +155,9 @@ exports[`should render status slots correctly 2`] = `
 
 exports[`should render status slots correctly 3`] = `
 <div class="van-pull-refresh">
-  <div class="van-pull-refresh__track"
-       style="transition-duration: 300ms; transform: translate3d(0,50px, 0);"
+  <div
+    class="van-pull-refresh__track"
+    style="transition-duration: 300ms; transform: translate3d(0,50px, 0);"
   >
     <div class="van-pull-refresh__head">
       loading 50
@@ -153,8 +168,9 @@ exports[`should render status slots correctly 3`] = `
 
 exports[`should render success slot correctly 1`] = `
 <div class="van-pull-refresh">
-  <div class="van-pull-refresh__track"
-       style="transition-duration: 300ms; transform: translate3d(0,50px, 0);"
+  <div
+    class="van-pull-refresh__track"
+    style="transition-duration: 300ms; transform: translate3d(0,50px, 0);"
   >
     <div class="van-pull-refresh__head">
       Custom Success
@@ -165,8 +181,9 @@ exports[`should render success slot correctly 1`] = `
 
 exports[`should render success text correctly 1`] = `
 <div class="van-pull-refresh">
-  <div class="van-pull-refresh__track"
-       style="transition-duration: 300ms; transform: translate3d(0,50px, 0);"
+  <div
+    class="van-pull-refresh__track"
+    style="transition-duration: 300ms; transform: translate3d(0,50px, 0);"
   >
     <div class="van-pull-refresh__head">
       <div class="van-pull-refresh__text">
@@ -179,8 +196,9 @@ exports[`should render success text correctly 1`] = `
 
 exports[`should render success text correctly 2`] = `
 <div class="van-pull-refresh">
-  <div class="van-pull-refresh__track"
-       style="transition-duration: 300ms;"
+  <div
+    class="van-pull-refresh__track"
+    style="transition-duration: 300ms;"
   >
     <div class="van-pull-refresh__head">
     </div>

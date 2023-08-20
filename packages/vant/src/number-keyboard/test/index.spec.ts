@@ -170,7 +170,7 @@ test('should emit "update:modelValue" event after clicking key', () => {
 });
 
 test('should limit max length of modelValue when using maxlength prop', async () => {
-  const onInput = jest.fn();
+  const onInput = vi.fn();
   const wrapper = mount(NumberKeyboard, {
     props: {
       onInput,

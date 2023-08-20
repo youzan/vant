@@ -7,6 +7,7 @@
     "test": "pnpm --dir ./packages/vant test",
     "test:watch": "pnpm --dir ./packages/vant test:watch",
     "test:update": "pnpm --dir ./packages/vant test:update",
+    "test:coverage": "pnpm --dir ./packages/vant test:coverage",
     "build": "pnpm --dir ./packages/vant build",
     "build:site": "pnpm --dir ./packages/vant build:site"
   },

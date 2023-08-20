@@ -1,4 +1,4 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`should render demo and match snapshot 1`] = `
 <!--[-->
@@ -6,15 +6,17 @@ exports[`should render demo and match snapshot 1`] = `
   <!--[-->
   <div class="van-signature">
     <div class="van-signature__content">
-      <canvas width="0"
-              height="0"
+      <canvas
+        width="0"
+        height="0"
       >
       </canvas>
     </div>
     <div class="van-signature__footer">
-      <button type="button"
-              class="van-button van-button--default van-button--small"
-              style
+      <button
+        type="button"
+        class="van-button van-button--default van-button--small"
+        style
       >
         <div class="van-button__content">
           <span class="van-button__text">
@@ -23,9 +25,10 @@ exports[`should render demo and match snapshot 1`] = `
           </span>
         </div>
       </button>
-      <button type="button"
-              class="van-button van-button--primary van-button--small"
-              style
+      <button
+        type="button"
+        class="van-button van-button--primary van-button--small"
+        style
       >
         <div class="van-button__content">
           <span class="van-button__text">
@@ -41,15 +44,17 @@ exports[`should render demo and match snapshot 1`] = `
   <!--[-->
   <div class="van-signature">
     <div class="van-signature__content">
-      <canvas width="0"
-              height="0"
+      <canvas
+        width="0"
+        height="0"
       >
       </canvas>
     </div>
     <div class="van-signature__footer">
-      <button type="button"
-              class="van-button van-button--default van-button--small"
-              style
+      <button
+        type="button"
+        class="van-button van-button--default van-button--small"
+        style
       >
         <div class="van-button__content">
           <span class="van-button__text">
@@ -58,9 +63,10 @@ exports[`should render demo and match snapshot 1`] = `
           </span>
         </div>
       </button>
-      <button type="button"
-              class="van-button van-button--primary van-button--small"
-              style
+      <button
+        type="button"
+        class="van-button van-button--primary van-button--small"
+        style
       >
         <div class="van-button__content">
           <span class="van-button__text">
@@ -76,15 +82,17 @@ exports[`should render demo and match snapshot 1`] = `
   <!--[-->
   <div class="van-signature">
     <div class="van-signature__content">
-      <canvas width="0"
-              height="0"
+      <canvas
+        width="0"
+        height="0"
       >
       </canvas>
     </div>
     <div class="van-signature__footer">
-      <button type="button"
-              class="van-button van-button--default van-button--small"
-              style
+      <button
+        type="button"
+        class="van-button van-button--default van-button--small"
+        style
       >
         <div class="van-button__content">
           <span class="van-button__text">
@@ -93,9 +101,10 @@ exports[`should render demo and match snapshot 1`] = `
           </span>
         </div>
       </button>
-      <button type="button"
-              class="van-button van-button--primary van-button--small"
-              style
+      <button
+        type="button"
+        class="van-button van-button--primary van-button--small"
+        style
       >
         <div class="van-button__content">
           <span class="van-button__text">
@@ -111,15 +120,17 @@ exports[`should render demo and match snapshot 1`] = `
   <!--[-->
   <div class="van-signature">
     <div class="van-signature__content">
-      <canvas width="0"
-              height="0"
+      <canvas
+        width="0"
+        height="0"
       >
       </canvas>
     </div>
     <div class="van-signature__footer">
-      <button type="button"
-              class="van-button van-button--default van-button--small"
-              style
+      <button
+        type="button"
+        class="van-button van-button--default van-button--small"
+        style
       >
         <div class="van-button__content">
           <span class="van-button__text">
@@ -128,9 +139,10 @@ exports[`should render demo and match snapshot 1`] = `
           </span>
         </div>
       </button>
-      <button type="button"
-              class="van-button van-button--primary van-button--small"
-              style
+      <button
+        type="button"
+        class="van-button van-button--primary van-button--small"
+        style
       >
         <div class="van-button__content">
           <span class="van-button__text">

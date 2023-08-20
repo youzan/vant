@@ -1,4 +1,4 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`should Skeleton works with template slots 1`] = `
 <div class="van-skeleton van-skeleton--animate">
@@ -11,9 +11,9 @@ exports[`should change avatar shape when using avatar-shape prop 1`] = `
 </div>
 `;
 
-exports[`should change avatar size when using avatar-size prop: 20rem 1`] = `"20rem"`;
+exports[`should change avatar size when using avatar-size prop > 20rem 1`] = `"20rem"`;
 
-exports[`should change avatar size when using avatar-size prop: 20ren 1`] = `"20rem"`;
+exports[`should change avatar size when using avatar-size prop > 20ren 1`] = `"20rem"`;
 
 exports[`should render default slot when loading is false 1`] = `
 <div>
@@ -24,20 +24,24 @@ exports[`should render default slot when loading is false 1`] = `
 exports[`should render with row width array correctly 1`] = `
 <div class="van-skeleton van-skeleton--animate">
   <div class="van-skeleton__content">
-    <div class="van-skeleton-paragraph"
-         style="width: 100%;"
+    <div
+      class="van-skeleton-paragraph"
+      style="width: 100%;"
     >
     </div>
-    <div class="van-skeleton-paragraph"
-         style="width: 30px;"
+    <div
+      class="van-skeleton-paragraph"
+      style="width: 30px;"
     >
     </div>
-    <div class="van-skeleton-paragraph"
-         style="width: 5rem;"
+    <div
+      class="van-skeleton-paragraph"
+      style="width: 5rem;"
     >
     </div>
-    <div class="van-skeleton-paragraph"
-         style="width: 100%;"
+    <div
+      class="van-skeleton-paragraph"
+      style="width: 100%;"
     >
     </div>
   </div>

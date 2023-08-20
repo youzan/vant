@@ -1,4 +1,4 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`should render demo and match snapshot 1`] = `
 <div>
@@ -109,9 +109,10 @@ exports[`should render demo and match snapshot 1`] = `
   </div>
 </div>
 <div>
-  <div class="van-cell van-cell--clickable"
-       role="button"
-       tabindex="0"
+  <div
+    class="van-cell van-cell--clickable"
+    role="button"
+    tabindex="0"
   >
     <div class="van-cell__title">
       <span>
@@ -121,9 +122,10 @@ exports[`should render demo and match snapshot 1`] = `
     <i class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon">
     </i>
   </div>
-  <div class="van-cell van-cell--clickable"
-       role="button"
-       tabindex="0"
+  <div
+    class="van-cell van-cell--clickable"
+    role="button"
+    tabindex="0"
   >
     <div class="van-cell__title">
       <span>
@@ -138,9 +140,10 @@ exports[`should render demo and match snapshot 1`] = `
     <i class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon">
     </i>
   </div>
-  <div class="van-cell van-cell--clickable"
-       role="button"
-       tabindex="0"
+  <div
+    class="van-cell van-cell--clickable"
+    role="button"
+    tabindex="0"
   >
     <div class="van-cell__title">
       <span>
@@ -157,9 +160,10 @@ exports[`should render demo and match snapshot 1`] = `
   </div>
 </div>
 <div>
-  <div class="van-cell van-cell--clickable"
-       role="button"
-       tabindex="0"
+  <div
+    class="van-cell van-cell--clickable"
+    role="button"
+    tabindex="0"
   >
     <div class="van-cell__title">
       <span>
@@ -169,9 +173,10 @@ exports[`should render demo and match snapshot 1`] = `
     <i class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon">
     </i>
   </div>
-  <div class="van-cell van-cell--clickable"
-       role="button"
-       tabindex="0"
+  <div
+    class="van-cell van-cell--clickable"
+    role="button"
+    tabindex="0"
   >
     <div class="van-cell__title">
       <span>
@@ -219,17 +224,19 @@ exports[`should render demo and match snapshot 1`] = `
   </div>
 </div>
 <div>
-  <div class="van-cell van-cell--clickable"
-       role="button"
-       tabindex="0"
+  <div
+    class="van-cell van-cell--clickable"
+    role="button"
+    tabindex="0"
   >
     <div class="van-cell__title">
       <span class="custom-title">
         Cell title
       </span>
-      <transition-stub appear="false"
-                       persisted="false"
-                       css="true"
+      <transition-stub
+        appear="false"
+        persisted="false"
+        css="true"
       >
         <span class="van-tag van-tag--primary">
           Tag

@@ -33,7 +33,7 @@ test('should allow position prop to contain unit', async () => {
 });
 
 test('should emit click event after clicked', async () => {
-  const windowScroll = jest.fn();
+  const windowScroll = vi.fn();
   window.scrollTo = windowScroll;
 
   const root = document.createElement('div');

@@ -2,7 +2,7 @@ import { later } from '../../../test';
 import { callInterceptor } from '../interceptor';
 
 test('callInterceptor', async () => {
-  const done = jest.fn();
+  const done = vi.fn();
   callInterceptor(undefined, { done });
   expect(done).toHaveBeenCalledTimes(1);
 

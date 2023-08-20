@@ -1,15 +1,17 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`create a forbidClick toast 1`] = `
-<transition-stub name="van-fade"
-                 appear="false"
-                 persisted="false"
-                 css="true"
+<transition-stub
+  name="van-fade"
+  appear="false"
+  persisted="false"
+  css="true"
 >
-  <div role="dialog"
-       tabindex="0"
-       class="van-popup van-popup--center van-toast van-toast--middle van-toast--success"
-       style="z-index: 2004;"
+  <div
+    role="dialog"
+    tabindex="0"
+    class="van-popup van-popup--center van-toast van-toast--middle van-toast--success"
+    style="z-index: 2004;"
   >
     <i class="van-badge__wrapper van-icon van-icon-success van-toast__icon">
     </i>
@@ -18,15 +20,17 @@ exports[`create a forbidClick toast 1`] = `
 `;
 
 exports[`should render message slot correctly 1`] = `
-<transition-stub name="van-fade"
-                 appear="false"
-                 persisted="false"
-                 css="true"
+<transition-stub
+  name="van-fade"
+  appear="false"
+  persisted="false"
+  css="true"
 >
-  <div role="dialog"
-       tabindex="0"
-       class="van-popup van-popup--center van-toast van-toast--middle van-toast--text"
-       style="z-index: 2007;"
+  <div
+    role="dialog"
+    tabindex="0"
+    class="van-popup van-popup--center van-toast van-toast--middle van-toast--text"
+    style="z-index: 2007;"
   >
     <div class="van-toast__text">
       Custom Message

@@ -2,7 +2,8 @@
   "extends": "../../tsconfig",
   "compilerOptions": {
     "allowJs": true,
-    "noImplicitThis": true
+    "noImplicitThis": true,
+    "types": ["vitest/globals"]
   },
   "include": ["src/**/*", "docs/**/*", "test/**/*"],
   "exclude": ["**/node_modules", "**/.*/"]

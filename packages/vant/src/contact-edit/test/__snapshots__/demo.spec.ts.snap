@@ -1,4 +1,4 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`should render demo and match snapshot 1`] = `
 <div>
@@ -6,38 +6,42 @@ exports[`should render demo and match snapshot 1`] = `
     <div class="van-contact-edit__fields">
       <div class="van-cell van-field">
         <div class="van-cell__title van-field__label">
-          <label id="van-field-label"
-                 for="van-field-input"
+          <label
+            id="van-field-label"
+            for="van-field-input"
           >
             Name
           </label>
         </div>
         <div class="van-cell__value van-field__value">
           <div class="van-field__body">
-            <input type="text"
-                   id="van-field-input"
-                   class="van-field__control"
-                   placeholder="Name"
-                   aria-labelledby="van-field-label"
+            <input
+              type="text"
+              id="van-field-input"
+              class="van-field__control"
+              placeholder="Name"
+              aria-labelledby="van-field-label"
             >
           </div>
         </div>
       </div>
       <div class="van-cell van-field">
         <div class="van-cell__title van-field__label">
-          <label id="van-field-label"
-                 for="van-field-input"
+          <label
+            id="van-field-label"
+            for="van-field-input"
           >
             Phone
           </label>
         </div>
         <div class="van-cell__value van-field__value">
           <div class="van-field__body">
-            <input type="tel"
-                   id="van-field-input"
-                   class="van-field__control"
-                   placeholder="Phone"
-                   aria-labelledby="van-field-label"
+            <input
+              type="tel"
+              id="van-field-input"
+              class="van-field__control"
+              placeholder="Phone"
+              aria-labelledby="van-field-label"
             >
           </div>
         </div>
@@ -49,18 +53,20 @@ exports[`should render demo and match snapshot 1`] = `
           Set as the default contact
         </span>
       </div>
-      <div role="switch"
-           class="van-switch"
-           tabindex="0"
-           aria-checked="false"
+      <div
+        role="switch"
+        class="van-switch"
+        tabindex="0"
+        aria-checked="false"
       >
         <div class="van-switch__node">
         </div>
       </div>
     </div>
     <div class="van-contact-edit__buttons">
-      <button type="submit"
-              class="van-button van-button--primary van-button--normal van-button--block van-button--round van-contact-edit__button"
+      <button
+        type="submit"
+        class="van-button van-button--primary van-button--normal van-button--block van-button--round van-contact-edit__button"
       >
         <div class="van-button__content">
           <span class="van-button__text">
@@ -68,8 +74,9 @@ exports[`should render demo and match snapshot 1`] = `
           </span>
         </div>
       </button>
-      <button type="button"
-              class="van-button van-button--default van-button--normal van-button--block van-button--round van-contact-edit__button"
+      <button
+        type="button"
+        class="van-button van-button--default van-button--normal van-button--block van-button--round van-contact-edit__button"
       >
         <div class="van-button__content">
           <span class="van-button__text">

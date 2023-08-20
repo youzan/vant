@@ -1,4 +1,4 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`should change finish icon when using finish-icon prop 1`] = `
 <div class="van-hairline van-step van-step--horizontal van-step--finish">
@@ -25,25 +25,29 @@ exports[`should change inactive color when using inactive-color prop 1`] = `
         <i class="van-badge__wrapper van-icon van-icon-checked van-step__icon van-step__icon--active">
         </i>
       </div>
-      <div class="van-step__line"
-           style="background: red;"
+      <div
+        class="van-step__line"
+        style="background: red;"
       >
       </div>
     </div>
     <div class="van-hairline van-step van-step--horizontal van-step--waiting">
-      <div class="van-step__title"
-           style="color: red;"
+      <div
+        class="van-step__title"
+        style="color: red;"
       >
         B
       </div>
       <div class="van-step__circle-container">
-        <i class="van-step__circle"
-           style="background: red;"
+        <i
+          class="van-step__circle"
+          style="background: red;"
         >
         </i>
       </div>
-      <div class="van-step__line"
-           style="background: red;"
+      <div
+        class="van-step__line"
+        style="background: red;"
       >
       </div>
     </div>

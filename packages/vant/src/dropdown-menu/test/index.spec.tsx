@@ -198,7 +198,7 @@ test('disable dropdown item', async () => {
 });
 
 test('change event', async () => {
-  const onChange = jest.fn();
+  const onChange = vi.fn();
 
   const wrapper = mount({
     setup() {
@@ -231,36 +231,38 @@ test('change event', async () => {
   expect(onChange).toHaveBeenCalledTimes(1);
 });
 
-test('toggle method', (done) => {
-  const wrapper = mount({
-    setup() {
-      const item = ref();
+test('toggle method', () => {
+  return new Promise<void>((resolve) => {
+    const wrapper = mount({
+      setup() {
+        const item = ref();
 
-      onMounted(async () => {
-        // show
-        item.value.toggle(true, { immediate: true });
-        await later();
+        onMounted(async () => {
+          // show
+          item.value.toggle(true, { immediate: true });
+          await later();
 
-        expect(
-          wrapper.find('.van-dropdown-item__content').style.display,
-        ).toEqual('');
+          expect(
+            wrapper.find('.van-dropdown-item__content').style.display,
+          ).toEqual('');
 
-        // hide
-        item.value.toggle(false, { immediate: true });
-        await later();
-        expect(
-          wrapper.find('.van-dropdown-item__content').style.display,
-        ).toEqual('none');
+          // hide
+          item.value.toggle(false, { immediate: true });
+          await later();
+          expect(
+            wrapper.find('.van-dropdown-item__content').style.display,
+          ).toEqual('none');
 
-        done();
-      });
+          resolve();
+        });
 
-      return () => (
-        <DropdownMenu>
-          <DropdownItem ref={item} />
-        </DropdownMenu>
-      );
-    },
+        return () => (
+          <DropdownMenu>
+            <DropdownItem ref={item} />
+          </DropdownMenu>
+        );
+      },
+    });
   });
 });
 

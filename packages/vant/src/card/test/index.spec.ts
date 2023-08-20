@@ -2,7 +2,7 @@ import { Card } from '..';
 import { mount } from '../../../test';
 
 test('should emit click event after clicked', () => {
-  const onClick = jest.fn();
+  const onClick = vi.fn();
   const wrapper = mount(Card, {
     props: {
       onClick,

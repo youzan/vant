@@ -1,22 +1,25 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`should render demo and match snapshot 1`] = `
 <!--[-->
 <div>
   <!--[-->
-  <div class="van-cell van-cell--clickable"
-       role="button"
-       tabindex="0"
+  <div
+    class="van-cell van-cell--clickable"
+    role="button"
+    tabindex="0"
   >
-    <div class="van-cell__title"
-         style
+    <div
+      class="van-cell__title"
+      style
     >
       <span>
         Show ShareSheet
       </span>
     </div>
-    <i class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon"
-       style
+    <i
+      class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon"
+      style
     >
       <!--[-->
     </i>
@@ -25,19 +28,22 @@ exports[`should render demo and match snapshot 1`] = `
 </div>
 <div>
   <!--[-->
-  <div class="van-cell van-cell--clickable"
-       role="button"
-       tabindex="0"
+  <div
+    class="van-cell van-cell--clickable"
+    role="button"
+    tabindex="0"
   >
-    <div class="van-cell__title"
-         style
+    <div
+      class="van-cell__title"
+      style
     >
       <span>
         Show ShareSheet
       </span>
     </div>
-    <i class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon"
-       style
+    <i
+      class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon"
+      style
     >
       <!--[-->
     </i>
@@ -46,19 +52,22 @@ exports[`should render demo and match snapshot 1`] = `
 </div>
 <div>
   <!--[-->
-  <div class="van-cell van-cell--clickable"
-       role="button"
-       tabindex="0"
+  <div
+    class="van-cell van-cell--clickable"
+    role="button"
+    tabindex="0"
   >
-    <div class="van-cell__title"
-         style
+    <div
+      class="van-cell__title"
+      style
     >
       <span>
         Show ShareSheet
       </span>
     </div>
-    <i class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon"
-       style
+    <i
+      class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon"
+      style
     >
       <!--[-->
     </i>
@@ -67,19 +76,22 @@ exports[`should render demo and match snapshot 1`] = `
 </div>
 <div>
   <!--[-->
-  <div class="van-cell van-cell--clickable"
-       role="button"
-       tabindex="0"
+  <div
+    class="van-cell van-cell--clickable"
+    role="button"
+    tabindex="0"
   >
-    <div class="van-cell__title"
-         style
+    <div
+      class="van-cell__title"
+      style
     >
       <span>
         Show ShareSheet
       </span>
     </div>
-    <i class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon"
-       style
+    <i
+      class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon"
+      style
     >
       <!--[-->
     </i>

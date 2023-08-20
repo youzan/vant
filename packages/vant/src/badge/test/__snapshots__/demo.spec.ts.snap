@@ -1,4 +1,4 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`should render demo and match snapshot 1`] = `
 <div>
@@ -57,8 +57,9 @@ exports[`should render demo and match snapshot 1`] = `
   <div class="van-badge__wrapper">
     <div class="child">
     </div>
-    <div class="van-badge van-badge--top-right van-badge--fixed"
-         style="background: rgb(25, 137, 250);"
+    <div
+      class="van-badge van-badge--top-right van-badge--fixed"
+      style="background: rgb(25, 137, 250);"
     >
       5
     </div>
@@ -66,8 +67,9 @@ exports[`should render demo and match snapshot 1`] = `
   <div class="van-badge__wrapper">
     <div class="child">
     </div>
-    <div class="van-badge van-badge--top-right van-badge--fixed"
-         style="background: rgb(25, 137, 250);"
+    <div
+      class="van-badge van-badge--top-right van-badge--fixed"
+      style="background: rgb(25, 137, 250);"
     >
       10
     </div>
@@ -75,8 +77,9 @@ exports[`should render demo and match snapshot 1`] = `
   <div class="van-badge__wrapper">
     <div class="child">
     </div>
-    <div class="van-badge van-badge--top-right van-badge--dot van-badge--fixed"
-         style="background: rgb(25, 137, 250);"
+    <div
+      class="van-badge van-badge--top-right van-badge--dot van-badge--fixed"
+      style="background: rgb(25, 137, 250);"
     >
     </div>
   </div>
@@ -131,13 +134,15 @@ exports[`should render demo and match snapshot 1`] = `
   </div>
 </div>
 <div>
-  <div class="van-badge van-badge--top-right"
-       style="margin-left: 16px;"
+  <div
+    class="van-badge van-badge--top-right"
+    style="margin-left: 16px;"
   >
     20
   </div>
-  <div class="van-badge van-badge--top-right"
-       style="margin-left: 16px;"
+  <div
+    class="van-badge van-badge--top-right"
+    style="margin-left: 16px;"
   >
     99+
   </div>

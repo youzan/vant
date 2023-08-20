@@ -1,20 +1,23 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`should render demo and match snapshot 1`] = `
 <!--[-->
 <div>
   <!--[-->
-  <div role="checkbox"
-       class="van-checkbox"
-       tabindex="0"
-       aria-checked="true"
+  <div
+    role="checkbox"
+    class="van-checkbox"
+    tabindex="0"
+    aria-checked="true"
   >
     <!--[-->
-    <div class="van-checkbox__icon van-checkbox__icon--round van-checkbox__icon--checked"
-         style
+    <div
+      class="van-checkbox__icon van-checkbox__icon--round van-checkbox__icon--checked"
+      style
     >
-      <i class="van-badge__wrapper van-icon van-icon-success"
-         style
+      <i
+        class="van-badge__wrapper van-icon van-icon-success"
+        style
       >
         <!--[-->
       </i>
@@ -27,16 +30,19 @@ exports[`should render demo and match snapshot 1`] = `
 </div>
 <div>
   <!--[-->
-  <div role="checkbox"
-       class="van-checkbox van-checkbox--disabled"
-       aria-checked="false"
+  <div
+    role="checkbox"
+    class="van-checkbox van-checkbox--disabled"
+    aria-checked="false"
   >
     <!--[-->
-    <div class="van-checkbox__icon van-checkbox__icon--round van-checkbox__icon--disabled"
-         style
+    <div
+      class="van-checkbox__icon van-checkbox__icon--round van-checkbox__icon--disabled"
+      style
     >
-      <i class="van-badge__wrapper van-icon van-icon-success"
-         style
+      <i
+        class="van-badge__wrapper van-icon van-icon-success"
+        style
       >
         <!--[-->
       </i>
@@ -46,16 +52,19 @@ exports[`should render demo and match snapshot 1`] = `
       Checkbox
     </span>
   </div>
-  <div role="checkbox"
-       class="van-checkbox van-checkbox--disabled"
-       aria-checked="true"
+  <div
+    role="checkbox"
+    class="van-checkbox van-checkbox--disabled"
+    aria-checked="true"
   >
     <!--[-->
-    <div class="van-checkbox__icon van-checkbox__icon--round van-checkbox__icon--disabled van-checkbox__icon--checked"
-         style
+    <div
+      class="van-checkbox__icon van-checkbox__icon--round van-checkbox__icon--disabled van-checkbox__icon--checked"
+      style
     >
-      <i class="van-badge__wrapper van-icon van-icon-success"
-         style
+      <i
+        class="van-badge__wrapper van-icon van-icon-success"
+        style
       >
         <!--[-->
       </i>
@@ -70,17 +79,20 @@ exports[`should render demo and match snapshot 1`] = `
   <!--[-->
   <div class="van-checkbox-group">
     <!--[-->
-    <div role="checkbox"
-         class="van-checkbox"
-         tabindex="0"
-         aria-checked="true"
+    <div
+      role="checkbox"
+      class="van-checkbox"
+      tabindex="0"
+      aria-checked="true"
     >
       <!--[-->
-      <div class="van-checkbox__icon van-checkbox__icon--square van-checkbox__icon--checked"
-           style
+      <div
+        class="van-checkbox__icon van-checkbox__icon--square van-checkbox__icon--checked"
+        style
       >
-        <i class="van-badge__wrapper van-icon van-icon-success"
-           style
+        <i
+          class="van-badge__wrapper van-icon van-icon-success"
+          style
         >
           <!--[-->
         </i>
@@ -90,17 +102,20 @@ exports[`should render demo and match snapshot 1`] = `
         Custom Shape a
       </span>
     </div>
-    <div role="checkbox"
-         class="van-checkbox"
-         tabindex="0"
-         aria-checked="true"
+    <div
+      role="checkbox"
+      class="van-checkbox"
+      tabindex="0"
+      aria-checked="true"
     >
       <!--[-->
-      <div class="van-checkbox__icon van-checkbox__icon--square van-checkbox__icon--checked"
-           style
+      <div
+        class="van-checkbox__icon van-checkbox__icon--square van-checkbox__icon--checked"
+        style
       >
-        <i class="van-badge__wrapper van-icon van-icon-success"
-           style
+        <i
+          class="van-badge__wrapper van-icon van-icon-success"
+          style
         >
           <!--[-->
         </i>
@@ -114,17 +129,20 @@ exports[`should render demo and match snapshot 1`] = `
 </div>
 <div>
   <!--[-->
-  <div role="checkbox"
-       class="van-checkbox"
-       tabindex="0"
-       aria-checked="true"
+  <div
+    role="checkbox"
+    class="van-checkbox"
+    tabindex="0"
+    aria-checked="true"
   >
     <!--[-->
-    <div class="van-checkbox__icon van-checkbox__icon--round van-checkbox__icon--checked"
-         style
+    <div
+      class="van-checkbox__icon van-checkbox__icon--round van-checkbox__icon--checked"
+      style
     >
-      <i class="van-badge__wrapper van-icon van-icon-success"
-         style="border-color:#ee0a24;background-color:#ee0a24;"
+      <i
+        class="van-badge__wrapper van-icon van-icon-success"
+        style="border-color:#ee0a24;background-color:#ee0a24;"
       >
         <!--[-->
       </i>
@@ -137,17 +155,20 @@ exports[`should render demo and match snapshot 1`] = `
 </div>
 <div>
   <!--[-->
-  <div role="checkbox"
-       class="van-checkbox"
-       tabindex="0"
-       aria-checked="true"
+  <div
+    role="checkbox"
+    class="van-checkbox"
+    tabindex="0"
+    aria-checked="true"
   >
     <!--[-->
-    <div class="van-checkbox__icon van-checkbox__icon--round van-checkbox__icon--checked"
-         style="font-size:24px;"
+    <div
+      class="van-checkbox__icon van-checkbox__icon--round van-checkbox__icon--checked"
+      style="font-size:24px;"
     >
-      <i class="van-badge__wrapper van-icon van-icon-success"
-         style
+      <i
+        class="van-badge__wrapper van-icon van-icon-success"
+        style
       >
         <!--[-->
       </i>
@@ -160,14 +181,16 @@ exports[`should render demo and match snapshot 1`] = `
 </div>
 <div>
   <!--[-->
-  <div role="checkbox"
-       class="van-checkbox"
-       tabindex="0"
-       aria-checked="true"
+  <div
+    role="checkbox"
+    class="van-checkbox"
+    tabindex="0"
+    aria-checked="true"
   >
     <!--[-->
-    <div class="van-checkbox__icon van-checkbox__icon--round van-checkbox__icon--checked"
-         style
+    <div
+      class="van-checkbox__icon van-checkbox__icon--round van-checkbox__icon--checked"
+      style
     >
       <!--[-->
       <img src="https://fastly.jsdelivr.net/npm/@vant/assets/user-active.png">
@@ -180,21 +203,24 @@ exports[`should render demo and match snapshot 1`] = `
 </div>
 <div>
   <!--[-->
-  <div role="checkbox"
-       class="van-checkbox"
-       tabindex="0"
-       aria-checked="false"
+  <div
+    role="checkbox"
+    class="van-checkbox"
+    tabindex="0"
+    aria-checked="false"
   >
     <!--[-->
     <span class="van-checkbox__label van-checkbox__label--left">
       <!--[-->
       Left Label
     </span>
-    <div class="van-checkbox__icon van-checkbox__icon--round"
-         style
+    <div
+      class="van-checkbox__icon van-checkbox__icon--round"
+      style
     >
-      <i class="van-badge__wrapper van-icon van-icon-success"
-         style
+      <i
+        class="van-badge__wrapper van-icon van-icon-success"
+        style
       >
         <!--[-->
       </i>
@@ -203,17 +229,20 @@ exports[`should render demo and match snapshot 1`] = `
 </div>
 <div>
   <!--[-->
-  <div role="checkbox"
-       class="van-checkbox van-checkbox--label-disabled"
-       tabindex="0"
-       aria-checked="true"
+  <div
+    role="checkbox"
+    class="van-checkbox van-checkbox--label-disabled"
+    tabindex="0"
+    aria-checked="true"
   >
     <!--[-->
-    <div class="van-checkbox__icon van-checkbox__icon--round van-checkbox__icon--checked"
-         style
+    <div
+      class="van-checkbox__icon van-checkbox__icon--round van-checkbox__icon--checked"
+      style
     >
-      <i class="van-badge__wrapper van-icon van-icon-success"
-         style
+      <i
+        class="van-badge__wrapper van-icon van-icon-success"
+        style
       >
         <!--[-->
       </i>
@@ -228,17 +257,20 @@ exports[`should render demo and match snapshot 1`] = `
   <!--[-->
   <div class="van-checkbox-group">
     <!--[-->
-    <div role="checkbox"
-         class="van-checkbox"
-         tabindex="0"
-         aria-checked="true"
+    <div
+      role="checkbox"
+      class="van-checkbox"
+      tabindex="0"
+      aria-checked="true"
     >
       <!--[-->
-      <div class="van-checkbox__icon van-checkbox__icon--round van-checkbox__icon--checked"
-           style
+      <div
+        class="van-checkbox__icon van-checkbox__icon--round van-checkbox__icon--checked"
+        style
       >
-        <i class="van-badge__wrapper van-icon van-icon-success"
-           style
+        <i
+          class="van-badge__wrapper van-icon van-icon-success"
+          style
         >
           <!--[-->
         </i>
@@ -248,17 +280,20 @@ exports[`should render demo and match snapshot 1`] = `
         Checkbox a
       </span>
     </div>
-    <div role="checkbox"
-         class="van-checkbox"
-         tabindex="0"
-         aria-checked="true"
+    <div
+      role="checkbox"
+      class="van-checkbox"
+      tabindex="0"
+      aria-checked="true"
     >
       <!--[-->
-      <div class="van-checkbox__icon van-checkbox__icon--round van-checkbox__icon--checked"
-           style
+      <div
+        class="van-checkbox__icon van-checkbox__icon--round van-checkbox__icon--checked"
+        style
       >
-        <i class="van-badge__wrapper van-icon van-icon-success"
-           style
+        <i
+          class="van-badge__wrapper van-icon van-icon-success"
+          style
         >
           <!--[-->
         </i>
@@ -274,17 +309,20 @@ exports[`should render demo and match snapshot 1`] = `
   <!--[-->
   <div class="van-checkbox-group van-checkbox-group--horizontal">
     <!--[-->
-    <div role="checkbox"
-         class="van-checkbox van-checkbox--horizontal"
-         tabindex="0"
-         aria-checked="false"
+    <div
+      role="checkbox"
+      class="van-checkbox van-checkbox--horizontal"
+      tabindex="0"
+      aria-checked="false"
     >
       <!--[-->
-      <div class="van-checkbox__icon van-checkbox__icon--round"
-           style
+      <div
+        class="van-checkbox__icon van-checkbox__icon--round"
+        style
       >
-        <i class="van-badge__wrapper van-icon van-icon-success"
-           style
+        <i
+          class="van-badge__wrapper van-icon van-icon-success"
+          style
         >
           <!--[-->
         </i>
@@ -294,17 +332,20 @@ exports[`should render demo and match snapshot 1`] = `
         Checkbox a
       </span>
     </div>
-    <div role="checkbox"
-         class="van-checkbox van-checkbox--horizontal"
-         tabindex="0"
-         aria-checked="false"
+    <div
+      role="checkbox"
+      class="van-checkbox van-checkbox--horizontal"
+      tabindex="0"
+      aria-checked="false"
     >
       <!--[-->
-      <div class="van-checkbox__icon van-checkbox__icon--round"
-           style
+      <div
+        class="van-checkbox__icon van-checkbox__icon--round"
+        style
       >
-        <i class="van-badge__wrapper van-icon van-icon-success"
-           style
+        <i
+          class="van-badge__wrapper van-icon van-icon-success"
+          style
         >
           <!--[-->
         </i>
@@ -320,17 +361,20 @@ exports[`should render demo and match snapshot 1`] = `
   <!--[-->
   <div class="van-checkbox-group">
     <!--[-->
-    <div role="checkbox"
-         class="van-checkbox"
-         tabindex="0"
-         aria-checked="false"
+    <div
+      role="checkbox"
+      class="van-checkbox"
+      tabindex="0"
+      aria-checked="false"
     >
       <!--[-->
-      <div class="van-checkbox__icon van-checkbox__icon--round"
-           style
+      <div
+        class="van-checkbox__icon van-checkbox__icon--round"
+        style
       >
-        <i class="van-badge__wrapper van-icon van-icon-success"
-           style
+        <i
+          class="van-badge__wrapper van-icon van-icon-success"
+          style
         >
           <!--[-->
         </i>
@@ -340,17 +384,20 @@ exports[`should render demo and match snapshot 1`] = `
         Checkbox a
       </span>
     </div>
-    <div role="checkbox"
-         class="van-checkbox"
-         tabindex="0"
-         aria-checked="false"
+    <div
+      role="checkbox"
+      class="van-checkbox"
+      tabindex="0"
+      aria-checked="false"
     >
       <!--[-->
-      <div class="van-checkbox__icon van-checkbox__icon--round"
-           style
+      <div
+        class="van-checkbox__icon van-checkbox__icon--round"
+        style
       >
-        <i class="van-badge__wrapper van-icon van-icon-success"
-           style
+        <i
+          class="van-badge__wrapper van-icon van-icon-success"
+          style
         >
           <!--[-->
         </i>
@@ -360,17 +407,20 @@ exports[`should render demo and match snapshot 1`] = `
         Checkbox b
       </span>
     </div>
-    <div role="checkbox"
-         class="van-checkbox"
-         tabindex="0"
-         aria-checked="false"
+    <div
+      role="checkbox"
+      class="van-checkbox"
+      tabindex="0"
+      aria-checked="false"
     >
       <!--[-->
-      <div class="van-checkbox__icon van-checkbox__icon--round"
-           style
+      <div
+        class="van-checkbox__icon van-checkbox__icon--round"
+        style
       >
-        <i class="van-badge__wrapper van-icon van-icon-success"
-           style
+        <i
+          class="van-badge__wrapper van-icon van-icon-success"
+          style
         >
           <!--[-->
         </i>
@@ -386,17 +436,20 @@ exports[`should render demo and match snapshot 1`] = `
   <!--[-->
   <div class="van-checkbox-group">
     <!--[-->
-    <div role="checkbox"
-         class="van-checkbox"
-         tabindex="0"
-         aria-checked="false"
+    <div
+      role="checkbox"
+      class="van-checkbox"
+      tabindex="0"
+      aria-checked="false"
     >
       <!--[-->
-      <div class="van-checkbox__icon van-checkbox__icon--round"
-           style
+      <div
+        class="van-checkbox__icon van-checkbox__icon--round"
+        style
       >
-        <i class="van-badge__wrapper van-icon van-icon-success"
-           style
+        <i
+          class="van-badge__wrapper van-icon van-icon-success"
+          style
         >
           <!--[-->
         </i>
@@ -406,17 +459,20 @@ exports[`should render demo and match snapshot 1`] = `
         Checkbox a
       </span>
     </div>
-    <div role="checkbox"
-         class="van-checkbox"
-         tabindex="0"
-         aria-checked="false"
+    <div
+      role="checkbox"
+      class="van-checkbox"
+      tabindex="0"
+      aria-checked="false"
     >
       <!--[-->
-      <div class="van-checkbox__icon van-checkbox__icon--round"
-           style
+      <div
+        class="van-checkbox__icon van-checkbox__icon--round"
+        style
       >
-        <i class="van-badge__wrapper van-icon van-icon-success"
-           style
+        <i
+          class="van-badge__wrapper van-icon van-icon-success"
+          style
         >
           <!--[-->
         </i>
@@ -426,17 +482,20 @@ exports[`should render demo and match snapshot 1`] = `
         Checkbox b
       </span>
     </div>
-    <div role="checkbox"
-         class="van-checkbox"
-         tabindex="0"
-         aria-checked="false"
+    <div
+      role="checkbox"
+      class="van-checkbox"
+      tabindex="0"
+      aria-checked="false"
     >
       <!--[-->
-      <div class="van-checkbox__icon van-checkbox__icon--round"
-           style
+      <div
+        class="van-checkbox__icon van-checkbox__icon--round"
+        style
       >
-        <i class="van-badge__wrapper van-icon van-icon-success"
-           style
+        <i
+          class="van-badge__wrapper van-icon van-icon-success"
+          style
         >
           <!--[-->
         </i>
@@ -448,9 +507,10 @@ exports[`should render demo and match snapshot 1`] = `
     </div>
   </div>
   <div class="demo-checkbox-buttons">
-    <button type="button"
-            class="van-button van-button--primary van-button--normal"
-            style
+    <button
+      type="button"
+      class="van-button van-button--primary van-button--normal"
+      style
     >
       <div class="van-button__content">
         <span class="van-button__text">
@@ -459,9 +519,10 @@ exports[`should render demo and match snapshot 1`] = `
         </span>
       </div>
     </button>
-    <button type="button"
-            class="van-button van-button--primary van-button--normal"
-            style
+    <button
+      type="button"
+      class="van-button van-button--primary van-button--normal"
+      style
     >
       <div class="van-button__content">
         <span class="van-button__text">
@@ -479,58 +540,68 @@ exports[`should render demo and match snapshot 1`] = `
     <div class="van-cell-group van-cell-group--inset">
       <!--[-->
       <!--[-->
-      <div class="van-cell van-cell--clickable"
-           role="button"
-           tabindex="0"
+      <div
+        class="van-cell van-cell--clickable"
+        role="button"
+        tabindex="0"
       >
-        <div class="van-cell__title"
-             style
+        <div
+          class="van-cell__title"
+          style
         >
           <span>
             Checkbox a
           </span>
         </div>
         <!--[-->
-        <div role="checkbox"
-             class="van-checkbox"
-             tabindex="0"
-             aria-checked="false"
+        <div
+          role="checkbox"
+          class="van-checkbox"
+          tabindex="0"
+          aria-checked="false"
         >
           <!--[-->
-          <div class="van-checkbox__icon van-checkbox__icon--round"
-               style
+          <div
+            class="van-checkbox__icon van-checkbox__icon--round"
+            style
           >
-            <i class="van-badge__wrapper van-icon van-icon-success"
-               style
+            <i
+              class="van-badge__wrapper van-icon van-icon-success"
+              style
             >
               <!--[-->
             </i>
           </div>
         </div>
       </div>
-      <div class="van-cell van-cell--clickable"
-           role="button"
-           tabindex="0"
+      <div
+        class="van-cell van-cell--clickable"
+        role="button"
+        tabindex="0"
       >
-        <div class="van-cell__title"
-             style
+        <div
+          class="van-cell__title"
+          style
         >
           <span>
             Checkbox b
           </span>
         </div>
         <!--[-->
-        <div role="checkbox"
-             class="van-checkbox"
-             tabindex="0"
-             aria-checked="false"
+        <div
+          role="checkbox"
+          class="van-checkbox"
+          tabindex="0"
+          aria-checked="false"
         >
           <!--[-->
-          <div class="van-checkbox__icon van-checkbox__icon--round"
-               style
+          <div
+            class="van-checkbox__icon van-checkbox__icon--round"
+            style
           >
-            <i class="van-badge__wrapper van-icon van-icon-success"
-               style
+            <i
+              class="van-badge__wrapper van-icon van-icon-success"
+              style
             >
               <!--[-->
             </i>

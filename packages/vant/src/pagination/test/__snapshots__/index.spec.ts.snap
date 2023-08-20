@@ -1,8 +1,9 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`should render page slot correctly 1`] = `
-<nav role="navigation"
-     class="van-pagination"
+<nav
+  role="navigation"
+  class="van-pagination"
 >
   <ul class="van-pagination__items">
     <li class="van-pagination__item van-pagination__item--prev van-hairline--surround">
@@ -45,8 +46,9 @@ exports[`should render page slot correctly 1`] = `
 `;
 
 exports[`should render prev-text、next-text slot correctly 1`] = `
-<nav role="navigation"
-     class="van-pagination"
+<nav
+  role="navigation"
+  class="van-pagination"
 >
   <ul class="van-pagination__items">
     <li class="van-pagination__item van-pagination__item--prev van-hairline--surround">

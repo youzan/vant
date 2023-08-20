@@ -1,14 +1,16 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`should render tag slot correctly 1`] = `
 <div class="van-address-list">
-  <div class="van-radio-group"
-       role="radiogroup"
+  <div
+    class="van-radio-group"
+    role="radiogroup"
   >
   </div>
   <div class="van-address-list__bottom van-safe-area-bottom">
-    <button type="button"
-            class="van-button van-button--primary van-button--normal van-button--block van-button--round van-address-list__add"
+    <button
+      type="button"
+      class="van-button van-button--primary van-button--normal van-button--block van-button--round van-address-list__add"
     >
       <div class="van-button__content">
         <span class="van-button__text">

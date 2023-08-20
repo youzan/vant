@@ -1,23 +1,26 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`should render demo and match snapshot 1`] = `
 <!--[-->
 <div>
   <!--[-->
   <div class="van-dropdown-menu">
-    <div style
-         class="van-dropdown-menu__bar"
+    <div
+      style
+      class="van-dropdown-menu__bar"
     >
       <!--[-->
     </div>
     <!--[-->
-    <div style="top:0px;display:none;"
-         class="van-dropdown-item van-dropdown-item--down"
+    <div
+      style="top:0px;display:none;"
+      class="van-dropdown-item van-dropdown-item--down"
     >
       <!--[-->
     </div>
-    <div style="top:0px;display:none;"
-         class="van-dropdown-item van-dropdown-item--down"
+    <div
+      style="top:0px;display:none;"
+      class="van-dropdown-item van-dropdown-item--down"
     >
       <!--[-->
     </div>
@@ -26,19 +29,22 @@ exports[`should render demo and match snapshot 1`] = `
 <div>
   <!--[-->
   <div class="van-dropdown-menu">
-    <div style
-         class="van-dropdown-menu__bar"
+    <div
+      style
+      class="van-dropdown-menu__bar"
     >
       <!--[-->
     </div>
     <!--[-->
-    <div style="top:0px;display:none;"
-         class="van-dropdown-item van-dropdown-item--down"
+    <div
+      style="top:0px;display:none;"
+      class="van-dropdown-item van-dropdown-item--down"
     >
       <!--[-->
     </div>
-    <div style="top:0px;display:none;"
-         class="van-dropdown-item van-dropdown-item--down"
+    <div
+      style="top:0px;display:none;"
+      class="van-dropdown-item van-dropdown-item--down"
     >
       <!--[-->
     </div>
@@ -47,19 +53,22 @@ exports[`should render demo and match snapshot 1`] = `
 <div>
   <!--[-->
   <div class="van-dropdown-menu">
-    <div style
-         class="van-dropdown-menu__bar"
+    <div
+      style
+      class="van-dropdown-menu__bar"
     >
       <!--[-->
     </div>
     <!--[-->
-    <div style="top:0px;display:none;"
-         class="van-dropdown-item van-dropdown-item--down"
+    <div
+      style="top:0px;display:none;"
+      class="van-dropdown-item van-dropdown-item--down"
     >
       <!--[-->
     </div>
-    <div style="top:0px;display:none;"
-         class="van-dropdown-item van-dropdown-item--down"
+    <div
+      style="top:0px;display:none;"
+      class="van-dropdown-item van-dropdown-item--down"
     >
       <!--[-->
     </div>
@@ -68,34 +77,40 @@ exports[`should render demo and match snapshot 1`] = `
 <div>
   <!--[-->
   <div class="van-dropdown-menu">
-    <div style
-         class="van-dropdown-menu__bar"
+    <div
+      style
+      class="van-dropdown-menu__bar"
     >
       <!--[-->
     </div>
     <!--[-->
-    <div style="top:0px;display:none;"
-         class="van-dropdown-item van-dropdown-item--down"
+    <div
+      style="top:0px;display:none;"
+      class="van-dropdown-item van-dropdown-item--down"
     >
       <!--[-->
     </div>
-    <div style="top:0px;display:none;"
-         class="van-dropdown-item van-dropdown-item--down"
+    <div
+      style="top:0px;display:none;"
+      class="van-dropdown-item van-dropdown-item--down"
     >
       <!--[-->
     </div>
-    <div style="top:0px;display:none;"
-         class="van-dropdown-item van-dropdown-item--down"
+    <div
+      style="top:0px;display:none;"
+      class="van-dropdown-item van-dropdown-item--down"
     >
       <!--[-->
     </div>
-    <div style="top:0px;display:none;"
-         class="van-dropdown-item van-dropdown-item--down"
+    <div
+      style="top:0px;display:none;"
+      class="van-dropdown-item van-dropdown-item--down"
     >
       <!--[-->
     </div>
-    <div style="top:0px;display:none;"
-         class="van-dropdown-item van-dropdown-item--down"
+    <div
+      style="top:0px;display:none;"
+      class="van-dropdown-item van-dropdown-item--down"
     >
       <!--[-->
     </div>
@@ -104,19 +119,22 @@ exports[`should render demo and match snapshot 1`] = `
 <div>
   <!--[-->
   <div class="van-dropdown-menu">
-    <div style
-         class="van-dropdown-menu__bar"
+    <div
+      style
+      class="van-dropdown-menu__bar"
     >
       <!--[-->
     </div>
     <!--[-->
-    <div style="bottom:0px;display:none;"
-         class="van-dropdown-item van-dropdown-item--up"
+    <div
+      style="bottom:0px;display:none;"
+      class="van-dropdown-item van-dropdown-item--up"
     >
       <!--[-->
     </div>
-    <div style="bottom:0px;display:none;"
-         class="van-dropdown-item van-dropdown-item--up"
+    <div
+      style="bottom:0px;display:none;"
+      class="van-dropdown-item van-dropdown-item--up"
     >
       <!--[-->
     </div>
@@ -125,19 +143,22 @@ exports[`should render demo and match snapshot 1`] = `
 <div>
   <!--[-->
   <div class="van-dropdown-menu">
-    <div style
-         class="van-dropdown-menu__bar"
+    <div
+      style
+      class="van-dropdown-menu__bar"
     >
       <!--[-->
     </div>
     <!--[-->
-    <div style="top:0px;display:none;"
-         class="van-dropdown-item van-dropdown-item--down"
+    <div
+      style="top:0px;display:none;"
+      class="van-dropdown-item van-dropdown-item--down"
     >
       <!--[-->
     </div>
-    <div style="top:0px;display:none;"
-         class="van-dropdown-item van-dropdown-item--down"
+    <div
+      style="top:0px;display:none;"
+      class="van-dropdown-item van-dropdown-item--down"
     >
       <!--[-->
     </div>

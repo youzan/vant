@@ -5,7 +5,7 @@ import { Form, FormInstance } from '..';
 import { Field } from '../../field';
 
 test('should emit submit event after calling the submit method', async () => {
-  const onSubmit = jest.fn();
+  const onSubmit = vi.fn();
   const form = ref<FormInstance>();
   mount({
     render() {
@@ -81,9 +81,11 @@ test('validate method - validate two fields and failed', async () => {
   }
 });
 
-test('validate method - unexist name', (done) => {
-  const { formRef } = mountSimpleRulesForm();
-  formRef.value?.validate('unexist').catch(done);
+test('validate method - unexist name', () => {
+  return new Promise((resolve) => {
+    const { formRef } = mountSimpleRulesForm();
+    formRef.value?.validate('unexist').catch(resolve);
+  });
 });
 
 test('resetValidation method - reset all fields', async () => {

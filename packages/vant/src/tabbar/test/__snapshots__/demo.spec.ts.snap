@@ -1,14 +1,16 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`should render demo and match snapshot 1`] = `
 <div>
-  <div role="tablist"
-       class="van-tabbar van-tabbar--fixed van-hairline--top-bottom van-safe-area-bottom"
+  <div
+    role="tablist"
+    class="van-tabbar van-tabbar--fixed van-hairline--top-bottom van-safe-area-bottom"
   >
-    <div role="tab"
-         class="van-tabbar-item van-tabbar-item--active"
-         tabindex="0"
-         aria-selected="true"
+    <div
+      role="tab"
+      class="van-tabbar-item van-tabbar-item--active"
+      tabindex="0"
+      aria-selected="true"
     >
       <div class="van-badge__wrapper van-tabbar-item__icon">
         <i class="van-badge__wrapper van-icon van-icon-home-o">
@@ -18,10 +20,11 @@ exports[`should render demo and match snapshot 1`] = `
         Tab
       </div>
     </div>
-    <div role="tab"
-         class="van-tabbar-item"
-         tabindex="0"
-         aria-selected="false"
+    <div
+      role="tab"
+      class="van-tabbar-item"
+      tabindex="0"
+      aria-selected="false"
     >
       <div class="van-badge__wrapper van-tabbar-item__icon">
         <i class="van-badge__wrapper van-icon van-icon-search">
@@ -31,10 +34,11 @@ exports[`should render demo and match snapshot 1`] = `
         Tab
       </div>
     </div>
-    <div role="tab"
-         class="van-tabbar-item"
-         tabindex="0"
-         aria-selected="false"
+    <div
+      role="tab"
+      class="van-tabbar-item"
+      tabindex="0"
+      aria-selected="false"
     >
       <div class="van-badge__wrapper van-tabbar-item__icon">
         <i class="van-badge__wrapper van-icon van-icon-friends-o">
@@ -44,10 +48,11 @@ exports[`should render demo and match snapshot 1`] = `
         Tab
       </div>
     </div>
-    <div role="tab"
-         class="van-tabbar-item"
-         tabindex="0"
-         aria-selected="false"
+    <div
+      role="tab"
+      class="van-tabbar-item"
+      tabindex="0"
+      aria-selected="false"
     >
       <div class="van-badge__wrapper van-tabbar-item__icon">
         <i class="van-badge__wrapper van-icon van-icon-setting-o">
@@ -60,13 +65,15 @@ exports[`should render demo and match snapshot 1`] = `
   </div>
 </div>
 <div>
-  <div role="tablist"
-       class="van-tabbar van-tabbar--fixed van-hairline--top-bottom van-safe-area-bottom"
+  <div
+    role="tablist"
+    class="van-tabbar van-tabbar--fixed van-hairline--top-bottom van-safe-area-bottom"
   >
-    <div role="tab"
-         class="van-tabbar-item van-tabbar-item--active"
-         tabindex="0"
-         aria-selected="true"
+    <div
+      role="tab"
+      class="van-tabbar-item van-tabbar-item--active"
+      tabindex="0"
+      aria-selected="true"
     >
       <div class="van-badge__wrapper van-tabbar-item__icon">
         <i class="van-badge__wrapper van-icon van-icon-home-o">
@@ -76,10 +83,11 @@ exports[`should render demo and match snapshot 1`] = `
         Tab
       </div>
     </div>
-    <div role="tab"
-         class="van-tabbar-item"
-         tabindex="0"
-         aria-selected="false"
+    <div
+      role="tab"
+      class="van-tabbar-item"
+      tabindex="0"
+      aria-selected="false"
     >
       <div class="van-badge__wrapper van-tabbar-item__icon">
         <i class="van-badge__wrapper van-icon van-icon-search">
@@ -89,10 +97,11 @@ exports[`should render demo and match snapshot 1`] = `
         Tab
       </div>
     </div>
-    <div role="tab"
-         class="van-tabbar-item"
-         tabindex="0"
-         aria-selected="false"
+    <div
+      role="tab"
+      class="van-tabbar-item"
+      tabindex="0"
+      aria-selected="false"
     >
       <div class="van-badge__wrapper van-tabbar-item__icon">
         <i class="van-badge__wrapper van-icon van-icon-friends-o">
@@ -102,10 +111,11 @@ exports[`should render demo and match snapshot 1`] = `
         Tab
       </div>
     </div>
-    <div role="tab"
-         class="van-tabbar-item"
-         tabindex="0"
-         aria-selected="false"
+    <div
+      role="tab"
+      class="van-tabbar-item"
+      tabindex="0"
+      aria-selected="false"
     >
       <div class="van-badge__wrapper van-tabbar-item__icon">
         <i class="van-badge__wrapper van-icon van-icon-setting-o">
@@ -118,13 +128,15 @@ exports[`should render demo and match snapshot 1`] = `
   </div>
 </div>
 <div>
-  <div role="tablist"
-       class="van-tabbar van-tabbar--fixed van-hairline--top-bottom van-safe-area-bottom"
+  <div
+    role="tablist"
+    class="van-tabbar van-tabbar--fixed van-hairline--top-bottom van-safe-area-bottom"
   >
-    <div role="tab"
-         class="van-tabbar-item van-tabbar-item--active"
-         tabindex="0"
-         aria-selected="true"
+    <div
+      role="tab"
+      class="van-tabbar-item van-tabbar-item--active"
+      tabindex="0"
+      aria-selected="true"
     >
       <div class="van-badge__wrapper van-tabbar-item__icon">
         <i class="van-badge__wrapper van-icon van-icon-home-o">
@@ -134,10 +146,11 @@ exports[`should render demo and match snapshot 1`] = `
         Tab
       </div>
     </div>
-    <div role="tab"
-         class="van-tabbar-item"
-         tabindex="0"
-         aria-selected="false"
+    <div
+      role="tab"
+      class="van-tabbar-item"
+      tabindex="0"
+      aria-selected="false"
     >
       <div class="van-badge__wrapper van-tabbar-item__icon">
         <i class="van-badge__wrapper van-icon van-icon-search">
@@ -149,10 +162,11 @@ exports[`should render demo and match snapshot 1`] = `
         Tab
       </div>
     </div>
-    <div role="tab"
-         class="van-tabbar-item"
-         tabindex="0"
-         aria-selected="false"
+    <div
+      role="tab"
+      class="van-tabbar-item"
+      tabindex="0"
+      aria-selected="false"
     >
       <div class="van-badge__wrapper van-tabbar-item__icon">
         <i class="van-badge__wrapper van-icon van-icon-friends-o">
@@ -165,10 +179,11 @@ exports[`should render demo and match snapshot 1`] = `
         Tab
       </div>
     </div>
-    <div role="tab"
-         class="van-tabbar-item"
-         tabindex="0"
-         aria-selected="false"
+    <div
+      role="tab"
+      class="van-tabbar-item"
+      tabindex="0"
+      aria-selected="false"
     >
       <div class="van-badge__wrapper van-tabbar-item__icon">
         <i class="van-badge__wrapper van-icon van-icon-setting-o">
@@ -184,13 +199,15 @@ exports[`should render demo and match snapshot 1`] = `
   </div>
 </div>
 <div>
-  <div role="tablist"
-       class="van-tabbar van-tabbar--fixed van-hairline--top-bottom van-safe-area-bottom"
+  <div
+    role="tablist"
+    class="van-tabbar van-tabbar--fixed van-hairline--top-bottom van-safe-area-bottom"
   >
-    <div role="tab"
-         class="van-tabbar-item van-tabbar-item--active"
-         tabindex="0"
-         aria-selected="true"
+    <div
+      role="tab"
+      class="van-tabbar-item van-tabbar-item--active"
+      tabindex="0"
+      aria-selected="true"
     >
       <div class="van-badge__wrapper van-tabbar-item__icon">
         <img src="https://fastly.jsdelivr.net/npm/@vant/assets/user-active.png">
@@ -204,10 +221,11 @@ exports[`should render demo and match snapshot 1`] = `
         </span>
       </div>
     </div>
-    <div role="tab"
-         class="van-tabbar-item"
-         tabindex="0"
-         aria-selected="false"
+    <div
+      role="tab"
+      class="van-tabbar-item"
+      tabindex="0"
+      aria-selected="false"
     >
       <div class="van-badge__wrapper van-tabbar-item__icon">
         <i class="van-badge__wrapper van-icon van-icon-search">
@@ -217,10 +235,11 @@ exports[`should render demo and match snapshot 1`] = `
         Tab
       </div>
     </div>
-    <div role="tab"
-         class="van-tabbar-item"
-         tabindex="0"
-         aria-selected="false"
+    <div
+      role="tab"
+      class="van-tabbar-item"
+      tabindex="0"
+      aria-selected="false"
     >
       <div class="van-badge__wrapper van-tabbar-item__icon">
         <i class="van-badge__wrapper van-icon van-icon-setting-o">
@@ -233,14 +252,16 @@ exports[`should render demo and match snapshot 1`] = `
   </div>
 </div>
 <div>
-  <div role="tablist"
-       class="van-tabbar van-tabbar--fixed van-hairline--top-bottom van-safe-area-bottom"
+  <div
+    role="tablist"
+    class="van-tabbar van-tabbar--fixed van-hairline--top-bottom van-safe-area-bottom"
   >
-    <div role="tab"
-         class="van-tabbar-item van-tabbar-item--active"
-         style="color: rgb(238, 10, 36);"
-         tabindex="0"
-         aria-selected="true"
+    <div
+      role="tab"
+      class="van-tabbar-item van-tabbar-item--active"
+      style="color: rgb(238, 10, 36);"
+      tabindex="0"
+      aria-selected="true"
     >
       <div class="van-badge__wrapper van-tabbar-item__icon">
         <i class="van-badge__wrapper van-icon van-icon-home-o">
@@ -250,10 +271,11 @@ exports[`should render demo and match snapshot 1`] = `
         Tab
       </div>
     </div>
-    <div role="tab"
-         class="van-tabbar-item"
-         tabindex="0"
-         aria-selected="false"
+    <div
+      role="tab"
+      class="van-tabbar-item"
+      tabindex="0"
+      aria-selected="false"
     >
       <div class="van-badge__wrapper van-tabbar-item__icon">
         <i class="van-badge__wrapper van-icon van-icon-search">
@@ -263,10 +285,11 @@ exports[`should render demo and match snapshot 1`] = `
         Tab
       </div>
     </div>
-    <div role="tab"
-         class="van-tabbar-item"
-         tabindex="0"
-         aria-selected="false"
+    <div
+      role="tab"
+      class="van-tabbar-item"
+      tabindex="0"
+      aria-selected="false"
     >
       <div class="van-badge__wrapper van-tabbar-item__icon">
         <i class="van-badge__wrapper van-icon van-icon-friends-o">
@@ -276,10 +299,11 @@ exports[`should render demo and match snapshot 1`] = `
         Tab
       </div>
     </div>
-    <div role="tab"
-         class="van-tabbar-item"
-         tabindex="0"
-         aria-selected="false"
+    <div
+      role="tab"
+      class="van-tabbar-item"
+      tabindex="0"
+      aria-selected="false"
     >
       <div class="van-badge__wrapper van-tabbar-item__icon">
         <i class="van-badge__wrapper van-icon van-icon-setting-o">
@@ -292,13 +316,15 @@ exports[`should render demo and match snapshot 1`] = `
   </div>
 </div>
 <div>
-  <div role="tablist"
-       class="van-tabbar van-tabbar--fixed van-hairline--top-bottom van-safe-area-bottom"
+  <div
+    role="tablist"
+    class="van-tabbar van-tabbar--fixed van-hairline--top-bottom van-safe-area-bottom"
   >
-    <div role="tab"
-         class="van-tabbar-item van-tabbar-item--active"
-         tabindex="0"
-         aria-selected="true"
+    <div
+      role="tab"
+      class="van-tabbar-item van-tabbar-item--active"
+      tabindex="0"
+      aria-selected="true"
     >
       <div class="van-badge__wrapper van-tabbar-item__icon">
         <i class="van-badge__wrapper van-icon van-icon-home-o">
@@ -308,10 +334,11 @@ exports[`should render demo and match snapshot 1`] = `
         Tab 1
       </div>
     </div>
-    <div role="tab"
-         class="van-tabbar-item"
-         tabindex="0"
-         aria-selected="false"
+    <div
+      role="tab"
+      class="van-tabbar-item"
+      tabindex="0"
+      aria-selected="false"
     >
       <div class="van-badge__wrapper van-tabbar-item__icon">
         <i class="van-badge__wrapper van-icon van-icon-search">
@@ -321,10 +348,11 @@ exports[`should render demo and match snapshot 1`] = `
         Tab 2
       </div>
     </div>
-    <div role="tab"
-         class="van-tabbar-item"
-         tabindex="0"
-         aria-selected="false"
+    <div
+      role="tab"
+      class="van-tabbar-item"
+      tabindex="0"
+      aria-selected="false"
     >
       <div class="van-badge__wrapper van-tabbar-item__icon">
         <i class="van-badge__wrapper van-icon van-icon-friends-o">
@@ -334,10 +362,11 @@ exports[`should render demo and match snapshot 1`] = `
         Tab 3
       </div>
     </div>
-    <div role="tab"
-         class="van-tabbar-item"
-         tabindex="0"
-         aria-selected="false"
+    <div
+      role="tab"
+      class="van-tabbar-item"
+      tabindex="0"
+      aria-selected="false"
     >
       <div class="van-badge__wrapper van-tabbar-item__icon">
         <i class="van-badge__wrapper van-icon van-icon-setting-o">

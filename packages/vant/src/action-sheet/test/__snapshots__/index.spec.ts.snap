@@ -1,45 +1,53 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`should allow to custom close icon with closeIcon prop 1`] = `
-<i class="van-badge__wrapper van-icon van-icon-cross van-action-sheet__close van-haptics-feedback">
-</i>
+"<i class=\\"van-badge__wrapper van-icon van-icon-cross van-action-sheet__close van-haptics-feedback\\">
+  <!---->
+  <!---->
+  <!---->
+</i>"
 `;
 
 exports[`should render action slot correctly 1`] = `
-<button type="button"
-        class="van-action-sheet__item"
+<button
+  type="button"
+  class="van-action-sheet__item"
 >
   name: Option, index: 0
 </button>
 `;
 
 exports[`should render cancel slot correctly 1`] = `
-<button type="button"
-        class="van-action-sheet__cancel"
+<button
+  type="button"
+  class="van-action-sheet__cancel"
 >
   Custom Cancel
 </button>
 `;
 
 exports[`should render default slot correctly 1`] = `
-<transition-stub name="van-fade"
-                 appear="true"
-                 persisted="false"
-                 css="true"
-                 role="button"
-                 tabindex="0"
+<transition-stub
+  name="van-fade"
+  appear="true"
+  persisted="false"
+  css="true"
+  role="button"
+  tabindex="0"
 >
   <div class="van-overlay">
   </div>
 </transition-stub>
-<transition-stub name="van-popup-slide-bottom"
-                 appear="false"
-                 persisted="false"
-                 css="true"
+<transition-stub
+  name="van-popup-slide-bottom"
+  appear="false"
+  persisted="false"
+  css="true"
 >
-  <div role="dialog"
-       tabindex="0"
-       class="van-popup van-popup--round van-popup--bottom van-safe-area-bottom van-action-sheet"
+  <div
+    role="dialog"
+    tabindex="0"
+    class="van-popup van-popup--round van-popup--bottom van-safe-area-bottom van-action-sheet"
   >
     <div class="van-action-sheet__header">
       Title
@@ -66,8 +74,9 @@ exports[`should render description slot when match snapshot 1`] = `
 `;
 
 exports[`should render subname correctly 1`] = `
-<button type="button"
-        class="van-action-sheet__item"
+<button
+  type="button"
+  class="van-action-sheet__item"
 >
   <span class="van-action-sheet__name">
     Option

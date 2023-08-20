@@ -1,4 +1,4 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`should render demo and match snapshot 1`] = `
 <div>
@@ -61,8 +61,9 @@ exports[`should render demo and match snapshot 1`] = `
         Title
       </div>
       <div class="van-nav-bar__right van-haptics-feedback">
-        <i class="van-badge__wrapper van-icon van-icon-search"
-           style="font-size: 18px;"
+        <i
+          class="van-badge__wrapper van-icon van-icon-search"
+          style="font-size: 18px;"
         >
         </i>
       </div>

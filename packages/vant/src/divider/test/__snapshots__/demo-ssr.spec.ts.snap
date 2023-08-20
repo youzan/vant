@@ -1,18 +1,20 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`should render demo and match snapshot 1`] = `
 <!--[-->
 <div>
   <!--[-->
-  <div role="separator"
-       class="van-divider van-divider--hairline"
+  <div
+    role="separator"
+    class="van-divider van-divider--hairline"
   >
   </div>
 </div>
 <div>
   <!--[-->
-  <div role="separator"
-       class="van-divider van-divider--hairline van-divider--content-center"
+  <div
+    role="separator"
+    class="van-divider van-divider--hairline van-divider--content-center"
   >
     <!--[-->
     Text
@@ -20,23 +22,16 @@ exports[`should render demo and match snapshot 1`] = `
 </div>
 <div>
   <!--[-->
-  <div role="separator"
-       class="van-divider van-divider--hairline van-divider--content-left"
+  <div
+    role="separator"
+    class="van-divider van-divider--hairline van-divider--content-left"
   >
     <!--[-->
     Text
   </div>
-  <div role="separator"
-       class="van-divider van-divider--hairline van-divider--content-right"
-  >
-    <!--[-->
-    Text
-  </div>
-</div>
-<div>
-  <!--[-->
-  <div role="separator"
-       class="van-divider van-divider--dashed van-divider--content-center"
+  <div
+    role="separator"
+    class="van-divider van-divider--hairline van-divider--content-right"
   >
     <!--[-->
     Text
@@ -44,9 +39,20 @@ exports[`should render demo and match snapshot 1`] = `
 </div>
 <div>
   <!--[-->
-  <div role="separator"
-       class="van-divider van-divider--hairline van-divider--content-center"
-       style="border-color:#1989fa;color:#1989fa;padding:0 16px;"
+  <div
+    role="separator"
+    class="van-divider van-divider--dashed van-divider--content-center"
+  >
+    <!--[-->
+    Text
+  </div>
+</div>
+<div>
+  <!--[-->
+  <div
+    role="separator"
+    class="van-divider van-divider--hairline van-divider--content-center"
+    style="border-color:#1989fa;color:#1989fa;padding:0 16px;"
   >
     <!--[-->
     Text
@@ -55,24 +61,28 @@ exports[`should render demo and match snapshot 1`] = `
 <div>
   <!--[-->
   <div class="content">
-    <div role="separator"
-         class="van-divider van-divider--hairline van-divider--vertical"
+    <div
+      role="separator"
+      class="van-divider van-divider--hairline van-divider--vertical"
     >
     </div>
     Text
-    <div role="separator"
-         class="van-divider van-divider--dashed van-divider--hairline van-divider--vertical"
+    <div
+      role="separator"
+      class="van-divider van-divider--dashed van-divider--hairline van-divider--vertical"
     >
     </div>
     Text
-    <div role="separator"
-         class="van-divider van-divider--vertical"
+    <div
+      role="separator"
+      class="van-divider van-divider--vertical"
     >
     </div>
     Text
-    <div role="separator"
-         class="van-divider van-divider--hairline van-divider--vertical"
-         style="border-color:#1989fa;"
+    <div
+      role="separator"
+      class="van-divider van-divider--hairline van-divider--vertical"
+      style="border-color:#1989fa;"
     >
     </div>
   </div>

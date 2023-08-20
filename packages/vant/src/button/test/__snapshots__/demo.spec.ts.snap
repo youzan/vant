@@ -1,10 +1,11 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`should render demo and match snapshot 1`] = `
 <div>
   <div class="demo-button-row">
-    <button type="button"
-            class="van-button van-button--primary van-button--normal"
+    <button
+      type="button"
+      class="van-button van-button--primary van-button--normal"
     >
       <div class="van-button__content">
         <span class="van-button__text">
@@ -12,8 +13,9 @@ exports[`should render demo and match snapshot 1`] = `
         </span>
       </div>
     </button>
-    <button type="button"
-            class="van-button van-button--success van-button--normal"
+    <button
+      type="button"
+      class="van-button van-button--success van-button--normal"
     >
       <div class="van-button__content">
         <span class="van-button__text">
@@ -21,8 +23,9 @@ exports[`should render demo and match snapshot 1`] = `
         </span>
       </div>
     </button>
-    <button type="button"
-            class="van-button van-button--default van-button--normal"
+    <button
+      type="button"
+      class="van-button van-button--default van-button--normal"
     >
       <div class="van-button__content">
         <span class="van-button__text">
@@ -31,8 +34,9 @@ exports[`should render demo and match snapshot 1`] = `
       </div>
     </button>
   </div>
-  <button type="button"
-          class="van-button van-button--danger van-button--normal"
+  <button
+    type="button"
+    class="van-button van-button--danger van-button--normal"
   >
     <div class="van-button__content">
       <span class="van-button__text">
@@ -40,8 +44,9 @@ exports[`should render demo and match snapshot 1`] = `
       </span>
     </div>
   </button>
-  <button type="button"
-          class="van-button van-button--warning van-button--normal"
+  <button
+    type="button"
+    class="van-button van-button--warning van-button--normal"
   >
     <div class="van-button__content">
       <span class="van-button__text">
@@ -51,8 +56,9 @@ exports[`should render demo and match snapshot 1`] = `
   </button>
 </div>
 <div>
-  <button type="button"
-          class="van-button van-button--primary van-button--normal van-button--plain"
+  <button
+    type="button"
+    class="van-button van-button--primary van-button--normal van-button--plain"
   >
     <div class="van-button__content">
       <span class="van-button__text">
@@ -60,8 +66,9 @@ exports[`should render demo and match snapshot 1`] = `
       </span>
     </div>
   </button>
-  <button type="button"
-          class="van-button van-button--success van-button--normal van-button--plain"
+  <button
+    type="button"
+    class="van-button van-button--success van-button--normal van-button--plain"
   >
     <div class="van-button__content">
       <span class="van-button__text">
@@ -71,8 +78,9 @@ exports[`should render demo and match snapshot 1`] = `
   </button>
 </div>
 <div>
-  <button type="button"
-          class="van-button van-button--primary van-button--normal van-button--plain van-button--hairline van-hairline--surround"
+  <button
+    type="button"
+    class="van-button van-button--primary van-button--normal van-button--plain van-button--hairline van-hairline--surround"
   >
     <div class="van-button__content">
       <span class="van-button__text">
@@ -80,8 +88,9 @@ exports[`should render demo and match snapshot 1`] = `
       </span>
     </div>
   </button>
-  <button type="button"
-          class="van-button van-button--success van-button--normal van-button--plain van-button--hairline van-hairline--surround"
+  <button
+    type="button"
+    class="van-button van-button--success van-button--normal van-button--plain van-button--hairline van-hairline--surround"
   >
     <div class="van-button__content">
       <span class="van-button__text">
@@ -91,9 +100,10 @@ exports[`should render demo and match snapshot 1`] = `
   </button>
 </div>
 <div>
-  <button type="button"
-          class="van-button van-button--primary van-button--normal van-button--disabled"
-          disabled
+  <button
+    type="button"
+    class="van-button van-button--primary van-button--normal van-button--disabled"
+    disabled
   >
     <div class="van-button__content">
       <span class="van-button__text">
@@ -101,9 +111,10 @@ exports[`should render demo and match snapshot 1`] = `
       </span>
     </div>
   </button>
-  <button type="button"
-          class="van-button van-button--success van-button--normal van-button--disabled"
-          disabled
+  <button
+    type="button"
+    class="van-button van-button--success van-button--normal van-button--disabled"
+    disabled
   >
     <div class="van-button__content">
       <span class="van-button__text">
@@ -113,22 +124,26 @@ exports[`should render demo and match snapshot 1`] = `
   </button>
 </div>
 <div>
-  <button type="button"
-          class="van-button van-button--primary van-button--normal van-button--loading"
+  <button
+    type="button"
+    class="van-button van-button--primary van-button--normal van-button--loading"
   >
     <div class="van-button__content">
-      <div class="van-loading van-loading--circular van-button__loading"
-           aria-live="polite"
-           aria-busy="true"
+      <div
+        class="van-loading van-loading--circular van-button__loading"
+        aria-live="polite"
+        aria-busy="true"
       >
         <span class="van-loading__spinner van-loading__spinner--circular">
-          <svg class="van-loading__circular"
-               viewbox="25 25 50 50"
+          <svg
+            class="van-loading__circular"
+            viewbox="25 25 50 50"
           >
-            <circle cx="50"
-                    cy="50"
-                    r="20"
-                    fill="none"
+            <circle
+              cx="50"
+              cy="50"
+              r="20"
+              fill="none"
             >
             </circle>
           </svg>
@@ -136,13 +151,15 @@ exports[`should render demo and match snapshot 1`] = `
       </div>
     </div>
   </button>
-  <button type="button"
-          class="van-button van-button--primary van-button--normal van-button--loading"
+  <button
+    type="button"
+    class="van-button van-button--primary van-button--normal van-button--loading"
   >
     <div class="van-button__content">
-      <div class="van-loading van-loading--spinner van-button__loading"
-           aria-live="polite"
-           aria-busy="true"
+      <div
+        class="van-loading van-loading--spinner van-button__loading"
+        aria-live="polite"
+        aria-busy="true"
       >
         <span class="van-loading__spinner van-loading__spinner--spinner">
           <i class="van-loading__line van-loading__line--1">
@@ -173,22 +190,26 @@ exports[`should render demo and match snapshot 1`] = `
       </div>
     </div>
   </button>
-  <button type="button"
-          class="van-button van-button--success van-button--normal van-button--loading"
+  <button
+    type="button"
+    class="van-button van-button--success van-button--normal van-button--loading"
   >
     <div class="van-button__content">
-      <div class="van-loading van-loading--circular van-button__loading"
-           aria-live="polite"
-           aria-busy="true"
+      <div
+        class="van-loading van-loading--circular van-button__loading"
+        aria-live="polite"
+        aria-busy="true"
       >
         <span class="van-loading__spinner van-loading__spinner--circular">
-          <svg class="van-loading__circular"
-               viewbox="25 25 50 50"
+          <svg
+            class="van-loading__circular"
+            viewbox="25 25 50 50"
           >
-            <circle cx="50"
-                    cy="50"
-                    r="20"
-                    fill="none"
+            <circle
+              cx="50"
+              cy="50"
+              r="20"
+              fill="none"
             >
             </circle>
           </svg>
@@ -201,8 +222,9 @@ exports[`should render demo and match snapshot 1`] = `
   </button>
 </div>
 <div>
-  <button type="button"
-          class="van-button van-button--primary van-button--normal van-button--square"
+  <button
+    type="button"
+    class="van-button van-button--primary van-button--normal van-button--square"
   >
     <div class="van-button__content">
       <span class="van-button__text">
@@ -210,8 +232,9 @@ exports[`should render demo and match snapshot 1`] = `
       </span>
     </div>
   </button>
-  <button type="button"
-          class="van-button van-button--success van-button--normal van-button--round"
+  <button
+    type="button"
+    class="van-button van-button--success van-button--normal van-button--round"
   >
     <div class="van-button__content">
       <span class="van-button__text">
@@ -221,16 +244,18 @@ exports[`should render demo and match snapshot 1`] = `
   </button>
 </div>
 <div>
-  <button type="button"
-          class="van-button van-button--primary van-button--normal"
+  <button
+    type="button"
+    class="van-button van-button--primary van-button--normal"
   >
     <div class="van-button__content">
       <i class="van-badge__wrapper van-icon van-icon-plus van-button__icon">
       </i>
     </div>
   </button>
-  <button type="button"
-          class="van-button van-button--primary van-button--normal"
+  <button
+    type="button"
+    class="van-button van-button--primary van-button--normal"
   >
     <div class="van-button__content">
       <i class="van-badge__wrapper van-icon van-icon-plus van-button__icon">
@@ -240,13 +265,15 @@ exports[`should render demo and match snapshot 1`] = `
       </span>
     </div>
   </button>
-  <button type="button"
-          class="van-button van-button--primary van-button--normal van-button--plain"
+  <button
+    type="button"
+    class="van-button van-button--primary van-button--normal van-button--plain"
   >
     <div class="van-button__content">
       <i class="van-badge__wrapper van-icon van-button__icon">
-        <img class="van-icon__image"
-             src="https://fastly.jsdelivr.net/npm/@vant/assets/user-active.png"
+        <img
+          class="van-icon__image"
+          src="https://fastly.jsdelivr.net/npm/@vant/assets/user-active.png"
         >
       </i>
       <span class="van-button__text">
@@ -256,8 +283,9 @@ exports[`should render demo and match snapshot 1`] = `
   </button>
 </div>
 <div>
-  <button type="button"
-          class="van-button van-button--primary van-button--large"
+  <button
+    type="button"
+    class="van-button van-button--primary van-button--large"
   >
     <div class="van-button__content">
       <span class="van-button__text">
@@ -265,8 +293,9 @@ exports[`should render demo and match snapshot 1`] = `
       </span>
     </div>
   </button>
-  <button type="button"
-          class="van-button van-button--primary van-button--normal"
+  <button
+    type="button"
+    class="van-button van-button--primary van-button--normal"
   >
     <div class="van-button__content">
       <span class="van-button__text">
@@ -274,8 +303,9 @@ exports[`should render demo and match snapshot 1`] = `
       </span>
     </div>
   </button>
-  <button type="button"
-          class="van-button van-button--primary van-button--small"
+  <button
+    type="button"
+    class="van-button van-button--primary van-button--small"
   >
     <div class="van-button__content">
       <span class="van-button__text">
@@ -283,8 +313,9 @@ exports[`should render demo and match snapshot 1`] = `
       </span>
     </div>
   </button>
-  <button type="button"
-          class="van-button van-button--primary van-button--mini"
+  <button
+    type="button"
+    class="van-button van-button--primary van-button--mini"
   >
     <div class="van-button__content">
       <span class="van-button__text">
@@ -294,8 +325,9 @@ exports[`should render demo and match snapshot 1`] = `
   </button>
 </div>
 <div>
-  <button type="button"
-          class="van-button van-button--primary van-button--normal van-button--block"
+  <button
+    type="button"
+    class="van-button van-button--primary van-button--normal van-button--block"
   >
     <div class="van-button__content">
       <span class="van-button__text">
@@ -305,8 +337,9 @@ exports[`should render demo and match snapshot 1`] = `
   </button>
 </div>
 <div>
-  <button type="button"
-          class="van-button van-button--primary van-button--normal"
+  <button
+    type="button"
+    class="van-button van-button--primary van-button--normal"
   >
     <div class="van-button__content">
       <span class="van-button__text">
@@ -314,8 +347,9 @@ exports[`should render demo and match snapshot 1`] = `
       </span>
     </div>
   </button>
-  <button type="button"
-          class="van-button van-button--primary van-button--normal"
+  <button
+    type="button"
+    class="van-button van-button--primary van-button--normal"
   >
     <div class="van-button__content">
       <span class="van-button__text">
@@ -325,9 +359,10 @@ exports[`should render demo and match snapshot 1`] = `
   </button>
 </div>
 <div>
-  <button type="button"
-          class="van-button van-button--default van-button--normal"
-          style="color: white; background: rgb(114, 50, 221); border-color: #7232dd;"
+  <button
+    type="button"
+    class="van-button van-button--default van-button--normal"
+    style="color: white; background: rgb(114, 50, 221); border-color: #7232dd;"
   >
     <div class="van-button__content">
       <span class="van-button__text">
@@ -335,9 +370,10 @@ exports[`should render demo and match snapshot 1`] = `
       </span>
     </div>
   </button>
-  <button type="button"
-          class="van-button van-button--default van-button--normal van-button--plain"
-          style="color: rgb(114, 50, 221); border-color: #7232dd;"
+  <button
+    type="button"
+    class="van-button van-button--default van-button--normal van-button--plain"
+    style="color: rgb(114, 50, 221); border-color: #7232dd;"
   >
     <div class="van-button__content">
       <span class="van-button__text">
@@ -345,9 +381,10 @@ exports[`should render demo and match snapshot 1`] = `
       </span>
     </div>
   </button>
-  <button type="button"
-          class="van-button van-button--default van-button--normal"
-          style="color: white; border: 0px;"
+  <button
+    type="button"
+    class="van-button van-button--default van-button--normal"
+    style="color: white; border: 0px;"
   >
     <div class="van-button__content">
       <span class="van-button__text">
@@ -357,22 +394,26 @@ exports[`should render demo and match snapshot 1`] = `
   </button>
 </div>
 <div>
-  <button type="button"
-          class="van-button van-button--danger van-button--normal van-button--round"
+  <button
+    type="button"
+    class="van-button van-button--danger van-button--normal van-button--round"
   >
     <div class="van-button__content">
       <span class="van-button__text">
         <div class="van-swipe notice-swipe">
-          <div style="transition-duration: 0ms; transform: translateY(0px); height: 200px;"
-               class="van-swipe__track van-swipe__track--vertical"
+          <div
+            style="transition-duration: 0ms; transform: translateY(0px); height: 200px;"
+            class="van-swipe__track van-swipe__track--vertical"
           >
-            <div class="van-swipe-item"
-                 style="height: 100px;"
+            <div
+              class="van-swipe-item"
+              style="height: 100px;"
             >
               Do Task
             </div>
-            <div class="van-swipe-item"
-                 style="height: 100px;"
+            <div
+              class="van-swipe-item"
+              style="height: 100px;"
             >
               Lottery
             </div>

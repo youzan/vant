@@ -1,42 +1,34 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`should render demo and match snapshot 1`] = `
 <div>
   <div class="van-progress">
-    <span class="van-progress__portion"
-          style="width: 50%;"
+    <span
+      class="van-progress__portion"
+      style="width: 50%;"
     >
     </span>
-    <span style="left: 50%; transform: translate(-50%,-50%);"
-          class="van-progress__pivot"
+    <span
+      style="left: 50%; transform: translate(-50%,-50%);"
+      class="van-progress__pivot"
     >
       50%
     </span>
   </div>
 </div>
 <div>
-  <div class="van-progress"
-       style="height: 8px;"
+  <div
+    class="van-progress"
+    style="height: 8px;"
   >
-    <span class="van-progress__portion"
-          style="width: 50%;"
+    <span
+      class="van-progress__portion"
+      style="width: 50%;"
     >
     </span>
-    <span style="left: 50%; transform: translate(-50%,-50%);"
-          class="van-progress__pivot"
-    >
-      50%
-    </span>
-  </div>
-</div>
-<div>
-  <div class="van-progress">
-    <span class="van-progress__portion van-progress__portion--inactive"
-          style="width: 50%;"
-    >
-    </span>
-    <span style="left: 50%; transform: translate(-50%,-50%);"
-          class="van-progress__pivot van-progress__pivot--inactive"
+    <span
+      style="left: 50%; transform: translate(-50%,-50%);"
+      class="van-progress__pivot"
     >
       50%
     </span>
@@ -44,34 +36,55 @@ exports[`should render demo and match snapshot 1`] = `
 </div>
 <div>
   <div class="van-progress">
-    <span class="van-progress__portion"
-          style="width: 25%; background: rgb(242, 130, 106);"
+    <span
+      class="van-progress__portion van-progress__portion--inactive"
+      style="width: 50%;"
     >
     </span>
-    <span style="left: 25%; transform: translate(-25%,-50%); background: rgb(242, 130, 106);"
-          class="van-progress__pivot"
+    <span
+      style="left: 50%; transform: translate(-50%,-50%);"
+      class="van-progress__pivot van-progress__pivot--inactive"
+    >
+      50%
+    </span>
+  </div>
+</div>
+<div>
+  <div class="van-progress">
+    <span
+      class="van-progress__portion"
+      style="width: 25%; background: rgb(242, 130, 106);"
+    >
+    </span>
+    <span
+      style="left: 25%; transform: translate(-25%,-50%); background: rgb(242, 130, 106);"
+      class="van-progress__pivot"
     >
       Orange
     </span>
   </div>
   <div class="van-progress">
-    <span class="van-progress__portion"
-          style="width: 50%; background: rgb(238, 10, 36);"
+    <span
+      class="van-progress__portion"
+      style="width: 50%; background: rgb(238, 10, 36);"
     >
     </span>
-    <span style="left: 50%; transform: translate(-50%,-50%); background: rgb(238, 10, 36);"
-          class="van-progress__pivot"
+    <span
+      style="left: 50%; transform: translate(-50%,-50%); background: rgb(238, 10, 36);"
+      class="van-progress__pivot"
     >
       Red
     </span>
   </div>
   <div class="van-progress">
-    <span class="van-progress__portion"
-          style="width: 75%;"
+    <span
+      class="van-progress__portion"
+      style="width: 75%;"
     >
     </span>
-    <span style="left: 75%; transform: translate(-75%,-50%); background: rgb(114, 50, 221);"
-          class="van-progress__pivot"
+    <span
+      style="left: 75%; transform: translate(-75%,-50%); background: rgb(114, 50, 221);"
+      class="van-progress__pivot"
     >
       Purple
     </span>
@@ -79,19 +92,22 @@ exports[`should render demo and match snapshot 1`] = `
 </div>
 <div>
   <div class="van-progress">
-    <span class="van-progress__portion"
-          style="width: 50%;"
+    <span
+      class="van-progress__portion"
+      style="width: 50%;"
     >
     </span>
-    <span style="left: 50%; transform: translate(-50%,-50%);"
-          class="van-progress__pivot"
+    <span
+      style="left: 50%; transform: translate(-50%,-50%);"
+      class="van-progress__pivot"
     >
       50%
     </span>
   </div>
   <div style="margin-top: 15px;">
-    <button type="button"
-            class="van-button van-button--primary van-button--small"
+    <button
+      type="button"
+      class="van-button van-button--primary van-button--small"
     >
       <div class="van-button__content">
         <span class="van-button__text">
@@ -99,8 +115,9 @@ exports[`should render demo and match snapshot 1`] = `
         </span>
       </div>
     </button>
-    <button type="button"
-            class="van-button van-button--danger van-button--small"
+    <button
+      type="button"
+      class="van-button van-button--danger van-button--small"
     >
       <div class="van-button__content">
         <span class="van-button__text">

@@ -1,24 +1,27 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`should render demo and match snapshot 1`] = `
 <!--[-->
 <div>
   <!--[-->
-  <nav role="navigation"
-       class="van-pagination"
+  <nav
+    role="navigation"
+    class="van-pagination"
   >
     <ul class="van-pagination__items">
       <li class="van-pagination__item van-pagination__item--disabled van-pagination__item--prev van-hairline--surround">
-        <button type="button"
-                disabled
+        <button
+          type="button"
+          disabled
         >
           Prev
         </button>
       </li>
       <!--[-->
       <li class="van-pagination__item van-pagination__item--active van-pagination__item--page van-hairline--surround">
-        <button type="button"
-                aria-current="true"
+        <button
+          type="button"
+          aria-current="true"
         >
           1
         </button>
@@ -53,14 +56,16 @@ exports[`should render demo and match snapshot 1`] = `
 </div>
 <div>
   <!--[-->
-  <nav role="navigation"
-       class="van-pagination"
-       size="small"
+  <nav
+    role="navigation"
+    class="van-pagination"
+    size="small"
   >
     <ul class="van-pagination__items">
       <li class="van-pagination__item van-pagination__item--disabled van-pagination__item--border van-pagination__item--prev van-hairline--surround">
-        <button type="button"
-                disabled
+        <button
+          type="button"
+          disabled
         >
           Prev
         </button>
@@ -78,21 +83,24 @@ exports[`should render demo and match snapshot 1`] = `
 </div>
 <div>
   <!--[-->
-  <nav role="navigation"
-       class="van-pagination"
+  <nav
+    role="navigation"
+    class="van-pagination"
   >
     <ul class="van-pagination__items">
       <li class="van-pagination__item van-pagination__item--disabled van-pagination__item--prev van-hairline--surround">
-        <button type="button"
-                disabled
+        <button
+          type="button"
+          disabled
         >
           Prev
         </button>
       </li>
       <!--[-->
       <li class="van-pagination__item van-pagination__item--active van-pagination__item--page van-hairline--surround">
-        <button type="button"
-                aria-current="true"
+        <button
+          type="button"
+          aria-current="true"
         >
           1
         </button>
@@ -122,17 +130,20 @@ exports[`should render demo and match snapshot 1`] = `
 </div>
 <div>
   <!--[-->
-  <nav role="navigation"
-       class="van-pagination"
+  <nav
+    role="navigation"
+    class="van-pagination"
   >
     <ul class="van-pagination__items">
       <li class="van-pagination__item van-pagination__item--disabled van-pagination__item--prev van-hairline--surround">
-        <button type="button"
-                disabled
+        <button
+          type="button"
+          disabled
         >
           <!--[-->
-          <i class="van-badge__wrapper van-icon van-icon-arrow-left"
-             style
+          <i
+            class="van-badge__wrapper van-icon van-icon-arrow-left"
+            style
           >
             <!--[-->
           </i>
@@ -140,8 +151,9 @@ exports[`should render demo and match snapshot 1`] = `
       </li>
       <!--[-->
       <li class="van-pagination__item van-pagination__item--active van-pagination__item--page van-hairline--surround">
-        <button type="button"
-                aria-current="true"
+        <button
+          type="button"
+          aria-current="true"
         >
           <!--[-->
           1
@@ -174,8 +186,9 @@ exports[`should render demo and match snapshot 1`] = `
       <li class="van-pagination__item van-pagination__item--next van-hairline--surround">
         <button type="button">
           <!--[-->
-          <i class="van-badge__wrapper van-icon van-icon-arrow"
-             style
+          <i
+            class="van-badge__wrapper van-icon van-icon-arrow"
+            style
           >
             <!--[-->
           </i>

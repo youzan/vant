@@ -1,4 +1,4 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`should render demo and match snapshot 1`] = `
 <div>
@@ -16,8 +16,9 @@ exports[`should render demo and match snapshot 1`] = `
           .50
         </span>
       </div>
-      <button type="button"
-              class="van-button van-button--danger van-button--normal van-button--round van-submit-bar__button van-submit-bar__button--danger"
+      <button
+        type="button"
+        class="van-button van-button--danger van-button--normal van-button--round van-submit-bar__button van-submit-bar__button--danger"
       >
         <div class="van-button__content">
           <span class="van-button__text">
@@ -50,9 +51,10 @@ exports[`should render demo and match snapshot 1`] = `
           .50
         </span>
       </div>
-      <button type="button"
-              class="van-button van-button--danger van-button--normal van-button--round van-button--disabled van-submit-bar__button van-submit-bar__button--danger"
-              disabled
+      <button
+        type="button"
+        class="van-button van-button--danger van-button--normal van-button--round van-button--disabled van-submit-bar__button van-submit-bar__button--danger"
+        disabled
       >
         <div class="van-button__content">
           <span class="van-button__text">
@@ -78,22 +80,26 @@ exports[`should render demo and match snapshot 1`] = `
           .50
         </span>
       </div>
-      <button type="button"
-              class="van-button van-button--danger van-button--normal van-button--round van-button--loading van-submit-bar__button van-submit-bar__button--danger"
+      <button
+        type="button"
+        class="van-button van-button--danger van-button--normal van-button--round van-button--loading van-submit-bar__button van-submit-bar__button--danger"
       >
         <div class="van-button__content">
-          <div class="van-loading van-loading--circular van-button__loading"
-               aria-live="polite"
-               aria-busy="true"
+          <div
+            class="van-loading van-loading--circular van-button__loading"
+            aria-live="polite"
+            aria-busy="true"
           >
             <span class="van-loading__spinner van-loading__spinner--circular">
-              <svg class="van-loading__circular"
-                   viewbox="25 25 50 50"
+              <svg
+                class="van-loading__circular"
+                viewbox="25 25 50 50"
               >
-                <circle cx="50"
-                        cy="50"
-                        r="20"
-                        fill="none"
+                <circle
+                  cx="50"
+                  cy="50"
+                  r="20"
+                  fill="none"
                 >
                 </circle>
               </svg>
@@ -113,10 +119,11 @@ exports[`should render demo and match snapshot 1`] = `
       </span>
     </div>
     <div class="van-submit-bar__bar">
-      <div role="checkbox"
-           class="van-checkbox"
-           tabindex="0"
-           aria-checked="true"
+      <div
+        role="checkbox"
+        class="van-checkbox"
+        tabindex="0"
+        aria-checked="true"
       >
         <div class="van-checkbox__icon van-checkbox__icon--round van-checkbox__icon--checked">
           <i class="van-badge__wrapper van-icon van-icon-success">
@@ -138,8 +145,9 @@ exports[`should render demo and match snapshot 1`] = `
           .50
         </span>
       </div>
-      <button type="button"
-              class="van-button van-button--danger van-button--normal van-button--round van-submit-bar__button van-submit-bar__button--danger"
+      <button
+        type="button"
+        class="van-button van-button--danger van-button--normal van-button--round van-submit-bar__button van-submit-bar__button--danger"
       >
         <div class="van-button__content">
           <span class="van-button__text">

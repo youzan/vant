@@ -23,7 +23,7 @@ test('should emit select event after clicking option', async () => {
 });
 
 test('should call callback function after clicking option', () => {
-  const callback = jest.fn();
+  const callback = vi.fn();
   const wrapper = mount(ActionSheet, {
     props: {
       show: true,
@@ -230,7 +230,7 @@ test('should close after clicking option if close-on-click-action prop is true',
 });
 
 test('should emit click-overlay event and closed after clicking the overlay', () => {
-  const onClickOverlay = jest.fn();
+  const onClickOverlay = vi.fn();
   const wrapper = mount(ActionSheet, {
     props: {
       show: true,

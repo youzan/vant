@@ -6,7 +6,7 @@ export function useId() {
   const vm = getCurrentInstance();
   const { name = 'unknown' } = vm?.type || {};
 
-  // keep jest snapshot stable
+  // keep test snapshot stable
   if (process.env.NODE_ENV === 'test') {
     return name;
   }

@@ -10,7 +10,7 @@ import {
 } from '../function-call';
 
 test('toast disappeared after duration', async () => {
-  const onClose = jest.fn();
+  const onClose = vi.fn();
   showToast({
     duration: 10,
     onClose,
@@ -62,9 +62,9 @@ test('icon-prefix prop', async () => {
 });
 
 test('clear toast', async () => {
-  const onClose1 = jest.fn();
-  const onClose2 = jest.fn();
-  const onClose3 = jest.fn();
+  const onClose1 = vi.fn();
+  const onClose2 = vi.fn();
+  const onClose3 = vi.fn();
 
   showToast({ onClose: onClose1 });
 
@@ -92,8 +92,8 @@ test('clear multiple toast', async () => {
   allowMultipleToast();
   closeToast(true);
 
-  const onClose1 = jest.fn();
-  const onClose2 = jest.fn();
+  const onClose1 = vi.fn();
+  const onClose2 = vi.fn();
 
   showSuccessToast({ onClose: onClose1 });
   await later();
@@ -152,7 +152,7 @@ test('set default options by type', async () => {
 
 test('toast duration 0', async () => {
   allowMultipleToast();
-  const onClose = jest.fn();
+  const onClose = vi.fn();
   showToast({ duration: 0, onClose });
 
   await later(2100);
@@ -162,7 +162,7 @@ test('toast duration 0', async () => {
 
 test('should trigger onClose callback after closed', async () => {
   allowMultipleToast();
-  const onClose = jest.fn();
+  const onClose = vi.fn();
   const toast = showToast({ onClose });
 
   await later();

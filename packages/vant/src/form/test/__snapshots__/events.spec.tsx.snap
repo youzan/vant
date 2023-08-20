@@ -1,14 +1,15 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`should emit failed event when validating failed 1`] = `
 <form class="van-form">
   <div class="van-cell van-field">
     <div class="van-cell__value van-field__value">
       <div class="van-field__body">
-        <input type="text"
-               id="van-field-input"
-               name="A"
-               class="van-field__control"
+        <input
+          type="text"
+          id="van-field-input"
+          name="A"
+          class="van-field__control"
         >
       </div>
       <div class="van-field__error-message">
@@ -19,10 +20,11 @@ exports[`should emit failed event when validating failed 1`] = `
   <div class="van-cell van-field">
     <div class="van-cell__value van-field__value">
       <div class="van-field__body">
-        <input type="text"
-               id="van-field-input"
-               name="B"
-               class="van-field__control"
+        <input
+          type="text"
+          id="van-field-input"
+          name="B"
+          class="van-field__control"
         >
       </div>
       <div class="van-field__error-message">

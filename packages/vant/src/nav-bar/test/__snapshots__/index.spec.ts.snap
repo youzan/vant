@@ -1,4 +1,4 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`should render left slot correctly 1`] = `
 <div class="van-nav-bar__left van-haptics-feedback">
@@ -13,8 +13,9 @@ exports[`should render left slot correctly 2`] = `
 `;
 
 exports[`should render placeholder element when using placeholder prop 1`] = `
-<div class="van-nav-bar__placeholder"
-     style="height: 50px;"
+<div
+  class="van-nav-bar__placeholder"
+  style="height: 50px;"
 >
   <div class="van-nav-bar van-nav-bar--fixed van-hairline--bottom">
     <div class="van-nav-bar__content">

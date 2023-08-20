@@ -1,21 +1,16 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`should render action text when using action-text prop 1`] = `
-<div class="van-search__action"
-     role="button"
-     tabindex="0"
+<div
+  class="van-search__action"
+  role="button"
+  tabindex="0"
 >
   Custom Text
 </div>
 `;
 
-exports[`should render label slot correctly 1`] = `
-<label class="van-search__label"
-       for="van-search-input"
->
-  Custom Label
-</label>
-`;
+exports[`should render label slot correctly 1`] = `"<label class=\\"van-search__label\\" for=\\"van-search-input\\">Custom Label</label>"`;
 
 exports[`should render left icon when using left-icon prop 1`] = `
 <div class="van-field__left-icon">
@@ -35,9 +30,10 @@ exports[`should render left slot correctly 1`] = `
       </div>
       <div class="van-cell__value van-field__value">
         <div class="van-field__body">
-          <input type="search"
-                 id="van-search-input"
-                 class="van-field__control"
+          <input
+            type="search"
+            id="van-search-input"
+            class="van-field__control"
           >
         </div>
       </div>

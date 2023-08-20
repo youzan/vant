@@ -1,177 +1,208 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`should render demo and match snapshot 1`] = `
 <div class="van-tabs van-tabs--line">
   <div class="van-tabs__wrap">
-    <div role="tablist"
-         class="van-tabs__nav van-tabs__nav--line"
-         aria-orientation="horizontal"
+    <div
+      role="tablist"
+      class="van-tabs__nav van-tabs__nav--line"
+      aria-orientation="horizontal"
     >
-      <div id="van-tabs-0"
-           role="tab"
-           class="van-tab van-tab--line van-tab--active"
-           tabindex="0"
-           aria-selected="true"
-           aria-controls="van-tab"
+      <div
+        id="van-tabs-0"
+        role="tab"
+        class="van-tab van-tab--line van-tab--active"
+        tabindex="0"
+        aria-selected="true"
+        aria-controls="van-tab"
       >
         <span class="van-tab__text van-tab__text--ellipsis">
           Basic Usage
         </span>
       </div>
-      <div id="van-tabs-1"
-           role="tab"
-           class="van-tab van-tab--line"
-           tabindex="-1"
-           aria-selected="false"
-           aria-controls="van-tab"
+      <div
+        id="van-tabs-1"
+        role="tab"
+        class="van-tab van-tab--line"
+        tabindex="-1"
+        aria-selected="false"
+        aria-controls="van-tab"
       >
         <span class="van-tab__text van-tab__text--ellipsis">
           Custom Index List
         </span>
       </div>
-      <div class="van-tabs__line"
-           style="transform: translateX(50px) translateX(-50%);"
+      <div
+        class="van-tabs__line"
+        style="transform: translateX(50px) translateX(-50%);"
       >
       </div>
     </div>
   </div>
   <div class="van-tabs__content">
-    <div id="van-tab"
-         role="tabpanel"
-         class="van-tab__panel"
-         tabindex="0"
-         aria-labelledby="van-tabs-0"
-         style
+    <div
+      id="van-tab"
+      role="tabpanel"
+      class="van-tab__panel"
+      tabindex="0"
+      aria-labelledby="van-tabs-0"
+      style
     >
       <div class="van-index-bar">
         <div class="van-index-bar__sidebar">
-          <span class="van-index-bar__index"
-                data-index="A"
+          <span
+            class="van-index-bar__index"
+            data-index="A"
           >
             A
           </span>
-          <span class="van-index-bar__index"
-                data-index="B"
+          <span
+            class="van-index-bar__index"
+            data-index="B"
           >
             B
           </span>
-          <span class="van-index-bar__index"
-                data-index="C"
+          <span
+            class="van-index-bar__index"
+            data-index="C"
           >
             C
           </span>
-          <span class="van-index-bar__index"
-                data-index="D"
+          <span
+            class="van-index-bar__index"
+            data-index="D"
           >
             D
           </span>
-          <span class="van-index-bar__index"
-                data-index="E"
+          <span
+            class="van-index-bar__index"
+            data-index="E"
           >
             E
           </span>
-          <span class="van-index-bar__index"
-                data-index="F"
+          <span
+            class="van-index-bar__index"
+            data-index="F"
           >
             F
           </span>
-          <span class="van-index-bar__index"
-                data-index="G"
+          <span
+            class="van-index-bar__index"
+            data-index="G"
           >
             G
           </span>
-          <span class="van-index-bar__index"
-                data-index="H"
+          <span
+            class="van-index-bar__index"
+            data-index="H"
           >
             H
           </span>
-          <span class="van-index-bar__index"
-                data-index="I"
+          <span
+            class="van-index-bar__index"
+            data-index="I"
           >
             I
           </span>
-          <span class="van-index-bar__index"
-                data-index="J"
+          <span
+            class="van-index-bar__index"
+            data-index="J"
           >
             J
           </span>
-          <span class="van-index-bar__index"
-                data-index="K"
+          <span
+            class="van-index-bar__index"
+            data-index="K"
           >
             K
           </span>
-          <span class="van-index-bar__index"
-                data-index="L"
+          <span
+            class="van-index-bar__index"
+            data-index="L"
           >
             L
           </span>
-          <span class="van-index-bar__index"
-                data-index="M"
+          <span
+            class="van-index-bar__index"
+            data-index="M"
           >
             M
           </span>
-          <span class="van-index-bar__index"
-                data-index="N"
+          <span
+            class="van-index-bar__index"
+            data-index="N"
           >
             N
           </span>
-          <span class="van-index-bar__index"
-                data-index="O"
+          <span
+            class="van-index-bar__index"
+            data-index="O"
           >
             O
           </span>
-          <span class="van-index-bar__index"
-                data-index="P"
+          <span
+            class="van-index-bar__index"
+            data-index="P"
           >
             P
           </span>
-          <span class="van-index-bar__index"
-                data-index="Q"
+          <span
+            class="van-index-bar__index"
+            data-index="Q"
           >
             Q
           </span>
-          <span class="van-index-bar__index"
-                data-index="R"
+          <span
+            class="van-index-bar__index"
+            data-index="R"
           >
             R
           </span>
-          <span class="van-index-bar__index"
-                data-index="S"
+          <span
+            class="van-index-bar__index"
+            data-index="S"
           >
             S
           </span>
-          <span class="van-index-bar__index"
-                data-index="T"
+          <span
+            class="van-index-bar__index"
+            data-index="T"
           >
             T
           </span>
-          <span class="van-index-bar__index"
-                data-index="U"
+          <span
+            class="van-index-bar__index"
+            data-index="U"
           >
             U
           </span>
-          <span class="van-index-bar__index"
-                data-index="V"
+          <span
+            class="van-index-bar__index"
+            data-index="V"
           >
             V
           </span>
-          <span class="van-index-bar__index"
-                data-index="W"
+          <span
+            class="van-index-bar__index"
+            data-index="W"
           >
             W
           </span>
-          <span class="van-index-bar__index"
-                data-index="X"
+          <span
+            class="van-index-bar__index"
+            data-index="X"
           >
             X
           </span>
-          <span class="van-index-bar__index"
-                data-index="Y"
+          <span
+            class="van-index-bar__index"
+            data-index="Y"
           >
             Y
           </span>
-          <span class="van-index-bar__index van-index-bar__index--active"
-                data-index="Z"
+          <span
+            class="van-index-bar__index van-index-bar__index--active"
+            data-index="Z"
           >
             Z
           </span>
@@ -877,10 +908,8 @@ exports[`should render demo and match snapshot 1`] = `
           </div>
         </div>
         <div>
-          <div style="height: 100px;">
-            <div class="van-index-anchor van-index-anchor--sticky van-hairline--bottom"
-                 style="width: 100px;"
-            >
+          <div style="height: 0px;">
+            <div class="van-index-anchor van-index-anchor--sticky van-hairline--bottom">
               Z
             </div>
           </div>
@@ -908,12 +937,13 @@ exports[`should render demo and match snapshot 1`] = `
         </div>
       </div>
     </div>
-    <div id="van-tab"
-         role="tabpanel"
-         class="van-tab__panel"
-         tabindex="-1"
-         aria-labelledby="van-tabs-1"
-         style="display: none;"
+    <div
+      id="van-tab"
+      role="tabpanel"
+      class="van-tab__panel"
+      tabindex="-1"
+      aria-labelledby="van-tabs-1"
+      style="display: none;"
     >
     </div>
   </div>

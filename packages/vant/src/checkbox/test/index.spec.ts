@@ -91,7 +91,7 @@ test('should adjust label position when using label-position prop', () => {
 });
 
 test('should emit click event when checkbox icon is clicked', async () => {
-  const onClick = jest.fn();
+  const onClick = vi.fn();
   const wrapper = mount(Checkbox, {
     props: {
       onClick,

@@ -1,4 +1,4 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`should render demo and match snapshot 1`] = `
 <!--[-->
@@ -7,9 +7,10 @@ exports[`should render demo and match snapshot 1`] = `
   <!--[-->
   <span class="van-popover__wrapper">
     <!--[-->
-    <button type="button"
-            class="van-button van-button--primary van-button--normal"
-            style
+    <button
+      type="button"
+      class="van-button van-button--primary van-button--normal"
+      style
     >
       <div class="van-button__content">
         <span class="van-button__text">
@@ -22,9 +23,10 @@ exports[`should render demo and match snapshot 1`] = `
   <!--[-->
   <span class="van-popover__wrapper">
     <!--[-->
-    <button type="button"
-            class="van-button van-button--primary van-button--normal"
-            style
+    <button
+      type="button"
+      class="van-button van-button--primary van-button--normal"
+      style
     >
       <div class="van-button__content">
         <span class="van-button__text">
@@ -37,17 +39,20 @@ exports[`should render demo and match snapshot 1`] = `
 </div>
 <div>
   <!--[-->
-  <div class="van-cell van-cell--clickable van-field"
-       role="button"
-       tabindex="0"
+  <div
+    class="van-cell van-cell--clickable van-field"
+    role="button"
+    tabindex="0"
   >
-    <div class="van-cell__title van-field__label"
-         style
+    <div
+      class="van-cell__title van-field__label"
+      style
     >
       <!--[-->
-      <label id="van-field-label"
-             for="van-field-input"
-             style
+      <label
+        id="van-field-label"
+        for="van-field-input"
+        style
       >
         Placement
       </label>
@@ -55,17 +60,19 @@ exports[`should render demo and match snapshot 1`] = `
     <div class="van-cell__value van-field__value">
       <!--[-->
       <div class="van-field__body">
-        <input type="text"
-               id="van-field-input"
-               name="picker"
-               class="van-field__control"
-               readonly
-               aria-labelledby="van-field-label"
+        <input
+          type="text"
+          id="van-field-input"
+          name="picker"
+          class="van-field__control"
+          readonly
+          aria-labelledby="van-field-label"
         >
       </div>
     </div>
-    <i class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon"
-       style
+    <i
+      class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon"
+      style
     >
       <!--[-->
     </i>
@@ -76,9 +83,10 @@ exports[`should render demo and match snapshot 1`] = `
   <!--[-->
   <span class="van-popover__wrapper">
     <!--[-->
-    <button type="button"
-            class="van-button van-button--primary van-button--normal"
-            style
+    <button
+      type="button"
+      class="van-button van-button--primary van-button--normal"
+      style
     >
       <div class="van-button__content">
         <span class="van-button__text">
@@ -91,9 +99,10 @@ exports[`should render demo and match snapshot 1`] = `
   <!--[-->
   <span class="van-popover__wrapper">
     <!--[-->
-    <button type="button"
-            class="van-button van-button--primary van-button--normal"
-            style
+    <button
+      type="button"
+      class="van-button van-button--primary van-button--normal"
+      style
     >
       <div class="van-button__content">
         <span class="van-button__text">
@@ -109,9 +118,10 @@ exports[`should render demo and match snapshot 1`] = `
   <!--[-->
   <span class="van-popover__wrapper">
     <!--[-->
-    <button type="button"
-            class="van-button van-button--primary van-button--normal"
-            style
+    <button
+      type="button"
+      class="van-button van-button--primary van-button--normal"
+      style
     >
       <div class="van-button__content">
         <span class="van-button__text">
@@ -124,9 +134,10 @@ exports[`should render demo and match snapshot 1`] = `
   <!--[-->
   <span class="van-popover__wrapper">
     <!--[-->
-    <button type="button"
-            class="van-button van-button--primary van-button--normal"
-            style
+    <button
+      type="button"
+      class="van-button van-button--primary van-button--normal"
+      style
     >
       <div class="van-button__content">
         <span class="van-button__text">
@@ -142,9 +153,10 @@ exports[`should render demo and match snapshot 1`] = `
   <!--[-->
   <span class="van-popover__wrapper">
     <!--[-->
-    <button type="button"
-            class="van-button van-button--primary van-button--normal"
-            style
+    <button
+      type="button"
+      class="van-button van-button--primary van-button--normal"
+      style
     >
       <div class="van-button__content">
         <span class="van-button__text">
@@ -160,9 +172,10 @@ exports[`should render demo and match snapshot 1`] = `
   <!--[-->
   <span class="van-popover__wrapper">
     <!--[-->
-    <button type="button"
-            class="van-button van-button--primary van-button--normal"
-            style
+    <button
+      type="button"
+      class="van-button van-button--primary van-button--normal"
+      style
     >
       <div class="van-button__content">
         <span class="van-button__text">

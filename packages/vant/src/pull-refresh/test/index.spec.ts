@@ -11,6 +11,8 @@ test('should render different head content in different pulling status', async (
   const wrapper = mount(PullRefresh);
   const track = wrapper.find('.van-pull-refresh__track');
 
+  await mockScrollTop(0);
+
   // pulling
   trigger(track, 'touchstart', 0, 0);
   trigger(track, 'touchmove', 0, 20);
@@ -35,7 +37,7 @@ test('should render different head content in different pulling status', async (
   expect(wrapper.emitted('update:modelValue')).toBeTruthy();
   expect(wrapper.emitted('refresh')).toBeTruthy();
 
-  // // end loading
+  // end loading
   await wrapper.setProps({ modelValue: true });
   await wrapper.setProps({ modelValue: false });
   expect(wrapper.html()).toMatchSnapshot();

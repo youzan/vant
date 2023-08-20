@@ -1,30 +1,31 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`should change close icon when using close-icon prop 1`] = `
-<i class="van-badge__wrapper van-icon van-icon-success van-cascader__close-icon van-haptics-feedback">
-</i>
+"<i class=\\"van-badge__wrapper van-icon van-icon-success van-cascader__close-icon van-haptics-feedback\\">
+  <!---->
+  <!---->
+  <!---->
+</i>"
 `;
 
 exports[`should render option slot correctly 1`] = `
-<li role="menuitemradio"
-    class="van-cascader__option"
-    tabindex="-1"
-    aria-checked="false"
->
-  Custom Option foo
-</li>
+"<li role=\\"menuitemradio\\" class=\\"van-cascader__option\\" tabindex=\\"-1\\" aria-checked=\\"false\\">Custom Option foo
+  <!---->
+</li>"
 `;
 
 exports[`should render options-top、options-bottom slots correctly 1`] = `
 <div class="van-tab__panel">
   Top, tab index: 0
-  <ul role="menu"
-      class="van-cascader__options"
+  <ul
+    role="menu"
+    class="van-cascader__options"
   >
-    <li role="menuitemradio"
-        class="van-cascader__option van-cascader__option--selected"
-        tabindex="0"
-        aria-checked="true"
+    <li
+      role="menuitemradio"
+      class="van-cascader__option van-cascader__option--selected"
+      tabindex="0"
+      aria-checked="true"
     >
       <span>
         Zhejiang
@@ -32,10 +33,11 @@ exports[`should render options-top、options-bottom slots correctly 1`] = `
       <i class="van-badge__wrapper van-icon van-icon-success van-cascader__selected-icon">
       </i>
     </li>
-    <li role="menuitemradio"
-        class="van-cascader__option"
-        tabindex="-1"
-        aria-checked="false"
+    <li
+      role="menuitemradio"
+      class="van-cascader__option"
+      tabindex="-1"
+      aria-checked="false"
     >
       <span>
         Jiangsu
@@ -46,17 +48,14 @@ exports[`should render options-top、options-bottom slots correctly 1`] = `
 </div>
 `;
 
-exports[`should render title slot correctly 1`] = `
-<h2 class="van-cascader__title">
-  Custom Title
-</h2>
-`;
+exports[`should render title slot correctly 1`] = `"<h2 class=\\"van-cascader__title\\">Custom Title</h2>"`;
 
 exports[`should select correct option when value changed 1`] = `
-<li role="menuitemradio"
-    class="van-cascader__option van-cascader__option--selected"
-    tabindex="0"
-    aria-checked="true"
+<li
+  role="menuitemradio"
+  class="van-cascader__option van-cascader__option--selected"
+  tabindex="0"
+  aria-checked="true"
 >
   <span>
     Wenzhou
@@ -76,68 +75,77 @@ exports[`should update tabs when previous tab is clicked 1`] = `
   </div>
   <div class="van-tabs van-tabs--line van-cascader__tabs">
     <div class="van-tabs__wrap">
-      <div role="tablist"
-           class="van-tabs__nav van-tabs__nav--line van-tabs__nav--shrink van-tabs__nav--complete"
-           aria-orientation="horizontal"
+      <div
+        role="tablist"
+        class="van-tabs__nav van-tabs__nav--line van-tabs__nav--shrink van-tabs__nav--complete"
+        aria-orientation="horizontal"
       >
-        <div id="van-tabs-0"
-             role="tab"
-             class="van-tab van-tab--line van-tab--shrink van-cascader__tab"
-             tabindex="-1"
-             aria-selected="false"
-             aria-controls="van-tab"
+        <div
+          id="van-tabs-0"
+          role="tab"
+          class="van-tab van-tab--line van-tab--shrink van-cascader__tab"
+          tabindex="-1"
+          aria-selected="false"
+          aria-controls="van-tab"
         >
           <span class="van-tab__text">
             Jiangsu
           </span>
         </div>
-        <div id="van-tabs-1"
-             role="tab"
-             class="van-tab van-tab--line van-tab--shrink van-tab--active van-cascader__tab van-cascader__tab--unselected"
-             tabindex="0"
-             aria-selected="true"
-             aria-controls="van-tab"
+        <div
+          id="van-tabs-1"
+          role="tab"
+          class="van-tab van-tab--line van-tab--shrink van-tab--active van-cascader__tab van-cascader__tab--unselected"
+          tabindex="0"
+          aria-selected="true"
+          aria-controls="van-tab"
         >
           <span class="van-tab__text">
             Select
           </span>
         </div>
-        <div class="van-tabs__line"
-             style="transform: translateX(50px) translateX(-50%); transition-duration: 0.3s;"
+        <div
+          class="van-tabs__line"
+          style="transform: translateX(50px) translateX(-50%); transition-duration: 0.3s;"
         >
         </div>
       </div>
     </div>
     <div class="van-tabs__content van-tabs__content--animated">
       <div class="van-swipe van-tabs__track">
-        <div style="transition-duration: 0ms; transform: translateX(0px); width: 200px;"
-             class="van-swipe__track"
+        <div
+          style="transition-duration: 0ms; transform: translateX(0px); width: 200px;"
+          class="van-swipe__track"
         >
-          <div class="van-swipe-item van-tab__panel-wrapper"
-               id="van-tab"
-               role="tabpanel"
-               tabindex="-1"
-               aria-hidden="true"
-               aria-labelledby="van-tabs-0"
-               style="width: 100px;"
+          <div
+            class="van-swipe-item van-tab__panel-wrapper"
+            id="van-tab"
+            role="tabpanel"
+            tabindex="-1"
+            aria-hidden="true"
+            aria-labelledby="van-tabs-0"
+            style="width: 100px;"
           >
             <div class="van-tab__panel">
-              <ul role="menu"
-                  class="van-cascader__options"
+              <ul
+                role="menu"
+                class="van-cascader__options"
               >
-                <li role="menuitemradio"
-                    class="van-cascader__option"
-                    tabindex="-1"
-                    aria-checked="false"
+                <li
+                  role="menuitemradio"
+                  class="van-cascader__option"
+                  tabindex="-1"
+                  aria-checked="false"
                 >
                   <span>
                     Zhejiang
                   </span>
                 </li>
-                <li role="menuitemradio"
-                    class="van-cascader__option van-cascader__option--selected"
-                    tabindex="0"
-                    aria-checked="true"
+                <li
+                  role="menuitemradio"
+                  class="van-cascader__option van-cascader__option--selected"
+                  tabindex="0"
+                  aria-checked="true"
                 >
                   <span>
                     Jiangsu
@@ -148,40 +156,45 @@ exports[`should update tabs when previous tab is clicked 1`] = `
               </ul>
             </div>
           </div>
-          <div class="van-swipe-item van-tab__panel-wrapper"
-               id="van-tab"
-               role="tabpanel"
-               tabindex="0"
-               aria-hidden="false"
-               aria-labelledby="van-tabs-1"
-               style="width: 100px;"
+          <div
+            class="van-swipe-item van-tab__panel-wrapper"
+            id="van-tab"
+            role="tabpanel"
+            tabindex="0"
+            aria-hidden="false"
+            aria-labelledby="van-tabs-1"
+            style="width: 100px;"
           >
             <div class="van-tab__panel">
-              <ul role="menu"
-                  class="van-cascader__options"
+              <ul
+                role="menu"
+                class="van-cascader__options"
               >
-                <li role="menuitemradio"
-                    class="van-cascader__option"
-                    tabindex="-1"
-                    aria-checked="false"
+                <li
+                  role="menuitemradio"
+                  class="van-cascader__option"
+                  tabindex="-1"
+                  aria-checked="false"
                 >
                   <span>
                     Nanjing
                   </span>
                 </li>
-                <li role="menuitemradio"
-                    class="van-cascader__option"
-                    tabindex="-1"
-                    aria-checked="false"
+                <li
+                  role="menuitemradio"
+                  class="van-cascader__option"
+                  tabindex="-1"
+                  aria-checked="false"
                 >
                   <span>
                     Wuxi
                   </span>
                 </li>
-                <li role="menuitemradio"
-                    class="van-cascader__option"
-                    tabindex="-1"
-                    aria-checked="false"
+                <li
+                  role="menuitemradio"
+                  class="van-cascader__option"
+                  tabindex="-1"
+                  aria-checked="false"
                 >
                   <span>
                     Xuzhou

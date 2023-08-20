@@ -1,10 +1,11 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`should render demo and match snapshot 1`] = `
 <div>
-  <div class="van-cell van-cell--clickable"
-       role="button"
-       tabindex="0"
+  <div
+    class="van-cell van-cell--clickable"
+    role="button"
+    tabindex="0"
   >
     <div class="van-cell__title">
       <span>
@@ -14,9 +15,10 @@ exports[`should render demo and match snapshot 1`] = `
     <i class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon">
     </i>
   </div>
-  <div class="van-cell van-cell--clickable"
-       role="button"
-       tabindex="0"
+  <div
+    class="van-cell van-cell--clickable"
+    role="button"
+    tabindex="0"
   >
     <div class="van-cell__title">
       <span>
@@ -26,9 +28,10 @@ exports[`should render demo and match snapshot 1`] = `
     <i class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon">
     </i>
   </div>
-  <div class="van-cell van-cell--clickable"
-       role="button"
-       tabindex="0"
+  <div
+    class="van-cell van-cell--clickable"
+    role="button"
+    tabindex="0"
   >
     <div class="van-cell__title">
       <span>
@@ -40,9 +43,10 @@ exports[`should render demo and match snapshot 1`] = `
   </div>
 </div>
 <div>
-  <div class="van-cell van-cell--clickable"
-       role="button"
-       tabindex="0"
+  <div
+    class="van-cell van-cell--clickable"
+    role="button"
+    tabindex="0"
   >
     <div class="van-cell__title">
       <span>
@@ -52,9 +56,10 @@ exports[`should render demo and match snapshot 1`] = `
     <i class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon">
     </i>
   </div>
-  <div class="van-cell van-cell--clickable"
-       role="button"
-       tabindex="0"
+  <div
+    class="van-cell van-cell--clickable"
+    role="button"
+    tabindex="0"
   >
     <div class="van-cell__title">
       <span>
@@ -66,9 +71,10 @@ exports[`should render demo and match snapshot 1`] = `
   </div>
 </div>
 <div>
-  <div class="van-cell van-cell--clickable"
-       role="button"
-       tabindex="0"
+  <div
+    class="van-cell van-cell--clickable"
+    role="button"
+    tabindex="0"
   >
     <div class="van-cell__title">
       <span>
@@ -80,9 +86,10 @@ exports[`should render demo and match snapshot 1`] = `
   </div>
 </div>
 <div>
-  <div class="van-cell van-cell--clickable"
-       role="button"
-       tabindex="0"
+  <div
+    class="van-cell van-cell--clickable"
+    role="button"
+    tabindex="0"
   >
     <div class="van-cell__title">
       <span>
@@ -92,22 +99,25 @@ exports[`should render demo and match snapshot 1`] = `
     <i class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon">
     </i>
   </div>
-  <transition-stub name="van-fade"
-                   appear="true"
-                   persisted="false"
-                   css="true"
+  <transition-stub
+    name="van-fade"
+    appear="true"
+    persisted="false"
+    css="true"
   >
   </transition-stub>
-  <transition-stub name="van-dialog-bounce"
-                   appear="false"
-                   persisted="false"
-                   css="true"
+  <transition-stub
+    name="van-dialog-bounce"
+    appear="false"
+    persisted="false"
+    css="true"
   >
-    <div role="dialog"
-         tabindex="0"
-         class="van-popup van-popup--center van-dialog"
-         aria-labelledby="Title"
-         style="display: none;"
+    <div
+      role="dialog"
+      tabindex="0"
+      class="van-popup van-popup--center van-dialog"
+      aria-labelledby="Title"
+      style="display: none;"
     >
       <div class="van-dialog__header">
         Title
@@ -116,8 +126,9 @@ exports[`should render demo and match snapshot 1`] = `
         <img src="https://fastly.jsdelivr.net/npm/@vant/assets/apple-3.jpeg">
       </div>
       <div class="van-hairline--top van-dialog__footer">
-        <button type="button"
-                class="van-button van-button--default van-button--large van-dialog__cancel"
+        <button
+          type="button"
+          class="van-button van-button--default van-button--large van-dialog__cancel"
         >
           <div class="van-button__content">
             <span class="van-button__text">
@@ -125,8 +136,9 @@ exports[`should render demo and match snapshot 1`] = `
             </span>
           </div>
         </button>
-        <button type="button"
-                class="van-button van-button--default van-button--large van-dialog__confirm van-hairline--left"
+        <button
+          type="button"
+          class="van-button van-button--default van-button--large van-dialog__confirm van-hairline--left"
         >
           <div class="van-button__content">
             <span class="van-button__text">

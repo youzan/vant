@@ -1,4 +1,4 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`should render demo and match snapshot 1`] = `
 <!--[-->
@@ -7,20 +7,23 @@ exports[`should render demo and match snapshot 1`] = `
   <div class="van-collapse van-hairline--top-bottom">
     <!--[-->
     <div class="van-collapse-item">
-      <div class="van-cell van-cell--clickable van-collapse-item__title van-collapse-item__title--expanded"
-           role="button"
-           tabindex="0"
-           aria-expanded="true"
+      <div
+        class="van-cell van-cell--clickable van-collapse-item__title van-collapse-item__title--expanded"
+        role="button"
+        tabindex="0"
+        aria-expanded="true"
       >
-        <div class="van-cell__title"
-             style
+        <div
+          class="van-cell__title"
+          style
         >
           <span>
             Title1
           </span>
         </div>
-        <i class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon"
-           style
+        <i
+          class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon"
+          style
         >
           <!--[-->
         </i>
@@ -33,40 +36,46 @@ exports[`should render demo and match snapshot 1`] = `
       </div>
     </div>
     <div class="van-collapse-item van-collapse-item--border">
-      <div class="van-cell van-cell--clickable van-collapse-item__title"
-           role="button"
-           tabindex="0"
-           aria-expanded="false"
+      <div
+        class="van-cell van-cell--clickable van-collapse-item__title"
+        role="button"
+        tabindex="0"
+        aria-expanded="false"
       >
-        <div class="van-cell__title"
-             style
+        <div
+          class="van-cell__title"
+          style
         >
           <span>
             Title2
           </span>
         </div>
-        <i class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon"
-           style
+        <i
+          class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon"
+          style
         >
           <!--[-->
         </i>
       </div>
     </div>
     <div class="van-collapse-item van-collapse-item--border">
-      <div class="van-cell van-cell--clickable van-collapse-item__title"
-           role="button"
-           tabindex="0"
-           aria-expanded="false"
+      <div
+        class="van-cell van-cell--clickable van-collapse-item__title"
+        role="button"
+        tabindex="0"
+        aria-expanded="false"
       >
-        <div class="van-cell__title"
-             style
+        <div
+          class="van-cell__title"
+          style
         >
           <span>
             Title3
           </span>
         </div>
-        <i class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon"
-           style
+        <i
+          class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon"
+          style
         >
           <!--[-->
         </i>
@@ -79,20 +88,23 @@ exports[`should render demo and match snapshot 1`] = `
   <div class="van-collapse van-hairline--top-bottom">
     <!--[-->
     <div class="van-collapse-item">
-      <div class="van-cell van-cell--clickable van-collapse-item__title van-collapse-item__title--expanded"
-           role="button"
-           tabindex="0"
-           aria-expanded="true"
+      <div
+        class="van-cell van-cell--clickable van-collapse-item__title van-collapse-item__title--expanded"
+        role="button"
+        tabindex="0"
+        aria-expanded="true"
       >
-        <div class="van-cell__title"
-             style
+        <div
+          class="van-cell__title"
+          style
         >
           <span>
             Title1
           </span>
         </div>
-        <i class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon"
-           style
+        <i
+          class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon"
+          style
         >
           <!--[-->
         </i>
@@ -105,40 +117,46 @@ exports[`should render demo and match snapshot 1`] = `
       </div>
     </div>
     <div class="van-collapse-item van-collapse-item--border">
-      <div class="van-cell van-cell--clickable van-collapse-item__title"
-           role="button"
-           tabindex="0"
-           aria-expanded="false"
+      <div
+        class="van-cell van-cell--clickable van-collapse-item__title"
+        role="button"
+        tabindex="0"
+        aria-expanded="false"
       >
-        <div class="van-cell__title"
-             style
+        <div
+          class="van-cell__title"
+          style
         >
           <span>
             Title2
           </span>
         </div>
-        <i class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon"
-           style
+        <i
+          class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon"
+          style
         >
           <!--[-->
         </i>
       </div>
     </div>
     <div class="van-collapse-item van-collapse-item--border">
-      <div class="van-cell van-cell--clickable van-collapse-item__title"
-           role="button"
-           tabindex="0"
-           aria-expanded="false"
+      <div
+        class="van-cell van-cell--clickable van-collapse-item__title"
+        role="button"
+        tabindex="0"
+        aria-expanded="false"
       >
-        <div class="van-cell__title"
-             style
+        <div
+          class="van-cell__title"
+          style
         >
           <span>
             Title3
           </span>
         </div>
-        <i class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon"
-           style
+        <i
+          class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon"
+          style
         >
           <!--[-->
         </i>
@@ -151,58 +169,67 @@ exports[`should render demo and match snapshot 1`] = `
   <div class="van-collapse van-hairline--top-bottom">
     <!--[-->
     <div class="van-collapse-item">
-      <div class="van-cell van-cell--clickable van-collapse-item__title"
-           role="button"
-           tabindex="0"
-           aria-expanded="false"
+      <div
+        class="van-cell van-cell--clickable van-collapse-item__title"
+        role="button"
+        tabindex="0"
+        aria-expanded="false"
       >
-        <div class="van-cell__title"
-             style
+        <div
+          class="van-cell__title"
+          style
         >
           <span>
             Title1
           </span>
         </div>
-        <i class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon"
-           style
+        <i
+          class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon"
+          style
         >
           <!--[-->
         </i>
       </div>
     </div>
     <div class="van-collapse-item van-collapse-item--border">
-      <div class="van-cell van-collapse-item__title van-collapse-item__title--disabled"
-           role="button"
-           aria-expanded="false"
+      <div
+        class="van-cell van-collapse-item__title van-collapse-item__title--disabled"
+        role="button"
+        aria-expanded="false"
       >
-        <div class="van-cell__title"
-             style
+        <div
+          class="van-cell__title"
+          style
         >
           <span>
             Title2
           </span>
         </div>
-        <i class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon"
-           style
+        <i
+          class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon"
+          style
         >
           <!--[-->
         </i>
       </div>
     </div>
     <div class="van-collapse-item van-collapse-item--border">
-      <div class="van-cell van-collapse-item__title van-collapse-item__title--disabled"
-           role="button"
-           aria-expanded="false"
+      <div
+        class="van-cell van-collapse-item__title van-collapse-item__title--disabled"
+        role="button"
+        aria-expanded="false"
       >
-        <div class="van-cell__title"
-             style
+        <div
+          class="van-cell__title"
+          style
         >
           <span>
             Title3
           </span>
         </div>
-        <i class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon"
-           style
+        <i
+          class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon"
+          style
         >
           <!--[-->
         </i>
@@ -215,42 +242,49 @@ exports[`should render demo and match snapshot 1`] = `
   <div class="van-collapse van-hairline--top-bottom">
     <!--[-->
     <div class="van-collapse-item">
-      <div class="van-cell van-cell--clickable van-collapse-item__title"
-           role="button"
-           tabindex="0"
-           aria-expanded="false"
+      <div
+        class="van-cell van-cell--clickable van-collapse-item__title"
+        role="button"
+        tabindex="0"
+        aria-expanded="false"
       >
-        <div class="van-cell__title"
-             style
+        <div
+          class="van-cell__title"
+          style
         >
           <!--[-->
           Title1
-          <i class="van-badge__wrapper van-icon van-icon-question-o"
-             style
+          <i
+            class="van-badge__wrapper van-icon van-icon-question-o"
+            style
           >
             <!--[-->
           </i>
         </div>
-        <i class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon"
-           style
+        <i
+          class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon"
+          style
         >
           <!--[-->
         </i>
       </div>
     </div>
     <div class="van-collapse-item van-collapse-item--border">
-      <div class="van-cell van-cell--clickable van-collapse-item__title"
-           role="button"
-           tabindex="0"
-           aria-expanded="false"
+      <div
+        class="van-cell van-cell--clickable van-collapse-item__title"
+        role="button"
+        tabindex="0"
+        aria-expanded="false"
       >
-        <i class="van-badge__wrapper van-icon van-icon-shop-o van-cell__left-icon"
-           style
+        <i
+          class="van-badge__wrapper van-icon van-icon-shop-o van-cell__left-icon"
+          style
         >
           <!--[-->
         </i>
-        <div class="van-cell__title"
-             style
+        <div
+          class="van-cell__title"
+          style
         >
           <span>
             Title2
@@ -261,8 +295,9 @@ exports[`should render demo and match snapshot 1`] = `
             Content
           </span>
         </div>
-        <i class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon"
-           style
+        <i
+          class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon"
+          style
         >
           <!--[-->
         </i>
@@ -275,20 +310,23 @@ exports[`should render demo and match snapshot 1`] = `
   <div class="van-collapse van-hairline--top-bottom">
     <!--[-->
     <div class="van-collapse-item">
-      <div class="van-cell van-cell--clickable van-collapse-item__title van-collapse-item__title--expanded"
-           role="button"
-           tabindex="0"
-           aria-expanded="true"
+      <div
+        class="van-cell van-cell--clickable van-collapse-item__title van-collapse-item__title--expanded"
+        role="button"
+        tabindex="0"
+        aria-expanded="true"
       >
-        <div class="van-cell__title"
-             style
+        <div
+          class="van-cell__title"
+          style
         >
           <span>
             Title1
           </span>
         </div>
-        <i class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon"
-           style
+        <i
+          class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon"
+          style
         >
           <!--[-->
         </i>
@@ -301,40 +339,46 @@ exports[`should render demo and match snapshot 1`] = `
       </div>
     </div>
     <div class="van-collapse-item van-collapse-item--border">
-      <div class="van-cell van-cell--clickable van-collapse-item__title"
-           role="button"
-           tabindex="0"
-           aria-expanded="false"
+      <div
+        class="van-cell van-cell--clickable van-collapse-item__title"
+        role="button"
+        tabindex="0"
+        aria-expanded="false"
       >
-        <div class="van-cell__title"
-             style
+        <div
+          class="van-cell__title"
+          style
         >
           <span>
             Title2
           </span>
         </div>
-        <i class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon"
-           style
+        <i
+          class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon"
+          style
         >
           <!--[-->
         </i>
       </div>
     </div>
     <div class="van-collapse-item van-collapse-item--border">
-      <div class="van-cell van-cell--clickable van-collapse-item__title"
-           role="button"
-           tabindex="0"
-           aria-expanded="false"
+      <div
+        class="van-cell van-cell--clickable van-collapse-item__title"
+        role="button"
+        tabindex="0"
+        aria-expanded="false"
       >
-        <div class="van-cell__title"
-             style
+        <div
+          class="van-cell__title"
+          style
         >
           <span>
             Title3
           </span>
         </div>
-        <i class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon"
-           style
+        <i
+          class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon"
+          style
         >
           <!--[-->
         </i>
@@ -342,9 +386,10 @@ exports[`should render demo and match snapshot 1`] = `
     </div>
   </div>
   <div class="demo-collapse-buttons">
-    <button type="button"
-            class="van-button van-button--primary van-button--normal"
-            style
+    <button
+      type="button"
+      class="van-button van-button--primary van-button--normal"
+      style
     >
       <div class="van-button__content">
         <span class="van-button__text">
@@ -353,9 +398,10 @@ exports[`should render demo and match snapshot 1`] = `
         </span>
       </div>
     </button>
-    <button type="button"
-            class="van-button van-button--primary van-button--normal"
-            style
+    <button
+      type="button"
+      class="van-button van-button--primary van-button--normal"
+      style
     >
       <div class="van-button__content">
         <span class="van-button__text">

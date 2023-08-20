@@ -1,11 +1,13 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`should render placeholder element when using placeholder prop 1`] = `
-<div class="van-tabbar__placeholder"
-     style="height: 50px;"
+<div
+  class="van-tabbar__placeholder"
+  style="height: 50px;"
 >
-  <div role="tablist"
-       class="van-tabbar van-tabbar--fixed van-hairline--top-bottom van-safe-area-bottom"
+  <div
+    role="tablist"
+    class="van-tabbar van-tabbar--fixed van-hairline--top-bottom van-safe-area-bottom"
   >
   </div>
 </div>

@@ -35,7 +35,7 @@ function timeRangeFilter(
 }
 
 test('should format initial value correctly', () => {
-  const onUpdate = jest.fn();
+  const onUpdate = vi.fn();
   mount(TimePicker, {
     props: {
       minHour: 22,
@@ -49,7 +49,7 @@ test('should format initial value correctly', () => {
 
 describe('should update modelValue correctly', () => {
   test('basic', async () => {
-    const onUpdate = jest.fn();
+    const onUpdate = vi.fn();
     const wrapper = mount(TimePicker, {
       props: {
         modelValue: ['-10', '-10'],
@@ -66,7 +66,7 @@ describe('should update modelValue correctly', () => {
   });
 
   test('when using max-hour and max-minute prop', async () => {
-    const onUpdate = jest.fn();
+    const onUpdate = vi.fn();
     const wrapper = mount(TimePicker, {
       props: {
         modelValue: ['23', '59'],
@@ -84,7 +84,7 @@ describe('should update modelValue correctly', () => {
   });
 
   test('when using min-hour and min-minute prop', async () => {
-    const onUpdate = jest.fn();
+    const onUpdate = vi.fn();
     const wrapper = mount(TimePicker, {
       props: {
         modelValue: ['00', '00'],
@@ -216,7 +216,7 @@ test('should emit confirm event correctly after setting values', async () => {
 });
 
 test('should emit confirm event correctly after setting range', async () => {
-  const onUpdate = jest.fn();
+  const onUpdate = vi.fn();
   const wrapper = mount(TimePicker, {
     props: {
       minHour: 0,

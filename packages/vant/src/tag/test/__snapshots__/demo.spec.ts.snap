@@ -1,4 +1,4 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`should render demo and match snapshot 1`] = `
 <div>
@@ -9,9 +9,10 @@ exports[`should render demo and match snapshot 1`] = `
       </span>
     </div>
     <div class="van-cell__value">
-      <transition-stub appear="false"
-                       persisted="false"
-                       css="true"
+      <transition-stub
+        appear="false"
+        persisted="false"
+        css="true"
       >
         <span class="van-tag van-tag--primary">
           Tag
@@ -26,9 +27,10 @@ exports[`should render demo and match snapshot 1`] = `
       </span>
     </div>
     <div class="van-cell__value">
-      <transition-stub appear="false"
-                       persisted="false"
-                       css="true"
+      <transition-stub
+        appear="false"
+        persisted="false"
+        css="true"
       >
         <span class="van-tag van-tag--success">
           Tag
@@ -43,9 +45,10 @@ exports[`should render demo and match snapshot 1`] = `
       </span>
     </div>
     <div class="van-cell__value">
-      <transition-stub appear="false"
-                       persisted="false"
-                       css="true"
+      <transition-stub
+        appear="false"
+        persisted="false"
+        css="true"
       >
         <span class="van-tag van-tag--danger">
           Tag
@@ -60,9 +63,10 @@ exports[`should render demo and match snapshot 1`] = `
       </span>
     </div>
     <div class="van-cell__value">
-      <transition-stub appear="false"
-                       persisted="false"
-                       css="true"
+      <transition-stub
+        appear="false"
+        persisted="false"
+        css="true"
       >
         <span class="van-tag van-tag--warning">
           Tag
@@ -79,9 +83,10 @@ exports[`should render demo and match snapshot 1`] = `
       </span>
     </div>
     <div class="van-cell__value">
-      <transition-stub appear="false"
-                       persisted="false"
-                       css="true"
+      <transition-stub
+        appear="false"
+        persisted="false"
+        css="true"
       >
         <span class="van-tag van-tag--plain van-tag--primary">
           Tag
@@ -96,9 +101,10 @@ exports[`should render demo and match snapshot 1`] = `
       </span>
     </div>
     <div class="van-cell__value">
-      <transition-stub appear="false"
-                       persisted="false"
-                       css="true"
+      <transition-stub
+        appear="false"
+        persisted="false"
+        css="true"
       >
         <span class="van-tag van-tag--round van-tag--primary">
           Tag
@@ -113,9 +119,10 @@ exports[`should render demo and match snapshot 1`] = `
       </span>
     </div>
     <div class="van-cell__value">
-      <transition-stub appear="false"
-                       persisted="false"
-                       css="true"
+      <transition-stub
+        appear="false"
+        persisted="false"
+        css="true"
       >
         <span class="van-tag van-tag--mark van-tag--primary">
           Tag
@@ -130,10 +137,11 @@ exports[`should render demo and match snapshot 1`] = `
       </span>
     </div>
     <div class="van-cell__value">
-      <transition-stub name="van-fade"
-                       appear="false"
-                       persisted="false"
-                       css="true"
+      <transition-stub
+        name="van-fade"
+        appear="false"
+        persisted="false"
+        css="true"
       >
         <span class="van-tag van-tag--medium van-tag--primary">
           Tag
@@ -152,9 +160,10 @@ exports[`should render demo and match snapshot 1`] = `
       </span>
     </div>
     <div class="van-cell__value">
-      <transition-stub appear="false"
-                       persisted="false"
-                       css="true"
+      <transition-stub
+        appear="false"
+        persisted="false"
+        css="true"
       >
         <span class="van-tag van-tag--primary">
           Tag
@@ -169,9 +178,10 @@ exports[`should render demo and match snapshot 1`] = `
       </span>
     </div>
     <div class="van-cell__value">
-      <transition-stub appear="false"
-                       persisted="false"
-                       css="true"
+      <transition-stub
+        appear="false"
+        persisted="false"
+        css="true"
       >
         <span class="van-tag van-tag--medium van-tag--primary">
           Tag
@@ -186,9 +196,10 @@ exports[`should render demo and match snapshot 1`] = `
       </span>
     </div>
     <div class="van-cell__value">
-      <transition-stub appear="false"
-                       persisted="false"
-                       css="true"
+      <transition-stub
+        appear="false"
+        persisted="false"
+        css="true"
       >
         <span class="van-tag van-tag--large van-tag--primary">
           Tag
@@ -205,12 +216,14 @@ exports[`should render demo and match snapshot 1`] = `
       </span>
     </div>
     <div class="van-cell__value">
-      <transition-stub appear="false"
-                       persisted="false"
-                       css="true"
+      <transition-stub
+        appear="false"
+        persisted="false"
+        css="true"
       >
-        <span style="background: rgb(114, 50, 221);"
-              class="van-tag van-tag--default"
+        <span
+          style="background: rgb(114, 50, 221);"
+          class="van-tag van-tag--default"
         >
           Tag
         </span>
@@ -224,12 +237,14 @@ exports[`should render demo and match snapshot 1`] = `
       </span>
     </div>
     <div class="van-cell__value">
-      <transition-stub appear="false"
-                       persisted="false"
-                       css="true"
+      <transition-stub
+        appear="false"
+        persisted="false"
+        css="true"
       >
-        <span style="color: rgb(173, 0, 0); background: rgb(255, 225, 225);"
-              class="van-tag van-tag--default"
+        <span
+          style="color: rgb(173, 0, 0); background: rgb(255, 225, 225);"
+          class="van-tag van-tag--default"
         >
           Tag
         </span>
@@ -243,12 +258,14 @@ exports[`should render demo and match snapshot 1`] = `
       </span>
     </div>
     <div class="van-cell__value">
-      <transition-stub appear="false"
-                       persisted="false"
-                       css="true"
+      <transition-stub
+        appear="false"
+        persisted="false"
+        css="true"
       >
-        <span style="color: rgb(114, 50, 221); border-color: #7232dd;"
-              class="van-tag van-tag--plain van-tag--default"
+        <span
+          style="color: rgb(114, 50, 221); border-color: #7232dd;"
+          class="van-tag van-tag--plain van-tag--default"
         >
           Tag
         </span>

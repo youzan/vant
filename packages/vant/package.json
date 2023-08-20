@@ -15,14 +15,15 @@
   "scripts": {
     "dev": "vant-cli dev",
     "lint": "vant-cli lint",
-    "test": "vant-cli test",
+    "test": "vitest run",
     "build": "vant-cli build",
     "build:site": "vant-cli build-site",
     "release": "cp ../../README.md ./ && vant-cli release --gitTag && rm ./README.md",
     "release:site": "pnpm build:site && npx gh-pages -d site-dist --add",
-    "test:update": "vant-cli test --updateSnapshot",
-    "test:watch": "vant-cli test --watch",
-    "test:coverage": "open test/coverage/index.html"
+    "test:update": "vitest run -u",
+    "test:watch": "vitest",
+    "test:coverage": "vitest run --coverage",
+    "open:coverage": "open test/coverage/index.html"
   },
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
@@ -53,15 +54,22 @@
     "vue": "^3.0.0"
   },
   "devDependencies": {
-    "@types/jest": "^29.5.1",
     "@types/node": "^18.16.3",
     "@vant/area-data": "workspace:*",
     "@vant/cli": "workspace:*",
     "@vant/eslint-config": "workspace:*",
     "@vant/icons": "workspace:*",
+    "@vitejs/plugin-vue": "^4.0.0",
+    "@vitejs/plugin-vue-jsx": "^3.0.0",
+    "@vitest/coverage-v8": "0.34.2",
     "@vue/runtime-core": "^3.3.4",
     "@vue/test-utils": "^2.3.2",
+    "diffable-html": "^5.0.0",
+    "jsdom": "^22.1.0",
     "typescript": "^5.0.4",
+    "vite": "^4.4.2",
+    "vitest": "^0.34.2",
+    "vitest-canvas-mock": "^0.3.2",
     "vue": "^3.3.4",
     "vue-router": "^4.1.6"
   },

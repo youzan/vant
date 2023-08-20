@@ -1,10 +1,11 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`should render demo and match snapshot 1`] = `
 <div>
-  <div class="van-cell van-cell--clickable"
-       role="button"
-       tabindex="0"
+  <div
+    class="van-cell van-cell--clickable"
+    role="button"
+    tabindex="0"
   >
     <div class="van-cell__title">
       <span>
@@ -14,29 +15,33 @@ exports[`should render demo and match snapshot 1`] = `
     <i class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon">
     </i>
   </div>
-  <transition-stub name="van-fade"
-                   appear="true"
-                   persisted="false"
-                   css="true"
-                   role="button"
-                   tabindex="0"
+  <transition-stub
+    name="van-fade"
+    appear="true"
+    persisted="false"
+    css="true"
+    role="button"
+    tabindex="0"
   >
   </transition-stub>
-  <transition-stub name="van-fade"
-                   appear="false"
-                   persisted="false"
-                   css="true"
+  <transition-stub
+    name="van-fade"
+    appear="false"
+    persisted="false"
+    css="true"
   >
   </transition-stub>
 </div>
 <div>
   <div class="van-grid van-hairline--top">
-    <div class="van-grid-item"
-         style="flex-basis: 25%;"
+    <div
+      class="van-grid-item"
+      style="flex-basis: 25%;"
     >
-      <div role="button"
-           class="van-grid-item__content van-grid-item__content--center van-grid-item__content--clickable van-hairline"
-           tabindex="0"
+      <div
+        role="button"
+        class="van-grid-item__content van-grid-item__content--center van-grid-item__content--clickable van-hairline"
+        tabindex="0"
       >
         <i class="van-badge__wrapper van-icon van-icon-arrow-up van-grid-item__icon">
         </i>
@@ -45,12 +50,14 @@ exports[`should render demo and match snapshot 1`] = `
         </span>
       </div>
     </div>
-    <div class="van-grid-item"
-         style="flex-basis: 25%;"
+    <div
+      class="van-grid-item"
+      style="flex-basis: 25%;"
     >
-      <div role="button"
-           class="van-grid-item__content van-grid-item__content--center van-grid-item__content--clickable van-hairline"
-           tabindex="0"
+      <div
+        role="button"
+        class="van-grid-item__content van-grid-item__content--center van-grid-item__content--clickable van-hairline"
+        tabindex="0"
       >
         <i class="van-badge__wrapper van-icon van-icon-arrow-down van-grid-item__icon">
         </i>
@@ -59,12 +66,14 @@ exports[`should render demo and match snapshot 1`] = `
         </span>
       </div>
     </div>
-    <div class="van-grid-item"
-         style="flex-basis: 25%;"
+    <div
+      class="van-grid-item"
+      style="flex-basis: 25%;"
     >
-      <div role="button"
-           class="van-grid-item__content van-grid-item__content--center van-grid-item__content--clickable van-hairline"
-           tabindex="0"
+      <div
+        role="button"
+        class="van-grid-item__content van-grid-item__content--center van-grid-item__content--clickable van-hairline"
+        tabindex="0"
       >
         <i class="van-badge__wrapper van-icon van-icon-arrow-left van-grid-item__icon">
         </i>
@@ -73,12 +82,14 @@ exports[`should render demo and match snapshot 1`] = `
         </span>
       </div>
     </div>
-    <div class="van-grid-item"
-         style="flex-basis: 25%;"
+    <div
+      class="van-grid-item"
+      style="flex-basis: 25%;"
     >
-      <div role="button"
-           class="van-grid-item__content van-grid-item__content--center van-grid-item__content--clickable van-hairline"
-           tabindex="0"
+      <div
+        role="button"
+        class="van-grid-item__content van-grid-item__content--center van-grid-item__content--clickable van-hairline"
+        tabindex="0"
       >
         <i class="van-badge__wrapper van-icon van-icon-arrow van-grid-item__icon">
         </i>
@@ -88,67 +99,76 @@ exports[`should render demo and match snapshot 1`] = `
       </div>
     </div>
   </div>
-  <transition-stub name="van-fade"
-                   appear="true"
-                   persisted="false"
-                   css="true"
-                   role="button"
-                   tabindex="0"
+  <transition-stub
+    name="van-fade"
+    appear="true"
+    persisted="false"
+    css="true"
+    role="button"
+    tabindex="0"
   >
   </transition-stub>
-  <transition-stub name="van-popup-slide-top"
-                   appear="false"
-                   persisted="false"
-                   css="true"
+  <transition-stub
+    name="van-popup-slide-top"
+    appear="false"
+    persisted="false"
+    css="true"
   >
   </transition-stub>
-  <transition-stub name="van-fade"
-                   appear="true"
-                   persisted="false"
-                   css="true"
-                   role="button"
-                   tabindex="0"
+  <transition-stub
+    name="van-fade"
+    appear="true"
+    persisted="false"
+    css="true"
+    role="button"
+    tabindex="0"
   >
   </transition-stub>
-  <transition-stub name="van-popup-slide-bottom"
-                   appear="false"
-                   persisted="false"
-                   css="true"
+  <transition-stub
+    name="van-popup-slide-bottom"
+    appear="false"
+    persisted="false"
+    css="true"
   >
   </transition-stub>
-  <transition-stub name="van-fade"
-                   appear="true"
-                   persisted="false"
-                   css="true"
-                   role="button"
-                   tabindex="0"
+  <transition-stub
+    name="van-fade"
+    appear="true"
+    persisted="false"
+    css="true"
+    role="button"
+    tabindex="0"
   >
   </transition-stub>
-  <transition-stub name="van-popup-slide-left"
-                   appear="false"
-                   persisted="false"
-                   css="true"
+  <transition-stub
+    name="van-popup-slide-left"
+    appear="false"
+    persisted="false"
+    css="true"
   >
   </transition-stub>
-  <transition-stub name="van-fade"
-                   appear="true"
-                   persisted="false"
-                   css="true"
-                   role="button"
-                   tabindex="0"
+  <transition-stub
+    name="van-fade"
+    appear="true"
+    persisted="false"
+    css="true"
+    role="button"
+    tabindex="0"
   >
   </transition-stub>
-  <transition-stub name="van-popup-slide-right"
-                   appear="false"
-                   persisted="false"
-                   css="true"
+  <transition-stub
+    name="van-popup-slide-right"
+    appear="false"
+    persisted="false"
+    css="true"
   >
   </transition-stub>
 </div>
 <div>
-  <div class="van-cell van-cell--clickable"
-       role="button"
-       tabindex="0"
+  <div
+    class="van-cell van-cell--clickable"
+    role="button"
+    tabindex="0"
   >
     <div class="van-cell__title">
       <span>
@@ -158,9 +178,10 @@ exports[`should render demo and match snapshot 1`] = `
     <i class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon">
     </i>
   </div>
-  <div class="van-cell van-cell--clickable"
-       role="button"
-       tabindex="0"
+  <div
+    class="van-cell van-cell--clickable"
+    role="button"
+    tabindex="0"
   >
     <div class="van-cell__title">
       <span>
@@ -170,9 +191,10 @@ exports[`should render demo and match snapshot 1`] = `
     <i class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon">
     </i>
   </div>
-  <div class="van-cell van-cell--clickable"
-       role="button"
-       tabindex="0"
+  <div
+    class="van-cell van-cell--clickable"
+    role="button"
+    tabindex="0"
   >
     <div class="van-cell__title">
       <span>
@@ -182,53 +204,60 @@ exports[`should render demo and match snapshot 1`] = `
     <i class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon">
     </i>
   </div>
-  <transition-stub name="van-fade"
-                   appear="true"
-                   persisted="false"
-                   css="true"
-                   role="button"
-                   tabindex="0"
+  <transition-stub
+    name="van-fade"
+    appear="true"
+    persisted="false"
+    css="true"
+    role="button"
+    tabindex="0"
   >
   </transition-stub>
-  <transition-stub name="van-popup-slide-bottom"
-                   appear="false"
-                   persisted="false"
-                   css="true"
+  <transition-stub
+    name="van-popup-slide-bottom"
+    appear="false"
+    persisted="false"
+    css="true"
   >
   </transition-stub>
-  <transition-stub name="van-fade"
-                   appear="true"
-                   persisted="false"
-                   css="true"
-                   role="button"
-                   tabindex="0"
+  <transition-stub
+    name="van-fade"
+    appear="true"
+    persisted="false"
+    css="true"
+    role="button"
+    tabindex="0"
   >
   </transition-stub>
-  <transition-stub name="van-popup-slide-bottom"
-                   appear="false"
-                   persisted="false"
-                   css="true"
+  <transition-stub
+    name="van-popup-slide-bottom"
+    appear="false"
+    persisted="false"
+    css="true"
   >
   </transition-stub>
-  <transition-stub name="van-fade"
-                   appear="true"
-                   persisted="false"
-                   css="true"
-                   role="button"
-                   tabindex="0"
+  <transition-stub
+    name="van-fade"
+    appear="true"
+    persisted="false"
+    css="true"
+    role="button"
+    tabindex="0"
   >
   </transition-stub>
-  <transition-stub name="van-popup-slide-bottom"
-                   appear="false"
-                   persisted="false"
-                   css="true"
+  <transition-stub
+    name="van-popup-slide-bottom"
+    appear="false"
+    persisted="false"
+    css="true"
   >
   </transition-stub>
 </div>
 <div>
-  <div class="van-cell van-cell--clickable"
-       role="button"
-       tabindex="0"
+  <div
+    class="van-cell van-cell--clickable"
+    role="button"
+    tabindex="0"
   >
     <div class="van-cell__title">
       <span>
@@ -238,23 +267,26 @@ exports[`should render demo and match snapshot 1`] = `
     <i class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon">
     </i>
   </div>
-  <transition-stub name="van-fade"
-                   appear="true"
-                   persisted="false"
-                   css="true"
-                   role="button"
-                   tabindex="0"
+  <transition-stub
+    name="van-fade"
+    appear="true"
+    persisted="false"
+    css="true"
+    role="button"
+    tabindex="0"
   >
   </transition-stub>
-  <transition-stub name="van-fade"
-                   appear="false"
-                   persisted="false"
-                   css="true"
+  <transition-stub
+    name="van-fade"
+    appear="false"
+    persisted="false"
+    css="true"
   >
   </transition-stub>
-  <div class="van-cell van-cell--clickable"
-       role="button"
-       tabindex="0"
+  <div
+    class="van-cell van-cell--clickable"
+    role="button"
+    tabindex="0"
   >
     <div class="van-cell__title">
       <span>
@@ -264,25 +296,28 @@ exports[`should render demo and match snapshot 1`] = `
     <i class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon">
     </i>
   </div>
-  <transition-stub name="van-fade"
-                   appear="true"
-                   persisted="false"
-                   css="true"
-                   role="button"
-                   tabindex="0"
+  <transition-stub
+    name="van-fade"
+    appear="true"
+    persisted="false"
+    css="true"
+    role="button"
+    tabindex="0"
   >
   </transition-stub>
-  <transition-stub name="van-popup-slide-bottom"
-                   appear="false"
-                   persisted="false"
-                   css="true"
+  <transition-stub
+    name="van-popup-slide-bottom"
+    appear="false"
+    persisted="false"
+    css="true"
   >
   </transition-stub>
 </div>
 <div>
-  <div class="van-cell van-cell--clickable"
-       role="button"
-       tabindex="0"
+  <div
+    class="van-cell van-cell--clickable"
+    role="button"
+    tabindex="0"
   >
     <div class="van-cell__title">
       <span>
@@ -292,23 +327,26 @@ exports[`should render demo and match snapshot 1`] = `
     <i class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon">
     </i>
   </div>
-  <transition-stub name="van-fade"
-                   appear="true"
-                   persisted="false"
-                   css="true"
-                   role="button"
-                   tabindex="0"
+  <transition-stub
+    name="van-fade"
+    appear="true"
+    persisted="false"
+    css="true"
+    role="button"
+    tabindex="0"
   >
   </transition-stub>
-  <transition-stub name="van-popup-slide-bottom"
-                   appear="false"
-                   persisted="false"
-                   css="true"
+  <transition-stub
+    name="van-popup-slide-bottom"
+    appear="false"
+    persisted="false"
+    css="true"
   >
   </transition-stub>
-  <div class="van-cell van-cell--clickable"
-       role="button"
-       tabindex="0"
+  <div
+    class="van-cell van-cell--clickable"
+    role="button"
+    tabindex="0"
   >
     <div class="van-cell__title">
       <span>
@@ -318,25 +356,28 @@ exports[`should render demo and match snapshot 1`] = `
     <i class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon">
     </i>
   </div>
-  <transition-stub name="van-fade"
-                   appear="true"
-                   persisted="false"
-                   css="true"
-                   role="button"
-                   tabindex="0"
+  <transition-stub
+    name="van-fade"
+    appear="true"
+    persisted="false"
+    css="true"
+    role="button"
+    tabindex="0"
   >
   </transition-stub>
-  <transition-stub name="van-popup-slide-bottom"
-                   appear="false"
-                   persisted="false"
-                   css="true"
+  <transition-stub
+    name="van-popup-slide-bottom"
+    appear="false"
+    persisted="false"
+    css="true"
   >
   </transition-stub>
 </div>
 <div>
-  <div class="van-cell van-cell--clickable"
-       role="button"
-       tabindex="0"
+  <div
+    class="van-cell van-cell--clickable"
+    role="button"
+    tabindex="0"
   >
     <div class="van-cell__title">
       <span>

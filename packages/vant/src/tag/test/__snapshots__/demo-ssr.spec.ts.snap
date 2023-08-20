@@ -1,12 +1,13 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`should render demo and match snapshot 1`] = `
 <!--[-->
 <div>
   <!--[-->
   <div class="van-cell">
-    <div class="van-cell__title"
-         style
+    <div
+      class="van-cell__title"
+      style
     >
       <span>
         primary
@@ -14,8 +15,9 @@ exports[`should render demo and match snapshot 1`] = `
     </div>
     <div class="van-cell__value">
       <!--[-->
-      <span style
-            class="van-tag van-tag--primary"
+      <span
+        style
+        class="van-tag van-tag--primary"
       >
         <!--[-->
         Tag
@@ -23,8 +25,9 @@ exports[`should render demo and match snapshot 1`] = `
     </div>
   </div>
   <div class="van-cell">
-    <div class="van-cell__title"
-         style
+    <div
+      class="van-cell__title"
+      style
     >
       <span>
         success
@@ -32,8 +35,9 @@ exports[`should render demo and match snapshot 1`] = `
     </div>
     <div class="van-cell__value">
       <!--[-->
-      <span style
-            class="van-tag van-tag--success"
+      <span
+        style
+        class="van-tag van-tag--success"
       >
         <!--[-->
         Tag
@@ -41,8 +45,9 @@ exports[`should render demo and match snapshot 1`] = `
     </div>
   </div>
   <div class="van-cell">
-    <div class="van-cell__title"
-         style
+    <div
+      class="van-cell__title"
+      style
     >
       <span>
         danger
@@ -50,8 +55,9 @@ exports[`should render demo and match snapshot 1`] = `
     </div>
     <div class="van-cell__value">
       <!--[-->
-      <span style
-            class="van-tag van-tag--danger"
+      <span
+        style
+        class="van-tag van-tag--danger"
       >
         <!--[-->
         Tag
@@ -59,8 +65,9 @@ exports[`should render demo and match snapshot 1`] = `
     </div>
   </div>
   <div class="van-cell">
-    <div class="van-cell__title"
-         style
+    <div
+      class="van-cell__title"
+      style
     >
       <span>
         warning
@@ -68,8 +75,9 @@ exports[`should render demo and match snapshot 1`] = `
     </div>
     <div class="van-cell__value">
       <!--[-->
-      <span style
-            class="van-tag van-tag--warning"
+      <span
+        style
+        class="van-tag van-tag--warning"
       >
         <!--[-->
         Tag
@@ -80,8 +88,9 @@ exports[`should render demo and match snapshot 1`] = `
 <div>
   <!--[-->
   <div class="van-cell">
-    <div class="van-cell__title"
-         style
+    <div
+      class="van-cell__title"
+      style
     >
       <span>
         Plain style
@@ -89,8 +98,9 @@ exports[`should render demo and match snapshot 1`] = `
     </div>
     <div class="van-cell__value">
       <!--[-->
-      <span style
-            class="van-tag van-tag--plain van-tag--primary"
+      <span
+        style
+        class="van-tag van-tag--plain van-tag--primary"
       >
         <!--[-->
         Tag
@@ -98,8 +108,9 @@ exports[`should render demo and match snapshot 1`] = `
     </div>
   </div>
   <div class="van-cell">
-    <div class="van-cell__title"
-         style
+    <div
+      class="van-cell__title"
+      style
     >
       <span>
         Round style
@@ -107,8 +118,9 @@ exports[`should render demo and match snapshot 1`] = `
     </div>
     <div class="van-cell__value">
       <!--[-->
-      <span style
-            class="van-tag van-tag--round van-tag--primary"
+      <span
+        style
+        class="van-tag van-tag--round van-tag--primary"
       >
         <!--[-->
         Tag
@@ -116,8 +128,9 @@ exports[`should render demo and match snapshot 1`] = `
     </div>
   </div>
   <div class="van-cell">
-    <div class="van-cell__title"
-         style
+    <div
+      class="van-cell__title"
+      style
     >
       <span>
         Mark style
@@ -125,8 +138,9 @@ exports[`should render demo and match snapshot 1`] = `
     </div>
     <div class="van-cell__value">
       <!--[-->
-      <span style
-            class="van-tag van-tag--mark van-tag--primary"
+      <span
+        style
+        class="van-tag van-tag--mark van-tag--primary"
       >
         <!--[-->
         Tag
@@ -134,8 +148,9 @@ exports[`should render demo and match snapshot 1`] = `
     </div>
   </div>
   <div class="van-cell">
-    <div class="van-cell__title"
-         style
+    <div
+      class="van-cell__title"
+      style
     >
       <span>
         Closeable
@@ -143,13 +158,15 @@ exports[`should render demo and match snapshot 1`] = `
     </div>
     <div class="van-cell__value">
       <!--[-->
-      <span style
-            class="van-tag van-tag--medium van-tag--primary"
+      <span
+        style
+        class="van-tag van-tag--medium van-tag--primary"
       >
         <!--[-->
         Tag
-        <i class="van-badge__wrapper van-icon van-icon-cross van-tag__close van-haptics-feedback"
-           style
+        <i
+          class="van-badge__wrapper van-icon van-icon-cross van-tag__close van-haptics-feedback"
+          style
         >
           <!--[-->
         </i>
@@ -160,8 +177,9 @@ exports[`should render demo and match snapshot 1`] = `
 <div>
   <!--[-->
   <div class="van-cell">
-    <div class="van-cell__title"
-         style
+    <div
+      class="van-cell__title"
+      style
     >
       <span>
         Small Size
@@ -169,8 +187,9 @@ exports[`should render demo and match snapshot 1`] = `
     </div>
     <div class="van-cell__value">
       <!--[-->
-      <span style
-            class="van-tag van-tag--primary"
+      <span
+        style
+        class="van-tag van-tag--primary"
       >
         <!--[-->
         Tag
@@ -178,8 +197,9 @@ exports[`should render demo and match snapshot 1`] = `
     </div>
   </div>
   <div class="van-cell">
-    <div class="van-cell__title"
-         style
+    <div
+      class="van-cell__title"
+      style
     >
       <span>
         Medium Size
@@ -187,8 +207,9 @@ exports[`should render demo and match snapshot 1`] = `
     </div>
     <div class="van-cell__value">
       <!--[-->
-      <span style
-            class="van-tag van-tag--medium van-tag--primary"
+      <span
+        style
+        class="van-tag van-tag--medium van-tag--primary"
       >
         <!--[-->
         Tag
@@ -196,8 +217,9 @@ exports[`should render demo and match snapshot 1`] = `
     </div>
   </div>
   <div class="van-cell">
-    <div class="van-cell__title"
-         style
+    <div
+      class="van-cell__title"
+      style
     >
       <span>
         Large Size
@@ -205,8 +227,9 @@ exports[`should render demo and match snapshot 1`] = `
     </div>
     <div class="van-cell__value">
       <!--[-->
-      <span style
-            class="van-tag van-tag--large van-tag--primary"
+      <span
+        style
+        class="van-tag van-tag--large van-tag--primary"
       >
         <!--[-->
         Tag
@@ -217,8 +240,9 @@ exports[`should render demo and match snapshot 1`] = `
 <div>
   <!--[-->
   <div class="van-cell">
-    <div class="van-cell__title"
-         style
+    <div
+      class="van-cell__title"
+      style
     >
       <span>
         Background Color
@@ -226,8 +250,9 @@ exports[`should render demo and match snapshot 1`] = `
     </div>
     <div class="van-cell__value">
       <!--[-->
-      <span style="background:#7232dd;"
-            class="van-tag van-tag--default"
+      <span
+        style="background:#7232dd;"
+        class="van-tag van-tag--default"
       >
         <!--[-->
         Tag
@@ -235,8 +260,9 @@ exports[`should render demo and match snapshot 1`] = `
     </div>
   </div>
   <div class="van-cell">
-    <div class="van-cell__title"
-         style
+    <div
+      class="van-cell__title"
+      style
     >
       <span>
         Text Color
@@ -244,8 +270,9 @@ exports[`should render demo and match snapshot 1`] = `
     </div>
     <div class="van-cell__value">
       <!--[-->
-      <span style="color:#ad0000;background:#ffe1e1;"
-            class="van-tag van-tag--default"
+      <span
+        style="color:#ad0000;background:#ffe1e1;"
+        class="van-tag van-tag--default"
       >
         <!--[-->
         Tag
@@ -253,8 +280,9 @@ exports[`should render demo and match snapshot 1`] = `
     </div>
   </div>
   <div class="van-cell">
-    <div class="van-cell__title"
-         style
+    <div
+      class="van-cell__title"
+      style
     >
       <span>
         Plain Color
@@ -262,8 +290,9 @@ exports[`should render demo and match snapshot 1`] = `
     </div>
     <div class="van-cell__value">
       <!--[-->
-      <span style="color:#7232dd;border-color:#7232dd;"
-            class="van-tag van-tag--plain van-tag--default"
+      <span
+        style="color:#7232dd;border-color:#7232dd;"
+        class="van-tag van-tag--plain van-tag--default"
       >
         <!--[-->
         Tag

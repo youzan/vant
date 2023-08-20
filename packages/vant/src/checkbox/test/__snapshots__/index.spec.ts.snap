@@ -1,10 +1,11 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`should adjust label position when using label-position prop 1`] = `
-<div role="checkbox"
-     class="van-checkbox"
-     tabindex="0"
-     aria-checked="false"
+<div
+  role="checkbox"
+  class="van-checkbox"
+  tabindex="0"
+  aria-checked="false"
 >
   <span class="van-checkbox__label van-checkbox__label--left">
     Label

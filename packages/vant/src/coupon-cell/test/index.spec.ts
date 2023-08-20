@@ -41,7 +41,7 @@ test('should render CouponCell correctly with zero discount', () => {
 });
 
 test('should click one time when coupon cell is clicked', () => {
-  const onClick = jest.fn();
+  const onClick = vi.fn();
   const wrapper = mount(CouponCell, {
     props: {
       onClick,

@@ -1,4 +1,4 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`should skeleton image render correctly 1`] = `
 <div class="van-skeleton-image van-skeleton-image--square">

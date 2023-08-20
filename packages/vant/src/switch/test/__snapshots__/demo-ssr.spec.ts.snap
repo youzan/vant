@@ -1,14 +1,15 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`should render demo and match snapshot 1`] = `
 <!--[-->
 <div>
   <!--[-->
-  <div role="switch"
-       class="van-switch van-switch--on"
-       style
-       tabindex="0"
-       aria-checked="true"
+  <div
+    role="switch"
+    class="van-switch van-switch--on"
+    style
+    tabindex="0"
+    aria-checked="true"
   >
     <div class="van-switch__node">
     </div>
@@ -16,10 +17,11 @@ exports[`should render demo and match snapshot 1`] = `
 </div>
 <div>
   <!--[-->
-  <div role="switch"
-       class="van-switch van-switch--on van-switch--disabled"
-       style
-       aria-checked="true"
+  <div
+    role="switch"
+    class="van-switch van-switch--on van-switch--disabled"
+    style
+    aria-checked="true"
   >
     <div class="van-switch__node">
     </div>
@@ -27,27 +29,32 @@ exports[`should render demo and match snapshot 1`] = `
 </div>
 <div>
   <!--[-->
-  <div role="switch"
-       class="van-switch van-switch--on van-switch--loading"
-       style
-       tabindex="0"
-       aria-checked="true"
+  <div
+    role="switch"
+    class="van-switch van-switch--on van-switch--loading"
+    style
+    tabindex="0"
+    aria-checked="true"
   >
     <div class="van-switch__node">
-      <div class="van-loading van-loading--circular van-switch__loading"
-           aria-live="polite"
-           aria-busy="true"
+      <div
+        class="van-loading van-loading--circular van-switch__loading"
+        aria-live="polite"
+        aria-busy="true"
       >
-        <span class="van-loading__spinner van-loading__spinner--circular"
-              style
+        <span
+          class="van-loading__spinner van-loading__spinner--circular"
+          style
         >
-          <svg class="van-loading__circular"
-               viewbox="25 25 50 50"
+          <svg
+            class="van-loading__circular"
+            viewbox="25 25 50 50"
           >
-            <circle cx="50"
-                    cy="50"
-                    r="20"
-                    fill="none"
+            <circle
+              cx="50"
+              cy="50"
+              r="20"
+              fill="none"
             >
             </circle>
           </svg>
@@ -58,11 +65,12 @@ exports[`should render demo and match snapshot 1`] = `
 </div>
 <div>
   <!--[-->
-  <div role="switch"
-       class="van-switch van-switch--on"
-       style="font-size:22px;"
-       tabindex="0"
-       aria-checked="true"
+  <div
+    role="switch"
+    class="van-switch van-switch--on"
+    style="font-size:22px;"
+    tabindex="0"
+    aria-checked="true"
   >
     <div class="van-switch__node">
     </div>
@@ -70,11 +78,12 @@ exports[`should render demo and match snapshot 1`] = `
 </div>
 <div>
   <!--[-->
-  <div role="switch"
-       class="van-switch van-switch--on"
-       style="background-color:#ee0a24;"
-       tabindex="0"
-       aria-checked="true"
+  <div
+    role="switch"
+    class="van-switch van-switch--on"
+    style="background-color:#ee0a24;"
+    tabindex="0"
+    aria-checked="true"
   >
     <div class="van-switch__node">
     </div>
@@ -82,17 +91,19 @@ exports[`should render demo and match snapshot 1`] = `
 </div>
 <div>
   <!--[-->
-  <div role="switch"
-       class="van-switch van-switch--on"
-       style
-       tabindex="0"
-       aria-checked="true"
+  <div
+    role="switch"
+    class="van-switch van-switch--on"
+    style
+    tabindex="0"
+    aria-checked="true"
   >
     <div class="van-switch__node">
       <!--[-->
       <div class="icon-wrapper">
-        <i class="van-badge__wrapper van-icon van-icon-success"
-           style
+        <i
+          class="van-badge__wrapper van-icon van-icon-success"
+          style
         >
           <!--[-->
         </i>
@@ -102,11 +113,12 @@ exports[`should render demo and match snapshot 1`] = `
 </div>
 <div>
   <!--[-->
-  <div role="switch"
-       class="van-switch van-switch--on"
-       style
-       tabindex="0"
-       aria-checked="true"
+  <div
+    role="switch"
+    class="van-switch van-switch--on"
+    style
+    tabindex="0"
+    aria-checked="true"
   >
     <div class="van-switch__node">
     </div>
@@ -115,19 +127,21 @@ exports[`should render demo and match snapshot 1`] = `
 <div>
   <!--[-->
   <div class="van-cell van-cell--center">
-    <div class="van-cell__title"
-         style
+    <div
+      class="van-cell__title"
+      style
     >
       <span>
         Title
       </span>
     </div>
     <!--[-->
-    <div role="switch"
-         class="van-switch van-switch--on"
-         style
-         tabindex="0"
-         aria-checked="true"
+    <div
+      role="switch"
+      class="van-switch van-switch--on"
+      style
+      tabindex="0"
+      aria-checked="true"
     >
       <div class="van-switch__node">
       </div>

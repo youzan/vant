@@ -1,9 +1,10 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`should render button text correctly 1`] = `
 <div class="van-hairline--top van-dialog__footer">
-  <button type="button"
-          class="van-button van-button--default van-button--large van-dialog__cancel"
+  <button
+    type="button"
+    class="van-button van-button--default van-button--large van-dialog__cancel"
   >
     <div class="van-button__content">
       <span class="van-button__text">
@@ -11,8 +12,9 @@ exports[`should render button text correctly 1`] = `
       </span>
     </div>
   </button>
-  <button type="button"
-          class="van-button van-button--default van-button--large van-dialog__confirm van-hairline--left"
+  <button
+    type="button"
+    class="van-button van-button--default van-button--large van-dialog__confirm van-hairline--left"
   >
     <div class="van-button__content">
       <span class="van-button__text">
@@ -30,10 +32,11 @@ exports[`should render default slot correctly 1`] = `
 `;
 
 exports[`should render footer slot correctly 1`] = `
-<div role="dialog"
-     tabindex="0"
-     class="van-popup van-popup--center van-dialog"
-     aria-labelledby="message"
+<div
+  role="dialog"
+  tabindex="0"
+  class="van-popup van-popup--center van-dialog"
+  aria-labelledby="message"
 >
   <div class="van-dialog__content van-dialog__content--isolated">
     <div class="van-dialog__message">

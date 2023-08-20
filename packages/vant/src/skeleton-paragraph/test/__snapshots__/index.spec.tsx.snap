@@ -1,15 +1,17 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`should skeleton paragraph works 1`] = `
-<div class="van-skeleton-paragraph"
-     style="width: 100%;"
+<div
+  class="van-skeleton-paragraph"
+  style="width: 100%;"
 >
 </div>
 `;
 
 exports[`should skeleton paragraph works with props 1`] = `
-<div class="van-skeleton-paragraph van-skeleton-paragraph--round"
-     style="width: 200rem;"
+<div
+  class="van-skeleton-paragraph van-skeleton-paragraph--round"
+  style="width: 200rem;"
 >
 </div>
 `;

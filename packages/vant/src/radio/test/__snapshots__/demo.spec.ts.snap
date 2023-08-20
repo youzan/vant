@@ -1,14 +1,16 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`should render demo and match snapshot 1`] = `
 <div>
-  <div class="van-radio-group demo-radio-group"
-       role="radiogroup"
+  <div
+    class="van-radio-group demo-radio-group"
+    role="radiogroup"
   >
-    <div role="radio"
-         class="van-radio"
-         tabindex="0"
-         aria-checked="true"
+    <div
+      role="radio"
+      class="van-radio"
+      tabindex="0"
+      aria-checked="true"
     >
       <div class="van-radio__icon van-radio__icon--round van-radio__icon--checked">
         <i class="van-badge__wrapper van-icon van-icon-success">
@@ -18,10 +20,11 @@ exports[`should render demo and match snapshot 1`] = `
         Radio 1
       </span>
     </div>
-    <div role="radio"
-         class="van-radio"
-         tabindex="0"
-         aria-checked="false"
+    <div
+      role="radio"
+      class="van-radio"
+      tabindex="0"
+      aria-checked="false"
     >
       <div class="van-radio__icon van-radio__icon--round">
         <i class="van-badge__wrapper van-icon van-icon-success">
@@ -34,13 +37,15 @@ exports[`should render demo and match snapshot 1`] = `
   </div>
 </div>
 <div>
-  <div class="van-radio-group van-radio-group--horizontal demo-radio-group"
-       role="radiogroup"
+  <div
+    class="van-radio-group van-radio-group--horizontal demo-radio-group"
+    role="radiogroup"
   >
-    <div role="radio"
-         class="van-radio van-radio--horizontal"
-         tabindex="0"
-         aria-checked="true"
+    <div
+      role="radio"
+      class="van-radio van-radio--horizontal"
+      tabindex="0"
+      aria-checked="true"
     >
       <div class="van-radio__icon van-radio__icon--round van-radio__icon--checked">
         <i class="van-badge__wrapper van-icon van-icon-success">
@@ -50,10 +55,11 @@ exports[`should render demo and match snapshot 1`] = `
         Radio 1
       </span>
     </div>
-    <div role="radio"
-         class="van-radio van-radio--horizontal"
-         tabindex="0"
-         aria-checked="false"
+    <div
+      role="radio"
+      class="van-radio van-radio--horizontal"
+      tabindex="0"
+      aria-checked="false"
     >
       <div class="van-radio__icon van-radio__icon--round">
         <i class="van-badge__wrapper van-icon van-icon-success">
@@ -66,12 +72,14 @@ exports[`should render demo and match snapshot 1`] = `
   </div>
 </div>
 <div>
-  <div class="van-radio-group demo-radio-group"
-       role="radiogroup"
+  <div
+    class="van-radio-group demo-radio-group"
+    role="radiogroup"
   >
-    <div role="radio"
-         class="van-radio van-radio--disabled"
-         aria-checked="false"
+    <div
+      role="radio"
+      class="van-radio van-radio--disabled"
+      aria-checked="false"
     >
       <div class="van-radio__icon van-radio__icon--round van-radio__icon--disabled">
         <i class="van-badge__wrapper van-icon van-icon-success">
@@ -81,9 +89,10 @@ exports[`should render demo and match snapshot 1`] = `
         Radio 1
       </span>
     </div>
-    <div role="radio"
-         class="van-radio van-radio--disabled"
-         aria-checked="true"
+    <div
+      role="radio"
+      class="van-radio van-radio--disabled"
+      aria-checked="true"
     >
       <div class="van-radio__icon van-radio__icon--round van-radio__icon--disabled van-radio__icon--checked">
         <i class="van-badge__wrapper van-icon van-icon-success">
@@ -96,13 +105,15 @@ exports[`should render demo and match snapshot 1`] = `
   </div>
 </div>
 <div>
-  <div class="van-radio-group demo-radio-group"
-       role="radiogroup"
+  <div
+    class="van-radio-group demo-radio-group"
+    role="radiogroup"
   >
-    <div role="radio"
-         class="van-radio"
-         tabindex="0"
-         aria-checked="true"
+    <div
+      role="radio"
+      class="van-radio"
+      tabindex="0"
+      aria-checked="true"
     >
       <div class="van-radio__icon van-radio__icon--square van-radio__icon--checked">
         <i class="van-badge__wrapper van-icon van-icon-success">
@@ -112,10 +123,11 @@ exports[`should render demo and match snapshot 1`] = `
         Radio 1
       </span>
     </div>
-    <div role="radio"
-         class="van-radio"
-         tabindex="0"
-         aria-checked="false"
+    <div
+      role="radio"
+      class="van-radio"
+      tabindex="0"
+      aria-checked="false"
     >
       <div class="van-radio__icon van-radio__icon--square">
         <i class="van-badge__wrapper van-icon van-icon-success">
@@ -126,14 +138,16 @@ exports[`should render demo and match snapshot 1`] = `
       </span>
     </div>
   </div>
-  <div class="van-radio-group demo-radio-group"
-       role="radiogroup"
-       style="margin-top: 20px;"
+  <div
+    class="van-radio-group demo-radio-group"
+    role="radiogroup"
+    style="margin-top: 20px;"
   >
-    <div role="radio"
-         class="van-radio"
-         tabindex="0"
-         aria-checked="true"
+    <div
+      role="radio"
+      class="van-radio"
+      tabindex="0"
+      aria-checked="true"
     >
       <div class="van-radio__icon van-radio__icon--dot van-radio__icon--checked">
         <div class="van-radio__icon--dot__icon">
@@ -143,10 +157,11 @@ exports[`should render demo and match snapshot 1`] = `
         Radio 1
       </span>
     </div>
-    <div role="radio"
-         class="van-radio"
-         tabindex="0"
-         aria-checked="false"
+    <div
+      role="radio"
+      class="van-radio"
+      tabindex="0"
+      aria-checked="false"
     >
       <div class="van-radio__icon van-radio__icon--dot">
         <div class="van-radio__icon--dot__icon">
@@ -159,17 +174,20 @@ exports[`should render demo and match snapshot 1`] = `
   </div>
 </div>
 <div>
-  <div class="van-radio-group demo-radio-group"
-       role="radiogroup"
+  <div
+    class="van-radio-group demo-radio-group"
+    role="radiogroup"
   >
-    <div role="radio"
-         class="van-radio"
-         tabindex="0"
-         aria-checked="true"
+    <div
+      role="radio"
+      class="van-radio"
+      tabindex="0"
+      aria-checked="true"
     >
       <div class="van-radio__icon van-radio__icon--round van-radio__icon--checked">
-        <i class="van-badge__wrapper van-icon van-icon-success"
-           style="border-color: #ee0a24; background-color: rgb(238, 10, 36);"
+        <i
+          class="van-badge__wrapper van-icon van-icon-success"
+          style="border-color: #ee0a24; background-color: rgb(238, 10, 36);"
         >
         </i>
       </div>
@@ -177,10 +195,11 @@ exports[`should render demo and match snapshot 1`] = `
         Radio 1
       </span>
     </div>
-    <div role="radio"
-         class="van-radio"
-         tabindex="0"
-         aria-checked="false"
+    <div
+      role="radio"
+      class="van-radio"
+      tabindex="0"
+      aria-checked="false"
     >
       <div class="van-radio__icon van-radio__icon--round">
         <i class="van-badge__wrapper van-icon van-icon-success">
@@ -193,16 +212,19 @@ exports[`should render demo and match snapshot 1`] = `
   </div>
 </div>
 <div>
-  <div class="van-radio-group demo-radio-group"
-       role="radiogroup"
+  <div
+    class="van-radio-group demo-radio-group"
+    role="radiogroup"
   >
-    <div role="radio"
-         class="van-radio"
-         tabindex="0"
-         aria-checked="true"
+    <div
+      role="radio"
+      class="van-radio"
+      tabindex="0"
+      aria-checked="true"
     >
-      <div class="van-radio__icon van-radio__icon--round van-radio__icon--checked"
-           style="font-size: 24px;"
+      <div
+        class="van-radio__icon van-radio__icon--round van-radio__icon--checked"
+        style="font-size: 24px;"
       >
         <i class="van-badge__wrapper van-icon van-icon-success">
         </i>
@@ -211,13 +233,15 @@ exports[`should render demo and match snapshot 1`] = `
         Radio 1
       </span>
     </div>
-    <div role="radio"
-         class="van-radio"
-         tabindex="0"
-         aria-checked="false"
+    <div
+      role="radio"
+      class="van-radio"
+      tabindex="0"
+      aria-checked="false"
     >
-      <div class="van-radio__icon van-radio__icon--round"
-           style="font-size: 24px;"
+      <div
+        class="van-radio__icon van-radio__icon--round"
+        style="font-size: 24px;"
       >
         <i class="van-badge__wrapper van-icon van-icon-success">
         </i>
@@ -229,13 +253,15 @@ exports[`should render demo and match snapshot 1`] = `
   </div>
 </div>
 <div>
-  <div class="van-radio-group demo-radio-group"
-       role="radiogroup"
+  <div
+    class="van-radio-group demo-radio-group"
+    role="radiogroup"
   >
-    <div role="radio"
-         class="van-radio"
-         tabindex="0"
-         aria-checked="true"
+    <div
+      role="radio"
+      class="van-radio"
+      tabindex="0"
+      aria-checked="true"
     >
       <div class="van-radio__icon van-radio__icon--round van-radio__icon--checked">
         <img src="https://fastly.jsdelivr.net/npm/@vant/assets/user-active.png">
@@ -244,10 +270,11 @@ exports[`should render demo and match snapshot 1`] = `
         Radio 1
       </span>
     </div>
-    <div role="radio"
-         class="van-radio"
-         tabindex="0"
-         aria-checked="false"
+    <div
+      role="radio"
+      class="van-radio"
+      tabindex="0"
+      aria-checked="false"
     >
       <div class="van-radio__icon van-radio__icon--round">
         <img src="https://fastly.jsdelivr.net/npm/@vant/assets/user-inactive.png">
@@ -259,13 +286,15 @@ exports[`should render demo and match snapshot 1`] = `
   </div>
 </div>
 <div>
-  <div class="van-radio-group demo-radio-group"
-       role="radiogroup"
+  <div
+    class="van-radio-group demo-radio-group"
+    role="radiogroup"
   >
-    <div role="radio"
-         class="van-radio"
-         tabindex="0"
-         aria-checked="true"
+    <div
+      role="radio"
+      class="van-radio"
+      tabindex="0"
+      aria-checked="true"
     >
       <span class="van-radio__label van-radio__label--left">
         Radio 1
@@ -275,10 +304,11 @@ exports[`should render demo and match snapshot 1`] = `
         </i>
       </div>
     </div>
-    <div role="radio"
-         class="van-radio"
-         tabindex="0"
-         aria-checked="false"
+    <div
+      role="radio"
+      class="van-radio"
+      tabindex="0"
+      aria-checked="false"
     >
       <span class="van-radio__label van-radio__label--left">
         Radio 2
@@ -291,13 +321,15 @@ exports[`should render demo and match snapshot 1`] = `
   </div>
 </div>
 <div>
-  <div class="van-radio-group demo-radio-group"
-       role="radiogroup"
+  <div
+    class="van-radio-group demo-radio-group"
+    role="radiogroup"
   >
-    <div role="radio"
-         class="van-radio van-radio--label-disabled"
-         tabindex="0"
-         aria-checked="true"
+    <div
+      role="radio"
+      class="van-radio van-radio--label-disabled"
+      tabindex="0"
+      aria-checked="true"
     >
       <div class="van-radio__icon van-radio__icon--round van-radio__icon--checked">
         <i class="van-badge__wrapper van-icon van-icon-success">
@@ -307,10 +339,11 @@ exports[`should render demo and match snapshot 1`] = `
         Radio 1
       </span>
     </div>
-    <div role="radio"
-         class="van-radio van-radio--label-disabled"
-         tabindex="0"
-         aria-checked="false"
+    <div
+      role="radio"
+      class="van-radio van-radio--label-disabled"
+      tabindex="0"
+      aria-checked="false"
     >
       <div class="van-radio__icon van-radio__icon--round">
         <i class="van-badge__wrapper van-icon van-icon-success">
@@ -323,23 +356,26 @@ exports[`should render demo and match snapshot 1`] = `
   </div>
 </div>
 <div>
-  <div class="van-radio-group"
-       role="radiogroup"
+  <div
+    class="van-radio-group"
+    role="radiogroup"
   >
     <div class="van-cell-group van-cell-group--inset">
-      <div class="van-cell van-cell--clickable"
-           role="button"
-           tabindex="0"
+      <div
+        class="van-cell van-cell--clickable"
+        role="button"
+        tabindex="0"
       >
         <div class="van-cell__title">
           <span>
             Radio1
           </span>
         </div>
-        <div role="radio"
-             class="van-radio"
-             tabindex="0"
-             aria-checked="true"
+        <div
+          role="radio"
+          class="van-radio"
+          tabindex="0"
+          aria-checked="true"
         >
           <div class="van-radio__icon van-radio__icon--round van-radio__icon--checked">
             <i class="van-badge__wrapper van-icon van-icon-success">
@@ -347,19 +383,21 @@ exports[`should render demo and match snapshot 1`] = `
           </div>
         </div>
       </div>
-      <div class="van-cell van-cell--clickable"
-           role="button"
-           tabindex="0"
+      <div
+        class="van-cell van-cell--clickable"
+        role="button"
+        tabindex="0"
       >
         <div class="van-cell__title">
           <span>
             Radio2
           </span>
         </div>
-        <div role="radio"
-             class="van-radio"
-             tabindex="0"
-             aria-checked="false"
+        <div
+          role="radio"
+          class="van-radio"
+          tabindex="0"
+          aria-checked="false"
         >
           <div class="van-radio__icon van-radio__icon--round">
             <i class="van-badge__wrapper van-icon van-icon-success">

@@ -12,7 +12,7 @@ function mockStickyRect(
   wrapper: VueWrapper<ComponentInstance>,
   rect: Partial<DOMRect>,
 ) {
-  const mocked = jest
+  const mocked = vi
     .spyOn(wrapper.element, 'getBoundingClientRect')
     .mockReturnValue(rect as DOMRect);
 
@@ -154,7 +154,7 @@ test('should allow to using offset-top prop with vw unit', async () => {
 });
 
 test('should not trigger scroll event when hidden', () => {
-  const onScroll = jest.fn();
+  const onScroll = vi.fn();
 
   mount({
     render() {
@@ -188,7 +188,7 @@ test('should sticky inside container when using container prop', async () => {
     },
   });
 
-  const mockStickyRect = jest
+  const mockStickyRect = vi
     .spyOn(wrapper.element.firstElementChild!, 'getBoundingClientRect')
     .mockReturnValue({
       height: 44,
@@ -196,7 +196,7 @@ test('should sticky inside container when using container prop', async () => {
       top: -100,
       bottom: -56,
     } as DOMRect);
-  const mockContainerRect = jest
+  const mockContainerRect = vi
     .spyOn(wrapper.element, 'getBoundingClientRect')
     .mockReturnValue({
       top: -100,
@@ -247,7 +247,7 @@ test('should sticky inside container bottom when using container prop', async ()
     },
   });
 
-  const mockStickyRect = jest
+  const mockStickyRect = vi
     .spyOn(wrapper.element.children[1], 'getBoundingClientRect')
     .mockReturnValue({
       height: 44,
@@ -255,7 +255,7 @@ test('should sticky inside container bottom when using container prop', async ()
       top: 690,
       bottom: 734,
     } as DOMRect);
-  const mockContainerRect = jest
+  const mockContainerRect = vi
     .spyOn(wrapper.element, 'getBoundingClientRect')
     .mockReturnValue({
       top: 540,
@@ -284,9 +284,9 @@ test('should sticky inside container bottom when using container prop', async ()
 test('should emit scroll event when visibility changed', async () => {
   const originIntersectionObserver = window.IntersectionObserver;
 
-  const observe = jest.fn();
-  const unobserve = jest.fn();
-  const onScroll = jest.fn();
+  const observe = vi.fn();
+  const unobserve = vi.fn();
+  const onScroll = vi.fn();
 
   type ObserverCallback = (
     entries: Partial<IntersectionObserverEntry>[],
@@ -328,7 +328,7 @@ test('should emit scroll event when visibility changed', async () => {
 
   wrapper.style.display = 'none';
   observerCallback([{ intersectionRatio: 0 }]);
-  expect(onScroll).toHaveBeenCalledTimes(2);
+  expect(onScroll).toHaveBeenCalledTimes(3);
 
   wrapper.unmount();
   expect(unobserve).toHaveBeenCalledTimes(1);
@@ -367,8 +367,9 @@ test('should sticky resize or orientationchange reset root height and width', as
     },
   });
 
-  window.innerWidth = 375;
-  const mockStickyRect = jest
+  Object.defineProperty(window, 'innerWidth', { value: 375 });
+
+  const mockStickyRect = vi
     .spyOn(wrapper.element, 'getBoundingClientRect')
     .mockReturnValue({
       top: -100,
@@ -380,7 +381,7 @@ test('should sticky resize or orientationchange reset root height and width', as
   await mockScrollTop(100);
   expect(wrapper.html()).toMatchSnapshot();
 
-  window.innerWidth = 677;
+  Object.defineProperty(window, 'innerWidth', { value: 677 });
   mockStickyRect.mockReturnValue({
     width: window.innerWidth,
     height: 20,

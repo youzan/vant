@@ -1,20 +1,23 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`should render demo and match snapshot 1`] = `
 <!--[-->
 <div>
   <!--[-->
-  <div class="van-cell van-cell--clickable van-field"
-       role="button"
-       tabindex="0"
+  <div
+    class="van-cell van-cell--clickable van-field"
+    role="button"
+    tabindex="0"
   >
-    <div class="van-cell__title van-field__label"
-         style
+    <div
+      class="van-cell__title van-field__label"
+      style
     >
       <!--[-->
-      <label id="van-field-label"
-             for="van-field-input"
-             style
+      <label
+        id="van-field-label"
+        for="van-field-input"
+        style
       >
         Area
       </label>
@@ -22,17 +25,19 @@ exports[`should render demo and match snapshot 1`] = `
     <div class="van-cell__value van-field__value">
       <!--[-->
       <div class="van-field__body">
-        <input type="text"
-               id="van-field-input"
-               class="van-field__control"
-               readonly
-               placeholder="Select Area"
-               aria-labelledby="van-field-label"
+        <input
+          type="text"
+          id="van-field-input"
+          class="van-field__control"
+          readonly
+          placeholder="Select Area"
+          aria-labelledby="van-field-label"
         >
       </div>
     </div>
-    <i class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon"
-       style
+    <i
+      class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon"
+      style
     >
       <!--[-->
     </i>
@@ -40,17 +45,20 @@ exports[`should render demo and match snapshot 1`] = `
 </div>
 <div>
   <!--[-->
-  <div class="van-cell van-cell--clickable van-field"
-       role="button"
-       tabindex="0"
+  <div
+    class="van-cell van-cell--clickable van-field"
+    role="button"
+    tabindex="0"
   >
-    <div class="van-cell__title van-field__label"
-         style
+    <div
+      class="van-cell__title van-field__label"
+      style
     >
       <!--[-->
-      <label id="van-field-label"
-             for="van-field-input"
-             style
+      <label
+        id="van-field-label"
+        for="van-field-input"
+        style
       >
         Area
       </label>
@@ -58,17 +66,19 @@ exports[`should render demo and match snapshot 1`] = `
     <div class="van-cell__value van-field__value">
       <!--[-->
       <div class="van-field__body">
-        <input type="text"
-               id="van-field-input"
-               class="van-field__control"
-               readonly
-               placeholder="Select Area"
-               aria-labelledby="van-field-label"
+        <input
+          type="text"
+          id="van-field-input"
+          class="van-field__control"
+          readonly
+          placeholder="Select Area"
+          aria-labelledby="van-field-label"
         >
       </div>
     </div>
-    <i class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon"
-       style
+    <i
+      class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon"
+      style
     >
       <!--[-->
     </i>
@@ -76,17 +86,20 @@ exports[`should render demo and match snapshot 1`] = `
 </div>
 <div>
   <!--[-->
-  <div class="van-cell van-cell--clickable van-field"
-       role="button"
-       tabindex="0"
+  <div
+    class="van-cell van-cell--clickable van-field"
+    role="button"
+    tabindex="0"
   >
-    <div class="van-cell__title van-field__label"
-         style
+    <div
+      class="van-cell__title van-field__label"
+      style
     >
       <!--[-->
-      <label id="van-field-label"
-             for="van-field-input"
-             style
+      <label
+        id="van-field-label"
+        for="van-field-input"
+        style
       >
         Area
       </label>
@@ -94,17 +107,19 @@ exports[`should render demo and match snapshot 1`] = `
     <div class="van-cell__value van-field__value">
       <!--[-->
       <div class="van-field__body">
-        <input type="text"
-               id="van-field-input"
-               class="van-field__control"
-               readonly
-               placeholder="Select Area"
-               aria-labelledby="van-field-label"
+        <input
+          type="text"
+          id="van-field-input"
+          class="van-field__control"
+          readonly
+          placeholder="Select Area"
+          aria-labelledby="van-field-label"
         >
       </div>
     </div>
-    <i class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon"
-       style
+    <i
+      class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon"
+      style
     >
       <!--[-->
     </i>
@@ -112,17 +127,20 @@ exports[`should render demo and match snapshot 1`] = `
 </div>
 <div>
   <!--[-->
-  <div class="van-cell van-cell--clickable van-field"
-       role="button"
-       tabindex="0"
+  <div
+    class="van-cell van-cell--clickable van-field"
+    role="button"
+    tabindex="0"
   >
-    <div class="van-cell__title van-field__label"
-         style
+    <div
+      class="van-cell__title van-field__label"
+      style
     >
       <!--[-->
-      <label id="van-field-label"
-             for="van-field-input"
-             style
+      <label
+        id="van-field-label"
+        for="van-field-input"
+        style
       >
         Area
       </label>
@@ -130,17 +148,19 @@ exports[`should render demo and match snapshot 1`] = `
     <div class="van-cell__value van-field__value">
       <!--[-->
       <div class="van-field__body">
-        <input type="text"
-               id="van-field-input"
-               class="van-field__control"
-               readonly
-               placeholder="Select Area"
-               aria-labelledby="van-field-label"
+        <input
+          type="text"
+          id="van-field-input"
+          class="van-field__control"
+          readonly
+          placeholder="Select Area"
+          aria-labelledby="van-field-label"
         >
       </div>
     </div>
-    <i class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon"
-       style
+    <i
+      class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon"
+      style
     >
       <!--[-->
     </i>
@@ -148,17 +168,20 @@ exports[`should render demo and match snapshot 1`] = `
 </div>
 <div>
   <!--[-->
-  <div class="van-cell van-cell--clickable van-field"
-       role="button"
-       tabindex="0"
+  <div
+    class="van-cell van-cell--clickable van-field"
+    role="button"
+    tabindex="0"
   >
-    <div class="van-cell__title van-field__label"
-         style
+    <div
+      class="van-cell__title van-field__label"
+      style
     >
       <!--[-->
-      <label id="van-field-label"
-             for="van-field-input"
-             style
+      <label
+        id="van-field-label"
+        for="van-field-input"
+        style
       >
         Area
       </label>
@@ -166,17 +189,19 @@ exports[`should render demo and match snapshot 1`] = `
     <div class="van-cell__value van-field__value">
       <!--[-->
       <div class="van-field__body">
-        <input type="text"
-               id="van-field-input"
-               class="van-field__control"
-               readonly
-               placeholder="Select Area"
-               aria-labelledby="van-field-label"
+        <input
+          type="text"
+          id="van-field-input"
+          class="van-field__control"
+          readonly
+          placeholder="Select Area"
+          aria-labelledby="van-field-label"
         >
       </div>
     </div>
-    <i class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon"
-       style
+    <i
+      class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon"
+      style
     >
       <!--[-->
     </i>
