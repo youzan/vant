@@ -9,6 +9,7 @@ export default defineConfig({
   test: {
     globals: true,
     coverage: {
+      provider: 'istanbul',
       include: ['src/**/*.[jt]s?(x)'],
       exclude: [
         'src/lazyload/vue-lazyload/**',
