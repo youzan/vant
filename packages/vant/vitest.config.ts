@@ -16,6 +16,7 @@ export default defineConfig({
         '**/test/**',
         '**/lang/**',
       ],
+      reporter: ['html', 'clover', 'text-summary'],
       reportsDirectory: './test/coverage',
     },
     environment: 'jsdom',
