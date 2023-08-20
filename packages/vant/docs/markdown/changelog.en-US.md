@@ -19,6 +19,24 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 
 ## Details
 
+### v4.6.6
+
+`2023-08-20`
+
+#### New Features 🎉
+
+- feat(DropdownItem): supports boolean value in options by [@baboon-king](https://github.com/baboon-king) in [#12208](https://github.com/youzan/vant/pull/12208)
+
+#### Bug Fixes 🐞
+
+- fix(FloatingBubble): drag should not trigger click on child elements by [@zhousg](https://github.com/zhousg) in [#12201](https://github.com/youzan/vant/pull/12201)
+- fix(FloatingBubble): does not update state while hidden by [@zhousg](https://github.com/zhousg) in [#12207](https://github.com/youzan/vant/pull/12207)
+
+#### Other Changes
+
+- chore(CI): update issue comment messages by [@chenjiahan](https://github.com/chenjiahan) in [#12204](https://github.com/youzan/vant/pull/12204)
+- refactor(cli): remove execa dependency by [@chenjiahan](https://github.com/chenjiahan) in [#12205](https://github.com/youzan/vant/pull/12205)
+
 ### v4.6.5
 
 `2023-08-16`

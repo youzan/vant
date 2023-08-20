@@ -19,6 +19,24 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 
 ## 更新内容
 
+### v4.6.6
+
+`2023-08-20`
+
+#### 新功能 🎉
+
+- feat(DropdownItem): 支持在 options 的 value 中传入布尔值 by [@baboon-king](https://github.com/baboon-king) in [#12208](https://github.com/youzan/vant/pull/12208)
+
+#### Bug 修复 🐞
+
+- fix(FloatingBubble): 拖动时不应触发子元素的点击事件 by [@zhousg](https://github.com/zhousg) in [#12201](https://github.com/youzan/vant/pull/12201)
+- fix(FloatingBubble): 隐藏时不更新状态 by [@zhousg](https://github.com/zhousg) in [#12207](https://github.com/youzan/vant/pull/12207)
+
+#### 其他变更
+
+- chore(CI): 更新 issue 评论消息的内容 by [@chenjiahan](https://github.com/chenjiahan) in [#12204](https://github.com/youzan/vant/pull/12204)
+- refactor(cli): 移除 execa 依赖 by [@chenjiahan](https://github.com/chenjiahan) in [#12205](https://github.com/youzan/vant/pull/12205)
+
 ### v4.6.5
 
 `2023-08-16`
