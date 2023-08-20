@@ -8,7 +8,6 @@ export default defineConfig({
   test: {
     globals: true,
     coverage: {
-      enabled: true,
       include: ['src/**/*.[jt]s?(x)'],
       exclude: [
         'src/lazyload/vue-lazyload/**',

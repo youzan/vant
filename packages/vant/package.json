@@ -22,7 +22,8 @@
     "release:site": "pnpm build:site && npx gh-pages -d site-dist --add",
     "test:update": "vitest run -u",
     "test:watch": "vitest",
-    "test:coverage": "open test/coverage/index.html"
+    "test:coverage": "vitest run --coverage",
+    "open:coverage": "open test/coverage/index.html"
   },
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
