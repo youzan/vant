@@ -23,7 +23,7 @@
     "test:update": "vitest run -u",
     "test:watch": "vitest",
     "test:coverage": "vitest run --coverage",
-    "open:coverage": "open test/coverage/index.html"
+    "open:coverage": "open test/coverage/lcov-report/index.html"
   },
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
