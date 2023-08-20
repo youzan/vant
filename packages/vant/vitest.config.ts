@@ -16,7 +16,6 @@ export default defineConfig({
         '**/test/**',
         '**/lang/**',
       ],
-      reporter: ['html', 'lcov', 'text-summary'],
       reportsDirectory: './test/coverage',
     },
     environment: 'jsdom',
