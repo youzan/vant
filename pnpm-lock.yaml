@@ -110,7 +110,7 @@ importers:
         specifier: ^4.4.2
         version: 4.4.9(@types/node@18.17.5)
       vitest:
-        specifier: ^0.34.2
+        specifier: 0.34.2
         version: 0.34.2(jsdom@22.1.0)
       vitest-canvas-mock:
         specifier: ^0.3.2
