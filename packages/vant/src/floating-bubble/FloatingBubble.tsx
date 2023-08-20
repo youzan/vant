@@ -104,6 +104,9 @@ export default defineComponent({
     });
 
     const updateState = () => {
+      // onDeactivated with window size change will cause this
+      if (!show.value) return;
+
       const { width, height } = useRect(rootRef.value!);
       const { offset } = props;
       state.value = {
