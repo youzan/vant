@@ -5,7 +5,7 @@ import { cpus } from 'os';
 
 // const isCI = Boolean(process.env.GITHUB_ACTIONS);
 
-console.log('cpu core', Math.max(cpus().length - 1, 1));
+const core = Math.max(cpus().length - 1, 1);
 
 export default defineConfig({
   test: {
@@ -24,11 +24,9 @@ export default defineConfig({
     environment: 'jsdom',
     include: ['src/**/*.spec.[jt]s?(x)'],
     restoreMocks: true,
-    // enable single thread in CI because it is faster
-    // singleThread: isCI,
-    // disable experimentalVmThreads on CI because it causes OOM
     experimentalVmThreads: true,
-    experimentalVmWorkerMemoryLimit: 0.1,
+    // limit the memory to avoid OOM
+    experimentalVmWorkerMemoryLimit: 1 / (core * 2),
   },
   plugins: [vitePluginVue(), vitePluginJsx()],
 });
