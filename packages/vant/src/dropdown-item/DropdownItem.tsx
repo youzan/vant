@@ -146,7 +146,7 @@ export default defineComponent({
         <Cell
           v-slots={{ value: renderIcon }}
           role="menuitem"
-          key={option.value}
+          key={String(option.value)}
           icon={option.icon}
           title={option.text}
           class={bem('option', { active })}
