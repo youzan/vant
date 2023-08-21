@@ -14,6 +14,14 @@ export function cancelRaf(id: number) {
   }
 }
 
+export function useRaf(fn: FrameRequestCallback): () => void {
+  if (inBrowser) {
+    const id = requestAnimationFrame(fn);
+    return () => cancelAnimationFrame(id);
+  }
+  return () => {};
+}
+
 // double raf for animation
 export function doubleRaf(fn: FrameRequestCallback): void {
   raf(() => raf(fn));
