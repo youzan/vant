@@ -38,6 +38,26 @@ export default {
 };
 ```
 
+### indeterminate
+
+```html
+<van-checkbox v-model="checked" :indeterminate="isIndeterminate"
+  >Checkbox</van-checkbox
+>
+```
+
+```js
+import { ref } from 'vue';
+
+export default {
+  setup() {
+    const checked = ref(true);
+    const isIndeterminate = ref(true);
+    return { checked, isIndeterminate };
+  },
+};
+```
+
 ### Disabled
 
 ```html
@@ -280,6 +300,7 @@ export default {
 | icon-size | Icon size | _number \| string_ | `20px` |
 | checked-color | Checked color | _string_ | `#1989fa` |
 | bind-group | Whether to bind with CheckboxGroup | _boolean_ | `true` |
+| indeterminate | Whether indeterminate status | _boolean_ | `false` |
 
 ### CheckboxGroup Props
 

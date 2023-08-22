@@ -24,6 +24,7 @@ export type CheckerParent = {
     direction?: CheckerDirection;
     modelValue?: unknown | unknown[];
     checkedColor?: string;
+    indeterminate?: boolean;
   };
 };
 
@@ -45,6 +46,7 @@ export default defineComponent({
     parent: Object as PropType<CheckerParent | null>,
     checked: Boolean,
     bindGroup: truthProp,
+    indeterminate: Boolean,
   }),
 
   emits: ['click', 'toggle'],
@@ -106,7 +108,7 @@ export default defineComponent({
     };
 
     const renderIcon = () => {
-      const { bem, checked } = props;
+      const { bem, checked, indeterminate } = props;
       const iconSize = props.iconSize || getParentProp('iconSize');
 
       return (
@@ -114,6 +116,7 @@ export default defineComponent({
           ref={iconRef}
           class={bem('icon', [
             shape.value,
+            { indeterminate },
             { disabled: disabled.value, checked },
           ])}
           style={
@@ -129,7 +132,10 @@ export default defineComponent({
           {slots.icon ? (
             slots.icon({ checked, disabled: disabled.value })
           ) : shape.value !== 'dot' ? (
-            <Icon name="success" style={iconStyle.value} />
+            <Icon
+              name={indeterminate ? 'minus' : 'success'}
+              style={iconStyle.value}
+            />
           ) : (
             <div
               class={bem('icon--dot__icon')}

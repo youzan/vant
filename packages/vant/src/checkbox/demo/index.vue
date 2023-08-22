@@ -26,6 +26,7 @@ const t = useTranslate({
     inverse: '反选',
     horizontal: '水平排列',
     disableLabel: '禁用文本点击',
+    indeterminate: '不确定状态',
   },
   'en-US': {
     checkbox: 'Checkbox',
@@ -42,6 +43,7 @@ const t = useTranslate({
     inverse: 'Inverse',
     horizontal: 'Horizontal',
     disableLabel: 'Disable label click',
+    indeterminate: 'indeterminate',
   },
 });
 
@@ -49,6 +51,7 @@ const state = reactive({
   checkbox1: true,
   checkbox2: true,
   checkbox3: true,
+  checkbox4: true,
   checkboxLabel: true,
   checkboxIcon: true,
   leftLabel: false,
@@ -65,6 +68,7 @@ const activeIcon = cdnURL('user-active.png');
 const inactiveIcon = cdnURL('user-inactive.png');
 
 const group = ref<CheckboxGroupInstance>();
+const isIndeterminate = ref(true);
 const [refs, setRefs] = useRefs<CheckboxInstance>();
 
 const toggle = (index: number) => {
@@ -83,6 +87,21 @@ const toggleAll = () => {
 <template>
   <demo-block :title="t('basicUsage')">
     <van-checkbox v-model="state.checkbox1">{{ t('checkbox') }}</van-checkbox>
+  </demo-block>
+
+  <demo-block :title="t('indeterminate')">
+    <van-checkbox v-model="state.checkbox4" :indeterminate="isIndeterminate">
+      {{ t('checkbox') }}
+    </van-checkbox>
+
+    <div class="demo-checkbox-buttons">
+      <van-button type="primary" @click="isIndeterminate = true">{{
+        t('indeterminate')
+      }}</van-button>
+      <van-button type="primary" @click="isIndeterminate = false">{{
+        t('checkAll')
+      }}</van-button>
+    </div>
   </demo-block>
 
   <demo-block :title="t('disabled')">

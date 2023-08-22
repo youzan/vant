@@ -25,6 +25,7 @@ const [name, bem] = createNamespace('checkbox');
 export const checkboxProps = extend({}, checkerProps, {
   shape: String as PropType<CheckerShape>,
   bindGroup: truthProp,
+  indeterminate: Boolean,
 });
 
 export type CheckboxProps = ExtractPropTypes<typeof checkboxProps>;

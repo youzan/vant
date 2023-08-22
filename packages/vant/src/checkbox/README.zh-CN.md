@@ -38,6 +38,28 @@ export default {
 };
 ```
 
+### 不确定状态
+
+通过 `indeterminate` 设置复选框是否为不确定状态。
+
+```html
+<van-checkbox v-model="checked" :indeterminate="isIndeterminate"
+  >复选框</van-checkbox
+>
+```
+
+```js
+import { ref } from 'vue';
+
+export default {
+  setup() {
+    const checked = ref(true);
+    const isIndeterminate = ref(true);
+    return { checked, isIndeterminate };
+  },
+};
+```
+
 ### 禁用状态
 
 通过设置 `disabled` 属性可以禁用复选框。
@@ -297,6 +319,7 @@ export default {
 | icon-size | 图标大小，默认单位为 `px` | _number \| string_ | `20px` |
 | checked-color | 选中状态颜色 | _string_ | `#1989fa` |
 | bind-group | 是否与复选框组绑定 | _boolean_ | `true` |
+| indeterminate | 是否为不确定状态 | _boolean_ | `false` |
 
 ### CheckboxGroup Props
 
