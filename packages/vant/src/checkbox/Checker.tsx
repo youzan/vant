@@ -116,8 +116,7 @@ export default defineComponent({
           ref={iconRef}
           class={bem('icon', [
             shape.value,
-            { indeterminate },
-            { disabled: disabled.value, checked },
+            { disabled: disabled.value, checked, indeterminate },
           ])}
           style={
             shape.value !== 'dot'
