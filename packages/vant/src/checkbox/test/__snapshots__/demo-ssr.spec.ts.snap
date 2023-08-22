@@ -32,6 +32,58 @@ exports[`should render demo and match snapshot 1`] = `
   <!--[-->
   <div
     role="checkbox"
+    class="van-checkbox"
+    tabindex="0"
+    aria-checked="true"
+  >
+    <!--[-->
+    <div
+      class="van-checkbox__icon van-checkbox__icon--round van-checkbox__icon--checked van-checkbox__icon--indeterminate"
+      style
+    >
+      <i
+        class="van-badge__wrapper van-icon van-icon-minus"
+        style
+      >
+        <!--[-->
+      </i>
+    </div>
+    <span class="van-checkbox__label">
+      <!--[-->
+      Checkbox
+    </span>
+  </div>
+  <div class="demo-checkbox-buttons">
+    <button
+      type="button"
+      class="van-button van-button--primary van-button--normal"
+      style
+    >
+      <div class="van-button__content">
+        <span class="van-button__text">
+          <!--[-->
+          indeterminate
+        </span>
+      </div>
+    </button>
+    <button
+      type="button"
+      class="van-button van-button--primary van-button--normal"
+      style
+    >
+      <div class="van-button__content">
+        <span class="van-button__text">
+          <!--[-->
+          Check All
+        </span>
+      </div>
+    </button>
+  </div>
+</div>
+<div>
+  <!--[-->
+  <div
+    role="checkbox"
     class="van-checkbox van-checkbox--disabled"
     aria-checked="false"
   >
