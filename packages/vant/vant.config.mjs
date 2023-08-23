@@ -503,6 +503,10 @@ location.href = location.href.replace('youzan.github.io', 'vant-ui.github.io');
                 path: 'use-window-size',
                 title: 'useWindowSize',
               },
+              {
+                path: 'use-raf',
+                title: 'useRaf',
+              },
             ],
           },
         ],
@@ -966,6 +970,10 @@ location.href = location.href.replace('youzan.github.io', 'vant-ui.github.io');
               {
                 path: 'use-window-size',
                 title: 'useWindowSize',
+              },
+              {
+                path: 'use-raf',
+                title: 'useRaf',
               },
             ],
           },
