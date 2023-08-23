@@ -13,7 +13,7 @@ import { useRaf } from '@vant/use';
 
 export default {
   setup() {
-    const count = ref(0);
+    let count = 0;
     const cancelRaf = useRaf(() => {
       count++;
       if (count === 10) {
