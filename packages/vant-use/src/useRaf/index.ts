@@ -4,8 +4,10 @@ export function useRaf(fn: FrameRequestCallback, interval = 0): () => void {
   if (inBrowser) {
     let start: number;
     const disposesId: number[] = [];
+    let isStopped = false;
 
     const myFrame = (timestamp: number) => {
+      if (isStopped) return;
       if (start === undefined) {
         start = timestamp;
       } else if (timestamp - start > interval) {
@@ -17,6 +19,7 @@ export function useRaf(fn: FrameRequestCallback, interval = 0): () => void {
     disposesId.push(requestAnimationFrame(myFrame));
 
     return () => {
+      isStopped = true;
       disposesId.forEach((id) => cancelAnimationFrame(id));
       disposesId.length = 0;
     };
