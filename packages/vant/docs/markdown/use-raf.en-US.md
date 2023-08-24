@@ -2,7 +2,7 @@
 
 ### Intro
 
-Provide convenient call and cancellation of [requestAnimationFrame](https://developer.mozilla.org/en-US/docs/Web/API/window/requestAnimationFrame), automatically wrapped by requestAnimationFrame, to ensure that the callback function will be executed in every frame, the second parameter interval can be used to control how long the interval is called, and return a cancelRaf function to stop the continued execution.
+Provide convenient call and cancellation of [requestAnimationFrame](https://developer.mozilla.org/en-US/docs/Web/API/window/requestAnimationFrame).
 
 ## Usage
 
@@ -18,12 +18,26 @@ import { useRaf } from '@vant/use';
 export default {
   setup() {
     let count = 0;
-    const cancelRaf = useRaf(() => {
+    // A single call will be automatically canceledRaf after the callback is executed.
+    useRaf(() => {
       count++;
-      if (count === 10) {
-        cancelRaf();
-      }
-    }, 1000);
+      console.log(count); // It will only be executed once.
+    });
+    // isLoop Turn on the cycle
+    let count1 = 0;
+    const cancelRaf = useRaf(
+      () => {
+        count1++;
+        console.log(count1); // Unlimited execution until it is cancelled.
+        if (count1 === 5) {
+          cancelRaf();
+        }
+      },
+      {
+        interval: 0, // control interval to call this function
+        isLoop: true,
+      },
+    );
   },
 };
 ```
@@ -35,13 +49,16 @@ export default {
 ```ts
 function useRaf(): {
   callback: () => void;
-  interval: number;
+  options: {
+    interval?: number;
+    isLoop?: boolean;
+  };
 };
 ```
 
 ### Return Value
 
-| Name     | Description | Type         |
-| -------- | ----------- | ------------ |
-| callback | Callback    | _() => void_ |
-| interval | Intervals   | _number_     |
+| Name | Description | Type | Default |
+| --- | --- | --- | --- |
+| callback | Callback | _() => void_ | _() => void_ |
+| options | Options | _{interval?: number; isLoop?: boolean}_ | _{interval: 0; isLoop: false}_ |

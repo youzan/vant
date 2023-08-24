@@ -2,7 +2,7 @@
 
 ### 介绍
 
-提供便捷的[requestAnimationFrame](https://developer.mozilla.org/zh-CN/docs/Web/API/window/requestAnimationFrame)的调用和取消, 自动被requestAnimationFrame包裹, 保证在每一帧都会执行回调函数,可通过第二个参数interval来控制间隔多久去调用，并返回一个cancelRaf的函数，去停止继续的执行。
+提供便捷的[requestAnimationFrame](https://developer.mozilla.org/zh-CN/docs/Web/API/window/requestAnimationFrame)的调用和取消。
 
 ## 代码演示
 
@@ -14,12 +14,26 @@ import { useRaf } from '@vant/use';
 export default {
   setup() {
     let count = 0;
-    const cancelRaf = useRaf(() => {
+    // 单次调用在回调执行完后会被自动cancelRaf
+    useRaf(() => {
       count++;
-      if (count === 10) {
-        cancelRaf();
-      }
-    }, 1000);
+      console.log(count); // 只会执行1次
+    });
+    // isLoop 开启循环
+    let count1 = 0;
+    const cancelRaf = useRaf(
+      () => {
+        count1++;
+        console.log(count1); // 无限的执行，直到被cancel
+        if (count1 === 5) {
+          cancelRaf();
+        }
+      },
+      {
+        interval: 0, // 控制间隔多久去调用
+        isLoop: true,
+      },
+    );
   },
 };
 ```
@@ -31,13 +45,16 @@ export default {
 ```ts
 function useRaf(): {
   callback: () => void;
-  interval: number;
+  options: {
+    interval?: number;
+    isLoop?: boolean;
+  };
 };
 ```
 
 ### 返回值
 
-| 参数     | 说明     | 类型         |
-| -------- | -------- | ------------ |
-| callback | 回调函数 | _() => void_ |
-| interval | 间隔时间 | _number_     |
+| 参数 | 说明 | 类型 | 默认 |
+| --- | --- | --- | --- |
+| callback | 回调函数 | _() => void_ | _() => void_ |
+| options | 配置参数 | _{interval?: number; isLoop?: boolean}_ | _{interval: 0; isLoop: false}_ |
