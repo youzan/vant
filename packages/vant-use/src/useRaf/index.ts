@@ -21,7 +21,6 @@ export function useRaf(
       disposesId.length = 0;
     };
     const frameWrapper = (timestamp: number) => {
-      console.log({ disposesId });
       if (isStopped) return;
       if (start === undefined) {
         start = timestamp;
@@ -30,7 +29,6 @@ export function useRaf(
         start = timestamp;
         if (!isLoop) {
           stop();
-          console.log({ disposesId });
           return;
         }
       }
