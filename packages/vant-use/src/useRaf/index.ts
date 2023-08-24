@@ -31,7 +31,6 @@ export function useRaf(
           return;
         }
       }
-      cancelAnimationFrame(rafId);
       rafId = requestAnimationFrame(frameWrapper);
     };
     rafId = requestAnimationFrame(frameWrapper);
