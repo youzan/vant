@@ -21,15 +21,20 @@ export function useRaf(
       disposesId.length = 0;
     };
     const frameWrapper = (timestamp: number) => {
+      console.log({ disposesId });
       if (isStopped) return;
       if (start === undefined) {
         start = timestamp;
       } else if (timestamp - start > interval) {
         fn(timestamp);
         start = timestamp;
-        if (!isLoop) stop();
+        if (!isLoop) {
+          stop();
+          console.log({ disposesId });
+          return;
+        }
       }
-      disposesId.push(requestAnimationFrame(frameWrapper));
+      requestAnimationFrame(frameWrapper);
     };
     disposesId.push(requestAnimationFrame(frameWrapper));
 
