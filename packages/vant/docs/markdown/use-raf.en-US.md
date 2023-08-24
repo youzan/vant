@@ -2,7 +2,7 @@
 
 ### Intro
 
-Provide convenient call and cancellation of [requestAnimationFrame](https://developer.mozilla.org/en-US/docs/Web/API/window/requestAnimationFrame)
+Provide convenient call and cancellation of [requestAnimationFrame](https://developer.mozilla.org/en-US/docs/Web/API/window/requestAnimationFrame), automatically wrapped by requestAnimationFrame, to ensure that the callback function will be executed in every frame, the second parameter interval can be used to control how long the interval is called, and return a cancelRaf function to stop the continued execution.
 
 ## Usage
 

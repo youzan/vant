@@ -6,7 +6,7 @@ export function useRaf(fn: FrameRequestCallback, interval = 0): () => void {
     const disposesId: number[] = [];
     let isStopped = false;
 
-    const myFrame = (timestamp: number) => {
+    const frameWrapper = (timestamp: number) => {
       if (isStopped) return;
       if (start === undefined) {
         start = timestamp;
@@ -14,9 +14,9 @@ export function useRaf(fn: FrameRequestCallback, interval = 0): () => void {
         fn(timestamp);
         start = timestamp;
       }
-      disposesId.push(requestAnimationFrame(myFrame));
+      disposesId.push(requestAnimationFrame(frameWrapper));
     };
-    disposesId.push(requestAnimationFrame(myFrame));
+    disposesId.push(requestAnimationFrame(frameWrapper));
 
     return () => {
       isStopped = true;

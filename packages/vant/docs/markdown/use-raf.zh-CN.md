@@ -2,7 +2,7 @@
 
 ### 介绍
 
-提供便捷的[requestAnimationFrame](https://developer.mozilla.org/zh-CN/docs/Web/API/window/requestAnimationFrame)的调用和取消
+提供便捷的[requestAnimationFrame](https://developer.mozilla.org/zh-CN/docs/Web/API/window/requestAnimationFrame)的调用和取消, 自动被requestAnimationFrame包裹, 保证在每一帧都会执行回调函数,可通过第二个参数interval来控制间隔多久去调用，并返回一个cancelRaf的函数，去停止继续的执行。
 
 ## 代码演示
 
