@@ -12,13 +12,12 @@ export function useRaf(
   if (inBrowser) {
     const { interval = 0, isLoop = false } = options || {};
     let start: number;
-    const disposesId: number[] = [];
     let isStopped = false;
+    let rafId: number;
 
     const stop = () => {
       isStopped = true;
-      disposesId.forEach((id) => cancelAnimationFrame(id));
-      disposesId.length = 0;
+      cancelAnimationFrame(rafId);
     };
     const frameWrapper = (timestamp: number) => {
       if (isStopped) return;
@@ -32,9 +31,10 @@ export function useRaf(
           return;
         }
       }
-      requestAnimationFrame(frameWrapper);
+      cancelAnimationFrame(rafId);
+      rafId = requestAnimationFrame(frameWrapper);
     };
-    disposesId.push(requestAnimationFrame(frameWrapper));
+    rafId = requestAnimationFrame(frameWrapper);
 
     return stop;
   }
