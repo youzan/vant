@@ -234,11 +234,11 @@ export default defineComponent({
         if (show && !opened) {
           open();
 
-          if (attrs.tabindex === 0) {
-            nextTick(() => {
-              popupRef.value?.focus();
-            });
-          }
+          nextTick(() => {
+            if (popupRef.value?.tabIndex === 0) {
+              popupRef.value.focus();
+            }
+          });
         }
         if (!show && opened) {
           opened = false;
