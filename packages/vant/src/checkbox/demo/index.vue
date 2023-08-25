@@ -51,7 +51,8 @@ const state = reactive({
   checkbox1: true,
   checkbox2: true,
   checkbox3: true,
-  checkbox4: true,
+  isCheckAll: false,
+  isIndeterminate: true,
   checkboxLabel: true,
   checkboxIcon: true,
   leftLabel: false,
@@ -60,15 +61,17 @@ const state = reactive({
   checkboxShape: ['a', 'b'],
   result2: [],
   result3: [],
+  result4: ['a', 'b', 'd'],
   checkAllResult: [],
   horizontalResult: [],
 });
+
+const list = ['a', 'b', 'c', 'd'];
 
 const activeIcon = cdnURL('user-active.png');
 const inactiveIcon = cdnURL('user-inactive.png');
 
 const group = ref<CheckboxGroupInstance>();
-const isIndeterminate = ref(true);
 const [refs, setRefs] = useRefs<CheckboxInstance>();
 
 const toggle = (index: number) => {
@@ -82,26 +85,22 @@ const checkAll = () => {
 const toggleAll = () => {
   group.value?.toggleAll();
 };
+
+const checkAllChange = (val: boolean) => {
+  state.result4 = val ? list : [];
+  state.isIndeterminate = false;
+};
+
+const checkedResultChange = (value: string[]) => {
+  const checkedCount = value.length;
+  state.isCheckAll = checkedCount === list.length;
+  state.isIndeterminate = checkedCount > 0 && checkedCount < list.length;
+};
 </script>
 
 <template>
   <demo-block :title="t('basicUsage')">
     <van-checkbox v-model="state.checkbox1">{{ t('checkbox') }}</van-checkbox>
-  </demo-block>
-
-  <demo-block :title="t('indeterminate')">
-    <van-checkbox v-model="state.checkbox4" :indeterminate="isIndeterminate">
-      {{ t('checkbox') }}
-    </van-checkbox>
-
-    <div class="demo-checkbox-buttons">
-      <van-button type="primary" @click="isIndeterminate = true">{{
-        t('indeterminate')
-      }}</van-button>
-      <van-button type="primary" @click="isIndeterminate = false">{{
-        t('checkAll')
-      }}</van-button>
-    </div>
   </demo-block>
 
   <demo-block :title="t('disabled')">
@@ -209,6 +208,22 @@ const toggleAll = () => {
       </van-cell-group>
     </van-checkbox-group>
   </demo-block>
+
+  <demo-block :title="t('indeterminate')">
+    <van-checkbox
+      v-model="state.isCheckAll"
+      :indeterminate="state.isIndeterminate"
+      @change="checkAllChange"
+    >
+      {{ t('checkAll') }}
+    </van-checkbox>
+    <div class="divider" />
+    <van-checkbox-group v-model="state.result4" @change="checkedResultChange">
+      <van-checkbox v-for="item in list" :key="item" :name="item">
+        {{ t('checkbox') }} {{ item }}
+      </van-checkbox>
+    </van-checkbox-group>
+  </demo-block>
 </template>
 
 <style lang="less">
@@ -238,5 +253,11 @@ const toggleAll = () => {
   .van-doc-demo-block__title {
     margin-top: -8px;
   }
+}
+
+.divider {
+  margin: 20px;
+  height: 1px;
+  background: #ccc;
 }
 </style>

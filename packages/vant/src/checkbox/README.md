@@ -38,26 +38,6 @@ export default {
 };
 ```
 
-### indeterminate
-
-```html
-<van-checkbox v-model="checked" :indeterminate="isIndeterminate"
-  >Checkbox</van-checkbox
->
-```
-
-```js
-import { ref } from 'vue';
-
-export default {
-  setup() {
-    const checked = ref(true);
-    const isIndeterminate = ref(true);
-    return { checked, isIndeterminate };
-  },
-};
-```
-
 ### Disabled
 
 ```html
@@ -280,6 +260,58 @@ export default {
       toggle,
       checked,
       checkboxRefs,
+    };
+  },
+};
+```
+
+### indeterminate
+
+```html
+<van-checkbox
+  v-model="isCheckAll"
+  :indeterminate="isIndeterminate"
+  @change="checkAllChange"
+>
+  Check All
+</van-checkbox>
+
+<van-checkbox-group v-model="checkedResult" @change="checkedResultChange">
+  <van-checkbox v-for="item in list" :key="item" :name="item">
+    Checkbox {{ item }}
+  </van-checkbox>
+</van-checkbox-group>
+```
+
+```js
+import { ref } from 'vue';
+
+export default {
+  setup() {
+    const list = ['a', 'b', 'c', 'd']
+
+    const isCheckAll = ref(false);
+    const checkedResult = ref(['a', 'b', 'd']);
+    const isIndeterminate = ref(true);
+
+    const checkAllChange = (val: boolean) => {
+      checkedResult.value = val ? list : []
+      isIndeterminate.value = false
+    }
+
+    const checkedResultChange = (value: string[]) => {
+      const checkedCount = value.length
+      isCheckAll.value = checkedCount === list.length
+      isIndeterminate.value = checkedCount > 0 && checkedCount < list.length
+    }
+
+    return {
+      list,
+      isCheckAll,
+      checkedResult,
+      checkAllChange,
+      isIndeterminate,
+      checkedResultChange
     };
   },
 };

@@ -38,28 +38,6 @@ export default {
 };
 ```
 
-### 不确定状态
-
-通过 `indeterminate` 设置复选框是否为不确定状态。
-
-```html
-<van-checkbox v-model="checked" :indeterminate="isIndeterminate"
-  >复选框</van-checkbox
->
-```
-
-```js
-import { ref } from 'vue';
-
-export default {
-  setup() {
-    const checked = ref(true);
-    const isIndeterminate = ref(true);
-    return { checked, isIndeterminate };
-  },
-};
-```
-
 ### 禁用状态
 
 通过设置 `disabled` 属性可以禁用复选框。
@@ -299,6 +277,60 @@ export default {
       toggle,
       checked,
       checkboxRefs,
+    };
+  },
+};
+```
+
+### 不确定状态
+
+通过 `indeterminate` 设置复选框是否为不确定状态。
+
+```html
+<van-checkbox
+  v-model="isCheckAll"
+  :indeterminate="isIndeterminate"
+  @change="checkAllChange"
+>
+  全选
+</van-checkbox>
+
+<van-checkbox-group v-model="checkedResult" @change="checkedResultChange">
+  <van-checkbox v-for="item in list" :key="item" :name="item">
+    复选框 {{ item }}
+  </van-checkbox>
+</van-checkbox-group>
+```
+
+```js
+import { ref } from 'vue';
+
+export default {
+  setup() {
+    const list = ['a', 'b', 'c', 'd']
+
+    const isCheckAll = ref(false);
+    const checkedResult = ref(['a', 'b', 'd']);
+    const isIndeterminate = ref(true);
+
+    const checkAllChange = (val: boolean) => {
+      checkedResult.value = val ? list : []
+      isIndeterminate.value = false
+    }
+
+    const checkedResultChange = (value: string[]) => {
+      const checkedCount = value.length
+      isCheckAll.value = checkedCount === list.length
+      isIndeterminate.value = checkedCount > 0 && checkedCount < list.length
+    }
+
+    return {
+      list,
+      isCheckAll,
+      checkedResult,
+      checkAllChange,
+      isIndeterminate,
+      checkedResultChange
     };
   },
 };
