@@ -26,6 +26,7 @@ export const checkboxProps = extend({}, checkerProps, {
   shape: String as PropType<CheckerShape>,
   bindGroup: truthProp,
   indeterminate: Boolean,
+  useIndeterminate: Boolean,
 });
 
 export type CheckboxProps = ExtractPropTypes<typeof checkboxProps>;
@@ -81,11 +82,15 @@ export default defineComponent({
       } else {
         emit('update:modelValue', newValue);
       }
+
+      if (props.useIndeterminate) emit('change', newValue);
     };
 
     watch(
       () => props.modelValue,
-      (value) => emit('change', value),
+      (value) => {
+        if (!props.useIndeterminate) emit('change', value);
+      },
     );
 
     useExpose<CheckboxExpose>({ toggle, props, checked });
