@@ -8,9 +8,9 @@ Provide convenient call and cancellation of [requestAnimationFrame](https://deve
 
 ### Basic Usage
 
-```js
-// Single call demo
+### Single call
 
+```js
 import { useRaf } from '@vant/use';
 
 export default {
@@ -25,8 +25,9 @@ export default {
 };
 ```
 
+### Unlimited calls
+
 ```js
-// Unlimited calls demo
 import { useRaf } from '@vant/use';
 
 export default {

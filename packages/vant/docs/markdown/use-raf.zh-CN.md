@@ -8,8 +8,9 @@
 
 ### 基本用法
 
+### 单次调用
+
 ```js
-// 单次调用 demo
 import { useRaf } from '@vant/use';
 
 export default {
@@ -20,27 +21,13 @@ export default {
       count++;
       console.log(count); // 只会执行 1 次
     });
-    // isLoop 开启循环
-    let count = 0;
-    const cancelRaf = useRaf(
-      () => {
-        count++;
-        console.log(count); // 无限的执行，直到被 cancel
-        if (count === 5) {
-          cancelRaf();
-        }
-      },
-      {
-        interval: 0, // 控制间隔多久去调用
-        isLoop: true,
-      },
-    );
   },
 };
 ```
 
+### 循环调用
+
 ```js
-// 无限调用 demo
 import { useRaf } from '@vant/use';
 
 export default {
