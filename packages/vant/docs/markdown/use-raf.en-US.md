@@ -8,11 +8,9 @@ Provide convenient call and cancellation of [requestAnimationFrame](https://deve
 
 ### Basic Usage
 
-```html
-<div ref="root" />
-```
-
 ```js
+// Single call demo
+
 import { useRaf } from '@vant/use';
 
 export default {
@@ -23,13 +21,23 @@ export default {
       count++;
       console.log(count); // It will only be executed once.
     });
+  },
+};
+```
+
+```js
+// Unlimited calls demo
+import { useRaf } from '@vant/use';
+
+export default {
+  setup() {
     // isLoop Turn on the cycle
-    let count1 = 0;
+    let count = 0;
     const cancelRaf = useRaf(
       () => {
-        count1++;
-        console.log(count1); // Unlimited execution until it is cancelled.
-        if (count1 === 5) {
+        count++;
+        console.log(count); // Unlimited execution until it is cancelled.
+        if (count === 5) {
           cancelRaf();
         }
       },
@@ -47,18 +55,18 @@ export default {
 ### Type Declarations
 
 ```ts
-function useRaf(): {
-  callback: () => void;
+function useRaf(
+  callback: () => void,
   options: {
     interval?: number;
     isLoop?: boolean;
-  };
-};
+  },
+) {}
 ```
 
-### Return Value
+### Params
 
 | Name | Description | Type | Default |
 | --- | --- | --- | --- |
 | callback | Callback | _() => void_ | _() => void_ |
-| options | Options | _{interval?: number; isLoop?: boolean}_ | _{interval: 0; isLoop: false}_ |
+| options | Options | _{ interval?: number; isLoop?: boolean }_ | _{ interval: 0; isLoop: false }_ |
