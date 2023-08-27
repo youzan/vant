@@ -1,3 +1,4 @@
+import 'vitest-canvas-mock';
 import { mount } from '../../../test';
 import { Lazyload } from '../../lazyload';
 import VanImage from '..';

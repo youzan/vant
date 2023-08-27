@@ -1,3 +1,4 @@
+import 'vitest-canvas-mock';
 import { Signature } from '..';
 import { mount } from '../../../test';
 
