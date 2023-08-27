@@ -6,9 +6,9 @@ Provide convenient call and cancellation of [requestAnimationFrame](https://deve
 
 ## Usage
 
-### Basic Usage
+### Single Call
 
-### Single call
+By using the `useRaf` method, you can execute a function before the next browser repaint.
 
 ```js
 import { useRaf } from '@vant/use';
@@ -16,35 +16,34 @@ import { useRaf } from '@vant/use';
 export default {
   setup() {
     let count = 0;
-    // A single call will be automatically canceledRaf after the callback is executed.
     useRaf(() => {
-      count++;
-      console.log(count); // It will only be executed once.
+      console.log(++count); // It will only be executed once.
     });
   },
 };
 ```
 
-### Unlimited calls
+### Loop Calls
+
+By using the `isLoop` option, you can execution of a function repeatedly at a specified interval until it is canceled.
 
 ```js
 import { useRaf } from '@vant/use';
 
 export default {
   setup() {
-    // isLoop Turn on the cycle
     let count = 0;
     const cancelRaf = useRaf(
       () => {
-        count++;
-        console.log(count); // Unlimited execution until it is cancelled.
+        console.log(++count); // Execute infinitely until canceled
+
         if (count === 5) {
           cancelRaf();
         }
       },
       {
-        interval: 0, // control interval to call this function
-        isLoop: true,
+        isLoop: true, // Enable the loop
+        interval: 100, // Set call interval
       },
     );
   },
@@ -62,12 +61,12 @@ function useRaf(
     interval?: number;
     isLoop?: boolean;
   },
-) {}
+): void;
 ```
 
 ### Params
 
 | Name | Description | Type | Default |
 | --- | --- | --- | --- |
-| callback | Callback | _() => void_ | _() => void_ |
+| callback | Callback | _() => void_ | - |
 | options | Options | _{ interval?: number; isLoop?: boolean }_ | _{ interval: 0; isLoop: false }_ |
