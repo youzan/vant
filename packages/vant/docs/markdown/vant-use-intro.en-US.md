@@ -47,3 +47,4 @@ console.log(height.value); // -> window height
 | [useScrollParent](#/en-US/use-scroll-parent) | Get the closest parent element that is scrollable |
 | [useToggle](#/en-US/use-toggle) | Used to switch between `true` and `false` |
 | [useWindowSize](#/en-US/use-window-size) | Get the viewport width and height of the browser window |
+| [useRaf](#/zh-CN/use-raf) | Used to manage the requestAnimationFrame |
