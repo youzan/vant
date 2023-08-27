@@ -1,5 +1,9 @@
 # Changelog
 
+## v1.6.0
+
+- add new `useRaf` method
+
 ## v1.5.1
 
 - add `vue` as peer dependencies
