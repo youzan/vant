@@ -390,4 +390,80 @@ exports[`should render demo and match snapshot 1`] = `
     </div>
   </div>
 </div>
+<div>
+  <div
+    role="checkbox"
+    class="van-checkbox"
+    tabindex="0"
+    aria-checked="false"
+  >
+    <div class="van-checkbox__icon van-checkbox__icon--round van-checkbox__icon--indeterminate">
+      <i class="van-badge__wrapper van-icon van-icon-minus">
+      </i>
+    </div>
+    <span class="van-checkbox__label">
+      Check All
+    </span>
+  </div>
+  <div class="divider">
+  </div>
+  <div class="van-checkbox-group">
+    <div
+      role="checkbox"
+      class="van-checkbox"
+      tabindex="0"
+      aria-checked="true"
+    >
+      <div class="van-checkbox__icon van-checkbox__icon--round van-checkbox__icon--checked">
+        <i class="van-badge__wrapper van-icon van-icon-success">
+        </i>
+      </div>
+      <span class="van-checkbox__label">
+        Checkbox a
+      </span>
+    </div>
+    <div
+      role="checkbox"
+      class="van-checkbox"
+      tabindex="0"
+      aria-checked="true"
+    >
+      <div class="van-checkbox__icon van-checkbox__icon--round van-checkbox__icon--checked">
+        <i class="van-badge__wrapper van-icon van-icon-success">
+        </i>
+      </div>
+      <span class="van-checkbox__label">
+        Checkbox b
+      </span>
+    </div>
+    <div
+      role="checkbox"
+      class="van-checkbox"
+      tabindex="0"
+      aria-checked="false"
+    >
+      <div class="van-checkbox__icon van-checkbox__icon--round">
+        <i class="van-badge__wrapper van-icon van-icon-success">
+        </i>
+      </div>
+      <span class="van-checkbox__label">
+        Checkbox c
+      </span>
+    </div>
+    <div
+      role="checkbox"
+      class="van-checkbox"
+      tabindex="0"
+      aria-checked="true"
+    >
+      <div class="van-checkbox__icon van-checkbox__icon--round van-checkbox__icon--checked">
+        <i class="van-badge__wrapper van-icon van-icon-success">
+        </i>
+      </div>
+      <span class="van-checkbox__label">
+        Checkbox d
+      </span>
+    </div>
+  </div>
+</div>
 `;
