@@ -24,8 +24,6 @@ export type CheckerParent = {
     direction?: CheckerDirection;
     modelValue?: unknown | unknown[];
     checkedColor?: string;
-    indeterminate?: boolean;
-    useIndeterminate?: boolean;
   };
 };
 
@@ -47,8 +45,10 @@ export default defineComponent({
     parent: Object as PropType<CheckerParent | null>,
     checked: Boolean,
     bindGroup: truthProp,
-    indeterminate: Boolean,
-    useIndeterminate: Boolean,
+    indeterminate: {
+      type: Boolean as PropType<boolean | null>,
+      default: null,
+    },
   }),
 
   emits: ['click', 'toggle'],

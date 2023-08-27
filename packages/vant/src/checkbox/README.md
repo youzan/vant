@@ -267,12 +267,9 @@ export default {
 
 ### indeterminate
 
-It is necessary to set `use-indeterminate` to `true`.
-
 ```html
 <van-checkbox
   v-model="isCheckAll"
-  use-indeterminate
   :indeterminate="isIndeterminate"
   @change="checkAllChange"
 >
@@ -335,8 +332,7 @@ export default {
 | icon-size | Icon size | _number \| string_ | `20px` |
 | checked-color | Checked color | _string_ | `#1989fa` |
 | bind-group | Whether to bind with CheckboxGroup | _boolean_ | `true` |
-| indeterminate | Whether indeterminate status, it is necessary to set `use-indeterminate` to `true` | _boolean_ | `false` |
-| use-indeterminate | Whether to use indeterminate status | _boolean_ | `false` |
+| indeterminate | Whether indeterminate status | _boolean_ | `false` |
 
 ### CheckboxGroup Props
 

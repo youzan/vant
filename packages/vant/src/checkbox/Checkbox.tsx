@@ -25,8 +25,10 @@ const [name, bem] = createNamespace('checkbox');
 export const checkboxProps = extend({}, checkerProps, {
   shape: String as PropType<CheckerShape>,
   bindGroup: truthProp,
-  indeterminate: Boolean,
-  useIndeterminate: Boolean,
+  indeterminate: {
+    type: Boolean as PropType<boolean | null>,
+    default: null,
+  },
 });
 
 export type CheckboxProps = ExtractPropTypes<typeof checkboxProps>;
@@ -83,13 +85,13 @@ export default defineComponent({
         emit('update:modelValue', newValue);
       }
 
-      if (props.useIndeterminate) emit('change', newValue);
+      if (props.indeterminate !== null) emit('change', newValue);
     };
 
     watch(
       () => props.modelValue,
       (value) => {
-        if (!props.useIndeterminate) emit('change', value);
+        if (props.indeterminate === null) emit('change', value);
       },
     );
 

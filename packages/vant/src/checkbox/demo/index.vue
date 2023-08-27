@@ -212,7 +212,6 @@ const checkedResultChange = (value: string[]) => {
   <demo-block :title="t('indeterminate')">
     <van-checkbox
       v-model="state.isCheckAll"
-      use-indeterminate
       :indeterminate="state.isIndeterminate"
       @change="checkAllChange"
     >
