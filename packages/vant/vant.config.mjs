@@ -378,6 +378,10 @@ location.href = location.href.replace('youzan.github.io', 'vant-ui.github.io');
                 title: 'ActionBar 动作栏',
               },
               {
+                path: 'back-top',
+                title: 'BackTop 回到顶部',
+              },
+              {
                 path: 'grid',
                 title: 'Grid 宫格',
               },
@@ -408,10 +412,6 @@ location.href = location.href.replace('youzan.github.io', 'vant-ui.github.io');
               {
                 path: 'tree-select',
                 title: 'TreeSelect 分类选择',
-              },
-              {
-                path: 'back-top',
-                title: 'BackTop 回到顶部',
               },
             ],
           },
@@ -846,6 +846,10 @@ location.href = location.href.replace('youzan.github.io', 'vant-ui.github.io');
                 title: 'ActionBar',
               },
               {
+                path: 'back-top',
+                title: 'BackTop',
+              },
+              {
                 path: 'grid',
                 title: 'Grid',
               },
@@ -876,10 +880,6 @@ location.href = location.href.replace('youzan.github.io', 'vant-ui.github.io');
               {
                 path: 'tree-select',
                 title: 'TreeSelect',
-              },
-              {
-                path: 'back-top',
-                title: 'BackTop',
               },
             ],
           },
