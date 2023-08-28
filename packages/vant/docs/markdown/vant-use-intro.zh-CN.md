@@ -51,3 +51,4 @@ console.log(height.value); // -> 窗口高度
 | [useScrollParent](#/zh-CN/use-scroll-parent) | 获取元素最近的可滚动父元素 |
 | [useToggle](#/zh-CN/use-toggle) | 用于在布尔值之间进行切换 |
 | [useWindowSize](#/zh-CN/use-window-size) | 获取浏览器窗口的视口宽度和高度 |
+| [useRaf](#/zh-CN/use-raf) | 提供requestAnimationFrame管理能力 |

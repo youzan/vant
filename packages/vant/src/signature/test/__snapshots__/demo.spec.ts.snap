@@ -4,8 +4,11 @@ exports[`should render demo and match snapshot 1`] = `
 <div>
   <div class="van-signature">
     <div class="van-signature__content">
-      <p>
-      </p>
+      <canvas
+        width="100"
+        height="100"
+      >
+      </canvas>
     </div>
     <div class="van-signature__footer">
       <button
@@ -34,8 +37,11 @@ exports[`should render demo and match snapshot 1`] = `
 <div>
   <div class="van-signature">
     <div class="van-signature__content">
-      <p>
-      </p>
+      <canvas
+        width="100"
+        height="100"
+      >
+      </canvas>
     </div>
     <div class="van-signature__footer">
       <button
@@ -64,8 +70,11 @@ exports[`should render demo and match snapshot 1`] = `
 <div>
   <div class="van-signature">
     <div class="van-signature__content">
-      <p>
-      </p>
+      <canvas
+        width="100"
+        height="100"
+      >
+      </canvas>
     </div>
     <div class="van-signature__footer">
       <button
@@ -94,8 +103,11 @@ exports[`should render demo and match snapshot 1`] = `
 <div>
   <div class="van-signature">
     <div class="van-signature__content">
-      <p>
-      </p>
+      <canvas
+        width="100"
+        height="100"
+      >
+      </canvas>
     </div>
     <div class="van-signature__footer">
       <button
