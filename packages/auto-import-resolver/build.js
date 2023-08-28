@@ -1,0 +1,1 @@
+require('../vant-use/build');
