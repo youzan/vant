@@ -45,6 +45,10 @@ export default defineComponent({
     parent: Object as PropType<CheckerParent | null>,
     checked: Boolean,
     bindGroup: truthProp,
+    indeterminate: {
+      type: Boolean as PropType<boolean | null>,
+      default: null,
+    },
   }),
 
   emits: ['click', 'toggle'],
@@ -106,7 +110,7 @@ export default defineComponent({
     };
 
     const renderIcon = () => {
-      const { bem, checked } = props;
+      const { bem, checked, indeterminate } = props;
       const iconSize = props.iconSize || getParentProp('iconSize');
 
       return (
@@ -114,7 +118,7 @@ export default defineComponent({
           ref={iconRef}
           class={bem('icon', [
             shape.value,
-            { disabled: disabled.value, checked },
+            { disabled: disabled.value, checked, indeterminate },
           ])}
           style={
             shape.value !== 'dot'
@@ -129,7 +133,10 @@ export default defineComponent({
           {slots.icon ? (
             slots.icon({ checked, disabled: disabled.value })
           ) : shape.value !== 'dot' ? (
-            <Icon name="success" style={iconStyle.value} />
+            <Icon
+              name={indeterminate ? 'minus' : 'success'}
+              style={iconStyle.value}
+            />
           ) : (
             <div
               class={bem('icon--dot__icon')}

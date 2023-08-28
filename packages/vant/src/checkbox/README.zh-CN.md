@@ -282,6 +282,60 @@ export default {
 };
 ```
 
+### 不确定状态
+
+通过 `indeterminate` 设置复选框是否为不确定状态。
+
+```html
+<van-checkbox
+  v-model="isCheckAll"
+  :indeterminate="isIndeterminate"
+  @change="checkAllChange"
+>
+  全选
+</van-checkbox>
+
+<van-checkbox-group v-model="checkedResult" @change="checkedResultChange">
+  <van-checkbox v-for="item in list" :key="item" :name="item">
+    复选框 {{ item }}
+  </van-checkbox>
+</van-checkbox-group>
+```
+
+```js
+import { ref } from 'vue';
+
+export default {
+  setup() {
+    const list = ['a', 'b', 'c', 'd']
+
+    const isCheckAll = ref(false);
+    const checkedResult = ref(['a', 'b', 'd']);
+    const isIndeterminate = ref(true);
+
+    const checkAllChange = (val: boolean) => {
+      checkedResult.value = val ? list : []
+      isIndeterminate.value = false
+    }
+
+    const checkedResultChange = (value: string[]) => {
+      const checkedCount = value.length
+      isCheckAll.value = checkedCount === list.length
+      isIndeterminate.value = checkedCount > 0 && checkedCount < list.length
+    }
+
+    return {
+      list,
+      isCheckAll,
+      checkedResult,
+      checkAllChange,
+      isIndeterminate,
+      checkedResultChange
+    };
+  },
+};
+```
+
 ## API
 
 ### Checkbox Props
@@ -297,6 +351,7 @@ export default {
 | icon-size | 图标大小，默认单位为 `px` | _number \| string_ | `20px` |
 | checked-color | 选中状态颜色 | _string_ | `#1989fa` |
 | bind-group | 是否与复选框组绑定 | _boolean_ | `true` |
+| indeterminate | 是否为不确定状态 | _boolean_ | `false` |
 
 ### CheckboxGroup Props
 

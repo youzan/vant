@@ -48,8 +48,8 @@
   "dependencies": {
     "@babel/core": "^7.18.13",
     "@babel/preset-typescript": "^7.18.6",
-    "@vant/eslint-config": "^4.0.0",
-    "@vant/touch-emulator": "^1.4.0",
+    "@vant/eslint-config": "workspace:^",
+    "@vant/touch-emulator": "workspace:^",
     "@vitejs/plugin-vue": "^4.0.0",
     "@vitejs/plugin-vue-jsx": "^3.0.0",
     "@vue/babel-plugin-jsx": "^1.1.1",

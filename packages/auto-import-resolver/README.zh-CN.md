@@ -1,14 +1,14 @@
 # Vant Auto Import Resolver
 
-@vant/auto-import-resolver 用于 vant 按需引入，基于 unplugin-vue-components 的解析器
+@vant/auto-import-resolver 用于 Vant 按需引入，基于 unplugin-vue-components 的解析器
 
 ### 特性
 
-- 支持 Vite, Webpack, Rspack, Vue CLI, Rollup, esbuild 等, 基于 <a href="https://github.com/antfu/unplugin-vue-components">unplugin-vue-components</a>.
+- 支持 `Vite`, `Webpack`, `Rspack`, `Vue CLI`, `Rollup`, `esbuild` 等, 基于 <a href="https://github.com/antfu/unplugin-vue-components">unplugin-vue-components</a>.
 
 - 支持自动引入 `css` 样式 `VantResolver()` 默认
 
-- 支持自动引入 `less` 样式 `VantResolver({ importStyle: false | 'less' })` , `vant 4.0` 以上 `npm` 包内移除了`less` 文件
+- 支持自动引入 `less` 样式 `VantResolver({ importStyle: false | 'less' })` , Vant 4.0 以上 npm 包内移除了 less 文件
 
 - 支持 `ssr` `VantResolver({ ssr: true })`
 
@@ -17,7 +17,6 @@
 ```shell
 # via npm
 npm i @vant/auto-import-resolver unplugin-vue-components -D
-
 
 # via yarn
 yarn add @vant/auto-import-resolver unplugin-vue-components -D
@@ -35,7 +34,7 @@ bun add @vant/auto-import-resolver unplugin-vue-components -D
 ```ts
 // vite.config.ts
 import Components from 'unplugin-vue-components/vite';
-import VantResolver from '@vant/auto-import-resolver';
+import { VantResolver } from '@vant/auto-import-resolver';
 
 export default defineConfig({
   plugins: [
@@ -54,7 +53,7 @@ export default defineConfig({
 ```ts
 // rollup.config.js
 import Components from 'unplugin-vue-components/rollup';
-import VantResolver from '@vant/auto-import-resolver';
+import { VantResolver } from '@vant/auto-import-resolver';
 
 export default {
   plugins: [
@@ -73,10 +72,9 @@ export default {
 ```ts
 // webpack.config.js
 import Components from 'unplugin-vue-components/webpack';
-import VantResolver from '@vant/auto-import-resolver';
+import { VantResolver } from '@vant/auto-import-resolver';
 
 module.exports = {
-  /* ... */
   plugins: [
     Components({
       resolvers: [VantResolver()],
@@ -93,7 +91,7 @@ module.exports = {
 ```ts
 // vue.config.js
 import Components from 'unplugin-vue-components/webpack';
-import VantResolver from '@vant/auto-import-resolver';
+import { VantResolver } from '@vant/auto-import-resolver';
 
 module.exports = {
   configureWebpack: {
@@ -115,7 +113,7 @@ module.exports = {
 // esbuild.config.js
 import { build } from 'esbuild';
 import Components from 'unplugin-vue-components/esbuild';
-import VantResolver from '@vant/auto-import-resolver';
+import { VantResolver } from '@vant/auto-import-resolver';
 
 build({
   plugins: [

@@ -37,7 +37,7 @@ function getSideEffects(dirName: string, options: VantResolverOptions) {
   return `vant/${moduleType}/${dirName}/style/index`;
 }
 
-export default function VantResolver(options: VantResolverOptions = {}) {
+export function VantResolver(options: VantResolverOptions = {}) {
   const { ssr = false } = options;
 
   const moduleType = getModuleType(ssr);

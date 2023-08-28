@@ -29,7 +29,7 @@ bun add vant
 
 ### CDN
 
-The easiest way to use `Vant` is to include a `CDN` link in the `HTML` file, after which you can access all components via the global variable `vant`.
+The easiest way to use Vant is to include a CDN link in the HTML file, after which you can access all components via the global variable `vant`.
 
 ```html
 <!-- import style -->
@@ -59,19 +59,19 @@ The easiest way to use `Vant` is to include a `CDN` link in the `HTML` file, aft
 </script>
 ```
 
-#### Free `CDN`
+#### Free CDN
 
-You can use Vant through these free `CDN` services:
+You can use Vant through these free CDN services:
 
 - [jsdelivr](https://www.jsdelivr.com/package/npm/vant)
 - [cdnjs](https://cdnjs.com/libraries/vant)
 - [unpkg](https://unpkg.com/)
 
-Note: Free `CDN` is generally used for making prototypes or personal projects. It is not recommended to use free `CDN` in production environment.
+Note: Free CDN is generally used for making prototypes or personal projects. It is not recommended to use free CDN in production environment.
 
 For enterprise developers, we recommend:
 
-- install with `npm`, use build tools to bundle it
+- install with npm, use build tools to bundle it
 - download the scripts, host it on your own server
 
 ### CLI
@@ -96,10 +96,13 @@ then
 
 ```bash
 cd my-vue-app
+
 # with npm
 npm install vant
+
 # with yarn
 yarn add vant
+
 # with pnpm
 pnpm add vant
 ```
@@ -108,7 +111,7 @@ pnpm add vant
 
 ### Basic Usage
 
-The basic usage of Vant components
+The basic usage of Vant components:
 
 ```js
 import { createApp } from 'vue';
@@ -123,15 +126,15 @@ const app = createApp();
 app.use(Button);
 ```
 
-> Tip: `Vant` supports `Tree Shaking` by default, so you don't need to configure any plugins, the unused `JS` code will be removed by `Tree Shaking`, but `CSS` styles cannot be optimized by it.
+> Tip: Vant supports Tree Shaking by default, so you don't need to configure any plugins, the unused JS code will be removed by Tree Shaking, but CSS styles cannot be optimized by it.
 
 ### Import on demand
 
 If you are using `vite`, `webpack` or `vue-cli`, you can use [unplugin-vue-components](https://github.com/antfu/unplugin-vue-components), this plugin can help you to auto importing components.
 
-`vant` officially wrote an automatic import style parser [@vant/auto-import-resolver](https://github.com/youzan/vant/vant/tree/main/packages/auto-import-resolver) based on `unplugin-vue-components`, both of which are used together.
+vant officially wrote an automatic import style parser [@vant/auto-import-resolver](https://github.com/youzan/vant/tree/main/packages/auto-import-resolver) based on `unplugin-vue-components`, both of which are used together.
 
-Compared with conventional usage, this method can introduce the `CSS` style of components on demand, thus reducing part of the code volume, but it will become more cumbersome to use. If the business's volume requirements for `CSS` are not particularly extreme, we recommend a simpler general usage.
+Compared with conventional usage, this method can introduce the CSS style of components on demand, thus reducing part of the code volume, but it will become more cumbersome to use. If the business's volume requirements for CSS are not particularly extreme, we recommend a simpler general usage.
 
 #### 1. Install Plugin
 
@@ -156,7 +159,7 @@ For `vite` based project，configure the plugin in the `vite.config.js` file:
 ```js
 import vue from '@vitejs/plugin-vue';
 import Components from 'unplugin-vue-components/vite';
-import VantResolver from '@vant/auto-import-resolver';
+import { VantResolver } from '@vant/auto-import-resolver';
 
 export default {
   plugins: [
@@ -171,7 +174,7 @@ export default {
 For `vue-cli` based project，configure the plugin in the `vue.config.js` file:
 
 ```js
-const VantResolver = require('@vant/auto-import-resolver');
+const { VantResolver } = require('@vant/auto-import-resolver');
 const ComponentsPlugin = require('unplugin-vue-components/webpack');
 
 module.exports = {
@@ -188,7 +191,7 @@ module.exports = {
 For `webpack` based project，configure the plugin in the `webpack.config.js` file:
 
 ```js
-const VantResolver = require('@vant/auto-import-resolver');
+const { VantResolver } = require('@vant/auto-import-resolver');
 const ComponentsPlugin = require('unplugin-vue-components/webpack');
 
 module.exports = {
@@ -202,7 +205,7 @@ module.exports = {
 
 #### 3. Using Components
 
-Then you can using components from Vant in the template, the `unplugin-vue-components` will automatically import the corresponding Vant components.
+Then you can using components from Vant in the template, the `unplugin-vue-components` will automatically import the corresponding Vant components,`@vant/auto-import-resolver` The corresponding component style will be automatically introduced.
 
 ```html
 <template>
@@ -242,9 +245,9 @@ import 'vant/es/image-preview/style';
 
 ## With Frameworks
 
-### Use Vant in `Nuxt 3`
+### Use Vant in Nuxt 3
 
-When using Vant in `Nuxt 3`, you can use [vant-nuxt](https://github.com/vant-ui/vant-nuxt), this module can help you to auto importing components and reduce `CSS` file size.
+When using Vant in Nuxt 3, you can use [vant-nuxt](https://github.com/vant-ui/vant-nuxt), this module can help you to auto importing components and reduce CSS file size.
 
 #### 1. Install Module
 
