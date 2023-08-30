@@ -1,6 +1,6 @@
 # Vant Auto Import Resolver
 
-`@vant/auto-import-resolver` For vant on-demand introduction, parser based on `unplugin-vue-components`
+@vant/auto-import-resolver For Vant on-demand introduction, parser based on `unplugin-vue-components`
 
 🇨🇳 <a href="./README.zh-CN.md">查看中文版介绍</a>
 
@@ -8,11 +8,13 @@
 
 ### Features
 
-- Supports `Vite`, `Webpack`, `Rspack`, `Vue CLI`, `Rollup`, `esbuild` and more, powered by <a href="https://github.com/antfu/unplugin-vue-components">unplugin-vue-components</a>.
+- Supports `Vite`, `Webpack`, `Rspack`, `Vue CLI`, `Rollup`, `esbuild` and more, powered by <a href="https://github.com/antfu/unplugin-vue-components">unplugin-vue-components</a>
 
 - Support css style `VantResolver()` default
 
-- Support less style `VantResolver({ importStyle: false | 'less' })` , Vant 4.0 the less file has been removed from the above npm package.
+- Support less style `VantResolver({ importStyle: false | 'less' })`
+
+  > Tip: Vant 4.0 the less file has been removed from the above npm package
 
 - Support ssr `VantResolver({ ssr: true })`
 

@@ -4,13 +4,15 @@
 
 ### 特性
 
-- 支持 `Vite`, `Webpack`, `Rspack`, `Vue CLI`, `Rollup`, `esbuild` 等, 基于 <a href="https://github.com/antfu/unplugin-vue-components">unplugin-vue-components</a>.
+- 支持 `Vite`, `Webpack`, `Rspack`, `Vue CLI`, `Rollup`, `esbuild` 等, 基于 <a href="https://github.com/antfu/unplugin-vue-components">unplugin-vue-components</a>
 
-- 支持自动引入 `css` 样式 `VantResolver()` 默认
+- 支持自动引入 css 样式 `VantResolver()` 默认
 
-- 支持自动引入 `less` 样式 `VantResolver({ importStyle: false | 'less' })` , Vant 4.0 以上 npm 包内移除了 less 文件
+- 支持自动引入 less 样式 `VantResolver({ importStyle: false | 'less' })`
 
-- 支持 `ssr` `VantResolver({ ssr: true })`
+  > 提示：Vant 4.0 以上 npm 包内移除了 less 文件
+
+- 支持 ssr `VantResolver({ ssr: true })`
 
 ### 安装
 
