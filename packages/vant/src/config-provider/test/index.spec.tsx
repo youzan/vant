@@ -79,7 +79,7 @@ test('should apply theme-vars-dark in dark mode', () => {
   );
 });
 
-test('should apply theme-vars-in-root enable root affects', () => {
+test('should apply theme-vars-in-root enable root affects', async () => {
   const wrapper = mount({
     render() {
       return (
@@ -99,6 +99,20 @@ test('should apply theme-vars-in-root enable root affects', () => {
   );
   expect(
     wrapper.element.getAttribute('style') ===
+      '--van-rate-icon-full-color: green;',
+  ).toBeFalsy();
+
+  await wrapper.setProps({
+    themeVarsInRoot: false,
+  });
+
+  await later(120);
+
+  expect(wrapper.element.getAttribute('style')).toEqual(
+    '--van-rate-icon-full-color: green;',
+  );
+  expect(
+    document.documentElement.getAttribute('style') ===
       '--van-rate-icon-full-color: green;',
   ).toBeFalsy();
 });
