@@ -18,7 +18,7 @@ npm i vant
 npm i vant@latest-v2
 ```
 
-当然，你也可以通过 `yarn` 或 `pnpm` 进行安装：
+当然，你也可以通过 `yarn`、`pnpm` 或 `bun` 进行安装：
 
 ```bash
 # 通过 yarn 安装
@@ -31,9 +31,18 @@ pnpm add vant
 bun add vant
 ```
 
+### 在新项目中使用
+
+如果你需要新建一个项目，我们推荐使用 [Vite](https://cn.vitejs.dev/) 或 [Nuxt 框架](https://nuxt.com)。
+
+以下是 Vant 官方提供的一些示例项目，你可以克隆该项目，并直接拷贝代码来使用。
+
+- [vant-demo - vite](https://github.com/vant-ui/vant-demo/tree/master/vant/vite)：使用 Vue 3、Vant 4、Vite 搭建应用
+- [vant-demo - nuxt3](https://github.com/vant-ui/vant-demo/tree/master/vant/nuxt3)：使用 Vue 3、Nuxt 3、Vant 4 搭建应用。
+
 ### 通过 CDN 安装
 
-使用 Vant 最简单的方法是直接在 HTML 文件中引入 CDN 链接，之后你可以通过全局变量 `vant` 访问到所有组件。
+如果你只需要开发一个简单的 HTML 页面，那么可以直接在 HTML 文件中引入 CDN 链接，之后你可以通过全局变量 `vant` 访问到所有组件。
 
 ```html
 <!-- 引入样式文件 -->
