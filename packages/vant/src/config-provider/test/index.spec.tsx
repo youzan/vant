@@ -78,3 +78,27 @@ test('should apply theme-vars-dark in dark mode', () => {
     '--van-rate-icon-full-color: green;',
   );
 });
+
+test('should apply theme-vars-in-root enable root affects', () => {
+  const wrapper = mount({
+    render() {
+      return (
+        <ConfigProvider
+          theme="dark"
+          themeVars={{ rateIconFullColor: 'red' }}
+          themeVarsDark={{ rateIconFullColor: 'green' }}
+          themeVarsLight={{ rateIconFullColor: 'blue' }}
+          themeVarsInRoot={true}
+        />
+      );
+    },
+  });
+
+  expect(document.documentElement.getAttribute('style')).toEqual(
+    '--van-rate-icon-full-color: green;',
+  );
+  expect(
+    wrapper.element.getAttribute('style') ===
+      '--van-rate-icon-full-color: green;',
+  ).toBeFalsy();
+});

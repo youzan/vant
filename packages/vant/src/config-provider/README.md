@@ -161,7 +161,7 @@ export default {
 };
 ```
 
-> Tips: ConfigProvider only affects its child components.
+> Tips: ConfigProvider by default only affects its child components.
 
 #### Use In TypeScript
 
@@ -316,6 +316,7 @@ There are all **Basic Variables** below, for component CSS Variables, please ref
 | theme-vars | Theme variables | _object_ | - |
 | theme-vars-dark | Theme variables that work in dark mode，will override `theme-vars` | _object_ | - |
 | theme-vars-light | Theme variables that work in light mode, will override `theme-vars` | _object_ | - |
+| theme-vars-in-root | Whether the root node is affected，by default only affects its child components | _boolean_ | `false` |
 | z-index | Set the z-index of all popup components, this property takes effect globally | _number_ | `2000` |
 | tag | HTML Tag of root element | _string_ | `div` |
 | icon-prefix | Icon className prefix | _string_ | `van-icon` |

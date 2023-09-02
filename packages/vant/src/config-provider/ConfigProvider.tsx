@@ -42,6 +42,7 @@ export const configProviderProps = {
   themeVars: Object as ThemeVars,
   themeVarsDark: Object as ThemeVars,
   themeVarsLight: Object as ThemeVars,
+  themeVarsInRoot: Boolean,
   iconPrefix: String,
 };
 
@@ -53,6 +54,18 @@ function mapThemeVarsToCSSVars(themeVars: Record<string, Numeric>) {
     cssVars[`--van-${kebabCase(key)}`] = themeVars[key];
   });
   return cssVars;
+}
+
+function syncThemeVarsInRoot(style: Record<string, Numeric>, enable: boolean) {
+  if (enable) {
+    Object.keys(style).forEach((key) => {
+      document.documentElement.style.setProperty(key, style[key] as string);
+    });
+  } else {
+    Object.keys(style).forEach((key) => {
+      document.documentElement.style.removeProperty(key);
+    });
+  }
 }
 
 export default defineComponent({
@@ -93,6 +106,23 @@ export default defineComponent({
       onActivated(addTheme);
       onDeactivated(removeTheme);
       onBeforeUnmount(removeTheme);
+
+      syncThemeVarsInRoot(
+        style.value as Record<string, Numeric>,
+        props.themeVarsInRoot,
+      );
+
+      let timer: ReturnType<typeof setTimeout>;
+      watch([style, () => props.themeVarsInRoot], () => {
+        if (timer) clearTimeout(timer);
+
+        timer = setTimeout(() => {
+          syncThemeVarsInRoot(
+            style.value as Record<string, Numeric>,
+            props.themeVarsInRoot,
+          );
+        }, 100);
+      });
     }
 
     provide(CONFIG_PROVIDER_KEY, props);
@@ -104,7 +134,10 @@ export default defineComponent({
     });
 
     return () => (
-      <props.tag class={bem()} style={style.value}>
+      <props.tag
+        class={bem()}
+        style={!props.themeVarsInRoot ? style.value : undefined}
+      >
         {slots.default?.()}
       </props.tag>
     );
