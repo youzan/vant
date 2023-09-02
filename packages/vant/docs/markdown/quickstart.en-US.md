@@ -27,9 +27,18 @@ pnpm add vant
 bun add vant
 ```
 
+### Using in a New Project
+
+If you need to create a new project, we recommend using [Vite](https://vitejs.dev/) or [Nuxt framework](https://nuxtjs.org/).
+
+Here are the example projects provided by Vant official. You can clone these projects and copy the code.
+
+- [vant-demo - vite](https://github.com/vant-ui/vant-demo/tree/master/vant/vite): Build an application using Vue 3, Vant 4, and Vite.
+- [vant-demo - nuxt3](https://github.com/vant-ui/vant-demo/tree/master/vant/nuxt3): Build an application using Vue 3, Nuxt 3, and Vant 4.
+
 ### CDN
 
-The easiest way to use Vant is to include a CDN link in the HTML file, after which you can access all components via the global variable `vant`.
+If you only need to develop a simple HTML page, you can directly include the CDN links in the HTML file. After that, you can access all the components through the global variable `vant`.
 
 ```html
 <!-- import style -->
@@ -73,39 +82,6 @@ For enterprise developers, we recommend:
 
 - install with npm, use build tools to bundle it
 - download the scripts, host it on your own server
-
-### CLI
-
-We recommend to use [Vite](https://vitejs.dev/config/) to create a new project.
-
-```bash
-# npm 6.x
-npm create vite@latest my-vue-app --template vue
-
-# npm 7+, extra double-dash is needed:
-npm create vite@latest my-vue-app -- --template vue
-
-# yarn
-yarn create vite my-vue-app --template vue
-
-# pnpm
-pnpm create vite my-vue-app --template vue
-```
-
-then
-
-```bash
-cd my-vue-app
-
-# with npm
-npm install vant
-
-# with yarn
-yarn add vant
-
-# with pnpm
-pnpm add vant
-```
 
 ## Usage
 
