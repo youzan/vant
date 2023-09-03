@@ -76,6 +76,22 @@ module.exports = {
 };
 ```
 
+### Rspack
+
+```ts
+// rspack.config.js
+import Components from 'unplugin-vue-components/rspack';
+import { VantResolver } from '@vant/auto-import-resolver';
+
+module.exports = {
+  plugins: [
+    Components({
+      resolvers: [VantResolver()],
+    }),
+  ],
+};
+```
+
 ### Vue CLI
 
 ```ts
