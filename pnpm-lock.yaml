@@ -27,15 +27,6 @@ importers:
         specifier: ^3.0.0
         version: 3.0.1
 
-  packages/auto-import-resolver:
-    devDependencies:
-      rimraf:
-        specifier: ^5.0.0
-        version: 5.0.1
-      typescript:
-        specifier: ^5.0.4
-        version: 5.1.6
-
   packages/create-vant-cli-app:
     dependencies:
       consola:
@@ -136,6 +127,15 @@ importers:
       esbuild:
         specifier: ^0.18.11
         version: 0.18.20
+      rimraf:
+        specifier: ^5.0.0
+        version: 5.0.1
+      typescript:
+        specifier: ^5.0.4
+        version: 5.1.6
+
+  packages/vant-auto-import-resolver:
+    devDependencies:
       rimraf:
         specifier: ^5.0.0
         version: 5.0.1
@@ -1144,14 +1144,6 @@ packages:
     dependencies:
       '@typescript-eslint/types': 6.3.0
       eslint-visitor-keys: 3.4.3
-    dev: false
-
-  /@vant/use@1.6.0(vue@3.3.4):
-    resolution: {integrity: sha512-PHHxeAASgiOpSmMjceweIrv2AxDZIkWXyaczksMoWvKV2YAYEhoizRuk/xFnKF+emUIi46TsQ+rvlm/t2BBCfA==}
-    peerDependencies:
-      vue: ^3.0.0
-    dependencies:
-      vue: 3.3.4
     dev: false
 
   /@vitejs/plugin-vue-jsx@3.0.1(vite@4.4.9)(vue@3.3.4):
