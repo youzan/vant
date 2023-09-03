@@ -78,3 +78,78 @@ test('should apply theme-vars-dark in dark mode', () => {
     '--van-rate-icon-full-color: green;',
   );
 });
+
+test('should apply theme-vars-scope enable root affects', async () => {
+  const wrapper = mount({
+    render() {
+      return (
+        <ConfigProvider
+          theme="dark"
+          themeVars={{ rateIconFullColor: 'red' }}
+          themeVarsDark={{ rateIconFullColor: 'green' }}
+          themeVarsLight={{ rateIconFullColor: 'blue' }}
+          themeVarsScope="global"
+        />
+      );
+    },
+  });
+
+  expect(document.documentElement.getAttribute('style')).toEqual(
+    '--van-rate-icon-full-color: green;',
+  );
+  expect(
+    wrapper.element.getAttribute('style') ===
+      '--van-rate-icon-full-color: green;',
+  ).toBeFalsy();
+
+  await wrapper.setProps({
+    themeVarsScope: 'local',
+  });
+
+  expect(wrapper.element.getAttribute('style')).toEqual(
+    '--van-rate-icon-full-color: green;',
+  );
+  expect(
+    document.documentElement.getAttribute('style') ===
+      '--van-rate-icon-full-color: green;',
+  ).toBeFalsy();
+});
+
+test('should apply theme-vars-scope enable root affects and sync theme vars', async () => {
+  const wrapper = mount({
+    render() {
+      return (
+        <ConfigProvider
+          theme="dark"
+          themeVars={{ rateIconFullColor: 'red' }}
+          themeVarsScope="global"
+        />
+      );
+    },
+  });
+
+  expect(document.documentElement.getAttribute('style')).toEqual(
+    '--van-rate-icon-full-color: red;',
+  );
+
+  await wrapper.setProps({
+    themeVars: {
+      rateIconFullColor: 'red',
+      buttonPrimaryColor: 'red',
+    },
+  });
+
+  expect(document.documentElement.getAttribute('style')).toEqual(
+    '--van-rate-icon-full-color: red; --van-button-primary-color: red;',
+  );
+
+  await wrapper.setProps({
+    themeVars: {
+      buttonPrimaryColor: 'red',
+    },
+  });
+
+  expect(document.documentElement.getAttribute('style')).toEqual(
+    '--van-button-primary-color: red;',
+  );
+});
