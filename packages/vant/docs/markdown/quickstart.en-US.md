@@ -108,7 +108,7 @@ app.use(Button);
 
 If you are using `vite`, `webpack` or `vue-cli`, you can use [unplugin-vue-components](https://github.com/unplugin/unplugin-vue-components), this plugin can help you to auto importing components.
 
-Vant officially wrote an automatic import style parser [@vant/auto-import-resolver](https://github.com/youzan/vant/tree/main/packages/auto-import-resolver) based on `unplugin-vue-components`, both of which are used together.
+Vant officially wrote an automatic import style parser [@vant/auto-import-resolver](https://github.com/youzan/vant/tree/main/packages/vant-auto-import-resolver) based on `unplugin-vue-components`, both of which are used together.
 
 Compared with conventional usage, this method can introduce the CSS style of components on demand, thus reducing part of the code volume, but it will become more cumbersome to use. If the business's volume requirements for CSS are not particularly extreme, we recommend a simpler general usage.
 
