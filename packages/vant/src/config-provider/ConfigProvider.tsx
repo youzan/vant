@@ -26,6 +26,8 @@ const [name, bem] = createNamespace('config-provider');
 
 export type ConfigProviderTheme = 'light' | 'dark';
 
+export type ConfigProviderThemeVarsScope = 'local' | 'global';
+
 export type ConfigProviderProvide = {
   iconPrefix?: string;
 };
@@ -42,7 +44,7 @@ export const configProviderProps = {
   themeVars: Object as ThemeVars,
   themeVarsDark: Object as ThemeVars,
   themeVarsLight: Object as ThemeVars,
-  themeVarsInRoot: Boolean,
+  themeVarsScope: makeStringProp<ConfigProviderThemeVarsScope>('local'),
   iconPrefix: String,
 };
 
@@ -56,16 +58,20 @@ function mapThemeVarsToCSSVars(themeVars: Record<string, Numeric>) {
   return cssVars;
 }
 
-function syncThemeVarsInRoot(style: Record<string, Numeric>, enable: boolean) {
-  if (enable) {
-    Object.keys(style).forEach((key) => {
-      document.documentElement.style.setProperty(key, style[key] as string);
-    });
-  } else {
-    Object.keys(style).forEach((key) => {
+function syncThemeVarsOnRoot(
+  newStyle: Record<string, Numeric> = {},
+  oldStyle: Record<string, Numeric> = {},
+) {
+  Object.keys(newStyle).forEach((key) => {
+    if (newStyle[key] !== oldStyle[key]) {
+      document.documentElement.style.setProperty(key, newStyle[key] as string);
+    }
+  });
+  Object.keys(oldStyle).forEach((key) => {
+    if (!newStyle[key]) {
       document.documentElement.style.removeProperty(key);
-    });
-  }
+    }
+  });
 }
 
 export default defineComponent({
@@ -107,22 +113,37 @@ export default defineComponent({
       onDeactivated(removeTheme);
       onBeforeUnmount(removeTheme);
 
-      syncThemeVarsInRoot(
-        style.value as Record<string, Numeric>,
-        props.themeVarsInRoot,
+      watch(
+        style,
+        (newStyle, oldStyle) => {
+          if (props.themeVarsScope === 'global') {
+            syncThemeVarsOnRoot(
+              newStyle as Record<string, Numeric>,
+              oldStyle as Record<string, Numeric>,
+            );
+          }
+        },
+        {
+          immediate: true,
+        },
       );
 
-      let timer: ReturnType<typeof setTimeout>;
-      watch([style, () => props.themeVarsInRoot], () => {
-        if (timer) clearTimeout(timer);
-
-        timer = setTimeout(() => {
-          syncThemeVarsInRoot(
-            style.value as Record<string, Numeric>,
-            props.themeVarsInRoot,
-          );
-        }, 100);
-      });
+      watch(
+        () => props.themeVarsScope,
+        (newScope, oldStyle) => {
+          if (oldStyle === 'global') {
+            // remove on Root
+            syncThemeVarsOnRoot({}, style.value as Record<string, Numeric>);
+          }
+          if (newScope === 'global') {
+            // add on root
+            syncThemeVarsOnRoot(style.value as Record<string, Numeric>, {});
+          }
+        },
+        {
+          immediate: true,
+        },
+      );
     }
 
     provide(CONFIG_PROVIDER_KEY, props);
@@ -136,7 +157,7 @@ export default defineComponent({
     return () => (
       <props.tag
         class={bem()}
-        style={!props.themeVarsInRoot ? style.value : undefined}
+        style={props.themeVarsScope === 'local' ? style.value : undefined}
       >
         {slots.default?.()}
       </props.tag>

@@ -159,7 +159,7 @@ export default {
 };
 ```
 
-> 注意：ConfigProvider 默认仅影响它的子组件的样式，不影响全局 root 节点。使用 `theme-vars-in-root` 可以开启全局影响。
+> 注意：ConfigProvider 默认仅影响它的子组件的样式，不影响全局 root 节点。设置为 `global` 整个页面生效。
 
 #### 在 TypeScript 中使用
 
@@ -318,7 +318,7 @@ Vant 中的 CSS 变量分为 **基础变量** 和 **组件变量**。组件变�
 | theme-vars | 自定义主题变量，局部生效 | _object_ | - |
 | theme-vars-dark | 仅在深色模式下生效的主题变量，优先级高于 `theme-vars` | _object_ | - |
 | theme-vars-light | 仅在浅色模式下生效的主题变量，优先级高于 `theme-vars` | _object_ | - |
-| theme-vars-in-root | 是否影响 root 节点，默认仅影响子组件的样式 | _boolean_ | `false` |
+| theme-vars-scope | 默认仅影响子组件的样式，设置为 `global` 整个页面生效 | _ConfigProviderThemeVarsScope_ | `local` |
 | tag | 根节点对应的 HTML 标签名 | _string_ | `div` |
 | z-index | 设置所有弹窗类组件的 z-index，该属性对全局生效 | _number_ | `2000` |
 | icon-prefix | 所有图标的类名前缀，等同于 Icon 组件的 [class-prefix 属性](#/zh-CN/icon#props) | _string_ | `van-icon` |
@@ -332,5 +332,6 @@ import type {
   ConfigProviderProps,
   ConfigProviderTheme,
   ConfigProviderThemeVars,
+  ConfigProviderThemeVarsScope,
 } from 'vant';
 ```

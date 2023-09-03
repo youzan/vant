@@ -7,6 +7,7 @@ export { configProviderProps } from './ConfigProvider';
 export type {
   ConfigProviderProps,
   ConfigProviderTheme,
+  ConfigProviderThemeVarsScope,
 } from './ConfigProvider';
 export type { ConfigProviderThemeVars } from './types';
 
