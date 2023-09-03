@@ -43,7 +43,7 @@ export function VantResolver(options: VantResolverOptions = {}) {
   const moduleType = getModuleType(ssr);
 
   return {
-    type: 'component',
+    type: 'component' as const,
     resolve: (name: string) => {
       if (name.startsWith('Van')) {
         const partialName = name.slice(3);
