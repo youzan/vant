@@ -79,7 +79,7 @@ import { showToast, buttonProps } from 'vant';
 import 'vant/lib/index.css';
 ```
 
-- 通过 [unplugin-vue-components](https://github.com/antfu/unplugin-vue-components) 插件实现按需引入样式，详细用法参见 [快速上手](#/zh-CN/quickstart)。
+- 通过 [unplugin-vue-components](https://github.com/unplugin/unplugin-vue-components) 插件实现按需引入样式，详细用法参见 [快速上手](#/zh-CN/quickstart)。
 
 ## 组件重构
 

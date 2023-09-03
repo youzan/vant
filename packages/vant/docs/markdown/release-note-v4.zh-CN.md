@@ -86,7 +86,7 @@
 import { showToast, buttonProps } from 'vant';
 ```
 
-在包体积方面，移除 `babel-plugin-import` 对项目的 JS 体积不会有影响，因为 Vant 默认支持通过 Tree Shaking 来移除不需要的 JS 代码，而 CSS 代码可以通过 [unplugin-vue-components](https://github.com/antfu/unplugin-vue-components) 插件实现按需引入，详细用法请参考 [「快速上手」](https://vant-ui.github.io/vant/#/zh-CN/quickstart)。
+在包体积方面，移除 `babel-plugin-import` 对项目的 JS 体积不会有影响，因为 Vant 默认支持通过 Tree Shaking 来移除不需要的 JS 代码，而 CSS 代码可以通过 [unplugin-vue-components](https://github.com/unplugin/unplugin-vue-components) 插件实现按需引入，详细用法请参考 [「快速上手」](https://vant-ui.github.io/vant/#/zh-CN/quickstart)。
 
 ### 样式变量类型提示
 

@@ -86,7 +86,7 @@ In the early days, most component libraries used `babel-plugin-import` to achiev
 import { showToast, buttonProps } from 'vant';
 ```
 
-In terms of bundle size, removing `babel-plugin-import` will not affect on the JS size of the project, because Vant supports tree shaking by default to remove unnecessary JS code by default, and CSS code can be imported on demand via [unplugin-vue-components](https://github.com/antfu/unplugin-vue-components). For detailed usage, please refer to ["Quick Start"](https://vant-ui.github.io/vant/#/en-US/quickstart).
+In terms of bundle size, removing `babel-plugin-import` will not affect on the JS size of the project, because Vant supports tree shaking by default to remove unnecessary JS code by default, and CSS code can be imported on demand via [unplugin-vue-components](https://github.com/unplugin/unplugin-vue-components). For detailed usage, please refer to ["Quick Start"](https://vant-ui.github.io/vant/#/en-US/quickstart).
 
 ### Style variable type hints
 

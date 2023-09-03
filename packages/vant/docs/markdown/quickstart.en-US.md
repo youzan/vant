@@ -106,7 +106,7 @@ app.use(Button);
 
 ### Import on demand
 
-If you are using `vite`, `webpack` or `vue-cli`, you can use [unplugin-vue-components](https://github.com/antfu/unplugin-vue-components), this plugin can help you to auto importing components.
+If you are using `vite`, `webpack` or `vue-cli`, you can use [unplugin-vue-components](https://github.com/unplugin/unplugin-vue-components), this plugin can help you to auto importing components.
 
 Vant officially wrote an automatic import style parser [@vant/auto-import-resolver](https://github.com/youzan/vant/tree/main/packages/auto-import-resolver) based on `unplugin-vue-components`, both of which are used together.
 
@@ -216,7 +216,7 @@ import 'vant/es/image-preview/style';
 #### Tips
 
 - "Full Import" and "On-demand Import" should not be used at the same time, otherwise it will lead to problems such as code duplication and style overrides.
-- During use, if the component cannot be imported, because `unplugin-vue-components` is not a plug-in officially maintained by `Vant`, it is recommended to give feedback under the [antfu/unplugin-vue-components](https://github.com/antfu/antfu/unplugin-vue-components) repository.
+- During use, if the component cannot be imported, because `unplugin-vue-components` is not a plug-in officially maintained by `Vant`, it is recommended to give feedback under the [unplugin/unplugin-vue-components](https://github.com/antfu/unplugin/unplugin-vue-components) repository.
 - If it is a similar problem that the style does not take effect, feedback under the `Vant` repository
 
 ## With Frameworks
