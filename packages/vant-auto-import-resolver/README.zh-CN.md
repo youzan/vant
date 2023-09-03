@@ -1,18 +1,14 @@
 # Vant Auto Import Resolver
 
-@vant/auto-import-resolver 用于 Vant 按需引入，基于 unplugin-vue-components 的解析器
+English | [简体中文](./README.zh-CN.md)
+
+`@vant/auto-import-resolver` 是 [unplugin-vue-components](https://github.com/unplugin/unplugin-vue-components) 的一个解析器，用于实现 Vant 按需引入。
 
 ### 特性
 
-- 支持 `Vite`, `Webpack`, `Rspack`, `Vue CLI`, `Rollup`, `esbuild` 等, 基于 <a href="https://github.com/antfu/unplugin-vue-components">unplugin-vue-components</a>
-
-- 支持自动引入 css 样式 `VantResolver()` 默认
-
-- 支持自动引入 less 样式 `VantResolver({ importStyle: false | 'less' })`
-
-  > 提示：Vant 4.0 以上 npm 包内移除了 less 文件
-
-- 支持 ssr `VantResolver({ ssr: true })`
+- 支持 `Vite`, `Webpack`, `Rspack`, `Vue CLI`, `Rollup`, `esbuild` 等
+- 支持自动引入组件对应的 CSS 样式
+- 支持 SSR（服务端渲染）
 
 ### 安装
 
@@ -30,8 +26,9 @@ pnpm add @vant/auto-import-resolver unplugin-vue-components -D
 bun add @vant/auto-import-resolver unplugin-vue-components -D
 ```
 
-<details>
-<summary>Vite</summary><br>
+## 使用
+
+### Vite
 
 ```ts
 // vite.config.ts
@@ -47,10 +44,7 @@ export default defineConfig({
 });
 ```
 
-<br></details>
-
-<details>
-<summary>Rollup</summary><br>
+### Rollup
 
 ```ts
 // rollup.config.js
@@ -66,10 +60,7 @@ export default {
 };
 ```
 
-<br></details>
-
-<details>
-<summary>Webpack</summary><br>
+### Webpack
 
 ```ts
 // webpack.config.js
@@ -85,10 +76,7 @@ module.exports = {
 };
 ```
 
-<br></details>
-
-<details>
-<summary>Vue CLI</summary><br>
+### Vue CLI
 
 ```ts
 // vue.config.js
@@ -106,10 +94,7 @@ module.exports = {
 };
 ```
 
-<br></details>
-
-<details>
-<summary>esbuild</summary><br>
+### esbuild
 
 ```ts
 // esbuild.config.js
@@ -125,5 +110,3 @@ build({
   ],
 });
 ```
-
-<br></details>

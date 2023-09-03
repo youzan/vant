@@ -1,24 +1,16 @@
 # Vant Auto Import Resolver
 
-@vant/auto-import-resolver For Vant on-demand introduction, parser based on `unplugin-vue-components`
+[English](./README.md) | 简体中文
 
-🇨🇳 <a href="./README.zh-CN.md">查看中文版介绍</a>
-
----
+`@vant/auto-import-resolver` is a resolver for [unplugin-vue-components](https://github.com/unplugin/unplugin-vue-components) that enables on-demand importing of Vant components.
 
 ### Features
 
-- Supports `Vite`, `Webpack`, `Rspack`, `Vue CLI`, `Rollup`, `esbuild` and more, powered by <a href="https://github.com/antfu/unplugin-vue-components">unplugin-vue-components</a>
+- Supports `Vite`, `Webpack`, `Rspack`, `Vue CLI`, `Rollup`, `esbuild`, and more.
+- Automatically imports the corresponding CSS styles for the components.
+- Supports SSR (Server-Side Rendering).
 
-- Support css style `VantResolver()` default
-
-- Support less style `VantResolver({ importStyle: false | 'less' })`
-
-  > Tip: Vant 4.0 the less file has been removed from the above npm package
-
-- Support ssr `VantResolver({ ssr: true })`
-
-### Install Manually
+### Installation
 
 ```shell
 # via npm
@@ -34,8 +26,9 @@ pnpm add @vant/auto-import-resolver unplugin-vue-components -D
 bun add @vant/auto-import-resolver unplugin-vue-components -D
 ```
 
-<details>
-<summary>Vite</summary><br>
+## Usage
+
+### Vite
 
 ```ts
 // vite.config.ts
@@ -51,10 +44,7 @@ export default defineConfig({
 });
 ```
 
-<br></details>
-
-<details>
-<summary>Rollup</summary><br>
+### Rollup
 
 ```ts
 // rollup.config.js
@@ -70,10 +60,7 @@ export default {
 };
 ```
 
-<br></details>
-
-<details>
-<summary>Webpack</summary><br>
+### Webpack
 
 ```ts
 // webpack.config.js
@@ -89,10 +76,7 @@ module.exports = {
 };
 ```
 
-<br></details>
-
-<details>
-<summary>Vue CLI</summary><br>
+### Vue CLI
 
 ```ts
 // vue.config.js
@@ -110,10 +94,7 @@ module.exports = {
 };
 ```
 
-<br></details>
-
-<details>
-<summary>esbuild</summary><br>
+### esbuild
 
 ```ts
 // esbuild.config.js
@@ -129,5 +110,3 @@ build({
   ],
 });
 ```
-
-<br></details>
