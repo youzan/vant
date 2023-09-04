@@ -113,25 +113,19 @@ export default defineComponent({
       onDeactivated(removeTheme);
       onBeforeUnmount(removeTheme);
 
-      watch(
-        style,
-        (newStyle, oldStyle) => {
-          if (props.themeVarsScope === 'global') {
-            syncThemeVarsOnRoot(
-              newStyle as Record<string, Numeric>,
-              oldStyle as Record<string, Numeric>,
-            );
-          }
-        },
-        {
-          immediate: true,
-        },
-      );
+      watch(style, (newStyle, oldStyle) => {
+        if (props.themeVarsScope === 'global') {
+          syncThemeVarsOnRoot(
+            newStyle as Record<string, Numeric>,
+            oldStyle as Record<string, Numeric>,
+          );
+        }
+      });
 
       watch(
         () => props.themeVarsScope,
-        (newScope, oldStyle) => {
-          if (oldStyle === 'global') {
+        (newScope, oldScope) => {
+          if (oldScope === 'global') {
             // remove on Root
             syncThemeVarsOnRoot({}, style.value as Record<string, Numeric>);
           }
@@ -140,10 +134,12 @@ export default defineComponent({
             syncThemeVarsOnRoot(style.value as Record<string, Numeric>, {});
           }
         },
-        {
-          immediate: true,
-        },
       );
+
+      if (props.themeVarsScope === 'global') {
+        // add on root
+        syncThemeVarsOnRoot(style.value as Record<string, Numeric>, {});
+      }
     }
 
     provide(CONFIG_PROVIDER_KEY, props);
