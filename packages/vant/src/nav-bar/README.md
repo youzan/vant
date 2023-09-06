@@ -93,6 +93,8 @@ export default {
 | title | Title | _string_ | `''` |
 | left-text | Left Text | _string_ | `''` |
 | right-text | Right Text | _string_ | `''` |
+| left-disabled | Left Disabled | _boolean_ | `false` |
+| right-disabled | Right Disabled | _boolean_ | `false` |
 | left-arrow | Whether to show left arrow | _boolean_ | `false` |
 | border | Whether to show bottom border | _boolean_ | `true` |
 | fixed | Whether to fixed top | _boolean_ | `false` |
