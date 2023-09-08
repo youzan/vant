@@ -2,14 +2,14 @@ type BaseThemeVars = {
   // Color Palette
   black?: string;
   white?: string;
-  'gray-1'?: string;
-  'gray-2'?: string;
-  'gray-3'?: string;
-  'gray-4'?: string;
-  'gray-5'?: string;
-  'gray-6'?: string;
-  'gray-7'?: string;
-  'gray-8'?: string;
+  gray1?: string;
+  gray2?: string;
+  gray3?: string;
+  gray4?: string;
+  gray5?: string;
+  gray6?: string;
+  gray7?: string;
+  gray8?: string;
   red?: string;
   blue?: string;
   orange?: string;
@@ -27,32 +27,32 @@ type BaseThemeVars = {
   dangerColor?: string;
   warningColor?: string;
   textColor?: string;
-  'text-color-2'?: string;
-  'text-color-3'?: string;
+  textColor2?: string;
+  textColor3?: string;
   activeColor?: string;
   activeOpacity?: number;
   disabledOpacity?: number;
   background?: string;
-  'background-2'?: string;
+  background2?: string;
 
   // Padding
   paddingBase?: string;
-  'padding-xs'?: string;
-  'padding-sm'?: string;
-  'padding-md'?: string;
-  'padding-lg'?: string;
-  'padding-xl'?: string;
+  paddingXs?: string;
+  paddingSm?: string;
+  paddingMd?: string;
+  paddingLg?: string;
+  paddingXl?: string;
 
   // Font
-  'font-size-xs'?: string;
-  'font-size-sm'?: string;
-  'font-size-md'?: string;
-  'font-size-lg'?: string;
+  fontSizexs?: string;
+  fontSizeSm?: string;
+  fontSizeMd?: string;
+  fontSizeLg?: string;
   fontBold?: number;
-  'line-height-xs'?: string;
-  'line-height-sm'?: string;
-  'line-height-md'?: string;
-  'line-height-lg'?: string;
+  lineHeightXs?: string;
+  lineHeightSm?: string;
+  lineHeightMd?: string;
+  lineHeightLg?: string;
   baseFont?: string;
   priceFont?: string;
 
@@ -65,10 +65,10 @@ type BaseThemeVars = {
   // Border
   borderColor?: string;
   borderWidth?: string;
-  'radius-sm'?: string;
-  'radius-md'?: string;
-  'radius-lg'?: string;
-  'radius-max'?: string;
+  radiusSm?: string;
+  radiusMd?: string;
+  radiusLg?: string;
+  radiusMax?: string;
 };
 
 export type ConfigProviderThemeVars = BaseThemeVars &
