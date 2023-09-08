@@ -44,7 +44,7 @@ type BaseThemeVars = {
   paddingXl?: string;
 
   // Font
-  fontSizexs?: string;
+  fontSizeXs?: string;
   fontSizeSm?: string;
   fontSizeMd?: string;
   fontSizeLg?: string;
