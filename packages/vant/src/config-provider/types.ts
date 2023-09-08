@@ -33,7 +33,7 @@ type BaseThemeVars = {
   activeOpacity?: number;
   disabledOpacity?: number;
   background?: string;
-  'background-2': string;
+  'background-2'?: string;
 
   // Padding
   paddingBase?: string;
