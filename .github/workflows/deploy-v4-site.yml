@@ -61,6 +61,8 @@ jobs:
           token: ${{ secrets.VANT_UI_TOKEN }}
           repository-name: vant-ui/vant-ui.github.io
           target-folder: vant
+          # enable single-commit to reduce the repo size
+          single-commit: true
           clean: true
           clean-exclude: |
             1.x/*
