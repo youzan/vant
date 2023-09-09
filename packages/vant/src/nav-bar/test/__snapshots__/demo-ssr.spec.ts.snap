@@ -104,4 +104,34 @@ exports[`should render demo and match snapshot 1`] = `
     </div>
   </div>
 </div>
+<div>
+  <!--[-->
+  <div
+    style
+    class="van-nav-bar van-hairline--bottom"
+  >
+    <div class="van-nav-bar__content">
+      <div class="van-nav-bar__left van-nav-bar__disabled">
+        <!--[-->
+        <i
+          class="van-badge__wrapper van-icon van-icon-arrow-left van-nav-bar__arrow"
+          style
+        >
+          <!--[-->
+        </i>
+        <span class="van-nav-bar__text">
+          Back
+        </span>
+      </div>
+      <div class="van-nav-bar__title van-ellipsis">
+        Title
+      </div>
+      <div class="van-nav-bar__right van-nav-bar__disabled">
+        <span class="van-nav-bar__text">
+          Button
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
 `;

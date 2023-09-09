@@ -51,8 +51,16 @@ export default defineComponent({
     const navBarRef = ref<HTMLElement>();
     const renderPlaceholder = usePlaceholder(navBarRef, bem);
 
-    const onClickLeft = (event: MouseEvent) => emit('clickLeft', event);
-    const onClickRight = (event: MouseEvent) => emit('clickRight', event);
+    const onClickLeft = (event: MouseEvent) => {
+      if (!props.leftDisabled) {
+        emit('clickLeft', event);
+      }
+    };
+    const onClickRight = (event: MouseEvent) => {
+      if (!props.rightDisabled) {
+        emit('clickRight', event);
+      }
+    };
 
     const renderLeft = () => {
       if (slots.left) {
@@ -102,7 +110,7 @@ export default defineComponent({
                     : '',
                   props.leftDisabled ? bem('disabled') : '',
                 ]}
-                onClick={!props.rightDisabled ? onClickLeft : () => {}}
+                onClick={onClickLeft}
               >
                 {renderLeft()}
               </div>
@@ -119,7 +127,7 @@ export default defineComponent({
                     : '',
                   props.rightDisabled ? bem('disabled') : '',
                 ]}
-                onClick={!props.rightDisabled ? onClickRight : () => {}}
+                onClick={onClickRight}
               >
                 {renderRight()}
               </div>
