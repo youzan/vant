@@ -63,6 +63,11 @@
     align-items: center;
     padding: 0 var(--van-padding-md);
     font-size: var(--van-font-size-md);
+
+    &--disabled {
+      cursor: not-allowed;
+      opacity: var(--van-nav-bar-disabled-opacity);
+    }
   }
 
   &__left {
@@ -75,10 +80,5 @@
 
   &__text {
     color: var(--van-nav-bar-text-color);
-  }
-
-  &__disabled {
-    cursor: not-allowed;
-    opacity: var(--van-nav-bar-disabled-opacity);
   }
 }

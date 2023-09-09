@@ -104,11 +104,10 @@ export default defineComponent({
             {hasLeft && (
               <div
                 class={[
-                  bem('left'),
+                  bem('left', { disabled: props.leftDisabled }),
                   props.clickable && !props.leftDisabled
                     ? HAPTICS_FEEDBACK
                     : '',
-                  props.leftDisabled ? bem('disabled') : '',
                 ]}
                 onClick={onClickLeft}
               >
@@ -121,11 +120,10 @@ export default defineComponent({
             {hasRight && (
               <div
                 class={[
-                  bem('right'),
+                  bem('right', { disabled: props.rightDisabled }),
                   props.clickable && !props.rightDisabled
                     ? HAPTICS_FEEDBACK
                     : '',
-                  props.rightDisabled ? bem('disabled') : '',
                 ]}
                 onClick={onClickRight}
               >

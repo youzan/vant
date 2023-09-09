@@ -111,7 +111,7 @@ exports[`should render demo and match snapshot 1`] = `
     class="van-nav-bar van-hairline--bottom"
   >
     <div class="van-nav-bar__content">
-      <div class="van-nav-bar__left van-nav-bar__disabled">
+      <div class="van-nav-bar__left van-nav-bar__left--disabled">
         <!--[-->
         <i
           class="van-badge__wrapper van-icon van-icon-arrow-left van-nav-bar__arrow"
@@ -126,7 +126,7 @@ exports[`should render demo and match snapshot 1`] = `
       <div class="van-nav-bar__title van-ellipsis">
         Title
       </div>
-      <div class="van-nav-bar__right van-nav-bar__disabled">
+      <div class="van-nav-bar__right van-nav-bar__right--disabled">
         <span class="van-nav-bar__text">
           Button
         </span>
