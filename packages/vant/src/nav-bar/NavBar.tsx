@@ -30,6 +30,8 @@ export const navBarProps = {
   border: truthProp,
   leftText: String,
   rightText: String,
+  leftDisabled: Boolean,
+  rightDisabled: Boolean,
   leftArrow: Boolean,
   placeholder: Boolean,
   safeAreaInsetTop: Boolean,
@@ -93,8 +95,14 @@ export default defineComponent({
           <div class={bem('content')}>
             {hasLeft && (
               <div
-                class={[bem('left'), props.clickable ? HAPTICS_FEEDBACK : '']}
-                onClick={onClickLeft}
+                class={[
+                  bem('left'),
+                  props.clickable && !props.leftDisabled
+                    ? HAPTICS_FEEDBACK
+                    : '',
+                  props.leftDisabled ? bem('disabled') : '',
+                ]}
+                onClick={!props.rightDisabled ? onClickLeft : () => {}}
               >
                 {renderLeft()}
               </div>
@@ -104,8 +112,14 @@ export default defineComponent({
             </div>
             {hasRight && (
               <div
-                class={[bem('right'), props.clickable ? HAPTICS_FEEDBACK : '']}
-                onClick={onClickRight}
+                class={[
+                  bem('right'),
+                  props.clickable && !props.rightDisabled
+                    ? HAPTICS_FEEDBACK
+                    : '',
+                  props.rightDisabled ? bem('disabled') : '',
+                ]}
+                onClick={!props.rightDisabled ? onClickRight : () => {}}
               >
                 {renderRight()}
               </div>

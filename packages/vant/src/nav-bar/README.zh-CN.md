@@ -101,6 +101,8 @@ export default {
 | title | 标题 | _string_ | `''` |
 | left-text | 左侧文案 | _string_ | `''` |
 | right-text | 右侧文案 | _string_ | `''` |
+| left-disabled | 左侧禁用 | _boolean_ | `false` |
+| right-disabled | 右侧禁用 | _boolean_ | `false` |
 | left-arrow | 是否显示左侧箭头 | _boolean_ | `false` |
 | border | 是否显示下边框 | _boolean_ | `true` |
 | fixed | 是否固定在顶部 | _boolean_ | `false` |

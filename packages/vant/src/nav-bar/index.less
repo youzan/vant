@@ -7,6 +7,7 @@
   --van-nav-bar-title-font-size: var(--van-font-size-lg);
   --van-nav-bar-title-text-color: var(--van-text-color);
   --van-nav-bar-z-index: 1;
+  --van-nav-bar-disabled-opacity: var(--van-disabled-opacity);
 }
 
 .van-nav-bar {
@@ -74,5 +75,10 @@
 
   &__text {
     color: var(--van-nav-bar-text-color);
+  }
+
+  &__disabled {
+    cursor: not-allowed;
+    opacity: var(--van-nav-bar-disabled-opacity);
   }
 }
