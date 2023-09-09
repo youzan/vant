@@ -51,8 +51,16 @@ export default defineComponent({
     const navBarRef = ref<HTMLElement>();
     const renderPlaceholder = usePlaceholder(navBarRef, bem);
 
-    const onClickLeft = (event: MouseEvent) => emit('clickLeft', event);
-    const onClickRight = (event: MouseEvent) => emit('clickRight', event);
+    const onClickLeft = (event: MouseEvent) => {
+      if (!props.leftDisabled) {
+        emit('clickLeft', event);
+      }
+    };
+    const onClickRight = (event: MouseEvent) => {
+      if (!props.rightDisabled) {
+        emit('clickRight', event);
+      }
+    };
 
     const renderLeft = () => {
       if (slots.left) {
@@ -96,13 +104,12 @@ export default defineComponent({
             {hasLeft && (
               <div
                 class={[
-                  bem('left'),
+                  bem('left', { disabled: props.leftDisabled }),
                   props.clickable && !props.leftDisabled
                     ? HAPTICS_FEEDBACK
                     : '',
-                  props.leftDisabled ? bem('disabled') : '',
                 ]}
-                onClick={!props.rightDisabled ? onClickLeft : () => {}}
+                onClick={onClickLeft}
               >
                 {renderLeft()}
               </div>
@@ -113,13 +120,12 @@ export default defineComponent({
             {hasRight && (
               <div
                 class={[
-                  bem('right'),
+                  bem('right', { disabled: props.rightDisabled }),
                   props.clickable && !props.rightDisabled
                     ? HAPTICS_FEEDBACK
                     : '',
-                  props.rightDisabled ? bem('disabled') : '',
                 ]}
-                onClick={!props.rightDisabled ? onClickRight : () => {}}
+                onClick={onClickRight}
               >
                 {renderRight()}
               </div>
