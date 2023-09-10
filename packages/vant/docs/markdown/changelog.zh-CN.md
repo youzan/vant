@@ -19,6 +19,36 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 
 ## 更新内容
 
+### v4.6.8
+
+`2023-09-10`
+
+#### 新功能 🎉
+
+- feat(Cell): 添加 CSS 变量用于自定义 Value 的字体大小 by [@inottn](https://github.com/inottn) in [#12260](https://github.com/youzan/vant/pull/12260)
+- feat(ConfigProvider): 补充 ConfigProviderThemeVars 的类型声明 by [@xieyezi](https://github.com/xieyezi) in [#12264](https://github.com/youzan/vant/pull/12264)
+- feat(NavBar): 添加 leftDisabled 和 rightDisabled 属性 by [@m-xlsea](https://github.com/m-xlsea) in [#12258](https://github.com/youzan/vant/pull/12258)
+
+#### Bug 修复 🐞
+
+- fix(ConfigProvider): 修复设置某些基础主题变量失败的问题 by [@chenjiahan](https://github.com/chenjiahan) in [#12272](https://github.com/youzan/vant/pull/12272)
+- fix(ConfigProvider): 修复 ConfigProviderThemeVars 的 fontSizeXs 命名错误 by [@xieyezi](https://github.com/xieyezi) in [#12267](https://github.com/youzan/vant/pull/12267)
+
+#### 文档 📖
+
+- docs(NavBar): 添加禁用按钮示例 by [@chenjiahan](https://github.com/chenjiahan) in [#12270](https://github.com/youzan/vant/pull/12270)
+
+#### 其他变更
+
+- chore(CI): 启用单一提交以减小仓库大小 by [@chenjiahan](https://github.com/chenjiahan) in [#12268](https://github.com/youzan/vant/pull/12268)
+- chore(CI): 升级 actions 版本 by [@chenjiahan](https://github.com/chenjiahan) in [#12269](https://github.com/youzan/vant/pull/12269)
+- chore: 将 Axure 文件移动到 vant-assets 仓库 by [@chenjiahan](https://github.com/chenjiahan) in [#12271](https://github.com/youzan/vant/pull/12271)
+
+#### 新贡献者
+
+- [@xieyezi](https://github.com/xieyezi) 在 [#12264](https://github.com/youzan/vant/pull/12264) 中首次贡献
+- [@m-xlsea](https://github.com/m-xlsea) 在 [#12258](https://github.com/youzan/vant/pull/12258) 中首次贡献
+
 ### v4.6.7
 
 `2023-09-04`
