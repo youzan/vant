@@ -50,10 +50,16 @@ export const configProviderProps = {
 
 export type ConfigProviderProps = ExtractPropTypes<typeof configProviderProps>;
 
+/** map `gray1` to `gray-1` */
+function insertDash(str: string) {
+  return str.replace(/([a-zA-Z])(\d)/g, '$1-$2');
+}
+
 function mapThemeVarsToCSSVars(themeVars: Record<string, Numeric>) {
   const cssVars: Record<string, Numeric> = {};
   Object.keys(themeVars).forEach((key) => {
-    cssVars[`--van-${kebabCase(key)}`] = themeVars[key];
+    const formattedKey = insertDash(kebabCase(key));
+    cssVars[`--van-${formattedKey}`] = themeVars[key];
   });
   return cssVars;
 }
