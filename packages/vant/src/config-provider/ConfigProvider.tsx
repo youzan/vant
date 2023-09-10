@@ -50,6 +50,7 @@ export const configProviderProps = {
 
 export type ConfigProviderProps = ExtractPropTypes<typeof configProviderProps>;
 
+/** map `gray1` to `gray-1` */
 function insertDash(str: string) {
   return str.replace(/([a-zA-Z])(\d)/g, '$1-$2');
 }
