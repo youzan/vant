@@ -62,7 +62,7 @@ export default defineComponent({
 
   props: calendarMonthProps,
 
-  emits: ['click'],
+  emits: ['click', 'click-disabled-date'],
 
   setup(props, { emit, slots }) {
     const [visible, setVisible] = useToggle();
@@ -262,6 +262,7 @@ export default defineComponent({
         offset={offset.value}
         rowHeight={rowHeight.value}
         onClick={(item) => emit('click', item)}
+        onClick-disabled-date={(item) => emit('click-disabled-date', item)}
       />
     );
 
