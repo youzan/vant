@@ -116,7 +116,7 @@ export default defineComponent({
     'overRange',
     'update:show',
     'clickSubtitle',
-    'click-disabled-date',
+    'clickDisabledDate',
   ],
 
   setup(props, { emit, slots }) {
@@ -487,7 +487,7 @@ export default defineComponent({
             'allowSameDay',
           ])}
           onClick={onClickDay}
-          onClick-disabled-date={(item) => emit('click-disabled-date', item)}
+          onClickDisabledDate={(item) => emit('clickDisabledDate', item)}
         />
       );
     };
