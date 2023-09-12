@@ -76,6 +76,7 @@ export const tabsProps = {
   lazyRender: truthProp,
   lineWidth: numericProp,
   lineHeight: numericProp,
+  lineBackground: String,
   beforeChange: Function as PropType<Interceptor>,
   swipeThreshold: makeNumericProp(5),
   titleActiveColor: String,
@@ -192,7 +193,7 @@ export default defineComponent({
 
         const lineStyle: CSSProperties = {
           width: addUnit(lineWidth),
-          backgroundColor: props.color,
+          background: props.lineBackground ? props.lineBackground : props.color,
           transform: `translateX(${left}px) translateX(-50%)`,
         };
 

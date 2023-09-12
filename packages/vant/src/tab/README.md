@@ -244,6 +244,7 @@ export default {
 | duration | Toggle tab's animation time | _number \| string_ | `0.3` |
 | line-width | Width of tab line | _number \| string_ | `40px` |
 | line-height | Height of tab line | _number \| string_ | `3px` |
+| line-background | Background color of tab line | _string_ | `#1989fa` |
 | animated | Whether to change tabs with animation | _boolean_ | `false` |
 | border | Whether to show border when `type="line"` | _boolean_ | `false` |
 | ellipsis | Whether to ellipsis too long title | _boolean_ | `true` |

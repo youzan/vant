@@ -257,6 +257,7 @@ export default {
 | duration | 动画时间，单位秒，设置为 0 可以禁用动画 | _number \| string_ | `0.3` |
 | line-width | 底部条宽度，默认单位 `px` | _number \| string_ | `40px` |
 | line-height | 底部条高度，默认单位 `px` | _number \| string_ | `3px` |
+| line-background | 底部条背景色 | _string_ | `#1989fa` |
 | animated | 是否开启切换标签内容时的转场动画 | _boolean_ | `false` |
 | border | 是否显示标签栏外边框，仅在 `type="line"` 时有效 | _boolean_ | `false` |
 | ellipsis | 是否省略过长的标题文字 | _boolean_ | `true` |

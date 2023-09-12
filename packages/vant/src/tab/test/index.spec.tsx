@@ -494,3 +494,19 @@ test('should re-render when line-width or line-height changed', async () => {
   expect(line.style.width).toEqual('30px');
   expect(line.style.height).toEqual('10px');
 });
+
+test('should change background color of tab line when using line-background prop', async () => {
+  const wrapper = mount({
+    render() {
+      return (
+        <Tabs lineBackground="red">
+          <Tab title="title1">Text</Tab>
+          <Tab title="title2">Text</Tab>
+        </Tabs>
+      );
+    },
+  });
+  await later();
+  const line = wrapper.find('.van-tabs__line');
+  expect(line.style.background).toEqual('red');
+});
