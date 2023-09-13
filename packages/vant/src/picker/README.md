@@ -338,6 +338,7 @@ export default {
 
 | Attribute | Description | Type | Default |
 | --- | --- | --- | --- |
+| v-model | values of chosen option | _number[] \| string[]_ | - |
 | columns | Columns data | _PickerOption[] \| PickerOption[][]_ | `[]` |
 | columns-field-names | custom columns field | _object_ | `{ text: 'text', value: 'value', children: 'children' }` |
 | title | Toolbar title | _string_ | - |
@@ -345,6 +346,7 @@ export default {
 | cancel-button-text | Text of cancel button | _string_ | `Cancel` |
 | toolbar-position | Toolbar position, cat be set to `bottom` | _string_ | `top` |
 | loading | Whether to show loading prompt | _boolean_ | `false` |
+| readonly | Whether to be readonly | _boolean_ | `false` |
 | show-toolbar | Whether to show toolbar | _boolean_ | `true` |
 | allow-html | Whether to allow HTML in option text | _boolean_ | `false` |
 | option-height | Option height, supports `px` `vw` `vh` `rem` unit, default `px` | _number \| string_ | `44` |

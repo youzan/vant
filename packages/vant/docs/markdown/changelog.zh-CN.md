@@ -19,6 +19,68 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 
 ## 更新内容
 
+### v4.6.8
+
+`2023-09-10`
+
+#### 新功能 🎉
+
+- feat(Cell): 添加 CSS 变量用于自定义 Value 的字体大小 by [@inottn](https://github.com/inottn) in [#12260](https://github.com/youzan/vant/pull/12260)
+- feat(ConfigProvider): 补充 ConfigProviderThemeVars 的类型声明 by [@xieyezi](https://github.com/xieyezi) in [#12264](https://github.com/youzan/vant/pull/12264)
+- feat(NavBar): 添加 leftDisabled 和 rightDisabled 属性 by [@m-xlsea](https://github.com/m-xlsea) in [#12258](https://github.com/youzan/vant/pull/12258)
+
+#### Bug 修复 🐞
+
+- fix(ConfigProvider): 修复设置某些基础主题变量失败的问题 by [@chenjiahan](https://github.com/chenjiahan) in [#12272](https://github.com/youzan/vant/pull/12272)
+- fix(ConfigProvider): 修复 ConfigProviderThemeVars 的 fontSizeXs 命名错误 by [@xieyezi](https://github.com/xieyezi) in [#12267](https://github.com/youzan/vant/pull/12267)
+
+#### 文档 📖
+
+- docs(NavBar): 添加禁用按钮示例 by [@chenjiahan](https://github.com/chenjiahan) in [#12270](https://github.com/youzan/vant/pull/12270)
+
+#### 其他变更
+
+- chore(CI): 启用单一提交以减小仓库大小 by [@chenjiahan](https://github.com/chenjiahan) in [#12268](https://github.com/youzan/vant/pull/12268)
+- chore(CI): 升级 actions 版本 by [@chenjiahan](https://github.com/chenjiahan) in [#12269](https://github.com/youzan/vant/pull/12269)
+- chore: 将 Axure 文件移动到 vant-assets 仓库 by [@chenjiahan](https://github.com/chenjiahan) in [#12271](https://github.com/youzan/vant/pull/12271)
+
+#### 新贡献者
+
+- [@xieyezi](https://github.com/xieyezi) 在 [#12264](https://github.com/youzan/vant/pull/12264) 中首次贡献
+- [@m-xlsea](https://github.com/m-xlsea) 在 [#12258](https://github.com/youzan/vant/pull/12258) 中首次贡献
+
+### v4.6.7
+
+`2023-09-04`
+
+#### 新功能 🎉
+
+- feat(vant-use): 添加 useRaf，由 [@Simon-He95](https://github.com/Simon-He95) 在 [#12211](https://github.com/youzan/vant/pull/12211) 中贡献
+- feat(Checkbox): 添加不确定状态，由 [@wjw-gavin](https://github.com/wjw-gavin) 在 [#12216](https://github.com/youzan/vant/pull/12216) 中贡献
+- feat(auto-import-resolver): 添加 auto-import-resolver 包，由 [@wChenonly](https://github.com/wChenonly) 在 [#12227](https://github.com/youzan/vant/pull/12227) 中贡献
+- feat(ConfigProvider): 添加 theme-vars-scope 属性以启用根作用域影响，由 [@zhousg](https://github.com/zhousg) 在 [#12240](https://github.com/youzan/vant/pull/12240) 中贡献
+
+#### 问题修复 🐞
+
+- fix(auto-import-resolver): 修复 TS 项目中的类型不匹配问题，由 [@chenjiahan](https://github.com/chenjiahan) 在 [#12243](https://github.com/youzan/vant/pull/12243) 中贡献
+- fix(eslint): 使用 ignorePatterns 替代 .eslintignore，由 [@MrXwq](https://github.com/MrXwq) 在 [#12237](https://github.com/youzan/vant/pull/12237) 中贡献
+
+#### 文档 📖
+
+- docs: 改善 back-top 的菜单位置，由 [@wjw-gavin](https://github.com/wjw-gavin) 在 [#12223](https://github.com/youzan/vant/pull/12223) 中贡献
+- docs: 改善 use-raf 文档，由 [@chenjiahan](https://github.com/chenjiahan) 在 [#12224](https://github.com/youzan/vant/pull/12224) 中贡献
+- docs: 在快速入门指南中添加 Vite 和 Nuxt 的指引，由 [@chenjiahan](https://github.com/chenjiahan) 在 [#12239](https://github.com/youzan/vant/pull/12239) 中贡献
+- docs(auto-import-resolver): 更新 README 和文件夹名称，由 [@chenjiahan](https://github.com/chenjiahan) 在 [#12241](https://github.com/youzan/vant/pull/12241) 中贡献
+- docs(auto-import-resolver): 添加 Rspack 的使用方法，由 [@chenjiahan](https://github.com/chenjiahan) 在 [#12242](https://github.com/youzan/vant/pull/12242) 中贡献
+- docs(ConfigProvider): 更新修改 CSS 变量的指南，由 [@chenjiahan](https://github.com/chenjiahan) 在 [#12246](https://github.com/youzan/vant/pull/12246) 中贡献
+
+#### 其他变更
+
+- test: 将测试运行器迁移到 vitest，由 [@chenjiahan](https://github.com/chenjiahan) 在 [#12206](https://github.com/youzan/vant/pull/12206) 中贡献
+- chore(CI): 修复 codecov 报告器，由 [@chenjiahan](https://github.com/chenjiahan) 在 [#12210](https://github.com/youzan/vant/pull/12210) 中贡献
+- chore: 对内部依赖使用 workspace 协议，由 [@chenjiahan](https://github.com/chenjiahan) 在 [#12225](https://github.com/youzan/vant/pull/12225) 中贡献
+- test: 修复 vitest 的 canvas 模拟，由 [@chenjiahan](https://github.com/chenjiahan) 在 [#12226](https://github.com/youzan/vant/pull/12226) 中贡献
+
 ### v4.6.6
 
 `2023-08-20`

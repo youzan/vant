@@ -21,7 +21,7 @@ export default defineComponent({
     rowHeight: String,
   },
 
-  emits: ['click'],
+  emits: ['click', 'clickDisabledDate'],
 
   setup(props, { emit, slots }) {
     const style = computed(() => {
@@ -64,6 +64,8 @@ export default defineComponent({
     const onClick = () => {
       if (props.item.type !== 'disabled') {
         emit('click', props.item);
+      } else {
+        emit('clickDisabledDate', props.item);
       }
     };
 

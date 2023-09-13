@@ -50,10 +50,16 @@ export const configProviderProps = {
 
 export type ConfigProviderProps = ExtractPropTypes<typeof configProviderProps>;
 
+/** map `gray1` to `gray-1` */
+function insertDash(str: string) {
+  return str.replace(/([a-zA-Z])(\d)/g, '$1-$2');
+}
+
 function mapThemeVarsToCSSVars(themeVars: Record<string, Numeric>) {
   const cssVars: Record<string, Numeric> = {};
   Object.keys(themeVars).forEach((key) => {
-    cssVars[`--van-${kebabCase(key)}`] = themeVars[key];
+    const formattedKey = insertDash(kebabCase(key));
+    cssVars[`--van-${formattedKey}`] = themeVars[key];
   });
   return cssVars;
 }
@@ -113,25 +119,19 @@ export default defineComponent({
       onDeactivated(removeTheme);
       onBeforeUnmount(removeTheme);
 
-      watch(
-        style,
-        (newStyle, oldStyle) => {
-          if (props.themeVarsScope === 'global') {
-            syncThemeVarsOnRoot(
-              newStyle as Record<string, Numeric>,
-              oldStyle as Record<string, Numeric>,
-            );
-          }
-        },
-        {
-          immediate: true,
-        },
-      );
+      watch(style, (newStyle, oldStyle) => {
+        if (props.themeVarsScope === 'global') {
+          syncThemeVarsOnRoot(
+            newStyle as Record<string, Numeric>,
+            oldStyle as Record<string, Numeric>,
+          );
+        }
+      });
 
       watch(
         () => props.themeVarsScope,
-        (newScope, oldStyle) => {
-          if (oldStyle === 'global') {
+        (newScope, oldScope) => {
+          if (oldScope === 'global') {
             // remove on Root
             syncThemeVarsOnRoot({}, style.value as Record<string, Numeric>);
           }
@@ -140,10 +140,12 @@ export default defineComponent({
             syncThemeVarsOnRoot(style.value as Record<string, Numeric>, {});
           }
         },
-        {
-          immediate: true,
-        },
       );
+
+      if (props.themeVarsScope === 'global') {
+        // add on root
+        syncThemeVarsOnRoot(style.value as Record<string, Numeric>, {});
+      }
     }
 
     provide(CONFIG_PROVIDER_KEY, props);

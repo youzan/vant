@@ -19,6 +19,68 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 
 ## Details
 
+### v4.6.8
+
+`2023-09-10`
+
+#### New Features 🎉
+
+- feat(Cell): add CSS vars to customize font size of the value by [@inottn](https://github.com/inottn) in [#12260](https://github.com/youzan/vant/pull/12260)
+- feat(ConfigProvider): supplement the type declaration of ConfigProviderThemeVars by [@xieyezi](https://github.com/xieyezi) in [#12264](https://github.com/youzan/vant/pull/12264)
+- feat(NavBar): add leftDisabled and rightDisabled prop by [@m-xlsea](https://github.com/m-xlsea) in [#12258](https://github.com/youzan/vant/pull/12258)
+
+#### Bug Fixes 🐞
+
+- fix(ConfigProvider): failed to set some basic theme vars by [@chenjiahan](https://github.com/chenjiahan) in [#12272](https://github.com/youzan/vant/pull/12272)
+- fix(ConfigProvider): ConfigProviderThemeVars fontSizeXs hump by [@xieyezi](https://github.com/xieyezi) in [#12267](https://github.com/youzan/vant/pull/12267)
+
+#### Document 📖
+
+- docs(NavBar): add disable button demo by [@chenjiahan](https://github.com/chenjiahan) in [#12270](https://github.com/youzan/vant/pull/12270)
+
+#### Other Changes
+
+- chore(CI): enable single-commit to reduce the repo size by [@chenjiahan](https://github.com/chenjiahan) in [#12268](https://github.com/youzan/vant/pull/12268)
+- chore(CI): bump actions version by [@chenjiahan](https://github.com/chenjiahan) in [#12269](https://github.com/youzan/vant/pull/12269)
+- chore: move axure to vant-assets repo by [@chenjiahan](https://github.com/chenjiahan) in [#12271](https://github.com/youzan/vant/pull/12271)
+
+#### New Contributors
+
+- [@xieyezi](https://github.com/xieyezi) made their first contribution in [#12264](https://github.com/youzan/vant/pull/12264)
+- [@m-xlsea](https://github.com/m-xlsea) made their first contribution in [#12258](https://github.com/youzan/vant/pull/12258)
+
+### v4.6.7
+
+`2023-09-04`
+
+#### New Features 🎉
+
+- feat(vant-use): add useRaf by [@Simon-He95](https://github.com/Simon-He95) in [#12211](https://github.com/youzan/vant/pull/12211)
+- feat(Checkbox): add indeterminate status by [@wjw-gavin](https://github.com/wjw-gavin) in [#12216](https://github.com/youzan/vant/pull/12216)
+- feat(auto-import-resolver): add auto-import-resolver package by [@wChenonly](https://github.com/wChenonly) in [#12227](https://github.com/youzan/vant/pull/12227)
+- feat(ConfigProvider): add theme-vars-scope props enable root affects by [@zhousg](https://github.com/zhousg) in [#12240](https://github.com/youzan/vant/pull/12240)
+
+#### Bug Fixes 🐞
+
+- fix(auto-import-resolver): type mismatch in TS projects by [@chenjiahan](https://github.com/chenjiahan) in [#12243](https://github.com/youzan/vant/pull/12243)
+- fix(eslint): using ignorePatterns to replace .eslintignore by [@MrXwq](https://github.com/MrXwq) in [#12237](https://github.com/youzan/vant/pull/12237)
+
+#### Document 📖
+
+- docs: improve the menu position of back-top by [@wjw-gavin](https://github.com/wjw-gavin) in [#12223](https://github.com/youzan/vant/pull/12223)
+- docs: improve use-raf document by [@chenjiahan](https://github.com/chenjiahan) in [#12224](https://github.com/youzan/vant/pull/12224)
+- docs: add Vite and Nuxt guide to quickstart by [@chenjiahan](https://github.com/chenjiahan) in [#12239](https://github.com/youzan/vant/pull/12239)
+- docs(auto-import-resolver): update README and folder name by [@chenjiahan](https://github.com/chenjiahan) in [#12241](https://github.com/youzan/vant/pull/12241)
+- docs(auto-import-resolver): add Rspack usage by [@chenjiahan](https://github.com/chenjiahan) in [#12242](https://github.com/youzan/vant/pull/12242)
+- docs(ConfigProvider): update the guide of modify CSS vars by [@chenjiahan](https://github.com/chenjiahan) in [#12246](https://github.com/youzan/vant/pull/12246)
+
+#### Other Changes
+
+- test: migrate test runner to vitest by [@chenjiahan](https://github.com/chenjiahan) in [#12206](https://github.com/youzan/vant/pull/12206)
+- chore(CI): fix codecov reporter by [@chenjiahan](https://github.com/chenjiahan) in [#12210](https://github.com/youzan/vant/pull/12210)
+- chore: use workspace protocol for internal deps by [@chenjiahan](https://github.com/chenjiahan) in [#12225](https://github.com/youzan/vant/pull/12225)
+- test: fix vitest canvas mock by [@chenjiahan](https://github.com/chenjiahan) in [#12226](https://github.com/youzan/vant/pull/12226)
+
 ### v4.6.6
 
 `2023-08-20`

@@ -359,6 +359,7 @@ export default {
 
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
+| v-model | 当前选中项对应的值 | _number[] \| string[]_ | - |
 | columns | 对象数组，配置每一列显示的数据 | _PickerOption[] \| PickerOption[][]_ | `[]` |
 | columns-field-names | 自定义 `columns` 结构中的字段 | _object_ | `{ text: 'text', value: 'value', children: 'children' }` |
 | title | 顶部栏标题 | _string_ | - |
@@ -366,6 +367,7 @@ export default {
 | cancel-button-text | 取消按钮文字 | _string_ | `取消` |
 | toolbar-position | 顶部栏位置，可选值为 `bottom` | _string_ | `top` |
 | loading | 是否显示加载状态 | _boolean_ | `false` |
+| readonly | 是否为只读状态，只读状态下无法切换选项 | _boolean_ | `false` |
 | show-toolbar | 是否显示顶部栏 | _boolean_ | `true` |
 | allow-html | 是否允许选项内容中渲染 HTML | _boolean_ | `false` |
 | option-height | 选项高度，支持 `px` `vw` `vh` `rem` 单位，默认 `px` | _number \| string_ | `44` |

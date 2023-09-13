@@ -92,6 +92,21 @@ export default {
 </van-nav-bar>
 ```
 
+### 禁用按钮
+
+通过 `left-disabled` 或 `right-disabled` 属性来禁用两侧的按钮。按钮被禁用时透明度降低，且无法点击。
+
+```html
+<van-nav-bar
+  title="标题"
+  left-text="返回"
+  right-text="按钮"
+  left-arrow
+  left-disabled
+  right-disabled
+/>
+```
+
 ## API
 
 ### Props
@@ -101,6 +116,8 @@ export default {
 | title | 标题 | _string_ | `''` |
 | left-text | 左侧文案 | _string_ | `''` |
 | right-text | 右侧文案 | _string_ | `''` |
+| left-disabled `v4.6.8` | 是否禁用左侧按钮，禁用时透明度降低，且无法点击 | _boolean_ | `false` |
+| right-disabled `v4.6.8` | 是否禁用右侧按钮，禁用时透明度降低，且无法点击 | _boolean_ | `false` |
 | left-arrow | 是否显示左侧箭头 | _boolean_ | `false` |
 | border | 是否显示下边框 | _boolean_ | `true` |
 | fixed | 是否固定在顶部 | _boolean_ | `false` |
