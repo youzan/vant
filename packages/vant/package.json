@@ -48,13 +48,15 @@
   "dependencies": {
     "@vant/popperjs": "workspace:^",
     "@vant/use": "workspace:^",
-    "@vue/shared": "^3.0.0"
+    "@vue/shared": "^3.0.0",
+    "transliteration": "^2.3.5"
   },
   "peerDependencies": {
     "vue": "^3.0.0"
   },
   "devDependencies": {
     "@types/node": "^18.16.3",
+    "@types/transliteration": "^1.6.6",
     "@vant/area-data": "workspace:*",
     "@vant/cli": "workspace:*",
     "@vant/eslint-config": "workspace:*",
