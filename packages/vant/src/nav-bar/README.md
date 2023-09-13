@@ -84,6 +84,21 @@ export default {
 </van-nav-bar>
 ```
 
+### Disable Button
+
+Use the `left-disabled` or `right-disabled` props to disable the buttons on either side. The prop reduces the opacity of the button and makes it unclickable.
+
+```html
+<van-nav-bar
+  title="Title"
+  left-text="Back"
+  right-text="Button"
+  left-arrow
+  left-disabled
+  right-disabled
+/>
+```
+
 ## API
 
 ### Props
@@ -93,6 +108,8 @@ export default {
 | title | Title | _string_ | `''` |
 | left-text | Left Text | _string_ | `''` |
 | right-text | Right Text | _string_ | `''` |
+| left-disabled `v4.6.8` | Whether to disable the left button, decrease opacity and make it unclickable | _boolean_ | `false` |
+| right-disabled `v4.6.8` | Whether to disable the right button, decrease opacity and make it unclickable | _boolean_ | `false` |
 | left-arrow | Whether to show left arrow | _boolean_ | `false` |
 | border | Whether to show bottom border | _boolean_ | `true` |
 | fixed | Whether to fixed top | _boolean_ | `false` |

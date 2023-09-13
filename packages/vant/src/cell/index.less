@@ -15,11 +15,13 @@
   --van-cell-label-line-height: var(--van-line-height-sm);
   --van-cell-label-margin-top: var(--van-padding-base);
   --van-cell-value-color: var(--van-text-color-2);
+  --van-cell-value-font-size: inherit;
   --van-cell-icon-size: 16px;
   --van-cell-right-icon-color: var(--van-gray-6);
   --van-cell-large-vertical-padding: var(--van-padding-sm);
   --van-cell-large-title-font-size: var(--van-font-size-lg);
   --van-cell-large-label-font-size: var(--van-font-size-md);
+  --van-cell-large-value-font-size: inherit;
 }
 
 .van-cell {
@@ -59,6 +61,7 @@
     position: relative;
     overflow: hidden;
     color: var(--van-cell-value-color);
+    font-size: var(--van-cell-value-font-size);
     text-align: right;
     vertical-align: middle;
     word-wrap: break-word;
@@ -114,6 +117,10 @@
 
     .van-cell__label {
       font-size: var(--van-cell-large-label-font-size);
+    }
+
+    .van-cell__value {
+      font-size: var(--van-cell-large-value-font-size);
     }
   }
 }

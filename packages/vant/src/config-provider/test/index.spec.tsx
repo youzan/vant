@@ -1,8 +1,8 @@
 import { ref } from 'vue';
-import { ConfigProvider } from '..';
+import { ConfigProvider, type ConfigProviderThemeVars } from '..';
 import { Icon } from '../../icon';
+import { Popup } from '../../popup';
 import { later, mount } from '../../../test';
-import Popup from '../../popup';
 
 test('should render tag prop correctly', () => {
   const wrapper = mount(ConfigProvider, {
@@ -57,6 +57,22 @@ test('should apply theme-vars-light in light mode', () => {
 
   expect(wrapper.element.getAttribute('style')).toEqual(
     '--van-rate-icon-full-color: blue;',
+  );
+});
+
+test('should apply basic theme vars correctly', () => {
+  const wrapper = mount({
+    render() {
+      const themeVars: ConfigProviderThemeVars = {
+        gray1: '#111',
+        background2: 'red',
+      };
+      return <ConfigProvider themeVars={themeVars} />;
+    },
+  });
+
+  expect(wrapper.element.getAttribute('style')).toEqual(
+    '--van-gray-1: #111; --van-background-2: red;',
   );
 });
 
