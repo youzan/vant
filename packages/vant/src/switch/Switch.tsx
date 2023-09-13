@@ -29,12 +29,13 @@ export default defineComponent({
 
   props: switchProps,
 
-  emits: ['change', 'update:modelValue'],
+  emits: ['change', 'update:modelValue', 'click'],
 
   setup(props, { emit, slots }) {
     const isChecked = () => props.modelValue === props.activeValue;
 
-    const onClick = () => {
+    const onClick = (e: MouseEvent) => {
+      emit('click', e);
       if (!props.disabled && !props.loading) {
         const newValue = isChecked() ? props.inactiveValue : props.activeValue;
         emit('update:modelValue', newValue);
