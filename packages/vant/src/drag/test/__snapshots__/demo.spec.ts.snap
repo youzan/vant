@@ -1,0 +1,57 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`should render demo and match snapshot 1`] = `
+<div>
+  <div
+    class="van-drag"
+    style="top: 0px; left: 0px; z-index: 10; transition: left 0.3s, top 0.3s;"
+  >
+    <button
+      type="button"
+      class="van-button van-button--primary van-button--normal"
+    >
+      <div class="van-button__content">
+        <span class="van-button__text">
+          按钮
+        </span>
+      </div>
+    </button>
+  </div>
+</div>
+<div>
+  <div
+    class="van-drag"
+    style="top: 0px; left: 0px; z-index: 10; transition: left 0.3s, top 0.3s;"
+  >
+    <button
+      type="button"
+      class="van-button van-button--primary van-button--normal"
+    >
+      <div class="van-button__content">
+        <span class="van-button__text">
+          按钮
+        </span>
+      </div>
+    </button>
+  </div>
+</div>
+<div>
+  <div class="demo-boundary">
+  </div>
+  <div
+    class="van-drag"
+    style="top: 0px; left: 0px; z-index: 10; transition: left 0.3s, top 0.3s;"
+  >
+    <button
+      type="button"
+      class="van-button van-button--primary van-button--normal"
+    >
+      <div class="van-button__content">
+        <span class="van-button__text">
+          按钮
+        </span>
+      </div>
+    </button>
+  </div>
+</div>
+`;
