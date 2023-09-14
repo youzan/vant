@@ -12,8 +12,8 @@ const t = useTranslate({
     success: '成功按钮',
   },
   'en-US': {
-    base: 'base',
-    card: 'card',
+    base: 'Base',
+    card: 'Card',
     default: 'Default',
     primary: 'Primary',
     success: 'Success',

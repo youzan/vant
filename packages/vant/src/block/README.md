@@ -24,9 +24,9 @@ use as a container, passing in the 'title' attribute as the title.
 
 ```html
 <van-block title="基础用法">
-  <van-button type="default">{{ t('default') }}</van-button>
-  <van-button type="primary">{{ t('primary') }}</van-button>
-  <van-button type="success">{{ t('success') }}</van-button>
+  <van-button type="default">default</van-button>
+  <van-button type="primary">primary</van-button>
+  <van-button type="success">success</van-button>
 </van-block>
 ```
 
@@ -36,9 +36,9 @@ set the container to card mode through the 'card' attribute.
 
 ```html
 <van-block title="卡片模式">
-  <van-button type="default">{{ t('default') }}</van-button>
-  <van-button type="primary">{{ t('primary') }}</van-button>
-  <van-button type="success">{{ t('success') }}</van-button>
+  <van-button type="default">default</van-button>
+  <van-button type="primary">primary</van-button>
+  <van-button type="success">success</van-button>
 </van-block>
 ```
 
@@ -46,10 +46,11 @@ set the container to card mode through the 'card' attribute.
 
 ### Props
 
-| Attribute | Description | Type      | Default |
-| --------- | ----------- | --------- | ------- |
-| title     | Title       | _string_  | `-`     |
-| card      | Card mode   | _boolean_ | `-`     |
+| Attribute | Description | Type | Default |
+| --- | --- | --- | --- |
+| title | Title | _string_ | `-` |
+| card | Card mode | _boolean_ | `-` |
+| id | Id，if you need to make an anchor jump, you need to pass in the | _string_ | `-` |
 
 ### Slots
 

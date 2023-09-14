@@ -6,7 +6,6 @@ import {
   watch,
 } from 'vue';
 import { createNamespace } from '../utils';
-import { slugify } from 'transliteration';
 
 const [name, bem] = createNamespace('block');
 
@@ -16,6 +15,10 @@ export const blockProps = {
     default: false,
   },
   title: {
+    type: String,
+    default: '',
+  },
+  id: {
     type: String,
     default: '',
   },
@@ -29,7 +32,7 @@ export default defineComponent({
   props: blockProps,
 
   setup(props, { slots }) {
-    const slugifyTitle = computed(() => (slugify ? slugify(props.title) : ''));
+    const slugifyTitle = computed(() => props.id);
 
     watch(
       () => slugifyTitle.value,

@@ -24,9 +24,9 @@ app.use(Block);
 
 ```html
 <van-block title="基础用法">
-  <van-button type="default">{{ t('default') }}</van-button>
-  <van-button type="primary">{{ t('primary') }}</van-button>
-  <van-button type="success">{{ t('success') }}</van-button>
+  <van-button type="default"> default</van-button>
+  <van-button type="primary">primary</van-button>
+  <van-button type="success">success</van-button>
 </van-block>
 ```
 
@@ -36,9 +36,9 @@ app.use(Block);
 
 ```html
 <van-block title="卡片模式">
-  <van-button type="default">{{ t('default') }}</van-button>
-  <van-button type="primary">{{ t('primary') }}</van-button>
-  <van-button type="success">{{ t('success') }}</van-button>
+  <van-button type="default">default</van-button>
+  <van-button type="primary">primary</van-button>
+  <van-button type="success">success</van-button>
 </van-block>
 ```
 
@@ -46,10 +46,11 @@ app.use(Block);
 
 ### Props
 
-| 参数  | 说明     | 类型      | 默认值 |
-| ----- | -------- | --------- | ------ |
-| title | 标题     | _string_  | `-`    |
-| card  | 卡片模式 | _boolean_ | `-`    |
+| 参数  | 说明                                 | 类型      | 默认值 |
+| ----- | ------------------------------------ | --------- | ------ |
+| title | 标题                                 | _string_  | `-`    |
+| card  | 卡片模式                             | _boolean_ | `-`    |
+| id    | 组件`id`，如果需要做锚点跳转则需传入 | _string_  | `-`    |
 
 ### Slots
 
