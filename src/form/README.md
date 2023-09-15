@@ -1,12 +1,18 @@
 # Form
 
+### Intro
+
+Used for data entry and verification, and supports input boxes, radio buttons, check boxes, file uploads and other types. Should be used with [Field](#/en-US/field) component.
+
 ### Install
 
 ```js
 import Vue from 'vue';
 import { Form } from 'vant';
+import { Field } from 'vant';
 
 Vue.use(Form);
+Vue.use(Field);
 ```
 
 ## Usage
@@ -263,7 +269,7 @@ export default {
 export default {
   data() {
     return {
-      uploader: [{ url: 'https://img.yzcdn.cn/vant/leaf.jpg' }],
+      uploader: [{ url: 'https://img01.yzcdn.cn/vant/leaf.jpg' }],
     };
   },
 };
@@ -428,11 +434,13 @@ export default {
 | Attribute | Description | Type | Default |
 | --- | --- | --- | --- |
 | label-width | Field label width | _number \| string_ | `6.2em` |
-| label-align | Field label align, can be set to `center` `right` | _string_ | `left` |
+| label-align | Field label align, can be set to `center` `right` | _string_ | `left` |
 | input-align | Field input align, can be set to `center` `right` | _string_ | `left` |
 | error-message-align | Error message align, can be set to `center` `right` | _string_ | `left` |
 | validate-trigger `v2.5.2` | When to validate the form，can be set to `onChange`、`onSubmit` | _string_ | `onBlur` |
 | colon | Whether to display colon after label | _boolean_ | `false` |
+| disabled `v2.12.2` | Whether to disable form | _boolean_ | `false` |
+| readonly `v2.12.2` | Whether to be readonly | _boolean_ | `false` |
 | validate-first | Whether to stop the validation when a rule fails | _boolean_ | `false` |
 | scroll-to-error `v2.5.2` | Whether to scroll to the error field when validation failed | _boolean_ | `false` |
 | show-error `v2.6.0` | Whether to highlight input when validation failed | _boolean_ | `true` |
@@ -443,7 +451,7 @@ export default {
 
 | Key | Description | Type |
 | --- | --- | --- |
-| required | Whether to be a required field | _boolean_ |
+| required | Whether to be a required field, the value is not allowed to be empty string, empty array, `undefined`, `null` | _boolean_ |
 | message `v2.5.3` | Error message | _string \| (value, rule) => string_ |
 | validator `v2.5.3` | Custom validator | _(value, rule) => boolean \| Promise_ |
 | pattern `v2.5.3` | Regex pattern | _RegExp_ |
@@ -452,18 +460,18 @@ export default {
 
 ### validate-trigger
 
-| Value    | Description                                                     |
-| -------- | --------------------------------------------------------------- |
-| onSubmit | Trigger validation after submiting form                         |
-| onBlur   | Trigger validation after submiting form or bluring input        |
-| onChange | Trigger validation after submiting form or changing input value |
+| Value    | Description                                                      |
+| -------- | ---------------------------------------------------------------- |
+| onSubmit | Trigger validation after submitting form                         |
+| onBlur   | Trigger validation after submitting form or bluring input        |
+| onChange | Trigger validation after submitting form or changing input value |
 
 ### Events
 
 | Event | Description | Arguments |
 | --- | --- | --- |
-| submit | Triggered after submitting the form and validation passed | _values: object_ |
-| failed | Triggered after submitting the form and validation failed | _errorInfo: { values: object, errors: object[] }_ |
+| submit | Emitted after submitting the form and validation passed | _values: object_ |
+| failed | Emitted after submitting the form and validation failed | _errorInfo: { values: object, errors: object[] }_ |
 
 ### Methods
 
@@ -472,8 +480,8 @@ Use [ref](https://vuejs.org/v2/api/#ref) to get Form instance and call instance 
 | Name | Description | Attribute | Return value |
 | --- | --- | --- | --- |
 | submit | Submit form | - | - |
-| validate | Validate form | _name?: string_ | _Promise_ |
-| resetValidation | Reset validation | _name?: string_ | - |
+| validate | Validate form | _name?: string \| string[]_ | _Promise_ |
+| resetValidation | Reset validation | _name?: string \| string[]_ | - |
 | scrollToField `v2.8.3` | Scroll to field | _name: string, alignToTop: boolean_ | - |
 
 ### Slots

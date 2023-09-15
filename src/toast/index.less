@@ -19,10 +19,11 @@
   font-size: @toast-font-size;
   line-height: @toast-line-height;
 
-  // allow newline charactor
+  // allow newline character
   white-space: pre-wrap;
   text-align: center;
-  word-wrap: break-word;
+  // https://github.com/vant-ui/vant/issues/8959
+  word-break: break-all;
   background-color: @toast-background-color;
   border-radius: @toast-border-radius;
   transform: translate3d(-50%, -50%, 0);

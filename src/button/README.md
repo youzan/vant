@@ -38,8 +38,8 @@ Vue.use(Button);
 ### Disabled
 
 ```html
-<van-button disabled type="primary">Diabled</van-button>
-<van-button disabled type="info">Diabled</van-button>
+<van-button disabled type="primary">Disabled</van-button>
+<van-button disabled type="info">Disabled</van-button>
 ```
 
 ### Loading
@@ -62,7 +62,7 @@ Vue.use(Button);
 ```html
 <van-button icon="plus" type="primary" />
 <van-button icon="plus" type="primary">Button</van-button>
-<van-button icon="https://img.yzcdn.cn/vant/user-active.png" type="info">
+<van-button icon="https://img01.yzcdn.cn/vant/user-active.png" type="info">
   Button
 </van-button>
 ```
@@ -124,19 +124,56 @@ Vue.use(Button);
 | loading-type | Loading type, can be set to `spinner` | _string_ | `circular` |
 | loading-size | Loading icon size | _string_ | `20px` |
 | url | Link URL | _string_ | - |
-| to | Target route of the link, same as to of vue-router | _string \| object_ | - |
+| to | Target route of the link, same as using vue-router | _string \| object_ | - |
 | replace | If true, the navigation will not leave a history record | _boolean_ | `false` |
 
 ### Events
 
 | Event | Description | Arguments |
 | --- | --- | --- |
-| click | Triggered when click button and not disabled or loading | _event: Event_ |
-| touchstart | Triggered when touch start | _event: TouchEvent_ |
+| click | Emitted when button is clicked and not disabled or loading | _event: Event_ |
+| touchstart | Emitted when button is touched | _event: TouchEvent_ |
 
 ### Slots
 
 | Name              | Description         |
 | ----------------- | ------------------- |
 | default           | Default slot        |
+| icon `v2.12.21`   | Custom icon         |
 | loading `v2.10.1` | Custom loading icon |
+
+### Less Variables
+
+How to use: [Custom Theme](#/en-US/theme).
+
+| Name                             | Default Value        | Description |
+| -------------------------------- | -------------------- | ----------- |
+| @button-mini-height              | `24px`               | -           |
+| @button-mini-font-size           | `@font-size-xs`      | -           |
+| @button-small-height             | `32px`               | -           |
+| @button-small-font-size          | `@font-size-sm`      | -           |
+| @button-normal-font-size         | `@font-size-md`      | -           |
+| @button-large-height             | `50px`               | -           |
+| @button-default-height           | `44px`               | -           |
+| @button-default-line-height      | `1.2`                | -           |
+| @button-default-font-size        | `@font-size-lg`      | -           |
+| @button-default-color            | `@text-color`        | -           |
+| @button-default-background-color | `@white`             | -           |
+| @button-default-border-color     | `@border-color`      | -           |
+| @button-primary-color            | `@white`             | -           |
+| @button-primary-background-color | `@green`             | -           |
+| @button-primary-border-color     | `@green`             | -           |
+| @button-info-color               | `@white`             | -           |
+| @button-info-background-color    | `@blue`              | -           |
+| @button-info-border-color        | `@blue`              | -           |
+| @button-danger-color             | `@white`             | -           |
+| @button-danger-background-color  | `@red`               | -           |
+| @button-danger-border-color      | `@red`               | -           |
+| @button-warning-color            | `@white`             | -           |
+| @button-warning-background-color | `@orange`            | -           |
+| @button-warning-border-color     | `@orange`            | -           |
+| @button-border-width             | `@border-width-base` | -           |
+| @button-border-radius            | `@border-radius-sm`  | -           |
+| @button-round-border-radius      | `@border-radius-max` | -           |
+| @button-plain-background-color   | `@white`             | -           |
+| @button-disabled-opacity         | `@disabled-opacity`  | -           |

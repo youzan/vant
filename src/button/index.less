@@ -151,10 +151,15 @@
     align-items: center;
     justify-content: center;
     height: 100%;
+
+    // fix icon vertical align
+    // see: https://github.com/vant-ui/vant/issues/7617
+    &::before {
+      content: ' ';
+    }
   }
 
   &__icon {
-    min-width: 1em;
     font-size: 1.2em;
     line-height: inherit;
   }

@@ -36,7 +36,7 @@ Vue.use(SwipeCell);
     desc="Description"
     title="Title"
     class="goods-card"
-    thumb="https://img.yzcdn.cn/vant/cat.jpeg"
+    thumb="https://img01.yzcdn.cn/vant/cat.jpeg"
   />
   <template #right>
     <van-button square text="Delete" type="danger" class="delete-button" />
@@ -101,7 +101,7 @@ export default {
 | name | Identifier of SwipeCell | _number \| string_ | - |
 | left-width | Width of the left swipe area | _number \| string_ | `auto` |
 | right-width | Width of the right swipe area | _number \| string_ | `auto` |
-| before-close `v2.3.0` | Callback function before close | _Function_ | - |
+| before-close | Callback function before close | _Function_ | - |
 | disabled | Whether to disabled swipe | _boolean_ | `false` |
 | stop-propagation | Whether to stop touchmove event propagation | _boolean_ | `false` |
 
@@ -117,23 +117,34 @@ export default {
 
 | Event | Description | Arguments |
 | --- | --- | --- |
-| click | Triggered when clicked | Click positon (`left` `right` `cell` `outside`) |
-| open | Triggered when opened | { position: 'left' \| 'right' , name: string } |
-| close | Triggered when closed | { position: string , name: string } |
+| click | Emitted when SwipeCell is clicked | Click position (`left` `right` `cell` `outside`) |
+| open | Emitted when SwipeCell is opened | { position: 'left' \| 'right' , name: string } |
+| close | Emitted when SwipeCell is closed | { position: string , name: string } |
 
 ### beforeClose Params
 
-| Attribute | Description                                     | Type        |
-| --------- | ----------------------------------------------- | ----------- |
-| name      | Name                                            | _string_    |
-| position  | Click positon (`left` `right` `cell` `outside`) | _string_    |
-| instance  | SwipeCell instance                              | _SwipeCell_ |
+| Attribute | Description                                      | Type        |
+| --------- | ------------------------------------------------ | ----------- |
+| name      | Name                                             | _string_    |
+| position  | Click position (`left` `right` `cell` `outside`) | _string_    |
+| instance  | SwipeCell instance                               | _SwipeCell_ |
 
 ### Methods
 
 Use [ref](https://vuejs.org/v2/api/#ref) to get SwipeCell instance and call instance methods.
 
-| Name  | Description     | Attribute                | Return value |
-| ----- | --------------- | ------------------------ | ------------ |
-| open  | open SwipeCell  | position: `left | right` | -            |
-| close | close SwipeCell | -                        | -            |
+| Name  | Description     | Attribute                 | Return value |
+| ----- | --------------- | ------------------------- | ------------ |
+| open  | open SwipeCell  | position: `left \| right` | -            |
+| close | close SwipeCell | -                         | -            |
+
+### Less Variables
+
+How to use: [Custom Theme](#/en-US/theme).
+
+| Name | Default Value | Description |
+| --- | --- | --- |
+| @switch-cell-padding-top | `@cell-vertical-padding - 1px` | - |
+| @switch-cell-padding-bottom | `@cell-vertical-padding - 1px` | - |
+| @switch-cell-large-padding-top | `@cell-large-vertical-padding - 1px` | - |
+| @switch-cell-large-padding-bottom | `@cell-large-vertical-padding - 1px` | - |

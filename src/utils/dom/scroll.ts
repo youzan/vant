@@ -5,33 +5,21 @@ function isWindow(val: unknown): val is Window {
 }
 
 // get nearest scroll element
-// http://w3help.org/zh-cn/causes/SD9013
-// http://stackoverflow.com/questions/17016740/onscroll-function-is-not-working-for-chrome
-const overflowScrollReg = /scroll|auto/i;
+// https://github.com/vant-ui/vant/issues/3823
+const overflowScrollReg = /scroll|auto|overlay/i;
 export function getScroller(el: HTMLElement, root: ScrollElement = window) {
   let node = el;
 
   while (
     node &&
     node.tagName !== 'HTML' &&
+    node.tagName !== 'BODY' &&
     node.nodeType === 1 &&
     node !== root
   ) {
     const { overflowY } = window.getComputedStyle(node);
-
     if (overflowScrollReg.test(overflowY)) {
-      if (node.tagName !== 'BODY') {
-        return node;
-      }
-
-      // see: https://github.com/youzan/vant/issues/3823
-      const { overflowY: htmlOverflowY } = window.getComputedStyle(
-        node.parentNode as Element
-      );
-
-      if (overflowScrollReg.test(htmlOverflowY)) {
-        return node;
-      }
+      return node;
     }
     node = node.parentNode as HTMLElement;
   }

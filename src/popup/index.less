@@ -72,14 +72,14 @@
     &-slide-left-enter-active,
     &-slide-right-enter-active,
     &-slide-bottom-enter-active {
-      transition-timing-function: ease-out;
+      transition-timing-function: @animation-timing-function-enter;
     }
 
     &-slide-top-leave-active,
     &-slide-left-leave-active,
     &-slide-right-leave-active,
     &-slide-bottom-leave-active {
-      transition-timing-function: ease-in;
+      transition-timing-function: @animation-timing-function-leave;
     }
 
     &-slide-top-enter,

@@ -66,12 +66,21 @@ export default {
 
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
-| offset-top `v2.8.7` | 吸顶时与顶部的距离，支持 `px` `vw` `rem` 单位，默认 `px` | _number \| string_ | `0` |
+| offset-top `v2.8.7` | 吸顶时与顶部的距离，支持 `px` `vw` `vh` `rem` 单位，默认 `px` | _number \| string_ | `0` |
 | z-index | 吸顶时的 z-index | _number \| string_ | `99` |
 | container | 容器对应的 HTML 节点 | _Element_ | - |
 
 ### Events
 
-| 事件名 | 说明       | 回调参数                                       |
-| ------ | ---------- | ---------------------------------------------- |
-| scroll | 滚动时触发 | { scrollTop: 距离顶部位置, isFixed: 是否吸顶 } |
+| 事件名 | 说明 | 回调参数 |
+| --- | --- | --- |
+| change `v2.12.13` | 当吸顶状态改变时触发 | _isFixed: boolean_ |
+| scroll | 滚动时触发 | _{ scrollTop: number, isFixed: boolean }_ |
+
+### 样式变量
+
+组件提供了下列 Less 变量，可用于自定义样式，使用方法请参考[主题定制](#/zh-CN/theme)。
+
+| 名称            | 默认值 | 描述 |
+| --------------- | ------ | ---- |
+| @sticky-z-index | `99`   | -    |

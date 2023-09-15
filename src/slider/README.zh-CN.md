@@ -1,5 +1,9 @@
 # Slider 滑块
 
+### 介绍
+
+滑动输入条，用于在给定的范围内选择一个值。
+
 ### 引入
 
 ```js
@@ -152,7 +156,7 @@ export default {
 | min | 最小值 | _number \| string_ | `0` |
 | step | 步长 | _number \| string_ | `1` |
 | bar-height | 进度条高度，默认单位为`px` | _number \| string_ | `2px` |
-| button-size `v2.4.5` | 滑块按钮大小，默认单位为`px` | _number \| string_ | `24px` |
+| button-size | 滑块按钮大小，默认单位为`px` | _number \| string_ | `24px` |
 | active-color | 进度条激活态颜色 | _string_ | `#1989fa` |
 | inactive-color | 进度条非激活态颜色 | _string_ | `#e5e5e5` |
 | range `v2.10.7` | 是否开启双滑块模式 | _boolean_ | `false` |
@@ -170,6 +174,24 @@ export default {
 
 ### Slots
 
-| 名称   | 说明           |
-| ------ | -------------- |
-| button | 自定义滑动按钮 |
+| 名称 | 说明 | 参数 |
+| --- | --- | --- |
+| button | 自定义滑动按钮 | - |
+| left-button `v2.12.38` | 自定义左侧滑块按钮（双滑块模式下） | { value: number } |
+| right-button `v2.12.38` | 自定义右侧滑块按钮（双滑块模式下） | { value: number } |
+
+### 样式变量
+
+组件提供了下列 Less 变量，可用于自定义样式，使用方法请参考[主题定制](#/zh-CN/theme)。
+
+| 名称                              | 默认值                         | 描述 |
+| --------------------------------- | ------------------------------ | ---- |
+| @slider-active-background-color   | `@blue`                        | -    |
+| @slider-inactive-background-color | `@gray-3`                      | -    |
+| @slider-disabled-opacity          | `@disabled-opacity`            | -    |
+| @slider-bar-height                | `2px`                          | -    |
+| @slider-button-width              | `24px`                         | -    |
+| @slider-button-height             | `24px`                         | -    |
+| @slider-button-border-radius      | `50%`                          | -    |
+| @slider-button-background-color   | `@white`                       | -    |
+| @slider-button-box-shadow         | `0 1px 2px rgba(0, 0, 0, 0.5)` | -    |

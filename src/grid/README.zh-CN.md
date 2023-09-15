@@ -46,13 +46,13 @@ Vue.use(GridItem);
 ```html
 <van-grid :border="false" :column-num="3">
   <van-grid-item>
-    <van-image src="https://img.yzcdn.cn/vant/apple-1.jpg" />
+    <van-image src="https://img01.yzcdn.cn/vant/apple-1.jpg" />
   </van-grid-item>
   <van-grid-item>
-    <van-image src="https://img.yzcdn.cn/vant/apple-2.jpg" />
+    <van-image src="https://img01.yzcdn.cn/vant/apple-2.jpg" />
   </van-grid-item>
   <van-grid-item>
-    <van-image src="https://img.yzcdn.cn/vant/apple-3.jpg" />
+    <van-image src="https://img01.yzcdn.cn/vant/apple-3.jpg" />
   </van-grid-item>
 </van-grid>
 ```
@@ -153,3 +153,16 @@ Vue.use(GridItem);
 | default | 自定义宫格的所有内容 |
 | icon    | 自定义图标           |
 | text    | 自定义文字           |
+
+### 样式变量
+
+组件提供了下列 Less 变量，可用于自定义样式，使用方法请参考[主题定制](#/zh-CN/theme)。
+
+| 名称                                | 默认值                    | 描述 |
+| ----------------------------------- | ------------------------- | ---- |
+| @grid-item-content-padding          | `@padding-md @padding-xs` | -    |
+| @grid-item-content-background-color | `@white`                  | -    |
+| @grid-item-content-active-color     | `@active-color`           | -    |
+| @grid-item-icon-size                | `28px`                    | -    |
+| @grid-item-text-color               | `@gray-7`                 | -    |
+| @grid-item-text-font-size           | `@font-size-sm`           | -    |

@@ -8,14 +8,14 @@ exports[`color prop when type is range 1`] = `
     <div class="van-calendar__weekdays"><span class="van-calendar__weekday">日</span><span class="van-calendar__weekday">一</span><span class="van-calendar__weekday">二</span><span class="van-calendar__weekday">三</span><span class="van-calendar__weekday">四</span><span class="van-calendar__weekday">五</span><span class="van-calendar__weekday">六</span></div>
   </div>
   <div class="van-calendar__body">
-    <div class="van-calendar__month" style="padding-bottom: 0px;">
+    <div class="van-calendar__month">
       <div role="grid" class="van-calendar__days">
-        <div class="van-calendar__month-mark">1</div>
+        <div class="van-calendar__month-mark" style="">1</div>
         <div role="gridcell" class="van-calendar__day van-calendar__day--disabled" style="margin-left: 71.42857142857143%;">1</div>
-        <div role="gridcell" class="van-calendar__day van-calendar__day--disabled">2</div>
-        <div role="gridcell" class="van-calendar__day van-calendar__day--disabled">3</div>
-        <div role="gridcell" class="van-calendar__day van-calendar__day--disabled">4</div>
-        <div role="gridcell" class="van-calendar__day van-calendar__day--disabled">5</div>
+        <div role="gridcell" class="van-calendar__day van-calendar__day--disabled" style="">2</div>
+        <div role="gridcell" class="van-calendar__day van-calendar__day--disabled" style="">3</div>
+        <div role="gridcell" class="van-calendar__day van-calendar__day--disabled" style="">4</div>
+        <div role="gridcell" class="van-calendar__day van-calendar__day--disabled" style="">5</div>
         <div role="gridcell" class="van-calendar__day van-calendar__day--disabled">6</div>
         <div role="gridcell" class="van-calendar__day van-calendar__day--disabled">7</div>
         <div role="gridcell" class="van-calendar__day van-calendar__day--disabled">8</div>
@@ -47,7 +47,7 @@ exports[`color prop when type is range 1`] = `
       </div>
     </div>
   </div>
-  <div class="van-calendar__footer"><button type="button" class="van-button van-button--danger van-button--normal van-button--block van-button--round van-calendar__confirm" style="color: rgb(255, 255, 255); background: blue; border-color: blue;">
+  <div class="van-calendar__footer"><button type="button" class="van-button van-button--danger van-button--normal van-button--block van-button--round van-calendar__confirm" style="color: white; background: blue; border-color: blue;">
       <div class="van-button__content"><span class="van-button__text">确定</span></div>
     </button></div>
 </div>
@@ -61,14 +61,14 @@ exports[`color prop when type is single 1`] = `
     <div class="van-calendar__weekdays"><span class="van-calendar__weekday">日</span><span class="van-calendar__weekday">一</span><span class="van-calendar__weekday">二</span><span class="van-calendar__weekday">三</span><span class="van-calendar__weekday">四</span><span class="van-calendar__weekday">五</span><span class="van-calendar__weekday">六</span></div>
   </div>
   <div class="van-calendar__body">
-    <div class="van-calendar__month" style="padding-bottom: 0px;">
+    <div class="van-calendar__month">
       <div role="grid" class="van-calendar__days">
-        <div class="van-calendar__month-mark">1</div>
+        <div class="van-calendar__month-mark" style="">1</div>
         <div role="gridcell" class="van-calendar__day van-calendar__day--disabled" style="margin-left: 71.42857142857143%;">1</div>
-        <div role="gridcell" class="van-calendar__day van-calendar__day--disabled">2</div>
-        <div role="gridcell" class="van-calendar__day van-calendar__day--disabled">3</div>
-        <div role="gridcell" class="van-calendar__day van-calendar__day--disabled">4</div>
-        <div role="gridcell" class="van-calendar__day van-calendar__day--disabled">5</div>
+        <div role="gridcell" class="van-calendar__day van-calendar__day--disabled" style="">2</div>
+        <div role="gridcell" class="van-calendar__day van-calendar__day--disabled" style="">3</div>
+        <div role="gridcell" class="van-calendar__day van-calendar__day--disabled" style="">4</div>
+        <div role="gridcell" class="van-calendar__day van-calendar__day--disabled" style="">5</div>
         <div role="gridcell" class="van-calendar__day van-calendar__day--disabled">6</div>
         <div role="gridcell" class="van-calendar__day van-calendar__day--disabled">7</div>
         <div role="gridcell" class="van-calendar__day van-calendar__day--disabled">8</div>
@@ -100,7 +100,7 @@ exports[`color prop when type is single 1`] = `
       </div>
     </div>
   </div>
-  <div class="van-calendar__footer"><button type="button" class="van-button van-button--danger van-button--normal van-button--block van-button--round van-calendar__confirm" style="color: rgb(255, 255, 255); background: blue; border-color: blue;">
+  <div class="van-calendar__footer"><button type="button" class="van-button van-button--danger van-button--normal van-button--block van-button--round van-calendar__confirm" style="color: white; background: blue; border-color: blue;">
       <div class="van-button__content"><span class="van-button__text">确定</span></div>
     </button></div>
 </div>
@@ -114,14 +114,14 @@ exports[`formatter prop 1`] = `
     <div class="van-calendar__weekdays"><span class="van-calendar__weekday">日</span><span class="van-calendar__weekday">一</span><span class="van-calendar__weekday">二</span><span class="van-calendar__weekday">三</span><span class="van-calendar__weekday">四</span><span class="van-calendar__weekday">五</span><span class="van-calendar__weekday">六</span></div>
   </div>
   <div class="van-calendar__body">
-    <div class="van-calendar__month" style="padding-bottom: 0px;">
+    <div class="van-calendar__month">
       <div role="grid" class="van-calendar__days">
-        <div class="van-calendar__month-mark">1</div>
+        <div class="van-calendar__month-mark" style="">1</div>
         <div role="gridcell" class="van-calendar__day van-calendar__day--disabled" style="margin-left: 71.42857142857143%;">1</div>
-        <div role="gridcell" class="van-calendar__day van-calendar__day--disabled">2</div>
-        <div role="gridcell" class="van-calendar__day van-calendar__day--disabled">3</div>
-        <div role="gridcell" class="van-calendar__day van-calendar__day--disabled">4</div>
-        <div role="gridcell" class="van-calendar__day van-calendar__day--disabled">5</div>
+        <div role="gridcell" class="van-calendar__day van-calendar__day--disabled" style="">2</div>
+        <div role="gridcell" class="van-calendar__day van-calendar__day--disabled" style="">3</div>
+        <div role="gridcell" class="van-calendar__day van-calendar__day--disabled" style="">4</div>
+        <div role="gridcell" class="van-calendar__day van-calendar__day--disabled" style="">5</div>
         <div role="gridcell" class="van-calendar__day van-calendar__day--disabled">6</div>
         <div role="gridcell" class="van-calendar__day van-calendar__day--disabled">7</div>
         <div role="gridcell" class="van-calendar__day van-calendar__day--disabled">8</div>
@@ -173,14 +173,14 @@ exports[`popup wrapper 2`] = `
       <div class="van-calendar__weekdays"><span class="van-calendar__weekday">日</span><span class="van-calendar__weekday">一</span><span class="van-calendar__weekday">二</span><span class="van-calendar__weekday">三</span><span class="van-calendar__weekday">四</span><span class="van-calendar__weekday">五</span><span class="van-calendar__weekday">六</span></div>
     </div>
     <div class="van-calendar__body">
-      <div class="van-calendar__month" style="padding-bottom: 0px;">
+      <div class="van-calendar__month">
         <div role="grid" class="van-calendar__days">
-          <div class="van-calendar__month-mark">1</div>
+          <div class="van-calendar__month-mark" style="">1</div>
           <div role="gridcell" class="van-calendar__day van-calendar__day--disabled" style="margin-left: 71.42857142857143%;">1</div>
-          <div role="gridcell" class="van-calendar__day van-calendar__day--disabled">2</div>
-          <div role="gridcell" class="van-calendar__day van-calendar__day--disabled">3</div>
-          <div role="gridcell" class="van-calendar__day van-calendar__day--disabled">4</div>
-          <div role="gridcell" class="van-calendar__day van-calendar__day--disabled">5</div>
+          <div role="gridcell" class="van-calendar__day van-calendar__day--disabled" style="">2</div>
+          <div role="gridcell" class="van-calendar__day van-calendar__day--disabled" style="">3</div>
+          <div role="gridcell" class="van-calendar__day van-calendar__day--disabled" style="">4</div>
+          <div role="gridcell" class="van-calendar__day van-calendar__day--disabled" style="">5</div>
           <div role="gridcell" class="van-calendar__day van-calendar__day--disabled">6</div>
           <div role="gridcell" class="van-calendar__day van-calendar__day--disabled">7</div>
           <div role="gridcell" class="van-calendar__day van-calendar__day--disabled">8</div>
@@ -228,9 +228,9 @@ exports[`row-height prop 1`] = `
     <div class="van-calendar__weekdays"><span class="van-calendar__weekday">日</span><span class="van-calendar__weekday">一</span><span class="van-calendar__weekday">二</span><span class="van-calendar__weekday">三</span><span class="van-calendar__weekday">四</span><span class="van-calendar__weekday">五</span><span class="van-calendar__weekday">六</span></div>
   </div>
   <div class="van-calendar__body">
-    <div class="van-calendar__month" style="padding-bottom: 0px;">
+    <div class="van-calendar__month">
       <div role="grid" class="van-calendar__days">
-        <div class="van-calendar__month-mark">1</div>
+        <div class="van-calendar__month-mark" style="">1</div>
         <div role="gridcell" class="van-calendar__day van-calendar__day--disabled" style="height: 50px; margin-left: 71.42857142857143%;">1</div>
         <div role="gridcell" class="van-calendar__day van-calendar__day--disabled" style="height: 50px;">2</div>
         <div role="gridcell" class="van-calendar__day van-calendar__day--disabled" style="height: 50px;">3</div>
@@ -281,14 +281,14 @@ exports[`title & footer slot 1`] = `
     <div class="van-calendar__weekdays"><span class="van-calendar__weekday">日</span><span class="van-calendar__weekday">一</span><span class="van-calendar__weekday">二</span><span class="van-calendar__weekday">三</span><span class="van-calendar__weekday">四</span><span class="van-calendar__weekday">五</span><span class="van-calendar__weekday">六</span></div>
   </div>
   <div class="van-calendar__body">
-    <div class="van-calendar__month" style="padding-bottom: 0px;">
+    <div class="van-calendar__month">
       <div role="grid" class="van-calendar__days">
-        <div class="van-calendar__month-mark">1</div>
+        <div class="van-calendar__month-mark" style="">1</div>
         <div role="gridcell" class="van-calendar__day van-calendar__day--disabled" style="margin-left: 71.42857142857143%;">1</div>
-        <div role="gridcell" class="van-calendar__day van-calendar__day--disabled">2</div>
-        <div role="gridcell" class="van-calendar__day van-calendar__day--disabled">3</div>
-        <div role="gridcell" class="van-calendar__day van-calendar__day--disabled">4</div>
-        <div role="gridcell" class="van-calendar__day van-calendar__day--disabled">5</div>
+        <div role="gridcell" class="van-calendar__day van-calendar__day--disabled" style="">2</div>
+        <div role="gridcell" class="van-calendar__day van-calendar__day--disabled" style="">3</div>
+        <div role="gridcell" class="van-calendar__day van-calendar__day--disabled" style="">4</div>
+        <div role="gridcell" class="van-calendar__day van-calendar__day--disabled" style="">5</div>
         <div role="gridcell" class="van-calendar__day van-calendar__day--disabled">6</div>
         <div role="gridcell" class="van-calendar__day van-calendar__day--disabled">7</div>
         <div role="gridcell" class="van-calendar__day van-calendar__day--disabled">8</div>

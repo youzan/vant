@@ -4,6 +4,7 @@ export function range(num: number, min: number, max: number): number {
 
 function trimExtraChar(value: string, char: string, regExp: RegExp) {
   const index = value.indexOf(char);
+  let prefix = '';
 
   if (index === -1) {
     return value;
@@ -13,7 +14,13 @@ function trimExtraChar(value: string, char: string, regExp: RegExp) {
     return value.slice(0, index);
   }
 
-  return value.slice(0, index + 1) + value.slice(index).replace(regExp, '');
+  if (char === '.' && value.match(/^(\.|-\.)/)) {
+    prefix = index ? '-0' : '0';
+  }
+
+  return (
+    prefix + value.slice(0, index + 1) + value.slice(index).replace(regExp, '')
+  );
 }
 
 export function formatNumber(
@@ -36,4 +43,10 @@ export function formatNumber(
   const regExp = allowDot ? /[^-0-9.]/g : /[^-0-9]/g;
 
   return value.replace(regExp, '');
+}
+
+// add num and avoid float number
+export function addNumber(num1: number, num2: number) {
+  const cardinal = 10 ** 10;
+  return Math.round((num1 + num2) * cardinal) / cardinal;
 }

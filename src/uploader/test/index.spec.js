@@ -9,8 +9,8 @@ const mockFileDataUrl = 'data:image/test';
 const mockFile = new File([], 'test.jpg');
 const file = { target: { files: [mockFile] } };
 const multiFile = { target: { files: [mockFile, mockFile] } };
-const IMAGE = 'https://img.yzcdn.cn/vant/cat.jpeg';
-const PDF = 'https://img.yzcdn.cn/vant/test.pdf';
+const IMAGE = 'https://img01.yzcdn.cn/vant/cat.jpeg';
+const PDF = 'https://img01.yzcdn.cn/vant/test.pdf';
 
 window.FileReader = function () {
   this.readAsText = function () {
@@ -203,8 +203,8 @@ test('render preview image', async () => {
   const wrapper = mount(Uploader, {
     propsData: {
       fileList: [
-        { url: 'https://img.yzcdn.cn/vant/cat.jpeg' },
-        { url: 'https://img.yzcdn.cn/vant/test.pdf' },
+        { url: 'https://img01.yzcdn.cn/vant/cat.jpeg' },
+        { url: 'https://img01.yzcdn.cn/vant/test.pdf' },
         { file: { name: 'test.pdf' } },
       ],
     },
@@ -225,7 +225,7 @@ test('image-fit prop', () => {
   const wrapper = mount(Uploader, {
     propsData: {
       imageFit: 'contain',
-      fileList: [{ url: 'https://img.yzcdn.cn/vant/cat.jpeg' }],
+      fileList: [{ url: 'https://img01.yzcdn.cn/vant/cat.jpeg' }],
     },
   });
 
@@ -476,9 +476,11 @@ test('close-preview event', async () => {
 
 test('show-upload prop', () => {
   const wrapper = mount(Uploader);
-  expect(wrapper.contains('.van-uploader__upload')).toBeTruthy();
+
+  const upload = wrapper.find('.van-uploader__upload');
+  expect(upload.element).toBeTruthy();
   wrapper.setProps({ showUpload: false });
-  expect(wrapper.contains('.van-uploader__upload')).toBeFalsy();
+  expect(upload.element.style.display).toBe('none');
 });
 
 test('file message should be reactive', (done) => {

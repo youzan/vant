@@ -62,3 +62,12 @@ test('click-item event', () => {
 
   expect(onClickItem).toHaveBeenCalledTimes(1);
 });
+
+test('should render tag  slot correctly', () => {
+  const wrapper = mount(AddressList, {
+    scopedSlots: {
+      tag: () => 'Custom Tag',
+    },
+  });
+  expect(wrapper.html()).toMatchSnapshot();
+});

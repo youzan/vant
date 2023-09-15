@@ -10,7 +10,7 @@ import SkuRowPropItem from './components/SkuRowPropItem';
 import SkuStepper from './components/SkuStepper';
 import SkuMessages from './components/SkuMessages';
 import SkuActions from './components/SkuActions';
-import { createNamespace } from '../utils';
+import { createNamespace, isEmpty } from '../utils';
 import {
   isAllSelected,
   isSkuChoosable,
@@ -70,6 +70,10 @@ export default createComponent({
       default: true,
     },
     showAddCartBtn: {
+      type: Boolean,
+      default: true,
+    },
+    disableSoldoutSku: {
       type: Boolean,
       default: true,
     },
@@ -179,9 +183,9 @@ export default createComponent({
       }
 
       // 属性未全选
-      return !this.propList.some(
-        (it) => (this.selectedProp[it.k_id] || []).length < 1
-      );
+      return !this.propList
+        .filter((i) => i.is_necessary !== false)
+        .some((i) => (this.selectedProp[i.k_id] || []).length === 0);
     },
 
     isSkuEmpty() {
@@ -409,14 +413,32 @@ export default createComponent({
       // 重置商品属性
       this.selectedProp = {};
       const { selectedProp = {} } = this.initialSku;
-      // 只有一个属性值时，默认选中，且选中外部传入信息
+      // 选中外部传入信息
       this.propList.forEach((item) => {
-        if (item.v && item.v.length === 1) {
-          this.selectedProp[item.k_id] = [item.v[0].id];
-        } else if (selectedProp[item.k_id]) {
+        if (selectedProp[item.k_id]) {
           this.selectedProp[item.k_id] = selectedProp[item.k_id];
         }
       });
+
+      if (isEmpty(this.selectedProp)) {
+        this.propList.forEach((item) => {
+          // 没有加价的属性，默认选中第一个
+          if (item?.v?.length > 0) {
+            const { v, k_id } = item;
+            const isHasConfigPrice = v.some((i) => +i.price !== 0);
+            // 没有加价属性
+            if (!isHasConfigPrice) {
+              // 找到第一个不被禁用的属性
+              // 历史如果没有 text_status 字段的，就相当于沿用直接原来的逻辑取第一个属性
+              const firstEnableProp = v.find((prop) => prop.text_status !== 0);
+
+              if (firstEnableProp) {
+                this.selectedProp[k_id] = [firstEnableProp.id];
+              }
+            }
+          }
+        });
+      }
 
       const propValues = this.selectedPropValues;
       if (propValues.length > 0) {
@@ -655,6 +677,7 @@ export default createComponent({
       stepperTitle,
       selectedSkuComb,
       showHeaderImage,
+      disableSoldoutSku,
     } = this;
 
     const slotsProps = {
@@ -720,6 +743,7 @@ export default createComponent({
                   skuKeyStr={skuTreeItem.k_s}
                   selectedSku={selectedSku}
                   skuEventBus={skuEventBus}
+                  disableSoldoutSku={disableSoldoutSku}
                   largeImageMode={skuTreeItem.largeImageMode}
                 />
               ))}
@@ -734,6 +758,7 @@ export default createComponent({
                   selectedProp={selectedProp}
                   skuEventBus={skuEventBus}
                   multiple={skuTreeItem.is_multiple}
+                  disabled={skuValue.text_status === 0}
                 />
               ))}
             </SkuRow>

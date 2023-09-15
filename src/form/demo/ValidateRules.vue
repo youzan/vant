@@ -1,6 +1,6 @@
 <template>
   <demo-block :title="t('title')">
-    <van-form validate-first @sumbit="onSubmit" @failed="onFailed">
+    <van-form validate-first @submit="onSubmit" @failed="onFailed">
       <van-field
         v-model="value1"
         name="pattern"

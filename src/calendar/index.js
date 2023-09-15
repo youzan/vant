@@ -108,11 +108,16 @@ export default createComponent({
     },
   },
 
+  inject: {
+    vanPopup: {
+      default: null,
+    },
+  },
+
   data() {
     return {
       subtitle: '',
       currentDate: this.getInitialDate(),
-      realRowHeight: 0,
     };
   },
 
@@ -152,8 +157,11 @@ export default createComponent({
   },
 
   watch: {
-    type: 'reset',
     value: 'init',
+
+    type() {
+      this.reset();
+    },
 
     defaultDate(val) {
       this.currentDate = val;
@@ -163,6 +171,10 @@ export default createComponent({
 
   mounted() {
     this.init();
+    // https://github.com/vant-ui/vant/issues/9845
+    if (!this.poppable) {
+      this.vanPopup?.$on('opened', this.onScroll);
+    }
   },
 
   /* istanbul ignore next */
@@ -172,8 +184,8 @@ export default createComponent({
 
   methods: {
     // @exposed-api
-    reset() {
-      this.currentDate = this.getInitialDate();
+    reset(date = this.getInitialDate()) {
+      this.currentDate = date;
       this.scrollIntoView();
     },
 
@@ -184,7 +196,7 @@ export default createComponent({
 
       this.$nextTick(() => {
         // add Math.floor to avoid decimal height issues
-        // https://github.com/youzan/vant/issues/5640
+        // https://github.com/vant-ui/vant/issues/5640
         this.bodyHeight = Math.floor(
           this.$refs.body.getBoundingClientRect().height
         );
@@ -193,17 +205,9 @@ export default createComponent({
       });
     },
 
-    // scroll to current month
-    scrollIntoView() {
+    // @exposed-api
+    scrollToDate(targetDate) {
       raf(() => {
-        const { currentDate } = this;
-
-        if (!currentDate) {
-          return;
-        }
-
-        const targetDate =
-          this.type === 'single' ? currentDate : currentDate[0];
         const displayed = this.value || !this.poppable;
 
         /* istanbul ignore if */
@@ -220,7 +224,20 @@ export default createComponent({
 
           return false;
         });
+
+        this.onScroll();
       });
+    },
+
+    // scroll to current month
+    scrollIntoView() {
+      const { currentDate } = this;
+
+      if (currentDate) {
+        const targetDate =
+          this.type === 'single' ? currentDate : currentDate[0];
+        this.scrollToDate(targetDate);
+      }
     },
 
     getInitialDate() {
@@ -266,28 +283,34 @@ export default createComponent({
 
       let height = 0;
       let currentMonth;
-      let visibleIndex;
+      const visibleRange = [-1, -1];
 
       for (let i = 0; i < months.length; i++) {
         const visible = height <= bottom && height + heights[i] >= top;
 
-        if (visible && !currentMonth) {
-          visibleIndex = i;
-          currentMonth = months[i];
-        }
+        if (visible) {
+          visibleRange[1] = i;
 
-        if (!months[i].visible && visible) {
-          this.$emit('month-show', {
-            date: months[i].date,
-            title: months[i].title,
-          });
+          if (!currentMonth) {
+            currentMonth = months[i];
+            visibleRange[0] = i;
+          }
+
+          if (!months[i].showed) {
+            months[i].showed = true;
+            this.$emit('month-show', {
+              date: months[i].date,
+              title: months[i].title,
+            });
+          }
         }
 
         height += heights[i];
       }
 
       months.forEach((month, index) => {
-        month.visible = index >= visibleIndex - 1 && index <= visibleIndex + 1;
+        month.visible =
+          index >= visibleRange[0] - 1 && index <= visibleRange[1] + 1;
       });
 
       /* istanbul ignore else */
@@ -399,10 +422,6 @@ export default createComponent({
       this.$emit('confirm', copyDates(this.currentDate));
     },
 
-    onUpdateHeight(height) {
-      this.realRowHeight = height;
-    },
-
     genMonth(date, index) {
       const showMonthTitle = index !== 0 || !this.showSubtitle;
       return (
@@ -421,11 +440,13 @@ export default createComponent({
           currentDate={this.currentDate}
           showSubtitle={this.showSubtitle}
           allowSameDay={this.allowSameDay}
-          realRowHeight={this.realRowHeight}
           showMonthTitle={showMonthTitle}
           firstDayOfWeek={this.dayOffset}
+          scopedSlots={{
+            'top-info': this.$scopedSlots['top-info'],
+            'bottom-info': this.$scopedSlots['bottom-info'],
+          }}
           onClick={this.onClickDay}
-          onUpdate-height={this.onUpdateHeight}
         />
       );
     },

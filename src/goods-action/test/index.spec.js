@@ -50,12 +50,12 @@ test('Icon render icon slot', () => {
   expect(wrapper).toMatchSnapshot();
 });
 
-test('Icon render icon slot with info', () => {
+test('Icon render icon slot with badge', () => {
   const wrapper = mount({
     render(h) {
       return h(Icon, {
         props: {
-          info: '1',
+          badge: '1',
         },
         scopedSlots: {
           default: () => 'Text',

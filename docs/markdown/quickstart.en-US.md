@@ -1,8 +1,65 @@
 # Quickstart
 
-### Starter kit
+## Install
 
-We recomment to use [Vue Cli](https://cli.vuejs.org/) to create a project.
+### npm
+
+```bash
+# Install latest Vant for Vue 3 project
+npm i vant -S
+
+# Install Vant 2 for Vue 2 project
+npm i vant@latest-v2 -S
+```
+
+### CDN
+
+The easiest way to use Vant is to include a CDN link in the html file, after which you can access all components via the global variable `vant`.
+
+```html
+<!-- import style -->
+<link
+  rel="stylesheet"
+  href="https://unpkg.com/vant@2.12/lib/index.css"
+/>
+
+<!-- import script -->
+<script src="https://unpkg.com/vue@2.6/dist/vue.min.js"></script>
+<script src="https://unpkg.com/vant@2.12/lib/vant.min.js"></script>
+
+<script>
+  // Render the Button component
+  new Vue({
+    el: '#app',
+    template: `<van-button>Button</van-button>`,
+  });
+
+  // Call function component
+  vant.Toast('Message');
+
+  // Register Lazyload directive
+  Vue.use(vant.Lazyload);
+</script>
+```
+
+#### Free CDN
+
+You can use Vant through these free CDN services:
+
+- [jsdelivr](https://www.jsdelivr.com/package/npm/vant)
+- [cdnjs](https://cdnjs.com/libraries/vant)
+- [unpkg](https://unpkg.com/)
+
+Note: Free CDN is generally used for making prototypes or personal projects. It is not recommended to use free CDN in production environment.
+
+For enterprise developers, we recommend:
+
+- install with npm, use build tools to bundle it
+- download the scripts, host it on your own server
+
+### CLI
+
+We recommend to use [Vue Cli](https://cli.vuejs.org/) to create a new project.
 
 ```bash
 # Install Vue Cli
@@ -15,21 +72,9 @@ vue create hello-world
 vue ui
 ```
 
-![](https://img.yzcdn.cn/vant/vue-cli-demo-201809030812.png)
+![](https://img01.yzcdn.cn/vant/vue-cli-demo-201809030812.png)
 
 In the GUI, click on 'Dependencies' -> `Install Dependencies` and add `vant` to the dependencies.
-
-### Install
-
-```bash
-# Using npm
-npm i vant -S
-
-# Using yarn
-yarn add vant
-```
-
-> Tips: Please install Vant 3.0 for Vue 3 projects, see [issue#7035](https://github.com/youzan/vant/issues/7035)
 
 ## Usage
 
@@ -92,60 +137,3 @@ Vue.use(Vant);
 ```
 
 > If you configured babel-plugin-import, you won't be allowed to import all components.
-
-### 4. CDN
-
-The easiest way to use Vant is to include a CDN link in the html file, after which you can access all components via the global variable `vant`.
-
-```html
-<!-- import style -->
-<link
-  rel="stylesheet"
-  href="https://cdn.jsdelivr.net/npm/vant@2.10/lib/index.css"
-/>
-
-<!-- import script -->
-<script src="https://cdn.jsdelivr.net/npm/vue@2.6/dist/vue.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/vant@2.10/lib/vant.min.js"></script>
-
-<script>
-  // Render the Button component
-  new Vue({
-    el: '#app',
-    template: `<van-button>Button</van-button>`,
-  });
-
-  // Call function component
-  vant.Toast('Message');
-
-  // Register Lazyload directive
-  Vue.use(vant.Lazyload);
-</script>
-```
-
-## Other
-
-### Rem units
-
-Vant use `px` as size units by default，you can use tools such as `postcss-pxtorem` to transform units to `rem`.
-
-- [postcss-pxtorem](https://github.com/cuth/postcss-pxtorem)
-- [lib-flexible](https://github.com/amfe/lib-flexible)
-
-#### PostCSS Config
-
-postcss config example:
-
-```js
-module.exports = {
-  plugins: {
-    autoprefixer: {
-      browsers: ['Android >= 4.0', 'iOS >= 8'],
-    },
-    'postcss-pxtorem': {
-      rootValue: 37.5,
-      propList: ['*'],
-    },
-  },
-};
-```

@@ -9,7 +9,6 @@
   color: @sidebar-text-color;
   font-size: @sidebar-font-size;
   line-height: @sidebar-line-height;
-  word-wrap: break-word;
   background-color: @sidebar-background-color;
   cursor: pointer;
   user-select: none;
@@ -21,6 +20,8 @@
   &__text {
     position: relative;
     display: inline-block;
+    // https://github.com/vant-ui/vant/issues/7455
+    word-break: break-all;
   }
 
   &:not(:last-child)::after {

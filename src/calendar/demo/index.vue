@@ -83,6 +83,7 @@
       />
 
       <van-cell
+        v-if="!isWeapp"
         is-link
         :title="t('firstDayOfWeek')"
         @click="show('single', 'firstDayOfWeek')"
@@ -121,8 +122,6 @@
 </template>
 
 <script>
-import { GREEN } from '../../utils/constant';
-
 export default {
   i18n: {
     'zh-CN': {
@@ -235,7 +234,7 @@ export default {
           this.showConfirm = false;
           break;
         case 'customColor':
-          this.color = GREEN;
+          this.color = '#1989fa';
           break;
         case 'customConfirm':
           this.confirmText = this.t('confirmText');

@@ -144,10 +144,10 @@ export default {
 
 | Attribute | Description | Type | Default |
 | --- | --- | --- | --- |
-| v-model | Whether to show loading info，the `load` event will not be triggered when loading | _boolean_ | `false` |
-| finished | Whether loading is finished，the `load` event will not be triggered when finished | _boolean_ | `false` |
-| error | Whether loading is error，the `load` event will be triggered only when error text clicked, the `sync` modifier is needed | _boolean_ | `false` |
-| offset | The load event will be triggered when the distance between the scrollbar and the bottom is less than offset | _number \| string_ | `300` |
+| v-model | Whether to show loading info，the `load` event will not be Emitted when loading | _boolean_ | `false` |
+| finished | Whether loading is finished，the `load` event will not be Emitted when finished | _boolean_ | `false` |
+| error | Whether loading is error，the `load` event will be Emitted only when error text clicked, the `sync` modifier is needed | _boolean_ | `false` |
+| offset | The load event will be Emitted when the distance between the scrollbar and the bottom is less than offset | _number \| string_ | `300` |
 | loading-text | Loading text | _string_ | `Loading...` |
 | finished-text | Finished text | _string_ | - |
 | error-text | Error loaded text | _string_ | - |
@@ -158,7 +158,7 @@ export default {
 
 | Event | Description | Arguments |
 | --- | --- | --- |
-| load | Triggered when the distance between the scrollbar and the bottom is less than offset | - |
+| load | Emitted when the distance between the scrollbar and the bottom is less than offset | - |
 
 ### Methods
 
@@ -176,3 +176,13 @@ Use [ref](https://vuejs.org/v2/api/#ref) to get List instance and call instance 
 | loading  | Custom loading tips  |
 | finished | Custom finished tips |
 | error    | Custom error tips    |
+
+### Less Variables
+
+How to use: [Custom Theme](#/en-US/theme).
+
+| Name                    | Default Value   | Description |
+| ----------------------- | --------------- | ----------- |
+| @list-text-color        | `@gray-6`       | -           |
+| @list-text-font-size    | `@font-size-md` | -           |
+| @list-text-line-height  | `50px`          | -           |

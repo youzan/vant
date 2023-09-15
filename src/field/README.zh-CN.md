@@ -264,7 +264,7 @@ export default {
 | show-word-limit | 是否显示字数统计，需要设置`maxlength`属性 | _boolean_ | `false` |
 | error | 是否将输入内容标红 | _boolean_ | `false` |
 | error-message | 底部错误提示文案，为空时不展示 | _string_ | - |
-| formatter `v2.4.2` | 输入内容格式化函数 | _Function_ | - |
+| formatter | 输入内容格式化函数 | _Function_ | - |
 | format-trigger `v2.8.7` | 格式化函数触发的时机，可选值为 `onBlur` | _string_ | `onChange` |
 | arrow-direction | 箭头方向，可选值为 `left` `up` `down` | _string_ | `right` |
 | label-class | 左侧文本额外类名 | _any_ | - |
@@ -277,6 +277,7 @@ export default {
 | right-icon | 右侧[图标名称](#/zh-CN/icon)或图片链接 | _string_ | - |
 | icon-prefix `v2.5.3` | 图标类名前缀，同 Icon 组件的 [class-prefix 属性](#/zh-CN/icon#props) | _string_ | `van-icon` |
 | rules `v2.5.0` | 表单校验规则，详见 [Form 组件](#/zh-CN/form#rule-shu-ju-jie-gou) | _Rule[]_ | - |
+| autocomplete | input 标签原生的[自动完成属性](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/autocomplete) | _string_ | - |
 
 ### Events
 
@@ -295,7 +296,7 @@ export default {
 
 ### 方法
 
-通过 ref 可以获取到 Field 实例并调用实例方法，详见[组件实例方法](#/zh-CN/quickstart#zu-jian-shi-li-fang-fa)。
+通过 ref 可以获取到 Field 实例并调用实例方法，详见[组件实例方法](#/zh-CN/advanced-usage#zu-jian-shi-li-fang-fa)。
 
 | 方法名 | 说明           | 参数 | 返回值 |
 | ------ | -------------- | ---- | ------ |
@@ -304,14 +305,39 @@ export default {
 
 ### Slots
 
-| 名称           | 说明                                                       |
-| -------------- | ---------------------------------------------------------- |
-| label          | 自定义输入框 label 标签                                    |
-| input          | 自定义输入框，使用此插槽后，与输入框相关的属性和事件将失效 |
-| left-icon      | 自定义输入框头部图标                                       |
-| right-icon     | 自定义输入框尾部图标                                       |
-| button         | 自定义输入框尾部按钮                                       |
-| extra `v2.8.2` | 自定义输入框最右侧的额外内容                               |
+| 名称 | 说明 |
+| --- | --- |
+| label | 自定义输入框 label 标签 |
+| input | 自定义输入框，使用此插槽后，与输入框相关的属性和事件将失效。<br>在 Form 组件进行表单校验时，会使用 input 插槽中子组件的 `value`，而不是 Field 组件的 `value`。 |
+| left-icon | 自定义输入框头部图标 |
+| right-icon | 自定义输入框尾部图标 |
+| button | 自定义输入框尾部按钮 |
+| extra `v2.8.2` | 自定义输入框最右侧的额外内容 |
+
+### 样式变量
+
+组件提供了下列 Less 变量，可用于自定义样式，使用方法请参考[主题定制](#/zh-CN/theme)。
+
+| 名称                             | 默认值          | 描述 |
+| -------------------------------- | --------------- | ---- |
+| @field-label-width               | `6.2em`         | -    |
+| @field-label-color               | `@gray-7`       | -    |
+| @field-label-margin-right        | `@padding-sm`   | -    |
+| @field-input-text-color          | `@text-color`   | -    |
+| @field-input-error-text-color    | `@red`          | -    |
+| @field-input-disabled-text-color | `@gray-5`       | -    |
+| @field-placeholder-text-color    | `@gray-5`       | -    |
+| @field-icon-size                 | `16px`          | -    |
+| @field-clear-icon-size           | `16px`          | -    |
+| @field-clear-icon-color          | `@gray-5`       | -    |
+| @field-right-icon-color          | `@gray-6`       | -    |
+| @field-error-message-color       | `@red`          | -    |
+| @field-error-message-font-size   | `12px`          | -    |
+| @field-text-area-min-height      | `60px`          | -    |
+| @field-word-limit-color          | `@gray-7`       | -    |
+| @field-word-limit-font-size      | `@font-size-sm` | -    |
+| @field-word-limit-line-height    | `16px`          | -    |
+| @field-disabled-text-color       | `@gray-5`       | -    |
 
 ## 常见问题
 
@@ -321,4 +347,4 @@ HTML 原生的 `type="number"` 属性在 iOS 和 Android 系统上都存在一�
 
 ### 在桌面端点击清除按钮无效？
 
-清除按钮监听是的移动端 Touch 事件，参见[在桌面端使用](#/zh-CN/quickstart#zai-zhuo-mian-duan-shi-yong)。
+清除按钮监听是的移动端 Touch 事件，参见[桌面端适配](#/zh-CN/advanced-usage#zhuo-mian-duan-gua-pei)。

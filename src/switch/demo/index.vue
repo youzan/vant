@@ -19,8 +19,8 @@
     <demo-block :title="t('customColor')">
       <van-switch
         v-model="checked3"
-        active-color="#07c160"
-        inactive-color="#ee0a24"
+        active-color="#ee0a24"
+        inactive-color="#dcdee0"
       />
     </demo-block>
 

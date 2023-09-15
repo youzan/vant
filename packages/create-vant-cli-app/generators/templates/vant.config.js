@@ -10,7 +10,7 @@ module.exports = {
   },
   site: {
     title: '<%= name %>',
-    logo: 'https://img.yzcdn.cn/vant/logo.png',
+    logo: 'https://img01.yzcdn.cn/vant/logo.png',
     nav: [
       {
         title: '开发指南',

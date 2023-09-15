@@ -7,6 +7,13 @@
       </van-cell-group>
     </demo-block>
 
+    <demo-block :title="t('insetGrouped')">
+      <van-cell-group inset>
+        <van-cell :title="t('cell')" :value="t('content')" />
+        <van-cell :title="t('cell')" :value="t('content')" :label="t('desc')" />
+      </van-cell-group>
+    </demo-block>
+
     <demo-block :title="t('largeSize')">
       <van-cell :title="t('cell')" :value="t('content')" size="large" />
       <van-cell
@@ -91,6 +98,7 @@ export default {
       urlRoute: 'URL 跳转',
       vueRoute: '路由跳转',
       useSlots: '使用插槽',
+      insetGrouped: '卡片风格',
       verticalCenter: '垂直居中',
     },
     'en-US': {
@@ -105,6 +113,7 @@ export default {
       urlRoute: 'URL',
       vueRoute: 'Vue Router',
       useSlots: 'Use Slots',
+      insetGrouped: 'Inset Grouped',
       verticalCenter: 'Vertical center',
     },
   },

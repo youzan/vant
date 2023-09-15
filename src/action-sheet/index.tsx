@@ -1,3 +1,5 @@
+import Vue from 'vue';
+
 // Utils
 import { createNamespace } from '../utils';
 import { emit, inherit } from '../utils/functional';
@@ -75,12 +77,6 @@ function ActionSheet(
     }
   }
 
-  function Content() {
-    if (slots.default) {
-      return <div class={bem('content')}>{slots.default()}</div>;
-    }
-  }
-
   function Option(item: ActionSheetItem, index: number) {
     const { disabled, loading, callback } = item;
 
@@ -95,11 +91,13 @@ function ActionSheet(
         callback(item);
       }
 
-      emit(ctx, 'select', item, index);
-
       if (props.closeOnClickAction) {
         emit(ctx, 'input', false);
       }
+
+      Vue.nextTick(() => {
+        emit(ctx, 'select', item, index);
+      });
     }
 
     function OptionContent() {
@@ -161,8 +159,10 @@ function ActionSheet(
     >
       {Header()}
       {Description()}
-      {props.actions && props.actions.map(Option)}
-      {Content()}
+      <div class={bem('content')}>
+        {props.actions && props.actions.map(Option)}
+        {slots.default?.()}
+      </div>
       {CancelText()}
     </Popup>
   );

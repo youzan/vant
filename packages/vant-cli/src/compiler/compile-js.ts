@@ -1,16 +1,18 @@
 import { transformAsync } from '@babel/core';
 import { readFileSync, removeSync, outputFileSync } from 'fs-extra';
 import { replaceExt } from '../common';
-import { replaceCssImport } from '../common/css';
+import { replaceCssImportExt } from '../common/css';
+import { replaceScriptImportExt } from './get-deps';
 
 export function compileJs(filePath: string): Promise<undefined> {
   return new Promise((resolve, reject) => {
     let code = readFileSync(filePath, 'utf-8');
 
-    code = replaceCssImport(code);
+    code = replaceCssImportExt(code);
+    code = replaceScriptImportExt(code, '.vue', '');
 
     transformAsync(code, { filename: filePath })
-      .then(result => {
+      .then((result) => {
         if (result) {
           const jsFilePath = replaceExt(filePath, '.js');
 

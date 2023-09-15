@@ -1,7 +1,21 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`apply icon-prefix prop to error-icon 1`] = `
+<div class="van-image">
+  <div class="van-image__error"><i class="my-icon my-icon-error van-image__error-icon">
+      <!----></i></div>
+</div>
+`;
+
+exports[`apply icon-prefix prop to loading-icon 1`] = `
+<div class="van-image"><img class="van-image__img">
+  <div class="van-image__loading"><i class="my-icon my-icon-success van-image__loading-icon">
+      <!----></i></div>
+</div>
+`;
+
 exports[`default slot 1`] = `
-<div class="van-image"><img src="https://img.yzcdn.cn/vant/cat.jpeg" class="van-image__img">
+<div class="van-image"><img src="https://img01.yzcdn.cn/vant/cat.jpeg" class="van-image__img">
   <div class="van-image__loading"><i class="van-icon van-icon-photo van-image__loading-icon">
       <!----></i></div>Custom Default
 </div>
@@ -30,7 +44,7 @@ exports[`lazy-load error event 1`] = `
 
 exports[`lazy-load load event 1`] = `<div class="van-image"><img class="van-image__img"></div>`;
 
-exports[`load event 1`] = `<div class="van-image"><img src="https://img.yzcdn.cn/vant/cat.jpeg" class="van-image__img"></div>`;
+exports[`load event 1`] = `<div class="van-image"><img src="https://img01.yzcdn.cn/vant/cat.jpeg" class="van-image__img"></div>`;
 
 exports[`load event 2`] = `
 <div class="van-image"><img src="" class="van-image__img">
@@ -47,7 +61,7 @@ exports[`loading-icon prop 1`] = `
 `;
 
 exports[`radius prop 1`] = `
-<div class="van-image" style="overflow: hidden; border-radius: 3px;"><img src="https://img.yzcdn.cn/vant/cat.jpeg" class="van-image__img">
+<div class="van-image" style="overflow: hidden; border-radius: 3px;"><img src="https://img01.yzcdn.cn/vant/cat.jpeg" class="van-image__img">
   <div class="van-image__loading"><i class="van-icon van-icon-photo van-image__loading-icon">
       <!----></i></div>
 </div>

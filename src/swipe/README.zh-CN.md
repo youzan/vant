@@ -1,5 +1,9 @@
 # Swipe 轮播
 
+### 介绍
+
+用于循环播放一组图片或内容。
+
 ### 引入
 
 ```js
@@ -57,8 +61,8 @@ export default {
   data() {
     return {
       images: [
-        'https://img.yzcdn.cn/vant/apple-1.jpg',
-        'https://img.yzcdn.cn/vant/apple-2.jpg',
+        'https://img01.yzcdn.cn/vant/apple-1.jpg',
+        'https://img01.yzcdn.cn/vant/apple-2.jpg',
       ],
     };
   },
@@ -127,9 +131,7 @@ export default {
   <van-swipe-item>3</van-swipe-item>
   <van-swipe-item>4</van-swipe-item>
   <template #indicator>
-    <div class="custom-indicator">
-      {{ current + 1 }}/4
-    </div>
+    <div class="custom-indicator">{{ current + 1 }}/4</div>
   </template>
 </van-swipe>
 
@@ -193,14 +195,14 @@ export default {
 
 ### Swipe 方法
 
-通过 ref 可以获取到 Swipe 实例并调用实例方法，详见[组件实例方法](#/zh-CN/quickstart#zu-jian-shi-li-fang-fa)。。
+通过 ref 可以获取到 Swipe 实例并调用实例方法，详见[组件实例方法](#/zh-CN/advanced-usage#zu-jian-shi-li-fang-fa)。
 
 | 方法名 | 说明 | 参数 | 返回值 |
 | --- | --- | --- | --- |
-| prev `v2.4.2` | 切换到上一轮播 | - | - |
-| next `v2.4.2` | 切换到下一轮播 | - | - |
-| swipeTo | 切换到指定位置 | index: number, options: Options | void |
-| resize | 外层元素大小变化后，可以调用此方法来触发重绘 | - | void |
+| prev | 切换到上一轮播 | - | - |
+| next | 切换到下一轮播 | - | - |
+| swipeTo | 切换到指定位置 | index: number, options: Options | - |
+| resize | 外层元素大小或组件显示状态变化时，可以调用此方法来触发重绘 | - | - |
 
 ### swipeTo Options 格式
 
@@ -215,6 +217,19 @@ export default {
 | default   | 轮播内容     |
 | indicator | 自定义指示器 |
 
+### 样式变量
+
+组件提供了下列 Less 变量，可用于自定义样式，使用方法请参考[主题定制](#/zh-CN/theme)。
+
+| 名称                                       | 默认值          | 描述 |
+| ------------------------------------------ | --------------- | ---- |
+| @swipe-indicator-size                      | `6px`           | -    |
+| @swipe-indicator-margin                    | `@padding-sm`   | -    |
+| @swipe-indicator-active-opacity            | `1`             | -    |
+| @swipe-indicator-inactive-opacity          | `0.3`           | -    |
+| @swipe-indicator-active-background-color   | `@blue`         | -    |
+| @swipe-indicator-inactive-background-color | `@border-color` | -    |
+
 ## 常见问题
 
 ### 滑动轮播时为什么触发了 click 事件？
@@ -225,8 +240,33 @@ export default {
 
 ### 在桌面端无法操作组件？
 
-参见[在桌面端使用](#/zh-CN/quickstart#zai-zhuo-mian-duan-shi-yong)。
+参见[桌面端适配](#/zh-CN/advanced-usage#zhuo-mian-duan-gua-pei)。
 
 ### Swipe 组件功能太少，无法实现复杂效果？
 
 Vant 中的 Swipe 组件是比较轻量的，因此功能也比较基础。如果需要更复杂的轮播效果，推荐使用社区里一些优质的轮播库，比如 [vue-awesome-swiper](https://github.com/surmon-china/vue-awesome-swiper)。
+
+### 组件从隐藏状态切换到显示状态时，无法正确渲染？
+
+Swipe 组件在挂载时，会获取自身的宽度，并计算出轮播图的位置。如果组件一开始处于隐藏状态，则获取到的宽度永远为 0，因此无法正确计算位置。
+
+#### 解决方法
+
+方法一，如果是使用 `v-show` 来控制组件展示的，则替换为 `v-if` 即可解决此问题：
+
+```html
+<!-- Before -->
+<van-swipe v-show="show" />
+<!-- After -->
+<van-swipe v-if="show" />
+```
+
+方法二，调用组件的 resize 方法来主动触发重绘：
+
+```html
+<van-swipe v-show="show" ref="swipe" />
+```
+
+```js
+this.$refs.swipe.resize();
+```

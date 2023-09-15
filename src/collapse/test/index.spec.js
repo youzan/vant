@@ -123,28 +123,6 @@ test('lazy render collapse content', async () => {
   expect(wrapper).toMatchSnapshot();
 });
 
-test('warn when value type is incorrect', () => {
-  const originConsoleError = console.error;
-  const error = jest.fn();
-  console.error = error;
-
-  mount({
-    template: `
-    <van-collapse v-model="active">
-      <van-collapse-item title="a" name="first"></van-collapse-item>
-    </van-collapse>
-    `,
-    data() {
-      return {
-        active: 0,
-      };
-    },
-  });
-
-  expect(error).toHaveBeenCalledTimes(1);
-  console.error = originConsoleError;
-});
-
 test('toggle method', (done) => {
   mount({
     template: `

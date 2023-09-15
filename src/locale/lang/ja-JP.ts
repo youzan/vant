@@ -22,6 +22,9 @@ export default {
     monthTitle: (year: number, month: number) => `${year}年${month}月`,
     rangePrompt: (maxRange: number) => `${maxRange}日以内を選択してください`,
   },
+  vanCascader: {
+    select: '選択する',
+  },
   vanContactCard: {
     addText: '連絡先を追加',
   },

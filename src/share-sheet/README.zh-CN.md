@@ -74,6 +74,7 @@ export default {
       options: [
         [
           { name: '微信', icon: 'wechat' },
+          { name: '朋友圈', icon: 'wechat-moments' },
           { name: '微博', icon: 'weibo' },
           { name: 'QQ', icon: 'qq' },
         ],
@@ -81,6 +82,7 @@ export default {
           { name: '复制链接', icon: 'link' },
           { name: '分享海报', icon: 'poster' },
           { name: '二维码', icon: 'qrcode' },
+          { name: '小程序码', icon: 'weapp-qrcode' },
         ],
       ],
     };
@@ -104,15 +106,15 @@ export default {
       options: [
         {
           name: '名称',
-          icon: 'https://img.yzcdn.cn/vant/custom-icon-fire.png',
+          icon: 'https://img01.yzcdn.cn/vant/custom-icon-fire.png',
         },
         {
           name: '名称',
-          icon: 'https://img.yzcdn.cn/vant/custom-icon-light.png',
+          icon: 'https://img01.yzcdn.cn/vant/custom-icon-light.png',
         },
         {
           name: '名称',
-          icon: 'https://img.yzcdn.cn/vant/custom-icon-water.png',
+          icon: 'https://img01.yzcdn.cn/vant/custom-icon-water.png',
         },
       ],
     };
@@ -166,7 +168,7 @@ export default {
 | lazy-render | 是否在显示弹层时才渲染内容 | _boolean_ | `true` |
 | close-on-popstate | 是否在页面回退时自动关闭 | _boolean_ | `true` |
 | close-on-click-overlay | 是否在点击遮罩层后关闭 | _boolean_ | `true` |
-| safe-area-inset-bottom | 是否开启[底部安全区适配](#/zh-CN/quickstart#di-bu-an-quan-qu-gua-pei) | _boolean_ | `true` |
+| safe-area-inset-bottom | 是否开启[底部安全区适配](#/zh-CN/advanced-usage#di-bu-an-quan-qu-gua-pei) | _boolean_ | `true` |
 | get-container | 指定挂载的节点，[用法示例](#/zh-CN/popup#zhi-ding-gua-zai-wei-zhi) | _string \| () => Element_ | - |
 
 ### Option 数据结构
@@ -177,7 +179,7 @@ export default {
 | --- | --- | --- |
 | name | 分享渠道名称 | _string_ |
 | description `v2.8.5` | 分享选项描述 | _string_ |
-| icon | 图标，可选值为 `wechat` `weibo` `qq` `link` `qrcode` `poster`，支持传入图片 URL | _string_ |
+| icon | 图标，可选值为 `wechat` `weibo` `qq` `link` `qrcode` `poster` `weapp-qrcode` `wechat-moments`，支持传入图片 URL | _string_ |
 | className | 分享选项类名 | _string_ |
 
 ### Events
@@ -194,6 +196,28 @@ export default {
 | ----------- | -------------- |
 | title       | 自定义顶部标题 |
 | description | 自定义描述文字 |
+
+### 样式变量
+
+组件提供了下列 Less 变量，可用于自定义样式，使用方法请参考[主题定制](#/zh-CN/theme)。
+
+| 名称 | 默认值 | 描述 |
+| --- | --- | --- |
+| @share-sheet-header-padding | `@padding-sm @padding-md @padding-base` | - |
+| @share-sheet-title-color | `@text-color` | - |
+| @share-sheet-title-font-size | `@font-size-md` | - |
+| @share-sheet-title-line-height | `@line-height-md` | - |
+| @share-sheet-description-color | `@gray-6` | - |
+| @share-sheet-description-font-size | `@font-size-sm` | - |
+| @share-sheet-description-line-height | `16px` | - |
+| @share-sheet-icon-size | `48px` | - |
+| @share-sheet-option-name-color | `@gray-7` | - |
+| @share-sheet-option-name-font-size | `@font-size-sm` | - |
+| @share-sheet-option-description-color | `@gray-5` | - |
+| @share-sheet-option-description-font-size | `@font-size-sm` | - |
+| @share-sheet-cancel-button-font-size | `@font-size-lg` | - |
+| @share-sheet-cancel-button-height | `48px` | - |
+| @share-sheet-cancel-button-background | `@white` | - |
 
 ## 常见问题
 

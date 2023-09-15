@@ -26,7 +26,6 @@ export default createComponent({
     currentDate: [Date, Array],
     allowSameDay: Boolean,
     showSubtitle: Boolean,
-    realRowHeight: Number,
     showMonthTitle: Boolean,
     firstDayOfWeek: Number,
   },
@@ -66,15 +65,13 @@ export default createComponent({
       return this.visible || !this.lazyRender;
     },
 
-    monthStyle() {
-      if (!this.shouldRender) {
-        const padding =
-          Math.ceil((this.totalDay + this.offset) / 7) * this.realRowHeight;
-
-        return {
-          paddingBottom: `${padding}px`,
-        };
+    placeholders() {
+      const rows = [];
+      const count = Math.ceil((this.totalDay + this.offset) / 7);
+      for (let day = 1; day <= count; day++) {
+        rows.push({ type: 'placeholder' });
       }
+      return rows;
     },
 
     days() {
@@ -104,29 +101,9 @@ export default createComponent({
     },
   },
 
-  watch: {
-    shouldRender(value) {
-      if (value) {
-        this.$nextTick(() => {
-          if (this.$refs.day[0] && !this.realRowHeight) {
-            const { height } = this.$refs.day[0].getBoundingClientRect();
-            this.$emit('update-height', height);
-          }
-        });
-      }
-    },
-
-    realRowHeight() {
-      this.height = null;
-    },
-  },
-
   methods: {
     getHeight() {
-      if (!this.height) {
-        this.height = this.$el.getBoundingClientRect().height;
-      }
-      return this.height;
+      return this.$el?.getBoundingClientRect().height || 0;
     },
 
     scrollIntoView(body) {
@@ -238,6 +215,11 @@ export default createComponent({
         height: this.rowHeightWithUnit,
       };
 
+      if (type === 'placeholder') {
+        style.width = '100%';
+        return style;
+      }
+
       if (index === 0) {
         style.marginLeft = `${(100 * this.offset) / 7}%`;
       }
@@ -266,26 +248,43 @@ export default createComponent({
     },
 
     genMark() {
-      if (this.showMark) {
+      if (this.showMark && this.shouldRender) {
         return <div class={bem('month-mark')}>{this.date.getMonth() + 1}</div>;
       }
     },
 
     genDays() {
-      if (this.shouldRender) {
+      const days = this.shouldRender ? this.days : this.placeholders;
+      return (
+        <div ref="days" role="grid" class={bem('days')}>
+          {this.genMark()}
+          {days.map(this.genDay)}
+        </div>
+      );
+    },
+
+    genTopInfo(item) {
+      const slot = this.$scopedSlots['top-info'];
+      if (item.topInfo || slot) {
         return (
-          <div ref="days" role="grid" class={bem('days')}>
-            {this.genMark()}
-            {this.days.map(this.genDay)}
+          <div class={bem('top-info')}>{slot ? slot(item) : item.topInfo}</div>
+        );
+      }
+    },
+
+    genBottomInfo(item) {
+      const slot = this.$scopedSlots['bottom-info'];
+      if (item.bottomInfo || slot) {
+        return (
+          <div class={bem('bottom-info')}>
+            {slot ? slot(item) : item.bottomInfo}
           </div>
         );
       }
-
-      return <div ref="days" />;
     },
 
     genDay(item, index) {
-      const { type, topInfo, bottomInfo } = item;
+      const { type } = item;
       const style = this.getDayStyle(type, index);
       const disabled = type === 'disabled';
 
@@ -295,17 +294,9 @@ export default createComponent({
         }
       };
 
-      const TopInfo = topInfo && <div class={bem('top-info')}>{topInfo}</div>;
-
-      const BottomInfo = bottomInfo && (
-        <div class={bem('bottom-info')}>{bottomInfo}</div>
-      );
-
       if (type === 'selected') {
         return (
           <div
-            ref="day"
-            refInFor
             role="gridcell"
             style={style}
             class={[bem('day'), item.className]}
@@ -320,9 +311,9 @@ export default createComponent({
                 background: this.color,
               }}
             >
-              {TopInfo}
+              {this.genTopInfo(item)}
               {item.text}
-              {BottomInfo}
+              {this.genBottomInfo(item)}
             </div>
           </div>
         );
@@ -330,17 +321,15 @@ export default createComponent({
 
       return (
         <div
-          ref="day"
-          refInFor
           role="gridcell"
           style={style}
           class={[bem('day', type), item.className]}
           tabindex={disabled ? null : -1}
           onClick={onClick}
         >
-          {TopInfo}
+          {this.genTopInfo(item)}
           {item.text}
-          {BottomInfo}
+          {this.genBottomInfo(item)}
         </div>
       );
     },
@@ -348,7 +337,7 @@ export default createComponent({
 
   render() {
     return (
-      <div class={bem('month')} ref="month" style={this.monthStyle}>
+      <div class={bem('month')} ref="month">
         {this.genTitle()}
         {this.genDays()}
       </div>

@@ -6,19 +6,16 @@ import {
   readFileSync,
   outputFileSync,
 } from 'fs-extra';
-import merge from 'webpack-merge';
-import {
-  SRC_DIR,
-  getVantConfig,
-  ROOT_WEBPACK_CONFIG_FILE,
-  ROOT_POSTCSS_CONFIG_FILE,
-} from './constant';
+import { mergeWithCustomize } from 'webpack-merge';
+import { SRC_DIR, getVantConfig, ROOT_WEBPACK_CONFIG_FILE } from './constant';
 import { WebpackConfig } from './types';
+import _ from 'lodash';
 
 export const EXT_REGEXP = /\.\w+$/;
 export const SFC_REGEXP = /\.(vue)$/;
 export const DEMO_REGEXP = new RegExp('\\' + sep + 'demo$');
 export const TEST_REGEXP = new RegExp('\\' + sep + 'test$');
+export const ASSET_REGEXP = /\.(png|jpe?g|gif|webp|ico|jfif|svg|woff2?|ttf)$/i;
 export const STYLE_REGEXP = /\.(css|less|scss)$/;
 export const SCRIPT_REGEXP = /\.(js|ts|jsx|tsx)$/;
 export const ENTRY_EXTS = ['js', 'ts', 'tsx', 'jsx', 'vue'];
@@ -64,6 +61,10 @@ export function isTestDir(dir: string) {
   return TEST_REGEXP.test(dir);
 }
 
+export function isAsset(path: string) {
+  return ASSET_REGEXP.test(path);
+}
+
 export function isSfc(path: string) {
   return SFC_REGEXP.test(path);
 }
@@ -104,25 +105,22 @@ export function normalizePath(path: string): string {
 export function getWebpackConfig(defaultConfig: WebpackConfig): object {
   if (existsSync(ROOT_WEBPACK_CONFIG_FILE)) {
     const config = require(ROOT_WEBPACK_CONFIG_FILE);
+    const customMerge = mergeWithCustomize({
+      customizeArray(arr1, arr2) {
+        return _.uniqWith([...arr1, ...arr2], _.isEqual);
+      }
+    })
 
     // 如果是函数形式，可能并不仅仅是添加额外的处理流程，而是在原有流程上进行修改
     // 比如修改markdown-loader,添加options.enableMetaData
     if (typeof config === 'function') {
-      return merge(defaultConfig, config(defaultConfig));
+      return customMerge(defaultConfig, config(defaultConfig));
     }
 
-    return merge(defaultConfig, config);
+    return customMerge(defaultConfig, config);
   }
 
   return defaultConfig;
-}
-
-export function getPostcssConfig(): object {
-  if (existsSync(ROOT_POSTCSS_CONFIG_FILE)) {
-    return require(ROOT_POSTCSS_CONFIG_FILE);
-  }
-
-  return {};
 }
 
 export type ModuleEnv = 'esmodule' | 'commonjs';

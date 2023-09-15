@@ -68,7 +68,7 @@ export default {
 | z-index | z-index | _number \| string_ | `1` |
 | sticky | Whether to enable anchor sticky top | _boolean_ | `true` |
 | sticky-offset-top | Anchor offset top when sticky | _number_ | `0` |
-| highlight-color | Index character highlight color | _string_ | `#07c160` | - |
+| highlight-color | Index character highlight color | _string_ | `#ee0a24` | - |
 
 ### IndexAnchor Props
 
@@ -80,11 +80,39 @@ export default {
 
 | Event | Description | Arguments |
 | --- | --- | --- |
-| select | Triggered when select index | _index: number \| string_ |
-| change `v2.10.10` | Triggered when active index changed | _index: number \| string_ |
+| select | Emitted when an index is selected | _index: number \| string_ |
+| change `v2.10.10` | Emitted when active index changed | _index: number \| string_ |
 
 ### IndexAnchor Slots
 
 | Name    | Description                           |
 | ------- | ------------------------------------- |
 | default | Anchor content, show index by default |
+
+### IndexBar Methods
+
+Use [ref](https://vuejs.org/v2/api/#ref) to get IndexBar instance and call instance methods.
+
+| Name | Description | Attribute | Return value |
+| --- | --- | --- | --- |
+| scrollTo `v2.12.2` | scroll to target element | _index: number \| string_ | - |
+
+### Less Variables
+
+How to use: [Custom Theme](#/en-US/theme).
+
+| Name                                  | Default Value       | Description |
+| ------------------------------------- | ------------------- | ----------- |
+| @index-bar-sidebar-z-index            | `2`                 | -           |
+| @index-bar-index-font-size            | `@font-size-xs`     | -           |
+| @index-bar-index-line-height          | `@line-height-xs`   | -           |
+| @index-bar-index-active-color         | `@red`              | -           |
+| @index-anchor-z-index                 | `1`                 | -           |
+| @index-anchor-padding                 | `0 @padding-md`     | -           |
+| @index-anchor-text-color              | `@text-color`       | -           |
+| @index-anchor-font-weight             | `@font-weight-bold` | -           |
+| @index-anchor-font-size               | `@font-size-md`     | -           |
+| @index-anchor-line-height             | `32px`              | -           |
+| @index-anchor-background-color        | `transparent`       | -           |
+| @index-anchor-sticky-text-color       | `@red`              | -           |
+| @index-anchor-sticky-background-color | `@white`            | -           |

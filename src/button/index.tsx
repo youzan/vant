@@ -1,7 +1,7 @@
 // Utils
 import { createNamespace } from '../utils';
 import { emit, inherit } from '../utils/functional';
-import { BORDER_SURROUND, WHITE } from '../utils/constant';
+import { BORDER_SURROUND } from '../utils/constant';
 import { routeProps, RouteProps, functionalRoute } from '../utils/router';
 
 // Components
@@ -42,7 +42,8 @@ export type ButtonEvents = {
   onClick?(event: Event): void;
 };
 
-export type ButttonSlots = DefaultSlots & {
+export type ButtonSlots = DefaultSlots & {
+  icon?: ScopedSlot;
   loading?: ScopedSlot;
 };
 
@@ -51,7 +52,7 @@ const [createComponent, bem] = createNamespace('button');
 function Button(
   h: CreateElement,
   props: ButtonProps,
-  slots: ButttonSlots,
+  slots: ButtonSlots,
   ctx: RenderContext<ButtonProps>
 ) {
   const {
@@ -70,7 +71,7 @@ function Button(
   const style: Record<string, string | number> = {};
 
   if (color) {
-    style.color = plain ? color : WHITE;
+    style.color = plain ? color : 'white';
 
     if (!plain) {
       // Use background instead of backgroundColor to make linear-gradient work
@@ -86,6 +87,9 @@ function Button(
   }
 
   function onClick(event: Event) {
+    if (props.loading) {
+      event.preventDefault();
+    }
     if (!loading && !disabled) {
       emit(ctx, 'click', event);
       functionalRoute(ctx);
@@ -125,6 +129,10 @@ function Button(
           color="currentColor"
         />
       );
+    }
+
+    if (slots.icon) {
+      return <div class={bem('icon')}>{slots.icon()}</div>;
     }
 
     if (icon) {
@@ -212,4 +220,4 @@ Button.props = {
   },
 };
 
-export default createComponent<ButtonProps, ButtonEvents, ButttonSlots>(Button);
+export default createComponent<ButtonProps, ButtonEvents, ButtonSlots>(Button);

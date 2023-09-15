@@ -68,6 +68,12 @@ export default createComponent({
     },
   },
 
+  watch: {
+    fixed(isFixed) {
+      this.$emit('change', isFixed);
+    },
+  },
+
   created() {
     // compatibility: https://caniuse.com/#feat=intersectionobserver
     if (!isServer && window.IntersectionObserver) {

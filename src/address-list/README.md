@@ -80,18 +80,18 @@ export default {
 | disabled-text | Disabled text | _string_ | - |
 | switchable | Whether to allow switch address | _boolean_ | `true` |
 | add-button-text | Add button text | _string_ | `Add new address` |
-| default-tag-text `v2.3.0` | Default tag text | _string_ | - |
+| default-tag-text | Default tag text | _string_ | - |
 
 ### Events
 
 | Event | Description | Arguments |
 | --- | --- | --- |
-| add | Triggered when click add button | - |
-| edit | Triggered when edit address | item: address object，index |
-| select | Triggered when select address | item: address object，index |
-| edit-disabled | Triggered when edit disabled address | item: address object，index |
-| select-disabled | Triggered when select disabled address | item: address object，index |
-| click-item | Triggered when click address item | item: address object，index |
+| add | Emitted when the add button is clicked | - |
+| edit | Emitted when the edit icon of address is clicked | item: address object，index |
+| select | Emitted when an address is selected | item: address object，index |
+| edit-disabled | Emitted when the edit icon of disabled address is clicked | item: address object，index |
+| select-disabled | Emitted when a disabled address is selected | item: address object，index |
+| click-item | Emitted when an address item is clicked | item: address object，index |
 
 ### Data Structure of Address
 
@@ -105,8 +105,29 @@ export default {
 
 ### Slots
 
-| Name                 | Description                    | SlotProps |
-| -------------------- | ------------------------------ | --------- |
-| default              | Custom content after list      | -         |
-| top                  | Custom content before list     | -         |
-| item-bottom `v2.5.0` | Custom content after list item | item      |
+| Name                 | Description                      | SlotProps |
+| -------------------- | -------------------------------- | --------- |
+| default              | Custom content after list        | -         |
+| top                  | Custom content before list       | -         |
+| item-bottom `v2.5.0` | Custom content after list item   | item      |
+| tag `v2.12.9`        | Custom tag content for list item | item      |
+
+### Less Variables
+
+How to use: [Custom Theme](#/en-US/theme).
+
+| Name | Default Value | Description |
+| --- | --- | --- |
+| @address-list-padding | `@padding-sm @padding-sm 80px` | - |
+| @address-list-disabled-text-color | `@gray-6` | - |
+| @address-list-disabled-text-padding | `@padding-base * 5 0 @padding-md` | - |
+| @address-list-disabled-text-font-size | `@font-size-md` | - |
+| @address-list-disabled-text-line-height | `@line-height-md` | - |
+| @address-list-add-button-z-index | `999` | - |
+| @address-list-item-padding | `@padding-sm` | - |
+| @address-list-item-text-color | `@text-color` | - |
+| @address-list-item-disabled-text-color | `@gray-5` | - |
+| @address-list-item-font-size | `13px` | - |
+| @address-list-item-line-height | `@line-height-sm` | - |
+| @address-list-item-radio-icon-color | `@red` | - |
+| @address-list-edit-icon-size | `20px` | - |

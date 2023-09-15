@@ -3,7 +3,7 @@ module.exports = {
   build: {
     skipInstall: ['lazyload'],
     site: {
-      publicPath: process.env.PUBLIC_PATH || 'https://b.yzcdn.cn/vant/',
+      publicPath: process.env.PUBLIC_PATH || '/vant/v2',
     },
     vetur: {
       tagPrefix: 'van-',
@@ -12,17 +12,23 @@ module.exports = {
   site: {
     defaultLang: 'en-US',
     versions: [
-      { label: '1.x', link: '/vant/1.x/' },
-      { label: '3.x', link: '/vant/next/' },
+      { label: 'v1', link: '/vant/v1/' },
+      { label: 'v3', link: '/vant/v3/' },
+      { label: 'v4', link: '/vant/v4/' },
     ],
     baiduAnalytics: {
-      seed: 'ad6b5732c36321f2dafed737ac2da92f',
+      seed: 'af5d41bc4e446e76665dbe3ec18d55c3',
+    },
+    htmlPluginOptions: {
+      meta: {
+        'docsearch:version': 'v2',
+      },
     },
     locales: {
       'zh-CN': {
-        title: 'Vant',
-        description: '轻量、可靠的移动端 Vue 组件库',
-        logo: 'https://img.yzcdn.cn/vant/logo.png',
+        title: 'Vant 2',
+        description: '轻量、可靠的移动端组件库',
+        logo: 'https://img01.yzcdn.cn/vant/logo.png',
         langLabel: '中文',
         links: [
           {
@@ -31,26 +37,9 @@ module.exports = {
           },
           {
             logo: 'https://b.yzcdn.cn/vant/logo/github.svg',
-            url: 'https://github.com/youzan/vant',
+            url: 'https://github.com/vant-ui/vant',
           },
         ],
-        searchConfig: {
-          apiKey: '90067aecdaa2c85220e2783cd305caac',
-          indexName: 'vant',
-          placeholder: '搜索文档...',
-          transformData(hits) {
-            if (location.hostname === 'vant-contrib.gitee.io') {
-              hits.forEach((hit) => {
-                if (hit.url) {
-                  hit.url = hit.url.replace(
-                    'youzan.github.io',
-                    'vant-contrib.gitee.io'
-                  );
-                }
-              });
-            }
-          },
-        },
         nav: [
           {
             title: '开发指南',
@@ -62,6 +51,10 @@ module.exports = {
               {
                 path: 'quickstart',
                 title: '快速上手',
+              },
+              {
+                path: 'advanced-usage',
+                title: '进阶用法',
               },
               {
                 path: 'changelog',
@@ -134,6 +127,11 @@ module.exports = {
                 title: 'Calendar 日历',
               },
               {
+                path: 'cascader',
+                title: 'Cascader 级联选择',
+                className: 'hide-in-weapp',
+              },
+              {
                 path: 'checkbox',
                 title: 'Checkbox 复选框',
               },
@@ -148,14 +146,17 @@ module.exports = {
               {
                 path: 'form',
                 title: 'Form 表单',
+                className: 'hide-in-weapp',
               },
               {
                 path: 'number-keyboard',
                 title: 'NumberKeyboard 数字键盘',
+                className: 'hide-in-weapp',
               },
               {
                 path: 'password-input',
                 title: 'PasswordInput 密码输入框',
+                className: 'hide-in-weapp',
               },
               {
                 path: 'picker',
@@ -221,6 +222,7 @@ module.exports = {
               {
                 path: 'pull-refresh',
                 title: 'PullRefresh 下拉刷新',
+                className: 'hide-in-weapp',
               },
               {
                 path: 'share-sheet',
@@ -235,6 +237,11 @@ module.exports = {
           {
             title: '展示组件',
             items: [
+              {
+                path: 'badge',
+                title: 'Badge 徽标',
+                className: 'hide-in-weapp',
+              },
               {
                 path: 'circle',
                 title: 'Circle 环形进度条',
@@ -258,18 +265,26 @@ module.exports = {
               {
                 path: 'image-preview',
                 title: 'ImagePreview 图片预览',
+                className: 'hide-in-weapp',
               },
               {
                 path: 'lazyload',
                 title: 'Lazyload 懒加载',
+                className: 'hide-in-weapp',
               },
               {
                 path: 'list',
                 title: 'List 列表',
+                className: 'hide-in-weapp',
               },
               {
                 path: 'notice-bar',
                 title: 'NoticeBar 通知栏',
+              },
+              {
+                path: 'popover',
+                title: 'Popover 气泡弹出框',
+                className: 'hide-in-weapp',
               },
               {
                 path: 'progress',
@@ -290,6 +305,7 @@ module.exports = {
               {
                 path: 'swipe',
                 title: 'Swipe 轮播',
+                className: 'hide-in-weapp',
               },
               {
                 path: 'tag',
@@ -315,6 +331,7 @@ module.exports = {
               {
                 path: 'pagination',
                 title: 'Pagination 分页',
+                className: 'hide-in-weapp',
               },
               {
                 path: 'sidebar',
@@ -340,10 +357,12 @@ module.exports = {
               {
                 path: 'address-edit',
                 title: 'AddressEdit 地址编辑',
+                className: 'hide-in-weapp',
               },
               {
                 path: 'address-list',
                 title: 'AddressList 地址列表',
+                className: 'hide-in-weapp',
               },
               {
                 path: 'area',
@@ -355,11 +374,23 @@ module.exports = {
               },
               {
                 path: 'contact-card',
-                title: 'Contact 联系人',
+                title: 'ContactCard 联系人卡片',
+                className: 'hide-in-weapp',
+              },
+              {
+                path: 'contact-edit',
+                title: 'ContactEdit 联系人编辑',
+                className: 'hide-in-weapp',
+              },
+              {
+                path: 'contact-list',
+                title: 'ContactList 联系人列表',
+                className: 'hide-in-weapp',
               },
               {
                 path: 'coupon-list',
                 title: 'Coupon 优惠券',
+                className: 'hide-in-weapp',
               },
               {
                 path: 'goods-action',
@@ -372,6 +403,7 @@ module.exports = {
               {
                 path: 'sku',
                 title: 'Sku 商品规格',
+                className: 'hide-in-weapp',
               },
             ],
           },
@@ -385,15 +417,16 @@ module.exports = {
               {
                 path: 'switch-cell',
                 title: 'SwitchCell 开关单元格',
+                className: 'hide-in-weapp',
               },
             ],
           },
         ],
       },
       'en-US': {
-        title: 'Vant',
+        title: 'Vant 2',
         description: 'Mobile UI Components built on Vue',
-        logo: 'https://img.yzcdn.cn/vant/logo.png',
+        logo: 'https://img01.yzcdn.cn/vant/logo.png',
         langLabel: 'En',
         links: [
           {
@@ -402,14 +435,9 @@ module.exports = {
           },
           {
             logo: 'https://b.yzcdn.cn/vant/logo/github.svg',
-            url: 'https://github.com/youzan/vant',
+            url: 'https://github.com/vant-ui/vant',
           },
         ],
-        searchConfig: {
-          apiKey: '90067aecdaa2c85220e2783cd305caac',
-          indexName: 'vant',
-          placeholder: 'Search...',
-        },
         nav: [
           {
             title: 'Essentials',
@@ -421,6 +449,10 @@ module.exports = {
               {
                 path: 'quickstart',
                 title: 'Quickstart',
+              },
+              {
+                path: 'advanced-usage',
+                title: 'Advanced Usage',
               },
               {
                 path: 'changelog',
@@ -479,6 +511,10 @@ module.exports = {
               {
                 path: 'calendar',
                 title: 'Calendar',
+              },
+              {
+                path: 'cascader',
+                title: 'Cascader',
               },
               {
                 path: 'checkbox',
@@ -587,6 +623,10 @@ module.exports = {
             title: 'Display Components',
             items: [
               {
+                path: 'badge',
+                title: 'Badge',
+              },
+              {
                 path: 'circle',
                 title: 'Circle',
               },
@@ -621,6 +661,10 @@ module.exports = {
               {
                 path: 'notice-bar',
                 title: 'NoticeBar',
+              },
+              {
+                path: 'popover',
+                title: 'Popover',
               },
               {
                 path: 'progress',
@@ -706,7 +750,15 @@ module.exports = {
               },
               {
                 path: 'contact-card',
-                title: 'Contact',
+                title: 'ContactCard',
+              },
+              {
+                path: 'contact-edit',
+                title: 'ContactEdit',
+              },
+              {
+                path: 'contact-list',
+                title: 'ContactList',
               },
               {
                 path: 'coupon-list',

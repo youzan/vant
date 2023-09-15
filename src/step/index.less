@@ -94,24 +94,11 @@
       border-bottom-width: 1px;
     }
 
-    &:first-child {
-      &::before {
-        position: absolute;
-        top: 0;
-        left: -15px;
-        z-index: 1;
-        width: 1px;
-        height: 20px;
-        background-color: @white;
-        content: '';
-      }
-    }
-
     .van-step__circle-container {
       position: absolute;
       top: 19px;
       left: -15px;
-      z-index: 2;
+      z-index: 1;
       font-size: @step-icon-size;
       line-height: 1;
       transform: translate(-50%, -50%);
@@ -144,7 +131,8 @@
   &__title {
     transition: color @animation-duration-base;
 
-    &--active {
+    &--active,
+    &--finish {
       color: @step-active-color;
     }
   }

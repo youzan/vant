@@ -1,4 +1,4 @@
-import merge from 'webpack-merge';
+import { merge } from 'webpack-merge';
 import WebpackBar from 'webpackbar';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import { get } from 'lodash';
@@ -15,6 +15,7 @@ import {
 
 export function getSiteDevBaseConfig(): WebpackConfig {
   const vantConfig = getVantConfig();
+  const headHtml = get(vantConfig, 'site.headHtml');
   const baiduAnalytics = get(vantConfig, 'site.baiduAnalytics');
 
   function getSiteConfig() {
@@ -39,6 +40,7 @@ export function getSiteDevBaseConfig(): WebpackConfig {
 
   const siteConfig = getSiteConfig();
   const title = getTitle(siteConfig);
+  const { htmlPluginOptions } = vantConfig.site;
 
   return merge(baseConfig as any, {
     entry: {
@@ -84,10 +86,13 @@ export function getSiteDevBaseConfig(): WebpackConfig {
         title,
         logo: siteConfig.logo,
         description: siteConfig.description,
+        usingSearch: !!siteConfig.searchConfig,
         chunks: ['chunks', 'site-desktop'],
         template: join(__dirname, '../../site/desktop/index.html'),
         filename: 'index.html',
+        headHtml,
         baiduAnalytics,
+        ...htmlPluginOptions,
       }),
       new HtmlWebpackPlugin({
         title,
@@ -96,7 +101,9 @@ export function getSiteDevBaseConfig(): WebpackConfig {
         chunks: ['chunks', 'site-mobile'],
         template: join(__dirname, '../../site/mobile/index.html'),
         filename: 'mobile.html',
+        headHtml,
         baiduAnalytics,
+        ...htmlPluginOptions,
       }),
     ],
   });

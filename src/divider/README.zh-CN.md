@@ -1,5 +1,9 @@
 # Divider 分割线
 
+### 介绍
+
+用于将内容分隔为多个区域。
+
 ### 引入
 
 ```js
@@ -71,3 +75,18 @@ Vue.use(Divider);
 | 名称    | 说明 |
 | ------- | ---- |
 | default | 内容 |
+
+### 样式变量
+
+组件提供了下列 Less 变量，可用于自定义样式，使用方法请参考[主题定制](#/zh-CN/theme)。
+
+| 名称                         | 默认值          | 描述 |
+| ---------------------------- | --------------- | ---- |
+| @divider-margin              | `@padding-md 0` | -    |
+| @divider-text-color          | `@gray-6`       | -    |
+| @divider-font-size           | `@font-size-md` | -    |
+| @divider-line-height         | `24px`          | -    |
+| @divider-border-color        | `@border-color` | -    |
+| @divider-content-padding     | `@padding-md`   | -    |
+| @divider-content-left-width  | `10%`           | -    |
+| @divider-content-right-width | `10%`           | -    |

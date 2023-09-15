@@ -2,6 +2,7 @@
 import { resetScroll } from '../utils/dom/reset-scroll';
 import { formatNumber } from '../utils/format/number';
 import { preventDefault } from '../utils/dom/event';
+import { getRootScrollTop, setRootScrollTop } from '../utils/dom/scroll';
 import {
   isDef,
   addUnit,
@@ -37,8 +38,14 @@ export default createComponent({
     ...cellProps,
     name: String,
     rules: Array,
-    disabled: Boolean,
-    readonly: Boolean,
+    disabled: {
+      type: Boolean,
+      default: null,
+    },
+    readonly: {
+      type: Boolean,
+      default: null,
+    },
     autosize: [Boolean, Object],
     leftIcon: String,
     rightIcon: String,
@@ -54,7 +61,7 @@ export default createComponent({
     errorMessageAlign: String,
     showWordLimit: Boolean,
     value: {
-      type: [String, Number],
+      type: [Number, String],
       default: '',
     },
     type: {
@@ -113,7 +120,9 @@ export default createComponent({
 
   computed: {
     showClear() {
-      if (this.clearable && !this.readonly) {
+      const readonly = this.getProp('readonly');
+
+      if (this.clearable && !readonly) {
         const hasValue = isDef(this.value) && this.value !== '';
         const trigger =
           this.clearTrigger === 'always' ||
@@ -280,7 +289,9 @@ export default createComponent({
           return defaultTrigger;
         });
 
-        this.validate(rules);
+        if (rules.length) {
+          this.validate(rules);
+        }
       }
     },
 
@@ -295,7 +306,7 @@ export default createComponent({
       value = isDef(value) ? String(value) : '';
 
       // native maxlength have incorrect line-break counting
-      // see: https://github.com/youzan/vant/issues/5033
+      // see: https://github.com/vant-ui/vant/issues/5033
       const { maxlength } = this;
       if (isDef(maxlength) && value.length > maxlength) {
         if (this.value && this.value.length === +maxlength) {
@@ -336,19 +347,26 @@ export default createComponent({
     onFocus(event) {
       this.focused = true;
       this.$emit('focus', event);
+      // https://github.com/vant-ui/vant/issues/9715
+      this.$nextTick(this.adjustSize);
 
-      // readonly not work in lagacy mobile safari
+      // readonly not work in legacy mobile safari
       /* istanbul ignore if */
-      if (this.readonly) {
+      if (this.getProp('readonly')) {
         this.blur();
       }
     },
 
     onBlur(event) {
+      if (this.getProp('readonly')) {
+        return;
+      }
+
       this.focused = false;
       this.updateValue(this.value, 'onBlur');
       this.$emit('blur', event);
       this.validateWithTrigger('onBlur');
+      this.$nextTick(this.adjustSize);
       resetScroll();
     },
 
@@ -398,6 +416,7 @@ export default createComponent({
         return;
       }
 
+      const scrollTop = getRootScrollTop();
       input.style.height = 'auto';
 
       let height = input.scrollHeight;
@@ -413,11 +432,15 @@ export default createComponent({
 
       if (height) {
         input.style.height = height + 'px';
+        // https://github.com/vant-ui/vant/issues/9178
+        setRootScrollTop(scrollTop);
       }
     },
 
     genInput() {
       const { type } = this;
+      const disabled = this.getProp('disabled');
+      const readonly = this.getProp('readonly');
       const inputSlot = this.slots('input');
       const inputAlign = this.getProp('inputAlign');
 
@@ -441,8 +464,8 @@ export default createComponent({
         attrs: {
           ...this.$attrs,
           name: this.name,
-          disabled: this.disabled,
-          readonly: this.readonly,
+          disabled,
+          readonly,
           placeholder: this.placeholder,
         },
         on: this.listeners,
@@ -462,8 +485,8 @@ export default createComponent({
       let inputType = type;
       let inputMode;
 
-      // type="number" is weired in iOS, and can't prevent dot in Android
-      // so use inputmode to set keyboard in mordern browers
+      // type="number" is weird in iOS, and can't prevent dot in Android
+      // so use inputmode to set keyboard in modern browsers
       if (type === 'number') {
         inputType = 'text';
         inputMode = 'decimal';
@@ -559,6 +582,7 @@ export default createComponent({
 
   render() {
     const { slots } = this;
+    const disabled = this.getProp('disabled');
     const labelAlign = this.getProp('labelAlign');
 
     const scopedSlots = {
@@ -591,7 +615,7 @@ export default createComponent({
         arrowDirection={this.arrowDirection}
         class={bem({
           error: this.showError,
-          disabled: this.disabled,
+          disabled,
           [`label-${labelAlign}`]: labelAlign,
           'min-height': this.type === 'textarea' && !this.autosize,
         })}

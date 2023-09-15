@@ -15,6 +15,10 @@
     <van-cell is-link @touchstart.native.stop="keyboard = 'multiExtraKey'">
       {{ t('button5') }}
     </van-cell>
+    <van-cell is-link @touchstart.native.stop="keyboard = 'randomKeyOrder'">
+      {{ t('button6') }}
+    </van-cell>
+
     <van-field
       readonly
       clickable
@@ -71,6 +75,15 @@
     />
 
     <van-number-keyboard
+      v-if="!isTest"
+      :show="keyboard === 'randomKeyOrder'"
+      random-key-order
+      @blur="keyboard = ''"
+      @input="onInput"
+      @delete="onDelete"
+    />
+
+    <van-number-keyboard
       v-model="value"
       :show="keyboard === 'bindValue'"
       maxlength="6"
@@ -91,10 +104,12 @@ export default {
       button3: '弹出身份证号键盘',
       button4: '弹出带标题的键盘',
       button5: '弹出配置多个按键的键盘',
+      button6: '弹出配置随机数字的键盘',
+      extraKey: '左下角按键内容',
       bindValue: '双向绑定',
       clickToInput: '点此输入',
-      extraKey: '左下角按键内容',
       multiExtraKey: '配置多个按键',
+      randomKeyOrder: '随机数字键盘',
     },
     'en-US': {
       close: 'Close',
@@ -105,10 +120,12 @@ export default {
       button3: 'Show IdNumber Keyboard',
       button4: 'Show Keyboard With Title',
       button5: 'Show Keyboard With Multiple ExtraKey',
+      button6: 'Show Keyboard With Random Key Order',
       bindValue: 'Bind Value',
       clickToInput: 'Click To Input',
       extraKey: 'IdNumber Keyboard',
       multiExtraKey: 'Multiple ExtraKey',
+      randomKeyOrder: 'Random Key Order',
     },
   },
 
@@ -116,6 +133,7 @@ export default {
     return {
       value: '',
       keyboard: 'default',
+      isTest: process.env.NODE_ENV === 'test',
     };
   },
 

@@ -12,6 +12,7 @@ export default createComponent({
   props: {
     value: String,
     uploadImg: Function,
+    customUpload: Function,
     maxSize: {
       type: Number,
       default: 6,
@@ -56,6 +57,15 @@ export default createComponent({
     onDelete() {
       this.$emit('input', '');
     },
+
+    onClickUpload() {
+      if (this.customUpload) {
+        this.customUpload().then((url) => {
+          this.fileList.push({ url });
+          this.$emit('input', url);
+        });
+      }
+    },
   },
 
   render() {
@@ -63,10 +73,12 @@ export default createComponent({
       <Uploader
         vModel={this.fileList}
         maxCount={1}
-        afterRead={this.afterReadFile}
+        readonly={!!this.customUpload}
         maxSize={this.maxSize * 1024 * 1024}
+        afterRead={this.afterReadFile}
         onOversize={this.onOversize}
         onDelete={this.onDelete}
+        onClick-upload={this.onClickUpload}
       />
     );
   },

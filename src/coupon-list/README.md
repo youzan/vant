@@ -75,14 +75,14 @@ export default {
 
 ### CouponCell Props
 
-| Attribute | Description | Type | Default |
-| --- | --- | --- | --- |
-| title | Cell title | _string_ | `Coupon` |
-| chosen-coupon | Index of chosen coupon | _number \| string_ | `-1` |
-| coupons | Coupon list | _Coupon[]_ | `[]` |
-| editable | Cell editable | _boolean_ | `true` |
-| border | Whether to show innner border | _boolean_ | `true` |
-| currency | Currency symbol | _string_ | `¥` |
+| Attribute     | Description                  | Type               | Default  |
+| ------------- | ---------------------------- | ------------------ | -------- |
+| title         | Cell title                   | _string_           | `Coupon` |
+| chosen-coupon | Index of chosen coupon       | _number \| string_ | `-1`     |
+| coupons       | Coupon list                  | _Coupon[]_         | `[]`     |
+| editable      | Cell editable                | _boolean_          | `true`   |
+| border        | Whether to show inner border | _boolean_          | `true`   |
+| currency      | Currency symbol              | _string_           | `¥`      |
 
 ### CouponList Props
 
@@ -102,27 +102,66 @@ export default {
 | close-button-text | Close button text | _string_ | `Close` |
 | input-placeholder | Input placeholder | _string_ | `Coupon code` |
 | currency | Currency symbol | _string_ | `¥` |
-| empty-image | Placeholder image when list is empty | _string_ | `https://img.yzcdn.cn/vant/coupon-empty.png` |
-| show-count `v2.3.0` | Whether to show coupon count in tab title | _boolean_ | `true` |
+| empty-image | Placeholder image when list is empty | _string_ | `https://img01.yzcdn.cn/vant/coupon-empty.png` |
+| show-count | Whether to show coupon count in tab title | _boolean_ | `true` |
 
 ### CouponList Events
 
 | Event | Description | Arguments |
 | --- | --- | --- |
-| change | Triggered when change chosen coupon | index: index of chosen coupon |
-| exchange | Triggered when exchange coupon | code: exchange code |
+| change | Emitted when chosen coupon changed | index: index of chosen coupon |
+| exchange | Emitted when exchanging coupon | code: exchange code |
 
 ### Data Structure of Coupon
 
-| Key         | Description                         | Type     |
-| ----------- | ----------------------------------- | -------- |
-| id          | Id                                  | _string_ |
-| name        | Name                                | _string_ |
-| condition   | Condition                           | _string_ |
-| startAt     | Start time (Timestmap, unit second) | _number_ |
-| endAt       | End time (Timestmap, unit second)   | _number_ |
-| description | Description                         | _string_ |
-| reason      | Unavailable reason                  | _string_ |
-| value       | Value                               | _number_ |
-| valueDesc   | Value Text                          | _string_ |
-| unitDesc    | Unit Text                           | _string_ |
+| Key               | Description                              | Type     |
+| ----------------- | ---------------------------------------- | -------- |
+| id                | Id                                       | _string_ |
+| name              | Name                                     | _string_ |
+| condition         | Condition                                | _string_ |
+| startAt           | Start time (Timestamp, unit millisecond) | _number_ |
+| endAt             | End time (Timestamp, unit millisecond)   | _number_ |
+| description       | Description                              | _string_ |
+| reason            | Unavailable reason                       | _string_ |
+| value             | Value                                    | _number_ |
+| valueDesc         | Value Text                               | _string_ |
+| unitDesc          | Unit Text                                | _string_ |
+| customValidPeriod | custom valid period                      | _string_ |
+
+### CouponList Slots
+
+| Name                            | Description                     |
+| ------------------------------- | ------------------------------- |
+| list-footer `v2.12.21`          | Coupon list bottom              |
+| disabled-list-footer `v2.12.21` | Unavailable coupons list bottom |
+
+### Less Variables
+
+How to use: [Custom Theme](#/en-US/theme).
+
+| Name | Default Value | Description |
+| --- | --- | --- |
+| @coupon-margin | `0 @padding-sm @padding-sm` | - |
+| @coupon-content-height | `84px` | - |
+| @coupon-content-padding | `14px 0` | - |
+| @coupon-background-color | `@white` | - |
+| @coupon-active-background-color | `@active-color` | - |
+| @coupon-border-radius | `@border-radius-lg` | - |
+| @coupon-box-shadow | `0 0 4px rgba(0, 0, 0, 0.1)` | - |
+| @coupon-head-width | `96px` | - |
+| @coupon-amount-color | `@red` | - |
+| @coupon-amount-font-size | `30px` | - |
+| @coupon-currency-font-size | `40%` | - |
+| @coupon-name-font-size | `@font-size-md` | - |
+| @coupon-disabled-text-color | `@gray-6` | - |
+| @coupon-description-padding | `@padding-xs @padding-md` | - |
+| @coupon-description-border-color | `@border-color` | - |
+| @coupon-list-background-color | `@background-color` | - |
+| @coupon-list-field-padding | `5px 0 5px @padding-md` | - |
+| @coupon-list-exchange-button-height | `32px` | - |
+| @coupon-list-close-button-height | `40px` | - |
+| @coupon-list-empty-image-size | `200px` | - |
+| @coupon-list-empty-tip-color | `@gray-6` | - |
+| @coupon-list-empty-tip-font-size | `@font-size-md` | - |
+| @coupon-list-empty-tip-line-height | `@line-height-md` | - |
+| @coupon-cell-selected-text-color | `@text-color` | - |

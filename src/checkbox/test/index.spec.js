@@ -160,7 +160,7 @@ test('toggleAll method', async () => {
       <van-checkbox-group v-model="result" ref="group">
         <van-checkbox name="a" />
         <van-checkbox name="b" />
-        <van-checkbox name="c" />
+        <van-checkbox name="c" disabled />
       </van-checkbox-group>
     `,
     data() {
@@ -184,6 +184,14 @@ test('toggleAll method', async () => {
   expect(wrapper.vm.result).toEqual([]);
 
   wrapper.vm.toggleAll(true);
+  await later();
+  expect(wrapper.vm.result).toEqual(['a', 'b', 'c']);
+
+  wrapper.vm.toggleAll({ skipDisabled: true });
+  await later();
+  expect(wrapper.vm.result).toEqual(['c']);
+
+  wrapper.vm.toggleAll({ checked: true, skipDisabled: true });
   await later();
   expect(wrapper.vm.result).toEqual(['a', 'b', 'c']);
 });

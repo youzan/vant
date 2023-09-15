@@ -163,6 +163,7 @@ test('lazy-render prop', async () => {
         <van-swipe-item><span>2</span></van-swipe-item>
         <van-swipe-item><span>3</span></van-swipe-item>
         <van-swipe-item><span>4</span></van-swipe-item>
+        <van-swipe-item><span>5</span></van-swipe-item>
       </van-swipe>
     `,
     data() {
@@ -175,26 +176,52 @@ test('lazy-render prop', async () => {
   await later();
   const items = wrapper.findAll('.van-swipe-item');
 
-  expect(items.at(0).contains('span')).toBeTruthy();
-  expect(items.at(1).contains('span')).toBeTruthy();
-  expect(items.at(2).contains('span')).toBeFalsy();
-  expect(items.at(3).contains('span')).toBeTruthy();
+  const expectRender = (results) => {
+    results.forEach((result, index) => {
+      expect(items.at(index).contains('span')).toEqual(result);
+    });
+  };
+
+  expectRender([true, true, false, false, true]);
 
   wrapper.setData({ active: 1 });
-  expect(items.at(0).contains('span')).toBeTruthy();
-  expect(items.at(1).contains('span')).toBeTruthy();
-  expect(items.at(2).contains('span')).toBeTruthy();
-  expect(items.at(3).contains('span')).toBeFalsy();
+  expectRender([true, true, true, false, true]);
 
   wrapper.setData({ active: 2 });
-  expect(items.at(0).contains('span')).toBeFalsy();
-  expect(items.at(1).contains('span')).toBeTruthy();
-  expect(items.at(2).contains('span')).toBeTruthy();
-  expect(items.at(3).contains('span')).toBeTruthy();
+  expectRender([true, true, true, true, true]);
+});
 
-  wrapper.setData({ active: 3 });
-  expect(items.at(0).contains('span')).toBeTruthy();
-  expect(items.at(1).contains('span')).toBeFalsy();
-  expect(items.at(2).contains('span')).toBeTruthy();
-  expect(items.at(3).contains('span')).toBeTruthy();
+test('lazy-render prop when loop is false', async () => {
+  const wrapper = mount({
+    template: `
+      <van-swipe :initial-swipe="active" :loop="false" lazy-render>
+        <van-swipe-item><span>1</span></van-swipe-item>
+        <van-swipe-item><span>2</span></van-swipe-item>
+        <van-swipe-item><span>3</span></van-swipe-item>
+        <van-swipe-item><span>4</span></van-swipe-item>
+      </van-swipe>
+    `,
+    data() {
+      return {
+        active: 0,
+      };
+    },
+  });
+
+  await later();
+  const items = wrapper.findAll('.van-swipe-item');
+
+  const expectRender = (results) => {
+    results.forEach((result, index) => {
+      expect(items.at(index).contains('span')).toEqual(result);
+    });
+  };
+
+  expectRender([true, true, false, false]);
+
+  wrapper.setData({ active: 1 });
+  expectRender([true, true, true, false]);
+
+  wrapper.setData({ active: 2 });
+  expectRender([true, true, true, true]);
 });

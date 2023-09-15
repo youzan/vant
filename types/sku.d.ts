@@ -32,6 +32,7 @@ export type SkuPropItemData = {
   v: SkuPropItemValueData[];
   k_id: number;
   is_multiple?: boolean;
+  is_necessary?: boolean;
 };
 
 export type SkuPropItemValueData = {

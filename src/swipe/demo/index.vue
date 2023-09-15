@@ -31,7 +31,7 @@
         vertical
         :autoplay="3000"
         indicator-color="white"
-        style="height: 200px;"
+        style="height: 200px"
         class="demo-swipe--vertical"
       >
         <van-swipe-item>1</van-swipe-item>
@@ -90,10 +90,10 @@ export default {
     return {
       current: 0,
       images: [
-        'https://img.yzcdn.cn/vant/apple-1.jpg',
-        'https://img.yzcdn.cn/vant/apple-2.jpg',
-        'https://img.yzcdn.cn/vant/apple-3.jpg',
-        'https://img.yzcdn.cn/vant/apple-4.jpg',
+        'https://img01.yzcdn.cn/vant/apple-1.jpg',
+        'https://img01.yzcdn.cn/vant/apple-2.jpg',
+        'https://img01.yzcdn.cn/vant/apple-3.jpg',
+        'https://img01.yzcdn.cn/vant/apple-4.jpg',
       ],
     };
   },

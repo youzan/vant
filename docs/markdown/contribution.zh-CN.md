@@ -19,19 +19,21 @@
 
 ```bash
 # 克隆仓库
-git clone git@github.com:youzan/vant.git
+# 默认为 dev 分支，包含 Vant 3 的代码
+# 如果需要在 Vant 2 上进行更改，请基于 2.x 分支进行开发
+git clone git@github.com:vant-ui/vant.git
 
 # 安装依赖
-cd vant && npm run bootstrap
+cd vant && yarn
 
 # 进入开发模式，浏览器访问 http://localhost:8080
-npm run dev
+yarn dev
 ```
 
 ### 目录结构
 
 - 仓库的组件代码位于 src 下，每个组件一个文件夹
-- docs 目录下是文档网站的代码，本地开发时可以在目录下运行 npm run dev 开启文档网站
+- docs 目录下是文档网站的代码，本地开发时可以在目录下运行 `yarn dev` 开启文档网站
 
 项目主要目录如下：
 
@@ -82,7 +84,7 @@ src
 
 ```bash
 # 添加主仓库到 remote，作为 fork 后仓库的上游仓库
-git remote add upstream https://github.com/youzan/vant.git
+git remote add upstream https://github.com/vant-ui/vant.git
 
 # 拉取主仓库最新代码
 git fetch upstream

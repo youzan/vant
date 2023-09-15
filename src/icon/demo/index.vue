@@ -24,11 +24,11 @@
         </demo-block>
 
         <demo-block :title="t('color')">
-          <van-col span="6" @click="copy(demoIcon, { color: BLUE })">
-            <van-icon :name="demoIcon" :color="BLUE" />
+          <van-col span="6" @click="copy(demoIcon, { color: '#1989fa' })">
+            <van-icon name="cart-o" color="#1989fa" />
           </van-col>
-          <van-col span="6" @click="copy(demoIcon, { color: GREEN })">
-            <van-icon :name="demoIcon" :color="GREEN" />
+          <van-col span="6" @click="copy(demoIcon, { color: RED })">
+            <van-icon name="fire-o" :color="RED" />
           </van-col>
         </demo-block>
 
@@ -83,7 +83,7 @@
 
 <script>
 import icons from '@vant/icons';
-import { BLUE, GREEN } from '../../utils/constant';
+import { RED } from '../../utils/constant';
 
 // from https://30secondsofcode.org
 function copyToClipboard(str) {
@@ -136,8 +136,7 @@ export default {
   },
 
   data() {
-    this.BLUE = BLUE;
-    this.GREEN = GREEN;
+    this.RED = RED;
     this.icons = icons;
     return {
       tab: 0,
@@ -153,7 +152,7 @@ export default {
         tag = `${tag} ${option.dot ? 'dot' : ''}`;
       }
       if ('badge' in option) {
-        tag = `${tag} badge="${option.badge}"`;
+        tag = `${tag} ${this.isWeapp ? 'info' : 'badge'}="${option.badge}"`;
       }
       if ('color' in option) {
         tag = `${tag} color="${option.color}"`;
@@ -180,12 +179,6 @@ export default {
 
 .demo-icon {
   font-size: 0;
-
-  &-list {
-    box-sizing: border-box;
-    min-height: calc(100vh - 65px);
-    padding-top: 10px;
-  }
 
   &-notify {
     font-size: 13px;

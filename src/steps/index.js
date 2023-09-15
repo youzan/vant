@@ -7,6 +7,9 @@ export default createComponent({
   mixins: [ParentMixin('vanSteps')],
 
   props: {
+    center: Boolean,
+    iconPrefix: String,
+    finishIcon: String,
     activeColor: String,
     inactiveIcon: String,
     inactiveColor: String,

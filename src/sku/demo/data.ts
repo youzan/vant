@@ -105,6 +105,8 @@ export function getSkuData(largeImageMode = false) {
           name: '留言2',
           type: 'id_no',
           required: 0,
+          extraDesc:
+            '身份证号码为敏感信息，系统将会对其进行安全处理，请放心。如对收集原因有疑问，请联系商家。',
         },
         {
           datetime: '0',
@@ -176,6 +178,61 @@ export function getSkuData(largeImageMode = false) {
             id: 1226,
             name: '珍珠',
             price: 5,
+          },
+        ],
+      },
+      {
+        k: '非必选属性',
+        k_id: 125,
+        is_multiple: true,
+        is_necessary: false,
+        v: [
+          {
+            id: 1234,
+            name: '属性1',
+            price: 3,
+          },
+          {
+            id: 1235,
+            name: '属性2',
+            price: 4,
+          },
+        ],
+      },
+      {
+        k: '未加价的属性项',
+        k_id: 126,
+        is_multiple: true,
+        v: [
+          {
+            id: 1244,
+            name: '属性a',
+            price: 0,
+          },
+          {
+            id: 1245,
+            name: '属性b',
+            price: 0,
+          },
+        ],
+      },
+      {
+        k: '有禁用的属性',
+        k_id: 127,
+        is_multiple: false,
+        is_necessary: false,
+        v: [
+          {
+            id: 1271,
+            name: '禁用的属性',
+            price: 0,
+            text_status: 0,
+          },
+          {
+            id: 1272,
+            name: '未禁用的属性',
+            price: 0,
+            text_status: 1,
           },
         ],
       },

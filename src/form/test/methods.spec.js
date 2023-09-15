@@ -37,7 +37,7 @@ test('validate method - validate all fields', (done) => {
   });
 });
 
-test('validate method - validate one field and passed', (done) => {
+test('validate method - validate one field and failed', (done) => {
   mountSimpleRulesForm({
     mounted() {
       this.$refs.form.validate('A').catch((err) => {
@@ -48,7 +48,7 @@ test('validate method - validate one field and passed', (done) => {
   });
 });
 
-test('validate method - validate one field and failed', (done) => {
+test('validate method - validate one field and passed', (done) => {
   mountForm({
     template: `	
       <van-form ref="form" @failed="onFailed">	
@@ -60,6 +60,25 @@ test('validate method - validate one field and failed', (done) => {
     data: getSimpleRules,
     mounted() {
       this.$refs.form.validate('A').then(done);
+    },
+  });
+});
+
+test('validate method - validate two fields and failed', (done) => {
+  mountForm({
+    template: `	
+      <van-form ref="form" @failed="onFailed">	
+        <van-field name="A" :rules="rulesA" value="123" />	
+        <van-field name="B" :rules="rulesB" value="" />	
+        <van-button native-type="submit" />	
+      </van-form>	
+    `,
+    data: getSimpleRules,
+    mounted() {
+      this.$refs.form.validate(['A', 'B']).catch((error) => {
+        expect(error).toEqual([{ message: 'B failed', name: 'B' }]);
+        done();
+      });
     },
   });
 });
@@ -77,6 +96,19 @@ test('resetValidation method - reset all fields', (done) => {
     mounted() {
       this.$refs.form.validate().catch(() => {
         this.$refs.form.resetValidation();
+        const errors = wrapper.findAll('.van-field__error-message');
+        expect(errors.length).toEqual(0);
+        done();
+      });
+    },
+  });
+});
+
+test('resetValidation method - reset two fields', (done) => {
+  const wrapper = mountSimpleRulesForm({
+    mounted() {
+      this.$refs.form.validate().catch(() => {
+        this.$refs.form.resetValidation(['A', 'B']);
         const errors = wrapper.findAll('.van-field__error-message');
         expect(errors.length).toEqual(0);
         done();

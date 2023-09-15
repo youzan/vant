@@ -27,6 +27,7 @@ export default createComponent({
     className: null,
     closeable: Boolean,
     asyncClose: Boolean,
+    overlayStyle: Object,
     showIndicators: Boolean,
     images: {
       type: Array,
@@ -48,13 +49,17 @@ export default createComponent({
       type: [Number, String],
       default: 3,
     },
+    transition: {
+      type: String,
+      default: 'van-fade',
+    },
     showIndex: {
       type: Boolean,
       default: true,
     },
     swipeDuration: {
       type: [Number, String],
-      default: 500,
+      default: 300,
     },
     startPosition: {
       type: [Number, String],
@@ -140,7 +145,7 @@ export default createComponent({
       if (this.showIndex) {
         return (
           <div class={bem('index')}>
-            {this.slots('index') ||
+            {this.slots('index', { index: this.active }) ||
               `${this.active + 1} / ${this.images.length}`}
           </div>
         );
@@ -211,18 +216,16 @@ export default createComponent({
   },
 
   render() {
-    if (!this.shouldRender) {
-      return;
-    }
-
     return (
-      <transition name="van-fade" onAfterLeave={this.onClosed}>
-        <div vShow={this.value} class={[bem(), this.className]}>
-          {this.genClose()}
-          {this.genImages()}
-          {this.genIndex()}
-          {this.genCover()}
-        </div>
+      <transition name={this.transition} onAfterLeave={this.onClosed}>
+        {this.shouldRender ? (
+          <div vShow={this.value} class={[bem(), this.className]}>
+            {this.genClose()}
+            {this.genImages()}
+            {this.genIndex()}
+            {this.genCover()}
+          </div>
+        ) : null}
       </transition>
     );
   },

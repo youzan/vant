@@ -88,8 +88,8 @@ export default {
     return {
       active: 0,
       icon: {
-        active: 'https://img.yzcdn.cn/vant/user-active.png',
-        inactive: 'https://img.yzcdn.cn/vant/user-inactive.png',
+        active: 'https://img01.yzcdn.cn/vant/user-active.png',
+        inactive: 'https://img01.yzcdn.cn/vant/user-inactive.png',
       },
     };
   },
@@ -99,7 +99,7 @@ export default {
 ### Custom Color
 
 ```html
-<van-tabbar v-model="active" active-color="#07c160" inactive-color="#000">
+<van-tabbar v-model="active" active-color="#ee0a24" inactive-color="#000">
   <van-tabbar-item icon="home-o">Tab</van-tabbar-item>
   <van-tabbar-item icon="search">Tab</van-tabbar-item>
   <van-tabbar-item icon="friends-o">Tab</van-tabbar-item>
@@ -136,12 +136,8 @@ export default {
 <router-view />
 
 <van-tabbar route>
-  <van-tabbar-item replace to="/home" icon="home-o">
-    Tab
-  </van-tabbar-item>
-  <van-tabbar-item replace to="/search" icon="search">
-    Tab
-  </van-tabbar-item>
+  <van-tabbar-item replace to="/home" icon="home-o">Tab</van-tabbar-item>
+  <van-tabbar-item replace to="/search" icon="search">Tab</van-tabbar-item>
 </van-tabbar>
 ```
 
@@ -158,7 +154,7 @@ export default {
 | active-color | Color of active tab item | _string_ | `#1989fa` |
 | inactive-color | Color of inactive tab item | _string_ | `#7d7e80` |
 | route | Whether to enable route mode | _boolean_ | `false` |
-| placeholder `v2.6.0` | Whether to generage a placeholder element when fixed | _boolean_ | `false` |
+| placeholder `v2.6.0` | Whether to generate a placeholder element when fixed | _boolean_ | `false` |
 | safe-area-inset-bottom | Whether to enable bottom safe area adaptation | _boolean_ | `false` |
 | before-change `v2.10.4` | Callback function before changing tabs，return `false` to prevent change，support return Promise | _(name) => boolean \| Promise_ | - |
 
@@ -166,7 +162,7 @@ export default {
 
 | Event  | Description                      | Arguments                    |
 | ------ | -------------------------------- | ---------------------------- |
-| change | Triggered when change active tab | active: index of current tab |
+| change | Emitted when changing active tab | active: index of current tab |
 
 ### TabbarItem Props
 
@@ -186,3 +182,20 @@ export default {
 | Name | Description | SlotProps |
 | ---- | ----------- | --------- |
 | icon | Custom icon | active    |
+
+### Less Variables
+
+How to use: [Custom Theme](#/en-US/theme).
+
+| Name | Default Value | Description |
+| --- | --- | --- |
+| @tabbar-height | `50px` | - |
+| @tabbar-z-index | `1` | - |
+| @tabbar-background-color | `@white` | - |
+| @tabbar-item-font-size | `@font-size-sm` | - |
+| @tabbar-item-text-color | `@gray-7` | - |
+| @tabbar-item-active-color | `@blue` | - |
+| @tabbar-item-active-background-color | `@tabbar-background-color` | - |
+| @tabbar-item-line-height | `1` | - |
+| @tabbar-item-icon-size | `22px` | - |
+| @tabbar-item-margin-bottom | `4px` | - |

@@ -73,5 +73,6 @@ export function removeOverlay(vm: any) {
   const item = context.find(vm);
   if (item) {
     removeNode(item.overlay.$el);
+    context.remove(vm);
   }
 }

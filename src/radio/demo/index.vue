@@ -34,10 +34,10 @@
 
     <demo-block :title="t('customColor')">
       <van-radio-group v-model="radio3" class="demo-radio-group">
-        <van-radio name="1" checked-color="#07c160">
+        <van-radio name="1" checked-color="#ee0a24">
           {{ t('radio') }} 1
         </van-radio>
-        <van-radio name="2" checked-color="#07c160">
+        <van-radio name="2" checked-color="#ee0a24">
           {{ t('radio') }} 2
         </van-radio>
       </van-radio-group>
@@ -45,12 +45,8 @@
 
     <demo-block :title="t('customIconSize')">
       <van-radio-group v-model="radioIconSize" class="demo-radio-group">
-        <van-radio name="1" checked-color="#07c160" icon-size="24px">
-          {{ t('radio') }} 1
-        </van-radio>
-        <van-radio name="2" checked-color="#07c160" icon-size="24px">
-          {{ t('radio') }} 2
-        </van-radio>
+        <van-radio name="1" icon-size="24px"> {{ t('radio') }} 1 </van-radio>
+        <van-radio name="2" icon-size="24px"> {{ t('radio') }} 2 </van-radio>
       </van-radio-group>
     </demo-block>
 
@@ -138,8 +134,8 @@ export default {
       radioIconSize: '1',
       radioHorizontal: '1',
       icon: {
-        active: 'https://img.yzcdn.cn/vant/user-active.png',
-        inactive: 'https://img.yzcdn.cn/vant/user-inactive.png',
+        active: 'https://img01.yzcdn.cn/vant/user-active.png',
+        inactive: 'https://img01.yzcdn.cn/vant/user-inactive.png',
       },
     };
   },

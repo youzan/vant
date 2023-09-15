@@ -6,6 +6,8 @@ const [createComponent, bem] = createNamespace('form');
 export default createComponent({
   props: {
     colon: Boolean,
+    disabled: Boolean,
+    readonly: Boolean,
     labelWidth: [Number, String],
     labelAlign: String,
     inputAlign: String,
@@ -43,11 +45,19 @@ export default createComponent({
   },
 
   methods: {
-    validateSeq() {
+    getFieldsByNames(names) {
+      if (names) {
+        return this.fields.filter((field) => names.indexOf(field.name) !== -1);
+      }
+      return this.fields;
+    },
+
+    validateSeq(names) {
       return new Promise((resolve, reject) => {
         const errors = [];
+        const fields = this.getFieldsByNames(names);
 
-        this.fields
+        fields
           .reduce(
             (promise, field) =>
               promise.then(() => {
@@ -71,28 +81,29 @@ export default createComponent({
       });
     },
 
-    validateAll() {
+    validateFields(names) {
       return new Promise((resolve, reject) => {
-        Promise.all(this.fields.map((item) => item.validate())).then(
-          (errors) => {
-            errors = errors.filter((item) => item);
+        const fields = this.getFieldsByNames(names);
+        Promise.all(fields.map((item) => item.validate())).then((errors) => {
+          errors = errors.filter((item) => item);
 
-            if (errors.length) {
-              reject(errors);
-            } else {
-              resolve();
-            }
+          if (errors.length) {
+            reject(errors);
+          } else {
+            resolve();
           }
-        );
+        });
       });
     },
 
     // @exposed-api
     validate(name) {
-      if (name) {
+      if (name && !Array.isArray(name)) {
         return this.validateField(name);
       }
-      return this.validateFirst ? this.validateSeq() : this.validateAll();
+      return this.validateFirst
+        ? this.validateSeq(name)
+        : this.validateFields(name);
     },
 
     validateField(name) {
@@ -115,10 +126,13 @@ export default createComponent({
 
     // @exposed-api
     resetValidation(name) {
-      this.fields.forEach((item) => {
-        if (!name || item.name === name) {
-          item.resetValidation();
-        }
+      if (name && !Array.isArray(name)) {
+        name = [name];
+      }
+
+      const fields = this.getFieldsByNames(name);
+      fields.forEach((item) => {
+        item.resetValidation();
       });
     },
 

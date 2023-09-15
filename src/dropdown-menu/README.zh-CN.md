@@ -164,14 +164,14 @@ export default {
 
 ### DropdownItem Slots
 
-| 名称    | 说明                       |
-| ------- | -------------------------- |
-| default | 菜单内容                   |
-| title   | 自定义标题，不支持动态渲染 |
+| 名称    | 说明             |
+| ------- | ---------------- |
+| default | 菜单内容         |
+| title   | 自定义菜单项标题 |
 
 ### DropdownItem 方法
 
-通过 ref 可以获取到 DropdownItem 实例并调用实例方法，详见[组件实例方法](#/zh-CN/quickstart#zu-jian-shi-li-fang-fa)。
+通过 ref 可以获取到 DropdownItem 实例并调用实例方法，详见[组件实例方法](#/zh-CN/advanced-usage#zu-jian-shi-li-fang-fa)。
 
 | 方法名 | 说明 | 参数 | 返回值 |
 | --- | --- | --- | --- |
@@ -184,3 +184,37 @@ export default {
 | text  | 文字                                   | _string_           |
 | value | 标识符                                 | _number \| string_ |
 | icon  | 左侧[图标名称](#/zh-CN/icon)或图片链接 | _string_           |
+
+### 样式变量
+
+组件提供了下列 Less 变量，可用于自定义样式，使用方法请参考[主题定制](#/zh-CN/theme)。
+
+| 名称 | 默认值 | 描述 |
+| --- | --- | --- |
+| @dropdown-menu-height | `48px` | - |
+| @dropdown-menu-background-color | `@white` | - |
+| @dropdown-menu-box-shadow | `0 2px 12px fade(@gray-7, 12)` | - |
+| @dropdown-menu-title-font-size | `15px` | - |
+| @dropdown-menu-title-text-color | `@text-color` | - |
+| @dropdown-menu-title-active-text-color | `@red` | - |
+| @dropdown-menu-title-disabled-text-color | `@gray-6` | - |
+| @dropdown-menu-title-padding | `0 @padding-xs` | - |
+| @dropdown-menu-title-line-height | `@line-height-lg` | - |
+| @dropdown-menu-option-active-color | `@red` | - |
+| @dropdown-menu-content-max-height | `80%` | - |
+| @dropdown-item-z-index | `10` | - |
+
+## 常见问题
+
+### 父元素设置 transform 后，下拉菜单的位置错误？
+
+把 `DropdownMenu` 嵌套在 `Tabs` 等组件内部使用时，可能会遇到下拉菜单位置错误的问题。这是因为在 Chrome 浏览器中，transform 元素内部的 fixed 布局会降级成 absolute 布局，导致下拉菜单的布局异常。
+
+将 `DropdownItem` 的 `get-container` 属性设置为 `body` 即可避免此问题：
+
+```html
+<van-dropdown-menu>
+  <van-dropdown-item get-container="body" />
+  <van-dropdown-item get-container="body" />
+</van-dropdown-menu>
+```

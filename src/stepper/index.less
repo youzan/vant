@@ -85,7 +85,8 @@
     &:disabled {
       color: @stepper-input-disabled-text-color;
       background-color: @stepper-input-disabled-background-color;
-      -webkit-text-fill-color: currentColor; // fix disabled color in iOS
+      // fix disabled color in iOSF
+      -webkit-text-fill-color: @stepper-input-disabled-text-color;
       opacity: 1;
     }
 

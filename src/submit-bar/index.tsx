@@ -30,6 +30,7 @@ export type SubmitBarProps = {
 export type SubmitBarSlots = DefaultSlots & {
   top?: ScopedSlot;
   tip?: ScopedSlot;
+  button?: ScopedSlot;
 };
 
 const [createComponent, bem, t] = createNamespace('submit-bar');
@@ -84,18 +85,22 @@ function SubmitBar(
       <div class={bem('bar')}>
         {slots.default && slots.default()}
         {Text()}
-        <Button
-          round
-          class={bem('button', props.buttonType)}
-          type={props.buttonType}
-          color={props.buttonColor}
-          loading={props.loading}
-          disabled={props.disabled}
-          text={props.loading ? '' : props.buttonText}
-          onClick={() => {
-            emit(ctx, 'submit');
-          }}
-        />
+        {slots.button ? (
+          slots.button()
+        ) : (
+          <Button
+            round
+            type={props.buttonType}
+            text={props.loading ? '' : props.buttonText}
+            color={props.buttonColor}
+            class={bem('button', props.buttonType)}
+            loading={props.loading}
+            disabled={props.disabled}
+            onClick={() => {
+              emit(ctx, 'submit');
+            }}
+          />
+        )}
       </div>
     </div>
   );

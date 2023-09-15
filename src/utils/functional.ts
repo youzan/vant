@@ -7,6 +7,7 @@ type InheritContext = Partial<VNodeData> & ObjectIndex;
 
 const inheritKey = [
   'ref',
+  'key',
   'style',
   'class',
   'attrs',

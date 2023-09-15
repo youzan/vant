@@ -1,5 +1,9 @@
 # AddressList 地址列表
 
+### 介绍
+
+展示收货地址列表。
+
 ### 引入
 
 ```js
@@ -72,15 +76,15 @@ export default {
 
 ### Props
 
-| 参数                      | 说明              | 类型        | 默认值     |
-| ------------------------- | ----------------- | ----------- | ---------- |
-| v-model                   | 当前选中地址的 id | _string_    | -          |
-| list                      | 地址列表          | _Address[]_ | `[]`       |
-| disabled-list             | 不可配送地址列表  | _Address[]_ | `[]`       |
-| disabled-text             | 不可配送提示文案  | _string_    | -          |
-| switchable                | 是否允许切换地址  | _boolean_   | `true`     |
-| add-button-text           | 底部按钮文字      | _string_    | `新增地址` |
-| default-tag-text `v2.3.0` | 默认地址标签文字  | _string_    | -          |
+| 参数             | 说明              | 类型        | 默认值     |
+| ---------------- | ----------------- | ----------- | ---------- |
+| v-model          | 当前选中地址的 id | _string_    | -          |
+| list             | 地址列表          | _Address[]_ | `[]`       |
+| disabled-list    | 不可配送地址列表  | _Address[]_ | `[]`       |
+| disabled-text    | 不可配送提示文案  | _string_    | -          |
+| switchable       | 是否允许切换地址  | _boolean_   | `true`     |
+| add-button-text  | 底部按钮文字      | _string_    | `新增地址` |
+| default-tag-text | 默认地址标签文字  | _string_    | -          |
 
 ### Events
 
@@ -105,8 +109,29 @@ export default {
 
 ### Slots
 
-| 名称                 | 说明                 | SlotProps  |
+| 名称                 | 说明                 | 参数       |
 | -------------------- | -------------------- | ---------- |
 | default              | 在列表下方插入内容   | -          |
 | top                  | 在顶部插入内容       | -          |
 | item-bottom `v2.5.0` | 在列表项底部插入内容 | 列表项的值 |
+| tag `v2.12.9`        | 列表项标签内容自定义 | 列表项的值 |
+
+### 样式变量
+
+组件提供了下列 Less 变量，可用于自定义样式，使用方法请参考[主题定制](#/zh-CN/theme)。
+
+| 名称 | 默认值 | 描述 |
+| --- | --- | --- |
+| @address-list-padding | `@padding-sm @padding-sm 80px` | - |
+| @address-list-disabled-text-color | `@gray-6` | - |
+| @address-list-disabled-text-padding | `@padding-base * 5 0 @padding-md` | - |
+| @address-list-disabled-text-font-size | `@font-size-md` | - |
+| @address-list-disabled-text-line-height | `@line-height-md` | - |
+| @address-list-add-button-z-index | `999` | - |
+| @address-list-item-padding | `@padding-sm` | - |
+| @address-list-item-text-color | `@text-color` | - |
+| @address-list-item-disabled-text-color | `@gray-5` | - |
+| @address-list-item-font-size | `13px` | - |
+| @address-list-item-line-height | `@line-height-sm` | - |
+| @address-list-item-radio-icon-color | `@red` | - |
+| @address-list-edit-icon-size | `20px` | - |

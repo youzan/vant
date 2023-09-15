@@ -35,7 +35,7 @@ Use the image prop to display different placeholder images.
 ```html
 <van-empty
   class="custom-image"
-  image="https://img.yzcdn.cn/vant/leaf.jpg"
+  image="https://img01.yzcdn.cn/vant/leaf.jpg"
   description="Description"
 />
 
@@ -50,9 +50,7 @@ Use the image prop to display different placeholder images.
 
 ```html
 <van-empty description="Description">
-  <van-button round type="danger" class="bottom-button">
-    Button
-  </van-button>
+  <van-button round type="danger" class="bottom-button">Button</van-button>
 </van-empty>
 
 <style>
@@ -70,7 +68,8 @@ Use the image prop to display different placeholder images.
 | Attribute | Description | Type | Default |
 | --- | --- | --- | --- |
 | image | Image type，can be set to `error` `network` `search` or image URL | _string_ | `default` |
-| description | Desciption | _string_ | - |
+| image-size `v2.10.11` | Image size | _number \| string_ | - |
+| description | Description | _string_ | - |
 
 ### Slots
 
@@ -79,3 +78,18 @@ Use the image prop to display different placeholder images.
 | default     | Custom bottom content |
 | image       | Custom image          |
 | description | Custom description    |
+
+### Less Variables
+
+How to use: [Custom Theme](#/en-US/theme).
+
+| Name                           | Default Value     | Description |
+| ------------------------------ | ----------------- | ----------- |
+| @empty-padding                 | `@padding-xl 0`   | -           |
+| @empty-image-size              | `160px`           | -           |
+| @empty-description-margin-top  | `@padding-md`     | -           |
+| @empty-description-padding     | `0 60px`          | -           |
+| @empty-description-color       | `@gray-6`         | -           |
+| @empty-description-font-size   | `@font-size-md`   | -           |
+| @empty-description-line-height | `@line-height-md` | -           |
+| @empty-bottom-margin-top       | `24px`            | -           |

@@ -52,6 +52,7 @@
 
   &--plain {
     background-color: @tag-plain-background-color;
+    border-color: currentColor;
 
     &::before {
       position: absolute;
@@ -59,7 +60,8 @@
       right: 0;
       bottom: 0;
       left: 0;
-      border: 1px solid currentColor;
+      border: 1px solid;
+      border-color: inherit;
       border-radius: inherit;
       content: '';
       pointer-events: none;
@@ -91,7 +93,6 @@
   }
 
   &__close {
-    min-width: 1em;
     margin-left: 2px;
     cursor: pointer;
   }

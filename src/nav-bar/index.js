@@ -16,6 +16,7 @@ export default createComponent({
     rightText: String,
     leftArrow: Boolean,
     placeholder: Boolean,
+    safeAreaInsetTop: Boolean,
     border: {
       type: Boolean,
       default: true,
@@ -30,7 +31,13 @@ export default createComponent({
 
   mounted() {
     if (this.placeholder && this.fixed) {
-      this.height = this.$refs.navBar.getBoundingClientRect().height;
+      const setHeight = () => {
+        this.height = this.$refs.navBar.getBoundingClientRect().height;
+      };
+
+      setHeight();
+      // https://github.com/vant-ui/vant/issues/10131
+      setTimeout(setHeight, 100);
     }
   },
 
@@ -65,19 +72,41 @@ export default createComponent({
         <div
           ref="navBar"
           style={{ zIndex: this.zIndex }}
-          class={[bem({ fixed: this.fixed }), { [BORDER_BOTTOM]: this.border }]}
+          class={[
+            bem({
+              fixed: this.fixed,
+              'safe-area-inset-top': this.safeAreaInsetTop,
+            }),
+            {
+              [BORDER_BOTTOM]: this.border,
+            },
+          ]}
         >
-          <div class={bem('left')} onClick={this.onClickLeft}>
-            {this.genLeft()}
-          </div>
-          <div class={[bem('title'), 'van-ellipsis']}>
-            {this.slots('title') || this.title}
-          </div>
-          <div class={bem('right')} onClick={this.onClickRight}>
-            {this.genRight()}
+          <div class={bem('content')}>
+            {this.hasLeft() && (
+              <div class={bem('left')} onClick={this.onClickLeft}>
+                {this.genLeft()}
+              </div>
+            )}
+            <div class={[bem('title'), 'van-ellipsis']}>
+              {this.slots('title') || this.title}
+            </div>
+            {this.hasRight() && (
+              <div class={bem('right')} onClick={this.onClickRight}>
+                {this.genRight()}
+              </div>
+            )}
           </div>
         </div>
       );
+    },
+
+    hasLeft() {
+      return this.leftArrow || this.leftText || this.slots('left');
+    },
+
+    hasRight() {
+      return this.rightText || this.slots('right');
     },
 
     onClickLeft(event) {

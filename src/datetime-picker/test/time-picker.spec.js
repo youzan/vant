@@ -111,22 +111,6 @@ test('change min-minute and emit correct value', async () => {
   expect(wrapper.emitted('confirm')[0][0]).toEqual('12:30');
 });
 
-test('set max-hour & max-minute smaller than current then emit correct value', async () => {
-  const wrapper = mount(TimePicker, {
-    propsData: {
-      value: '23:59',
-    },
-  });
-  await later();
-  wrapper.setProps({
-    maxHour: 2,
-    maxMinute: 2,
-  });
-
-  wrapper.find('.van-picker__confirm').trigger('click');
-  expect(wrapper.emitted('confirm')[0][0]).toEqual('00:00');
-});
-
 test('set min-minute dynamically', async () => {
   const wrapper = mount({
     template: `
@@ -149,4 +133,85 @@ test('set min-minute dynamically', async () => {
   triggerDrag(wrapper.find('.van-picker-column'), 0, -100);
   wrapper.find('.van-picker__confirm').trigger('click');
   expect(wrapper.emitted('confirm')[0][0]).toEqual('13:00');
+});
+
+test('dynamic set min-hour & min-minute then emit correct value', async () => {
+  const wrapper = mount({
+    template: `
+    <van-datetime-picker
+      v-model="time"
+      type="time"
+      :min-hour="minHour"
+      :min-minute="minMinute"
+      @confirm="value => this.$emit('confirm', value)"
+    />
+    `,
+    data() {
+      return {
+        time: '10:30',
+        minHour: 1,
+        minMinute: 20,
+      }
+    },
+    mounted() {
+      this.minHour = 11;
+      this.minMinute = 40;
+    },
+  })
+
+  await later();
+  wrapper.find('.van-picker__confirm').trigger('click');
+  expect(wrapper.emitted('confirm')[0][0]).toEqual('11:40');
+});
+
+test('dynamic set max-hour & max-minute then emit correct value', async () => {
+  const wrapper = mount({
+    template: `
+      <van-datetime-picker
+        v-model="time"
+        type="time"
+        :max-hour="maxHour"
+        :max-minute="maxMinute"
+        @confirm="value => this.$emit('confirm', value)"
+      />
+    `,
+
+    data() {
+      return {
+        time: '12:30',
+        minHour: 1,
+        minMinute: 1,
+        maxHour: 20,
+        maxMinute: 59,
+      }
+    },
+  })
+
+  const confirm = wrapper.find('.van-picker__confirm');
+
+  await later();
+  confirm.trigger('click');
+  expect(wrapper.emitted('confirm')[0][0]).toEqual('12:30');
+
+  await later();
+  wrapper.setData({ maxHour: 20, maxMinute: 50 });
+  confirm.trigger('click');
+  expect(wrapper.emitted('confirm')[1][0]).toEqual('12:30');
+
+  await later();
+  wrapper.setData({ maxHour: 12, maxMinute: 30 });
+  confirm.trigger('click');
+  expect(wrapper.emitted('confirm')[2][0]).toEqual('12:30');
+
+  await later();
+  wrapper.setData({ maxHour: 11, maxMinute: 20 });
+  confirm.trigger('click');
+  expect(wrapper.emitted('confirm')[3][0]).toEqual('11:20');
+
+  await later();
+  wrapper.setData({ maxHour: 14 });
+  await later();
+  wrapper.setData({ maxMinute: 25 });
+  wrapper.find('.van-picker__confirm').trigger('click');
+  expect(wrapper.emitted('confirm')[4][0]).toEqual('11:20');
 });

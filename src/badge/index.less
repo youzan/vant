@@ -1,0 +1,38 @@
+@import '../style/var';
+
+.van-badge {
+  display: inline-block;
+  box-sizing: border-box;
+  min-width: @badge-size;
+  padding: @badge-padding;
+  color: @badge-color;
+  font-weight: @badge-font-weight;
+  font-size: @badge-font-size;
+  font-family: @badge-font-family;
+  line-height: 1.2;
+  text-align: center;
+  background-color: @badge-background-color;
+  border: @badge-border-width solid @white;
+  border-radius: @border-radius-max;
+
+  &--fixed {
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translate(50%, -50%);
+    transform-origin: 100%;
+  }
+
+  &--dot {
+    width: @badge-dot-size;
+    min-width: 0;
+    height: @badge-dot-size;
+    background-color: @badge-dot-color;
+    border-radius: 100%;
+  }
+
+  &__wrapper {
+    position: relative;
+    display: inline-block;
+  }
+}

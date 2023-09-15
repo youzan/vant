@@ -52,6 +52,19 @@ function TreeSelect(
 ) {
   const { items, height, activeId, selectedIcon, mainActiveIndex } = props;
 
+  if (process.env.NODE_ENV === 'development') {
+    if (ctx.listeners.navclick) {
+      console.warn(
+        '[Vant] TreeSelect: "navclick" event is deprecated, use "click-nav" instead.'
+      );
+    }
+    if (ctx.listeners.itemclick) {
+      console.warn(
+        '[Vant] TreeSelect: "itemclick" event is deprecated, use "click-item" instead.'
+      );
+    }
+  }
+
   const selectedItem: Partial<TreeSelectItem> = items[+mainActiveIndex] || {};
   const subItems = selectedItem.children || [];
   const isMultiple = Array.isArray(activeId);

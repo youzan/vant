@@ -61,12 +61,17 @@ test('swipe to switch tab', async () => {
   const onChange = jest.fn();
   const wrapper = mount({
     template: `
-      <van-tabs swipeable @change="onChange">
+      <van-tabs v-model="active" swipeable @change="onChange">
         <van-tab title="title1">Text</van-tab>
         <van-tab title="title2">Text</van-tab>
         <van-tab title="title3" disabled>Text</van-tab>
       </van-tabs>
     `,
+    data() {
+      return {
+        active: 0,
+      };
+    },
     methods: {
       onChange,
     },
@@ -174,7 +179,7 @@ test('name prop', async () => {
 
   const wrapper = mount({
     template: `
-      <van-tabs @click="onClick" @disabled="onDisabled" @change="onChange">
+      <van-tabs v-model="active" @click="onClick" @disabled="onDisabled" @change="onChange">
         <van-tab title="title1" name="a">Text</van-tab>
         <van-tab title="title2" name="b">Text</van-tab>
         <van-tab title="title3" name="c" disabled>Text</van-tab>
@@ -184,6 +189,11 @@ test('name prop', async () => {
       onClick,
       onChange,
       onDisabled,
+    },
+    data() {
+      return {
+        active: 0,
+      };
     },
   });
 
@@ -246,11 +256,11 @@ test('dot prop', () => {
   expect(wrapper).toMatchSnapshot();
 });
 
-test('info prop', () => {
+test('badge prop', () => {
   const wrapper = mount({
     template: `
       <van-tabs>
-        <van-tab info="10">Text</van-tab>
+        <van-tab badge="10">Text</van-tab>
       </van-tabs>
     `,
   });

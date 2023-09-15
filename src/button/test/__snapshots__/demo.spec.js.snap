@@ -55,7 +55,7 @@ exports[`renders demo correctly 1`] = `
       <div class="van-button__content"><i class="van-icon van-icon-plus van-button__icon">
           <!----></i><span class="van-button__text">按钮</span></div>
     </button> <button class="van-button van-button--info van-button--normal van-button--plain">
-      <div class="van-button__content"><i class="van-icon van-button__icon"><img src="https://img.yzcdn.cn/vant/user-active.png" class="van-icon__image">
+      <div class="van-button__content"><i class="van-icon van-button__icon"><img src="https://img01.yzcdn.cn/vant/user-active.png" class="van-icon__image">
           <!----></i><span class="van-button__text">按钮</span></div>
     </button></div>
   <div><button class="van-button van-button--primary van-button--large">
@@ -75,11 +75,11 @@ exports[`renders demo correctly 1`] = `
     </button> <button class="van-button van-button--primary van-button--normal">
       <div class="van-button__content"><span class="van-button__text">路由跳转</span></div>
     </button></div>
-  <div><button class="van-button van-button--default van-button--normal" style="color: rgb(255, 255, 255); background: rgb(114, 50, 221); border-color: #7232dd;">
+  <div><button class="van-button van-button--default van-button--normal" style="color: white; background: rgb(114, 50, 221); border-color: #7232dd;">
       <div class="van-button__content"><span class="van-button__text">单色按钮</span></div>
     </button> <button class="van-button van-button--default van-button--normal van-button--plain" style="color: rgb(114, 50, 221); border-color: #7232dd;">
       <div class="van-button__content"><span class="van-button__text">单色按钮</span></div>
-    </button> <button class="van-button van-button--default van-button--normal" style="color: rgb(255, 255, 255); border: 0px;">
+    </button> <button class="van-button van-button--default van-button--normal" style="color: white; border: 0px;">
       <div class="van-button__content"><span class="van-button__text">渐变色按钮</span></div>
     </button></div>
 </div>

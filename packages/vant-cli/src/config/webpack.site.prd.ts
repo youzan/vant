@@ -1,4 +1,4 @@
-import merge from 'webpack-merge';
+import { merge } from 'webpack-merge';
 import { get } from 'lodash';
 import { WebpackConfig } from '../common/types';
 import { getVantConfig, getWebpackConfig } from '../common';

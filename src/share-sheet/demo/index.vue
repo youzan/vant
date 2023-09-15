@@ -67,6 +67,8 @@ export default {
       withDesc: '展示描述信息',
       customIcon: '自定义图标',
       description: '描述信息',
+      weappQrcode: '小程序码',
+      wechatMoments: '朋友圈',
     },
     'en-US': {
       qq: 'QQ',
@@ -82,6 +84,8 @@ export default {
       withDesc: 'Show Description',
       customIcon: 'Custom Icon',
       description: 'Description',
+      weappQrcode: 'Weapp Qrcode',
+      wechatMoments: 'Wechat Moments',
     },
   },
 
@@ -111,6 +115,7 @@ export default {
       return [
         [
           { name: this.t('wechat'), icon: 'wechat' },
+          { name: this.t('wechatMoments'), icon: 'wechat-moments' },
           { name: this.t('weibo'), icon: 'weibo' },
           { name: this.t('qq'), icon: 'qq' },
         ],
@@ -118,6 +123,7 @@ export default {
           { name: this.t('link'), icon: 'link' },
           { name: this.t('poster'), icon: 'poster' },
           { name: this.t('qrcode'), icon: 'qrcode' },
+          { name: this.t('weappQrcode'), icon: 'weapp-qrcode' },
         ],
       ];
     },
@@ -126,15 +132,15 @@ export default {
       return [
         {
           name: this.t('name'),
-          icon: 'https://img.yzcdn.cn/vant/custom-icon-fire.png',
+          icon: 'https://img01.yzcdn.cn/vant/custom-icon-fire.png',
         },
         {
           name: this.t('name'),
-          icon: 'https://img.yzcdn.cn/vant/custom-icon-light.png',
+          icon: 'https://img01.yzcdn.cn/vant/custom-icon-light.png',
         },
         {
           name: this.t('name'),
-          icon: 'https://img.yzcdn.cn/vant/custom-icon-water.png',
+          icon: 'https://img01.yzcdn.cn/vant/custom-icon-water.png',
         },
       ];
     },

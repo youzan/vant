@@ -14,6 +14,8 @@ export type ImagePreviewOptions =
       closeable?: boolean;
       closeIcon?: string;
       asyncClose?: boolean;
+      transition?: string;
+      overlayStyle?: object;
       swipeDuration?: number;
       startPosition?: number;
       showIndicators?: boolean;
@@ -21,6 +23,7 @@ export type ImagePreviewOptions =
       closeIconPosition?: string;
       getContainer?: string | (() => Element);
       onClose?(): void;
+      onScale?(data: { index: number; scale: number }): void;
       onChange?(index: number): void;
       swipeTo?(index: number, options?: SwipeToOptions): void;
     };

@@ -13,7 +13,7 @@ Vue.use(PullRefresh);
 
 ### Basic Usage
 
-The `refresh` event will be triggered when pull refresh, you should set `v-model` to `false` to reset loading status after process refresh event.
+The `refresh` event will be Emitted when pull refresh, you should set `v-model` to `false` to reset loading status after process refresh event.
 
 ```html
 <van-pull-refresh v-model="isLoading" @refresh="onRefresh">
@@ -66,17 +66,17 @@ Use slots to custom tips.
   <template #pulling="props">
     <img
       class="doge"
-      src="https://img.yzcdn.cn/vant/doge.png"
+      src="https://img01.yzcdn.cn/vant/doge.png"
       :style="{ transform: `scale(${props.distance / 80})` }"
     />
   </template>
 
   <template #loosing>
-    <img class="doge" src="https://img.yzcdn.cn/vant/doge.png" />
+    <img class="doge" src="https://img01.yzcdn.cn/vant/doge.png" />
   </template>
 
   <template #loading>
-    <img class="doge" src="https://img.yzcdn.cn/vant/doge-fire.jpg" />
+    <img class="doge" src="https://img01.yzcdn.cn/vant/doge-fire.jpg" />
   </template>
   <p>Refresh Count: {{ count }}</p>
 </van-pull-refresh>
@@ -104,14 +104,15 @@ Use slots to custom tips.
 | success-text | Text to show when loading success | _string_ | - |
 | success-duration | Success text display duration(ms) | _number \| string_ | `500` |
 | animation-duration | Animation duration | _number \| string_ | `300` |
-| head-height `v2.4.2` | Height of head | _number \| string_ | `50` |
+| head-height | Height of head | _number \| string_ | `50` |
+| pull-distance `v2.12.8` | The distance to trigger the pull refresh | _number \| string_ | same as `head-height` |
 | disabled | Whether to disable pull refresh | _boolean_ | `false` |
 
 ### Events
 
-| Event   | Description                 | Parameters |
-| ------- | --------------------------- | ---------- |
-| refresh | Triggered when pull refresh | -          |
+| Event   | Description                   | Parameters |
+| ------- | ----------------------------- | ---------- |
+| refresh | Emitted after pulling refresh | -          |
 
 ### Slots
 
@@ -123,3 +124,13 @@ Use slots to custom tips.
 | loosing | Content of head when at loosing       | { distance } |
 | loading | Content of head when at loading       | { distance } |
 | success | Content of head when succeed          | -            |
+
+### Less Variables
+
+How to use: [Custom Theme](#/en-US/theme).
+
+| Name                          | Default Value   | Description |
+| ----------------------------- | --------------- | ----------- |
+| @pull-refresh-head-height     | `50px`          | -           |
+| @pull-refresh-head-font-size  | `@font-size-md` | -           |
+| @pull-refresh-head-text-color | `@gray-6`       | -           |

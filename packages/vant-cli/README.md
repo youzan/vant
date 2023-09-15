@@ -65,11 +65,8 @@ yarn add @vant/cli --dev
 
 ## 详细文档
 
-- [命令](https://github.com/youzan/vant/tree/dev/packages/vant-cli/docs/commands.md)
-- [配置指南](https://github.com/youzan/vant/tree/dev/packages/vant-cli/docs/config.md)
-- [目录结构](https://github.com/youzan/vant/tree/dev/packages/vant-cli/docs/directory.md)
-- [更新日志](https://github.com/youzan/vant/tree/dev/packages/vant-cli/changelog.md)
-
-## 关于桌面端组件
-
-目前 Vant Cli 仅支持移动端组件的预览，桌面端组件暂不支持预览（欢迎 PR）。
+- [命令](https://github.com/vant-ui/vant/tree/dev/packages/vant-cli/docs/commands.md)
+- [配置指南](https://github.com/vant-ui/vant/tree/dev/packages/vant-cli/docs/config.md)
+- [目录结构](https://github.com/vant-ui/vant/tree/dev/packages/vant-cli/docs/directory.md)
+- [桌面端组件](https://github.com/vant-ui/vant/tree/dev/packages/vant-cli/docs/desktop.md)
+- [更新日志](https://github.com/vant-ui/vant/tree/dev/packages/vant-cli/changelog.md)

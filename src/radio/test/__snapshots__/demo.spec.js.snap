@@ -53,7 +53,7 @@ exports[`renders demo correctly 1`] = `
   <div>
     <div role="radiogroup" class="demo-radio-group van-radio-group">
       <div role="radio" tabindex="0" aria-checked="true" class="van-radio">
-        <div class="van-radio__icon van-radio__icon--round van-radio__icon--checked"><i class="van-icon van-icon-success" style="border-color: #07c160; background-color: rgb(7, 193, 96);">
+        <div class="van-radio__icon van-radio__icon--round van-radio__icon--checked"><i class="van-icon van-icon-success" style="border-color: #ee0a24; background-color: rgb(238, 10, 36);">
             <!----></i></div><span class="van-radio__label">
         单选框 1
       </span>
@@ -69,28 +69,24 @@ exports[`renders demo correctly 1`] = `
   <div>
     <div role="radiogroup" class="demo-radio-group van-radio-group">
       <div role="radio" tabindex="0" aria-checked="true" class="van-radio">
-        <div class="van-radio__icon van-radio__icon--round van-radio__icon--checked" style="font-size: 24px;"><i class="van-icon van-icon-success" style="border-color: #07c160; background-color: rgb(7, 193, 96);">
-            <!----></i></div><span class="van-radio__label">
-        单选框 1
-      </span>
+        <div class="van-radio__icon van-radio__icon--round van-radio__icon--checked" style="font-size: 24px;"><i class="van-icon van-icon-success">
+            <!----></i></div><span class="van-radio__label"> 单选框 1 </span>
       </div>
       <div role="radio" tabindex="-1" aria-checked="false" class="van-radio">
         <div class="van-radio__icon van-radio__icon--round" style="font-size: 24px;"><i class="van-icon van-icon-success">
-            <!----></i></div><span class="van-radio__label">
-        单选框 2
-      </span>
+            <!----></i></div><span class="van-radio__label"> 单选框 2 </span>
       </div>
     </div>
   </div>
   <div>
     <div role="radiogroup" class="demo-radio-group van-radio-group">
       <div role="radio" tabindex="0" aria-checked="true" class="van-radio">
-        <div class="van-radio__icon van-radio__icon--round van-radio__icon--checked"><img src="https://img.yzcdn.cn/vant/user-active.png"></div><span class="van-radio__label">
+        <div class="van-radio__icon van-radio__icon--round van-radio__icon--checked"><img src="https://img01.yzcdn.cn/vant/user-active.png"></div><span class="van-radio__label">
         单选框 1
         </span>
       </div>
       <div role="radio" tabindex="-1" aria-checked="false" class="van-radio">
-        <div class="van-radio__icon van-radio__icon--round"><img src="https://img.yzcdn.cn/vant/user-inactive.png"></div><span class="van-radio__label">
+        <div class="van-radio__icon van-radio__icon--round"><img src="https://img01.yzcdn.cn/vant/user-inactive.png"></div><span class="van-radio__label">
         单选框 2
         </span>
       </div>

@@ -1,5 +1,122 @@
 # 更新日志
 
+## v2.11.8 ~ 2.11.11
+
+`2022-07-17`
+
+- 新增 `site.headHtml` 配置项
+
+## v2.11.7
+
+`2022-05-28`
+
+- 替换 `cdn.jsdelivr.net` 域名为 `fastly.jsdelivr.net`，修复无法访问的问题
+- 未使用 `searchConfig` 时，不加载 docsearch 相关文件
+
+## v2.11.6
+
+`2022-04-28`
+
+- 支持 pnpm。
+
+## v2.11.5
+
+`2022-02-07`
+
+- 支持在 release 时通过 `--tag` 指定 npm tag
+
+## v2.11.4
+
+`2021-11-29`
+
+- 修复加载异步模块时报错的问题
+
+## v2.11.3
+
+`2021-08-10`
+
+- 修复合并 Webpack 配置时可能引入多个重复 entry 导致编译失败的问题
+
+## v2.11.2
+
+`2021-07-15`
+
+- test 命令支持更多 jest 参数
+
+## v2.11.1
+
+`2021-06-27`
+
+- 修复 sfc 组件包含 defineComponent 时缺少 render 函数的问题
+
+## v2.11.0
+
+`2021-06-26`
+
+- 构建时保留静态资源
+
+## v2.10.4
+
+`2021-06-23`
+
+- 支持自定义 autoprefixer 插件
+
+## v2.10.3
+
+`2021-05-24`
+
+- 支持自定义导航栏选项的类名
+
+## v2.10.2
+
+`2021-05-03`
+
+- 升级 highlight.js 10
+
+## v2.10.1
+
+`2021-04-25`
+
+- windows 系统禁用左右方向键导航
+
+## v2.10.0
+
+`2021-04-10`
+
+- 支持 iframe 跨域通信
+
+## v2.9.1
+
+`2021-03-26`
+
+- 修复非 8080 端口无法热更新的问题
+
+## v2.9.0
+
+`2021-03-17`
+
+- 支持预览 PC 端组件
+
+## v2.8.1
+
+- 修复大屏幕下预览区域位置错位的问题
+
+## v2.8.0
+
+- 升级 less 4.0
+- 升级 less-loader 7.0
+
+## v2.7.0
+
+- 支持通过 `site.htmlPluginOptions` 来配置 html-webpack-plugin
+- 修复组件内部引用 `.vue` 文件时 build 结果不正确的问题
+
+## v2.6.2
+
+`2020-11-15`
+
+- 支持自定义 postcss 配置时传入数组格式的 plugins
+
 ### v2.6.1
 
 `2020-10-09`
@@ -75,15 +192,15 @@
 
 `2020-03-29`
 
-- 优化网站导航栏在大屏上的适配 ([#5928](https://github.com/youzan/vant/pull/5928))
+- 优化网站导航栏在大屏上的适配 ([#5928](https://github.com/vant-ui/vant/pull/5928))
 
 ### v2.3.0
 
 `2020-03-25`
 
-- build 命令支持编译 scoped 样式 ([#5910](https://github.com/youzan/vant/pull/5910))
-- build 命令支持生成 WebStorm 组件定义文件 ([#5899](https://github.com/youzan/vant/issues/5899))
-- clean 命令现在会移除而不是清空文件夹 ([#5895](https://github.com/youzan/vant/issues/5895))
+- build 命令支持编译 scoped 样式 ([#5910](https://github.com/vant-ui/vant/pull/5910))
+- build 命令支持生成 WebStorm 组件定义文件 ([#5899](https://github.com/vant-ui/vant/issues/5899))
+- clean 命令现在会移除而不是清空文件夹 ([#5895](https://github.com/vant-ui/vant/issues/5895))
 - 升级 @vant/markdown-vetur 2.0.0
 
 ### v2.2.8
@@ -117,7 +234,7 @@
 
 `2020-02-14`
 
-- 修复在 windows 上构建出的样式入口文件路径错误的问题 ([#5655](https://github.com/youzan/vant/pull/5655)
+- 修复在 windows 上构建出的样式入口文件路径错误的问题 ([#5655](https://github.com/vant-ui/vant/pull/5655)
 
 ### v2.2.3
 
@@ -129,14 +246,14 @@
 
 `2020-02-05`
 
-- 修复在 windows 上获取 markdown 路径错误的问题 ([#5626](https://github.com/youzan/vant/pull/5626))
+- 修复在 windows 上获取 markdown 路径错误的问题 ([#5626](https://github.com/vant-ui/vant/pull/5626))
 
 ### v2.2.1
 
 `2020-02-04`
 
 - 升级 babel@7.8
-- 修复切换版本时跳转 undefined 的问题 ([#5620](https://github.com/youzan/vant/pull/5620))
+- 修复切换版本时跳转 undefined 的问题 ([#5620](https://github.com/vant-ui/vant/pull/5620))
 
 ### v2.2.0
 

@@ -25,7 +25,7 @@ exports[`renders demo correctly 1`] = `
     </div>
   </div>
   <div>
-    <div role="switch" aria-checked="true" class="van-switch van-switch--on" style="background-color: rgb(7, 193, 96);">
+    <div role="switch" aria-checked="true" class="van-switch van-switch--on" style="background-color: rgb(238, 10, 36);">
       <div class="van-switch__node"></div>
     </div>
   </div>

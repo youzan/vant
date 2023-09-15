@@ -1,13 +1,14 @@
 {
   "name": "@vant/icons",
-  "version": "1.3.2",
+  "version": "1.5.0",
   "description": "vant icons",
   "main": "./src/config.js",
   "files": [
     "src"
   ],
   "publishConfig": {
-    "access": "public"
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
   },
   "scripts": {
     "export": "node ./build/export.js",
@@ -15,7 +16,7 @@
     "release": "npm run build && release-it"
   },
   "license": "MIT",
-  "repository": "https://github.com/youzan/vant/tree/dev/packages/vant-icons",
+  "repository": "https://github.com/vant-ui/vant/tree/dev/packages/vant-icons",
   "devDependencies": {
     "fast-glob": "^3.2.2",
     "fs-extra": "^9.0.1",

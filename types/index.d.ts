@@ -14,11 +14,13 @@ import { DropdownItem } from './dropdown-item';
 import { Field } from './field';
 import { Form } from './form';
 import { ImagePreview } from './image-preview';
+import { IndexBar } from './index-bar';
 import { Lazyload } from './lazyload';
 import { List } from './list';
 import { Locale } from './locale';
 import { Notify } from './notify';
 import { Picker } from './picker';
+import { Progress } from './progress';
 import { Sku } from './sku';
 import { Swipe } from './swipe';
 import { SwipeCell } from './swipe-cell';
@@ -31,8 +33,10 @@ export function install(vue: typeof Vue): void;
 
 export class ActionSheet extends VanComponent {}
 export class AddressList extends VanComponent {}
+export class Badge extends VanComponent {}
 export class Button extends VanComponent {}
 export class Card extends VanComponent {}
+export class Cascader extends VanComponent {}
 export class Cell extends VanComponent {}
 export class CellGroup extends VanComponent {}
 export class Circle extends VanComponent {}
@@ -54,7 +58,6 @@ export class GoodsActionIcon extends VanComponent {}
 export class Icon extends VanComponent {}
 export class Image extends VanComponent {}
 export class IndexAnchor extends VanComponent {}
-export class IndexBar extends VanComponent {}
 export class Info extends VanComponent {}
 export class Loading extends VanComponent {}
 export class NavBar extends VanComponent {}
@@ -64,8 +67,8 @@ export class Overlay extends VanComponent {}
 export class Pagination extends VanComponent {}
 export class Panel extends VanComponent {}
 export class PasswordInput extends VanComponent {}
+export class Popover extends VanComponent {}
 export class Popup extends VanComponent {}
-export class Progress extends VanComponent {}
 export class PullRefresh extends VanComponent {}
 export class Radio extends VanComponent {}
 export class RadioGroup extends VanComponent {}
@@ -105,11 +108,13 @@ export {
   Form,
   Field,
   ImagePreview,
+  IndexBar,
   Lazyload,
   List,
   Locale,
   Notify,
   Picker,
+  Progress,
   Sku,
   Swipe,
   SwipeCell,

@@ -212,3 +212,205 @@ test('use min-date with filter', async () => {
   wrapper.find('.van-picker__confirm').trigger('click');
   expect(wrapper.emitted('confirm')[0][0]).toEqual(new Date(2030, 0, 0, 0, 30));
 });
+
+test('v-model', async () => {
+  const minDate = new Date(2030, 0, 0, 0, 3);
+
+  const wrapper = mount({
+    template: `
+      <van-datetime-picker
+          v-model="date"
+          :min-date="minDate"
+      ></van-datetime-picker>
+    `,
+    data() {
+      return {
+        date: null,
+        minDate: new Date(2030, 0, 0, 0, 3),
+      };
+    },
+  });
+
+  await later();
+
+  wrapper.find('.van-picker__confirm').trigger('click');
+  expect(wrapper.vm.date).toEqual(minDate);
+});
+
+test('value has an inital value', () => {
+  const defaultValue = new Date(2020, 0, 0, 0, 0);
+  const wrapper = mount(DatePicker, {
+    propsData: {
+      value: defaultValue,
+    },
+  });
+
+  wrapper.find('.van-picker__confirm').trigger('click');
+  expect(wrapper.emitted('confirm')[0][0]).toEqual(defaultValue);
+});
+
+test('dynamic set min-date then emit correct value', async () => {
+  const defaultValue = new Date(2020, 10, 2, 10, 30);
+  const wrapper = mount({
+    template: `
+    <van-datetime-picker
+      v-model="date"
+      :min-date="minDate"
+      @confirm="value => this.$emit('confirm', value)"
+    />
+    `,
+    data() {
+      return {
+        date: defaultValue,
+        minDate: new Date(2010, 0, 1, 10, 30),
+      };
+    },
+    mounted() {
+      this.minDate = defaultValue;
+    },
+  });
+
+  await later();
+  wrapper.find('.van-picker__confirm').trigger('click');
+  expect(wrapper.emitted('confirm')[0][0]).toEqual(defaultValue);
+});
+
+test('dynamic set max-date then emit correct value', async () => {
+  const date = new Date(2020, 10, 2, 10, 30);
+  const minDate = new Date(0);
+  const wrapper = mount({
+    template: `
+      <van-datetime-picker
+        v-model="date"
+        :min-date="minDate"
+        :max-date="maxDate"
+        @confirm="value => this.$emit('confirm', value)"
+      />
+    `,
+
+    data() {
+      return {
+        date,
+        minDate,
+        maxDate: new Date(2030, 0, 1, 10, 30),
+      };
+    },
+
+    methods: {
+      onChangeMaxDate(date) {
+        this.maxDate = date;
+      },
+    },
+  });
+
+  await later();
+  wrapper.find('.van-picker__confirm').trigger('click');
+  expect(wrapper.emitted('confirm')[0][0]).toEqual(date);
+
+  await later();
+  wrapper.vm.onChangeMaxDate(new Date(2029, 10, 10, 10, 10));
+  wrapper.find('.van-picker__confirm').trigger('click');
+  expect(wrapper.emitted('confirm')[1][0]).toEqual(date);
+
+  await later();
+  wrapper.vm.onChangeMaxDate(new Date(2020, 10, 10, 10, 10));
+  wrapper.find('.van-picker__confirm').trigger('click');
+  expect(wrapper.emitted('confirm')[2][0]).toEqual(date);
+
+  await later();
+  wrapper.vm.onChangeMaxDate(new Date(2019, 10, 10, 10, 10));
+  wrapper.find('.van-picker__confirm').trigger('click');
+  expect(wrapper.emitted('confirm')[3][0]).toEqual(
+    new Date(2019, 10, 10, 10, 10)
+  );
+
+  await later();
+  wrapper.vm.onChangeMaxDate(new Date(2040, 10, 10, 10, 10));
+  wrapper.find('.van-picker__confirm').trigger('click');
+  expect(wrapper.emitted('confirm')[4][0]).toEqual(
+    new Date(2019, 10, 10, 10, 10)
+  );
+});
+
+test('should value correctly when using filter and select over min date', async () => {
+  const minDate = new Date(2010, 0, 1, 0, 21);
+  const maxDate = new Date(2020, 0, 1, 20, 42);
+
+  const wrapper = mount({
+    template: `
+      <van-datetime-picker
+        v-model="value"
+        :min-date="minDate"
+        :max-date="maxDate"
+        :filter="filter"
+        @confirm="value => this.$emit('confirm', value)"
+      />
+    `,
+
+    data() {
+      return {
+        value: new Date(minDate),
+        minDate,
+        maxDate,
+      };
+    },
+
+    methods: {
+      filter(type, values) {
+        if (type === 'minute') {
+          return values.filter((value) => value % 10 === 0);
+        }
+
+        return values;
+      },
+    },
+  });
+
+  const confirm = wrapper.find('.van-picker__confirm');
+  await later();
+  confirm.trigger('click');
+  expect(wrapper.emitted('confirm')[0][0]).toEqual(new Date(2010, 0, 1, 0, 30));
+
+  await later();
+  triggerDrag(wrapper.findAll('.van-picker-column').at(3), 0, -300);
+  wrapper.findAll('.van-picker-column ul').at(3).trigger('transitionend');
+  await later();
+  triggerDrag(wrapper.findAll('.van-picker-column').at(4), 0, 300);
+  wrapper.findAll('.van-picker-column ul').at(3).trigger('transitionend');
+  await later();
+  confirm.trigger('click');
+  expect(wrapper.emitted('confirm')[1][0]).toEqual(new Date(2010, 0, 1, 23, 0));
+
+  await later();
+  triggerDrag(wrapper.findAll('.van-picker-column').at(3), 0, 300);
+  wrapper.findAll('.van-picker-column ul').at(3).trigger('transitionend');
+  await later();
+  confirm.trigger('click');
+  expect(wrapper.emitted('confirm')[2][0]).toEqual(new Date(2010, 0, 1, 0, 30));
+
+  await later();
+  wrapper.setData({ value: maxDate });
+  confirm.trigger('click');
+  expect(wrapper.emitted('confirm')[3][0]).toEqual(
+    new Date(2020, 0, 1, 20, 40)
+  );
+
+  await later();
+  triggerDrag(wrapper.findAll('.van-picker-column').at(3), 0, 300);
+  wrapper.findAll('.van-picker-column ul').at(3).trigger('transitionend');
+  await later();
+  triggerDrag(wrapper.findAll('.van-picker-column').at(4), 0, -300);
+  wrapper.findAll('.van-picker-column ul').at(3).trigger('transitionend');
+  await later();
+  confirm.trigger('click');
+  expect(wrapper.emitted('confirm')[4][0]).toEqual(new Date(2020, 0, 1, 0, 50));
+
+  await later();
+  triggerDrag(wrapper.findAll('.van-picker-column').at(3), 0, -300);
+  wrapper.findAll('.van-picker-column ul').at(3).trigger('transitionend');
+  await later();
+  confirm.trigger('click');
+  expect(wrapper.emitted('confirm')[5][0]).toEqual(
+    new Date(2020, 0, 1, 20, 40)
+  );
+});

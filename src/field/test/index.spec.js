@@ -186,7 +186,7 @@ test('maxlength', async () => {
   expect(input.element.value).toEqual('123');
   expect(wrapper.emitted('input')[0][0]).toEqual('123');
 
-  // see: https://github.com/youzan/vant/issues/7265
+  // see: https://github.com/vant-ui/vant/issues/7265
   input.element.value = 1423;
   input.trigger('input');
   expect(input.element.value).toEqual('123');

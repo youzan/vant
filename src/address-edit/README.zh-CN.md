@@ -1,5 +1,9 @@
 # AddressEdit 地址编辑
 
+### 介绍
+
+收货地址编辑组件，用于新建、更新、删除收货地址。
+
 ### 引入
 
 ```js
@@ -112,7 +116,7 @@ export default {
 
 ### 方法
 
-通过 ref 可以获取到 AddressEdit 实例并调用实例方法，详见[组件实例方法](#/zh-CN/quickstart#zu-jian-shi-li-fang-fa)。
+通过 ref 可以获取到 AddressEdit 实例并调用实例方法，详见[组件实例方法](#/zh-CN/advanced-usage#zu-jian-shi-li-fang-fa)。
 
 | 方法名           | 说明         | 参数                  | 返回值 |
 | ---------------- | ------------ | --------------------- | ------ |
@@ -145,3 +149,15 @@ export default {
 ### 省市县列表数据格式
 
 请参考 [Area](#/zh-CN/area) 组件。
+
+### 样式变量
+
+组件提供了下列 Less 变量，可用于自定义样式，使用方法请参考[主题定制](#/zh-CN/theme)。
+
+| 名称                                  | 默认值                      | 描述 |
+| ------------------------------------- | --------------------------- | ---- |
+| @address-edit-padding                 | `@padding-sm`               | -    |
+| @address-edit-buttons-padding         | `@padding-xl @padding-base` | -    |
+| @address-edit-button-margin-bottom    | `@padding-sm`               | -    |
+| @address-edit-detail-finish-color     | `@blue`                     | -    |
+| @address-edit-detail-finish-font-size | `@font-size-sm`             | -    |

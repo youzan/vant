@@ -11,7 +11,7 @@ ImagePreview 是一个函数，调用函数后会直接在页面中展示图片�
 ```js
 import { ImagePreview } from 'vant';
 
-ImagePreview(['https://img.yzcdn.cn/vant/apple-1.jpg']);
+ImagePreview(['https://img01.yzcdn.cn/vant/apple-1.jpg']);
 ```
 
 ### 组件调用
@@ -41,8 +41,8 @@ export default {
 
 ```js
 ImagePreview([
-  'https://img.yzcdn.cn/vant/apple-1.jpg',
-  'https://img.yzcdn.cn/vant/apple-2.jpg',
+  'https://img01.yzcdn.cn/vant/apple-1.jpg',
+  'https://img01.yzcdn.cn/vant/apple-2.jpg',
 ]);
 ```
 
@@ -53,8 +53,8 @@ ImagePreview 支持传入配置对象，并通过 `startPosition` 选项指定�
 ```js
 ImagePreview({
   images: [
-    'https://img.yzcdn.cn/vant/apple-1.jpg',
-    'https://img.yzcdn.cn/vant/apple-2.jpg',
+    'https://img01.yzcdn.cn/vant/apple-1.jpg',
+    'https://img01.yzcdn.cn/vant/apple-2.jpg',
   ],
   startPosition: 1,
 });
@@ -67,8 +67,8 @@ ImagePreview({
 ```js
 ImagePreview({
   images: [
-    'https://img.yzcdn.cn/vant/apple-1.jpg',
-    'https://img.yzcdn.cn/vant/apple-2.jpg',
+    'https://img01.yzcdn.cn/vant/apple-1.jpg',
+    'https://img01.yzcdn.cn/vant/apple-2.jpg',
   ],
   closeable: true,
 });
@@ -83,8 +83,8 @@ import { Toast } from 'vant';
 
 ImagePreview({
   images: [
-    'https://img.yzcdn.cn/vant/apple-1.jpg',
-    'https://img.yzcdn.cn/vant/apple-2.jpg',
+    'https://img01.yzcdn.cn/vant/apple-1.jpg',
+    'https://img01.yzcdn.cn/vant/apple-2.jpg',
   ],
   onClose() {
     Toast('关闭');
@@ -99,8 +99,8 @@ ImagePreview({
 ```js
 const instance = ImagePreview({
   images: [
-    'https://img.yzcdn.cn/vant/apple-1.jpg',
-    'https://img.yzcdn.cn/vant/apple-2.jpg',
+    'https://img01.yzcdn.cn/vant/apple-1.jpg',
+    'https://img01.yzcdn.cn/vant/apple-2.jpg',
   ],
   asyncClose: true,
 });
@@ -127,8 +127,8 @@ export default {
       show: false,
       index: 0,
       images: [
-        'https://img.yzcdn.cn/vant/apple-1.jpg',
-        'https://img.yzcdn.cn/vant/apple-2.jpg',
+        'https://img01.yzcdn.cn/vant/apple-1.jpg',
+        'https://img01.yzcdn.cn/vant/apple-2.jpg',
       ],
     };
   },
@@ -150,7 +150,7 @@ export default {
 | --- | --- | --- | --- |
 | images | 需要预览的图片 URL 数组 | _string[]_ | `[]` |
 | startPosition | 图片预览起始位置索引 | _number \| string_ | `0` |
-| swipeDuration | 动画时长，单位为`ms` | _number \| string_ | `500` |
+| swipeDuration | 动画时长，单位为`ms` | _number \| string_ | `300` |
 | showIndex | 是否显示页码 | _boolean_ | `true` |
 | showIndicators | 是否显示轮播指示器 | _boolean_ | `false` |
 | loop | 是否开启循环播放 | _boolean_ | `true` |
@@ -165,6 +165,8 @@ export default {
 | closeable `v2.5.0` | 是否显示关闭图标 | _boolean_ | `false` |
 | closeIcon `v2.5.0` | 关闭图标名称或图片链接 | _string_ | `clear` |
 | closeIconPosition `v2.5.0` | 关闭图标位置，可选值为`top-left`<br>`bottom-left` `bottom-right` | _string_ | `top-right` |
+| transition `v2.12.8` | 动画类名，等价于 [transition](https://cn.vuejs.org/v2/api/index.html#transition) 的 `name` 属性 | _string_ | `van-fade` |
+| overlayStyle `v2.12.37` | 自定义遮罩层样式 | _object_ | - |
 | getContainer | 指定挂载的节点，[用法示例](#/zh-CN/popup#zhi-ding-gua-zai-wei-zhi) | _string \| () => Element_ | - |
 
 ### Props
@@ -175,7 +177,7 @@ export default {
 | --- | --- | --- | --- |
 | images | 需要预览的图片 URL 数组 | _string[]_ | `[]` |
 | start-position | 图片预览起始位置索引 | _number \| string_ | `0` |
-| swipe-duration | 动画时长，单位为 ms | _number \| string_ | `500` |
+| swipe-duration | 动画时长，单位为 ms | _number \| string_ | `300` |
 | show-index | 是否显示页码 | _boolean_ | `true` |
 | show-indicators | 是否显示轮播指示器 | _boolean_ | `false` |
 | loop | 是否开启循环播放 | _boolean_ | `true` |
@@ -187,6 +189,8 @@ export default {
 | closeable `v2.5.0` | 是否显示关闭图标 | _boolean_ | `false` |
 | close-icon `v2.5.0` | 关闭图标名称或图片链接 | _string_ | `clear` |
 | close-icon-position `v2.5.0` | 关闭图标位置，可选值为`top-left`<br>`bottom-left` `bottom-right` | _string_ | `top-right` |
+| transition `v2.12.8` | 动画类名，等价于 [transition](https://cn.vuejs.org/v2/api/index.html#transition) 的 `name` 属性 | _string_ | `van-fade` |
+| overlay-style `v2.12.37` | 自定义遮罩层样式 | _object_ | - |
 | get-container | 指定挂载的节点，[用法示例](#/zh-CN/popup#zhi-ding-gua-zai-wei-zhi) | _string \| () => Element_ | - |
 
 ### Events
@@ -199,16 +203,23 @@ export default {
 | closed `v2.5.6` | 关闭且且动画结束后触发 | - |
 | change | 切换当前图片时触发 | index: 当前图片的索引 |
 | scale `v2.5.0` | 缩放当前图片时触发 | { index: 当前图片的索引, scale: 当前缩放的值 } |
-| swipeTo `2.9.0` | 切换到指定位置 | index: number, options: Options | void |
+
+### 方法
+
+通过组件调用 `ImagePreview` 时，通过 ref 可以获取到 ImagePreview 实例并调用实例方法，详见[组件实例方法](#/zh-CN/advanced-usage#zu-jian-shi-li-fang-fa)。
+
+| 方法名          | 说明           | 参数                            | 返回值 |
+| --------------- | -------------- | ------------------------------- | ------ |
+| swipeTo `2.9.0` | 切换到指定位置 | index: number, options: Options | -      |
 
 ### Slots
 
 通过组件调用 `ImagePreview` 时，支持以下插槽：
 
-| 名称  | 说明                           |
-| ----- | ------------------------------ |
-| index | 自定义页码内容                 |
-| cover | 自定义覆盖在图片预览上方的内容 |
+| 名称  | 说明                           | 参数                      |
+| ----- | ------------------------------ | ------------------------- |
+| index | 自定义页码内容                 | { index: 当前图片的索引 } |
+| cover | 自定义覆盖在图片预览上方的内容 | -                         |
 
 ### onClose 回调参数
 
@@ -224,8 +235,25 @@ export default {
 | index  | 当前图片的索引值 | _number_ |
 | scale  | 当前图片的缩放值 | _number_ |
 
+### 样式变量
+
+组件提供了下列 Less 变量，可用于自定义样式，使用方法请参考[主题定制](#/zh-CN/theme)。
+
+| 名称                                    | 默认值               | 描述 |
+| --------------------------------------- | -------------------- | ---- |
+| @image-preview-index-text-color         | `@white`             | -    |
+| @image-preview-index-font-size          | `@font-size-md`      | -    |
+| @image-preview-index-line-height        | `@line-height-md`    | -    |
+| @image-preview-index-text-shadow        | `0 1px 1px @gray-8`  | -    |
+| @image-preview-overlay-background-color | `rgba(0, 0, 0, 0.9)` | -    |
+| @image-preview-close-icon-size          | `22px`               | -    |
+| @image-preview-close-icon-color         | `@gray-5`            | -    |
+| @image-preview-close-icon-active-color  | `@gray-6`            | -    |
+| @image-preview-close-icon-margin        | `@padding-md`        | -    |
+| @image-preview-close-icon-z-index       | `1`                  | -    |
+
 ## 常见问题
 
 ### 在桌面端无法操作组件？
 
-参见[在桌面端使用](#/zh-CN/quickstart#zai-zhuo-mian-duan-shi-yong)。
+参见[桌面端适配](#/zh-CN/advanced-usage#zhuo-mian-duan-gua-pei)。

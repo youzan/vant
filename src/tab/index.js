@@ -11,10 +11,12 @@ export default createComponent({
     ...routeProps,
     dot: Boolean,
     name: [Number, String],
+    // @deprecated
     info: [Number, String],
     badge: [Number, String],
     title: String,
     titleStyle: null,
+    titleClass: null,
     disabled: Boolean,
   },
 
@@ -42,6 +44,7 @@ export default createComponent({
   watch: {
     title() {
       this.parent.setLine();
+      this.parent.scrollIntoView();
     },
 
     inited(val) {
@@ -57,7 +60,13 @@ export default createComponent({
     const { slots, parent, isActive } = this;
     const slotContent = slots();
 
-    if (!slotContent) {
+    if (process.env.NODE_ENV === 'development' && this.info) {
+      console.warn(
+        '[Vant] Tab: "info" prop is deprecated, use "badge" prop instead.'
+      );
+    }
+
+    if (!slotContent && !parent.animated) {
       return;
     }
 

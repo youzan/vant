@@ -1,5 +1,9 @@
 # Radio 单选框
 
+### 介绍
+
+用于在多个选项中选择单个结果。
+
 ### 引入
 
 ```js
@@ -72,8 +76,8 @@ export default {
 
 ```html
 <van-radio-group v-model="radio">
-  <van-radio name="1" checked-color="#07c160">单选框 1</van-radio>
-  <van-radio name="2" checked-color="#07c160">单选框 2</van-radio>
+  <van-radio name="1" checked-color="#ee0a24">单选框 1</van-radio>
+  <van-radio name="2" checked-color="#ee0a24">单选框 2</van-radio>
 </van-radio-group>
 ```
 
@@ -120,8 +124,8 @@ export default {
   data() {
     return {
       radio: '1',
-      activeIcon: 'https://img.yzcdn.cn/vant/user-active.png',
-      inactiveIcon: 'https://img.yzcdn.cn/vant/user-inactive.png',
+      activeIcon: 'https://img01.yzcdn.cn/vant/user-active.png',
+      inactiveIcon: 'https://img01.yzcdn.cn/vant/user-inactive.png',
     };
   },
 };
@@ -197,7 +201,23 @@ export default {
 
 ### Radio Slots
 
-| 名称    | 说明       | SlotProps          |
+| 名称    | 说明       | 参数               |
 | ------- | ---------- | ------------------ |
 | default | 自定义文本 | -                  |
 | icon    | 自定义图标 | _checked: boolean_ |
+
+### 样式变量
+
+组件提供了下列 Less 变量，可用于自定义样式，使用方法请参考[主题定制](#/zh-CN/theme)。
+
+| 名称                             | 默认值                     | 描述 |
+| -------------------------------- | -------------------------- | ---- |
+| @radio-size                      | `20px`                     | -    |
+| @radio-border-color              | `@gray-5`                  | -    |
+| @radio-transition-duration       | `@animation-duration-fast` | -    |
+| @radio-label-margin              | `@padding-xs`              | -    |
+| @radio-label-color               | `@text-color`              | -    |
+| @radio-checked-icon-color        | `@blue`                    | -    |
+| @radio-disabled-icon-color       | `@gray-5`                  | -    |
+| @radio-disabled-label-color      | `@gray-5`                  | -    |
+| @radio-disabled-background-color | `@border-color`            | -    |

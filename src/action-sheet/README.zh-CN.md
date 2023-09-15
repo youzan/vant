@@ -171,7 +171,7 @@ export default {
 | close-on-popstate `v2.5.3` | 是否在页面回退时自动关闭 | _boolean_ | `false` |
 | close-on-click-action | 是否在点击选项后关闭 | _boolean_ | `false` |
 | close-on-click-overlay | 是否在点击遮罩层后关闭 | _boolean_ | `true` |
-| safe-area-inset-bottom | 是否开启[底部安全区适配](#/zh-CN/quickstart#di-bu-an-quan-qu-gua-pei) | _boolean_ | `true` |
+| safe-area-inset-bottom | 是否开启[底部安全区适配](#/zh-CN/advanced-usage#di-bu-an-quan-qu-gua-pei) | _boolean_ | `true` |
 | get-container | 指定挂载的节点，[用法示例](#/zh-CN/popup#zhi-ding-gua-zai-wei-zhi) | _string \| () => Element_ | - |
 
 ### Action 数据结构
@@ -206,8 +206,37 @@ export default {
 | default               | 自定义面板的展示内容 |
 | description `v2.10.4` | 自定义描述文案       |
 
+### 样式变量
+
+组件提供了下列 Less 变量，可用于自定义样式，使用方法请参考[主题定制](#/zh-CN/theme)。
+
+| 名称                                   | 默认值              | 描述 |
+| -------------------------------------- | ------------------- | ---- |
+| @action-sheet-max-height               | `80%`               | -    |
+| @action-sheet-header-height            | `48px`              | -    |
+| @action-sheet-header-font-size         | `@font-size-lg`     | -    |
+| @action-sheet-description-color        | `@gray-6`           | -    |
+| @action-sheet-description-font-size    | `@font-size-md`     | -    |
+| @action-sheet-description-line-height  | `@line-height-md`   | -    |
+| @action-sheet-item-background          | `@white`            | -    |
+| @action-sheet-item-font-size           | `@font-size-lg`     | -    |
+| @action-sheet-item-line-height         | `@line-height-lg`   | -    |
+| @action-sheet-item-text-color          | `@text-color`       | -    |
+| @action-sheet-item-disabled-text-color | `@gray-5`           | -    |
+| @action-sheet-subname-color            | `@gray-6`           | -    |
+| @action-sheet-subname-font-size        | `@font-size-sm`     | -    |
+| @action-sheet-subname-line-height      | `@line-height-sm`   | -    |
+| @action-sheet-close-icon-size          | `22px`              | -    |
+| @action-sheet-close-icon-color         | `@gray-5`           | -    |
+| @action-sheet-close-icon-active-color  | `@gray-6`           | -    |
+| @action-sheet-close-icon-padding       | `0 @padding-md`     | -    |
+| @action-sheet-cancel-text-color        | `@gray-7`           | -    |
+| @action-sheet-cancel-padding-top       | `@padding-xs`       | -    |
+| @action-sheet-cancel-padding-color     | `@background-color` | -    |
+| @action-sheet-loading-icon-size        | `22px`              | -    |
+
 ## 常见问题
 
 ### 引入时提示 dependencies not found？
 
-在 1.x 版本中，动作面板的组件名为`Actionsheet`，从 2.0 版本开始更名为`ActionSheet`，请注意区分。
+在 v1 版本中，动作面板的组件名为`Actionsheet`，从 2.0 版本开始更名为`ActionSheet`，请注意区分。

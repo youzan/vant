@@ -26,6 +26,32 @@ test('insert tab dynamically', async () => {
   expect(wrapper).toMatchSnapshot();
 });
 
+test('insert tab with name dynamically', async () => {
+  const onChange = jest.fn();
+  const wrapper = mount({
+    template: `
+      <van-tabs v-model="active" @change="onChange">
+        <van-tab v-if="insert" title="1" name="bar">2</van-tab>
+        <van-tab title="2" name="foo">1</van-tab>
+      </van-tabs>
+    `,
+    data() {
+      return {
+        insert: false,
+        active: 'foo',
+      };
+    },
+    methods: {
+      onChange,
+    },
+  });
+
+  await later();
+  wrapper.setData({ insert: true });
+  expect(wrapper).toMatchSnapshot();
+  expect(onChange).toHaveBeenCalledTimes(0);
+});
+
 // this case will throw wierd error in index.spec.js
 // so separate it
 test('insert tab with child component', async () => {

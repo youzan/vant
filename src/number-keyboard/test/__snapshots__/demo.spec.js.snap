@@ -32,6 +32,12 @@ exports[`renders demo correctly 1`] = `
     </div><i class="van-icon van-icon-arrow van-cell__right-icon">
       <!----></i>
   </div>
+  <div role="button" tabindex="0" class="van-cell van-cell--clickable">
+    <div class="van-cell__value van-cell__value--alone">
+      弹出配置随机数字的键盘
+    </div><i class="van-icon van-icon-arrow van-cell__right-icon">
+      <!----></i>
+  </div>
   <div role="button" tabindex="0" class="van-cell van-cell--clickable van-field">
     <div class="van-cell__title van-field__label"><span>双向绑定</span></div>
     <div class="van-cell__value van-field__value">
@@ -277,6 +283,7 @@ exports[`renders demo correctly 1`] = `
       </div>
     </div>
   </div>
+  <!---->
   <div class="van-number-keyboard" style="display: none;" name="van-slide-up">
     <div class="van-number-keyboard__body">
       <div class="van-number-keyboard__keys">

@@ -125,3 +125,50 @@ test('disabled in cascade', () => {
 
   expect(wrapper.find('.van-picker-column__item--disabled')).toMatchSnapshot();
 });
+
+test('should move to next option when default option is disabled', () => {
+  const wrapper = mount(Picker, {
+    propsData: {
+      columns: [
+        {
+          text: 'A1',
+          disabled: true,
+          children: [{ text: 'B1' }, { text: 'B2' }],
+        },
+        {
+          text: 'A2',
+          children: [{ text: 'B3' }, { text: 'B4' }],
+        },
+      ],
+    },
+  });
+
+  expect(wrapper).toMatchSnapshot();
+});
+
+test('should move to first option when all options are disabled', () => {
+  const wrapper = mount(Picker, {
+    propsData: {
+      columns: [
+        {
+          text: 'A1',
+          disabled: true,
+          children: [
+            { text: 'B1', disabled: true },
+            { text: 'B2', disabled: true },
+          ],
+        },
+        {
+          text: 'A2',
+          disabled: true,
+          children: [
+            { text: 'B3', disabled: true },
+            { text: 'B4', disabled: true },
+          ],
+        },
+      ],
+    },
+  });
+
+  expect(wrapper).toMatchSnapshot();
+});

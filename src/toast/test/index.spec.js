@@ -150,7 +150,7 @@ test('toast duration 0', () => {
   Toast.allowMultiple(false);
 });
 
-test('onClose callback', () => {
+test('should trigger onClose callback after closed', () => {
   Toast.allowMultiple();
   const onClose = jest.fn();
   const toast = Toast({
@@ -158,6 +158,10 @@ test('onClose callback', () => {
     onClose,
   });
 
+  toast.clear();
+  expect(onClose).toHaveBeenCalledTimes(1);
+
+  // onClose should only be called once
   toast.clear();
   expect(onClose).toHaveBeenCalledTimes(1);
   Toast.allowMultiple(false);

@@ -118,3 +118,26 @@ export default {
 | ------ | -------------- | -------------- |
 | click  | 点击时触发     | _event: Event_ |
 | close  | 关闭标签时触发 | -              |
+
+### 样式变量
+
+组件提供了下列 Less 变量，可用于自定义样式，使用方法请参考[主题定制](#/zh-CN/theme)。
+
+| 名称                        | 默认值                      | 描述 |
+| --------------------------- | --------------------------- | ---- |
+| @tag-padding                | `0 @padding-base`           | -    |
+| @tag-text-color             | `@white`                    | -    |
+| @tag-font-size              | `@font-size-sm`             | -    |
+| @tag-border-radius          | `2px`                       | -    |
+| @tag-line-height            | `16px`                      | -    |
+| @tag-medium-padding         | `2px 6px`                   | -    |
+| @tag-large-padding          | `@padding-base @padding-xs` | -    |
+| @tag-large-border-radius    | `@border-radius-md`         | -    |
+| @tag-large-font-size        | `@font-size-md`             | -    |
+| @tag-round-border-radius    | `@border-radius-max`        | -    |
+| @tag-danger-color           | `@red`                      | -    |
+| @tag-primary-color          | `@blue`                     | -    |
+| @tag-success-color          | `@green`                    | -    |
+| @tag-warning-color          | `@orange`                   | -    |
+| @tag-default-color          | `@gray-6`                   | -    |
+| @tag-plain-background-color | `@white`                    | -    |

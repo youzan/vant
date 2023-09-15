@@ -125,3 +125,24 @@ export default {
 | Name            | Description |
 | --------------- | ----------- |
 | title `v2.10.8` | 自定义标题  |
+
+### 样式变量
+
+组件提供了下列 Less 变量，可用于自定义样式，使用方法请参考[主题定制](#/zh-CN/theme)。
+
+| 名称                               | 默认值              | 描述 |
+| ---------------------------------- | ------------------- | ---- |
+| @sidebar-width                     | `80px`              | -    |
+| @sidebar-font-size                 | `@font-size-md`     | -    |
+| @sidebar-line-height               | `@line-height-md`   | -    |
+| @sidebar-text-color                | `@text-color`       | -    |
+| @sidebar-disabled-text-color       | `@gray-5`           | -    |
+| @sidebar-padding                   | `20px @padding-sm`  | -    |
+| @sidebar-active-color              | `@active-color`     | -    |
+| @sidebar-background-color          | `@background-color` | -    |
+| @sidebar-selected-font-weight      | `@font-weight-bold` | -    |
+| @sidebar-selected-text-color       | `@text-color`       | -    |
+| @sidebar-selected-border-width     | `4px`               | -    |
+| @sidebar-selected-border-height    | `16px`              | -    |
+| @sidebar-selected-border-color     | `@red`              | -    |
+| @sidebar-selected-background-color | `@white`            | -    |

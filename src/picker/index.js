@@ -86,7 +86,17 @@ export default createComponent({
       let cursor = { children: this.columns };
 
       while (cursor && cursor.children) {
-        const defaultIndex = cursor.defaultIndex ?? +this.defaultIndex;
+        const { children } = cursor;
+        let defaultIndex = cursor.defaultIndex ?? +this.defaultIndex;
+
+        while (children[defaultIndex] && children[defaultIndex].disabled) {
+          if (defaultIndex < children.length - 1) {
+            defaultIndex++;
+          } else {
+            defaultIndex = 0;
+            break;
+          }
+        }
 
         formatted.push({
           values: cursor.children,
@@ -94,7 +104,7 @@ export default createComponent({
           defaultIndex,
         });
 
-        cursor = cursor.children[defaultIndex];
+        cursor = children[defaultIndex];
       }
 
       this.formattedColumns = formatted;
@@ -108,7 +118,7 @@ export default createComponent({
 
         // compatible with old version of wrong parameters
         // should be removed in next major version
-        // see: https://github.com/youzan/vant/issues/5905
+        // see: https://github.com/vant-ui/vant/issues/5905
         if (this.dataType === 'cascade') {
           values = values.map((item) => item[this.valueKey]);
         }
@@ -149,7 +159,7 @@ export default createComponent({
 
         // compatible with old version of wrong parameters
         // should be removed in next major version
-        // see: https://github.com/youzan/vant/issues/5905
+        // see: https://github.com/vant-ui/vant/issues/5905
         if (this.dataType === 'cascade') {
           values = values.map((item) => item[this.valueKey]);
         }
@@ -270,22 +280,30 @@ export default createComponent({
       }
     },
 
+    genCancel() {
+      return (
+        <button type="button" class={bem('cancel')} onClick={this.cancel}>
+          {this.slots('cancel') || this.cancelButtonText || t('cancel')}
+        </button>
+      );
+    },
+
+    genConfirm() {
+      return (
+        <button type="button" class={bem('confirm')} onClick={this.confirm}>
+          {this.slots('confirm') || this.confirmButtonText || t('confirm')}
+        </button>
+      );
+    },
+
     genToolbar() {
       if (this.showToolbar) {
         return (
           <div class={bem('toolbar')}>
             {this.slots() || [
-              <button type="button" class={bem('cancel')} onClick={this.cancel}>
-                {this.cancelButtonText || t('cancel')}
-              </button>,
+              this.genCancel(),
               this.genTitle(),
-              <button
-                type="button"
-                class={bem('confirm')}
-                onClick={this.confirm}
-              >
-                {this.confirmButtonText || t('confirm')}
-              </button>,
+              this.genConfirm(),
             ]}
           </div>
         );
@@ -330,6 +348,9 @@ export default createComponent({
           swipeDuration={this.swipeDuration}
           visibleItemCount={this.visibleItemCount}
           initialOptions={item.values}
+          scopedSlots={{
+            option: this.$scopedSlots.option,
+          }}
           onChange={() => {
             this.onChange(columnIndex);
           }}

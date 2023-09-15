@@ -5,8 +5,16 @@ import Checkbox from '../checkbox';
 
 const [createComponent, bem, t] = createNamespace('coupon');
 
+function formatTimeStamp(timeStamp) {
+  // compatible when the timestamp is seconds
+  if (timeStamp < 10 ** 12) {
+    return timeStamp * 1000;
+  }
+  return +timeStamp;
+}
+
 function getDate(timeStamp) {
-  const date = new Date(timeStamp * 1000);
+  const date = new Date(formatTimeStamp(timeStamp));
   return `${date.getFullYear()}.${padZero(date.getMonth() + 1)}.${padZero(
     date.getDate()
   )}`;
@@ -35,8 +43,8 @@ export default createComponent({
 
   computed: {
     validPeriod() {
-      const { startAt, endAt } = this.coupon;
-      return `${getDate(startAt)} - ${getDate(endAt)}`;
+      const { startAt, endAt, customValidPeriod } = this.coupon;
+      return customValidPeriod || `${getDate(startAt)} - ${getDate(endAt)}`;
     },
 
     faceAmount() {

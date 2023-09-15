@@ -1,4 +1,4 @@
-import { createNamespace, addUnit } from '../utils';
+import { createNamespace, addUnit, noop } from '../utils';
 import { BORDER_TOP, BORDER_LEFT } from '../utils/constant';
 import { PopupMixin } from '../mixins/popup';
 import Button from '../button';
@@ -97,10 +97,35 @@ export default createComponent({
 
     onOpened() {
       this.$emit('opened');
+
+      this.$nextTick(() => {
+        this.$refs.dialog?.focus();
+      });
     },
 
     onClosed() {
       this.$emit('closed');
+    },
+
+    onKeydown(event) {
+      if (event.key === 'Escape' || event.key === 'Enter') {
+        // skip keyboard events of child elements
+        if (event.target !== this.$refs.dialog) {
+          return;
+        }
+
+        const onEventType = {
+          Enter: this.showConfirmButton
+            ? () => this.handleAction('confirm')
+            : noop,
+          Escape: this.showCancelButton
+            ? () => this.handleAction('cancel')
+            : noop,
+        };
+
+        onEventType[event.key]();
+        this.$emit('keydown', event);
+      }
     },
 
     genRoundButtons() {
@@ -148,6 +173,7 @@ export default createComponent({
               loading={this.loading.cancel}
               text={this.cancelButtonText || t('cancel')}
               style={{ color: this.cancelButtonColor }}
+              nativeType="button"
               onClick={() => {
                 this.handleAction('cancel');
               }}
@@ -160,6 +186,7 @@ export default createComponent({
               loading={this.loading.confirm}
               text={this.confirmButtonText || t('confirm')}
               style={{ color: this.confirmButtonColor }}
+              nativeType="button"
               onClick={() => {
                 this.handleAction('confirm');
               }}
@@ -221,6 +248,9 @@ export default createComponent({
           aria-labelledby={this.title || message}
           class={[bem([this.theme]), this.className]}
           style={{ width: addUnit(this.width) }}
+          ref="dialog"
+          tabIndex={0}
+          onKeydown={this.onKeydown}
         >
           {Title}
           {this.genContent(title, messageSlot)}

@@ -113,6 +113,18 @@
 @address-list-item-radio-icon-color: @red;
 @address-list-edit-icon-size: 20px;
 
+// Badge
+@badge-size: 16px;
+@badge-color: @white;
+@badge-padding: 0 3px;
+@badge-font-size: @font-size-sm;
+@badge-font-weight: @font-weight-bold;
+@badge-border-width: @border-width-base;
+@badge-background-color: @red;
+@badge-dot-color: @red;
+@badge-dot-size: 8px;
+@badge-font-family: -apple-system-font, Helvetica Neue, Arial, sans-serif;
+
 // Button
 @button-mini-height: 24px;
 @button-mini-font-size: @font-size-xs;
@@ -189,6 +201,20 @@
 @card-price-integer-font-size: @font-size-lg;
 @card-price-font-family: @price-integer-font-family;
 
+// Cascader
+@cascader-header-height: 48px;
+@cascader-title-font-size: @font-size-lg;
+@cascader-title-line-height: 20px;
+@cascader-close-icon-size: 22px;
+@cascader-close-icon-color: @gray-5;
+@cascader-close-icon-active-color: @gray-6;
+@cascader-selected-icon-size: 18px;
+@cascader-tabs-height: 48px;
+@cascader-active-color: @red;
+@cascader-options-height: 384px;
+@cascader-tab-color: @text-color;
+@cascader-unselected-tab-color: @gray-6;
+
 // Cell
 @cell-font-size: @font-size-md;
 @cell-line-height: 24px;
@@ -216,6 +242,9 @@
 @cell-group-title-padding: @padding-md @padding-md @padding-xs;
 @cell-group-title-font-size: @font-size-md;
 @cell-group-title-line-height: 16px;
+@cell-group-inset-padding: 0 @padding-md;
+@cell-group-inset-border-radius: @border-radius-lg;
+@cell-group-inset-title-padding: @padding-md @padding-md @padding-xs @padding-xl;
 
 // Checkbox
 @checkbox-size: 20px;
@@ -229,6 +258,9 @@
 @checkbox-disabled-background-color: @border-color;
 
 // Circle
+@circle-size: 100px;
+@circle-color: @blue;
+@circle-layer-color: @white;
 @circle-text-color: @text-color;
 @circle-text-font-weight: @font-weight-bold;
 @circle-text-font-size: @font-size-md;
@@ -359,13 +391,13 @@
 @field-input-text-color: @text-color;
 @field-input-error-text-color: @red;
 @field-input-disabled-text-color: @gray-5;
-@field-placeholder-text-color: @gray-6;
+@field-placeholder-text-color: @gray-5;
 @field-icon-size: 16px;
 @field-clear-icon-size: 16px;
 @field-clear-icon-color: @gray-5;
 @field-right-icon-color: @gray-6;
 @field-error-message-color: @red;
-@field-error-message-text-color: 12px;
+@field-error-message-font-size: 12px;
 @field-text-area-min-height: 60px;
 @field-word-limit-color: @gray-7;
 @field-word-limit-font-size: @font-size-sm;
@@ -402,14 +434,14 @@
 @index-anchor-font-size: @font-size-md;
 @index-anchor-line-height: 32px;
 @index-anchor-background-color: transparent;
-@index-anchor-sticky-text-color: @green;
+@index-anchor-sticky-text-color: @red;
 @index-anchor-sticky-background-color: @white;
 
 // IndexBar
 @index-bar-sidebar-z-index: 2;
 @index-bar-index-font-size: @font-size-xs;
 @index-bar-index-line-height: @line-height-xs;
-@index-bar-index-active-color: @green;
+@index-bar-index-active-color: @red;
 
 // Info
 @info-size: 16px;
@@ -445,7 +477,6 @@
 @image-preview-close-icon-z-index: 1;
 
 // List
-@list-icon-margin-right: 5px;
 @list-text-color: @gray-6;
 @list-text-font-size: @font-size-md;
 @list-text-line-height: 50px;
@@ -555,10 +586,25 @@
 @picker-loading-icon-color: @blue;
 @picker-loading-mask-color: rgba(255, 255, 255, 0.9);
 
+// Popover
+@popover-arrow-size: 6px;
+@popover-border-radius: @border-radius-lg;
+@popover-action-width: 128px;
+@popover-action-height: 44px;
+@popover-action-font-size: @font-size-md;
+@popover-action-line-height: @line-height-md;
+@popover-action-icon-size: 20px;
+@popover-light-text-color: @text-color;
+@popover-light-background-color: @white;
+@popover-light-action-disabled-text-color: @gray-5;
+@popover-dark-text-color: @white;
+@popover-dark-background-color: #4a4a4a;
+@popover-dark-action-disabled-text-color: @gray-6;
+
 // Popup
 @popup-background-color: @white;
 @popup-transition: transform @animation-duration-base;
-@popup-round-border-radius: 20px;
+@popup-round-border-radius: 16px;
 @popup-close-icon-size: 22px;
 @popup-close-icon-color: @gray-5;
 @popup-close-icon-active-color: @gray-6;
@@ -648,6 +694,8 @@
 @skeleton-row-height: 16px;
 @skeleton-row-background-color: @active-color;
 @skeleton-row-margin-top: @padding-sm;
+@skeleton-title-width: 40%;
+@skeleton-avatar-size: 32px;
 @skeleton-avatar-background-color: @active-color;
 @skeleton-animation-duration: 1.2s;
 
@@ -731,7 +779,6 @@
 @switch-width: 2em;
 @switch-height: 1em;
 @switch-node-size: 1em;
-@switch-node-z-index: 1;
 @switch-node-background-color: @white;
 @switch-node-box-shadow: 0 3px 1px 0 rgba(0, 0, 0, 0.05),
   0 2px 2px 0 rgba(0, 0, 0, 0.1), 0 3px 3px 0 rgba(0, 0, 0, 0.05);

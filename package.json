@@ -1,6 +1,6 @@
 {
   "name": "vant",
-  "version": "2.10.9",
+  "version": "2.12.54",
   "description": "Mobile UI Components built on Vue",
   "main": "lib/index.js",
   "module": "es/index.js",
@@ -12,6 +12,9 @@
     "types",
     "vetur"
   ],
+  "npm": {
+    "tag": "latest-v2"
+  },
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
   },
@@ -21,7 +24,7 @@
     "lint": "vant-cli lint",
     "test": "vant-cli test",
     "build": "vant-cli build",
-    "release": "vant-cli release",
+    "release": "vant-cli release --tag latest-v2",
     "test:watch": "vant-cli test --watch",
     "release:site": "sh docs/site/release.sh",
     "test:coverage": "open test/coverage/index.html"
@@ -40,7 +43,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:youzan/vant.git"
+    "url": "git@github.com:vant-ui/vant.git"
   },
   "keywords": [
     "ui",
@@ -54,18 +57,19 @@
   "license": "MIT",
   "dependencies": {
     "@babel/runtime": "7.x",
-    "@vant/icons": "1.3.2",
+    "@vant/icons": "^1.7.1",
+    "@vant/popperjs": "^1.1.0",
     "@vue/babel-helper-vue-jsx-merge-props": "^1.0.0",
     "vue-lazyload": "1.2.3"
   },
   "peerDependencies": {
-    "vue": ">= 2.5.22"
+    "vue": ">= 2.6.0"
   },
   "devDependencies": {
-    "@vant/cli": "^2.6.0",
-    "prettier": "^2.0.4",
-    "vue": "^2.6.11",
-    "vue-template-compiler": "^2.6.11"
+    "@vant/cli": "^2.11.11",
+    "prettier": "2.1.0",
+    "vue": "^2.6.12",
+    "vue-template-compiler": "^2.6.12"
   },
   "sideEffects": [
     "es/**/style/*",

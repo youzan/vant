@@ -104,8 +104,8 @@ export default {
 | input-placeholder | 输入框文字提示 | _string_ | `请输入优惠码` |
 | show-exchange-bar | 是否展示兑换栏 | _boolean_ | `true` |
 | currency | 货币符号 | _string_ | `¥` |
-| empty-image | 列表为空时的占位图 | _string_ | `https://img.yzcdn.cn/vant/coupon-empty.png` |
-| show-count `v2.3.0` | 是否展示可用 / 不可用数量 | _boolean_ | `true` |
+| empty-image | 列表为空时的占位图 | _string_ | `https://img01.yzcdn.cn/vant/coupon-empty.png` |
+| show-count | 是否展示可用 / 不可用数量 | _boolean_ | `true` |
 
 ### CouponList Events
 
@@ -116,15 +116,54 @@ export default {
 
 ### Coupon 数据结构
 
-| 键名        | 说明                            | 类型     |
-| ----------- | ------------------------------- | -------- |
-| id          | 优惠券 id                       | _string_ |
-| name        | 优惠券名称                      | _string_ |
-| condition   | 满减条件                        | _string_ |
-| startAt     | 卡有效开始时间 (时间戳, 单位秒) | _number_ |
-| endAt       | 卡失效日期 (时间戳, 单位秒)     | _number_ |
-| description | 描述信息，优惠券可用时展示      | _string_ |
-| reason      | 不可用原因，优惠券不可用时展示  | _string_ |
-| value       | 折扣券优惠金额，单位分          | _number_ |
-| valueDesc   | 折扣券优惠金额文案              | _string_ |
-| unitDesc    | 单位文案                        | _string_ |
+| 键名              | 说明                              | 类型     |
+| ----------------- | --------------------------------- | -------- |
+| id                | 优惠券 id                         | _string_ |
+| name              | 优惠券名称                        | _string_ |
+| condition         | 满减条件                          | _string_ |
+| startAt           | 卡有效开始时间 (时间戳, 单位毫秒) | _number_ |
+| endAt             | 卡失效日期 (时间戳, 单位毫秒)     | _number_ |
+| description       | 描述信息，优惠券可用时展示        | _string_ |
+| reason            | 不可用原因，优惠券不可用时展示    | _string_ |
+| value             | 折扣券优惠金额，单位分            | _number_ |
+| valueDesc         | 折扣券优惠金额文案                | _string_ |
+| unitDesc          | 单位文案                          | _string_ |
+| customValidPeriod | 自定义有效时间文案                | _string_ |
+
+### CouponList Slots
+
+| 名称                            | 说明                 |
+| ------------------------------- | -------------------- |
+| list-footer `v2.12.21`          | 优惠券列表底部       |
+| disabled-list-footer `v2.12.21` | 不可用优惠券列表底部 |
+
+### 样式变量
+
+组件提供了下列 Less 变量，可用于自定义样式，使用方法请参考[主题定制](#/zh-CN/theme)。
+
+| 名称                                | 默认值                       | 描述 |
+| ----------------------------------- | ---------------------------- | ---- |
+| @coupon-margin                      | `0 @padding-sm @padding-sm`  | -    |
+| @coupon-content-height              | `84px`                       | -    |
+| @coupon-content-padding             | `14px 0`                     | -    |
+| @coupon-background-color            | `@white`                     | -    |
+| @coupon-active-background-color     | `@active-color`              | -    |
+| @coupon-border-radius               | `@border-radius-lg`          | -    |
+| @coupon-box-shadow                  | `0 0 4px rgba(0, 0, 0, 0.1)` | -    |
+| @coupon-head-width                  | `96px`                       | -    |
+| @coupon-amount-color                | `@red`                       | -    |
+| @coupon-amount-font-size            | `30px`                       | -    |
+| @coupon-currency-font-size          | `40%`                        | -    |
+| @coupon-name-font-size              | `@font-size-md`              | -    |
+| @coupon-disabled-text-color         | `@gray-6`                    | -    |
+| @coupon-description-padding         | `@padding-xs @padding-md`    | -    |
+| @coupon-description-border-color    | `@border-color`              | -    |
+| @coupon-list-background-color       | `@background-color`          | -    |
+| @coupon-list-field-padding          | `5px 0 5px @padding-md`      | -    |
+| @coupon-list-exchange-button-height | `32px`                       | -    |
+| @coupon-list-close-button-height    | `40px`                       | -    |
+| @coupon-list-empty-image-size       | `200px`                      | -    |
+| @coupon-list-empty-tip-color        | `@gray-6`                    | -    |
+| @coupon-list-empty-tip-font-size    | `@font-size-md`              | -    |
+| @coupon-list-empty-tip-line-height  | `@line-height-md`            | -    |
+| @coupon-cell-selected-text-color    | `@text-color`                | -    |

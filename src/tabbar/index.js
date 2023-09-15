@@ -56,28 +56,33 @@ export default createComponent({
 
   mounted() {
     if (this.placeholder && this.fixed) {
-      this.height = this.$refs.tabbar.getBoundingClientRect().height;
+      const setHeight = () => {
+        this.height = this.$refs.tabbar.getBoundingClientRect().height;
+      };
+
+      setHeight();
+      // https://github.com/vant-ui/vant/issues/10131
+      setTimeout(setHeight, 100);
     }
   },
 
   methods: {
     setActiveItem() {
       this.children.forEach((item, index) => {
-        item.active = (item.name || index) === this.value;
+        item.nameMatched = item.name === this.value || index === this.value;
       });
     },
 
-    onChange(active) {
-      if (active !== this.value) {
-        callInterceptor({
-          interceptor: this.beforeChange,
-          args: [active],
-          done: () => {
-            this.$emit('input', active);
-            this.$emit('change', active);
-          },
-        });
-      }
+    triggerChange(active, afterChange) {
+      callInterceptor({
+        interceptor: this.beforeChange,
+        args: [active],
+        done: () => {
+          this.$emit('input', active);
+          this.$emit('change', active);
+          afterChange();
+        },
+      });
     },
 
     genTabbar() {

@@ -239,7 +239,7 @@ Use `input-align` prop to align the input value.
 | show-word-limit | Whether to show word limit, need to set the `maxlength` prop | _boolean_ | `false` |
 | error | Whether to show error info | _boolean_ | `false` |
 | error-message | Error message | _string_ | - |
-| formatter `v2.4.2` | Input value formatter | _Function_ | - |
+| formatter | Input value formatter | _Function_ | - |
 | format-trigger `v2.8.7` | When to format value，can be set to `onBlur` | _string_ | `onChange` |
 | arrow-direction | Can be set to `left` `up` `down` | _string_ | `right` |
 | label-class | Label className | _any_ | - |
@@ -247,11 +247,12 @@ Use `input-align` prop to align the input value.
 | label-align | Label align, can be set to `center` `right` | _string_ | `left` |
 | input-align | Input align, can be set to `center` `right` | _string_ | `left` |
 | error-message-align | Error message align, can be set to `center` `right` | _string_ | `left` |
-| autosize | Textarea auto resize，can accpet an object,<br>e.g. { maxHeight: 100, minHeight: 50 } | _boolean \| object_ | `false` |
+| autosize | Textarea auto resize，can accept an object,<br>e.g. { maxHeight: 100, minHeight: 50 } | _boolean \| object_ | `false` |
 | left-icon | Left side icon name | _string_ | - |
 | right-icon | Right side icon name | _string_ | - |
 | icon-prefix `v2.5.3` | Icon className prefix | _string_ | `van-icon` |
 | rules `v2.5.0` | Form validation rules | _Rule[]_ | - |
+| autocomplete | [autocomplete](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/autocomplete) attribute of native input element | _string_ | - |
 
 ### Events
 
@@ -259,14 +260,14 @@ Field support all native events of input tag
 
 | Event | Description | Parameters |
 | --- | --- | --- |
-| input | Triggered when input value changed | _value: string_ |
-| focus | Triggered when input gets focus | _event: Event_ |
-| blur | Triggered when input loses focus | _event: Event_ |
-| clear | Triggered when click clear icon | _event: Event_ |
-| click | Triggered when click Field | _event: Event_ |
-| click-input `v2.8.1` | Triggered when click input | _event: Event_ |
-| click-left-icon | Triggered when click the left icon of Field | _event: Event_ |
-| click-right-icon | Triggered when click the right icon of Field | _event: Event_ |
+| input | Emitted when input value changed | _value: string_ |
+| focus | Emitted when input is focused | _event: Event_ |
+| blur | Emitted when input is blurred | _event: Event_ |
+| clear | Emitted when the clear icon is clicked | _event: Event_ |
+| click | Emitted when component is clicked | _event: Event_ |
+| click-input `v2.8.1` | Emitted when the input is clicked | _event: Event_ |
+| click-left-icon | Emitted when the left icon is clicked | _event: Event_ |
+| click-right-icon | Emitted when the right icon is clicked | _event: Event_ |
 
 ### Methods
 
@@ -287,3 +288,28 @@ Use [ref](https://vuejs.org/v2/api/#ref) to get Field instance and call instance
 | right-icon     | Custom right icon           |
 | button         | Insert button               |
 | extra `v2.8.2` | Custom content on the right |
+
+### Less Variables
+
+How to use: [Custom Theme](#/en-US/theme).
+
+| Name                             | Default Value   | Description |
+| -------------------------------- | --------------- | ----------- |
+| @field-label-width               | `6.2em`         | -           |
+| @field-label-color               | `@gray-7`       | -           |
+| @field-label-margin-right        | `@padding-sm`   | -           |
+| @field-input-text-color          | `@text-color`   | -           |
+| @field-input-error-text-color    | `@red`          | -           |
+| @field-input-disabled-text-color | `@gray-5`       | -           |
+| @field-placeholder-text-color    | `@gray-5`       | -           |
+| @field-icon-size                 | `16px`          | -           |
+| @field-clear-icon-size           | `16px`          | -           |
+| @field-clear-icon-color          | `@gray-5`       | -           |
+| @field-right-icon-color          | `@gray-6`       | -           |
+| @field-error-message-color       | `@red`          | -           |
+| @field-error-message-font-size   | `12px`          | -           |
+| @field-text-area-min-height      | `60px`          | -           |
+| @field-word-limit-color          | `@gray-7`       | -           |
+| @field-word-limit-font-size      | `@font-size-sm` | -           |
+| @field-word-limit-line-height    | `16px`          | -           |
+| @field-disabled-text-color       | `@gray-5`       | -           |

@@ -17,10 +17,52 @@ Vue.use(Area);
 
 ### Basic Usage
 
-To initailize `Area` component, `area-list` property is required. Data structure will be introduced later.
+To initialize `Area` component, `area-list` property is required.
 
 ```html
 <van-area title="Title" :area-list="areaList" />
+```
+
+### areaList Data Structure
+
+An object contains three properties: `province_list`, `city_list` and `county_list`. Each property is a simple key-value object, key is a 6-bit code of the area of which first two bits stand for the province or state, middle two bits are used as city code and the last two are district code, value is the name of the area. If the code stands for an area that has sub-areas, lower bits of it will be filled with 0.
+
+Sample data:
+
+```js
+export default {
+  province_list: {
+    110000: 'Beijing',
+    330000: 'Zhejiang Province',
+  },
+  city_list: {
+    110100: 'Beijing City',
+    330100: 'Hangzhou',
+  },
+  county_list: {
+    110101: 'Dongcheng District',
+    110102: 'Xicheng District',
+    // ....
+  },
+};
+```
+
+### @vant/area-data
+
+Vant officially provides a default area data, which can be imported through [@vant/area-data](https://github.com/vant-ui/vant/tree/dev/packages/vant-area-data):
+
+```bash
+yarn add @vant/area-data
+```
+
+```ts
+import { areaList } from '@vant/area-data';
+
+export default {
+  setup() {
+    return { areaList };
+  },
+};
 ```
 
 ### Initial Value
@@ -65,7 +107,7 @@ To have a selected value，simply pass the `code` of target area to `value` prop
 | columns-placeholder | Placeholder of columns | _string[]_ | `[]` |
 | loading | Whether to show loading prompt | _boolean_ | `false` |
 | readonly `v2.10.5` | Whether to be readonly | _boolean_ | `false` |
-| item-height `v2.8.6` | Option height, supports `px` `vw` `rem` unit, default `px` | _number \| string_ | `44` |
+| item-height `v2.8.6` | Option height, supports `px` `vw` `vh` `rem` unit, default `px` | _number \| string_ | `44` |
 | columns-num | Level of picker | _number \| string_ | `3` |
 | visible-item-count | Count of visible columns | _number \| string_ | `6` |
 | swipe-duration | Duration of the momentum animation，unit `ms` | _number \| string_ | `1000` |
@@ -75,9 +117,9 @@ To have a selected value，simply pass the `code` of target area to `value` prop
 
 | Event | Description | Arguments |
 | --- | --- | --- |
-| confirm | triggers when clicking the confirm button | an array |
-| cancel | triggers when clicking the cancel button | - |
-| change | Triggered when current option changed | Picker instance, current values，column index |
+| confirm | Emitted when the confirm button is clicked | selected areas |
+| cancel | Emitted when the cancel button is clicked | - |
+| change | Emitted when current option changed | Picker instance, current values，column index |
 
 ### Slots
 
@@ -94,36 +136,6 @@ Use [ref](https://vuejs.org/v2/api/#ref) to get Area instance and call instance 
 | Name  | Description               | Attribute     | Return value |
 | ----- | ------------------------- | ------------- | ------------ |
 | reset | Reset all options by code | code?: string | -            |
-
-### areaList Data Structure
-
-An object contains three properties: `province_list`, `city_list` and `county_list`. Each property is a simple key-value object, key is a 6-bit code of the area of which first two bits stand for the province or state, middle two bits are used as city code and the last two are district code, value is the name of the area. If the code stands for an area that has sub-areas, lower bits of it will be filled with 0.
-
-Example of `AreaList`
-
-```js
-{
-  province_list: {
-    110000: 'Beijing',
-    330000: 'Zhejiang Province'
-  },
-  city_list: {
-    110100: 'Beijing City',
-    330100: 'Hangzhou',
-  },
-  county_list: {
-    110101: 'Dongcheng District',
-    110102: 'Xicheng District',
-    110105: 'Chaoyang District',
-    110106: 'Fengtai District'
-    330105: 'Gongshu District',
-    330106: 'Xihu District',
-    // ....
-  }
-}
-```
-
-All code of China: [Area.json](https://github.com/youzan/vant/blob/dev/src/area/demo/area-en.js)
 
 ### argument of callback function confirm
 

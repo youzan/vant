@@ -37,7 +37,7 @@
     </demo-block>
 
     <demo-block :title="t('customActiveColor')">
-      <van-dropdown-menu :active-color="BLUE">
+      <van-dropdown-menu active-color="#1989fa">
         <van-dropdown-item v-model="value1" :options="option1" />
         <van-dropdown-item v-model="value2" :options="option2" />
       </van-dropdown-menu>
@@ -60,7 +60,7 @@
 </template>
 
 <script>
-import { RED, BLUE } from '../../utils/constant';
+import { RED } from '../../utils/constant';
 
 export default {
   i18n: {
@@ -107,7 +107,6 @@ export default {
   data() {
     return {
       RED,
-      BLUE,
       switch1: true,
       switch2: false,
       value1: 0,

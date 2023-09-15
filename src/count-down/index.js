@@ -1,4 +1,4 @@
-import { createNamespace } from '../utils';
+import { createNamespace, inBrowser } from '../utils';
 import { raf, cancelRaf } from '../utils/dom/raf';
 import { isSameSecond, parseTimeData, parseFormat } from './utils';
 
@@ -92,6 +92,12 @@ export default createComponent({
     },
 
     tick() {
+      // should not start counting in server
+      // see: https://github.com/vant-ui/vant/issues/7807
+      if (!inBrowser) {
+        return;
+      }
+
       if (this.millisecond) {
         this.microTick();
       } else {

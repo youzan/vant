@@ -48,10 +48,22 @@ export function trigger(
 // simulate drag gesture
 export function triggerDrag(
   el: Wrapper<Vue> | HTMLElement,
-  x = 0,
-  y = 0
+  relativeX = 0,
+  relativeY = 0
 ): void {
-  trigger(el, 'touchstart', 0, 0);
+  let x = relativeX;
+  let y = relativeY;
+  let startX = 0;
+  let startY = 0;
+  if (relativeX < 0) {
+    startX = Math.abs(relativeX);
+    x = 0;
+  }
+  if (relativeY < 0) {
+    startY = Math.abs(relativeY);
+    y = 0;
+  }
+  trigger(el, 'touchstart', startX, startY);
   trigger(el, 'touchmove', x / 4, y / 4);
   trigger(el, 'touchmove', x / 3, y / 3);
   trigger(el, 'touchmove', x / 2, y / 2);

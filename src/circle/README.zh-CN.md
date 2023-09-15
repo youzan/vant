@@ -1,5 +1,9 @@
 # Circle 环形进度条
 
+### 介绍
+
+圆环形的进度条组件，支持进度渐变动画。
+
 ### 引入
 
 ```js
@@ -123,7 +127,7 @@ export default {
 | speed | 动画速度（单位为 rate/s） | _number \| string_ | `0` |
 | text | 文字 | _string_ | - |
 | stroke-width | 进度条宽度 | _number \| string_ | `40` |
-| stroke-linecap | 进度条端点的形状，可选值为`sqaure` `butt` | _string_ | `round` |
+| stroke-linecap | 进度条端点的形状，可选值为`square` `butt` | _string_ | `round` |
 | clockwise | 是否顺时针增加 | _boolean_ | `true` |
 
 ### Slots
@@ -131,3 +135,17 @@ export default {
 | 名称    | 说明           |
 | ------- | -------------- |
 | default | 自定义文字内容 |
+
+### 样式变量
+
+组件提供了下列 Less 变量，可用于自定义样式，使用方法请参考[主题定制](#/zh-CN/theme)。
+
+| 名称                     | 默认值              | 描述 |
+| ------------------------ | ------------------- | ---- |
+| @circle-size             | `100px`             | -    |
+| @circle-color            | `@blue`             | -    |
+| @circle-layer-color      | `@white`            | -    |
+| @circle-text-color       | `@text-color`       | -    |
+| @circle-text-font-weight | `@font-weight-bold` | -    |
+| @circle-text-font-size   | `@font-size-md`     | -    |
+| @circle-text-line-height | `@line-height-md`   | -    |

@@ -1,4 +1,4 @@
-import { createNamespace } from '../utils';
+import { addUnit, createNamespace } from '../utils';
 import Network from './Network';
 
 const [createComponent, bem] = createNamespace('empty');
@@ -7,6 +7,7 @@ const PRESETS = ['error', 'search', 'default'];
 
 export default createComponent({
   props: {
+    imageSize: [Number, String],
     description: String,
     image: {
       type: String,
@@ -29,14 +30,23 @@ export default createComponent({
       let { image } = this;
 
       if (PRESETS.indexOf(image) !== -1) {
-        image = `https://img.yzcdn.cn/vant/empty-image-${image}.png`;
+        image = `https://img01.yzcdn.cn/vant/empty-image-${image}.png`;
       }
 
       return <img src={image} />;
     },
 
     genImage() {
-      return <div class={bem('image')}>{this.genImageContent()}</div>;
+      const imageStyle = {
+        width: addUnit(this.imageSize),
+        height: addUnit(this.imageSize),
+      };
+
+      return (
+        <div class={bem('image')} style={imageStyle}>
+          {this.genImageContent()}
+        </div>
+      );
     },
 
     genDescription() {

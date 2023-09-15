@@ -1,5 +1,5 @@
 import { createNamespace, isDef } from '../utils';
-import { doubleRaf } from '../utils/dom/raf';
+import { doubleRaf, raf } from '../utils/dom/raf';
 import { BindEventMixin } from '../mixins/bind-event';
 import Icon from '../icon';
 
@@ -10,9 +10,15 @@ export default createComponent({
     BindEventMixin(function (bind) {
       // fix cache issues with forwards and back history in safari
       // see: https://guwii.com/cache-issues-with-forwards-and-back-history-in-safari/
-      bind(window, 'pageshow', this.start);
+      bind(window, 'pageshow', this.reset);
     }),
   ],
+
+  inject: {
+    vanPopup: {
+      default: null,
+    },
+  },
 
   props: {
     text: String,
@@ -31,7 +37,7 @@ export default createComponent({
     },
     speed: {
       type: [Number, String],
-      default: 50,
+      default: 60,
     },
   },
 
@@ -46,15 +52,22 @@ export default createComponent({
   },
 
   watch: {
-    scrollable: 'start',
+    scrollable: 'reset',
     text: {
-      handler: 'start',
+      handler: 'reset',
       immediate: true,
     },
   },
 
+  created() {
+    // https://github.com/vant-ui/vant/issues/8634
+    if (this.vanPopup) {
+      this.vanPopup.onReopen(this.reset);
+    }
+  },
+
   activated() {
-    this.start();
+    this.reset();
   },
 
   methods: {
@@ -70,7 +83,8 @@ export default createComponent({
       this.duration = 0;
 
       // wait for Vue to render offset
-      this.$nextTick(() => {
+      // using nextTick won't work in iOS14
+      raf(() => {
         // use double raf to ensure animation can start
         doubleRaf(() => {
           this.offset = -this.contentWidth;
@@ -80,17 +94,19 @@ export default createComponent({
       });
     },
 
+    // not an exposed-api, but may used by some users
+    start() {
+      this.reset();
+    },
+
+    // @exposed-api
     reset() {
+      const delay = isDef(this.delay) ? this.delay * 1000 : 0;
+
       this.offset = 0;
       this.duration = 0;
       this.wrapWidth = 0;
       this.contentWidth = 0;
-    },
-
-    start() {
-      const delay = isDef(this.delay) ? this.delay * 1000 : 0;
-
-      this.reset();
 
       clearTimeout(this.startTimer);
       this.startTimer = setTimeout(() => {

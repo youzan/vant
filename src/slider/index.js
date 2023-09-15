@@ -1,6 +1,7 @@
 import { createNamespace, addUnit } from '../utils';
 import { deepClone } from '../utils/deep-clone';
 import { preventDefault } from '../utils/dom/event';
+import { range, addNumber } from '../utils/format/number';
 import { TouchMixin } from '../mixins/touch';
 import { FieldMixin } from '../mixins/field';
 
@@ -183,10 +184,13 @@ export default createComponent({
     },
 
     format(value) {
-      return (
-        Math.round(Math.max(this.min, Math.min(value, this.max)) / this.step) *
-        this.step
-      );
+      const min = +this.min;
+      const max = +this.max;
+      const step = +this.step;
+
+      value = range(value, min, max);
+      const diff = Math.round((value - min) / step) * step;
+      return addNumber(min, diff);
     },
   },
 
@@ -232,17 +236,37 @@ export default createComponent({
     const renderButton = (i) => {
       const map = ['left', 'right'];
       const isNumber = typeof i === 'number';
+      const current = isNumber ? this.value[i] : this.value;
+
       const getClassName = () => {
         if (isNumber) {
           return `button-wrapper-${map[i]}`;
         }
         return `button-wrapper`;
       };
+
       const getRefName = () => {
         if (isNumber) {
           return `wrapper${i}`;
         }
         return `wrapper`;
+      };
+
+      const renderButtonContent = () => {
+        if (isNumber) {
+          const slot = this.slots(i === 0 ? 'left-button' : 'right-button', {
+            value: current,
+          });
+          if (slot) {
+            return slot;
+          }
+        }
+
+        if (this.slots('button')) {
+          return this.slots('button');
+        }
+
+        return <div class={bem('button')} style={this.buttonStyle} />;
       };
 
       return (
@@ -263,9 +287,7 @@ export default createComponent({
           }}
           onClick={(e) => e.stopPropagation()}
         >
-          {this.slots('button') || (
-            <div class={bem('button')} style={this.buttonStyle} />
-          )}
+          {renderButtonContent()}
         </div>
       );
     };

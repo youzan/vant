@@ -40,7 +40,7 @@
         <van-goods-action-icon
           icon="chat-o"
           :text="t('icon1')"
-          color="#07c160"
+          color="#ee0a24"
         />
         <van-goods-action-icon icon="cart-o" :text="t('icon2')" />
         <van-goods-action-icon

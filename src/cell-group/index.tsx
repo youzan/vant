@@ -9,6 +9,7 @@ import { DefaultSlots, ScopedSlot } from '../utils/types';
 
 export type CellGroupProps = {
   title?: string;
+  inset: boolean;
   border: boolean;
 };
 
@@ -26,7 +27,10 @@ function CellGroup(
 ) {
   const Group = (
     <div
-      class={[bem(), { [BORDER_TOP_BOTTOM]: props.border }]}
+      class={[
+        bem({ inset: props.inset }),
+        { [BORDER_TOP_BOTTOM]: props.border },
+      ]}
       {...inherit(ctx, true)}
     >
       {slots.default?.()}
@@ -35,8 +39,8 @@ function CellGroup(
 
   if (props.title || slots.title) {
     return (
-      <div>
-        <div class={bem('title')}>
+      <div key={ctx.data.key}>
+        <div class={bem('title', { inset: props.inset })}>
           {slots.title ? slots.title() : props.title}
         </div>
         {Group}
@@ -49,6 +53,7 @@ function CellGroup(
 
 CellGroup.props = {
   title: String,
+  inset: Boolean,
   border: {
     type: Boolean,
     default: true,

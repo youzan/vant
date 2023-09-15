@@ -1,6 +1,7 @@
 import Picker from '..';
-import PickerColumn from '../PickerColumn';
+import PickerColumn, { MOMENTUM_LIMIT_TIME, MOMENTUM_LIMIT_DISTANCE} from '../PickerColumn';
 import { mount, triggerDrag, later } from '../../../test';
+import { DEFAULT_ITEM_HEIGHT } from '../shared';
 
 const simpleColumn = ['1990', '1991', '1992', '1993', '1994', '1995'];
 const columns = [
@@ -138,12 +139,54 @@ test('column watch default index', async () => {
 test('render title slot', () => {
   const wrapper = mount({
     template: `
-      <picker show-toolbar>
+      <van-picker show-toolbar>
         <template v-slot:title>Custom title</template>
-      </picker>
+      </van-picker>
     `,
-    components: {
-      Picker,
+  });
+
+  expect(wrapper).toMatchSnapshot();
+});
+
+test('render confirm/cancel slot', () => {
+  const wrapper = mount({
+    template: `
+      <van-picker show-toolbar>
+        <template v-slot:confirm>Custom Confirm</template>
+        <template v-slot:cancel>Custom Cancel</template>
+      </van-picker>
+    `,
+  });
+
+  expect(wrapper).toMatchSnapshot();
+});
+
+test('render option slot with simple columns', () => {
+  const wrapper = mount({
+    template: `
+      <van-picker :columns="columns" show-toolbar>
+        <template #option="item">{{ item }}</template>
+      </van-picker>
+    `,
+    data() {
+      return { columns: ['foo', 'bar'] };
+    },
+  });
+
+  expect(wrapper).toMatchSnapshot();
+});
+
+test('render option slot with object columns', () => {
+  const wrapper = mount({
+    template: `
+      <van-picker :columns="columns" show-toolbar>
+        <template #option="item">{{ item.text }}</template>
+      </van-picker>
+    `,
+    data() {
+      return {
+        columns: [{ text: 'foo' }, { text: 'bar' }],
+      };
     },
   });
 
@@ -293,4 +336,67 @@ test('readonly prop', () => {
   wrapper.findAll('.van-picker-column__item').at(3).trigger('click');
 
   expect(wrapper.emitted('change')).toBeFalsy();
+});
+
+test('wheel event on columns is detected', async () => {
+  const onMouseWheel = jest.spyOn(PickerColumn.methods, 'onMouseWheel');
+
+  const wrapper = mount(PickerColumn, {
+    propsData: {
+      initialOptions: [...simpleColumn],
+    },
+  });
+
+  await wrapper.trigger('wheel');
+
+  expect(onMouseWheel).toHaveBeenCalled();
+});
+
+test('wheel scroll on columns', async () => {
+  const fakeScroll = (translateY, deltaY)=> {
+    // mock getComputedStyle
+    // see: https://github.com/jsdom/jsdom/issues/2588
+    const originGetComputedStyle = window.getComputedStyle;
+    window.getComputedStyle = (ele) => {
+      const style = originGetComputedStyle(ele);
+      return {
+        ...style,
+        transform: `matrix(1, 0, 0, 1, 0, ${translateY})`,
+      };
+    };
+    return new Promise(resolve => {
+      const wrapper = mount(Picker, {
+        propsData: {
+          columns: simpleColumn,
+        },
+      });
+
+      wrapper.find('.van-picker-column').trigger('wheel', {
+        deltaY,
+      });
+
+      return later(MOMENTUM_LIMIT_TIME + 10).then(()=>{
+        wrapper.find('.van-picker-column ul').trigger('transitionend');
+        resolve(wrapper.emitted('change'));
+      }).finally(()=>{
+        window.getComputedStyle = originGetComputedStyle;
+      });
+    });
+  }
+
+  const topToDown = await fakeScroll(110, -MOMENTUM_LIMIT_DISTANCE);
+  expect(topToDown).toEqual(undefined);
+
+  const topToUp = await fakeScroll(110, MOMENTUM_LIMIT_DISTANCE + 10);
+  expect(topToUp[0][1]).toEqual('1991');
+
+  const bottomToUp = await fakeScroll(-110, MOMENTUM_LIMIT_DISTANCE + 5);
+  expect(bottomToUp[0][1]).toEqual('1995');
+
+  const bottomToDown = await fakeScroll(-110, -(MOMENTUM_LIMIT_DISTANCE - 5));
+  expect(bottomToDown[0][1]).toEqual('1995');
+
+  const pos1992 = simpleColumn.indexOf('1992')
+  const momentum = await fakeScroll(-110 + (pos1992 + 1) * DEFAULT_ITEM_HEIGHT, MOMENTUM_LIMIT_DISTANCE + 10);
+  expect(momentum[0][1]).toEqual(simpleColumn[pos1992+1]);
 });

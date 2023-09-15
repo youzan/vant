@@ -36,13 +36,13 @@ Vue.use(GridItem);
 ```html
 <van-grid :border="false" :column-num="3">
   <van-grid-item>
-    <van-image src="https://img.yzcdn.cn/vant/apple-1.jpg" />
+    <van-image src="https://img01.yzcdn.cn/vant/apple-1.jpg" />
   </van-grid-item>
   <van-grid-item>
-    <van-image src="https://img.yzcdn.cn/vant/apple-2.jpg" />
+    <van-image src="https://img01.yzcdn.cn/vant/apple-2.jpg" />
   </van-grid-item>
   <van-grid-item>
-    <van-image src="https://img.yzcdn.cn/vant/apple-3.jpg" />
+    <van-image src="https://img01.yzcdn.cn/vant/apple-3.jpg" />
   </van-grid-item>
 </van-grid>
 ```
@@ -121,9 +121,9 @@ Vue.use(GridItem);
 
 ### GridItem Events
 
-| Event | Description            | Arguments      |
-| ----- | ---------------------- | -------------- |
-| click | Triggered when clicked | _event: Event_ |
+| Event | Description                       | Arguments      |
+| ----- | --------------------------------- | -------------- |
+| click | Emitted when component is clicked | _event: Event_ |
 
 ### GridItem Slots
 
@@ -132,3 +132,16 @@ Vue.use(GridItem);
 | default | Custom content |
 | icon    | Custom icon    |
 | text    | Custom text    |
+
+### Less Variables
+
+How to use: [Custom Theme](#/en-US/theme).
+
+| Name | Default Value | Description |
+| --- | --- | --- |
+| @grid-item-content-padding | `@padding-md @padding-xs` | - |
+| @grid-item-content-background-color | `@white` | - |
+| @grid-item-content-active-color | `@active-color` | - |
+| @grid-item-icon-size | `28px` | - |
+| @grid-item-text-color | `@gray-7` | - |
+| @grid-item-text-font-size | `@font-size-sm` | - |

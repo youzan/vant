@@ -1,5 +1,9 @@
 # PullRefresh 下拉刷新
 
+### 介绍
+
+用于提供下拉刷新的交互操作。
+
 ### 引入
 
 ```js
@@ -67,19 +71,19 @@ export default {
   <template #pulling="props">
     <img
       class="doge"
-      src="https://img.yzcdn.cn/vant/doge.png"
+      src="https://img01.yzcdn.cn/vant/doge.png"
       :style="{ transform: `scale(${props.distance / 80})` }"
     />
   </template>
 
   <!-- 释放提示 -->
   <template #loosing>
-    <img class="doge" src="https://img.yzcdn.cn/vant/doge.png" />
+    <img class="doge" src="https://img01.yzcdn.cn/vant/doge.png" />
   </template>
 
   <!-- 加载提示 -->
   <template #loading>
-    <img class="doge" src="https://img.yzcdn.cn/vant/doge-fire.jpg" />
+    <img class="doge" src="https://img01.yzcdn.cn/vant/doge-fire.jpg" />
   </template>
   <p>刷新次数: {{ count }}</p>
 </van-pull-refresh>
@@ -107,7 +111,8 @@ export default {
 | success-text | 刷新成功提示文案 | _string_ | - |
 | success-duration | 刷新成功提示展示时长(ms) | _number \| string_ | `500` |
 | animation-duration | 动画时长 | _number \| string_ | `300` |
-| head-height `v2.4.2` | 顶部内容高度 | _number \| string_ | `50` |
+| head-height | 顶部内容高度 | _number \| string_ | `50` |
+| pull-distance `v2.12.8` | 触发下拉刷新的距离 | _number \| string_ | 与 `head-height` 一致 |
 | disabled | 是否禁用下拉刷新 | _boolean_ | `false` |
 
 ### Events
@@ -118,7 +123,7 @@ export default {
 
 ### Slots
 
-| 名称    | 说明                 | SlotProps                  |
+| 名称    | 说明                 | 参数                       |
 | ------- | -------------------- | -------------------------- |
 | default | 自定义内容           | -                          |
 | normal  | 非下拉状态时顶部内容 | -                          |
@@ -127,9 +132,19 @@ export default {
 | loading | 加载过程中顶部内容   | { distance: 当前下拉距离 } |
 | success | 刷新成功提示内容     | -                          |
 
+### 样式变量
+
+组件提供了下列 Less 变量，可用于自定义样式，使用方法请参考[主题定制](#/zh-CN/theme)。
+
+| 名称                          | 默认值          | 描述 |
+| ----------------------------- | --------------- | ---- |
+| @pull-refresh-head-height     | `50px`          | -    |
+| @pull-refresh-head-font-size  | `@font-size-md` | -    |
+| @pull-refresh-head-text-color | `@gray-6`       | -    |
+
 ## 常见问题
 
-### PullReresh 的内容未填满屏幕时，只有一部分区域可以下拉？
+### PullRefresh 的内容未填满屏幕时，只有一部分区域可以下拉？
 
 默认情况下，下拉区域的高度是和内容高度保持一致的，如果需要让下拉区域始终为全屏，可以给 PullRefresh 设置一个与屏幕大小相等的最小高度：
 
@@ -137,6 +152,13 @@ export default {
 <van-pull-refresh style="min-height: 100vh;" />
 ```
 
+### PullRefresh 的触发条件是？
+
+PullRefresh 的触发条件是「父级滚动元素的滚动条在顶部位置」。
+
+- 如果最近一个可滚动的父级元素是 `window`，则要求 `window.pageYOffset === 0`。
+- 如果最近一个可滚动的父级元素是 `Element`，则要求 `Element.scrollTop === 0`。
+
 ### 在桌面端无法操作组件？
 
-参见[在桌面端使用](#/zh-CN/quickstart#zai-zhuo-mian-duan-shi-yong)。
+参见[桌面端适配](#/zh-CN/advanced-usage#zhuo-mian-duan-gua-pei)。

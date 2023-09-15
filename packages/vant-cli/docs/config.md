@@ -12,6 +12,7 @@
     - [site.versions](#siteversions)
     - [site.baiduAnalytics](#sitebaiduanalytics)
     - [site.searchConfig](#sitesearchconfig)
+    - [site.hideSimulator](#sitehidesimulator)
   - [Webpack](#webpack)
   - [Babel](#babel)
     - [默认配置](#-1)
@@ -39,7 +40,7 @@ module.exports = {
     // 标题
     title: 'Demo UI',
     // 图标
-    logo: 'https://img.yzcdn.cn/vant/logo.png',
+    logo: 'https://img01.yzcdn.cn/vant/logo.png',
     // 描述
     description: '示例组件库',
     // 左侧导航
@@ -165,6 +166,8 @@ module.exports = {
             path: 'home',
             // 导航项文案
             title: '介绍',
+            // 是否隐藏当前页右侧的手机模拟器（默认不隐藏）
+            hideSimulator: true,
           },
         ],
       },
@@ -185,8 +188,8 @@ module.exports = {
   site: {
     versions: [
       {
-        label: '1.x',
-        link: 'https://youzan.github.io/vant/1.x/',
+        label: 'v1',
+        link: 'https://vant-ui.github.io/vant/v1/',
       },
     ],
   },
@@ -221,6 +224,20 @@ module.exports = {
 文档网站的搜索配置，基于 algolia 提供的 docsearch 服务实现。
 
 配置内容参见 [docsearch](https://docsearch.algolia.com/docs/behavior)。
+
+### site.hideSimulator
+
+- Type: `boolean`
+- Default: `false`
+
+是否隐藏所有页面右侧的手机模拟器，默认不隐藏
+
+### site.htmlPluginOptions
+
+- Type: `object`
+- Default: `undefined`
+
+html-webpack-plugin 的配置项，详见 [Options](https://github.com/jantimon/html-webpack-plugin#options)。
 
 ## Webpack
 

@@ -66,11 +66,6 @@
         &::-webkit-scrollbar {
           display: none;
         }
-
-        &--complete {
-          padding-right: 8px;
-          padding-left: 8px;
-        }
       }
     }
   }
@@ -85,6 +80,11 @@
       box-sizing: content-box;
       height: 100%;
       padding-bottom: 15px; /* 15px padding to hide scrollbar in mobile safari */
+    }
+
+    &--line&--complete {
+      padding-right: @padding-xs;
+      padding-left: @padding-xs;
     }
 
     &--card {

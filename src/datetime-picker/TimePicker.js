@@ -45,11 +45,30 @@ export default createComponent({
 
   watch: {
     filter: 'updateInnerValue',
-    minHour: 'updateInnerValue',
-    maxHour: 'updateInnerValue',
+    minHour() {
+      this.$nextTick(() => {
+        this.updateInnerValue();
+      });
+    },
+    maxHour(value) {
+      const [hour, minute] = this.innerValue.split(':');
+      if (hour >= value) {
+        this.innerValue = this.formatValue(`${value}:${minute}`);
+        this.updateColumnValue();
+      } else {
+        this.updateInnerValue();
+      }
+    },
     minMinute: 'updateInnerValue',
-    maxMinute: 'updateInnerValue',
-
+    maxMinute(value) {
+      const [hour, minute] = this.innerValue.split(':');
+      if (minute >= value) {
+        this.innerValue = this.formatValue(`${hour}:${value}`);
+        this.updateColumnValue();
+      } else {
+        this.updateInnerValue();
+      }
+    },
     value(val) {
       val = this.formatValue(val);
 
@@ -89,6 +108,8 @@ export default createComponent({
 
       this.$nextTick(() => {
         this.$nextTick(() => {
+          // https://github.com/vant-ui/vant/issues/9775
+          this.updateInnerValue();
           this.$emit('change', picker);
         });
       });

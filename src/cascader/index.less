@@ -1,0 +1,82 @@
+@import '../style/var';
+
+.van-cascader {
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: @cascader-header-height;
+    padding: 0 @padding-md;
+  }
+
+  &__title {
+    font-weight: @font-weight-bold;
+    font-size: @cascader-title-font-size;
+    line-height: @cascader-title-line-height;
+  }
+
+  &__close-icon {
+    color: @cascader-close-icon-color;
+    font-size: @cascader-close-icon-size;
+
+    &:active {
+      color: @cascader-close-icon-active-color;
+    }
+  }
+
+  &__tabs {
+    .van-tab {
+      flex: none;
+      padding: 0 10px;
+    }
+
+    &.van-tabs--line .van-tabs__wrap {
+      height: @cascader-tabs-height;
+    }
+
+    .van-tabs__nav--complete {
+      padding-right: 6px;
+      padding-left: 6px;
+    }
+  }
+
+  &__tab {
+    color: @cascader-tab-color;
+    font-weight: @font-weight-bold;
+
+    &--unselected {
+      color: @cascader-unselected-tab-color;
+      font-weight: normal;
+    }
+  }
+
+  &__option {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px @padding-md;
+    font-size: @font-size-md;
+    line-height: @line-height-md;
+
+    &:active {
+      background-color: @active-color;
+    }
+
+    &--selected {
+      color: @cascader-active-color;
+      font-weight: @font-weight-bold;
+    }
+  }
+
+  &__selected-icon {
+    font-size: @cascader-selected-icon-size;
+  }
+
+  &__options {
+    box-sizing: border-box;
+    height: @cascader-options-height;
+    padding-top: 6px;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+}

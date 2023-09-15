@@ -1,7 +1,7 @@
 import { deepClone } from '../utils/deep-clone';
-import { createNamespace, isObject } from '../utils';
+import { createNamespace, inBrowser, isObject } from '../utils';
 import { range } from '../utils/format/number';
-import { preventDefault } from '../utils/dom/event';
+import { preventDefault, on, off } from '../utils/dom/event';
 import { TouchMixin } from '../mixins/touch';
 
 const DEFAULT_DURATION = 200;
@@ -9,8 +9,8 @@ const DEFAULT_DURATION = 200;
 // 惯性滑动思路:
 // 在手指离开屏幕时，如果和上一次 move 时的间隔小于 `MOMENTUM_LIMIT_TIME` 且 move
 // 距离大于 `MOMENTUM_LIMIT_DISTANCE` 时，执行惯性滑动
-const MOMENTUM_LIMIT_TIME = 300;
-const MOMENTUM_LIMIT_DISTANCE = 15;
+export const MOMENTUM_LIMIT_TIME = 300;
+export const MOMENTUM_LIMIT_DISTANCE = 15;
 
 const [createComponent, bem] = createNamespace('picker-column');
 
@@ -25,6 +25,10 @@ function getElementTranslateY(element) {
 function isOptionDisabled(option) {
   return isObject(option) && option.disabled;
 }
+// use standard WheelEvent:
+// https://developer.mozilla.org/en-US/docs/Web/API/WheelEvent
+const supportMousewheel = inBrowser && 'onwheel' in window;
+let mousewheelTimer = null;
 
 export default createComponent({
   mixins: [TouchMixin],
@@ -64,6 +68,9 @@ export default createComponent({
 
   mounted() {
     this.bindTouchEvent(this.$el);
+    if (supportMousewheel) {
+      on(this.$el, 'wheel', this.onMouseWheel, false);
+    }
   },
 
   destroyed() {
@@ -71,6 +78,10 @@ export default createComponent({
 
     if (children) {
       children.splice(children.indexOf(this), 1);
+    }
+
+    if (supportMousewheel) {
+      off(this.$el, 'wheel');
     }
   },
 
@@ -167,10 +178,48 @@ export default createComponent({
       this.setIndex(index, true);
 
       // compatible with desktop scenario
-      // use setTimeout to skip the click event triggered after touchstart
+      // use setTimeout to skip the click event Emitted after touchstart
       setTimeout(() => {
         this.moving = false;
       }, 0);
+    },
+
+    onMouseWheel(event) {
+      if (this.readonly) {
+        return;
+      }
+      preventDefault(event, true);
+      // simply combine touchstart and touchmove
+      const translateY = getElementTranslateY(this.$refs.wrapper);
+      this.startOffset = Math.min(0, translateY - this.baseOffset);
+      this.momentumOffset = this.startOffset;
+      this.transitionEndTrigger = null;
+
+      // directly use deltaY, see https://caniuse.com/?search=deltaY
+      // use deltaY to detect direction for not special setting device
+      // https://developer.mozilla.org/en-US/docs/Web/API/Element/wheel_event
+      const { deltaY } = event;
+      if (this.startOffset === 0 && deltaY < 0) {
+        return;
+      }
+
+      // get offset
+      // if necessary, can adjust distance value to make scrolling smoother
+      const distance = -deltaY;
+      this.offset = range(
+        this.startOffset + distance,
+        -(this.count * this.itemHeight),
+        this.itemHeight
+      );
+
+      if (mousewheelTimer) {
+        clearTimeout(mousewheelTimer);
+      }
+
+      mousewheelTimer = setTimeout(() => {
+        this.onTouchEnd();
+        this.touchStartTime = 0;
+      }, MOMENTUM_LIMIT_TIME);
     },
 
     onTransitionEnd() {
@@ -330,7 +379,7 @@ export default createComponent({
 
         return (
           <li {...data}>
-            <div {...childData} />
+            {this.slots('option', option) || <div {...childData} />}
           </li>
         );
       });

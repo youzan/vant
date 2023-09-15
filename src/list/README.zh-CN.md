@@ -177,7 +177,7 @@ export default {
 
 ### 方法
 
-通过 ref 可以获取到 List 实例并调用实例方法，详见[组件实例方法](#/zh-CN/quickstart#zu-jian-shi-li-fang-fa)。
+通过 ref 可以获取到 List 实例并调用实例方法，详见[组件实例方法](#/zh-CN/advanced-usage#zu-jian-shi-li-fang-fa)。
 
 | 方法名 | 说明 | 参数 | 返回值 |
 | --- | --- | --- | --- |
@@ -191,6 +191,16 @@ export default {
 | loading  | 自定义底部加载中提示       |
 | finished | 自定义加载完成后的提示文案 |
 | error    | 自定义加载失败后的提示文案 |
+
+### 样式变量
+
+组件提供了下列 Less 变量，可用于自定义样式，使用方法请参考[主题定制](#/zh-CN/theme)。
+
+| 名称                    | 默认值          | 描述 |
+| ----------------------- | --------------- | ---- |
+| @list-text-color        | `@gray-6`       | -    |
+| @list-text-font-size    | `@font-size-md` | -    |
+| @list-text-line-height  | `50px`          | -    |
 
 ## 常见问题
 
@@ -242,3 +252,9 @@ body {
 ```
 
 这个问题的原因是当元素设置了`overflow-x: hidden`样式时，该元素的`overflow-y`会被浏览器设置为`auto`，而不是默认值`visible`，导致 List 无法正确地判断滚动容器。解决方法是去除该样式，或者在 html 和 body 标签上添加`height: 100%`样式。
+
+### direction 属性设置为 up 后一直触发加载？
+
+设置 `direction` 属性为 up 后，当滚动条处于页面顶部时，就会触发 List 组件的加载。
+
+因此在使用该属性时，建议在每次数据加载完成后，将滚动条滚动至页面底部或非顶部的位置。

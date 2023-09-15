@@ -11,7 +11,7 @@
         v-model="showList"
         round
         position="bottom"
-        style="height: 90%; padding-top: 4px;"
+        style="height: 90%; padding-top: 4px"
       >
         <van-coupon-list
           :coupons="coupons"

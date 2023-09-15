@@ -30,13 +30,22 @@ export default createComponent({
 
   watch: {
     filter: 'updateInnerValue',
-    minDate: 'updateInnerValue',
-    maxDate: 'updateInnerValue',
-
+    minDate() {
+      this.$nextTick(() => {
+        this.updateInnerValue();
+      });
+    },
+    maxDate(value) {
+      if (this.innerValue.valueOf() >= value.valueOf()) {
+        this.innerValue = value;
+      } else {
+        this.updateInnerValue();
+      }
+    },
     value(val) {
       val = this.formatValue(val);
 
-      if (val.valueOf() !== this.innerValue.valueOf()) {
+      if (val && val.valueOf() !== this.innerValue.valueOf()) {
         this.innerValue = val;
       }
     },
@@ -50,7 +59,10 @@ export default createComponent({
         maxMonth,
         maxHour,
         maxMinute,
-      } = this.getBoundary('max', this.innerValue);
+      } = this.getBoundary(
+        'max',
+        this.innerValue ? this.innerValue : this.minDate
+      );
 
       const {
         minYear,
@@ -58,7 +70,10 @@ export default createComponent({
         minMonth,
         minHour,
         minMinute,
-      } = this.getBoundary('min', this.innerValue);
+      } = this.getBoundary(
+        'min',
+        this.innerValue ? this.innerValue : this.minDate
+      );
 
       let result = [
         {
@@ -114,11 +129,52 @@ export default createComponent({
   methods: {
     formatValue(value) {
       if (!isDate(value)) {
-        value = this.minDate;
+        return null;
       }
 
-      value = Math.max(value, this.minDate.getTime());
-      value = Math.min(value, this.maxDate.getTime());
+      let minDate = new Date(this.minDate);
+      let maxDate = new Date(this.maxDate);
+      const dateMethods = {
+        year: 'getFullYear',
+        month: 'getMonth',
+        day: 'getDate',
+        hour: 'getHours',
+        minute: 'getMinutes',
+      };
+      if (this.originColumns) {
+        const dateColumns = this.originColumns.map(({ type, values }, index) => {
+          const { range } = this.ranges[index];
+          const minDateVal = minDate[dateMethods[type]]();
+          const maxDateVal = maxDate[dateMethods[type]]();
+          const min = type === 'month' ? +values[0] - 1 : +values[0];
+          const max =
+            type === 'month'
+              ? +values[values.length - 1] - 1
+              : +values[values.length - 1];
+
+          return {
+            type,
+            values: [
+              minDateVal < range[0] ? Math.max(minDateVal, min) : min || minDateVal,
+              maxDateVal > range[1] ? Math.min(maxDateVal, max) : max || maxDateVal,
+            ]
+          };
+        });
+
+        if (this.type === 'month-day') {
+          const year = (this.innerValue || this.minDate).getFullYear();
+          dateColumns.unshift({ type: 'year', values: [year, year] });
+        }
+
+        const dates = Object.keys(dateMethods).map((type) =>
+          dateColumns.filter(item => item.type === type)[0]?.values
+        ).filter((item) => item);
+        minDate = new Date(...dates.map((val) => getTrueValue(val[0])));
+        maxDate = new Date(...dates.map((val) => getTrueValue(val[1])));
+      }
+
+      value = Math.max(value, minDate.getTime());
+      value = Math.min(value, maxDate.getTime());
 
       return new Date(value);
     },
@@ -178,7 +234,7 @@ export default createComponent({
       let month;
       let day;
       if (type === 'month-day') {
-        year = this.innerValue.getFullYear();
+        year = (this.innerValue || this.minDate).getFullYear();
         month = getValue('month');
         day = getValue('day');
       } else {
@@ -212,13 +268,15 @@ export default createComponent({
 
       this.$nextTick(() => {
         this.$nextTick(() => {
+          // https://github.com/vant-ui/vant/issues/9775
+          this.updateInnerValue();
           this.$emit('change', picker);
         });
       });
     },
 
     updateColumnValue() {
-      const value = this.innerValue;
+      const value = this.innerValue ? this.innerValue : this.minDate;
       const { formatter } = this;
 
       const values = this.originColumns.map((column) => {

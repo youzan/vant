@@ -1,5 +1,10 @@
 import { VanComponent } from './component';
 
+export type ToggleAllOptions = {
+  checked?: boolean;
+  skipDisabled?: boolean;
+};
+
 export class CheckboxGroup extends VanComponent {
-  toggleAll(checked?: boolean): void;
+  toggleAll(options?: boolean | ToggleAllOptions): void;
 }

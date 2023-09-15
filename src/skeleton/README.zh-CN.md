@@ -1,5 +1,9 @@
 # Skeleton 骨架屏
 
+### 介绍
+
+用于在内容加载过程中展示一组占位图形。
+
 ### 引入
 
 ```js
@@ -66,3 +70,17 @@ export default {
 | title-width | 标题占位图宽度 | _number \| string_ | `40%` |
 | avatar-size | 头像占位图大小 | _number \| string_ | `32px` |
 | avatar-shape | 头像占位图形状，可选值为`square` | _string_ | `round` |
+
+### 样式变量
+
+组件提供了下列 Less 变量，可用于自定义样式，使用方法请参考[主题定制](#/zh-CN/theme)。
+
+| 名称                              | 默认值          | 描述 |
+| --------------------------------- | --------------- | ---- |
+| @skeleton-row-height              | `16px`          | -    |
+| @skeleton-row-background-color    | `@active-color` | -    |
+| @skeleton-row-margin-top          | `@padding-sm`   | -    |
+| @skeleton-title-width             | `40%`           | -    |
+| @skeleton-avatar-size             | `32px`          | -    |
+| @skeleton-avatar-background-color | `@active-color` | -    |
+| @skeleton-animation-duration      | `1.2s`          | -    |

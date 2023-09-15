@@ -133,17 +133,34 @@ export default {
 | closeable | 是否显示关闭图标 | _boolean_ | `false` |
 | close-icon | 关闭图标名称或图片链接 | _string_ | `cross` |
 | close-icon-position | 关闭图标位置，可选值为`top-left`<br>`bottom-left` `bottom-right` | _string_ | `top-right` |
-| transition | 动画类名，等价于 [transtion](https://cn.vuejs.org/v2/api/index.html#transition) 的`name`属性 | _string_ | - |
+| transition | 动画类名，等价于 [transition](https://cn.vuejs.org/v2/api/index.html#transition) 的`name`属性 | _string_ | - |
+| transition-appear `v2.10.14` | 是否在初始渲染时启用过渡动画 | _boolean_ | `false` |
 | get-container | 指定挂载的节点 | _string \| () => Element_ | - |
-| safe-area-inset-bottom | 是否开启[底部安全区适配](#/zh-CN/quickstart#di-bu-an-quan-qu-gua-pei) | _boolean_ | `false` |
+| safe-area-inset-bottom | 是否开启[底部安全区适配](#/zh-CN/advanced-usage#di-bu-an-quan-qu-gua-pei) | _boolean_ | `false` |
 
 ### Events
 
-| 事件名        | 说明                       | 回调参数       |
-| ------------- | -------------------------- | -------------- |
-| click         | 点击弹出层时触发           | _event: Event_ |
-| open          | 打开弹出层时触发           | -              |
-| close         | 关闭弹出层时触发           | -              |
-| opened        | 打开弹出层且动画结束后触发 | -              |
-| closed        | 关闭弹出层且动画结束后触发 | -              |
-| click-overlay | 点击遮罩层时触发           | -              |
+| 事件名                     | 说明                       | 回调参数       |
+| -------------------------- | -------------------------- | -------------- |
+| click                      | 点击弹出层时触发           | _event: Event_ |
+| click-overlay              | 点击遮罩层时触发           | -              |
+| click-close-icon `v2.11.0` | 点击关闭图标时触发         | _event: Event_ |
+| open                       | 打开弹出层时触发           | -              |
+| close                      | 关闭弹出层时触发           | -              |
+| opened                     | 打开弹出层且动画结束后触发 | -              |
+| closed                     | 关闭弹出层且动画结束后触发 | -              |
+
+### 样式变量
+
+组件提供了下列 Less 变量，可用于自定义样式，使用方法请参考[主题定制](#/zh-CN/theme)。
+
+| 名称                           | 默认值                               | 描述 |
+| ------------------------------ | ------------------------------------ | ---- |
+| @popup-background-color        | `@white`                             | -    |
+| @popup-transition              | `transform @animation-duration-base` | -    |
+| @popup-round-border-radius     | `16px`                               | -    |
+| @popup-close-icon-size         | `22px`                               | -    |
+| @popup-close-icon-color        | `@gray-5`                            | -    |
+| @popup-close-icon-active-color | `@gray-6`                            | -    |
+| @popup-close-icon-margin       | `16px`                               | -    |
+| @popup-close-icon-z-index      | `1`                                  | -    |

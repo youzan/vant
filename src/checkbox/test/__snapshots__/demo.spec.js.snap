@@ -26,13 +26,13 @@ exports[`renders demo correctly 1`] = `
     <div role="checkbox" tabindex="0" aria-checked="true" class="van-checkbox">
       <div class="van-checkbox__icon van-checkbox__icon--square van-checkbox__icon--checked"><i class="van-icon van-icon-success">
           <!----></i></div><span class="van-checkbox__label">
-      自定义颜色
+      自定义形状
     </span>
     </div>
   </div>
   <div>
     <div role="checkbox" tabindex="0" aria-checked="true" class="van-checkbox">
-      <div class="van-checkbox__icon van-checkbox__icon--round van-checkbox__icon--checked"><i class="van-icon van-icon-success" style="border-color: #07c160; background-color: rgb(7, 193, 96);">
+      <div class="van-checkbox__icon van-checkbox__icon--round van-checkbox__icon--checked"><i class="van-icon van-icon-success" style="border-color: #ee0a24; background-color: rgb(238, 10, 36);">
           <!----></i></div><span class="van-checkbox__label">
       自定义颜色
     </span>
@@ -48,7 +48,7 @@ exports[`renders demo correctly 1`] = `
   </div>
   <div>
     <div role="checkbox" tabindex="0" aria-checked="true" class="van-checkbox">
-      <div class="van-checkbox__icon van-checkbox__icon--round van-checkbox__icon--checked"><img src="https://img.yzcdn.cn/vant/user-active.png"></div><span class="van-checkbox__label">
+      <div class="van-checkbox__icon van-checkbox__icon--round van-checkbox__icon--checked"><img src="https://img01.yzcdn.cn/vant/user-active.png"></div><span class="van-checkbox__label">
       自定义图标
       </span>
     </div>

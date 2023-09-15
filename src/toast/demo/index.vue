@@ -114,7 +114,7 @@ export default {
     showImageToast() {
       this.$toast({
         message: this.t('customImage'),
-        icon: 'https://img.yzcdn.cn/vant/logo.png',
+        icon: 'https://img01.yzcdn.cn/vant/logo.png',
       });
     },
 

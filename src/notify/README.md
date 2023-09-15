@@ -105,3 +105,18 @@ export default {
 | onClick | Callback function after click | _Function_ | - |
 | onOpened | Callback function after opened | _Function_ | - |
 | onClose | Callback function after close | _Function_ | - |
+
+### Less Variables
+
+How to use: [Custom Theme](#/en-US/theme).
+
+| Name                             | Default Value             | Description |
+| -------------------------------- | ------------------------- | ----------- |
+| @notify-text-color               | `@white`                  | -           |
+| @notify-padding                  | `@padding-xs @padding-md` | -           |
+| @notify-font-size                | `@font-size-md`           | -           |
+| @notify-line-height              | `@line-height-md`         | -           |
+| @notify-primary-background-color | `@blue`                   | -           |
+| @notify-success-background-color | `@green`                  | -           |
+| @notify-danger-background-color  | `@red`                    | -           |
+| @notify-warning-background-color | `@orange`                 | -           |

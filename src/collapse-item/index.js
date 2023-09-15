@@ -20,6 +20,10 @@ export default createComponent({
     ...cellProps,
     name: [Number, String],
     disabled: Boolean,
+    lazyRender: {
+      type: Boolean,
+      default: true,
+    },
     isLink: {
       type: Boolean,
       default: true,
@@ -46,7 +50,7 @@ export default createComponent({
       const { value, accordion } = this.parent;
 
       if (
-        process.env.NODE_ENV !== 'production' &&
+        process.env.NODE_ENV === 'development' &&
         !accordion &&
         !Array.isArray(value)
       ) {
@@ -155,7 +159,7 @@ export default createComponent({
     },
 
     genContent() {
-      if (this.inited) {
+      if (this.inited || !this.lazyRender) {
         return (
           <div
             vShow={this.show}

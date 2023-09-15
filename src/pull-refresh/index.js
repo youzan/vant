@@ -23,6 +23,7 @@ export default createComponent({
     pullingText: String,
     loosingText: String,
     loadingText: String,
+    pullDistance: [Number, String],
     value: {
       type: Boolean,
       required: true,
@@ -136,13 +137,13 @@ export default createComponent({
     },
 
     ease(distance) {
-      const headHeight = +this.headHeight;
+      const pullDistance = +(this.pullDistance || this.headHeight);
 
-      if (distance > headHeight) {
-        if (distance < headHeight * 2) {
-          distance = headHeight + (distance - headHeight) / 2;
+      if (distance > pullDistance) {
+        if (distance < pullDistance * 2) {
+          distance = pullDistance + (distance - pullDistance) / 2;
         } else {
-          distance = headHeight * 1.5 + (distance - headHeight * 2) / 4;
+          distance = pullDistance * 1.5 + (distance - pullDistance * 2) / 4;
         }
       }
 
@@ -156,7 +157,10 @@ export default createComponent({
       } else if (distance === 0) {
         status = 'normal';
       } else {
-        status = distance < this.headHeight ? 'pulling' : 'loosing';
+        status =
+          distance < (this.pullDistance || this.headHeight)
+            ? 'pulling'
+            : 'loosing';
       }
 
       this.distance = distance;

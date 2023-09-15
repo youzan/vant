@@ -25,6 +25,11 @@ export const CloseOnPopstateMixin = {
   },
 
   methods: {
+    onPopstate() {
+      this.close();
+      this.shouldReopen = false;
+    },
+
     handlePopstate(bind) {
       /* istanbul ignore if */
       if (this.$isServer) {
@@ -34,10 +39,7 @@ export const CloseOnPopstateMixin = {
       if (this.bindStatus !== bind) {
         this.bindStatus = bind;
         const action = bind ? on : off;
-        action(window, 'popstate', () => {
-          this.close();
-          this.shouldReopen = false;
-        });
+        action(window, 'popstate', this.onPopstate);
       }
     },
   },

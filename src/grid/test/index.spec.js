@@ -19,7 +19,7 @@ test('click grid item', () => {
   expect(onClick).toHaveBeenCalledTimes(1);
 });
 
-test('sqaure and set gutter', () => {
+test('square and set gutter', () => {
   const wrapper = mount({
     template: `
       <van-grid square :column-num="2" gutter="10rem">
@@ -49,7 +49,7 @@ test('render icon-slot', () => {
   const wrapper = mount({
     template: `
       <van-grid icon-size="10">
-        <van-grid-item info="1">
+        <van-grid-item badge="1">
           <template #icon>
             <div>Custom Icon</div>
           </template>

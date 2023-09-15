@@ -15,12 +15,12 @@
 
     <demo-block :title="t('customShape')">
       <van-checkbox v-model="checkboxShape" shape="square">
-        {{ t('customColor') }}
+        {{ t('customShape') }}
       </van-checkbox>
     </demo-block>
 
     <demo-block :title="t('customColor')">
-      <van-checkbox v-model="checkbox2" checked-color="#07c160">
+      <van-checkbox v-model="checkbox2" checked-color="#ee0a24">
         {{ t('customColor') }}
       </van-checkbox>
     </demo-block>
@@ -154,8 +154,8 @@ export default {
       result3: [],
       checkAllResult: [],
       horizontalResult: [],
-      activeIcon: 'https://img.yzcdn.cn/vant/user-active.png',
-      inactiveIcon: 'https://img.yzcdn.cn/vant/user-inactive.png',
+      activeIcon: 'https://img01.yzcdn.cn/vant/user-active.png',
+      inactiveIcon: 'https://img01.yzcdn.cn/vant/user-inactive.png',
     };
   },
 

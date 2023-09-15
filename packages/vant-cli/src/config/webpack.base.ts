@@ -62,6 +62,15 @@ if (existsSync(tsconfigPath)) {
   );
 }
 
+const VUE_LOADER = {
+  loader: 'vue-loader',
+  options: {
+    compilerOptions: {
+      preserveWhitespace: false,
+    },
+  },
+};
+
 export const baseConfig: WebpackConfig = {
   mode: 'development',
   resolve: {
@@ -71,21 +80,11 @@ export const baseConfig: WebpackConfig = {
     rules: [
       {
         test: /\.vue$/,
-        use: [
-          CACHE_LOADER,
-          {
-            loader: 'vue-loader',
-            options: {
-              compilerOptions: {
-                preserveWhitespace: false,
-              },
-            },
-          },
-        ],
+        use: [CACHE_LOADER, VUE_LOADER],
       },
       {
         test: /\.(js|ts|jsx|tsx)$/,
-        exclude: /node_modules\/(?!(@vant\/cli))/,
+        exclude: /^node_modules(\/\.pnpm)?\/(?!(@vant\/cli))/,
         use: [CACHE_LOADER, 'babel-loader'],
       },
       {
@@ -113,7 +112,7 @@ export const baseConfig: WebpackConfig = {
       },
       {
         test: /\.md$/,
-        use: [CACHE_LOADER, 'vue-loader', '@vant/markdown-loader'],
+        use: [CACHE_LOADER, VUE_LOADER, '@vant/markdown-loader'],
       },
     ],
   },

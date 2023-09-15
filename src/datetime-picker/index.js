@@ -13,7 +13,7 @@ export default createComponent({
   methods: {
     // @exposed-api
     getPicker() {
-      return this.$refs.root.getPicker();
+      return this.$refs.root.getProxiedPicker();
     },
   },
 
@@ -24,6 +24,7 @@ export default createComponent({
       <Component
         ref="root"
         class={bem()}
+        scopedSlots={this.$scopedSlots}
         {...{
           props: this.$props,
           on: this.$listeners,

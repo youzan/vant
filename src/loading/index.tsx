@@ -14,6 +14,7 @@ export type LoadingProps = {
   color: string;
   vertical?: boolean;
   textSize?: string | number;
+  textColor?: string;
 };
 
 const [createComponent, bem] = createNamespace('loading');
@@ -40,8 +41,9 @@ function LoadingText(
   slots: DefaultSlots
 ) {
   if (slots.default) {
-    const style = props.textSize && {
+    const style = {
       fontSize: addUnit(props.textSize),
+      color: props.textColor ?? props.color,
     };
 
     return (
@@ -85,6 +87,7 @@ Loading.props = {
   size: [Number, String],
   vertical: Boolean,
   textSize: [Number, String],
+  textColor: String,
   type: {
     type: String,
     default: 'circular',

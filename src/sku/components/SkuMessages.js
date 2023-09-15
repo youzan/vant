@@ -127,6 +127,14 @@ export default createComponent({
       };
     },
 
+    getExtraDesc(message) {
+      const { extraDesc } = message;
+
+      if (extraDesc) {
+        return <div class={bem('extra-message')}>{extraDesc}</div>;
+      }
+    },
+
     genMessage(message, index) {
       if (message.type === 'image') {
         return (
@@ -141,6 +149,7 @@ export default createComponent({
               vModel={this.messageValues[index].value}
               maxSize={this.messageConfig.uploadMaxSize}
               uploadImg={this.messageConfig.uploadImg}
+              customUpload={this.messageConfig.customUpload}
             />
             <div class={bem('image-cell-label')}>{t('imageLabel')}</div>
           </Cell>
@@ -163,17 +172,21 @@ export default createComponent({
       }
 
       return (
-        <Field
-          vModel={this.messageValues[index].value}
-          maxlength="200"
-          center={!message.multiple}
-          label={message.name}
-          key={`${this.goodsId}-${index}`}
-          required={String(message.required) === '1'}
-          placeholder={this.getPlaceholder(message)}
-          type={this.getType(message)}
-          formatter={this.getFormatter(message)}
-        />
+        <div class={bem('cell-block')}>
+          <Field
+            vModel={this.messageValues[index].value}
+            maxlength="200"
+            center={!message.multiple}
+            label={message.name}
+            key={`${this.goodsId}-${index}`}
+            required={String(message.required) === '1'}
+            placeholder={this.getPlaceholder(message)}
+            type={this.getType(message)}
+            formatter={this.getFormatter(message)}
+            border={false}
+          />
+          {this.getExtraDesc(message)}
+        </div>
       );
     },
   },

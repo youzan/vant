@@ -144,3 +144,20 @@ export default {
 | 事件名 | 说明             | 回调参数 |
 | ------ | ---------------- | -------- |
 | focus  | 输入框聚焦时触发 | -        |
+
+### 样式变量
+
+组件提供了下列 Less 变量，可用于自定义样式，使用方法请参考[主题定制](#/zh-CN/theme)。
+
+| 名称                             | 默认值          | 描述 |
+| -------------------------------- | --------------- | ---- |
+| @password-input-height           | `50px`          | -    |
+| @password-input-margin           | `0 @padding-md` | -    |
+| @password-input-font-size        | `20px`          | -    |
+| @password-input-border-radius    | `6px`           | -    |
+| @password-input-background-color | `@white`        | -    |
+| @password-input-info-color       | `@gray-6`       | -    |
+| @password-input-info-font-size   | `@font-size-md` | -    |
+| @password-input-error-info-color | `@red`          | -    |
+| @password-input-dot-size         | `10px`          | -    |
+| @password-input-dot-color        | `@black`        | -    |

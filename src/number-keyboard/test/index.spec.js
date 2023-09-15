@@ -50,7 +50,7 @@ test('click close button', () => {
   expect(wrapper.emitted('close')).toBeTruthy();
 });
 
-test('listen to show/hide event when has transtion', () => {
+test('listen to show/hide event when has transition', () => {
   const wrapper = mount(NumberKeyboard);
   wrapper.vm.show = true;
   wrapper.trigger('animationend');
@@ -60,7 +60,7 @@ test('listen to show/hide event when has transtion', () => {
   expect(wrapper.emitted('hide')).toBeTruthy();
 });
 
-test('listen to show event when no transtion', () => {
+test('listen to show event when no transition', () => {
   const wrapper = mount(NumberKeyboard, {
     propsData: {
       transition: false,
@@ -237,4 +237,23 @@ test('close-button-loading prop', () => {
   });
 
   expect(wrapper.contains('.van-key__loading-icon')).toBeTruthy();
+});
+test('random-key-order prop', () => {
+  const wrapper = mount(NumberKeyboard, {
+    propsData: {
+      show: true,
+      randomKeyOrder: true,
+    },
+  });
+
+  const keys = [];
+  const clickKeys = [];
+  for (let i = 0; i < 9; i++) {
+    keys.push(i + 1);
+
+    clickKey(wrapper.findAll('.van-key').at(i));
+    clickKeys.push(wrapper.emitted('input')[i][0]);
+  }
+
+  expect(keys.every((v, k) => keys[k] === clickKeys[k])).toEqual(false);
 });

@@ -1,15 +1,25 @@
 import VueRouter from 'vue-router';
-import { mount, later, mockGetBoundingClientRect } from '../../../test';
+import { later, mockGetBoundingClientRect, mount } from '../../../test';
 import Vue from 'vue';
 import Tabbar from '..';
+import { createLocalVue } from '@vue/test-utils';
 
 Vue.use(VueRouter);
 
 test('route mode', async () => {
-  const router = new VueRouter();
-  const wrapper = mount({
-    router,
-    template: `
+  const router = new VueRouter({
+    routes: [
+      { path: '/', component: { render: () => '/' } },
+      { path: '/search', component: { render: () => '/search' } },
+      { path: '/star', component: { render: () => '/star' } },
+    ],
+  });
+  const localVue = createLocalVue();
+  localVue.use(VueRouter);
+
+  const wrapper = mount(
+    {
+      template: `
       <van-tabbar route>
         <van-tabbar-item replace to="/">
           Tab
@@ -25,7 +35,9 @@ test('route mode', async () => {
         </van-tabbar-item>
       </van-tabbar>
     `,
-  });
+    },
+    { localVue, router }
+  );
 
   expect(wrapper).toMatchSnapshot();
 

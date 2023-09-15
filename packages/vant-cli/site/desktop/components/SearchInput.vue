@@ -26,9 +26,17 @@ export default {
   },
 
   mounted() {
-    if (this.searchConfig) {
+    const { searchConfig } = this;
+    if (searchConfig) {
+      const { algoliaOptions } = searchConfig;
+      let facetFilters = [`lang:${this.lang}`];
+
+      if (algoliaOptions?.facetFilters) {
+        facetFilters = facetFilters.concat(algoliaOptions.facetFilters);
+      }
+
       this.docsearchInstance = window.docsearch({
-        ...this.searchConfig,
+        ...searchConfig,
         transformData: (hits) => {
           hits.forEach((hit) => {
             if (hit.anchor) {
@@ -36,13 +44,14 @@ export default {
               hit.anchor = null;
             }
           });
-          if (this.searchConfig.transformData) {
-            this.searchConfig.transformData(hits);
+          if (searchConfig.transformData) {
+            searchConfig.transformData(hits);
           }
         },
         inputSelector: '.van-doc-search',
         algoliaOptions: {
-          facetFilters: [`lang:${this.lang}`],
+          ...algoliaOptions,
+          facetFilters,
         },
       });
     }

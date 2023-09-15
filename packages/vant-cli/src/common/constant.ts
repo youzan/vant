@@ -3,15 +3,16 @@ import { existsSync } from 'fs-extra';
 import { join, dirname, isAbsolute } from 'path';
 
 function findRootDir(dir: string): string {
-  if (dir === '/') {
-    return '/';
-  }
-
   if (existsSync(join(dir, 'vant.config.js'))) {
     return dir;
   }
 
-  return findRootDir(dirname(dir));
+  const parentDir = dirname(dir);
+  if (dir === parentDir) {
+    return dir;
+  }
+
+  return findRootDir(parentDir);
 }
 
 // Colors

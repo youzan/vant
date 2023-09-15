@@ -1,8 +1,14 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`button slot 1`] = `
+<div class="van-submit-bar">
+  <div class="van-submit-bar__bar">Custom button</div>
+</div>
+`;
+
 exports[`button-color prop 1`] = `
 <div class="van-submit-bar">
-  <div class="van-submit-bar__bar"><button class="van-button van-button--danger van-button--normal van-button--round van-submit-bar__button van-submit-bar__button--danger" style="color: rgb(255, 255, 255); background: red; border-color: red;">
+  <div class="van-submit-bar__bar"><button class="van-button van-button--danger van-button--normal van-button--round van-submit-bar__button van-submit-bar__button--danger" style="color: white; background: red; border-color: red;">
       <div class="van-button__content"></div>
     </button></div>
 </div>
@@ -57,7 +63,7 @@ exports[`text-align prop 1`] = `
 `;
 
 exports[`top slot 1`] = `
-<div class="van-submit-bar">top<div class="van-submit-bar__bar"><button class="van-button van-button--danger van-button--normal van-button--round van-submit-bar__button van-submit-bar__button--danger">
+<div class="van-submit-bar">Custom Top<div class="van-submit-bar__bar"><button class="van-button van-button--danger van-button--normal van-button--round van-submit-bar__button van-submit-bar__button--danger">
       <div class="van-button__content"></div>
     </button></div>
 </div>

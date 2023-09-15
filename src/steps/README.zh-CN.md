@@ -1,5 +1,9 @@
 # Steps 步骤条
 
+### 介绍
+
+用于展示操作流程的各个环节，让用户了解当前的操作在整体流程中的位置。
+
 ### 引入
 
 ```js
@@ -81,16 +85,39 @@ export default {
 | inactive-color `v2.9.1` | 未激活状态颜色 | _string_ | `#969799` |
 | active-icon | 激活状态底部图标，可选值见 [Icon 组件](#/zh-CN/icon) | _string_ | `checked` |
 | inactive-icon | 未激活状态底部图标，可选值见 [Icon 组件](#/zh-CN/icon) | _string_ | - |
+| finish-icon `v2.12.7` | 已完成步骤对应的底部图标，优先级高于 `inactive-icon`，可选值见 [Icon 组件](#/zh-CN/icon) | _string_ | - |
+| icon-prefix `v2.12.15` | 图标类名前缀，同 Icon 组件的 [class-prefix 属性](#/zh-CN/icon#props) | _string_ | `van-icon` |
+| center | 是否进行居中对齐，仅在竖向展示时有效 |  _boolean_ | `false` |
 
 ### Step Slots
 
-| 名称          | 说明                 |
-| ------------- | -------------------- |
-| active-icon   | 自定义激活状态图标   |
+| 名称 | 说明 |
+| --- | --- |
+| active-icon | 自定义激活状态图标 |
 | inactive-icon | 自定义未激活状态图标 |
+| finish-icon `v2.12.7` | 自定义已完成步骤对应的底部图标，优先级高于 `inactive-icon` |
 
 ### Steps Events
 
 | 事件名              | 说明                       | 回调参数        |
 | ------------------- | -------------------------- | --------------- |
 | click-step `v2.5.9` | 点击步骤的标题或图标时触发 | _index: number_ |
+
+### 样式变量
+
+组件提供了下列 Less 变量，可用于自定义样式，使用方法请参考[主题定制](#/zh-CN/theme)。
+
+| 名称                             | 默认值          | 描述 |
+| -------------------------------- | --------------- | ---- |
+| @step-text-color                 | `@gray-6`       | -    |
+| @step-active-color               | `@green`        | -    |
+| @step-process-text-color         | `@text-color`   | -    |
+| @step-font-size                  | `@font-size-md` | -    |
+| @step-line-color                 | `@border-color` | -    |
+| @step-finish-line-color          | `@green`        | -    |
+| @step-finish-text-color          | `@text-color`   | -    |
+| @step-icon-size                  | `12px`          | -    |
+| @step-circle-size                | `5px`           | -    |
+| @step-circle-color               | `@gray-6`       | -    |
+| @step-horizontal-title-font-size | `@font-size-sm` | -    |
+| @steps-background-color          | `@white`        | -    |

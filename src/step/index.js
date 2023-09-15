@@ -23,10 +23,22 @@ export default createComponent({
     },
 
     lineStyle() {
-      if (this.status === 'finish') {
-        return { background: this.parent.activeColor };
+      const { activeColor, inactiveColor, center, direction } = this.parent;
+      const style = {
+        background: this.status === 'finish' ? activeColor : inactiveColor,
+      };
+      if (center && direction === 'vertical') {
+        style.top = '50%';
       }
-      return { background: this.parent.inactiveColor };
+      return style;
+    },
+
+    circleContainerStyle() {
+      if (this.parent.center && this.parent.direction === 'vertical') {
+        return {
+          top: '50%',
+        };
+      }
     },
 
     titleStyle() {
@@ -41,7 +53,13 @@ export default createComponent({
 
   methods: {
     genCircle() {
-      const { activeIcon, activeColor, inactiveIcon } = this.parent;
+      const {
+        activeIcon,
+        iconPrefix,
+        activeColor,
+        finishIcon,
+        inactiveIcon,
+      } = this.parent;
 
       if (this.active) {
         return (
@@ -50,6 +68,21 @@ export default createComponent({
               class={bem('icon', 'active')}
               name={activeIcon}
               color={activeColor}
+              classPrefix={iconPrefix}
+            />
+          )
+        );
+      }
+
+      const finishIconSlot = this.slots('finish-icon');
+      if (this.status === 'finish' && (finishIcon || finishIconSlot)) {
+        return (
+          finishIconSlot || (
+            <Icon
+              class={bem('icon', 'finish')}
+              name={finishIcon}
+              color={activeColor}
+              classPrefix={iconPrefix}
             />
           )
         );
@@ -59,7 +92,13 @@ export default createComponent({
 
       if (inactiveIcon || inactiveIconSlot) {
         return (
-          inactiveIconSlot || <Icon class={bem('icon')} name={inactiveIcon} />
+          inactiveIconSlot || (
+            <Icon
+              class={bem('icon')}
+              name={inactiveIcon}
+              classPrefix={iconPrefix}
+            />
+          )
         );
       }
 
@@ -84,7 +123,11 @@ export default createComponent({
         >
           {this.slots()}
         </div>
-        <div class={bem('circle-container')} onClick={this.onClickStep}>
+        <div
+          class={bem('circle-container')}
+          onClick={this.onClickStep}
+          style={this.circleContainerStyle}
+        >
           {this.genCircle()}
         </div>
         <div class={bem('line')} style={this.lineStyle} />

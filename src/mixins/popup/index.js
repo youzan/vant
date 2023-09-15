@@ -18,6 +18,8 @@ import { PortalMixin } from '../portal';
 import { CloseOnPopstateMixin } from '../close-on-popstate';
 
 export const popupMixinProps = {
+  // Initial rendering animation
+  transitionAppear: Boolean,
   // whether to show popup
   value: Boolean,
   // whether to show overlay
@@ -26,7 +28,7 @@ export const popupMixinProps = {
   overlayStyle: Object,
   // overlay custom class name
   overlayClass: String,
-  // whether to close popup when click overlay
+  // whether to close popup when overlay is clicked
   closeOnClickOverlay: Boolean,
   // z-index
   zIndex: [Number, String],
@@ -56,9 +58,16 @@ export function PopupMixin(options = {}) {
       }),
     ],
 
+    provide() {
+      return {
+        vanPopup: this,
+      };
+    },
+
     props: popupMixinProps,
 
     data() {
+      this.onReopenCallback = [];
       return {
         inited: this.value,
       };
@@ -133,6 +142,9 @@ export function PopupMixin(options = {}) {
         this.opened = true;
         this.renderOverlay();
         this.addLock();
+        this.onReopenCallback.forEach((callback) => {
+          callback();
+        });
       },
 
       addLock() {
@@ -217,6 +229,10 @@ export function PopupMixin(options = {}) {
 
       updateZIndex(value = 0) {
         this.$el.style.zIndex = ++context.zIndex + value;
+      },
+
+      onReopen(callback) {
+        this.onReopenCallback.push(callback);
       },
     },
   };

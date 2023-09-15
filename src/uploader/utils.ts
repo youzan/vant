@@ -1,4 +1,8 @@
+import { isFunction } from '../utils';
+
 export type ResultType = 'dataUrl' | 'text' | 'file';
+
+export type UploaderMaxSize = number | string | ((file: File) => boolean);
 
 export function toArray<T>(item: T | T[]): T[] {
   if (Array.isArray(item)) {
@@ -9,9 +13,9 @@ export function toArray<T>(item: T | T[]): T[] {
 }
 
 export function readFile(file: File, resultType: ResultType) {
-  return new Promise((resolve) => {
+  return new Promise<FileReader['result']>((resolve) => {
     if (resultType === 'file') {
-      resolve();
+      resolve(null);
       return;
     }
 
@@ -31,9 +35,17 @@ export function readFile(file: File, resultType: ResultType) {
 
 export function isOversize(
   files: File | File[],
-  maxSize: number | string
+  maxSize: UploaderMaxSize
 ): boolean {
-  return toArray(files).some((file) => file.size > maxSize);
+  return toArray(files).some((file) => {
+    if (file) {
+      if (isFunction(maxSize)) {
+        return maxSize(file);
+      }
+      return file.size > maxSize;
+    }
+    return false;
+  });
 }
 
 export type FileListItem = {

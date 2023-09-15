@@ -78,3 +78,16 @@ test('icon-prefix prop', () => {
 
   expect(wrapper).toMatchSnapshot();
 });
+
+test('should allow to disable clickable when using is-link prop', () => {
+  const wrapper = mount(Cell, {
+    propsData: {
+      isLink: true,
+      clickable: false,
+    },
+  });
+
+  expect(
+    wrapper.element.classList.contains('.van-cell--clickable')
+  ).toBeFalsy();
+});

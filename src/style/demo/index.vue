@@ -104,7 +104,7 @@ export default {
     height: 100px;
     margin: -50px 0 0 -50px;
     background-color: @blue;
-    border-radius: 3px;
+    border-radius: 8px;
   }
 }
 </style>

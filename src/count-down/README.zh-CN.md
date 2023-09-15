@@ -1,5 +1,9 @@
 # CountDown 倒计时
 
+### 介绍
+
+用于实时展示倒计时数值，支持毫秒精度。
+
 ### 引入
 
 ```js
@@ -143,14 +147,14 @@ export default {
 
 ### Events
 
-| 事件名          | 说明             | 回调参数             |
-| --------------- | ---------------- | -------------------- |
-| finish          | 倒计时结束时触发 | -                    |
-| change `v2.4.4` | 倒计时变化时触发 | _timeData: TimeData_ |
+| 事件名 | 说明             | 回调参数             |
+| ------ | ---------------- | -------------------- |
+| finish | 倒计时结束时触发 | -                    |
+| change | 倒计时变化时触发 | _timeData: TimeData_ |
 
 ### Slots
 
-| 名称    | 说明       | SlotProps            |
+| 名称    | 说明       | 参数                 |
 | ------- | ---------- | -------------------- |
 | default | 自定义内容 | _timeData: TimeData_ |
 
@@ -166,13 +170,23 @@ export default {
 
 ### 方法
 
-通过 ref 可以获取到 CountDown 实例并调用实例方法，详见[组件实例方法](#/zh-CN/quickstart#zu-jian-shi-li-fang-fa)。
+通过 ref 可以获取到 CountDown 实例并调用实例方法，详见[组件实例方法](#/zh-CN/advanced-usage#zu-jian-shi-li-fang-fa)。
 
 | 方法名 | 说明 | 参数 | 返回值 |
 | --- | --- | --- | --- |
 | start | 开始倒计时 | - | - |
 | pause | 暂停倒计时 | - | - |
-| reset | 重设倒计时，若`auto-start`为`true`，重设后会自动开始倒计时 | - | - |
+| reset | 重设倒计时，若 `auto-start` 为 `true`，重设后会自动开始倒计时 | - | - |
+
+### 样式变量
+
+组件提供了下列 Less 变量，可用于自定义样式，使用方法请参考[主题定制](#/zh-CN/theme)。
+
+| 名称                    | 默认值            | 描述 |
+| ----------------------- | ----------------- | ---- |
+| @count-down-text-color  | `@text-color`     | -    |
+| @count-down-font-size   | `@font-size-md`   | -    |
+| @count-down-line-height | `@line-height-md` | -    |
 
 ## 常见问题
 

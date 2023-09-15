@@ -130,14 +130,15 @@ export default {
 | reset-stepper-on-hide | Whether to reset stepper when hide | _boolean_ | `false` |
 | reset-selected-sku-on-hide | Whether to reset selected sku when hide | _boolean_ | `false` |
 | disable-stepper-input | Whether to disable stepper input | _boolean_ | `false` |
-| close-on-click-overlay | Whether to close sku popup when click overlay | _boolean_ | `true` |
+| close-on-click-overlay | Whether to close sku popup when overlay is clicked | _boolean_ | `true` |
 | stepper-title | Quantity title | _string_ | `Quantity` |
 | custom-stepper-config | Custom stepper related config | _object_ | `{}` |
 | message-config | Message related config | _object_ | `{}` |
+| disable-soldout-sku `v2.11.3` | Whether to disable soldout sku | _boolean_ | `true` |
 | get-container | Return the mount node for sku | _string \| () => Element_ | - |
 | safe-area-inset-bottom | Whether to enable bottom safe area adaptation | _boolean_ | `true` |
-| start-sale-num `v2.3.0` | Minimum quantity | _number_ | `1` |
-| properties `v2.4.2` | Goods properties | _array_ | - |
+| start-sale-num | Minimum quantity | _number_ | `1` |
+| properties | Goods properties | _array_ | - |
 | preview-on-click-image `v2.5.2` | Whether to preview image when click goods image | _boolean_ | `true` |
 | show-header-image `v2.9.0` | Whether to display header image | _boolean_ | `true` |
 | lazy-load | Whether to enable lazy load，should register [Lazyload](#/en-US/lazyload) component | _boolean_ | `false` |
@@ -146,14 +147,14 @@ export default {
 
 | Event | Description | Arguments |
 | --- | --- | --- |
-| add-cart | Triggered when click cart button | data: object |
-| buy-clicked | Triggered when click buy button | data: object |
-| stepper-change | Triggered when stepper value changed | value: number |
-| sku-selected | Triggered when select sku | { skuValue, selectedSku, selectedSkuComb } |
-| sku-prop-selected | Triggered when select property | { propValue, selectedProp, selectedSkuComb } |
-| open-preview | Triggered when open image preview | data: object |
-| close-preview | Triggered when close image preview | data: object |
-| sku-reset `v2.8.1` | Triggered when reset sku and property | { selectedSku, selectedProp, selectedSkuComb } |
+| add-cart | Emitted when click cart button | data: object |
+| buy-clicked | Emitted when click buy button | data: object |
+| stepper-change | Emitted when stepper value changed | value: number |
+| sku-selected | Emitted when select sku | { skuValue, selectedSku, selectedSkuComb } |
+| sku-prop-selected | Emitted when select property | { propValue, selectedProp, selectedSkuComb } |
+| open-preview | Emitted when open image preview | data: object |
+| close-preview | Emitted when close image preview | data: object |
+| sku-reset `v2.8.1` | Emitted when reset sku and property | { selectedSku, selectedProp, selectedSkuComb } |
 
 ### Methods
 
@@ -162,7 +163,7 @@ Use [ref](https://vuejs.org/v2/api/#ref) to get Sku instance and call instance m
 | Name | Description | Attribute | Return value |
 | --- | --- | --- | --- |
 | getSkuData | Get current skuData | - | skuData |
-| resetSelectedSku `v2.3.0` | Reset selected sku to initial sku | - | - |
+| resetSelectedSku | Reset selected sku to initial sku | - | - |
 
 ### Slots
 
@@ -178,7 +179,7 @@ Use [ref](https://vuejs.org/v2/api/#ref) to get Sku instance and call instance m
 | extra-sku-group                 | Extra custom content              |
 | sku-stepper                     | Custom stepper                    |
 | sku-messages                    | Custom messages                   |
-| sku-actions-top `v2.4.7`        | Custom content before sku-actions |
+| sku-actions-top                 | Custom content before sku-actions |
 | sku-actions                     | Custom button actions             |
 
 ### Sku Data Structure
@@ -193,14 +194,14 @@ sku: {
         {
           id: '1',
           name: 'Red',
-          imgUrl: 'https://img.yzcdn.cn/1.jpg',
-          previewImgUrl: 'https://img.yzcdn.cn/1p.jpg',
+          imgUrl: 'https://img01.yzcdn.cn/1.jpg',
+          previewImgUrl: 'https://img01.yzcdn.cn/1p.jpg',
         },
         {
           id: '1',
           name: 'Blue',
-          imgUrl: 'https://img.yzcdn.cn/2.jpg',
-          previewImgUrl: 'https://img.yzcdn.cn/2p.jpg',
+          imgUrl: 'https://img01.yzcdn.cn/2.jpg',
+          previewImgUrl: 'https://img01.yzcdn.cn/2p.jpg',
         }
       ],
       largeImageMode: true, //  whether to enable large image mode
@@ -226,7 +227,8 @@ sku: {
       name: 'Message',
       type: 'text',
       required: '1'，
-      placeholder: ''
+      placeholder: '',
+      extraDesc: ''
     }
   ],
   hide_stock: false,
@@ -265,11 +267,13 @@ sku: {
         id: 1222,
         name: 'Tea',
         price: 1,
+        text_status: 0,
       },
       {
         id: 1223,
         name: 'Water',
         price: 1,
+        text_status: 1,
       },
     ],
   },
@@ -295,7 +299,7 @@ sku: {
 
 ```js
 goods: {
-  picture: 'https://img.yzcdn.cn/1.jpg';
+  picture: 'https://img01.yzcdn.cn/1.jpg';
 }
 ```
 
@@ -326,7 +330,7 @@ customStepperConfig: {
   handleStepperChange: currentValue => {},
   // stock
   stockNum: 1999,
-  // stock fomatter
+  // stock formatter
   stockFormatter: stockNum => {},
 }
 ```
@@ -338,7 +342,7 @@ messageConfig: {
   // the upload image callback
   uploadImg: () => {
     return new Promise((resolve) => {
-      setTimeout(() => resolve('https://img.yzcdn.cn/upload_files/2017/02/21/FjKTOxjVgnUuPmHJRdunvYky9OHP.jpg!100x100.jpg'), 1000);
+      setTimeout(() => resolve('https://img01.yzcdn.cn/upload_files/2017/02/21/FjKTOxjVgnUuPmHJRdunvYky9OHP.jpg!100x100.jpg'), 1000);
     });
   },
   // max file size (MB)
@@ -395,3 +399,13 @@ skuData: {
   }
 }
 ```
+
+### Less Variables
+
+How to use: [Custom Theme](#/en-US/theme).
+
+| Name                       | Default Value           | Description |
+| -------------------------- | ----------------------- | ----------- |
+| @sku-item-background-color | `@background-color`     | -           |
+| @sku-icon-gray-color       | `@gray-4`               | -           |
+| @sku-upload-mask-color     | `rgba(50, 50, 51, 0.8)` | -           |

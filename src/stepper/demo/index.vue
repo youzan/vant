@@ -91,7 +91,8 @@ export default {
     onChange(value) {
       this.$toast.loading({ forbidClick: true });
 
-      setTimeout(() => {
+      clearTimeout(this.timer);
+      this.timer = setTimeout(() => {
         this.stepper6 = value;
         this.$toast.clear();
       }, 500);

@@ -53,14 +53,17 @@ Locale.add(messages);
 | 日语           | ja-JP        |
 | 罗马尼亚语     | ro-RO        |
 | 挪威语         | nb-NO        |
+| 泰语           | th-TH        |
+| 法语           | fr-FR        |
+| 越南语     | vi-VN        |
 
-> 在 [这里](https://github.com/youzan/vant/tree/dev/src/locale/lang) 查看所有的语言包源文件。
+> 在 [这里](https://github.com/vant-ui/vant/tree/2.x/src/locale/lang) 查看所有的语言包源文件。
 
 ## 常见问题
 
 ### 找不到所需的语言包？
 
-如果上方列表中没有你需要的语言，欢迎给我们提 Pull Request 来增加新的语言包，改动内容可以参考[增加德语语言包](https://github.com/youzan/vant/pull/7245) 的 PR。
+如果上方列表中没有你需要的语言，欢迎给我们提 Pull Request 来增加新的语言包，改动内容可以参考[增加德语语言包](https://github.com/vant-ui/vant/pull/7245) 的 PR。
 
 ### 业务代码如何实现国际化？
 

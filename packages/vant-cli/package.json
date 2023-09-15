@@ -1,6 +1,6 @@
 {
   "name": "@vant/cli",
-  "version": "2.6.1",
+  "version": "2.11.11",
   "description": "",
   "main": "lib/index.js",
   "typings": "lib/index.d.ts",
@@ -9,6 +9,9 @@
   },
   "engines": {
     "node": ">=10"
+  },
+  "npm": {
+    "tag": "latest-v2"
   },
   "publishConfig": {
     "access": "public",
@@ -51,7 +54,7 @@
     "@types/webpack": "^4.41.13",
     "@types/webpack-dev-server": "^3.11.0",
     "@vant/eslint-config": "^2.2.2",
-    "@vant/markdown-loader": "^2.3.0",
+    "@vant/markdown-loader": "^2.5.0",
     "@vant/markdown-vetur": "^2.0.2",
     "@vant/stylelint-config": "^1.3.0",
     "@vant/touch-emulator": "^1.2.0",
@@ -70,6 +73,7 @@
     "commander": "^5.1.0",
     "consola": "^2.12.2",
     "conventional-changelog": "^3.1.21",
+    "copy-text-to-clipboard": "^3.0.1",
     "cross-env": "^7.0.2",
     "css-loader": "^3.5.3",
     "eslint": "^6.8.0",
@@ -82,8 +86,8 @@
     "jest": "^25.5.4",
     "jest-canvas-mock": "^2.2.0",
     "jest-serializer-vue": "^2.0.2",
-    "less": "^3.11.1",
-    "less-loader": "^6.1.0",
+    "less": "^4.0.0",
+    "less-loader": "^7.0.0",
     "lint-staged": "^10.2.7",
     "lodash": "^4.17.15",
     "ora": "^4.0.4",
@@ -102,13 +106,16 @@
     "vue-router": "^3.3.1",
     "webpack": "^4.43.0",
     "webpack-dev-server": "3.11.0",
-    "webpack-merge": "^4.2.2",
+    "webpack-merge": "^5.8.0",
     "webpackbar": "^4.0.0"
   },
   "release-it": {
     "git": {
       "tag": false,
       "commitMessage": "chore: release @vant/cli@${version}"
+    },
+    "npm": {
+      "tag": "latest-v2"
     }
   },
   "eslintConfig": {

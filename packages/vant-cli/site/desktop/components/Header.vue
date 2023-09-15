@@ -90,7 +90,7 @@ export default {
     },
 
     anotherLang() {
-      const items = this.langConfigs.filter(item => item.lang !== this.lang);
+      const items = this.langConfigs.filter((item) => item.lang !== this.lang);
       if (items.length) {
         return items[0];
       }

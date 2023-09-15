@@ -12,7 +12,9 @@
 
   &__title {
     .van-cell__right-icon::before {
-      transform: rotate(90deg);
+      // using translateZ to fix safari rendering issues
+      // see: https://github.com/vant-ui/vant/issues/8608
+      transform: rotate(90deg) translateZ(0);
       transition: transform @collapse-item-transition-duration;
     }
 

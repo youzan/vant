@@ -1,5 +1,7 @@
 import { VanComponent } from './component';
 
 export class Calendar extends VanComponent {
-  reset(): void;
+  reset(date?: Date | Date[]): void;
+
+  scrollToDate(date: Date): void;
 }

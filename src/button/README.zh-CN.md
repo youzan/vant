@@ -1,5 +1,9 @@
 # Button 按钮
 
+### 介绍
+
+按钮用于触发一个操作，如提交表单。
+
 ### 引入
 
 ```js
@@ -76,7 +80,7 @@ Vue.use(Button);
 ```html
 <van-button icon="plus" type="primary" />
 <van-button icon="plus" type="primary">按钮</van-button>
-<van-button icon="https://img.yzcdn.cn/vant/user-active.png" type="info">
+<van-button icon="https://img01.yzcdn.cn/vant/user-active.png" type="info">
   按钮
 </van-button>
 ```
@@ -162,4 +166,41 @@ Vue.use(Button);
 | 名称              | 说明           |
 | ----------------- | -------------- |
 | default           | 按钮内容       |
+| icon `v2.12.21`   | 自定义图标     |
 | loading `v2.10.1` | 自定义加载图标 |
+
+### 样式变量
+
+组件提供了下列 Less 变量，可用于自定义样式，使用方法请参考[主题定制](#/zh-CN/theme)。
+
+| 名称                             | 默认值               | 描述 |
+| -------------------------------- | -------------------- | ---- |
+| @button-mini-height              | `24px`               | -    |
+| @button-mini-font-size           | `@font-size-xs`      | -    |
+| @button-small-height             | `32px`               | -    |
+| @button-small-font-size          | `@font-size-sm`      | -    |
+| @button-normal-font-size         | `@font-size-md`      | -    |
+| @button-large-height             | `50px`               | -    |
+| @button-default-height           | `44px`               | -    |
+| @button-default-line-height      | `1.2`                | -    |
+| @button-default-font-size        | `@font-size-lg`      | -    |
+| @button-default-color            | `@text-color`        | -    |
+| @button-default-background-color | `@white`             | -    |
+| @button-default-border-color     | `@border-color`      | -    |
+| @button-primary-color            | `@white`             | -    |
+| @button-primary-background-color | `@green`             | -    |
+| @button-primary-border-color     | `@green`             | -    |
+| @button-info-color               | `@white`             | -    |
+| @button-info-background-color    | `@blue`              | -    |
+| @button-info-border-color        | `@blue`              | -    |
+| @button-danger-color             | `@white`             | -    |
+| @button-danger-background-color  | `@red`               | -    |
+| @button-danger-border-color      | `@red`               | -    |
+| @button-warning-color            | `@white`             | -    |
+| @button-warning-background-color | `@orange`            | -    |
+| @button-warning-border-color     | `@orange`            | -    |
+| @button-border-width             | `@border-width-base` | -    |
+| @button-border-radius            | `@border-radius-sm`  | -    |
+| @button-round-border-radius      | `@border-radius-max` | -    |
+| @button-plain-background-color   | `@white`             | -    |
+| @button-disabled-opacity         | `@disabled-opacity`  | -    |

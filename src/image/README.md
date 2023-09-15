@@ -14,7 +14,11 @@ Vue.use(VanImage);
 ### Basic Usage
 
 ```html
-<van-image width="100" height="100" src="https://img.yzcdn.cn/vant/cat.jpeg" />
+<van-image
+  width="100"
+  height="100"
+  src="https://img01.yzcdn.cn/vant/cat.jpeg"
+/>
 ```
 
 ### Fit Mode
@@ -24,7 +28,7 @@ Vue.use(VanImage);
   width="10rem"
   height="10rem"
   fit="contain"
-  src="https://img.yzcdn.cn/vant/cat.jpeg"
+  src="https://img01.yzcdn.cn/vant/cat.jpeg"
 />
 ```
 
@@ -37,7 +41,7 @@ Show round image, it may not works at `fit=contain` and `fit=scale-down`.
   round
   width="10rem"
   height="10rem"
-  src="https://img.yzcdn.cn/vant/cat.jpeg"
+  src="https://img01.yzcdn.cn/vant/cat.jpeg"
 />
 ```
 
@@ -48,7 +52,7 @@ Show round image, it may not works at `fit=contain` and `fit=scale-down`.
   width="100"
   height="100"
   lazy-load
-  src="https://img.yzcdn.cn/vant/cat.jpeg"
+  src="https://img01.yzcdn.cn/vant/cat.jpeg"
 />
 ```
 
@@ -75,12 +79,13 @@ Vue.use(Lazyload);
 | lazy-load | Whether to enable lazy load，should register [Lazyload](#/en-US/lazyload) component | _boolean_ | `false` |
 | show-error | Whether to show error placeholder | _boolean_ | `true` |
 | show-loading | Whether to show loading placeholder | _boolean_ | `true` |
-| error-icon `v2.4.2` | Error icon | _string_ | `photo-fail` |
-| loading-icon `v2.4.2` | Loading icon | _string_ | `photo` |
+| error-icon | Error icon | _string_ | `photo-fail` |
+| loading-icon | Loading icon | _string_ | `photo` |
+| icon-prefix `v2.10.12` | Icon className prefix | _string_ | `van-icon` |
 
 ### fit optional value
 
-| name | desctription |
+| name | description |
 | --- | --- |
 | contain | Keep aspect ratio, fully display the long side of the image |
 | cover | Keep aspect ratio, fully display the short side of the image, cutting the long side |
@@ -90,11 +95,11 @@ Vue.use(Lazyload);
 
 ### Events
 
-| Event | Description                      | Arguments      |
-| ----- | -------------------------------- | -------------- |
-| click | Triggered when click image       | _event: Event_ |
-| load  | Triggered when image loaded      | -              |
-| error | Triggered when image load failed | -              |
+| Event | Description                    | Arguments      |
+| ----- | ------------------------------ | -------------- |
+| click | Emitted when image is clicked  | _event: Event_ |
+| load  | Emitted when image loaded      | -              |
+| error | Emitted when image load failed | -              |
 
 ### Slots
 
@@ -103,3 +108,17 @@ Vue.use(Lazyload);
 | default `v2.9.0` | Custom the content below the image |
 | loading          | Custom loading placeholder         |
 | error            | Custom error placeholder           |
+
+### Less Variables
+
+How to use: [Custom Theme](#/en-US/theme).
+
+| Name                                | Default Value       | Description |
+| ----------------------------------- | ------------------- | ----------- |
+| @image-placeholder-text-color       | `@gray-6`           | -           |
+| @image-placeholder-font-size        | `@font-size-md`     | -           |
+| @image-placeholder-background-color | `@background-color` | -           |
+| @image-loading-icon-size            | `32px`              | -           |
+| @image-loading-icon-color           | `@gray-4`           | -           |
+| @image-error-icon-size              | `32px`              | -           |
+| @image-error-icon-color             | `@gray-4`           | -           |

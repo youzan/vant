@@ -9,6 +9,7 @@ export default createComponent({
   data() {
     return {
       offset: 0,
+      inited: false,
       mounted: false,
     };
   },
@@ -24,7 +25,9 @@ export default createComponent({
       const style = {};
       const { size, vertical } = this.parent;
 
-      style[vertical ? 'height' : 'width'] = `${size}px`;
+      if (size) {
+        style[vertical ? 'height' : 'width'] = `${size}px`;
+      }
 
       if (this.offset) {
         style.transform = `translate${vertical ? 'Y' : 'X'}(${this.offset}px)`;
@@ -34,9 +37,9 @@ export default createComponent({
     },
 
     shouldRender() {
-      const { index, parent, mounted } = this;
+      const { index, inited, parent, mounted } = this;
 
-      if (!parent.lazyRender) {
+      if (!parent.lazyRender || inited) {
         return true;
       }
 
@@ -47,10 +50,16 @@ export default createComponent({
 
       const active = parent.activeIndicator;
       const maxActive = parent.count - 1;
-      const prevActive = active === 0 ? maxActive : active - 1;
-      const nextActive = active === maxActive ? 0 : active + 1;
+      const prevActive = active === 0 && parent.loop ? maxActive : active - 1;
+      const nextActive = active === maxActive && parent.loop ? 0 : active + 1;
+      const shouldRender =
+        index === active || index === prevActive || index === nextActive;
 
-      return index === active || index === prevActive || index === nextActive;
+      if (shouldRender) {
+        this.inited = true;
+      }
+
+      return shouldRender;
     },
   },
 

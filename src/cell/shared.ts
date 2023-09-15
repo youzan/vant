@@ -23,7 +23,6 @@ export const cellProps = {
   center: Boolean,
   isLink: Boolean,
   required: Boolean,
-  clickable: Boolean,
   iconPrefix: String,
   titleStyle: null as any,
   titleClass: null as any,
@@ -36,5 +35,9 @@ export const cellProps = {
   border: {
     type: Boolean,
     default: true,
+  },
+  clickable: {
+    type: Boolean,
+    default: null,
   },
 };

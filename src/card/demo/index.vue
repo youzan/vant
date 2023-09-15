@@ -32,12 +32,10 @@
       >
         <template #tags>
           <div>
-            <van-tag plain type="danger" style="margin-right: 5px;">
+            <van-tag plain type="danger" style="margin-right: 5px">
               标签
             </van-tag>
-            <van-tag plain type="danger">
-              标签
-            </van-tag>
+            <van-tag plain type="danger">标签</van-tag>
           </div>
         </template>
 
@@ -72,7 +70,7 @@ export default {
 
   data() {
     return {
-      imageURL: 'https://img.yzcdn.cn/vant/ipad.jpeg',
+      imageURL: 'https://img01.yzcdn.cn/vant/ipad.jpeg',
     };
   },
 };

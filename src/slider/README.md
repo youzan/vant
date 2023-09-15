@@ -150,7 +150,7 @@ export default {
 | min | Min value | _number \| string_ | `0` |
 | step | Step size | _number \| string_ | `1` |
 | bar-height | Height of bar | _number \| string_ | `2px` |
-| button-size `v2.4.5` | Button size | _number \| string_ | `24px` |
+| button-size | Button size | _number \| string_ | `24px` |
 | active-color | Active color of bar | _string_ | `#1989fa` |
 | inactive-color | Inactive color of bar | _string_ | `#e5e5e5` |
 | range `v2.10.7` | Whether to enable dual thumb mode | _boolean_ | `false` |
@@ -159,15 +159,33 @@ export default {
 
 ### Events
 
-| Event      | Description                          | Arguments           |
-| ---------- | ------------------------------------ | ------------------- |
-| input      | Instant triggered when value changed | value: current rate |
-| change     | Triggered after value changed        | value: current rate |
-| drag-start | Triggered when start drag            | -                   |
-| drag-end   | Triggered when end drag              | -                   |
+| Event      | Description                    | Arguments           |
+| ---------- | ------------------------------ | ------------------- |
+| input      | Emitted when value is changing | value: current rate |
+| change     | Emitted after value changed    | value: current rate |
+| drag-start | Emitted when start draging     | -                   |
+| drag-end   | Emitted when end draging       | -                   |
 
 ### Slots
 
-| Name   | Description   |
-| ------ | ------------- |
-| button | Custom button |
+| Name                    | Description                    | Arguments         |
+| ----------------------- | ------------------------------ | ----------------- |
+| button                  | Custom button                  | -                 |
+| left-button `v2.12.38`  | Custom left button (in range)  | { value: number } |
+| right-button `v2.12.38` | Custom right button (in range) | { value: number } |
+
+### Less Variables
+
+How to use: [Custom Theme](#/en-US/theme).
+
+| Name | Default Value | Description |
+| --- | --- | --- |
+| @slider-active-background-color | `@blue` | - |
+| @slider-inactive-background-color | `@gray-3` | - |
+| @slider-disabled-opacity | `@disabled-opacity` | - |
+| @slider-bar-height | `2px` | - |
+| @slider-button-width | `24px` | - |
+| @slider-button-height | `24px` | - |
+| @slider-button-border-radius | `50%` | - |
+| @slider-button-background-color | `@white` | - |
+| @slider-button-box-shadow | `0 1px 2px rgba(0, 0, 0, 0.5)` | - |

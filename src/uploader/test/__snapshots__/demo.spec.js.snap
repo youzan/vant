@@ -14,7 +14,7 @@ exports[`renders demo correctly 1`] = `
     <div class="van-uploader">
       <div class="van-uploader__wrapper">
         <div class="van-uploader__preview">
-          <div class="van-image van-uploader__preview-image"><img src="https://img.yzcdn.cn/vant/leaf.jpg" class="van-image__img" style="object-fit: cover;">
+          <div class="van-image van-uploader__preview-image"><img src="https://img01.yzcdn.cn/vant/leaf.jpg" class="van-image__img" style="object-fit: cover;">
             <div class="van-image__loading"><i class="van-icon van-icon-photo van-image__loading-icon">
                 <!----></i></div>
           </div>
@@ -22,7 +22,7 @@ exports[`renders demo correctly 1`] = `
               <!----></i></div>
         </div>
         <div class="van-uploader__preview">
-          <div class="van-image van-uploader__preview-image"><img src="https://img.yzcdn.cn/vant/tree.jpg" class="van-image__img" style="object-fit: cover;">
+          <div class="van-image van-uploader__preview-image"><img src="https://img01.yzcdn.cn/vant/tree.jpg" class="van-image__img" style="object-fit: cover;">
             <div class="van-image__loading"><i class="van-icon van-icon-photo van-image__loading-icon">
                 <!----></i></div>
           </div>
@@ -38,7 +38,7 @@ exports[`renders demo correctly 1`] = `
     <div class="van-uploader">
       <div class="van-uploader__wrapper">
         <div class="van-uploader__preview">
-          <div class="van-image van-uploader__preview-image"><img src="https://img.yzcdn.cn/vant/leaf.jpg" class="van-image__img" style="object-fit: cover;">
+          <div class="van-image van-uploader__preview-image"><img src="https://img01.yzcdn.cn/vant/leaf.jpg" class="van-image__img" style="object-fit: cover;">
             <div class="van-image__loading"><i class="van-icon van-icon-photo van-image__loading-icon">
                 <!----></i></div>
           </div>
@@ -48,7 +48,7 @@ exports[`renders demo correctly 1`] = `
           </div>
         </div>
         <div class="van-uploader__preview">
-          <div class="van-image van-uploader__preview-image"><img src="https://img.yzcdn.cn/vant/tree.jpg" class="van-image__img" style="object-fit: cover;">
+          <div class="van-image van-uploader__preview-image"><img src="https://img01.yzcdn.cn/vant/tree.jpg" class="van-image__img" style="object-fit: cover;">
             <div class="van-image__loading"><i class="van-icon van-icon-photo van-image__loading-icon">
                 <!----></i></div>
           </div>
@@ -68,7 +68,7 @@ exports[`renders demo correctly 1`] = `
     <div class="van-uploader">
       <div class="van-uploader__wrapper">
         <div class="van-uploader__preview">
-          <div class="van-image van-uploader__preview-image"><img src="https://img.yzcdn.cn/vant/sand.jpg" class="van-image__img" style="object-fit: cover;">
+          <div class="van-image van-uploader__preview-image"><img src="https://img01.yzcdn.cn/vant/sand.jpg" class="van-image__img" style="object-fit: cover;">
             <div class="van-image__loading"><i class="van-icon van-icon-photo van-image__loading-icon">
                 <!----></i></div>
           </div>
@@ -84,7 +84,7 @@ exports[`renders demo correctly 1`] = `
     <div class="van-uploader">
       <div class="van-uploader__wrapper">
         <div class="van-uploader__preview">
-          <div class="van-image van-uploader__preview-image"><img src="https://img.yzcdn.cn/vant/sand.jpg" class="van-image__img" style="object-fit: cover;">
+          <div class="van-image van-uploader__preview-image"><img src="https://img01.yzcdn.cn/vant/sand.jpg" class="van-image__img" style="object-fit: cover;">
             <div class="van-image__loading"><i class="van-icon van-icon-photo van-image__loading-icon">
                 <!----></i></div>
           </div>
@@ -112,7 +112,7 @@ exports[`renders demo correctly 1`] = `
     <div class="van-uploader">
       <div class="van-uploader__wrapper">
         <div class="van-uploader__preview">
-          <div class="van-image van-uploader__preview-image"><img src="https://img.yzcdn.cn/vant/leaf.jpg" class="van-image__img" style="object-fit: cover;">
+          <div class="van-image van-uploader__preview-image"><img src="https://img01.yzcdn.cn/vant/leaf.jpg" class="van-image__img" style="object-fit: cover;">
             <div class="van-image__loading"><i class="van-icon van-icon-photo van-image__loading-icon">
                 <!----></i></div>
             <div class="van-uploader__preview-cover">
@@ -140,6 +140,36 @@ exports[`renders demo correctly 1`] = `
       <div class="van-uploader__wrapper van-uploader__wrapper--disabled">
         <div class="van-uploader__upload"><i class="van-icon van-icon-photograph van-uploader__upload-icon">
             <!----></i><input type="file" accept="image/*" disabled="disabled" class="van-uploader__input"></div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div class="van-uploader">
+      <div class="van-uploader__wrapper">
+        <div class="van-uploader__preview">
+          <div class="van-image van-uploader__preview-image"><img src="https://img01.yzcdn.cn/vant/leaf.jpg" class="van-image__img" style="object-fit: cover;">
+            <div class="van-image__loading"><i class="van-icon van-icon-photo van-image__loading-icon">
+                <!----></i></div>
+          </div>
+        </div>
+        <div class="van-uploader__preview">
+          <div class="van-image van-uploader__preview-image"><img src="https://img01.yzcdn.cn/vant/sand.jpg" class="van-image__img" style="object-fit: cover;">
+            <div class="van-image__loading"><i class="van-icon van-icon-photo van-image__loading-icon">
+                <!----></i></div>
+          </div>
+          <div class="van-uploader__preview-delete"><i class="van-icon van-icon-cross van-uploader__preview-delete-icon">
+              <!----></i></div>
+        </div>
+        <div class="van-uploader__preview">
+          <div class="van-image van-uploader__preview-image" style="width: 120px; height: 120px;"><img src="https://img01.yzcdn.cn/vant/tree.jpg" class="van-image__img" style="object-fit: contain;">
+            <div class="van-image__loading"><i class="van-icon van-icon-photo van-image__loading-icon">
+                <!----></i></div>
+          </div>
+          <div class="van-uploader__preview-delete"><i class="van-icon van-icon-cross van-uploader__preview-delete-icon">
+              <!----></i></div>
+        </div>
+        <div class="van-uploader__upload"><i class="van-icon van-icon-photograph van-uploader__upload-icon">
+            <!----></i><input multiple="multiple" type="file" accept="*" class="van-uploader__input"></div>
       </div>
     </div>
   </div>

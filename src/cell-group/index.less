@@ -3,10 +3,20 @@
 .van-cell-group {
   background-color: @cell-group-background-color;
 
+  &--inset {
+    margin: @cell-group-inset-padding;
+    overflow: hidden;
+    border-radius: @cell-group-inset-border-radius;
+  }
+
   &__title {
     padding: @cell-group-title-padding;
     color: @cell-group-title-color;
     font-size: @cell-group-title-font-size;
     line-height: @cell-group-title-line-height;
+
+    &--inset {
+      padding: @cell-group-inset-title-padding;
+    }
   }
 }

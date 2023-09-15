@@ -62,11 +62,11 @@ export default {
   <template #content>
     <van-image
       v-if="active === 0"
-      src="https://img.yzcdn.cn/vant/apple-1.jpg"
+      src="https://img01.yzcdn.cn/vant/apple-1.jpg"
     />
     <van-image
       v-if="active === 1"
-      src="https://img.yzcdn.cn/vant/apple-2.jpg"
+      src="https://img01.yzcdn.cn/vant/apple-2.jpg"
     />
   </template>
 </van-tree-select>
@@ -124,8 +124,8 @@ export default {
 
 | Event | Description | Arguments |
 | --- | --- | --- |
-| click-nav | triggered when parent node is selected | index: index of selected parent |
-| click-item | triggered when item is selected | data: selected item |
+| click-nav | Emitted when parent node is selected | index: index of selected parent |
+| click-item | Emitted when item is selected | data: selected item |
 
 ### Slots
 
@@ -168,3 +168,18 @@ In every tree object, `text` property defines `id` stands for the unique key whi
   },
 ];
 ```
+
+### Less Variables
+
+How to use: [Custom Theme](#/en-US/theme).
+
+| Name                                  | Default Value       | Description |
+| ------------------------------------- | ------------------- | ----------- |
+| @tree-select-font-size                | `@font-size-md`     | -           |
+| @tree-select-nav-background-color     | `@background-color` | -           |
+| @tree-select-content-background-color | `@white`            | -           |
+| @tree-select-nav-item-padding         | `14px @padding-sm`  | -           |
+| @tree-select-item-height              | `48px`              | -           |
+| @tree-select-item-active-color        | `@red`              | -           |
+| @tree-select-item-disabled-color      | `@gray-5`           | -           |
+| @tree-select-item-selected-size       | `16px`              | -           |

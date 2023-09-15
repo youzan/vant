@@ -10,6 +10,7 @@ module.exports = {
     'plus',
     'minus',
     'fail',
+    'circle',
   ],
   outline: [
     // has corresponding filled icon
@@ -79,6 +80,8 @@ module.exports = {
     'new-arrival-o',
     'goods-collect-o',
     'eye-o',
+    'delete-o',
+    'font-o',
     // without corresponding filled icon
     'balance-o',
     'refund-o',
@@ -109,12 +112,12 @@ module.exports = {
     'search',
     'points',
     'edit',
-    'delete',
     'qr',
     'qr-invalid',
     'closed-eye',
     'down',
     'scan',
+    'revoke',
     'free-postage',
     'certificate',
     'logistics',
@@ -124,7 +127,6 @@ module.exports = {
     'exchange',
     'upgrade',
     'ellipsis',
-    'circle',
     'description',
     'records',
     'sign',
@@ -214,6 +216,8 @@ module.exports = {
     'new-arrival',
     'goods-collect',
     'eye',
+    'delete',
+    'font',
     // without corresponding outline icon
     'alipay',
     'wechat',
@@ -241,5 +245,6 @@ module.exports = {
     'wap-nav',
     'enlarge',
     'photo-fail',
+    'sort',
   ],
 };

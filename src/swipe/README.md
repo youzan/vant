@@ -57,8 +57,8 @@ export default {
   data() {
     return {
       images: [
-        'https://img.yzcdn.cn/vant/apple-1.jpg',
-        'https://img.yzcdn.cn/vant/apple-2.jpg',
+        'https://img01.yzcdn.cn/vant/apple-1.jpg',
+        'https://img01.yzcdn.cn/vant/apple-2.jpg',
       ],
     };
   },
@@ -121,9 +121,7 @@ export default {
   <van-swipe-item>3</van-swipe-item>
   <van-swipe-item>4</van-swipe-item>
   <template #indicator>
-    <div class="custom-indicator">
-      {{ current + 1 }}/4
-    </div>
+    <div class="custom-indicator">{{ current + 1 }}/4</div>
   </template>
 </van-swipe>
 
@@ -175,15 +173,15 @@ export default {
 
 ### Swipe Events
 
-| Event  | Description                         | Arguments                     |
-| ------ | ----------------------------------- | ----------------------------- |
-| change | Triggered when current swipe change | index: index of current swipe |
+| Event  | Description                        | Arguments                     |
+| ------ | ---------------------------------- | ----------------------------- |
+| change | Emitted when current swipe changed | index: index of current swipe |
 
 ### SwipeItem Events
 
-| Event | Description            | Arguments      |
-| ----- | ---------------------- | -------------- |
-| click | Triggered when clicked | _event: Event_ |
+| Event | Description                       | Arguments      |
+| ----- | --------------------------------- | -------------- |
+| click | Emitted when component is clicked | _event: Event_ |
 
 ### Swipe Methods
 
@@ -191,10 +189,10 @@ Use [ref](https://vuejs.org/v2/api/#ref) to get Swipe instance and call instance
 
 | Name | Description | Attribute | Return value |
 | --- | --- | --- | --- |
-| prev `v2.4.2` | Swipe to prev item | - | - |
-| next `v2.4.2` | Swipe to next item | - | - |
-| swipeTo | Swipe to target index | index: target index, options: Options | void |
-| resize | Resize Swipe when container element resized | - | void |
+| prev | Swipe to prev item | - | - |
+| next | Swipe to next item | - | - |
+| swipeTo | Swipe to target index | index: target index, options: Options | - |
+| resize | Resize Swipe when container element resized or visibility changed | - | - |
 
 ### swipeTo Options
 
@@ -208,3 +206,16 @@ Use [ref](https://vuejs.org/v2/api/#ref) to get Swipe instance and call instance
 | --------- | ---------------- |
 | default   | Content          |
 | indicator | Custom indicator |
+
+### Less Variables
+
+How to use: [Custom Theme](#/en-US/theme).
+
+| Name                                       | Default Value   | Description |
+| ------------------------------------------ | --------------- | ----------- |
+| @swipe-indicator-size                      | `6px`           | -           |
+| @swipe-indicator-margin                    | `@padding-sm`   | -           |
+| @swipe-indicator-active-opacity            | `1`             | -           |
+| @swipe-indicator-inactive-opacity          | `0.3`           | -           |
+| @swipe-indicator-active-background-color   | `@blue`         | -           |
+| @swipe-indicator-inactive-background-color | `@border-color` | -           |

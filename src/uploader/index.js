@@ -24,6 +24,7 @@ export default createComponent({
 
   props: {
     disabled: Boolean,
+    readonly: Boolean,
     lazyLoad: Boolean,
     uploadText: String,
     afterRead: Function,
@@ -44,7 +45,7 @@ export default createComponent({
       default: () => [],
     },
     maxSize: {
-      type: [Number, String],
+      type: [Number, String, Function],
       default: Number.MAX_VALUE,
     },
     maxCount: {
@@ -90,6 +91,14 @@ export default createComponent({
     value() {
       return this.fileList;
     },
+  },
+
+  created() {
+    this.urls = [];
+  },
+
+  beforeDestroy() {
+    this.urls.forEach((url) => URL.revokeObjectURL(url));
   },
 
   methods: {
@@ -185,7 +194,7 @@ export default createComponent({
           validFiles = [];
           files.forEach((item) => {
             if (item.file) {
-              if (item.file.size > this.maxSize) {
+              if (isOversize(item.file, this.maxSize)) {
                 oversizeFiles.push(item);
               } else {
                 validFiles.push(item);
@@ -212,8 +221,9 @@ export default createComponent({
     },
 
     onDelete(file, index) {
-      if (this.beforeDelete) {
-        const response = this.beforeDelete(file, this.getDetail(index));
+      const beforeDelete = file.beforeDelete ?? this.beforeDelete;
+      if (beforeDelete) {
+        const response = beforeDelete(file, this.getDetail(index));
 
         if (!response) {
           return;
@@ -247,13 +257,23 @@ export default createComponent({
       }
     },
 
+    onClickUpload(event) {
+      this.$emit('click-upload', event);
+    },
+
     onPreviewImage(item) {
       if (!this.previewFullImage) {
         return;
       }
 
       const imageFiles = this.fileList.filter((item) => isImageFile(item));
-      const imageContents = imageFiles.map((item) => item.content || item.url);
+      const imageContents = imageFiles.map((item) => {
+        if (item.file && !item.url && item.status !== 'failed') {
+          item.url = URL.createObjectURL(item.file);
+          this.urls.push(item.url);
+        }
+        return item.url;
+      });
 
       this.imagePreview = ImagePreview({
         images: imageContents,
@@ -306,7 +326,8 @@ export default createComponent({
     },
 
     genPreviewItem(item, index) {
-      const showDelete = item.status !== 'uploading' && this.deletable;
+      const deleteAble = item.deletable ?? this.deletable;
+      const showDelete = item.status !== 'uploading' && deleteAble;
 
       const DeleteIcon = showDelete && (
         <div
@@ -329,13 +350,16 @@ export default createComponent({
         <div class={bem('preview-cover')}>{PreviewCoverContent}</div>
       );
 
+      const previewSize = item.previewSize ?? this.previewSize;
+      const imageFit = item.imageFit ?? this.imageFit;
+
       const Preview = isImageFile(item) ? (
         <Image
-          fit={this.imageFit}
+          fit={imageFit}
           src={item.content || item.url}
           class={bem('preview-image')}
-          width={this.previewSize}
-          height={this.previewSize}
+          width={previewSize}
+          height={previewSize}
           lazyLoad={this.lazyLoad}
           onClick={() => {
             this.onPreviewImage(item);
@@ -380,13 +404,13 @@ export default createComponent({
     },
 
     genUpload() {
-      if (this.fileList.length >= this.maxCount || !this.showUpload) {
+      if (this.fileList.length >= this.maxCount) {
         return;
       }
 
       const slot = this.slots();
 
-      const Input = (
+      const Input = this.readonly ? null : (
         <input
           {...{ attrs: this.$attrs }}
           ref="input"
@@ -400,7 +424,11 @@ export default createComponent({
 
       if (slot) {
         return (
-          <div class={bem('input-wrapper')}>
+          <div
+            class={bem('input-wrapper')}
+            key="input-wrapper"
+            onClick={this.onClickUpload}
+          >
             {slot}
             {Input}
           </div>
@@ -417,7 +445,12 @@ export default createComponent({
       }
 
       return (
-        <div class={bem('upload')} style={style}>
+        <div
+          v-show={this.showUpload}
+          class={bem('upload', { readonly: this.readonly })}
+          style={style}
+          onClick={this.onClickUpload}
+        >
           <Icon name={this.uploadIcon} class={bem('upload-icon')} />
           {this.uploadText && (
             <span class={bem('upload-text')}>{this.uploadText}</span>
