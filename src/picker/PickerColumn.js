@@ -50,7 +50,7 @@ export default createComponent({
       duration: 0,
       options: deepClone(this.initialOptions),
       currentIndex: this.defaultIndex,
-      altitude:this.itemHeight * (this.visibleItemCount - 1) / 2
+      altitude: (this.itemHeight * (this.visibleItemCount - 1)) / 2,
     };
   },
 
@@ -294,27 +294,30 @@ export default createComponent({
             click: () => {
               this.onClickItem(index);
             },
-            wheel:function wheel(e) {
-              let evt = e || window.event;
+            wheel: (e) => {
+              const evt = e || window.event;
               evt.preventDefault();
-              let inindata=_this3.initialOptions.length-1
-              if( evt.deltaY>0 ){
-                if(Number(document.getElementsByClassName('van-picker-column__wrapper')[0].getAttribute('three'))==-(44*inindata-66)){
-                  return false
-                }else {
-                  _this3.onClickItem(index);
-                  _this3.altitude=_this3.altitude-44
+              const inindata = this.initialOptions.length - 1;
+              if (evt.deltaY > 0) {
+                if (
+                  Number(
+                    document
+                      .getElementsByClassName('van-picker-column__wrapper')[0]
+                      .getAttribute('three')
+                  ) === -(44 * inindata - 66)
+                ) {
+                  return false;
                 }
-              }else{
-                if(_this3.altitude==66){
-                  return false
-                }else{
-                  _this3.onClickItem(index);
-                  _this3.altitude=_this3.altitude+44
-
+                this.onClickItem(index);
+                this.altitude -= 44;
+              } else {
+                if (this.altitude === 66) {
+                  return false;
                 }
+                this.onClickItem(index);
+                this.altitude += 44;
               }
-            }
+            },
           },
         };
 
@@ -347,7 +350,7 @@ export default createComponent({
           ref="wrapper"
           style={wrapperStyle}
           class={bem('wrapper')}
-          three=this.offset + this.baseOffset
+          three={this.offset + this.baseOffset}
           onTransitionend={this.onTransitionEnd}
         >
           {this.genOptions()}
