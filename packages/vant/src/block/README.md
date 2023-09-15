@@ -46,11 +46,10 @@ set the container to card mode through the 'card' attribute.
 
 ### Props
 
-| Attribute | Description | Type | Default |
-| --- | --- | --- | --- |
-| title | Title | _string_ | `-` |
-| card | Card mode | _boolean_ | `-` |
-| id | Id，if you need to make an anchor jump, you need to pass in the | _string_ | `-` |
+| Attribute | Description | Type      | Default |
+| --------- | ----------- | --------- | ------- |
+| title     | Title       | _string_  | `-`     |
+| card      | Card mode   | _boolean_ | `-`     |
 
 ### Slots
 

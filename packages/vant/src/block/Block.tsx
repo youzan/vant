@@ -1,10 +1,4 @@
-import {
-  ExtractPropTypes,
-  computed,
-  defineComponent,
-  nextTick,
-  watch,
-} from 'vue';
+import { ExtractPropTypes, defineComponent } from 'vue';
 import { createNamespace } from '../utils';
 
 const [name, bem] = createNamespace('block');
@@ -32,35 +26,9 @@ export default defineComponent({
   props: blockProps,
 
   setup(props, { slots }) {
-    const slugifyTitle = computed(() => props.id);
-
-    watch(
-      () => slugifyTitle.value,
-      (val) => {
-        if (val) {
-          nextTick(() => {
-            let hash = '';
-            if (top) {
-              hash = top.location.hash.split('#').pop() as string;
-            } else {
-              hash = location.hash.split('#').pop() as string;
-            }
-            const target = document.getElementById(val);
-            if (target && val === hash) {
-              target.scrollIntoView(true);
-            }
-          });
-        }
-      },
-    );
-
     return () => (
       <div class={bem()}>
-        {props.title ? (
-          <h2 class={bem('title')} id={slugifyTitle.value}>
-            {props.title}
-          </h2>
-        ) : null}
+        {props.title ? <h2 class={bem('title')}>{props.title}</h2> : null}
         {props.card ? (
           <div class={bem('card')}>{slots.default?.()}</div>
         ) : (
