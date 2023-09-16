@@ -535,3 +535,22 @@ export default {
 目前 Chrome、Safari 等浏览器不支持展示 HEIC/HEIF 格式的图片，因此上传后无法在 Uploader 组件中进行预览。
 
 [HEIF] 格式的兼容性请参考 [caniuse](https://caniuse.com/?search=heic)。
+
+### 如何判断用户授予了摄像头权限？
+
+在上传图片时，如果用户没有授予当前 App 摄像头权限，会导致 Uploader 组件无法使用。
+
+你可以通过浏览器提供的 [getUserMedia](https://developer.mozilla.org/zh-CN/docs/Web/API/MediaDevices/getUserMedia) 方法来判断是否被授予了摄像头权限（请留意 `getUserMedia` 方法无法在 iOS 10 中使用）。
+
+以下是一个简化的示例：
+
+```ts
+navigator.mediaDevices
+  .getUserMedia({ video: true })
+  .then((stream) => {
+    console.log(stream);
+  })
+  .catch((err) => {
+    console.log(err);
+  });
+```
