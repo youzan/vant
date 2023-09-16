@@ -339,7 +339,7 @@ export default defineComponent({
           ref={inputRef}
           type="file"
           class={bem('input')}
-          accept={props.capture ? 'image/*' : props.accept}
+          accept={!props.accept && props.capture ? 'image/*' : props.accept}
           capture={props.capture as unknown as boolean}
           multiple={props.multiple && reuploadIndex.value === -1}
           disabled={props.disabled}
