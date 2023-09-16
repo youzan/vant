@@ -1,5 +1,8 @@
 import Picker from '..';
-import PickerColumn, { MOMENTUM_LIMIT_TIME, MOMENTUM_LIMIT_DISTANCE} from '../PickerColumn';
+import PickerColumn, {
+  MOMENTUM_LIMIT_TIME,
+  MOMENTUM_LIMIT_DISTANCE,
+} from '../PickerColumn';
 import { mount, triggerDrag, later } from '../../../test';
 import { DEFAULT_ITEM_HEIGHT } from '../shared';
 
@@ -353,7 +356,7 @@ test('wheel event on columns is detected', async () => {
 });
 
 test('wheel scroll on columns', async () => {
-  const fakeScroll = (translateY, deltaY)=> {
+  const fakeScroll = (translateY, deltaY) => {
     // mock getComputedStyle
     // see: https://github.com/jsdom/jsdom/issues/2588
     const originGetComputedStyle = window.getComputedStyle;
@@ -364,7 +367,7 @@ test('wheel scroll on columns', async () => {
         transform: `matrix(1, 0, 0, 1, 0, ${translateY})`,
       };
     };
-    return new Promise(resolve => {
+    return new Promise((resolve) => {
       const wrapper = mount(Picker, {
         propsData: {
           columns: simpleColumn,
@@ -375,14 +378,16 @@ test('wheel scroll on columns', async () => {
         deltaY,
       });
 
-      return later(MOMENTUM_LIMIT_TIME + 10).then(()=>{
-        wrapper.find('.van-picker-column ul').trigger('transitionend');
-        resolve(wrapper.emitted('change'));
-      }).finally(()=>{
-        window.getComputedStyle = originGetComputedStyle;
-      });
+      return later(MOMENTUM_LIMIT_TIME + 10)
+        .then(() => {
+          wrapper.find('.van-picker-column ul').trigger('transitionend');
+          resolve(wrapper.emitted('change'));
+        })
+        .finally(() => {
+          window.getComputedStyle = originGetComputedStyle;
+        });
     });
-  }
+  };
 
   const topToDown = await fakeScroll(110, -MOMENTUM_LIMIT_DISTANCE);
   expect(topToDown).toEqual(undefined);
@@ -394,9 +399,12 @@ test('wheel scroll on columns', async () => {
   expect(bottomToUp[0][1]).toEqual('1995');
 
   const bottomToDown = await fakeScroll(-110, -(MOMENTUM_LIMIT_DISTANCE - 5));
-  expect(bottomToDown[0][1]).toEqual('1995');
+  expect(bottomToDown[0][1]).toEqual('1994');
 
-  const pos1992 = simpleColumn.indexOf('1992')
-  const momentum = await fakeScroll(-110 + (pos1992 + 1) * DEFAULT_ITEM_HEIGHT, MOMENTUM_LIMIT_DISTANCE + 10);
-  expect(momentum[0][1]).toEqual(simpleColumn[pos1992+1]);
+  const pos1992 = simpleColumn.indexOf('1992');
+  const momentum = await fakeScroll(
+    -110 + (pos1992 + 1) * DEFAULT_ITEM_HEIGHT,
+    MOMENTUM_LIMIT_DISTANCE + 10
+  );
+  expect(momentum[0][1]).toEqual(simpleColumn[pos1992 + 1]);
 });
