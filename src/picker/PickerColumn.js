@@ -202,11 +202,10 @@ export default createComponent({
         return;
       }
 
-      // get offset
-      // if necessary, can adjust distance value to make scrolling smoother
-      const distance = -deltaY;
+      // Calculate the offset based on itemHeight
+      const itemOffset = this.itemHeight * (deltaY > 0 ? -1 : 1);
       this.offset = range(
-        this.startOffset + distance,
+        this.startOffset + itemOffset,
         -(this.count * this.itemHeight),
         this.itemHeight
       );
