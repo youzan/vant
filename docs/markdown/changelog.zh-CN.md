@@ -25,6 +25,35 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 
 ## 更新内容
 
+### [v2.13.0](https://github.com/vant-ui/vant/compare/v2.12.54...v2.13.0)
+
+`2023-09-17`
+
+**Feature**
+
+- Icon: 重命名线框风格的 `records` 图标为 `records-o`
+- Icon: 重命名线框风格的 `contact` 图标为 `contact-o`
+- Icon: 重命名线框风格的 `discount` 图标为 `discount-o`
+- Icon: 重命名线框风格的 `completed` 图标为 `completed-o`
+- Icon: 重命名线框风格的 `description` 图标为 `description-o`
+- Icon: 重命名线框风格的 `cash-back-record` 图标为 `cash-back-record-o`
+- Icon: 新增实底风格的 `records` 图标
+- Icon: 新增实底风格的 `contact` 图标
+- Icon: 新增实底风格的 `discount` 图标
+- Icon: 新增实底风格的 `completed` 图标
+- Icon: 新增实底风格的 `description` 图标
+- Icon: 新增实底风格的 `cash-back-record` 图标
+- Icon: 新增 `user` 图标
+- Icon: 新增 `notes` 图标
+- Icon: 新增 `newspaper` 图标
+- Icon: 新增 `list-switch` 图标
+- Icon: 新增 `list-switching` 图标
+
+**Bug Fixes**
+
+- Picker: 修复滚轮操作时多次滚动的问题 [#12290](https://github.com/vant-ui/vant/issues/12290) [#12290](https://github.com/vant-ui/vant/issues/12290)
+- Icon: 修复 delete / delete-o 图标
+
 ### [v2.12.54](https://github.com/vant-ui/vant/compare/v2.12.53...v2.12.54)
 
 `2023-02-11`
