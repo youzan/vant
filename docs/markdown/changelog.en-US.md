@@ -16,6 +16,35 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 
 ## Details
 
+### [v2.13.0](https://github.com/vant-ui/vant/compare/v2.12.54...v2.13.0)
+
+`2023-09-17`
+
+**Feature**
+
+- Icon: rename the previous `records` icon to `records-o`
+- Icon: rename the previous `contact` icon to `contact-o`
+- Icon: rename the previous `discount` icon to `discount-o`
+- Icon: rename the previous `completed` icon to `completed-o`
+- Icon: rename the previous `description` icon to `description-o`
+- Icon: rename the previous `cash-back-record` icon to `cash-back-record-o`
+- Icon: add a filled `records` icon
+- Icon: add a filled `contact` icon
+- Icon: add a filled `discount` icon
+- Icon: add a filled `completed` icon
+- Icon: add a filled `description` icon
+- Icon: add a filled `cash-back-record` icon
+- Icon: add new `user` icon
+- Icon: add new `notes` icon
+- Icon: add new `newspaper` icon
+- Icon: add new `list-switch` icon
+- Icon: add new `list-switching` icon
+
+**Bug Fixes**
+
+- Picker: Fix the issue when scrolling the mouse wheel once but the element scrolls multiple times [#12290](https://github.com/vant-ui/vant/issues/12290) [#12290](https://github.com/vant-ui/vant/issues/12290)
+- Icon: fix delete / delete-o icon
+
 ### [v2.12.54](https://github.com/vant-ui/vant/compare/v2.12.53...v2.12.54)
 
 `2023-02-11`
