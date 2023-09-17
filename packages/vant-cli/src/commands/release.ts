@@ -48,17 +48,21 @@ function getNpmTag(version: string, forceTag?: string) {
   return tag;
 }
 
-function setPkgVersion(version: string, cwd: string) {
-  const pkgJson = join(cwd, 'package.json');
-  const pkg = fse.readJSONSync(pkgJson);
-  pkg.version = version;
-  fse.writeJSONSync(pkgJson, pkg, { spaces: 2 });
+function setPkgVersion(
+  pkgJson: Record<string, any>,
+  pkgJsonPath: string,
+  version: string,
+) {
+  pkgJson.version = version;
+  fse.writeJSONSync(pkgJsonPath, pkgJson, { spaces: 2 });
 }
 
-function buildPackage(packageManager: string) {
-  const command = `${packageManager} run build`;
-  consola.success(`${color.bold('Build package:')} ${color.green(command)}`);
-  execSync(command, { stdio: 'inherit' });
+function buildPackage(pkgJson: Record<string, any>, packageManager: string) {
+  if (pkgJson.scripts?.build) {
+    const command = `${packageManager} run build`;
+    consola.success(`${color.bold('Build package:')} ${color.green(command)}`);
+    execSync(command, { stdio: 'inherit' });
+  }
 }
 
 function publishPackage(packageManager: string, tag: string) {
@@ -101,13 +105,16 @@ export async function release(command: { tag?: string; gitTag?: boolean }) {
   const tag = getNpmTag(version, command.tag);
   const packageManager = getPackageManager();
 
-  setPkgVersion(version, cwd);
+  const pkgJsonPath = join(cwd, 'package.json');
+  const pkgJson = fse.readJSONSync(pkgJsonPath);
+
+  setPkgVersion(pkgJson, pkgJsonPath, version);
 
   try {
-    buildPackage(packageManager);
+    buildPackage(pkgJson, packageManager);
   } catch (err) {
     consola.error('Failed to build package, rollback to the previous version.');
-    setPkgVersion(currentVersion, cwd);
+    setPkgVersion(pkgJson, pkgJsonPath, currentVersion);
     throw err;
   }
 
