@@ -1,5 +1,25 @@
 ## Changelog
 
+## 3.0.0
+
+- rename the previous `records` icon to `records-o`
+- rename the previous `contact` icon to `contact-o`
+- rename the previous `discount` icon to `discount-o`
+- rename the previous `completed` icon to `completed-o`
+- rename the previous `description` icon to `description-o`
+- rename the previous `cash-back-record` icon to `cash-back-record-o`
+- add a filled `records` icon
+- add a filled `contact` icon
+- add a filled `discount` icon
+- add a filled `completed` icon
+- add a filled `description` icon
+- add a filled `cash-back-record` icon
+- add new `user` icon
+- add new `notes` icon
+- add new `newspaper` icon
+- add new `list-switch` icon
+- add new `list-switching` icon
+
 ## 2.0.1
 
 - add woff format back to be compatible with some special webview
