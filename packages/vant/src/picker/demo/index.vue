@@ -44,8 +44,7 @@ const t = useTranslate({
     multipleColumns: 'Multiple Columns',
     customChildrenKey: 'Custom Columns Fields',
     customChildrenColumns: customKeyColumns['en-US'],
-    toastContent: (value: string, index: number) =>
-      `Value: ${value}, Index：${index}`,
+    toastContent: (value: string) => `Value: ${value}`,
   },
 });
 
