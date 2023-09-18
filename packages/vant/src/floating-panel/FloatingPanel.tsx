@@ -120,7 +120,7 @@ export default defineComponent({
           return;
         }
       }
-
+      preventDefault(e, true);
       const moveY = touch.deltaY.value + startY;
       height.value = -ease(moveY);
     };
