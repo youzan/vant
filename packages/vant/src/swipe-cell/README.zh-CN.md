@@ -98,7 +98,9 @@ export default {
           return new Promise((resolve) => {
             showConfirmDialog({
               title: '确定删除吗？',
-            }).then(resolve);
+            })
+              .then(resolve)
+              .catch(resolve);
           });
       }
     };
