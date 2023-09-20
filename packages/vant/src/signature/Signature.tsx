@@ -97,11 +97,11 @@ export default defineComponent({
       const empty = document.createElement('canvas');
       empty.width = canvas.width;
       empty.height = canvas.height;
-      // if(props.backgroundColor){
-      //   const emptyCtx = empty.getContext('2d');
-      //   emptyCtx!.fillStyle = props.backgroundColor;
-      //   emptyCtx!.fillRect(0, 0, empty.width, empty.height);
-      // }
+      if (props.backgroundColor) {
+        const emptyCtx = empty.getContext('2d');
+        emptyCtx!.fillStyle = props.backgroundColor;
+        emptyCtx!.fillRect(0, 0, empty.width, empty.height);
+      }
       return canvas.toDataURL() === empty.toDataURL();
     };
 
@@ -129,8 +129,6 @@ export default defineComponent({
             }[props.type] as () => string
           )?.() || canvas.toDataURL(`image/${props.type}`);
 
-      console.log(canvas);
-      console.log(canvas.toDataURL('image/jpeg', 0.8));
       emit('submit', {
         image,
         canvas,
