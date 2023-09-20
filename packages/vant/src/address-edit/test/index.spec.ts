@@ -109,6 +109,24 @@ test('should emit changeDetail event after changing address detail', () => {
   expect(wrapper.emitted('changeDetail')).toEqual([['123']]);
 });
 
+test('should emit change event after name or tel input', () => {
+  const wrapper = mount(AddressEdit);
+
+  const field = wrapper.findAll('.van-field__control')[0];
+  (field.element as HTMLInputElement).value = '123';
+  field.trigger('input');
+  expect(wrapper.emitted('change')?.[0]).toEqual([
+    { key: 'name', value: '123' },
+  ]);
+
+  const field1 = wrapper.findAll('.van-field__control')[1];
+  (field1.element as HTMLInputElement).value = '123';
+  field1.trigger('input');
+  expect(wrapper.emitted('change')?.[1]).toEqual([
+    { key: 'tel', value: '123' },
+  ]);
+});
+
 test('should show search result after focusing to address detail', async () => {
   const wrapper = mount(AddressEdit, {
     props: {
