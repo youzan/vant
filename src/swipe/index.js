@@ -156,6 +156,7 @@ export default createComponent({
 
   mounted() {
     this.bindTouchEvent(this.$refs.track);
+    this.autoPlay();
   },
 
   methods: {
@@ -385,7 +386,12 @@ export default createComponent({
       if (autoplay > 0 && this.count > 1) {
         this.clear();
         this.timer = setTimeout(() => {
-          this.next();
+          if (!this.rect) {
+            this.initialize();
+          }
+          if (this.rect) {
+            this.next();
+          }
           this.autoPlay();
         }, autoplay);
       }
