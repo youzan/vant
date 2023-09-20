@@ -37,15 +37,29 @@ test('should allow to drag to show right part', async () => {
   expect(track.style.transform).toEqual('translate3d(-100px, 0, 0)');
 });
 
-test('should call beforeClose before closing', () => {
+test('should call beforeClose before closing', async () => {
   let position;
+  let clickPosition;
+  let usePromise;
+  let promiseRet;
 
   const wrapper = mount(SwipeCell, {
     ...defaultProps,
     props: {
       ...defaultProps.props,
+      onClick(position) {
+        clickPosition = position;
+      },
       beforeClose(params) {
-        ({ position } = params);
+        if (usePromise) {
+          return new Promise((resolve) => {
+            setTimeout(() => {
+              resolve(promiseRet);
+            }, 100);
+          });
+        } else {
+          ({ position } = params);
+        }
       },
     },
   });
@@ -66,6 +80,17 @@ test('should call beforeClose before closing', () => {
 
   wrapper.vm.close();
   expect(track.style.transform).toEqual('translate3d(0px, 0, 0)');
+
+  usePromise = true;
+  promiseRet = false;
+  wrapper.vm.open('right');
+  wrapper.find('.van-swipe-cell__right').trigger('click');
+  expect(clickPosition).toEqual('right');
+  wrapper.trigger('click');
+  expect(clickPosition).toEqual('right');
+  await later(200);
+  wrapper.trigger('click');
+  expect(clickPosition).toEqual('cell');
 });
 
 test('should close swipe cell after clicked', async () => {
