@@ -219,12 +219,6 @@ export default defineComponent({
       }, 0);
     };
 
-    const onMouseWheel = () => {
-      if (isReadonly()) {
-        return;
-      }
-    };
-
     const renderOptions = () => {
       const optionStyle = {
         height: `${props.optionHeight}px`,
@@ -246,7 +240,6 @@ export default defineComponent({
             option.className,
           ],
           onClick: () => onClickOption(index),
-          onWheel: () => onClickOption(index),
         };
 
         const childData = {
@@ -293,7 +286,6 @@ export default defineComponent({
         onTouchstartPassive={onTouchStart}
         onTouchend={onTouchEnd}
         onTouchcancel={onTouchEnd}
-        onWheel={onMouseWheel}
       >
         <ul
           ref={wrapper}
