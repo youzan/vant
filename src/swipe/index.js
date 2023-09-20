@@ -146,6 +146,7 @@ export default createComponent({
     },
 
     minOffset() {
+      if (!this.rect) return 0;
       return (
         (this.vertical ? this.rect.height : this.rect.width) -
         this.size * this.count
