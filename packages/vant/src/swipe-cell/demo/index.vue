@@ -38,13 +38,9 @@ const beforeClose = ({ position }: { position: string }) => {
     case 'outside':
       return true;
     case 'right':
-      return new Promise<boolean>((resolve) => {
-        showConfirmDialog({
-          title: t('confirm'),
-        }).then(() => {
-          resolve(true);
-        });
-      });
+      return showConfirmDialog({
+        title: t('confirm'),
+      }) as Promise<boolean>;
   }
 };
 </script>

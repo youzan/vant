@@ -91,7 +91,9 @@ export default {
           return new Promise((resolve) => {
             showConfirmDialog({
               title: 'Are you sure to delete?',
-            }).then(resolve);
+            })
+              .then(resolve)
+              .catch(resolve);
           });
       }
     };
