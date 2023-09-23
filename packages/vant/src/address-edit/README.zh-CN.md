@@ -101,6 +101,7 @@ export default {
 | --- | --- | --- |
 | save | 点击保存按钮时触发 | _info: AddressEditInfo_ |
 | focus | 输入框聚焦时触发 | _key: string_ |
+| change | 仅 `name` 和 `tel` 输入框值改变触发 | _{key: string, value: string}_ |
 | delete | 确认删除地址时触发 | _info: AddressEditInfo_ |
 | select-search | 选中搜索结果时触发 | _value: string_ |
 | click-area | 点击收件地区时触发 | - |

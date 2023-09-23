@@ -95,6 +95,7 @@ export default defineComponent({
   emits: [
     'save',
     'focus',
+    'change',
     'delete',
     'clickArea',
     'changeArea',
@@ -134,6 +135,10 @@ export default defineComponent({
     const onFocus = (key: string) => {
       detailFocused.value = key === 'addressDetail';
       emit('focus', key);
+    };
+
+    const onChange = (key: string, value: string) => {
+      emit('change', { key, value });
     };
 
     const rules = computed<Record<string, FieldRule[]>>(() => {
@@ -273,6 +278,7 @@ export default defineComponent({
               rules={rules.value.name}
               placeholder={t('name')}
               onFocus={() => onFocus('name')}
+              onUpdate:modelValue={(val) => onChange('name', val)}
             />
             <Field
               v-model={data.tel}
@@ -283,6 +289,7 @@ export default defineComponent({
               maxlength={props.telMaxlength}
               placeholder={t('tel')}
               onFocus={() => onFocus('tel')}
+              onUpdate:modelValue={(val) => onChange('tel', val)}
             />
             <Field
               v-show={props.showArea}
