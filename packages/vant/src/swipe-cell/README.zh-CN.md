@@ -99,8 +99,8 @@ export default {
             showConfirmDialog({
               title: '确定删除吗？',
             })
-              .then(resolve)
-              .catch(resolve);
+              .then(() => resolve(true))
+              .catch(() => resolve(false));
           });
       }
     };

@@ -92,8 +92,8 @@ export default {
             showConfirmDialog({
               title: 'Are you sure to delete?',
             })
-              .then(resolve)
-              .catch(resolve);
+              .then(() => resolve(true))
+              .catch(() => resolve(false));
           });
       }
     };
