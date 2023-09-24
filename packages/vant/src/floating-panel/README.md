@@ -88,7 +88,7 @@ By default, both the header and content areas of FloatingPanel can be dragged, b
 | anchors | Setting custom anchors, unit `px` | _number[]_ | `[100, window.innerWidth * 0.6]` |
 | duration | Transition duration, unit second | _number \| string_ | `0.3` |
 | content-draggable | Allow dragging content | _boolean_ | `true` |
-| lock-scroll `v4.6.4` | Whether to lock background scroll | _boolean_ | `false` |
+| lock-scroll `v4.6.4` | When not dragging, Whether to lock background scroll | _boolean_ | `false` |
 | safe-area-inset-bottom | Whether to enable bottom safe area adaptation | _boolean_ | `true` |
 
 ### Events
