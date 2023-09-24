@@ -36,6 +36,8 @@ test('should render correctly when all props set', async () => {
     gap: 50,
   });
 
+  await later(1000);
+
   expect(floatingBubbleEl.style.transform).toEqual(
     `translate3d(${window.innerWidth - 48 - 50}px, ${
       window.innerHeight - 48 - 50
@@ -48,6 +50,8 @@ test('should render correctly when all props set', async () => {
       y: 400,
     },
   });
+
+  await later(1000);
 
   expect(floatingBubbleEl.style.transform).toEqual(
     `translate3d(${400}px, ${400}px, 0)`,
@@ -188,7 +192,7 @@ test('should free direction move and  magnetic to x axios when magnetic is "x" '
 
   await triggerDrag(floatingBubbleEl, -100, -100);
 
-  await later(400);
+  await later(1000);
 
   expect(floatingBubbleEl.style.transform).toEqual(
     `translate3d(${window.innerWidth - 48 - 24}px, ${
@@ -198,7 +202,7 @@ test('should free direction move and  magnetic to x axios when magnetic is "x" '
 
   await triggerDrag(floatingBubbleEl, -600, -100);
 
-  await later(400);
+  await later(1000);
 
   expect(floatingBubbleEl.style.transform).toEqual(
     `translate3d(${24}px, ${window.innerHeight - 48 - 24 - 200}px, 0)`,

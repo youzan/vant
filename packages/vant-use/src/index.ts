@@ -11,3 +11,4 @@ export * from './usePageVisibility';
 export * from './useCustomFieldValue';
 export * from './useRaf';
 export * from './onMountedOrActivated';
+export * from './useSpring';
