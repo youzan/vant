@@ -27,7 +27,7 @@ import {
 } from '../utils';
 
 // Composables
-import { useRect, useEventListener, useSpring, stiff } from '@vant/use';
+import { useRect, useEventListener, useSpring, springConfig } from '@vant/use';
 import { useTouch } from '../composables/use-touch';
 
 // Components
@@ -94,7 +94,7 @@ export default defineComponent({
         x: state.value.x,
         y: state.value.y,
       },
-      stiff,
+      springConfig.stiff,
     );
     watch(
       state,

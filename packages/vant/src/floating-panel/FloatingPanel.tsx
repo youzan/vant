@@ -27,6 +27,7 @@ import { useTouch } from '../composables/use-touch';
 export const floatingPanelProps = {
   height: makeNumericProp(0),
   anchors: makeArrayProp<number>(),
+  duration: makeNumericProp(0.3),
   contentDraggable: truthProp,
   lockScroll: Boolean,
   safeAreaInsetBottom: truthProp,
@@ -74,7 +75,10 @@ export default defineComponent({
 
     const rootStyle = computed(() => ({
       height: addUnit(boundary.value.max),
-      transform: `translateY(calc(100% + ${addUnit(-springValue.height)}))`,
+      transform: `translateY(calc(100% + ${addUnit(
+        -(dragging.value ? springValue.height : height.value),
+      )}))`,
+      transition: !dragging.value ? `transform ${props.duration}s` : 'none',
     }));
 
     const ease = (moveY: number): number => {

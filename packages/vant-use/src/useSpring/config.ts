@@ -19,13 +19,6 @@ export interface SpringConfig {
   precision?: number;
 }
 
-export const none: SpringConfig = {
-  mass: 1,
-  tension: 0,
-  friction: 0,
-  precision: 0.01,
-};
-
 // the default, if nothing provided
 export const noWobble: SpringConfig = {
   mass: 1,
@@ -55,4 +48,4 @@ export const stiff: SpringConfig = {
   precision: 0.01,
 };
 
-export const presets = { noWobble, gentle, wobbly, stiff };
+export const springConfig = { noWobble, gentle, wobbly, stiff };

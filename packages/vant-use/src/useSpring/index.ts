@@ -20,7 +20,7 @@ import { cancelRaf, raf } from '../utils';
 import { noWobble, type SpringConfig } from './config';
 import { isArray, now, stepper } from './utils';
 
-export * from './config';
+export { springConfig } from './config';
 
 const msPerFrame = 1000 / 60;
 
