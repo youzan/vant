@@ -46,10 +46,12 @@ function initInstance() {
   ({ instance } = mountComponent(Wrapper));
 }
 
-export function showDialog(options: DialogOptions) {
+export function showDialog(
+  options: DialogOptions,
+): Promise<DialogAction | undefined> {
   /* istanbul ignore if */
   if (!inBrowser) {
-    return Promise.resolve();
+    return Promise.resolve(undefined);
   }
 
   return new Promise((resolve, reject) => {
@@ -59,7 +61,7 @@ export function showDialog(options: DialogOptions) {
 
     instance.open(
       extend({}, currentOptions, options, {
-        callback: (action: DialogAction) => {
+        callback: (action?: DialogAction) => {
           (action === 'confirm' ? resolve : reject)(action);
         },
       }),
