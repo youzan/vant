@@ -328,7 +328,7 @@ Following props are supported when the type is multiple
 | month-show | Emitted when a month enters the visible area | _value: { date: Date, title: string }_ |
 | over-range | Emitted when exceeded max range | - |
 | click-subtitle | Emitted when clicking the subtitle | _event: MouseEvent_ |
-| click-disabled-date | Emitted when clicking disabled date | _value: Date \| Date[]_ |
+| click-disabled-date `v4.7.0` | Emitted when clicking disabled date | _value: Date \| Date[]_ |
 
 ### Slots
 
