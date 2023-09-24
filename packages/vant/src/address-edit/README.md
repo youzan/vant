@@ -101,7 +101,7 @@ export default {
 | --- | --- | --- |
 | save | Emitted when the save button is clicked | _info: AddressEditInfo_ |
 | focus | Emitted when field is focused | _key: string_ |
-| change | Emitted when only the name and tel field are changed | _{key: string, value: string}_ |
+| change `v4.7.0` | Emitted when only the name and tel field are changed | _{key: string, value: string}_ |
 | delete | Emitted when confirming delete | _info: AddressEditInfo_ |
 | select-search | Emitted when a search result is selected | _value: string_ |
 | click-area | Emitted when the area field is clicked | - |
