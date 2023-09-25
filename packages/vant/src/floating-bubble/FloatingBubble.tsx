@@ -27,7 +27,7 @@ import {
 } from '../utils';
 
 // Composables
-import { useRect, useEventListener, useSpring, springConfig } from '@vant/use';
+import { useRect, useEventListener } from '@vant/use';
 import { useTouch } from '../composables/use-touch';
 
 // Components
@@ -87,33 +87,18 @@ export default defineComponent({
     }));
 
     const dragging = ref(false);
-
     let initialized = false;
-    const spring = useSpring(
-      {
-        x: state.value.x,
-        y: state.value.y,
-      },
-      springConfig.stiff,
-    );
-    watch(
-      state,
-      () => {
-        spring.x = state.value.x;
-        spring.y = state.value.y;
-      },
-      {
-        deep: true,
-      },
-    );
 
     const rootStyle = computed(() => {
       const style: CSSProperties = {};
 
-      // when initialized use spring data
-      const x = addUnit(initialized ? Math.round(spring.x) : state.value.x);
-      const y = addUnit(initialized ? Math.round(spring.y) : state.value.y);
+      const x = addUnit(state.value.x);
+      const y = addUnit(state.value.y);
       style.transform = `translate3d(${x}, ${y}, 0)`;
+
+      if (dragging.value || !initialized) {
+        style.transition = 'none';
+      }
 
       return style;
     });

@@ -1,8 +1,8 @@
 import {
-  computed,
-  defineComponent,
   ref,
   watch,
+  computed,
+  defineComponent,
   type ExtractPropTypes,
 } from 'vue';
 
@@ -19,10 +19,10 @@ import {
 } from '../utils';
 
 // Composables
-import { useEventListener, useSpring } from '@vant/use';
+import { useEventListener } from '@vant/use';
 import { useLockScroll } from '../composables/use-lock-scroll';
-import { useSyncPropRef } from '../composables/use-sync-prop-ref';
 import { useTouch } from '../composables/use-touch';
+import { useSyncPropRef } from '../composables/use-sync-prop-ref';
 
 export const floatingPanelProps = {
   height: makeNumericProp(0),
@@ -68,17 +68,12 @@ export default defineComponent({
 
     const dragging = ref(false);
 
-    const springValue = useSpring({ height: boundary.value.min });
-    watch(height, () => {
-      springValue.height = height.value;
-    });
-
     const rootStyle = computed(() => ({
       height: addUnit(boundary.value.max),
-      transform: `translateY(calc(100% + ${addUnit(
-        -(dragging.value ? springValue.height : height.value),
-      )}))`,
-      transition: !dragging.value ? `transform ${props.duration}s` : 'none',
+      transform: `translateY(calc(100% + ${addUnit(-height.value)}))`,
+      transition: !dragging.value
+        ? `transform ${props.duration}s cubic-bezier(0.18, 0.89, 0.32, 1.28)`
+        : 'none',
     }));
 
     const ease = (moveY: number): number => {
