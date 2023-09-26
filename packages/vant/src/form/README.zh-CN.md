@@ -485,7 +485,7 @@ export default {
 
 ```html
 <van-field
-  v-model="value"
+  v-model="result"
   is-link
   readonly
   name="calendar"
