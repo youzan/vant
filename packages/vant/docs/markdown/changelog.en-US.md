@@ -19,6 +19,59 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 
 ## Details
 
+### v4.7.0
+
+`2023-09-24`
+
+#### 🍭 Icon Updates
+
+- Icon: add new `user` icon
+- Icon: add new `notes` icon
+- Icon: add new `newspaper` icon
+- Icon: add new `list-switch` icon
+- Icon: add new `list-switching` icon
+- Icon: add a filled `records` icon
+- Icon: add a filled `contact` icon
+- Icon: add a filled `discount` icon
+- Icon: add a filled `completed` icon
+- Icon: add a filled `description` icon
+- Icon: add a filled `cash-back-record` icon
+- Icon: rename the previous `records` icon to `records-o`
+- Icon: rename the previous `contact` icon to `contact-o`
+- Icon: rename the previous `discount` icon to `discount-o`
+- Icon: rename the previous `completed` icon to `completed-o`
+- Icon: rename the previous `description` icon to `description-o`
+- Icon: rename the previous `cash-back-record` icon to `cash-back-record-o`
+
+#### New Features 🎉
+
+- feat(Calendar): add click-disabled-date event by [@LadyChatterleyLover](https://github.com/LadyChatterleyLover) in [#12274](https://github.com/youzan/vant/pull/12274)
+- feat(Uploader): add --van-uploader-border-radius css variables by [@xieyezi](https://github.com/xieyezi) in [#12280](https://github.com/youzan/vant/pull/12280)
+- feat(SwipeCell): fix triggered close by clickAway when in running beforeClose by [@nined9](https://github.com/nined9) in [#12309](https://github.com/youzan/vant/pull/12309)
+- feat(AddressEdit): add change event for name and tel input by [@zhousg](https://github.com/zhousg) in [#12310](https://github.com/youzan/vant/pull/12310)
+- types(Dialog): improve showDialog return type by [@chenjiahan](https://github.com/chenjiahan) in [#12316](https://github.com/youzan/vant/pull/12316)
+
+#### Bug Fixes 🐞
+
+- fix(Picker): fix bug the content of the popup window is not consistent with the Chinese version under the English version by [@lllomh](https://github.com/lllomh) in [#12300](https://github.com/youzan/vant/pull/12300)
+- fix(Signature): fix checking if canvas is empty when backgroundColor is set by [@sywyyhykkk](https://github.com/sywyyhykkk) in [#12304](https://github.com/youzan/vant/pull/12304)
+- fix(FloatingPanel): dragging down causes the page to move by [@zhousg](https://github.com/zhousg) in [#12314](https://github.com/youzan/vant/pull/12314)
+
+#### Document 📖
+
+- docs(Picker): improve picker document by [@MrXwq](https://github.com/MrXwq) in [#12275](https://github.com/youzan/vant/pull/12275)
+- docs(Uploader): add FAQ about camera permission by [@chenjiahan](https://github.com/chenjiahan) in [#12289](https://github.com/youzan/vant/pull/12289)
+
+#### Other Changes
+
+- test(Dialog): enable function-call test cases by [@chenjiahan](https://github.com/chenjiahan) in [#12315](https://github.com/youzan/vant/pull/12315)
+- fix(cli): allow missing build script when releasing by [@chenjiahan](https://github.com/chenjiahan) in [#12292](https://github.com/youzan/vant/pull/12292)
+
+#### New Contributors
+
+- [@nined9](https://github.com/nined9) made their first contribution in [#12309](https://github.com/youzan/vant/pull/12309)
+- [@sywyyhykkk](https://github.com/sywyyhykkk) made their first contribution in [#12304](https://github.com/youzan/vant/pull/12304)
+
 ### v4.6.8
 
 `2023-09-10`

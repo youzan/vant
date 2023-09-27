@@ -19,6 +19,59 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 
 ## 更新内容
 
+### v4.7.0
+
+`2023-09-24`
+
+#### 🍭 图标更新
+
+- 图标：添加一个实底的 `records` 图标
+- 图标：添加一个实底的 `contact` 图标
+- 图标：添加一个实底的 `discount` 图标
+- 图标：添加一个实底的 `completed` 图标
+- 图标：添加一个实底的 `description` 图标
+- 图标：添加一个实底的 `cash-back-record` 图标
+- 图标：添加新的 `user` 图标
+- 图标：添加新的 `notes` 图标
+- 图标：添加新的 `newspaper` 图标
+- 图标：添加新的 `list-switch` 图标
+- 图标：添加新的 `list-switching` 图标
+- 图标：将以前的 `records` 图标重命名为 `records-o`
+- 图标：将以前的 `contact` 图标重命名为 `contact-o`
+- 图标：将以前的 `discount` 图标重命名为 `discount-o`
+- 图标：将以前的 `completed` 图标重命名为 `completed-o`
+- 图标：将以前的 `description` 图标重命名为 `description-o`
+- 图标：将以前的 `cash-back-record` 图标重命名为 `cash-back-record-o`
+
+#### 新功能 🎉
+
+- feat(Calendar): 由 [@LadyChatterleyLover](https://github.com/LadyChatterleyLover) 在 [#12274](https://github.com/youzan/vant/pull/12274) 中添加了 `click-disabled-date` 事件
+- feat(Uploader): 由 [@xieyezi](https://github.com/xieyezi) 在 [#12280](https://github.com/youzan/vant/pull/12280) 中添加了 `--van-uploader-border-radius` CSS 变量
+- feat(SwipeCell): 由 [@nined9](https://github.com/nined9) 在 [#12309](https://github.com/youzan/vant/pull/12309) 中修复了运行 `beforeClose` 时点击外部触发关闭的问题
+- feat(AddressEdit): 由 [@zhousg](https://github.com/zhousg) 在 [#12310](https://github.com/youzan/vant/pull/12310) 中为姓名和电话输入添加了 `change` 事件
+- types(Dialog): 由 [@chenjiahan](https://github.com/chenjiahan) 在 [#12316](https://github.com/youzan/vant/pull/12316) 中改进了 `showDialog` 的返回类型
+
+#### Bug 修复 🐞
+
+- fix(Picker): 由 [@lllomh](https://github.com/lllomh) 在 [#12300](https://github.com/youzan/vant/pull/12300) 中修复了弹出窗口的内容与中文版本不一致的问题
+- fix(Signature): 由 [@sywyyhykkk](https://github.com/sywyyhykkk) 在 [#12304](https://github.com/youzan/vant/pull/12304) 中修复了当设置了背景颜色时检查画布是否为空的问题
+- fix(FloatingPanel): 由 [@zhousg](https://github.com/zhousg) 在 [#12314](https://github.com/youzan/vant/pull/12314) 中修复了向下拖动导致页面移动的问题
+
+#### 文档 📖
+
+- docs(Picker): 由 [@MrXwq](https://github.com/MrXwq) 在 [#12275](https://github.com/youzan/vant/pull/12275) 中改进了 Picker 的文档
+- docs(Uploader): 由 [@chenjiahan](https://github.com/chenjiahan) 在 [#12289](https://github.com/youzan/vant/pull/12289) 中添加了有关相机权限的常见问题解答
+
+#### 其他变更
+
+- test(Dialog): 由 [@chenjiahan](https://github.com/chenjiahan) 在 [#12315](https://github.com/youzan/vant/pull/12315) 中启用了函数调用测试用例
+- fix(cli): 由 [@chenjiahan](https://github.com/chenjiahan) 在 [#12292](https://github.com/youzan/vant/pull/12292) 中允许在发布时缺少构建脚本
+
+#### 新贡献者
+
+- [@nined9](https://github.com/nined9) 在 [#12309](https://github.com/youzan/vant/pull/12309) 中进行了首次贡献
+- [@sywyyhykkk](https://github.com/sywyyhykkk) 在 [#12304](https://github.com/youzan/vant/pull/12304) 中进行了首次贡献
+
 ### v4.6.8
 
 `2023-09-10`

@@ -143,7 +143,7 @@ export default defineComponent({
       { immediate: true },
     );
 
-    useLockScroll(rootRef, () => props.lockScroll);
+    useLockScroll(rootRef, () => props.lockScroll || dragging.value);
 
     // useEventListener will set passive to `false` to eliminate the warning of Chrome
     useEventListener('touchmove', onTouchmove, { target: rootRef });

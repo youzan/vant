@@ -334,7 +334,7 @@ export default {
 | month-show | 当某个月份进入可视区域时触发 | _{ date: Date, title: string }_ |
 | over-range | 范围选择超过最多可选天数时触发 | - |
 | click-subtitle | 点击日历副标题时触发 | _event: MouseEvent_ |
-| click-disabled-date | 点击禁用日期时触发 | _value: Date \| Date[]_ |
+| click-disabled-date `v4.7.0` | 点击禁用日期时触发 | _value: Date \| Date[]_ |
 
 ### Slots
 

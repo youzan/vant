@@ -97,13 +97,19 @@ export default defineComponent({
       const empty = document.createElement('canvas');
       empty.width = canvas.width;
       empty.height = canvas.height;
+      if (props.backgroundColor) {
+        const emptyCtx = empty.getContext('2d');
+        setCanvasBgColor(emptyCtx);
+      }
       return canvas.toDataURL() === empty.toDataURL();
     };
 
-    const setCanvasBgColor = () => {
-      if (state.ctx && props.backgroundColor) {
-        state.ctx.fillStyle = props.backgroundColor;
-        state.ctx.fillRect(0, 0, state.width, state.height);
+    const setCanvasBgColor = (
+      ctx: CanvasRenderingContext2D | null | undefined,
+    ) => {
+      if (ctx && props.backgroundColor) {
+        ctx.fillStyle = props.backgroundColor;
+        ctx.fillRect(0, 0, state.width, state.height);
       }
     };
 
@@ -134,7 +140,7 @@ export default defineComponent({
       if (state.ctx) {
         state.ctx.clearRect(0, 0, state.width, state.height);
         state.ctx.closePath();
-        setCanvasBgColor();
+        setCanvasBgColor(state.ctx);
       }
       emit('clear');
     };
@@ -147,7 +153,7 @@ export default defineComponent({
 
         // ensure canvas is rendered
         nextTick(() => {
-          setCanvasBgColor();
+          setCanvasBgColor(state.ctx);
         });
       }
     });
