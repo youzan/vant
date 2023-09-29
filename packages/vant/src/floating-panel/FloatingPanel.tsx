@@ -27,7 +27,7 @@ import { useSyncPropRef } from '../composables/use-sync-prop-ref';
 export const floatingPanelProps = {
   height: makeNumericProp(0),
   anchors: makeArrayProp<number>(),
-  duration: makeNumericProp(0.2),
+  duration: makeNumericProp(0.3),
   contentDraggable: truthProp,
   lockScroll: Boolean,
   safeAreaInsetBottom: truthProp,
@@ -71,7 +71,9 @@ export default defineComponent({
     const rootStyle = computed(() => ({
       height: addUnit(boundary.value.max),
       transform: `translateY(calc(100% + ${addUnit(-height.value)}))`,
-      transition: !dragging.value ? `transform ${props.duration}s` : 'none',
+      transition: !dragging.value
+        ? `transform ${props.duration}s cubic-bezier(0.18, 0.89, 0.32, 1.28)`
+        : 'none',
     }));
 
     const ease = (moveY: number): number => {
