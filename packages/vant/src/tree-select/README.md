@@ -41,7 +41,7 @@ export default {
         children: [
           { text: 'Delaware', id: 1 },
           { text: 'Florida', id: 2 },
-          { text: 'Georqia', id: 3, disabled: true },
+          { text: 'Georgia', id: 3, disabled: true },
         ],
       },
       {
@@ -87,7 +87,7 @@ export default {
         children: [
           { text: 'Delaware', id: 1 },
           { text: 'Florida', id: 2 },
-          { text: 'Georqia', id: 3, disabled: true },
+          { text: 'Georgia', id: 3, disabled: true },
         ],
       },
       {
@@ -169,7 +169,7 @@ export default {
           children: [
             { text: 'Delaware', id: 1 },
             { text: 'Florida', id: 2 },
-            { text: 'Georqia', id: 3, disabled: true },
+            { text: 'Georgia', id: 3, disabled: true },
           ],
           dot: true,
         },

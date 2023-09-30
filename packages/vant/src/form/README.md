@@ -347,7 +347,7 @@ export default {
     const columns = [
       { text: 'Delaware', value: 'Delaware' },
       { text: 'Florida', value: 'Florida' },
-      { text: 'Georqia', value: 'Georqia' },
+      { text: 'Georgia', value: 'Georgia' },
       { text: 'Indiana', value: 'Indiana' },
       { text: 'Maine', value: 'Maine' },
     ];
