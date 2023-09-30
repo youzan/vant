@@ -5,7 +5,6 @@ exports[`should render demo and match snapshot 1`] = `
 <div class="van-block">
   <h2
     class="van-block__title"
-    id="base"
   >
     base
   </h2>
