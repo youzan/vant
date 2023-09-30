@@ -88,7 +88,7 @@ export default {
 | anchors | 设置自定义锚点, 单位 `px` | _number[]_ | `[100, window.innerWidth * 0.6]` |
 | duration | 动画时长，单位秒，设置为 0 可以禁用动画 | _number \| string_ | `0.3` |
 | content-draggable | 允许拖拽内容容器 | _boolean_ | `true` |
-| lock-scroll `v4.6.4` | 是否锁定背景滚动 | _boolean_ | `false` |
+| lock-scroll `v4.6.4` | 当不拖拽时，是否锁定背景滚动 | _boolean_ | `false` |
 | safe-area-inset-bottom | 是否开启[底部安全区适配](#/zh-CN/advanced-usage#di-bu-an-quan-qu-gua-pei) | _boolean_ | `true` |
 
 ### Events

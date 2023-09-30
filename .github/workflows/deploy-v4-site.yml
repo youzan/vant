@@ -13,14 +13,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout 🛎️
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
         with:
           ref: 'main'
 
       - name: Install pnpm
         run: corepack enable
 
-      - uses: actions/setup-node@v2
+      - uses: actions/setup-node@v3
         with:
           node-version: '18'
           cache: 'pnpm'
@@ -32,10 +32,12 @@ jobs:
         run: npm run build:site
 
       - name: Deploy for Gitee 🚀
-        uses: JamesIves/github-pages-deploy-action@v4.4.0
+        uses: JamesIves/github-pages-deploy-action@v4.4.1
         with:
           branch: gh-pages
           folder: packages/vant/site-dist
+          # enable single-commit to reduce the repo size
+          single-commit: true
           clean: true
           clean-exclude: |
             1.x/*
@@ -61,6 +63,8 @@ jobs:
           token: ${{ secrets.VANT_UI_TOKEN }}
           repository-name: vant-ui/vant-ui.github.io
           target-folder: vant
+          # enable single-commit to reduce the repo size
+          single-commit: true
           clean: true
           clean-exclude: |
             1.x/*

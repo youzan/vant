@@ -24,6 +24,7 @@
   --van-uploader-loading-icon-size: 22px;
   --van-uploader-loading-icon-color: var(--van-white);
   --van-uploader-disabled-opacity: var(--van-disabled-opacity);
+  --van-uploader-border-radius: 0px;
 }
 
 .van-uploader {
@@ -69,6 +70,7 @@
     height: var(--van-uploader-size);
     margin: 0 var(--van-padding-xs) var(--van-padding-xs) 0;
     background: var(--van-uploader-upload-background);
+    border-radius: var(--van-uploader-border-radius);
 
     &:active {
       background-color: var(--van-uploader-upload-active-color);
@@ -100,6 +102,7 @@
       width: var(--van-uploader-size);
       height: var(--van-uploader-size);
       overflow: hidden;
+      border-radius: var(--van-uploader-border-radius);
     }
 
     &-delete {
@@ -145,6 +148,7 @@
     justify-content: center;
     color: var(--van-uploader-mask-text-color);
     background: var(--van-uploader-mask-background);
+    border-radius: var(--van-uploader-border-radius);
 
     &-icon {
       font-size: var(--van-uploader-mask-icon-size);

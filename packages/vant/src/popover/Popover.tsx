@@ -31,6 +31,7 @@ import {
 
 // Composables
 import { useClickAway } from '@vant/use';
+import { useScopeId } from '../composables/use-scope-id';
 import { useSyncPropRef } from '../composables/use-sync-prop-ref';
 
 // Components
@@ -265,6 +266,7 @@ export default defineComponent({
           lockScroll={false}
           onUpdate:show={updateShow}
           {...attrs}
+          {...useScopeId()}
           {...pick(props, popupProps)}
         >
           {props.showArrow && <div class={bem('arrow')} />}

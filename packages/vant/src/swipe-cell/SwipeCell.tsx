@@ -56,6 +56,7 @@ export default defineComponent({
     let opened: boolean;
     let lockClick: boolean;
     let startOffset: number;
+    let isInBeforeClosing: boolean;
 
     const root = ref<HTMLElement>();
     const leftRef = ref<HTMLElement>();
@@ -161,9 +162,12 @@ export default defineComponent({
     };
 
     const onClick = (position: SwipeCellPosition = 'outside') => {
+      if (isInBeforeClosing) return;
+
       emit('click', position);
 
       if (opened && !lockClick) {
+        isInBeforeClosing = true;
         callInterceptor(props.beforeClose, {
           args: [
             {
@@ -171,7 +175,12 @@ export default defineComponent({
               position,
             },
           ],
-          done: () => close(position),
+          done: () => {
+            isInBeforeClosing = false;
+            close(position);
+          },
+          canceled: () => (isInBeforeClosing = false),
+          error: () => (isInBeforeClosing = false),
         });
       }
     };

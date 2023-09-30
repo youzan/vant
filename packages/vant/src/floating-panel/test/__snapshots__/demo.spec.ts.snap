@@ -62,7 +62,7 @@ exports[`should render demo and match snapshot 1`] = `
     >
       <div
         class="van-floating-panel van-safe-area-bottom"
-        style="height: 461px; transform: translateY(calc(100% + -100px)); transition: transform 0.2s;"
+        style="height: 461px; transform: translateY(calc(100% + -100px)); transition: transform 0.3s cubic-bezier(0.18, 0.89, 0.32, 1.28);"
       >
         <div class="van-floating-panel__header">
           <div class="van-floating-panel__header-bar">

@@ -187,6 +187,26 @@ test('should not trigger select event when click disabled day', async () => {
   expect(wrapper.emitted('select')).toBeFalsy();
 });
 
+test('should trigger click-disabled-date event when click disabled day', async () => {
+  const fn = vi.fn();
+  const wrapper = mount(Calendar, {
+    props: {
+      minDate,
+      maxDate,
+      poppable: false,
+      lazyRender: false,
+      onClickDisabledDate: fn,
+    },
+  });
+
+  await later();
+
+  const disabeldDate = wrapper.findAll('.van-calendar__day--disabled')[0];
+  expect(disabeldDate).toBeDefined();
+  await disabeldDate.trigger('click');
+  expect(fn).toHaveBeenCalled();
+});
+
 test('confirm event when type is single', async () => {
   const wrapper = mount(Calendar, {
     props: {

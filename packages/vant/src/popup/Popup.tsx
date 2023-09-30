@@ -32,6 +32,7 @@ import { useLockScroll } from '../composables/use-lock-scroll';
 import { useLazyRender } from '../composables/use-lazy-render';
 import { POPUP_TOGGLE_KEY } from '../composables/on-popup-reopen';
 import { useGlobalZIndex } from '../composables/use-global-z-index';
+import { useScopeId } from '../composables/use-scope-id';
 
 // Components
 import { Icon } from '../icon';
@@ -143,6 +144,7 @@ export default defineComponent({
             customStyle={props.overlayStyle}
             role={props.closeOnClickOverlay ? 'button' : undefined}
             tabindex={props.closeOnClickOverlay ? 0 : undefined}
+            {...useScopeId()}
             onClick={onClickOverlay}
           />
         );
@@ -205,6 +207,7 @@ export default defineComponent({
           ]}
           onKeydown={onKeydown}
           {...attrs}
+          {...useScopeId()}
         >
           {slots.default?.()}
           {renderCloseIcon()}

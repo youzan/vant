@@ -9,11 +9,13 @@ const t = useTranslate({
     useSlot: '使用插槽',
     showBack: '返回上级',
     rightButton: '右侧按钮',
+    disableButton: '禁用按钮',
   },
   'en-US': {
     useSlot: 'Use Slot',
     showBack: 'Back',
     rightButton: 'Right Button',
+    disableButton: 'Disable Button',
   },
 });
 
@@ -52,5 +54,18 @@ const onClickRight = () => showToast(t('button'));
         <van-icon name="search" size="18" />
       </template>
     </van-nav-bar>
+  </demo-block>
+
+  <demo-block :title="t('disableButton')">
+    <van-nav-bar
+      :title="t('title')"
+      :left-text="t('back')"
+      :right-text="t('button')"
+      left-arrow
+      left-disabled
+      right-disabled
+      @click-left="onClickLeft"
+      @click-right="onClickRight"
+    />
   </demo-block>
 </template>

@@ -5,6 +5,10 @@ on:
     tags:
       - 'v*' # Push events to matching v*, i.e. v1.0, v20.15.10
 
+  # Sync to gitee everyday
+  schedule:
+    - cron: '0 1 * * *'
+
   workflow_dispatch:
 
 jobs:
@@ -12,7 +16,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Sync to Gitee
-        uses: wearerequired/git-mirror-action@master
+        uses: wearerequired/git-mirror-action@v1.2.0
         env:
           # 在 Settings->Secrets 配置 GITEE_RSA_PRIVATE_KEY
           SSH_PRIVATE_KEY: ${{ secrets.GITEE_RSA_PRIVATE_KEY }}

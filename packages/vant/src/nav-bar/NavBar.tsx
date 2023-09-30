@@ -30,6 +30,8 @@ export const navBarProps = {
   border: truthProp,
   leftText: String,
   rightText: String,
+  leftDisabled: Boolean,
+  rightDisabled: Boolean,
   leftArrow: Boolean,
   placeholder: Boolean,
   safeAreaInsetTop: Boolean,
@@ -49,8 +51,16 @@ export default defineComponent({
     const navBarRef = ref<HTMLElement>();
     const renderPlaceholder = usePlaceholder(navBarRef, bem);
 
-    const onClickLeft = (event: MouseEvent) => emit('clickLeft', event);
-    const onClickRight = (event: MouseEvent) => emit('clickRight', event);
+    const onClickLeft = (event: MouseEvent) => {
+      if (!props.leftDisabled) {
+        emit('clickLeft', event);
+      }
+    };
+    const onClickRight = (event: MouseEvent) => {
+      if (!props.rightDisabled) {
+        emit('clickRight', event);
+      }
+    };
 
     const renderLeft = () => {
       if (slots.left) {
@@ -93,7 +103,12 @@ export default defineComponent({
           <div class={bem('content')}>
             {hasLeft && (
               <div
-                class={[bem('left'), props.clickable ? HAPTICS_FEEDBACK : '']}
+                class={[
+                  bem('left', { disabled: props.leftDisabled }),
+                  props.clickable && !props.leftDisabled
+                    ? HAPTICS_FEEDBACK
+                    : '',
+                ]}
                 onClick={onClickLeft}
               >
                 {renderLeft()}
@@ -104,7 +119,12 @@ export default defineComponent({
             </div>
             {hasRight && (
               <div
-                class={[bem('right'), props.clickable ? HAPTICS_FEEDBACK : '']}
+                class={[
+                  bem('right', { disabled: props.rightDisabled }),
+                  props.clickable && !props.rightDisabled
+                    ? HAPTICS_FEEDBACK
+                    : '',
+                ]}
                 onClick={onClickRight}
               >
                 {renderRight()}

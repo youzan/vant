@@ -41,9 +41,9 @@ const beforeClose = ({ position }: { position: string }) => {
       return new Promise<boolean>((resolve) => {
         showConfirmDialog({
           title: t('confirm'),
-        }).then(() => {
-          resolve(true);
-        });
+        })
+          .then(() => resolve(true))
+          .catch(() => resolve(false));
       });
   }
 };

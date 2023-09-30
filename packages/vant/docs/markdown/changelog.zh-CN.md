@@ -19,6 +19,121 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 
 ## 更新内容
 
+### v4.7.0
+
+`2023-09-24`
+
+#### 🍭 图标更新
+
+- 图标：添加一个实底的 `records` 图标
+- 图标：添加一个实底的 `contact` 图标
+- 图标：添加一个实底的 `discount` 图标
+- 图标：添加一个实底的 `completed` 图标
+- 图标：添加一个实底的 `description` 图标
+- 图标：添加一个实底的 `cash-back-record` 图标
+- 图标：添加新的 `user` 图标
+- 图标：添加新的 `notes` 图标
+- 图标：添加新的 `newspaper` 图标
+- 图标：添加新的 `list-switch` 图标
+- 图标：添加新的 `list-switching` 图标
+- 图标：将以前的 `records` 图标重命名为 `records-o`
+- 图标：将以前的 `contact` 图标重命名为 `contact-o`
+- 图标：将以前的 `discount` 图标重命名为 `discount-o`
+- 图标：将以前的 `completed` 图标重命名为 `completed-o`
+- 图标：将以前的 `description` 图标重命名为 `description-o`
+- 图标：将以前的 `cash-back-record` 图标重命名为 `cash-back-record-o`
+
+#### 新功能 🎉
+
+- feat(Calendar): 由 [@LadyChatterleyLover](https://github.com/LadyChatterleyLover) 在 [#12274](https://github.com/youzan/vant/pull/12274) 中添加了 `click-disabled-date` 事件
+- feat(Uploader): 由 [@xieyezi](https://github.com/xieyezi) 在 [#12280](https://github.com/youzan/vant/pull/12280) 中添加了 `--van-uploader-border-radius` CSS 变量
+- feat(SwipeCell): 由 [@nined9](https://github.com/nined9) 在 [#12309](https://github.com/youzan/vant/pull/12309) 中修复了运行 `beforeClose` 时点击外部触发关闭的问题
+- feat(AddressEdit): 由 [@zhousg](https://github.com/zhousg) 在 [#12310](https://github.com/youzan/vant/pull/12310) 中为姓名和电话输入添加了 `change` 事件
+- types(Dialog): 由 [@chenjiahan](https://github.com/chenjiahan) 在 [#12316](https://github.com/youzan/vant/pull/12316) 中改进了 `showDialog` 的返回类型
+
+#### Bug 修复 🐞
+
+- fix(Picker): 由 [@lllomh](https://github.com/lllomh) 在 [#12300](https://github.com/youzan/vant/pull/12300) 中修复了弹出窗口的内容与中文版本不一致的问题
+- fix(Signature): 由 [@sywyyhykkk](https://github.com/sywyyhykkk) 在 [#12304](https://github.com/youzan/vant/pull/12304) 中修复了当设置了背景颜色时检查画布是否为空的问题
+- fix(FloatingPanel): 由 [@zhousg](https://github.com/zhousg) 在 [#12314](https://github.com/youzan/vant/pull/12314) 中修复了向下拖动导致页面移动的问题
+
+#### 文档 📖
+
+- docs(Picker): 由 [@MrXwq](https://github.com/MrXwq) 在 [#12275](https://github.com/youzan/vant/pull/12275) 中改进了 Picker 的文档
+- docs(Uploader): 由 [@chenjiahan](https://github.com/chenjiahan) 在 [#12289](https://github.com/youzan/vant/pull/12289) 中添加了有关相机权限的常见问题解答
+
+#### 其他变更
+
+- test(Dialog): 由 [@chenjiahan](https://github.com/chenjiahan) 在 [#12315](https://github.com/youzan/vant/pull/12315) 中启用了函数调用测试用例
+- fix(cli): 由 [@chenjiahan](https://github.com/chenjiahan) 在 [#12292](https://github.com/youzan/vant/pull/12292) 中允许在发布时缺少构建脚本
+
+#### 新贡献者
+
+- [@nined9](https://github.com/nined9) 在 [#12309](https://github.com/youzan/vant/pull/12309) 中进行了首次贡献
+- [@sywyyhykkk](https://github.com/sywyyhykkk) 在 [#12304](https://github.com/youzan/vant/pull/12304) 中进行了首次贡献
+
+### v4.6.8
+
+`2023-09-10`
+
+#### 新功能 🎉
+
+- feat(Cell): 添加 CSS 变量用于自定义 Value 的字体大小 by [@inottn](https://github.com/inottn) in [#12260](https://github.com/youzan/vant/pull/12260)
+- feat(ConfigProvider): 补充 ConfigProviderThemeVars 的类型声明 by [@xieyezi](https://github.com/xieyezi) in [#12264](https://github.com/youzan/vant/pull/12264)
+- feat(NavBar): 添加 leftDisabled 和 rightDisabled 属性 by [@m-xlsea](https://github.com/m-xlsea) in [#12258](https://github.com/youzan/vant/pull/12258)
+
+#### Bug 修复 🐞
+
+- fix(ConfigProvider): 修复设置某些基础主题变量失败的问题 by [@chenjiahan](https://github.com/chenjiahan) in [#12272](https://github.com/youzan/vant/pull/12272)
+- fix(ConfigProvider): 修复 ConfigProviderThemeVars 的 fontSizeXs 命名错误 by [@xieyezi](https://github.com/xieyezi) in [#12267](https://github.com/youzan/vant/pull/12267)
+
+#### 文档 📖
+
+- docs(NavBar): 添加禁用按钮示例 by [@chenjiahan](https://github.com/chenjiahan) in [#12270](https://github.com/youzan/vant/pull/12270)
+
+#### 其他变更
+
+- chore(CI): 启用单一提交以减小仓库大小 by [@chenjiahan](https://github.com/chenjiahan) in [#12268](https://github.com/youzan/vant/pull/12268)
+- chore(CI): 升级 actions 版本 by [@chenjiahan](https://github.com/chenjiahan) in [#12269](https://github.com/youzan/vant/pull/12269)
+- chore: 将 Axure 文件移动到 vant-assets 仓库 by [@chenjiahan](https://github.com/chenjiahan) in [#12271](https://github.com/youzan/vant/pull/12271)
+
+#### 新贡献者
+
+- [@xieyezi](https://github.com/xieyezi) 在 [#12264](https://github.com/youzan/vant/pull/12264) 中首次贡献
+- [@m-xlsea](https://github.com/m-xlsea) 在 [#12258](https://github.com/youzan/vant/pull/12258) 中首次贡献
+
+### v4.6.7
+
+`2023-09-04`
+
+#### 新功能 🎉
+
+- feat(vant-use): 添加 useRaf，由 [@Simon-He95](https://github.com/Simon-He95) 在 [#12211](https://github.com/youzan/vant/pull/12211) 中贡献
+- feat(Checkbox): 添加不确定状态，由 [@wjw-gavin](https://github.com/wjw-gavin) 在 [#12216](https://github.com/youzan/vant/pull/12216) 中贡献
+- feat(auto-import-resolver): 添加 auto-import-resolver 包，由 [@wChenonly](https://github.com/wChenonly) 在 [#12227](https://github.com/youzan/vant/pull/12227) 中贡献
+- feat(ConfigProvider): 添加 theme-vars-scope 属性以启用根作用域影响，由 [@zhousg](https://github.com/zhousg) 在 [#12240](https://github.com/youzan/vant/pull/12240) 中贡献
+
+#### 问题修复 🐞
+
+- fix(auto-import-resolver): 修复 TS 项目中的类型不匹配问题，由 [@chenjiahan](https://github.com/chenjiahan) 在 [#12243](https://github.com/youzan/vant/pull/12243) 中贡献
+- fix(eslint): 使用 ignorePatterns 替代 .eslintignore，由 [@MrXwq](https://github.com/MrXwq) 在 [#12237](https://github.com/youzan/vant/pull/12237) 中贡献
+
+#### 文档 📖
+
+- docs: 改善 back-top 的菜单位置，由 [@wjw-gavin](https://github.com/wjw-gavin) 在 [#12223](https://github.com/youzan/vant/pull/12223) 中贡献
+- docs: 改善 use-raf 文档，由 [@chenjiahan](https://github.com/chenjiahan) 在 [#12224](https://github.com/youzan/vant/pull/12224) 中贡献
+- docs: 在快速入门指南中添加 Vite 和 Nuxt 的指引，由 [@chenjiahan](https://github.com/chenjiahan) 在 [#12239](https://github.com/youzan/vant/pull/12239) 中贡献
+- docs(auto-import-resolver): 更新 README 和文件夹名称，由 [@chenjiahan](https://github.com/chenjiahan) 在 [#12241](https://github.com/youzan/vant/pull/12241) 中贡献
+- docs(auto-import-resolver): 添加 Rspack 的使用方法，由 [@chenjiahan](https://github.com/chenjiahan) 在 [#12242](https://github.com/youzan/vant/pull/12242) 中贡献
+- docs(ConfigProvider): 更新修改 CSS 变量的指南，由 [@chenjiahan](https://github.com/chenjiahan) 在 [#12246](https://github.com/youzan/vant/pull/12246) 中贡献
+
+#### 其他变更
+
+- test: 将测试运行器迁移到 vitest，由 [@chenjiahan](https://github.com/chenjiahan) 在 [#12206](https://github.com/youzan/vant/pull/12206) 中贡献
+- chore(CI): 修复 codecov 报告器，由 [@chenjiahan](https://github.com/chenjiahan) 在 [#12210](https://github.com/youzan/vant/pull/12210) 中贡献
+- chore: 对内部依赖使用 workspace 协议，由 [@chenjiahan](https://github.com/chenjiahan) 在 [#12225](https://github.com/youzan/vant/pull/12225) 中贡献
+- test: 修复 vitest 的 canvas 模拟，由 [@chenjiahan](https://github.com/chenjiahan) 在 [#12226](https://github.com/youzan/vant/pull/12226) 中贡献
+
 ### v4.6.6
 
 `2023-08-20`
