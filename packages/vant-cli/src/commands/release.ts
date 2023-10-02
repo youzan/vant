@@ -2,15 +2,15 @@ import fse from 'fs-extra';
 import { join } from 'node:path';
 import color from 'picocolors';
 import enquirer from 'enquirer';
-import { consola } from '../common/logger.js';
+import { logger } from 'rslog';
 import { getPackageManager } from '../common/manager.js';
 import { execSync } from 'child_process';
 
 function logCurrentVersion(cwd: string) {
   const pkgJson = join(cwd, 'package.json');
   const pkg = fse.readJSONSync(pkgJson);
-  consola.success(`${color.bold('Current package:')} ${color.green(pkg.name)}`);
-  consola.success(
+  logger.success(`${color.bold('Current package:')} ${color.green(pkg.name)}`);
+  logger.success(
     `${color.bold('Current version:')} ${color.green(pkg.version)}`,
   );
   return {
@@ -43,7 +43,7 @@ function getNpmTag(version: string, forceTag?: string) {
     tag = 'latest';
   }
 
-  consola.success(`${color.bold('Npm tag:')} ${color.green(tag)}`);
+  logger.success(`${color.bold('Npm tag:')} ${color.green(tag)}`);
 
   return tag;
 }
@@ -60,7 +60,7 @@ function setPkgVersion(
 function buildPackage(pkgJson: Record<string, any>, packageManager: string) {
   if (pkgJson.scripts?.build) {
     const command = `${packageManager} run build`;
-    consola.success(`${color.bold('Build package:')} ${color.green(command)}`);
+    logger.success(`${color.bold('Build package:')} ${color.green(command)}`);
     execSync(command, { stdio: 'inherit' });
   }
 }
@@ -113,7 +113,7 @@ export async function release(command: { tag?: string; gitTag?: boolean }) {
   try {
     buildPackage(pkgJson, packageManager);
   } catch (err) {
-    consola.error('Failed to build package, rollback to the previous version.');
+    logger.error('Failed to build package, rollback to the previous version.');
     setPkgVersion(pkgJson, pkgJsonPath, currentVersion);
     throw err;
   }
