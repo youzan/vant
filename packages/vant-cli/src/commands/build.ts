@@ -1,9 +1,9 @@
 import fse from 'fs-extra';
+import { logger } from 'rslog';
 import { execSync } from 'child_process';
 import { join, relative } from 'node:path';
 import { clean } from './clean.js';
 import { CSS_LANG } from '../common/css.js';
-import { createSpinner, consola } from '../common/logger.js';
 import { installDependencies } from '../common/manager.js';
 import { compileSfc } from '../compiler/compile-sfc.js';
 import { compileStyle } from '../compiler/compile-style.js';
@@ -181,20 +181,19 @@ const tasks = [
 async function runBuildTasks() {
   for (let i = 0; i < tasks.length; i++) {
     const { task, text } = tasks[i];
-    const spinner = createSpinner(text).start();
 
     try {
       /* eslint-disable no-await-in-loop */
       await task();
-      spinner.success({ text });
+      logger.ready(text);
     } catch (err) {
-      spinner.error({ text });
-      console.log(err);
+      logger.error(text);
+      logger.error(err);
       throw err;
     }
   }
 
-  consola.success('Compile successfully');
+  logger.success('Build all files');
 }
 
 export async function build() {
@@ -205,7 +204,7 @@ export async function build() {
     await installDependencies();
     await runBuildTasks();
   } catch (err) {
-    consola.error('Build failed');
+    logger.error('Build failed');
     process.exit(1);
   }
 }

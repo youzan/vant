@@ -29,9 +29,6 @@ importers:
 
   packages/create-vant-cli-app:
     dependencies:
-      consola:
-        specifier: ^3.0.2
-        version: 3.2.3
       enquirer:
         specifier: 2.3.6
         version: 2.3.6
@@ -42,6 +39,9 @@ importers:
         specifier: ^11.1.0
         version: 11.1.1
       picocolors:
+        specifier: ^1.0.0
+        version: 1.0.0
+      rslog:
         specifier: ^1.0.0
         version: 1.0.0
     devDependencies:
@@ -172,9 +172,6 @@ importers:
       commander:
         specifier: ^11.0.0
         version: 11.0.0
-      consola:
-        specifier: ^3.0.2
-        version: 3.2.3
       enquirer:
         specifier: 2.3.6
         version: 2.3.6
@@ -214,9 +211,6 @@ importers:
       nano-staged:
         specifier: ^0.8.0
         version: 0.8.0
-      nanospinner:
-        specifier: ^1.1.0
-        version: 1.1.0
       picocolors:
         specifier: ^1.0.0
         version: 1.0.0
@@ -229,6 +223,9 @@ importers:
       prettier:
         specifier: ^3.0.0
         version: 3.0.1
+      rslog:
+        specifier: ^1.0.0
+        version: 1.0.0
       terser:
         specifier: ^5.19.2
         version: 5.19.2
@@ -1591,11 +1588,6 @@ packages:
       proto-list: 1.2.4
     dev: true
 
-  /consola@3.2.3:
-    resolution: {integrity: sha512-I5qxpzLv+sJhTVEoLYNcTW+bThDCPsit0vLNKShZx6rLtpilNpmmeTPaeqJb9ZE9dV3DGaeby6Vuhrw38WjeyQ==}
-    engines: {node: ^14.18.0 || >=16.10.0}
-    dev: false
-
   /convert-source-map@1.9.0:
     resolution: {integrity: sha512-ASFBup0Mz1uyiIjANan1jzLQami9z1PoYSZCiiYW2FczPbenXc45FZdBZLzOT+r6+iciuEModtmCti+hjaAk0A==}
 
@@ -2660,12 +2652,6 @@ packages:
     engines: {node: ^10 || ^12 || ^13.7 || ^14 || >=15.0.1}
     hasBin: true
 
-  /nanospinner@1.1.0:
-    resolution: {integrity: sha512-yFvNYMig4AthKYfHFl1sLj7B2nkHL4lzdig4osvl9/LdGbXwrdFRoqBS98gsEsOakr0yH+r5NZ/1Y9gdVB8trA==}
-    dependencies:
-      picocolors: 1.0.0
-    dev: false
-
   /natural-compare-lite@1.4.0:
     resolution: {integrity: sha512-Tj+HTDSJJKaZnfiuw+iaF9skdPpTo2GtEly5JHnWV/hfv2Qj/9RKsGISQtLh2ox3l5EAGw487hnBee0sIJ6v2g==}
     dev: false
@@ -2955,6 +2941,11 @@ packages:
   /rrweb-cssom@0.6.0:
     resolution: {integrity: sha512-APM0Gt1KoXBz0iIkkdB/kfvGOwC4UuJFeG/c+yV7wSc7q96cG/kJ0HiYCnzivD9SB53cLV1MlHFNfOuPaadYSw==}
     dev: true
+
+  /rslog@1.0.0:
+    resolution: {integrity: sha512-yTulfJJIYHBftErlZZXHdZuFA8275spDcTrCs8JIXIh+wRIRgi6RGoT8MAnB8H6NIEvJbMUP14Mo1t7hCw4k1g==}
+    engines: {node: '>=14.17.6'}
+    dev: false
 
   /run-parallel@1.2.0:
     resolution: {integrity: sha512-5l4VyZR86LZ/lDxZTR6jqL8AFE2S0IFLMP26AbjsLVADxHdhB/c0GUsH+y39UfCi3dzz8OlQuPmnaJOMoDHQBA==}

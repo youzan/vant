@@ -1,5 +1,5 @@
 import { exec } from 'child_process';
-import { consola, createSpinner } from '../common/logger.js';
+import { logger } from 'rslog';
 import { SCRIPT_EXTS } from '../common/constant.js';
 
 type RunCommandMessages = {
@@ -9,7 +9,7 @@ type RunCommandMessages = {
 };
 
 function runCommand(cmd: string, messages: RunCommandMessages) {
-  const spinner = createSpinner(messages.start).start();
+  logger.start(messages.start);
 
   return new Promise((resolve) => {
     const options = {
@@ -18,11 +18,11 @@ function runCommand(cmd: string, messages: RunCommandMessages) {
 
     exec(cmd, options, (error, stdout, stderr) => {
       if (error) {
-        consola.error(stderr || stdout);
-        spinner.error({ text: messages.failed });
+        logger.error(stderr || stdout);
+        logger.error(messages.failed);
         resolve(false);
       } else {
-        spinner.success({ text: messages.succeed });
+        logger.success(messages.succeed);
         resolve(true);
       }
     });
