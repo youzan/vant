@@ -1,10 +1,10 @@
 import { parse } from 'node:path';
 import fse from 'fs-extra';
+import { logger } from 'rslog';
 import { getVantConfig, replaceExt } from '../common/index.js';
 import { compileCss } from './compile-css.js';
 import { compileLess } from './compile-less.js';
 import { compileSass } from './compile-sass.js';
-import { consola } from '../common/logger.js';
 
 const { readFileSync, writeFileSync, removeSync } = fse;
 
@@ -25,7 +25,7 @@ async function compileFile(filePath: string) {
     const source = readFileSync(filePath, 'utf-8');
     return await compileCss(source);
   } catch (err) {
-    consola.error('Compile style failed: ' + filePath);
+    logger.error('Compile style failed: ' + filePath);
     throw err;
   }
 }
