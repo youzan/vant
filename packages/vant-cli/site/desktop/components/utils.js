@@ -10,7 +10,7 @@ function _compress(uncompressed, bitsPerChar, getCharFromInt) {
   let context_c = '';
   let context_wc = '';
   let context_w = '';
-  let context_enlargeIn = 2; // Compensate for the first entry which should not count
+  let context_enlargeIn = 2;
   let context_dictSize = 3;
   let context_numBits = 2;
   const context_data = [];
@@ -108,12 +108,10 @@ function _compress(uncompressed, bitsPerChar, getCharFromInt) {
         context_enlargeIn = Math.pow(2, context_numBits);
         context_numBits++;
       }
-      // Add wc to the dictionary.
       context_dictionary[context_wc] = context_dictSize++;
       context_w = String(context_c);
     }
   }
-  // Output the code for w.
   if (context_w !== '') {
     if (
       Object.prototype.hasOwnProperty.call(
@@ -196,7 +194,6 @@ function _compress(uncompressed, bitsPerChar, getCharFromInt) {
       context_numBits++;
     }
   }
-  // Mark the end of the stream
   value = 2;
   for (i = 0; i < context_numBits; i++) {
     context_data_val = (context_data_val << 1) | (value & 1);
@@ -209,7 +206,6 @@ function _compress(uncompressed, bitsPerChar, getCharFromInt) {
     }
     value = value >> 1;
   }
-  // Flush the last char
   // eslint-disable-next-line no-constant-condition
   while (true) {
     context_data_val = context_data_val << 1;
@@ -226,10 +222,8 @@ function compressToBase64(input) {
   const res = _compress(input, 6, function (a) {
     return keyStrBase64.charAt(a);
   });
-  switch (
-    res.length % 4 // To produce valid Base64
-  ) {
-    default: // When could this happen ?
+  switch (res.length % 4) {
+    default:
     case 0:
       return res;
     case 1:
@@ -243,9 +237,9 @@ function compressToBase64(input) {
 
 function compress(input) {
   return compressToBase64(input)
-    .replace(/\+/g, `-`) // Convert '+' to '-'
-    .replace(/\//g, `_`) // Convert '/' to '_'
-    .replace(/=+$/, ``); // Remove ending '='
+    .replace(/\+/g, `-`)
+    .replace(/\//g, `_`)
+    .replace(/=+$/, ``);
 }
 
 export function getParameters(parameters) {
