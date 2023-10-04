@@ -1,4 +1,4 @@
-import { getParameters } from 'codesandbox/lib/api/define';
+import { getParameters } from './utils';
 
 const indexHtml = `<!DOCTYPE html>
 <html lang="en">

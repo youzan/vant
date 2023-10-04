@@ -42,7 +42,6 @@
     "@types/less": "^3.0.3",
     "@types/lodash": "^4.14.191",
     "@types/markdown-it": "^13.0.0",
-    "codesandbox": "^2.2.3",
     "rimraf": "^5.0.0",
     "vue": "^3.3.4"
   },
