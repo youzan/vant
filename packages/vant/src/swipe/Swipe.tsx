@@ -123,7 +123,9 @@ export default defineComponent({
     const trackStyle = computed(() => {
       const style: CSSProperties = {
         transitionDuration: `${state.swiping ? 0 : props.duration}ms`,
-        transform: `translate${props.vertical ? 'Y' : 'X'}(${state.offset}px)`,
+        transform: `translate${
+          props.vertical ? 'Y' : 'X'
+        }(${+state.offset.toFixed(2)}px)`,
       };
 
       if (size.value) {
