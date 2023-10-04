@@ -67,7 +67,10 @@ The current maintenance status of each version of Vant is as follows:
 | [taroify](https://gitee.com/mallfoundry/taroify) | Vant Taro |
 | [vant-theme](https://github.com/Aisen60/vant-theme) | Online theme preview built on Vant UI |
 | [@antmjs/vantui](https://github.com/antmjs/vantui) | Mobile UI Components based on Vant, supporting Taro and React |
-| [sfc-playground-vant](https://github.com/zhixiaoqiang/sfc-playground-vant) | Try Vant in the Playground. Currently only Vant 3+ is supported |
+| [vant-playground](https://github.com/LadyChatterleyLover/vant-playground) | Vant Playground |
+| [sfc-playground-vant](https://github.com/zhixiaoqiang/sfc-playground-vant) | Vant Playground |
+| [vue3-h5-template](https://github.com/yulimchen/vue3-h5-template) | Mobile project template based on Vant |
+| [vue3-vant-mobile](https://github.com/CharleeWa/vue3-vant-mobile) | Mobile project template based on Vant |
 
 ### Other Links
 

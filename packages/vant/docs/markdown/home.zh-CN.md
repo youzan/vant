@@ -81,7 +81,10 @@ Vant 3/4 支持现代浏览器以及 Chrome >= 51、iOS >= 10.0（与 Vue 3 一�
 | [taroify](https://gitee.com/mallfoundry/taroify) | Vant Taro 版 |
 | [vant-theme](https://github.com/Aisen60/vant-theme) | Vant 在线主题预览工具 |
 | [@antmjs/vantui](https://github.com/antmjs/vantui) | 基于 Vant Weapp 开发的多端组件库，同时支持 Taro 和 React |
-| [sfc-playground-vant](https://github.com/zhixiaoqiang/sfc-playground-vant) | Vant Playground. 当前仅支持 Vant 3.0 以上 |
+| [vant-playground](https://github.com/LadyChatterleyLover/vant-playground) | Vant Playground |
+| [sfc-playground-vant](https://github.com/zhixiaoqiang/sfc-playground-vant) | Vant Playground |
+| [vue3-h5-template](https://github.com/yulimchen/vue3-h5-template) | 基于 Vant 的移动端项目模板 |
+| [vue3-vant-mobile](https://github.com/CharleeWa/vue3-vant-mobile) | 基于 Vant 的移动端项目模板 |
 
 ### 其他链接
 
