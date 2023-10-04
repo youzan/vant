@@ -45,7 +45,7 @@ export async function compileSite(production = false) {
     const require = createRequire(import.meta.url);
     const { version } = require('vite/package.json');
     const viteInfo = color.cyan(`vite v${version}`);
-    console.log(`\n  ${viteInfo}` + color.green(` dev server running at:\n`));
+    console.log(`  ${viteInfo}` + color.green(` dev server running at:\n`));
     server.printUrls();
   }
 }
