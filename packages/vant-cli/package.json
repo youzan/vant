@@ -70,7 +70,7 @@
     "markdown-it-anchor": "^8.6.4",
     "nano-staged": "^0.8.0",
     "picocolors": "^1.0.0",
-    "postcss": "^8.4.23",
+    "postcss": "^8.4.31",
     "postcss-load-config": "^4.0.1",
     "prettier": "^3.0.0",
     "terser": "^5.19.2",
