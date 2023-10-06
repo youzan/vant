@@ -19,6 +19,43 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 
 ## 更新内容
 
+### v4.7.1
+
+`2023-10-06`
+
+#### 新功能 🎉
+
+- feat(FloatingPanel): 优化弹跳动画，由 [@zhousg](https://github.com/zhousg) 在 [#12317](https://github.com/youzan/vant/pull/12317) 中贡献
+- feat(cli): 使用 rslog，由 [@chenjiahan](https://github.com/chenjiahan) 在 [#12334](https://github.com/youzan/vant/pull/12334) 中贡献
+- style(Swipe): 声明 `transition-property` 样式，由 [@chenjiahan](https://github.com/chenjiahan) 在 [#12336](https://github.com/youzan/vant/pull/12336) 中贡献
+- feat(Notify): 为辅助函数添加 JSDoc，由 [@chenjiahan](https://github.com/chenjiahan) 在 [#12342](https://github.com/youzan/vant/pull/12342) 中贡献
+- feat(Dialog): 为辅助函数添加 JSDoc，由 [@chenjiahan](https://github.com/chenjiahan) 在 [#12343](https://github.com/youzan/vant/pull/12343) 中贡献
+- feat(Toast): 为辅助函数添加 JSDoc，由 [@chenjiahan](https://github.com/chenjiahan) 在 [#12344](https://github.com/youzan/vant/pull/12344) 中贡献
+
+#### Bug 修复 🐞
+
+- fix(Popup): 修复无法继承 scopedId 的问题，由 [@chenjiahan](https://github.com/chenjiahan) 在 [#12327](https://github.com/youzan/vant/pull/12327) 中贡献
+- fix(CellGroup): 修复带有标题时无法继承 scopeId 的问题，由 [@chenjiahan](https://github.com/chenjiahan) 在 [#12328](https://github.com/youzan/vant/pull/12328) 中贡献
+- fix(Popover): 修复无法继承 scopedId 的问题，由 [@chenjiahan](https://github.com/chenjiahan) 在 [#12329](https://github.com/youzan/vant/pull/12329) 中贡献
+
+#### 文档 📖
+
+- docs: 修复 Form 中的拼写错误，由 [@zcvvvbb](https://github.com/zcvvvbb) 在 [#12322](https://github.com/youzan/vant/pull/12322) 中贡献
+- docs: 添加更多生态项目，由 [@chenjiahan](https://github.com/chenjiahan) 在 [#12338](https://github.com/youzan/vant/pull/12338) 中贡献
+- docs(ImagePreview): 改进英文文档，由 [@chenjiahan](https://github.com/chenjiahan) 在 [#12345](https://github.com/youzan/vant/pull/12345) 中贡献
+- docs: 修复将 Georqia 错误拼写为 Georgia 的问题，由 [@mahnunchik](https://github.com/mahnunchik) 在 [#12331](https://github.com/youzan/vant/pull/12331) 中贡献
+
+#### 其他变更
+
+- chore(Swipe): 限制 transform 的小数位数，由 [@chenjiahan](https://github.com/chenjiahan) 在 [#12337](https://github.com/youzan/vant/pull/12337) 中贡献
+- chore: 升级 pnpm 到 v8.8.0，由 [@chenjiahan](https://github.com/chenjiahan) 在 [#12339](https://github.com/youzan/vant/pull/12339) 中贡献
+- chore(deps): 将 postcss 从 8.4.27 升级到 8.4.31，由 [@dependabot](https://github.com/dependabot) 在 [#12341](https://github.com/youzan/vant/pull/12341) 中贡献
+
+#### 新贡献者
+
+- [@zcvvvbb](https://github.com/zcvvvbb) 在 [#12322](https://github.com/youzan/vant/pull/12322) 中首次贡献
+- [@mahnunchik](https://github.com/mahnunchik) 在 [#12331](https://github.com/youzan/vant/pull/12331) 中首次贡献
+
 ### v4.7.0
 
 `2023-09-24`
