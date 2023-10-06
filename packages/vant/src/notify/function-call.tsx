@@ -34,12 +34,18 @@ const getDefaultOptions = (): NotifyOptions => ({
 
 let currentOptions = getDefaultOptions();
 
+/**
+ * Close the currently displayed Notify
+ */
 export const closeNotify = () => {
   if (instance) {
     instance.toggle(false);
   }
 };
 
+/**
+ * Display Notify at the top of the page
+ */
 export function showNotify(options: NotifyMessage | NotifyOptions) {
   if (!inBrowser) {
     return;
@@ -61,9 +67,15 @@ export function showNotify(options: NotifyMessage | NotifyOptions) {
   return instance;
 }
 
+/**
+ * Modify the default configuration, affecting all `showNotify` calls
+ */
 export const setNotifyDefaultOptions = (options: NotifyOptions) =>
   extend(currentOptions, options);
 
+/**
+ * Reset the default configuration, affecting all `showNotify` calls
+ */
 export const resetNotifyDefaultOptions = () => {
   currentOptions = getDefaultOptions();
 };

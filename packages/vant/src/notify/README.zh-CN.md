@@ -128,8 +128,8 @@ Vant 中导出了以下 Notify 相关的辅助函数：
 
 | 方法名 | 说明 | 参数 | 返回值 |
 | --- | --- | --- | --- |
-| showNotify | 展示提示 | `NotifyOptions \| string` | notify 实例 |
-| closeNotify | 关闭提示 | - | `void` |
+| showNotify | 在页面顶部展示 Notify | `NotifyOptions \| string` | notify 实例 |
+| closeNotify | 关闭当前展示的 Notify | - | `void` |
 | setNotifyDefaultOptions | 修改默认配置，影响所有的 `showNotify` 调用 | `NotifyOptions` | `void` |
 | resetNotifyDefaultOptions | 重置默认配置，影响所有的 `showNotify` 调用 | - | `void` |
 
