@@ -32,7 +32,7 @@ showDialog({ message: 'Content' });
 
 ### Alert dialog
 
-Used to prompt for some messages, only including one confirm button.
+Used to prompt for some messages, only including one confirm button by default.
 
 ```js
 showDialog({
@@ -51,7 +51,7 @@ showDialog({
 
 ### Confirm dialog
 
-Used to confirm some messages, including a confirm button and a cancel button.
+Used to confirm some messages, including a confirm button and a cancel button by default.
 
 ```js
 showConfirmDialog({
@@ -68,7 +68,7 @@ showConfirmDialog({
 
 ### Round Button Style
 
-Use round button style.
+Setting the `theme` option to `round-button` will display the Dialog with a rounded button style.
 
 ```js
 showDialog({
@@ -89,6 +89,8 @@ showDialog({
 
 ### Async Close
 
+You can pass a callback function through the `beforeClose` option to perform specific operations before closing the Dialog.
+
 ```js
 const beforeClose = (action) =>
   new Promise((resolve) => {
@@ -106,7 +108,7 @@ showConfirmDialog({
 
 ### Use Dialog Component
 
-If you need to render Vue components within a Dialog, you can use the Dialog component.
+If you need to embed components or other custom content within a Dialog, you can directly use the Dialog component and customize it using the default slot. Before using it, you need to register the component using `app.use` or other methods.
 
 ```html
 <van-dialog v-model:show="show" title="Title" show-cancel-button>
@@ -133,11 +135,11 @@ Vant exports following Dialog utility functions:
 
 | Name | Description | Attribute | Return value |
 | --- | --- | --- | --- |
-| showDialog | Show dialog | _options: DialogOptions_ | `Promise<void>` |
-| showConfirmDialog | Show confirm dialog | _options: DialogOptions_ | `Promise<void>` |
-| closeDialog | Close dialog | - | `void` |
-| setDialogDefaultOptions | Set default options of all dialogs | _options: DialogOptions_ | `void` |
-| resetDialogDefaultOptions | Reset default options of all dialogs | - | `void` |
+| showDialog | Display a message prompt dialog with a default confirm button | _options: DialogOptions_ | `Promise<void>` |
+| showConfirmDialog | Display a message confirmation dialog with default confirm and cancel buttons | _options: DialogOptions_ | `Promise<void>` |
+| closeDialog | Close the currently displayed dialog | - | `void` |
+| setDialogDefaultOptions | Modify the default configuration that affects all `showDialog` calls | _options: DialogOptions_ | `void` |
+| resetDialogDefaultOptions | Reset the default configuration that affects all `showDialog` calls | - | `void` |
 
 ### DialogOptions
 
