@@ -115,10 +115,10 @@ Vant exports following Notify utility functions:
 
 | Methods | Description | Attribute | Return value |
 | --- | --- | --- | --- |
-| showNotify | Show notify | `NotifyOptions \| string` | notify instance |
-| closeNotify | Close notify | - | `void` |
-| setNotifyDefaultOptions | Set default options of all notifies | `NotifyOptions` | `void` |
-| resetNotifyDefaultOptions | Reset default options of all notifies | - | `void` |
+| showNotify | Display Notify at the top of the page | `NotifyOptions \| string` | Notify instance |
+| closeNotify | Close the currently displayed Notify | - | `void` |
+| setNotifyDefaultOptions | Modify the default configuration, affecting all `showNotify` calls | `NotifyOptions` | `void` |
+| resetNotifyDefaultOptions | Reset the default configuration, affecting all `showNotify` calls | - | `void` |
 
 ### NotifyOptions
 
