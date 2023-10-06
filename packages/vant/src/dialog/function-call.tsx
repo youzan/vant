@@ -46,6 +46,9 @@ function initInstance() {
   ({ instance } = mountComponent(Wrapper));
 }
 
+/**
+ * Display a message prompt dialog with a default confirm button
+ */
 export function showDialog(
   options: DialogOptions,
 ): Promise<DialogAction | undefined> {
@@ -69,17 +72,29 @@ export function showDialog(
   });
 }
 
+/**
+ * Modify the default configuration that affects all `showDialog` calls
+ */
 export const setDialogDefaultOptions = (options: DialogOptions) => {
   extend(currentOptions, options);
 };
 
+/**
+ * Reset the default configuration that affects all `showDialog` calls
+ */
 export const resetDialogDefaultOptions = () => {
   currentOptions = extend({}, DEFAULT_OPTIONS);
 };
 
+/**
+ * Display a message confirmation dialog with default confirm and cancel buttons
+ */
 export const showConfirmDialog = (options: DialogOptions) =>
   showDialog(extend({ showCancelButton: true }, options));
 
+/**
+ * Close the currently displayed dialog
+ */
 export const closeDialog = () => {
   if (instance) {
     instance.toggle(false);
