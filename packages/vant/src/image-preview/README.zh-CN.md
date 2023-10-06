@@ -61,7 +61,7 @@ showImagePreview({
 
 ### 展示关闭按钮
 
-设置 `closeable` 属性后，会在弹出层的右上角显示关闭图标，并且可以通过 `close-icon` 属性自定义图标，使用`close-icon-position` 属性可以自定义图标位置。
+开启 `closeable` 选项后，会在弹出层的右上角显示关闭图标，并且可以通过 `close-icon` 属性自定义图标，使用`close-icon-position` 属性可以自定义图标位置。
 
 ```js
 import { showImagePreview } from 'vant';
@@ -95,7 +95,7 @@ showImagePreview({
 
 ### 异步关闭
 
-通过 `beforeClose` 属性可以拦截关闭行为。
+通过 `beforeClose` 属性可以传入一个回调函数，在图片预览关闭前进行特定操作。
 
 ```js
 import { showImagePreview } from 'vant';
@@ -190,7 +190,7 @@ Vant 中导出了以下 ImagePreview 相关的辅助函数：
 
 | 方法名 | 说明 | 参数 | 返回值 |
 | --- | --- | --- | --- |
-| showImagePreview | 展示图片预览 | _string[] \| ImagePreviewOptions_ | ImagePreview 实例 |
+| showImagePreview | 展示一个全屏的图片预览组件 | _string[] \| ImagePreviewOptions_ | ImagePreview 实例 |
 
 ### ImagePreviewOptions
 
