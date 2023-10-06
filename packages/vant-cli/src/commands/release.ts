@@ -9,10 +9,8 @@ import { execSync } from 'child_process';
 function logCurrentVersion(cwd: string) {
   const pkgJson = join(cwd, 'package.json');
   const pkg = fse.readJSONSync(pkgJson);
-  logger.success(`${color.bold('Current package:')} ${color.green(pkg.name)}`);
-  logger.success(
-    `${color.bold('Current version:')} ${color.green(pkg.version)}`,
-  );
+  logger.info(`${color.bold('Current package:')} ${color.green(pkg.name)}`);
+  logger.info(`${color.bold('Current version:')} ${color.green(pkg.version)}`);
   return {
     pkgName: pkg.name,
     currentVersion: pkg.version,
@@ -43,7 +41,7 @@ function getNpmTag(version: string, forceTag?: string) {
     tag = 'latest';
   }
 
-  logger.success(`${color.bold('Npm tag:')} ${color.green(tag)}`);
+  logger.info(`${color.bold('Npm tag:')} ${color.green(tag)}`);
 
   return tag;
 }
@@ -60,7 +58,7 @@ function setPkgVersion(
 function buildPackage(pkgJson: Record<string, any>, packageManager: string) {
   if (pkgJson.scripts?.build) {
     const command = `${packageManager} run build`;
-    logger.success(`${color.bold('Build package:')} ${color.green(command)}`);
+    logger.info(`${color.bold('Build package:')} ${color.green(command)}`);
     execSync(command, { stdio: 'inherit' });
   }
 }
