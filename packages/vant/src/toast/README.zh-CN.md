@@ -32,6 +32,8 @@ showToast('提示内容');
 
 ### 文字提示
 
+使用 `showToast` 方法在屏幕中间展示一条文字提示。
+
 ```js
 import { showToast } from 'vant';
 
@@ -80,7 +82,7 @@ showToast({
 });
 ```
 
-通过`loadingType` 属性可以自定义加载图标类型。
+通过 `loadingType` 属性可以自定义加载图标类型。
 
 ```js
 import { showLoadingToast } from 'vant';
@@ -112,7 +114,7 @@ showToast({
 
 ### 文字换行方式
 
-通过 `wordBreak` 选择可以控制 Toast 中的文字过长时的截断方式，默认值为 `break-all`，可选值为 `break-word` 和 `normal`。
+通过 `wordBreak` 选项可以控制 Toast 中的文字过长时的截断方式，默认值为 `break-all`，可选值为 `break-word` 和 `normal`。
 
 ```js
 import { showToast } from 'vant';
@@ -189,7 +191,7 @@ resetToastDefaultOptions('loading');
 
 ### 使用 Toast 组件
 
-如果需要在 Toast 内嵌入组件或其他自定义内容，可以直接使用 Toast 组件，并使用 message 插槽进行定制。使用前需要通过 `app.use` 等方式注册组件。
+如果你需要在 Toast 内嵌入组件或其他自定义内容，可以直接使用 Toast 组件，并使用 message 插槽进行定制。使用前需要通过 `app.use` 等方式注册组件。
 
 ```html
 <van-toast v-model:show="show" style="padding: 0">
@@ -218,14 +220,14 @@ Vant 中导出了以下 Toast 相关的辅助函数：
 
 | 方法名 | 说明 | 参数 | 返回值 |
 | --- | --- | --- | --- |
-| showToast | 展示提示 | `ToastOptions \| string` | toast 实例 |
-| showLoadingToast | 展示加载提示 | `ToastOptions \| string` | toast 实例 |
-| showSuccessToast | 展示成功提示 | `ToastOptions \| string` | toast 实例 |
-| showFailToast | 展示失败提示 | `ToastOptions \| string` | toast 实例 |
-| closeToast | 关闭提示 | `closeAll: boolean` | `void` |
+| showToast | 展示文字提示 | `ToastOptions \| string` | Toast 实例 |
+| showLoadingToast | 展示加载提示 | `ToastOptions \| string` | Toast 实例 |
+| showSuccessToast | 展示成功提示 | `ToastOptions \| string` | Toast 实例 |
+| showFailToast | 展示失败提示 | `ToastOptions \| string` | Toast 实例 |
+| closeToast | 关闭当前展示的提示 | `closeAll: boolean` | `void` |
 | allowMultipleToast | 允许同时存在多个 Toast | - | `void` |
-| setToastDefaultOptions | 修改默认配置，影响所有的 `showToast` 调用。<br>传入 type 可以修改指定类型的默认配置 | `type \| ToastOptions` | `void` |
-| resetToastDefaultOptions | 重置默认配置，影响所有的 `showToast` 调用。<br>传入 type 可以重置指定类型的默认配置 | `type` | `void` |
+| setToastDefaultOptions | 修改默认配置，影响所有的 `showToast` 调用。传入 type 可以修改指定类型 Toast 的默认配置 | `type \| ToastOptions` | `void` |
+| resetToastDefaultOptions | 重置默认配置，影响所有的 `showToast` 调用。传入 type 可以重置指定类型 Toast 的默认配置 | `type` | `void` |
 
 ### ToastOptions 数据结构
 
@@ -233,7 +235,7 @@ Vant 中导出了以下 Toast 相关的辅助函数：
 
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
-| type | 提示类型，可选值为 `loading` `success`<br>`fail` `html` | _ToastType_ | `text` |
+| type | 提示类型，可选值为 `loading` `success` `fail` `html` | _ToastType_ | `text` |
 | position | 位置，可选值为 `top` `bottom` | _ToastPosition_ | `middle` |
 | message | 文本内容，支持通过`\n`换行 | _string_ | `''` |
 | wordBreak | 文本内容的换行方式，可选值为 `normal` `break-all` `break-word` | _ToastWordBreak_ | `'break-all'` |
