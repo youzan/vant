@@ -1,5 +1,9 @@
 ## Changelog
 
+## 3.0.1
+
+- add `--van-icon-font-family` CSS var
+
 ## 3.0.0
 
 - rename the previous `records` icon to `records-o`
