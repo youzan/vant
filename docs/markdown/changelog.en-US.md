@@ -16,6 +16,14 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 
 ## Details
 
+### [v2.13.1](https://github.com/vant-ui/vant/compare/v2.13.0...v2.13.1)
+
+`2023-10-10`
+
+**Feature**
+
+- bump @vant/icons v3.0.2 [#12355](https://github.com/vant-ui/vant/issues/12355)
+
 ### [v2.13.0](https://github.com/vant-ui/vant/compare/v2.12.54...v2.13.0)
 
 `2023-09-17`
