@@ -1,5 +1,9 @@
 ## Changelog
 
+## 3.0.2
+
+- compatible with the browser range of Vant 2
+
 ## 3.0.1
 
 - add `--van-icon-font-family` CSS var
