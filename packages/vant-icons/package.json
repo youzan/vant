@@ -1,6 +1,6 @@
 {
   "name": "@vant/icons",
-  "version": "3.0.1",
+  "version": "3.0.2",
   "description": "vant icons",
   "main": "./src/config.js",
   "types": "./src/config.d.ts",
