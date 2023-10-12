@@ -5,6 +5,7 @@ import {
   onBeforeUnmount,
   type PropType,
   type ExtractPropTypes,
+  nextTick,
 } from 'vue';
 
 // Utils
@@ -104,6 +105,7 @@ export default defineComponent({
     const inputRef = ref();
     const urls: string[] = [];
     const reuploadIndex = ref(-1);
+    const openReuploadTime = ref(Date.now());
 
     const getDetail = (index = props.modelValue.length) => ({
       name: props.name,
@@ -278,9 +280,17 @@ export default defineComponent({
     };
 
     const reuploadImage = (index: number) => {
-      // eslint-disable-next-line no-use-before-define
-      chooseFile();
       reuploadIndex.value = index;
+      openReuploadTime.value = Date.now();
+      nextTick(() => chooseFile());
+    };
+    const onInputClick = () => {
+      // If the triggering time of the reuploadImage and the triggering time of the click are greater than 50ms,
+      // it is considered as a simple input click event, and the reuploadIndex value is reset
+      // Alternative scheme cancel event, but input type="file" cancel event need >= Chrome113
+      if (Date.now() - openReuploadTime.value > 50) {
+        reuploadIndex.value = -1;
+      }
     };
 
     const renderPreviewItem = (item: UploaderFileListItem, index: number) => {
@@ -344,6 +354,7 @@ export default defineComponent({
           multiple={props.multiple && reuploadIndex.value === -1}
           disabled={props.disabled}
           onChange={onChange}
+          onClick={onInputClick}
         />
       );
 
