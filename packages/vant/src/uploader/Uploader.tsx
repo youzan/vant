@@ -285,8 +285,6 @@ export default defineComponent({
       nextTick(() => chooseFile());
     };
     const onInputClick = () => {
-      // If the triggering time of the reuploadImage and the triggering time of the click are greater than 50ms,
-      // it is considered as a simple input click event, and the reuploadIndex value is reset
       // Alternative scheme cancel event, but input type="file" cancel event need >= Chrome113
       if (Date.now() - openReuploadTime.value > 50) {
         reuploadIndex.value = -1;
