@@ -6,10 +6,7 @@ exports[`should render demo and match snapshot 1`] = `
   <!--[-->
   <div class="van-signature">
     <div class="van-signature__content">
-      <canvas
-        width="0"
-        height="0"
-      >
+      <canvas>
       </canvas>
     </div>
     <div class="van-signature__footer">
@@ -44,10 +41,7 @@ exports[`should render demo and match snapshot 1`] = `
   <!--[-->
   <div class="van-signature">
     <div class="van-signature__content">
-      <canvas
-        width="0"
-        height="0"
-      >
+      <canvas>
       </canvas>
     </div>
     <div class="van-signature__footer">
@@ -82,10 +76,7 @@ exports[`should render demo and match snapshot 1`] = `
   <!--[-->
   <div class="van-signature">
     <div class="van-signature__content">
-      <canvas
-        width="0"
-        height="0"
-      >
+      <canvas>
       </canvas>
     </div>
     <div class="van-signature__footer">
@@ -120,10 +111,7 @@ exports[`should render demo and match snapshot 1`] = `
   <!--[-->
   <div class="van-signature">
     <div class="van-signature__content">
-      <canvas
-        width="0"
-        height="0"
-      >
+      <canvas>
       </canvas>
     </div>
     <div class="van-signature__footer">
