@@ -1,8 +1,7 @@
 import {
+  computed,
   ref,
-  reactive,
   onMounted,
-  nextTick,
   defineComponent,
   type ExtractPropTypes,
 } from 'vue';
@@ -45,45 +44,45 @@ export default defineComponent({
   setup(props, { emit }) {
     const canvasRef = ref<HTMLCanvasElement>();
     const wrapRef = ref<HTMLElement>();
-
-    const state = reactive({
-      width: 0,
-      height: 0,
-      ctx: null as CanvasRenderingContext2D | null | undefined,
-      ratio: inBrowser ? window.devicePixelRatio : 1,
+    const ctx = computed(() => {
+      if (!canvasRef.value) return null;
+      return canvasRef.value.getContext('2d');
     });
-
-    let canvasRect: DOMRect;
     const isRenderCanvas = inBrowser ? hasCanvasSupport() : true;
+    const ratio = inBrowser ? window.devicePixelRatio : 1;
+
+    let canvasWidth = 0;
+    let canvasHeight = 0;
+    let canvasRect: DOMRect;
 
     const touchStart = () => {
-      if (!state.ctx) {
+      if (!ctx.value) {
         return false;
       }
 
-      state.ctx.beginPath();
-      state.ctx.lineWidth = props.lineWidth * state.ratio;
-      state.ctx.strokeStyle = props.penColor;
+      ctx.value.beginPath();
+      ctx.value.lineWidth = props.lineWidth * ratio;
+      ctx.value.strokeStyle = props.penColor;
       canvasRect = useRect(canvasRef);
 
       emit('start');
     };
 
     const touchMove = (event: TouchEvent) => {
-      if (!state.ctx) {
+      if (!ctx.value) {
         return false;
       }
 
       preventDefault(event);
 
       const touch = event.touches[0];
-      const mouseX = (touch.clientX - (canvasRect?.left || 0)) * state.ratio;
-      const mouseY = (touch.clientY - (canvasRect?.top || 0)) * state.ratio;
+      const mouseX = (touch.clientX - (canvasRect?.left || 0)) * ratio;
+      const mouseY = (touch.clientY - (canvasRect?.top || 0)) * ratio;
 
-      state.ctx.lineCap = 'round';
-      state.ctx.lineJoin = 'round';
-      state.ctx?.lineTo(mouseX, mouseY);
-      state.ctx?.stroke();
+      ctx.value.lineCap = 'round';
+      ctx.value.lineJoin = 'round';
+      ctx.value.lineTo(mouseX, mouseY);
+      ctx.value.stroke();
 
       emit('signing', event);
     };
@@ -109,7 +108,7 @@ export default defineComponent({
     ) => {
       if (ctx && props.backgroundColor) {
         ctx.fillStyle = props.backgroundColor;
-        ctx.fillRect(0, 0, state.width, state.height);
+        ctx.fillRect(0, 0, canvasWidth, canvasHeight);
       }
     };
 
@@ -137,24 +136,21 @@ export default defineComponent({
     };
 
     const clear = () => {
-      if (state.ctx) {
-        state.ctx.clearRect(0, 0, state.width, state.height);
-        state.ctx.closePath();
-        setCanvasBgColor(state.ctx);
+      if (ctx.value) {
+        ctx.value.clearRect(0, 0, canvasWidth, canvasHeight);
+        ctx.value.closePath();
+        setCanvasBgColor(ctx.value);
       }
       emit('clear');
     };
 
     onMounted(() => {
-      if (isRenderCanvas) {
-        state.ctx = canvasRef.value?.getContext('2d');
-        state.width = (wrapRef.value?.offsetWidth || 0) * state.ratio;
-        state.height = (wrapRef.value?.offsetHeight || 0) * state.ratio;
-
-        // ensure canvas is rendered
-        nextTick(() => {
-          setCanvasBgColor(state.ctx);
-        });
+      if (isRenderCanvas && canvasRef.value) {
+        const canvas = canvasRef.value;
+        canvasWidth = canvas.width = (wrapRef.value?.offsetWidth || 0) * ratio;
+        canvasHeight = canvas.height =
+          (wrapRef.value?.offsetHeight || 0) * ratio;
+        setCanvasBgColor(ctx.value);
       }
     });
 
@@ -164,8 +160,6 @@ export default defineComponent({
           {isRenderCanvas ? (
             <canvas
               ref={canvasRef}
-              width={state.width}
-              height={state.height}
               onTouchstartPassive={touchStart}
               onTouchmove={touchMove}
               onTouchend={touchEnd}
