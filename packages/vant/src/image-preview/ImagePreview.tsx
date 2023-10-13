@@ -72,7 +72,7 @@ export const imagePreviewProps = {
   closeOnClickOverlay: truthProp,
   closeIconPosition: makeStringProp<PopupCloseIconPosition>('top-right'),
   teleport: [String, Object] as PropType<TeleportProps['to']>,
-  enableDoubleScale: Boolean,
+  enableDoubleScale: truthProp,
 };
 
 export type ImagePreviewProps = ExtractPropTypes<typeof imagePreviewProps>;
