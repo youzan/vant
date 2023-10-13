@@ -54,6 +54,7 @@ export default defineComponent({
     rootHeight: makeRequiredProp(Number),
     disableZoom: Boolean,
     closeOnClickOverlay: Boolean,
+    enableDoubleScale: Boolean,
   },
 
   emits: ['scale', 'close', 'longPress'],
@@ -254,23 +255,28 @@ export default defineComponent({
       const TAP_TIME = 250;
 
       if (offsetX.value < TAP_OFFSET && offsetY.value < TAP_OFFSET) {
-        // tap or double tap
         if (deltaTime < TAP_TIME) {
-          if (doubleTapTimer) {
-            clearTimeout(doubleTapTimer);
-            doubleTapTimer = null;
-            toggleScale();
-          } else {
-            if (
-              !props.closeOnClickOverlay &&
-              event.target === swipeItem.value?.$el
-            ) {
-              return;
-            }
-            doubleTapTimer = setTimeout(() => {
-              emit('close');
+          // allow double to scale
+          if (props.enableDoubleScale) {
+            // tap or double tap
+            if (doubleTapTimer) {
+              clearTimeout(doubleTapTimer);
               doubleTapTimer = null;
-            }, TAP_TIME);
+              toggleScale();
+            } else {
+              if (
+                !props.closeOnClickOverlay &&
+                event.target === swipeItem.value?.$el
+              ) {
+                return;
+              }
+              doubleTapTimer = setTimeout(() => {
+                emit('close');
+                doubleTapTimer = null;
+              }, TAP_TIME);
+            }
+          } else {
+            emit('close');
           }
         }
         // long press

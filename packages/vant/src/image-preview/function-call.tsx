@@ -28,6 +28,7 @@ const defaultConfig: ImagePreviewOptions = {
   closeOnPopstate: true,
   closeOnClickOverlay: true,
   closeIconPosition: 'top-right',
+  enableDoubleScale: true,
 };
 
 function initInstance() {

@@ -1,31 +1,32 @@
 {
-  "private": true,
-  "scripts": {
-    "prepare": "husky install",
-    "dev": "pnpm --dir ./packages/vant dev",
-    "lint": "eslint ./packages/**/src ./packages/**/test --ext .js,.ts,.tsx,.vue,.mjs,.cjs",
-    "test": "pnpm --dir ./packages/vant test",
-    "test:watch": "pnpm --dir ./packages/vant test:watch",
-    "test:update": "pnpm --dir ./packages/vant test:update",
-    "test:coverage": "pnpm --dir ./packages/vant test:coverage",
-    "build": "pnpm --dir ./packages/vant build",
-    "build:site": "pnpm --dir ./packages/vant build:site"
-  },
-  "nano-staged": {
-    "*.md": "prettier --write",
-    "*.{ts,tsx,js,vue,less}": "prettier --write",
-    "*.{ts,tsx,js,vue}": "eslint --fix"
-  },
-  "engines": {
-    "pnpm": ">= 8.8.0"
-  },
-  "packageManager": "pnpm@8.8.0",
-  "devDependencies": {
-    "@vant/cli": "workspace:*",
-    "@vant/eslint-config": "workspace:*",
-    "eslint": "^8.46.0",
-    "husky": "^8.0.1",
-    "nano-staged": "^0.8.0",
-    "prettier": "^3.0.0"
-  }
+    "private": true,
+    "scripts": {
+        "prepare": "husky install",
+        "dev": "pnpm --dir ./packages/vant dev",
+        "lint": "eslint ./packages/**/src ./packages/**/test --ext .js,.ts,.tsx,.vue,.mjs,.cjs",
+        "test": "pnpm --dir ./packages/vant test",
+        "test:watch": "pnpm --dir ./packages/vant test:watch",
+        "test:update": "pnpm --dir ./packages/vant test:update",
+        "test:coverage": "pnpm --dir ./packages/vant test:coverage",
+        "build": "pnpm --dir ./packages/vant build",
+        "build:site": "pnpm --dir ./packages/vant build:site"
+    },
+    "nano-staged": {
+        "*.md": "prettier --write",
+        "*.{ts,tsx,js,vue,less}": "prettier --write",
+        "*.{ts,tsx,js,vue}": "eslint --fix"
+    },
+    "engines": {
+        "pnpm": ">= 8.8.0"
+    },
+    "packageManager": "pnpm@8.8.0",
+    "devDependencies": {
+        "@vant/cli": "workspace:*",
+        "@vant/eslint-config": "workspace:*",
+        "eslint": "^8.46.0",
+        "husky": "^8.0.1",
+        "nano-staged": "^0.8.0",
+        "prettier": "^3.0.0",
+        "vue": "^3.3.4"
+    }
 }
