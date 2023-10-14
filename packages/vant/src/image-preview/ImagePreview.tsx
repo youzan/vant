@@ -72,6 +72,7 @@ export const imagePreviewProps = {
   closeOnClickOverlay: truthProp,
   closeIconPosition: makeStringProp<PopupCloseIconPosition>('top-right'),
   teleport: [String, Object] as PropType<TeleportProps['to']>,
+  enableDoubleScale: truthProp,
 };
 
 export type ImagePreviewProps = ExtractPropTypes<typeof imagePreviewProps>;
@@ -178,6 +179,7 @@ export default defineComponent({
             onScale={emitScale}
             onClose={emitClose}
             onLongPress={() => emit('longPress', { index })}
+            enableDoubleScale={props.enableDoubleScale}
           />
         ))}
       </Swipe>

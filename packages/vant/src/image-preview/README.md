@@ -217,6 +217,7 @@ Vant exports following ImagePreview utility functions:
 | overlayClass | Custom overlay class | _string \| Array \| object_ | - |
 | overlayStyle | Custom overlay style | _object_ | - |
 | teleport | Specifies a target element where ImagePreview will be mounted | _string \| Element_ | - |
+| enableDoubleScale | Do you want to enable double click zoom and enable the delay of closing the mask | _boolean_ | `true` |
 
 ### Props
 
@@ -242,6 +243,7 @@ Vant exports following ImagePreview utility functions:
 | overlay-class | Custom overlay class | _string \| Array \| object_ | - |
 | overlay-style | Custom overlay style | _object_ | - |
 | teleport | Specifies a target element where ImagePreview will be mounted | _string \| Element_ | - |
+| enableDoubleScale | Do you want to enable double click zoom and enable the delay of closing the mask | _boolean_ | `true` |
 
 ### Events
 
