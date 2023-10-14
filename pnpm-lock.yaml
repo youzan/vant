@@ -42,8 +42,8 @@ importers:
         specifier: ^1.0.0
         version: 1.0.0
       rslog:
-        specifier: ^1.0.0
-        version: 1.0.0
+        specifier: ^1.1.0
+        version: 1.1.0
     devDependencies:
       '@types/fs-extra':
         specifier: ^11.0.1
@@ -224,8 +224,8 @@ importers:
         specifier: ^3.0.0
         version: 3.0.1
       rslog:
-        specifier: ^1.0.0
-        version: 1.0.0
+        specifier: ^1.1.0
+        version: 1.1.0
       terser:
         specifier: ^5.19.2
         version: 5.19.2
@@ -2950,8 +2950,8 @@ packages:
     resolution: {integrity: sha512-APM0Gt1KoXBz0iIkkdB/kfvGOwC4UuJFeG/c+yV7wSc7q96cG/kJ0HiYCnzivD9SB53cLV1MlHFNfOuPaadYSw==}
     dev: true
 
-  /rslog@1.0.0:
-    resolution: {integrity: sha512-yTulfJJIYHBftErlZZXHdZuFA8275spDcTrCs8JIXIh+wRIRgi6RGoT8MAnB8H6NIEvJbMUP14Mo1t7hCw4k1g==}
+  /rslog@1.1.0:
+    resolution: {integrity: sha512-wtTijPuwUhyVG7YvnIVzlefhlto4qJ9vm42ewwJtqrOBP/vKdZCIyfiYm0odVCR3ajR1CIUqaloIzbqhlbyaZA==}
     engines: {node: '>=14.17.6'}
     dev: false
 
