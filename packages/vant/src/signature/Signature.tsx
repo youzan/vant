@@ -49,7 +49,6 @@ export default defineComponent({
       return canvasRef.value.getContext('2d');
     });
     const isRenderCanvas = inBrowser ? hasCanvasSupport() : true;
-    const ratio = inBrowser ? window.devicePixelRatio : 1;
 
     let canvasWidth = 0;
     let canvasHeight = 0;
@@ -61,7 +60,7 @@ export default defineComponent({
       }
 
       ctx.value.beginPath();
-      ctx.value.lineWidth = props.lineWidth * ratio;
+      ctx.value.lineWidth = props.lineWidth;
       ctx.value.strokeStyle = props.penColor;
       canvasRect = useRect(canvasRef);
 
@@ -76,8 +75,8 @@ export default defineComponent({
       preventDefault(event);
 
       const touch = event.touches[0];
-      const mouseX = (touch.clientX - (canvasRect?.left || 0)) * ratio;
-      const mouseY = (touch.clientY - (canvasRect?.top || 0)) * ratio;
+      const mouseX = touch.clientX - (canvasRect?.left || 0);
+      const mouseY = touch.clientY - (canvasRect?.top || 0);
 
       ctx.value.lineCap = 'round';
       ctx.value.lineJoin = 'round';
@@ -147,9 +146,11 @@ export default defineComponent({
     onMounted(() => {
       if (isRenderCanvas && canvasRef.value) {
         const canvas = canvasRef.value;
-        canvasWidth = canvas.width = (wrapRef.value?.offsetWidth || 0) * ratio;
-        canvasHeight = canvas.height =
-          (wrapRef.value?.offsetHeight || 0) * ratio;
+        const dpr = inBrowser ? window.devicePixelRatio : 1;
+
+        canvasWidth = canvas.width = (wrapRef.value?.offsetWidth || 0) * dpr;
+        canvasHeight = canvas.height = (wrapRef.value?.offsetHeight || 0) * dpr;
+        ctx.value?.scale(dpr, dpr);
         setCanvasBgColor(ctx.value);
       }
     });
