@@ -205,6 +205,7 @@ Vant exports following ImagePreview utility functions:
 | onChange | Emitted when current image changed | _Function_ | - |
 | onScale | Emitted when scaling current image | _Function_ | - |
 | closeOnPopstate | Whether to close when popstate | _boolean_ | `true` |
+| doubleScale `v4.7.2` | Whether to enable double tap zoom gesture. When disabled, the image preview will be closed immediately upon clicking | _boolean_ | `true` |
 | closeOnClickOverlay `v4.6.4` | Whether to close when overlay is clicked | _boolean_ | `true` |
 | beforeClose | Callback function before close | _(action) => boolean \| Promise_ | - |
 | className | Custom className | _string \| Array \| object_ | - |
@@ -217,7 +218,6 @@ Vant exports following ImagePreview utility functions:
 | overlayClass | Custom overlay class | _string \| Array \| object_ | - |
 | overlayStyle | Custom overlay style | _object_ | - |
 | teleport | Specifies a target element where ImagePreview will be mounted | _string \| Element_ | - |
-| enableDoubleScale | Do you want to enable double click zoom and enable the delay of closing the mask | _boolean_ | `true` |
 
 ### Props
 
@@ -230,6 +230,7 @@ Vant exports following ImagePreview utility functions:
 | show-index | Whether to show index | _boolean_ | `true` |
 | show-indicators | Whether to show indicators | _boolean_ | `false` |
 | loop | Whether to enable loop | _boolean_ | `true` |
+| double-scale | Whether to enable double tap zoom gesture. When disabled, the image preview will be closed immediately upon clicking | _boolean_ | `true` |
 | before-close | Callback function before close | _(action: number) => boolean \| Promise\<boolean\>_ | - |
 | close-on-popstate | Whether to close when popstate | _boolean_ | `true` |
 | close-on-click-overlay `v4.6.4` | Whether to close when overlay is clicked | _boolean_ | `true` |
@@ -243,7 +244,6 @@ Vant exports following ImagePreview utility functions:
 | overlay-class | Custom overlay class | _string \| Array \| object_ | - |
 | overlay-style | Custom overlay style | _object_ | - |
 | teleport | Specifies a target element where ImagePreview will be mounted | _string \| Element_ | - |
-| enableDoubleScale | Do you want to enable double click zoom and enable the delay of closing the mask | _boolean_ | `true` |
 
 ### Events
 

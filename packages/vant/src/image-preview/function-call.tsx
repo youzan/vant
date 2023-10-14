@@ -20,6 +20,7 @@ const defaultConfig: ImagePreviewOptions = {
   closeIcon: 'clear',
   transition: undefined,
   beforeClose: undefined,
+  doubleScale: true,
   overlayStyle: undefined,
   overlayClass: undefined,
   startPosition: 0,
@@ -28,7 +29,6 @@ const defaultConfig: ImagePreviewOptions = {
   closeOnPopstate: true,
   closeOnClickOverlay: true,
   closeIconPosition: 'top-right',
-  enableDoubleScale: true,
 };
 
 function initInstance() {

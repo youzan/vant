@@ -204,6 +204,7 @@ Vant 中导出了以下 ImagePreview 相关的辅助函数：
 | showIndex | 是否显示页码 | _boolean_ | `true` |
 | showIndicators | 是否显示轮播指示器 | _boolean_ | `false` |
 | loop | 是否开启循环播放 | _boolean_ | `true` |
+| doubleScale `v4.7.2` | 是否启用双击缩放手势，禁用后，点击时会立即关闭图片预览 | _boolean_ | `true` |
 | onClose | 关闭时的回调函数 | _Function_ | - |
 | onChange | 切换图片时的回调函数，回调参数为当前索引 | _Function_ | - |
 | onScale | 缩放图片时的回调函数，回调参数为当前索引和当前缩放值组成的对象 | _Function_ | - |
@@ -220,7 +221,6 @@ Vant 中导出了以下 ImagePreview 相关的辅助函数：
 | overlayClass | 自定义遮罩层类名 | _string \| Array \| object_ | - |
 | overlayStyle | 自定义遮罩层样式 | _object_ | - |
 | teleport | 指定挂载的节点，等同于 Teleport 组件的 [to 属性](https://cn.vuejs.org/api/built-in-components.html#teleport) | _string \| Element_ | - |
-| enableDoubleScale | 是否开启双击缩放，开启蒙层关闭延迟 | _boolean_ | `true` |
 
 ### Props
 
@@ -235,6 +235,7 @@ Vant 中导出了以下 ImagePreview 相关的辅助函数：
 | show-index | 是否显示页码 | _boolean_ | `true` |
 | show-indicators | 是否显示轮播指示器 | _boolean_ | `false` |
 | loop | 是否开启循环播放 | _boolean_ | `true` |
+| double-scale `v4.7.2` | 是否启用双击缩放手势，禁用后，点击时会立即关闭图片预览 | _boolean_ | `true` |
 | before-close | 关闭前的回调函数，返回 `false` 可阻止关闭，支持返回 Promise | _(active: number) => boolean \| Promise\<boolean\>_ | - |
 | close-on-popstate | 是否在页面回退时自动关闭 | _boolean_ | `true` |
 | close-on-click-overlay `v4.6.4` | 是否在点击遮罩层后关闭图片预览 | _boolean_ | `true` |
@@ -248,7 +249,6 @@ Vant 中导出了以下 ImagePreview 相关的辅助函数：
 | overlay-class | 自定义遮罩层类名 | _string \| Array \| object_ | - |
 | overlay-style | 自定义遮罩层样式 | _object_ | - |
 | teleport | 指定挂载的节点，等同于 Teleport 组件的 [to 属性](https://cn.vuejs.org/api/built-in-components.html#teleport) | _string \| Element_ | - |
-| enableDoubleScale | 是否开启双击缩放，开启蒙层关闭延迟 | _boolean_ | `true` |
 
 ### Events
 

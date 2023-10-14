@@ -63,6 +63,7 @@ export const imagePreviewProps = {
   closeIcon: makeStringProp('clear'),
   transition: String,
   beforeClose: Function as PropType<Interceptor>,
+  doubleScale: truthProp,
   overlayClass: unknownProp,
   overlayStyle: Object as PropType<CSSProperties>,
   swipeDuration: makeNumericProp(300),
@@ -72,7 +73,6 @@ export const imagePreviewProps = {
   closeOnClickOverlay: truthProp,
   closeIconPosition: makeStringProp<PopupCloseIconPosition>('top-right'),
   teleport: [String, Object] as PropType<TeleportProps['to']>,
-  enableDoubleScale: truthProp,
 };
 
 export type ImagePreviewProps = ExtractPropTypes<typeof imagePreviewProps>;
@@ -175,11 +175,11 @@ export default defineComponent({
             rootWidth={state.rootWidth}
             rootHeight={state.rootHeight}
             disableZoom={state.disableZoom}
+            doubleScale={props.doubleScale}
             closeOnClickOverlay={props.closeOnClickOverlay}
             onScale={emitScale}
             onClose={emitClose}
             onLongPress={() => emit('longPress', { index })}
-            enableDoubleScale={props.enableDoubleScale}
           />
         ))}
       </Swipe>
