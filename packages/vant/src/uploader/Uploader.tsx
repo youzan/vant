@@ -105,7 +105,7 @@ export default defineComponent({
     const inputRef = ref();
     const urls: string[] = [];
     const reuploadIndex = ref(-1);
-    const openReuploadTime = ref(Date.now());
+    const isReuploading = ref(false);
 
     const getDetail = (index = props.modelValue.length) => ({
       name: props.name,
@@ -280,15 +280,15 @@ export default defineComponent({
     };
 
     const reuploadImage = (index: number) => {
+      isReuploading.value = true;
       reuploadIndex.value = index;
-      openReuploadTime.value = Date.now();
       nextTick(() => chooseFile());
     };
     const onInputClick = () => {
-      // Alternative scheme cancel event, but input type="file" cancel event need >= Chrome113
-      if (Date.now() - openReuploadTime.value > 50) {
+      if (!isReuploading.value) {
         reuploadIndex.value = -1;
       }
+      isReuploading.value = false;
     };
 
     const renderPreviewItem = (item: UploaderFileListItem, index: number) => {
