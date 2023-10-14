@@ -217,7 +217,7 @@ test('should not close when overlay is clicked and closeOnClickOverlay is false'
   expect(wrapper.emitted('close')).toBeFalsy();
 });
 
-test('double click', async () => {
+test('should trigger scale after double clicking', async () => {
   const onScale = vi.fn();
   const wrapper = mount(ImagePreview, {
     props: {
@@ -243,6 +243,24 @@ test('double click', async () => {
     index: 0,
     scale: 1,
   });
+});
+
+test('should allow to disable double click gesture', async () => {
+  const onScale = vi.fn();
+  const wrapper = mount(ImagePreview, {
+    props: {
+      images,
+      show: true,
+      doubleScale: false,
+      onScale,
+    },
+  });
+
+  await later();
+  const swipe = wrapper.find('.van-swipe-item');
+  triggerDrag(swipe, 0, 0);
+  triggerDrag(swipe, 0, 0);
+  expect(onScale).toHaveBeenCalledTimes(0);
 });
 
 test('zoom in and drag image to move', async () => {

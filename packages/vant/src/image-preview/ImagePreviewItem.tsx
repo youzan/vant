@@ -53,8 +53,8 @@ export default defineComponent({
     rootWidth: makeRequiredProp(Number),
     rootHeight: makeRequiredProp(Number),
     disableZoom: Boolean,
+    doubleScale: Boolean,
     closeOnClickOverlay: Boolean,
-    enableDoubleScale: Boolean,
   },
 
   emits: ['scale', 'close', 'longPress'],
@@ -257,7 +257,7 @@ export default defineComponent({
       if (offsetX.value < TAP_OFFSET && offsetY.value < TAP_OFFSET) {
         if (deltaTime < TAP_TIME) {
           // allow double to scale
-          if (props.enableDoubleScale) {
+          if (props.doubleScale) {
             // tap or double tap
             if (doubleTapTimer) {
               clearTimeout(doubleTapTimer);

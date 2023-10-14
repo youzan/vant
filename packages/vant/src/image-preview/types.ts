@@ -20,6 +20,7 @@ export type ImagePreviewOptions = {
   closeIcon?: string;
   transition?: string;
   beforeClose?: Interceptor;
+  doubleScale?: boolean;
   overlayStyle?: CSSProperties;
   overlayClass?: unknown;
   swipeDuration?: number;
@@ -31,7 +32,6 @@ export type ImagePreviewOptions = {
   onClose?(): void;
   onScale?(args: { scale: number; index: number }): void;
   onChange?(index: number): void;
-  enableDoubleScale?: boolean;
 };
 
 export type ImagePreviewScaleEventParams = {
