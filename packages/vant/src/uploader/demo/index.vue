@@ -207,7 +207,7 @@ const fileList6 = ref([{ url: cdnURL('leaf.jpeg') }]);
   </demo-block>
 
   <demo-block :title="t('reupload')">
-    <van-uploader v-model="fileList6" reupload max-count="2" multiple />
+    <van-uploader v-model="fileList6" reupload max-count="2" />
   </demo-block>
 </template>
 
