@@ -55,7 +55,7 @@
     "@vue/babel-plugin-jsx": "^1.1.1",
     "autoprefixer": "^10.4.8",
     "commander": "^11.0.0",
-    "rslog": "^1.0.0",
+    "rslog": "^1.1.0",
     "esbuild": "^0.18.11",
     "eslint": "^8.46.0",
     "enquirer": "2.3.6",
