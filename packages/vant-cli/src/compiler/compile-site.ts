@@ -1,5 +1,3 @@
-import color from 'picocolors';
-import { createRequire } from 'node:module';
 import { createServer, build } from 'vite';
 import {
   getViteConfigForSiteDev,
@@ -41,11 +39,6 @@ export async function compileSite(production = false) {
     );
     const server = await createServer(config);
     await server.listen(config.server?.port);
-
-    const require = createRequire(import.meta.url);
-    const { version } = require('vite/package.json');
-    const viteInfo = color.cyan(`vite v${version}`);
-    console.log(`  ${viteInfo}` + color.green(` dev server running at:\n`));
     server.printUrls();
   }
 }
