@@ -1,12 +1,12 @@
-// @ts-ignore
-import fs from 'node:fs';
-import { URL, fileURLToPath } from 'node:url';
 import { logger } from 'rslog';
+import { createRequire } from 'node:module';
 
-const packagePath = fileURLToPath(new URL('../package.json', import.meta.url));
-const packageJson = JSON.parse(fs.readFileSync(packagePath, 'utf-8'));
-export const cliVersion: string = packageJson.version;
+const require = createRequire(import.meta.url);
+const { version: viteVersion } = require('vite/package.json');
+const { version: cliVersion } = require('../package.json');
 
-logger.greet(`  Vant CLI v${cliVersion}\n`);
+export { cliVersion };
+
+logger.greet(`  Vant CLI v${cliVersion} / Vite v${viteVersion}\n`);
 
 process.env.VANT_CLI_VERSION = cliVersion;
