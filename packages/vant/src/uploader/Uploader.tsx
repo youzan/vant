@@ -5,6 +5,7 @@ import {
   onBeforeUnmount,
   type PropType,
   type ExtractPropTypes,
+  nextTick,
 } from 'vue';
 
 // Utils
@@ -104,6 +105,7 @@ export default defineComponent({
     const inputRef = ref();
     const urls: string[] = [];
     const reuploadIndex = ref(-1);
+    const isReuploading = ref(false);
 
     const getDetail = (index = props.modelValue.length) => ({
       name: props.name,
@@ -278,9 +280,15 @@ export default defineComponent({
     };
 
     const reuploadImage = (index: number) => {
-      // eslint-disable-next-line no-use-before-define
-      chooseFile();
+      isReuploading.value = true;
       reuploadIndex.value = index;
+      nextTick(() => chooseFile());
+    };
+    const onInputClick = () => {
+      if (!isReuploading.value) {
+        reuploadIndex.value = -1;
+      }
+      isReuploading.value = false;
     };
 
     const renderPreviewItem = (item: UploaderFileListItem, index: number) => {
@@ -344,6 +352,7 @@ export default defineComponent({
           multiple={props.multiple && reuploadIndex.value === -1}
           disabled={props.disabled}
           onChange={onChange}
+          onClick={onInputClick}
         />
       );
 
