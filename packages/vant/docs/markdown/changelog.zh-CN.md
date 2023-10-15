@@ -19,6 +19,32 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 
 ## 更新内容
 
+### v4.7.2
+
+`2023-10-15`
+
+#### 新功能 🎉
+
+- feat(Icon): 添加 font-family CSS 变量，由 [@JeremyFan](https://github.com/JeremyFan) 在 [#12354](https://github.com/youzan/vant/pull/12354) 中贡献
+- feat(ImagePreview): 添加 doubleScale 选项，由 [@coderXMin](https://github.com/coderXMin) 在 [#12360](https://github.com/youzan/vant/pull/12360) 中贡献
+
+#### Bug 修复 🐞
+
+- fix(Icons): 使图标与 Vant 2 的浏览器范围兼容，由 [@chenjiahan](https://github.com/chenjiahan) 在 [#12356](https://github.com/youzan/vant/pull/12356) 中贡献
+- fix(Uploader): 修复了多次重新上传只选择一个以及取消选择的问题，由 [@zhousg](https://github.com/zhousg) 在 [#12359](https://github.com/youzan/vant/pull/12359) 中贡献
+
+#### 其他更改
+
+- refactor(Signature): 避免在下一个 tick 中设置 canvas 的宽度和高度，由 [@inottn](https://github.com/inottn) 在 [#12347](https://github.com/youzan/vant/pull/12347) 中贡献
+- refactor(Signature): 使用 scale 方法提高清晰度，由 [@inottn](https://github.com/inottn) 在 [#12363](https://github.com/youzan/vant/pull/12363) 中贡献
+- chore(deps): 将 rslog 版本提升至 v1.1.0，由 [@chenjiahan](https://github.com/chenjiahan) 在 [#12364](https://github.com/youzan/vant/pull/12364) 中贡献
+- chore(cli): 合并欢迎日志，由 [@chenjiahan](https://github.com/chenjiahan) 在 [#12365](https://github.com/youzan/vant/pull/12365) 中贡献
+- chore(ImagePreview): 重命名 doubleScale 并添加测试用例，由 [@chenjiahan](https://github.com/chenjiahan) 在 [#12366](https://github.com/youzan/vant/pull/12366) 中贡献
+
+#### 新贡献者
+
+- [@coderXMin](https://github.com/coderXMin) 在 [#12360](https://github.com/youzan/vant/pull/12360) 中进行了他的首次贡献
+
 ### v4.7.1
 
 `2023-10-06`
