@@ -78,6 +78,7 @@ export type ConfigProviderThemeVars = BaseThemeVars &
   import('../action-sheet').ActionSheetThemeVars &
   import('../address-edit').AddressEditThemeVars &
   import('../address-list').AddressListThemeVars &
+  import('../back-top').BackTopThemeVars &
   import('../badge').BadgeThemeVars &
   import('../barrage').BarrageThemeVars &
   import('../button').ButtonThemeVars &
