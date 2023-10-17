@@ -16,6 +16,14 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 
 ## Details
 
+### [v2.13.2](https://github.com/vant-ui/vant/compare/v2.13.1...v2.13.2)
+
+`2023-10-17`
+
+**Feature**
+
+- Sku: add more slots about sku-messages [#12368](https://github.com/vant-ui/vant/issues/12368)
+
 ### [v2.13.1](https://github.com/vant-ui/vant/compare/v2.13.0...v2.13.1)
 
 `2023-10-10`

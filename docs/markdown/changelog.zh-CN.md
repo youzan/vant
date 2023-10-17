@@ -25,6 +25,14 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 
 ## 更新内容
 
+### [v2.13.2](https://github.com/vant-ui/vant/compare/v2.13.1...v2.13.2)
+
+`2023-10-17`
+
+**Feature**
+
+- Sku: 增加 sku-messages 相关的 slots [#12368](https://github.com/vant-ui/vant/issues/12368)
+
 ### [v2.13.1](https://github.com/vant-ui/vant/compare/v2.13.0...v2.13.1)
 
 `2023-10-10`
