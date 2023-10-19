@@ -389,7 +389,7 @@ export default defineComponent({
           onTouchcancel={onTouchEnd}
         >
           {slots.image ? (
-            <div class={bem('image-wrap')}>
+            <div class={bem('image-wrap')} style={imageStyle.value}>
               {slots.image({ src: props.src })}
             </div>
           ) : (
