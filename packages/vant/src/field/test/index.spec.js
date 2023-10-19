@@ -106,7 +106,19 @@ test('should render textarea when type is textarea', async () => {
   await later();
   expect(wrapper.html()).toMatchSnapshot();
 });
+test('should show required icon when using rules which contian required', async () => {
+  const wrapper = mount(Field, {
+    props: {
+      modelValue: '123',
+      label: '123',
+      rules: [{ required: false }],
+    },
+  });
 
+  expect(wrapper.find('.van-field__label--required').exists()).toBeFalsy();
+  await wrapper.setProps({ rules: [{ required: true }] });
+  expect(wrapper.find('.van-field__label--required').exists()).toBeTruthy();
+});
 test('should autosize textarea field', async () => {
   const wrapper = mount(Field, {
     props: {
