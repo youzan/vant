@@ -5,6 +5,7 @@ import {
   reactive,
   defineComponent,
   type CSSProperties,
+  VNode,
 } from 'vue';
 
 // Utils
@@ -117,6 +118,28 @@ export default defineComponent({
 
       return 0;
     });
+
+    const isImgElm = computed(() => {
+      if (!slots.image) return false;
+      const vNodeContent = slots.image({ src: props.src })[0];
+      return hasImgNode(vNodeContent);
+    });
+
+    const hasImgNode = (vNodeContent: VNode) => {
+      if (vNodeContent.type === 'img') {
+        return true;
+      } else if (
+        Array.isArray(vNodeContent.children) &&
+        vNodeContent.children.length !== 0
+      ) {
+        for (const child of vNodeContent.children) {
+          if (hasImgNode(child as VNode)) {
+            return true;
+          }
+        }
+      }
+      return false;
+    };
 
     const setScale = (scale: number, center?: { x: number; y: number }) => {
       scale = clamp(scale, +props.minZoom, +props.maxZoom + 1);
@@ -389,7 +412,10 @@ export default defineComponent({
           onTouchcancel={onTouchEnd}
         >
           {slots.image ? (
-            <div class={bem('image-wrap')} style={imageStyle.value}>
+            <div
+              class={bem('image-wrap')}
+              style={isImgElm.value ? imageStyle.value : {}}
+            >
               {slots.image({ src: props.src })}
             </div>
           ) : (
