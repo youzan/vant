@@ -41,6 +41,7 @@ Current supported languages:
 
 | Language                 | Filename     | Version  |
 | ------------------------ | ------------ | -------- |
+| Arabic                   | ar-SA        | `v3.5.0` |
 | Bulgarian                | bg-BG        | `v3.5.0` |
 | Bangla (Bangladesh)      | bn-BD        | `v3.4.5` |
 | Danish                   | da-DK        | `v3.4.8` |
