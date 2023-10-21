@@ -28,6 +28,7 @@ export const formProps = {
   colon: Boolean,
   disabled: Boolean,
   readonly: Boolean,
+  required: [Boolean, String] as PropType<boolean | 'auto'>,
   showError: Boolean,
   labelWidth: numericProp,
   labelAlign: String as PropType<FieldTextAlign>,

@@ -499,6 +499,7 @@ export default {
 | colon | Whether to display colon after label | _boolean_ | `false` |
 | disabled | Whether to disable form | _boolean_ | `false` |
 | readonly | Whether to be readonly | _boolean_ | `false` |
+| required `v4.7.3` | Whether to show required mark | _boolean \| 'auto'_ | `null` |
 | validate-first | Whether to stop the validation when a rule fails | _boolean_ | `false` |
 | scroll-to-error | Whether to scroll to the error field when validation failed | _boolean_ | `false` |
 | show-error | Whether to highlight input when validation failed | _boolean_ | `false` |
