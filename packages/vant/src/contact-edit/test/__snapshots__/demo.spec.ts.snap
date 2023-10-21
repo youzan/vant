@@ -5,7 +5,7 @@ exports[`should render demo and match snapshot 1`] = `
   <form class="van-form van-contact-edit">
     <div class="van-contact-edit__fields">
       <div class="van-cell van-field">
-        <div class="van-cell__title van-field__label">
+        <div class="van-cell__title van-field__label van-field__label--required">
           <label
             id="van-field-label"
             for="van-field-input"

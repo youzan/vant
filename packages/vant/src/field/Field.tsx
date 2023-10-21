@@ -193,6 +193,10 @@ export default defineComponent({
       return props.modelValue;
     });
 
+    const isRequired = computed(() => {
+      return props.rules?.some((rule: FieldRule) => rule.required);
+    });
+
     const runRules = (rules: FieldRule[]) =>
       rules.reduce(
         (promise, rule) =>
@@ -696,7 +700,10 @@ export default defineComponent({
           titleStyle={labelStyle.value}
           valueClass={bem('value')}
           titleClass={[
-            bem('label', [labelAlign, { required: props.required }]),
+            bem('label', [
+              labelAlign,
+              { required: isRequired.value || props.required },
+            ]),
             props.labelClass,
           ]}
           arrowDirection={props.arrowDirection}
