@@ -247,8 +247,102 @@ exports[`should render demo and match snapshot 1`] = `
 </div>
 <div>
   <div class="van-cell-group van-cell-group--inset">
-    <div class="van-cell van-field van-field--error">
+    <div class="van-cell van-field">
       <div class="van-cell__title van-field__label van-field__label--required">
+        <label
+          id="van-field-label"
+          for="van-field-input"
+        >
+          Username
+        </label>
+      </div>
+      <div class="van-cell__value van-field__value">
+        <div class="van-field__body">
+          <input
+            type="text"
+            id="van-field-input"
+            class="van-field__control"
+            placeholder="Username"
+            aria-labelledby="van-field-label"
+          >
+        </div>
+      </div>
+    </div>
+    <div class="van-cell van-field">
+      <div class="van-cell__title van-field__label van-field__label--required">
+        <label
+          id="van-field-label"
+          for="van-field-input"
+        >
+          Phone
+        </label>
+      </div>
+      <div class="van-cell__value van-field__value">
+        <div class="van-field__body">
+          <input
+            type="text"
+            id="van-field-input"
+            class="van-field__control"
+            placeholder="Phone"
+            aria-labelledby="van-field-label"
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div>
+  <div class="van-cell-group van-cell-group--inset">
+    <form class="van-form">
+      <div class="van-cell van-field">
+        <div class="van-cell__title van-field__label van-field__label--required">
+          <label
+            id="van-field-label"
+            for="van-field-input"
+          >
+            Username
+          </label>
+        </div>
+        <div class="van-cell__value van-field__value">
+          <div class="van-field__body">
+            <input
+              type="text"
+              id="van-field-input"
+              class="van-field__control"
+              placeholder="Username"
+              aria-labelledby="van-field-label"
+            >
+          </div>
+        </div>
+      </div>
+      <div class="van-cell van-field">
+        <div class="van-cell__title van-field__label">
+          <label
+            id="van-field-label"
+            for="van-field-input"
+          >
+            Phone
+          </label>
+        </div>
+        <div class="van-cell__value van-field__value">
+          <div class="van-field__body">
+            <input
+              type="text"
+              id="van-field-input"
+              class="van-field__control"
+              placeholder="Phone"
+              aria-labelledby="van-field-label"
+            >
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+<div>
+  <div class="van-cell-group van-cell-group--inset">
+    <div class="van-cell van-field van-field--error">
+      <div class="van-cell__title van-field__label">
         <label
           id="van-field-label"
           for="van-field-input"
@@ -269,7 +363,7 @@ exports[`should render demo and match snapshot 1`] = `
       </div>
     </div>
     <div class="van-cell van-field">
-      <div class="van-cell__title van-field__label van-field__label--required">
+      <div class="van-cell__title van-field__label">
         <label
           id="van-field-label"
           for="van-field-input"

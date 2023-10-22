@@ -5,7 +5,7 @@ exports[`should render demo and match snapshot 1`] = `
   <form class="van-form">
     <div class="van-cell-group van-cell-group--inset">
       <div class="van-cell van-field">
-        <div class="van-cell__title van-field__label van-field__label--required">
+        <div class="van-cell__title van-field__label">
           <label
             id="van-field-label"
             for="van-field-input"
@@ -27,7 +27,7 @@ exports[`should render demo and match snapshot 1`] = `
         </div>
       </div>
       <div class="van-cell van-field">
-        <div class="van-cell__title van-field__label van-field__label--required">
+        <div class="van-cell__title van-field__label">
           <label
             id="van-field-label"
             for="van-field-input"

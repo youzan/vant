@@ -10,7 +10,7 @@ exports[`should render demo and match snapshot 1`] = `
       <!--[-->
       <div class="van-cell van-field">
         <div
-          class="van-cell__title van-field__label van-field__label--required"
+          class="van-cell__title van-field__label"
           style
         >
           <!--[-->
@@ -38,7 +38,7 @@ exports[`should render demo and match snapshot 1`] = `
       </div>
       <div class="van-cell van-field">
         <div
-          class="van-cell__title van-field__label van-field__label--required"
+          class="van-cell__title van-field__label"
           style
         >
           <!--[-->

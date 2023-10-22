@@ -125,6 +125,50 @@ export default {
 };
 ```
 
+### 必填星号
+
+设置 `required` 属性来展示必填星号。
+
+```html
+<van-cell-group inset>
+  <van-field
+    v-model="username"
+    required
+    label="用户名"
+    placeholder="请输入用户名"
+  />
+  <van-field
+    v-model="phone"
+    required
+    label="手机号"
+    placeholder="请输入手机号"
+  />
+</van-cell-group>
+```
+
+请注意 `required` 属性只用于控制样式展示，在进行表单校验时，需要使用 `rule.required` 选项来控制校验逻辑。
+
+### 自动展示星号
+
+你可以在 Form 组件上设置 `required="auto"`，此时 Form 里的所有 Field 会自动根据 `rule.required` 来判断是否需要展示星号。
+
+```html
+<van-form required="auto">
+  <van-field
+    v-model="username"
+    :rules="[{ required: true }]"
+    label="用户名"
+    placeholder="请输入用户名"
+  />
+  <van-field
+    v-model="phone"
+    :rules="[{ required: false }]"
+    label="手机号"
+    placeholder="请输入手机号"
+  />
+</van-form>
+```
+
 ### 错误提示
 
 设置 `required` 属性表示这是一个必填项，可以配合 `error` 或 `error-message` 属性显示对应的错误提示。
@@ -134,13 +178,11 @@ export default {
   <van-field
     v-model="username"
     error
-    required
     label="用户名"
     placeholder="请输入用户名"
   />
   <van-field
     v-model="phone"
-    required
     label="手机号"
     placeholder="请输入手机号"
     error-message="手机号格式错误"
@@ -311,7 +353,7 @@ export default {
 | disabled | 是否禁用输入框 | _boolean_ | `false` |
 | readonly | 是否为只读状态，只读状态下无法输入内容 | _boolean_ | `false` |
 | colon | 是否在 label 后面添加冒号 | _boolean_ | `false` |
-| required | 是否显示表单必填星号 | _boolean_ | `false` |
+| required | 是否显示表单必填星号 | _boolean \| 'auto'_ | `null` |
 | center | 是否使内容垂直居中 | _boolean_ | `false` |
 | clearable | 是否启用清除图标，点击清除图标后会清空输入框 | _boolean_ | `false` |
 | clear-icon | 清除图标名称或图片链接，等同于 Icon 组件的 [name 属性](#/zh-CN/icon#props) | _string_ | `clear` |
