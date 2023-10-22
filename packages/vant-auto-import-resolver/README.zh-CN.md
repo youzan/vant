@@ -1,6 +1,6 @@
 # Vant Auto Import Resolver
 
-English | [简体中文](./README.zh-CN.md)
+[English](./README.md) | 简体中文
 
 `@vant/auto-import-resolver` 是 [unplugin-vue-components](https://github.com/unplugin/unplugin-vue-components) 的一个解析器，用于实现 Vant 按需引入。
 
@@ -122,6 +122,27 @@ build({
   plugins: [
     Components({
       resolvers: [VantResolver()],
+    }),
+  ],
+});
+```
+
+## 选项
+
+### importStyle
+
+是否自动引用组件对应的样式。
+
+- **Type：** `boolean`
+- **Default：** `true`
+- **Example：**
+
+```ts
+Components({
+  resolvers: [
+    VantResolver({
+      // 禁用样式引用
+      importStyle: false,
     }),
   ],
 });
