@@ -131,7 +131,7 @@ build({
 
 ### importStyle
 
-是否自动 import 组件对应的样式。
+是否自动引用组件对应的样式。
 
 - **Type：** `boolean`
 - **Default：** `true`
