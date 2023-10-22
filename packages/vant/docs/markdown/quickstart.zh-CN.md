@@ -238,7 +238,7 @@ import 'vant/es/image-preview/style';
 
 - 请避免同时使用「全量引入」和「按需引入」这两种引入方式，否则会导致代码重复、样式错乱等问题。
 - 在使用过程中，如果你遇到组件不能导入的问题，因为 unplugin-vue-components 并不是 Vant 官方维护的插件，所以建议到 [unplugin/unplugin-vue-components](https://github.com/unplugin/unplugin-vue-components) 仓库下反馈。
-- `@vant/auto-import-resolver` 提供了一些配置项，请参考 [README 文档](<(https://github.com/youzan/vant/tree/main/packages/vant-auto-import-resolver)>) 来了解更多。
+- `@vant/auto-import-resolver` 提供了一些配置项，请参考 [README 文档](https://github.com/youzan/vant/tree/main/packages/vant-auto-import-resolver) 来了解更多。
 - 如果是样式不生效的相关问题，你可以在 Vant 仓库下反馈。
 
 ## 在框架中使用

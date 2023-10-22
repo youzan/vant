@@ -147,3 +147,28 @@ Components({
   ],
 });
 ```
+
+### module
+
+设置引用的模块类型。
+
+- **Type：** `'esm' | 'cjs'`
+- **Default：** `'esm'`
+- **Example：**
+
+```ts
+Components({
+  resolvers: [
+    VantResolver({
+      module: 'cjs',
+    }),
+  ],
+});
+```
+
+### ssr
+
+- **Type：** `boolean`
+- **Default：** `undefined`
+
+此选项已废弃，请使用 `module` 选项来设置模块类型。
