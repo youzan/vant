@@ -150,7 +150,7 @@ export default defineComponent({
 
       const classes: Record<string, boolean | undefined> = {
         center,
-        required,
+        required: Boolean(required),
         clickable,
         borderless: !border,
       };
