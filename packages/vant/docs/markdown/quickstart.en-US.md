@@ -217,7 +217,8 @@ import 'vant/es/image-preview/style';
 
 - "Full Import" and "On-demand Import" should not be used at the same time, otherwise it will lead to problems such as code duplication and style overrides.
 - During use, if the component cannot be imported, because `unplugin-vue-components` is not a plug-in officially maintained by `Vant`, it is recommended to give feedback under the [unplugin/unplugin-vue-components](https://github.com/antfu/unplugin/unplugin-vue-components) repository.
-- If it is a similar problem that the style does not take effect, feedback under the `Vant` repository
+- `@vant/auto-import-resolver` provides some configuration options. Please refer to the [README document](https://github.com/youzan/vant/tree/main/packages/vant-auto-import-resolver) for more information.
+- If it is a similar problem that the style does not take effect, feedback under the `Vant` repository.
 
 ## With Frameworks
 
