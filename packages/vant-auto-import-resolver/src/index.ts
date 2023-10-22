@@ -1,15 +1,24 @@
 export interface VantResolverOptions {
   /**
-   * import style css or less along with components
+   * Whether to automatically import the corresponding styles of the components.
    *
    * @default true
    */
-  importStyle?: boolean | 'css' | 'less';
+  importStyle?:
+    | boolean
+    | 'css'
+    /** Compatible with Vant 2.x / 3.x */
+    | 'less';
 
   /**
-   * use lib
+   * Set the referenced module type.
    *
-   * @default false
+   * @default 'esm'
+   */
+  module?: 'esm' | 'cjs';
+
+  /**
+   * @deprecated Please use `module` option instead.
    */
   ssr?: boolean;
 }
@@ -22,15 +31,25 @@ function kebabCase(key: string) {
   return result.split(' ').join('-').toLowerCase();
 }
 
-function getModuleType(ssr: boolean): string {
-  return ssr ? 'lib' : 'es';
+function getModuleType(options: VantResolverOptions): string {
+  const { ssr, module = 'esm' } = options;
+
+  // compatible with the deprecated `ssr` option
+  if (ssr !== undefined) {
+    return ssr ? 'lib' : 'es';
+  }
+
+  return module === 'cjs' ? 'lib' : 'es';
 }
 
 function getSideEffects(dirName: string, options: VantResolverOptions) {
-  const { importStyle = true, ssr = false } = options;
-  if (!importStyle) return;
+  const { importStyle = true } = options;
 
-  const moduleType = getModuleType(ssr);
+  if (!importStyle) {
+    return;
+  }
+
+  const moduleType = getModuleType(options);
 
   if (importStyle === 'less') return `vant/${moduleType}/${dirName}/style/less`;
 
@@ -38,12 +57,11 @@ function getSideEffects(dirName: string, options: VantResolverOptions) {
 }
 
 export function VantResolver(options: VantResolverOptions = {}) {
-  const { ssr = false } = options;
-
-  const moduleType = getModuleType(ssr);
+  const moduleType = getModuleType(options);
 
   return {
     type: 'component' as const,
+
     resolve: (name: string) => {
       if (name.startsWith('Van')) {
         const partialName = name.slice(3);

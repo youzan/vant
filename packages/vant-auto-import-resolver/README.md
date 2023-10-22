@@ -147,3 +147,28 @@ Components({
   ],
 });
 ```
+
+### module
+
+Specifies the type of module to be imported.
+
+- **Type:** `'esm' | 'cjs'`
+- **Default:** `'esm'`
+- **Example:**
+
+```ts
+Components({
+  resolvers: [
+    VantResolver({
+      module: 'cjs',
+    }),
+  ],
+});
+```
+
+### ssr
+
+- **Type:** `boolean`
+- **Default:** `undefined`
+
+This option is deprecated. Please use the `module` option to set the module type.
