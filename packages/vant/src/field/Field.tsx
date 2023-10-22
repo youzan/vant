@@ -93,10 +93,6 @@ export const fieldSharedProps = {
   enterkeyhint: String,
   clearTrigger: makeStringProp<FieldClearTrigger>('focus'),
   formatTrigger: makeStringProp<FieldFormatTrigger>('onChange'),
-  required: {
-    type: [Boolean, String] as PropType<boolean | 'auto'>,
-    default: null,
-  },
   spellcheck: {
     type: Boolean,
     default: null,
