@@ -12,13 +12,16 @@ test('should allow to use the teleport option', async () => {
 });
 
 test('should trigger onClose option correctly', async () => {
+  const root = document.createElement('div');
   const onClose = vi.fn();
   const instance = showImagePreview({
     images,
     startPosition: 1,
     onClose,
+    teleport: root,
   });
 
+  await later();
   await instance?.close();
 
   expect(onClose).toHaveBeenCalledTimes(1);
