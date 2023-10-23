@@ -37,12 +37,14 @@ export default {
 
 <style lang="less">
 .demo-nav {
-  position: relative;
+  position: sticky;
+  top: 0;
   display: flex;
   align-items: center;
   justify-content: center;
   height: 56px;
   background-color: var(--van-doc-background-3);
+  z-index: 100;
 
   &__title {
     font-weight: 600;
