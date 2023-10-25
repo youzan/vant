@@ -64,10 +64,7 @@ export const tabsProps = {
   color: String,
   border: Boolean,
   sticky: Boolean,
-  showTitle: {
-    type: Boolean,
-    default: true,
-  },
+  showTitle: truthProp,
   shrink: Boolean,
   active: makeNumericProp(0),
   duration: makeNumericProp(0.3),
