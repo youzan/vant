@@ -60,7 +60,7 @@ import { ref } from 'vue';
 
 export default {
   setup() {
-    const activeName = ref('a');
+    const activeName = ref('b');
     return { activeName };
   },
 };
