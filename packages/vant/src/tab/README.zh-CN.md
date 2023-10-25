@@ -145,10 +145,10 @@ export default {
 
 ### 无标题模式
 
-通过 `titleless` 属性可以不渲染tab头部标题。
+通过 `showTitle` 属性可以不渲染tab头部标题。
 
 ```html
-<van-tabs v-model:active="active" titleless>
+<van-tabs v-model:active="active" :show-title="false">
   <van-tab v-for="index in 4" :title="'选项 ' + index">
     无title内容 {{ index }}
   </van-tab>

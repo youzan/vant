@@ -134,12 +134,12 @@ In sticky mode, the tab nav will be fixed to top when scroll to top.
 </van-tabs>
 ```
 
-### Titleless
+### ShowTitle
 
-In Titleless mode, title will not be rendered.
+If showTitle is falthy, title will not be rendered.
 
 ```html
-<van-tabs v-model:active="active" titleless>
+<van-tabs v-model:active="active" :show-title="false">
   <van-tab v-for="index in 4" :title="'option ' + index">
     titleless content {{ index }}
   </van-tab>

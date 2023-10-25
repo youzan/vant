@@ -64,7 +64,10 @@ export const tabsProps = {
   color: String,
   border: Boolean,
   sticky: Boolean,
-  titleless: Boolean,
+  showTitle: {
+    type: Boolean,
+    default: true,
+  },
   shrink: Boolean,
   active: makeNumericProp(0),
   duration: makeNumericProp(0.3),
@@ -480,7 +483,7 @@ export default defineComponent({
 
     return () => (
       <div ref={root} class={bem([props.type])}>
-        {props.titleless ? null : (
+        {props.showTitle && (
           <>
             {props.sticky ? (
               <Sticky
