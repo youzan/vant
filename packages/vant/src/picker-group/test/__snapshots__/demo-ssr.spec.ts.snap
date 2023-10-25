@@ -25,6 +25,7 @@ exports[`should render demo and match snapshot 1`] = `
     </div>
     <div class="van-tabs van-tabs--line van-picker-group__tabs">
       <!--[-->
+      <!--[-->
       <div class="van-tabs__wrap">
         <div
           role="tablist"
@@ -1500,6 +1501,7 @@ exports[`should render demo and match snapshot 1`] = `
     </div>
     <div class="van-tabs van-tabs--line van-picker-group__tabs">
       <!--[-->
+      <!--[-->
       <div class="van-tabs__wrap">
         <div
           role="tablist"
@@ -2975,6 +2977,7 @@ exports[`should render demo and match snapshot 1`] = `
     </div>
     <div class="van-tabs van-tabs--line van-picker-group__tabs">
       <!--[-->
+      <!--[-->
       <div class="van-tabs__wrap">
         <div
           role="tablist"
@@ -4077,6 +4080,7 @@ exports[`should render demo and match snapshot 1`] = `
       </button>
     </div>
     <div class="van-tabs van-tabs--line van-picker-group__tabs">
+      <!--[-->
       <!--[-->
       <div class="van-tabs__wrap">
         <div
@@ -5917,6 +5921,7 @@ exports[`should render demo and match snapshot 1`] = `
       </button>
     </div>
     <div class="van-tabs van-tabs--line van-picker-group__tabs">
+      <!--[-->
       <!--[-->
       <div class="van-tabs__wrap">
         <div
