@@ -432,7 +432,7 @@ test('should not render title when titleless is true', async () => {
     },
   });
 
-  // await later();
+  await later();
   const tabs = wrapper.findAll('.van-tabs__wrap,.van-sticky');
   expect(tabs.length).toEqual(0);
 });
