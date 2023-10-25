@@ -297,7 +297,7 @@ export default defineComponent({
               label={t('area')}
               is-link={!disableArea}
               modelValue={areaText.value}
-              rules={rules.value.areaCode}
+              rules={props.showArea ? rules.value.areaCode : undefined}
               placeholder={props.areaPlaceholder || t('area')}
               onFocus={() => onFocus('areaCode')}
               onClick={() => {
