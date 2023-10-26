@@ -119,16 +119,13 @@ export default defineComponent({
       });
 
       const onInput = (value: string) => emit('update:modelValue', value);
-      const hasErrorMessageClass =
-        fieldAttrs.errorMessage && 'has-error-message';
-      const classes = [bem('field'), hasErrorMessageClass].filter(Boolean);
 
       return (
         <Field
           v-slots={pick(slots, ['left-icon', 'right-icon'])}
           ref={fieldRef}
           type="search"
-          class={classes}
+          class={bem('field', { 'with-message': fieldAttrs.errorMessage })}
           border={false}
           onBlur={onBlur}
           onFocus={onFocus}
