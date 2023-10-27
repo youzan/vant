@@ -1,4 +1,10 @@
-import { defineComponent, type InjectionKey, type ExtractPropTypes } from 'vue';
+import {
+  defineComponent,
+  type InjectionKey,
+  type ExtractPropTypes,
+  type VNode,
+  Component,
+} from 'vue';
 
 // Utils
 import {
@@ -22,6 +28,13 @@ import Toolbar, {
 } from '../picker/PickerToolbar';
 
 const [name, bem] = createNamespace('picker-group');
+
+const validSlotComponents = [
+  'van-picker',
+  'van-date-picker',
+  'van-time-picker',
+  'van-area',
+];
 
 export type PickerGroupProvide = Record<string, string>;
 
@@ -72,6 +85,17 @@ export default defineComponent({
 
     return () => {
       const childNodes = slots.default?.();
+      // Supports the van-picker, van-date-picker, van-time-picker, and van-area components
+      const filterChildNodes: VNode[] = [];
+      if (childNodes) {
+        childNodes.filter((item) => {
+          const component = (item?.type || {}) as Component;
+          if (component.name && validSlotComponents.includes(component.name)) {
+            filterChildNodes.push(item);
+          }
+        });
+      }
+
       const confirmButtonText = showNextButton()
         ? props.nextStepText
         : props.confirmButtonText;
@@ -95,7 +119,7 @@ export default defineComponent({
           >
             {props.tabs.map((title, index) => (
               <Tab title={title} titleClass={bem('tab-title')}>
-                {childNodes?.[index]}
+                {filterChildNodes?.[index]}
               </Tab>
             ))}
           </Tabs>
