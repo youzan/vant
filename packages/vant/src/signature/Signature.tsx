@@ -4,6 +4,7 @@ import {
   onMounted,
   defineComponent,
   type ExtractPropTypes,
+  onUnmounted,
 } from 'vue';
 import {
   inBrowser,
@@ -44,6 +45,7 @@ export default defineComponent({
   setup(props, { emit }) {
     const canvasRef = ref<HTMLCanvasElement>();
     const wrapRef = ref<HTMLElement>();
+
     const ctx = computed(() => {
       if (!canvasRef.value) return null;
       return canvasRef.value.getContext('2d');
@@ -143,16 +145,24 @@ export default defineComponent({
       emit('clear');
     };
 
-    onMounted(() => {
+    const setupSignature = () => {
       if (isRenderCanvas && canvasRef.value) {
         const canvas = canvasRef.value;
         const dpr = inBrowser ? window.devicePixelRatio : 1;
-
         canvasWidth = canvas.width = (wrapRef.value?.offsetWidth || 0) * dpr;
         canvasHeight = canvas.height = (wrapRef.value?.offsetHeight || 0) * dpr;
         ctx.value?.scale(dpr, dpr);
         setCanvasBgColor(ctx.value);
       }
+    };
+
+    onMounted(() => {
+      setupSignature();
+      window.addEventListener('resize', setupSignature);
+    });
+
+    onUnmounted(() => {
+      window.removeEventListener('resize', setupSignature);
     });
 
     return () => (
