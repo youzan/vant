@@ -3,7 +3,7 @@ import {
   type InjectionKey,
   type ExtractPropTypes,
   type VNode,
-  Component,
+  type Component,
 } from 'vue';
 
 // Utils
