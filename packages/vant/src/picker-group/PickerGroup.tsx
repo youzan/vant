@@ -1,9 +1,9 @@
 import {
   defineComponent,
+  Comment,
   type InjectionKey,
   type ExtractPropTypes,
   type VNode,
-  type Component,
 } from 'vue';
 
 // Utils
@@ -28,13 +28,6 @@ import Toolbar, {
 } from '../picker/PickerToolbar';
 
 const [name, bem] = createNamespace('picker-group');
-
-const validSlotComponents = [
-  'van-picker',
-  'van-date-picker',
-  'van-time-picker',
-  'van-area',
-];
 
 export type PickerGroupProvide = Record<string, string>;
 
@@ -85,12 +78,10 @@ export default defineComponent({
 
     return () => {
       const childNodes = slots.default?.();
-      // Supports the van-picker, van-date-picker, van-time-picker, and van-area components
       const filterChildNodes: VNode[] = [];
       if (childNodes) {
         childNodes.filter((item) => {
-          const component = (item?.type || {}) as Component;
-          if (component.name && validSlotComponents.includes(component.name)) {
+          if (item.type !== Comment) {
             filterChildNodes.push(item);
           }
         });
