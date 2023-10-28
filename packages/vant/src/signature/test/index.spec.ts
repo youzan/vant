@@ -95,4 +95,5 @@ test('should allow to custom button text', async () => {
 test('expose resize method', async () => {
   const wrapper = mount(Signature);
   expect(wrapper.vm.resize).toBeTypeOf('function');
+  expect(wrapper.vm.resize()).toBeUndefined();
 });
