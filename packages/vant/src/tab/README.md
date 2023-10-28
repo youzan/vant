@@ -233,7 +233,7 @@ export default {
 
 > Tips: The before-change callback will not be triggered by swiping gesture.
 
-### Hide Title
+### Hide Header
 
 By setting the `showHeader` prop to `false`, the title bar of the Tabs component can be hidden. In this case, you can control the `active` prop of the Tabs using custom components.
 
