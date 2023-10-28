@@ -417,6 +417,26 @@ test('should allow to call scrollTo method when scrollspy is enabled', async () 
   expect(onChange).toHaveBeenCalledWith('b', 'title2');
 });
 
+test('should not render title when showTitle is not truthy', async () => {
+  const wrapper = mount({
+    render() {
+      return (
+        <Tabs showTitle={false}>
+          <Tab title="title1">Text</Tab>
+          <Tab title="title2">Text</Tab>
+          <Tab title="title3">Text</Tab>
+          <Tab title="title4">Text</Tab>
+          <Tab title="title5">Text</Tab>
+        </Tabs>
+      );
+    },
+  });
+
+  await later();
+  const tabs = wrapper.findAll('.van-tabs__wrap,.van-sticky');
+  expect(tabs.length).toEqual(0);
+});
+
 test('should call before-change prop before changing', async () => {
   const onChange = vi.fn();
   const beforeChange = (name: number) => {

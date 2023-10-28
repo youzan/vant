@@ -64,6 +64,7 @@ export const tabsProps = {
   color: String,
   border: Boolean,
   sticky: Boolean,
+  showTitle: truthProp,
   shrink: Boolean,
   active: makeNumericProp(0),
   duration: makeNumericProp(0.3),
@@ -479,16 +480,20 @@ export default defineComponent({
 
     return () => (
       <div ref={root} class={bem([props.type])}>
-        {props.sticky ? (
-          <Sticky
-            container={root.value}
-            offsetTop={offsetTopPx.value}
-            onScroll={onStickyScroll}
-          >
-            {renderHeader()}
-          </Sticky>
-        ) : (
-          renderHeader()
+        {props.showTitle && (
+          <>
+            {props.sticky ? (
+              <Sticky
+                container={root.value}
+                offsetTop={offsetTopPx.value}
+                onScroll={onStickyScroll}
+              >
+                {renderHeader()}
+              </Sticky>
+            ) : (
+              renderHeader()
+            )}
+          </>
         )}
         <TabsContent
           ref={contentRef}

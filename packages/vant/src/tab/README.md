@@ -134,6 +134,18 @@ In sticky mode, the tab nav will be fixed to top when scroll to top.
 </van-tabs>
 ```
 
+### ShowTitle
+
+If showTitle is falthy, title will not be rendered.
+
+```html
+<van-tabs v-model:active="active" :show-title="false">
+  <van-tab v-for="index in 4" :title="'option ' + index">
+    titleless content {{ index }}
+  </van-tab>
+</van-tabs>
+```
+
 ### Shrink
 
 In shrink mode, the tabs will be shrinked to the left.

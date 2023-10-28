@@ -6,6 +6,7 @@ exports[`should render demo and match snapshot 1`] = `
   <!--[-->
   <div class="van-tabs van-tabs--line">
     <!--[-->
+    <!--[-->
     <div class="van-tabs__wrap">
       <div
         role="tablist"
@@ -63,6 +64,7 @@ exports[`should render demo and match snapshot 1`] = `
   <!--[-->
   <div class="van-tabs van-tabs--line">
     <!--[-->
+    <!--[-->
     <div class="van-tabs__wrap">
       <div
         role="tablist"
@@ -109,6 +111,7 @@ exports[`should render demo and match snapshot 1`] = `
 <div>
   <!--[-->
   <div class="van-tabs van-tabs--line">
+    <!--[-->
     <!--[-->
     <div class="van-tabs__wrap">
       <div
@@ -203,6 +206,7 @@ exports[`should render demo and match snapshot 1`] = `
   <!--[-->
   <div class="van-tabs van-tabs--line">
     <!--[-->
+    <!--[-->
     <div class="van-tabs__wrap">
       <div
         role="tablist"
@@ -250,6 +254,7 @@ exports[`should render demo and match snapshot 1`] = `
 <div>
   <!--[-->
   <div class="van-tabs van-tabs--card">
+    <!--[-->
     <!--[-->
     <div class="van-tabs__wrap">
       <div
@@ -299,6 +304,7 @@ exports[`should render demo and match snapshot 1`] = `
   <!--[-->
   <div class="van-tabs van-tabs--line">
     <!--[-->
+    <!--[-->
     <div class="van-tabs__wrap">
       <div
         role="tablist"
@@ -337,6 +343,7 @@ exports[`should render demo and match snapshot 1`] = `
 <div>
   <!--[-->
   <div class="van-tabs van-tabs--line">
+    <!--[-->
     <div style>
       <div
         class="van-sticky"
@@ -405,6 +412,7 @@ exports[`should render demo and match snapshot 1`] = `
   <!--[-->
   <div class="van-tabs van-tabs--line">
     <!--[-->
+    <!--[-->
     <div class="van-tabs__wrap">
       <div
         role="tablist"
@@ -461,6 +469,7 @@ exports[`should render demo and match snapshot 1`] = `
     class="van-tabs van-tabs--card"
     style="margin-top:var(--van-padding-lg);"
   >
+    <!--[-->
     <!--[-->
     <div class="van-tabs__wrap">
       <div
@@ -519,6 +528,7 @@ exports[`should render demo and match snapshot 1`] = `
   <!--[-->
   <div class="van-tabs van-tabs--line">
     <!--[-->
+    <!--[-->
     <div class="van-tabs__wrap">
       <div
         role="tablist"
@@ -558,74 +568,6 @@ exports[`should render demo and match snapshot 1`] = `
   <!--[-->
   <div class="van-tabs van-tabs--line">
     <!--[-->
-    <div class="van-tabs__wrap">
-      <div
-        role="tablist"
-        class="van-tabs__nav van-tabs__nav--line"
-        style
-        aria-orientation="horizontal"
-      >
-        <!--[-->
-      </div>
-    </div>
-    <div class="van-tabs__content van-tabs__content--animated">
-      <div class="van-swipe van-tabs__track">
-        <div
-          style="transition-duration:300ms;transform:translateX(0px);"
-          class="van-swipe__track"
-        >
-          <!--[-->
-          <!--[-->
-          <!--[-->
-          <!--[-->
-          <div
-            class="van-swipe-item van-tab__panel-wrapper van-tab__panel-wrapper--inactive"
-            style
-            id="van-tab"
-            role="tabpanel"
-            tabindex="-1"
-            aria-hidden="true"
-            aria-labelledby="van-tabs-0"
-          >
-          </div>
-          <div
-            class="van-swipe-item van-tab__panel-wrapper van-tab__panel-wrapper--inactive"
-            style
-            id="van-tab"
-            role="tabpanel"
-            tabindex="-1"
-            aria-hidden="true"
-            aria-labelledby="van-tabs-1"
-          >
-          </div>
-          <div
-            class="van-swipe-item van-tab__panel-wrapper van-tab__panel-wrapper--inactive"
-            style
-            id="van-tab"
-            role="tabpanel"
-            tabindex="-1"
-            aria-hidden="true"
-            aria-labelledby="van-tabs-2"
-          >
-          </div>
-          <div
-            class="van-swipe-item van-tab__panel-wrapper van-tab__panel-wrapper--inactive"
-            style
-            id="van-tab"
-            role="tabpanel"
-            tabindex="-1"
-            aria-hidden="true"
-            aria-labelledby="van-tabs-3"
-          >
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-<div>
-  <!--[-->
-  <div class="van-tabs van-tabs--line">
     <!--[-->
     <div class="van-tabs__wrap">
       <div
@@ -695,6 +637,77 @@ exports[`should render demo and match snapshot 1`] = `
 <div>
   <!--[-->
   <div class="van-tabs van-tabs--line">
+    <!--[-->
+    <!--[-->
+    <div class="van-tabs__wrap">
+      <div
+        role="tablist"
+        class="van-tabs__nav van-tabs__nav--line"
+        style
+        aria-orientation="horizontal"
+      >
+        <!--[-->
+      </div>
+    </div>
+    <div class="van-tabs__content van-tabs__content--animated">
+      <div class="van-swipe van-tabs__track">
+        <div
+          style="transition-duration:300ms;transform:translateX(0px);"
+          class="van-swipe__track"
+        >
+          <!--[-->
+          <!--[-->
+          <!--[-->
+          <!--[-->
+          <div
+            class="van-swipe-item van-tab__panel-wrapper van-tab__panel-wrapper--inactive"
+            style
+            id="van-tab"
+            role="tabpanel"
+            tabindex="-1"
+            aria-hidden="true"
+            aria-labelledby="van-tabs-0"
+          >
+          </div>
+          <div
+            class="van-swipe-item van-tab__panel-wrapper van-tab__panel-wrapper--inactive"
+            style
+            id="van-tab"
+            role="tabpanel"
+            tabindex="-1"
+            aria-hidden="true"
+            aria-labelledby="van-tabs-1"
+          >
+          </div>
+          <div
+            class="van-swipe-item van-tab__panel-wrapper van-tab__panel-wrapper--inactive"
+            style
+            id="van-tab"
+            role="tabpanel"
+            tabindex="-1"
+            aria-hidden="true"
+            aria-labelledby="van-tabs-2"
+          >
+          </div>
+          <div
+            class="van-swipe-item van-tab__panel-wrapper van-tab__panel-wrapper--inactive"
+            style
+            id="van-tab"
+            role="tabpanel"
+            tabindex="-1"
+            aria-hidden="true"
+            aria-labelledby="van-tabs-3"
+          >
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div>
+  <!--[-->
+  <div class="van-tabs van-tabs--line">
+    <!--[-->
     <div style>
       <div
         class="van-sticky"
@@ -806,6 +819,7 @@ exports[`should render demo and match snapshot 1`] = `
 <div>
   <!--[-->
   <div class="van-tabs van-tabs--line">
+    <!--[-->
     <!--[-->
     <div class="van-tabs__wrap">
       <div

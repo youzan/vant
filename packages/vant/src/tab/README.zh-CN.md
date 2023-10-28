@@ -143,6 +143,18 @@ export default {
 
 > Tips: 如果页面顶部有其他内容，可以通过 offset-top 属性设置吸顶时与顶部的距离。
 
+### 无标题模式
+
+通过 `showTitle` 属性可以不渲染tab头部标题。
+
+```html
+<van-tabs v-model:active="active" :show-title="false">
+  <van-tab v-for="index in 4" :title="'选项 ' + index">
+    无title内容 {{ index }}
+  </van-tab>
+</van-tabs>
+```
+
 ### 收缩布局
 
 通过 `shrink` 属性可以开启收缩布局，开启后，所有的标签会向左侧收缩对齐。
