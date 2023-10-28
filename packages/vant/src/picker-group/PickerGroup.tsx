@@ -3,7 +3,6 @@ import {
   Comment,
   type InjectionKey,
   type ExtractPropTypes,
-  type VNode,
 } from 'vue';
 
 // Utils
@@ -77,15 +76,9 @@ export default defineComponent({
     const onCancel = () => emit('cancel');
 
     return () => {
-      const childNodes = slots.default?.();
-      const filterChildNodes: VNode[] = [];
-      if (childNodes) {
-        childNodes.filter((item) => {
-          if (item.type !== Comment) {
-            filterChildNodes.push(item);
-          }
-        });
-      }
+      const childNodes = slots
+        .default?.()
+        ?.filter((node) => node.type !== Comment);
 
       const confirmButtonText = showNextButton()
         ? props.nextStepText
@@ -110,7 +103,7 @@ export default defineComponent({
           >
             {props.tabs.map((title, index) => (
               <Tab title={title} titleClass={bem('tab-title')}>
-                {filterChildNodes?.[index]}
+                {childNodes?.[index]}
               </Tab>
             ))}
           </Tabs>
