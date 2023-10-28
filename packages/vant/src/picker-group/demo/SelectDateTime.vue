@@ -39,13 +39,13 @@ const onCancel = () => {
     @confirm="onConfirm"
     @cancel="onCancel"
   >
-    <!-- 日期 -->
+    <!-- Date -->
     <van-date-picker
       v-model="currentDate"
       :min-date="minDate"
       :max-date="maxDate"
     />
-    <!-- 时间 -->
+    <!-- Time -->
     <van-time-picker v-model="currentTime" />
   </van-picker-group>
 </template>
