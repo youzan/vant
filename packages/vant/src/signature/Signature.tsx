@@ -3,6 +3,7 @@ import {
   ref,
   onMounted,
   defineComponent,
+  watch,
   type ExtractPropTypes,
 } from 'vue';
 
@@ -13,6 +14,7 @@ import {
   makeStringProp,
   createNamespace,
   preventDefault,
+  windowWidth,
 } from '../utils';
 
 // Composables
@@ -172,6 +174,8 @@ export default defineComponent({
         ctx.value.putImageData(data, 0, 0);
       }
     };
+
+    watch(windowWidth, resize);
 
     onMounted(initialize);
 
