@@ -91,3 +91,8 @@ test('should allow to custom button text', async () => {
 
   expect(wrapper.find('.van-signature__footer').html()).toMatchSnapshot();
 });
+
+test('expose resize method', async () => {
+  const wrapper = mount(Signature);
+  expect(wrapper.vm.resize).toBeTypeOf('function');
+});
