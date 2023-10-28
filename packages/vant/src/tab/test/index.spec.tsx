@@ -417,11 +417,11 @@ test('should allow to call scrollTo method when scrollspy is enabled', async () 
   expect(onChange).toHaveBeenCalledWith('b', 'title2');
 });
 
-test('should not render title when showTitle is not truthy', async () => {
+test('should not render header when showHeader is false', async () => {
   const wrapper = mount({
     render() {
       return (
-        <Tabs showTitle={false}>
+        <Tabs showHeader={false}>
           <Tab title="title1">Text</Tab>
           <Tab title="title2">Text</Tab>
           <Tab title="title3">Text</Tab>
