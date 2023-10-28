@@ -215,7 +215,6 @@ exports[`should render demo and match snapshot 1`] = `
   <!--[-->
   <div class="van-tabs van-tabs--line">
     <!--[-->
-    <!--[-->
     <div class="van-tabs__wrap">
       <div
         role="tablist"

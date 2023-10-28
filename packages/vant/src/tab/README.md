@@ -134,18 +134,6 @@ In sticky mode, the tab nav will be fixed to top when scroll to top.
 </van-tabs>
 ```
 
-### ShowTitle
-
-If showTitle is falthy, title will not be rendered.
-
-```html
-<van-tabs v-model:active="active" :show-title="false">
-  <van-tab v-for="index in 4" :title="'option ' + index">
-    titleless content {{ index }}
-  </van-tab>
-</van-tabs>
-```
-
 ### Shrink
 
 In shrink mode, the tabs will be shrinked to the left.
@@ -243,6 +231,18 @@ export default {
 };
 ```
 
+> Tips: The before-change callback will not be triggered by swiping gesture.
+
+### Hide Header
+
+By setting the `showHeader` prop to `false`, the title bar of the Tabs component can be hidden. In this case, you can control the `active` prop of the Tabs using custom components.
+
+```html
+<van-tabs v-model:active="active" :show-header="false">
+  <van-tab v-for="index in 4"> content {{ index }} </van-tab>
+</van-tabs>
+```
+
 ## API
 
 ### Tabs Props
@@ -264,6 +264,7 @@ export default {
 | swipeable | Whether to enable gestures to slide left and right | _boolean_ | `false` |
 | lazy-render | Whether to enable tab content lazy render | _boolean_ | `true` |
 | scrollspy | Whether to use scrollspy mode | _boolean_ | `false` |
+| show-header `v4.7.3` | Whether to show title bar | _boolean_ | `true` |
 | offset-top | Sticky offset top , supports `px` `vw` `vh` `rem` unit, default `px` | _number \| string_ | `0` |
 | swipe-threshold | Set swipe tabs threshold | _number \| string_ | `5` |
 | title-active-color | Title active color | _string_ | - |

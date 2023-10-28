@@ -6,7 +6,6 @@ exports[`should render demo and match snapshot 1`] = `
   <!--[-->
   <div class="van-tabs van-tabs--line">
     <!--[-->
-    <!--[-->
     <div class="van-tabs__wrap">
       <div
         role="tablist"
@@ -64,7 +63,6 @@ exports[`should render demo and match snapshot 1`] = `
   <!--[-->
   <div class="van-tabs van-tabs--line">
     <!--[-->
-    <!--[-->
     <div class="van-tabs__wrap">
       <div
         role="tablist"
@@ -111,7 +109,6 @@ exports[`should render demo and match snapshot 1`] = `
 <div>
   <!--[-->
   <div class="van-tabs van-tabs--line">
-    <!--[-->
     <!--[-->
     <div class="van-tabs__wrap">
       <div
@@ -206,7 +203,6 @@ exports[`should render demo and match snapshot 1`] = `
   <!--[-->
   <div class="van-tabs van-tabs--line">
     <!--[-->
-    <!--[-->
     <div class="van-tabs__wrap">
       <div
         role="tablist"
@@ -254,7 +250,6 @@ exports[`should render demo and match snapshot 1`] = `
 <div>
   <!--[-->
   <div class="van-tabs van-tabs--card">
-    <!--[-->
     <!--[-->
     <div class="van-tabs__wrap">
       <div
@@ -304,7 +299,6 @@ exports[`should render demo and match snapshot 1`] = `
   <!--[-->
   <div class="van-tabs van-tabs--line">
     <!--[-->
-    <!--[-->
     <div class="van-tabs__wrap">
       <div
         role="tablist"
@@ -343,7 +337,6 @@ exports[`should render demo and match snapshot 1`] = `
 <div>
   <!--[-->
   <div class="van-tabs van-tabs--line">
-    <!--[-->
     <div style>
       <div
         class="van-sticky"
@@ -412,7 +405,6 @@ exports[`should render demo and match snapshot 1`] = `
   <!--[-->
   <div class="van-tabs van-tabs--line">
     <!--[-->
-    <!--[-->
     <div class="van-tabs__wrap">
       <div
         role="tablist"
@@ -469,7 +461,6 @@ exports[`should render demo and match snapshot 1`] = `
     class="van-tabs van-tabs--card"
     style="margin-top:var(--van-padding-lg);"
   >
-    <!--[-->
     <!--[-->
     <div class="van-tabs__wrap">
       <div
@@ -528,7 +519,6 @@ exports[`should render demo and match snapshot 1`] = `
   <!--[-->
   <div class="van-tabs van-tabs--line">
     <!--[-->
-    <!--[-->
     <div class="van-tabs__wrap">
       <div
         role="tablist"
@@ -568,7 +558,6 @@ exports[`should render demo and match snapshot 1`] = `
   <!--[-->
   <div class="van-tabs van-tabs--line">
     <!--[-->
-    <!--[-->
     <div class="van-tabs__wrap">
       <div
         role="tablist"
@@ -638,7 +627,6 @@ exports[`should render demo and match snapshot 1`] = `
   <!--[-->
   <div class="van-tabs van-tabs--line">
     <!--[-->
-    <!--[-->
     <div class="van-tabs__wrap">
       <div
         role="tablist"
@@ -707,7 +695,6 @@ exports[`should render demo and match snapshot 1`] = `
 <div>
   <!--[-->
   <div class="van-tabs van-tabs--line">
-    <!--[-->
     <div style>
       <div
         class="van-sticky"
@@ -819,7 +806,6 @@ exports[`should render demo and match snapshot 1`] = `
 <div>
   <!--[-->
   <div class="van-tabs van-tabs--line">
-    <!--[-->
     <!--[-->
     <div class="van-tabs__wrap">
       <div

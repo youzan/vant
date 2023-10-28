@@ -143,18 +143,6 @@ export default {
 
 > Tips: 如果页面顶部有其他内容，可以通过 offset-top 属性设置吸顶时与顶部的距离。
 
-### 无标题模式
-
-通过 `showTitle` 属性可以不渲染tab头部标题。
-
-```html
-<van-tabs v-model:active="active" :show-title="false">
-  <van-tab v-for="index in 4" :title="'选项 ' + index">
-    无title内容 {{ index }}
-  </van-tab>
-</van-tabs>
-```
-
 ### 收缩布局
 
 通过 `shrink` 属性可以开启收缩布局，开启后，所有的标签会向左侧收缩对齐。
@@ -256,6 +244,16 @@ export default {
 
 > Tips: 通过手势滑动不会触发 before-change 属性。
 
+### 隐藏标题栏
+
+通过将 `showHeader` 属性设置为 `false`，可以不渲染 Tabs 的标题栏。在这种情况下，你可以通过一些自定义组件来控制 Tabs 的 `active` 属性。
+
+```html
+<van-tabs v-model:active="active" :show-header="false">
+  <van-tab v-for="index in 4"> 内容 {{ index }} </van-tab>
+</van-tabs>
+```
+
 ## API
 
 ### Tabs Props
@@ -277,6 +275,7 @@ export default {
 | swipeable | 是否开启手势左右滑动切换 | _boolean_ | `false` |
 | lazy-render | 是否开启延迟渲染（首次切换到标签时才触发内容渲染） | _boolean_ | `true` |
 | scrollspy | 是否开启滚动导航 | _boolean_ | `false` |
+| show-header `v4.7.3` | 是否显示标题栏 | _boolean_ | `true` |
 | offset-top | 粘性布局下吸顶时与顶部的距离，支持 `px` `vw` `vh` `rem` 单位，默认 `px` | _number \| string_ | `0` |
 | swipe-threshold | 滚动阈值，标签数量超过阈值且总宽度超过标签栏宽度时开始横向滚动 | _number \| string_ | `5` |
 | title-active-color | 标题选中态颜色 | _string_ | - |
