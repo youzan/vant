@@ -3,17 +3,29 @@ import {
   ref,
   onMounted,
   defineComponent,
+  watch,
   type ExtractPropTypes,
 } from 'vue';
+
+// Utils
 import {
   inBrowser,
   makeNumberProp,
   makeStringProp,
   createNamespace,
   preventDefault,
+  windowWidth,
 } from '../utils';
+
+// Composables
 import { useRect } from '@vant/use';
+import { useExpose } from '../composables/use-expose';
+
+// Components
 import { Button } from '../button';
+
+// Types
+import type { SignatureExpose } from './types';
 
 const [name, bem, t] = createNamespace('signature');
 
@@ -143,7 +155,7 @@ export default defineComponent({
       emit('clear');
     };
 
-    onMounted(() => {
+    const initialize = () => {
       if (isRenderCanvas && canvasRef.value) {
         const canvas = canvasRef.value;
         const dpr = inBrowser ? window.devicePixelRatio : 1;
@@ -153,6 +165,22 @@ export default defineComponent({
         ctx.value?.scale(dpr, dpr);
         setCanvasBgColor(ctx.value);
       }
+    };
+
+    const resize = () => {
+      if (ctx.value) {
+        const data = ctx.value.getImageData(0, 0, canvasWidth, canvasHeight);
+        initialize();
+        ctx.value.putImageData(data, 0, 0);
+      }
+    };
+
+    watch(windowWidth, resize);
+
+    onMounted(initialize);
+
+    useExpose<SignatureExpose>({
+      resize,
     });
 
     return () => (

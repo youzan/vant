@@ -1,6 +1,6 @@
 import 'vitest-canvas-mock';
 import { Signature } from '..';
-import { mount } from '../../../test';
+import { mount, trigger } from '../../../test';
 
 test('renders a canvas element when canvas is supported', async () => {
   const wrapper = mount(Signature);
@@ -90,4 +90,21 @@ test('should allow to custom button text', async () => {
   });
 
   expect(wrapper.find('.van-signature__footer').html()).toMatchSnapshot();
+});
+
+test('expose resize method', async () => {
+  const wrapper = mount(Signature);
+  expect(wrapper.vm.resize).toBeTypeOf('function');
+  expect(wrapper.vm.resize()).toBeUndefined();
+});
+
+test('should call resize when window width changes', async () => {
+  const wrapper = mount(Signature);
+  const canvas = wrapper.find('canvas');
+  const ctx = canvas.element.getContext('2d')!;
+  const spy = vi.spyOn(ctx, 'getImageData');
+
+  Object.defineProperty(window, 'innerWidth', { value: 400 });
+  await trigger(window, 'resize');
+  expect(spy).toBeCalled();
 });
