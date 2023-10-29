@@ -19,6 +19,49 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 
 ## Details
 
+### v4.7.3
+
+`2023-10-29`
+
+#### New Features 🎉
+
+- feat(locale): add Arabic Locale by [@mo9a7i](https://github.com/mo9a7i) in [#12381](https://github.com/youzan/vant/pull/12381)
+- feat(Form): add required prop and support auto display by [@chenjiahan](https://github.com/chenjiahan) in [#12380](https://github.com/youzan/vant/pull/12380)
+- feat(auto-import-resolver): add module option by [@chenjiahan](https://github.com/chenjiahan) in [#12383](https://github.com/youzan/vant/pull/12383)
+- style: replace word-break with overflow-wrap by [@wjw-gavin](https://github.com/wjw-gavin) in [#12396](https://github.com/youzan/vant/pull/12396)
+- feat(Tab): add show-header prop by [@yoyo837](https://github.com/yoyo837) in [#12394](https://github.com/youzan/vant/pull/12394)
+- style(Search): use consistent padding when display error msg by [@chenjiahan](https://github.com/chenjiahan) in [#12409](https://github.com/youzan/vant/pull/12409)
+- feat(Signature): expose resize method by [@inottn](https://github.com/inottn) in [#12405](https://github.com/youzan/vant/pull/12405)
+
+#### Bug Fixes 🐞
+
+- fix(ConfigProvider): export missing theme vars by [@inottn](https://github.com/inottn) in [#12371](https://github.com/youzan/vant/pull/12371)
+- fix(AddressEdit): area field validate error when showArea is false by [@zhousg](https://github.com/zhousg) in [#12393](https://github.com/youzan/vant/pull/12393)
+- fix([@vant](https://github.com/vant)/area-data): add exports types by @Alkaidcc in [#12397](https://github.com/youzan/vant/pull/12397)
+- fix(Search): fix search style when has error message by [@johnsonwong666](https://github.com/johnsonwong666) in [#12385](https://github.com/youzan/vant/pull/12385)
+- fix(PickerGroup): only filter Comment vnode by [@zhousg](https://github.com/zhousg) in [#12402](https://github.com/youzan/vant/pull/12402)
+
+#### Document 📖
+
+- docs(auto-import-resolver): add doc for importStyle option by [@chenjiahan](https://github.com/chenjiahan) in [#12382](https://github.com/youzan/vant/pull/12382)
+- docs(Tab): keep docs and example the same by [@wjw-gavin](https://github.com/wjw-gavin) in [#12395](https://github.com/youzan/vant/pull/12395)
+- chore: add vscode-common-intellisense to the Community Ecosystem by [@Simon-He95](https://github.com/Simon-He95) in [#12406](https://github.com/youzan/vant/pull/12406)
+- docs(Signature): add resize method by [@chenjiahan](https://github.com/chenjiahan) in [#12411](https://github.com/youzan/vant/pull/12411)
+- docs(progress): remove outdated resize method by [@chenjiahan](https://github.com/chenjiahan) in [#12412](https://github.com/youzan/vant/pull/12412)
+
+#### Other Changes
+
+- chore(Field): required label css will active when rules contain required by [@morance](https://github.com/morance) in [#12376](https://github.com/youzan/vant/pull/12376)
+- test(ImagePreview): fix incorrect onClose test case by [@chenjiahan](https://github.com/chenjiahan) in [#12386](https://github.com/youzan/vant/pull/12386)
+- chore: forked repo, skip CI running by [@yoyo837](https://github.com/yoyo837) in [#12410](https://github.com/youzan/vant/pull/12410)
+
+#### New Contributors
+
+- [@morance](https://github.com/morance) made their first contribution in [#12376](https://github.com/youzan/vant/pull/12376)
+- [@mo9a7i](https://github.com/mo9a7i) made their first contribution in [#12381](https://github.com/youzan/vant/pull/12381)
+- [@Alkaidcc](https://github.com/Alkaidcc) made their first contribution in [#12397](https://github.com/youzan/vant/pull/12397)
+- [@johnsonwong666](https://github.com/johnsonwong666) made their first contribution in [#12385](https://github.com/youzan/vant/pull/12385)
+
 ### v4.7.2
 
 `2023-10-15`
