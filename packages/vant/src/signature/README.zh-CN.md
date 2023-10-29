@@ -99,12 +99,31 @@ export default {
 | submit | 点击确定按钮时触发 | _data: { image: string; canvas: HTMLCanvasElement }_ |
 | clear | 点击取消按钮时触发 | - |
 
+### 方法
+
+通过 ref 可以获取到 Signature 实例并调用实例方法，详见[组件实例方法](#/zh-CN/advanced-usage#zu-jian-shi-li-fang-fa)。
+
+| 方法名 | 说明 | 参数 | 返回值 |
+| --- | --- | --- | --- |
+| resize `v4.7.3` | 外层元素大小或组件显示状态变化时，可以调用此方法来触发重绘 | - | - |
+
 ### 类型定义
 
 组件导出以下类型定义：
 
-```js
-import type { SignatureProps } from 'vant';
+```ts
+import type { SignatureProps, SignatureInstance } from 'vant';
+```
+
+`SignatureInstance` 是组件实例的类型，用法如下：
+
+```ts
+import { ref } from 'vue';
+import type { SignatureInstance } from 'vant';
+
+const signatureRef = ref<SignatureInstance>();
+
+signatureRef.value?.resize();
 ```
 
 ## 主题定制
