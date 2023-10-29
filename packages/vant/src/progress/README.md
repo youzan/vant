@@ -77,17 +77,6 @@ The component exports the following type definitions:
 import type { ProgressProps, ProgressInstance } from 'vant';
 ```
 
-`ProgressInstance` is the type of component instance:
-
-```ts
-import { ref } from 'vue';
-import type { ProgressInstance } from 'vant';
-
-const progressRef = ref<ProgressInstance>();
-
-progressRef.value?.resize();
-```
-
 ## Theming
 
 ### CSS Variables
