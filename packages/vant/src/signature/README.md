@@ -111,7 +111,7 @@ Use [ref](https://vuejs.org/guide/essentials/template-refs.html) to get Signatur
 
 The component exports the following type definitions:
 
-```js
+```ts
 import type { SignatureProps, SignatureInstance } from 'vant';
 ```
 

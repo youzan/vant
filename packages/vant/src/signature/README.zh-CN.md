@@ -111,7 +111,7 @@ export default {
 
 组件导出以下类型定义：
 
-```js
+```ts
 import type { SignatureProps, SignatureInstance } from 'vant';
 ```
 
