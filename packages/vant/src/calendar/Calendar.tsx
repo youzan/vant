@@ -3,6 +3,8 @@ import {
   watch,
   computed,
   defineComponent,
+  shallowReactive,
+  type Ref,
   type PropType,
   type TeleportProps,
   type ExtractPropTypes,
@@ -176,8 +178,8 @@ export default defineComponent({
 
     const bodyRef = ref<HTMLElement>();
 
-    const subtitle = ref<{ text: string; date?: Date }>({
-      text: '',
+    const subtitle = shallowReactive<{ text: Ref<string>; date?: Date }>({
+      text: ref(''),
       date: undefined,
     });
     const currentDate = ref(getInitialDate());
@@ -271,10 +273,8 @@ export default defineComponent({
 
       /* istanbul ignore else */
       if (currentMonth) {
-        subtitle.value = {
-          text: currentMonth.getTitle(),
-          date: currentMonth.date,
-        };
+        subtitle.text = currentMonth.getTitle();
+        subtitle.date = currentMonth.date;
       }
     };
 
@@ -533,9 +533,9 @@ export default defineComponent({
       <div class={bem()}>
         <CalendarHeader
           v-slots={pick(slots, ['title', 'subtitle'])}
-          date={subtitle.value.date}
+          date={subtitle.date}
           title={props.title}
-          subtitle={subtitle.value.text}
+          subtitle={subtitle.text.value}
           showTitle={props.showTitle}
           showSubtitle={props.showSubtitle}
           firstDayOfWeek={dayOffset.value}
