@@ -143,7 +143,7 @@ app.use(CellGroup);
 | title | Title | _number \| string_ | - |
 | value | Right text | _number \| string_ | - |
 | label | Description below the title | _string_ | - |
-| size | Size, can be set to `large` | _string_ | - |
+| size | Size, can be set to `large` `normal` | _string_ | - |
 | icon | Left Icon | _string_ | - |
 | icon-prefix | Icon className prefix | _string_ | `van-icon` |
 | tag | Custom element tag | _string_ | `div` |
