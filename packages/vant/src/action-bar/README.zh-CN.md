@@ -94,7 +94,7 @@ export default {
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
 | safe-area-inset-bottom | 是否开启[底部安全区适配](#/zh-CN/advanced-usage#di-bu-an-quan-qu-gua-pei) | _boolean_ | `true` |
-| placeholder | 是否在标签位置生成一个等高的占位元素 | _boolean_ | `false` |
+| placeholder | 是否在标签位置生成一个等高的占位元素 | _string_ | `false` |
 
 ### ActionBarIcon Props
 

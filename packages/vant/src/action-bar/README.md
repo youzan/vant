@@ -90,7 +90,7 @@ Use `badge` prop to show badge in icon.
 | Attribute | Description | Type | Default |
 | --- | --- | --- | --- |
 | safe-area-inset-bottom | Whether to enable bottom safe area adaptation | _boolean_ | `true` |
-| placeholder | Whether to generate a placeholder element | _boolean_ | `false` |
+| placeholder | Whether to generate a placeholder element | _string_ | `false` |
 
 ### ActionBarIcon Props
 
