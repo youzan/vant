@@ -261,7 +261,8 @@ Use [ref](https://vuejs.org/v2/api/#ref) to get ImagePreview instance and call i
 
 | Name | Description | Attribute | Return value |
 | --- | --- | --- | --- |
-| swipeTo `2.9.0` | Swipe to target index | _index: number, options?: SwipeToOptions_ | - |
+| resetScale `4.7.4` | Reset the current image's zoom ratio | - | - |
+| swipeTo | Swipe to target index | _index: number, options?: SwipeToOptions_ | - |
 
 ### Types
 
