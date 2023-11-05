@@ -3,8 +3,6 @@ import {
   watch,
   computed,
   defineComponent,
-  shallowReactive,
-  type Ref,
   type PropType,
   type TeleportProps,
   type ExtractPropTypes,
@@ -178,8 +176,8 @@ export default defineComponent({
 
     const bodyRef = ref<HTMLElement>();
 
-    const subtitle = shallowReactive<{ text: Ref<string>; date?: Date }>({
-      text: ref(''),
+    const subtitle = ref<{ textFn: () => string; date?: Date }>({
+      textFn: () => '',
       date: undefined,
     });
     const currentDate = ref(getInitialDate());
@@ -273,8 +271,10 @@ export default defineComponent({
 
       /* istanbul ignore else */
       if (currentMonth) {
-        subtitle.text = currentMonth.getTitle();
-        subtitle.date = currentMonth.date;
+        subtitle.value = {
+          textFn: currentMonth.getTitle,
+          date: currentMonth.date,
+        };
       }
     };
 
@@ -529,24 +529,29 @@ export default defineComponent({
       </div>
     );
 
-    const renderCalendar = () => (
-      <div class={bem()}>
-        <CalendarHeader
-          v-slots={pick(slots, ['title', 'subtitle'])}
-          date={subtitle.date}
-          title={props.title}
-          subtitle={subtitle.text.value}
-          showTitle={props.showTitle}
-          showSubtitle={props.showSubtitle}
-          firstDayOfWeek={dayOffset.value}
-          onClickSubtitle={(event: MouseEvent) => emit('clickSubtitle', event)}
-        />
-        <div ref={bodyRef} class={bem('body')} onScroll={onScroll}>
-          {months.value.map(renderMonth)}
+    const renderCalendar = () => {
+      const subTitle = subtitle.value.textFn();
+      return (
+        <div class={bem()}>
+          <CalendarHeader
+            v-slots={pick(slots, ['title', 'subtitle'])}
+            date={subtitle.value.date}
+            title={props.title}
+            subtitle={subTitle}
+            showTitle={props.showTitle}
+            showSubtitle={props.showSubtitle}
+            firstDayOfWeek={dayOffset.value}
+            onClickSubtitle={(event: MouseEvent) =>
+              emit('clickSubtitle', event)
+            }
+          />
+          <div ref={bodyRef} class={bem('body')} onScroll={onScroll}>
+            {months.value.map(renderMonth)}
+          </div>
+          {renderFooter()}
         </div>
-        {renderFooter()}
-      </div>
-    );
+      );
+    };
 
     watch(() => props.show, init);
     watch(

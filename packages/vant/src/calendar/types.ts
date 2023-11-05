@@ -41,7 +41,7 @@ export type CalendarMonthInstance = ComponentPublicInstance<
   CalendarMonthProps,
   {
     showed?: boolean;
-    getTitle: () => Ref<string>;
+    getTitle: () => string;
     getHeight: () => number;
     setVisible: (value?: boolean | undefined) => void;
     scrollToDate: (body: Element, targetDate: Date) => void;

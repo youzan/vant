@@ -1,6 +1,5 @@
 import {
   ref,
-  toRef,
   computed,
   defineComponent,
   type PropType,
@@ -88,7 +87,7 @@ export default defineComponent({
 
     const shouldRender = computed(() => visible.value || !props.lazyRender);
 
-    const getTitle = () => toRef(title, 'value');
+    const getTitle = () => title.value;
 
     const getMultipleDayType = (day: Date) => {
       const isSelected = (date: Date) =>
