@@ -63,18 +63,7 @@ export type ImagePreviewItemProps = ExtractPropTypes<
 >;
 
 export default defineComponent({
-  props: {
-    src: String,
-    show: Boolean,
-    active: Number,
-    minZoom: makeRequiredProp(numericProp),
-    maxZoom: makeRequiredProp(numericProp),
-    rootWidth: makeRequiredProp(Number),
-    rootHeight: makeRequiredProp(Number),
-    disableZoom: Boolean,
-    doubleScale: Boolean,
-    closeOnClickOverlay: Boolean,
-  },
+  props: imagePreviewItemProps,
 
   emits: ['scale', 'close', 'longPress'],
 
