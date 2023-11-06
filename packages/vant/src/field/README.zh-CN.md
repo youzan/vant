@@ -346,7 +346,7 @@ export default {
 | name | 名称，作为提交表单时的标识符 | _string_ | - |
 | id | 输入框 id，同时会设置 label 的 for 属性 | _string_ | `van-field-n-input` |
 | type | 输入框类型, 支持原生 input 标签的所有 [type 属性](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/input#%3Cinput%3E_types)，额外支持了 `digit` 类型 | _FieldType_ | `text` |
-| size | 大小，可选值为 `large` | _string_ | - |
+| size | 大小，可选值为 `large` `normal` | _string_ | - |
 | maxlength | 输入的最大字符数 | _number \| string_ | - |
 | placeholder | 输入框占位提示文字 | _string_ | - |
 | border | 是否显示内边框 | _boolean_ | `true` |
