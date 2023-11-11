@@ -148,6 +148,8 @@ export default defineComponent({
     };
 
     const renderLabel = () => {
+      const { checked } = props;
+
       if (slots.default) {
         return (
           <span
@@ -156,7 +158,7 @@ export default defineComponent({
               { disabled: disabled.value },
             ])}
           >
-            {slots.default()}
+            {slots.default({ checked, disabled: disabled.value })}
           </span>
         );
       }
