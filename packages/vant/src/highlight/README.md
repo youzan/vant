@@ -105,8 +105,8 @@ export default {
 | --- | --- | --- | --- |
 | keywords | Expected highlighted text | _string \| string[]_ | - |
 | source-string | Source text | _string_ | - |
-| autoEscape | Whether to automatically escape | _boolean_ | `true` |
-| caseSensitive | Is case sensitive | _boolean_ | `false` |
+| auto-escape | Whether to automatically escape | _boolean_ | `true` |
+| case-sensitive | Is case sensitive | _boolean_ | `false` |
 | highlight-class-name | Class name of the highlight tag | _string_ | - |
 
 ### Types

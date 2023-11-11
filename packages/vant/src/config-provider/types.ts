@@ -102,6 +102,7 @@ export type ConfigProviderThemeVars = BaseThemeVars &
   import('../dropdown-item').DropdownItemThemeVars &
   import('../dropdown-menu').DropdownMenuThemeVars &
   import('../empty').EmptyThemeVars &
+  import('../highlight').HighlightThemeVars &
   import('../field').FieldThemeVars &
   import('../floating-bubble').FloatingBubbleThemeVars &
   import('../floating-panel').FloatingPanelThemeVars &

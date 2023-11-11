@@ -102,8 +102,8 @@ export default {
 | -------------------- | -------------- | -------------------- | ------- |
 | keywords             | 期望高亮的文本 | _string \| string[]_ | -       |
 | source-string        | 源文本         | _string_             | -       |
-| autoEscape           | 是否自动转义   | _boolean_            | `true`  |
-| caseSensitive        | 是否区分大小写 | _boolean_            | `false` |
+| auto-escape          | 是否自动转义   | _boolean_            | `true`  |
+| case-sensitive       | 是否区分大小写 | _boolean_            | `false` |
 | highlight-class-name | 高亮标签的类名 | _string_             | -       |
 
 ### 类型定义
