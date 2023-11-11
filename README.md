@@ -113,6 +113,7 @@ Vant 3/4 supports modern browsers and Chrome >= 51、iOS >= 10.0 (same as Vue 3)
 | [sfc-playground-vant](https://github.com/zhixiaoqiang/sfc-playground-vant) | Vant Playground |
 | [vue3-h5-template](https://github.com/yulimchen/vue3-h5-template) | Mobile project template based on Vant |
 | [vue3-vant-mobile](https://github.com/CharleeWa/vue3-vant-mobile) | Mobile project template based on Vant |
+| [vscode-common-intellisense](https://github.com/Simon-He95/vscode-common-intellisense) | A VS Code extension that provides better intellisense to Vant developers |
 
 ## Links
 

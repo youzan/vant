@@ -5,6 +5,7 @@ import {
   reactive,
   defineComponent,
   type CSSProperties,
+  type ExtractPropTypes,
 } from 'vue';
 
 // Utils
@@ -20,6 +21,7 @@ import {
 } from '../utils';
 
 // Composables
+import { useExpose } from '../composables/use-expose';
 import { useTouch } from '../composables/use-touch';
 import { raf, useEventListener, useRect } from '@vant/use';
 
@@ -43,19 +45,25 @@ const bem = createNamespace('image-preview')[1];
 
 const longImageRatio = 2.6;
 
+const imagePreviewItemProps = {
+  src: String,
+  show: Boolean,
+  active: Number,
+  minZoom: makeRequiredProp(numericProp),
+  maxZoom: makeRequiredProp(numericProp),
+  rootWidth: makeRequiredProp(Number),
+  rootHeight: makeRequiredProp(Number),
+  disableZoom: Boolean,
+  doubleScale: Boolean,
+  closeOnClickOverlay: Boolean,
+};
+
+export type ImagePreviewItemProps = ExtractPropTypes<
+  typeof imagePreviewItemProps
+>;
+
 export default defineComponent({
-  props: {
-    src: String,
-    show: Boolean,
-    active: Number,
-    minZoom: makeRequiredProp(numericProp),
-    maxZoom: makeRequiredProp(numericProp),
-    rootWidth: makeRequiredProp(Number),
-    rootHeight: makeRequiredProp(Number),
-    disableZoom: Boolean,
-    doubleScale: Boolean,
-    closeOnClickOverlay: Boolean,
-  },
+  props: imagePreviewItemProps,
 
   emits: ['scale', 'close', 'longPress'],
 
@@ -374,6 +382,8 @@ export default defineComponent({
     useEventListener('touchmove', onTouchMove, {
       target: computed(() => swipeItem.value?.$el),
     });
+
+    useExpose({ resetScale });
 
     return () => {
       const imageSlots = {

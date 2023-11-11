@@ -19,6 +19,49 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 
 ## 更新内容
 
+### v4.7.3
+
+`2023-10-29`
+
+#### 新功能 🎉
+
+- feat(locale): 添加阿拉伯语本地化支持 by [@mo9a7i](https://github.com/mo9a7i) in [#12381](https://github.com/youzan/vant/pull/12381)
+- feat(Form): 添加 required 属性并支持自动显示 by [@chenjiahan](https://github.com/chenjiahan) in [#12380](https://github.com/youzan/vant/pull/12380)
+- feat(auto-import-resolver): 添加模块选项 by [@chenjiahan](https://github.com/chenjiahan) in [#12383](https://github.com/youzan/vant/pull/12383)
+- style: 使用 overflow-wrap 替换 word-break by [@wjw-gavin](https://github.com/wjw-gavin) in [#12396](https://github.com/youzan/vant/pull/12396)
+- feat(Tab): 添加 show-header 属性 by [@yoyo837](https://github.com/yoyo837) in [#12394](https://github.com/youzan/vant/pull/12394)
+- style(Search): 在显示错误消息时使用一致的内边距 by [@chenjiahan](https://github.com/chenjiahan) in [#12409](https://github.com/youzan/vant/pull/12409)
+- feat(Signature): 公开 resize 方法 by [@inottn](https://github.com/inottn) in [#12405](https://github.com/youzan/vant/pull/12405)
+
+#### Bug 修复 🐞
+
+- fix(ConfigProvider): 导出丢失的主题变量 by [@inottn](https://github.com/inottn) in [#12371](https://github.com/youzan/vant/pull/12371)
+- fix(AddressEdit): 当 showArea 为 false 时区域字段验证错误 by [@zhousg](https://github.com/zhousg) in [#12393](https://github.com/youzan/vant/pull/12393)
+- fix([@vant](https://github.com/vant)/area-data): 添加导出类型 by @Alkaidcc in [#12397](https://github.com/youzan/vant/pull/12397)
+- fix(Search): 修复显示错误消息时的搜索样式问题 by [@johnsonwong666](https://github.com/johnsonwong666) in [#12385](https://github.com/youzan/vant/pull/12385)
+- fix(PickerGroup): 仅过滤 Comment vnode by [@zhousg](https://github.com/zhousg) in [#12402](https://github.com/youzan/vant/pull/12402)
+
+#### 文档 📖
+
+- docs(auto-import-resolver): 添加 importStyle 选项的文档 by [@chenjiahan](https://github.com/chenjiahan) in [#12382](https://github.com/youzan/vant/pull/12382)
+- docs(Tab): 保持文档和示例的一致性 by [@wjw-gavin](https://github.com/wjw-gavin) in [#12395](https://github.com/youzan/vant/pull/12395)
+- chore: 将 vscode-common-intellisense 添加到社区生态系统中 by [@Simon-He95](https://github.com/Simon-He95) in [#12406](https://github.com/youzan/vant/pull/12406)
+- docs(Signature): 添加 resize 方法 by [@chenjiahan](https://github.com/chenjiahan) in [#12411](https://github.com/youzan/vant/pull/12411)
+- docs(progress): 移除过时的 resize 方法 by [@chenjiahan](https://github.com/chenjiahan) in [#12412](https://github.com/youzan/vant/pull/12412)
+
+#### 其他变更
+
+- chore(Field): 当 rules 包含 required 时，必填标签的 CSS 将生效 by [@morance](https://github.com/morance) in [#12376](https://github.com/youzan/vant/pull/12376)
+- test(ImagePreview): 修复不正确的 onClose 测试用例 by [@chenjiahan](https://github.com/chenjiahan) in [#12386](https://github.com/youzan/vant/pull/12386)
+- chore: forked 仓库，跳过 CI 运行 by [@yoyo837](https://github.com/yoyo837) in [#12410](https://github.com/youzan/vant/pull/12410)
+
+#### 新贡献者
+
+- [@morance](https://github.com/morance) 在 [#12376](https://github.com/youzan/vant/pull/12376) 中进行了首次贡献
+- [@mo9a7i](https://github.com/mo9a7i) 在 [#12381](https://github.com/youzan/vant/pull/12381) 中进行了首次贡献
+- [@Alkaidcc](https://github.com/Alkaidcc) 在 [#12397](https://github.com/youzan/vant/pull/12397) 中进行了首次贡献
+- [@johnsonwong666](https://github.com/johnsonwong666) 在 [#12385](https://github.com/youzan/vant/pull/12385) 中进行了首次贡献
+
 ### v4.7.2
 
 `2023-10-15`

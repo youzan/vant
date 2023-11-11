@@ -74,6 +74,7 @@ export const tabsProps = {
   offsetTop: makeNumericProp(0),
   background: String,
   lazyRender: truthProp,
+  showHeader: truthProp,
   lineWidth: numericProp,
   lineHeight: numericProp,
   beforeChange: Function as PropType<Interceptor>,
@@ -479,17 +480,19 @@ export default defineComponent({
 
     return () => (
       <div ref={root} class={bem([props.type])}>
-        {props.sticky ? (
-          <Sticky
-            container={root.value}
-            offsetTop={offsetTopPx.value}
-            onScroll={onStickyScroll}
-          >
-            {renderHeader()}
-          </Sticky>
-        ) : (
-          renderHeader()
-        )}
+        {props.showHeader ? (
+          props.sticky ? (
+            <Sticky
+              container={root.value}
+              offsetTop={offsetTopPx.value}
+              onScroll={onStickyScroll}
+            >
+              {renderHeader()}
+            </Sticky>
+          ) : (
+            renderHeader()
+          )
+        ) : null}
         <TabsContent
           ref={contentRef}
           count={children.length}

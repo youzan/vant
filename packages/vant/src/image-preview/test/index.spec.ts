@@ -8,6 +8,7 @@ import {
 import { LONG_PRESS_START_TIME } from '../../utils';
 import ImagePreview from '../ImagePreview';
 import { images, triggerZoom } from './shared';
+import type { ImagePreviewInstance } from '../types';
 
 test('should swipe to current index after calling the swipeTo method', async () => {
   const wrapper = mount(ImagePreview, {
@@ -364,4 +365,24 @@ test('should emit long-press event after long press', async () => {
   expect(onLongPress).toHaveBeenLastCalledWith({
     index: 0,
   });
+});
+
+test('should reset scale after calling the resetScale method', async () => {
+  const wrapper = mount(ImagePreview, {
+    props: {
+      show: true,
+      images,
+    },
+  });
+
+  await later();
+  const image = wrapper.find('.van-image');
+
+  triggerZoom(image, 300, 300);
+  await later();
+  expect(image.style.transform).toBeTruthy();
+
+  (wrapper.vm as ImagePreviewInstance).resetScale();
+  await later();
+  expect(image.style.transform).toBeFalsy();
 });

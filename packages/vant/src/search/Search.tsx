@@ -125,7 +125,7 @@ export default defineComponent({
           v-slots={pick(slots, ['left-icon', 'right-icon'])}
           ref={fieldRef}
           type="search"
-          class={bem('field')}
+          class={bem('field', { 'with-message': fieldAttrs.errorMessage })}
           border={false}
           onBlur={onBlur}
           onFocus={onFocus}

@@ -1,4 +1,9 @@
-import { defineComponent, type InjectionKey, type ExtractPropTypes } from 'vue';
+import {
+  defineComponent,
+  Comment,
+  type InjectionKey,
+  type ExtractPropTypes,
+} from 'vue';
 
 // Utils
 import {
@@ -71,7 +76,10 @@ export default defineComponent({
     const onCancel = () => emit('cancel');
 
     return () => {
-      const childNodes = slots.default?.();
+      const childNodes = slots
+        .default?.()
+        ?.filter((node) => node.type !== Comment);
+
       const confirmButtonText = showNextButton()
         ? props.nextStepText
         : props.confirmButtonText;
