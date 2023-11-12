@@ -55,7 +55,6 @@ test('should render vertical gap when gutter is an array and provide the second 
   expect(wrapper.find('.van-row').style.rowGap).toEqual('16px');
 });
 
-// 垂直间距设置为负数的时候，不应该设置 rowGap
 test('should not render vertical gap when gutter is an array and provide the second parameter as negative number', () => {
   const wrapper = mount({
     render: () => (
