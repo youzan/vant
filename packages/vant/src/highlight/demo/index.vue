@@ -42,11 +42,15 @@ const t = useTranslate({
 </template>
 
 <style lang="less">
-.van-highlight {
-  padding: 0 16px;
-}
+.demo-highlight {
+  background: var(--van-background-2);
 
-.custom-class {
-  color: red;
+  .van-highlight {
+    padding: 0 16px;
+  }
+
+  .custom-class {
+    color: red;
+  }
 }
 </style>
