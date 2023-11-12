@@ -31,13 +31,15 @@ export default defineComponent({
         return;
       }
 
-      const { spaces } = parent;
+      const { spaces, verticalSpaces } = parent;
 
       if (spaces && spaces.value && spaces.value[index.value]) {
         const { left, right } = spaces.value[index.value];
+        const { bottom } = verticalSpaces.value[index.value] || {};
         return {
           paddingLeft: left ? `${left}px` : null,
           paddingRight: right ? `${right}px` : null,
+          marginBottom: bottom ? `${bottom}px` : null,
         };
       }
     });

@@ -82,52 +82,37 @@ exports[`should render demo and match snapshot 1`] = `
       span: 8
     </div>
   </div>
-  <div
-    class="van-row"
-    style="row-gap:20px;"
-  >
-    <!--[-->
-    <div
-      style
-      class="van-col van-col--8"
-    >
+  <div class="demo-vertical-space">
+    <div class="van-row">
       <!--[-->
-      span: 8
-    </div>
-    <div
-      style
-      class="van-col van-col--8"
-    >
-      <!--[-->
-      span: 8
-    </div>
-    <div
-      style
-      class="van-col van-col--8"
-    >
-      <!--[-->
-      span: 8
-    </div>
-    <div
-      style
-      class="van-col van-col--8"
-    >
-      <!--[-->
-      span: 8
-    </div>
-    <div
-      style
-      class="van-col van-col--8"
-    >
-      <!--[-->
-      span: 8
-    </div>
-    <div
-      style
-      class="van-col van-col--8"
-    >
-      <!--[-->
-      span: 8
+      <div
+        style
+        class="van-col van-col--12"
+      >
+        <!--[-->
+        span: 12
+      </div>
+      <div
+        style
+        class="van-col van-col--12"
+      >
+        <!--[-->
+        span: 12
+      </div>
+      <div
+        style
+        class="van-col van-col--12"
+      >
+        <!--[-->
+        span: 12
+      </div>
+      <div
+        style
+        class="van-col van-col--12"
+      >
+        <!--[-->
+        span: 12
+      </div>
     </div>
   </div>
 </div>

@@ -40,14 +40,14 @@ const t = useTranslate({
       <van-col span="8">span: 8</van-col>
     </van-row>
 
-    <van-row :gutter="[20, 20]">
-      <van-col span="8">span: 8</van-col>
-      <van-col span="8">span: 8</van-col>
-      <van-col span="8">span: 8</van-col>
-      <van-col span="8">span: 8</van-col>
-      <van-col span="8">span: 8</van-col>
-      <van-col span="8">span: 8</van-col>
-    </van-row>
+    <div class="demo-vertical-space">
+      <van-row :gutter="[20, 20]">
+        <van-col span="12">span: 12</van-col>
+        <van-col span="12">span: 12</van-col>
+        <van-col span="12">span: 12</van-col>
+        <van-col span="12">span: 12</van-col>
+      </van-row>
+    </div>
   </demo-block>
 
   <demo-block :title="t('justify')">
@@ -87,12 +87,6 @@ const t = useTranslate({
     padding-left: 0;
   }
 
-  .van-row[style='row-gap: 20px;'] {
-    .van-col {
-      margin-bottom: 0;
-    }
-  }
-
   .van-col {
     margin-bottom: 10px;
     color: var(--van-white);
@@ -108,6 +102,12 @@ const t = useTranslate({
     &:nth-child(even) {
       background-color: #66c6f2;
     }
+  }
+}
+
+.demo-vertical-space {
+  .van-col {
+    margin-bottom: 0;
   }
 }
 </style>

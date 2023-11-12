@@ -12,9 +12,11 @@ import { useChildren } from '@vant/use';
 const [name, bem] = createNamespace('row');
 
 export type RowSpaces = { left?: number; right: number }[];
+export type VerticalSpaces = { bottom?: number }[];
 
 export type RowProvide = {
   spaces: ComputedRef<RowSpaces>;
+  verticalSpaces: ComputedRef<VerticalSpaces>;
 };
 
 export const ROW_KEY: InjectionKey<RowProvide> = Symbol(name);
@@ -99,21 +101,29 @@ export default defineComponent({
       return spaces;
     });
 
-    const rowGap = computed(() => {
+    const verticalSpaces = computed(() => {
       const { gutter } = props;
+      const spaces: VerticalSpaces = [];
       if (Array.isArray(gutter) && gutter.length > 1) {
-        const rowGutter = Number(gutter[1]);
-        if (rowGutter > 0) {
-          return `${rowGutter}px`;
+        const bottom = Number(gutter[1]) || 0;
+        if (bottom <= 0) {
+          return spaces;
         }
+        groups.value.forEach((group, index) => {
+          group.forEach(() => {
+            if (index !== groups.value.length - 1) {
+              spaces.push({ bottom: bottom });
+            }
+          });
+        });
       }
+      return spaces;
     });
 
-    linkChildren({ spaces });
+    linkChildren({ spaces, verticalSpaces });
 
     return () => {
       const { tag, wrap, align, justify } = props;
-      const tagProps = rowGap.value ? { style: { rowGap: rowGap.value } } : {};
       return (
         <tag
           class={bem({
@@ -121,7 +131,6 @@ export default defineComponent({
             [`justify-${justify}`]: justify,
             nowrap: !wrap,
           })}
-          {...tagProps}
         >
           {slots.default?.()}
         </tag>

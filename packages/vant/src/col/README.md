@@ -55,13 +55,11 @@ If you want to set the vertical spacing, you can set `[horizontal,vertical]` as 
 </van-row>
 
 <!-- set the vertical spacing -->
-<van-row :gutter="[20,20]">
-  <van-col span="8">span: 8</van-col>
-  <van-col span="8">span: 8</van-col>
-  <van-col span="8">span: 8</van-col>
-  <van-col span="8">span: 8</van-col>
-  <van-col span="8">span: 8</van-col>
-  <van-col span="8">span: 8</van-col>
+<van-row :gutter="[20, 20]">
+  <van-col span="12">span: 12</van-col>
+  <van-col span="12">span: 12</van-col>
+  <van-col span="12">span: 12</van-col>
+  <van-col span="12">span: 12</van-col>
 </van-row>
 ```
 
