@@ -317,7 +317,7 @@ Use `label-align` prop to align the input value, can be set to `center`, `right`
 | name | As the identifier when submitting the form | _string_ | - |
 | id | Input id, the for attribute of the label also will be set | _string_ | `van-field-n-input` |
 | type | Input type, support all [native types](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#input_types) and `digit` type | _FieldType_ | `text` |
-| size | Size, can be set to `large` | _string_ | - |
+| size | Size, can be set to `large` `normal` | _string_ | - |
 | maxlength | Max length of value | _number \| string_ | - |
 | placeholder | Input placeholder | _string_ | - |
 | border | Whether to show inner border | _boolean_ | `true` |

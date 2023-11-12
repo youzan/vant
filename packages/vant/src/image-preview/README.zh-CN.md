@@ -268,7 +268,8 @@ Vant 中导出了以下 ImagePreview 相关的辅助函数：
 
 | 方法名 | 说明 | 参数 | 返回值 |
 | --- | --- | --- | --- |
-| swipeTo `2.9.0` | 切换到指定位置 | _index: number, options?: SwipeToOptions_ | - |
+| resetScale `4.7.4` | 重置当前图片的缩放比 | - | - |
+| swipeTo | 切换到指定位置 | _index: number, options?: SwipeToOptions_ | - |
 
 ### 类型定义
 
