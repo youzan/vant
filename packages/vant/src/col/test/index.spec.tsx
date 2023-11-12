@@ -41,3 +41,30 @@ test('should render gutter correctly', () => {
 
   expect(wrapper.html()).toMatchSnapshot();
 });
+
+test('should render vertical gap when gutter is an array and provide the second parameter', () => {
+  const wrapper = mount({
+    render: () => (
+      <Row gutter={[16, 16]}>
+        <Col span="12">12</Col>
+        <Col span="12">12</Col>
+      </Row>
+    ),
+  });
+
+  expect(wrapper.find('.van-row').style.rowGap).toEqual('16px');
+});
+
+// 垂直间距设置为负数的时候，不应该设置 rowGap
+test('should not render vertical gap when gutter is an array and provide the second parameter as negative number', () => {
+  const wrapper = mount({
+    render: () => (
+      <Row gutter={[16, -16]}>
+        <Col span="12">12</Col>
+        <Col span="12">12</Col>
+      </Row>
+    ),
+  });
+
+  expect(wrapper.find('.van-row').style.rowGap).toBeFalsy();
+});

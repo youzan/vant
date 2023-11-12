@@ -39,6 +39,15 @@ const t = useTranslate({
       <van-col span="8">span: 8</van-col>
       <van-col span="8">span: 8</van-col>
     </van-row>
+
+    <van-row :gutter="[20, 20]">
+      <van-col span="8">span: 8</van-col>
+      <van-col span="8">span: 8</van-col>
+      <van-col span="8">span: 8</van-col>
+      <van-col span="8">span: 8</van-col>
+      <van-col span="8">span: 8</van-col>
+      <van-col span="8">span: 8</van-col>
+    </van-row>
   </demo-block>
 
   <demo-block :title="t('justify')">
@@ -76,6 +85,12 @@ const t = useTranslate({
 
   .van-doc-demo-block__title {
     padding-left: 0;
+  }
+
+  .van-row[style='row-gap: 20px;'] {
+    .van-col {
+      margin-bottom: 0;
+    }
   }
 
   .van-col {

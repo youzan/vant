@@ -45,8 +45,20 @@ Layout are based on 24-column. The attribute `span` in `Col` means the number of
 
 Set grid spacing using `gutter` attribute. The default value is 0.
 
+If you want to set the vertical spacing, you can set `[horizontal,vertical]` as an array.
+
 ```html
 <van-row gutter="20">
+  <van-col span="8">span: 8</van-col>
+  <van-col span="8">span: 8</van-col>
+  <van-col span="8">span: 8</van-col>
+</van-row>
+
+<!-- set the vertical spacing -->
+<van-row :gutter="[20,20]">
+  <van-col span="8">span: 8</van-col>
+  <van-col span="8">span: 8</van-col>
+  <van-col span="8">span: 8</van-col>
   <van-col span="8">span: 8</van-col>
   <van-col span="8">span: 8</van-col>
   <van-col span="8">span: 8</van-col>
@@ -87,7 +99,7 @@ Set grid spacing using `gutter` attribute. The default value is 0.
 
 | Attribute | Description | Type | Default |
 | --- | --- | --- | --- |
-| gutter | Grid spacing（px） | _number \| string_ | - |
+| gutter | Grid spacing（px） | _number \| \_string_ \| Array\_ | - |
 | tag | Custom element tag | _string_ | `div` |
 | justify | Flex main axis, can be set to end/center/space-around/space-between | _string_ | `start` |
 | align | Flex cross axis, be set to center/bottom | _string_ | `top` |
