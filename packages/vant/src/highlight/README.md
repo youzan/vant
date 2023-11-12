@@ -2,7 +2,7 @@
 
 ### Intro
 
-Highlight the specified text content.
+Highlight the specified text content. Please upgrade `vant` to >= v4.8.0 before using this component.
 
 ### Install
 
