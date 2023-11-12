@@ -99,7 +99,7 @@ If you want to set the vertical spacing, you can set `[horizontal,vertical]` as 
 
 | Attribute | Description | Type | Default |
 | --- | --- | --- | --- |
-| gutter | Grid spacing（px） | _number \| \_string_ \| Array\_ | - |
+| gutter | Grid spacing（px） | _number \| string \| Array_ | - |
 | tag | Custom element tag | _string_ | `div` |
 | justify | Flex main axis, can be set to end/center/space-around/space-between | _string_ | `start` |
 | align | Flex cross axis, be set to center/bottom | _string_ | `top` |

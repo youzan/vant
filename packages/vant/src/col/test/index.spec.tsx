@@ -42,7 +42,7 @@ test('should render gutter correctly', () => {
   expect(wrapper.html()).toMatchSnapshot();
 });
 
-test('should render vertical gap when gutter is an array and provide the second parameter', () => {
+test('should render vertical space when gutter is an array and provide the second parameter', () => {
   const wrapper = mount({
     render: () => (
       <Row gutter={[16, 16]}>
@@ -55,7 +55,7 @@ test('should render vertical gap when gutter is an array and provide the second 
   expect(wrapper.find('.van-row').style.rowGap).toEqual('16px');
 });
 
-test('should not render vertical gap when gutter is an array and provide the second parameter as negative number', () => {
+test('should not render vertical space when gutter is an array and provide the second parameter as negative number', () => {
   const wrapper = mount({
     render: () => (
       <Row gutter={[16, -16]}>
@@ -66,4 +66,19 @@ test('should not render vertical gap when gutter is an array and provide the sec
   });
 
   expect(wrapper.find('.van-row').style.rowGap).toBeFalsy();
+});
+
+test('should not render space when gutter is an empty array', () => {
+  const wrapper = mount({
+    render: () => (
+      <Row gutter={[]}>
+        <Col span="12">12</Col>
+        <Col span="12">12</Col>
+      </Row>
+    ),
+  });
+
+  const colList = wrapper.findAll('.van-col');
+  expect(colList[0].style.paddingRight).toBeFalsy();
+  expect(colList[1].style.paddingLeft).toBeFalsy();
 });

@@ -104,7 +104,7 @@ Layout 组件提供了 `24列栅格`，通过在 `Col` 上添加 `span` 属性�
 
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
-| gutter | 列元素之间的间距（单位为 px） | _number \| \_string_ \| Array\_ | - |
+| gutter | 列元素之间的间距（单位为 px） | _number \| string \| Array_ | - |
 | tag | 自定义元素标签 | _string_ | `div` |
 | justify | 主轴对齐方式，可选值为 `end` `center` <br> `space-around` `space-between` | _string_ | `start` |
 | align | 交叉轴对齐方式，可选值为 `center` `bottom` | _string_ | `top` |
