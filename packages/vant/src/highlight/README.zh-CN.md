@@ -64,13 +64,13 @@ export default {
 
 ### 设置高亮标签类名
 
-通过 `highlight-class-name` 可以设置高亮标签的类名，以便自定义样式。
+通过 `highlight-class` 可以设置高亮标签的类名，以便自定义样式。
 
 ```html
 <van-highlight
   :keywords="keywords"
   :source-string="text"
-  highlight-class-name="custom-class"
+  highlight-class="custom-class"
 />
 ```
 
@@ -98,13 +98,17 @@ export default {
 
 ### Props
 
-| 参数                 | 说明           | 类型                 | 默认值  |
-| -------------------- | -------------- | -------------------- | ------- |
-| keywords             | 期望高亮的文本 | _string \| string[]_ | -       |
-| source-string        | 源文本         | _string_             | -       |
-| auto-escape          | 是否自动转义   | _boolean_            | `true`  |
-| case-sensitive       | 是否区分大小写 | _boolean_            | `false` |
-| highlight-class-name | 高亮标签的类名 | _string_             | -       |
+| 参数 | 说明 | 类型 | 默认值 |
+| --- | --- | --- | --- |
+| auto-escape | 是否自动转义 | _boolean_ | `true` |
+| case-sensitive | 是否区分大小写 | _boolean_ | `false` |
+| highlight-class | 高亮元素的类名 | _string_ | - |
+| highlight-tag | 高亮元素对应的 HTML 标签名 | _string_ | `span` |
+| keywords | 期望高亮的文本 | _string \| string[]_ | - |
+| source-string | 源文本 | _string_ | - |
+| tag | 根节点对应的 HTML 标签名 | _string_ | `div` |
+| unhighlight-class | 非高亮元素的类名 | _string_ | - |
+| unhighlight-tag | 非高亮元素对应的 HTML 标签名 | _string_ | `span` |
 
 ### 类型定义
 

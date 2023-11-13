@@ -58,7 +58,7 @@ test('should set custom class of the highlight tag', () => {
       keywords: 'time',
       sourceString:
         'Take your time and be patient. Life itself will eventually answer all those questions it once raised for you.',
-      highlightClassName: 'my-custom-class',
+      highlightClass: 'my-custom-class',
     },
   });
 
@@ -66,4 +66,32 @@ test('should set custom class of the highlight tag', () => {
   const tag = highlight.find('.van-highlight__tag');
 
   expect(tag.classes()).toContain('my-custom-class');
+});
+
+test('should be merged when the highlighted content overlaps', () => {
+  const wrapper = mount(Highlight, {
+    props: {
+      keywords: ['ab', 'bc'],
+      sourceString: 'abcd',
+    },
+  });
+
+  const highlight = wrapper.find('.van-highlight');
+  const tags = highlight.findAll('.van-highlight__tag');
+
+  expect(tags[0].text()).toEqual('abc');
+});
+
+test('empty text should not be matched', () => {
+  const wrapper = mount(Highlight, {
+    props: {
+      keywords: ['', 'bc'],
+      sourceString: 'abcd',
+    },
+  });
+
+  const highlight = wrapper.find('.van-highlight');
+  const tags = highlight.findAll('.van-highlight__tag');
+
+  expect(tags[0].text()).toEqual('bc');
 });
