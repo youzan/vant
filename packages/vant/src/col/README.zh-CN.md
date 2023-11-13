@@ -44,15 +44,19 @@ Layout 组件提供了 `24列栅格`，通过在 `Col` 上添加 `span` 属性�
 
 通过 `gutter` 属性可以设置列元素之间的间距，默认间距为 0。
 
-如果需要设置垂直间距，可以使用数组形式设置 `[水平间距,垂直间距]`。
-
 ```html
 <van-row gutter="20">
   <van-col span="8">span: 8</van-col>
   <van-col span="8">span: 8</van-col>
   <van-col span="8">span: 8</van-col>
 </van-row>
+```
 
+### 垂直间距
+
+如果需要设置垂直间距，可以使用数组形式设置 `[水平间距, 垂直间距]`。
+
+```html
 <!-- 设置垂直间距 -->
 <van-row :gutter="[20, 20]">
   <van-col span="12">span: 12</van-col>

@@ -112,7 +112,7 @@ export default defineComponent({
         groups.value.forEach((group, index) => {
           group.forEach(() => {
             if (index !== groups.value.length - 1) {
-              spaces.push({ bottom: bottom });
+              spaces.push({ bottom });
             }
           });
         });

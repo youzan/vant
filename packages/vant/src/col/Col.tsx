@@ -4,6 +4,7 @@ import {
   createNamespace,
   makeNumericProp,
   makeStringProp,
+  extend,
 } from '../utils';
 import { useParent } from '@vant/use';
 import { ROW_KEY } from '../row/Row';
@@ -32,16 +33,21 @@ export default defineComponent({
       }
 
       const { spaces, verticalSpaces } = parent;
-
+      let styles = {};
       if (spaces && spaces.value && spaces.value[index.value]) {
         const { left, right } = spaces.value[index.value];
-        const { bottom } = verticalSpaces.value[index.value] || {};
-        return {
+
+        styles = {
           paddingLeft: left ? `${left}px` : null,
           paddingRight: right ? `${right}px` : null,
-          marginBottom: bottom ? `${bottom}px` : null,
         };
       }
+
+      const { bottom } = verticalSpaces.value[index.value] || {};
+      extend(styles, {
+        marginBottom: bottom ? `${bottom}px` : null,
+      });
+      return styles;
     });
 
     return () => {

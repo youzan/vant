@@ -46,7 +46,7 @@ test('should render gutter correctly', () => {
 test('should render vertical space when gutter is an array and provide the second parameter', async () => {
   const wrapper = mount({
     render: () => (
-      <Row gutter={[20, 20]}>
+      <Row gutter={[0, 20]}>
         <Col span="12">12</Col>
         <Col span="12">12</Col>
         <Col span="12">12</Col>
@@ -97,5 +97,21 @@ test('should not render space when gutter is an empty array', async () => {
   const field = wrapper.findAll('.van-col')[0];
   await nextTick();
   expect(field.style.paddingRight).toBeFalsy();
+  expect(field.style.marginBottom).toBeFalsy();
+});
+
+test('should not render vertical space when gutter is an array and provide the second parameter as NaN', async () => {
+  const wrapper = mount({
+    render: () => (
+      <Row gutter={[0, 'invalid']}>
+        <Col span="12">12</Col>
+        <Col span="12">12</Col>
+        <Col span="12">12</Col>
+        <Col span="12">12</Col>
+      </Row>
+    ),
+  });
+  const field = wrapper.findAll('.van-col')[0];
+  await nextTick();
   expect(field.style.marginBottom).toBeFalsy();
 });

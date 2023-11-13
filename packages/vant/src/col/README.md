@@ -45,15 +45,19 @@ Layout are based on 24-column. The attribute `span` in `Col` means the number of
 
 Set grid spacing using `gutter` attribute. The default value is 0.
 
-If you want to set the vertical spacing, you can set `[horizontal,vertical]` as an array.
-
 ```html
 <van-row gutter="20">
   <van-col span="8">span: 8</van-col>
   <van-col span="8">span: 8</van-col>
   <van-col span="8">span: 8</van-col>
 </van-row>
+```
 
+### Vertical Spacing
+
+If you want to set the vertical spacing, you can set `[horizontal, vertical]` as an array.
+
+```html
 <!-- set the vertical spacing -->
 <van-row :gutter="[20, 20]">
   <van-col span="12">span: 12</van-col>
