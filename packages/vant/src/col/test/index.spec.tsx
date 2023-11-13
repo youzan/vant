@@ -100,7 +100,7 @@ test('should not render space when gutter is an empty array', async () => {
   expect(field.style.marginBottom).toBeFalsy();
 });
 
-test('should not render vertical space when gutter is an array and provide the second parameter as NaN', async () => {
+test('should not render vertical space when gutter is an array and provide the second parameter as invalid number', async () => {
   const wrapper = mount({
     render: () => (
       <Row gutter={[0, 'invalid']}>
@@ -111,6 +111,7 @@ test('should not render vertical space when gutter is an array and provide the s
       </Row>
     ),
   });
+
   const field = wrapper.findAll('.van-col')[0];
   await nextTick();
   expect(field.style.marginBottom).toBeFalsy();

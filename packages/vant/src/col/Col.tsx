@@ -36,7 +36,6 @@ export default defineComponent({
       let styles = {};
       if (spaces && spaces.value && spaces.value[index.value]) {
         const { left, right } = spaces.value[index.value];
-
         styles = {
           paddingLeft: left ? `${left}px` : null,
           paddingRight: right ? `${right}px` : null,
