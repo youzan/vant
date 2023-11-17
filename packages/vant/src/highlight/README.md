@@ -66,13 +66,13 @@ export default {
 
 ### Custom Class
 
-Set the `highlight-class-name` of the highlighted tag to customize the style.
+Set the `highlight-class` of the highlighted tag to customize the style.
 
 ```html
 <van-highlight
   :keywords="keywords"
   :source-string="text"
-  highlight-class-name="custom-class"
+  highlight-class="custom-class"
 />
 ```
 
@@ -103,11 +103,15 @@ export default {
 
 | Attribute | Description | Type | Default |
 | --- | --- | --- | --- |
-| keywords | Expected highlighted text | _string \| string[]_ | - |
-| source-string | Source text | _string_ | - |
 | auto-escape | Whether to automatically escape | _boolean_ | `true` |
 | case-sensitive | Is case sensitive | _boolean_ | `false` |
-| highlight-class-name | Class name of the highlight tag | _string_ | - |
+| highlight-class | Class name of the highlight element | _string_ | - |
+| highlight-tag | HTML Tag of highlighted element | _string_ | `span` |
+| keywords | Expected highlighted text | _string \| string[]_ | - |
+| source-string | Source text | _string_ | - |
+| tag | HTML Tag of root element | _string_ | `div` |
+| unhighlight-class | Class name of the unhighlight element | _string_ | - |
+| unhighlight-tag | HTML Tag of unhighlighted element | _string_ | `span` |
 
 ### Types
 

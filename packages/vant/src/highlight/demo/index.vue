@@ -9,7 +9,7 @@ const t = useTranslate({
     keywords2: ['难题', '终有一天', '答案'],
     keywords3: '生活',
     multipleKeywords: '多字符匹配',
-    highlightClassName: '设置高亮标签类名',
+    highlightClass: '设置高亮标签类名',
   },
   'en-US': {
     text1:
@@ -18,7 +18,7 @@ const t = useTranslate({
     keywords2: ['time', 'life', 'answer'],
     keywords3: 'life',
     multipleKeywords: 'Multiple Keywords',
-    highlightClassName: 'Highlight Class Name',
+    highlightClass: 'Highlight Class Name',
   },
 });
 </script>
@@ -32,11 +32,11 @@ const t = useTranslate({
     <van-highlight :keywords="t('keywords2')" :source-string="t('text1')" />
   </demo-block>
 
-  <demo-block :title="t('highlightClassName')">
+  <demo-block :title="t('highlightClass')">
     <van-highlight
       :keywords="t('keywords3')"
       :source-string="t('text1')"
-      highlight-class-name="custom-class"
+      highlight-class="custom-class"
     />
   </demo-block>
 </template>
