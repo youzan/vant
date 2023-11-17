@@ -43,10 +43,10 @@ export default defineComponent({
       }
 
       const { bottom } = verticalSpaces.value[index.value] || {};
-      extend(styles, {
+
+      return extend(styles, {
         marginBottom: bottom ? `${bottom}px` : null,
       });
-      return styles;
     });
 
     return () => {
