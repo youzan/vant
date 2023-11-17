@@ -110,10 +110,9 @@ export default defineComponent({
           return spaces;
         }
         groups.value.forEach((group, index) => {
+          if (index === groups.value.length - 1) return;
           group.forEach(() => {
-            if (index !== groups.value.length - 1) {
-              spaces.push({ bottom });
-            }
+            spaces.push({ bottom });
           });
         });
       }
