@@ -29,10 +29,11 @@ bun add vant
 
 ### Using in a New Project
 
-If you need to create a new project, we recommend using [Vite](https://vitejs.dev/) or [Nuxt framework](https://nuxtjs.org/).
+If you need to create a new project, we recommend using [Rsbuild](https://github.com/web-infra-dev/rsbuild), [Vite](https://vitejs.dev/) or [Nuxt framework](https://nuxtjs.org/).
 
 Here are the example projects provided by Vant official. You can clone these projects and copy the code.
 
+- [vant-demo - rsbuild](https://github.com/vant-ui/vant-demo/tree/master/vant/rsbuild): Build an application using Vue 3, Vant 4, and Rsbuild.
 - [vant-demo - vite](https://github.com/vant-ui/vant-demo/tree/master/vant/vite): Build an application using Vue 3, Vant 4, and Vite.
 - [vant-demo - nuxt3](https://github.com/vant-ui/vant-demo/tree/master/vant/nuxt3): Build an application using Vue 3, Nuxt 3, and Vant 4.
 
