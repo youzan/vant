@@ -61,6 +61,14 @@ export default {
 </style>
 ```
 
+### Setting z-index
+
+The default z-index level of the Overlay component is `1`. You can set its z-index level using the `z-index` prop.
+
+```html
+<van-overlay z-index="100" />
+```
+
 ## API
 
 ### Props
