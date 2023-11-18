@@ -85,6 +85,42 @@ exports[`should render demo and match snapshot 1`] = `
 </div>
 <div>
   <!--[-->
+  <div class="demo-vertical-space">
+    <div class="van-row">
+      <!--[-->
+      <div
+        style
+        class="van-col van-col--12"
+      >
+        <!--[-->
+        span: 12
+      </div>
+      <div
+        style
+        class="van-col van-col--12"
+      >
+        <!--[-->
+        span: 12
+      </div>
+      <div
+        style
+        class="van-col van-col--12"
+      >
+        <!--[-->
+        span: 12
+      </div>
+      <div
+        style
+        class="van-col van-col--12"
+      >
+        <!--[-->
+        span: 12
+      </div>
+    </div>
+  </div>
+</div>
+<div>
+  <!--[-->
   <div class="van-row van-row--justify-center">
     <!--[-->
     <div

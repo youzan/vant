@@ -6,20 +6,17 @@ import {
   type InjectionKey,
   type ExtractPropTypes,
 } from 'vue';
-import {
-  truthProp,
-  makeStringProp,
-  makeNumericProp,
-  createNamespace,
-} from '../utils';
+import { truthProp, makeStringProp, createNamespace } from '../utils';
 import { useChildren } from '@vant/use';
 
 const [name, bem] = createNamespace('row');
 
 export type RowSpaces = { left?: number; right: number }[];
+export type VerticalSpaces = { bottom?: number }[];
 
 export type RowProvide = {
   spaces: ComputedRef<RowSpaces>;
+  verticalSpaces: ComputedRef<VerticalSpaces>;
 };
 
 export const ROW_KEY: InjectionKey<RowProvide> = Symbol(name);
@@ -37,7 +34,12 @@ export const rowProps = {
   tag: makeStringProp<keyof HTMLElementTagNameMap>('div'),
   wrap: truthProp,
   align: String as PropType<RowAlign>,
-  gutter: makeNumericProp(0),
+  gutter: {
+    type: [String, Number, Array] as PropType<
+      string | number | (string | number)[]
+    >,
+    default: 0,
+  },
   justify: String as PropType<RowJustify>,
 };
 
@@ -70,7 +72,12 @@ export default defineComponent({
     });
 
     const spaces = computed(() => {
-      const gutter = Number(props.gutter);
+      let gutter = 0;
+      if (Array.isArray(props.gutter)) {
+        gutter = Number(props.gutter[0]) || 0;
+      } else {
+        gutter = Number(props.gutter);
+      }
       const spaces: RowSpaces = [];
 
       if (!gutter) {
@@ -94,7 +101,25 @@ export default defineComponent({
       return spaces;
     });
 
-    linkChildren({ spaces });
+    const verticalSpaces = computed(() => {
+      const { gutter } = props;
+      const spaces: VerticalSpaces = [];
+      if (Array.isArray(gutter) && gutter.length > 1) {
+        const bottom = Number(gutter[1]) || 0;
+        if (bottom <= 0) {
+          return spaces;
+        }
+        groups.value.forEach((group, index) => {
+          if (index === groups.value.length - 1) return;
+          group.forEach(() => {
+            spaces.push({ bottom });
+          });
+        });
+      }
+      return spaces;
+    });
+
+    linkChildren({ spaces, verticalSpaces });
 
     return () => {
       const { tag, wrap, align, justify } = props;
