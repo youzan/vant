@@ -63,6 +63,14 @@ export default {
 </style>
 ```
 
+### 设置 z-index
+
+Overlay 组件默认的 z-index 层级为 `1`，你可以通过 `z-index` 属性设置它的 z-index 层级。
+
+```html
+<van-overlay z-index="100" />
+```
+
 ## API
 
 ### Props
