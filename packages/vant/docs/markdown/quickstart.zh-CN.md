@@ -33,10 +33,11 @@ bun add vant
 
 ### 在新项目中使用
 
-如果你需要新建一个项目，我们推荐使用 [Vite](https://cn.vitejs.dev/) 或 [Nuxt 框架](https://nuxt.com)。
+如果你需要新建一个项目，我们推荐使用 [Rsbuild](https://github.com/web-infra-dev/rsbuild)，[Vite](https://cn.vitejs.dev/) 或 [Nuxt 框架](https://nuxt.com)。
 
 以下是 Vant 官方提供的一些示例项目，你可以克隆该项目，并直接拷贝代码来使用。
 
+- [vant-demo - rsbuild](https://github.com/vant-ui/vant-demo/tree/master/vant/rsbuild)：使用 Vue 3、Vant 4、Rsbuild 搭建应用
 - [vant-demo - vite](https://github.com/vant-ui/vant-demo/tree/master/vant/vite)：使用 Vue 3、Vant 4、Vite 搭建应用
 - [vant-demo - nuxt3](https://github.com/vant-ui/vant-demo/tree/master/vant/nuxt3)：使用 Vue 3、Nuxt 3、Vant 4 搭建应用。
 
@@ -94,6 +95,7 @@ bun add vant
 
 我们提供了丰富的[示例工程](https://github.com/vant-ui/vant-demo)，通过示例工程你可以了解如下内容：
 
+- 基于 Rsbuild 和 Vant 搭建应用
 - 基于 Vite 和 Vant 搭建应用
 - 基于 Nuxt 和 Vant 搭建应用
 - 基于 Vue CLI 和 Vant 搭建应用
