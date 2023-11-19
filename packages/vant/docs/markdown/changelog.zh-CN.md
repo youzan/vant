@@ -19,6 +19,40 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 
 ## 更新内容
 
+### v4.8.0
+
+`2023-11-19`
+
+#### 新组件 🎉
+
+- 新增 Highlight 组件，由 [@wjw-gavin](https://github.com/wjw-gavin) 和 [@inottn](https://github.com/inottn) 贡献 ❤️ [#12434](https://github.com/youzan/vant/pull/12434)
+
+#### 新功能
+
+- feat(ImagePreview): 由 [@inottn](https://github.com/inottn) 在 [#12426](https://github.com/youzan/vant/pull/12426) 中增加 resetScale 方法
+- feat(Checker): 由 [@inottn](https://github.com/inottn) 在 [#12436](https://github.com/youzan/vant/pull/12436) 中向默认插槽添加 checked 和 disabled 参数
+- feat(Row): 由 [@cc-hearts](https://github.com/cc-hearts) 在 [#12439](https://github.com/youzan/vant/pull/12439) 中支持 gutter 垂直间距
+
+#### Bug 修复 🐞
+
+- fix(Calendar): 由 [@cc-hearts](https://github.com/cc-hearts) 在 [#12425](https://github.com/youzan/vant/pull/12425) 中支持副标题的响应式
+
+#### 文档 📖
+
+- docs(field): 由 [@Simon-He95](https://github.com/Simon-He95) 在 [#12429](https://github.com/youzan/vant/pull/12429) 中更新 props size
+- docs(cell): 由 [@Simon-He95](https://github.com/Simon-He95) 在 [#12427](https://github.com/youzan/vant/pull/12427) 中更新 props size
+- docs(Highlight): 由 [@chenjiahan](https://github.com/chenjiahan) 在 [#12438](https://github.com/youzan/vant/pull/12438) 中添加版本提示
+- docs(Overlay): 由 [@chenjiahan](https://github.com/chenjiahan) 在 [#12454](https://github.com/youzan/vant/pull/12454) 中添加设置 z-index 的演示
+- docs: 由 [@chenjiahan](https://github.com/chenjiahan) 在 [#12455](https://github.com/youzan/vant/pull/12455) 中将 Rsbuild 添加到快速入门指南
+
+#### 其他变更
+
+- chore(deps): 由 [@chenjiahan](https://github.com/chenjiahan) 在 [#12414](https://github.com/youzan/vant/pull/12414) 中修复了 babel 和 postcss 的安全警报
+
+#### 新贡献者
+
+- [@cc-hearts](https://github.com/cc-hearts) 在 [#12425](https://github.com/youzan/vant/pull/12425) 中进行了首次贡献
+
 ### v4.7.3
 
 `2023-10-29`
