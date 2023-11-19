@@ -19,6 +19,40 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 
 ## Details
 
+### v4.8.0
+
+`2023-11-19`
+
+#### New Component 🎉
+
+- Added Highlight component, contributed by [@wjw-gavin](https://github.com/wjw-gavin) and [@inottn](https://github.com/inottn) ❤️ [#12434](https://github.com/youzan/vant/pull/12434)
+
+#### New Features
+
+- feat(ImagePreview): expose resetScale method by [@inottn](https://github.com/inottn) in [#12426](https://github.com/youzan/vant/pull/12426)
+- feat(Checker): add checked and disabled params to the default slot by [@inottn](https://github.com/inottn) in [#12436](https://github.com/youzan/vant/pull/12436)
+- feat(Row): gutter support vertical space by [@cc-hearts](https://github.com/cc-hearts) in [#12439](https://github.com/youzan/vant/pull/12439)
+
+#### Bug Fixes 🐞
+
+- fix(Calendar): subtitle supports reactive by [@cc-hearts](https://github.com/cc-hearts) in [#12425](https://github.com/youzan/vant/pull/12425)
+
+#### Document 📖
+
+- docs(field): update props size by [@Simon-He95](https://github.com/Simon-He95) in [#12429](https://github.com/youzan/vant/pull/12429)
+- docs(cell): update props size by [@Simon-He95](https://github.com/Simon-He95) in [#12427](https://github.com/youzan/vant/pull/12427)
+- docs(Highlight): add version tip by [@chenjiahan](https://github.com/chenjiahan) in [#12438](https://github.com/youzan/vant/pull/12438)
+- docs(Overlay): add set z-index demo by [@chenjiahan](https://github.com/chenjiahan) in [#12454](https://github.com/youzan/vant/pull/12454)
+- docs: add Rsbuild to quickstart by [@chenjiahan](https://github.com/chenjiahan) in [#12455](https://github.com/youzan/vant/pull/12455)
+
+#### Other Changes
+
+- chore(deps): fix security alerts of babel and postcss by [@chenjiahan](https://github.com/chenjiahan) in [#12414](https://github.com/youzan/vant/pull/12414)
+
+#### New Contributors
+
+- [@cc-hearts](https://github.com/cc-hearts) made their first contribution in [#12425](https://github.com/youzan/vant/pull/12425)
+
 ### v4.7.3
 
 `2023-10-29`
