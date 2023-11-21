@@ -113,7 +113,7 @@ export default {
 Using `toggleAll` method to toggle all items.
 
 ```html
-<van-collapse v-model="activeNames">
+<van-collapse v-model="activeNames" ref="collapse">
   <van-collapse-item title="Title1" name="1">Content 1</van-collapse-item>
   <van-collapse-item title="Title2" name="2">Content 2</van-collapse-item>
   <van-collapse-item title="Title3" name="3">Content 3</van-collapse-item>
