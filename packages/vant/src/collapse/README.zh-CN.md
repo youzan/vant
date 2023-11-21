@@ -129,7 +129,7 @@ export default {
 通过 `Collapse` 实例上的 `toggleAll` 方法可以实现全部展开与全部切换。
 
 ```html
-<van-collapse v-model="activeNames">
+<van-collapse v-model="activeNames" ref="collapse">
   <van-collapse-item title="标题1" name="1">
     代码是写出来给人看的，附带能在机器上运行。
   </van-collapse-item>
