@@ -104,12 +104,8 @@ import { showConfirmDialog } from 'vant';
 const beforeClose = (action) =>
   new Promise((resolve) => {
     setTimeout(() => {
-      if (action === 'confirm') {
-        resolve(true);
-      } else {
-        // 拦截取消操作
-        resolve(false);
-      }
+      // action !== 'confirm'  拦截取消操作
+      resolve(action === 'confirm');
     }, 1000);
   });
 

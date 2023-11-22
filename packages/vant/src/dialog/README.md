@@ -25,7 +25,7 @@ For example, calling the `showDialog` function will render a Dialog directly in 
 ```js
 import { showDialog } from 'vant';
 
-showDialog({ message: 'Content' });
+showDialog({ message: 'Alert' });
 ```
 
 ## Usage
@@ -35,15 +35,18 @@ showDialog({ message: 'Content' });
 Used to prompt for some messages, only including one confirm button by default.
 
 ```js
+import { showDialog } from 'vant';
+
 showDialog({
   title: 'Title',
-  message: 'Content',
+  message: 'The code is written for people to see and can be run on a machine.',
 }).then(() => {
   // on close
 });
 
 showDialog({
-  message: 'Content',
+  message:
+    'Life is far more than just spinning and being busy to the limit, and human experiences are much broader and richer than this.',
 }).then(() => {
   // on close
 });
@@ -54,9 +57,12 @@ showDialog({
 Used to confirm some messages, including a confirm button and a cancel button by default.
 
 ```js
+import { showConfirmDialog } from 'vant';
+
 showConfirmDialog({
   title: 'Title',
-  message: 'Content',
+  message:
+    'If the solution is ugly, then there must be a better solution, but it has not been discovered yet.',
 })
   .then(() => {
     // on confirm
@@ -71,16 +77,19 @@ showConfirmDialog({
 Setting the `theme` option to `round-button` will display the Dialog with a rounded button style.
 
 ```js
+import { showDialog } from 'vant';
+
 showDialog({
   title: 'Title',
-  message: 'Content',
+  message: 'The code is written for people to see and can be run on a machine.',
   theme: 'round-button',
 }).then(() => {
   // on close
 });
 
 showDialog({
-  message: 'Content',
+  message:
+    'Life is far more than just spinning and being busy to the limit, and human experiences are much broader and richer than this.',
   theme: 'round-button',
 }).then(() => {
   // on close
@@ -92,16 +101,20 @@ showDialog({
 You can pass a callback function through the `beforeClose` option to perform specific operations before closing the Dialog.
 
 ```js
+import { showConfirmDialog } from 'vant';
+
 const beforeClose = (action) =>
   new Promise((resolve) => {
     setTimeout(() => {
+      // action !== 'confirm'  Interception cancellation operation
       resolve(action === 'confirm');
     }, 1000);
   });
 
 showConfirmDialog({
   title: 'Title',
-  message: 'Content',
+  message:
+    'If the solution is ugly, then there must be a better solution, but it has not been discovered yet.',
   beforeClose,
 });
 ```
