@@ -19,9 +19,11 @@ const t = useTranslate({
     inverse: '全部切换',
   },
   'en-US': {
-    text1: 'Content 1',
-    text2: 'Content 2',
-    text3: 'Content 3',
+    text1: 'The code is written for people to see and can be run on a machine.',
+    text2:
+      'Technology is nothing more than the common soul of those who develop it.',
+    text3:
+      'The frequency of people swearing during code reading is the only measure of code quality.',
     accordion: 'Accordion',
     titleSlot: 'Custom title',
     toggleAll: 'Toggle All',
