@@ -24,9 +24,12 @@ const t = useTranslate({
     alert1: 'Alert',
     alert2: 'Alert without title',
     confirm: 'Confirm dialog',
-    content1: 'Content',
-    content2: 'Content',
-    content3: 'Content',
+    content1:
+      'The frequency of people swearing during code reading is the only measure of code quality.',
+    content2:
+      'Life is far more than just spinning and busy to the limit, and human experiences are much broader and richer than this.',
+    content3:
+      'If the solution is ugly, then there must be a better solution, but it has not been discovered yet.',
     beforeClose: 'Before Close',
     roundButton: 'Round Button Style',
     useComponent: 'Use Dialog Component',
