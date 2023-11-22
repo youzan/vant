@@ -31,7 +31,7 @@ exports[`should render demo and match snapshot 1`] = `
       <div class="van-collapse-item__wrapper">
         <div class="van-collapse-item__content">
           <!--[-->
-          Content 1
+          The code is written for people to see and can be run on a machine.
         </div>
       </div>
     </div>
@@ -112,7 +112,7 @@ exports[`should render demo and match snapshot 1`] = `
       <div class="van-collapse-item__wrapper">
         <div class="van-collapse-item__content">
           <!--[-->
-          Content 1
+          The code is written for people to see and can be run on a machine.
         </div>
       </div>
     </div>
@@ -334,7 +334,7 @@ exports[`should render demo and match snapshot 1`] = `
       <div class="van-collapse-item__wrapper">
         <div class="van-collapse-item__content">
           <!--[-->
-          Content 1
+          The code is written for people to see and can be run on a machine.
         </div>
       </div>
     </div>
