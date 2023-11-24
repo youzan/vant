@@ -7,11 +7,13 @@ import {
   type ExtractPropTypes,
 } from 'vue';
 
-// Composables
-import { useEventListener } from '@vant/use';
-
 // Utils
-import { makeNumericProp, makeStringProp, createNamespace } from '../utils';
+import {
+  makeNumericProp,
+  makeStringProp,
+  createNamespace,
+  windowWidth,
+} from '../utils';
 
 const [name, bem] = createNamespace('text-ellipsis');
 
@@ -196,9 +198,10 @@ export default defineComponent({
 
     onMounted(calcEllipsised);
 
-    watch(() => [props.content, props.rows, props.position], calcEllipsised);
-
-    useEventListener('resize', calcEllipsised);
+    watch(
+      [windowWidth, () => [props.content, props.rows, props.position]],
+      calcEllipsised,
+    );
 
     return () => (
       <div ref={root} class={bem()}>
