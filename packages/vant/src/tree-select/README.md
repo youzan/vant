@@ -79,7 +79,7 @@ import { ref } from 'vue';
 
 export default {
   setup() {
-    const activeId = ref([1, 2]);
+    const activeIds = ref([1, 2]);
     const activeIndex = ref(0);
     const items = [
       {
@@ -103,7 +103,7 @@ export default {
 
     return {
       items,
-      activeId,
+      activeIds,
       activeIndex,
     };
   },
