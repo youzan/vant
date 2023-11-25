@@ -15,6 +15,8 @@ import {
   windowWidth,
 } from '../utils';
 
+import { useExpose } from '../composables/use-expose';
+
 const [name, bem] = createNamespace('text-ellipsis');
 
 export const textEllipsisProps = {
@@ -185,8 +187,12 @@ export default defineComponent({
       document.body.removeChild(container);
     };
 
+    const toggle = (isExpanded = !expanded.value) => {
+      expanded.value = isExpanded;
+    };
+
     const onClickAction = (event: MouseEvent) => {
-      expanded.value = !expanded.value;
+      toggle();
       emit('clickAction', event);
     };
 
@@ -202,6 +208,8 @@ export default defineComponent({
       [windowWidth, () => [props.content, props.rows, props.position]],
       calcEllipsised,
     );
+
+    useExpose({ toggle });
 
     return () => (
       <div ref={root} class={bem()}>

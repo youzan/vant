@@ -146,12 +146,35 @@ export default {
 | ------------ | --------------------------------------- | ------------------- |
 | click-action | Emitted when Expand/Collapse is clicked | _event: MouseEvent_ |
 
+### Methods
+
+Use [ref](https://vuejs.org/guide/essentials/template-refs.html) to get TextEllipsis instance and call instance methods.
+
+| Name   | Description            | Attribute            | Return value |
+| ------ | ---------------------- | -------------------- | ------------ |
+| toggle | Toggle expanded status | _expanded?: boolean_ | -            |
+
 ### Types
 
 The component exports the following type definitions:
 
 ```ts
-import type { TextEllipsisProps, TextEllipsisThemeVars } from 'vant';
+import type {
+  TextEllipsisProps,
+  TextEllipsisInstance,
+  TextEllipsisThemeVars,
+} from 'vant';
+```
+
+`TextEllipsisInstance` is the type of component instance:
+
+```ts
+import { ref } from 'vue';
+import type { TextEllipsisInstance } from 'vant';
+
+const textEllipsisRef = ref<TextEllipsisInstance>();
+
+textEllipsisRef.value?.toggle();
 ```
 
 ## Theming
