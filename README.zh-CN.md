@@ -70,6 +70,20 @@ pnpm add vant
 bun add vant
 ```
 
+## 脚手架
+
+推荐使用 [Rsbuild](https://github.com/web-infra-dev/rsbuild) 来创建一个脚手架项目。
+
+Rsbuild 是基于 Rspack 的构建工具，由 Vant 作者开发，具备一流的构建速度和开发体验，对 Vant 提供第一优先级支持。
+
+你可以通过以下命令创建一个 Rsbuild 项目：
+
+```bash
+npm create rsbuild@latest
+```
+
+请访问 [Rsbuild 仓库](https://github.com/web-infra-dev/rsbuild) 了解更多信息。
+
 ## 快速上手
 
 ```js

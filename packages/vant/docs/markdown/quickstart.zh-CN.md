@@ -35,6 +35,20 @@ bun add vant
 
 如果你需要新建一个项目，我们推荐使用 [Rsbuild](https://github.com/web-infra-dev/rsbuild)，[Vite](https://cn.vitejs.dev/) 或 [Nuxt 框架](https://nuxt.com)。
 
+#### Rsbuild
+
+Rsbuild 是基于 Rspack 的构建工具，由 Vant 作者开发，具备一流的构建速度和开发体验，对 Vant 提供第一优先级支持。
+
+你可以通过以下命令创建一个 Rsbuild 项目：
+
+```bash
+npm create rsbuild@latest
+```
+
+请访问 [Rsbuild 仓库](https://github.com/web-infra-dev/rsbuild) 了解更多信息。
+
+#### 示例项目
+
 以下是 Vant 官方提供的一些示例项目，你可以克隆该项目，并直接拷贝代码来使用。
 
 - [vant-demo - rsbuild](https://github.com/vant-ui/vant-demo/tree/master/vant/rsbuild)：使用 Vue 3、Vant 4、Rsbuild 搭建应用

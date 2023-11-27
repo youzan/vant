@@ -31,6 +31,20 @@ bun add vant
 
 If you need to create a new project, we recommend using [Rsbuild](https://github.com/web-infra-dev/rsbuild), [Vite](https://vitejs.dev/) or [Nuxt framework](https://nuxtjs.org/).
 
+#### Rsbuild
+
+Rsbuild is a build tool based on Rspack, developed by the author of Vant, with first-class build speed and development experience, providing first-priority support for Vant.
+
+You can create a Rsbuild project with the following command:
+
+```bash
+npm create rsbuild@latest
+```
+
+Please visit the [Rsbuild repository](https://github.com/web-infra-dev/rsbuild) for more information.
+
+#### Example
+
 Here are the example projects provided by Vant official. You can clone these projects and copy the code.
 
 - [vant-demo - rsbuild](https://github.com/vant-ui/vant-demo/tree/master/vant/rsbuild): Build an application using Vue 3, Vant 4, and Rsbuild.
