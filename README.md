@@ -66,6 +66,20 @@ pnpm add vant
 bun add vant
 ```
 
+## Scaffold
+
+It is recommended to use [Rsbuild](https://github.com/web-infra-dev/rsbuild) to create a scaffold project.
+
+Rsbuild is a build tool based on Rspack, developed by the author of Vant, with first-class build speed and development experience, providing first-priority support for Vant.
+
+You can create a Rsbuild project with the following command:
+
+```bash
+npm create rsbuild@latest
+```
+
+Please visit the [Rsbuild repository](https://github.com/web-infra-dev/rsbuild) for more information.
+
 ## Quickstart
 
 ```js
