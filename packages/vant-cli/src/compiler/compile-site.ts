@@ -1,12 +1,20 @@
-import { createServer, build } from 'vite';
-import {
-  getViteConfigForSiteDev,
-  getViteConfigForSiteProd,
-} from '../config/vite.site.js';
-import { mergeCustomViteConfig } from '../common/index.js';
+import { join } from 'path';
+import { getVantConfig, setBuildTarget } from '../common/index.js';
+import { getTemplateParams } from './get-template-params.js';
 import { genPackageEntry } from './gen-package-entry.js';
 import { genStyleDepsMap } from './gen-style-deps-map.js';
-import { PACKAGE_ENTRY_FILE } from '../common/constant.js';
+import type { RsbuildConfig } from '@rsbuild/core';
+import { RspackVirtualModulePlugin } from 'rspack-plugin-virtual-module';
+import { CSS_LANG } from '../common/css.js';
+import { genSiteMobileShared } from '../compiler/gen-site-mobile-shared.js';
+import { genSiteDesktopShared } from '../compiler/gen-site-desktop-shared.js';
+import { genPackageStyle } from '../compiler/gen-package-style.js';
+import {
+  MD_LOADER,
+  SITE_SRC_DIR,
+  SITE_DIST_DIR,
+  PACKAGE_ENTRY_FILE,
+} from '../common/constant.js';
 
 export function genSiteEntry(): Promise<void> {
   return new Promise((resolve, reject) => {
@@ -24,21 +32,78 @@ export function genSiteEntry(): Promise<void> {
   });
 }
 
-export async function compileSite(production = false) {
+export async function compileSite(isProd = false) {
+  setBuildTarget('site');
+
+  const { createRsbuild } = await import('@rsbuild/core');
+  const { pluginVue } = await import('@rsbuild/plugin-vue');
+  const { pluginVueJsx } = await import('@rsbuild/plugin-vue-jsx');
+  const { pluginBabel } = await import('@rsbuild/plugin-babel');
+
   await genSiteEntry();
-  if (production) {
-    const config = await mergeCustomViteConfig(
-      getViteConfigForSiteProd(),
-      'production',
-    );
-    await build(config);
+
+  const vantConfig = getVantConfig();
+  const assetPrefix = vantConfig.build?.site?.publicPath || '/';
+
+  const rsbuildConfig: RsbuildConfig = {
+    plugins: [pluginBabel(), pluginVue(), pluginVueJsx()],
+    source: {
+      entry: {
+        index: join(SITE_SRC_DIR, 'desktop/main.js'),
+        mobile: join(SITE_SRC_DIR, 'mobile/main.js'),
+      },
+    },
+    dev: {
+      assetPrefix,
+    },
+    output: {
+      assetPrefix,
+      distPath: {
+        root: vantConfig.build?.site?.outputDir || SITE_DIST_DIR,
+      },
+    },
+    html: {
+      template: ({ entryName }) => join(SITE_SRC_DIR, `${entryName}.html`),
+      templateParameters: getTemplateParams(),
+    },
+    tools: {
+      bundlerChain(chain, { CHAIN_ID }) {
+        const vueRule = chain.module.rules
+          .get(CHAIN_ID.RULE.VUE)
+          .use(CHAIN_ID.USE.VUE);
+        const vueLoader = vueRule.get('loader');
+        const vueOptions = vueRule.get('options');
+
+        chain.module
+          .rule('md')
+          .test(/\.md$/)
+          .use('vue')
+          .loader(vueLoader)
+          .options(vueOptions)
+          .end()
+          .use('md')
+          .loader(MD_LOADER);
+      },
+      rspack: {
+        plugins: [
+          new RspackVirtualModulePlugin({
+            'site-mobile-shared': genSiteMobileShared(),
+            'site-desktop-shared': genSiteDesktopShared(),
+            [`package-style.${CSS_LANG}`]: genPackageStyle() || '',
+          }),
+        ],
+      },
+    },
+  };
+
+  const rsbuild = await createRsbuild({
+    cwd: SITE_SRC_DIR,
+    rsbuildConfig,
+  });
+
+  if (isProd) {
+    await rsbuild.build();
   } else {
-    const config = await mergeCustomViteConfig(
-      getViteConfigForSiteDev(),
-      'development',
-    );
-    const server = await createServer(config);
-    await server.listen(config.server?.port);
-    server.printUrls();
+    await rsbuild.startDevServer();
   }
 }
