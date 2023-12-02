@@ -1,11 +1,7 @@
-import type { Plugin } from 'vite';
-import hljs from 'highlight.js';
-import MarkdownIt from 'markdown-it';
-import { createRequire } from 'node:module';
+const hljs = require('highlight.js');
+const MarkdownIt = require('markdown-it');
 
-const isMd = (id: string) => /\.md$/.test(id);
-
-function markdownCardWrapper(htmlCode: string) {
+function markdownCardWrapper(htmlCode) {
   const group = htmlCode
     .replace(/<h3/g, ':::<h3')
     .replace(/<h2/g, ':::<h2')
@@ -22,7 +18,7 @@ function markdownCardWrapper(htmlCode: string) {
     .join('');
 }
 
-function markdownHighlight(str: string, lang: string) {
+function markdownHighlight(str, lang) {
   if (lang && hljs.getLanguage(lang)) {
     // https://github.com/highlightjs/highlight.js/issues/2277
     return hljs.highlight(str, { language: lang, ignoreIllegals: true }).value;
@@ -38,7 +34,6 @@ const initMarkdownIt = () => {
     highlight: markdownHighlight,
   });
 
-  const require = createRequire(import.meta.url);
   const { slugify } = require('transliteration');
   const markdownItAnchor = require('markdown-it-anchor');
 
@@ -52,16 +47,10 @@ const initMarkdownIt = () => {
   return md;
 };
 
-const markdownToVue = ({
-  id,
-  raw,
-  md,
-}: {
-  id: string;
-  raw: string;
-  md: MarkdownIt;
-}) => {
-  let html = md.render(raw, { id });
+const md = initMarkdownIt();
+
+const markdownToVue = (raw) => {
+  let html = md.render(raw);
   html = `<div class="van-doc-markdown-body">${html}</div>`;
   html = markdownCardWrapper(html);
   // escape curly brackets
@@ -70,7 +59,7 @@ const markdownToVue = ({
 };
 
 // add target="_blank" to all links
-function markdownLinkOpen(md: MarkdownIt) {
+function markdownLinkOpen(md) {
   const defaultRender = md.renderer.rules.link_open;
 
   md.renderer.rules.link_open = (tokens, idx, options, env, self) => {
@@ -88,41 +77,6 @@ function markdownLinkOpen(md: MarkdownIt) {
   };
 }
 
-export function vitePluginMd(): Plugin {
-  const md = initMarkdownIt();
-
-  return {
-    name: 'vite-plugin-md',
-
-    enforce: 'pre',
-
-    transform(raw, id) {
-      if (!isMd(id)) {
-        return;
-      }
-
-      try {
-        return markdownToVue({ id, raw, md });
-      } catch (e: any) {
-        this.error(e);
-      }
-    },
-
-    async handleHotUpdate(ctx) {
-      if (!isMd(ctx.file)) {
-        return;
-      }
-
-      const defaultRead = ctx.read;
-
-      ctx.read = async function () {
-        const raw = await defaultRead();
-        return markdownToVue({
-          id: ctx.file,
-          raw,
-          md,
-        });
-      };
-    },
-  };
-}
+module.exports = function (raw) {
+  return markdownToVue(raw);
+};

@@ -48,6 +48,10 @@
   "dependencies": {
     "@babel/core": "^7.23.2",
     "@babel/preset-typescript": "^7.23.2",
+    "@rsbuild/core": "0.1.8",
+    "@rsbuild/plugin-babel": "0.1.8",
+    "@rsbuild/plugin-vue": "0.1.8",
+    "@rsbuild/plugin-vue-jsx": "0.1.8",
     "@vant/eslint-config": "workspace:^",
     "@vant/touch-emulator": "workspace:^",
     "@vitejs/plugin-vue": "^4.0.0",
@@ -73,6 +77,7 @@
     "postcss": "^8.4.31",
     "postcss-load-config": "^4.0.1",
     "prettier": "^3.0.0",
+    "rspack-plugin-virtual-module": "^0.1.12",
     "terser": "^5.19.2",
     "transliteration": "^2.3.5",
     "typescript": "^5.0.4",
