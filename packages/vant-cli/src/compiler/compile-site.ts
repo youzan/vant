@@ -58,6 +58,8 @@ export async function compileSite(isProd = false) {
     },
     output: {
       assetPrefix,
+      // make compilation faster
+      disableSourceMap: true,
       distPath: {
         root: vantConfig.build?.site?.outputDir || SITE_DIST_DIR,
       },
