@@ -234,7 +234,7 @@ Vant exports following ImagePreview utility functions:
 | before-close | Callback function before close | _(action: number) => boolean \| Promise\<boolean\>_ | - |
 | close-on-popstate | Whether to close when popstate | _boolean_ | `true` |
 | close-on-click-overlay `v4.6.4` | Whether to close when overlay is clicked | _boolean_ | `true` |
-| class-name | Custom className | _string \| Array \| object_ | - |
+| class-name | Custom className (apply to Popup in image preview) | _string \| Array \| object_ | - |
 | max-zoom | Max zoom | _number \| string_ | `3` |
 | min-zoom | Min zoom | _number \| string_ | `1/3` |
 | closeable | Whether to show close icon | _boolean_ | `false` |
