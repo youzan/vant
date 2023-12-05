@@ -177,7 +177,7 @@ export default defineComponent({
       );
 
       if (maxHeight < container.offsetHeight) {
-        hasAction.value = true;
+        hasAction.value = !!actionText.value;
         text.value = calcEllipsisText(container, maxHeight);
       } else {
         hasAction.value = false;
@@ -209,7 +209,10 @@ export default defineComponent({
       calcEllipsised,
     );
 
-    useExpose({ toggle });
+    useExpose({
+      toggle,
+      getTextEllipsized: () => hasAction.value,
+    });
 
     return () => (
       <div ref={root} class={bem()}>
