@@ -67,7 +67,7 @@
     "diffable-html": "^5.0.0",
     "jsdom": "^22.1.0",
     "typescript": "^5.0.4",
-    "vite": "^4.4.2",
+    "vite": "^4.4.12",
     "vitest": "0.34.2",
     "vitest-canvas-mock": "^0.3.2",
     "vue": "^3.3.4",
