@@ -171,9 +171,8 @@ const ComponentsPlugin = require('unplugin-vue-components/webpack');
 module.exports = {
   configureWebpack: {
     plugins: [
-      ComponentsPlugin({
-        resolvers: [VantResolver()],
-      }),
+      ComponentsPlugin({ resolvers: [VantResolver()] }), // when the unplugin-vue-components version is less than 0.26.0
+      ComponentsPlugin.default({ resolvers: [VantResolver()] }), // when the unplugin-vue-components version is greater than or equal to 0.26.0
     ],
   },
 };
@@ -187,9 +186,8 @@ const ComponentsPlugin = require('unplugin-vue-components/webpack');
 
 module.exports = {
   plugins: [
-    ComponentsPlugin({
-      resolvers: [VantResolver()],
-    }),
+    ComponentsPlugin({ resolvers: [VantResolver()] }), // when the unplugin-vue-components version is less than 0.26.0
+    ComponentsPlugin.default({ resolvers: [VantResolver()] }), // when the unplugin-vue-components version is greater than or equal to 0.26.0
   ],
 };
 ```
@@ -232,6 +230,9 @@ import 'vant/es/image-preview/style';
 
 - "Full Import" and "On-demand Import" should not be used at the same time, otherwise it will lead to problems such as code duplication and style overrides.
 - During use, if the component cannot be imported, because `unplugin-vue-components` is not a plug-in officially maintained by `Vant`, it is recommended to give feedback under the [unplugin/unplugin-vue-components](https://github.com/antfu/unplugin/unplugin-vue-components) repository.
+
+  > Tips: when the version number of `unplugin-vue-components` is >= 0.26.0 or above, for `webpack`, `vuecli`, `rspack`, you need to use `ComponentsPlugin.default` to register.
+
 - `@vant/auto-import-resolver` provides some configuration options. Please refer to the [README document](https://github.com/youzan/vant/tree/main/packages/vant-auto-import-resolver) for more information.
 - If it is a similar problem that the style does not take effect, feedback under the `Vant` repository.
 
