@@ -46,7 +46,14 @@ export async function compileSite(isProd = false) {
   const assetPrefix = vantConfig.build?.site?.publicPath || '/';
 
   const rsbuildConfig: RsbuildConfig = {
-    plugins: [pluginBabel(), pluginVue(), pluginVueJsx()],
+    plugins: [
+      pluginBabel({
+        include: /\.(jsx|tsx)$/,
+        exclude: /[\\/]node_modules[\\/]/,
+      }),
+      pluginVue(),
+      pluginVueJsx(),
+    ],
     source: {
       entry: {
         index: join(SITE_SRC_DIR, 'desktop/main.js'),
@@ -59,7 +66,10 @@ export async function compileSite(isProd = false) {
     output: {
       assetPrefix,
       // make compilation faster
-      disableSourceMap: true,
+      sourceMap: {
+        js: false,
+        css: false,
+      },
       distPath: {
         root: vantConfig.build?.site?.outputDir || SITE_DIST_DIR,
       },
