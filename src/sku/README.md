@@ -179,6 +179,8 @@ Use [ref](https://vuejs.org/v2/api/#ref) to get Sku instance and call instance m
 | extra-sku-group                 | Extra custom content              |
 | sku-stepper                     | Custom stepper                    |
 | sku-messages                    | Custom messages                   |
+| before-sku-messages `v2.13.2`   | Area before custom messages       |
+| after-sku-messages `v2.13.2`    | Area after custom messages        |
 | sku-actions-top                 | Custom content before sku-actions |
 | sku-actions                     | Custom button actions             |
 

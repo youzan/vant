@@ -12,16 +12,27 @@ npm i vant -S
 npm i vant@latest-v2 -S
 ```
 
+### Scaffold
+
+It is recommended to use [Rsbuild](https://github.com/web-infra-dev/rsbuild) to create a scaffold project.
+
+Rsbuild is a build tool based on Rspack, developed by the author of Vant, with first-class build speed and development experience, providing first-priority support for Vant.
+
+You can create a Rsbuild project with the following command:
+
+```bash
+npm create rsbuild@latest
+```
+
+Please visit the [Rsbuild repository](https://github.com/web-infra-dev/rsbuild) for more information.
+
 ### CDN
 
 The easiest way to use Vant is to include a CDN link in the html file, after which you can access all components via the global variable `vant`.
 
 ```html
 <!-- import style -->
-<link
-  rel="stylesheet"
-  href="https://unpkg.com/vant@2.12/lib/index.css"
-/>
+<link rel="stylesheet" href="https://unpkg.com/vant@2.12/lib/index.css" />
 
 <!-- import script -->
 <script src="https://unpkg.com/vue@2.6/dist/vue.min.js"></script>

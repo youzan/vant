@@ -16,6 +16,60 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 
 ## Details
 
+### [v2.13.2](https://github.com/vant-ui/vant/compare/v2.13.1...v2.13.2)
+
+`2023-10-17`
+
+**Feature**
+
+- Sku: add more slots about sku-messages [#12368](https://github.com/vant-ui/vant/issues/12368)
+
+### [v2.13.1](https://github.com/vant-ui/vant/compare/v2.13.0...v2.13.1)
+
+`2023-10-10`
+
+**Feature**
+
+- bump @vant/icons v3.0.2 [#12355](https://github.com/vant-ui/vant/issues/12355)
+
+### [v2.13.0](https://github.com/vant-ui/vant/compare/v2.12.54...v2.13.0)
+
+`2023-09-17`
+
+**Feature**
+
+- Icon: rename the previous `records` icon to `records-o`
+- Icon: rename the previous `contact` icon to `contact-o`
+- Icon: rename the previous `discount` icon to `discount-o`
+- Icon: rename the previous `completed` icon to `completed-o`
+- Icon: rename the previous `description` icon to `description-o`
+- Icon: rename the previous `cash-back-record` icon to `cash-back-record-o`
+- Icon: add a filled `records` icon
+- Icon: add a filled `contact` icon
+- Icon: add a filled `discount` icon
+- Icon: add a filled `completed` icon
+- Icon: add a filled `description` icon
+- Icon: add a filled `cash-back-record` icon
+- Icon: add new `user` icon
+- Icon: add new `notes` icon
+- Icon: add new `newspaper` icon
+- Icon: add new `list-switch` icon
+- Icon: add new `list-switching` icon
+
+**Bug Fixes**
+
+- Picker: Fix the issue when scrolling the mouse wheel once but the element scrolls multiple times [#12290](https://github.com/vant-ui/vant/issues/12290) [#12290](https://github.com/vant-ui/vant/issues/12290)
+- Icon: fix delete / delete-o icon
+
+### [v2.12.54](https://github.com/vant-ui/vant/compare/v2.12.53...v2.12.54)
+
+`2023-02-11`
+
+**Bug Fixes**
+
+- Popover: location update after transition [#11558](https://github.com/vant-ui/vant/issues/11558)
+- Search: @search-left-icon-color var not work [#11299](https://github.com/vant-ui/vant/issues/11299)
+
 ### [v2.12.53](https://github.com/vant-ui/vant/compare/v2.12.52...v2.12.53)
 
 `2022-11-17`

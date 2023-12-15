@@ -822,7 +822,9 @@ export default createComponent({
           {Group}
           {slots('extra-sku-group')}
           {Stepper}
+          {slots('before-sku-messages')}
           {Messages}
+          {slots('after-sku-messages')}
         </div>
         {slots('sku-actions-top')}
         {Actions}

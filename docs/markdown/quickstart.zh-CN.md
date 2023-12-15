@@ -18,16 +18,27 @@ npm i vant -S
 npm i vant@latest-v2 -S
 ```
 
+### 脚手架
+
+推荐使用 [Rsbuild](https://github.com/web-infra-dev/rsbuild) 来创建一个脚手架项目。
+
+Rsbuild 是基于 Rspack 的构建工具，由 Vant 作者开发，具备一流的构建速度和开发体验，对 Vant 提供第一优先级支持。
+
+你可以通过以下命令创建一个 Rsbuild 项目：
+
+```bash
+npm create rsbuild@latest
+```
+
+请访问 [Rsbuild 仓库](https://github.com/web-infra-dev/rsbuild) 了解更多信息。
+
 ### 通过 CDN 安装
 
 使用 Vant 最简单的方法是直接在 html 文件中引入 CDN 链接，之后你可以通过全局变量 `vant` 访问到所有组件。
 
 ```html
 <!-- 引入样式文件 -->
-<link
-  rel="stylesheet"
-  href="https://unpkg.com/vant@2.12/lib/index.css"
-/>
+<link rel="stylesheet" href="https://unpkg.com/vant@2.12/lib/index.css" />
 
 <!-- 引入 Vue 和 Vant 的 JS 文件 -->
 <script src="https://unpkg.com/vue@2.6/dist/vue.min.js"></script>
