@@ -182,6 +182,7 @@ export function PopupMixin(options = {}) {
         this.$emit('input', false);
       },
 
+      touchStart: function (event) {},
       onTouchMove(event) {
         this.touchMove(event);
         const direction = this.deltaY > 0 ? '10' : '01';
