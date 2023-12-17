@@ -19,6 +19,46 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 
 ## 更新内容
 
+### v4.8.1
+
+`2023-12-17`
+
+#### 新功能 🎉
+
+- perf(TextEllipsis): 重用 windowWidth 以避免重复计算 by [@inottn](https://github.com/inottn) in [#12471](https://github.com/youzan/vant/pull/12471)
+- feat(TextEllipsis): 添加 toggle 实例方法 by [@wjw-gavin](https://github.com/wjw-gavin) in [#12472](https://github.com/youzan/vant/pull/12472)
+- feat(cli): 升级 Rsbuild 到 v0.2.2 by [@chenjiahan](https://github.com/chenjiahan) in [#12502](https://github.com/youzan/vant/pull/12502)
+
+#### 性能优化 🚀
+
+- perf(cli): 禁用 source map 以加快编译速度 by [@chenjiahan](https://github.com/chenjiahan) in [#12484](https://github.com/youzan/vant/pull/12484)
+
+#### Bug 修复 🐞
+
+- fix(cli): 在模板中删除未使用的脚本 by [@chenjiahan](https://github.com/chenjiahan) in [#12482](https://github.com/youzan/vant/pull/12482)
+- fix(TextEllipsis): 修复 toggle 的缺少参数 by [@wjw-gavin](https://github.com/wjw-gavin) in [#12483](https://github.com/youzan/vant/pull/12483)
+
+#### 文档 📖
+
+- docs(collapse): 修复缺少的引用标签 by [@RSS1102](https://github.com/RSS1102) in [#12460](https://github.com/youzan/vant/pull/12460)
+- docs(collapse): 修复翻译错误 by [@RSS1102](https://github.com/RSS1102) in [#12464](https://github.com/youzan/vant/pull/12464)
+- docs(dialog): 修复翻译错误并保持示例代码不变 by [@RSS1102](https://github.com/RSS1102) in [#12465](https://github.com/youzan/vant/pull/12465)
+- docs(TreeSelect): 修正变量名 by [@inottn](https://github.com/inottn) in [#12469](https://github.com/youzan/vant/pull/12469)
+- docs: 添加 Rsbuild 脚手架指南 by [@chenjiahan](https://github.com/chenjiahan) in [#12475](https://github.com/youzan/vant/pull/12475)
+- docs(image-preview): 补充 className 的使用方法 by [@RSS1102](https://github.com/RSS1102) in [#12491](https://github.com/youzan/vant/pull/12491)
+- docs(Quickstart): 更新 unplugin-vue-components 的使用方法 (#12499) by [@wChenonly](https://github.com/wChenonly) in [#12500](https://github.com/youzan/vant/pull/12500)
+
+#### 其他变更
+
+- chore(workflow): 为 PR 添加 perf 标签 by [@chenjiahan](https://github.com/chenjiahan) in [#12473](https://github.com/youzan/vant/pull/12473)
+- refactor(CLI): 整合 Rsbuild 以构建网站 by [@chenjiahan](https://github.com/chenjiahan) in [#12481](https://github.com/youzan/vant/pull/12481)
+- chore: 升级 Rspack 到 0.4.2 以修复中文路径问题 by [@chenjiahan](https://github.com/chenjiahan) in [#12496](https://github.com/youzan/vant/pull/12496)
+- chore(deps): 从 4.4.9 升级 vite 到 4.4.12 by [@dependabot](https://github.com/dependabot) in [#12493](https://github.com/youzan/vant/pull/12493)
+
+#### 新贡献者
+
+- [@RSS1102](https://github.com/RSS1102) 在 [#12460](https://github.com/youzan/vant/pull/12460) 中作出了他们的首次贡献
+
 ### v4.8.0
 
 `2023-11-19`

@@ -19,6 +19,46 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 
 ## Details
 
+### v4.8.1
+
+`2023-12-17`
+
+#### New Features 🎉
+
+- perf(TextEllipsis): reuse windowWidth to avoid repeat calculations by [@inottn](https://github.com/inottn) in [#12471](https://github.com/youzan/vant/pull/12471)
+- feat(TextEllipsis): add the toggle instance method by [@wjw-gavin](https://github.com/wjw-gavin) in [#12472](https://github.com/youzan/vant/pull/12472)
+- feat(cli): bump Rsbuild v0.2.2 by [@chenjiahan](https://github.com/chenjiahan) in [#12502](https://github.com/youzan/vant/pull/12502)
+
+#### Performance 🚀
+
+- perf(cli): disable source map to make compilation faster by [@chenjiahan](https://github.com/chenjiahan) in [#12484](https://github.com/youzan/vant/pull/12484)
+
+#### Bug Fixes 🐞
+
+- fix(cli): remove unused script in template by [@chenjiahan](https://github.com/chenjiahan) in [#12482](https://github.com/youzan/vant/pull/12482)
+- fix(TextEllipsis): fix missing param for toggle by [@wjw-gavin](https://github.com/wjw-gavin) in [#12483](https://github.com/youzan/vant/pull/12483)
+
+#### Document 📖
+
+- docs(collapse): fix missing ref tags by [@RSS1102](https://github.com/RSS1102) in [#12460](https://github.com/youzan/vant/pull/12460)
+- docs(collapse): fix translation Error by [@RSS1102](https://github.com/RSS1102) in [#12464](https://github.com/youzan/vant/pull/12464)
+- docs(dialog): fix translation Error and keep the sample code the same by [@RSS1102](https://github.com/RSS1102) in [#12465](https://github.com/youzan/vant/pull/12465)
+- docs(TreeSelect): correct variable names by [@inottn](https://github.com/inottn) in [#12469](https://github.com/youzan/vant/pull/12469)
+- docs: add Rsbuild scaffold guide by [@chenjiahan](https://github.com/chenjiahan) in [#12475](https://github.com/youzan/vant/pull/12475)
+- docs(image-preview): usage of Supplementing className by [@RSS1102](https://github.com/RSS1102) in [#12491](https://github.com/youzan/vant/pull/12491)
+- docs(Quickstart): unplugin-vue-components usage updated (#12499) by [@wChenonly](https://github.com/wChenonly) in [#12500](https://github.com/youzan/vant/pull/12500)
+
+#### Other Changes
+
+- chore(workflow): add perf label for PR by [@chenjiahan](https://github.com/chenjiahan) in [#12473](https://github.com/youzan/vant/pull/12473)
+- refactor(CLI): integrate Rsbuild to build website by [@chenjiahan](https://github.com/chenjiahan) in [#12481](https://github.com/youzan/vant/pull/12481)
+- chore: bump Rspack 0.4.2 to fix Chinese path by [@chenjiahan](https://github.com/chenjiahan) in [#12496](https://github.com/youzan/vant/pull/12496)
+- chore(deps): bump vite from 4.4.9 to 4.4.12 by [@dependabot](https://github.com/dependabot) in [#12493](https://github.com/youzan/vant/pull/12493)
+
+#### New Contributors
+
+- [@RSS1102](https://github.com/RSS1102) made their first contribution in [#12460](https://github.com/youzan/vant/pull/12460)
+
 ### v4.8.0
 
 `2023-11-19`
