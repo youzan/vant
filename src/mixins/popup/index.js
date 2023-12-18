@@ -202,7 +202,7 @@ export function PopupMixin(options = {}) {
           this.direction === 'vertical' &&
           !(parseInt(status, 2) & parseInt(direction, 2))
         ) {
-          touchStart(event);
+          stopPropagation(event);
         }
       },
 
