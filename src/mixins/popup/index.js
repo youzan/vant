@@ -8,7 +8,7 @@ import {
 } from './overlay';
 
 // Utils
-import { on, off, preventDefault } from '../../utils/dom/event';
+import { on, off, stopPropagation } from '../../utils/dom/event';
 import { removeNode } from '../../utils/dom/node';
 import { getScroller } from '../../utils/dom/scroll';
 
