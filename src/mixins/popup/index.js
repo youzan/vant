@@ -182,7 +182,6 @@ export function PopupMixin(options = {}) {
         this.$emit('input', false);
       },
 
-      touchStart: function () {},
       onTouchMove(event) {
         this.touchMove(event);
         const direction = this.deltaY > 0 ? '10' : '01';
@@ -203,7 +202,7 @@ export function PopupMixin(options = {}) {
           this.direction === 'vertical' &&
           !(parseInt(status, 2) & parseInt(direction, 2))
         ) {
-          preventDefault(event, true);
+          touchStart(event);
         }
       },
 
