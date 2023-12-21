@@ -3,7 +3,7 @@
   "scripts": {
     "prepare": "husky install",
     "dev": "pnpm --dir ./packages/vant dev",
-    "lint": "eslint ./packages/**/src ./packages/**/test --ext .js,.ts,.tsx,.vue,.mjs,.cjs",
+    "lint": "eslint \"./packages/**/{src,test}/**/*.{vue,ts,tsx,js,mjs,cjs}\"",
     "test": "pnpm --dir ./packages/vant test",
     "test:watch": "pnpm --dir ./packages/vant test:watch",
     "test:update": "pnpm --dir ./packages/vant test:update",
