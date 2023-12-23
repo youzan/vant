@@ -62,7 +62,7 @@
     "@vitejs/plugin-vue": "^4.0.0",
     "@vitejs/plugin-vue-jsx": "^3.0.0",
     "@vitest/coverage-istanbul": "0.34.1",
-    "@vue/runtime-core": "^3.3.4",
+    "@vue/runtime-core": "^3.4.0-beta.4",
     "@vue/test-utils": "^2.3.2",
     "diffable-html": "^5.0.0",
     "jsdom": "^22.1.0",
@@ -70,7 +70,7 @@
     "vite": "^4.4.12",
     "vitest": "0.34.2",
     "vitest-canvas-mock": "^0.3.2",
-    "vue": "^3.3.4",
+    "vue": "^3.4.0-beta.4",
     "vue-router": "^4.1.6"
   },
   "sideEffects": [
