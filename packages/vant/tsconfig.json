@@ -3,7 +3,7 @@
   "compilerOptions": {
     "allowJs": true,
     "noImplicitThis": true,
-    "types": ["vitest/globals"]
+    "types": ["vitest/globals", "vue/jsx"]
   },
   "include": ["src/**/*", "docs/**/*", "test/**/*"],
   "exclude": ["**/node_modules", "**/.*/"]
