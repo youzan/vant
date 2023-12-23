@@ -54,8 +54,8 @@
     "@rsbuild/plugin-vue-jsx": "0.2.8",
     "@vant/eslint-config": "workspace:^",
     "@vant/touch-emulator": "workspace:^",
-    "@vitejs/plugin-vue": "^4.0.0",
-    "@vitejs/plugin-vue-jsx": "^3.0.0",
+    "@vitejs/plugin-vue": "^4.5.2",
+    "@vitejs/plugin-vue-jsx": "^3.1.0",
     "@vue/babel-plugin-jsx": "^1.1.1",
     "autoprefixer": "^10.4.8",
     "commander": "^11.0.0",
@@ -81,7 +81,7 @@
     "terser": "^5.19.2",
     "transliteration": "^2.3.5",
     "typescript": "^5.0.4",
-    "vite": "^4.4.12",
+    "vite": "^5.0.10",
     "vue-router": "^4.1.6"
   }
 }
