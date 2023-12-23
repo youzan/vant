@@ -1,6 +1,7 @@
+import { nextTick } from 'vue';
 import { DOMWrapper } from '@vue/test-utils/dist/domWrapper';
 import { cdnURL } from '../../../docs/site';
-import { trigger } from '../../../test';
+import { trigger, triggerDrag } from '../../../test';
 
 export const images = [
   cdnURL('apple-1.jpeg'),
@@ -37,4 +38,15 @@ export function triggerZoom(
   }
 
   trigger(el, 'touchend', 0, 0, { touchList: [] });
+}
+
+export function triggerDoubleTap(
+  el: HTMLElement | DOMWrapper<Element>,
+  x: number = 0,
+  y: number = 0,
+) {
+  triggerDrag(el, x, y);
+  triggerDrag(el, x, y);
+
+  return nextTick();
 }
