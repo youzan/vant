@@ -27,5 +27,10 @@
     "husky": "^8.0.1",
     "nano-staged": "^0.8.0",
     "prettier": "^3.0.0"
+  },
+  "pnpm": {
+    "overrides": {
+      "@rspack/core": "0.4.3"
+    }
   }
 }
