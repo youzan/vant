@@ -1,7 +1,7 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`should change clear icon when using clear-icon prop 1`] = `
-"<i class=\\"van-badge__wrapper van-icon van-icon-cross van-field__clear\\">
+"<i class="van-badge__wrapper van-icon van-icon-cross van-field__clear">
   <!---->
   <!---->
   <!---->

@@ -48,7 +48,7 @@ exports[`should change icon class prefix when using icon-prefix prop 1`] = `
 </transition-stub>
 `;
 
-exports[`should locate to reference element when showed 1`] = `"<!----><transition-stub name=\\"van-popover-zoom\\" appear=\\"false\\" persisted=\\"false\\" css=\\"true\\"><!----></transition-stub>"`;
+exports[`should locate to reference element when showed 1`] = `"<!----><transition-stub name="van-popover-zoom" appear="false" persisted="false" css="true"><!----></transition-stub>"`;
 
 exports[`should locate to reference element when showed 2`] = `
 <transition-stub

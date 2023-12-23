@@ -1,7 +1,7 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`should change arrow direction when using arrow-direction prop 1`] = `
-"<i class=\\"van-badge__wrapper van-icon van-icon-arrow-down van-cell__right-icon\\">
+"<i class="van-badge__wrapper van-icon van-icon-arrow-down van-cell__right-icon">
   <!---->
   <!---->
   <!---->
@@ -41,7 +41,7 @@ exports[`should render label slot correctly 1`] = `
 `;
 
 exports[`should render tag prop correctly 1`] = `
-"<a class=\\"van-cell\\">
+"<a class="van-cell">
   <!---->
   <!---->
   <!---->

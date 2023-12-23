@@ -275,10 +275,10 @@ exports[`formatter prop 1`] = `
 `;
 
 exports[`popup wrapper 1`] = `
-"<transition-stub name=\\"van-fade\\" appear=\\"true\\" persisted=\\"false\\" css=\\"true\\" role=\\"button\\" tabindex=\\"0\\">
+"<transition-stub name="van-fade" appear="true" persisted="false" css="true" role="button" tabindex="0">
   <!---->
 </transition-stub>
-<transition-stub name=\\"van-popup-slide-bottom\\" appear=\\"false\\" persisted=\\"false\\" css=\\"true\\">
+<transition-stub name="van-popup-slide-bottom" appear="false" persisted="false" css="true">
   <!---->
 </transition-stub>"
 `;

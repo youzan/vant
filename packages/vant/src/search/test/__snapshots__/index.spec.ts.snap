@@ -10,7 +10,7 @@ exports[`should render action text when using action-text prop 1`] = `
 </div>
 `;
 
-exports[`should render label slot correctly 1`] = `"<label class=\\"van-search__label\\" for=\\"van-search-input\\">Custom Label</label>"`;
+exports[`should render label slot correctly 1`] = `"<label class="van-search__label" for="van-search-input">Custom Label</label>"`;
 
 exports[`should render left icon when using left-icon prop 1`] = `
 <div class="van-field__left-icon">
