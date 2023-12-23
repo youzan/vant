@@ -45,7 +45,7 @@ exports[`render image 1`] = `
 `;
 
 exports[`should change close icon position when using close-icon-position prop 1`] = `
-"<i class=\\"van-badge__wrapper van-icon van-icon-clear van-image-preview__close-icon van-image-preview__close-icon--top-left van-haptics-feedback\\" role=\\"button\\">
+"<i class="van-badge__wrapper van-icon van-icon-clear van-image-preview__close-icon van-image-preview__close-icon--top-left van-haptics-feedback" role="button">
   <!---->
   <!---->
   <!---->
@@ -53,7 +53,7 @@ exports[`should change close icon position when using close-icon-position prop 1
 `;
 
 exports[`should change close icon when using close-icon prop 1`] = `
-"<i class=\\"van-badge__wrapper van-icon van-icon-success van-image-preview__close-icon van-image-preview__close-icon--top-right van-haptics-feedback\\" role=\\"button\\">
+"<i class="van-badge__wrapper van-icon van-icon-success van-image-preview__close-icon van-image-preview__close-icon--top-right van-haptics-feedback" role="button">
   <!---->
   <!---->
   <!---->

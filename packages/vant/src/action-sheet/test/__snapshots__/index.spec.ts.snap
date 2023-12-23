@@ -1,7 +1,7 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`should allow to custom close icon with closeIcon prop 1`] = `
-"<i class=\\"van-badge__wrapper van-icon van-icon-cross van-action-sheet__close van-haptics-feedback\\">
+"<i class="van-badge__wrapper van-icon van-icon-cross van-action-sheet__close van-haptics-feedback">
   <!---->
   <!---->
   <!---->

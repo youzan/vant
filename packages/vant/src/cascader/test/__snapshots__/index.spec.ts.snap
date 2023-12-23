@@ -1,7 +1,7 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`should change close icon when using close-icon prop 1`] = `
-"<i class=\\"van-badge__wrapper van-icon van-icon-success van-cascader__close-icon van-haptics-feedback\\">
+"<i class="van-badge__wrapper van-icon van-icon-success van-cascader__close-icon van-haptics-feedback">
   <!---->
   <!---->
   <!---->
@@ -9,7 +9,7 @@ exports[`should change close icon when using close-icon prop 1`] = `
 `;
 
 exports[`should render option slot correctly 1`] = `
-"<li role=\\"menuitemradio\\" class=\\"van-cascader__option\\" tabindex=\\"-1\\" aria-checked=\\"false\\">Custom Option foo
+"<li role="menuitemradio" class="van-cascader__option" tabindex="-1" aria-checked="false">Custom Option foo
   <!---->
 </li>"
 `;
@@ -48,7 +48,7 @@ exports[`should render options-top、options-bottom slots correctly 1`] = `
 </div>
 `;
 
-exports[`should render title slot correctly 1`] = `"<h2 class=\\"van-cascader__title\\">Custom Title</h2>"`;
+exports[`should render title slot correctly 1`] = `"<h2 class="van-cascader__title">Custom Title</h2>"`;
 
 exports[`should select correct option when value changed 1`] = `
 <li

@@ -1,7 +1,7 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`should apply icon-prefix prop to error-icon 1`] = `
-"<i class=\\"van-badge__wrapper my-icon my-icon-error van-image__error-icon\\">
+"<i class="van-badge__wrapper my-icon my-icon-error van-image__error-icon">
   <!---->
   <!---->
   <!---->
@@ -9,7 +9,7 @@ exports[`should apply icon-prefix prop to error-icon 1`] = `
 `;
 
 exports[`should apply icon-prefix prop to loading-icon 1`] = `
-"<i class=\\"van-badge__wrapper my-icon my-icon-success van-image__loading-icon\\">
+"<i class="van-badge__wrapper my-icon my-icon-success van-image__loading-icon">
   <!---->
   <!---->
   <!---->
