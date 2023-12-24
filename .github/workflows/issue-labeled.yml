@@ -31,9 +31,9 @@ jobs:
           actions: 'create-comment'
           issue-number: ${{ github.event.issue.number }}
           body: |
-            Hello @${{ github.event.issue.user.login }}. Please provide an online reproduction demo by [codesandbox](https://codesandbox.io/s/vant-3-issue-template-8fuq5o) or a minimal GitHub repository. Issues marked with `need reproduce` will be closed if there is no activity within 3 days. For background, please refer to [Why reproductions are required](https://antfu.me/posts/why-reproductions-are-required).
+            Hello @${{ github.event.issue.user.login }}. Please provide an online reproduction demo by [codesandbox](https://codesandbox.io/p/devbox/vant-4-issue-template-8fuq5o) or a minimal GitHub repository. Issues marked with `need reproduce` will be closed if there is no activity within 3 days. For background, please refer to [Why reproductions are required](https://antfu.me/posts/why-reproductions-are-required).
 
-            你好 @${{ github.event.issue.user.login }}, 我们需要你提供一个在线的重现示例，以便于我们帮你排查问题。你可以通过点击 [codesandbox](https://codesandbox.io/s/vant-3-issue-template-8fuq5o) 创建，或者提供一个最小化的 GitHub 仓库。如果 3 天内未跟进，此 issue 将会被自动关闭。背景请参考 [为什么需要最小重现](https://antfu.me/posts/why-reproductions-are-required-zh)。
+            你好 @${{ github.event.issue.user.login }}, 我们需要你提供一个在线的重现示例，以便于我们帮你排查问题。你可以通过点击 [codesandbox](https://codesandbox.io/p/devbox/vant-4-issue-template-8fuq5o) 创建，或者提供一个最小化的 GitHub 仓库。如果 3 天内未跟进，此 issue 将会被自动关闭。背景请参考 [为什么需要最小重现](https://antfu.me/posts/why-reproductions-are-required-zh)。
 
       - name: question
         if: github.event.label.name == 'question'
