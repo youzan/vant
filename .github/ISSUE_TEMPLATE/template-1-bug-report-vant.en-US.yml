@@ -7,7 +7,7 @@ body:
     id: reproduce
     attributes:
       label: Reproduction Link
-      description: Please provide a simple [codesandbox](https://codesandbox.io/s/vant-3-issue-template-8fuq5o) or GitHub repository link. Do not fill in invalid links, this will cause your issue to be closed directly.
+      description: Please provide a simple [codesandbox](https://codesandbox.io/p/devbox/vant-4-issue-template-8fuq5o) or GitHub repository link. Do not fill in invalid links, this will cause your issue to be closed directly.
     validations:
       required: true
 
