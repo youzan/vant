@@ -13,6 +13,7 @@ export type UploaderFileListItem = {
   isImage?: boolean;
   status?: '' | 'uploading' | 'done' | 'failed';
   message?: string;
+  progressValue?: number;
   imageFit?: ImageFit;
   deletable?: boolean;
   reupload?: boolean;

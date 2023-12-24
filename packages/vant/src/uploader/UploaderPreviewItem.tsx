@@ -17,6 +17,7 @@ import {
 import { Icon } from '../icon';
 import { Image, ImageFit } from '../image';
 import { Loading } from '../loading';
+import Slider from '../slider';
 
 // Types
 import type { UploaderFileListItem } from './types';
@@ -40,8 +41,7 @@ export default defineComponent({
 
   setup(props, { emit, slots }) {
     const renderMask = () => {
-      const { status, message } = props.item;
-
+      const { status, message, progressValue } = props.item;
       if (status === 'uploading' || status === 'failed') {
         const MaskIcon =
           status === 'failed' ? (
@@ -56,6 +56,13 @@ export default defineComponent({
           <div class={bem('mask')}>
             {MaskIcon}
             {showMessage && <div class={bem('mask-message')}>{message}</div>}
+            {progressValue && (
+              <Slider
+                class={bem('mask-slide')}
+                modelValue={progressValue}
+                cancelButton={true}
+              ></Slider>
+            )}
           </div>
         );
       }

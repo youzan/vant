@@ -60,6 +60,7 @@ const fileList3 = ref([]);
 
 const fileList4 = ref([{ url: cdnURL('sand.jpeg') }]);
 
+const progressValue = ref(30);
 const fileList5 = ref<UploaderFileListItem[]>([
   {
     url: cdnURL('sand.jpeg'),
@@ -79,6 +80,7 @@ const statusFileList = ref<UploaderFileListItem[]>([
     url: cdnURL('leaf.jpeg'),
     status: 'uploading',
     message: t('uploading'),
+    progressValue: progressValue,
   },
   {
     url: cdnURL('tree.jpeg'),
