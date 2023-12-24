@@ -1,4 +1,4 @@
-name: 我要反馈 Vant 的 Bug
+name: 我要反馈 Bug
 description: 通过标准模板进行 Bug 反馈。
 title: "[Bug Report] 请在此填写标题"
 labels: ["bug: need confirm"]
@@ -25,7 +25,7 @@ body:
     attributes:
       label: Vant 版本
       description: 你正在使用的 Vant 版本是多少？（请填写 node_modules/vant/package.json 里实际安装的版本）
-      placeholder: 比如 3.2.0
+      placeholder: 比如 4.2.0
     validations:
       required: true
 

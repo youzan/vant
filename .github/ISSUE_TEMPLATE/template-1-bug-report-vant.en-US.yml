@@ -16,7 +16,7 @@ body:
     attributes:
       label: Vant Version
       description: Please fill in the version actually installed in node_modules/vant/package.json
-      placeholder: E.g. 3.2.0
+      placeholder: E.g. 4.2.0
     validations:
       required: true
 
