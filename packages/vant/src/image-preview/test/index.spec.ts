@@ -7,7 +7,7 @@ import {
 } from '../../../test';
 import { LONG_PRESS_START_TIME } from '../../utils';
 import ImagePreview from '../ImagePreview';
-import { images, triggerZoom } from './shared';
+import { images, triggerDoubleTap, triggerZoom } from './shared';
 import type { ImagePreviewInstance } from '../types';
 
 test('should swipe to current index after calling the swipeTo method', async () => {
@@ -230,38 +230,56 @@ test('should trigger scale after double clicking', async () => {
 
   await later();
   const swipe = wrapper.find('.van-swipe-item');
-  triggerDrag(swipe, 0, 0);
-  triggerDrag(swipe, 0, 0);
+
+  triggerDoubleTap(swipe);
   expect(onScale).toHaveBeenCalledWith({
     index: 0,
     scale: 2,
   });
 
-  await later();
-  triggerDrag(swipe, 0, 0);
-  triggerDrag(swipe, 0, 0);
+  triggerDoubleTap(swipe);
   expect(onScale).toHaveBeenLastCalledWith({
     index: 0,
     scale: 1,
   });
+
+  // when closeOnClickOverlay is set to false, it will not affect the zooming.
+  onScale.mockClear();
+  await wrapper.setProps({ closeOnClickOverlay: false });
+  triggerDoubleTap(swipe);
+  expect(onScale).toHaveBeenCalled();
 });
 
 test('should allow to disable double click gesture', async () => {
   const onScale = vi.fn();
+  const onClose = vi.fn();
   const wrapper = mount(ImagePreview, {
     props: {
       images,
       show: true,
       doubleScale: false,
+      onClose,
       onScale,
+      'onUpdate:show': (show) => {
+        wrapper.setProps({ show });
+      },
     },
   });
 
+  // The ImagePreview will close because double-click is disabled.
   await later();
   const swipe = wrapper.find('.van-swipe-item');
-  triggerDrag(swipe, 0, 0);
-  triggerDrag(swipe, 0, 0);
-  expect(onScale).toHaveBeenCalledTimes(0);
+  await triggerDoubleTap(swipe);
+  expect(onClose).toHaveBeenCalled();
+  expect(onScale).not.toHaveBeenCalled();
+
+  // The ImagePreview will not close when closeOnClickOverlay is set to false.
+  onClose.mockClear();
+  await wrapper.setProps({ closeOnClickOverlay: false, show: true });
+  await triggerDrag(swipe, 0, 0);
+  expect(onClose).not.toHaveBeenCalled();
+  await triggerDoubleTap(swipe, 0, 0);
+  expect(onClose).not.toHaveBeenCalled();
 });
 
 test('zoom in and drag image to move', async () => {

@@ -16,7 +16,7 @@ exports[`should allow to disable lazy-render 1`] = `
 `;
 
 exports[`should render default slot correctly 1`] = `
-"<transition-stub name=\\"van-fade\\" appear=\\"true\\" persisted=\\"false\\" css=\\"true\\">
+"<transition-stub name="van-fade" appear="true" persisted="false" css="true">
   <!---->
 </transition-stub>"
 `;

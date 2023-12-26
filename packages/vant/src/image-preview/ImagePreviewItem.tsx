@@ -251,6 +251,14 @@ export default defineComponent({
       }
     };
 
+    const checkClose = (event: TouchEvent) => {
+      const isClickOverlay = event.target === swipeItem.value?.$el;
+
+      if (!props.closeOnClickOverlay && isClickOverlay) return;
+
+      emit('close');
+    };
+
     const checkTap = (event: TouchEvent) => {
       if (fingerNum > 1) {
         return;
@@ -272,19 +280,13 @@ export default defineComponent({
               doubleTapTimer = null;
               toggleScale();
             } else {
-              if (
-                !props.closeOnClickOverlay &&
-                event.target === swipeItem.value?.$el
-              ) {
-                return;
-              }
               doubleTapTimer = setTimeout(() => {
-                emit('close');
+                checkClose(event);
                 doubleTapTimer = null;
               }, TAP_TIME);
             }
           } else {
-            emit('close');
+            checkClose(event);
           }
         }
         // long press

@@ -43,24 +43,24 @@
     "@types/lodash": "^4.14.191",
     "@types/markdown-it": "^13.0.0",
     "rimraf": "^5.0.0",
-    "vue": "^3.3.4"
+    "vue": "^3.4.0-rc.1"
   },
   "dependencies": {
     "@babel/core": "^7.23.2",
     "@babel/preset-typescript": "^7.23.2",
-    "@rsbuild/core": "0.2.2",
-    "@rsbuild/plugin-babel": "0.2.2",
-    "@rsbuild/plugin-vue": "0.2.2",
-    "@rsbuild/plugin-vue-jsx": "0.2.2",
+    "@rsbuild/core": "0.2.10",
+    "@rsbuild/plugin-babel": "0.2.10",
+    "@rsbuild/plugin-vue": "0.2.10",
+    "@rsbuild/plugin-vue-jsx": "0.2.10",
     "@vant/eslint-config": "workspace:^",
     "@vant/touch-emulator": "workspace:^",
-    "@vitejs/plugin-vue": "^4.0.0",
-    "@vitejs/plugin-vue-jsx": "^3.0.0",
+    "@vitejs/plugin-vue": "^4.5.2",
+    "@vitejs/plugin-vue-jsx": "^3.1.0",
     "@vue/babel-plugin-jsx": "^1.1.1",
     "autoprefixer": "^10.4.8",
     "commander": "^11.0.0",
     "rslog": "^1.1.0",
-    "esbuild": "^0.18.11",
+    "esbuild": "^0.19.10",
     "eslint": "^8.46.0",
     "enquirer": "2.3.6",
     "fast-glob": "^3.2.11",
@@ -81,7 +81,7 @@
     "terser": "^5.19.2",
     "transliteration": "^2.3.5",
     "typescript": "^5.0.4",
-    "vite": "^4.4.12",
+    "vite": "^5.0.10",
     "vue-router": "^4.1.6"
   }
 }

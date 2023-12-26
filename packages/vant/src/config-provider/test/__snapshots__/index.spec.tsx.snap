@@ -8,7 +8,7 @@ exports[`should change icon class-prefix when using icon-prefix prop 1`] = `
 `;
 
 exports[`should render tag prop correctly 1`] = `
-"<section class=\\"van-config-provider\\">
+"<section class="van-config-provider">
   <!---->
 </section>"
 `;
