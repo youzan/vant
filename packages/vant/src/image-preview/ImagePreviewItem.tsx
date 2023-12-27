@@ -16,7 +16,6 @@ import {
   createNamespace,
   makeRequiredProp,
   LONG_PRESS_START_TIME,
-  TAP_OFFSET,
   type ComponentInstance,
 } from '../utils';
 
@@ -264,13 +263,12 @@ export default defineComponent({
         return;
       }
 
-      const { offsetX, offsetY } = touch;
       const deltaTime = Date.now() - touchStartTime;
 
       // Same as the default value of iOS double tap timeout
       const TAP_TIME = 250;
 
-      if (offsetX.value < TAP_OFFSET && offsetY.value < TAP_OFFSET) {
+      if (touch.isTap.value) {
         if (deltaTime < TAP_TIME) {
           // allow double to scale
           if (props.doubleScale) {
