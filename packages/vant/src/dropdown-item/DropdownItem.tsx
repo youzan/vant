@@ -2,6 +2,7 @@ import {
   reactive,
   Teleport,
   defineComponent,
+  ref,
   type PropType,
   type TeleportProps,
   type CSSProperties,
@@ -15,11 +16,12 @@ import {
   getZIndexStyle,
   createNamespace,
   makeArrayProp,
+  getContainingBlock,
 } from '../utils';
 import { DROPDOWN_KEY } from '../dropdown-menu/DropdownMenu';
 
 // Composables
-import { useParent } from '@vant/use';
+import { useParent, useRect } from '@vant/use';
 import { useExpose } from '../composables/use-expose';
 
 // Components
@@ -59,6 +61,7 @@ export default defineComponent({
       transition: true,
       showWrapper: false,
     });
+    const wrapperRef = ref<HTMLElement>();
 
     const { parent, index } = useParent(DROPDOWN_KEY);
 
@@ -160,20 +163,35 @@ export default defineComponent({
 
     const renderContent = () => {
       const { offset } = parent;
-      const { zIndex, overlay, duration, direction, closeOnClickOverlay } =
-        parent.props;
-
+      const {
+        autoLocate,
+        zIndex,
+        overlay,
+        duration,
+        direction,
+        closeOnClickOverlay,
+      } = parent.props;
       const style: CSSProperties = getZIndexStyle(zIndex);
+      let offsetValue = offset.value;
+
+      if (autoLocate && wrapperRef.value) {
+        const offsetParent = getContainingBlock(wrapperRef.value);
+
+        if (offsetParent) {
+          offsetValue -= useRect(offsetParent).top;
+        }
+      }
 
       if (direction === 'down') {
-        style.top = `${offset.value}px`;
+        style.top = `${offsetValue}px`;
       } else {
-        style.bottom = `${offset.value}px`;
+        style.bottom = `${offsetValue}px`;
       }
 
       return (
         <div
           v-show={state.showWrapper}
+          ref={wrapperRef}
           style={style}
           class={bem([direction])}
           onClick={onClickWrapper}

@@ -172,6 +172,7 @@ You can set `swipe-threshold` prop to customize threshold number.
 | close-on-click-overlay | Whether to close when overlay is clicked | _boolean_ | `true` |
 | close-on-click-outside | Whether to close when outside is clicked | _boolean_ | `true` |
 | swipe-threshold | Horizontal scrolling is allowed when the number of items exceeds the threshold and the total width exceeds the width of the menu. | _number \| string_ | - |
+| auto-locate | When the ancestor element is set with a transform, the position of the dropdown menu will be automatically adjusted. | _boolean_ | `false` |
 
 ### DropdownItem Props
 
