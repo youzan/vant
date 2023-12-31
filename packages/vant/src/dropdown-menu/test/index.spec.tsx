@@ -2,6 +2,9 @@ import { later, mount } from '../../../test';
 import { reactive, ref, onMounted, computed } from 'vue';
 import DropdownItem from '../../dropdown-item';
 import DropdownMenu, { DropdownMenuDirection } from '..';
+import { getContainingBlock } from '../../utils/dom';
+
+vi.mock('../../utils/dom');
 
 function renderWrapper(
   options: {
@@ -324,4 +327,43 @@ test('scrolling is allowed when the number of items exceeds the threshold', asyn
   itemCounts.value = 5;
   await later();
   expect(bar.classes()).toContain('van-dropdown-menu__bar--scrollable');
+});
+
+test('auto-locate prop', async () => {
+  const mockedFn = vi.mocked(getContainingBlock);
+  const autoLocate = ref(false);
+  const wrapper = mount({
+    setup() {
+      const options = [
+        { text: 'A', value: 0 },
+        { text: 'B', value: 1 },
+      ];
+
+      return () => (
+        <DropdownMenu autoLocate={autoLocate.value}>
+          <DropdownItem modelValue={0} options={options} />
+        </DropdownMenu>
+      );
+    },
+  });
+
+  const item = wrapper.find('.van-dropdown-item');
+  const offsetParent = {
+    getBoundingClientRect() {
+      return {
+        top: 10,
+      };
+    },
+  } as HTMLElement;
+  expect(mockedFn).not.toHaveBeenCalled();
+  expect(item.style.top).toEqual('0px');
+
+  mockedFn.mockReturnValue(offsetParent);
+  autoLocate.value = true;
+  await later();
+  expect(mockedFn).toHaveBeenCalled();
+  expect(mockedFn.mock.calls[0]).toEqual([item.element]);
+  expect(item.style.top).toEqual('-10px');
+
+  vi.doUnmock('../../utils/dom');
 });
