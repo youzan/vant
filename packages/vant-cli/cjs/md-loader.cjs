@@ -49,13 +49,37 @@ const initMarkdownIt = () => {
 
 const md = initMarkdownIt();
 
-const markdownToVue = (raw) => {
+const markdownToJs = (raw) => {
   let html = md.render(raw);
-  html = `<div class="van-doc-markdown-body">${html}</div>`;
   html = markdownCardWrapper(html);
-  // escape curly brackets
-  html = html.replace(/<code(.*?)>/g, '<code$1 v-pre>');
-  return `<template>${html}</template>`;
+
+  return `
+  import { openBlock, createElementBlock } from 'vue';
+
+const _hoisted_1 = ['innerHTML'];
+const html = ${JSON.stringify(html)};
+
+export default {
+  setup() {
+    return { html: '' };
+  },
+  render() {
+    return (
+      openBlock(),
+      createElementBlock(
+        'div',
+        {
+          class: 'van-doc-markdown-body',
+          innerHTML: html,
+        },
+        null,
+        8 /* PROPS */,
+        _hoisted_1,
+      )
+    );
+  },
+};
+  `
 };
 
 // add target="_blank" to all links
@@ -78,5 +102,5 @@ function markdownLinkOpen(md) {
 }
 
 module.exports = function (raw) {
-  return markdownToVue(raw);
+  return markdownToJs(raw);
 };
