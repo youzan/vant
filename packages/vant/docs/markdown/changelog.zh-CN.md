@@ -19,6 +19,41 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 
 ## 更新内容
 
+### v4.8.2
+
+`2024-01-03`
+
+#### 新功能 🎉
+
+- feat: 支持从 shadow DOM 中链接 CSS [@yoyo837](https://github.com/yoyo837) 在 [#12526](https://github.com/youzan/vant/pull/12526)
+- feat(DropdownMenu): 新增 auto-locate 属性 [@inottn](https://github.com/inottn) 在 [#12251](https://github.com/youzan/vant/pull/12251)
+
+#### 性能提升 🚀
+
+- perf(CLI): 提升 markdown 编译性能 [@chenjiahan](https://github.com/chenjiahan) 在 [#12541](https://github.com/youzan/vant/pull/12541)
+
+#### Bug 修复 🐞
+
+- fix(ci): 在 Windows 上修复 eslint [@Jungzl](https://github.com/Jungzl) 在 [#12516](https://github.com/youzan/vant/pull/12516)
+- fix(ImagePreview): 在某些情况下双倍缩放和点击遮罩关闭可能无法工作 [@inottn](https://github.com/inottn) 在 [#12521](https://github.com/youzan/vant/pull/12521)
+
+#### 其他更改
+
+- chore(deps): 升级 Rsbuild 至 v0.2.8 [@chenjiahan](https://github.com/chenjiahan) 在 [#12519](https://github.com/youzan/vant/pull/12519)
+- chore(deps): 升级 Vue 至 3.4.0-beta.4 [@chenjiahan](https://github.com/chenjiahan) 在 [#12520](https://github.com/youzan/vant/pull/12520)
+- test: 升级 vitest 至 v1.1.0 [@chenjiahan](https://github.com/chenjiahan) 在 [#12522](https://github.com/youzan/vant/pull/12522)
+- chore(deps): 升级 vite 至 v5 [@chenjiahan](https://github.com/chenjiahan) 在 [#12523](https://github.com/youzan/vant/pull/12523)
+- chore(deps): 升级 esbuild 至 v0.19 [@chenjiahan](https://github.com/chenjiahan) 在 [#12524](https://github.com/youzan/vant/pull/12524)
+- chore: 锁定 Rspack 至 v0.4.3 以修复 CSS 问题 [@chenjiahan](https://github.com/chenjiahan) 在 [#12525](https://github.com/youzan/vant/pull/12525)
+- chore(workflow): 调整问题模板 [@chenjiahan](https://github.com/chenjiahan) 在 [#12528](https://github.com/youzan/vant/pull/12528)
+- chore(workflow): 更新 codesandbox 链接 [@chenjiahan](https://github.com/chenjiahan) 在 [#12529](https://github.com/youzan/vant/pull/12529)
+- chore: 更新 vitest 配置 [@inottn](https://github.com/inottn) 在 [#12530](https://github.com/youzan/vant/pull/12530)
+- chore(deps): 升级 Rsbuild 和 Vue [@chenjiahan](https://github.com/chenjiahan) 在 [#12532](https://github.com/youzan/vant/pull/12532)
+- chore(ImagePreview): 重用 isTap 引用 [@inottn](https://github.com/inottn) 在 [#12536](https://github.com/youzan/vant/pull/12536)
+- test(Toast): 减少测试运行时间 [@inottn](https://github.com/inottn) 在 [#12538](https://github.com/youzan/vant/pull/12538)
+- test(FloatingBubble): 减少测试运行时间 [@inottn](https://github.com/inottn) 在 [#12539](https://github.com/youzan/vant/pull/12539)
+- release: 发布 vant v4.8.2 [@chenjiahan](https://github.com/chenjiahan) 在 [#12542](https://github.com/youzan/vant/pull/12542)
+
 ### v4.8.1
 
 `2023-12-17`

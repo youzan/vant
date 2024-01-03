@@ -19,6 +19,40 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 
 ## Details
 
+### v4.8.2
+
+`2024-01-03`
+
+#### New Features 🎉
+
+- feat: support link css from shadow dom by [@yoyo837](https://github.com/yoyo837) in [#12526](https://github.com/youzan/vant/pull/12526)
+- feat(DropdownMenu): add auto-locate prop by [@inottn](https://github.com/inottn) in [#12251](https://github.com/youzan/vant/pull/12251)
+
+#### Performance 🚀
+
+- perf(CLI): improve markdown compile performance by [@chenjiahan](https://github.com/chenjiahan) in [#12541](https://github.com/youzan/vant/pull/12541)
+
+#### Bug Fixes 🐞
+
+- fix(ci): eslint on windows by [@Jungzl](https://github.com/Jungzl) in [#12516](https://github.com/youzan/vant/pull/12516)
+- fix(ImagePreview): double-scale and close-on-click-overlay may not work in certain scenarios by [@inottn](https://github.com/inottn) in [#12521](https://github.com/youzan/vant/pull/12521)
+
+#### Other Changes
+
+- chore(deps): bump Rsbuild v0.2.8 by [@chenjiahan](https://github.com/chenjiahan) in [#12519](https://github.com/youzan/vant/pull/12519)
+- chore(deps): bump Vue 3.4.0-beta.4 by [@chenjiahan](https://github.com/chenjiahan) in [#12520](https://github.com/youzan/vant/pull/12520)
+- test: bump vitest v1.1.0 by [@chenjiahan](https://github.com/chenjiahan) in [#12522](https://github.com/youzan/vant/pull/12522)
+- chore(deps): bump vite v5 by [@chenjiahan](https://github.com/chenjiahan) in [#12523](https://github.com/youzan/vant/pull/12523)
+- chore(deps): bump esbuild v0.19 by [@chenjiahan](https://github.com/chenjiahan) in [#12524](https://github.com/youzan/vant/pull/12524)
+- chore: lock Rspack v0.4.3 to fix CSS issue by [@chenjiahan](https://github.com/chenjiahan) in [#12525](https://github.com/youzan/vant/pull/12525)
+- chore(workflow): adjust issue templates by [@chenjiahan](https://github.com/chenjiahan) in [#12528](https://github.com/youzan/vant/pull/12528)
+- chore(workflow): update codesandbox URL by [@chenjiahan](https://github.com/chenjiahan) in [#12529](https://github.com/youzan/vant/pull/12529)
+- chore: update vitest config by [@inottn](https://github.com/inottn) in [#12530](https://github.com/youzan/vant/pull/12530)
+- chore(deps): bump Rsbuild and Vue by [@chenjiahan](https://github.com/chenjiahan) in [#12532](https://github.com/youzan/vant/pull/12532)
+- chore(ImagePreview): reuse isTap ref by [@inottn](https://github.com/inottn) in [#12536](https://github.com/youzan/vant/pull/12536)
+- test(Toast): reduce test run time by [@inottn](https://github.com/inottn) in [#12538](https://github.com/youzan/vant/pull/12538)
+- test(FloatingBubble): reduce test run time by [@inottn](https://github.com/inottn) in [#12539](https://github.com/youzan/vant/pull/12539)
+
 ### v4.8.1
 
 `2023-12-17`
