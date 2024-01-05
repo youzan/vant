@@ -192,7 +192,6 @@ export default defineComponent({
     };
 
     const onClickAction = (event: MouseEvent) => {
-      toggle();
       emit('clickAction', event);
     };
 
@@ -209,10 +208,7 @@ export default defineComponent({
       calcEllipsised,
     );
 
-    useExpose({
-      toggle,
-      getTextEllipsized: () => hasAction.value,
-    });
+    useExpose({ toggle, hasAction });
 
     return () => (
       <div ref={root} class={bem()}>

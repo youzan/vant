@@ -3,7 +3,7 @@ import type { TextEllipsisProps } from './TextEllipsis';
 
 export type TextEllipsisExpose = {
   toggle: (expanded?: boolean) => void;
-  getTextEllipsized: () => boolean;
+  hasAction: boolean;
 };
 
 export type TextEllipsisInstance = ComponentPublicInstance<

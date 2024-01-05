@@ -150,10 +150,9 @@ export default {
 
 Use [ref](https://vuejs.org/guide/essentials/template-refs.html) to get TextEllipsis instance and call instance methods.
 
-| Name | Description | Attribute | Return value |
-| --- | --- | --- | --- |
-| toggle | Toggle expanded status | _expanded?: boolean_ | - |
-| getTextEllipsized | Get the ellipsis status of the text | - | _boolean_ |
+| Name   | Description            | Attribute            | Return value |
+| ------ | ---------------------- | -------------------- | ------------ |
+| toggle | Toggle expanded status | _expanded?: boolean_ | -            |
 
 ### Types
 
@@ -176,7 +175,6 @@ import type { TextEllipsisInstance } from 'vant';
 const textEllipsisRef = ref<TextEllipsisInstance>();
 
 textEllipsisRef.value?.toggle();
-textEllipsisRef.value!.getTextEllipsized();
 ```
 
 ## Theming
