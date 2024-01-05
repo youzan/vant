@@ -119,7 +119,8 @@ export default defineComponent({
         if (container) {
           const containerRect = useRect(container);
           const difference = containerRect.bottom - offset.value - state.height;
-          state.fixed = offset.value > rootRect.top && containerRect.bottom > 0;
+          state.fixed =
+            offset.value >= rootRect.top && containerRect.bottom > 0;
           state.transform = difference < 0 ? difference : 0;
         } else {
           state.fixed = offset.value > rootRect.top;
