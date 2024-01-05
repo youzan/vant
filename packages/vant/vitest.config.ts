@@ -1,10 +1,9 @@
 import { defineConfig } from 'vitest/config';
 import vitePluginVue from '@vitejs/plugin-vue';
 import vitePluginJsx from '@vitejs/plugin-vue-jsx';
-import { cpus, totalmem } from 'os';
+import { cpus } from 'os';
 
 const cpuNum = Math.max(cpus().length - 1, 1);
-const memory = totalmem();
 
 export default defineConfig({
   test: {
@@ -25,10 +24,7 @@ export default defineConfig({
     poolOptions: {
       vmThreads: {
         // limit the memory to avoid OOM
-        memoryLimit:
-          typeof memory === 'number'
-            ? memory * Math.min(1 / (cpuNum * 2), 0.1)
-            : undefined,
+        memoryLimit: Math.min(1 / (cpuNum * 2), 0.1),
       },
     },
     environment: 'jsdom',
