@@ -437,6 +437,51 @@ test('should not render header when showHeader is false', async () => {
   expect(tabs.length).toEqual(0);
 });
 
+test('should fixed when sticky offset is equal top', async () => {
+  const wrapper = mount({
+    render() {
+      return (
+        <Tabs sticky>
+          <Tab title="title1">Text</Tab>
+          <Tab title="title2">Text</Tab>
+        </Tabs>
+      );
+    },
+  });
+
+  const mockContainerRect = vi
+    .spyOn(wrapper.element, 'getBoundingClientRect')
+    .mockReturnValue({
+      bottom: 10,
+    } as DOMRect);
+  const container = wrapper.element.children[0];
+  const mockStickyRect = vi
+    .spyOn(container, 'getBoundingClientRect')
+    .mockReturnValue({
+      top: -10,
+    } as DOMRect);
+
+  expect(wrapper.find('.van-sticky').classes()).toStrictEqual(['van-sticky']);
+
+  await mockScrollTop(100);
+  expect(wrapper.find('.van-sticky').classes()).toStrictEqual([
+    'van-sticky',
+    'van-sticky--fixed',
+  ]);
+
+  mockStickyRect.mockReturnValue({
+    top: 0,
+  } as DOMRect);
+  await mockScrollTop(100);
+  expect(wrapper.find('.van-sticky').classes()).toStrictEqual([
+    'van-sticky',
+    'van-sticky--fixed',
+  ]);
+
+  mockStickyRect.mockRestore();
+  mockContainerRect.mockRestore();
+});
+
 test('should call before-change prop before changing', async () => {
   const onChange = vi.fn();
   const beforeChange = (name: number) => {
