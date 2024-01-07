@@ -1,12 +1,8 @@
-export type ImageFit = 'contain' | 'cover' | 'fill' | 'none' | 'scale-down';
+import type { CSSProperties } from 'vue';
 
-export type ImagePosition =
-  | 'center'
-  | 'top'
-  | 'right'
-  | 'bottom'
-  | 'left'
-  | string;
+export type ImageFit = CSSProperties['objectFit'];
+
+export type ImagePosition = CSSProperties['objectPosition'];
 
 export type ImageThemeVars = {
   imagePlaceholderTextColor?: string;
