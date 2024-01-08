@@ -73,7 +73,7 @@ app.use(Lazyload, {
 | --- | --- | --- | --- |
 | loading | Src of the image while loading | _string_ | - |
 | error | Src of the image upon load fail | _string_ | - |
-| preload | Proportion of pre-loading height | _string_ | - |
+| preLoad | Proportion of pre-loading height | _number_ | - |
 | attempt | Attempts count | _number_ | `3` |
 | listenEvents | Events that you want vue listen for | _string[]_ | `scroll`... |
 | adapter | Dynamically modify the attribute of element | _object_ | - |
