@@ -1,5 +1,7 @@
 <script setup lang="ts">
-import VanTextEllipsis from '..';
+import { ref } from 'vue';
+import VanTextEllipsis, { TextEllipsisInstance } from '..';
+import VanButton from '../../button'
 import { useTranslate } from '../../../docs/site';
 
 const t = useTranslate({
@@ -16,6 +18,7 @@ const t = useTranslate({
     collapsePosition: '自定义省略位置',
     collapseStart: '头部省略',
     collapseMiddle: '中部省略',
+    useSlots: '使用插槽',
   },
   'en-US': {
     text1:
@@ -31,8 +34,15 @@ const t = useTranslate({
     collapsePosition: 'Custom Collapse Position',
     collapseStart: 'Head Area Collapse Position',
     collapseMiddle: 'Middle Area Collapse Position',
+    useSlots: 'use Slots',
   },
 });
+
+const textEllipsisRef = ref<TextEllipsisInstance>();
+
+const toggle = (value: boolean) => {
+  textEllipsisRef.value?.toggle(value);
+};
 </script>
 
 <template>
@@ -76,6 +86,21 @@ const t = useTranslate({
         :collapse-text="t('collapseText')"
         position="middle"
       />
+    </demo-block>
+
+    <demo-block :title="t('useSlots')">
+      <van-text-ellipsis ref="textEllipsisRef" :content="t('text1')">
+        <template #expand-text>
+          <van-button size="small" type="primary" @click="toggle(true)"
+            >展开</van-button
+          >
+        </template>
+        <template #collapse-text>
+          <van-button size="small" type="primary" @click="toggle(false)"
+            >折叠</van-button
+          >
+        </template>
+      </van-text-ellipsis>
     </demo-block>
   </demo-block>
 </template>

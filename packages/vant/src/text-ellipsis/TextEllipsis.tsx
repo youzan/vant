@@ -37,7 +37,7 @@ export default defineComponent({
 
   emits: ['clickAction'],
 
-  setup(props, { emit }) {
+  setup(props, { emit, slots }) {
     const text = ref('');
     const expanded = ref(false);
     const hasAction = ref(false);
@@ -196,11 +196,21 @@ export default defineComponent({
       emit('clickAction', event);
     };
 
-    const renderAction = () => (
-      <span class={bem('action')} onClick={onClickAction}>
-        {actionText.value}
-      </span>
-    );
+    const renderAction = () => {
+      const expandTextSlot = slots['expand-text'];
+      const collapseTextSlot = slots['collapse-text'];
+      if (expandTextSlot && !expanded.value) {
+        return expandTextSlot();
+      }
+      if (collapseTextSlot && expanded.value) {
+        return collapseTextSlot();
+      }
+      return (
+        <span class={bem('action')} onClick={onClickAction}>
+          {actionText.value}
+        </span>
+      );
+    };
 
     onMounted(calcEllipsised);
 
