@@ -50,7 +50,7 @@ exports[`should render demo and match snapshot 1`] = `
       >
         <div class="van-button__content">
           <span class="van-button__text">
-            展开
+            expand
           </span>
         </div>
       </button>

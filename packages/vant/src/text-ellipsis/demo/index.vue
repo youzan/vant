@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref } from 'vue';
 import VanTextEllipsis, { TextEllipsisInstance } from '..';
-import VanButton from '../../button'
+import VanButton from '../../button';
 import { useTranslate } from '../../../docs/site';
 
 const t = useTranslate({
@@ -92,13 +92,13 @@ const toggle = (value: boolean) => {
       <van-text-ellipsis ref="textEllipsisRef" :content="t('text1')">
         <template #expand-text>
           <van-button size="small" type="primary" @click="toggle(true)"
-            >展开</van-button
-          >
+            >{{ t('expandText') }}
+          </van-button>
         </template>
         <template #collapse-text>
-          <van-button size="small" type="primary" @click="toggle(false)"
-            >折叠</van-button
-          >
+          <van-button size="small" type="primary" @click="toggle(false)">{{
+            t('collapseText')
+          }}</van-button>
         </template>
       </van-text-ellipsis>
     </demo-block>
