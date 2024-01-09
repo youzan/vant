@@ -41,5 +41,20 @@ exports[`should render demo and match snapshot 1`] = `
       </span>
     </div>
   </div>
+  <div>
+    <div class="van-text-ellipsis">
+      ...
+      <button
+        type="button"
+        class="van-button van-button--primary van-button--small"
+      >
+        <div class="van-button__content">
+          <span class="van-button__text">
+            展开
+          </span>
+        </div>
+      </button>
+    </div>
+  </div>
 </div>
 `;
