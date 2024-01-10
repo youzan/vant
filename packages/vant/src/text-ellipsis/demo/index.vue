@@ -34,7 +34,7 @@ const t = useTranslate({
     collapsePosition: 'Custom Collapse Position',
     collapseStart: 'Head Area Collapse Position',
     collapseMiddle: 'Middle Area Collapse Position',
-    useSlots: 'use Slots',
+    useSlots: 'Use Slots',
   },
 });
 
