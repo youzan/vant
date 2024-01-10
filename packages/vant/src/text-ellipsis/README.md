@@ -177,6 +177,13 @@ const textEllipsisRef = ref<TextEllipsisInstance>();
 textEllipsisRef.value?.toggle();
 ```
 
+### Slots
+
+| Name                   | Description            | SlotProps |
+| ---------------------- | ---------------------- | --------- |
+| expand-text `v4.8.3`   | Custom expand action   | -         |
+| collapse-text `v4.8.3` | Custom collapse action | -         |
+
 ## Theming
 
 ### CSS Variables

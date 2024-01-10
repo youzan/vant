@@ -174,6 +174,13 @@ const textEllipsisRef = ref<TextEllipsisInstance>();
 textEllipsisRef.value?.toggle();
 ```
 
+### Slots
+
+| 名称                   | 说明           | 参数 |
+| ---------------------- | -------------- | ---- |
+| expand-text `v4.8.3`   | 自定义展开操作 | -    |
+| collapse-text `v4.8.3` | 自定义收起操作 | -    |
+
 ## 主题定制
 
 ### 样式变量
