@@ -151,6 +151,13 @@ export default {
 | --- | --- | --- | --- |
 | toggle | 切换文本的展开状态，传 `true` 为展开，`false` 为收起，不传参为切换 | _expanded?: boolean_ | - |
 
+### Slots
+
+| 名称                   | 说明           | 参数 |
+| ---------------------- | -------------- | ---- |
+| expand-text `v4.8.3`   | 自定义展开操作 | -    |
+| collapse-text `v4.8.3` | 自定义收起操作 | -    |
+
 ### 类型定义
 
 组件导出以下类型定义：
@@ -173,13 +180,6 @@ const textEllipsisRef = ref<TextEllipsisInstance>();
 
 textEllipsisRef.value?.toggle();
 ```
-
-### Slots
-
-| 名称                   | 说明           | 参数 |
-| ---------------------- | -------------- | ---- |
-| expand-text `v4.8.3`   | 自定义展开操作 | -    |
-| collapse-text `v4.8.3` | 自定义收起操作 | -    |
 
 ## 主题定制
 

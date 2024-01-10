@@ -154,6 +154,13 @@ Use [ref](https://vuejs.org/guide/essentials/template-refs.html) to get TextElli
 | ------ | ---------------------- | -------------------- | ------------ |
 | toggle | Toggle expanded status | _expanded?: boolean_ | -            |
 
+### Slots
+
+| Name                   | Description            | SlotProps |
+| ---------------------- | ---------------------- | --------- |
+| expand-text `v4.8.3`   | Custom expand action   | -         |
+| collapse-text `v4.8.3` | Custom collapse action | -         |
+
 ### Types
 
 The component exports the following type definitions:
@@ -176,13 +183,6 @@ const textEllipsisRef = ref<TextEllipsisInstance>();
 
 textEllipsisRef.value?.toggle();
 ```
-
-### Slots
-
-| Name                   | Description            | SlotProps |
-| ---------------------- | ---------------------- | --------- |
-| expand-text `v4.8.3`   | Custom expand action   | -         |
-| collapse-text `v4.8.3` | Custom collapse action | -         |
 
 ## Theming
 
