@@ -127,6 +127,48 @@ export default {
 };
 ```
 
+### Custom Action
+
+Use `expand-text` `collapse-text` slots to custom expand and collapse action
+
+```html
+<van-text-ellipsis ref="textEllipsisRef" :content="text">
+  <template #expand-text>
+    <van-button size="small" type="primary" @click="toggle(true)"
+      >Expand</van-button
+    >
+  </template>
+  <template #collapse-text>
+    <van-button size="small" type="primary" @click="toggle(false)"
+      >Collapse</van-button
+    >
+  </template>
+</van-text-ellipsis>
+```
+
+```js
+import { ref } from 'vue';
+import type { TextEllipsisInstance } from 'vant';
+
+export default {
+  setup() {
+    const text =
+          "That day, I turned twenty-one. In the golden age of my life, I was full of dreams. I wanted to love, to eat, and to instantly transform into one of these clouds, part alight, part darkened. It was only later that I understood life is but a slow, drawn-out process of getting your balls crushed. Day by day, you get older. Day by day, your dreams fade. In the end you are no different from a crushed ox. But I hadn't foreseen any of it on my twenty-first birthday. I thought I would be vigorous forever, and that nothing could ever crush me.";
+    const textEllipsisRef = ref<TextEllipsisInstance>();
+
+    const toggle = (value: boolean) => {
+      textEllipsisRef.value?.toggle(value);
+    };
+
+    return {
+      text,
+      toggle,
+      textEllipsisRef,
+    };
+  },
+};
+```
+
 ## API
 
 ### Props
