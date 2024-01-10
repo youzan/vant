@@ -122,6 +122,8 @@ Vant exports following Notify utility functions:
 
 ### NotifyOptions
 
+When calling the `showNotify` and other related methods, the following options are supported:
+
 | Attribute | Description | Type | Default |
 | --- | --- | --- | --- |
 | type | Can be set to `primary` `success` `warning` | _NotifyType_ | `danger` |
@@ -133,9 +135,45 @@ Vant exports following Notify utility functions:
 | background | Background color | _string_ | - |
 | className | Custom className | _string \| Array \| object_ | - |
 | lockScroll | Whether to lock background scroll | _boolean_ | `false` |
+| teleport | Specifies a target element where Notify will be mounted | _string \| Element_ | - |
 | onClick | Callback function after click | _(event: MouseEvent) => void_ | - |
 | onOpened | Callback function after opened | _() => void_ | - |
 | onClose | Callback function after close | _() => void_ | - |
+
+### Props
+
+When using `Notify` as a component, the following props are supported:
+
+| Attribute | Description | Type | Default |
+| --- | --- | --- | --- |
+| v-model:show | Whether to show notify | _boolean_ | `false` |
+| type | Can be set to `primary` `success` `warning` | _NotifyType_ | `danger` |
+| message | Message | _string_ | - |
+| z-index | Set the z-index to a fixed value | _number \| string_ | `2000+` |
+| position | Position, can be set to `bottom` | _NotifyPosition_ | `top` |
+| color | Message color | _string_ | `white` |
+| background | Background color | _string_ | - |
+| class-name | Custom className | _string \| Array \| object_ | - |
+| lock-scroll | Whether to lock background scroll | _boolean_ | `false` |
+| teleport | Specifies a target element where Notify will be mounted | _string \| Element_ | - |
+
+### Events
+
+When using `Notify` as a component, the following events are supported:
+
+| Event  | Description                    | Parameters          |
+| ------ | ------------------------------ | ------------------- |
+| click  | Callback function after click  | _event: MouseEvent_ |
+| close  | Callback function after close  | -                   |
+| opened | Callback function after opened | -                   |
+
+### Slots
+
+When using `Notify` as a component, the following slots are supported:
+
+| Name    | Description    |
+| ------- | -------------- |
+| default | Custom content |
 
 ### Types
 
