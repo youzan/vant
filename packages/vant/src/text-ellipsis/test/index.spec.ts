@@ -1,6 +1,6 @@
 import { mount } from '../../../test';
 import { nextTick } from 'vue';
-import TextEllipsis from '..';
+import { TextEllipsis, TextEllipsisInstance } from '..';
 
 const originGetComputedStyle = window.getComputedStyle;
 
@@ -30,6 +30,30 @@ beforeAll(() => {
 
 afterAll(() => {
   window.getComputedStyle = originGetComputedStyle;
+});
+
+test('should render expand-text, collapse-text slots correctly', async () => {
+  const wrapper = mount(TextEllipsis, {
+    props: {
+      content,
+    },
+    slots: {
+      'expand-text': () => 'Custom Expand',
+      'collapse-text': () => 'Custom Collapse',
+    },
+  });
+
+  await nextTick();
+
+  expect(wrapper.html()).toMatchSnapshot();
+
+  (wrapper.vm as TextEllipsisInstance).toggle();
+  await nextTick();
+  expect(wrapper.html()).toMatchSnapshot();
+
+  (wrapper.vm as TextEllipsisInstance).toggle();
+  await nextTick();
+  expect(wrapper.html()).toMatchSnapshot();
 });
 
 test('should render content correctly', async () => {

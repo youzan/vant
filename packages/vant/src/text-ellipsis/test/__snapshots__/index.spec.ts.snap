@@ -7,3 +7,21 @@ exports[`should render content correctly 1`] = `
   </span>
 </div>
 `;
+
+exports[`should render expand-text, collapse-text slots correctly 1`] = `
+<div class="van-text-ellipsis">
+  Vant is a lightweight, customizable mobile component library th...Custom Expand
+</div>
+`;
+
+exports[`should render expand-text, collapse-text slots correctly 2`] = `
+<div class="van-text-ellipsis">
+  Vant is a lightweight, customizable mobile component library that was open sourced in 2017. Currently Vant officially provides Vue 2 version, Vue 3 version and WeChat applet version, and the community team maintains React version and Alipay applet version.Custom Collapse
+</div>
+`;
+
+exports[`should render expand-text, collapse-text slots correctly 3`] = `
+<div class="van-text-ellipsis">
+  Vant is a lightweight, customizable mobile component library th...Custom Expand
+</div>
+`;
