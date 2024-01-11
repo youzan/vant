@@ -129,42 +129,22 @@ export default {
 
 ### Custom Action
 
-Use `expand-text` `collapse-text` slots to custom expand and collapse action
+Use `action` slots to custom action
 
 ```html
-<van-text-ellipsis ref="textEllipsisRef" :content="text">
-  <template #expand-text>
-    <van-button size="small" type="primary" @click="toggle(true)"
-      >Expand</van-button
-    >
-  </template>
-  <template #collapse-text>
-    <van-button size="small" type="primary" @click="toggle(false)"
-      >Collapse</van-button
-    >
+<van-text-ellipsis :content="text">
+  <template #action="{ expanded }">
+    {{ expanded ? 'Expand' : 'Collapse' }}
   </template>
 </van-text-ellipsis>
 ```
 
 ```js
-import { ref } from 'vue';
-import type { TextEllipsisInstance } from 'vant';
-
 export default {
   setup() {
     const text =
       'Take your time and be patient. Life itself will eventually answer all those questions it once raised for you.';
-    const textEllipsisRef = ref<TextEllipsisInstance>();
-
-    const toggle = (value: boolean) => {
-      textEllipsisRef.value?.toggle(value);
-    };
-
-    return {
-      text,
-      toggle,
-      textEllipsisRef,
-    };
+    return { text };
   },
 };
 ```

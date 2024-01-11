@@ -126,41 +126,19 @@ export default {
 
 ### 自定义操作内容
 
-通过插槽 `expand-text` `collapse-text` 自定义操作内容
+通过插槽 `action` 自定义操作内容
 
 ```html
 <van-text-ellipsis ref="textEllipsisRef" :content="text">
-  <template #expand-text>
-    <van-button size="small" type="primary" @click="toggle(true)"
-      >展开</van-button
-    >
-  </template>
-  <template #collapse-text>
-    <van-button size="small" type="primary" @click="toggle(false)"
-      >收起</van-button
-    >
-  </template>
+  <template #action="{ expanded }"> {{ expanded ? '展开' : '收起' }} </template>
 </van-text-ellipsis>
 ```
 
 ```js
-import { ref } from 'vue';
-import type { TextEllipsisInstance } from 'vant';
-
 export default {
   setup() {
     const text = '慢慢来，不要急，生活给你出了难题，可也终有一天会给出答案。';
-    const textEllipsisRef = ref<TextEllipsisInstance>();
-
-    const toggle = (value: boolean) => {
-      textEllipsisRef.value?.toggle(value);
-    };
-
-    return {
-      text,
-      toggle,
-      textEllipsisRef,
-    };
+    return { text };
   },
 };
 ```
