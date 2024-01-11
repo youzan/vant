@@ -16,6 +16,7 @@ const t = useTranslate({
     collapsePosition: '自定义省略位置',
     collapseStart: '头部省略',
     collapseMiddle: '中部省略',
+    customAction: '自定义操作内容',
   },
   'en-US': {
     text1:
@@ -31,6 +32,7 @@ const t = useTranslate({
     collapsePosition: 'Custom Collapse Position',
     collapseStart: 'Head Area Collapse Position',
     collapseMiddle: 'Middle Area Collapse Position',
+    customAction: 'Custom Action',
   },
 });
 </script>
@@ -76,6 +78,14 @@ const t = useTranslate({
         :collapse-text="t('collapseText')"
         position="middle"
       />
+    </demo-block>
+
+    <demo-block :title="t('customAction')">
+      <van-text-ellipsis :content="t('text1')">
+        <template #action="{ expanded }">
+          {{ expanded ? t('collapseText') : t('expandText') }}
+        </template>
+      </van-text-ellipsis>
     </demo-block>
   </demo-block>
 </template>

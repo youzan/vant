@@ -124,6 +124,25 @@ export default {
 };
 ```
 
+### 自定义操作内容
+
+通过插槽 `action` 自定义操作内容。
+
+```html
+<van-text-ellipsis :content="text">
+  <template #action="{ expanded }">{{ expanded ? '收起' : '展开' }}</template>
+</van-text-ellipsis>
+```
+
+```js
+export default {
+  setup() {
+    const text = '慢慢来，不要急，生活给你出了难题，可也终有一天会给出答案。';
+    return { text };
+  },
+};
+```
+
 ## API
 
 ### Props
@@ -150,6 +169,12 @@ export default {
 | 方法名 | 说明 | 参数 | 返回值 |
 | --- | --- | --- | --- |
 | toggle | 切换文本的展开状态，传 `true` 为展开，`false` 为收起，不传参为切换 | _expanded?: boolean_ | - |
+
+### Slots
+
+| 名称            | 说明       | 参数                    |
+| --------------- | ---------- | ----------------------- |
+| action `v4.8.3` | 自定义操作 | _{ expanded: boolean }_ |
 
 ### 类型定义
 
