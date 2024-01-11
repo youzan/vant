@@ -1,6 +1,6 @@
 import { mount } from '../../../test';
 import { nextTick } from 'vue';
-import { TextEllipsis, TextEllipsisInstance } from '..';
+import TextEllipsis, { type TextEllipsisInstance } from '..';
 
 const originGetComputedStyle = window.getComputedStyle;
 
