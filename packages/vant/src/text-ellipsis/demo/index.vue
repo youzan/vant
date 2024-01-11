@@ -16,7 +16,7 @@ const t = useTranslate({
     collapsePosition: '自定义省略位置',
     collapseStart: '头部省略',
     collapseMiddle: '中部省略',
-    useSlots: '使用插槽',
+    customAction: '自定义操作内容',
   },
   'en-US': {
     text1:
@@ -32,7 +32,7 @@ const t = useTranslate({
     collapsePosition: 'Custom Collapse Position',
     collapseStart: 'Head Area Collapse Position',
     collapseMiddle: 'Middle Area Collapse Position',
-    useSlots: 'Use Slot',
+    customAction: 'Custom Action',
   },
 });
 </script>
@@ -80,7 +80,7 @@ const t = useTranslate({
       />
     </demo-block>
 
-    <demo-block :title="t('useSlots')">
+    <demo-block :title="t('customAction')">
       <van-text-ellipsis :content="t('text1')">
         <template #action="{ expanded }">
           {{ expanded ? t('collapseText') : t('expandText') }}
