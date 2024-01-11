@@ -32,7 +32,7 @@ const t = useTranslate({
     collapsePosition: 'Custom Collapse Position',
     collapseStart: 'Head Area Collapse Position',
     collapseMiddle: 'Middle Area Collapse Position',
-    useSlots: 'Use Slots',
+    useSlots: 'Use Slot',
   },
 });
 </script>
