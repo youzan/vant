@@ -129,7 +129,7 @@ export default {
 通过插槽 `action` 自定义操作内容
 
 ```html
-<van-text-ellipsis ref="textEllipsisRef" :content="text">
+<van-text-ellipsis :content="text">
   <template #action="{ expanded }">{{ expanded ? '收起' : '展开' }}</template>
 </van-text-ellipsis>
 ```
