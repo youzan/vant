@@ -300,9 +300,5 @@ const onConfirm = (date: Date | Date[]) => {
     :first-day-of-week="state.firstDayOfWeek"
     :confirm-disabled-text="state.confirmDisabledText"
     @confirm="onConfirm"
-  >
-    <template #subtitle="{ date }">
-      {{ date }}
-    </template>
-  </van-calendar>
+  />
 </template>
