@@ -148,9 +148,45 @@ Vant 中导出了以下 Notify 相关的辅助函数：
 | background | 背景颜色 | _string_ | - |
 | className | 自定义类名 | _string \| Array \| object_ | - |
 | lockScroll | 是否锁定背景滚动 | _boolean_ | `false` |
+| teleport | 指定挂载的节点，等同于 Teleport 组件的 [to 属性](https://cn.vuejs.org/api/built-in-components.html#teleport) | _string \| Element_ | - |
 | onClick | 点击时的回调函数 | _(event: MouseEvent): void_ | - |
 | onOpened | 完全展示后的回调函数 | _() => void_ | - |
 | onClose | 关闭时的回调函数 | _() => void_ | - |
+
+### Props
+
+通过组件调用 `Notify` 时，支持以下 Props：
+
+| 参数 | 说明 | 类型 | 默认值 |
+| --- | --- | --- | --- |
+| v-model:show | 是否显示通知 | _boolean_ | `false` |
+| type | 类型，可选值为 `primary` `success` `warning` | _NotifyType_ | `danger` |
+| message | 展示文案，支持通过`\n`换行 | _string_ | - |
+| z-index | 将组件的 z-index 层级设置为一个固定值 | _number \| string_ | `2000+` |
+| position | 弹出位置，可选值为 `bottom` | _NotifyPosition_ | `top` |
+| color | 字体颜色 | _string_ | `white` |
+| background | 背景颜色 | _string_ | - |
+| class-name | 自定义类名 | _string \| Array \| object_ | - |
+| lock-scroll | 是否锁定背景滚动 | _boolean_ | `false` |
+| teleport | 指定挂载的节点，等同于 Teleport 组件的 [to 属性](https://cn.vuejs.org/api/built-in-components.html#teleport) | _string \| Element_ | - |
+
+### Events
+
+通过组件调用 `Notify` 时，支持以下事件：
+
+| 事件名 | 说明                 | 回调参数            |
+| ------ | -------------------- | ------------------- |
+| click  | 点击时的回调函数     | _event: MouseEvent_ |
+| close  | 关闭时的回调函数     | -                   |
+| opened | 完全展示后的回调函数 | -                   |
+
+### Slots
+
+通过组件调用 `Notify` 时，支持以下插槽：
+
+| 名称    | 说明       |
+| ------- | ---------- |
+| default | 自定义内容 |
 
 ### 类型定义
 
