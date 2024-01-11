@@ -134,7 +134,7 @@ Use `action` slots to custom action
 ```html
 <van-text-ellipsis :content="text">
   <template #action="{ expanded }">
-    {{ expanded ? 'Expand' : 'Collapse' }}
+    {{ expanded ? 'Collapse' : 'Expand' }}
   </template>
 </van-text-ellipsis>
 ```
