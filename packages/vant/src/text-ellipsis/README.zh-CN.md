@@ -126,7 +126,7 @@ export default {
 
 ### 自定义操作内容
 
-通过插槽 `action` 自定义操作内容
+通过插槽 `action` 自定义操作内容。
 
 ```html
 <van-text-ellipsis :content="text">

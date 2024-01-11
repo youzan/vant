@@ -129,7 +129,7 @@ export default {
 
 ### Custom Action
 
-Use `action` slots to custom action
+Use `action` slots to custom action.
 
 ```html
 <van-text-ellipsis :content="text">
