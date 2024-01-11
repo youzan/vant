@@ -1,7 +1,5 @@
 <script setup lang="ts">
-import { ref } from 'vue';
-import VanTextEllipsis, { TextEllipsisInstance } from '..';
-import VanButton from '../../button';
+import VanTextEllipsis from '..';
 import { useTranslate } from '../../../docs/site';
 
 const t = useTranslate({
@@ -37,12 +35,6 @@ const t = useTranslate({
     useSlots: 'Use Slots',
   },
 });
-
-const textEllipsisRef = ref<TextEllipsisInstance>();
-
-const toggle = (value: boolean) => {
-  textEllipsisRef.value?.toggle(value);
-};
 </script>
 
 <template>
@@ -89,16 +81,9 @@ const toggle = (value: boolean) => {
     </demo-block>
 
     <demo-block :title="t('useSlots')">
-      <van-text-ellipsis ref="textEllipsisRef" :content="t('text1')">
-        <template #expand-text>
-          <van-button size="small" type="primary" @click="toggle(true)"
-            >{{ t('expandText') }}
-          </van-button>
-        </template>
-        <template #collapse-text>
-          <van-button size="small" type="primary" @click="toggle(false)">{{
-            t('collapseText')
-          }}</van-button>
+      <van-text-ellipsis :content="t('text1')">
+        <template #action="{ expanded }">
+          {{ expanded ? t('collapseText') : t('expandText') }}
         </template>
       </van-text-ellipsis>
     </demo-block>

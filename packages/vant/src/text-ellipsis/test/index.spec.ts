@@ -32,14 +32,13 @@ afterAll(() => {
   window.getComputedStyle = originGetComputedStyle;
 });
 
-test('should render expand-text, collapse-text slots correctly', async () => {
+test('should render action slot correctly', async () => {
   const wrapper = mount(TextEllipsis, {
     props: {
       content,
     },
     slots: {
-      'expand-text': () => 'Custom Expand',
-      'collapse-text': () => 'Custom Collapse',
+      action: ({ expanded }) => (expanded ? 'Expand' : 'Collapse'),
     },
   });
 

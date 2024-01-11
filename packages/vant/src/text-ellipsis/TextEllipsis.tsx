@@ -197,17 +197,12 @@ export default defineComponent({
     };
 
     const renderAction = () => {
-      const expandTextSlot = slots['expand-text'];
-      const collapseTextSlot = slots['collapse-text'];
-      if (expandTextSlot && !expanded.value) {
-        return expandTextSlot();
-      }
-      if (collapseTextSlot && expanded.value) {
-        return collapseTextSlot();
-      }
+      const action = slots.action
+        ? slots.action({ expanded: expanded.value })
+        : actionText.value;
       return (
         <span class={bem('action')} onClick={onClickAction}>
-          {actionText.value}
+          {action}
         </span>
       );
     };
