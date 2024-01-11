@@ -178,9 +178,9 @@ Use [ref](https://vuejs.org/guide/essentials/template-refs.html) to get TextElli
 
 ### Slots
 
-| Name            | Description   | SlotProps |
-| --------------- | ------------- | --------- |
-| action `v4.8.3` | Custom action | -         |
+| Name            | Description   | SlotProps               |
+| --------------- | ------------- | ----------------------- |
+| action `v4.8.3` | Custom action | _{ expanded: boolean }_ |
 
 ### Types
 
