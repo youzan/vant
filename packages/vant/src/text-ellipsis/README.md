@@ -198,10 +198,9 @@ Use [ref](https://vuejs.org/guide/essentials/template-refs.html) to get TextElli
 
 ### Slots
 
-| Name                   | Description            | SlotProps |
-| ---------------------- | ---------------------- | --------- |
-| expand-text `v4.8.3`   | Custom expand action   | -         |
-| collapse-text `v4.8.3` | Custom collapse action | -         |
+| Name            | Description   | SlotProps |
+| --------------- | ------------- | --------- |
+| action `v4.8.3` | Custom action | -         |
 
 ### Types
 
