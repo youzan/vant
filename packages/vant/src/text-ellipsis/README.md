@@ -127,6 +127,28 @@ export default {
 };
 ```
 
+### Custom Action
+
+Use `action` slots to custom action.
+
+```html
+<van-text-ellipsis :content="text">
+  <template #action="{ expanded }">
+    {{ expanded ? 'Collapse' : 'Expand' }}
+  </template>
+</van-text-ellipsis>
+```
+
+```js
+export default {
+  setup() {
+    const text =
+      'Take your time and be patient. Life itself will eventually answer all those questions it once raised for you.';
+    return { text };
+  },
+};
+```
+
 ## API
 
 ### Props
@@ -153,6 +175,12 @@ Use [ref](https://vuejs.org/guide/essentials/template-refs.html) to get TextElli
 | Name   | Description            | Attribute            | Return value |
 | ------ | ---------------------- | -------------------- | ------------ |
 | toggle | Toggle expanded status | _expanded?: boolean_ | -            |
+
+### Slots
+
+| Name            | Description   | SlotProps               |
+| --------------- | ------------- | ----------------------- |
+| action `v4.8.3` | Custom action | _{ expanded: boolean }_ |
 
 ### Types
 

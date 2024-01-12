@@ -37,7 +37,7 @@ export default defineComponent({
 
   emits: ['clickAction'],
 
-  setup(props, { emit }) {
+  setup(props, { emit, slots }) {
     const text = ref('');
     const expanded = ref(false);
     const hasAction = ref(false);
@@ -196,11 +196,16 @@ export default defineComponent({
       emit('clickAction', event);
     };
 
-    const renderAction = () => (
-      <span class={bem('action')} onClick={onClickAction}>
-        {actionText.value}
-      </span>
-    );
+    const renderAction = () => {
+      const action = slots.action
+        ? slots.action({ expanded: expanded.value })
+        : actionText.value;
+      return (
+        <span class={bem('action')} onClick={onClickAction}>
+          {action}
+        </span>
+      );
+    };
 
     onMounted(calcEllipsised);
 

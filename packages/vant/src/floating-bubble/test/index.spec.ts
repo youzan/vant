@@ -171,8 +171,9 @@ test('should free direction move when axis is "xy" ', async () => {
 });
 
 test('should free direction move and  magnetic to x axios when magnetic is "x" ', async () => {
-  const restore = mockGetBoundingClientRect({ width: 48, height: 48 });
+  vi.useFakeTimers();
 
+  const restore = mockGetBoundingClientRect({ width: 48, height: 48 });
   const root = document.createElement('div');
   mount(FloatingBubble, {
     props: {
@@ -187,8 +188,7 @@ test('should free direction move and  magnetic to x axios when magnetic is "x" '
   )!;
 
   await triggerDrag(floatingBubbleEl, -100, -100);
-
-  await later(400);
+  await vi.advanceTimersByTimeAsync(400);
 
   expect(floatingBubbleEl.style.transform).toEqual(
     `translate3d(${window.innerWidth - 48 - 24}px, ${
@@ -197,19 +197,20 @@ test('should free direction move and  magnetic to x axios when magnetic is "x" '
   );
 
   await triggerDrag(floatingBubbleEl, -600, -100);
-
-  await later(400);
+  await vi.advanceTimersByTimeAsync(400);
 
   expect(floatingBubbleEl.style.transform).toEqual(
     `translate3d(${24}px, ${window.innerHeight - 48 - 24 - 200}px, 0)`,
   );
 
   restore();
+  vi.useRealTimers();
 });
 
 test('should offset control positioning when use v-model:offset ', async () => {
-  const restore = mockGetBoundingClientRect({ width: 48, height: 48 });
+  vi.useFakeTimers();
 
+  const restore = mockGetBoundingClientRect({ width: 48, height: 48 });
   const root = document.createElement('div');
   const wrapper = mount(FloatingBubble, {
     props: {
@@ -227,8 +228,7 @@ test('should offset control positioning when use v-model:offset ', async () => {
   )!;
 
   await triggerDrag(floatingBubbleEl, 100, 100);
-
-  await later(400);
+  await vi.advanceTimersByTimeAsync(400);
 
   expect(floatingBubbleEl.style.transform).toEqual(
     `translate3d(${300}px, ${300}px, 0)`,
@@ -241,6 +241,7 @@ test('should offset control positioning when use v-model:offset ', async () => {
   });
 
   restore();
+  vi.useRealTimers();
 });
 
 test('should emit click when click wrapper', async () => {

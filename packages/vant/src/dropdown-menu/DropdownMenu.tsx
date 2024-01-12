@@ -42,6 +42,7 @@ export const dropdownMenuProps = {
   duration: makeNumericProp(0.2),
   direction: makeStringProp<DropdownMenuDirection>('down'),
   activeColor: String,
+  autoLocate: Boolean,
   closeOnClickOutside: truthProp,
   closeOnClickOverlay: truthProp,
   swipeThreshold: numericProp,

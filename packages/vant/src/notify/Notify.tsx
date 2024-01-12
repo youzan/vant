@@ -1,5 +1,6 @@
 import { defineComponent, type ExtractPropTypes } from 'vue';
 import {
+  pick,
   extend,
   numericProp,
   unknownProp,
@@ -11,6 +12,14 @@ import { popupSharedProps } from '../popup/shared';
 import type { NotifyType, NotifyPosition } from './types';
 
 const [name, bem] = createNamespace('notify');
+
+const popupInheritProps = [
+  'lockScroll',
+  'position',
+  'show',
+  'teleport',
+  'zIndex',
+] as const;
 
 export const notifyProps = extend({}, popupSharedProps, {
   type: makeStringProp<NotifyType>('danger'),
@@ -36,18 +45,15 @@ export default defineComponent({
 
     return () => (
       <Popup
-        show={props.show}
         class={[bem([props.type]), props.className]}
         style={{
           color: props.color,
           background: props.background,
         }}
         overlay={false}
-        zIndex={props.zIndex}
-        position={props.position}
         duration={0.2}
-        lockScroll={props.lockScroll}
         onUpdate:show={updateShow}
+        {...pick(props, popupInheritProps)}
       >
         {slots.default ? slots.default() : props.message}
       </Popup>
