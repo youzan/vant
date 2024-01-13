@@ -150,10 +150,14 @@ export default {
 
 ### Use image slot
 
-When using ImagePreview component, you can custom the image through the `image` slot, such as render a video content.
+When using ImagePreview component, you can custom the image through the `image` slot, such as render a video content. In this example, you can also set `close-on-click-image` prop to `false`, so that the preview won't be accidentally closed when you click on the video.
 
 ```html
-<van-image-preview v-model:show="show" :images="images">
+<van-image-preview
+  v-model:show="show"
+  :images="images"
+  :close-on-click-image="false"
+>
   <template #image="{ src }">
     <video style="width: 100%;" controls>
       <source :src="src" />
@@ -206,6 +210,7 @@ Vant exports following ImagePreview utility functions:
 | onScale | Emitted when scaling current image | _Function_ | - |
 | closeOnPopstate | Whether to close when popstate | _boolean_ | `true` |
 | doubleScale `v4.7.2` | Whether to enable double tap zoom gesture. When disabled, the image preview will be closed immediately upon clicking | _boolean_ | `true` |
+| closeOnClickImage `v4.8.3` | Whether to close when image is clicked | _boolean_ | `true` |
 | closeOnClickOverlay `v4.6.4` | Whether to close when overlay is clicked | _boolean_ | `true` |
 | beforeClose | Callback function before close | _(action) => boolean \| Promise_ | - |
 | className | Custom className | _string \| Array \| object_ | - |
@@ -233,6 +238,7 @@ Vant exports following ImagePreview utility functions:
 | double-scale | Whether to enable double tap zoom gesture. When disabled, the image preview will be closed immediately upon clicking | _boolean_ | `true` |
 | before-close | Callback function before close | _(action: number) => boolean \| Promise\<boolean\>_ | - |
 | close-on-popstate | Whether to close when popstate | _boolean_ | `true` |
+| close-on-click-image `v4.8.3` | Whether to close when image is clicked | _boolean_ | `true` |
 | close-on-click-overlay `v4.6.4` | Whether to close when overlay is clicked | _boolean_ | `true` |
 | class-name | Custom className (apply to Popup in image preview) | _string \| Array \| object_ | - |
 | max-zoom | Max zoom | _number \| string_ | `3` |

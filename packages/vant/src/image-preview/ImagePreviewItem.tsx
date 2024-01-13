@@ -54,6 +54,7 @@ const imagePreviewItemProps = {
   rootHeight: makeRequiredProp(Number),
   disableZoom: Boolean,
   doubleScale: Boolean,
+  closeOnClickImage: Boolean,
   closeOnClickOverlay: Boolean,
 };
 
@@ -251,8 +252,12 @@ export default defineComponent({
     };
 
     const checkClose = (event: TouchEvent) => {
-      const isClickOverlay = event.target === swipeItem.value?.$el;
+      const swipeItemEl: HTMLElement = swipeItem.value?.$el;
+      const imageEl = swipeItemEl.firstElementChild;
+      const isClickOverlay = event.target === swipeItemEl;
+      const isClickImage = imageEl?.contains(event.target as HTMLElement);
 
+      if (!props.closeOnClickImage && isClickImage) return;
       if (!props.closeOnClickOverlay && isClickOverlay) return;
 
       emit('close');

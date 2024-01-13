@@ -151,10 +151,14 @@ export default {
 
 ### 使用 image 插槽
 
-当以组件调用的方式使用 ImagePreview 时，可以通过 `image` 插槽来插入自定义的内容，比如展示一个视频内容。
+当以组件调用的方式使用 ImagePreview 时，可以通过 `image` 插槽来插入自定义的内容，比如展示一个视频内容。在这个例子中，你可以将 `close-on-click-image` 属性设置为 `false`，这样当你点击视频时就不会意外关闭预览了。
 
 ```html
-<van-image-preview v-model:show="show" :images="images">
+<van-image-preview
+  v-model:show="show"
+  :images="images"
+  :close-on-click-image="false"
+>
   <template #image="{ src }">
     <video style="width: 100%;" controls>
       <source :src="src" />
@@ -210,6 +214,7 @@ Vant 中导出了以下 ImagePreview 相关的辅助函数：
 | onScale | 缩放图片时的回调函数，回调参数为当前索引和当前缩放值组成的对象 | _Function_ | - |
 | beforeClose | 关闭前的回调函数，返回 `false` 可阻止关闭，支持返回 Promise | _(active: number) => boolean \| Promise\<boolean\>_ | - |
 | closeOnPopstate | 是否在页面回退时自动关闭 | _boolean_ | `true` |
+| closeOnClickImage `v4.8.3` | 是否在点击图片后关闭图片预览 | _boolean_ | `true` |
 | closeOnClickOverlay `v4.6.4` | 是否在点击遮罩层后关闭图片预览 | _boolean_ | `true` |
 | className | 自定义类名 (应用在图片预览的弹出层) | _string \| Array \| object_ | - |
 | maxZoom | 手势缩放时，最大缩放比例 | _number \| string_ | `3` |
@@ -238,6 +243,7 @@ Vant 中导出了以下 ImagePreview 相关的辅助函数：
 | double-scale `v4.7.2` | 是否启用双击缩放手势，禁用后，点击时会立即关闭图片预览 | _boolean_ | `true` |
 | before-close | 关闭前的回调函数，返回 `false` 可阻止关闭，支持返回 Promise | _(active: number) => boolean \| Promise\<boolean\>_ | - |
 | close-on-popstate | 是否在页面回退时自动关闭 | _boolean_ | `true` |
+| close-on-click-image `v4.8.3` | 是否在点击图片后关闭图片预览 | _boolean_ | `true` |
 | close-on-click-overlay `v4.6.4` | 是否在点击遮罩层后关闭图片预览 | _boolean_ | `true` |
 | class-name | 自定义类名 | _string \| Array \| object_ | - |
 | max-zoom | 手势缩放时，最大缩放比例 | _number \| string_ | `3` |
