@@ -134,7 +134,11 @@ const showFunctionCall = (options: Partial<ImagePreviewOptions> = {}) => {
       :title="t('useImageSlot')"
       @click="showComponentCallSlot"
     />
-    <van-image-preview v-model:show="showSlot" :images="imagesSlot">
+    <van-image-preview
+      v-model:show="showSlot"
+      :images="imagesSlot"
+      :close-on-click-image="false"
+    >
       <template #image="{ src }">
         <video style="width: 100%" controls>
           <source :src="src" />
