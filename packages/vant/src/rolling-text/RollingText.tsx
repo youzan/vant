@@ -1,20 +1,21 @@
 import {
   ref,
-  defineComponent,
-  computed,
   watch,
+  computed,
+  defineComponent,
+  type InjectionKey,
   type ExtractPropTypes,
 } from 'vue';
 
 // Utils
-import { raf } from '@vant/use';
+import { raf, useChildren } from '@vant/use';
 import {
-  createNamespace,
-  makeArrayProp,
-  makeNumberProp,
-  makeStringProp,
-  truthProp,
   padZero,
+  truthProp,
+  makeArrayProp,
+  makeStringProp,
+  makeNumberProp,
+  createNamespace,
 } from '../utils';
 
 // Composables
@@ -46,13 +47,16 @@ export const rollingTextProps = {
 const CIRCLE_NUM = 2;
 
 export type RollingTextProps = ExtractPropTypes<typeof rollingTextProps>;
+export const ROLLING_TEXT_KEY: InjectionKey<any> = Symbol(name);
 
 export default defineComponent({
   name,
 
   props: rollingTextProps,
 
-  setup(props) {
+  setup(props, { slots }) {
+    const { children, linkChildren } = useChildren(ROLLING_TEXT_KEY);
+
     const isCustomType = computed(
       () => Array.isArray(props.textList) && props.textList.length,
     );
@@ -130,20 +134,32 @@ export default defineComponent({
       reset,
     });
 
+    if (slots.default) {
+      console.log(slots.default());
+    }
+
+    const renderContent = () => {
+      if (slots.default) {
+        return slots.default()
+      }
+      console.log(isCustomType.value ? getTextArrByIdx(0) : getFigureArr(0));
+      return targetNumArr.value.map((_, i) => (
+        <RollingTextItem
+          figureArr={
+            isCustomType.value ? getTextArrByIdx(i) : getFigureArr(i)
+          }
+          duration={props.duration}
+          direction={props.direction}
+          isStart={rolling.value}
+          height={props.height}
+          delay={getDelay(i, itemLength.value)}
+        />
+      ))
+    }
+
     return () => (
       <div class={bem()}>
-        {targetNumArr.value.map((_, i) => (
-          <RollingTextItem
-            figureArr={
-              isCustomType.value ? getTextArrByIdx(i) : getFigureArr(i)
-            }
-            duration={props.duration}
-            direction={props.direction}
-            isStart={rolling.value}
-            height={props.height}
-            delay={getDelay(i, itemLength.value)}
-          />
-        ))}
+        {renderContent()}
       </div>
     );
   },
