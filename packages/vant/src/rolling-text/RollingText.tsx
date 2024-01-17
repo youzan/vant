@@ -103,6 +103,7 @@ export default defineComponent({
     };
 
     const getDelay = (i: number, len: number) => {
+      if (props.delay !== 0) return props.delay;
       if (props.stopOrder === 'ltr') return 0.2 * i;
       return 0.2 * (len - 1 - i);
     };

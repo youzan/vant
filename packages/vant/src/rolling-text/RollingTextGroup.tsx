@@ -5,6 +5,8 @@ import { createNamespace } from '../utils';
 
 // Composables
 import { useChildren } from '@vant/use';
+import { useExpose } from '../composables/use-expose';
+import { RollingTextGroupExpose } from './types';
 
 const [name, bem] = createNamespace('rolling-text-group');
 
@@ -20,14 +22,17 @@ export default defineComponent({
     linkChildren();
 
     const start = () => {
-      children.map(ins => {
-        ins.start()
-      })
+      children.map((ins) => {
+        ins.start();
+      });
     };
+
+    useExpose<RollingTextGroupExpose>({
+      start,
+    })
     if (slots.default) {
       return () => (
         <div class={bem()}>
-          <button onClick={start}>start</button>
           {slots.default!()}
         </div>
       );
