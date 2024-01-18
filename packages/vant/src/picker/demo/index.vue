@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { ref } from 'vue';
 import WithPopup from './WithPopup.vue';
+import WithPopupHorizontal from './WithPopupHorizontal.vue';
 import VanPicker, {
   PickerChangeEventParams,
   PickerConfirmEventParams,
@@ -116,4 +117,6 @@ const onCancel = () => showToast(t('cancel'));
       :columns-field-names="customFieldName"
     />
   </demo-block>
+
+  <WithPopupHorizontal />
 </template>
