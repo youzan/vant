@@ -24,7 +24,7 @@
 - 🍭 Support SSR
 - 🌍 Support i18n, built-in 30+ languages
 
-## Scaffold
+### Scaffold
 
 It is recommended to use [Rsbuild](https://github.com/web-infra-dev/rsbuild) to create a scaffold project.
 
