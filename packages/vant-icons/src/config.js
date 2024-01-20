@@ -5,6 +5,8 @@ export default {
     'arrow-left',
     'arrow-up',
     'arrow-down',
+    'arrow-double-left',
+    'arrow-double-right',
     'success',
     'cross',
     'plus',
