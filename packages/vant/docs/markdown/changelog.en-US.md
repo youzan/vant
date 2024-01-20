@@ -19,6 +19,40 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 
 ## Details
 
+### v4.8.3
+
+`2024-01-20`
+
+#### New Features 🎉
+
+- feat(Notify): add teleport prop by [@inottn](https://github.com/inottn) in [#12556](https://github.com/youzan/vant/pull/12556)
+- feat(TextEllipsis): add `action` slot by [@nemo-shen](https://github.com/nemo-shen) in [#12560](https://github.com/youzan/vant/pull/12560)
+- feat(ImagePreview): add close-on-click-image prop by [@inottn](https://github.com/inottn) in [#12566](https://github.com/youzan/vant/pull/12566)
+- feat(icons): add icon `arrow-double-left` and `arrow-double-right` by [@nemo-shen](https://github.com/nemo-shen) in [#12579](https://github.com/youzan/vant/pull/12579)
+- feat(Toast): add z-index prop by [@inottn](https://github.com/inottn) in [#12587](https://github.com/youzan/vant/pull/12587)
+
+#### Bug Fixes 🐞
+
+- fix(Tab): tab(with sticky prop) loss 'fixed' classname after switch tab by [@nemo-shen](https://github.com/nemo-shen) in [#12547](https://github.com/youzan/vant/pull/12547)
+- fix(Image): ImagePosition type is not exported before by [@Jungzl](https://github.com/Jungzl) in [#12549](https://github.com/youzan/vant/pull/12549)
+- fix(Tabs): van-border-radius-sm to van-radius-sm by [@edram](https://github.com/edram) in [#12576](https://github.com/youzan/vant/pull/12576)
+
+#### Document 📖
+
+- docs(Lazyload): fix preLoad type error and spelling mistakes by [@RSS1102](https://github.com/RSS1102) in [#12554](https://github.com/youzan/vant/pull/12554)
+- docs(home): update heading level by [@inottn](https://github.com/inottn) in [#12577](https://github.com/youzan/vant/pull/12577)
+
+#### Other Changes
+
+- test: bump vitest v1.1.3 by [@inottn](https://github.com/inottn) in [#12546](https://github.com/youzan/vant/pull/12546)
+- chore(deps): bump Rsbuild to v0.3.2 by [@chenjiahan](https://github.com/chenjiahan) in [#12565](https://github.com/youzan/vant/pull/12565)
+- chore(deps): bump vue to v3.4.13 by [@inottn](https://github.com/inottn) in [#12567](https://github.com/youzan/vant/pull/12567)
+- chore(deps): bump vite from 5.0.11 to 5.0.12 by [@dependabot](https://github.com/dependabot) in [#12588](https://github.com/youzan/vant/pull/12588)
+
+#### New Contributors
+
+- [@edram](https://github.com/edram) made their first contribution in [#12576](https://github.com/youzan/vant/pull/12576)
+
 ### v4.8.2
 
 `2024-01-03`

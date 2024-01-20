@@ -19,6 +19,40 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 
 ## 更新内容
 
+### v4.8.3
+
+`2024-01-20`
+
+#### 新功能 🎉
+
+- feat(Notify): 添加 teleport 属性，由 [@inottn](https://github.com/inottn) 贡献于 [#12556](https://github.com/youzan/vant/pull/12556)
+- feat(TextEllipsis): 添加 `action` 插槽，由 [@nemo-shen](https://github.com/nemo-shen) 贡献于 [#12560](https://github.com/youzan/vant/pull/12560)
+- feat(ImagePreview): 添加 close-on-click-image 属性，由 [@inottn](https://github.com/inottn) 贡献于 [#12566](https://github.com/youzan/vant/pull/12566)
+- feat(icons): 添加图标 `arrow-double-left` 和 `arrow-double-right`，由 [@nemo-shen](https://github.com/nemo-shen) 贡献于 [#12579](https://github.com/youzan/vant/pull/12579)
+- feat(Toast): 添加 z-index 属性，由 [@inottn](https://github.com/inottn) 贡献于 [#12587](https://github.com/youzan/vant/pull/12587)
+
+#### 问题修复 🐞
+
+- fix(Tab): 带 sticky 属性的标签页在切换后丢失 'fixed' 类名，由 [@nemo-shen](https://github.com/nemo-shen) 贡献于 [#12547](https://github.com/youzan/vant/pull/12547)
+- fix(Image): 之前未导出 ImagePosition 类型，由 [@Jungzl](https://github.com/Jungzl) 贡献于 [#12549](https://github.com/youzan/vant/pull/12549)
+- fix(Tabs): 将 van-border-radius-sm 更改为 van-radius-sm，由 [@edram](https://github.com/edram) 贡献于 [#12576](https://github.com/youzan/vant/pull/12576)
+
+#### 文档更新 📖
+
+- docs(Lazyload): 修复 preLoad 类型错误和拼写错误，由 [@RSS1102](https://github.com/RSS1102) 贡献于 [#12554](https://github.com/youzan/vant/pull/12554)
+- docs(home): 更新标题层级，由 [@inottn](https://github.com/inottn) 贡献于 [#12577](https://github.com/youzan/vant/pull/12577)
+
+#### 其他变更
+
+- test: 将 vitest 升级到 v1.1.3，由 [@inottn](https://github.com/inottn) 贡献于 [#12546](https://github.com/youzan/vant/pull/12546)
+- chore(deps): 将 Rsbuild 升级到 v0.3.2，由 [@chenjiahan](https://github.com/chenjiahan) 贡献于 [#12565](https://github.com/youzan/vant/pull/12565)
+- chore(deps): 将 vue 升级到 v3.4.13，由 [@inottn](https://github.com/inottn) 贡献于 [#12567](https://github.com/youzan/vant/pull/12567)
+- chore(deps): 将 vite 从 5.0.11 升级到 5.0.12，由 [@dependabot](https://github.com/dependabot) 贡献于 [#12588](https://github.com/youzan/vant/pull/12588)
+
+#### 新贡献者
+
+- [@edram](https://github.com/edram) 在 [#12576](https://github.com/youzan/vant/pull/12576) 中首次贡献
+
 ### v4.8.2
 
 `2024-01-03`
