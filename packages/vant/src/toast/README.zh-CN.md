@@ -251,10 +251,46 @@ Vant 中导出了以下 Toast 相关的辅助函数：
 | className | 自定义类名 | _string \| Array \| object_ | - |
 | overlayClass | 自定义遮罩层类名 | _string \| Array \| object_ | - |
 | overlayStyle | 自定义遮罩层样式 | _object_ | - |
-| onOpened | 完全展示后的回调函数 | _Function_ | - |
-| onClose | 关闭时的回调函数 | _Function_ | - |
 | transition | 动画类名，等价于 [transition](https://cn.vuejs.org/api/built-in-components.html#transition) 的`name`属性 | _string_ | `van-fade` |
 | teleport | 指定挂载的节点，等同于 Teleport 组件的 [to 属性](https://cn.vuejs.org/api/built-in-components.html#teleport) | _string \| Element_ | `body` |
+| z-index | 将组件的 z-index 层级设置为一个固定值 | _number \| string_ | `2000+` |
+| onClose | 关闭时的回调函数 | _Function_ | - |
+| onOpened | 完全展示后的回调函数 | _Function_ | - |
+
+### Props
+
+通过组件调用 `Toast` 时，支持以下 Props：
+
+| 参数 | 说明 | 类型 | 默认值 |
+| --- | --- | --- | --- |
+| type | 提示类型，可选值为 `loading` `success` `fail` `html` | _ToastType_ | `text` |
+| position | 位置，可选值为 `top` `bottom` | _ToastPosition_ | `middle` |
+| message | 文本内容，支持通过`\n`换行 | _string_ | `''` |
+| word-break | 文本内容的换行方式，可选值为 `normal` `break-all` `break-word` | _ToastWordBreak_ | `'break-all'` |
+| icon | 自定义图标，支持传入图标名称或图片链接，等同于 Icon 组件的 [name 属性](#/zh-CN/icon#props) | _string_ | - |
+| icon-size | 图标大小，如 `20px` `2em`，默认单位为 `px` | _number \| string_ | `36px` |
+| icon-prefix | 图标类名前缀，等同于 Icon 组件的 [class-prefix 属性](#/zh-CN/icon#props) | _string_ | `van-icon` |
+| overlay | 是否显示背景遮罩层 | _boolean_ | `false` |
+| forbid-click | 是否禁止背景点击 | _boolean_ | `false` |
+| close-on-click | 是否在点击后关闭 | _boolean_ | `false` |
+| close-on-click-overlay | 是否在点击遮罩层后关闭 | _boolean_ | `false` |
+| loading-type | [加载图标类型](#/zh-CN/loading), 可选值为 `spinner` | _string_ | `circular` |
+| duration | 展示时长(ms)，值为 0 时，toast 不会消失 | _number_ | `2000` |
+| class-name | 自定义类名 | _string \| Array \| object_ | - |
+| overlay-class | 自定义遮罩层类名 | _string \| Array \| object_ | - |
+| overlay-style | 自定义遮罩层样式 | _object_ | - |
+| transition | 动画类名，等价于 [transition](https://cn.vuejs.org/api/built-in-components.html#transition) 的`name`属性 | _string_ | `van-fade` |
+| teleport | 指定挂载的节点，等同于 Teleport 组件的 [to 属性](https://cn.vuejs.org/api/built-in-components.html#teleport) | _string \| Element_ | `body` |
+| z-index | 将组件的 z-index 层级设置为一个固定值 | _number \| string_ | `2000+` |
+
+### Events
+
+通过组件调用 `Toast` 时，支持以下事件：
+
+| 事件名 | 说明                 | 回调参数 |
+| ------ | -------------------- | -------- |
+| close  | 关闭时的回调函数     | -        |
+| opened | 完全展示后的回调函数 | -        |
 
 ### Slots
 
