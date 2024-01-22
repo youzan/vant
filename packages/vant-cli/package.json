@@ -81,7 +81,7 @@
     "terser": "^5.19.2",
     "transliteration": "^2.3.5",
     "typescript": "^5.0.4",
-    "vite": "^5.0.10",
+    "vite": "^5.0.12",
     "vue-router": "^4.1.6"
   }
 }

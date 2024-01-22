@@ -228,6 +228,8 @@ Vant exports following Toast utility functions:
 
 ### ToastOptions
 
+When calling the `showToast` and other related methods, the following options are supported:
+
 | Attribute | Description | Type | Default |
 | --- | --- | --- | --- |
 | type | Can be set to `loading` `success` `fail` `html` | _ToastType_ | `text` |
@@ -246,10 +248,47 @@ Vant exports following Toast utility functions:
 | className | Custom className | _string \| Array \| object_ | - |
 | overlayClass | Custom overlay class | _string \| Array \| object_ | - |
 | overlayStyle | Custom overlay style | _object_ | - |
-| onOpened | Callback function after opened | _Function_ | - |
-| onClose | Callback function after close | _Function_ | - |
 | transition | Transition, equivalent to `name` prop of [transition](https://vuejs.org/api/built-in-components.html#transition) | _string_ | `van-fade` |
 | teleport | Specifies a target element where Toast will be mounted | _string \| Element_ | `body` |
+| zIndex | Set the z-index to a fixed value | _number \| string_ | `2000+` |
+| onClose | Callback function after close | _Function_ | - |
+| onOpened | Callback function after opened | _Function_ | - |
+
+### Props
+
+When using `Toast` as a component, the following props are supported:
+
+| Attribute | Description | Type | Default |
+| --- | --- | --- | --- |
+| v-model:show | Whether to show toast | _boolean_ | `false` |
+| type | Can be set to `loading` `success` `fail` `html` | _ToastType_ | `text` |
+| position | Can be set to `top` `middle` `bottom` | _ToastPosition_ | `middle` |
+| message | Message | _string_ | `''` |
+| word-break | Can be set to `normal` `break-all` `break-word` | _ToastWordBreak_ | `'break-all'` |
+| icon | Custom icon | _string_ | - |
+| icon-size | Custom icon size | _number \| string_ | `36px` |
+| icon-prefix | Icon className prefix | _string_ | `van-icon` |
+| overlay | Whether to show overlay | _boolean_ | `false` |
+| forbid-click | Whether to forbid click background | _boolean_ | `false` |
+| close-on-click | Whether to close after clicked | _boolean_ | `false` |
+| close-on-click-overlay | Whether to close when overlay is clicked | _boolean_ | `false` |
+| loading-type | Loading icon type, can be set to `spinner` | _string_ | `circular` |
+| duration | Toast duration(ms), won't disappear if value is 0 | _number_ | `2000` |
+| class-name | Custom className | _string \| Array \| object_ | - |
+| overlay-class | Custom overlay class | _string \| Array \| object_ | - |
+| overlay-style | Custom overlay style | _object_ | - |
+| transition | Transition, equivalent to `name` prop of [transition](https://vuejs.org/api/built-in-components.html#transition) | _string_ | `van-fade` |
+| teleport | Specifies a target element where Toast will be mounted | _string \| Element_ | `body` |
+| z-index | Set the z-index to a fixed value | _number \| string_ | `2000+` |
+
+### Events
+
+When using `Toast` as a component, the following events are supported:
+
+| Event  | Description                    | Parameters |
+| ------ | ------------------------------ | ---------- |
+| close  | Callback function after close  | -          |
+| opened | Callback function after opened | -          |
 
 ### Slots
 
