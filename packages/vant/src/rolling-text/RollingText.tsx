@@ -105,8 +105,10 @@ export default defineComponent({
       if (props.delay !== 0) return props.delay;
       if (parent) {
         i = index.value;
+        len = parent.children.length;
       }
-      if (props.stopOrder === 'ltr') return 0.2 * i;
+      const stopOrder = parent?.props.stopOrder ?? props.stopOrder;
+      if (stopOrder === 'ltr') return 0.2 * i;
       return 0.2 * (len - 1 - i);
     };
 
