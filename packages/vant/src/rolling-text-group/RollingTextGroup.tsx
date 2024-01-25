@@ -43,8 +43,15 @@ export default defineComponent({
       });
     };
 
+    const reset = () => {
+      children.map((ins) => {
+        ins.reset();
+      });
+    };
+
     useExpose<RollingTextGroupExpose>({
       start,
+      reset,
     });
 
     if (slots.default) {
