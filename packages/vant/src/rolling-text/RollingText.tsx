@@ -3,7 +3,6 @@ import {
   watch,
   computed,
   defineComponent,
-  type InjectionKey,
   type ExtractPropTypes,
 } from 'vue';
 
@@ -23,7 +22,7 @@ import { useExpose } from '../composables/use-expose';
 
 // Components
 import RollingTextItem from './RollingTextItem';
-import { ROLLING_TEXT_GROUP_KEY } from '../rolling-text-group/RollingTextGroup';
+import { ROLLING_TEXT_KEY } from '../rolling-text-group/RollingTextGroup';
 
 // Types
 import {
@@ -49,7 +48,6 @@ export const rollingTextProps = {
 const CIRCLE_NUM = 2;
 
 export type RollingTextProps = ExtractPropTypes<typeof rollingTextProps>;
-export const ROLLING_TEXT_KEY: InjectionKey<any> = Symbol(name);
 
 export default defineComponent({
   name,
@@ -57,7 +55,6 @@ export default defineComponent({
   props: rollingTextProps,
 
   setup(props) {
-
     const isCustomType = computed(
       () => Array.isArray(props.textList) && props.textList.length,
     );
@@ -108,7 +105,9 @@ export default defineComponent({
       return 0.2 * (len - 1 - i);
     };
 
-    const rolling = ref(props.autoStart);
+    const { parent } = useParent(ROLLING_TEXT_KEY);
+
+    const rolling = ref(parent?.props.autoStart ?? props.autoStart);
 
     const start = () => {
       rolling.value = true;
@@ -117,13 +116,13 @@ export default defineComponent({
     const reset = () => {
       rolling.value = false;
 
-      if (props.autoStart) {
+      if (rolling.value) {
         raf(() => start());
       }
     };
 
     watch(
-      () => props.autoStart,
+      () => rolling,
       (value) => {
         if (value) {
           start();
@@ -131,7 +130,6 @@ export default defineComponent({
       },
     );
 
-    useParent(ROLLING_TEXT_GROUP_KEY);
     useExpose<RollingTextExpose>({
       start,
       reset,
