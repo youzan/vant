@@ -9,17 +9,9 @@ export type RollingTextExpose = {
   reset: () => void;
 };
 
-export type RollingTextGroupExpose = {
-  start: () => void;
-};
-
 export type RollingTextInstance = ComponentPublicInstance<
   RollingTextProps,
   RollingTextExpose
->;
-
-export type RollingTextGroupInstance = ComponentPublicInstance<
-  RollingTextGroupExpose
 >;
 
 export type RollingTextThemeVars = {

@@ -23,7 +23,7 @@ import { useExpose } from '../composables/use-expose';
 
 // Components
 import RollingTextItem from './RollingTextItem';
-import { ROLLING_TEXT_GROUP_KEY } from './RollingTextGroup';
+import { ROLLING_TEXT_GROUP_KEY } from '../rolling-text-group/RollingTextGroup';
 
 // Types
 import {
