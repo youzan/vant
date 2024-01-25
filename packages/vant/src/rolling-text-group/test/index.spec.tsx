@@ -8,11 +8,11 @@ test('should start rolling after calling the start method', async () => {
   const wrapper = mount({
     render() {
       return (
-        <RollingTextGroup>
-          <RollingText startNum={0} targetNum={1} autoStart={false} />
-          <RollingText startNum={0} targetNum={2} autoStart={false} />
-          <RollingText startNum={0} targetNum={3} autoStart={false} />
-          <RollingText startNum={0} targetNum={4} autoStart={false} />
+        <RollingTextGroup autoStart={false}>
+          <RollingText startNum={0} targetNum={1} />
+          <RollingText startNum={0} targetNum={2} />
+          <RollingText startNum={0} targetNum={3} />
+          <RollingText startNum={0} targetNum={4} />
         </RollingTextGroup>
       );
     },

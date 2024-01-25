@@ -55,6 +55,8 @@ export default defineComponent({
   props: rollingTextProps,
 
   setup(props) {
+    const { parent, index } = useParent(ROLLING_TEXT_KEY);
+
     const isCustomType = computed(
       () => Array.isArray(props.textList) && props.textList.length,
     );
@@ -101,11 +103,12 @@ export default defineComponent({
 
     const getDelay = (i: number, len: number) => {
       if (props.delay !== 0) return props.delay;
+      if (parent) {
+        i = index.value;
+      }
       if (props.stopOrder === 'ltr') return 0.2 * i;
       return 0.2 * (len - 1 - i);
     };
-
-    const { parent } = useParent(ROLLING_TEXT_KEY);
 
     const rolling = ref(parent?.props.autoStart ?? props.autoStart);
 
