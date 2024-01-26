@@ -113,8 +113,11 @@ export default defineComponent({
       if (stopOrder === 'ltr') return 0.2 * i;
       return 0.2 * (len - 1 - i);
     };
+    const autoStart = computed(() => {
+      return parent?.props.autoStart ?? props.autoStart;
+    });
 
-    const rolling = ref(parent?.props.autoStart ?? props.autoStart);
+    const rolling = ref(autoStart.value);
 
     const start = () => {
       rolling.value = true;
@@ -129,8 +132,9 @@ export default defineComponent({
     };
 
     watch(
-      () => rolling,
+      () => autoStart.value,
       (value) => {
+        console.log('nemo autostart', value);
         if (value) {
           start();
         }
