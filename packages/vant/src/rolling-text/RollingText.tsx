@@ -56,13 +56,17 @@ export default defineComponent({
   setup(props) {
     const { parent, index } = useParent(ROLLING_TEXT_KEY);
 
+    const startNum = computed(() => {
+      return parent?.props.startNum ?? props.startNum;
+    });
+
     const isCustomType = computed(
       () => Array.isArray(props.textList) && props.textList.length,
     );
 
     const itemLength = computed(() => {
       if (isCustomType.value) return props.textList[0].length;
-      return `${Math.max(props.startNum, props.targetNum!)}`.length;
+      return `${Math.max(startNum.value, props.targetNum!)}`.length;
     });
 
     const getTextArrByIdx = (idx: number) => {
@@ -79,7 +83,7 @@ export default defineComponent({
     });
 
     const startNumArr = computed(() =>
-      padZero(props.startNum, itemLength.value).split(''),
+      padZero(startNum.value, itemLength.value).split(''),
     );
 
     const getFigureArr = (i: number) => {
@@ -145,10 +149,10 @@ export default defineComponent({
             figureArr={
               isCustomType.value ? getTextArrByIdx(i) : getFigureArr(i)
             }
-            duration={props.duration}
-            direction={props.direction}
+            duration={parent?.props.duration ?? props.duration}
+            direction={parent?.props.direction ?? props.direction}
             isStart={rolling.value}
-            height={props.height}
+            height={parent?.props.height ?? props.height}
             delay={getDelay(i, itemLength.value)}
           />
         ))}
