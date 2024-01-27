@@ -1,12 +1,12 @@
-import { defineComponent, type InjectionKey, type ExtractPropTypes } from 'vue';
+import {
+  defineComponent,
+  type InjectionKey,
+  type ExtractPropTypes,
+  PropType,
+} from 'vue';
 
 // Utils
-import {
-  truthProp,
-  makeNumberProp,
-  makeStringProp,
-  createNamespace,
-} from '../utils';
+import { truthProp, createNamespace, makeNumberProp } from '../utils';
 
 // Composables
 import { useChildren } from '@vant/use';
@@ -18,11 +18,11 @@ const [name, bem] = createNamespace('rolling-text-group');
 
 export const rollingTextGroupProps = {
   startNum: makeNumberProp(0),
-  duration: makeNumberProp(2),
+  duration: Number,
   autoStart: truthProp,
-  direction: makeStringProp<RollingTextDirection>('down'),
-  stopOrder: makeStringProp<RollingTextStopOrder>('ltr'),
-  height: makeNumberProp(40),
+  direction: String as PropType<RollingTextDirection>,
+  stopOrder: String as PropType<RollingTextStopOrder>,
+  height: Number,
 };
 
 export type RollingTextGroupProps = ExtractPropTypes<

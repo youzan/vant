@@ -4,6 +4,7 @@ import {
   computed,
   defineComponent,
   type ExtractPropTypes,
+  getCurrentInstance,
 } from 'vue';
 
 // Utils
@@ -15,6 +16,8 @@ import {
   makeStringProp,
   makeNumberProp,
   createNamespace,
+  isDef,
+  kebabCase,
 } from '../utils';
 
 // Composables
@@ -22,7 +25,10 @@ import { useExpose } from '../composables/use-expose';
 
 // Components
 import RollingTextItem from './RollingTextItem';
-import { ROLLING_TEXT_KEY } from '../rolling-text-group/RollingTextGroup';
+import {
+  ROLLING_TEXT_KEY,
+  RollingTextGroupProps,
+} from '../rolling-text-group/RollingTextGroup';
 
 // Types
 import {
@@ -54,10 +60,33 @@ export default defineComponent({
   props: rollingTextProps,
 
   setup(props) {
+    const instance = getCurrentInstance();
     const { parent, index } = useParent(ROLLING_TEXT_KEY);
 
+    const getProp = <K extends keyof RollingTextProps>(
+      key: K,
+    ): RollingTextProps[K] => {
+      if (
+        instance &&
+        instance.vnode.props &&
+        (key in instance.vnode.props || kebabCase(key) in instance.vnode.props)
+      ) {
+        return props[key];
+      }
+      if (
+        parent &&
+        key in parent.props &&
+        isDef(parent.props[key as keyof RollingTextGroupProps])
+      ) {
+        return parent.props[
+          key as keyof RollingTextGroupProps
+        ] as RollingTextProps[K];
+      }
+      return props[key];
+    };
+
     const startNum = computed(() => {
-      return parent?.props.startNum ?? props.startNum;
+      return getProp('startNum');
     });
 
     const isCustomType = computed(
@@ -109,12 +138,13 @@ export default defineComponent({
         i = index.value;
         len = parent.children.length;
       }
-      const stopOrder = parent?.props.stopOrder ?? props.stopOrder;
+      const stopOrder = getProp('stopOrder');
       if (stopOrder === 'ltr') return 0.2 * i;
       return 0.2 * (len - 1 - i);
     };
+
     const autoStart = computed(() => {
-      return parent?.props.autoStart ?? props.autoStart;
+      return getProp('autoStart');
     });
 
     const rolling = ref(autoStart.value);
@@ -134,7 +164,6 @@ export default defineComponent({
     watch(
       () => autoStart.value,
       (value) => {
-        console.log('nemo autostart', value);
         if (value) {
           start();
         }
@@ -153,10 +182,10 @@ export default defineComponent({
             figureArr={
               isCustomType.value ? getTextArrByIdx(i) : getFigureArr(i)
             }
-            duration={parent?.props.duration ?? props.duration}
-            direction={parent?.props.direction ?? props.direction}
+            duration={getProp('duration')}
+            direction={getProp('direction')}
             isStart={rolling.value}
-            height={parent?.props.height ?? props.height}
+            height={getProp('height')}
             delay={getDelay(i, itemLength.value)}
           />
         ))}
