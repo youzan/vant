@@ -156,7 +156,7 @@ export default defineComponent({
     const reset = () => {
       rolling.value = false;
 
-      if (rolling.value) {
+      if (autoStart.value) {
         raf(() => start());
       }
     };
