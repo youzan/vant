@@ -342,8 +342,8 @@ export default {
 | columns | Columns data | _PickerOption[] \| PickerOption[][]_ | `[]` |
 | columns-field-names | custom columns field | _object_ | `{ text: 'text', value: 'value', children: 'children' }` |
 | title | Toolbar title | _string_ | - |
-| confirm-button-text | Text of confirm button | _string_ | `Confirm` |
-| cancel-button-text | Text of cancel button | _string_ | `Cancel` |
+| confirm-button-text | Text of confirm button, setting it as an empty string can hide the button | _string_ | `Confirm` |
+| cancel-button-text | Text of cancel button, setting it as an empty string can hide the button | _string_ | `Cancel` |
 | toolbar-position | Toolbar position, cat be set to `bottom` | _string_ | `top` |
 | loading | Whether to show loading prompt | _boolean_ | `false` |
 | readonly | Whether to be readonly | _boolean_ | `false` |
