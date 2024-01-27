@@ -73,6 +73,7 @@ export async function compileSite(isProd = false) {
       distPath: {
         root: vantConfig.build?.site?.outputDir || SITE_DIST_DIR,
       },
+      cleanDistPath: true,
     },
     html: {
       template: ({ entryName }) => join(SITE_SRC_DIR, `${entryName}.html`),
