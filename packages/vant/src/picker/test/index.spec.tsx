@@ -408,3 +408,15 @@ test('should be displayed correctly whhen the component is reused', async () => 
       .selectedValues,
   ).toEqual(['1992', '03']);
 });
+
+test('should allow to skip rendering confirm and cancel buttons', async () => {
+  const wrapper = mount(Picker, {
+    props: {
+      confirmButtonText: '',
+      cancelButtonText: '',
+    },
+  });
+
+  expect(wrapper.find('.van-picker__confirm').exists()).toBeFalsy();
+  expect(wrapper.find('.van-picker__cancel').exists()).toBeFalsy();
+});
