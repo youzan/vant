@@ -363,8 +363,8 @@ export default {
 | columns | 对象数组，配置每一列显示的数据 | _PickerOption[] \| PickerOption[][]_ | `[]` |
 | columns-field-names | 自定义 `columns` 结构中的字段 | _object_ | `{ text: 'text', value: 'value', children: 'children' }` |
 | title | 顶部栏标题 | _string_ | - |
-| confirm-button-text | 确认按钮文字 | _string_ | `确认` |
-| cancel-button-text | 取消按钮文字 | _string_ | `取消` |
+| confirm-button-text | 确认按钮文字，设置为空字符串可以隐藏按钮 | _string_ | `确认` |
+| cancel-button-text | 取消按钮文字，设置为空字符串可以隐藏按钮 | _string_ | `取消` |
 | toolbar-position | 顶部栏位置，可选值为 `bottom` | _string_ | `top` |
 | loading | 是否显示加载状态 | _boolean_ | `false` |
 | readonly | 是否为只读状态，只读状态下无法切换选项 | _boolean_ | `false` |
