@@ -1,5 +1,5 @@
 <template>
-  <demo-nav />
+  <!-- <demo-nav /> -->
   <router-view v-slot="{ Component }">
     <demo-section>
       <keep-alive>
