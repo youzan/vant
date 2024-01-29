@@ -39,7 +39,12 @@ export default defineComponent({
     const onConfirm = () => emit('confirm');
 
     const renderCancel = () => {
-      const text = props.cancelButtonText || t('cancel');
+      const text = props.cancelButtonText ?? t('cancel');
+
+      if (!slots.cancel && !text) {
+        return;
+      }
+
       return (
         <button
           type="button"
@@ -52,7 +57,12 @@ export default defineComponent({
     };
 
     const renderConfirm = () => {
-      const text = props.confirmButtonText || t('confirm');
+      const text = props.confirmButtonText ?? t('confirm');
+
+      if (!slots.confirm && !text) {
+        return;
+      }
+
       return (
         <button
           type="button"
