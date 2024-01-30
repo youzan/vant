@@ -1,10 +1,5 @@
 <script setup lang="ts">
-import { ref } from 'vue';
-import WithPopup from './WithPopup.vue';
-import VanPicker, {
-  PickerChangeEventParams,
-  PickerConfirmEventParams,
-} from '..';
+import VanPicker from '..';
 import {
   dateColumns,
   basicColumns,
@@ -12,7 +7,6 @@ import {
   disabledColumns,
   customKeyColumns,
 } from './data';
-import { showToast } from '../../toast';
 import { useTranslate } from '../../../docs/site';
 
 const t = useTranslate({
@@ -48,23 +42,18 @@ const t = useTranslate({
   },
 });
 
-const customFieldName = {
-  text: 'cityName',
-  value: 'cityName',
-  children: 'cities',
+const onChange = (value: string[]) => {
+  console.log('onChange', value)
+}
+
+const onScrollInto = ({
+  columnIndex,
+  currentOption,
+}: any) => {
+  console.log('onScrollInto', columnIndex, currentOption);
+  // 一个一个滑动的话，currentOption是当前选中的值。
+  //通过惯性滚动的话，currentOption并不是当前选中的值。
 };
-
-const selectedValues = ref(['Wenzhou']);
-
-const onChange1 = ({ selectedValues }: PickerChangeEventParams) => {
-  showToast(t('toastContent', selectedValues.join(',')));
-};
-
-const onConfirm = ({ selectedValues }: PickerConfirmEventParams) => {
-  showToast(t('toastContent', selectedValues.join(',')));
-};
-
-const onCancel = () => showToast(t('cancel'));
 </script>
 
 <template>
@@ -72,48 +61,8 @@ const onCancel = () => showToast(t('cancel'));
     <van-picker
       :title="t('title')"
       :columns="t('basicColumns')"
-      @change="onChange1"
-      @cancel="onCancel"
-      @confirm="onConfirm"
-    />
-  </demo-block>
-
-  <WithPopup />
-
-  <demo-block card :title="t('modelValue')">
-    <van-picker
-      v-model="selectedValues"
-      :title="t('title')"
-      :columns="t('basicColumns')"
-    />
-  </demo-block>
-
-  <demo-block card :title="t('multipleColumns')">
-    <van-picker
-      :title="t('title')"
-      :columns="t('dateColumns')"
-      @cancel="onCancel"
-      @confirm="onConfirm"
-    />
-  </demo-block>
-
-  <demo-block card :title="t('cascade')">
-    <van-picker :title="t('title')" :columns="t('cascadeColumns')" />
-  </demo-block>
-
-  <demo-block card :title="t('disableOption')">
-    <van-picker :title="t('title')" :columns="t('disabledColumns')" />
-  </demo-block>
-
-  <demo-block card :title="t('loadingStatus')">
-    <van-picker loading :title="t('title')" />
-  </demo-block>
-
-  <demo-block card :title="t('customChildrenKey')">
-    <van-picker
-      :title="t('title')"
-      :columns="t('customChildrenColumns')"
-      :columns-field-names="customFieldName"
+      @scroll-into="onScrollInto"
+      @change="onChange"
     />
   </demo-block>
 </template>
