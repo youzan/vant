@@ -10,6 +10,7 @@ on:
 
 jobs:
   build-and-deploy:
+    if: github.repository == 'youzan/vant'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout 🛎️
