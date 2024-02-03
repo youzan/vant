@@ -19,6 +19,29 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 
 ## Details
 
+### v4.8.4
+
+`2024-02-03`
+
+#### New Features 🎉
+
+- feat(Picker): allow to hidden to toolbar buttons by [@chenjiahan](https://github.com/chenjiahan) in [#12599](https://github.com/youzan/vant/pull/12599)
+
+#### Bug Fixes 🐞
+
+- fix(Sticky): initial sticky position by [@nemo-shen](https://github.com/nemo-shen) in [#12601](https://github.com/youzan/vant/pull/12601)
+- fix(DropdownMenu): fix recursive update when passing object literal to title-class by [@inottn](https://github.com/inottn) in [#12614](https://github.com/youzan/vant/pull/12614)
+
+#### Document 📖
+
+- docs: improve quickstart tips by [@inottn](https://github.com/inottn) in [#12606](https://github.com/youzan/vant/pull/12606)
+
+#### Other Changes
+
+- chore(deps): bump Rsbuild 0.3.9 and enable clean dist by [@chenjiahan](https://github.com/chenjiahan) in [#12600](https://github.com/youzan/vant/pull/12600)
+- chore: avoid workflow running on forked repo by [@tolking](https://github.com/tolking) in [#12607](https://github.com/youzan/vant/pull/12607)
+- chore(workflow): using new M1 macOS runner by [@chenjiahan](https://github.com/chenjiahan) in [#12615](https://github.com/youzan/vant/pull/12615)
+
 ### v4.8.3
 
 `2024-01-20`
