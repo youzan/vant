@@ -2,7 +2,6 @@ import {
   ref,
   computed,
   defineComponent,
-  toRaw,
   type InjectionKey,
   type CSSProperties,
   type ExtractPropTypes,
@@ -18,6 +17,7 @@ import {
   makeNumericProp,
   createNamespace,
   HAPTICS_FEEDBACK,
+  type ComponentInstance,
 } from '../utils';
 
 // Composables
@@ -33,7 +33,6 @@ import {
 
 // Types
 import type { DropdownMenuProvide, DropdownMenuDirection } from './types';
-import type { DropdownItemInstance } from '../dropdown-item';
 
 const [name, bem] = createNamespace('dropdown-menu');
 
@@ -64,10 +63,7 @@ export default defineComponent({
     const barRef = ref<HTMLElement>();
     const offset = ref(0);
 
-    const { children, linkChildren } = useChildren<
-      DropdownItemInstance,
-      unknown
-    >(DROPDOWN_KEY);
+    const { children, linkChildren } = useChildren(DROPDOWN_KEY);
     const scrollParent = useScrollParent(root);
 
     const opened = computed(() =>
@@ -125,9 +121,9 @@ export default defineComponent({
       });
     };
 
-    const renderTitle = (item: DropdownItemInstance, index: number) => {
+    const renderTitle = (item: ComponentInstance, index: number) => {
       const { showPopup } = item.state;
-      const { disabled, titleClass } = toRaw(item.$props);
+      const { disabled, titleClass } = item;
 
       return (
         <div
