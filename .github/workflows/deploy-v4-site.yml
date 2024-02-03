@@ -11,7 +11,7 @@ on:
 jobs:
   build-and-deploy:
     if: github.repository == 'youzan/vant'
-    runs-on: ubuntu-latest
+    runs-on: macos-14
     steps:
       - name: Checkout 🛎️
         uses: actions/checkout@v4
