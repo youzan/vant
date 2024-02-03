@@ -9,7 +9,7 @@ on:
 jobs:
   change-labeling:
     name: Labeling for changes
-    runs-on: ubuntu-latest
+    runs-on: macos-14
     steps:
       - uses: github/issue-labeler@v3.2
         with:

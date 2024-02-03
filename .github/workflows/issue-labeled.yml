@@ -11,7 +11,7 @@ jobs:
   reply-labeled:
     permissions:
       issues: write
-    runs-on: ubuntu-latest
+    runs-on: macos-14
     steps:
       - name: help wanted
         if: github.event.label.name == '👏 PR welcome' || github.event.label.name == 'help wanted'
