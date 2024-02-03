@@ -14,7 +14,7 @@ on:
 jobs:
   build:
     if: github.repository == 'youzan/vant'
-    runs-on: macos-14
+    runs-on: ubuntu-latest
     steps:
       - name: Sync to Gitee
         uses: wearerequired/git-mirror-action@v1.2.0

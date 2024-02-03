@@ -20,7 +20,7 @@ on:
 jobs:
   analyze:
     name: Analyze
-    runs-on: macos-14
+    runs-on: ubuntu-latest
     permissions:
       actions: read
       contents: read

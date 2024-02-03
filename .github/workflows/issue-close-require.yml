@@ -11,7 +11,7 @@ jobs:
   issue-close-require:
     permissions:
       issues: write
-    runs-on: macos-14
+    runs-on: ubuntu-latest
     steps:
       - name: need reproduce
         uses: actions-cool/issues-helper@v3
