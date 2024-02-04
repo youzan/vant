@@ -332,6 +332,38 @@ export default {
 };
 ```
 
+### Scroll Into Event
+
+Emitted when an option is scrolled into the middle selection area by clicking or dragging. It can used to get user's scroll change, e.g. implement a click sound of iOS picker.
+
+```html
+<van-picker title="标题" :columns="columns" @scroll-into="onScrollInto" />
+```
+
+```js
+import { showToast } from 'vant';
+
+export default {
+  setup() {
+    const columns = [
+      { text: '杭州', value: 'Hangzhou' },
+      { text: '宁波', value: 'Ningbo' },
+      { text: '温州', value: 'Wenzhou' },
+      { text: '绍兴', value: 'Shaoxing' },
+      { text: '湖州', value: 'Huzhou' },
+    ];
+    const onScrollInto = ({ currentOption }) => {
+      showToast(`当前值: ${currentOption.text}`);
+    };
+
+    return {
+      columns,
+      onScrollInto,
+    };
+  },
+};
+```
+
 ## API
 
 ### Props

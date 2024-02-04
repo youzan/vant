@@ -353,6 +353,38 @@ export default {
 };
 ```
 
+### 监听 scroll-into 事件
+
+当用户通过点击或拖拽让一个选项滚动到中间的选择区域时触发 scroll-into 事件。可用于监听用户滚动选项的变化，例如实现 iOS 选择器的咔哒声。
+
+```html
+<van-picker title="标题" :columns="columns" @scroll-into="onScrollInto" />
+```
+
+```js
+import { showToast } from 'vant';
+
+export default {
+  setup() {
+    const columns = [
+      { text: '杭州', value: 'Hangzhou' },
+      { text: '宁波', value: 'Ningbo' },
+      { text: '温州', value: 'Wenzhou' },
+      { text: '绍兴', value: 'Shaoxing' },
+      { text: '湖州', value: 'Huzhou' },
+    ];
+    const onScrollInto = ({ currentOption }) => {
+      showToast(`当前值: ${currentOption.text}`);
+    };
+
+    return {
+      columns,
+      onScrollInto,
+    };
+  },
+};
+```
+
 ## API
 
 ### Props

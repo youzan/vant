@@ -1,40 +1,134 @@
 <script setup lang="ts">
 import { ref } from 'vue';
-import VanPicker from '..';
+import WithPopup from './WithPopup.vue';
+import VanPicker, {
+  PickerChangeEventParams,
+  PickerConfirmEventParams,
+  PickerOption,
+} from '..';
+import {
+  dateColumns,
+  basicColumns,
+  cascadeColumns,
+  disabledColumns,
+  customKeyColumns,
+} from './data';
+import { showToast } from '../../toast';
+import { useTranslate } from '../../../docs/site';
 
-// const onChange = ({ selectedOptions }) => {
-// console.log('onChange', selectedOptions[0]);
-// };
+const t = useTranslate({
+  'zh-CN': {
+    cascade: '级联选择',
+    modelValue: '双向绑定',
+    showToolbar: '展示顶部栏',
+    dateColumns: dateColumns['zh-CN'],
+    basicColumns: basicColumns['zh-CN'],
+    defaultIndex: '默认选中项',
+    disableOption: '禁用选项',
+    cascadeColumns: cascadeColumns['zh-CN'],
+    disabledColumns: disabledColumns['zh-CN'],
+    multipleColumns: '多列选择',
+    customChildrenKey: '自定义 Columns 结构',
+    customChildrenColumns: customKeyColumns['zh-CN'],
+    scrollInto: '监听 scrollInto 事件',
+    toastContent: (value: string) => `当前值：${value}`,
+  },
+  'en-US': {
+    cascade: 'Cascade',
+    modelValue: 'v-model',
+    showToolbar: 'Show Toolbar',
+    dateColumns: dateColumns['en-US'],
+    basicColumns: basicColumns['en-US'],
+    defaultIndex: 'Default Index',
+    disableOption: 'Disable Option',
+    cascadeColumns: cascadeColumns['en-US'],
+    disabledColumns: disabledColumns['en-US'],
+    multipleColumns: 'Multiple Columns',
+    customChildrenKey: 'Custom Columns Fields',
+    customChildrenColumns: customKeyColumns['en-US'],
+    scrollInto: 'ScrollInto Event',
+    toastContent: (value: string) => `Value: ${value}`,
+  },
+});
 
-// const audio = new Audio(
-//   'data:audio/mpeg;base64,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P8TVYG8OI+BNi5HU1JYiCwBQJdcUIpZWQkqFDAVBpGCM0MCKaFmMCEESVChjiJFHFkREGiZrYxyUpf0qhQs+VxQomgdGgqVBUFYKg0DQlddi/9pb/iWVO0xBTUUzLjEwMFVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVX/+3DE6wARgVcd7DBz4ikp4rWGGjlVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV//sgxPGDzTy5DaM9KMAAAD/AAAAEVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVQ==',
-// );
-const scrollIntoValue = ref<{ text: string; value: string }>();
-const onScrollInto = ({
-  currentOption,
-}: {
-  currentOption: { text: string; value: string };
-}) => {
-  scrollIntoValue.value = currentOption;
-  // audio.currentTime = 0;
-  // audio.play();
-  console.log('scrollInto:', currentOption);
+const customFieldName = {
+  text: 'cityName',
+  value: 'cityName',
+  children: 'cities',
 };
-const fieldValue = ref();
-const columns = Array.from({ length: 100 }, (_, index) => ({
-  text: `Item${index}`,
-  value: index,
-}));
+
+const selectedValues = ref(['Wenzhou']);
+
+const onChange1 = ({ selectedValues }: PickerChangeEventParams) => {
+  showToast(t('toastContent', selectedValues.join(',')));
+};
+
+const onConfirm = ({ selectedValues }: PickerConfirmEventParams) => {
+  showToast(t('toastContent', selectedValues.join(',')));
+};
+
+const onCancel = () => showToast(t('cancel'));
+
+const onScrollInto = ({ currentOption }: { currentOption: PickerOption }) => {
+  showToast(t('toastContent', currentOption.text));
+};
 </script>
 
 <template>
-  {{ scrollIntoValue }}
-  <!-- {{ fieldValue }}
-  <button @click="onChangeFieldValue(60)">change vModel to 60</button> -->
+  <demo-block card :title="t('basicUsage')">
+    <van-picker
+      :title="t('title')"
+      :columns="t('basicColumns')"
+      @change="onChange1"
+      @cancel="onCancel"
+      @confirm="onConfirm"
+    />
+  </demo-block>
 
-  <van-picker
-    v-model="fieldValue"
-    :columns="columns"
-    @scroll-into="onScrollInto"
-  />
+  <WithPopup />
+
+  <demo-block card :title="t('modelValue')">
+    <van-picker
+      v-model="selectedValues"
+      :title="t('title')"
+      :columns="t('basicColumns')"
+    />
+  </demo-block>
+
+  <demo-block card :title="t('multipleColumns')">
+    <van-picker
+      :title="t('title')"
+      :columns="t('dateColumns')"
+      @cancel="onCancel"
+      @confirm="onConfirm"
+    />
+  </demo-block>
+
+  <demo-block card :title="t('cascade')">
+    <van-picker :title="t('title')" :columns="t('cascadeColumns')" />
+  </demo-block>
+
+  <demo-block card :title="t('disableOption')">
+    <van-picker :title="t('title')" :columns="t('disabledColumns')" />
+  </demo-block>
+
+  <demo-block card :title="t('loadingStatus')">
+    <van-picker loading :title="t('title')" />
+  </demo-block>
+
+  <demo-block card :title="t('customChildrenKey')">
+    <van-picker
+      :title="t('title')"
+      :columns="t('customChildrenColumns')"
+      :columns-field-names="customFieldName"
+    />
+  </demo-block>
+
+  <demo-block card :title="t('scrollInto')">
+    <van-picker
+      :title="t('title')"
+      :columns="t('basicColumns')"
+      @scroll-into="onScrollInto"
+    />
+  </demo-block>
 </template>
