@@ -1,11 +1,5 @@
 export const basicColumns = {
-  'zh-CN': [
-    { text: '杭州', value: 'Hangzhou' },
-    { text: '宁波', value: 'Ningbo' },
-    { text: '温州', value: 'Wenzhou' },
-    { text: '绍兴', value: 'Shaoxing' },
-    { text: '湖州', value: 'Huzhou' },
-  ],
+  'zh-CN': Array.from({ length: 100 }, (_, index) => ({ text: `Item${index}`, value: index })),
   'en-US': [
     { text: 'Delaware', value: 'Delaware' },
     { text: 'Florida', value: 'Florida' },

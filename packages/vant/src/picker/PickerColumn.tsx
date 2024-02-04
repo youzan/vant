@@ -20,7 +20,7 @@ import {
 import { getElementTranslateY, findIndexOfEnabledOption } from './utils';
 
 // Composables
-import { useEventListener, useParent } from '@vant/use';
+import { useEventListener, useParent, useRaf } from '@vant/use';
 import { useTouch } from '../composables/use-touch';
 import { useExpose } from '../composables/use-expose';
 
@@ -119,6 +119,7 @@ export default defineComponent({
       clamp(Math.round(-offset / props.optionHeight), 0, count() - 1);
 
     const currentIndex = computed(() => getIndexByOffset(currentOffset.value));
+    console.log('nemo picker columns currentIndex:', currentIndex.value);
 
     const momentum = (distance: number, duration: number) => {
       const speed = Math.abs(distance / duration);
@@ -129,6 +130,43 @@ export default defineComponent({
       const index = getIndexByOffset(distance);
 
       currentDuration.value = +props.swipeDuration;
+      const itemCount =
+        Math.max(index, currentIndex.value) -
+        Math.min(index, currentIndex.value);
+      const time = duration / speed;
+      console.log(
+        'nemo momentum',
+        ['currentIndex:', currentIndex.value],
+        ['nextIndex:', index],
+        ['distance:', Math.abs(distance)],
+        ['duration:', duration],
+        ['itemCount:', itemCount],
+        ['currentDuration:', currentDuration.value],
+        ['time:', time],
+        ['speed:', speed],
+      );
+      const isDown = currentIndex.value < index;
+      const oldIndex = currentIndex.value;
+      let i = 0;
+      let start: number;
+
+      const stop = useRaf(
+        (timestamp) => {
+          if (start === undefined) start = timestamp;
+          const elapsed = timestamp - start;
+          if (i <= itemCount) {
+            if (Math.floor(elapsed / time) > i) {
+              emit('scrollInto', oldIndex + (isDown ? i : -1 * i));
+              i++;
+            }
+          } else {
+            stop();
+          }
+        },
+        {
+          isLoop: true,
+        },
+      );
       updateValueByIndex(index);
     };
 
@@ -180,6 +218,12 @@ export default defineComponent({
       );
 
       const newIndex = getIndexByOffset(newOffset);
+      // console.log(
+      //   'nemo picker column newIndex: ',
+      //   newIndex,
+      //   'newOffset:',
+      //   newOffset,
+      // );
       if (newIndex !== currentIndex.value) {
         emit('scrollInto', props.options[newIndex]);
       }
