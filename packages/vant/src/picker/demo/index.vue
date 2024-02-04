@@ -21,10 +21,10 @@ const onScrollInto = ({
   console.log('scrollInto:', currentOption);
 };
 const fieldValue = ref();
-const columns = Array.from({ length: 100 }, (_, index) => ({ text: `Item${index}`, value: index }))
-const onChangeFieldValue = (value) => {
-  fieldValue.value = [60]
-}
+const columns = Array.from({ length: 100 }, (_, index) => ({
+  text: `Item${index}`,
+  value: index,
+}));
 </script>
 
 <template>
