@@ -122,18 +122,18 @@ test('should filter options when using filter prop to filter a time range', asyn
   });
 
   const picker = wrapper.findComponent(Picker);
-  let columns = picker.props('columns');
+  let columns = picker.props('columns')!;
   expect(columns[0].length).toEqual(11);
   expect(columns[1].length).toEqual(20);
   expect(columns[0][0].value).toEqual('08');
   expect(columns[1][0].value).toEqual('40');
 
   await wrapper.setProps({ modelValue: ['09', '00'] });
-  columns = picker.props('columns');
+  columns = picker.props('columns')!;
   expect(columns[1].length).toEqual(60);
 
   await wrapper.setProps({ modelValue: ['18', '00'] });
-  columns = picker.props('columns');
+  columns = picker.props('columns')!;
   expect(columns[1].length).toEqual(21);
   expect(columns[1][20].value).toEqual('20');
 });
