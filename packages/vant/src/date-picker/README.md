@@ -108,7 +108,7 @@ export default {
         option.text += ' Year';
       }
       if (type === 'month') {
-        option.text += '月Month';
+        option.text += 'Month';
       }
       return option;
     };
