@@ -18,7 +18,7 @@ const onScrollInto = ({
   scrollIntoValue.value = currentOption;
   // audio.currentTime = 0;
   // audio.play();
-  console.log('nemo onScrollInto', currentOption);
+  console.log('scrollInto:', currentOption);
 };
 const fieldValue = ref();
 const columns = Array.from({ length: 100 }, (_, index) => ({ text: `Item${index}`, value: index }))
@@ -29,8 +29,8 @@ const onChangeFieldValue = (value) => {
 
 <template>
   {{ scrollIntoValue }}
-  {{ fieldValue }}
-  <button @click="onChangeFieldValue(60)">change vModel to 60</button>
+  <!-- {{ fieldValue }}
+  <button @click="onChangeFieldValue(60)">change vModel to 60</button> -->
 
   <van-picker
     v-model="fieldValue"
