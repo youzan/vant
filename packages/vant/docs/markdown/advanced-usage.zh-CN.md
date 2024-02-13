@@ -29,6 +29,24 @@ app.use(Button);
 app.component(Button.name, Button);
 ```
 
+#### 全量注册
+
+你也可以在全局一次性注册所有 Vant 组件：
+
+```js
+import Vant from 'vant';
+import { createApp } from 'vue';
+
+const app = createApp();
+
+app.use(Vant);
+
+// Lazyload 指令需要单独进行注册
+app.use(vant.Lazyload);
+```
+
+> 注意：注册所有组件会引入所有组件的代码，导致包体积增大。
+
 #### 局部注册
 
 局部注册后，你可以在当前组件中使用注册的 Vant 组件。
