@@ -25,6 +25,24 @@ app.use(Button);
 app.component(Button.name, Button);
 ```
 
+#### Full Registration
+
+You can also globally register all Vant components at once:
+
+```js
+import Vant from 'vant';
+import { createApp } from 'vue';
+
+const app = createApp();
+
+app.use(Vant);
+
+// The Lazyload directive needs to be registered separately
+app.use(vant.Lazyload);
+```
+
+> Note: Registering all components will introduce the code of all components, leading to larger bundle size.
+
 #### Local Registration
 
 ```js
