@@ -121,7 +121,7 @@ app.use(Button);
 
 ### Import on demand
 
-If you are using `vite`, `webpack` or `vue-cli`, you can use [unplugin-vue-components](https://github.com/unplugin/unplugin-vue-components), this plugin can help you to auto importing components.
+If you are using Rsbuild, Vite, webpack or vue-cli, you can use [unplugin-vue-components](https://github.com/unplugin/unplugin-vue-components), this plugin can help you to auto importing components.
 
 Vant officially wrote an automatic import style parser [@vant/auto-import-resolver](https://github.com/youzan/vant/tree/main/packages/vant-auto-import-resolver) based on `unplugin-vue-components`, both of which are used together.
 
@@ -145,7 +145,29 @@ bun add @vant/auto-import-resolver unplugin-vue-components -D
 
 #### 2. Configure Plugin
 
-For `vite` based project，configure the plugin in the `vite.config.js` file:
+For Rsbuild based project，configure the plugin in the `rsbuild.config.js` file:
+
+```js
+import { defineConfig } from '@rsbuild/core';
+import { pluginVue } from '@rsbuild/plugin-vue';
+import Components from 'unplugin-vue-components/rspack';
+import { VantResolver } from '@vant/auto-import-resolver';
+
+export default defineConfig({
+  plugins: [pluginVue()],
+  tools: {
+    rspack: {
+      plugins: [
+        Components({
+          resolvers: [VantResolver()],
+        }),
+      ],
+    },
+  },
+});
+```
+
+For Vite based project，configure the plugin in the `vite.config.js` file:
 
 ```js
 import vue from '@vitejs/plugin-vue';
@@ -162,7 +184,7 @@ export default {
 };
 ```
 
-For `vue-cli` based project，configure the plugin in the `vue.config.js` file:
+For vue-cli based project，configure the plugin in the `vue.config.js` file:
 
 ```js
 const { VantResolver } = require('@vant/auto-import-resolver');
@@ -171,14 +193,16 @@ const ComponentsPlugin = require('unplugin-vue-components/webpack');
 module.exports = {
   configureWebpack: {
     plugins: [
-      ComponentsPlugin({ resolvers: [VantResolver()] }), // when the unplugin-vue-components version is less than 0.26.0
-      ComponentsPlugin.default({ resolvers: [VantResolver()] }), // when the unplugin-vue-components version is greater than or equal to 0.26.0
+      // When the version of unplugin-vue-components is less than 0.26.0:
+      ComponentsPlugin({ resolvers: [VantResolver()] }),
+      // when the unplugin-vue-components version is greater than or equal to 0.26.0:
+      ComponentsPlugin.default({ resolvers: [VantResolver()] }),
     ],
   },
 };
 ```
 
-For `webpack` based project，configure the plugin in the `webpack.config.js` file:
+For webpack based project，configure the plugin in the `webpack.config.js` file:
 
 ```js
 const { VantResolver } = require('@vant/auto-import-resolver');
@@ -186,8 +210,10 @@ const ComponentsPlugin = require('unplugin-vue-components/webpack');
 
 module.exports = {
   plugins: [
-    ComponentsPlugin({ resolvers: [VantResolver()] }), // when the unplugin-vue-components version is less than 0.26.0
-    ComponentsPlugin.default({ resolvers: [VantResolver()] }), // when the unplugin-vue-components version is greater than or equal to 0.26.0
+    // When the version of unplugin-vue-components is less than 0.26.0:
+    ComponentsPlugin({ resolvers: [VantResolver()] }),
+    // when the unplugin-vue-components version is greater than or equal to 0.26.0:
+    ComponentsPlugin.default({ resolvers: [VantResolver()] }),
   ],
 };
 ```
