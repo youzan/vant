@@ -237,7 +237,7 @@ export default defineComponent({
           <div class={bem('sidebar')}>
             {props.showDeleteKey && (
               <NumberKeyboardKey
-                v-slots={{ delete: slots.delete }}
+                v-slots={{ default: slots.delete }}
                 large
                 text={props.deleteButtonText}
                 type="delete"

@@ -19,6 +19,29 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 
 ## 更新内容
 
+### v4.8.4
+
+`2024-02-03`
+
+#### 新功能 🎉
+
+- feat(Picker): 允许隐藏工具栏按钮 by [@chenjiahan](https://github.com/chenjiahan) in [#12599](https://github.com/youzan/vant/pull/12599)
+
+#### 问题修复 🐞
+
+- fix(Sticky): 初始黏贴位置 by [@nemo-shen](https://github.com/nemo-shen) in [#12601](https://github.com/youzan/vant/pull/12601)
+- fix(DropdownMenu): 修复传递对象字面量到 title-class 时的递归更新问题 by [@inottn](https://github.com/inottn) in [#12614](https://github.com/youzan/vant/pull/12614)
+
+#### 文档 📖
+
+- docs: 改进快速启动提示 by [@inottn](https://github.com/inottn) in [#12606](https://github.com/youzan/vant/pull/12606)
+
+#### 其他改变
+
+- chore(deps): 升级 Rsbuild 至 0.3.9 by [@chenjiahan](https://github.com/chenjiahan) in [#12600](https://github.com/youzan/vant/pull/12600)
+- chore: 避免工作流在 forked repo 上运行 by [@tolking](https://github.com/tolking) in [#12607](https://github.com/youzan/vant/pull/12607)
+- chore(workflow): 使用新的 M1 macOS 运行器 by [@chenjiahan](https://github.com/chenjiahan) in [#12615](https://github.com/youzan/vant/pull/12615)
+
 ### v4.8.3
 
 `2024-01-20`
