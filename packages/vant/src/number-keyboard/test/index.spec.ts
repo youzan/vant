@@ -105,6 +105,29 @@ test('should render extra-key slot correctly', () => {
   expect(wrapper.findAll('.van-key')[9].html()).toMatchSnapshot();
 });
 
+test('should render delete slot correctly', () => {
+  const wrapper = mount(NumberKeyboard, {
+    slots: {
+      delete: () => 'Custom Delete Key',
+    },
+  });
+
+  expect(wrapper.find('.van-key--delete').html()).toMatchSnapshot();
+});
+
+test('should render delete slot correctly when theme is custom', () => {
+  const wrapper = mount(NumberKeyboard, {
+    props: {
+      theme: 'custom',
+    },
+    slots: {
+      delete: () => 'Custom Delete Key',
+    },
+  });
+
+  expect(wrapper.find('.van-key--delete').html()).toMatchSnapshot();
+});
+
 test('should emit blur event after clicking outside', () => {
   const wrapper = mount(NumberKeyboard, {
     props: {

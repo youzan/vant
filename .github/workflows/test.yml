@@ -32,7 +32,7 @@ jobs:
       run: npm run lint
 
   test:
-    runs-on: ubuntu-latest
+    runs-on: macos-14
     steps:
     - uses: actions/checkout@v4
 
@@ -57,7 +57,7 @@ jobs:
         directory: ./packages/vant/test/coverage
 
   build:
-    runs-on: ubuntu-latest
+    runs-on: macos-14
     steps:
     - uses: actions/checkout@v4
 

@@ -108,7 +108,7 @@ export default {
         option.text += ' Year';
       }
       if (type === 'month') {
-        option.text += '月Month';
+        option.text += 'Month';
       }
       return option;
     };
@@ -188,9 +188,9 @@ export default {
 
 | Event | Description | Arguments |
 | --- | --- | --- |
-| confirm | Emitted when the confirm button is clicked | _{ selectedValues, selectedOptions }_ |
-| cancel | Emitted when the cancel button is clicked | _{ selectedValues, selectedOptions }_ |
-| change | Emitted when current option is changed | _{ selectedValues, selectedOptions, columnIndex }_ |
+| confirm | Emitted when the confirm button is clicked | _{ selectedValues, selectedOptions, selectedIndexes }_ |
+| cancel | Emitted when the cancel button is clicked | _{ selectedValues, selectedOptions, selectedIndexes }_ |
+| change | Emitted when current option is changed | _{ selectedValues, selectedOptions, selectedIndexes, columnIndex }_ |
 
 ### Slots
 

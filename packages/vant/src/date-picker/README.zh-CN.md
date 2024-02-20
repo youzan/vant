@@ -194,9 +194,9 @@ export default {
 
 | 事件名 | 说明 | 回调参数 |
 | --- | --- | --- |
-| confirm | 点击完成按钮时触发 | _{ selectedValues, selectedOptions }_ |
-| cancel | 点击取消按钮时触发 | _{ selectedValues, selectedOptions }_ |
-| change | 选项改变时触发 | _{ selectedValues, selectedOptions, columnIndex }_ |
+| confirm | 点击完成按钮时触发 | _{ selectedValues, selectedOptions, selectedIndexes }_ |
+| cancel | 点击取消按钮时触发 | _{ selectedValues, selectedOptions, selectedIndexes }_ |
+| change | 选项改变时触发 | _{ selectedValues, selectedOptions, selectedIndexes, columnIndex }_ |
 
 ### Slots
 

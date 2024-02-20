@@ -143,7 +143,7 @@ Vant 支持多种组件注册方式，除了在 app 上全局注册组件，你�
 
 ### 方法二. 按需引入组件样式
 
-在基于 `vite`、`webpack` 或 `vue-cli` 的项目中使用 Vant 时，可以使用 [unplugin-vue-components](https://github.com/unplugin/unplugin-vue-components) 插件，它可以自动引入组件。
+在基于 Rsbuild、Vite、webpack 或 vue-cli 的项目中使用 Vant 时，可以使用 [unplugin-vue-components](https://github.com/unplugin/unplugin-vue-components) 插件，它可以自动引入组件。
 
 Vant 官方基于 `unplugin-vue-components` 提供了自动导入样式的解析器 [@vant/auto-import-resolver](https://github.com/youzan/vant/tree/main/packages/vant-auto-import-resolver)，两者可以配合使用。
 
@@ -167,7 +167,29 @@ bun add @vant/auto-import-resolver unplugin-vue-components -D
 
 #### 2. 配置插件
 
-如果是基于 `vite` 的项目，在 `vite.config.js` 文件中配置插件：
+如果是基于 [Rsbuild](https://github.com/web-infra-dev/rsbuild) 的项目，在 `rsbuild.config.js` 文件中配置插件：
+
+```js
+import { defineConfig } from '@rsbuild/core';
+import { pluginVue } from '@rsbuild/plugin-vue';
+import Components from 'unplugin-vue-components/rspack';
+import { VantResolver } from '@vant/auto-import-resolver';
+
+export default defineConfig({
+  plugins: [pluginVue()],
+  tools: {
+    rspack: {
+      plugins: [
+        Components({
+          resolvers: [VantResolver()],
+        }),
+      ],
+    },
+  },
+});
+```
+
+如果是基于 Vite 的项目，在 `vite.config.js` 文件中配置插件：
 
 ```js
 import vue from '@vitejs/plugin-vue';
@@ -184,7 +206,7 @@ export default {
 };
 ```
 
-如果是基于 `vue-cli` 的项目，在 `vue.config.js` 文件中配置插件：
+如果是基于 vue-cli 的项目，在 `vue.config.js` 文件中配置插件：
 
 ```js
 const { VantResolver } = require('@vant/auto-import-resolver');
@@ -193,14 +215,16 @@ const ComponentsPlugin = require('unplugin-vue-components/webpack');
 module.exports = {
   configureWebpack: {
     plugins: [
-      ComponentsPlugin({ resolvers: [VantResolver()] }), // 当 unplugin-vue-components 版本小于 0.26.0
-      ComponentsPlugin.default({ resolvers: [VantResolver()] }), //当 unplugin-vue-components 版本大于等于 0.26.0
+      // 当 unplugin-vue-components 版本小于 0.26.0 时，使用以下写法
+      ComponentsPlugin({ resolvers: [VantResolver()] }),
+      //当 unplugin-vue-components 版本大于等于 0.26.0 时，使用以下写法
+      ComponentsPlugin.default({ resolvers: [VantResolver()] }),
     ],
   },
 };
 ```
 
-如果是基于 `webpack` 的项目，在 `webpack.config.js` 文件中配置插件：
+如果是基于 webpack 的项目，在 `webpack.config.js` 文件中配置插件：
 
 ```js
 const { VantResolver } = require('@vant/auto-import-resolver');
@@ -208,8 +232,10 @@ const ComponentsPlugin = require('unplugin-vue-components/webpack');
 
 module.exports = {
   plugins: [
-    ComponentsPlugin({ resolvers: [VantResolver()] }), // 当 unplugin-vue-components 版本小于 0.26.0
-    ComponentsPlugin.default({ resolvers: [VantResolver()] }), //当 unplugin-vue-components 版本大于等于 0.26.0
+    // 当 unplugin-vue-components 版本小于 0.26.0 时，使用以下写法
+    ComponentsPlugin({ resolvers: [VantResolver()] }),
+    //当 unplugin-vue-components 版本大于等于 0.26.0 时，使用以下写法
+    ComponentsPlugin.default({ resolvers: [VantResolver()] }),
   ],
 };
 ```
@@ -252,9 +278,7 @@ import 'vant/es/image-preview/style';
 
 - 请避免同时使用「全量引入」和「按需引入」这两种引入方式，否则会导致代码重复、样式错乱等问题。
 - 在使用过程中，如果你遇到组件不能导入的问题，因为 unplugin-vue-components 并不是 Vant 官方维护的插件，所以建议到 [unplugin/unplugin-vue-components](https://github.com/unplugin/unplugin-vue-components) 仓库下反馈。
-
-  > 提示：`unplugin-vue-components` 在版本号 >= 0.26.0 以上时，对于 `webpack`、`vuecli`、`rspack` 的，需要使用 `ComponentsPlugin.default` 进行注册。
-
+- 当 `unplugin-vue-components` 的版本号 >= 0.26.0 时，对于 `webpack`、`vue-cli` 和 `rspack`，你需要使用 `ComponentsPlugin.default` 进行注册。
 - `@vant/auto-import-resolver` 提供了一些配置项，请参考 [README 文档](https://github.com/youzan/vant/tree/main/packages/vant-auto-import-resolver) 来了解更多。
 - 如果是样式不生效的相关问题，你可以在 Vant 仓库下反馈。
 
