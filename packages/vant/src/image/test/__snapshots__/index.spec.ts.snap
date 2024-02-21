@@ -25,6 +25,17 @@ exports[`should emit load event after image loaded 1`] = `
 </div>
 `;
 
+exports[`should pass props to img 1`] = `
+<div class="van-image">
+  <img
+    src="https://img.com"
+    class="van-image__img"
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  >
+</div>
+`;
+
 exports[`should render default slot correctly 1`] = `
 <div class="van-image">
   <img

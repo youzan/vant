@@ -109,6 +109,8 @@ app.use(Lazyload);
 | loading-icon | Loading icon | _string_ | `photo` |
 | icon-size | Icon size | _number \| string_ | `32px` |
 | icon-prefix | Icon className prefix | _string_ | `van-icon` |
+| crossorigin | same as [crossorigin](https://developer.mozilla.org/en-US/docs/Web/API/HTMLImageElement/crossOrigin) | _string_ | - |
+| referrerpolicy | same as [referrerpolicy](https://developer.mozilla.org/en-US/docs/Web/API/HTMLImageElement/referrerPolicy) | _string_ | - |
 
 ### fit optional value
 

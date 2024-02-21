@@ -135,6 +135,8 @@ app.use(Lazyload);
 | loading-icon | 加载时提示的图标名称或图片链接，等同于 Icon 组件的 [name 属性](#/zh-CN/icon#props) | _string_ | `photo` |
 | icon-size | 加载图标和失败图标的大小 | _number \| string_ | `32px` |
 | icon-prefix | 图标类名前缀，等同于 Icon 组件的 [class-prefix 属性](#/zh-CN/icon#props) | _string_ | `van-icon` |
+| crossorigin | 等同于原生的 [crossorigin](https://developer.mozilla.org/zh-CN/docs/Web/API/HTMLImageElement/crossOrigin) 属性 | _string_ | - |
+| referrerpolicy | 等同于原生的 [referrerpolicy](https://developer.mozilla.org/zh-CN/docs/Web/API/HTMLImageElement/referrerPolicy) 属性 | _string_ | - |
 
 ### 图片填充模式
 
