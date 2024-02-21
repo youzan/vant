@@ -49,6 +49,8 @@ export const imageProps = {
   iconPrefix: String,
   showLoading: truthProp,
   loadingIcon: makeStringProp('photo'),
+  crossorigin: String as PropType<HTMLImageElement['crossOrigin']>,
+  referrerpolicy: String as PropType<HTMLImageElement['referrerPolicy']>,
 };
 
 export type ImageProps = ExtractPropTypes<typeof imageProps>;
@@ -154,6 +156,8 @@ export default defineComponent({
           objectFit: props.fit,
           objectPosition: props.position,
         },
+        crossorigin: props.crossorigin,
+        referrerpolicy: props.referrerpolicy,
       };
 
       if (props.lazyLoad) {
