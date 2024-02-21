@@ -11,6 +11,7 @@ import {
   type PropType,
   type CSSProperties,
   type ExtractPropTypes,
+  type ImgHTMLAttributes,
 } from 'vue';
 
 // Utils
@@ -49,8 +50,8 @@ export const imageProps = {
   iconPrefix: String,
   showLoading: truthProp,
   loadingIcon: makeStringProp('photo'),
-  crossorigin: String as PropType<HTMLImageElement['crossOrigin']>,
-  referrerpolicy: String as PropType<HTMLImageElement['referrerPolicy']>,
+  crossorigin: String as PropType<ImgHTMLAttributes['crossorigin']>,
+  referrerpolicy: String as PropType<ImgHTMLAttributes['referrerpolicy']>,
 };
 
 export type ImageProps = ExtractPropTypes<typeof imageProps>;
