@@ -19,6 +19,37 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 
 ## 更新内容
 
+### v4.8.5
+
+`2024-02-25`
+
+#### 新功能 🎉
+
+- feat(Image): 新增 `crossorigin` 和 `referrerpolicy` 属性 by [@Jungzl](https://github.com/Jungzl) in [#12641](https://github.com/youzan/vant/pull/12641)
+
+#### Bug修复 🐞
+
+- fix(NumberKeyboard): 当主题为自定义时正确渲染删除插槽 by [@TPORL](https://github.com/TPORL) in [#12624](https://github.com/youzan/vant/pull/12624)
+
+#### 文档 📖
+
+- docs: 更新与 Picker 事件相关的参数文档 by [@wjw-gavin](https://github.com/wjw-gavin) in [#12619](https://github.com/youzan/vant/pull/12619)
+- docs(DatePicker): 修复英文文档错误 by [@wjw-gavin](https://github.com/wjw-gavin) in [#12620](https://github.com/youzan/vant/pull/12620)
+- docs(Uploader): 修复丢失双引号问题 by [@nemo-shen](https://github.com/nemo-shen) in [#12627](https://github.com/youzan/vant/pull/12627)
+- docs: 新增完整注册指南 by [@chenjiahan](https://github.com/chenjiahan) in [#12628](https://github.com/youzan/vant/pull/12628)
+- docs: 新增Rsbuild按需引入指南 by [@chenjiahan](https://github.com/chenjiahan) in [#12629](https://github.com/youzan/vant/pull/12629)
+
+#### 其他更改
+
+- Revert "fix(DropdownMenu): 当传递对象字面量给title-class时修复递归更新问题 (#12614)" by [@inottn](https://github.com/inottn) in [#12617](https://github.com/youzan/vant/pull/12617)
+- chore(deps): 提升 Rsbuild 至 v0.4 版本 by [@chenjiahan](https://github.com/chenjiahan) in [#12625](https://github.com/youzan/vant/pull/12625)
+- chore(workflow): 设置 renovate 配置 by [@chenjiahan](https://github.com/chenjiahan) in [#12626](https://github.com/youzan/vant/pull/12626)
+- test: 跳过图像 SSR 测试案例 by [@chenjiahan](https://github.com/chenjiahan) in [#12644](https://github.com/youzan/vant/pull/12644)
+
+#### 新贡献者
+
+- [@TPORL](https://github.com/TPORL) 在 [#12624](https://github.com/youzan/vant/pull/12624) 中首次贡献
+
 ### v4.8.4
 
 `2024-02-03`
