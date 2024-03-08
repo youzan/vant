@@ -1,3 +1,11 @@
+/*
+ * @Author: sunguohui
+ * @Date: 2024-03-08 11:02:22
+ * @LastEditors: sunguohui
+ * @LastEditTime: 2024-03-08 11:09:08
+ * @FilePath: \vant\src\image-preview\types.ts
+ * @Description:
+ */
 import type {
   CSSProperties,
   TeleportProps,
@@ -14,6 +22,7 @@ export type ImagePreviewOptions = {
   images: string[];
   maxZoom?: number;
   minZoom?: number;
+  vertical?: boolean;
   teleport?: TeleportProps['to'];
   className?: unknown;
   showIndex?: boolean;

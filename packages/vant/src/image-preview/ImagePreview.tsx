@@ -60,6 +60,7 @@ export const imagePreviewProps = {
   minZoom: makeNumericProp(1 / 3),
   maxZoom: makeNumericProp(3),
   overlay: truthProp,
+  vertical: Boolean,
   closeable: Boolean,
   showIndex: truthProp,
   className: unknownProp,
@@ -159,6 +160,7 @@ export default defineComponent({
         lazyRender
         loop={props.loop}
         class={bem('swipe')}
+        vertical={props.vertical}
         duration={props.swipeDuration}
         initialSwipe={props.startPosition}
         showIndicators={props.showIndicators}
