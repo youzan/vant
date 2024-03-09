@@ -14,6 +14,7 @@ export type ImagePreviewOptions = {
   images: string[];
   maxZoom?: number;
   minZoom?: number;
+  vertical?: boolean;
   teleport?: TeleportProps['to'];
   className?: unknown;
   showIndex?: boolean;
