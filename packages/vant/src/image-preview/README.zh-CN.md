@@ -216,6 +216,7 @@ Vant 中导出了以下 ImagePreview 相关的辅助函数：
 | closeOnPopstate | 是否在页面回退时自动关闭 | _boolean_ | `true` |
 | closeOnClickImage `v4.8.3` | 是否在点击图片后关闭图片预览 | _boolean_ | `true` |
 | closeOnClickOverlay `v4.6.4` | 是否在点击遮罩层后关闭图片预览 | _boolean_ | `true` |
+| vertical `v4.8.6` | 是否开启纵向手势滑动 | _boolean_ | `false` |
 | className | 自定义类名 (应用在图片预览的弹出层) | _string \| Array \| object_ | - |
 | maxZoom | 手势缩放时，最大缩放比例 | _number \| string_ | `3` |
 | minZoom | 手势缩放时，最小缩放比例 | _number \| string_ | `1/3` |
@@ -245,6 +246,7 @@ Vant 中导出了以下 ImagePreview 相关的辅助函数：
 | close-on-popstate | 是否在页面回退时自动关闭 | _boolean_ | `true` |
 | close-on-click-image `v4.8.3` | 是否在点击图片后关闭图片预览 | _boolean_ | `true` |
 | close-on-click-overlay `v4.6.4` | 是否在点击遮罩层后关闭图片预览 | _boolean_ | `true` |
+| vertical `v4.8.6` | 是否开启纵向手势滑动 | _boolean_ | `false` |
 | class-name | 自定义类名 | _string \| Array \| object_ | - |
 | max-zoom | 手势缩放时，最大缩放比例 | _number \| string_ | `3` |
 | min-zoom | 手势缩放时，最小缩放比例 | _number \| string_ | `1/3` |
