@@ -55,43 +55,6 @@ export default {
 };
 ```
 
-### 展示图标
-
-动作面板通过 `actions` 属性来定义选项，`actions` 属性是一个由对象构成的数组，数组中的每个对象配置一列，对象格式见文档下方表格。
-
-```html
-<van-cell is-link title="基础用法" @click="show = true" />
-<van-action-sheet v-model:show="show" :actions="actions" @select="onSelect" />
-```
-
-```js
-import { ref } from 'vue';
-import { showToast } from 'vant';
-
-export default {
-  setup() {
-    const show = ref(false);
-    const actions = [
-      { name: '选项一' },
-      { name: '选项二' },
-      { name: '选项三' },
-    ];
-    const onSelect = (item) => {
-      // 默认情况下点击选项时不会自动收起
-      // 可以通过 close-on-click-action 属性开启自动收起
-      show.value = false;
-      showToast(item.name);
-    };
-
-    return {
-      show,
-      actions,
-      onSelect,
-    };
-  },
-};
-```
-
 ### 展示取消按钮
 
 设置 `cancel-text` 属性后，会在底部展示取消按钮，点击后关闭当前面板并触发 `cancel` 事件。
