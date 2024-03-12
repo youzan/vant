@@ -190,6 +190,7 @@ export default defineComponent({
             doubleScale={props.doubleScale}
             closeOnClickImage={props.closeOnClickImage}
             closeOnClickOverlay={props.closeOnClickOverlay}
+            vertical={props.vertical}
             onScale={emitScale}
             onClose={emitClose}
             onLongPress={() => emit('longPress', { index })}
