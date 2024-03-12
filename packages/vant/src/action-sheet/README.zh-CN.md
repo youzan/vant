@@ -55,6 +55,41 @@ export default {
 };
 ```
 
+### 展示图标
+
+使用 `actions` 的 `icon` 字段可以为选项设置图标。
+
+```html
+<van-cell is-link title="展示图标" @click="show = true" />
+<van-action-sheet v-model:show="show" :actions="actions" @select="onSelect" />
+```
+
+```js
+import { ref } from 'vue';
+import { showToast } from 'vant';
+
+export default {
+  setup() {
+    const show = ref(false);
+    const actions = [
+      { name: '选项一', icon: 'cart-o' },
+      { name: '选项二', icon: 'shop-o' },
+      { name: '选项三', icon: 'star-o' },
+    ];
+    const onSelect = (item) => {
+      show.value = false;
+      showToast(item.name);
+    };
+
+    return {
+      show,
+      actions,
+      onSelect,
+    };
+  },
+};
+```
+
 ### 展示取消按钮
 
 设置 `cancel-text` 属性后，会在底部展示取消按钮，点击后关闭当前面板并触发 `cancel` 事件。

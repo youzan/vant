@@ -53,6 +53,41 @@ export default {
 };
 ```
 
+### Show Icon
+
+Use the `icon` field of `actions` to set the icon for the option.
+
+```html
+<van-cell is-link title="Show Icon" @click="show = true" />
+<van-action-sheet v-model:show="show" :actions="actions" @select="onSelect" />
+```
+
+```js
+import { ref } from 'vue';
+import { showToast } from 'vant';
+
+export default {
+  setup() {
+    const show = ref(false);
+    const actions = [
+      { name: 'Option 1', icon: 'cart-o' },
+      { name: 'Option 2', icon: 'shop-o' },
+      { name: 'Option 3', icon: 'star-o' },
+    ];
+    const onSelect = (item) => {
+      show.value = false;
+      showToast(item.name);
+    };
+
+    return {
+      show,
+      actions,
+      onSelect,
+    };
+  },
+};
+```
+
 ### Show Cancel Button
 
 ```html
