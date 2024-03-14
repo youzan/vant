@@ -70,6 +70,13 @@ export function VantResolver(options: VantResolverOptions = {}) {
           from: `vant/${moduleType}`,
           sideEffects: getSideEffects(kebabCase(partialName), options),
         };
+      } else if (name.startsWith('show')) {
+        const partialName = name.slice(4);
+        return {
+          name: `show${partialName}`,
+          from: `vant/${moduleType}`,
+          sideEffects: getSideEffects(kebabCase(partialName), options),
+        };
       }
     },
   };
