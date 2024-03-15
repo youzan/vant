@@ -43,7 +43,7 @@ importers:
         version: 1.0.0
       rslog:
         specifier: ^1.1.0
-        version: 1.2.0
+        version: 1.2.1
     devDependencies:
       '@types/fs-extra':
         specifier: ^11.0.1
@@ -240,7 +240,7 @@ importers:
         version: 3.2.5
       rslog:
         specifier: ^1.1.0
-        version: 1.2.0
+        version: 1.2.1
       rspack-plugin-virtual-module:
         specifier: ^0.1.12
         version: 0.1.12
@@ -3915,8 +3915,8 @@ packages:
     resolution: {integrity: sha512-APM0Gt1KoXBz0iIkkdB/kfvGOwC4UuJFeG/c+yV7wSc7q96cG/kJ0HiYCnzivD9SB53cLV1MlHFNfOuPaadYSw==}
     dev: true
 
-  /rslog@1.2.0:
-    resolution: {integrity: sha512-2ZFW7Jtkzt4VkwCFRTE+0lKbzSLSH7U5OM9qZ5YuKk4xVrlIJJZx9Qh/fCyfsk8H+qXbermMc7+18qKJxLQ/bw==}
+  /rslog@1.2.1:
+    resolution: {integrity: sha512-XDMoa858LLZnf4i2kUwyjBQGplXaoSoIfMQf9iji2ano5t1OfSiJsSYpHeOH26DJEc5hdje/4K3wiT6TWL3cRA==}
     engines: {node: '>=14.17.6'}
     dev: false
 
