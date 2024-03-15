@@ -42,7 +42,10 @@
 
   &__item,
   &__cancel {
-    display: block;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
     width: 100%;
     padding: 14px var(--van-padding-md);
     font-size: var(--van-action-sheet-item-font-size);
@@ -88,10 +91,12 @@
   }
 
   &__subname {
+    width: 100%;
     margin-top: var(--van-padding-xs);
     color: var(--van-action-sheet-subname-color);
     font-size: var(--van-action-sheet-subname-font-size);
     line-height: var(--van-action-sheet-subname-line-height);
+    overflow-wrap: break-word;
   }
 
   &__gap {
