@@ -231,7 +231,7 @@ export default {
       // 返回 Promise 来执行异步逻辑
       return new Promise((resolve) => {
         // 在 resolve 函数中返回 true 或 false
-        resolve(index !== 3);
+        setTimeout(() => resolve(index !== 3), 1000);
       });
     };
 
