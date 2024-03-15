@@ -25,7 +25,7 @@ importers:
         version: 0.8.0
       prettier:
         specifier: ^3.0.0
-        version: 3.2.1
+        version: 3.2.5
 
   packages/create-vant-cli-app:
     dependencies:
@@ -237,7 +237,7 @@ importers:
         version: 4.0.2(postcss@8.4.33)
       prettier:
         specifier: ^3.0.0
-        version: 3.2.1
+        version: 3.2.5
       rslog:
         specifier: ^1.1.0
         version: 1.2.0
@@ -3800,8 +3800,8 @@ packages:
     resolution: {integrity: sha512-vkcDPrRZo1QZLbn5RLGPpg/WmIQ65qoWWhcGKf/b5eplkkarX0m9z8ppCat4mlOqUsWpyNuYgO3VRyrYHSzX5g==}
     engines: {node: '>= 0.8.0'}
 
-  /prettier@3.2.1:
-    resolution: {integrity: sha512-qSUWshj1IobVbKc226Gw2pync27t0Kf0EdufZa9j7uBSJay1CC+B3K5lAAZoqgX3ASiKuWsk6OmzKRetXNObWg==}
+  /prettier@3.2.5:
+    resolution: {integrity: sha512-3/GWa9aOC0YeD7LUfvOG2NiDyhOWRvt1k+rcKhOuYnMY24iiCphgneUfJDyFXd6rZCAnuLBv6UeAULtrhT/F4A==}
     engines: {node: '>=14'}
     hasBin: true
 
