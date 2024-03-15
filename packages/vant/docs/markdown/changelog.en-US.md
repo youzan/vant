@@ -19,6 +19,37 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 
 ## Details
 
+### v4.8.5
+
+`2024-02-25`
+
+#### New Features 🎉
+
+- feat(Image): add `crossorigin` & `referrerpolicy` props by [@Jungzl](https://github.com/Jungzl) in [#12641](https://github.com/youzan/vant/pull/12641)
+
+#### Bug Fixes 🐞
+
+- fix(NumberKeyboard): render delete slot correctly when theme is custom by [@TPORL](https://github.com/TPORL) in [#12624](https://github.com/youzan/vant/pull/12624)
+
+#### Document 📖
+
+- docs: update docs for params related to Picker events by [@wjw-gavin](https://github.com/wjw-gavin) in [#12619](https://github.com/youzan/vant/pull/12619)
+- docs(DatePicker): fix en-docs error by [@wjw-gavin](https://github.com/wjw-gavin) in [#12620](https://github.com/youzan/vant/pull/12620)
+- docs(Uploader): fix miss double quote by [@nemo-shen](https://github.com/nemo-shen) in [#12627](https://github.com/youzan/vant/pull/12627)
+- docs: add full registration guide by [@chenjiahan](https://github.com/chenjiahan) in [#12628](https://github.com/youzan/vant/pull/12628)
+- docs: add Rsbuild import on demand guide by [@chenjiahan](https://github.com/chenjiahan) in [#12629](https://github.com/youzan/vant/pull/12629)
+
+#### Other Changes
+
+- Revert "fix(DropdownMenu): fix recursive update when passing object literal to title-class (#12614)" by [@inottn](https://github.com/inottn) in [#12617](https://github.com/youzan/vant/pull/12617)
+- chore(deps): bump Rsbuild v0.4 by [@chenjiahan](https://github.com/chenjiahan) in [#12625](https://github.com/youzan/vant/pull/12625)
+- chore(workflow): setup renovate config by [@chenjiahan](https://github.com/chenjiahan) in [#12626](https://github.com/youzan/vant/pull/12626)
+- test: skip image SSR test case by [@chenjiahan](https://github.com/chenjiahan) in [#12644](https://github.com/youzan/vant/pull/12644)
+
+#### New Contributors
+
+- [@TPORL](https://github.com/TPORL) made their first contribution in [#12624](https://github.com/youzan/vant/pull/12624)
+
 ### v4.8.4
 
 `2024-02-03`

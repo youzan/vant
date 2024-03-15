@@ -13,6 +13,7 @@ const defaultConfig: ImagePreviewOptions = {
   onScale: undefined,
   onClose: undefined,
   onChange: undefined,
+  vertical: false,
   teleport: 'body',
   className: '',
   showIndex: true,
