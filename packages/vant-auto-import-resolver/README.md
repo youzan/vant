@@ -14,16 +14,16 @@ English | [简体中文](./README.zh-CN.md)
 
 ```shell
 # via npm
-npm i @vant/auto-import-resolver unplugin-vue-components -D
+npm i @vant/auto-import-resolver unplugin-vue-components unplugin-auto-import -D
 
 # via yarn
-yarn add @vant/auto-import-resolver unplugin-vue-components -D
+yarn add @vant/auto-import-resolver unplugin-vue-components unplugin-auto-import -D
 
 # via pnpm
-pnpm add @vant/auto-import-resolver unplugin-vue-components -D
+pnpm add @vant/auto-import-resolver unplugin-vue-components unplugin-auto-import -D
 
 # via Bun
-bun add @vant/auto-import-resolver unplugin-vue-components -D
+bun add @vant/auto-import-resolver unplugin-vue-components unplugin-auto-import -D
 ```
 
 ## Usage
@@ -32,11 +32,15 @@ bun add @vant/auto-import-resolver unplugin-vue-components -D
 
 ```ts
 // vite.config.ts
+import AutoImport from 'unplugin-auto-import/vite';
 import Components from 'unplugin-vue-components/vite';
 import { VantResolver } from '@vant/auto-import-resolver';
 
 export default defineConfig({
   plugins: [
+    AutoImport({
+      resolvers: [VantResolver()],
+    }),
     Components({
       resolvers: [VantResolver()],
     }),
@@ -48,11 +52,15 @@ export default defineConfig({
 
 ```ts
 // rollup.config.js
+import AutoImport from 'unplugin-auto-import/rollup';
 import Components from 'unplugin-vue-components/rollup';
 import { VantResolver } from '@vant/auto-import-resolver';
 
 export default {
   plugins: [
+    AutoImport({
+      resolvers: [VantResolver()],
+    }),
     Components({
       resolvers: [VantResolver()],
     }),
@@ -64,11 +72,15 @@ export default {
 
 ```ts
 // webpack.config.js
+import AutoImport from 'unplugin-auto-import/webpack';
 import Components from 'unplugin-vue-components/webpack';
 import { VantResolver } from '@vant/auto-import-resolver';
 
 module.exports = {
   plugins: [
+    AutoImport({
+      resolvers: [VantResolver()],
+    }),
     Components({
       resolvers: [VantResolver()],
     }),
@@ -80,11 +92,15 @@ module.exports = {
 
 ```ts
 // rspack.config.js
+import AutoImport from 'unplugin-auto-import/rspack';
 import Components from 'unplugin-vue-components/rspack';
 import { VantResolver } from '@vant/auto-import-resolver';
 
 module.exports = {
   plugins: [
+    AutoImport({
+      resolvers: [VantResolver()],
+    }),
     Components({
       resolvers: [VantResolver()],
     }),
@@ -96,12 +112,16 @@ module.exports = {
 
 ```ts
 // vue.config.js
+import AutoImport from 'unplugin-auto-import/webpack';
 import Components from 'unplugin-vue-components/webpack';
 import { VantResolver } from '@vant/auto-import-resolver';
 
 module.exports = {
   configureWebpack: {
     plugins: [
+      AutoImport({
+        resolvers: [VantResolver()],
+      }),
       Components({
         resolvers: [VantResolver()],
       }),
@@ -115,11 +135,15 @@ module.exports = {
 ```ts
 // esbuild.config.js
 import { build } from 'esbuild';
+import AutoImport from 'unplugin-auto-import/esbuild';
 import Components from 'unplugin-vue-components/esbuild';
 import { VantResolver } from '@vant/auto-import-resolver';
 
 build({
   plugins: [
+    AutoImport({
+      resolvers: [VantResolver()],
+    }),
     Components({
       resolvers: [VantResolver()],
     }),
