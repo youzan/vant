@@ -65,7 +65,7 @@ const beforeChange = (name: number) => {
     return false;
   }
   return new Promise<boolean>((resolve) => {
-    resolve(name !== 3);
+    setTimeout(() => resolve(name !== 3), 1000);
   });
 };
 </script>
