@@ -131,16 +131,16 @@ Compared with conventional usage, this method can introduce the CSS style of com
 
 ```bash
 # with npm
-npm i @vant/auto-import-resolver unplugin-vue-components -D
+npm i @vant/auto-import-resolver unplugin-vue-components unplugin-auto-import -D
 
 # with yarn
-yarn add @vant/auto-import-resolver unplugin-vue-components -D
+yarn add @vant/auto-import-resolver unplugin-vue-components unplugin-auto-import -D
 
 # with pnpm
-pnpm add @vant/auto-import-resolver unplugin-vue-components -D
+pnpm add @vant/auto-import-resolver unplugin-vue-components unplugin-auto-import -D
 
 # with Bun
-bun add @vant/auto-import-resolver unplugin-vue-components -D
+bun add @vant/auto-import-resolver unplugin-vue-components unplugin-auto-import -D
 ```
 
 #### 2. Configure Plugin
@@ -150,6 +150,7 @@ For Rsbuild based project，configure the plugin in the `rsbuild.config.js` file
 ```js
 import { defineConfig } from '@rsbuild/core';
 import { pluginVue } from '@rsbuild/plugin-vue';
+import AutoImport from 'unplugin-auto-import/rspack';
 import Components from 'unplugin-vue-components/rspack';
 import { VantResolver } from '@vant/auto-import-resolver';
 
@@ -158,6 +159,9 @@ export default defineConfig({
   tools: {
     rspack: {
       plugins: [
+        AutoImport({
+          resolvers: [VantResolver()],
+        }),
         Components({
           resolvers: [VantResolver()],
         }),
@@ -171,12 +175,16 @@ For Vite based project，configure the plugin in the `vite.config.js` file:
 
 ```js
 import vue from '@vitejs/plugin-vue';
+import AutoImport from 'unplugin-auto-import/vite';
 import Components from 'unplugin-vue-components/vite';
 import { VantResolver } from '@vant/auto-import-resolver';
 
 export default {
   plugins: [
     vue(),
+    AutoImport({
+      resolvers: [VantResolver()],
+    }),
     Components({
       resolvers: [VantResolver()],
     }),
@@ -188,15 +196,18 @@ For vue-cli based project，configure the plugin in the `vue.config.js` file:
 
 ```js
 const { VantResolver } = require('@vant/auto-import-resolver');
-const ComponentsPlugin = require('unplugin-vue-components/webpack');
+const AutoImport = require('unplugin-auto-import/webpack');
+const Components = require('unplugin-vue-components/webpack');
 
 module.exports = {
   configureWebpack: {
     plugins: [
       // When the version of unplugin-vue-components is less than 0.26.0:
-      ComponentsPlugin({ resolvers: [VantResolver()] }),
+      AutoImport({ resolvers: [VantResolver()] }),
+      Components({ resolvers: [VantResolver()] }),
       // when the unplugin-vue-components version is greater than or equal to 0.26.0:
-      ComponentsPlugin.default({ resolvers: [VantResolver()] }),
+      AutoImport.default({ resolvers: [VantResolver()] }),
+      Components.default({ resolvers: [VantResolver()] }),
     ],
   },
 };
@@ -206,14 +217,17 @@ For webpack based project，configure the plugin in the `webpack.config.js` file
 
 ```js
 const { VantResolver } = require('@vant/auto-import-resolver');
-const ComponentsPlugin = require('unplugin-vue-components/webpack');
+const AutoImport = require('unplugin-auto-import/webpack');
+const Components = require('unplugin-vue-components/webpack');
 
 module.exports = {
   plugins: [
     // When the version of unplugin-vue-components is less than 0.26.0:
-    ComponentsPlugin({ resolvers: [VantResolver()] }),
+    AutoImport({ resolvers: [VantResolver()] }),
+    Components({ resolvers: [VantResolver()] }),
     // when the unplugin-vue-components version is greater than or equal to 0.26.0:
-    ComponentsPlugin.default({ resolvers: [VantResolver()] }),
+    AutoImport.default({ resolvers: [VantResolver()] }),
+    Components.default({ resolvers: [VantResolver()] }),
   ],
 };
 ```
@@ -228,29 +242,13 @@ Then you can using components from Vant in the template, the `unplugin-vue-compo
 </template>
 ```
 
-#### 4. Style of Function Components
+`unplugin-auto-import` will automatically import the corresponding Vant API and styles.
 
-Some components of Vant are provided as function, including `Toast`, `Dialog`, `Notify` and `ImagePreview`. When using function components, `unplugin-vue-components` cannot parse the automatic registration component, resulting in `@vant/auto-import-resolver` unable to parse the style, so the style needs to be introduced manually.
-
-```js
-// Toast
-import { showToast } from 'vant';
-import 'vant/es/toast/style';
-
-// Dialog
-import { showDialog } from 'vant';
-import 'vant/es/dialog/style';
-
-// Notify
-import { showNotify } from 'vant';
-import 'vant/es/notify/style';
-
-// ImagePreview
-import { showImagePreview } from 'vant';
-import 'vant/es/image-preview/style';
+```html
+<script>
+showToast('No need to import showToast')
+</script>
 ```
-
-> Tip: "Full Import" and "On-demand Import" should not be used at the same time, otherwise it will lead to problems such as code duplication and style overrides.
 
 #### Tips
 
