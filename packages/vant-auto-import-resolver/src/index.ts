@@ -56,8 +56,48 @@ function getSideEffects(dirName: string, options: VantResolverOptions) {
   return `vant/${moduleType}/${dirName}/style/index`;
 }
 
+function getAPIMap() {
+  const apiMap = new Map<string, string>();
+
+  const api = {
+    dialog: [
+      'showDialog',
+      'closeDialog',
+      'showConfirmDialog',
+      'setDialogDefaultOptions',
+      'resetDialogDefaultOptions',
+    ],
+    imagePreview: ['showImagePreview'],
+    notify: [
+      'showNotify',
+      'closeNotify',
+      'setNotifyDefaultOptions',
+      'resetNotifyDefaultOptions',
+    ],
+    toast: [
+      'showToast',
+      'closeToast',
+      'showFailToast',
+      'showLoadingToast',
+      'showSuccessToast',
+      'allowMultipleToast',
+      'setToastDefaultOptions',
+      'resetToastDefaultOptions',
+    ],
+  };
+
+  Object.entries(api).forEach(([importName, apiList]) => {
+    apiList.forEach((api) => {
+      apiMap.set(api, importName);
+    });
+  });
+
+  return apiMap;
+}
+
 export function VantResolver(options: VantResolverOptions = {}) {
   const moduleType = getModuleType(options);
+  const apiMap = getAPIMap();
 
   return {
     type: 'component' as const,
@@ -70,10 +110,13 @@ export function VantResolver(options: VantResolverOptions = {}) {
           from: `vant/${moduleType}`,
           sideEffects: getSideEffects(kebabCase(partialName), options),
         };
-      } else if (name.startsWith('show')) {
-        const partialName = name.slice(4);
+      }
+
+      // import API
+      if (apiMap.has(name)) {
+        const partialName = apiMap.get(name)!;
         return {
-          name: `show${partialName}`,
+          name,
           from: `vant/${moduleType}`,
           sideEffects: getSideEffects(kebabCase(partialName), options),
         };
