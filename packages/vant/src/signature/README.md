@@ -106,6 +106,8 @@ Use [ref](https://vuejs.org/guide/essentials/template-refs.html) to get Signatur
 | Name | Description | Attribute | Return value |
 | --- | --- | --- | --- |
 | resize `v4.7.3` | Resize Signature when container element resized or visibility changed | - | - |
+| clear `v4.8.6` | Can be called to clear the signature | - | - |
+| submit `v4.8.6` | Trigger the `submit` event, which is equivalent to clicking the confirm button. | - | - |
 
 ### Types
 
