@@ -19,6 +19,45 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 
 ## 更新内容
 
+### v4.8.6
+
+`2024-03-17`
+
+#### 新功能 🎉
+
+- feat(ImagePreview)：添加 vertical 属性 [@suncohey](https://github.com/suncohey) 在 [#12660](https://github.com/youzan/vant/pull/12660)
+- feat(signature)：导出 clear 和 submit 方法 [@chouchouji](https://github.com/chouchouji) 在 [#12654](https://github.com/youzan/vant/pull/12654)
+- feat：支持 unplugin-auto-import 插件 [@DragonnZhang](https://github.com/DragonnZhang) 在 [#12679](https://github.com/youzan/vant/pull/12679)
+- feat(ActionSheet)：在 actions 数据中添加图标支持 [@wjw-gavin](https://github.com/wjw-gavin) 在 [#12671](https://github.com/youzan/vant/pull/12671)
+
+#### Bug 修复 🐞
+
+- fix(ImagePreview)：在当前图片被移动到边缘时，允许用户滑动到下一张图片 [@inottn](https://github.com/inottn) 在 [#12666](https://github.com/youzan/vant/pull/12666)
+- fix(ActionSheet)：图标类名 [@chenjiahan](https://github.com/chenjiahan) 在 [#12701](https://github.com/youzan/vant/pull/12701)
+
+#### 文档更新 📖
+
+- docs(ImagePreview)：添加 vertical 属性 [@chenjiahan](https://github.com/chenjiahan) 在 [#12663](https://github.com/youzan/vant/pull/12663)
+- docs：将 tab 的 'Before Change' 改为一个真正的异步函数 [@gxy5202](https://github.com/gxy5202) 在 [#12693](https://github.com/youzan/vant/pull/12693)
+
+#### 其他更改
+
+- chore(deps)：Rsbuild 升级到 0.4.12 [@chenjiahan](https://github.com/chenjiahan) 在 [#12665](https://github.com/youzan/vant/pull/12665)
+- chore(deps)：更新依赖 [@vue](https://github.com/vue)/test-utils 到 v2.4.5 @renovate 在 [#12681](https://github.com/youzan/vant/pull/12681)
+- chore(deps)：更新依赖 autoprefixer 到 v10.4.18 [@renovate](https://github.com/renovate) 在 [#12682](https://github.com/youzan/vant/pull/12682)
+- chore(workflow)：禁用依赖仪表板 [@chenjiahan](https://github.com/chenjiahan) 在 [#12686](https://github.com/youzan/vant/pull/12686)
+- chore(deps)：更新依赖 prettier 到 v3.2.5 [@renovate](https://github.com/renovate) 在 [#12685](https://github.com/youzan/vant/pull/12685)
+- chore(deps)：更新 Rsbuild 到 v0.4.15 [@renovate](https://github.com/renovate) 在 [#12688](https://github.com/youzan/vant/pull/12688)
+- chore(deps)：更新依赖 eslint 到 v8.57.0 [@renovate](https://github.com/renovate) 在 [#12697](https://github.com/youzan/vant/pull/12697)
+- chore(deps)：更新依赖 typescript 到 v5.4.2 [@renovate](https://github.com/renovate) 在 [#12700](https://github.com/youzan/vant/pull/12700)
+
+#### 新贡献者
+
+- [@chouchouji](https://github.com/chouchouji) 在 [#12654](https://github.com/youzan/vant/pull/12654) 做出了首次贡献
+- [@renovate](https://github.com/renovate) 在 [#12681](https://github.com/youzan/vant/pull/12681) 做出了首次贡献
+- [@gxy5202](https://github.com/gxy5202) 在 [#12693](https://github.com/youzan/vant/pull/12693) 做出了首次贡献
+- [@DragonnZhang](https://github.com/DragonnZhang) 在 [#12679](https://github.com/youzan/vant/pull/12679) 做出了首次贡献
+
 ### v4.8.5
 
 `2024-02-25`
