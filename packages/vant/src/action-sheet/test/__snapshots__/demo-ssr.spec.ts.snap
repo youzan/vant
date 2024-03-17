@@ -34,6 +34,26 @@ exports[`should render demo and match snapshot 1`] = `
       style
     >
       <span>
+        Show Icon
+      </span>
+    </div>
+    <i
+      class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon"
+      style
+    >
+      <!--[-->
+    </i>
+  </div>
+  <div
+    class="van-cell van-cell--clickable"
+    role="button"
+    tabindex="0"
+  >
+    <div
+      class="van-cell__title"
+      style
+    >
+      <span>
         Show Cancel Button
       </span>
     </div>
@@ -111,6 +131,7 @@ exports[`should render demo and match snapshot 1`] = `
     </i>
   </div>
 </div>
+<!--[-->
 <!--[-->
 <!--[-->
 <!--[-->

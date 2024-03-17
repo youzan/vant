@@ -11,6 +11,7 @@ const t = useTranslate({
     option2: '选项二',
     option3: '选项三',
     subname: '描述信息',
+    showIcon: '展示图标',
     showCancel: '展示取消按钮',
     buttonText: '弹出菜单',
     customPanel: '自定义面板',
@@ -25,6 +26,7 @@ const t = useTranslate({
     option2: 'Option 2',
     option3: 'Option 3',
     subname: 'Description',
+    showIcon: 'Show Icon',
     showCancel: 'Show Cancel Button',
     buttonText: 'Show ActionSheet',
     customPanel: 'Custom Panel',
@@ -36,6 +38,7 @@ const t = useTranslate({
   },
 });
 const showBasic = ref(false);
+const showIcon = ref(false);
 const showCancel = ref(false);
 const showTitle = ref(false);
 const showStatus = ref(false);
@@ -45,6 +48,12 @@ const simpleActions = computed<ActionSheetAction[]>(() => [
   { name: t('option1') },
   { name: t('option2') },
   { name: t('option3') },
+]);
+
+const iconActions = computed<ActionSheetAction[]>(() => [
+  { name: t('option1'), icon: 'cart-o' },
+  { name: t('option2'), icon: 'shop-o' },
+  { name: t('option3'), icon: 'star-o' },
 ]);
 
 const statusActions = computed<ActionSheetAction[]>(() => [
@@ -64,12 +73,18 @@ const onSelect = (item: ActionSheetAction) => {
   showToast(item.name);
 };
 
+const onSelectIcon = (item: ActionSheetAction) => {
+  showIcon.value = false;
+  showToast(item.name);
+};
+
 const onCancel = () => showToast(t('cancel'));
 </script>
 
 <template>
   <demo-block card :title="t('basicUsage')">
     <van-cell is-link :title="t('basicUsage')" @click="showBasic = true" />
+    <van-cell is-link :title="t('showIcon')" @click="showIcon = true" />
     <van-cell is-link :title="t('showCancel')" @click="showCancel = true" />
     <van-cell
       is-link
@@ -90,6 +105,12 @@ const onCancel = () => showToast(t('cancel'));
     v-model:show="showBasic"
     :actions="simpleActions"
     @select="onSelect"
+  />
+
+  <van-action-sheet
+    v-model:show="showIcon"
+    :actions="iconActions"
+    @select="onSelectIcon"
   />
 
   <van-action-sheet

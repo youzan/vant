@@ -13,6 +13,8 @@
   --van-action-sheet-item-line-height: var(--van-line-height-lg);
   --van-action-sheet-item-text-color: var(--van-text-color);
   --van-action-sheet-item-disabled-text-color: var(--van-text-color-3);
+  --van-action-sheet-item-icon-size: 18px;
+  --van-action-sheet-item-icon-margin-right: var(--van-padding-xs);
   --van-action-sheet-subname-color: var(--van-text-color-2);
   --van-action-sheet-subname-font-size: var(--van-font-size-sm);
   --van-action-sheet-subname-line-height: var(--van-line-height-sm);
@@ -40,7 +42,10 @@
 
   &__item,
   &__cancel {
-    display: block;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
     width: 100%;
     padding: 14px var(--van-padding-md);
     font-size: var(--van-action-sheet-item-font-size);
@@ -72,6 +77,11 @@
     &--loading {
       cursor: default;
     }
+
+    &--icon {
+      font-size: var(--van-action-sheet-item-icon-size);
+      margin-right: var(--van-action-sheet-item-icon-margin-right);
+    }
   }
 
   &__cancel {
@@ -81,10 +91,12 @@
   }
 
   &__subname {
+    width: 100%;
     margin-top: var(--van-padding-xs);
     color: var(--van-action-sheet-subname-color);
     font-size: var(--van-action-sheet-subname-font-size);
     line-height: var(--van-action-sheet-subname-line-height);
+    overflow-wrap: break-word;
   }
 
   &__gap {

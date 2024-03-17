@@ -55,6 +55,41 @@ export default {
 };
 ```
 
+### 展示图标
+
+使用 `actions` 的 `icon` 字段可以为选项设置图标。
+
+```html
+<van-cell is-link title="展示图标" @click="show = true" />
+<van-action-sheet v-model:show="show" :actions="actions" @select="onSelect" />
+```
+
+```js
+import { ref } from 'vue';
+import { showToast } from 'vant';
+
+export default {
+  setup() {
+    const show = ref(false);
+    const actions = [
+      { name: '选项一', icon: 'cart-o' },
+      { name: '选项二', icon: 'shop-o' },
+      { name: '选项三', icon: 'star-o' },
+    ];
+    const onSelect = (item) => {
+      show.value = false;
+      showToast(item.name);
+    };
+
+    return {
+      show,
+      actions,
+      onSelect,
+    };
+  },
+};
+```
+
 ### 展示取消按钮
 
 设置 `cancel-text` 属性后，会在底部展示取消按钮，点击后关闭当前面板并触发 `cancel` 事件。
@@ -207,15 +242,16 @@ export default {
 
 `actions` 属性是一个由对象构成的数组，数组中的每个对象配置一列，对象可以包含以下值：
 
-| 键名      | 说明                     | 类型                        |
-| --------- | ------------------------ | --------------------------- |
-| name      | 标题                     | _string_                    |
-| subname   | 二级标题                 | _string_                    |
-| color     | 选项文字颜色             | _string_                    |
-| className | 为对应列添加额外的 class | _string \| Array \| object_ |
-| loading   | 是否为加载状态           | _boolean_                   |
-| disabled  | 是否为禁用状态           | _boolean_                   |
-| callback  | 点击时触发的回调函数     | _action: ActionSheetAction_ |
+| 键名          | 说明                     | 类型                        |
+| ------------- | ------------------------ | --------------------------- |
+| name          | 标题                     | _string_                    |
+| subname       | 二级标题                 | _string_                    |
+| color         | 选项文字颜色             | _string_                    |
+| icon `v4.8.6` | 选项图标名称或图片链接   | _string_                    |
+| className     | 为对应列添加额外的 class | _string \| Array \| object_ |
+| loading       | 是否为加载状态           | _boolean_                   |
+| disabled      | 是否为禁用状态           | _boolean_                   |
+| callback      | 点击时触发的回调函数     | _action: ActionSheetAction_ |
 
 ### Events
 
@@ -265,6 +301,8 @@ import type { ActionSheetProps, ActionSheetAction } from 'vant';
 | --van-action-sheet-item-line-height | _var(--van-line-height-lg)_ | - |
 | --van-action-sheet-item-text-color | _var(--van-text-color)_ | - |
 | --van-action-sheet-item-disabled-text-color | _var(--van-text-color-3)_ | - |
+| --van-action-sheet-item-icon-size | _18px_ | - |
+| --van-action-sheet-item-icon-margin-right | _var(--van-padding-xs)_ | - |
 | --van-action-sheet-subname-color | _var(--van-text-color-2)_ | - |
 | --van-action-sheet-subname-font-size | _var(--van-font-size-sm)_ | - |
 | --van-action-sheet-subname-line-height | _var(--van-line-height-sm)_ | - |
