@@ -97,7 +97,7 @@ export default defineComponent({
 
     const renderIcon = (action: ActionSheetAction) => {
       if (action.icon) {
-        return <Icon class={bem('item--icon')} name={action.icon} />;
+        return <Icon class={bem('item-icon')} name={action.icon} />;
       }
     };
 
