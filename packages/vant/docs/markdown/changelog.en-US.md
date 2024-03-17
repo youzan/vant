@@ -19,6 +19,45 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 
 ## Details
 
+### v4.8.6
+
+`2024-03-17`
+
+#### New Features 🎉
+
+- feat(ImagePreview): add vertical prop by [@suncohey](https://github.com/suncohey) in [#12660](https://github.com/youzan/vant/pull/12660)
+- feat(signature): export clear and submit method by [@chouchouji](https://github.com/chouchouji) in [#12654](https://github.com/youzan/vant/pull/12654)
+- feat: support unplugin-auto-import plugin by [@DragonnZhang](https://github.com/DragonnZhang) in [#12679](https://github.com/youzan/vant/pull/12679)
+- feat(ActionSheet): add icon support to the actions data by [@wjw-gavin](https://github.com/wjw-gavin) in [#12671](https://github.com/youzan/vant/pull/12671)
+
+#### Bug Fixes 🐞
+
+- fix(ImagePreview): allow user to swipe to next image when the current image is moved to the edge by [@inottn](https://github.com/inottn) in [#12666](https://github.com/youzan/vant/pull/12666)
+- fix(ActionSheet): icon class name by [@chenjiahan](https://github.com/chenjiahan) in [#12701](https://github.com/youzan/vant/pull/12701)
+
+#### Document 📖
+
+- docs(ImagePreview): add vertical prop by [@chenjiahan](https://github.com/chenjiahan) in [#12663](https://github.com/youzan/vant/pull/12663)
+- docs: change tab's 'Before Change' into a real async function by [@gxy5202](https://github.com/gxy5202) in [#12693](https://github.com/youzan/vant/pull/12693)
+
+#### Other Changes
+
+- chore(deps): bump Rsbuild 0.4.12 by [@chenjiahan](https://github.com/chenjiahan) in [#12665](https://github.com/youzan/vant/pull/12665)
+- chore(deps): update dependency [@vue](https://github.com/vue)/test-utils to v2.4.5 by @renovate in [#12681](https://github.com/youzan/vant/pull/12681)
+- chore(deps): update dependency autoprefixer to v10.4.18 by [@renovate](https://github.com/renovate) in [#12682](https://github.com/youzan/vant/pull/12682)
+- chore(workflow): disable dependency dashboard by [@chenjiahan](https://github.com/chenjiahan) in [#12686](https://github.com/youzan/vant/pull/12686)
+- chore(deps): update dependency prettier to v3.2.5 by [@renovate](https://github.com/renovate) in [#12685](https://github.com/youzan/vant/pull/12685)
+- chore(deps): update rsbuild to v0.4.15 by [@renovate](https://github.com/renovate) in [#12688](https://github.com/youzan/vant/pull/12688)
+- chore(deps): update dependency eslint to v8.57.0 by [@renovate](https://github.com/renovate) in [#12697](https://github.com/youzan/vant/pull/12697)
+- chore(deps): update dependency typescript to v5.4.2 by [@renovate](https://github.com/renovate) in [#12700](https://github.com/youzan/vant/pull/12700)
+
+#### New Contributors
+
+- [@chouchouji](https://github.com/chouchouji) made their first contribution in [#12654](https://github.com/youzan/vant/pull/12654)
+- [@renovate](https://github.com/renovate) made their first contribution in [#12681](https://github.com/youzan/vant/pull/12681)
+- [@gxy5202](https://github.com/gxy5202) made their first contribution in [#12693](https://github.com/youzan/vant/pull/12693)
+- [@DragonnZhang](https://github.com/DragonnZhang) made their first contribution in [#12679](https://github.com/youzan/vant/pull/12679)
+
 ### v4.8.5
 
 `2024-02-25`
