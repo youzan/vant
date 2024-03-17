@@ -181,6 +181,8 @@ export default defineComponent({
 
     useExpose<SignatureExpose>({
       resize,
+      clear,
+      submit,
     });
 
     return () => (
