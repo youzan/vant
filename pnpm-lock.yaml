@@ -123,7 +123,7 @@ importers:
         version: 3.4.13(typescript@5.3.3)
       vue-router:
         specifier: ^4.1.6
-        version: 4.2.5(vue@3.4.13)
+        version: 4.3.0(vue@3.4.13)
 
   packages/vant-area-data:
     devDependencies:
@@ -258,7 +258,7 @@ importers:
         version: 5.0.12(less@4.2.0)(terser@5.26.0)
       vue-router:
         specifier: ^4.1.6
-        version: 4.2.5(vue@3.4.13)
+        version: 4.3.0(vue@3.4.13)
     devDependencies:
       '@types/fs-extra':
         specifier: ^11.0.1
@@ -1775,8 +1775,8 @@ packages:
       '@vue/shared': 3.4.15
     dev: false
 
-  /@vue/devtools-api@6.5.1:
-    resolution: {integrity: sha512-+KpckaAQyfbvshdDW5xQylLni1asvNSGme1JFs8I1+/H5pHEhqUKMEQD/qn3Nx5+/nycBq11qAEi8lk+LXI2dA==}
+  /@vue/devtools-api@6.6.1:
+    resolution: {integrity: sha512-LgPscpE3Vs0x96PzSSB4IGVSZXZBZHpfxs+ZA1d+VEPwHdOXowy/Y2CsvCAIFrf+ssVU1pD1jidj505EpUnfbA==}
 
   /@vue/reactivity@3.4.13:
     resolution: {integrity: sha512-/ZdUOrGKkGVONzVJkfDqNcn2fLMvaa5VlYx2KwTbnRbX06YZ4GJE0PVTmWzIxtBYdpSTLLXgw3pDggO+96KXzg==}
@@ -4511,12 +4511,12 @@ packages:
       webpack: 5.89.0(esbuild@0.19.11)
     dev: false
 
-  /vue-router@4.2.5(vue@3.4.13):
-    resolution: {integrity: sha512-DIUpKcyg4+PTQKfFPX88UWhlagBEBEfJ5A8XDXRJLUnZOvcpMF8o/dnL90vpVkGaPbjvXazV/rC1qBKrZlFugw==}
+  /vue-router@4.3.0(vue@3.4.13):
+    resolution: {integrity: sha512-dqUcs8tUeG+ssgWhcPbjHvazML16Oga5w34uCUmsk7i0BcnskoLGwjpa15fqMr2Fa5JgVBrdL2MEgqz6XZ/6IQ==}
     peerDependencies:
       vue: ^3.2.0
     dependencies:
-      '@vue/devtools-api': 6.5.1
+      '@vue/devtools-api': 6.6.1
       vue: 3.4.13(typescript@5.3.3)
 
   /vue@3.4.13(typescript@5.3.3):
