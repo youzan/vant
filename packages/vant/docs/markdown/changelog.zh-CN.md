@@ -19,6 +19,15 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 
 ## 更新内容
 
+### v4.8.7
+
+`2024-03-18`
+
+#### 其他更改
+
+- 回退 "chore(deps)：更新依赖 typescript 到 v5.4.2" by [@renovate](https://github.com/renovate) in [#12700](https://github.com/youzan/vant/pull/12700)
+- 更新 `@vant/auto-import-resolver` homepage by [@yoyo837](https://github.com/yoyo837) in [#12704](https://github.com/youzan/vant/pull/12704)
+
 ### v4.8.6
 
 `2024-03-17`

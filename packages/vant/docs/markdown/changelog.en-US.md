@@ -19,6 +19,15 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 
 ## Details
 
+### v4.8.7
+
+`2024-03-18`
+
+#### Other Changes
+
+- Revert "chore(deps): update dependency typescript to v5.4.2" by [@renovate](https://github.com/renovate) in [#12700](https://github.com/youzan/vant/pull/12700)
+- chore: Update homepage by [@yoyo837](https://github.com/yoyo837) in [#12704](https://github.com/youzan/vant/pull/12704)
+
 ### v4.8.6
 
 `2024-03-17`
