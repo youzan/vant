@@ -327,7 +327,7 @@ importers:
   packages/vant-popperjs:
     devDependencies:
       '@popperjs/core':
-        specifier: ^2.11.6
+        specifier: ^2.11.8
         version: 2.11.8
       esbuild:
         specifier: ^0.20.0
