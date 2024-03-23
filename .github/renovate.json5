@@ -6,7 +6,9 @@
 		// Use chore as semantic commit type for commit messages
 		{
 			"matchPackagePatterns": ["*"],
-			"semanticCommitType": "chore"
+			"semanticCommitType": "chore",
+			// always bump package.json
+			"rangeStrategy": "bump"
 		},
 		{
 			"groupName": "rsbuild",
