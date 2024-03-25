@@ -15,7 +15,7 @@ importers:
         specifier: workspace:*
         version: link:packages/vant-eslint-config
       eslint:
-        specifier: ^8.46.0
+        specifier: ^8.57.0
         version: 8.57.0
       husky:
         specifier: ^8.0.1
@@ -194,7 +194,7 @@ importers:
         specifier: ^0.20.0
         version: 0.20.2
       eslint:
-        specifier: ^8.46.0
+        specifier: ^8.57.0
         version: 8.57.0
       fast-glob:
         specifier: ^3.2.11
@@ -316,7 +316,7 @@ importers:
         version: 9.20.1(eslint@8.57.0)
     devDependencies:
       eslint:
-        specifier: ^8.46.0
+        specifier: ^8.57.0
         version: 8.57.0
       typescript:
         specifier: ^5.0.4
