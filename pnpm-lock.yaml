@@ -33,7 +33,7 @@ importers:
         specifier: 2.3.6
         version: 2.3.6
       fast-glob:
-        specifier: ^3.2.11
+        specifier: ^3.3.2
         version: 3.3.2
       fs-extra:
         specifier: ^11.1.0
@@ -197,7 +197,7 @@ importers:
         specifier: ^8.57.0
         version: 8.57.0
       fast-glob:
-        specifier: ^3.2.11
+        specifier: ^3.3.2
         version: 3.3.2
       fs-extra:
         specifier: ^11.1.0
