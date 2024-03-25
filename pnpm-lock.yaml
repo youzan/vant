@@ -128,7 +128,7 @@ importers:
   packages/vant-area-data:
     devDependencies:
       esbuild:
-        specifier: ^0.20.0
+        specifier: ^0.20.2
         version: 0.20.2
       rimraf:
         specifier: ^5.0.0
@@ -191,7 +191,7 @@ importers:
         specifier: 2.3.6
         version: 2.3.6
       esbuild:
-        specifier: ^0.20.0
+        specifier: ^0.20.2
         version: 0.20.2
       eslint:
         specifier: ^8.57.0
@@ -285,7 +285,7 @@ importers:
         specifier: ^3.4.13
         version: 3.4.13
       esbuild:
-        specifier: ^0.20.0
+        specifier: ^0.20.2
         version: 0.20.2
       rimraf:
         specifier: ^5.0.0
@@ -330,7 +330,7 @@ importers:
         specifier: ^2.11.6
         version: 2.11.8
       esbuild:
-        specifier: ^0.20.0
+        specifier: ^0.20.2
         version: 0.20.2
       rimraf:
         specifier: ^5.0.0
@@ -344,7 +344,7 @@ importers:
   packages/vant-use:
     devDependencies:
       esbuild:
-        specifier: ^0.20.0
+        specifier: ^0.20.2
         version: 0.20.2
       rimraf:
         specifier: ^5.0.0

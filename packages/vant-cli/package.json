@@ -60,7 +60,7 @@
     "autoprefixer": "^10.4.8",
     "commander": "^11.0.0",
     "rslog": "^1.1.0",
-    "esbuild": "^0.20.0",
+    "esbuild": "^0.20.2",
     "eslint": "^8.57.0",
     "enquirer": "2.3.6",
     "fast-glob": "^3.2.11",
