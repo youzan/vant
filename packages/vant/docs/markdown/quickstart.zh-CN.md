@@ -153,16 +153,16 @@ Vant 官方基于 `unplugin-vue-components` 提供了自动导入样式的解析
 
 ```bash
 # 通过 npm 安装
-npm i @vant/auto-import-resolver unplugin-vue-components -D
+npm i @vant/auto-import-resolver unplugin-vue-components unplugin-auto-import -D
 
 # 通过 yarn 安装
-yarn add @vant/auto-import-resolver unplugin-vue-components -D
+yarn add @vant/auto-import-resolver unplugin-vue-components unplugin-auto-import -D
 
 # 通过 pnpm 安装
-pnpm add @vant/auto-import-resolver unplugin-vue-components -D
+pnpm add @vant/auto-import-resolver unplugin-vue-components unplugin-auto-import -D
 
 # 通过 bun 安装
-bun add @vant/auto-import-resolver unplugin-vue-components -D
+bun add @vant/auto-import-resolver unplugin-vue-components unplugin-auto-import -D
 ```
 
 #### 2. 配置插件
@@ -172,6 +172,7 @@ bun add @vant/auto-import-resolver unplugin-vue-components -D
 ```js
 import { defineConfig } from '@rsbuild/core';
 import { pluginVue } from '@rsbuild/plugin-vue';
+import AutoImport from 'unplugin-auto-import/rspack';
 import Components from 'unplugin-vue-components/rspack';
 import { VantResolver } from '@vant/auto-import-resolver';
 
@@ -180,6 +181,9 @@ export default defineConfig({
   tools: {
     rspack: {
       plugins: [
+        AutoImport({
+          resolvers: [VantResolver()],
+        }),
         Components({
           resolvers: [VantResolver()],
         }),
@@ -193,12 +197,16 @@ export default defineConfig({
 
 ```js
 import vue from '@vitejs/plugin-vue';
+import AutoImport from 'unplugin-auto-import/vite';
 import Components from 'unplugin-vue-components/vite';
 import { VantResolver } from '@vant/auto-import-resolver';
 
 export default {
   plugins: [
     vue(),
+    AutoImport({
+      resolvers: [VantResolver()],
+    }),
     Components({
       resolvers: [VantResolver()],
     }),
@@ -210,15 +218,18 @@ export default {
 
 ```js
 const { VantResolver } = require('@vant/auto-import-resolver');
-const ComponentsPlugin = require('unplugin-vue-components/webpack');
+const AutoImport = require('unplugin-auto-import/webpack');
+const Components = require('unplugin-vue-components/webpack');
 
 module.exports = {
   configureWebpack: {
     plugins: [
       // 当 unplugin-vue-components 版本小于 0.26.0 时，使用以下写法
-      ComponentsPlugin({ resolvers: [VantResolver()] }),
+      AutoImport({ resolvers: [VantResolver()] }),
+      Components({ resolvers: [VantResolver()] }),
       //当 unplugin-vue-components 版本大于等于 0.26.0 时，使用以下写法
-      ComponentsPlugin.default({ resolvers: [VantResolver()] }),
+      AutoImport.default({ resolvers: [VantResolver()] }),
+      Components.default({ resolvers: [VantResolver()] }),
     ],
   },
 };
@@ -228,19 +239,22 @@ module.exports = {
 
 ```js
 const { VantResolver } = require('@vant/auto-import-resolver');
-const ComponentsPlugin = require('unplugin-vue-components/webpack');
+const AutoImport = require('unplugin-auto-import/webpack');
+const Components = require('unplugin-vue-components/webpack');
 
 module.exports = {
   plugins: [
     // 当 unplugin-vue-components 版本小于 0.26.0 时，使用以下写法
-    ComponentsPlugin({ resolvers: [VantResolver()] }),
+    AutoImport({ resolvers: [VantResolver()] }),
+    Components({ resolvers: [VantResolver()] }),
     //当 unplugin-vue-components 版本大于等于 0.26.0 时，使用以下写法
-    ComponentsPlugin.default({ resolvers: [VantResolver()] }),
+    AutoImport.default({ resolvers: [VantResolver()] }),
+    Components.default({ resolvers: [VantResolver()] }),
   ],
 };
 ```
 
-#### 3. 使用组件
+#### 3. 使用组件和 API
 
 完成以上两步，就可以直接在模板中使用 Vant 组件了，`unplugin-vue-components` 会解析模板并自动注册对应的组件, `@vant/auto-import-resolver` 会自动引入对应的组件样式。
 
@@ -250,29 +264,13 @@ module.exports = {
 </template>
 ```
 
-#### 4. 引入函数组件的样式
+`unplugin-auto-import` 会自动导入对应的 Vant API 以及样式。
 
-Vant 中有个别组件是以函数的形式提供的，包括 `Toast`，`Dialog`，`Notify` 和 `ImagePreview` 组件。在使用函数组件时，`unplugin-vue-components` 无法解析自动注册组件，导致 `@vant/auto-import-resolver` 无法解析样式，因此需要手动引入样式。
-
-```js
-// Toast
-import { showToast } from 'vant';
-import 'vant/es/toast/style';
-
-// Dialog
-import { showDialog } from 'vant';
-import 'vant/es/dialog/style';
-
-// Notify
-import { showNotify } from 'vant';
-import 'vant/es/notify/style';
-
-// ImagePreview
-import { showImagePreview } from 'vant';
-import 'vant/es/image-preview/style';
+```html
+<script>
+showToast('No need to import showToast')
+</script>
 ```
-
-你可以在项目的入口文件或公共模块中引入以上组件的样式，这样在业务代码中使用组件时，便不再需要重复引入样式了。
 
 #### 使用提示
 

@@ -219,7 +219,7 @@ export default {
 
       // async
       return new Promise((resolve) => {
-        resolve(index !== 3);
+        setTimeout(() => resolve(index !== 3), 1000);
       });
     };
 

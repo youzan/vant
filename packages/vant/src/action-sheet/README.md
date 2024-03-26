@@ -53,6 +53,41 @@ export default {
 };
 ```
 
+### Show Icon
+
+Use the `icon` field of `actions` to set the icon for the option.
+
+```html
+<van-cell is-link title="Show Icon" @click="show = true" />
+<van-action-sheet v-model:show="show" :actions="actions" @select="onSelect" />
+```
+
+```js
+import { ref } from 'vue';
+import { showToast } from 'vant';
+
+export default {
+  setup() {
+    const show = ref(false);
+    const actions = [
+      { name: 'Option 1', icon: 'cart-o' },
+      { name: 'Option 2', icon: 'shop-o' },
+      { name: 'Option 3', icon: 'star-o' },
+    ];
+    const onSelect = (item) => {
+      show.value = false;
+      showToast(item.name);
+    };
+
+    return {
+      show,
+      actions,
+      onSelect,
+    };
+  },
+};
+```
+
 ### Show Cancel Button
 
 ```html
@@ -195,15 +230,16 @@ export default {
 
 ### Data Structure of ActionSheetAction
 
-| Key       | Description                     | Type                        |
-| --------- | ------------------------------- | --------------------------- |
-| name      | Title                           | _string_                    |
-| subname   | Subtitle                        | _string_                    |
-| color     | Text color                      | _string_                    |
-| className | className for the option        | _string \| Array \| object_ |
-| loading   | Whether to be loading status    | _boolean_                   |
-| disabled  | Whether to be disabled          | _boolean_                   |
-| callback  | Callback function after clicked | _action: ActionSheetAction_ |
+| Key | Description | Type |
+| --- | --- | --- |
+| name | Title | _string_ |
+| subname | Subtitle | _string_ |
+| color | Text color | _string_ |
+| icon `v4.8.6` | Icon name or URL | _string_ |
+| className | className for the option | _string \| Array \| object_ |
+| loading | Whether to be loading status | _boolean_ |
+| disabled | Whether to be disabled | _boolean_ |
+| callback | Callback function after clicked | _action: ActionSheetAction_ |
 
 ### Events
 
@@ -253,6 +289,8 @@ The component provides the following CSS variables, which can be used to customi
 | --van-action-sheet-item-line-height | _var(--van-line-height-lg)_ | - |
 | --van-action-sheet-item-text-color | _var(--van-text-color)_ | - |
 | --van-action-sheet-item-disabled-text-color | _var(--van-text-color-3)_ | - |
+| --van-action-sheet-item-icon-size | _18px_ | - |
+| --van-action-sheet-item-icon-margin-right | _var(--van-padding-xs)_ | - |
 | --van-action-sheet-subname-color | _var(--van-text-color-2)_ | - |
 | --van-action-sheet-subname-font-size | _var(--van-font-size-sm)_ | - |
 | --van-action-sheet-subname-line-height | _var(--van-line-height-sm)_ | - |
