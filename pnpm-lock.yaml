@@ -309,7 +309,7 @@ importers:
         specifier: ^6.2.1
         version: 6.18.1(eslint@8.57.0)(typescript@5.3.3)
       eslint-config-prettier:
-        specifier: ^9.0.0
+        specifier: ^9.1.0
         version: 9.1.0(eslint@8.57.0)
       eslint-plugin-vue:
         specifier: ^9.16.1
