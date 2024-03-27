@@ -46,8 +46,8 @@
     "vue": "^3.4.13"
   },
   "dependencies": {
-    "@babel/core": "^7.23.2",
-    "@babel/preset-typescript": "^7.23.2",
+    "@babel/core": "^7.24.3",
+    "@babel/preset-typescript": "^7.24.1",
     "@rsbuild/core": "0.4.15",
     "@rsbuild/plugin-babel": "0.4.15",
     "@rsbuild/plugin-vue": "0.4.15",
