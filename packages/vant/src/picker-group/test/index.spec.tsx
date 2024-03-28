@@ -143,3 +143,25 @@ test('support controlled mode to set active-tab', async () => {
   await later();
   expect(tabs[1]?.classes()).toContain('van-tab--active');
 });
+
+test('should render correctly with v-for', async () => {
+  const Comp = {
+    components: {
+      Picker,
+      PickerGroup,
+    },
+    template: `
+      <picker-group :tabs="['Tab1', 'Tab2']">
+        <picker v-for="_ in 2" :columns="[{ text: '1', value: '1' }]" />
+      </picker-group>
+    `,
+  };
+
+  const wrapper = mount(Comp);
+  const items = wrapper.findAll('.van-swipe-item');
+
+  items.forEach((item) => {
+    const picker = item.find('.van-picker');
+    expect(picker.exists()).toEqual(true);
+  });
+});
