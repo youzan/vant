@@ -1,0 +1,67 @@
+/*! vue */
+
+/*! ./index.vue.ts?vue&type=script&setup=true&lang=ts!=!-!builtin:swc-loader??clonedRuleSet-2.use[0]!../../../../../node_modules/.pnpm/vue-loader@17.4.2_vue@3.4.13_webpack@5.89.0/node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./index.vue?vue&type=script&setup=true&lang=ts */
+
+/*! .. */
+
+/*! ./Notify */
+
+/*! ./function-call */
+
+/*! vue */
+
+/*! ../utils */
+
+/*! core-js/modules/es.string.replace.js */
+
+/*! vue */
+
+/*! ../composables/use-route */
+
+/*! ../../icon */
+
+/*! ./Notify */
+
+/*! ../icon */
+
+/*! ../utils */
+
+/*! ../utils */
+
+/*! ./basic */
+
+/*! core-js/modules/web.dom-collections.iterator.js */
+
+/*! ./Cell */
+
+/*! core-js/modules/es.array.iterator.js */
+
+/*! ../utils */
+
+/*! ../composables/use-expose */
+
+/*! core-js/modules/es.regexp.exec.js */
+
+/*! ../popup/shared */
+
+/*! vue */
+
+/*! ../../cell */
+
+/*! ../utils/mount-component */
+
+/*! ../popup */
+
+/*! core-js/modules/web.dom-collections.iterator.js */
+
+/*! core-js/modules/es.array.iterator.js */
+
+/*! ../utils */
+
+/*! ./index.vue.ts?vue&type=script&setup=true&lang=ts!=!../../../../../node_modules/.pnpm/vue-loader@17.4.2_vue@3.4.13_webpack@5.89.0/node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./index.vue?vue&type=script&setup=true&lang=ts */
+
+/*! vue */
+
+/*! vue */
+
+/*! ../../../docs/site */

@@ -1,0 +1,1 @@
+const o="van-hairline",t=`${o}--top`,s=`${o}--left`,O=`${o}--bottom`,R=`${o}--surround`,a=`${o}--top-bottom`,n=`${o}-unset--top-bottom`,c="van-haptics-feedback",B=Symbol("van-form");export{R as B,B as F,c as H,n as a,a as b,t as c,o as d,s as e,O as f};

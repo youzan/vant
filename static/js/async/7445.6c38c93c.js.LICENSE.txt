@@ -1,0 +1,185 @@
+/*! core-js/modules/web.dom-collections.iterator.js */
+
+/*! ../utils */
+
+/*! core-js/modules/esnext.iterator.constructor.js */
+
+/*! core-js/modules/esnext.iterator.constructor.js */
+
+/*! ../tabs/Tabs */
+
+/*! ../composables/use-touch */
+
+/*! ../composables/use-refs */
+
+/*! ../composables/use-id */
+
+/*! ../swipe/Swipe */
+
+/*! ../composables/use-expose */
+
+/*! core-js/modules/es.array.iterator.js */
+
+/*! ../swipe-item */
+
+/*! core-js/modules/es.regexp.exec.js */
+
+/*! ../composables/use-visibility-change */
+
+/*! ../badge */
+
+/*! ../composables/use-route */
+
+/*! core-js/modules/es.array.iterator.js */
+
+/*! ../utils */
+
+/*! vue */
+
+/*! vue */
+
+/*! vue */
+
+/*! core-js/modules/esnext.async-iterator.find.js */
+
+/*! core-js/modules/es.array.iterator.js */
+
+/*! @vant/use */
+
+/*! vue */
+
+/*! core-js/modules/es.array.iterator.js */
+
+/*! core-js/modules/esnext.iterator.for-each.js */
+
+/*! @vant/use */
+
+/*! ../composables/use-visibility-change */
+
+/*! ../sticky */
+
+/*! ../utils */
+
+/*! vue */
+
+/*! ../composables/use-expose */
+
+/*! ../composables/use-expose */
+
+/*! core-js/modules/esnext.iterator.find.js */
+
+/*! @vant/use */
+
+/*! ../utils */
+
+/*! ./Tab */
+
+/*! ../composables/use-expose */
+
+/*! ./Sticky */
+
+/*! core-js/modules/es.array.iterator.js */
+
+/*! ../composables/use-id */
+
+/*! @vue/shared */
+
+/*! @vant/use */
+
+/*! ../utils */
+
+/*! ./Tabs */
+
+/*! core-js/modules/es.array.iterator.js */
+
+/*! ../swipe */
+
+/*! core-js/modules/esnext.iterator.map.js */
+
+/*! core-js/modules/esnext.iterator.map.js */
+
+/*! core-js/modules/es.array.iterator.js */
+
+/*! ../composables/use-expose */
+
+/*! ../composables/use-route */
+
+/*! ../utils */
+
+/*! core-js/modules/es.symbol.description.js */
+
+/*! vue */
+
+/*! vue */
+
+/*! ../utils */
+
+/*! core-js/modules/web.dom-collections.iterator.js */
+
+/*! core-js/modules/esnext.async-iterator.map.js */
+
+/*! ../composables/on-popup-reopen */
+
+/*! core-js/modules/esnext.async-iterator.for-each.js */
+
+/*! core-js/modules/esnext.async-iterator.map.js */
+
+/*! ../composables/on-popup-reopen */
+
+/*! core-js/modules/es.symbol.description.js */
+
+/*! core-js/modules/es.symbol.description.js */
+
+/*! @vant/use */
+
+/*! vue */
+
+/*! core-js/modules/web.dom-collections.iterator.js */
+
+/*! ../utils */
+
+/*! @vant/use */
+
+/*! ../utils */
+
+/*! ../utils */
+
+/*! ../utils */
+
+/*! vue */
+
+/*! @vant/use */
+
+/*! ./Swipe */
+
+/*! core-js/modules/es.string.replace.js */
+
+/*! core-js/modules/web.dom-collections.iterator.js */
+
+/*! ./TabTitle */
+
+/*! core-js/modules/web.dom-collections.iterator.js */
+
+/*! ./utils */
+
+/*! vue */
+
+/*! ../composables/use-tab-status */
+
+/*! ./SwipeItem */
+
+/*! ../utils */
+
+/*! core-js/modules/web.dom-collections.iterator.js */
+
+/*! ../utils */
+
+/*! vue */
+
+/*! vue */
+
+/*! core-js/modules/web.dom-collections.iterator.js */
+
+/*! ./TabsContent */
+
+/*! ../utils */

@@ -1,0 +1,179 @@
+/*! .. */
+
+/*! ../utils */
+
+/*! ./Loading */
+
+/*! core-js/modules/es.array.iterator.js */
+
+/*! core-js/modules/web.dom-collections.iterator.js */
+
+/*! ../utils */
+
+/*! ./SkeletonImage */
+
+/*! core-js/modules/web.dom-collections.iterator.js */
+
+/*! core-js/modules/es.array.iterator.js */
+
+/*! vue */
+
+/*! core-js/modules/es.string.replace.js */
+
+/*! core-js/modules/esnext.async-iterator.for-each.js */
+
+/*! core-js/modules/es.array.iterator.js */
+
+/*! core-js/modules/es.array.iterator.js */
+
+/*! ../loading */
+
+/*! ../utils */
+
+/*! core-js/modules/web.dom-collections.iterator.js */
+
+/*! core-js/modules/es.array.iterator.js */
+
+/*! core-js/modules/web.dom-collections.iterator.js */
+
+/*! core-js/modules/es.regexp.exec.js */
+
+/*! ./Skeleton */
+
+/*! ./index.vue.ts?vue&type=script&setup=true&lang=ts!=!../../../../../node_modules/.pnpm/vue-loader@17.4.2_vue@3.4.13_webpack@5.89.0/node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./index.vue?vue&type=script&setup=true&lang=ts */
+
+/*! ../utils */
+
+/*! vue */
+
+/*! ../skeleton-title */
+
+/*! core-js/modules/esnext.iterator.map.js */
+
+/*! ./Badge */
+
+/*! ../../skeleton-image */
+
+/*! ../utils */
+
+/*! vue */
+
+/*! ../utils */
+
+/*! ./SkeletonParagraph */
+
+/*! core-js/modules/esnext.async-iterator.map.js */
+
+/*! vue */
+
+/*! ../composables/use-global-z-index */
+
+/*! vue */
+
+/*! ../utils */
+
+/*! ../utils */
+
+/*! ./SkeletonAvatar */
+
+/*! core-js/modules/es.symbol.description.js */
+
+/*! ../utils */
+
+/*! core-js/modules/web.dom-collections.iterator.js */
+
+/*! vue */
+
+/*! ../utils */
+
+/*! ../config-provider/ConfigProvider */
+
+/*! core-js/modules/es.regexp.exec.js */
+
+/*! ../../switch */
+
+/*! ../utils */
+
+/*! vue */
+
+/*! ../utils */
+
+/*! ../utils */
+
+/*! core-js/modules/esnext.iterator.constructor.js */
+
+/*! core-js/modules/web.dom-collections.iterator.js */
+
+/*! ./Switch */
+
+/*! ../utils */
+
+/*! core-js/modules/es.array.iterator.js */
+
+/*! core-js/modules/es.array.includes.js */
+
+/*! core-js/modules/web.dom-collections.iterator.js */
+
+/*! core-js/modules/es.array.iterator.js */
+
+/*! core-js/modules/web.dom-collections.iterator.js */
+
+/*! core-js/modules/web.dom-collections.iterator.js */
+
+/*! ../skeleton-paragraph */
+
+/*! ../utils */
+
+/*! core-js/modules/es.string.split.js */
+
+/*! ./Icon */
+
+/*! ../icon */
+
+/*! core-js/modules/es.array.iterator.js */
+
+/*! core-js/modules/web.dom-collections.iterator.js */
+
+/*! ./index.vue.less?vue&type=style&index=0&id=41cfcccc&lang=less!=!../../../../../node_modules/.pnpm/vue-loader@17.4.2_vue@3.4.13_webpack@5.89.0/node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./index.vue?vue&type=style&index=0&id=41cfcccc&lang=less */
+
+/*! ../../../docs/site */
+
+/*! core-js/modules/esnext.iterator.map.js */
+
+/*! core-js/modules/es.array.iterator.js */
+
+/*! vue */
+
+/*! vue */
+
+/*! ../badge */
+
+/*! core-js/modules/esnext.async-iterator.map.js */
+
+/*! ./SkeletonTitle */
+
+/*! core-js/modules/esnext.iterator.for-each.js */
+
+/*! core-js/modules/es.string.replace.js */
+
+/*! vue */
+
+/*! ../utils */
+
+/*! @vant/use */
+
+/*! ../../skeleton-paragraph */
+
+/*! ../utils */
+
+/*! ./index.vue.ts?vue&type=script&setup=true&lang=ts!=!-!builtin:swc-loader??clonedRuleSet-2.use[0]!../../../../../node_modules/.pnpm/vue-loader@17.4.2_vue@3.4.13_webpack@5.89.0/node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./index.vue?vue&type=script&setup=true&lang=ts */
+
+/*! ../skeleton-avatar */
+
+/*! core-js/modules/es.array.iterator.js */
+
+/*! vue */
+
+/*! ../utils */
+
+/*! ../utils */

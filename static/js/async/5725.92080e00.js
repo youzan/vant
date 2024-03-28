@@ -1,0 +1,2 @@
+/*! For license information please see 5725.92080e00.js.LICENSE.txt */
+(self.webpackChunk=self.webpackChunk||[]).push([["5725"],{4089:function(e,n,l){"use strict";l.r(n);var t=l("69298");let a=["innerHTML"];n.default={setup:()=>({html:""}),render:()=>((0,t.openBlock)(),(0,t.createElementBlock)("div",{class:"van-doc-markdown-body",innerHTML:'<h1>SkeletonParagraph</h1>\n<p>Please refer to <a href="/skeleton#skeletontitle-props" target="_blank">Skeleton docs</a></p>\n'},null,8,a))}}}]);
