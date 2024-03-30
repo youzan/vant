@@ -302,7 +302,7 @@ imagePreviewRef.value?.swipeTo(1);
 | --- | --- | --- |
 | index | Custom index | _{ index: index of current image }_ |
 | cover | Custom content that covers the image preview | - |
-| image | Custom image content | _{ src: current image src }_ |
+| image | Custom image content | _{ src: current image src, onLoad: load image, style: current image style }_ |
 
 ### onClose Parameters
 
