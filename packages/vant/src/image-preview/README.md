@@ -185,6 +185,20 @@ export default {
 };
 ```
 
+When you customize the image through the `image` slot, you can bind the `style` and `onLoad` callback through the params of the slot, which can allow the `<img>` tag to support image scaling.
+
+```html
+<van-image-preview
+  v-model:show="show"
+  :images="images"
+  :close-on-click-image="false"
+>
+  <template #image="{ src, style, onLoad }">
+    <img :style="[{ width: '100%' }, style]" @load="onLoad" />
+  </template>
+</van-image-preview>
+```
+
 ## API
 
 ### Methods
