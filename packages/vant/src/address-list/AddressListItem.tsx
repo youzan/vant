@@ -39,11 +39,11 @@ export default defineComponent({
   emits: ['edit', 'click', 'select'],
 
   setup(props, { slots, emit }) {
-    const onClick = () => {
+    const onClick = (event: MouseEvent) => {
       if (props.switchable) {
         emit('select');
       }
-      emit('click');
+      emit('click', event);
     };
 
     const renderRightIcon = () => (
@@ -53,7 +53,7 @@ export default defineComponent({
         onClick={(event) => {
           event.stopPropagation();
           emit('edit');
-          emit('click');
+          emit('click', event);
         }}
       />
     );
