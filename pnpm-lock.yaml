@@ -218,7 +218,7 @@ importers:
         specifier: ^4.17.21
         version: 4.17.21
       markdown-it:
-        specifier: ^13.0.1
+        specifier: ^13.0.2
         version: 13.0.2
       markdown-it-anchor:
         specifier: ^8.6.4
