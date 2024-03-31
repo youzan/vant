@@ -403,6 +403,23 @@ test('should render image slot correctly 2', async () => {
   expect(wrapper.html().includes('video')).toBeTruthy();
 });
 
+test('should render image slot correctly 3', async () => {
+  const wrapper = mount(ImagePreview, {
+    props: {
+      show: true,
+      images,
+    },
+    slots: {
+      image: ({ src, style }) =>
+        `<img class="test-img" src="${src}" style="${Object.assign({ width: '100px' }, style)}" />`,
+    },
+  });
+
+  await later();
+
+  expect(wrapper.html().includes('width: 100px')).toBeTruthy();
+});
+
 test('should emit long-press event after long press', async () => {
   const onLongPress = vi.fn();
   const wrapper = mount(ImagePreview, {

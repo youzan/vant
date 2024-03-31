@@ -407,7 +407,11 @@ export default defineComponent({
         >
           {slots.image ? (
             <div class={bem('image-wrap')}>
-              {slots.image({ src: props.src })}
+              {slots.image({
+                src: props.src,
+                onLoad,
+                style: imageStyle.value,
+              })}
             </div>
           ) : (
             <Image
