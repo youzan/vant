@@ -64,7 +64,7 @@
     "eslint": "^8.57.0",
     "enquirer": "2.4.1",
     "fast-glob": "^3.2.11",
-    "fs-extra": "^11.1.0",
+    "fs-extra": "^11.2.0",
     "hash-sum": "^2.0.0",
     "highlight.js": "^11.6.0",
     "husky": "^8.0.1",
