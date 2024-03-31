@@ -39,7 +39,7 @@
     "rslog": "^1.1.0",
     "fast-glob": "^3.2.11",
     "fs-extra": "^11.1.0",
-    "enquirer": "2.3.6",
+    "enquirer": "2.4.1",
     "picocolors": "^1.0.0"
   }
 }

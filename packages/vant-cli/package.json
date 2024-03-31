@@ -62,7 +62,7 @@
     "rslog": "^1.1.0",
     "esbuild": "^0.20.0",
     "eslint": "^8.57.0",
-    "enquirer": "2.3.6",
+    "enquirer": "2.4.1",
     "fast-glob": "^3.2.11",
     "fs-extra": "^11.1.0",
     "hash-sum": "^2.0.0",

@@ -30,8 +30,8 @@ importers:
   packages/create-vant-cli-app:
     dependencies:
       enquirer:
-        specifier: 2.3.6
-        version: 2.3.6
+        specifier: 2.4.1
+        version: 2.4.1
       fast-glob:
         specifier: ^3.2.11
         version: 3.3.2
@@ -188,8 +188,8 @@ importers:
         specifier: ^11.1.0
         version: 11.1.0
       enquirer:
-        specifier: 2.3.6
-        version: 2.3.6
+        specifier: 2.4.1
+        version: 2.4.1
       esbuild:
         specifier: ^0.20.0
         version: 0.20.2
@@ -2603,11 +2603,12 @@ packages:
       tapable: 2.2.1
     dev: false
 
-  /enquirer@2.3.6:
-    resolution: {integrity: sha512-yjNnPr315/FjS4zIsUxYguYUPP2e1NK4d7E7ZOLiyYCcbFBiTMyID+2wvm2w6+pZ/odMA7cRkjhsPbltwBOrLg==}
+  /enquirer@2.4.1:
+    resolution: {integrity: sha512-rRqJg/6gd538VHvR3PSrdRBb/1Vy2YfzHqzvbhGIQpDRKIa4FgV/54b5Q1xYSxOOwKvjXweS26E0Q+nAMwp2pQ==}
     engines: {node: '>=8.6'}
     dependencies:
       ansi-colors: 4.1.3
+      strip-ansi: 6.0.1
     dev: false
 
   /entities@1.1.2:
