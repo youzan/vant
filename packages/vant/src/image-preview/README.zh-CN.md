@@ -186,6 +186,20 @@ export default {
 };
 ```
 
+当你通过 `image` 插槽自定义图片时，可以通过插槽的参数绑定 `style` 样式和 `onLoad` 回调函数，这可以让 `<img>` 标签支持图片缩放。
+
+```html
+<van-image-preview
+  v-model:show="show"
+  :images="images"
+  :close-on-click-image="false"
+>
+  <template #image="{ src, style, onLoad }">
+    <img :style="[{ width: '100%' }, style]" @load="onLoad" />
+  </template>
+</van-image-preview>
+```
+
 ## API
 
 ### 方法
