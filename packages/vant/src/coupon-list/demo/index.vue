@@ -30,7 +30,9 @@ const getRandomId = (max = 999999) =>
   String(Math.floor(Math.random() * max) + 1);
 
 const showList = ref(false);
+const showListArray = ref(false);
 const chosenCoupon = ref(-1);
+const chosenCouponArray = ref([]);
 const exchangedCoupons = ref<CouponInfo[]>([]);
 
 const coupon = computed(() => ({
@@ -84,6 +86,11 @@ const onChange = (index: number) => {
   chosenCoupon.value = index;
 };
 
+const onChangeArray = (chosenCoupon: []) => {
+  showListArray.value = false;
+  chosenCouponArray.value = chosenCoupon;
+};
+
 const onExchange = () => {
   showToast(t('exchange'));
   exchangedCoupons.value.push({
@@ -94,6 +101,7 @@ const onExchange = () => {
 </script>
 
 <template>
+  <!-- <div> -->
   <demo-block :title="t('basicUsage')">
     <van-coupon-cell
       :coupons="coupons"
@@ -115,4 +123,27 @@ const onExchange = () => {
       />
     </van-popup>
   </demo-block>
+
+  <demo-block :title="t('checkboxUsage')">
+    <van-coupon-cell
+      :coupons="coupons"
+      :chosen-coupon="chosenCouponArray"
+      @click="showListArray = true"
+    />
+    <van-popup
+      v-model:show="showListArray"
+      round
+      position="bottom"
+      style="height: 90%; padding-top: 4px"
+    >
+      <van-coupon-list
+        :coupons="coupons"
+        :chosen-coupon="chosenCouponArray"
+        :disabled-coupons="disabledCoupons"
+        @change="onChangeArray"
+        @exchange="onExchange"
+      />
+    </van-popup>
+  </demo-block>
+  <!-- </div> -->
 </template>
