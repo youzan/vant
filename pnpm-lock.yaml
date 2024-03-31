@@ -18,7 +18,7 @@ importers:
         specifier: ^8.57.0
         version: 8.57.0
       husky:
-        specifier: ^8.0.1
+        specifier: ^8.0.3
         version: 8.0.3
       nano-staged:
         specifier: ^0.8.0
@@ -209,7 +209,7 @@ importers:
         specifier: ^11.9.0
         version: 11.9.0
       husky:
-        specifier: ^8.0.1
+        specifier: ^8.0.3
         version: 8.0.3
       less:
         specifier: ^4.2.0
