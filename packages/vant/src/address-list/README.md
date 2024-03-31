@@ -102,7 +102,7 @@ export default {
 | select | Emitted when an address is selected | _item: Address, index: number_ |
 | edit-disabled | Emitted when the edit icon of disabled address is clicked | _item: Address, index: number_ |
 | select-disabled | Emitted when a disabled address is selected | _item: Address, index: number_ |
-| click-item | Emitted when an address item is clicked | _item: Address, index: number_ |
+| click-item | Emitted when an address item is clicked | _item: Address, index: number, { event }_ |
 
 ### Data Structure of Address
 

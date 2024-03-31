@@ -54,7 +54,8 @@ export default defineComponent({
       const onEdit = () =>
         emit(disabled ? 'editDisabled' : 'edit', item, index);
 
-      const onClick = () => emit('clickItem', item, index);
+      const onClick = (event: MouseEvent) =>
+        emit('clickItem', item, index, { event });
 
       const onSelect = () => {
         emit(disabled ? 'selectDisabled' : 'select', item, index);
