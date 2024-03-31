@@ -179,7 +179,7 @@ importers:
         specifier: ^3.1.0
         version: 3.1.0(vite@5.0.12)(vue@3.4.13)
       '@vue/babel-plugin-jsx':
-        specifier: ^1.1.1
+        specifier: ^1.2.2
         version: 1.2.2(@babel/core@7.24.3)
       autoprefixer:
         specifier: ^10.4.8
