@@ -101,7 +101,6 @@ const onExchange = () => {
 </script>
 
 <template>
-  <!-- <div> -->
   <demo-block :title="t('basicUsage')">
     <van-coupon-cell
       :coupons="coupons"
@@ -145,5 +144,4 @@ const onExchange = () => {
       />
     </van-popup>
   </demo-block>
-  <!-- </div> -->
 </template>

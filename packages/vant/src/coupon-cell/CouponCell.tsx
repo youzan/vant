@@ -24,7 +24,7 @@ export const couponCellProps = {
   coupons: makeArrayProp<CouponInfo>(),
   currency: makeStringProp('¥'),
   chosenCoupon: {
-    type: [Number, Array<any>],
+    type: [Number, Array],
     default: -1,
   },
 };
@@ -32,38 +32,38 @@ export const couponCellProps = {
 export type CouponCellProps = ExtractPropTypes<typeof couponCellProps>;
 
 function formatValue({ coupons, chosenCoupon, currency }: CouponCellProps) {
-  if (Array.isArray(chosenCoupon)) {
-    if (chosenCoupon.length === 0) {
-      return coupons.length === 0 ? t('noCoupon') : t('count', coupons.length);
-    }
+  const getValue = (coupon: CouponInfo) => {
     let value = 0;
-    chosenCoupon.forEach((i) => {
+    const { value: couponValue, denominations } = coupon;
+    if (isDef(coupon.value)) {
+      value = couponValue;
+    } else if (isDef(coupon.denominations)) {
+      value = denominations as number;
+    }
+    return value;
+  };
+
+  let value = 0,
+    isExist = false;
+  if (Array.isArray(chosenCoupon)) {
+    (chosenCoupon as CouponInfo[]).forEach((i) => {
       const coupon = coupons[+i];
-      if (isDef(coupon.value)) {
-        value += coupon.value;
-      } else if (isDef(coupon.denominations)) {
-        value += coupon.denominations;
+      if (coupon) {
+        isExist = true;
+        value += getValue(coupon);
       }
     });
-
-    return `-${currency} ${(value / 100).toFixed(2)}`;
-  }
-
-  const coupon = coupons[+chosenCoupon];
-
-  if (coupon) {
-    let value = 0;
-
-    if (isDef(coupon.value)) {
-      ({ value } = coupon);
-    } else if (isDef(coupon.denominations)) {
-      value = coupon.denominations;
+  } else {
+    const coupon = coupons[+chosenCoupon];
+    if (coupon) {
+      isExist = true;
+      value = getValue(coupon);
     }
-
-    return `-${currency} ${(value / 100).toFixed(2)}`;
   }
-
-  return coupons.length === 0 ? t('noCoupon') : t('count', coupons.length);
+  if (!isExist) {
+    return coupons.length === 0 ? t('noCoupon') : t('count', coupons.length);
+  }
+  return `-${currency} ${(value / 100).toFixed(2)}`;
 }
 
 export default defineComponent({
