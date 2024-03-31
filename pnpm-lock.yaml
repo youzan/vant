@@ -206,7 +206,7 @@ importers:
         specifier: ^2.0.0
         version: 2.0.0
       highlight.js:
-        specifier: ^11.6.0
+        specifier: ^11.9.0
         version: 11.9.0
       husky:
         specifier: ^8.0.1
