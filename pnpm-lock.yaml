@@ -149,10 +149,10 @@ importers:
   packages/vant-cli:
     dependencies:
       '@babel/core':
-        specifier: ^7.23.2
+        specifier: ^7.24.3
         version: 7.24.3
       '@babel/preset-typescript':
-        specifier: ^7.23.2
+        specifier: ^7.24.1
         version: 7.24.1(@babel/core@7.24.3)
       '@rsbuild/core':
         specifier: 0.5.5
