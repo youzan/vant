@@ -36,7 +36,7 @@ importers:
         specifier: ^3.2.11
         version: 3.3.2
       fs-extra:
-        specifier: ^11.1.0
+        specifier: ^11.2.0
         version: 11.2.0
       picocolors:
         specifier: ^1.0.0
@@ -200,7 +200,7 @@ importers:
         specifier: ^3.2.11
         version: 3.3.2
       fs-extra:
-        specifier: ^11.1.0
+        specifier: ^11.2.0
         version: 11.2.0
       hash-sum:
         specifier: ^2.0.0
