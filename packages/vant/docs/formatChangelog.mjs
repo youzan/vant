@@ -7,7 +7,45 @@
  */
 
 // paste changelog here
-const changelog = ``;
+const changelog = `> Please refer to [Changelog](https://vant-ui.github.io/vant/#/en-US/changelog) for all changes.  |  请访问 [更新日志](https://vant-ui.github.io/vant/#/zh-CN/changelog) 了解所有更新。
+
+<!-- Release notes generated using configuration in .github/release.yml at v4.8.8 -->
+
+## What's Changed
+### New Features 🎉
+* feat(image-preview): export onLoad and style for image slot by @chouchouji in https://github.com/youzan/vant/pull/12740
+* feat(AddressList): add event param for click-item by @chenjiahan in https://github.com/youzan/vant/pull/12748
+### Bug Fixes 🐞
+* fix(floating-bubble): update offset when the value changed by @chouchouji in https://github.com/youzan/vant/pull/12730
+* fix(vant-cli): support defineOptions named by @wChenonly in https://github.com/youzan/vant/pull/12734
+* fix(PickerGroup): rendering correctly when using v-for by @inottn in https://github.com/youzan/vant/pull/12732
+* fix(TextEllipsis): should recalculate the ellipsis state when the component is activated by @inottn in https://github.com/youzan/vant/pull/12741
+### Document 📖
+* docs(changelog): vant@4.8.7 by @chenjiahan in https://github.com/youzan/vant/pull/12707
+* docs(button): Keep Chinese and English documents consistent by @chouchouji in https://github.com/youzan/vant/pull/12708
+* docs(cell): correct the type of label by @chouchouji in https://github.com/youzan/vant/pull/12721
+* docs(ImagePreview): add image slot scale guide by @chenjiahan in https://github.com/youzan/vant/pull/12751
+### Other Changes
+* chore(deps): update dependency vue-router to v4.3.0 by @renovate in https://github.com/youzan/vant/pull/12702
+* chore(deps): update dependency esbuild to ^0.20.0 by @renovate in https://github.com/youzan/vant/pull/12696
+* chore(workflow): let renovate bump package.json by @chenjiahan in https://github.com/youzan/vant/pull/12714
+* chore(deps): update dependency eslint to ^8.57.0 by @renovate in https://github.com/youzan/vant/pull/12723
+* chore(docs): update the vue3-vant-mobile reference by @CharleeWa in https://github.com/youzan/vant/pull/12735
+* chore(deps): update dependency commander to ^11.1.0 by @renovate in https://github.com/youzan/vant/pull/12718
+* chore(deps): update dependency enquirer to v2.4.1 by @renovate in https://github.com/youzan/vant/pull/12695
+* chore(deps): update dependency @vue/test-utils to ^2.4.5 by @renovate in https://github.com/youzan/vant/pull/12716
+* chore(deps): bump Rsbuild v0.5 by @chenjiahan in https://github.com/youzan/vant/pull/12747
+* chore(deps): update dependency eslint-config-prettier to ^9.1.0 by @renovate in https://github.com/youzan/vant/pull/12724
+* chore(deps): update dependency fs-extra to ^11.2.0 by @renovate in https://github.com/youzan/vant/pull/12745
+* chore(deps): update dependency highlight.js to ^11.9.0 by @renovate in https://github.com/youzan/vant/pull/12746
+* chore(deps): update dependency fast-glob to ^3.3.2 by @renovate in https://github.com/youzan/vant/pull/12731
+* chore(deps): update dependency less to ^4.2.0 by @renovate in https://github.com/youzan/vant/pull/12752
+* chore(workflow): let renovate group patch updates by @chenjiahan in https://github.com/youzan/vant/pull/12754
+
+## New Contributors
+* @CharleeWa made their first contribution in https://github.com/youzan/vant/pull/12735
+
+**Full Changelog**: https://github.com/youzan/vant/compare/v4.8.7...v4.8.8`;
 
 changelog.split('\n').map((line) => {
   // Skip unused lines

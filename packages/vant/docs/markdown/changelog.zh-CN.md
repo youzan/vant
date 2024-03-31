@@ -19,6 +19,50 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 
 ## 更新内容
 
+### v4.8.8
+
+`2024-03-31`
+
+#### 新特性 🎉
+
+- feat(image-preview): 导出 image 插槽的 onLoad 和 style 属性，由[@chouchouji](https://github.com/chouchouji) 在 [#12740](https://github.com/youzan/vant/pull/12740) 提交
+- feat(AddressList): 为 click-item 添加事件参数，由[@chenjiahan](https://github.com/chenjiahan) 在 [#12748](https://github.com/youzan/vant/pull/12748) 提交
+
+#### 故障修复 🐞
+
+- fix(floating-bubble): 当值更改时更新偏移量，由[@chouchouji](https://github.com/chouchouji) 在 [#12730](https://github.com/youzan/vant/pull/12730) 提交
+- fix(vant-cli): 支持以定义的选项命名，由[@wChenonly](https://github.com/wChenonly) 在 [#12734](https://github.com/youzan/vant/pull/12734) 提交
+- fix(PickerGroup): 使用 v-for 时能够正确渲染，由[@inottn](https://github.com/inottn) 在 [#12732](https://github.com/youzan/vant/pull/12732) 提交
+- fix(TextEllipsis): 当组件被激活时应重新计算省略状态，由[@inottn](https://github.com/inottn) 在 [#12741](https://github.com/youzan/vant/pull/12741) 提交
+
+#### 文档更新 📖
+
+- docs(button): 保持中英文文档一致，由[@chouchouji](https://github.com/chouchouji) 在 [#12708](https://github.com/youzan/vant/pull/12708) 提交
+- docs(cell): 更正 label 的类型，由[@chouchouji](https://github.com/chouchouji) 在 [#12721](https://github.com/youzan/vant/pull/12721) 提交
+- docs(ImagePreview): 添加图片插槽缩放指导，由[@chenjiahan](https://github.com/chenjiahan) 在 [#12751](https://github.com/youzan/vant/pull/12751) 提交
+
+#### 其他更改
+
+- chore(deps): 更新 vue-router 依赖至 v4.3.0，由[@renovate](https://github.com/renovate) 在 [#12702](https://github.com/youzan/vant/pull/12702) 提交
+- chore(deps): 更新 esbuild 依赖至 ^0.20.0，由[@renovate](https://github.com/renovate) 在 [#12696](https://github.com/youzan/vant/pull/12696) 提交
+- chore(workflow): 让 renovate 提升 package.json 版本，由[@chenjiahan](https://github.com/chenjiahan) 在 [#12714](https://github.com/youzan/vant/pull/12714) 提交
+- chore(deps): 更新 eslint 依赖至 ^8.57.0，由[@renovate](https://github.com/renovate) 在 [#12723](https://github.com/youzan/vant/pull/12723) 提交
+- chore(docs): 更新 vue3-vant-mobile 参考文档，由[@CharleeWa](https://github.com/CharleeWa) 在 [#12735](https://github.com/youzan/vant/pull/12735) 提交
+- chore(deps): 更新 commander 依赖至 ^11.1.0，由[@renovate](https://github.com/renovate) 在 [#12718](https://github.com/youzan/vant/pull/12718) 提交
+- chore(deps): 更新 enquirer 依赖至 v2.4.1，由[@renovate](https://github.com/renovate) 在 [#12695](https://github.com/youzan/vant/pull/12695) 提交
+- chore(deps): 更新 [@vue](https://github.com/vue)/test-utils 依赖至 ^2.4.5，由 @renovate 在 [#12716](https://github.com/youzan/vant/pull/12716) 提交
+- chore(deps): 版本升至 Rsbuild v0.5，由[@chenjiahan](https://github.com/chenjiahan) 在 [#12747](https://github.com/youzan/vant/pull/12747) 提交
+- chore(deps): 更新 eslint-config-prettier 依赖至 ^9.1.0，由[@renovate](https://github.com/renovate) 在 [#12724](https://github.com/youzan/vant/pull/12724) 提交
+- chore(deps): 更新 fs-extra 依赖至 ^11.2.0，由[@renovate](https://github.com/renovate) 在 [#12745](https://github.com/youzan/vant/pull/12745) 提交
+- chore(deps): 更新 highlight.js 依赖至 ^11.9.0，由[@renovate](https://github.com/renovate) 在 [#12746](https://github.com/youzan/vant/pull/12746) 提交
+- chore(deps): 更新 fast-glob 依赖至 ^3.3.2，由[@renovate](https://github.com/renovate) 在 [#12731](https://github.com/youzan/vant/pull/12731) 提交
+- chore(deps): 更新 less 依赖至 ^4.2.0，由[@renovate](https://github.com/renovate) 在 [#12752](https://github.com/youzan/vant/pull/12752) 提交
+- chore(workflow): 让 renovate 整合补丁更新，由[@chenjiahan](https://github.com/chenjiahan) 在 [#12754](https://github.com/youzan/vant/pull/12754) 提交
+
+#### 新贡献者
+
+- [@CharleeWa](https://github.com/CharleeWa) 在 [#12735](https://github.com/youzan/vant/pull/12735) 中首次贡献
+
 ### v4.8.7
 
 `2024-03-18`
