@@ -135,6 +135,7 @@ export default {
 | -------------------- | -------------------- |
 | list-footer          | 优惠券列表底部       |
 | disabled-list-footer | 不可用优惠券列表底部 |
+| list-button          | 自定义底部按钮       |
 
 ### CouponInfo 数据结构
 

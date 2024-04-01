@@ -133,6 +133,7 @@ export default {
 | -------------------- | ------------------------------- |
 | list-footer          | Coupon list bottom              |
 | disabled-list-footer | Unavailable coupons list bottom |
+| list-button          | Customize the bottom button     |
 
 ### Data Structure of CouponInfo
 

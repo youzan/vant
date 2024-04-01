@@ -235,17 +235,21 @@ export default defineComponent({
           {renderDisabledTab()}
         </Tabs>
         <div class={bem('bottom')}>
-          <Button
-            v-show={props.showCloseButton}
-            round
-            block
-            type="primary"
-            class={bem('close')}
-            text={props.closeButtonText || t('close')}
-            onClick={() =>
-              emit('change', Array.isArray(props.chosenCoupon) ? [] : -1)
-            }
-          />
+          {slots['list-button'] ? (
+            slots['list-button']()
+          ) : (
+            <Button
+              v-show={props.showCloseButton}
+              round
+              block
+              type="primary"
+              class={bem('close')}
+              text={props.closeButtonText || t('close')}
+              onClick={() =>
+                emit('change', Array.isArray(props.chosenCoupon) ? [] : -1)
+              }
+            />
+          )}
         </div>
       </div>
     );
