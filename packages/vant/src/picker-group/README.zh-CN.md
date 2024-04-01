@@ -310,12 +310,41 @@ export default {
 | confirm | 自定义确认按钮内容     | -    |
 | cancel  | 自定义取消按钮内容     | -    |
 
+### PickerGroupConfirmOptions 数据结构
+
+| Key | Description | Type |
+| --- | --- | --- |
+| nextFirst | 如果为 true 且当前不是最后一个 tab 则移动到下一个 tab，否则执行 `confirm`. | _boolean ｜ undefined_ |
+
+### 方法
+
+通过 ref 可以获取到 Picker 实例并调用实例方法，详见[组件实例方法](#/zh-CN/advanced-usage#zu-jian-shi-li-fang-fa)。
+
+| 方法名 | 说明 | 参数 | 返回值 |
+| --- | --- | --- | --- |
+| confirm | 停止惯性滚动并触发 `confirm` 事件 | _options?: PickerGroupConfirmOptions_ | - |
+
 ### 类型定义
 
 组件导出以下类型定义：
 
 ```ts
-import type { PickerGroupProps, PickerGroupThemeVars } from 'vant';
+import type {
+  PickerGroupProps,
+  PickerGroupThemeVars,
+  PickerGroupInstance,
+} from 'vant';
+```
+
+`PickerGroupInstance` 是组件实例的类型，用法如下：
+
+```ts
+import { ref } from 'vue';
+import type { PickerGroupInstance } from 'vant';
+
+const pickerGroupRef = ref<PickerGroupInstance>();
+
+pickerGroupRef.value?.confirm();
 ```
 
 ## 主题定制

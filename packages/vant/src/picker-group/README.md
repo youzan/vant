@@ -309,12 +309,41 @@ export default {
 | confirm | Custom confirm button text | -         |
 | cancel  | Custom cancel button text  | -         |
 
+### Data Structure of PickerGroupConfirmOptions
+
+| Key | Description | Type |
+| --- | --- | --- |
+| nextFirst | If true, move to the next tab if current is not the last tab; otherwise, execute `confirm`. | _boolean ｜ undefined_ |
+
+### Methods
+
+Use [ref](https://vuejs.org/guide/essentials/template-refs.html) to get Picker instance and call instance methods.
+
+| Name | Description | Attribute | Return value |
+| --- | --- | --- | --- |
+| confirm | Stop scrolling and emit confirm event | _option?: PickerGroupConfirmOptions_ | - |
+
 ### Types
 
 The component exports the following type definitions:
 
 ```ts
-import type { PickerGroupProps, PickerGroupThemeVars } from 'vant';
+import type {
+  PickerGroupProps,
+  PickerGroupThemeVars,
+  PickerGrouInstance,
+} from 'vant';
+```
+
+`PickerGrouInstance` is the type of component instance:
+
+```ts
+import { ref } from 'vue';
+import type { PickerGrouInstance } from 'vant';
+
+const pickerGrouRef = ref<PickerGrouInstance>();
+
+datePickerRef.value?.confirm();
 ```
 
 ## Theming

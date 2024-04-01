@@ -5,6 +5,8 @@ import {
   type InjectionKey,
   type ExtractPropTypes,
   type VNode,
+  ComponentPublicInstance,
+  nextTick,
 } from 'vue';
 
 // Utils
@@ -15,6 +17,7 @@ import {
   makeArrayProp,
   makeNumericProp,
   createNamespace,
+  makeBooleanProp,
 } from '../utils';
 
 // Composables
@@ -28,6 +31,7 @@ import Toolbar, {
   pickerToolbarProps,
   pickerToolbarSlots,
 } from '../picker/PickerToolbar';
+import { useExpose } from '../composables/use-expose';
 
 const [name, bem] = createNamespace('picker-group');
 
@@ -40,11 +44,25 @@ export const pickerGroupProps = extend(
     tabs: makeArrayProp<string>(),
     activeTab: makeNumericProp(0),
     nextStepText: String,
+    showToolbar: makeBooleanProp(true),
   },
   pickerToolbarProps,
 );
 
+export type PickerGroupConfirmOptions = {
+  nextFirst?: boolean;
+};
+
+export type PickerGroupExpose = {
+  confirm: (options?: PickerGroupConfirmOptions) => void;
+};
+
 export type PickerGroupProps = ExtractPropTypes<typeof pickerGroupProps>;
+
+export type PickerGroupInstance = ComponentPublicInstance<
+  PickerGroupProps,
+  PickerGroupExpose
+>;
 
 export default defineComponent({
   name,
@@ -62,21 +80,32 @@ export default defineComponent({
 
     linkChildren();
 
-    const showNextButton = () =>
-      +activeTab.value < props.tabs.length - 1 && props.nextStepText;
+    const canNext = () => +activeTab.value < props.tabs.length - 1;
+
+    const showNextButton = () => canNext() && props.nextStepText;
 
     const onConfirm = () => {
       if (showNextButton()) {
         activeTab.value = +activeTab.value + 1;
       } else {
-        emit(
-          'confirm',
-          children.map((item) => item.confirm()),
-        );
+        const selectedData = children.map((item) => item.confirm());
+        nextTick(() => emit('confirm', selectedData));
       }
     };
 
     const onCancel = () => emit('cancel');
+
+    const doConfirm = (options?: PickerGroupConfirmOptions) => {
+      if (options?.nextFirst && canNext()) {
+        activeTab.value = +activeTab.value + 1;
+      } else {
+        const selectedData = children.map((item) => item.confirm());
+        nextTick(() => emit('confirm', selectedData));
+        return selectedData;
+      }
+    };
+
+    useExpose<PickerGroupExpose>({ confirm: doConfirm });
 
     return () => {
       let childNodes = slots
@@ -98,16 +127,24 @@ export default defineComponent({
         ? props.nextStepText
         : props.confirmButtonText;
 
+      const renderToolbar = () => {
+        if (props.showToolbar) {
+          return (
+            <Toolbar
+              v-slots={pick(slots, pickerToolbarSlots)}
+              title={props.title}
+              cancelButtonText={props.cancelButtonText}
+              confirmButtonText={confirmButtonText}
+              onConfirm={onConfirm}
+              onCancel={onCancel}
+            />
+          );
+        }
+      };
+
       return (
         <div class={bem()}>
-          <Toolbar
-            v-slots={pick(slots, pickerToolbarSlots)}
-            title={props.title}
-            cancelButtonText={props.cancelButtonText}
-            confirmButtonText={confirmButtonText}
-            onConfirm={onConfirm}
-            onCancel={onCancel}
-          />
+          {renderToolbar()}
           <Tabs
             v-model:active={activeTab.value}
             class={bem('tabs')}
