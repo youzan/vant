@@ -5,6 +5,7 @@ import {
   watch,
   type ExtractPropTypes,
   type PropType,
+  ComponentPublicInstance,
 } from 'vue';
 
 // Utils
@@ -24,7 +25,8 @@ import {
 } from '../utils';
 
 // Components
-import { Picker } from '../picker';
+import { Picker, PickerInstance } from '../picker';
+import { useExpose } from '../composables/use-expose';
 
 const [name] = createNamespace('time-picker');
 
@@ -58,6 +60,16 @@ export const timePickerProps = extend({}, sharedProps, {
 
 export type TimePickerProps = ExtractPropTypes<typeof timePickerProps>;
 
+export type TimePickerExpose = {
+  confirm: () => void;
+  getSelectedTime: () => string[];
+};
+
+export type TimePickerInstance = ComponentPublicInstance<
+  TimePickerProps,
+  TimePickerExpose
+>;
+
 export default defineComponent({
   name,
 
@@ -67,12 +79,21 @@ export default defineComponent({
 
   setup(props, { emit, slots }) {
     const currentValues = ref<string[]>(props.modelValue);
+    const pickerRef = ref<PickerInstance>();
 
     const getValidTime = (time: string) => {
       const timeLimitArr = time.split(':');
       return fullColumns.map((col, i) =>
         props.columnsType.includes(col) ? timeLimitArr[i] : '00',
       );
+    };
+
+    const confirm = () => {
+      return pickerRef.value?.confirm();
+    };
+
+    const getSelectedTime = (): Array<string> => {
+      return currentValues.value;
     };
 
     const columns = computed(() => {
@@ -165,8 +186,11 @@ export default defineComponent({
     const onCancel = (...args: unknown[]) => emit('cancel', ...args);
     const onConfirm = (...args: unknown[]) => emit('confirm', ...args);
 
+    useExpose<TimePickerExpose>({ confirm, getSelectedTime });
+
     return () => (
       <Picker
+        ref={pickerRef}
         v-model={currentValues.value}
         v-slots={slots}
         columns={columns.value}
