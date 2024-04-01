@@ -210,12 +210,36 @@ export default {
 | columns-top | 自定义选项上方内容 | - |
 | columns-bottom | 自定义选项下方内容 | - |
 
+### 方法
+
+通过 ref 可以获取到 Picker 实例并调用实例方法，详见[组件实例方法](#/zh-CN/advanced-usage#zu-jian-shi-li-fang-fa)。
+
+| 方法名 | 说明 | 参数 | 返回值 |
+| --- | --- | --- | --- |
+| confirm | 停止惯性滚动并触发 `confirm` 事件 | - | - |
+| getSelectedDate | 获取当前选中的日期 | - | _string[] \| undefined_ |
+
 ### 类型定义
 
 组件导出以下类型定义：
 
 ```ts
-import type { DatePickerProps, DatePickerColumnType } from 'vant';
+import type {
+  DatePickerProps,
+  DatePickerColumnType,
+  DatePickerInstance,
+} from 'vant';
+```
+
+`DatePickerInstance` 是组件实例的类型，用法如下：
+
+```ts
+import { ref } from 'vue';
+import type { DatePickerInstance } from 'vant';
+
+const datePickerRef = ref<DatePickerInstance>();
+
+datePickerRef.value?.confirm();
 ```
 
 ## 常见问题

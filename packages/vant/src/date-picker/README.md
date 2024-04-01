@@ -204,10 +204,34 @@ export default {
 | columns-top | Custom content above columns | - |
 | columns-bottom | Custom content below columns | - |
 
+### Methods
+
+Use [ref](https://vuejs.org/guide/essentials/template-refs.html) to get Picker instance and call instance methods.
+
+| Name | Description | Attribute | Return value |
+| --- | --- | --- | --- |
+| confirm | Stop scrolling and emit confirm event | - | - |
+| getSelectedDate | Get current selected date | - | _string[] \| undefined_ |
+
 ### Types
 
 The component exports the following type definitions:
 
 ```ts
-import type { DatePickerProps, DatePickerColumnType } from 'vant';
+import type {
+  DatePickerProps,
+  DatePickerColumnType,
+  DatePickerInstance,
+} from 'vant';
+```
+
+`DatePickerInstance` is the type of component instance:
+
+```ts
+import { ref } from 'vue';
+import type { DatePickerInstance } from 'vant';
+
+const datePickerRef = ref<DatePickerInstance>();
+
+datePickerRef.value?.confirm();
 ```
