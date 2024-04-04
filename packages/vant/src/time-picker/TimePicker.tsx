@@ -5,7 +5,7 @@ import {
   watch,
   type ExtractPropTypes,
   type PropType,
-  ComponentPublicInstance,
+  type ComponentPublicInstance,
 } from 'vue';
 
 // Utils
@@ -26,6 +26,8 @@ import {
 
 // Components
 import { Picker, PickerInstance } from '../picker';
+
+// Composables
 import { useExpose } from '../composables/use-expose';
 
 const [name] = createNamespace('time-picker');
@@ -92,7 +94,7 @@ export default defineComponent({
       return pickerRef.value?.confirm();
     };
 
-    const getSelectedTime = (): Array<string> => {
+    const getSelectedTime = (): string[] => {
       return currentValues.value;
     };
 
