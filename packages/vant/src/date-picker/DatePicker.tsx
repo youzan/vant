@@ -138,7 +138,7 @@ export default defineComponent({
       return pickerRef.value?.confirm();
     };
 
-    const getSelectedDate = (): Array<string> => {
+    const getSelectedDate = () => {
       return currentValues.value;
     };
 
