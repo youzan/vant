@@ -18,9 +18,11 @@ import {
   formatValueRange,
 } from './utils';
 
+// Composables
+import { useExpose } from '../composables/use-expose';
+
 // Components
 import { Picker, PickerInstance } from '../picker';
-import { useExpose } from '../composables/use-expose';
 
 const currentYear = new Date().getFullYear();
 const [name] = createNamespace('date-picker');
@@ -134,13 +136,9 @@ export default defineComponent({
       return genOptions(minDate, maxDate, 'day', props.formatter, props.filter);
     };
 
-    const confirm = () => {
-      return pickerRef.value?.confirm();
-    };
+    const confirm = () => pickerRef.value?.confirm();
 
-    const getSelectedDate = () => {
-      return currentValues.value;
-    };
+    const getSelectedDate = () => currentValues.value;
 
     const columns = computed(() =>
       props.columnsType.map((type) => {

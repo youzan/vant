@@ -17,18 +17,18 @@ import {
   type TimeFilter,
 } from '../date-picker/utils';
 import {
-  createNamespace,
+  pick,
   extend,
   isSameValue,
   makeNumericProp,
-  pick,
+  createNamespace,
 } from '../utils';
-
-// Components
-import { Picker, PickerInstance } from '../picker';
 
 // Composables
 import { useExpose } from '../composables/use-expose';
+
+// Components
+import { Picker, PickerInstance } from '../picker';
 
 const [name] = createNamespace('time-picker');
 
@@ -90,13 +90,9 @@ export default defineComponent({
       );
     };
 
-    const confirm = () => {
-      return pickerRef.value?.confirm();
-    };
+    const confirm = () => pickerRef.value?.confirm();
 
-    const getSelectedTime = (): string[] => {
-      return currentValues.value;
-    };
+    const getSelectedTime = () => currentValues.value;
 
     const columns = computed(() => {
       let { minHour, maxHour, minMinute, maxMinute, minSecond, maxSecond } =

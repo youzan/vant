@@ -211,7 +211,7 @@ Use [ref](https://vuejs.org/guide/essentials/template-refs.html) to get Picker i
 | Name | Description | Attribute | Return value |
 | --- | --- | --- | --- |
 | confirm | Stop scrolling and emit confirm event | - | - |
-| getSelectedDate | Get current selected date | - | _string[] \| undefined_ |
+| getSelectedDate | Get current selected date | - | _string[]_ |
 
 ### Types
 
