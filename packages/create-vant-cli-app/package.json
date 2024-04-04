@@ -31,12 +31,12 @@
   "author": "chenjiahan",
   "license": "MIT",
   "devDependencies": {
-    "@types/fs-extra": "^11.0.1",
-    "rimraf": "^5.0.0",
+    "@types/fs-extra": "^11.0.4",
+    "rimraf": "^5.0.5",
     "typescript": "^5.0.4"
   },
   "dependencies": {
-    "rslog": "^1.1.0",
+    "rslog": "^1.2.1",
     "fast-glob": "^3.3.2",
     "fs-extra": "^11.2.0",
     "enquirer": "2.4.1",
