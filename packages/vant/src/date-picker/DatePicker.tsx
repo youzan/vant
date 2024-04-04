@@ -3,6 +3,7 @@ import {
   watch,
   computed,
   defineComponent,
+  type ComponentPublicInstance,
   type PropType,
   type ExtractPropTypes,
 } from 'vue';
@@ -18,7 +19,8 @@ import {
 } from './utils';
 
 // Components
-import { Picker } from '../picker';
+import { Picker, PickerInstance } from '../picker';
+import { useExpose } from '../composables/use-expose';
 
 const currentYear = new Date().getFullYear();
 const [name] = createNamespace('date-picker');
@@ -42,7 +44,17 @@ export const datePickerProps = extend({}, sharedProps, {
   },
 });
 
+export type DatePickerExpose = {
+  confirm: () => void;
+  getSelectedDate: () => string[];
+};
+
 export type DatePickerProps = ExtractPropTypes<typeof datePickerProps>;
+
+export type DatePickerInstance = ComponentPublicInstance<
+  DatePickerProps,
+  DatePickerExpose
+>;
 
 export default defineComponent({
   name,
@@ -54,6 +66,7 @@ export default defineComponent({
   setup(props, { emit, slots }) {
     const currentValues = ref<string[]>(props.modelValue);
     const updatedByExternalSources = ref(false);
+    const pickerRef = ref<PickerInstance>();
 
     const genYearOptions = () => {
       const minYear = props.minDate.getFullYear();
@@ -121,6 +134,14 @@ export default defineComponent({
       return genOptions(minDate, maxDate, 'day', props.formatter, props.filter);
     };
 
+    const confirm = () => {
+      return pickerRef.value?.confirm();
+    };
+
+    const getSelectedDate = () => {
+      return currentValues.value;
+    };
+
     const columns = computed(() =>
       props.columnsType.map((type) => {
         switch (type) {
@@ -169,8 +190,11 @@ export default defineComponent({
     const onCancel = (...args: unknown[]) => emit('cancel', ...args);
     const onConfirm = (...args: unknown[]) => emit('confirm', ...args);
 
+    useExpose<DatePickerExpose>({ confirm, getSelectedDate });
+
     return () => (
       <Picker
+        ref={pickerRef}
         v-slots={slots}
         v-model={currentValues.value}
         columns={columns.value}
