@@ -290,7 +290,7 @@ Use [ref](https://vuejs.org/guide/essentials/template-refs.html) to get Picker i
 | Name | Description | Attribute | Return value |
 | --- | --- | --- | --- |
 | confirm | Stop scrolling and emit confirm event | - | - |
-| getSelectedTime | Get current selected time | - | _string[] \| undefined_ |
+| getSelectedTime | Get current selected time | - | _string[]_ |
 
 ### Types
 
