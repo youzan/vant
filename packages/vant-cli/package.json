@@ -40,7 +40,7 @@
   "devDependencies": {
     "@types/fs-extra": "^11.0.4",
     "@types/less": "^3.0.6",
-    "@types/lodash": "^4.14.191",
+    "@types/lodash": "^4.17.0",
     "@types/markdown-it": "^13.0.7",
     "rimraf": "^5.0.5",
     "vue": "^3.4.21"
