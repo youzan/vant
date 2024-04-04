@@ -3,7 +3,7 @@ import {
   watch,
   computed,
   defineComponent,
-  ComponentPublicInstance,
+  type ComponentPublicInstance,
   type PropType,
   type ExtractPropTypes,
 } from 'vue';
