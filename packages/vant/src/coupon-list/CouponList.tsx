@@ -4,6 +4,7 @@ import {
   computed,
   nextTick,
   onMounted,
+  unref,
   defineComponent,
   type ExtractPropTypes,
 } from 'vue';
@@ -37,7 +38,7 @@ export const couponListProps = {
   currency: makeStringProp('¥'),
   showCount: truthProp,
   emptyImage: String,
-  chosenCoupon: makeNumberProp(-1),
+  chosenCoupon: [Number, Array],
   enabledTitle: String,
   disabledTitle: String,
   disabledCoupons: makeArrayProp<CouponInfo>(),
@@ -137,6 +138,19 @@ export default defineComponent({
       const count = props.showCount ? ` (${coupons.length})` : '';
       const title = (props.enabledTitle || t('enable')) + count;
 
+      const getChosenCoupon = (
+        chosenCoupon: Array<any> = [],
+        value: number = 0,
+      ): Array<any> => {
+        const unrefChosenCoupon = unref(chosenCoupon);
+        const index = unrefChosenCoupon.indexOf(value);
+        if (index === -1) {
+          return [...unrefChosenCoupon, value];
+        }
+        unrefChosenCoupon.splice(index, 1);
+        return [...unrefChosenCoupon];
+      };
+
       return (
         <Tab title={title}>
           <div
@@ -148,9 +162,20 @@ export default defineComponent({
                 key={coupon.id}
                 ref={setCouponRefs(index)}
                 coupon={coupon}
-                chosen={index === props.chosenCoupon}
+                chosen={
+                  Array.isArray(props.chosenCoupon)
+                    ? props.chosenCoupon.includes(index)
+                    : index === props.chosenCoupon
+                }
                 currency={props.currency}
-                onClick={() => emit('change', index)}
+                onClick={() =>
+                  emit(
+                    'change',
+                    Array.isArray(props.chosenCoupon)
+                      ? getChosenCoupon(props.chosenCoupon, index)
+                      : index,
+                  )
+                }
               />
             ))}
             {!coupons.length && renderEmpty()}
@@ -210,15 +235,21 @@ export default defineComponent({
           {renderDisabledTab()}
         </Tabs>
         <div class={bem('bottom')}>
-          <Button
-            v-show={props.showCloseButton}
-            round
-            block
-            type="primary"
-            class={bem('close')}
-            text={props.closeButtonText || t('close')}
-            onClick={() => emit('change', -1)}
-          />
+          {slots['list-button'] ? (
+            slots['list-button']()
+          ) : (
+            <Button
+              v-show={props.showCloseButton}
+              round
+              block
+              type="primary"
+              class={bem('close')}
+              text={props.closeButtonText || t('close')}
+              onClick={() =>
+                emit('change', Array.isArray(props.chosenCoupon) ? [] : -1)
+              }
+            />
+          )}
         </div>
       </div>
     );

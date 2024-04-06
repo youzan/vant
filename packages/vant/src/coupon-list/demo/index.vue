@@ -1,8 +1,9 @@
 <script setup lang="ts">
 import VanCouponCell from '../../coupon-cell';
 import VanPopup from '../../popup';
+import VanButton from '../../button';
 import VanCouponList from '..';
-import { ref, computed } from 'vue';
+import { ref, computed, unref } from 'vue';
 import { useTranslate } from '../../../docs/site';
 import { CouponInfo } from '../../coupon';
 import { showToast } from '../../toast';
@@ -30,7 +31,10 @@ const getRandomId = (max = 999999) =>
   String(Math.floor(Math.random() * max) + 1);
 
 const showList = ref(false);
+const showListArray = ref(false);
 const chosenCoupon = ref(-1);
+const chosenCouponArray = ref([]);
+const chosenCouponArrayResult = ref([]);
 const exchangedCoupons = ref<CouponInfo[]>([]);
 
 const coupon = computed(() => ({
@@ -84,6 +88,15 @@ const onChange = (index: number) => {
   chosenCoupon.value = index;
 };
 
+const onChangeArray = (chosenCoupon: []) => {
+  chosenCouponArray.value = chosenCoupon;
+};
+
+const onSubmit = () => {
+  showListArray.value = false;
+  chosenCouponArrayResult.value = unref(chosenCouponArray);
+};
+
 const onExchange = () => {
   showToast(t('exchange'));
   exchangedCoupons.value.push({
@@ -113,6 +126,40 @@ const onExchange = () => {
         @change="onChange"
         @exchange="onExchange"
       />
+    </van-popup>
+  </demo-block>
+
+  <demo-block :title="t('checkboxUsage')">
+    <van-coupon-cell
+      :coupons="coupons"
+      :chosen-coupon="chosenCouponArrayResult"
+      @click="showListArray = true"
+    />
+    <van-popup
+      v-model:show="showListArray"
+      round
+      position="bottom"
+      style="height: 90%; padding-top: 4px"
+    >
+      <van-coupon-list
+        :coupons="coupons"
+        :chosen-coupon="chosenCouponArray"
+        :disabled-coupons="disabledCoupons"
+        :show-close-button="false"
+        @change="onChangeArray"
+        @exchange="onExchange"
+      >
+        <template #list-button>
+          <van-button
+            round
+            block
+            type="primary"
+            text="确定"
+            style="height: 40px"
+            @click="onSubmit"
+          />
+        </template>
+      </van-coupon-list>
     </van-popup>
   </demo-block>
 </template>

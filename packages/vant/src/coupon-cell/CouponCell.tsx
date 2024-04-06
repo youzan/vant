@@ -6,7 +6,6 @@ import {
   truthProp,
   makeArrayProp,
   makeStringProp,
-  makeNumericProp,
   createNamespace,
 } from '../utils';
 
@@ -24,27 +23,47 @@ export const couponCellProps = {
   editable: truthProp,
   coupons: makeArrayProp<CouponInfo>(),
   currency: makeStringProp('¥'),
-  chosenCoupon: makeNumericProp(-1),
+  chosenCoupon: {
+    type: [Number, Array],
+    default: -1,
+  },
 };
 
 export type CouponCellProps = ExtractPropTypes<typeof couponCellProps>;
 
 function formatValue({ coupons, chosenCoupon, currency }: CouponCellProps) {
-  const coupon = coupons[+chosenCoupon];
-
-  if (coupon) {
+  const getValue = (coupon: CouponInfo) => {
     let value = 0;
-
+    const { value: couponValue, denominations } = coupon;
     if (isDef(coupon.value)) {
-      ({ value } = coupon);
+      value = couponValue;
     } else if (isDef(coupon.denominations)) {
-      value = coupon.denominations;
+      value = denominations as number;
     }
+    return value;
+  };
 
-    return `-${currency} ${(value / 100).toFixed(2)}`;
+  let value = 0,
+    isExist = false;
+  if (Array.isArray(chosenCoupon)) {
+    (chosenCoupon as CouponInfo[]).forEach((i) => {
+      const coupon = coupons[+i];
+      if (coupon) {
+        isExist = true;
+        value += getValue(coupon);
+      }
+    });
+  } else {
+    const coupon = coupons[+chosenCoupon];
+    if (coupon) {
+      isExist = true;
+      value = getValue(coupon);
+    }
   }
-
-  return coupons.length === 0 ? t('noCoupon') : t('count', coupons.length);
+  if (!isExist) {
+    return coupons.length === 0 ? t('noCoupon') : t('count', coupons.length);
+  }
+  return `-${currency} ${(value / 100).toFixed(2)}`;
 }
 
 export default defineComponent({
@@ -54,7 +73,9 @@ export default defineComponent({
 
   setup(props) {
     return () => {
-      const selected = props.coupons[+props.chosenCoupon];
+      const selected = Array.isArray(props.chosenCoupon)
+        ? props.chosenCoupon.length
+        : props.coupons[+props.chosenCoupon];
       return (
         <Cell
           class={bem()}

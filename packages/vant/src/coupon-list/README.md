@@ -104,7 +104,7 @@ export default {
 | Attribute | Description | Type | Default |
 | --- | --- | --- | --- |
 | v-model | Current exchange code | _string_ | - |
-| chosen-coupon | Index of chosen coupon | _number_ | `-1` |
+| chosen-coupon | Index of chosen coupon,support multiple selection(type `[]`) | _number\|number[]_ | `-1` |
 | coupons | Coupon list | _CouponInfo[]_ | `[]` |
 | disabled-coupons | Disabled coupon list | _CouponInfo[]_ | `[]` |
 | enabled-title | Title of coupon list | _string_ | `Available` |
@@ -133,6 +133,7 @@ export default {
 | -------------------- | ------------------------------- |
 | list-footer          | Coupon list bottom              |
 | disabled-list-footer | Unavailable coupons list bottom |
+| list-button          | Customize the bottom button     |
 
 ### Data Structure of CouponInfo
 

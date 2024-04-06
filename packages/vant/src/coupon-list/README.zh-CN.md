@@ -104,7 +104,7 @@ export default {
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
 | v-model:code | 当前输入的兑换码 | _string_ | - |
-| chosen-coupon | 当前选中优惠券的索引 | _number_ | `-1` |
+| chosen-coupon | 当前选中优惠券的索引,支持多选（类型为`[]`） | _number\|number[]_ | `-1` |
 | coupons | 可用优惠券列表 | _CouponInfo[]_ | `[]` |
 | disabled-coupons | 不可用优惠券列表 | _CouponInfo[]_ | `[]` |
 | enabled-title | 可用优惠券列表标题 | _string_ | `可使用优惠券` |
@@ -135,6 +135,7 @@ export default {
 | -------------------- | -------------------- |
 | list-footer          | 优惠券列表底部       |
 | disabled-list-footer | 不可用优惠券列表底部 |
+| list-button          | 自定义底部按钮       |
 
 ### CouponInfo 数据结构
 
