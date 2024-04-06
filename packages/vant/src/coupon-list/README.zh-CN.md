@@ -90,21 +90,21 @@ export default {
 
 ### CouponCell Props
 
-| 参数          | 说明                 | 类型               | 默认值   |
-| ------------- | -------------------- | ------------------ | -------- |
-| title         | 单元格标题           | _string_           | `优惠券` |
-| chosen-coupon | 当前选中优惠券的索引 | _number \| string_ | `-1`     |
-| coupons       | 可用优惠券列表       | _Coupon[]_         | `[]`     |
-| editable      | 能否切换优惠券       | _boolean_          | `true`   |
-| border        | 是否显示内边框       | _boolean_          | `true`   |
-| currency      | 货币符号             | _string_           | `¥`      |
+| 参数          | 说明                 | 类型                 | 默认值   |
+| ------------- | -------------------- | -------------------- | -------- |
+| title         | 单元格标题           | _string_             | `优惠券` |
+| chosen-coupon | 当前选中优惠券的索引 | _number \| number[]_ | `-1`     |
+| coupons       | 可用优惠券列表       | _Coupon[]_           | `[]`     |
+| editable      | 能否切换优惠券       | _boolean_            | `true`   |
+| border        | 是否显示内边框       | _boolean_            | `true`   |
+| currency      | 货币符号             | _string_             | `¥`      |
 
 ### CouponList Props
 
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
 | v-model:code | 当前输入的兑换码 | _string_ | - |
-| chosen-coupon | 当前选中优惠券的索引,支持多选（类型为`[]`） | _number\|number[]_ | `-1` |
+| chosen-coupon | 当前选中优惠券的索引,支持多选（类型为 `[]`） | _number \| number[]_ | `-1` |
 | coupons | 可用优惠券列表 | _CouponInfo[]_ | `[]` |
 | disabled-coupons | 不可用优惠券列表 | _CouponInfo[]_ | `[]` |
 | enabled-title | 可用优惠券列表标题 | _string_ | `可使用优惠券` |

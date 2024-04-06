@@ -90,21 +90,21 @@ export default {
 
 ### CouponCell Props
 
-| Attribute     | Description                  | Type               | Default  |
-| ------------- | ---------------------------- | ------------------ | -------- |
-| title         | Cell title                   | _string_           | `Coupon` |
-| chosen-coupon | Index of chosen coupon       | _number \| string_ | `-1`     |
-| coupons       | Coupon list                  | _Coupon[]_         | `[]`     |
-| editable      | Cell editable                | _boolean_          | `true`   |
-| border        | Whether to show inner border | _boolean_          | `true`   |
-| currency      | Currency symbol              | _string_           | `¥`      |
+| Attribute | Description | Type | Default |
+| --- | --- | --- | --- |
+| title | Cell title | _string_ | `Coupon` |
+| chosen-coupon | Index of chosen coupon | _number \| number[]_ | `-1` |
+| coupons | Coupon list | _Coupon[]_ | `[]` |
+| editable | Cell editable | _boolean_ | `true` |
+| border | Whether to show inner border | _boolean_ | `true` |
+| currency | Currency symbol | _string_ | `¥` |
 
 ### CouponList Props
 
 | Attribute | Description | Type | Default |
 | --- | --- | --- | --- |
 | v-model | Current exchange code | _string_ | - |
-| chosen-coupon | Index of chosen coupon,support multiple selection(type `[]`) | _number\|number[]_ | `-1` |
+| chosen-coupon | Index of chosen coupons, support multiple selection (type is `[]`) | _number \| number[]_ | `-1` |
 | coupons | Coupon list | _CouponInfo[]_ | `[]` |
 | disabled-coupons | Disabled coupon list | _CouponInfo[]_ | `[]` |
 | enabled-title | Title of coupon list | _string_ | `Available` |
