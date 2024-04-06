@@ -1,4 +1,4 @@
-import { defineComponent, type ExtractPropTypes } from 'vue';
+import { defineComponent, type PropType, type ExtractPropTypes } from 'vue';
 
 // Utils
 import {
@@ -24,46 +24,40 @@ export const couponCellProps = {
   coupons: makeArrayProp<CouponInfo>(),
   currency: makeStringProp('¥'),
   chosenCoupon: {
-    type: [Number, Array],
+    type: [Number, Array] as PropType<number | number[]>,
     default: -1,
   },
 };
 
 export type CouponCellProps = ExtractPropTypes<typeof couponCellProps>;
 
-function formatValue({ coupons, chosenCoupon, currency }: CouponCellProps) {
-  const getValue = (coupon: CouponInfo) => {
-    let value = 0;
-    const { value: couponValue, denominations } = coupon;
-    if (isDef(coupon.value)) {
-      value = couponValue;
-    } else if (isDef(coupon.denominations)) {
-      value = denominations as number;
-    }
+const getValue = (coupon: CouponInfo) => {
+  const { value, denominations } = coupon;
+  if (isDef(value)) {
     return value;
-  };
+  }
+  if (isDef(denominations)) {
+    return denominations;
+  }
+  return 0;
+};
 
-  let value = 0,
-    isExist = false;
-  if (Array.isArray(chosenCoupon)) {
-    (chosenCoupon as CouponInfo[]).forEach((i) => {
-      const coupon = coupons[+i];
-      if (coupon) {
-        isExist = true;
-        value += getValue(coupon);
-      }
-    });
-  } else {
-    const coupon = coupons[+chosenCoupon];
+function formatValue({ coupons, chosenCoupon, currency }: CouponCellProps) {
+  let value = 0;
+  let isExist = false;
+
+  (Array.isArray(chosenCoupon) ? chosenCoupon : [chosenCoupon]).forEach((i) => {
+    const coupon = coupons[+i];
     if (coupon) {
       isExist = true;
-      value = getValue(coupon);
+      value += getValue(coupon);
     }
+  });
+
+  if (isExist) {
+    return `-${currency} ${(value / 100).toFixed(2)}`;
   }
-  if (!isExist) {
-    return coupons.length === 0 ? t('noCoupon') : t('count', coupons.length);
-  }
-  return `-${currency} ${(value / 100).toFixed(2)}`;
+  return coupons.length === 0 ? t('noCoupon') : t('count', coupons.length);
 }
 
 export default defineComponent({

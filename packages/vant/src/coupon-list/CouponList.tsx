@@ -4,8 +4,8 @@ import {
   computed,
   nextTick,
   onMounted,
-  unref,
   defineComponent,
+  type PropType,
   type ExtractPropTypes,
 } from 'vue';
 
@@ -38,7 +38,6 @@ export const couponListProps = {
   currency: makeStringProp('¥'),
   showCount: truthProp,
   emptyImage: String,
-  chosenCoupon: [Number, Array],
   enabledTitle: String,
   disabledTitle: String,
   disabledCoupons: makeArrayProp<CouponInfo>(),
@@ -51,6 +50,10 @@ export const couponListProps = {
   displayedCouponIndex: makeNumberProp(-1),
   exchangeButtonLoading: Boolean,
   exchangeButtonDisabled: Boolean,
+  chosenCoupon: {
+    type: [Number, Array] as PropType<number | number[]>,
+    default: -1,
+  },
 };
 
 export type CouponListProps = ExtractPropTypes<typeof couponListProps>;
@@ -134,21 +137,18 @@ export default defineComponent({
     };
 
     const renderCouponTab = () => {
-      const { coupons } = props;
+      const { coupons, chosenCoupon } = props;
       const count = props.showCount ? ` (${coupons.length})` : '';
       const title = (props.enabledTitle || t('enable')) + count;
 
-      const getChosenCoupon = (
-        chosenCoupon: Array<any> = [],
+      const updateChosenCoupon = (
+        currentValues: number[] = [],
         value: number = 0,
-      ): Array<any> => {
-        const unrefChosenCoupon = unref(chosenCoupon);
-        const index = unrefChosenCoupon.indexOf(value);
-        if (index === -1) {
-          return [...unrefChosenCoupon, value];
+      ) => {
+        if (currentValues.includes(value)) {
+          return currentValues.filter((item) => item !== value);
         }
-        unrefChosenCoupon.splice(index, 1);
-        return [...unrefChosenCoupon];
+        return [...currentValues, value];
       };
 
       return (
@@ -163,16 +163,16 @@ export default defineComponent({
                 ref={setCouponRefs(index)}
                 coupon={coupon}
                 chosen={
-                  Array.isArray(props.chosenCoupon)
-                    ? props.chosenCoupon.includes(index)
-                    : index === props.chosenCoupon
+                  Array.isArray(chosenCoupon)
+                    ? chosenCoupon.includes(index)
+                    : index === chosenCoupon
                 }
                 currency={props.currency}
                 onClick={() =>
                   emit(
                     'change',
-                    Array.isArray(props.chosenCoupon)
-                      ? getChosenCoupon(props.chosenCoupon, index)
+                    Array.isArray(chosenCoupon)
+                      ? updateChosenCoupon(chosenCoupon, index)
                       : index,
                   )
                 }
