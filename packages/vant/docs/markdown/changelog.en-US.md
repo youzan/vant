@@ -19,6 +19,34 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 
 ## Details
 
+### v4.8.10
+
+`2024-04-06`
+
+#### New Features 🎉
+
+- feat(TimePicker): support confirm and getSelectedTime methods by [@bluesky335](https://github.com/bluesky335) in [#12761](https://github.com/youzan/vant/pull/12761)
+- feat(DatePicker): support confirm and getSelectedDate method by [@bluesky335](https://github.com/bluesky335) in [#12762](https://github.com/youzan/vant/pull/12762)
+- feat(Coupon): support for checkbox usage by [@CatsAndMice](https://github.com/CatsAndMice) in [#12744](https://github.com/youzan/vant/pull/12744)
+
+#### Other Changes
+
+- chore(deps): update dependency vite to v5.0.13 [security] by [@renovate](https://github.com/renovate) in [#12767](https://github.com/youzan/vant/pull/12767)
+- chore(deps): update all patch dependencies by [@renovate](https://github.com/renovate) in [#12756](https://github.com/youzan/vant/pull/12756)
+- chore(deps): update dependency [@types](https://github.com/types)/lodash to ^4.17.0 by @renovate in [#12757](https://github.com/youzan/vant/pull/12757)
+- chore: correct return type of getSelectedTime by [@chenjiahan](https://github.com/chenjiahan) in [#12768](https://github.com/youzan/vant/pull/12768)
+- refactor(Coupon): simplify the checkbox usage by [@chenjiahan](https://github.com/chenjiahan) in [#12771](https://github.com/youzan/vant/pull/12771)
+
+#### New Contributors
+
+- [@bluesky335](https://github.com/bluesky335) made their first contribution in [#12761](https://github.com/youzan/vant/pull/12761)
+
+### v4.8.9
+
+`2024-04-06`
+
+Invalid version, please do not use it.
+
 ### v4.8.8
 
 `2024-03-31`
