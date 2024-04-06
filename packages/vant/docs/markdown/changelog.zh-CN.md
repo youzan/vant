@@ -19,6 +19,34 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 
 ## 更新内容
 
+### v4.8.10
+
+`2024-04-06`
+
+#### 新功能 🎉
+
+- feat(TimePicker)：支持 confirm 和 getSelectedTime 方法，由 [@bluesky335](https://github.com/bluesky335) 在 [#12761](https://github.com/youzan/vant/pull/12761) 提供
+- feat(DatePicker)：支持 confirm 和 getSelectedDate 方法，由 [@bluesky335](https://github.com/bluesky335) 在 [#12762](https://github.com/youzan/vant/pull/12762) 提供
+- feat(Coupon)：支持复选框用法，由 [@CatsAndMice](https://github.com/CatsAndMice) 在 [#12744](https://github.com/youzan/vant/pull/12744) 提供
+
+#### 其他变更
+
+- chore(deps)：更新依赖 vite 至 v5.0.13 [安全]，由 [@renovate](https://github.com/renovate) 在 [#12767](https://github.com/youzan/vant/pull/12767) 提供
+- chore(deps)：更新所有补丁依赖项，由 [@renovate](https://github.com/renovate) 在 [#12756](https://github.com/youzan/vant/pull/12756) 提供
+- chore(deps)：更新依赖项 [@types](https://github.com/types)/lodash 至 ^4.17.0，由 [@renovate](https://github.com/renovate) 在 [#12757](https://github.com/youzan/vant/pull/12757) 提供
+- chore：修正 getSelectedTime 的返回类型，由 [@chenjiahan](https://github.com/chenjiahan) 在 [#12768](https://github.com/youzan/vant/pull/12768) 提供
+- refactor(Coupon)：简化复选框用法，由 [@chenjiahan](https://github.com/chenjiahan) 在 [#12771](https://github.com/youzan/vant/pull/12771) 提供
+
+#### 新贡献者
+
+- [@bluesky335](https://github.com/bluesky335) 在 [#12761](https://github.com/youzan/vant/pull/12761) 中首次贡献
+
+### v4.8.9
+
+`2024-04-06`
+
+无效版本，请勿使用。
+
 ### v4.8.8
 
 `2024-03-31`
