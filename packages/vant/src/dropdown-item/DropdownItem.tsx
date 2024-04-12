@@ -126,9 +126,14 @@ export default defineComponent({
 
     const renderOption = (option: DropdownItemOption) => {
       const { activeColor } = parent.props;
+      const { disabled } = option;
       const active = option.value === props.modelValue;
 
       const onClick = () => {
+        if (disabled) {
+          return;
+        }
+
         state.showPopup = false;
 
         if (option.value !== props.modelValue) {
@@ -140,7 +145,11 @@ export default defineComponent({
       const renderIcon = () => {
         if (active) {
           return (
-            <Icon class={bem('icon')} color={activeColor} name="success" />
+            <Icon
+              class={bem('icon')}
+              color={disabled ? undefined : activeColor}
+              name="success"
+            />
           );
         }
       };
@@ -152,10 +161,10 @@ export default defineComponent({
           key={String(option.value)}
           icon={option.icon}
           title={option.text}
-          class={bem('option', { active })}
+          class={bem('option', { active, disabled })}
           style={{ color: active ? activeColor : '' }}
           tabindex={active ? 0 : -1}
-          clickable
+          clickable={!disabled}
           onClick={onClick}
         />
       );
