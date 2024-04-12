@@ -1,7 +1,7 @@
 /* eslint-disable no-continue */
 import { Articles } from './parser.js';
 import { formatType, removeVersion, toKebabCase } from './utils.js';
-import { VueAttribute, VueEventArgument, VueTag } from './type.js';
+import { VueAttribute, VueEvent, VueEventArgument, VueTag } from './type.js';
 
 function formatComponentName(name: string, tagPrefix: string) {
   return tagPrefix + toKebabCase(name);
@@ -124,13 +124,30 @@ export function formatter(
         };
 
         if (name === 'v-model') {
+          const modelValue = 'modelValue';
           // add `modelValue`
-          tag.attributes.push({ ...attribute, name: 'modelValue' });
+          tag.attributes.push({ ...attribute, name: modelValue });
+
           if (type === 'boolean') {
             // fix: warning `is not a valid value for v-model` in JetBrains IDE
             // ref: https://github.com/JetBrains/web-types/issues/79#issuecomment-2045153333
             attribute.value = { ...attribute.value, type: type + ' ' };
           }
+
+          if (!tag.events) {
+            tag.events = [];
+          }
+
+          tag.events.push({
+            name: `update:${modelValue}`,
+            description: `${desc}\nEmitted when input value changed`,
+            arguments: [
+              {
+                name: modelValue,
+                type,
+              },
+            ],
+          });
         }
 
         tag.attributes.push(attribute);
@@ -141,20 +158,21 @@ export function formatter(
     if (tableTitle.includes('Events')) {
       const name = getNameFromTableTitle(tableTitle, tagPrefix) || defaultName;
       const tag = findTag(vueTags, name);
+      const events: VueEvent[] = [];
 
       table.body.forEach((line) => {
         const [name, desc, args] = line;
 
-        if (!tag.events) {
-          tag.events = [];
-        }
-
-        tag.events.push({
+        events.push({
           name: removeVersion(name),
           description: desc,
           arguments: formatArguments(args),
         });
       });
+
+      // for higher priority
+      tag.events = events.concat(tag.events || []);
+
       return;
     }
 
