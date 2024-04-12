@@ -30,5 +30,6 @@ export type DropdownMenuThemeVars = {
   dropdownMenuTitlePadding?: string;
   dropdownMenuTitleLineHeight?: number | string;
   dropdownMenuOptionActiveColor?: string;
+  dropdownMenuOptionDisabledColor?: string;
   dropdownMenuContentMaxHeight?: string;
 };

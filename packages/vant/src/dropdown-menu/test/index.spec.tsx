@@ -367,3 +367,43 @@ test('auto-locate prop', async () => {
 
   vi.doUnmock('../../utils/dom');
 });
+
+test('disable dropdown option', async () => {
+  const onChange = vi.fn();
+  const optionsRef = ref([
+    { text: 'A', value: 0 },
+    { text: 'B', value: 1, disabled: true },
+    { text: 'C', value: 2 },
+  ]);
+  const wrapper = mount({
+    setup() {
+      return () => (
+        <DropdownMenu>
+          <DropdownItem
+            modelValue={0}
+            options={optionsRef.value}
+            onChange={onChange}
+          />
+        </DropdownMenu>
+      );
+    },
+  });
+
+  await later();
+  const title = wrapper.find('.van-dropdown-menu__title');
+  await title.trigger('click');
+
+  const options = wrapper.findAll('.van-dropdown-item .van-cell');
+
+  await options[1].trigger('click');
+  expect(onChange).not.toHaveBeenCalled();
+
+  await options[2].trigger('click');
+  expect(onChange).toHaveBeenCalledTimes(1);
+
+  optionsRef.value[1].disabled = false;
+
+  await later();
+  await options[1].trigger('click');
+  expect(onChange).toHaveBeenCalledTimes(2);
+});
