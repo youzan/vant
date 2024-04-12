@@ -1,7 +1,7 @@
 /* eslint-disable no-continue */
 import { Articles } from './parser.js';
 import { formatType, removeVersion, toKebabCase } from './utils.js';
-import { VueEventArgument, VueTag } from './type.js';
+import { VueAttribute, VueEventArgument, VueTag } from './type.js';
 
 function formatComponentName(name: string, tagPrefix: string) {
   return tagPrefix + toKebabCase(name);
@@ -105,21 +105,35 @@ export function formatter(
       const tag = findTag(vueTags, name);
 
       table.body.forEach((line) => {
-        const [name, desc, type, defaultVal] = line;
+        const [_name, desc, _type, defaultVal] = line;
+        const name = removeVersion(_name);
+        const type = formatType(_type);
 
         if (!tag.attributes) {
           tag.attributes = [];
         }
 
-        tag.attributes.push({
-          name: removeVersion(name),
+        const attribute: VueAttribute = {
+          name,
           default: defaultVal,
           description: desc,
           value: {
-            type: formatType(type),
+            type,
             kind: 'expression',
           },
-        });
+        };
+
+        if (name === 'v-model') {
+          // add `modelValue`
+          tag.attributes.push({ ...attribute, name: 'modelValue' });
+          if (type === 'boolean') {
+            // fix: warning `is not a valid value for v-model` in JetBrains IDE
+            // ref: https://github.com/JetBrains/web-types/issues/79#issuecomment-2045153333
+            attribute.value = { ...attribute.value, type: type + ' ' };
+          }
+        }
+
+        tag.attributes.push(attribute);
       });
       return;
     }
