@@ -140,7 +140,7 @@ export function formatter(
 
           tag.events.push({
             name: `update:${modelValue}`,
-            description: `${desc}\nEmitted when input value changed`,
+            description: `${desc}\n\nEmitted when the value of \`${modelValue}\` prop changes.`,
             arguments: [
               {
                 name: modelValue,
