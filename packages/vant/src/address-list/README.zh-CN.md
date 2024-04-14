@@ -102,7 +102,7 @@ export default {
 | select | 切换选中的地址时触发 | _item: AddressListAddress, index: number_ |
 | edit-disabled | 编辑不可配送的地址时触发 | _item: AddressListAddress, index: number_ |
 | select-disabled | 选中不可配送的地址时触发 | _item: AddressListAddress, index: number_ |
-| click-item | 点击任意地址时触发 | _item: AddressListAddress, index: number_ |
+| click-item | 点击任意地址时触发 | _item: AddressListAddress, index: number, { event }_ |
 
 ### AddressListAddress 数据结构
 

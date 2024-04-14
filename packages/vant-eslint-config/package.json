@@ -22,8 +22,8 @@
   "dependencies": {
     "@typescript-eslint/eslint-plugin": "^6.2.1",
     "@typescript-eslint/parser": "^6.2.1",
-    "eslint-config-prettier": "^9.0.0",
-    "eslint-plugin-vue": "^9.16.1"
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-vue": "^9.24.1"
   },
   "devDependencies": {
     "eslint": "^8.57.0",

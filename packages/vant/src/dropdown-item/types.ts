@@ -5,6 +5,7 @@ import type { Numeric } from '../utils';
 export type DropdownItemOptionValue = Numeric | boolean;
 
 export type DropdownItemOption = {
+  disabled?: boolean;
   text: string;
   icon?: string;
   value: DropdownItemOptionValue;

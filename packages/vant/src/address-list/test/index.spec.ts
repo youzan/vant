@@ -48,7 +48,7 @@ test('should emit clickItem event when item is clicked', () => {
 
   wrapper.find('.van-address-item').trigger('click');
 
-  expect(wrapper.emitted('clickItem')![0]).toEqual([list[0], 0]);
+  expect(wrapper.emitted('clickItem')![0].slice(0, 2)).toEqual([list[0], 0]);
 });
 
 test('should render tag slot correctly', () => {

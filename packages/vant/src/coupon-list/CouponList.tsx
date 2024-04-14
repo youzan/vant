@@ -5,6 +5,7 @@ import {
   nextTick,
   onMounted,
   defineComponent,
+  type PropType,
   type ExtractPropTypes,
 } from 'vue';
 
@@ -37,7 +38,6 @@ export const couponListProps = {
   currency: makeStringProp('¥'),
   showCount: truthProp,
   emptyImage: String,
-  chosenCoupon: makeNumberProp(-1),
   enabledTitle: String,
   disabledTitle: String,
   disabledCoupons: makeArrayProp<CouponInfo>(),
@@ -50,6 +50,10 @@ export const couponListProps = {
   displayedCouponIndex: makeNumberProp(-1),
   exchangeButtonLoading: Boolean,
   exchangeButtonDisabled: Boolean,
+  chosenCoupon: {
+    type: [Number, Array] as PropType<number | number[]>,
+    default: -1,
+  },
 };
 
 export type CouponListProps = ExtractPropTypes<typeof couponListProps>;
@@ -133,9 +137,19 @@ export default defineComponent({
     };
 
     const renderCouponTab = () => {
-      const { coupons } = props;
+      const { coupons, chosenCoupon } = props;
       const count = props.showCount ? ` (${coupons.length})` : '';
       const title = (props.enabledTitle || t('enable')) + count;
+
+      const updateChosenCoupon = (
+        currentValues: number[] = [],
+        value: number = 0,
+      ) => {
+        if (currentValues.includes(value)) {
+          return currentValues.filter((item) => item !== value);
+        }
+        return [...currentValues, value];
+      };
 
       return (
         <Tab title={title}>
@@ -148,9 +162,20 @@ export default defineComponent({
                 key={coupon.id}
                 ref={setCouponRefs(index)}
                 coupon={coupon}
-                chosen={index === props.chosenCoupon}
+                chosen={
+                  Array.isArray(chosenCoupon)
+                    ? chosenCoupon.includes(index)
+                    : index === chosenCoupon
+                }
                 currency={props.currency}
-                onClick={() => emit('change', index)}
+                onClick={() =>
+                  emit(
+                    'change',
+                    Array.isArray(chosenCoupon)
+                      ? updateChosenCoupon(chosenCoupon, index)
+                      : index,
+                  )
+                }
               />
             ))}
             {!coupons.length && renderEmpty()}
@@ -210,15 +235,21 @@ export default defineComponent({
           {renderDisabledTab()}
         </Tabs>
         <div class={bem('bottom')}>
-          <Button
-            v-show={props.showCloseButton}
-            round
-            block
-            type="primary"
-            class={bem('close')}
-            text={props.closeButtonText || t('close')}
-            onClick={() => emit('change', -1)}
-          />
+          {slots['list-button'] ? (
+            slots['list-button']()
+          ) : (
+            <Button
+              v-show={props.showCloseButton}
+              round
+              block
+              type="primary"
+              class={bem('close')}
+              text={props.closeButtonText || t('close')}
+              onClick={() =>
+                emit('change', Array.isArray(props.chosenCoupon) ? [] : -1)
+              }
+            />
+          )}
         </div>
       </div>
     );

@@ -2,6 +2,7 @@ import {
   ref,
   watch,
   computed,
+  onActivated,
   onMounted,
   defineComponent,
   type ExtractPropTypes,
@@ -42,6 +43,7 @@ export default defineComponent({
     const expanded = ref(false);
     const hasAction = ref(false);
     const root = ref<HTMLElement>();
+    let needRecalculate = false;
 
     const actionText = computed(() =>
       expanded.value ? props.collapseText : props.expandText,
@@ -53,29 +55,31 @@ export default defineComponent({
       return match ? Number(match[0]) : 0;
     };
 
+    const cloneContainer = () => {
+      if (!root.value || !root.value.isConnected) return;
+
+      const originStyle = window.getComputedStyle(root.value);
+      const container = document.createElement('div');
+      const styleNames: string[] = Array.prototype.slice.apply(originStyle);
+
+      styleNames.forEach((name) => {
+        container.style.setProperty(name, originStyle.getPropertyValue(name));
+      });
+
+      container.style.position = 'fixed';
+      container.style.zIndex = '-9999';
+      container.style.top = '-9999px';
+      container.style.height = 'auto';
+      container.style.minHeight = 'auto';
+      container.style.maxHeight = 'auto';
+
+      container.innerText = props.content;
+      document.body.appendChild(container);
+
+      return container;
+    };
+
     const calcEllipsised = () => {
-      const cloneContainer = () => {
-        if (!root.value) return;
-
-        const originStyle = window.getComputedStyle(root.value);
-        const container = document.createElement('div');
-        const styleNames: string[] = Array.prototype.slice.apply(originStyle);
-        styleNames.forEach((name) => {
-          container.style.setProperty(name, originStyle.getPropertyValue(name));
-        });
-
-        container.style.position = 'fixed';
-        container.style.zIndex = '-9999';
-        container.style.top = '-9999px';
-        container.style.height = 'auto';
-        container.style.minHeight = 'auto';
-        container.style.maxHeight = 'auto';
-
-        container.innerText = props.content;
-        document.body.appendChild(container);
-        return container;
-      };
-
       const calcEllipsisText = (
         container: HTMLDivElement,
         maxHeight: number,
@@ -168,7 +172,12 @@ export default defineComponent({
 
       // Calculate the interceptional text
       const container = cloneContainer();
-      if (!container) return;
+
+      if (!container) {
+        needRecalculate = true;
+        return;
+      }
+
       const { paddingBottom, paddingTop, lineHeight } = container.style;
       const maxHeight = Math.ceil(
         (Number(props.rows) + 0.5) * pxToNum(lineHeight) +
@@ -208,6 +217,13 @@ export default defineComponent({
     };
 
     onMounted(calcEllipsised);
+
+    onActivated(() => {
+      if (needRecalculate) {
+        needRecalculate = false;
+        calcEllipsised();
+      }
+    });
 
     watch(
       [windowWidth, () => [props.content, props.rows, props.position]],
