@@ -19,6 +19,33 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 
 ## 更新内容
 
+### v4.8.11
+
+`2024-04-14`
+
+#### 新功能 🎉
+
+- feat(DropdownMenu)：通过 [@inottn](https://github.com/inottn) 在 [#12785](https://github.com/youzan/vant/pull/12785) 中为选项添加 disabled 属性
+
+#### Bug 修复 🐞
+
+- fix：在 JetBrains IDE 中修复警告 `is not a valid value for v-model`，贡献者 [@anyesu](https://github.com/anyesu) 在 [#12787](https://github.com/youzan/vant/pull/12787)
+- fix(Cli)：移除站点的 tsconfig 文件，贡献者 [@chenjiahan](https://github.com/chenjiahan) 在 [#12792](https://github.com/youzan/vant/pull/12792)
+
+#### 文档 📖
+
+- docs(list)：更新模块代码加载错误信息，贡献者 [@wangjue666](https://github.com/wangjue666) 在 [#12778](https://github.com/youzan/vant/pull/12778)
+
+#### 其他变更
+
+- chore(deps)：更新依赖 eslint-plugin-vue 至 ^9.24.1，由 [@renovate](https://github.com/renovate) 在 [#12774](https://github.com/youzan/vant/pull/12774) 提交
+- chore(deps)：升级 Rsbuild 至 v0.6 版本，由 [@chenjiahan](https://github.com/chenjiahan) 在 [#12790](https://github.com/youzan/vant/pull/12790) 提交
+
+#### 新贡献者
+
+- [@wangjue666](https://github.com/wangjue666) 在 [#12778](https://github.com/youzan/vant/pull/12778) 中首次贡献
+- [@anyesu](https://github.com/anyesu) 在 [#12787](https://github.com/youzan/vant/pull/12787) 中首次贡献
+
 ### v4.8.10
 
 `2024-04-06`

@@ -19,6 +19,33 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 
 ## Details
 
+### v4.8.11
+
+`2024-04-14`
+
+#### New Features 🎉
+
+- feat(DropdownMenu): add disabled for option by [@inottn](https://github.com/inottn) in [#12785](https://github.com/youzan/vant/pull/12785)
+
+#### Bug Fixes 🐞
+
+- fix: warning `is not a valid value for v-model` in JetBrains IDE by [@anyesu](https://github.com/anyesu) in [#12787](https://github.com/youzan/vant/pull/12787)
+- fix(Cli): remove site tsconfig by [@chenjiahan](https://github.com/chenjiahan) in [#12792](https://github.com/youzan/vant/pull/12792)
+
+#### Document 📖
+
+- docs(list): update Error loading module code by [@wangjue666](https://github.com/wangjue666) in [#12778](https://github.com/youzan/vant/pull/12778)
+
+#### Other Changes
+
+- chore(deps): update dependency eslint-plugin-vue to ^9.24.1 by [@renovate](https://github.com/renovate) in [#12774](https://github.com/youzan/vant/pull/12774)
+- chore(deps): bump Rsbuild v0.6 by [@chenjiahan](https://github.com/chenjiahan) in [#12790](https://github.com/youzan/vant/pull/12790)
+
+#### New Contributors
+
+- [@wangjue666](https://github.com/wangjue666) made their first contribution in [#12778](https://github.com/youzan/vant/pull/12778)
+- [@anyesu](https://github.com/anyesu) made their first contribution in [#12787](https://github.com/youzan/vant/pull/12787)
+
 ### v4.8.10
 
 `2024-04-06`
