@@ -13,13 +13,9 @@
   "scripts": {
     "dev": "vant-cli dev",
     "lint": "vant-cli lint",
-    "test": "vant-cli test",
     "build": "vant-cli build",
     "build:site": "vant-cli build-site",
-    "release": "vant-cli release --tag next",
-    "release:site": "pnpm build:site && npx gh-pages -d site-dist",
-    "test:watch": "vant-cli test --watch",
-    "test:coverage": "open test/coverage/index.html"
+    "release:site": "pnpm build:site && npx gh-pages -d site-dist"
   },
   "author": "",
   "nano-staged": {
