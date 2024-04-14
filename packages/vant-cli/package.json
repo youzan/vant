@@ -13,7 +13,7 @@
   "scripts": {
     "dev": "tsc --watch",
     "build": "rimraf ./lib && tsc",
-    "release": "vant-cli release",
+    "release": "rm -rf ./site/node_modules && vant-cli release",
     "prepare": "pnpm build"
   },
   "files": [
