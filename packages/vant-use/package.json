@@ -41,7 +41,7 @@
     "esbuild": "^0.20.2",
     "rimraf": "^5.0.5",
     "typescript": "^5.0.4",
-    "vue": "^3.4.21"
+    "vue": "^3.4.23"
   },
   "peerDependencies": {
     "vue": "^3.0.0"
