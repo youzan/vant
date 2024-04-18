@@ -245,8 +245,8 @@ importers:
         specifier: ^0.1.12
         version: 0.1.12
       terser:
-        specifier: ^5.19.2
-        version: 5.26.0
+        specifier: ^5.30.3
+        version: 5.30.3
       transliteration:
         specifier: ^2.3.5
         version: 2.3.5
@@ -255,7 +255,7 @@ importers:
         version: 5.3.3
       vite:
         specifier: ^5.0.12
-        version: 5.0.13(less@4.2.0)(terser@5.26.0)
+        version: 5.0.13(less@4.2.0)(terser@5.30.3)
       vue-router:
         specifier: ^4.3.0
         version: 4.3.0(vue@3.4.21)
@@ -4479,12 +4479,12 @@ packages:
       jest-worker: 27.5.1
       schema-utils: 3.3.0
       serialize-javascript: 6.0.2
-      terser: 5.26.0
+      terser: 5.30.3
       webpack: 5.91.0(esbuild@0.20.2)
     dev: false
 
-  /terser@5.26.0:
-    resolution: {integrity: sha512-dytTGoE2oHgbNV9nTzgBEPaqAWvcJNl66VZ0BkJqlvp71IjO8CxdBx/ykCNb47cLnCmCvRZ6ZR0tLkqvZCdVBQ==}
+  /terser@5.30.3:
+    resolution: {integrity: sha512-STdUgOUx8rLbMGO9IOwHLpCqolkDITFFQSMYYwKE1N2lY6MVSaeoi10z/EhWxRc6ybqoVmKSkhKYH/XUpl7vSA==}
     engines: {node: '>=10'}
     hasBin: true
     dependencies:
@@ -4696,7 +4696,7 @@ packages:
     optionalDependencies:
       fsevents: 2.3.3
 
-  /vite@5.0.13(less@4.2.0)(terser@5.26.0):
+  /vite@5.0.13(less@4.2.0)(terser@5.30.3):
     resolution: {integrity: sha512-/9ovhv2M2dGTuA+dY93B9trfyWMDRQw2jdVBhHNP6wr0oF34wG2i/N55801iZIpgUpnHDm4F/FabGQLyc+eOgg==}
     engines: {node: ^18.0.0 || >=20.0.0}
     hasBin: true
@@ -4728,7 +4728,7 @@ packages:
       less: 4.2.0
       postcss: 8.4.38
       rollup: 4.14.0
-      terser: 5.26.0
+      terser: 5.30.3
     optionalDependencies:
       fsevents: 2.3.3
     dev: false
