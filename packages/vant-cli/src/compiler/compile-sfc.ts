@@ -38,7 +38,7 @@ function injectRender(script: string, render: string) {
 }
 
 function injectScopeId(script: string, scopeId: string) {
-  script += `\n${VUEIDS}._scopeId = '${scopeId}'`;
+  script += `\n${VUEIDS}.__scopeId = '${scopeId}'`;
   return script;
 }
 
@@ -92,6 +92,7 @@ export async function compileSfc(filePath: string): Promise<any> {
         const { bindings, content } = compileScript(descriptor, {
           id: scopeKey,
         });
+
         script += content;
         script = injectStyle(script, styles, filePath);
 
@@ -101,8 +102,10 @@ export async function compileSfc(filePath: string): Promise<any> {
           const render = compileTemplate({
             id: scopeKey,
             source: template.content,
+            scoped: !!scopeKey,
             filename: filePath,
             compilerOptions: {
+              scopeId: scopeKey,
               bindingMetadata: bindings,
             },
           }).code;
