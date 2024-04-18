@@ -6,6 +6,7 @@ import {
   SFCBlock,
   compileTemplate,
   compileScript,
+  compileStyle,
 } from 'vue/compiler-sfc';
 import { replaceExt } from '../common/index.js';
 
@@ -75,7 +76,8 @@ export async function compileSfc(filePath: string): Promise<any> {
   const { template, styles } = descriptor;
 
   const hasScoped = styles.some((s) => s.scoped);
-  const scopeId = hasScoped ? `data-v-${hash(source)}` : '';
+  const scopeId = hasScoped ? hash(source) : '';
+  const scopeKey = scopeId ? `data-v-${hash(source)}` : '';
 
   // compile js part
   if (descriptor.script || descriptor.scriptSetup) {
@@ -87,35 +89,29 @@ export async function compileSfc(filePath: string): Promise<any> {
       new Promise((resolve) => {
         let script = '';
 
-        let bindingMetadata;
-        if (descriptor.scriptSetup) {
-          const { bindings, content } = compileScript(descriptor, {
-            id: scopeId,
-          });
-          script += content;
-          bindingMetadata = bindings;
-        } else {
-          script += descriptor.script!.content;
-        }
-
+        const { bindings, content } = compileScript(descriptor, {
+          id: scopeKey,
+        });
+        script += content;
         script = injectStyle(script, styles, filePath);
+
         script = script.replace(EXPORT, `const ${VUEIDS} =`);
 
         if (template) {
           const render = compileTemplate({
-            id: scopeId,
+            id: scopeKey,
             source: template.content,
             filename: filePath,
             compilerOptions: {
-              bindingMetadata,
+              bindingMetadata: bindings,
             },
           }).code;
 
           script = injectRender(script, render);
         }
 
-        if (scopeId) {
-          script = injectScopeId(script, scopeId);
+        if (scopeKey) {
+          script = injectScopeId(script, scopeKey);
         }
 
         script += `\n${EXPORT} ${VUEIDS}`;
@@ -136,20 +132,14 @@ export async function compileSfc(filePath: string): Promise<any> {
     ...styles.map(async (style, index: number) => {
       const cssFilePath = getSfcStylePath(filePath, style.lang || 'css', index);
 
-      const styleSource = trim(style.content);
+      const styleSource = compileStyle({
+        source: style.content,
+        filename: path.basename(cssFilePath),
+        scoped: style.scoped,
+        id: scopeId,
+      });
 
-      // TODO support scoped
-      // if (style.scoped) {
-      //   styleSource = compileUtils.compileStyle({
-      //     id: scopeId,
-      //     scoped: true,
-      //     source: styleSource,
-      //     filename: cssFilePath,
-      //     preprocessLang: style.lang,
-      //   }).code;
-      // }
-
-      return outputFile(cssFilePath, styleSource);
+      return outputFile(cssFilePath, trim(styleSource.code));
     }),
   );
 
