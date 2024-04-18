@@ -1,6 +1,6 @@
 {
   "name": "@vant/cli",
-  "version": "6.2.0",
+  "version": "7.0.1",
   "type": "module",
   "main": "lib/index.js",
   "typings": "lib/index.d.ts",
@@ -13,7 +13,7 @@
   "scripts": {
     "dev": "tsc --watch",
     "build": "rimraf ./lib && tsc",
-    "release": "vant-cli release",
+    "release": "rm -rf ./site/node_modules && vant-cli release",
     "prepare": "pnpm build"
   },
   "files": [
@@ -48,10 +48,10 @@
   "dependencies": {
     "@babel/core": "^7.24.4",
     "@babel/preset-typescript": "^7.24.1",
-    "@rsbuild/core": "0.5.7",
-    "@rsbuild/plugin-babel": "0.5.7",
-    "@rsbuild/plugin-vue": "0.5.7",
-    "@rsbuild/plugin-vue-jsx": "0.5.7",
+    "@rsbuild/core": "0.6.1",
+    "@rsbuild/plugin-babel": "0.6.1",
+    "@rsbuild/plugin-vue": "0.6.1",
+    "@rsbuild/plugin-vue-jsx": "0.6.1",
     "@vant/eslint-config": "workspace:^",
     "@vant/touch-emulator": "workspace:^",
     "@vitejs/plugin-vue": "^4.6.2",
