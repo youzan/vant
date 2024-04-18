@@ -77,7 +77,7 @@ export async function compileSfc(filePath: string): Promise<any> {
 
   const hasScoped = styles.some((s) => s.scoped);
   const scopeId = hasScoped ? hash(source) : '';
-  const scopeKey = scopeId ? `data-v-${hash(source)}` : '';
+  const scopeKey = scopeId ? `data-v-${scopeId}` : '';
 
   // compile js part
   if (descriptor.script || descriptor.scriptSetup) {
