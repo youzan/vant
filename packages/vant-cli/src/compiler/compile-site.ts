@@ -3,7 +3,11 @@ import { getVantConfig, setBuildTarget } from '../common/index.js';
 import { getTemplateParams } from './get-template-params.js';
 import { genPackageEntry } from './gen-package-entry.js';
 import { genStyleDepsMap } from './gen-style-deps-map.js';
-import type { RsbuildConfig } from '@rsbuild/core';
+import {
+  loadConfig,
+  mergeRsbuildConfig,
+  type RsbuildConfig,
+} from '@rsbuild/core';
 import { RspackVirtualModulePlugin } from 'rspack-plugin-virtual-module';
 import { CSS_LANG } from '../common/css.js';
 import { genSiteMobileShared } from '../compiler/gen-site-mobile-shared.js';
@@ -95,9 +99,11 @@ export async function compileSite(isProd = false) {
     },
   };
 
+  const userRsbuildConfig = await loadConfig({ cwd: process.cwd() });
+
   const rsbuild = await createRsbuild({
     cwd: SITE_SRC_DIR,
-    rsbuildConfig,
+    rsbuildConfig: mergeRsbuildConfig(rsbuildConfig, userRsbuildConfig.content),
   });
 
   if (isProd) {

@@ -1,6 +1,8 @@
 # 配置指南
 
 - [配置指南](#----)
+  - [rsbuild.config.mjs](#rsbuildconfigmjs)
+  - [vite.config.mjs](#viteconfigmjs)
   - [vant.config.mjs](#vantconfigmjs)
     - [name](#name)
     - [build.css.base](#buildcssbase)
@@ -8,7 +10,6 @@
     - [build.site.publicPath](#buildsitepublicpath)
     - [build.srcDir](#buildsrcdir)
     - [build.namedExport](#buildnamedexport)
-    - [build.configureVite](#buildconfigurevite)
     - [build.packageManager](#buildpackagemanager)
     - [site.title](#sitetitle)
     - [site.logo](#sitelogo)
@@ -23,6 +24,34 @@
   - [PostCSS](#postcss)
     - [默认配置](#-----1)
   - [browserslist](#browserslist)
+
+## rsbuild.config.mjs
+
+Vant CLI 使用 [Rsbuild](https://github.com/web-infra-dev/rsbuild) 来构建文档站点，你可以在 `vant.config.mjs` 的同级目录下创建 Rsbuild 的配置文件，文件内容会被 Vant CLI 自动读取。
+
+```js
+// rsbuild.config.mjs 或 rsbuild.config.ts
+export default {
+  plugins: [
+    // 配置 Rsbuild 插件
+  ],
+  dev: {
+    // 与本地开发有关的选项
+  },
+  html: {
+    // 与 HTML 生成有关的选项
+  },
+  // 其他选项
+};
+```
+
+> 请参考 [配置 Rsbuild](https://rsbuild.dev/zh/guide/basic/configure-rsbuild) 了解更多。
+
+## vite.config.mjs
+
+Vant Cli 使用 Vite 来构建组件库代码，你可以在 `vant.config.mjs` 的同级目录下创建 Vite 的配置文件，在该文件中你可以添加任意的 Vite 配置。
+
+> 请参考 [Vite 配置](https://vitejs.dev/config/) 了解更多。
 
 ## vant.config.mjs
 
@@ -173,50 +202,6 @@ module.exports = {
 未开启此选项时，会通过 `export default from 'xxx'` 导出组件内部的默认模块。
 
 开启此选项后，会通过 `export * from 'xxx'` 导出组件内部的所有模块、类型定义。
-
-### build.configureVite
-
-- Type: `(config: InlineConfig): InlineConfig | undefined`
-- Default: `undefined`
-
-vant-cli 使用 vite 来构建组件库和文档站点，通过 `configureVite` 选项可以自定义 [vite 配置](https://vitejs.dev/config/)（从 4.0.0 版本开始支持）。
-
-```js
-module.exports = {
-  build: {
-    configureVite(config) {
-      config.server.port = 3000;
-      return config;
-    },
-  },
-};
-```
-
-在自定义配置时，可以通过 `process.env.BUILD_TARGET` 对构建目标进行区分：
-
-```js
-module.exports = {
-  build: {
-    configureVite(config) {
-      const { BUILD_TARGET } = process.env;
-
-      if (BUILD_TARGET === 'package') {
-        // 修改组件库构建配置
-      }
-
-      if (BUILD_TARGET === 'site') {
-        // 修改文档站点构建配置
-      }
-
-      return config;
-    },
-  },
-};
-```
-
-注意，由于 `vant.config.mjs` 文件会被打包到文档网站的代码中，因此 `configureVite` 中不允许引用 vite 插件。
-
-如果需要配置 vite 插件，可以在 `vant.config.mjs` 的同级目录下创建 `vite.config.ts` 文件，在该文件中你可以添加任意的 vite 配置（该特性从 @vant/cli 5.1.0 版本开始支持）。
 
 ### build.packageManager
 
