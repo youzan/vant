@@ -1,0 +1,55 @@
+/*! ./util */
+
+/*! ./listener */
+
+/*! @vant/use */
+
+/*! ./lazy-container */
+
+/*! ../../../docs/site */
+
+/*! ./lazy-image */
+
+/*! vue */
+
+/*! @vant/use */
+
+/*! ../../../docs/site */
+
+/*! vue */
+
+/*! vue */
+
+/*! ./lazy */
+
+/*! @vant/use */
+
+/*! ./vue-lazyload */
+
+/*! ./util */
+
+/*! @vant/use */
+
+/*! ./index.vue.less?vue&type=style&index=0&id=0a2184f9&lang=less!=!../../../../../node_modules/.pnpm/vue-loader@17.4.2_vue@3.4.23_typescript@5.4.5__webpack@5.91.0_esbuild@0.20.2_/node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./index.vue?vue&type=style&index=0&id=0a2184f9&lang=less */
+
+/*! @vant/use */
+
+/*! ../../utils */
+
+/*! ./util */
+
+/*! ./util */
+
+/*! ../../utils */
+
+/*! ../../utils */
+
+/*! ./index.vue.ts?vue&type=script&setup=true&lang=ts!=!../../../../../node_modules/.pnpm/vue-loader@17.4.2_vue@3.4.23_typescript@5.4.5__webpack@5.91.0_esbuild@0.20.2_/node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./index.vue?vue&type=script&setup=true&lang=ts */
+
+/*! ./lazy-component */
+
+/*! .. */
+
+/*! vue */
+
+/*! vue */

@@ -1,0 +1,191 @@
+/*! ../common/iframe-sync */
+
+/*! ./DemoBlock.vue.less?vue&type=style&index=0&id=0f0a554e&lang=less!=!../../../../../node_modules/.pnpm/vue-loader@17.4.2_vue@3.4.23_typescript@5.4.5__webpack@5.91.0_esbuild@0.20.2_/node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./DemoBlock.vue?vue&type=style&index=0&id=0f0a554e&lang=less */
+
+/*! vue */
+
+/*! @swc/helpers/_/_async_to_generator */
+
+/*! ./DemoHome.vue.js?vue&type=template&id=112f5271!=!-!builtin:swc-loader??clonedRuleSet-2.use[0]!../../../../../node_modules/.pnpm/vue-loader@17.4.2_vue@3.4.23_typescript@5.4.5__webpack@5.91.0_esbuild@0.20.2_/node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[14].use[0]!../../../../../node_modules/.pnpm/vue-loader@17.4.2_vue@3.4.23_typescript@5.4.5__webpack@5.91.0_esbuild@0.20.2_/node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./DemoHome.vue?vue&type=template&id=112f5271 */
+
+/*! ./DemoSection.vue.js?vue&type=template&id=7fcac626!=!../../../../../node_modules/.pnpm/vue-loader@17.4.2_vue@3.4.23_typescript@5.4.5__webpack@5.91.0_esbuild@0.20.2_/node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./DemoSection.vue?vue&type=template&id=7fcac626 */
+
+/*! ./App.vue.js?vue&type=script&lang=js!=!../../../../node_modules/.pnpm/vue-loader@17.4.2_vue@3.4.23_typescript@5.4.5__webpack@5.91.0_esbuild@0.20.2_/node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./App.vue?vue&type=script&lang=js */
+
+/*! core-js/modules/es.regexp.exec.js */
+
+/*! ../../../../../node_modules/.pnpm/vue-loader@17.4.2_vue@3.4.23_typescript@5.4.5__webpack@5.91.0_esbuild@0.20.2_/node_modules/vue-loader/dist/exportHelper.js */
+
+/*! vue */
+
+/*! ../../../../../node_modules/.pnpm/vue-loader@17.4.2_vue@3.4.23_typescript@5.4.5__webpack@5.91.0_esbuild@0.20.2_/node_modules/vue-loader/dist/exportHelper.js */
+
+/*! site-desktop-shared */
+
+/*! ./DemoHomeNav.vue.js?vue&type=template&id=38d78448!=!../../../../../node_modules/.pnpm/vue-loader@17.4.2_vue@3.4.23_typescript@5.4.5__webpack@5.91.0_esbuild@0.20.2_/node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./DemoHomeNav.vue?vue&type=template&id=38d78448 */
+
+/*! ./DemoHome.vue.less?vue&type=style&index=0&id=112f5271&lang=less!=!../../../../../node_modules/.pnpm/vue-loader@17.4.2_vue@3.4.23_typescript@5.4.5__webpack@5.91.0_esbuild@0.20.2_/node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./DemoHome.vue?vue&type=style&index=0&id=112f5271&lang=less */
+
+/*! core-js/modules/esnext.async-iterator.for-each.js */
+
+/*! ./DemoBlock.vue.js?vue&type=template&id=0f0a554e!=!../../../../../node_modules/.pnpm/vue-loader@17.4.2_vue@3.4.23_typescript@5.4.5__webpack@5.91.0_esbuild@0.20.2_/node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./DemoBlock.vue?vue&type=template&id=0f0a554e */
+
+/*! ./DemoNav.vue.js?vue&type=script&lang=js!=!../../../../../node_modules/.pnpm/vue-loader@17.4.2_vue@3.4.23_typescript@5.4.5__webpack@5.91.0_esbuild@0.20.2_/node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./DemoNav.vue?vue&type=script&lang=js */
+
+/*! core-js/modules/es.string.replace.js */
+
+/*! vue */
+
+/*! core-js/modules/esnext.iterator.constructor.js */
+
+/*! ./DemoNav.vue.less?vue&type=style&index=0&id=76a69211&lang=less!=!../../../../../node_modules/.pnpm/vue-loader@17.4.2_vue@3.4.23_typescript@5.4.5__webpack@5.91.0_esbuild@0.20.2_/node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./DemoNav.vue?vue&type=style&index=0&id=76a69211&lang=less */
+
+/*! ./App.vue.js?vue&type=script&lang=js!=!-!builtin:swc-loader??clonedRuleSet-2.use[0]!../../../../node_modules/.pnpm/vue-loader@17.4.2_vue@3.4.23_typescript@5.4.5__webpack@5.91.0_esbuild@0.20.2_/node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./App.vue?vue&type=script&lang=js */
+
+/*! core-js/modules/es.string.split.js */
+
+/*! ./DemoHomeNav.vue.js?vue&type=script&lang=js!=!../../../../../node_modules/.pnpm/vue-loader@17.4.2_vue@3.4.23_typescript@5.4.5__webpack@5.91.0_esbuild@0.20.2_/node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./DemoHomeNav.vue?vue&type=script&lang=js */
+
+/*! ./router */
+
+/*! ./DemoHome.vue.js?vue&type=script&lang=js!=!-!builtin:swc-loader??clonedRuleSet-2.use[0]!../../../../../node_modules/.pnpm/vue-loader@17.4.2_vue@3.4.23_typescript@5.4.5__webpack@5.91.0_esbuild@0.20.2_/node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./DemoHome.vue?vue&type=script&lang=js */
+
+/*! vue */
+
+/*! ./ArrowRight.vue */
+
+/*! ./App.vue */
+
+/*! ./components/DemoNav.vue */
+
+/*! ../../../../../node_modules/.pnpm/vue-loader@17.4.2_vue@3.4.23_typescript@5.4.5__webpack@5.91.0_esbuild@0.20.2_/node_modules/vue-loader/dist/exportHelper.js */
+
+/*! core-js/modules/es.string.replace.js */
+
+/*! ./DemoNav.vue.js?vue&type=script&lang=js!=!-!builtin:swc-loader??clonedRuleSet-2.use[0]!../../../../../node_modules/.pnpm/vue-loader@17.4.2_vue@3.4.23_typescript@5.4.5__webpack@5.91.0_esbuild@0.20.2_/node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./DemoNav.vue?vue&type=script&lang=js */
+
+/*! core-js/modules/es.promise.js */
+
+/*! core-js/modules/es.array.iterator.js */
+
+/*! ../common/locales */
+
+/*! vue-router */
+
+/*! core-js/modules/es.regexp.exec.js */
+
+/*! ../common */
+
+/*! core-js/modules/es.array.push.js */
+
+/*! ../../../../../node_modules/.pnpm/vue-loader@17.4.2_vue@3.4.23_typescript@5.4.5__webpack@5.91.0_esbuild@0.20.2_/node_modules/vue-loader/dist/exportHelper.js */
+
+/*! ./App.vue.js?vue&type=template&id=051ae480!=!../../../../node_modules/.pnpm/vue-loader@17.4.2_vue@3.4.23_typescript@5.4.5__webpack@5.91.0_esbuild@0.20.2_/node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./App.vue?vue&type=template&id=051ae480 */
+
+/*! vue */
+
+/*! core-js/modules/esnext.iterator.for-each.js */
+
+/*! core-js/modules/esnext.array.group.js */
+
+/*! ./DemoSection.vue.less?vue&type=style&index=0&id=7fcac626&lang=less!=!../../../../../node_modules/.pnpm/vue-loader@17.4.2_vue@3.4.23_typescript@5.4.5__webpack@5.91.0_esbuild@0.20.2_/node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./DemoSection.vue?vue&type=style&index=0&id=7fcac626&lang=less */
+
+/*! core-js/modules/es.string.replace.js */
+
+/*! site-mobile-shared */
+
+/*! core-js/modules/es.regexp.exec.js */
+
+/*! vue */
+
+/*! ./DemoHomeNav.vue */
+
+/*! ./App.vue.less?vue&type=style&index=0&id=051ae480&lang=less!=!../../../../node_modules/.pnpm/vue-loader@17.4.2_vue@3.4.23_typescript@5.4.5__webpack@5.91.0_esbuild@0.20.2_/node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./App.vue?vue&type=style&index=0&id=051ae480&lang=less */
+
+/*! ../../../../node_modules/.pnpm/vue-loader@17.4.2_vue@3.4.23_typescript@5.4.5__webpack@5.91.0_esbuild@0.20.2_/node_modules/vue-loader/dist/exportHelper.js */
+
+/*! core-js/modules/es.symbol.description.js */
+
+/*! core-js/modules/esnext.iterator.constructor.js */
+
+/*! vue */
+
+/*! vue */
+
+/*! ../../common */
+
+/*! site-mobile-shared */
+
+/*! transliteration */
+
+/*! ./DemoHome.vue.js?vue&type=template&id=112f5271!=!../../../../../node_modules/.pnpm/vue-loader@17.4.2_vue@3.4.23_typescript@5.4.5__webpack@5.91.0_esbuild@0.20.2_/node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./DemoHome.vue?vue&type=template&id=112f5271 */
+
+/*! ./ArrowRight.vue.js?vue&type=template&id=2e6ae1ca!=!../../../../../node_modules/.pnpm/vue-loader@17.4.2_vue@3.4.23_typescript@5.4.5__webpack@5.91.0_esbuild@0.20.2_/node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./ArrowRight.vue?vue&type=template&id=2e6ae1ca */
+
+/*! ./components/DemoHome.vue */
+
+/*! vue */
+
+/*! vue */
+
+/*! vue */
+
+/*! ./components/DemoBlock.vue */
+
+/*! ../common/iframe-sync */
+
+/*! ./DemoNav.vue.js?vue&type=template&id=76a69211!=!../../../../../node_modules/.pnpm/vue-loader@17.4.2_vue@3.4.23_typescript@5.4.5__webpack@5.91.0_esbuild@0.20.2_/node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./DemoNav.vue?vue&type=template&id=76a69211 */
+
+/*! core-js/modules/esnext.async-iterator.for-each.js */
+
+/*! ./DemoHomeNav.vue.js?vue&type=template&id=38d78448!=!-!builtin:swc-loader??clonedRuleSet-2.use[0]!../../../../../node_modules/.pnpm/vue-loader@17.4.2_vue@3.4.23_typescript@5.4.5__webpack@5.91.0_esbuild@0.20.2_/node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[14].use[0]!../../../../../node_modules/.pnpm/vue-loader@17.4.2_vue@3.4.23_typescript@5.4.5__webpack@5.91.0_esbuild@0.20.2_/node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./DemoHomeNav.vue?vue&type=template&id=38d78448 */
+
+/*! ./DemoHomeNav.vue.js?vue&type=script&lang=js!=!-!builtin:swc-loader??clonedRuleSet-2.use[0]!../../../../../node_modules/.pnpm/vue-loader@17.4.2_vue@3.4.23_typescript@5.4.5__webpack@5.91.0_esbuild@0.20.2_/node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./DemoHomeNav.vue?vue&type=script&lang=js */
+
+/*! vue */
+
+/*! vue */
+
+/*! ./components/DemoSection.vue */
+
+/*! ./DemoNav.vue.js?vue&type=template&id=76a69211!=!-!builtin:swc-loader??clonedRuleSet-2.use[0]!../../../../../node_modules/.pnpm/vue-loader@17.4.2_vue@3.4.23_typescript@5.4.5__webpack@5.91.0_esbuild@0.20.2_/node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[14].use[0]!../../../../../node_modules/.pnpm/vue-loader@17.4.2_vue@3.4.23_typescript@5.4.5__webpack@5.91.0_esbuild@0.20.2_/node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./DemoNav.vue?vue&type=template&id=76a69211 */
+
+/*! ./DemoSection.vue.js?vue&type=script&lang=js!=!../../../../../node_modules/.pnpm/vue-loader@17.4.2_vue@3.4.23_typescript@5.4.5__webpack@5.91.0_esbuild@0.20.2_/node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./DemoSection.vue?vue&type=script&lang=js */
+
+/*! core-js/modules/web.dom-collections.iterator.js */
+
+/*! core-js/modules/es.array.push.js */
+
+/*! ../../../../../node_modules/.pnpm/vue-loader@17.4.2_vue@3.4.23_typescript@5.4.5__webpack@5.91.0_esbuild@0.20.2_/node_modules/vue-loader/dist/exportHelper.js */
+
+/*! ./DemoSection.vue.js?vue&type=script&lang=js!=!-!builtin:swc-loader??clonedRuleSet-2.use[0]!../../../../../node_modules/.pnpm/vue-loader@17.4.2_vue@3.4.23_typescript@5.4.5__webpack@5.91.0_esbuild@0.20.2_/node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./DemoSection.vue?vue&type=script&lang=js */
+
+/*! vue */
+
+/*! core-js/modules/es.regexp.exec.js */
+
+/*! core-js/modules/es.string.split.js */
+
+/*! site-mobile-shared */
+
+/*! core-js/modules/esnext.iterator.for-each.js */
+
+/*! vue */
+
+/*! ../../../../../node_modules/.pnpm/vue-loader@17.4.2_vue@3.4.23_typescript@5.4.5__webpack@5.91.0_esbuild@0.20.2_/node_modules/vue-loader/dist/exportHelper.js */
+
+/*! ./DemoHomeNav.vue.less?vue&type=style&index=0&id=38d78448&lang=less!=!../../../../../node_modules/.pnpm/vue-loader@17.4.2_vue@3.4.23_typescript@5.4.5__webpack@5.91.0_esbuild@0.20.2_/node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./DemoHomeNav.vue?vue&type=style&index=0&id=38d78448&lang=less */
+
+/*! vue */
+
+/*! ./DemoBlock.vue.js?vue&type=script&lang=js!=!../../../../../node_modules/.pnpm/vue-loader@17.4.2_vue@3.4.23_typescript@5.4.5__webpack@5.91.0_esbuild@0.20.2_/node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./DemoBlock.vue?vue&type=script&lang=js */
+
+/*! @vant/touch-emulator */
+
+/*! ./DemoBlock.vue.js?vue&type=script&lang=js!=!-!builtin:swc-loader??clonedRuleSet-2.use[0]!../../../../../node_modules/.pnpm/vue-loader@17.4.2_vue@3.4.23_typescript@5.4.5__webpack@5.91.0_esbuild@0.20.2_/node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./DemoBlock.vue?vue&type=script&lang=js */
+
+/*! vue */
+
+/*! ./DemoHome.vue.js?vue&type=script&lang=js!=!../../../../../node_modules/.pnpm/vue-loader@17.4.2_vue@3.4.23_typescript@5.4.5__webpack@5.91.0_esbuild@0.20.2_/node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./DemoHome.vue?vue&type=script&lang=js */
+
+/*! core-js/modules/es.regexp.exec.js */
