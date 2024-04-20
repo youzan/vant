@@ -43,15 +43,15 @@
     "@types/lodash": "^4.17.0",
     "@types/markdown-it": "^13.0.7",
     "rimraf": "^5.0.5",
-    "vue": "^3.4.21"
+    "vue": "^3.4.23"
   },
   "dependencies": {
     "@babel/core": "^7.24.4",
     "@babel/preset-typescript": "^7.24.1",
-    "@rsbuild/core": "0.6.1",
-    "@rsbuild/plugin-babel": "0.6.1",
-    "@rsbuild/plugin-vue": "0.6.1",
-    "@rsbuild/plugin-vue-jsx": "0.6.1",
+    "@rsbuild/core": "0.6.4",
+    "@rsbuild/plugin-babel": "0.6.4",
+    "@rsbuild/plugin-vue": "0.6.4",
+    "@rsbuild/plugin-vue-jsx": "0.6.4",
     "@vant/eslint-config": "workspace:^",
     "@vant/touch-emulator": "workspace:^",
     "@vitejs/plugin-vue": "^4.6.2",
@@ -82,6 +82,6 @@
     "transliteration": "^2.3.5",
     "typescript": "^5.0.4",
     "vite": "^5.0.12",
-    "vue-router": "^4.3.0"
+    "vue-router": "^4.3.2"
   }
 }
