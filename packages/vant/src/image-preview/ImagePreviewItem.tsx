@@ -255,6 +255,9 @@ export default defineComponent({
 
     const checkClose = (event: TouchEvent) => {
       const swipeItemEl: HTMLElement = swipeItem.value?.$el;
+
+      if (!swipeItemEl) return;
+
       const imageEl = swipeItemEl.firstElementChild;
       const isClickOverlay = event.target === swipeItemEl;
       const isClickImage = imageEl?.contains(event.target as HTMLElement);
