@@ -103,15 +103,20 @@ export default defineComponent({
       }
     });
 
-    const getActiveAnchor = (
-      scrollTop: number,
-      rects: Array<{ top: number; height: number }>,
-    ) => {
+    const scrollParentRect = useRect(scrollParent);
+
+    const rects = computed<{ top: number; height: number }[]>(() =>
+      children.map((item) =>
+        item.getRect(scrollParent.value, scrollParentRect),
+      ),
+    );
+
+    const getActiveAnchor = (scrollTop: number) => {
       for (let i = children.length - 1; i >= 0; i--) {
-        const prevHeight = i > 0 ? rects[i - 1].height : 0;
+        const prevHeight = i > 0 ? rects.value[i - 1].height : 0;
         const reachTop = props.sticky ? prevHeight + props.stickyOffsetTop : 0;
 
-        if (scrollTop + reachTop >= rects[i].top) {
+        if (scrollTop + reachTop >= rects.value[i].top) {
           return i;
         }
       }
@@ -129,21 +134,20 @@ export default defineComponent({
 
       const { sticky, indexList } = props;
       const scrollTop = getScrollTop(scrollParent.value!);
-      const scrollParentRect = useRect(scrollParent);
-
-      const rects = children.map((item) =>
-        item.getRect(scrollParent.value, scrollParentRect),
-      );
 
       let active = -1;
       if (selectActiveIndex) {
         const match = getMatchAnchor(selectActiveIndex);
         if (match) {
           const rect = match.getRect(scrollParent.value, scrollParentRect);
-          active = getActiveAnchor(rect.top, rects);
+          if (props.sticky && props.stickyOffsetTop) {
+            active = getActiveAnchor(rect.top - props.stickyOffsetTop);
+          } else {
+            active = getActiveAnchor(rect.top);
+          }
         }
       } else {
-        active = getActiveAnchor(scrollTop, rects);
+        active = getActiveAnchor(scrollTop);
       }
 
       activeAnchor.value = indexList[active];
@@ -163,13 +167,15 @@ export default defineComponent({
           if (index === active) {
             state.active = true;
             state.top =
-              Math.max(props.stickyOffsetTop, rects[index].top - scrollTop) +
-              scrollParentRect.top;
+              Math.max(
+                props.stickyOffsetTop,
+                rects.value[index].top - scrollTop,
+              ) + scrollParentRect.top;
           } else if (index === active - 1 && selectActiveIndex === '') {
-            const activeItemTop = rects[active].top - scrollTop;
+            const activeItemTop = rects.value[active].top - scrollTop;
             state.active = activeItemTop > 0;
             state.top =
-              activeItemTop + scrollParentRect.top - rects[index].height;
+              activeItemTop + scrollParentRect.top - rects.value[index].height;
           } else {
             state.active = false;
           }
@@ -229,7 +235,11 @@ export default defineComponent({
         }
 
         if (props.sticky && props.stickyOffsetTop) {
-          setRootScrollTop(getRootScrollTop() - props.stickyOffsetTop);
+          if (getRootScrollTop() === offsetHeight - scrollParentRect.height) {
+            setRootScrollTop(getRootScrollTop());
+          } else {
+            setRootScrollTop(getRootScrollTop() - props.stickyOffsetTop);
+          }
         }
 
         emit('select', match.index);
