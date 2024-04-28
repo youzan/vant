@@ -37,6 +37,14 @@ function mockHTMLElementOffset() {
   });
 }
 
+export function mockScrollTo() {
+  const fn = vi.fn();
+  if (inBrowser) {
+    window.scrollTo = fn;
+  }
+  return fn;
+}
+
 export function mockScrollIntoView() {
   const fn = vi.fn();
   if (inBrowser) {
