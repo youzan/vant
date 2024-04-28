@@ -367,10 +367,7 @@ exports[`should render active anchor when stick prop is true and has stickyOffse
   <div style="height: 32px;">
     A1
   </div>
-  <div
-    data-index="1"
-    style
-  >
+  <div data-index="1">
     <div class="van-index-anchor">
       B
     </div>
@@ -378,7 +375,10 @@ exports[`should render active anchor when stick prop is true and has stickyOffse
   <div style="height: 32px;">
     B1
   </div>
-  <div data-index="2">
+  <div
+    data-index="2"
+    style
+  >
     <div class="van-index-anchor">
       C
     </div>
