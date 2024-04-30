@@ -103,20 +103,15 @@ export default defineComponent({
       }
     });
 
-    const scrollParentRect = useRect(scrollParent);
-
-    const rects = computed<{ top: number; height: number }[]>(() =>
-      children.map((item) =>
-        item.getRect(scrollParent.value, scrollParentRect),
-      ),
-    );
-
-    const getActiveAnchor = (scrollTop: number) => {
+    const getActiveAnchor = (
+      scrollTop: number,
+      rects: Array<{ top: number; height: number }>,
+    ) => {
       for (let i = children.length - 1; i >= 0; i--) {
-        const prevHeight = i > 0 ? rects.value[i - 1].height : 0;
+        const prevHeight = i > 0 ? rects[i - 1].height : 0;
         const reachTop = props.sticky ? prevHeight + props.stickyOffsetTop : 0;
 
-        if (scrollTop + reachTop >= rects.value[i].top) {
+        if (scrollTop + reachTop >= rects[i].top) {
           return i;
         }
       }
@@ -134,6 +129,11 @@ export default defineComponent({
 
       const { sticky, indexList } = props;
       const scrollTop = getScrollTop(scrollParent.value!);
+      const scrollParentRect = useRect(scrollParent);
+
+      const rects = children.map((item) =>
+        item.getRect(scrollParent.value, scrollParentRect),
+      );
 
       let active = -1;
       if (selectActiveIndex) {
@@ -141,13 +141,13 @@ export default defineComponent({
         if (match) {
           const rect = match.getRect(scrollParent.value, scrollParentRect);
           if (props.sticky && props.stickyOffsetTop) {
-            active = getActiveAnchor(rect.top - props.stickyOffsetTop);
+            active = getActiveAnchor(rect.top - props.stickyOffsetTop, rects);
           } else {
-            active = getActiveAnchor(rect.top);
+            active = getActiveAnchor(rect.top, rects);
           }
         }
       } else {
-        active = getActiveAnchor(scrollTop);
+        active = getActiveAnchor(scrollTop, rects);
       }
 
       activeAnchor.value = indexList[active];
@@ -167,15 +167,13 @@ export default defineComponent({
           if (index === active) {
             state.active = true;
             state.top =
-              Math.max(
-                props.stickyOffsetTop,
-                rects.value[index].top - scrollTop,
-              ) + scrollParentRect.top;
+              Math.max(props.stickyOffsetTop, rects[index].top - scrollTop) +
+              scrollParentRect.top;
           } else if (index === active - 1 && selectActiveIndex === '') {
-            const activeItemTop = rects.value[active].top - scrollTop;
+            const activeItemTop = rects[active].top - scrollTop;
             state.active = activeItemTop > 0;
             state.top =
-              activeItemTop + scrollParentRect.top - rects.value[index].height;
+              activeItemTop + scrollParentRect.top - rects[index].height;
           } else {
             state.active = false;
           }
