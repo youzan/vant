@@ -297,6 +297,7 @@ export default {
 | v-model:active-tab `v4.3.2` | 设置当前选中的标签 | _number \| string_ | `0` |
 | tabs | 设置标签页的标题 | _string[]_ | `[]` |
 | title | 顶部栏标题 | _string_ | `''` |
+| show-toolbar | 是否显示顶部栏 | _boolean_ | `true` |
 | next-step-text `v4.0.8` | 下一步按钮的文字 | _string_ | `''` |
 | confirm-button-text | 确认按钮的文字 | _string_ | `确认` |
 | cancel-button-text | 取消按钮的文字 | _string_ | `取消` |
