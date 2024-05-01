@@ -3,6 +3,8 @@ import type { Numeric } from '../utils';
 import type { CalendarProps } from './Calendar';
 import type { CalendarMonthProps } from './CalendarMonth';
 
+export type CalendarSwitchMode = 'none' | 'month' | 'year-month';
+
 export type CalendarType = 'single' | 'range' | 'multiple';
 
 export type CalendarDayType =
@@ -56,6 +58,9 @@ export type CalendarThemeVars = {
   calendarHeaderTitleHeight?: string;
   calendarHeaderTitleFontSize?: string;
   calendarHeaderSubtitleFontSize?: string;
+  calendarHeaderActionWidth?: string;
+  calendarHeaderActionColor?: string;
+  calendarHeaderActionDisabledColor?: string;
   calendarWeekdaysHeight?: string;
   calendarWeekdaysFontSize?: string;
   calendarMonthTitleFontSize?: string;

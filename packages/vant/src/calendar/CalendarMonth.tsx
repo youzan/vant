@@ -42,8 +42,8 @@ const calendarMonthProps = {
   date: makeRequiredProp(Date),
   type: String as PropType<CalendarType>,
   color: String,
-  minDate: makeRequiredProp(Date),
-  maxDate: makeRequiredProp(Date),
+  minDate: Date,
+  maxDate: Date,
   showMark: Boolean,
   rowHeight: numericProp,
   formatter: Function as PropType<(item: CalendarDayItem) => CalendarDayItem>,
@@ -73,11 +73,14 @@ export default defineComponent({
     const title = computed(() => formatMonthTitle(props.date));
     const rowHeight = computed(() => addUnit(props.rowHeight));
     const offset = computed(() => {
-      const realDay = props.date.getDay();
+      const date = props.date.getDate();
+      const day = props.date.getDay();
+      const realDay = (day - (date % 7) + 8) % 7;
 
       if (props.firstDayOfWeek) {
         return (realDay + 7 - props.firstDayOfWeek) % 7;
       }
+
       return realDay;
     });
 
@@ -150,7 +153,10 @@ export default defineComponent({
     const getDayType = (day: Date): CalendarDayType => {
       const { type, minDate, maxDate, currentDate } = props;
 
-      if (compareDay(day, minDate) < 0 || compareDay(day, maxDate) > 0) {
+      if (
+        (minDate && compareDay(day, minDate) < 0) ||
+        (maxDate && compareDay(day, maxDate) > 0)
+      ) {
         return 'disabled';
       }
 
