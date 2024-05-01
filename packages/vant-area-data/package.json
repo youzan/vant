@@ -40,6 +40,6 @@
   "devDependencies": {
     "esbuild": "^0.20.2",
     "rimraf": "^5.0.5",
-    "typescript": "^5.0.4"
+    "typescript": "^5.4.5"
   }
 }

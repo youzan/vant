@@ -40,8 +40,8 @@
   "devDependencies": {
     "esbuild": "^0.20.2",
     "rimraf": "^5.0.5",
-    "typescript": "^5.0.4",
-    "vue": "^3.4.23"
+    "typescript": "^5.4.5",
+    "vue": "^3.4.26"
   },
   "peerDependencies": {
     "vue": "^3.0.0"
