@@ -3,6 +3,7 @@ import {
   mount,
   trigger,
   triggerDrag,
+  mockScrollTo,
   mockScrollTop,
   mockScrollIntoView,
 } from '../../../test';
@@ -205,4 +206,49 @@ test('should render teleport prop correctly', () => {
   });
 
   expect(root.querySelector('.van-index-bar__sidebar')).toBeTruthy();
+});
+
+test('should render active anchor when stick prop is true and has stickyOffsetTop', async () => {
+  const nativeRect = Element.prototype.getBoundingClientRect;
+  Element.prototype.getBoundingClientRect = function () {
+    const { index } = this.dataset;
+    return {
+      top: index ? index * (10 + 32) : 0,
+      height: 10,
+    };
+  };
+
+  mockScrollTo();
+  const onSelect = vi.fn();
+  const onChange = vi.fn();
+
+  const wrapper = mount({
+    render() {
+      return (
+        <IndexBar onSelect={onSelect} stickyOffsetTop={42} onChange={onChange}>
+          <IndexAnchor index="A" data-index="0" />
+          <div style={{ height: '32px' }}>A1</div>
+          <IndexAnchor index="B" data-index="1" />
+          <div style={{ height: '32px' }}>B1</div>
+          <IndexAnchor index="C" data-index="2" />
+          <div style={{ height: '32px' }}>C1</div>
+        </IndexBar>
+      );
+    },
+  });
+
+  await nextTick();
+  expect(wrapper.html()).toMatchSnapshot();
+
+  const indexes = wrapper.findAll('.van-index-bar__index');
+  await indexes[0].trigger('click');
+  await trigger(window, 'scroll');
+
+  expect(wrapper.html()).toMatchSnapshot();
+  expect(onSelect).toHaveBeenCalledWith('A');
+  expect(onChange).toHaveBeenCalledWith('A');
+
+  wrapper.unmount();
+
+  Element.prototype.getBoundingClientRect = nativeRect;
 });
