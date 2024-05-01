@@ -569,10 +569,6 @@ module.exports = {
                 title: 'Switch',
               },
               {
-                path: 'switch-cell',
-                title: 'SwitchCell',
-              },
-              {
                 path: 'uploader',
                 title: 'Uploader',
               },
