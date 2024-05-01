@@ -1,7 +1,7 @@
 import { computed, defineComponent } from 'vue';
 
 // Utils
-import { createNamespace, makeStringProp } from '../utils';
+import { createNamespace, HAPTICS_FEEDBACK, makeStringProp } from '../utils';
 import {
   t,
   bem,
@@ -69,82 +69,56 @@ export default defineComponent({
 
     const onPanelChange = (date: Date) => emit('panelChange', date);
 
-    const renderPrevAction = () => {
-      const showPrevYearAction = props.switchMode === 'year-month';
-      const prevMonthSlot = slots['prev-month'];
-      const prevYearSlot = slots['prev-year'];
+    const renderAction = (isNext?: boolean) => {
+      const showYearAction = props.switchMode === 'year-month';
+      const monthSlot = slots[isNext ? 'next-month' : 'prev-month'];
+      const yearSlot = slots[isNext ? 'next-year' : 'prev-year'];
+      const monthDisabled = isNext
+        ? nextMonthDisabled.value
+        : prevMonthDisabled.value;
+      const yearDisabled = isNext
+        ? nextYearDisabled.value
+        : prevYearDisabled.value;
+      const monthIconName = isNext ? 'arrow' : 'arrow-left';
+      const yearIconName = isNext ? 'arrow-double-right' : 'arrow-double-left';
 
-      return [
-        showPrevYearAction && (
-          <view
-            class={bem('header-action', { disabled: prevYearDisabled.value })}
-            onClick={
-              prevYearDisabled.value
-                ? undefined
-                : () => onPanelChange(getPrevYear(props.date!))
-            }
-          >
-            {prevYearSlot ? (
-              prevYearSlot({ disabled: prevYearDisabled.value })
-            ) : (
-              <Icon name="arrow-double-left" />
-            )}
-          </view>
-        ),
+      const onMonthChange = () =>
+        onPanelChange((isNext ? getNextMonth : getPrevMonth)(props.date!));
+      const onYearChange = () =>
+        onPanelChange((isNext ? getNextYear : getPrevYear)(props.date!));
+
+      const MonthAction = (
         <view
-          class={bem('header-action', { disabled: prevMonthDisabled.value })}
-          onClick={
-            prevMonthDisabled.value
-              ? undefined
-              : () => onPanelChange(getPrevMonth(props.date!))
-          }
+          class={bem('header-action', { disabled: monthDisabled })}
+          onClick={monthDisabled ? undefined : onMonthChange}
         >
-          {prevMonthSlot ? (
-            prevMonthSlot({ disabled: prevMonthDisabled.value })
+          {monthSlot ? (
+            monthSlot({ disabled: monthDisabled })
           ) : (
-            <Icon name="arrow-left" />
+            <Icon
+              class={{ [HAPTICS_FEEDBACK]: !monthDisabled }}
+              name={monthIconName}
+            />
           )}
-        </view>,
-      ];
-    };
-
-    const renderNextAction = () => {
-      const showNextYearAction = props.switchMode === 'year-month';
-      const nextMonthSlot = slots['next-month'];
-      const nextYearSlot = slots['next-year'];
-
-      return [
+        </view>
+      );
+      const YearAction = showYearAction && (
         <view
-          class={bem('header-action', { disabled: nextMonthDisabled.value })}
-          onClick={
-            nextMonthDisabled.value
-              ? undefined
-              : () => onPanelChange(getNextMonth(props.date!))
-          }
+          class={bem('header-action', { disabled: yearDisabled })}
+          onClick={yearDisabled ? undefined : onYearChange}
         >
-          {nextMonthSlot ? (
-            nextMonthSlot({ disabled: nextMonthDisabled.value })
+          {yearSlot ? (
+            yearSlot({ disabled: yearDisabled })
           ) : (
-            <Icon name="arrow" />
+            <Icon
+              class={{ [HAPTICS_FEEDBACK]: !yearDisabled }}
+              name={yearIconName}
+            />
           )}
-        </view>,
-        showNextYearAction && (
-          <view
-            class={bem('header-action', { disabled: nextYearDisabled.value })}
-            onClick={
-              nextYearDisabled.value
-                ? undefined
-                : () => onPanelChange(getNextYear(props.date!))
-            }
-          >
-            {nextYearSlot ? (
-              nextYearSlot({ disabled: nextYearDisabled.value })
-            ) : (
-              <Icon name="arrow-double-right" />
-            )}
-          </view>
-        ),
-      ];
+        </view>
+      );
+
+      return isNext ? [MonthAction, YearAction] : [YearAction, MonthAction];
     };
 
     const renderSubtitle = () => {
@@ -164,9 +138,9 @@ export default defineComponent({
           >
             {canSwitch
               ? [
-                  renderPrevAction(),
+                  renderAction(),
                   <div class={bem('header-subtitle-text')}>{title}</div>,
-                  renderNextAction(),
+                  renderAction(true),
                 ]
               : title}
           </div>

@@ -18,6 +18,14 @@ app.use(Calendar);
 
 ## Usage
 
+### Select Switch Mode
+
+By default, all months will be displayed without showing the switch button. When there are too many months, it may affect the page's interactivity performance. You can display the year and month switching buttons by setting the `switch-mode` prop.
+
+```html
+<van-calendar v-model:show="show" switch-mode="year-month" />
+```
+
 ### Select Single Date
 
 The `confirm` event will be emitted after the date selection is completed.

@@ -11,7 +11,7 @@ const t = useTranslate({
     switchMode: '选择切换模式',
   },
   'en-US': {
-    switchMode: 'select switch mode',
+    switchMode: 'Select Switch Mode',
   },
 });
 
@@ -43,7 +43,7 @@ const onPickerConfirm = ({ selectedOptions }: PickerConfirmEventParams) => {
   <demo-block card :title="t('switchMode')">
     <van-cell
       is-link
-      title="switch-mode"
+      :title="t('switchMode')"
       :value="switchMode"
       @click="onClickField"
     />

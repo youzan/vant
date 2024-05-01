@@ -18,6 +18,14 @@ app.use(Calendar);
 
 ## 代码演示
 
+### 选择切换模式
+
+默认所有月份将以平铺方式展示，不显示切换按钮，当月份过多时可能会影响页面交互性能。可以通过设置 `switch-mode` 属性，展示年月切换按钮。
+
+```html
+<van-calendar v-model:show="show" switch-mode="year-month" />
+```
+
 ### 选择单个日期
 
 下面演示了结合单元格来使用日历组件的用法，日期选择完成后会触发 `confirm` 事件。
