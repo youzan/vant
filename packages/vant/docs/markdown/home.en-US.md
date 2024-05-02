@@ -78,7 +78,6 @@ The current maintenance status of each version of Vant is as follows:
 | --- | --- |
 | [3lang3/react-vant](https://github.com/3lang3/react-vant) | React mobile UI Components based on Vant |
 | [vant-aliapp](https://github.com/ant-move/Vant-Aliapp) | Alipay MiniProgram UI |
-| [taroify](https://gitee.com/mallfoundry/taroify) | Vant Taro |
 | [vant-theme](https://github.com/Aisen60/vant-theme) | Online theme preview built on Vant UI |
 | [@antmjs/vantui](https://github.com/antmjs/vantui) | Mobile UI Components based on Vant, supporting Taro and React |
 | [vant-playground](https://github.com/LadyChatterleyLover/vant-playground) | Vant Playground |
