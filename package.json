@@ -17,7 +17,7 @@
     "*.{ts,tsx,js,vue}": "eslint --fix"
   },
   "engines": {
-    "pnpm": ">= 9.0.6"
+    "pnpm": ">= 9.0.0"
   },
   "packageManager": "pnpm@9.0.6",
   "devDependencies": {
