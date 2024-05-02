@@ -258,7 +258,7 @@ Set `poppable` to `false`, the calendar will be displayed directly on the page i
 | Attribute | Description | Type | Default |
 | --- | --- | --- | --- |
 | type | Type, can be set to `range` `multiple` | _string_ | `single` |
-| switch-mode | Switch mode:<br>`none` Display all months in a tiled format without switch buttons <br>`month` Support switching by month, displaying buttons for previous month/next month <br>`year-month` Support switching by year, as well as by month, displaying buttons for previous year/next year and previous month/next month | _string_ | `none` |
+| switch-mode `v4.9.0` | Switch mode:<br>`none` Display all months in a tiled format without switch buttons <br>`month` Support switching by month, displaying buttons for previous month/next month <br>`year-month` Support switching by year, as well as by month, displaying buttons for previous year/next year and previous month/next month | _string_ | `none` |
 | title | Title of calendar | _string_ | `Calendar` |
 | color | Color for the bottom button and selected date | _string_ | `#1989fa` |
 | min-date | Min date | _Date_ | When `switch-mode` is set to `none`, the default value is the today |

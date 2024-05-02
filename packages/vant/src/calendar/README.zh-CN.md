@@ -262,7 +262,7 @@ export default {
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
 | type | 选择类型：<br>`single` 表示选择单个日期，<br>`multiple` 表示选择多个日期，<br>`range` 表示选择日期区间 | _string_ | `single` |
-| switch-mode | 切换模式：<br>`none` 平铺展示所有月份，不展示切换按钮，<br>`month` 支持按月切换，展示上个月/下个月按钮，<br>`year-month` 支持按年切换，也支持按月切换，展示上一年/下一年，上个月/下个月按钮 | _string_ | `none` |
+| switch-mode `v4.9.0` | 切换模式：<br>`none` 平铺展示所有月份，不展示切换按钮，<br>`month` 支持按月切换，展示上个月/下个月按钮，<br>`year-month` 支持按年切换，也支持按月切换，展示上一年/下一年，上个月/下个月按钮 | _string_ | `none` |
 | title | 日历标题 | _string_ | `日期选择` |
 | color | 主题色，对底部按钮和选中日期生效 | _string_ | `#1989fa` |
 | min-date | 可选择的最小日期 | _Date_ | `switch-mode` 为 `none` 时为当前日期 |
