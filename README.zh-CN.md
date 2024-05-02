@@ -10,7 +10,7 @@
     <img src="https://img.shields.io/npm/v/vant?style=flat-square" alt="npm version" />
     <img src="https://img.shields.io/codecov/c/github/youzan/vant/main.svg?style=flat-square&color=#4fc08d" alt="Coverage Status" />
     <img src="https://img.shields.io/npm/dm/vant.svg?style=flat-square&color=#4fc08d" alt="downloads" />
-    <img src="https://badgen.net/bundlephobia/minzip/vant?style=flat-square&label=gzip%20size" alt="Gzip Size" />
+    <img src="https://badgen.net/bundlephobia/minzip/vant?style=flat-square" alt="Gzip Size" />
 </p>
 
 <p align="center">
