@@ -20,14 +20,14 @@
   "author": "chenjiahan",
   "license": "MIT",
   "dependencies": {
-    "@typescript-eslint/eslint-plugin": "^6.2.1",
-    "@typescript-eslint/parser": "^6.2.1",
+    "@typescript-eslint/eslint-plugin": "^6.21.0",
+    "@typescript-eslint/parser": "^6.21.0",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-vue": "^9.25.0"
   },
   "devDependencies": {
     "eslint": "^8.57.0",
-    "typescript": "^5.0.4"
+    "typescript": "^5.4.5"
   },
   "peerDependencies": {
     "eslint": "^7.32.0 || ^8.2.0"

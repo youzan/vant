@@ -36,11 +36,11 @@
   "author": "chenjiahan",
   "license": "MIT",
   "devDependencies": {
-    "@vue/runtime-core": "^3.4.23",
+    "@vue/runtime-core": "^3.4.26",
     "vant": "workspace:*",
-    "vue": "^3.4.23",
+    "vue": "^3.4.26",
     "esbuild": "^0.20.2",
     "rimraf": "^5.0.5",
-    "typescript": "^5.0.4"
+    "typescript": "^5.4.5"
   }
 }
