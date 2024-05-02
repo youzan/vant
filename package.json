@@ -27,5 +27,8 @@
     "husky": "^8.0.3",
     "nano-staged": "^0.8.0",
     "prettier": "^3.2.5"
+  },
+  "overrides": {
+    "esbuild": "^0.20.2"
   }
 }
