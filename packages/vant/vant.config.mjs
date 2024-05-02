@@ -49,7 +49,7 @@ location.href = location.href.replace('youzan.github.io', 'vant-ui.github.io');
         links: [
           {
             logo: 'https://fastly.jsdelivr.net/npm/@vant/assets/weapp.svg',
-            url: 'https://vant-contrib.gitee.io/vant-weapp/',
+            url: 'https://vant-ui.github.io/vant-weapp/',
           },
           {
             logo: 'https://fastly.jsdelivr.net/npm/@vant/assets/github.svg',

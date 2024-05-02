@@ -14,11 +14,15 @@
 </p>
 
 <p align="center">
-  🔥 <a href="https://vant-contrib.gitee.io/vant">文档网站（国内）</a>
+  <a href="https://vant-ui.github.io/vant">Documentation</a>
   &nbsp;
-  🌈 <a href="https://vant-ui.github.io/vant">文档网站（GitHub）</a>
+  ·
   &nbsp;
-  🇨🇳 <a href="./README.zh-CN.md">中文版介绍</a>
+  <a href="https://vant-ui.github.io/vant">文档站</a>
+  &nbsp;
+  ·
+  &nbsp;
+  <a href="./README.zh-CN.md">中文介绍</a>
 </p>
 
 ---
@@ -120,7 +124,6 @@ Vant 3/4 supports modern browsers and Chrome >= 51、iOS >= 10.0 (same as Vue 3)
 | --- | --- |
 | [3lang3/react-vant](https://github.com/3lang3/react-vant) | React mobile UI Components based on Vant |
 | [vant-aliapp](https://github.com/ant-move/Vant-Aliapp) | Alipay MiniProgram UI |
-| [taroify](https://gitee.com/mallfoundry/taroify) | Vant Taro |
 | [vant-theme](https://github.com/Aisen60/vant-theme) | Online theme preview built on Vant UI |
 | [@antmjs/vantui](https://github.com/antmjs/vantui) | Mobile UI Components based on Vant, supporting Taro and React |
 | [vant-playground](https://github.com/LadyChatterleyLover/vant-playground) | Vant Playground |
