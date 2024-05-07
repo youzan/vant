@@ -1,6 +1,6 @@
 {
   "name": "@vant/cli",
-  "version": "7.0.1",
+  "version": "7.0.2",
   "type": "module",
   "main": "lib/index.js",
   "typings": "lib/index.d.ts",
@@ -41,25 +41,25 @@
     "@types/fs-extra": "^11.0.4",
     "@types/less": "^3.0.6",
     "@types/lodash": "^4.17.0",
-    "@types/markdown-it": "^13.0.7",
+    "@types/markdown-it": "^13.0.8",
     "rimraf": "^5.0.5",
-    "vue": "^3.4.21"
+    "vue": "^3.4.26"
   },
   "dependencies": {
-    "@babel/core": "^7.24.4",
+    "@babel/core": "^7.24.5",
     "@babel/preset-typescript": "^7.24.1",
-    "@rsbuild/core": "0.6.1",
-    "@rsbuild/plugin-babel": "0.6.1",
-    "@rsbuild/plugin-vue": "0.6.1",
-    "@rsbuild/plugin-vue-jsx": "0.6.1",
+    "@rsbuild/core": "0.6.9",
+    "@rsbuild/plugin-babel": "0.6.9",
+    "@rsbuild/plugin-vue": "0.6.9",
+    "@rsbuild/plugin-vue-jsx": "0.6.9",
     "@vant/eslint-config": "workspace:^",
     "@vant/touch-emulator": "workspace:^",
-    "@vitejs/plugin-vue": "^4.6.2",
+    "@vitejs/plugin-vue": "^5.0.4",
     "@vitejs/plugin-vue-jsx": "^3.1.0",
     "@vue/babel-plugin-jsx": "^1.2.2",
     "autoprefixer": "^10.4.19",
-    "commander": "^11.1.0",
-    "rslog": "^1.2.1",
+    "commander": "^12.0.0",
+    "rslog": "^1.2.2",
     "esbuild": "^0.20.2",
     "eslint": "^8.57.0",
     "enquirer": "2.4.1",
@@ -78,10 +78,10 @@
     "postcss-load-config": "^4.0.2",
     "prettier": "^3.2.5",
     "rspack-plugin-virtual-module": "^0.1.12",
-    "terser": "^5.19.2",
+    "terser": "^5.30.3",
     "transliteration": "^2.3.5",
-    "typescript": "^5.0.4",
-    "vite": "^5.0.12",
-    "vue-router": "^4.3.0"
+    "typescript": "^5.4.5",
+    "vite": "^5.2.10",
+    "vue-router": "^4.3.2"
   }
 }

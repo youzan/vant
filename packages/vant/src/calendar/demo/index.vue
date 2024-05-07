@@ -1,10 +1,11 @@
 <script setup lang="ts">
 import VanCell from '../../cell';
 import VanCalendar from '..';
-import { reactive } from 'vue';
+import { reactive, ref } from 'vue';
 import { useTranslate } from '../../../docs/site';
+import SwicthModeField from './SwicthModeField.vue';
 import TiledDisplay from './TiledDisplay.vue';
-import type { CalendarDayItem } from '../types';
+import type { CalendarDayItem, CalendarSwitchMode } from '../types';
 
 const t = useTranslate({
   'zh-CN': {
@@ -191,9 +192,13 @@ const onConfirm = (date: Date | Date[]) => {
   state.showCalendar = false;
   state.date[state.id] = date;
 };
+
+const switchMode = ref<CalendarSwitchMode>('none');
 </script>
 
 <template>
+  <SwicthModeField v-model="switchMode" />
+
   <demo-block card :title="t('basicUsage')">
     <van-cell
       is-link
@@ -283,7 +288,7 @@ const onConfirm = (date: Date | Date[]) => {
     />
   </demo-block>
 
-  <TiledDisplay />
+  <TiledDisplay :switch-mode="switchMode" />
 
   <van-calendar
     v-model:show="state.showCalendar"
@@ -296,6 +301,7 @@ const onConfirm = (date: Date | Date[]) => {
     :max-range="state.maxRange"
     :formatter="state.formatter"
     :show-confirm="state.showConfirm"
+    :switch-mode="switchMode"
     :confirm-text="state.confirmText"
     :first-day-of-week="state.firstDayOfWeek"
     :confirm-disabled-text="state.confirmDisabledText"

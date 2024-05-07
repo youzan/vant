@@ -19,6 +19,47 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 
 ## Details
 
+### v4.9.0
+
+`2024-05-02`
+
+#### New Features 🎉
+
+- feat(Calendar): add switch-mode prop by [@inottn](https://github.com/inottn) in [#12836](https://github.com/youzan/vant/pull/12836)
+- feat(PickerGroup): add new prop showToolbar by [@ReinoFu](https://github.com/ReinoFu) in [#12839](https://github.com/youzan/vant/pull/12839)
+- feat(CLI): support for configuring Rsbuild by [@chenjiahan](https://github.com/chenjiahan) in [#12809](https://github.com/youzan/vant/pull/12809)
+
+#### Bug Fixes 🐞
+
+- fix(cli): Vue SFC style binding failure by [@zoy-l](https://github.com/zoy-l) in [#12799](https://github.com/youzan/vant/pull/12799)
+- fix(ImagePreview): swipeItem may be undefined by [@inottn](https://github.com/inottn) in [#12818](https://github.com/youzan/vant/pull/12818)
+- fix(Highlight): render correctly when keywords is empty by [@Jungzl](https://github.com/Jungzl) in [#12829](https://github.com/youzan/vant/pull/12829)
+- fix(IndexBar): render active anchor correctly when passing sticky & stickyOffsetTop by [@Jungzl](https://github.com/Jungzl) in [#12837](https://github.com/youzan/vant/pull/12837)
+
+#### Document 📖
+
+- docs: remove all Gitee links by [@chenjiahan](https://github.com/chenjiahan) in [#12845](https://github.com/youzan/vant/pull/12845)
+- docs: remove gzip size badge by [@chenjiahan](https://github.com/chenjiahan) in [#12847](https://github.com/youzan/vant/pull/12847)
+- docs: fix Rsbuild HTML build failed by [@chenjiahan](https://github.com/chenjiahan) in [#12848](https://github.com/youzan/vant/pull/12848)
+
+#### Other Changes
+
+- chore(deps): update dependency terser to ^5.30.3 by [@renovate](https://github.com/renovate) in [#12795](https://github.com/youzan/vant/pull/12795)
+- chore(deps): update dependency eslint-plugin-vue to ^9.25.0 by [@renovate](https://github.com/renovate) in [#12794](https://github.com/youzan/vant/pull/12794)
+- chore(deps): update all patch dependencies by [@renovate](https://github.com/renovate) in [#12773](https://github.com/youzan/vant/pull/12773)
+- chore(workflow): upgrade to pnpm v9 by [@chenjiahan](https://github.com/chenjiahan) in [#12808](https://github.com/youzan/vant/pull/12808)
+- chore: bump github-pages-deploy-action[@v4](https://github.com/v4).6.0 by @chenjiahan in [#12810](https://github.com/youzan/vant/pull/12810)
+- chore(deps): update dependency [@vitejs](https://github.com/vitejs)/plugin-vue to v5 by @renovate in [#12840](https://github.com/youzan/vant/pull/12840)
+- chore(deps): update dependency commander to v12 by [@renovate](https://github.com/renovate) in [#12841](https://github.com/youzan/vant/pull/12841)
+- chore(deps): update actions/setup-node action to v4 by [@renovate](https://github.com/renovate) in [#12814](https://github.com/youzan/vant/pull/12814)
+- chore(deps): update github/issue-labeler action to v3.4 by [@renovate](https://github.com/renovate) in [#12813](https://github.com/youzan/vant/pull/12813)
+- chore(deps): update codecov/codecov-action action to v4 by [@renovate](https://github.com/renovate) in [#12815](https://github.com/youzan/vant/pull/12815)
+- chore(deps): update all patch dependencies by [@renovate](https://github.com/renovate) in [#12812](https://github.com/youzan/vant/pull/12812)
+
+#### New Contributors
+
+- [@ReinoFu](https://github.com/ReinoFu) made their first contribution in [#12839](https://github.com/youzan/vant/pull/12839)
+
 ### v4.8.11
 
 `2024-04-14`

@@ -15,6 +15,7 @@ import {
   makeArrayProp,
   makeNumericProp,
   createNamespace,
+  truthProp,
 } from '../utils';
 
 // Composables
@@ -40,6 +41,7 @@ export const pickerGroupProps = extend(
     tabs: makeArrayProp<string>(),
     activeTab: makeNumericProp(0),
     nextStepText: String,
+    showToolbar: truthProp,
   },
   pickerToolbarProps,
 );
@@ -100,14 +102,16 @@ export default defineComponent({
 
       return (
         <div class={bem()}>
-          <Toolbar
-            v-slots={pick(slots, pickerToolbarSlots)}
-            title={props.title}
-            cancelButtonText={props.cancelButtonText}
-            confirmButtonText={confirmButtonText}
-            onConfirm={onConfirm}
-            onCancel={onCancel}
-          />
+          {props.showToolbar ? (
+            <Toolbar
+              v-slots={pick(slots, pickerToolbarSlots)}
+              title={props.title}
+              cancelButtonText={props.cancelButtonText}
+              confirmButtonText={confirmButtonText}
+              onConfirm={onConfirm}
+              onCancel={onCancel}
+            />
+          ) : null}
           <Tabs
             v-model:active={activeTab.value}
             class={bem('tabs')}

@@ -18,6 +18,14 @@ app.use(Calendar);
 
 ## Usage
 
+### Select Switch Mode
+
+By default, all months will be displayed without showing the switch button. When there are too many months, it may affect the page's interactivity performance. You can display the year and month switching buttons by setting the `switch-mode` prop.
+
+```html
+<van-calendar v-model:show="show" switch-mode="year-month" />
+```
+
 ### Select Single Date
 
 The `confirm` event will be emitted after the date selection is completed.
@@ -250,10 +258,11 @@ Set `poppable` to `false`, the calendar will be displayed directly on the page i
 | Attribute | Description | Type | Default |
 | --- | --- | --- | --- |
 | type | Type, can be set to `range` `multiple` | _string_ | `single` |
+| switch-mode `v4.9.0` | Switch mode:<br>`none` Display all months in a tiled format without switch buttons <br>`month` Support switching by month, displaying buttons for previous month/next month <br>`year-month` Support switching by year, as well as by month, displaying buttons for previous year/next year and previous month/next month | _string_ | `none` |
 | title | Title of calendar | _string_ | `Calendar` |
 | color | Color for the bottom button and selected date | _string_ | `#1989fa` |
-| min-date | Min date | _Date_ | Today |
-| max-date | Max date | _Date_ | Six months after the today |
+| min-date | Min date | _Date_ | When `switch-mode` is set to `none`, the default value is the today |
+| max-date | Max date | _Date_ | When `switch-mode` is set to `none`, the default value is six months after the today |
 | default-date | Default selected date | _Date \| Date[] \| null_ | Today |
 | row-height | Row height | _number \| string_ | `64` |
 | formatter | Day formatter | _(day: Day) => Day_ | - |
@@ -329,6 +338,7 @@ Following props are supported when the type is multiple
 | over-range | Emitted when exceeded max range | - |
 | click-subtitle | Emitted when clicking the subtitle | _event: MouseEvent_ |
 | click-disabled-date `v4.7.0` | Emitted when clicking disabled date | _value: Date \| Date[]_ |
+| panel-change | Emitted when switching calendar panel | _{ date: Date }_ |
 
 ### Slots
 
@@ -341,6 +351,10 @@ Following props are supported when the type is multiple
 | confirm-text | Custom confirm text | _{ disabled: boolean }_ |
 | top-info | Custom top info of day | _day: Day_ |
 | bottom-info | Custom bottom info of day | _day: Day_ |
+| prev-month | Custom previous month button | _{ disabled: boolean }_ |
+| prev-year | Custom previous year button | _{ disabled: boolean }_ |
+| next-month | Custom next month button | _{ disabled: boolean }_ |
+| next-year | Custom next year button | _{ disabled: boolean }_ |
 
 ### Methods
 
@@ -358,6 +372,7 @@ The component exports the following type definitions:
 
 ```ts
 import type {
+  CalendarSwitchMode,
   CalendarType,
   CalendarProps,
   CalendarDayItem,
@@ -391,6 +406,9 @@ The component provides the following CSS variables, which can be used to customi
 | --van-calendar-header-title-height | _44px_ | - |
 | --van-calendar-header-title-font-size | _var(--van-font-size-lg)_ | - |
 | --van-calendar-header-subtitle-font-size | _var(--van-font-size-md)_ | - |
+| --van-calendar-header-action-width | 28px | - |
+| --van-calendar-header-action-color | _var(--van-text-color)_ | - |
+| --van-calendar-header-action-disabled-color | _var(--van-text-color-3)_ | - |
 | --van-calendar-weekdays-height | _30px_ | - |
 | --van-calendar-weekdays-font-size | _var(--van-font-size-sm)_ | - |
 | --van-calendar-month-title-font-size | _var(--van-font-size-md)_ | - |

@@ -21,7 +21,7 @@ jobs:
       - name: Install pnpm
         run: corepack enable
 
-      - uses: actions/setup-node@v3
+      - uses: actions/setup-node@v4
         with:
           node-version: '18'
           cache: 'pnpm'
@@ -32,34 +32,10 @@ jobs:
       - name: Build Site
         run: npm run build:site
 
-      - name: Deploy for Gitee 🚀
-        uses: JamesIves/github-pages-deploy-action@v4.4.1
+      - name: Deploy for GitHub 🚀
+        uses: JamesIves/github-pages-deploy-action@v4.6.0
         with:
           branch: gh-pages
-          folder: packages/vant/site-dist
-          # enable single-commit to reduce the repo size
-          single-commit: true
-          clean: true
-          clean-exclude: |
-            1.x/*
-            1.x/**/*
-            next/*
-            next/**/*
-            v1/*
-            v1/**/*
-            v2/*
-            v2/**/*
-            v3/*
-            v3/**/*
-            v4/*
-            v4/**/*
-            vant-use/*
-            vant-use/**/*
-
-      - name: Deploy for GitHub 🚀
-        uses: JamesIves/github-pages-deploy-action@v4.4.1
-        with:
-          branch: main
           folder: packages/vant/site-dist
           token: ${{ secrets.VANT_UI_TOKEN }}
           repository-name: vant-ui/vant-ui.github.io

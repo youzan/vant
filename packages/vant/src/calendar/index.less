@@ -6,6 +6,9 @@
   --van-calendar-header-title-height: 44px;
   --van-calendar-header-title-font-size: var(--van-font-size-lg);
   --van-calendar-header-subtitle-font-size: var(--van-font-size-md);
+  --van-calendar-header-action-width: 28px;
+  --van-calendar-header-action-color: var(--van-text-color);
+  --van-calendar-header-action-disabled-color: var(--van-text-color-3);
   --van-calendar-weekdays-height: 30px;
   --van-calendar-weekdays-font-size: var(--van-font-size-sm);
   --van-calendar-month-title-font-size: var(--van-font-size-md);
@@ -76,6 +79,31 @@
 
   &__header-subtitle {
     font-size: var(--van-calendar-header-subtitle-font-size);
+
+    &--with-swicth {
+      display: flex;
+      align-items: center;
+      padding: 0 var(--van-padding-base);
+    }
+  }
+
+  &__header-subtitle-text {
+    flex: 1;
+  }
+
+  &__header-action {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: var(--van-calendar-header-action-width);
+    height: 100%;
+    color: var(--van-calendar-header-action-color);
+    cursor: pointer;
+
+    &--disabled {
+      color: var(--van-calendar-header-action-disabled-color);
+      cursor: not-allowed;
+    }
   }
 
   &__month-title {

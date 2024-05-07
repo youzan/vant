@@ -18,6 +18,14 @@ app.use(Calendar);
 
 ## 代码演示
 
+### 选择切换模式
+
+默认所有月份将以平铺方式展示，不显示切换按钮，当月份过多时可能会影响页面交互性能。可以通过设置 `switch-mode` 属性，展示年月切换按钮。
+
+```html
+<van-calendar v-model:show="show" switch-mode="year-month" />
+```
+
 ### 选择单个日期
 
 下面演示了结合单元格来使用日历组件的用法，日期选择完成后会触发 `confirm` 事件。
@@ -253,11 +261,12 @@ export default {
 
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
-| type | 选择类型:<br>`single` 表示选择单个日期，<br>`multiple` 表示选择多个日期，<br>`range` 表示选择日期区间 | _string_ | `single` |
+| type | 选择类型：<br>`single` 表示选择单个日期，<br>`multiple` 表示选择多个日期，<br>`range` 表示选择日期区间 | _string_ | `single` |
+| switch-mode `v4.9.0` | 切换模式：<br>`none` 平铺展示所有月份，不展示切换按钮，<br>`month` 支持按月切换，展示上个月/下个月按钮，<br>`year-month` 支持按年切换，也支持按月切换，展示上一年/下一年，上个月/下个月按钮 | _string_ | `none` |
 | title | 日历标题 | _string_ | `日期选择` |
 | color | 主题色，对底部按钮和选中日期生效 | _string_ | `#1989fa` |
-| min-date | 可选择的最小日期 | _Date_ | 当前日期 |
-| max-date | 可选择的最大日期 | _Date_ | 当前日期的六个月后 |
+| min-date | 可选择的最小日期 | _Date_ | `switch-mode` 为 `none` 时为当前日期 |
+| max-date | 可选择的最大日期 | _Date_ | `switch-mode` 为 `none` 时为当前日期的六个月后 |
 | default-date | 默认选中的日期，`type` 为 `multiple` 或 `range` 时为数组，传入 `null` 表示默认不选择 | _Date \| Date[] \| null_ | 今天 |
 | row-height | 日期行高 | _number \| string_ | `64` |
 | formatter | 日期格式化函数 | _(day: Day) => Day_ | - |
@@ -335,6 +344,7 @@ export default {
 | over-range | 范围选择超过最多可选天数时触发 | - |
 | click-subtitle | 点击日历副标题时触发 | _event: MouseEvent_ |
 | click-disabled-date `v4.7.0` | 点击禁用日期时触发 | _value: Date \| Date[]_ |
+| panel-change | 日历面板切换时触发 | _{ date: Date }_ |
 
 ### Slots
 
@@ -347,6 +357,10 @@ export default {
 | confirm-text | 自定义确认按钮的内容 | _{ disabled: boolean }_ |
 | top-info | 自定义日期上方的提示信息 | _day: Day_ |
 | bottom-info | 自定义日期下方的提示信息 | _day: Day_ |
+| prev-month | 自定义上个月按钮 | _{ disabled: boolean }_ |
+| prev-year | 自定义上一年按钮 | _{ disabled: boolean }_ |
+| next-month | 自定义下个月按钮 | _{ disabled: boolean }_ |
+| next-year | 自定义下一年按钮 | _{ disabled: boolean }_ |
 
 ### 方法
 
@@ -364,6 +378,7 @@ export default {
 
 ```ts
 import type {
+  CalendarSwitchMode,
   CalendarType,
   CalendarProps,
   CalendarDayItem,
@@ -397,6 +412,9 @@ calendarRef.value?.reset();
 | --van-calendar-header-title-height | _44px_ | - |
 | --van-calendar-header-title-font-size | _var(--van-font-size-lg)_ | - |
 | --van-calendar-header-subtitle-font-size | _var(--van-font-size-md)_ | - |
+| --van-calendar-header-action-width | 28px | - |
+| --van-calendar-header-action-color | _var(--van-text-color)_ | - |
+| --van-calendar-header-action-disabled-color | _var(--van-text-color-3)_ | - |
 | --van-calendar-weekdays-height | _30px_ | - |
 | --van-calendar-weekdays-font-size | _var(--van-font-size-sm)_ | - |
 | --van-calendar-month-title-font-size | _var(--van-font-size-md)_ | - |
