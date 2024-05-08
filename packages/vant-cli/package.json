@@ -40,18 +40,18 @@
   "devDependencies": {
     "@types/fs-extra": "^11.0.4",
     "@types/less": "^3.0.6",
-    "@types/lodash": "^4.17.0",
+    "@types/lodash": "^4.17.1",
     "@types/markdown-it": "^13.0.8",
     "rimraf": "^5.0.5",
-    "vue": "^3.4.26"
+    "vue": "^3.4.27"
   },
   "dependencies": {
     "@babel/core": "^7.24.5",
     "@babel/preset-typescript": "^7.24.1",
-    "@rsbuild/core": "0.6.9",
-    "@rsbuild/plugin-babel": "0.6.9",
-    "@rsbuild/plugin-vue": "0.6.9",
-    "@rsbuild/plugin-vue-jsx": "0.6.9",
+    "@rsbuild/core": "0.6.12",
+    "@rsbuild/plugin-babel": "0.6.12",
+    "@rsbuild/plugin-vue": "0.6.12",
+    "@rsbuild/plugin-vue-jsx": "0.6.12",
     "@vant/eslint-config": "workspace:^",
     "@vant/touch-emulator": "workspace:^",
     "@vitejs/plugin-vue": "^5.0.4",
@@ -81,7 +81,7 @@
     "terser": "^5.31.0",
     "transliteration": "^2.3.5",
     "typescript": "^5.4.5",
-    "vite": "^5.2.10",
+    "vite": "^5.2.11",
     "vue-router": "^4.3.2"
   }
 }
