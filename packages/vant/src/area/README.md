@@ -113,7 +113,7 @@ export default {
 <van-area
   title="Title"
   :area-list="areaList"
-  :columns-placeholder="['Choose', 'Choose', 'Choose']"
+  :columns-placeholder="['Province', 'City', 'County']"
 />
 ```
 

@@ -10,14 +10,14 @@ const t = useTranslate({
     title2: '控制选中项',
     title3: '配置显示列',
     title4: '配置列占位提示文字',
-    columnsPlaceholder: ['请选择', '请选择', '请选择'],
+    columnsPlaceholder: ['省份', '城市', '区县'],
     areaList,
   },
   'en-US': {
     title2: 'Model Value',
     title3: 'Columns Number',
     title4: 'Columns Placeholder',
-    columnsPlaceholder: ['Choose', 'Choose', 'Choose'],
+    columnsPlaceholder: ['Province', 'City', 'County'],
     areaList: areaListEn,
   },
 });

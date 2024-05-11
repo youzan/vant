@@ -117,7 +117,7 @@ export default {
 <van-area
   title="标题"
   :area-list="areaList"
-  :columns-placeholder="['请选择', '请选择', '请选择']"
+  :columns-placeholder="['省份', '城市', '区县']"
 />
 ```
 
