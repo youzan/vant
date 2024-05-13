@@ -140,6 +140,9 @@ export async function compileSfc(filePath: string): Promise<any> {
         filename: path.basename(cssFilePath),
         scoped: style.scoped,
         id: scopeId,
+        preprocessLang: style.lang as Parameters<
+          typeof compileStyle
+        >[0]['preprocessLang'],
       });
 
       return outputFile(cssFilePath, trim(styleSource.code));
