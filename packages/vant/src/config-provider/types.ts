@@ -108,6 +108,7 @@ export type ConfigProviderThemeVars = BaseThemeVars &
   import('../floating-panel').FloatingPanelThemeVars &
   import('../grid-item').GridItemThemeVars &
   import('../image').ImageThemeVars &
+  import('../image-crop').ImageCropThemeVars &
   import('../image-preview').ImagePreviewThemeVars &
   import('../index-anchor').IndexAnchorThemeVars &
   import('../index-bar').IndexBarThemeVars &
