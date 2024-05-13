@@ -174,7 +174,7 @@ import { defineConfig } from '@rsbuild/core';
 import { pluginVue } from '@rsbuild/plugin-vue';
 import AutoImport from 'unplugin-auto-import/rspack';
 import Components from 'unplugin-vue-components/rspack';
-import { VantResolver } from '@vant/auto-import-resolver';
+import { VantResolver, VantImports } from '@vant/auto-import-resolver';
 
 export default defineConfig({
   plugins: [pluginVue()],
@@ -182,6 +182,7 @@ export default defineConfig({
     rspack: {
       plugins: [
         AutoImport({
+          imports: [VantImports()],
           resolvers: [VantResolver()],
         }),
         Components({
@@ -199,12 +200,13 @@ export default defineConfig({
 import vue from '@vitejs/plugin-vue';
 import AutoImport from 'unplugin-auto-import/vite';
 import Components from 'unplugin-vue-components/vite';
-import { VantResolver } from '@vant/auto-import-resolver';
+import { VantResolver, VantImports } from '@vant/auto-import-resolver';
 
 export default {
   plugins: [
     vue(),
     AutoImport({
+      imports: [VantImports()],
       resolvers: [VantResolver()],
     }),
     Components({
@@ -217,7 +219,7 @@ export default {
 如果是基于 vue-cli 的项目，在 `vue.config.js` 文件中配置插件：
 
 ```js
-const { VantResolver } = require('@vant/auto-import-resolver');
+const { VantResolver, VantImports } = require('@vant/auto-import-resolver');
 const AutoImport = require('unplugin-auto-import/webpack');
 const Components = require('unplugin-vue-components/webpack');
 
@@ -225,10 +227,13 @@ module.exports = {
   configureWebpack: {
     plugins: [
       // 当 unplugin-vue-components 版本小于 0.26.0 时，使用以下写法
-      AutoImport({ resolvers: [VantResolver()] }),
+      AutoImport({ imports: [VantImports()], resolvers: [VantResolver()] }),
       Components({ resolvers: [VantResolver()] }),
       //当 unplugin-vue-components 版本大于等于 0.26.0 时，使用以下写法
-      AutoImport.default({ resolvers: [VantResolver()] }),
+      AutoImport.default({
+        imports: [VantImports()],
+        resolvers: [VantResolver()],
+      }),
       Components.default({ resolvers: [VantResolver()] }),
     ],
   },
@@ -238,17 +243,20 @@ module.exports = {
 如果是基于 webpack 的项目，在 `webpack.config.js` 文件中配置插件：
 
 ```js
-const { VantResolver } = require('@vant/auto-import-resolver');
+const { VantResolver, VantImports } = require('@vant/auto-import-resolver');
 const AutoImport = require('unplugin-auto-import/webpack');
 const Components = require('unplugin-vue-components/webpack');
 
 module.exports = {
   plugins: [
     // 当 unplugin-vue-components 版本小于 0.26.0 时，使用以下写法
-    AutoImport({ resolvers: [VantResolver()] }),
+    AutoImport({ imports: [VantImports()], resolvers: [VantResolver()] }),
     Components({ resolvers: [VantResolver()] }),
     //当 unplugin-vue-components 版本大于等于 0.26.0 时，使用以下写法
-    AutoImport.default({ resolvers: [VantResolver()] }),
+    AutoImport.default({
+      imports: [VantImports()],
+      resolvers: [VantResolver()],
+    }),
     Components.default({ resolvers: [VantResolver()] }),
   ],
 };
@@ -268,7 +276,7 @@ module.exports = {
 
 ```html
 <script>
-showToast('No need to import showToast')
+  showToast('No need to import showToast');
 </script>
 ```
 
