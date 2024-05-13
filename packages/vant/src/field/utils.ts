@@ -71,7 +71,6 @@ export function resizeTextarea(
   autosize: true | FieldAutosizeConfig,
 ) {
   const scrollTop = getRootScrollTop();
-  input.style.height = 'auto';
 
   let height = input.scrollHeight;
   if (isObject(autosize)) {
@@ -88,6 +87,8 @@ export function resizeTextarea(
     input.style.height = `${height}px`;
     // https://github.com/vant-ui/vant/issues/9178
     setRootScrollTop(scrollTop);
+  } else {
+    input.style.height = 'auto';
   }
 }
 
