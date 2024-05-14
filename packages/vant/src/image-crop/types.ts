@@ -24,9 +24,9 @@ export type ImageCropState = {
   left: number; // 初始移动X
   point1?: Touch; // 触控点1
   point2?: Touch; // 触控点2
+  targetImage?: HTMLImageElement; // 容器图片
   readonly screenView: ImageCropSize; // 屏幕
   readonly cropArea: ImageCropRectArea; // 裁剪区
-  readonly targetImage: HTMLImageElement; // 容器图片
   readonly fileSize: ImageCropRectArea; // 裁剪图片
   readonly fileInitSize: ImageCropSize; // 图片初始大小
   readonly fileRealitySize: ImageCropSize; // 图片真实大小

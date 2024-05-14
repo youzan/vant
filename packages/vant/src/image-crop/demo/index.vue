@@ -66,10 +66,10 @@ export default {
 
   data() {
     return {
-      image1: null,
+      image1: undefined,
       image2: cdnURL('cat.jpeg'),
-      image3: null,
-      imgList: [],
+      image3: undefined,
+      imgList: [] as Array<{ id: number; src: string }>,
     };
   },
 
@@ -77,10 +77,10 @@ export default {
     addImg() {
       this.imgList.push({ id: Date.now(), src: '' });
     },
-    rmImg(index) {
+    rmImg(index: number) {
       this.imgList.splice(index, 1);
     },
-    onRotate(flag) {
+    onRotate(flag: number) {
       console.log(flag);
     },
     t: useTranslate({

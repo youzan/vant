@@ -1,0 +1,15 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`show crop area 1`] = `
+<div class="van-image-crop">
+  <img
+    class="van-image-crop__view-image"
+    src="https://fastly.jsdelivr.net/npm/@vant/assets/cat.jpeg"
+  >
+  <input
+    class="van-image-crop__input-file"
+    accept="image/*"
+    type="file"
+  >
+</div>
+`;

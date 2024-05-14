@@ -1,7 +1,12 @@
 import { defineComponent, type ExtractPropTypes } from 'vue';
 
 // Utils
-import { makeNumberProp, makeNumericProp, createNamespace } from '../utils';
+import {
+  preventDefault,
+  makeNumberProp,
+  makeNumericProp,
+  createNamespace,
+} from '../utils';
 
 // Components
 import { Icon } from '../icon';
@@ -62,7 +67,6 @@ export default defineComponent({
       point1: undefined, // 触控点1
       point2: undefined, // 触控点2
       // readonly
-      targetImage: new Image(), // 容器图片
       screenView: { width: 0, height: 0 }, // 屏幕
       cropArea: { width: 0, height: 0, left: 0, top: 0 }, // 裁剪区
       fileSize: { width: 0, height: 0, left: 0, top: 0 }, // 裁剪图片
@@ -90,15 +94,11 @@ export default defineComponent({
   watch: {
     visible(v) {
       if (v) {
-        this.addEventDefault();
+        this.addEventHandler();
       } else {
-        this.removeEventDefault();
+        this.removeEventHandler();
       }
     },
-  },
-
-  created() {
-    this.targetImage.onload = this.onImgLoad;
   },
 
   mounted() {
@@ -111,7 +111,7 @@ export default defineComponent({
 
   beforeUnmount() {
     // 退出销毁外置截取区域
-    this.removeEventDefault();
+    this.removeEventHandler();
     document.body.removeChild(this.$refs.screenView as HTMLElement);
   },
 
@@ -142,8 +142,7 @@ export default defineComponent({
       this.$emit('delete');
       this.value = '';
       this.reset();
-      e.preventDefault();
-      e.stopPropagation();
+      preventDefault(e, true);
     },
 
     // 取消
@@ -172,16 +171,16 @@ export default defineComponent({
       const { files } = evt.target as HTMLInputElement;
       const file = files?.[0];
       this.$emit('change', file);
-      if (!file) return;
-
-      this.setImage(file);
+      if (file) {
+        this.setImage(file);
+      }
     },
 
     // 图片加载成功
     onImgLoad() {
       // 获取图片真实宽高
-      this.fileRealitySize.width = this.targetImage.width;
-      this.fileRealitySize.height = this.targetImage.height;
+      this.fileRealitySize.width = this.targetImage?.width || 0;
+      this.fileRealitySize.height = this.targetImage?.height || 0;
 
       const sameRatio = this.fileHWR === this.aspectRatio;
 
@@ -263,11 +262,15 @@ export default defineComponent({
     setImage(img: File) {
       const blobUrl = URL.createObjectURL(img);
       this.fileType = img.type;
+      this.targetImage = new Image(); // 容器图片
+      this.targetImage.onload = this.onImgLoad;
       this.targetImage.src = blobUrl;
     },
 
     // 载入图片
     loadImg() {
+      if (!this.targetImage) return;
+
       // 设置图片最大宽度
       const { width } = this.fileRealitySize || {};
       const cropWidth = Number(this.cropWidth);
@@ -554,6 +557,8 @@ export default defineComponent({
 
     // 初始化裁剪区
     initCanvas() {
+      if (!this.targetImage) return;
+
       const cropWidth = Number(this.cropWidth);
       const imgWidth =
         this.fileRealitySize.width > cropWidth
@@ -564,18 +569,18 @@ export default defineComponent({
       this.value = base64;
     },
 
-    preventDefault(e: Event) {
-      e.preventDefault();
+    preventTouchDefault(e: Event) {
+      preventDefault(e);
     },
 
-    addEventDefault() {
-      window.addEventListener('touchmove', this.preventDefault, {
+    addEventHandler() {
+      window.addEventListener('touchmove', this.preventTouchDefault, {
         passive: false,
       });
     },
 
-    removeEventDefault() {
-      window.removeEventListener('touchmove', this.preventDefault, false);
+    removeEventHandler() {
+      window.removeEventListener('touchmove', this.preventTouchDefault, false);
     },
 
     reset() {
@@ -607,7 +612,7 @@ export default defineComponent({
   render() {
     return (
       <div class={bem()}>
-        <img class={bem('show-img')} src={this.value || ''} />
+        <img class={bem('view-image')} src={this.value || ''} />
         {this.getBtnDelete()}
         {this.$slots.default?.()}
         <input

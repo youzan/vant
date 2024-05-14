@@ -2,7 +2,7 @@
 
 ### 介绍
 
-对图片进行拖拽裁剪，通过设置目标的清晰度、宽高比和最大宽度像素等属性，返回新的图片 base64 值。
+对图片进行拖拽裁剪，通过设置目标的清晰度、宽高比和最大宽度像素等属性，返回裁切后的图片（base64）。
 
 ### 引入
 
@@ -17,9 +17,7 @@ Vue.use(ImageCrop);
 
 ### 基础用法
 
-`v-model` 绑定字符串或空值即可(一般绑定图片 url 或 base64 作为显示, 回传裁剪后的图片 base64 值)。
-
-`deletable` 是否显示删除按钮，可重置已裁剪的内容，点击后会首先触发 `delete` 事件。
+`v-model` 支持绑定图片 url 或 base64 字符串, 裁切完成返回图片 base64 字符串)。`deletable` 显示删除按钮，可重置已裁剪的内容，点击后会首先触发 `delete` 事件。
 
 ```html
 <van-image-crop class="image_1" v-model="image1" deletable />
@@ -36,13 +34,14 @@ data() {
 ```css
 .image_1 {
   border: 1px dotted #4fc08d;
+  width: 100vw;
   height: 100vw;
 }
 ```
 
 ### 调整比例
 
-`aspect-ratio` 属性可以设置裁剪比例，默认宽高 1 比 1。
+`aspect-ratio` 属性可以设置裁剪比例，默认高宽比 1 : 1。
 
 > 这里小猫图片的**高宽比**是 55 / 80 = 0.6875
 
@@ -153,14 +152,6 @@ methods: {
   <template v-slot:rotate> rotate </template>
   <template v-slot:submit> submit </template>
 </van-image-crop>
-```
-
-```js
-data() {
-  return {
-    image3: null
-  };
-}
 ```
 
 ## API

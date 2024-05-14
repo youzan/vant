@@ -1,0 +1,72 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`should render demo and match snapshot 1`] = `
+<demo-section>
+  <div>
+    <div
+      class="van-image-crop image_1"
+      skip-crop
+    >
+      <img
+        class="van-image-crop__view-image"
+        src
+      >
+      <span class="van-image-crop__remove">
+        <i class="van-badge__wrapper van-icon van-icon-clear van-image-crop__remove-icon">
+        </i>
+      </span>
+      <input
+        class="van-image-crop__input-file"
+        accept="image/*"
+        type="file"
+      >
+    </div>
+  </div>
+  <div>
+    <div
+      class="van-image-crop"
+      style="height: 68.75vw;"
+    >
+      <img
+        class="van-image-crop__view-image"
+        src="https://fastly.jsdelivr.net/npm/@vant/assets/cat.jpeg"
+      >
+      <input
+        class="van-image-crop__input-file"
+        accept="image/*"
+        type="file"
+      >
+    </div>
+  </div>
+  <div>
+    <div class="van-row img-list">
+      <div class="item">
+        <div class="item-box add">
+          Add One
+        </div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div class="van-image-crop image_1">
+      <img
+        class="van-image-crop__view-image"
+        src
+      >
+      <span class="van-image-crop__remove">
+        <span>
+          Delete
+        </span>
+      </span>
+      <div style="display: flex; align-items: center; justify-content: center; height: 100%;">
+        Select Image
+      </div>
+      <input
+        class="van-image-crop__input-file"
+        accept="image/*"
+        type="file"
+      >
+    </div>
+  </div>
+</demo-section>
+`;
