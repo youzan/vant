@@ -151,11 +151,11 @@ test('cancel crop', async () => {
 it('calls `addEventDefault`', async () => {
   const wrapper = mount(ImageCrop);
 
-  let spy = vi.spyOn(wrapper.vm, 'addEventDefault');
+  let spy = vi.spyOn(wrapper.vm, 'addEventHandler');
   await wrapper.setData({ visible: true });
   expect(spy).toBeCalled();
 
-  spy = vi.spyOn(wrapper.vm, 'removeEventDefault');
+  spy = vi.spyOn(wrapper.vm, 'removeEventHandler');
   await wrapper.setData({ visible: false });
   expect(spy).toBeCalled();
 
