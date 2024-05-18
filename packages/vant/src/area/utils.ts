@@ -47,10 +47,10 @@ export function formatDataForCascade({
 
   const getProvinceChildren = () => {
     if (showCity) {
-      return placeholder.length
+      return placeholder.length > 1
         ? [
             makeOption(
-              placeholder[0],
+              placeholder[1],
               AREA_EMPTY_CODE,
               showCounty ? [] : undefined,
             ),
@@ -71,7 +71,7 @@ export function formatDataForCascade({
   if (showCity) {
     const getCityChildren = () => {
       if (showCounty) {
-        return placeholder.length ? [makeOption(placeholder[1])] : [];
+        return placeholder.length > 2 ? [makeOption(placeholder[2])] : [];
       }
     };
 

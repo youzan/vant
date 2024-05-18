@@ -510,7 +510,7 @@ exports[`should render demo and match snapshot 1`] = `
             class="van-picker-column__item van-picker-column__item--selected"
           >
             <div class="van-ellipsis">
-              Choose
+              Province
             </div>
           </li>
           <li
@@ -557,7 +557,7 @@ exports[`should render demo and match snapshot 1`] = `
             class="van-picker-column__item van-picker-column__item--selected"
           >
             <div class="van-ellipsis">
-              Choose
+              City
             </div>
           </li>
         </ul>
@@ -574,7 +574,7 @@ exports[`should render demo and match snapshot 1`] = `
             class="van-picker-column__item van-picker-column__item--selected"
           >
             <div class="van-ellipsis">
-              Choose
+              County
             </div>
           </li>
         </ul>
