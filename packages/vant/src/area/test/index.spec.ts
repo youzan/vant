@@ -8,7 +8,7 @@ import {
 } from '../../picker';
 
 test('should columns placeholder displayed normally', async () => {
-  const columnsPlaceholder = ['省份', '省份', '区县'];
+  const columnsPlaceholder = ['Province', 'City', 'County'];
 
   const wrapper = mount(Area, {
     props: {
