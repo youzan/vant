@@ -32,7 +32,7 @@
   "license": "MIT",
   "devDependencies": {
     "@types/fs-extra": "^11.0.4",
-    "rimraf": "^5.0.5",
+    "rimraf": "^5.0.7",
     "typescript": "^5.4.5"
   },
   "dependencies": {
@@ -40,6 +40,6 @@
     "fast-glob": "^3.3.2",
     "fs-extra": "^11.2.0",
     "enquirer": "2.4.1",
-    "picocolors": "^1.0.0"
+    "picocolors": "^1.0.1"
   }
 }
