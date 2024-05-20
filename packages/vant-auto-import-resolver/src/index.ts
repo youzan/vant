@@ -131,6 +131,6 @@ export function VantImports(options: VantImportsOptions = {}) {
   const moduleType = getModuleType(options);
 
   return {
-    [`vant/${moduleType}`]: getAPIMap().keys(),
+    [`vant/${moduleType}`]: [...getAPIMap().keys()],
   };
 }
