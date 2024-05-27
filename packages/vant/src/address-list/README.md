@@ -83,7 +83,7 @@ export default {
 
 | Attribute | Description | Type | Default |
 | --- | --- | --- | --- |
-| v-model | Id of chosen address | _number \| string_ | - |
+| v-model | Id of chosen address, support multiple selection (type is `[]`) | _number \| string \| number[] \| string[]_ | - |
 | list | Address list | _Address[]_ | `[]` |
 | disabled-list | Disabled address list | _Address[]_ | `[]` |
 | disabled-text | Disabled text | _string_ | - |
