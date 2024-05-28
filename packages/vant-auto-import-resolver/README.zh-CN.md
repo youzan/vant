@@ -34,12 +34,11 @@ bun add @vant/auto-import-resolver unplugin-vue-components unplugin-auto-import 
 // vite.config.ts
 import AutoImport from 'unplugin-auto-import/vite';
 import Components from 'unplugin-vue-components/vite';
-import { VantResolver, VantImports } from '@vant/auto-import-resolver';
+import { VantResolver } from '@vant/auto-import-resolver';
 
 export default defineConfig({
   plugins: [
     AutoImport({
-      imports: [VantImports()],
       resolvers: [VantResolver()],
     }),
     Components({
@@ -55,12 +54,11 @@ export default defineConfig({
 // rollup.config.js
 import AutoImport from 'unplugin-auto-import/rollup';
 import Components from 'unplugin-vue-components/rollup';
-import { VantResolver, VantImports } from '@vant/auto-import-resolver';
+import { VantResolver } from '@vant/auto-import-resolver';
 
 export default {
   plugins: [
     AutoImport({
-      imports: [VantImports()],
       resolvers: [VantResolver()],
     }),
     Components({
@@ -76,12 +74,11 @@ export default {
 // webpack.config.js
 import AutoImport from 'unplugin-auto-import/webpack';
 import Components from 'unplugin-vue-components/webpack';
-import { VantResolver, VantImports } from '@vant/auto-import-resolver';
+import { VantResolver } from '@vant/auto-import-resolver';
 
 module.exports = {
   plugins: [
     AutoImport({
-      imports: [VantImports()],
       resolvers: [VantResolver()],
     }),
     Components({
@@ -97,12 +94,11 @@ module.exports = {
 // rspack.config.js
 import AutoImport from 'unplugin-auto-import/rspack';
 import Components from 'unplugin-vue-components/rspack';
-import { VantResolver, VantImports } from '@vant/auto-import-resolver';
+import { VantResolver } from '@vant/auto-import-resolver';
 
 module.exports = {
   plugins: [
     AutoImport({
-      imports: [VantImports()],
       resolvers: [VantResolver()],
     }),
     Components({
@@ -118,13 +114,12 @@ module.exports = {
 // vue.config.js
 import AutoImport from 'unplugin-auto-import/webpack';
 import Components from 'unplugin-vue-components/webpack';
-import { VantResolver, VantImports } from '@vant/auto-import-resolver';
+import { VantResolver } from '@vant/auto-import-resolver';
 
 module.exports = {
   configureWebpack: {
     plugins: [
       AutoImport({
-        imports: [VantImports()],
         resolvers: [VantResolver()],
       }),
       Components({
@@ -142,12 +137,11 @@ module.exports = {
 import { build } from 'esbuild';
 import AutoImport from 'unplugin-auto-import/esbuild';
 import Components from 'unplugin-vue-components/esbuild';
-import { VantResolver, VantImports } from '@vant/auto-import-resolver';
+import { VantResolver } from '@vant/auto-import-resolver';
 
 build({
   plugins: [
     AutoImport({
-      imports: [VantImports()],
       resolvers: [VantResolver()],
     }),
     Components({
