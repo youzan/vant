@@ -1,6 +1,6 @@
 {
   "name": "@vant/auto-import-resolver",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Vant auto import resolver based on unplugin-vue-components",
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.mjs",
