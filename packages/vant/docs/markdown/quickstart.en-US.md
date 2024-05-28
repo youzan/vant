@@ -152,7 +152,7 @@ import { defineConfig } from '@rsbuild/core';
 import { pluginVue } from '@rsbuild/plugin-vue';
 import AutoImport from 'unplugin-auto-import/rspack';
 import Components from 'unplugin-vue-components/rspack';
-import { VantResolver, VantImports } from '@vant/auto-import-resolver';
+import { VantResolver } from '@vant/auto-import-resolver';
 
 export default defineConfig({
   plugins: [pluginVue()],
@@ -160,7 +160,6 @@ export default defineConfig({
     rspack: {
       plugins: [
         AutoImport({
-          imports: [VantImports()],
           resolvers: [VantResolver()],
         }),
         Components({
@@ -178,13 +177,12 @@ For Vite based project，configure the plugin in the `vite.config.js` file:
 import vue from '@vitejs/plugin-vue';
 import AutoImport from 'unplugin-auto-import/vite';
 import Components from 'unplugin-vue-components/vite';
-import { VantResolver, VantImports } from '@vant/auto-import-resolver';
+import { VantResolver } from '@vant/auto-import-resolver';
 
 export default {
   plugins: [
     vue(),
     AutoImport({
-      imports: [VantImports()],
       resolvers: [VantResolver()],
     }),
     Components({
@@ -197,7 +195,7 @@ export default {
 For vue-cli based project，configure the plugin in the `vue.config.js` file:
 
 ```js
-const { VantResolver, VantImports } = require('@vant/auto-import-resolver');
+const { VantResolver } = require('@vant/auto-import-resolver');
 const AutoImport = require('unplugin-auto-import/webpack');
 const Components = require('unplugin-vue-components/webpack');
 
@@ -205,11 +203,10 @@ module.exports = {
   configureWebpack: {
     plugins: [
       // When the version of unplugin-vue-components is less than 0.26.0:
-      AutoImport({ imports: [VantImports()], resolvers: [VantResolver()] }),
+      AutoImport({ resolvers: [VantResolver()] }),
       Components({ resolvers: [VantResolver()] }),
       // when the unplugin-vue-components version is greater than or equal to 0.26.0:
       AutoImport.default({
-        imports: [VantImports()],
         resolvers: [VantResolver()],
       }),
       Components.default({ resolvers: [VantResolver()] }),
@@ -221,18 +218,17 @@ module.exports = {
 For webpack based project，configure the plugin in the `webpack.config.js` file:
 
 ```js
-const { VantResolver, VantImports } = require('@vant/auto-import-resolver');
+const { VantResolver } = require('@vant/auto-import-resolver');
 const AutoImport = require('unplugin-auto-import/webpack');
 const Components = require('unplugin-vue-components/webpack');
 
 module.exports = {
   plugins: [
     // When the version of unplugin-vue-components is less than 0.26.0:
-    AutoImport({ imports: [VantImports()], resolvers: [VantResolver()] }),
+    AutoImport({ resolvers: [VantResolver()] }),
     Components({ resolvers: [VantResolver()] }),
     // when the unplugin-vue-components version is greater than or equal to 0.26.0:
     AutoImport.default({
-      imports: [VantImports()],
       resolvers: [VantResolver()],
     }),
     Components.default({ resolvers: [VantResolver()] }),
