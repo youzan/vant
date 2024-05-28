@@ -318,6 +318,7 @@ export default defineComponent({
           // set keyboard in modern browsers
           inputmode={props.integer ? 'numeric' : 'decimal'}
           placeholder={props.placeholder}
+          autocomplete="off"
           aria-valuemax={props.max}
           aria-valuemin={props.min}
           aria-valuenow={current.value}

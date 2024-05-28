@@ -32,6 +32,7 @@ exports[`should render demo and match snapshot 1`] = `
           value="1"
           style
           inputmode="decimal"
+          autocomplete="off"
           aria-valuemax="Infinity"
           aria-valuemin="1"
           aria-valuenow="1"
@@ -74,6 +75,7 @@ exports[`should render demo and match snapshot 1`] = `
           value="1"
           style
           inputmode="decimal"
+          autocomplete="off"
           aria-valuemax="Infinity"
           aria-valuemin="1"
           aria-valuenow="1"
@@ -116,6 +118,7 @@ exports[`should render demo and match snapshot 1`] = `
           value="5"
           style
           inputmode="decimal"
+          autocomplete="off"
           aria-valuemax="8"
           aria-valuemin="5"
           aria-valuenow="5"
@@ -158,6 +161,7 @@ exports[`should render demo and match snapshot 1`] = `
           value="1"
           style
           inputmode="numeric"
+          autocomplete="off"
           aria-valuemax="Infinity"
           aria-valuemin="1"
           aria-valuenow="1"
@@ -201,6 +205,7 @@ exports[`should render demo and match snapshot 1`] = `
           style
           disabled
           inputmode="decimal"
+          autocomplete="off"
           aria-valuemax="Infinity"
           aria-valuemin="1"
           aria-valuenow="1"
@@ -245,6 +250,7 @@ exports[`should render demo and match snapshot 1`] = `
           style
           readonly
           inputmode="decimal"
+          autocomplete="off"
           aria-valuemax="Infinity"
           aria-valuemin="1"
           aria-valuenow="1"
@@ -287,6 +293,7 @@ exports[`should render demo and match snapshot 1`] = `
           value="1.0"
           style
           inputmode="decimal"
+          autocomplete="off"
           aria-valuemax="Infinity"
           aria-valuemin="1"
           aria-valuenow="1.0"
@@ -329,6 +336,7 @@ exports[`should render demo and match snapshot 1`] = `
           value="1"
           style="width:40px;height:32px;"
           inputmode="decimal"
+          autocomplete="off"
           aria-valuemax="Infinity"
           aria-valuemin="1"
           aria-valuenow="1"
@@ -371,6 +379,7 @@ exports[`should render demo and match snapshot 1`] = `
           value="1"
           style
           inputmode="decimal"
+          autocomplete="off"
           aria-valuemax="Infinity"
           aria-valuemin="1"
           aria-valuenow="1"
@@ -414,6 +423,7 @@ exports[`should render demo and match snapshot 1`] = `
           style="height:22px;"
           readonly
           inputmode="decimal"
+          autocomplete="off"
           aria-valuemax="Infinity"
           aria-valuemin="1"
           aria-valuenow="1"
