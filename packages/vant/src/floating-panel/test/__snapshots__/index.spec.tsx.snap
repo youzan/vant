@@ -29,3 +29,14 @@ exports[`should minHeight 100 and maxHeight 0.6 innerHeight when anchors props d
   </div>
 </div>
 `;
+
+exports[`should render header slot correctly 1`] = `
+<div
+  class="van-floating-panel van-safe-area-bottom"
+  style="height: 461px; transform: translateY(calc(100% + -100px)); transition: transform 0.3s cubic-bezier(0.18, 0.89, 0.32, 1.28);"
+>
+  Custom Header
+  <div class="van-floating-panel__content">
+  </div>
+</div>
+`;
