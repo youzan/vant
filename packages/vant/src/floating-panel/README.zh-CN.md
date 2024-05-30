@@ -102,6 +102,7 @@ export default {
 | Name    | Description    |
 | ------- | -------------- |
 | default | 自定义面板内容 |
+| header  | 自定义面板标头 |
 
 ### 类型定义
 
