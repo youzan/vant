@@ -33,7 +33,7 @@ jobs:
         run: npm run build:site
 
       - name: Deploy for GitHub 🚀
-        uses: JamesIves/github-pages-deploy-action@v4.6.0
+        uses: JamesIves/github-pages-deploy-action@v4.6.1
         with:
           branch: gh-pages
           folder: packages/vant/site-dist
