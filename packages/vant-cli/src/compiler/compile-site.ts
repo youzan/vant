@@ -43,6 +43,8 @@ export async function compileSite(isProd = false) {
   const { pluginVue } = await import('@rsbuild/plugin-vue');
   const { pluginVueJsx } = await import('@rsbuild/plugin-vue-jsx');
   const { pluginBabel } = await import('@rsbuild/plugin-babel');
+  const { pluginSass } = await import('@rsbuild/plugin-sass');
+  const { pluginLess } = await import('@rsbuild/plugin-less');
 
   await genSiteEntry();
 
@@ -57,6 +59,8 @@ export async function compileSite(isProd = false) {
       }),
       pluginVue(),
       pluginVueJsx(),
+      pluginSass(),
+      pluginLess(),
     ],
     source: {
       entry: {
