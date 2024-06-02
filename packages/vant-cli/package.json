@@ -46,15 +46,15 @@
     "vue": "^3.4.27"
   },
   "dependencies": {
-    "@babel/core": "^7.24.5",
-    "@babel/preset-typescript": "^7.24.1",
+    "@babel/core": "^7.24.6",
+    "@babel/preset-typescript": "^7.24.6",
     "@rsbuild/core": "0.6.15",
     "@rsbuild/plugin-babel": "0.6.15",
     "@rsbuild/plugin-vue": "0.6.15",
     "@rsbuild/plugin-vue-jsx": "0.6.15",
     "@vant/eslint-config": "workspace:^",
     "@vant/touch-emulator": "workspace:^",
-    "@vitejs/plugin-vue": "^5.0.4",
+    "@vitejs/plugin-vue": "^5.0.5",
     "@vitejs/plugin-vue-jsx": "^3.1.0",
     "@vue/babel-plugin-jsx": "^1.2.2",
     "autoprefixer": "^10.4.19",
@@ -81,7 +81,7 @@
     "terser": "^5.31.0",
     "transliteration": "^2.3.5",
     "typescript": "^5.4.5",
-    "vite": "^5.2.11",
+    "vite": "^5.2.12",
     "vue-router": "^4.3.2"
   }
 }
