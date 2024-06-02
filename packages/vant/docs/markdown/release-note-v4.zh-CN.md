@@ -10,7 +10,7 @@
 
 **Vant 4.0 支持切换所有组件为深色模式。**
 
-只需要把 [ConfigProvider 组件](https://vant-ui.github.io/vant/#/zh-CN/config-provider)的 `theme` 属性设置为 `dark`，即可切换为深色模式，将页面上的所有 Vant 组件变成深色风格。
+只需要把 [ConfigProvider 组件](/vant/#/zh-CN/config-provider)的 `theme` 属性设置为 `dark`，即可切换为深色模式，将页面上的所有 Vant 组件变成深色风格。
 
 ```html
 <van-config-provider theme="dark">
@@ -28,11 +28,11 @@
 
 **Vant 4.0 包含以下新组件：**
 
-- [BackTop 回到顶部](https://vant-ui.github.io/vant/#/zh-CN/back-top)：返回页面顶部的操作按钮。
-- [TimePicker 时间选择器](https://vant-ui.github.io/vant/#/zh-CN/time-picker)：用于时间选择，包括时、分、秒。
-- [DatePicker 日期选择器](https://vant-ui.github.io/vant/#/zh-CN/date-picker)：用于日期选择，包括年、月、日。
-- [PickerGroup 选择器组](https://vant-ui.github.io/vant/#/zh-CN/picker-group)：用于结合多个 Picker 选择器组件，在一次交互中完成多个值的选择。
-- [Skeleton 骨架屏子组件](https://vant-ui.github.io/vant/#/zh-CN/skeleton)：通过 SkeletonTitle、SkeletonImage、SkeletonAvatar 等子组件来自定义骨架屏。
+- [BackTop 回到顶部](/vant/#/zh-CN/back-top)：返回页面顶部的操作按钮。
+- [TimePicker 时间选择器](/vant/#/zh-CN/time-picker)：用于时间选择，包括时、分、秒。
+- [DatePicker 日期选择器](/vant/#/zh-CN/date-picker)：用于日期选择，包括年、月、日。
+- [PickerGroup 选择器组](/vant/#/zh-CN/picker-group)：用于结合多个 Picker 选择器组件，在一次交互中完成多个值的选择。
+- [Skeleton 骨架屏子组件](/vant/#/zh-CN/skeleton)：通过 SkeletonTitle、SkeletonImage、SkeletonAvatar 等子组件来自定义骨架屏。
 
 其中，TimePicker 和 DatePicker 由旧版的 DatetimePicker 组件拆分而来，DatetimePicker 组件不再提供。你可以通过 PickerGroup 来实现同时选择日期和时间的交互效果。
 
@@ -86,7 +86,7 @@
 import { showToast, buttonProps } from 'vant';
 ```
 
-在包体积方面，移除 `babel-plugin-import` 对项目的 JS 体积不会有影响，因为 Vant 默认支持通过 Tree Shaking 来移除不需要的 JS 代码，而 CSS 代码可以通过 [unplugin-vue-components](https://github.com/unplugin/unplugin-vue-components) 插件实现按需引入，详细用法请参考 [「快速上手」](https://vant-ui.github.io/vant/#/zh-CN/quickstart)。
+在包体积方面，移除 `babel-plugin-import` 对项目的 JS 体积不会有影响，因为 Vant 默认支持通过 Tree Shaking 来移除不需要的 JS 代码，而 CSS 代码可以通过 [unplugin-vue-components](https://github.com/unplugin/unplugin-vue-components) 插件实现按需引入，详细用法请参考 [「快速上手」](/vant/#/zh-CN/quickstart)。
 
 ### 样式变量类型提示
 
@@ -110,7 +110,7 @@ Vant 提供了 700 多个样式变量，你可以通过 CSS 代码或 `ConfigPro
 
 为了解决上述问题，我们在 Vant 4.0 中对 `Picker` 组件进行了重构，同时也重构了基于 `Picker` 派生出的 `Area` 和 `DatetimePicker` 组件。
 
-如果你的项目中使用了这三个组件，请阅读 [「升级指南」](https://vant-ui.github.io/vant/#/zh-CN/migrate-from-v3) 进行升级。
+如果你的项目中使用了这三个组件，请阅读 [「升级指南」](/vant/#/zh-CN/migrate-from-v3) 进行升级。
 
 ### 组件工具函数调整
 
@@ -209,9 +209,9 @@ npm add stylelint@13 @vant/stylelint-config
 
 ### 版本信息
 
-**目前 [Vant 官网](https://vant-ui.github.io/vant/) 和 npm latest 标签均已指向 Vant 4.0。**
+**目前 [Vant 官网](/vant/) 和 npm latest 标签均已指向 Vant 4.0。**
 
-我们为 Vant 4.0 准备了完整的升级指南，请阅读 [从 v3 升级到 v4](https://vant-ui.github.io/vant/#/zh-CN/migrate-from-v3) 进行升级。
+我们为 Vant 4.0 准备了完整的升级指南，请阅读 [从 v3 升级到 v4](/vant/#/zh-CN/migrate-from-v3) 进行升级。
 
 同时，Vant 3.x 也会进入维护状态，后续 Vant 各个版本的维护状态如下：
 

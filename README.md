@@ -17,7 +17,7 @@
   &nbsp;
   ·
   &nbsp;
-  <a href="https://vant-ui.github.io/vant">文档站</a>
+  <a href="https://vant.pro/vant/">Documentation (backup)</a>
   &nbsp;
   ·
   &nbsp;
@@ -98,7 +98,7 @@ const app = createApp();
 app.use(Button);
 ```
 
-See more in [Quickstart](https://vant-ui.github.io/vant#/en-US/quickstart).
+See more in [Quickstart](https://vant-ui.github.io/vant/#/en-US/quickstart).
 
 ## Browser Support
 
@@ -133,8 +133,9 @@ Vant 3/4 supports modern browsers and Chrome >= 51、iOS >= 10.0 (same as Vue 3)
 
 ## Links
 
-- [Documentation](https://vant-ui.github.io/vant)
-- [Changelog](https://vant-ui.github.io/vant#/en-US/changelog)
+- [Documentation](https://vant-ui.github.io/vant/)
+- [Documentation (backup)](https://vant.pro/vant/)
+- [Changelog](https://vant-ui.github.io/vant/#/en-US/changelog)
 - [Discussions](https://github.com/vant-ui/vant/discussions)
 
 ## Preview

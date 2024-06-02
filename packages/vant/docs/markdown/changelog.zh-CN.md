@@ -4,8 +4,8 @@
 
 当前文档为 Vant 4 的更新日志，其他版本请参考：
 
-- [Vant 2 更新日志](https://vant-ui.github.io/vant/v2/#/zh-CN/changelog)
-- [Vant 3 更新日志](https://vant-ui.github.io/vant/v3/#/zh-CN/changelog)
+- [Vant 2 更新日志](/vant/v2/#/zh-CN/changelog)
+- [Vant 3 更新日志](/vant/v3/#/zh-CN/changelog)
 
 ### 介绍
 
@@ -1119,7 +1119,7 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 
 `2022-11-26`
 
-> 完整内容请移步：[「4.0 更新介绍」](https://vant-ui.github.io/vant/#/zh-CN/release-note-v4)
+> 完整内容请移步：[「4.0 更新介绍」](/vant/#/zh-CN/release-note-v4)
 
 **Feature**
 
