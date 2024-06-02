@@ -314,7 +314,7 @@ module.exports = {
     versions: [
       {
         label: 'v1',
-        link: 'https://vant-ui.github.io/vant/v1/',
+        link: '/v1/',
       },
     ],
   },

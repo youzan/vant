@@ -10,7 +10,7 @@ In this iteration, Vant supports the dark mode, adds five new components, improv
 
 **Vant 4.0 supports switching all components to dark mode.**
 
-Simply set the `theme` attribute of the [ConfigProvider component](https://vant-ui.github.io/vant/#/en-US/config-provider) to `dark` to switch to dark mode, which will switch all Vant components on the page to a dark style.
+Simply set the `theme` attribute of the [ConfigProvider component](/vant/#/en-US/config-provider) to `dark` to switch to dark mode, which will switch all Vant components on the page to a dark style.
 
 ```html
 <van-config-provider theme="dark">
@@ -28,11 +28,11 @@ At the same time, the Vant 4.0 document also supports switching to dark mode:
 
 **Vant 4.0 contains the following new components:**
 
-- [BackTop](https://vant-ui.github.io/vant/#/en-US/back-top): Used to back to the top of the page.
-- [TimePicker](https://vant-ui.github.io/vant/#/en-US/time-picker): Used for time selection, including hours, minutes, and seconds.
-- [DatePicker](https://vant-ui.github.io/vant/#/en-US/time-picker): Used for date selection, including year, month, and day.
-- [PickerGroup](https://vant-ui.github.io/vant/#/en-US/picker-group): Used to combine multiple Picker components, allow users to select multiple value.
-- [SkeletonItems](https://vant-ui.github.io/vant/#/en-US/skeleton): Customize the skeleton through subcomponents such as SkeletonTitle, SkeletonImage, and SkeletonAvatar.
+- [BackTop](/vant/#/en-US/back-top): Used to back to the top of the page.
+- [TimePicker](/vant/#/en-US/time-picker): Used for time selection, including hours, minutes, and seconds.
+- [DatePicker](/vant/#/en-US/time-picker): Used for date selection, including year, month, and day.
+- [PickerGroup](/vant/#/en-US/picker-group): Used to combine multiple Picker components, allow users to select multiple value.
+- [SkeletonItems](/vant/#/en-US/skeleton): Customize the skeleton through subcomponents such as SkeletonTitle, SkeletonImage, and SkeletonAvatar.
 
 Among them, TimePicker and DatePicker are split from the old DatetimePicker component, and the DatetimePicker component is removed. You can use PickerGroup to get the interactive effect of selecting the date and time at the same time.
 
@@ -86,7 +86,7 @@ In the early days, most component libraries used `babel-plugin-import` to achiev
 import { showToast, buttonProps } from 'vant';
 ```
 
-In terms of bundle size, removing `babel-plugin-import` will not affect on the JS size of the project, because Vant supports tree shaking by default to remove unnecessary JS code by default, and CSS code can be imported on demand via [unplugin-vue-components](https://github.com/unplugin/unplugin-vue-components). For detailed usage, please refer to ["Quick Start"](https://vant-ui.github.io/vant/#/en-US/quickstart).
+In terms of bundle size, removing `babel-plugin-import` will not affect on the JS size of the project, because Vant supports tree shaking by default to remove unnecessary JS code by default, and CSS code can be imported on demand via [unplugin-vue-components](https://github.com/unplugin/unplugin-vue-components). For detailed usage, please refer to ["Quick Start"](/vant/#/en-US/quickstart).
 
 ### Style variable type hints
 
@@ -110,7 +110,7 @@ In the previous version, the API design of the `Picker` component was not sensib
 
 To solve the above problems, we refactored the `Picker` component in Vant 4.0, and also refactored the `Area` and `DatetimePicker` components derived from `Picker`.
 
-If these three components are used in your project, please read the ["Upgrade Guide"](https://vant-ui.github.io/vant/#/en-US/migrate-from-v3) to upgrade.
+If these three components are used in your project, please read the ["Upgrade Guide"](/vant/#/en-US/migrate-from-v3) to upgrade.
 
 ### Component Utils Adjustment
 
@@ -209,9 +209,9 @@ npm add stylelint@13 @vant/stylelint-config
 
 ### Version Information
 
-**Currently both [Vant official website](https://vant-ui.github.io/vant/) and npm latest tag point to Vant 4.0.**
+**Currently both [Vant official website](/vant/) and npm latest tag point to Vant 4.0.**
 
-We have prepared a complete upgrade guide for Vant 4.0, please read [Upgrade from v3 to v4](https://vant-ui.github.io/vant/#/en-US/migrate-from-v3) to upgrade.
+We have prepared a complete upgrade guide for Vant 4.0, please read [Upgrade from v3 to v4](/vant/#/en-US/migrate-from-v3) to upgrade.
 
 At the same time, Vant 3.x will also enter the maintenance status, and the maintenance status of each version of Vant is as follows:
 
