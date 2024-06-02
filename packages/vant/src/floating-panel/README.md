@@ -102,6 +102,7 @@ By default, both the header and content areas of FloatingPanel can be dragged, b
 | Name    | Description          |
 | ------- | -------------------- |
 | default | Custom panel content |
+| header  | Custom panel header  |
 
 ### Types
 
