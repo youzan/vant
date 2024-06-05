@@ -44,6 +44,7 @@ exports[`should render demo and match snapshot 1`] = `
               <span class="van-card__price-integer">
                 2
               </span>
+              <!--[-->
               .
               <span class="van-card__price-decimal">
                 00
@@ -109,6 +110,7 @@ exports[`should render demo and match snapshot 1`] = `
               <span class="van-card__price-integer">
                 2
               </span>
+              <!--[-->
               .
               <span class="van-card__price-decimal">
                 00
@@ -183,6 +185,7 @@ exports[`should render demo and match snapshot 1`] = `
               <span class="van-card__price-integer">
                 2
               </span>
+              <!--[-->
               .
               <span class="van-card__price-decimal">
                 00

@@ -108,8 +108,12 @@ export default defineComponent({
       return (
         <div>
           <span class={bem('price-currency')}>{props.currency}</span>
-          <span class={bem('price-integer')}>{priceArr[0]}</span>.
-          <span class={bem('price-decimal')}>{priceArr[1]}</span>
+          <span class={bem('price-integer')}>{priceArr[0]}</span>
+          {priceArr.length > 1 && (
+            <>
+              .<span class={bem('price-decimal')}>{priceArr[1]}</span>
+            </>
+          )}
         </div>
       );
     };
