@@ -86,3 +86,13 @@ test('should render price and price-top slot correctly', () => {
 
   expect(wrapper.html()).toMatchSnapshot();
 });
+
+test('should render correctly when the price is an integer', () => {
+  const wrapper = mount(Card, {
+    props: {
+      price: 12,
+    },
+  });
+
+  expect(wrapper.find('.van-card__price').text()).toEqual('¥12');
+});
