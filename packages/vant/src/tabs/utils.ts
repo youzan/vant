@@ -10,13 +10,15 @@ export function scrollLeftTo(
   let count = 0;
   const from = scroller.scrollLeft;
   const frames = duration === 0 ? 1 : Math.round((duration * 1000) / 16);
+  let scrollLeft = from;
 
   function cancel() {
     cancelRaf(rafId);
   }
 
   function animate() {
-    scroller.scrollLeft += (to - from) / frames;
+    scrollLeft += (to - from) / frames;
+    scroller.scrollLeft = scrollLeft;
 
     if (++count < frames) {
       rafId = raf(animate);
