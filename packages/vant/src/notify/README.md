@@ -129,7 +129,7 @@ When calling the `showNotify` and other related methods, the following options a
 | type | Can be set to `primary` `success` `warning` | _NotifyType_ | `danger` |
 | message | Message | _string_ | - |
 | duration | Duration(ms), won't disappear if value is 0 | _number \| string_ | `3000` |
-| z-index | Set the z-index to a fixed value | _number \| string_ | `2000+` |
+| zIndex | Set the z-index to a fixed value | _number \| string_ | `2000+` |
 | position | Position, can be set to `bottom` | _NotifyPosition_ | `top` |
 | color | Message color | _string_ | `white` |
 | background | Background color | _string_ | - |
