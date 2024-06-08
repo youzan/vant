@@ -11,6 +11,7 @@ export type NotifyOptions = {
   color?: string;
   message?: NotifyMessage;
   duration?: number;
+  zIndex?: number;
   position?: NotifyPosition;
   className?: unknown;
   background?: string;
