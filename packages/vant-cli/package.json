@@ -40,20 +40,20 @@
   "devDependencies": {
     "@types/fs-extra": "^11.0.4",
     "@types/less": "^3.0.6",
-    "@types/lodash": "^4.17.4",
+    "@types/lodash": "^4.17.5",
     "@types/markdown-it": "^13.0.8",
     "rimraf": "^5.0.7",
     "vue": "^3.4.27"
   },
   "dependencies": {
-    "@babel/core": "^7.24.6",
-    "@babel/preset-typescript": "^7.24.6",
-    "@rsbuild/core": "0.7.2",
-    "@rsbuild/plugin-babel": "0.7.2",
-    "@rsbuild/plugin-less": "0.7.2",
-    "@rsbuild/plugin-sass": "0.7.2",
-    "@rsbuild/plugin-vue": "0.7.2",
-    "@rsbuild/plugin-vue-jsx": "0.7.2",
+    "@babel/core": "^7.24.7",
+    "@babel/preset-typescript": "^7.24.7",
+    "@rsbuild/core": "0.7.4",
+    "@rsbuild/plugin-babel": "0.7.4",
+    "@rsbuild/plugin-less": "0.7.4",
+    "@rsbuild/plugin-sass": "0.7.4",
+    "@rsbuild/plugin-vue": "0.7.4",
+    "@rsbuild/plugin-vue-jsx": "0.7.4",
     "@vant/eslint-config": "workspace:^",
     "@vant/touch-emulator": "workspace:^",
     "@vitejs/plugin-vue": "^5.0.5",
@@ -80,10 +80,10 @@
     "postcss-load-config": "^4.0.2",
     "prettier": "^3.3.1",
     "rspack-plugin-virtual-module": "^0.1.12",
-    "terser": "^5.31.0",
+    "terser": "^5.31.1",
     "transliteration": "^2.3.5",
     "typescript": "^5.4.5",
-    "vite": "^5.2.12",
+    "vite": "^5.2.13",
     "vue-router": "^4.3.2"
   }
 }
