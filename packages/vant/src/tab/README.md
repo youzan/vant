@@ -258,7 +258,7 @@ By setting the `showHeader` prop to `false`, the title bar of the Tabs component
 | line-height | Height of tab line | _number \| string_ | `3px` |
 | animated | Whether to change tabs with animation | _boolean_ | `false` |
 | border | Whether to show border when `type="line"` | _boolean_ | `false` |
-| ellipsis | Whether to ellipsis too long title | _boolean_ | `true` |
+| ellipsis | Whether to ellipsis too long title (Takes effect only if `shrink` is `false` and the number of `tabs` is less than or equal to `swipe-threshold`) | _boolean_ | `true` |
 | sticky | Whether to use sticky mode | _boolean_ | `false` |
 | shrink | Whether to shrink the the tabs to the left | _boolean_ | `false` |
 | swipeable | Whether to enable gestures to slide left and right | _boolean_ | `false` |
@@ -266,7 +266,7 @@ By setting the `showHeader` prop to `false`, the title bar of the Tabs component
 | scrollspy | Whether to use scrollspy mode | _boolean_ | `false` |
 | show-header `v4.7.3` | Whether to show title bar | _boolean_ | `true` |
 | offset-top | Sticky offset top , supports `px` `vw` `vh` `rem` unit, default `px` | _number \| string_ | `0` |
-| swipe-threshold | Set swipe tabs threshold | _number \| string_ | `5` |
+| swipe-threshold | Set swipe tabs threshold (Takes effect only when `shrink` is `false` and `ellipsis` is `true`) | _number \| string_ | `5` |
 | title-active-color | Title active color | _string_ | - |
 | title-inactive-color | Title inactive color | _string_ | - |
 | before-change | Callback function before changing tabs, return `false` to prevent change, support return Promise | _(name: number \| string) => boolean \| Promise\<boolean\>_ | - |
@@ -278,7 +278,7 @@ By setting the `showHeader` prop to `false`, the title bar of the Tabs component
 | title | Title | _string_ | - |
 | disabled | Whether to disable tab | _boolean_ | `false` |
 | dot | Whether to show red dot on the title | _boolean_ | `false` |
-| badge | Content of the badge on the title | _number \| string_ | - |
+| badge | Content of the badge on the title (Effective when `dot` is `false`) | _number \| string_ | - |
 | name | Identifier | _number \| string_ | Index of tab |
 | url | Link | _string_ | - |
 | to | The target route should navigate to when clicked on, same as the [to prop](https://router.vuejs.org/api/interfaces/RouterLinkProps.html#Properties-to) of Vue Router | _string \| object_ | - |
