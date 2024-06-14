@@ -245,7 +245,7 @@ By setting the `showHeader` prop to `false`, the title bar of the Tabs component
 
 ```html
 <van-tabs v-model:active="active" :show-header="false">
-  <van-tab v-for="index in 4">content {{ index }}</van-tab>
+  <van-tab v-for="index in 4">content of tab {{ index }}</van-tab>
 </van-tabs>
 ```
 
