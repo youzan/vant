@@ -269,7 +269,7 @@ export default {
 | line-height | 底部条高度，默认单位 `px` | _number \| string_ | `3px` |
 | animated | 是否开启切换标签内容时的转场动画 | _boolean_ | `false` |
 | border | 是否显示标签栏外边框，仅在 `type="line"` 时有效 | _boolean_ | `false` |
-| ellipsis | 是否省略过长的标题文字 | _boolean_ | `true` |
+| ellipsis | 是否省略过长的标题文字（仅在 `shrink` 为 `false` 且 `tab` 数量小于等于 `swipe-threshold` 时生效） | _boolean_ | `true` |
 | sticky | 是否使用粘性布局 | _boolean_ | `false` |
 | shrink | 是否开启左侧收缩布局 | _boolean_ | `false` |
 | swipeable | 是否开启手势左右滑动切换 | _boolean_ | `false` |
@@ -277,7 +277,7 @@ export default {
 | scrollspy | 是否开启滚动导航 | _boolean_ | `false` |
 | show-header `v4.7.3` | 是否显示标题栏 | _boolean_ | `true` |
 | offset-top | 粘性布局下吸顶时与顶部的距离，支持 `px` `vw` `vh` `rem` 单位，默认 `px` | _number \| string_ | `0` |
-| swipe-threshold | 滚动阈值，标签数量超过阈值且总宽度超过标签栏宽度时开始横向滚动 | _number \| string_ | `5` |
+| swipe-threshold | 滚动阈值，标签数量超过阈值且总宽度超过标签栏宽度时开始横向滚动（仅在 `shrink` 为 `false` 且 `ellipsis` 为 `true` 时生效） | _number \| string_ | `5` |
 | title-active-color | 标题选中态颜色 | _string_ | - |
 | title-inactive-color | 标题默认态颜色 | _string_ | - |
 | before-change | 切换标签前的回调函数，返回 `false` 可阻止切换，支持返回 Promise | _(name: number \| string) => boolean \| Promise\<boolean\>_ | - |
