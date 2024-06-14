@@ -141,7 +141,13 @@ In shrink mode, the tabs will be shrinked to the left.
 ```html
 <van-tabs v-model:active="active" shrink>
   <van-tab v-for="index in 4" :title="'Tab ' + index">
-    content {{ index }}
+    content of tab {{ index }}
+  </van-tab>
+</van-tabs>
+
+<van-tabs v-model:active="active" shrink type="card">
+  <van-tab v-for="index in 4" :title="'Tab ' + index">
+    content of tab {{ index }}
   </van-tab>
 </van-tabs>
 ```

@@ -153,6 +153,12 @@ export default {
     内容 {{ index }}
   </van-tab>
 </van-tabs>
+
+<van-tabs v-model:active="active" shrink type="card">
+  <van-tab v-for="index in 4" :title="'标签 ' + index">
+    内容 {{ index }}
+  </van-tab>
+</van-tabs>
 ```
 
 ### 自定义标签
