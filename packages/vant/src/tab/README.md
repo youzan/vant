@@ -278,7 +278,7 @@ By setting the `showHeader` prop to `false`, the title bar of the Tabs component
 | title | Title | _string_ | - |
 | disabled | Whether to disable tab | _boolean_ | `false` |
 | dot | Whether to show red dot on the title | _boolean_ | `false` |
-| badge | Content of the badge on the title | _number \| string_ | - |
+| badge | Content of the badge on the title (Effective when `dot` is `false`) | _number \| string_ | - |
 | name | Identifier | _number \| string_ | Index of tab |
 | url | Link | _string_ | - |
 | to | The target route should navigate to when clicked on, same as the [to prop](https://router.vuejs.org/api/interfaces/RouterLinkProps.html#Properties-to) of Vue Router | _string \| object_ | - |
