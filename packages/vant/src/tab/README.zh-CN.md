@@ -135,7 +135,7 @@ export default {
 
 ```html
 <van-tabs v-model:active="active" sticky>
-  <van-tab v-for="index in 4" :title="'选项 ' + index">
+  <van-tab v-for="index in 4" :title="'标签 ' + index">
     内容 {{ index }}
   </van-tab>
 </van-tabs>
@@ -149,7 +149,7 @@ export default {
 
 ```html
 <van-tabs v-model:active="active" shrink>
-  <van-tab v-for="index in 4" :title="'选项 ' + index">
+  <van-tab v-for="index in 4" :title="'标签 ' + index">
     内容 {{ index }}
   </van-tab>
 </van-tabs>
@@ -162,7 +162,7 @@ export default {
 ```html
 <van-tabs v-model:active="active">
   <van-tab v-for="index in 2">
-    <template #title> <van-icon name="more-o" />选项 </template>
+    <template #title><van-icon name="more-o" />标签</template>
     内容 {{ index }}
   </van-tab>
 </van-tabs>
@@ -174,7 +174,7 @@ export default {
 
 ```html
 <van-tabs v-model:active="active" animated>
-  <van-tab v-for="index in 4" :title="'选项 ' + index">
+  <van-tab v-for="index in 4" :title="'标签 ' + index">
     内容 {{ index }}
   </van-tab>
 </van-tabs>
@@ -186,7 +186,7 @@ export default {
 
 ```html
 <van-tabs v-model:active="active" swipeable>
-  <van-tab v-for="index in 4" :title="'选项 ' + index">
+  <van-tab v-for="index in 4" :title="'标签 ' + index">
     内容 {{ index }}
   </van-tab>
 </van-tabs>
@@ -198,7 +198,7 @@ export default {
 
 ```html
 <van-tabs v-model:active="active" scrollspy sticky>
-  <van-tab v-for="index in 8" :title="'选项 ' + index">
+  <van-tab v-for="index in 8" :title="'标签 ' + index">
     内容 {{ index }}
   </van-tab>
 </van-tabs>
@@ -210,7 +210,7 @@ export default {
 
 ```html
 <van-tabs v-model:active="active" :before-change="beforeChange">
-  <van-tab v-for="index in 4" :title="'选项 ' + index">
+  <van-tab v-for="index in 4" :title="'标签 ' + index">
     内容 {{ index }}
   </van-tab>
 </van-tabs>
@@ -250,7 +250,7 @@ export default {
 
 ```html
 <van-tabs v-model:active="active" :show-header="false">
-  <van-tab v-for="index in 4"> 内容 {{ index }} </van-tab>
+  <van-tab v-for="index in 4">内容 {{ index }}</van-tab>
 </van-tabs>
 ```
 

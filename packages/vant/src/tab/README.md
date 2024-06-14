@@ -25,7 +25,7 @@ The first tab is active by default, you can set `v-model:active` to active speci
 
 ```html
 <van-tabs v-model:active="active">
-  <van-tab v-for="index in 4" :title="'tab' + index">
+  <van-tab v-for="index in 4" :title="'Tab ' + index">
     content of tab {{ index }}
   </van-tab>
 </van-tabs>
@@ -46,9 +46,9 @@ export default {
 
 ```html
 <van-tabs v-model:active="activeName">
-  <van-tab title="tab 1" name="a">content of tab 1</van-tab>
-  <van-tab title="tab 2" name="b">content of tab 2</van-tab>
-  <van-tab title="tab 3" name="c">content of tab 3</van-tab>
+  <van-tab title="Tab 1" name="a">content of tab 1</van-tab>
+  <van-tab title="Tab 2" name="b">content of tab 2</van-tab>
+  <van-tab title="Tab 3" name="c">content of tab 3</van-tab>
 </van-tabs>
 ```
 
@@ -69,7 +69,7 @@ By default more than 5 tabs, you can scroll through the tabs. You can set `swipe
 
 ```html
 <van-tabs v-model:active="active">
-  <van-tab v-for="index in 8" :title="'tab' + index">
+  <van-tab v-for="index in 8" :title="'Tab ' + index">
     content of tab {{ index }}
   </van-tab>
 </van-tabs>
@@ -81,7 +81,7 @@ Use `disabled` prop to disable a tab.
 
 ```html
 <van-tabs v-model:active="active">
-  <van-tab v-for="index in 3" :title="'tab' + index" :disabled="index === 2">
+  <van-tab v-for="index in 3" :title="'Tab ' + index" :disabled="index === 2">
     content of tab {{ index }}
   </van-tab>
 </van-tabs>
@@ -93,17 +93,17 @@ Tabs styled as cards.
 
 ```html
 <van-tabs v-model:active="active" type="card">
-  <van-tab v-for="index in 3" :title="'tab' + index">
+  <van-tab v-for="index in 3" :title="'Tab ' + index">
     content of tab {{ index }}
   </van-tab>
 </van-tabs>
 ```
 
-### Click Tab Event
+### Click Event
 
 ```html
 <van-tabs v-model:active="active" @click-tab="onClickTab">
-  <van-tab v-for="index in 2" :title="'tab' + index">
+  <van-tab v-for="index in 2" :title="'Tab ' + index">
     content of tab {{ index }}
   </van-tab>
 </van-tabs>
@@ -128,8 +128,8 @@ In sticky mode, the tab nav will be fixed to top when scroll to top.
 
 ```html
 <van-tabs v-model:active="active" sticky>
-  <van-tab v-for="index in 4" :title="'tab ' + index">
-    content {{ index }}
+  <van-tab v-for="index in 4" :title="'Tab ' + index">
+    content of tab {{ index }}
   </van-tab>
 </van-tabs>
 ```
@@ -140,21 +140,21 @@ In shrink mode, the tabs will be shrinked to the left.
 
 ```html
 <van-tabs v-model:active="active" shrink>
-  <van-tab v-for="index in 4" :title="'tab ' + index">
+  <van-tab v-for="index in 4" :title="'Tab ' + index">
     content {{ index }}
   </van-tab>
 </van-tabs>
 ```
 
-### Custom title
+### Custom Tab
 
 Use title slot to custom tab title.
 
 ```html
 <van-tabs v-model:active="active">
   <van-tab v-for="index in 2">
-    <template #title> <van-icon name="more-o" />tab </template>
-    content {{ index }}
+    <template #title><van-icon name="more-o" />Tab</template>
+    content of tab {{ index }}
   </van-tab>
 </van-tabs>
 ```
@@ -165,8 +165,8 @@ Use `animated` props to change tabs with animation.
 
 ```html
 <van-tabs v-model:active="active" animated>
-  <van-tab v-for="index in 4" :title="'tab ' + index">
-    content {{ index }}
+  <van-tab v-for="index in 4" :title="'Tab ' + index">
+    content of tab {{ index }}
   </van-tab>
 </van-tabs>
 ```
@@ -177,8 +177,8 @@ In swipeable mode, you can switch tabs with swipe gesture in the content.
 
 ```html
 <van-tabs v-model:active="active" swipeable>
-  <van-tab v-for="index in 4" :title="'tab ' + index">
-    content {{ index }}
+  <van-tab v-for="index in 4" :title="'Tab ' + index">
+    content of tab {{ index }}
   </van-tab>
 </van-tabs>
 ```
@@ -189,8 +189,8 @@ In scrollspy mode, the list of content will be tiled.
 
 ```html
 <van-tabs v-model:active="active" scrollspy sticky>
-  <van-tab v-for="index in 8" :title="'tab ' + index">
-    content {{ index }}
+  <van-tab v-for="index in 8" :title="'Tab ' + index">
+    content of tab {{ index }}
   </van-tab>
 </van-tabs>
 ```
@@ -199,8 +199,8 @@ In scrollspy mode, the list of content will be tiled.
 
 ```html
 <van-tabs v-model:active="active" :before-change="beforeChange">
-  <van-tab v-for="index in 4" :title="'tab ' + index">
-    content {{ index }}
+  <van-tab v-for="index in 4" :title="'Tab ' + index">
+    content of tab {{ index }}
   </van-tab>
 </van-tabs>
 ```
@@ -239,7 +239,7 @@ By setting the `showHeader` prop to `false`, the title bar of the Tabs component
 
 ```html
 <van-tabs v-model:active="active" :show-header="false">
-  <van-tab v-for="index in 4"> content {{ index }} </van-tab>
+  <van-tab v-for="index in 4">content {{ index }}</van-tab>
 </van-tabs>
 ```
 
