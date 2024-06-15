@@ -10,6 +10,7 @@ import Shrink from './Shrink.vue';
 const t = useTranslate({
   'zh-CN': {
     tab: '标签 ',
+    content: '内容',
     title2: '标签栏滚动',
     title3: '禁用标签',
     title4: '样式风格',
@@ -19,7 +20,6 @@ const t = useTranslate({
     title8: '切换动画',
     title9: '滑动切换',
     title10: '滚动导航',
-    disabled: ' 已被禁用',
     matchByName: '通过名称匹配',
     beforeChange: '异步切换',
   },
@@ -35,7 +35,6 @@ const t = useTranslate({
     title8: 'Switch Animation',
     title9: 'Swipeable',
     title10: 'Scrollspy',
-    disabled: ' is disabled',
     matchByName: 'Match By Name',
     beforeChange: 'Before Change',
   },
@@ -81,9 +80,9 @@ const beforeChange = (name: number) => {
 
   <demo-block :title="t('matchByName')">
     <van-tabs v-model:active="activeName">
-      <van-tab name="a" :title="t('tab') + 1"> {{ t('content') }} 1 </van-tab>
-      <van-tab name="b" :title="t('tab') + 2"> {{ t('content') }} 2 </van-tab>
-      <van-tab name="c" :title="t('tab') + 3"> {{ t('content') }} 3 </van-tab>
+      <van-tab name="a" :title="t('tab') + 1">{{ t('content') }} 1</van-tab>
+      <van-tab name="b" :title="t('tab') + 2">{{ t('content') }} 2</van-tab>
+      <van-tab name="c" :title="t('tab') + 3">{{ t('content') }} 3</van-tab>
     </van-tabs>
   </demo-block>
 
@@ -137,7 +136,7 @@ const beforeChange = (name: number) => {
   <demo-block :title="t('title7')">
     <van-tabs v-model:active="active7">
       <van-tab v-for="index in 2" :key="index">
-        <template #title> <van-icon name="more-o" />{{ t('tab') }} </template>
+        <template #title><van-icon name="more-o" />{{ t('tab') }}</template>
         {{ t('content') }} {{ index }}
       </van-tab>
     </van-tabs>
