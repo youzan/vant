@@ -262,12 +262,12 @@ By setting the `showHeader` prop to `false`, the title bar of the Tabs component
 | duration | Toggle tab's animation time | _number \| string_ | `0.3` |
 | line-width | Width of tab line | _number \| string_ | `40px` |
 | line-height | Height of tab line | _number \| string_ | `3px` |
-| animated | Whether to change tabs with animation | _boolean_ | `false` |
+| animated | Whether to change tabs with animation (After enabling this attribute, if there is a sticky layout in the content area, it will not meet expectations) | _boolean_ | `false` |
 | border | Whether to show border when `type="line"` | _boolean_ | `false` |
 | ellipsis | Whether to ellipsis too long title (Takes effect only if `shrink` is `false` and the number of `tabs` is less than or equal to `swipe-threshold`) | _boolean_ | `true` |
 | sticky | Whether to use sticky mode | _boolean_ | `false` |
 | shrink | Whether to shrink the the tabs to the left | _boolean_ | `false` |
-| swipeable | Whether to enable gestures to slide left and right | _boolean_ | `false` |
+| swipeable | Whether to enable gestures to slide left and right (After enabling this attribute, if there is a sticky layout in the content area, it will not meet expectations) | _boolean_ | `false` |
 | lazy-render | Whether to enable tab content lazy render | _boolean_ | `true` |
 | scrollspy | Whether to use scrollspy mode | _boolean_ | `false` |
 | show-header `v4.7.3` | Whether to show title bar | _boolean_ | `true` |
