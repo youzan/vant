@@ -43,7 +43,7 @@
     "@types/lodash": "^4.17.5",
     "@types/markdown-it": "^13.0.8",
     "rimraf": "^5.0.7",
-    "vue": "^3.4.27"
+    "vue": "^3.4.29"
   },
   "dependencies": {
     "@babel/core": "^7.24.7",
