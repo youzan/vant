@@ -135,7 +135,7 @@ Use `position` prop to set the position of badge.
 
 | Attribute | Description | Type | Default |
 | --- | --- | --- | --- |
-| content | Badge content | _number \| string_ | - |
+| content | Badge content (Effective when `dot` is `false`) | _number \| string_ | - |
 | color | Background color | _string_ | `#ee0a24` |
 | dot | Whether to show dot | _boolean_ | `false` |
 | max | Max value, show `{max}+` when exceed, only works when content is number | _number \| string_ | - |
