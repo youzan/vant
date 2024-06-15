@@ -60,7 +60,7 @@
     "@vant/eslint-config": "workspace:*",
     "@vant/icons": "workspace:*",
     "@vitejs/plugin-vue": "^5.0.5",
-    "@vitejs/plugin-vue-jsx": "^3.1.0",
+    "@vitejs/plugin-vue-jsx": "^4.0.0",
     "@vitest/coverage-istanbul": "^1.6.0",
     "@vue/runtime-core": "^3.4.29",
     "@vue/test-utils": "^2.4.6",

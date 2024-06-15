@@ -57,7 +57,7 @@
     "@vant/eslint-config": "workspace:^",
     "@vant/touch-emulator": "workspace:^",
     "@vitejs/plugin-vue": "^5.0.5",
-    "@vitejs/plugin-vue-jsx": "^3.1.0",
+    "@vitejs/plugin-vue-jsx": "^4.0.0",
     "@vue/babel-plugin-jsx": "^1.2.2",
     "autoprefixer": "^10.4.19",
     "commander": "^12.1.0",
