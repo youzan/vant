@@ -335,6 +335,7 @@ exports[`should render demo and match snapshot 1`] = `
                   aria-valuemax="Infinity"
                   aria-valuemin="1"
                   aria-valuenow="1"
+                  value="1"
                 >
                 <button
                   type="button"

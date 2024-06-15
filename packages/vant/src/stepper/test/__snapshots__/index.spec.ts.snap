@@ -21,6 +21,7 @@ exports[`should disable buttons and input when using disabled prop 1`] = `
     aria-valuemax="Infinity"
     aria-valuemin="1"
     aria-valuenow="1"
+    value="1"
   >
   <button
     type="button"
@@ -53,6 +54,7 @@ exports[`should update input height and button size when using button-size prop 
     aria-valuemax="Infinity"
     aria-valuemin="1"
     aria-valuenow="1"
+    value="1"
   >
   <button
     type="button"
