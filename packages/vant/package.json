@@ -8,6 +8,13 @@
   "typings": "lib/index.d.ts",
   "unpkg": "lib/vant.min.js",
   "jsdelivr": "lib/vant.min.js",
+  "exports": {
+    ".": {
+      "import": "./es/index.mjs",
+      "require": "./lib/vant.cjs.js",
+      "types": "./lib/index.d.ts"
+    }
+  },
   "files": [
     "es",
     "lib"
