@@ -405,3 +405,21 @@ Tabs 组件在挂载时，会获取自身的宽度，并计算出底部条的位
 ```js
 this.$refs.tabs.resize();
 ```
+
+### Tabs 开启 swipeable 或 animated 属性后，内容区元素的 sticky 功能将不达预期
+
+`Tabs` 开启 `swipeable` 或 `animated` 属性后，内容区将被带有 `transform` 属性的元素包裹，此时如果内容区的元素开启了 `sticky` 功能，那么该功能生效了，但显示位置将不达预期。
+
+比如下面的代码：
+
+```html
+<van-tabs v-model:active="active" swipeable>
+  <van-tab>
+    <van-sticky>
+      <van-button>sticky button</van-button>
+    </van-sticky>
+  </van-tab>
+</van-tabs>
+```
+
+这是因为 `transform` 元素内部的 `fixed` 定位会相对于该元素进行计算，而不是相对于整个文档，从而导致布局异常。
