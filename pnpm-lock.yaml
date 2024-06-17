@@ -227,8 +227,8 @@ importers:
         specifier: ^13.0.2
         version: 13.0.2
       markdown-it-anchor:
-        specifier: ^8.6.7
-        version: 8.6.7(@types/markdown-it@13.0.8)(markdown-it@13.0.2)
+        specifier: ^9.0.1
+        version: 9.0.1(@types/markdown-it@13.0.8)(markdown-it@13.0.2)
       nano-staged:
         specifier: ^0.8.0
         version: 0.8.0
@@ -927,6 +927,7 @@ packages:
   '@humanwhocodes/config-array@0.11.14':
     resolution: {integrity: sha512-3T8LkOmg45BV5FICb15QQMsyUSWrQ8AygVfC7ZG32zOalnqrilm018ZVCw0eapXux8FtA33q8PSRSstjee3jSg==}
     engines: {node: '>=10.10.0'}
+    deprecated: Use @eslint/config-array instead
 
   '@humanwhocodes/module-importer@1.0.1':
     resolution: {integrity: sha512-bxveV4V8v5Yb4ncFTT3rPSgZBOpCkjfK0y4oVVVJwIuDVBRMDXrPyXRL988i5ap9m9bnyEEjWfm5WkBmtffLfA==}
@@ -934,6 +935,7 @@ packages:
 
   '@humanwhocodes/object-schema@2.0.3':
     resolution: {integrity: sha512-93zYdMES/c1D69yZiKDBj0V24vqNzB/koF26KPaagAfd3P/4gUlh3Dys5ogAK+Exi9QyzlD8x/08Zt7wIKcDcA==}
+    deprecated: Use @eslint/object-schema instead
 
   '@isaacs/cliui@8.0.2':
     resolution: {integrity: sha512-O8jcjabXaleOG9DQ0+ARXWZBTfnP4WNAqzuiJK7ll44AmxGKv/J2M4TPjxjY3znBCfvBXFzucm1twdyFybFqEA==}
@@ -2232,8 +2234,8 @@ packages:
     resolution: {integrity: sha512-hXdUTZYIVOt1Ex//jAQi+wTZZpUpwBj/0QsOzqegb3rGMMeJiSEu5xLHnYfBrRV4RH2+OCSOO95Is/7x1WJ4bw==}
     engines: {node: '>=10'}
 
-  markdown-it-anchor@8.6.7:
-    resolution: {integrity: sha512-FlCHFwNnutLgVTflOYHPW2pPcl2AACqVzExlkGQNsi4CJgqOHN7YTgDd4LuhgN1BFO3TS0vLAruV1Td6dwWPJA==}
+  markdown-it-anchor@9.0.1:
+    resolution: {integrity: sha512-cBt7aAzmkfX8X7FqAe8EBryiKmToXgMQEEMqkXzWCm0toDtfDYIGboKeTKd8cpNJArJtutrf+977wFJTsvNGmQ==}
     peerDependencies:
       '@types/markdown-it': '*'
       markdown-it: '*'
@@ -5295,7 +5297,7 @@ snapshots:
     dependencies:
       semver: 7.6.0
 
-  markdown-it-anchor@8.6.7(@types/markdown-it@13.0.8)(markdown-it@13.0.2):
+  markdown-it-anchor@9.0.1(@types/markdown-it@13.0.8)(markdown-it@13.0.2):
     dependencies:
       '@types/markdown-it': 13.0.8
       markdown-it: 13.0.2
