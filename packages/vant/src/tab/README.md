@@ -262,12 +262,12 @@ By setting the `showHeader` prop to `false`, the title bar of the Tabs component
 | duration | Toggle tab's animation time | _number \| string_ | `0.3` |
 | line-width | Width of tab line | _number \| string_ | `40px` |
 | line-height | Height of tab line | _number \| string_ | `3px` |
-| animated | Whether to change tabs with animation | _boolean_ | `false` |
+| animated | Whether to change tabs with animation (After enabling this attribute, if there is a sticky layout in the content area, it will not meet expectations) | _boolean_ | `false` |
 | border | Whether to show border when `type="line"` | _boolean_ | `false` |
 | ellipsis | Whether to ellipsis too long title (Takes effect only if `shrink` is `false` and the number of `tabs` is less than or equal to `swipe-threshold`) | _boolean_ | `true` |
 | sticky | Whether to use sticky mode | _boolean_ | `false` |
 | shrink | Whether to shrink the the tabs to the left | _boolean_ | `false` |
-| swipeable | Whether to enable gestures to slide left and right | _boolean_ | `false` |
+| swipeable | Whether to enable gestures to slide left and right (After enabling this attribute, if there is a sticky layout in the content area, it will not meet expectations) | _boolean_ | `false` |
 | lazy-render | Whether to enable tab content lazy render | _boolean_ | `true` |
 | scrollspy | Whether to use scrollspy mode | _boolean_ | `false` |
 | show-header `v4.7.3` | Whether to show title bar | _boolean_ | `true` |
@@ -365,3 +365,23 @@ The component provides the following CSS variables, which can be used to customi
 | --van-tabs-bottom-bar-width   | _40px_                      | -           |
 | --van-tabs-bottom-bar-height  | _3px_                       | -           |
 | --van-tabs-bottom-bar-color   | _var(--van-primary-color)_  | -           |
+
+## FAQ
+
+### After Tabs enable the swipeable or animated attribute, the sticky function of content area elements will not meet expectations
+
+When the `swipeable` or `animated` attribute is enabled for `Tabs`, the content area will be wrapped by an element with the `transform` attribute, and if the `sticky` function is enabled for the element in the content area, the function will take effect, but the display position will not be as expected.
+
+For example, the following code:
+
+```html
+<van-tabs v-model:active="active" swipeable>
+  <van-tab>
+    <van-sticky>
+      <van-button>sticky button</van-button>
+    </van-sticky>
+  </van-tab>
+</van-tabs>
+```
+
+This is because the `fixed` positioning inside the `transform` element is computed relative to that element, not relative to the entire document, resulting in layout exceptions.
