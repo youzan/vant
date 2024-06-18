@@ -24,7 +24,7 @@
     "@vant/cli": "workspace:*",
     "@vant/eslint-config": "workspace:*",
     "eslint": "^8.57.0",
-    "husky": "^8.0.3",
+    "husky": "^9.0.11",
     "nano-staged": "^0.8.0",
     "prettier": "^3.3.1"
   },
