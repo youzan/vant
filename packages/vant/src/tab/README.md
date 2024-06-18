@@ -368,7 +368,7 @@ The component provides the following CSS variables, which can be used to customi
 
 ## FAQ
 
-### After Tabs enable the switchable or animated attribute, the sticky function of content area elements will not meet expectations
+### After Tabs enable the swipeable or animated attribute, the sticky function of content area elements will not meet expectations
 
 When the `swipeable` or `animated` attribute is enabled for `Tabs`, the content area will be wrapped by an element with the `transform` attribute, and if the `sticky` function is enabled for the element in the content area, the function will take effect, but the display position will not be as expected.
 
