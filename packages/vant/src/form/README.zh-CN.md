@@ -534,6 +534,7 @@ export default {
 | required `v4.7.3` | 是否显示表单必填星号 | _boolean \| 'auto'_ | `null` |
 | validate-first | 是否在某一项校验不通过时停止校验 | _boolean_ | `false` |
 | scroll-to-error | 是否在提交表单且校验不通过时滚动至错误的表单项 | _boolean_ | `false` |
+| scroll-to-error-position | 滚动至错误的表单项时的位置，可选值为 `center` \| `end` \| `nearest` \| `start` | _string_ | - |
 | show-error | 是否在校验不通过时标红输入框 | _boolean_ | `false` |
 | show-error-message | 是否在校验不通过时在输入框下方展示错误提示 | _boolean_ | `true` |
 | submit-on-enter | 是否在按下回车键时提交表单 | _boolean_ | `true` |
