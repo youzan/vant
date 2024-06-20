@@ -195,7 +195,7 @@ export default {
   :close-on-click-image="false"
 >
   <template #image="{ src, style, onLoad }">
-    <img :style="[{ width: '100%' }, style]" @load="onLoad" />
+    <img :src="src" :style="[{ width: '100%' }, style]" @load="onLoad" />
   </template>
 </van-image-preview>
 ```
