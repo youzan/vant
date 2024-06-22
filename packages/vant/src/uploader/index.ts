@@ -10,6 +10,8 @@ export type {
   UploaderThemeVars,
   UploaderResultType,
   UploaderFileListItem,
+  UploaderBeforeRead,
+  UploaderAfterRead,
 } from './types';
 
 declare module 'vue' {
