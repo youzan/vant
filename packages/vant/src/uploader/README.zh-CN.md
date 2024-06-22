@@ -427,6 +427,8 @@ import type {
   UploaderInstance,
   UploaderResultType,
   UploaderFileListItem,
+  UploaderBeforeRead,
+  UploaderAfterRead,
 } from 'vant';
 ```
 
