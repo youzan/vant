@@ -84,6 +84,7 @@ app.use(Button);
 <van-button icon="plus" type="primary" />
 <van-button icon="plus" type="primary">按钮</van-button>
 <van-button
+  plain
   icon="https://fastly.jsdelivr.net/npm/@vant/assets/user-active.png"
   type="primary"
 >
