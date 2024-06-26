@@ -31,6 +31,14 @@
       "import": "./es/*.mjs",
       "types": "./es/*.d.ts"
     },
+    "./lib/*": {
+      "require": "./lib/*/index.js",
+      "types": "./lib/*/index.d.ts"
+    },
+    "./es/*": {
+      "import": "./es/*/index.mjs",
+      "types": "./es/*/index.d.ts"
+    },
     "./*": "./*"
   },
   "files": [
