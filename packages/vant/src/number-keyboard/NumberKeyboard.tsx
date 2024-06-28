@@ -123,7 +123,9 @@ export default defineComponent({
       const { extraKey } = props;
       const extraKeys = Array.isArray(extraKey) ? extraKey : [extraKey];
 
-      if (extraKeys.length === 1) {
+      if (extraKeys.length === 0) {
+        keys.push({ text: 0, wider: true });
+      } else if (extraKeys.length === 1) {
         keys.push(
           { text: 0, wider: true },
           { text: extraKeys[0], type: 'extra' },
