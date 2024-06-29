@@ -63,7 +63,7 @@
     "commander": "^12.1.0",
     "rslog": "^1.2.2",
     "esbuild": "^0.20.2",
-    "eslint": "^8.57.0",
+    "eslint": "^9.6.0",
     "enquirer": "2.4.1",
     "fast-glob": "^3.3.2",
     "fs-extra": "^11.2.0",
