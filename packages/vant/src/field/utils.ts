@@ -71,6 +71,13 @@ export function resizeTextarea(
   autosize: true | FieldAutosizeConfig,
 ) {
   const scrollTop = getRootScrollTop();
+
+  let parentFieldEl: HTMLElement | null = input;
+  while (parentFieldEl && !parentFieldEl.classList.contains('van-field')) {
+    parentFieldEl = parentFieldEl.parentElement;
+  }
+  const parentFieldElScrollTop = parentFieldEl?.scrollTop ?? 0;
+
   input.style.height = 'auto';
 
   let height = input.scrollHeight;
@@ -86,6 +93,7 @@ export function resizeTextarea(
 
   if (height) {
     input.style.height = `${height}px`;
+    if (parentFieldEl) parentFieldEl.scrollTop = parentFieldElScrollTop;
     // https://github.com/vant-ui/vant/issues/9178
     setRootScrollTop(scrollTop);
   }
