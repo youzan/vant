@@ -77,7 +77,7 @@
     "nano-staged": "^0.8.0",
     "picocolors": "^1.0.1",
     "postcss": "^8.4.38",
-    "postcss-load-config": "^4.0.2",
+    "postcss-load-config": "^6.0.1",
     "prettier": "^3.3.1",
     "rspack-plugin-virtual-module": "^0.1.12",
     "terser": "^5.31.1",
