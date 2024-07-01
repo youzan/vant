@@ -41,6 +41,6 @@
     "vue": "^3.4.29",
     "esbuild": "^0.20.2",
     "rimraf": "^5.0.7",
-    "typescript": "^5.4.5"
+    "typescript": "^5.5.3"
   }
 }
