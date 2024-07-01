@@ -1,9 +1,13 @@
-import { getCurrentInstance } from 'vue';
+import { getCurrentInstance, inject } from 'vue';
 
-let current = 0;
+const initial = { current: 0 };
+const ID_INJECTION_KEY = 'van-id-injection';
 
 export function useId() {
   const vm = getCurrentInstance();
+  const idInjection = getCurrentInstance()
+    ? inject(ID_INJECTION_KEY, initial)
+    : initial;
   const { name = 'unknown' } = vm?.type || {};
 
   // keep test snapshot stable
@@ -11,5 +15,11 @@ export function useId() {
     return name;
   }
 
-  return `${name}-${++current}`;
+  if (typeof window === 'undefined' && !inject(ID_INJECTION_KEY)) {
+    console.warn(
+      '[vant useId] Looks like you are using server rendering, we suggest injecting an initial value for the ID. eg: app.provide("van-id-injection", { current: 0 })',
+    );
+  }
+
+  return `${name}-${++idInjection.current}`;
 }
