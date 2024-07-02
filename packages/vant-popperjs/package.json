@@ -38,7 +38,7 @@
   "license": "MIT",
   "devDependencies": {
     "@popperjs/core": "^2.11.8",
-    "esbuild": "^0.20.2",
+    "esbuild": "^0.23.0",
     "rimraf": "^5.0.7",
     "typescript": "^5.4.5"
   }
