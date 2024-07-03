@@ -1,3 +1,4 @@
+import type { TeleportProps } from 'vue';
 import type { Numeric } from '../utils';
 
 export type NotifyMessage = Numeric;
@@ -16,6 +17,7 @@ export type NotifyOptions = {
   className?: unknown;
   background?: string;
   lockScroll?: boolean;
+  teleport?: TeleportProps['to'];
   onClick?: (event: MouseEvent) => void;
   onClose?: () => void;
   onOpened?: () => void;
