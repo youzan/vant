@@ -70,6 +70,7 @@ export default defineComponent({
       container.style.zIndex = '-9999';
       container.style.top = '-9999px';
       container.style.height = 'auto';
+      container.style.width = 'auto';
       container.style.minHeight = 'auto';
       container.style.maxHeight = 'auto';
 
