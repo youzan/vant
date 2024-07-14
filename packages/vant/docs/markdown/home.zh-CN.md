@@ -64,10 +64,10 @@ Vant 3/4 支持现代浏览器以及 Chrome >= 51、iOS >= 10.0（与 Vue 3 一�
 
 | 名称 | 框架 | 发布时间 | 最新版 | 维护状态 |
 | --- | --- | --- | --- | --- |
-| Vant 4 | Vue 3 | `2022.12` | ![](https://img.shields.io/npm/v/vant/latest?style=flat-square) | 持续迭代新功能 |
-| Vant 3 | Vue 3 | `2020.12` | ![](https://img.shields.io/npm/v/vant/latest-v3?style=flat-square) | 停止迭代新功能，bug 会被处理和修复 |
-| Vant 2 | Vue 2 | `2019.06` | ![](https://img.shields.io/npm/v/vant/latest-v2?style=flat-square) | 停止迭代新功能，重要 bug 会被处理和修复 |
-| Vant 1 | Vue 2 | `2018.03` | ![](https://img.shields.io/npm/v/vant/latest-v1?style=flat-square) | 停止维护，不再接受 PR |
+| Vant 4 | Vue 3 | `2022.12` | ![](https://img.shields.io/npm/v/vant/latest?style=flat-square) | 长期支持 |
+| Vant 3 | Vue 3 | `2020.12` | ![](https://img.shields.io/npm/v/vant/latest-v3?style=flat-square) | 终止支持，不再接受 PR |
+| Vant 2 | Vue 2 | `2019.06` | ![](https://img.shields.io/npm/v/vant/latest-v2?style=flat-square) | 终止支持，不再接受 PR |
+| Vant 1 | Vue 2 | `2018.03` | ![](https://img.shields.io/npm/v/vant/latest-v1?style=flat-square) | 终止支持，不再接受 PR |
 
 ## 链接
 
