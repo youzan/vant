@@ -1,4 +1,4 @@
-import { ref, Ref } from 'vue';
+import { onUnmounted, ref, Ref } from 'vue';
 import { inBrowser } from '../utils';
 
 type VisibilityState = 'hidden' | 'visible';
@@ -16,6 +16,9 @@ export function usePageVisibility() {
 
       update();
       window.addEventListener('visibilitychange', update);
+      onUnmounted(() => {
+        window.removeEventListener('visibilitychange', update);
+      });
     }
   }
 
