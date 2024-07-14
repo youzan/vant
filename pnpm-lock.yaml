@@ -227,8 +227,8 @@ importers:
         specifier: ^13.0.2
         version: 13.0.2
       markdown-it-anchor:
-        specifier: ^8.6.7
-        version: 8.6.7(@types/markdown-it@13.0.8)(markdown-it@13.0.2)
+        specifier: ^9.0.1
+        version: 9.0.1(@types/markdown-it@13.0.8)(markdown-it@13.0.2)
       nano-staged:
         specifier: ^0.8.0
         version: 0.8.0
@@ -2278,8 +2278,8 @@ packages:
     resolution: {integrity: sha512-hXdUTZYIVOt1Ex//jAQi+wTZZpUpwBj/0QsOzqegb3rGMMeJiSEu5xLHnYfBrRV4RH2+OCSOO95Is/7x1WJ4bw==}
     engines: {node: '>=10'}
 
-  markdown-it-anchor@8.6.7:
-    resolution: {integrity: sha512-FlCHFwNnutLgVTflOYHPW2pPcl2AACqVzExlkGQNsi4CJgqOHN7YTgDd4LuhgN1BFO3TS0vLAruV1Td6dwWPJA==}
+  markdown-it-anchor@9.0.1:
+    resolution: {integrity: sha512-cBt7aAzmkfX8X7FqAe8EBryiKmToXgMQEEMqkXzWCm0toDtfDYIGboKeTKd8cpNJArJtutrf+977wFJTsvNGmQ==}
     peerDependencies:
       '@types/markdown-it': '*'
       markdown-it: '*'
@@ -5257,7 +5257,7 @@ snapshots:
     dependencies:
       semver: 7.6.0
 
-  markdown-it-anchor@8.6.7(@types/markdown-it@13.0.8)(markdown-it@13.0.2):
+  markdown-it-anchor@9.0.1(@types/markdown-it@13.0.8)(markdown-it@13.0.2):
     dependencies:
       '@types/markdown-it': 13.0.8
       markdown-it: 13.0.2
