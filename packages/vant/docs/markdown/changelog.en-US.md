@@ -1,8 +1,12 @@
 # Changelog
 
-### Tips
+### Important Notice
 
-The current document is the changelog of Vant 4, other versions:
+**To avoid redundant maintenance and reduce costs.**
+
+**From v4.9.0, Vant's changelog will be published on [GitHub's Releases Page](https://github.com/youzan/vant/releases). This page will no longer be updated.**
+
+The current document contains the changelog for Vant v4.0.0 ~ v4.9.0. For other versions, please refer to:
 
 - [Vant 2 Changelog](/vant/v2/#/en-US/changelog)
 - [Vant 3 Changelog](/vant/v3/#/en-US/changelog)
@@ -18,48 +22,6 @@ Vant follows [Semantic Versioning 2.0.0](https://semver.org/lang/zh-CN/).
 - Major version：No fixed release time, includes breaking changes and major feature updates.
 
 ## Details
-
-### v4.9.1
-
-`2024-06-02`
-
-#### New Features 🎉
-
-- feat(FloatingPanel): support header slot by [@chouchouji](https://github.com/chouchouji) in [#12897](https://github.com/youzan/vant/pull/12897)
-- feat(AddressList): support multiple selection by [@jj56313751](https://github.com/jj56313751) in [#12887](https://github.com/youzan/vant/pull/12887)
-- feat(cli): bump Rsbuild v0.7 by [@chenjiahan](https://github.com/chenjiahan) in [#12903](https://github.com/youzan/vant/pull/12903)
-- feat: supports `imports` option for auto-import by [@zhaojjiang](https://github.com/zhaojjiang) in [#12861](https://github.com/youzan/vant/pull/12861)
-
-#### Bug Fixes 🐞
-
-- fix(cli): CSS preprocessor for scoped by [@zoy-l](https://github.com/zoy-l) in [#12860](https://github.com/youzan/vant/pull/12860)
-- fix(area): columns-placeholder prop rendering error by [@yipl95](https://github.com/yipl95) in [#12857](https://github.com/youzan/vant/pull/12857)
-- fix: VantImports type error by [@wChenonly](https://github.com/wChenonly) in [#12876](https://github.com/youzan/vant/pull/12876)
-- fix(Stepper): set autocomplete to off by [@inottn](https://github.com/inottn) in [#12892](https://github.com/youzan/vant/pull/12892)
-- fix(Tab): incorrect style by [@pany-ang](https://github.com/pany-ang) in [#12885](https://github.com/youzan/vant/pull/12885)
-
-#### Document 📖
-
-- docs: add ICP license by [@chenjiahan](https://github.com/chenjiahan) in [#12893](https://github.com/youzan/vant/pull/12893)
-- docs: remove VantImports example by [@chenjiahan](https://github.com/chenjiahan) in [#12894](https://github.com/youzan/vant/pull/12894)
-- docs: add new document site URL by [@chenjiahan](https://github.com/chenjiahan) in [#12902](https://github.com/youzan/vant/pull/12902)
-
-#### Other Changes
-
-- chore(deps): update dependency terser to ^5.31.0 by [@renovate](https://github.com/renovate) in [#12852](https://github.com/youzan/vant/pull/12852)
-- chore(deps): update all patch dependencies by [@renovate](https://github.com/renovate) in [#12851](https://github.com/youzan/vant/pull/12851)
-- chore(deps): update dependency eslint-plugin-vue to ^9.26.0 by [@renovate](https://github.com/renovate) in [#12864](https://github.com/youzan/vant/pull/12864)
-- chore(deps): update all patch dependencies by [@renovate](https://github.com/renovate) in [#12862](https://github.com/youzan/vant/pull/12862)
-- chore(deps): update pnpm to v9.1.2 by [@renovate](https://github.com/renovate) in [#12865](https://github.com/youzan/vant/pull/12865)
-- chore(deps): update dependency commander to ^12.1.0 by [@renovate](https://github.com/renovate) in [#12884](https://github.com/youzan/vant/pull/12884)
-- chore(deps): update all patch dependencies by [@renovate](https://github.com/renovate) in [#12883](https://github.com/youzan/vant/pull/12883)
-
-#### New Contributors
-
-- [@zhaojjiang](https://github.com/zhaojjiang) made their first contribution in [#12861](https://github.com/youzan/vant/pull/12861)
-- [@yipl95](https://github.com/yipl95) made their first contribution in [#12857](https://github.com/youzan/vant/pull/12857)
-- [@pany-ang](https://github.com/pany-ang) made their first contribution in [#12885](https://github.com/youzan/vant/pull/12885)
-- [@jj56313751](https://github.com/jj56313751) made their first contribution in [#12887](https://github.com/youzan/vant/pull/12887)
 
 ### v4.9.0
 
