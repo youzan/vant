@@ -62,6 +62,29 @@ test('disable previous and next month buttons', async () => {
   expect(nextMonth.classes()).not.toContain(disabledActionClass);
 });
 
+test('disable the previous month button correctly when the minDate is the current time', async () => {
+  const wrapper = mount(Calendar, {
+    props: {
+      minDate: new Date(),
+      poppable: false,
+      switchMode: 'month',
+    },
+  });
+
+  await later();
+  const [prevMonth, nextMonth] = wrapper.findAll(
+    '.van-calendar__header-action',
+  );
+
+  expect(prevMonth.classes()).toContain(disabledActionClass);
+
+  await nextMonth.trigger('click');
+  expect(prevMonth.classes()).not.toContain(disabledActionClass);
+
+  await prevMonth.trigger('click');
+  expect(prevMonth.classes()).toContain(disabledActionClass);
+});
+
 test('disable previous and next year buttons', async () => {
   const maxDate = getNextYear(minDate);
   const wrapper = mount(Calendar, {
