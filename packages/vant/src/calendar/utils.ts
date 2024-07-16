@@ -46,12 +46,22 @@ export function getDayByOffset(date: Date, offset: number) {
 export function getMonthByOffset(date: Date, offset: number) {
   const cloned = cloneDate(date);
   cloned.setMonth(cloned.getMonth() + offset);
+
+  if (cloned.getDate() !== date.getDate()) {
+    cloned.setDate(0);
+  }
+
   return cloned;
 }
 
 export function getYearByOffset(date: Date, offset: number) {
   const cloned = cloneDate(date);
   cloned.setFullYear(cloned.getFullYear() + offset);
+
+  if (cloned.getDate() !== date.getDate()) {
+    cloned.setDate(0);
+  }
+
   return cloned;
 }
 
