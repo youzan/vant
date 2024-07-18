@@ -41,6 +41,7 @@ export type UploaderAfterRead = (
 export type UploaderExpose = {
   chooseFile: () => void;
   closeImagePreview: () => void;
+  reuploadFile: (index: number) => void;
 };
 
 export type UploaderInstance = ComponentPublicInstance<
