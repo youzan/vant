@@ -5,6 +5,7 @@ import { createNamespace, HAPTICS_FEEDBACK, makeStringProp } from '../utils';
 import {
   t,
   bem,
+  compareMonth,
   getPrevMonth,
   getPrevYear,
   getNextMonth,
@@ -39,22 +40,22 @@ export default defineComponent({
   setup(props, { slots, emit }) {
     const prevMonthDisabled = computed(() => {
       const prevMonth = getPrevMonth(props.date!);
-      return props.minDate && prevMonth < props.minDate;
+      return props.minDate && compareMonth(prevMonth, props.minDate) < 0;
     });
 
     const prevYearDisabled = computed(() => {
       const prevYear = getPrevYear(props.date!);
-      return props.minDate && prevYear < props.minDate;
+      return props.minDate && compareMonth(prevYear, props.minDate) < 0;
     });
 
     const nextMonthDisabled = computed(() => {
       const nextMonth = getNextMonth(props.date!);
-      return props.maxDate && nextMonth > props.maxDate;
+      return props.maxDate && compareMonth(nextMonth, props.maxDate) > 0;
     });
 
     const nextYearDisabled = computed(() => {
       const nextYear = getNextYear(props.date!);
-      return props.maxDate && nextYear > props.maxDate;
+      return props.maxDate && compareMonth(nextYear, props.maxDate) > 0;
     });
 
     const renderTitle = () => {
