@@ -226,3 +226,36 @@ test('should emit panelChange event', async () => {
   currentDate = getNextMonth(currentDate);
   expect(onPanelChange).toHaveBeenLastCalledWith({ date: currentDate });
 });
+
+test('correctly change the panelDate when the selected date is the last day of each month', async () => {
+  let defaultDate = new Date(2024, 4, 31);
+  const onPanelChange = vi.fn();
+  const wrapper = mount(Calendar, {
+    props: {
+      defaultDate,
+      poppable: false,
+      switchMode: 'month',
+      onPanelChange,
+    },
+  });
+
+  await later();
+  const nextMonth = wrapper.findAll('.van-calendar__header-action')[1];
+
+  await nextMonth.trigger('click');
+  let panelDate = getNextMonth(defaultDate);
+  expect(panelDate).toEqual(new Date(2024, 5, 30));
+  expect(onPanelChange).toHaveBeenLastCalledWith({ date: panelDate });
+
+  defaultDate = new Date(2024, 1, 29);
+  await wrapper.setProps({
+    defaultDate,
+    switchMode: 'year-month',
+  });
+  const nextYear = wrapper.findAll('.van-calendar__header-action')[3];
+
+  await nextYear.trigger('click');
+  panelDate = getNextYear(defaultDate);
+  expect(panelDate).toEqual(new Date(2025, 1, 28));
+  expect(onPanelChange).toHaveBeenLastCalledWith({ date: panelDate });
+});

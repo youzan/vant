@@ -38,25 +38,33 @@ export default defineComponent({
   emits: ['clickSubtitle', 'panelChange'],
 
   setup(props, { slots, emit }) {
-    const prevMonthDisabled = computed(() => {
-      const prevMonth = getPrevMonth(props.date!);
-      return props.minDate && compareMonth(prevMonth, props.minDate) < 0;
-    });
+    const prevMonthDisabled = computed(
+      () =>
+        props.date &&
+        props.minDate &&
+        compareMonth(getPrevMonth(props.date), props.minDate) < 0,
+    );
 
-    const prevYearDisabled = computed(() => {
-      const prevYear = getPrevYear(props.date!);
-      return props.minDate && compareMonth(prevYear, props.minDate) < 0;
-    });
+    const prevYearDisabled = computed(
+      () =>
+        props.date &&
+        props.minDate &&
+        compareMonth(getPrevYear(props.date), props.minDate) < 0,
+    );
 
-    const nextMonthDisabled = computed(() => {
-      const nextMonth = getNextMonth(props.date!);
-      return props.maxDate && compareMonth(nextMonth, props.maxDate) > 0;
-    });
+    const nextMonthDisabled = computed(
+      () =>
+        props.date &&
+        props.maxDate &&
+        compareMonth(getNextMonth(props.date), props.maxDate) > 0,
+    );
 
-    const nextYearDisabled = computed(() => {
-      const nextYear = getNextYear(props.date!);
-      return props.maxDate && compareMonth(nextYear, props.maxDate) > 0;
-    });
+    const nextYearDisabled = computed(
+      () =>
+        props.date &&
+        props.maxDate &&
+        compareMonth(getNextYear(props.date), props.maxDate) > 0,
+    );
 
     const renderTitle = () => {
       if (props.showTitle) {
