@@ -1,6 +1,6 @@
 import { nextTick } from 'vue';
 import { cdnURL } from '../../../docs/site';
-import Uploader, { type UploaderFileListItem } from '..';
+import Uploader, { type UploaderFileListItem, type UploaderInstance } from '..';
 import { mount, later, triggerDrag, trigger } from '../../../test';
 import type { Numeric } from '../../utils';
 
@@ -686,11 +686,10 @@ test('should emit clickReUpload event when props reupload true', async () => {
     props: {
       maxCount: 1,
       modelValue: [{ url: IMAGE }],
+      reupload: true,
     },
   });
 
-  expect(wrapper.find('.van-uploader__upload').exists()).toBeFalsy();
-  await wrapper.setProps({ reupload: true });
   expect(wrapper.find('.van-uploader__upload').style.display).toBe('none');
 
   const previewItem = wrapper.find<HTMLDivElement>(
@@ -705,4 +704,37 @@ test('should emit clickReUpload event when props reupload true', async () => {
   });
   await trigger(input, 'change');
   expect(wrapper.emitted('update:modelValue')?.[0][0]).toHaveLength(1);
+});
+
+test('expose reuploadFile method', async () => {
+  const onUpdate = vi.fn();
+  const wrapper = mount(Uploader, {
+    props: {
+      maxCount: 2,
+      modelValue: [{ url: IMAGE }, { url: PDF }],
+      'onUpdate:modelValue': onUpdate,
+    },
+  });
+
+  const {reuploadFile} = (wrapper.vm as UploaderInstance);
+  expect(reuploadFile).toBeTypeOf('function');
+
+  const input = wrapper.find<HTMLInputElement>('.van-uploader__input');
+  Object.defineProperty(input.element, 'files', {
+    get: vi.fn().mockReturnValue([mockFile]),
+  });
+
+  reuploadFile(1);
+  await trigger(input, 'change');
+  expect(onUpdate.mock.calls[0][0]).toMatchObject([
+    { url: IMAGE },
+    { file: mockFile },
+  ]);
+
+  reuploadFile(0);
+  await trigger(input, 'change');
+  expect(onUpdate.mock.calls[1][0]).toMatchObject([
+    { file: mockFile },
+    { url: PDF },
+  ]);
 });
