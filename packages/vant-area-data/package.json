@@ -39,7 +39,7 @@
   "license": "MIT",
   "devDependencies": {
     "esbuild": "^0.20.2",
-    "rimraf": "^5.0.7",
+    "rimraf": "^5.0.9",
     "typescript": "^5.4.5"
   }
 }
