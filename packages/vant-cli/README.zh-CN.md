@@ -43,7 +43,7 @@ bun add @vant/cli -D
     "test": "vant-cli test",
     "lint": "vant-cli lint",
     "build": "vant-cli build",
-    "prepare": "husky install",
+    "prepare": "husky",
     "release": "vant-cli release",
     "build-site": "vant-cli build-site"
   },
