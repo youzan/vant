@@ -1,8 +1,12 @@
 # 更新日志
 
-### 提示
+### 重要提示
 
-当前文档为 Vant 4 的更新日志，其他版本请参考：
+**为了避免重复维护，降低维护成本。**
+
+**从 v4.9.0 开始，Vant 的更新日志统一发布在 [GitHub 的 Releases 页面](https://github.com/youzan/vant/releases)，当前页面将不再更新。**
+
+当前文档为 Vant v4.0.0 ~ v4.9.0 的的更新日志，其他版本请参考：
 
 - [Vant 2 更新日志](/vant/v2/#/zh-CN/changelog)
 - [Vant 3 更新日志](/vant/v3/#/zh-CN/changelog)
@@ -18,48 +22,6 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 - 主版本号：无固定的发布时间，包含不兼容更新和重大功能更新。
 
 ## 更新内容
-
-### v4.9.1
-
-`2024-06-02`
-
-#### New Features 🎉
-
-- feat(FloatingPanel): 支持 header 插槽 by [@chouchouji](https://github.com/chouchouji) in [#12897](https://github.com/youzan/vant/pull/12897)
-- feat(AddressList): 支持多重选择 by [@jj56313751](https://github.com/jj56313751) in [#12887](https://github.com/youzan/vant/pull/12887)
-- feat(cli): 升级 Rsbuild 到 v0.7 by [@chenjiahan](https://github.com/chenjiahan) in [#12903](https://github.com/youzan/vant/pull/12903)
-- feat: 支持自动导入的 `imports` 选项 by [@zhaojjiang](https://github.com/zhaojjiang) in [#12861](https://github.com/youzan/vant/pull/12861)
-
-#### Bug Fixes 🐞
-
-- fix(cli): 修复用于 scoped 的 CSS 预处理器问题 by [@zoy-l](https://github.com/zoy-l) in [#12860](https://github.com/youzan/vant/pull/12860)
-- fix(area): 修复 columns-placeholder 属性渲染错误 by [@yipl95](https://github.com/yipl95) in [#12857](https://github.com/youzan/vant/pull/12857)
-- fix: 修复 VantImports 的类型错误 by [@wChenonly](https://github.com/wChenonly) in [#12876](https://github.com/youzan/vant/pull/12876)
-- fix(Stepper): 设置 autocomplete 为 off by [@inottn](https://github.com/inottn) in [#12892](https://github.com/youzan/vant/pull/12892)
-- fix(Tab): 修复样式错误 by [@pany-ang](https://github.com/pany-ang) in [#12885](https://github.com/youzan/vant/pull/12885)
-
-#### Document 📖
-
-- docs: 添加 ICP 许可证 by [@chenjiahan](https://github.com/chenjiahan) in [#12893](https://github.com/youzan/vant/pull/12893)
-- docs: 移除 VantImports 示例 by [@chenjiahan](https://github.com/chenjiahan) in [#12894](https://github.com/youzan/vant/pull/12894)
-- docs: 添加新文档站点 URL by [@chenjiahan](https://github.com/chenjiahan) in [#12902](https://github.com/youzan/vant/pull/12902)
-
-#### Other Changes
-
-- chore(deps): 更新 terser 依赖到 ^5.31.0 by [@renovate](https://github.com/renovate) in [#12852](https://github.com/youzan/vant/pull/12852)
-- chore(deps): 更新所有补丁依赖 by [@renovate](https://github.com/renovate) in [#12851](https://github.com/youzan/vant/pull/12851)
-- chore(deps): 更新 eslint-plugin-vue 依赖到 ^9.26.0 by [@renovate](https://github.com/renovate) in [#12864](https://github.com/youzan/vant/pull/12864)
-- chore(deps): 更新所有补丁依赖 by [@renovate](https://github.com/renovate) in [#12862](https://github.com/youzan/vant/pull/12862)
-- chore(deps): 更新 pnpm 到 v9.1.2 by [@renovate](https://github.com/renovate) in [#12865](https://github.com/youzan/vant/pull/12865)
-- chore(deps): 更新 commander 依赖到 ^12.1.0 by [@renovate](https://github.com/renovate) in [#12884](https://github.com/youzan/vant/pull/12884)
-- chore(deps): 更新所有补丁依赖 by [@renovate](https://github.com/renovate) in [#12883](https://github.com/youzan/vant/pull/12883)
-
-#### New Contributors
-
-- [@zhaojjiang](https://github.com/zhaojjiang) made their first contribution in [#12861](https://github.com/youzan/vant/pull/12861)
-- [@yipl95](https://github.com/yipl95) made their first contribution in [#12857](https://github.com/youzan/vant/pull/12857)
-- [@pany-ang](https://github.com/pany-ang) made their first contribution in [#12885](https://github.com/youzan/vant/pull/12885)
-- [@jj56313751](https://github.com/jj56313751) made their first contribution in [#12887](https://github.com/youzan/vant/pull/12887)
 
 ### v4.9.0
 

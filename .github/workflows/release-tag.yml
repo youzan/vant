@@ -18,5 +18,3 @@ jobs:
         uses: ncipollo/release-action@v1
         with:
           generateReleaseNotes: "true"
-          body: |
-            > Please refer to [Changelog](https://vant-ui.github.io/vant/#/en-US/changelog) for all changes.  |  请访问 [更新日志](https://vant-ui.github.io/vant/#/zh-CN/changelog) 了解所有更新。

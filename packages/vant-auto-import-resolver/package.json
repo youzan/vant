@@ -39,7 +39,7 @@
   "author": "chenjiahan",
   "license": "MIT",
   "devDependencies": {
-    "rimraf": "^5.0.7",
+    "rimraf": "^5.0.9",
     "typescript": "^5.4.5"
   }
 }

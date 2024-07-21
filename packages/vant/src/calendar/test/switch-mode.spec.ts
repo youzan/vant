@@ -62,6 +62,29 @@ test('disable previous and next month buttons', async () => {
   expect(nextMonth.classes()).not.toContain(disabledActionClass);
 });
 
+test('disable the previous month button correctly when the minDate is the current time', async () => {
+  const wrapper = mount(Calendar, {
+    props: {
+      minDate: new Date(),
+      poppable: false,
+      switchMode: 'month',
+    },
+  });
+
+  await later();
+  const [prevMonth, nextMonth] = wrapper.findAll(
+    '.van-calendar__header-action',
+  );
+
+  expect(prevMonth.classes()).toContain(disabledActionClass);
+
+  await nextMonth.trigger('click');
+  expect(prevMonth.classes()).not.toContain(disabledActionClass);
+
+  await prevMonth.trigger('click');
+  expect(prevMonth.classes()).toContain(disabledActionClass);
+});
+
 test('disable previous and next year buttons', async () => {
   const maxDate = getNextYear(minDate);
   const wrapper = mount(Calendar, {
@@ -202,4 +225,37 @@ test('should emit panelChange event', async () => {
   await nextMonth.trigger('click');
   currentDate = getNextMonth(currentDate);
   expect(onPanelChange).toHaveBeenLastCalledWith({ date: currentDate });
+});
+
+test('correctly change the panelDate when the selected date is the last day of each month', async () => {
+  let defaultDate = new Date(2024, 4, 31);
+  const onPanelChange = vi.fn();
+  const wrapper = mount(Calendar, {
+    props: {
+      defaultDate,
+      poppable: false,
+      switchMode: 'month',
+      onPanelChange,
+    },
+  });
+
+  await later();
+  const nextMonth = wrapper.findAll('.van-calendar__header-action')[1];
+
+  await nextMonth.trigger('click');
+  let panelDate = getNextMonth(defaultDate);
+  expect(panelDate).toEqual(new Date(2024, 5, 30));
+  expect(onPanelChange).toHaveBeenLastCalledWith({ date: panelDate });
+
+  defaultDate = new Date(2024, 1, 29);
+  await wrapper.setProps({
+    defaultDate,
+    switchMode: 'year-month',
+  });
+  const nextYear = wrapper.findAll('.van-calendar__header-action')[3];
+
+  await nextYear.trigger('click');
+  panelDate = getNextYear(defaultDate);
+  expect(panelDate).toEqual(new Date(2025, 1, 28));
+  expect(onPanelChange).toHaveBeenLastCalledWith({ date: panelDate });
 });

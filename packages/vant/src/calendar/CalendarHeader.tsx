@@ -5,6 +5,7 @@ import { createNamespace, HAPTICS_FEEDBACK, makeStringProp } from '../utils';
 import {
   t,
   bem,
+  compareMonth,
   getPrevMonth,
   getPrevYear,
   getNextMonth,
@@ -37,25 +38,33 @@ export default defineComponent({
   emits: ['clickSubtitle', 'panelChange'],
 
   setup(props, { slots, emit }) {
-    const prevMonthDisabled = computed(() => {
-      const prevMonth = getPrevMonth(props.date!);
-      return props.minDate && prevMonth < props.minDate;
-    });
+    const prevMonthDisabled = computed(
+      () =>
+        props.date &&
+        props.minDate &&
+        compareMonth(getPrevMonth(props.date), props.minDate) < 0,
+    );
 
-    const prevYearDisabled = computed(() => {
-      const prevYear = getPrevYear(props.date!);
-      return props.minDate && prevYear < props.minDate;
-    });
+    const prevYearDisabled = computed(
+      () =>
+        props.date &&
+        props.minDate &&
+        compareMonth(getPrevYear(props.date), props.minDate) < 0,
+    );
 
-    const nextMonthDisabled = computed(() => {
-      const nextMonth = getNextMonth(props.date!);
-      return props.maxDate && nextMonth > props.maxDate;
-    });
+    const nextMonthDisabled = computed(
+      () =>
+        props.date &&
+        props.maxDate &&
+        compareMonth(getNextMonth(props.date), props.maxDate) > 0,
+    );
 
-    const nextYearDisabled = computed(() => {
-      const nextYear = getNextYear(props.date!);
-      return props.maxDate && nextYear > props.maxDate;
-    });
+    const nextYearDisabled = computed(
+      () =>
+        props.date &&
+        props.maxDate &&
+        compareMonth(getNextYear(props.date), props.maxDate) > 0,
+    );
 
     const renderTitle = () => {
       if (props.showTitle) {

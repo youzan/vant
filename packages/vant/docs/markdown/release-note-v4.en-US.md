@@ -213,14 +213,14 @@ npm add stylelint@13 @vant/stylelint-config
 
 We have prepared a complete upgrade guide for Vant 4.0, please read [Upgrade from v3 to v4](/vant/#/en-US/migrate-from-v3) to upgrade.
 
-At the same time, Vant 3.x will also enter the maintenance status, and the maintenance status of each version of Vant is as follows:
+The maintenance status of each version of Vant is as follows:
 
-| Name | Framework | Release Date | Maintenance Status |
-| --- | --- | --- | --- |
-| Vant 4 | Vue 3 | `2022.12` | Continuously adding new features |
-| Vant 3 | Vue 3 | `2020.12` | No more new features, bugs will be fixed |
-| Vant 2 | Vue 2 | `2019.06` | No more new features, critical bugs will be fixed |
-| Vant 1 | Vue 2 | `2018.03` | End of maintenance, no PRs accepted |
+| Name   | Framework | Release Date | Maintenance Status |
+| ------ | --------- | ------------ | ------------------ |
+| Vant 4 | Vue 3     | `2022.12`    | Long-term support  |
+| Vant 3 | Vue 3     | `2020.12`    | End of life        |
+| Vant 2 | Vue 2     | `2019.06`    | End of life        |
+| Vant 1 | Vue 2     | `2018.03`    | End of life        |
 
 ### Finally
 
