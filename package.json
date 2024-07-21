@@ -1,7 +1,7 @@
 {
   "private": true,
   "scripts": {
-    "prepare": "husky install",
+    "prepare": "husky",
     "dev": "pnpm --dir ./packages/vant dev",
     "lint": "eslint \"./packages/**/{src,test}/**/*.{vue,ts,tsx,js,mjs,cjs}\"",
     "test": "pnpm --dir ./packages/vant test",
