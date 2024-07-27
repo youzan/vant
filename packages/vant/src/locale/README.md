@@ -59,6 +59,7 @@ Current supported languages:
 | Icelandic                | is-IS        | `v3.4.7` |
 | Italian                  | it-IT        | `v3.4.5` |
 | Japanese                 | ja-JP        | -        |
+| Kazakh                   | kk-KZ        | -        |
 | Khmer                    | km-KH        | `v4.1.2` |
 | Korean                   | ko-KR        | `v3.4.3` |
 | Lao                      | la-LA        | `v3.4.7` |
