@@ -79,7 +79,7 @@ export default {
 | --- | --- | --- | --- |
 | active | Active step | _number \| string_ | `0` |
 | direction | Can be set to `vertical` | _string_ | `horizontal` |
-| active-color | Active step color | _string_ | `#07c160` |
+| active-color | Active step color | _string_ | `#1989fa` |
 | inactive-color | Inactive step color | _string_ | `#969799` |
 | active-icon | Active icon name | _string_ | `checked` |
 | inactive-icon | Inactive icon name | _string_ | - |
