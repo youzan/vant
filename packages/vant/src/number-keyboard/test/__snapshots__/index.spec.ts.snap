@@ -61,3 +61,13 @@ exports[`should render title-left slot correctly 1`] = `
   </span>
 </div>
 `;
+
+exports[`should render zero key correctly when extra-key prop is an empty array 1`] = `
+<div
+  role="button"
+  tabindex="0"
+  class="van-key"
+>
+  0
+</div>
+`;
