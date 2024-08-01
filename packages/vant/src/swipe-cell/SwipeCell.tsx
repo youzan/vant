@@ -194,6 +194,11 @@ export default defineComponent({
         if (stop) {
           event.stopPropagation();
         }
+
+        if (lockClick) {
+          return;
+        }
+
         onClick(position, event);
       };
 
