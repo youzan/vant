@@ -83,8 +83,8 @@ importers:
         specifier: workspace:*
         version: link:../vant-icons
       '@vitejs/plugin-vue':
-        specifier: ^5.0.5
-        version: 5.0.5(vite@5.3.4(@types/node@18.19.41)(less@4.2.0)(terser@5.31.3))(vue@3.4.33(typescript@5.4.5))
+        specifier: ^5.1.2
+        version: 5.1.2(vite@5.3.4(@types/node@18.19.41)(less@4.2.0)(terser@5.31.3))(vue@3.4.33(typescript@5.4.5))
       '@vitejs/plugin-vue-jsx':
         specifier: ^4.0.0
         version: 4.0.0(vite@5.3.4(@types/node@18.19.41)(less@4.2.0)(terser@5.31.3))(vue@3.4.33(typescript@5.4.5))
@@ -179,8 +179,8 @@ importers:
         specifier: workspace:^
         version: link:../vant-touch-emulator
       '@vitejs/plugin-vue':
-        specifier: ^5.0.5
-        version: 5.0.5(vite@5.3.4(@types/node@18.19.41)(less@4.2.0)(terser@5.31.3))(vue@3.4.33(typescript@5.4.5))
+        specifier: ^5.1.2
+        version: 5.1.2(vite@5.3.4(@types/node@18.19.41)(less@4.2.0)(terser@5.31.3))(vue@3.4.33(typescript@5.4.5))
       '@vitejs/plugin-vue-jsx':
         specifier: ^4.0.0
         version: 4.0.0(vite@5.3.4(@types/node@18.19.41)(less@4.2.0)(terser@5.31.3))(vue@3.4.33(typescript@5.4.5))
@@ -1266,8 +1266,8 @@ packages:
       vite: ^5.0.0
       vue: ^3.0.0
 
-  '@vitejs/plugin-vue@5.0.5':
-    resolution: {integrity: sha512-LOjm7XeIimLBZyzinBQ6OSm3UBCNVCpLkxGC0oWmm2YPzVZoxMsdvNVimLTBzpAnR9hl/yn1SHGuRfe6/Td9rQ==}
+  '@vitejs/plugin-vue@5.1.2':
+    resolution: {integrity: sha512-nY9IwH12qeiJqumTCLJLE7IiNx7HZ39cbHaysEUd+Myvbz9KAqd2yq+U01Kab1R/H1BmiyM2ShTYlNH32Fzo3A==}
     engines: {node: ^18.0.0 || >=20.0.0}
     peerDependencies:
       vite: ^5.0.0
@@ -4061,7 +4061,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@vitejs/plugin-vue@5.0.5(vite@5.3.4(@types/node@18.19.41)(less@4.2.0)(terser@5.31.3))(vue@3.4.33(typescript@5.4.5))':
+  '@vitejs/plugin-vue@5.1.2(vite@5.3.4(@types/node@18.19.41)(less@4.2.0)(terser@5.31.3))(vue@3.4.33(typescript@5.4.5))':
     dependencies:
       vite: 5.3.4(@types/node@18.19.41)(less@4.2.0)(terser@5.31.3)
       vue: 3.4.33(typescript@5.4.5)
