@@ -88,7 +88,7 @@ export default {
 | active-icon | 当前步骤对应的底部图标，可选值见 [Icon 组件](#/zh-CN/icon) | _string_ | `checked` |
 | inactive-icon | 非当前步骤对应的底部图标，可选值见 [Icon 组件](#/zh-CN/icon) | _string_ | - |
 | finish-icon | 已完成步骤对应的底部图标，优先级高于 `inactive-icon`，可选值见 [Icon 组件](#/zh-CN/icon) | _string_ | - |
-| active-color | 当前步骤和已完成步骤的颜色 | _string_ | `#07c160` |
+| active-color | 当前步骤和已完成步骤的颜色 | _string_ | `#1989fa` |
 | inactive-color | 未激活步骤的颜色 | _string_ | `#969799` |
 | icon-prefix | 图标类名前缀，等同于 Icon 组件的 [class-prefix 属性](#/zh-CN/icon#props) | _string_ | `van-icon` |
 
