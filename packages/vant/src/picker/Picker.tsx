@@ -65,6 +65,7 @@ export const pickerSharedProps = extend(
     showToolbar: truthProp,
     swipeDuration: makeNumericProp(1000),
     visibleOptionNum: makeNumericProp(6),
+    defaultValue: makeArrayProp<Numeric>(),
   },
   pickerToolbarProps,
 );
@@ -94,7 +95,12 @@ export default defineComponent({
 
   setup(props, { emit, slots }) {
     const columnsRef = ref<HTMLElement>();
-    const selectedValues = ref(props.modelValue.slice(0));
+
+    const selectedValues = ref(
+      props.modelValue.slice(0).length
+        ? props.modelValue.slice(0)
+        : props.defaultValue.slice(0),
+    );
 
     const { parent } = useParent(PICKER_GROUP_KEY);
     const { children, linkChildren } = useChildren(PICKER_KEY);

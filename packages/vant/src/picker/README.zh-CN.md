@@ -353,6 +353,61 @@ export default {
 };
 ```
 
+### 默认值
+
+使用 `default-value` 设置 Picker 的默认值。
+
+```html
+<van-field
+  v-model="fieldValue"
+  is-link
+  readonly
+  label="City"
+  placeholder="Choose City"
+  @click="showPicker = true"
+/>
+<van-popup v-model:show="showPicker" round position="bottom">
+  <van-picker
+    title="Title"
+    :default-value="defaultSelectedValues"
+    :columns="columns"
+    @cancel="showPicker = false"
+    @confirm="onConfirm"
+  />
+</van-popup>
+```
+
+```js
+import { ref } from 'vue';
+
+export default {
+  setup() {
+    const columns = [
+      { text: '杭州', value: 'Hangzhou' },
+      { text: '宁波', value: 'Ningbo' },
+      { text: '温州', value: 'Wenzhou' },
+      { text: '绍兴', value: 'Shaoxing' },
+      { text: '湖州', value: 'Huzhou' },
+    ];
+    const fieldValue = ref('');
+    const defaultSelectedValues = ref(['Shaoxing']);
+    const showPicker = ref(false);
+
+    const onConfirm = ({ selectedOptions }) => {
+      showPicker.value = false;
+    };
+
+    return {
+      columns,
+      onConfirm,
+      fieldValue,
+      defaultSelectedValues,
+      showPicker,
+    };
+  },
+};
+```
+
 ## API
 
 ### Props
@@ -373,6 +428,7 @@ export default {
 | option-height | 选项高度，支持 `px` `vw` `vh` `rem` 单位，默认 `px` | _number \| string_ | `44` |
 | visible-option-num | 可见的选项个数 | _number \| string_ | `6` |
 | swipe-duration | 快速滑动时惯性滚动的时长，单位 `ms` | _number \| string_ | `1000` |
+| default-value | 默认选中项对应的值 | _number[] \| string[]_ | - |
 
 ### Events
 

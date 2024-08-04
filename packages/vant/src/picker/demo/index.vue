@@ -22,7 +22,7 @@ const t = useTranslate({
     showToolbar: '展示顶部栏',
     dateColumns: dateColumns['zh-CN'],
     basicColumns: basicColumns['zh-CN'],
-    defaultIndex: '默认选中项',
+    defaultValue: '默认选中项',
     disableOption: '禁用选项',
     cascadeColumns: cascadeColumns['zh-CN'],
     disabledColumns: disabledColumns['zh-CN'],
@@ -37,7 +37,7 @@ const t = useTranslate({
     showToolbar: 'Show Toolbar',
     dateColumns: dateColumns['en-US'],
     basicColumns: basicColumns['en-US'],
-    defaultIndex: 'Default Index',
+    defaultValue: 'Default Value',
     disableOption: 'Disable Option',
     cascadeColumns: cascadeColumns['en-US'],
     disabledColumns: disabledColumns['en-US'],
@@ -55,6 +55,7 @@ const customFieldName = {
 };
 
 const selectedValues = ref(['Wenzhou']);
+const defaultSelectedValues = ref(['Shaoxing']);
 
 const onChange1 = ({ selectedValues }: PickerChangeEventParams) => {
   showToast(t('toastContent', selectedValues.join(',')));
@@ -114,6 +115,13 @@ const onCancel = () => showToast(t('cancel'));
       :title="t('title')"
       :columns="t('customChildrenColumns')"
       :columns-field-names="customFieldName"
+    />
+  </demo-block>
+  <demo-block card :title="t('defaultValue')">
+    <van-picker
+      :default-value="defaultSelectedValues"
+      :title="t('title')"
+      :columns="t('basicColumns')"
     />
   </demo-block>
 </template>
