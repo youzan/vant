@@ -20,7 +20,7 @@ import {
 import { getElementTranslateY, findIndexOfEnabledOption } from './utils';
 
 // Composables
-import { useEventListener, useParent } from '@vant/use';
+import { useEventListener, useParent, useRaf } from '@vant/use';
 import { useTouch } from '../composables/use-touch';
 import { useExpose } from '../composables/use-expose';
 
@@ -111,6 +111,9 @@ export default defineComponent({
 
       transitionEndTrigger = null;
       currentDuration.value = DEFAULT_DURATION;
+      const distance = currentOffset.value - momentumOffset;
+      const duration = Date.now() - touchStartTime;
+      scrollInto(index, duration, Math.abs(distance / duration));
       updateValueByIndex(index);
       emit('clickOption', props.options[index]);
     };
@@ -119,6 +122,7 @@ export default defineComponent({
       clamp(Math.round(-offset / props.optionHeight), 0, count() - 1);
 
     const currentIndex = computed(() => getIndexByOffset(currentOffset.value));
+    let stop: () => void;
 
     const momentum = (distance: number, duration: number) => {
       const speed = Math.abs(distance / duration);
@@ -129,7 +133,41 @@ export default defineComponent({
       const index = getIndexByOffset(distance);
 
       currentDuration.value = +props.swipeDuration;
+
+      scrollInto(index, duration, speed);
+
       updateValueByIndex(index);
+    };
+
+    const scrollInto = (index: number, duration: number, speed: number) => {
+      // const duration = currentDuration.value;
+      const oldIndex = currentIndex.value;
+      const itemCount = Math.max(index, oldIndex) - Math.min(index, oldIndex);
+      const time = duration / speed;
+      let passedCount = 0;
+      const isDown = currentIndex.value < index;
+      let start: number;
+      if (stop) stop();
+      stop = useRaf(
+        (timestamp) => {
+          if (start === undefined) start = timestamp;
+          const elapsed = timestamp - start;
+          if (passedCount <= itemCount) {
+            const currentCount = Math.round(elapsed / time);
+            if (passedCount <= currentCount) {
+              const option =
+                props.options[oldIndex + (isDown ? passedCount : -passedCount)];
+              emit('scrollInto', option);
+              passedCount++;
+            }
+          } else {
+            stop();
+          }
+        },
+        {
+          isLoop: true,
+        },
+      );
     };
 
     const stopMomentum = () => {
