@@ -41,7 +41,7 @@
     "@types/fs-extra": "^11.0.4",
     "@types/less": "^3.0.6",
     "@types/lodash": "^4.17.7",
-    "@types/markdown-it": "^13.0.8",
+    "@types/markdown-it": "^14.1.2",
     "rimraf": "^5.0.9",
     "vue": "^3.4.33"
   },
