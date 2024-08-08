@@ -55,7 +55,7 @@ const customFieldName = {
 };
 
 const selectedValues = ref(['Wenzhou']);
-const defaultSelectedValues = ref(['Shaoxing']);
+// const defaultSelectedValues = ref(['Shaoxing']);
 
 const onChange1 = ({ selectedValues }: PickerChangeEventParams) => {
   showToast(t('toastContent', selectedValues.join(',')));
@@ -117,11 +117,11 @@ const onCancel = () => showToast(t('cancel'));
       :columns-field-names="customFieldName"
     />
   </demo-block>
-  <demo-block card :title="t('defaultValue')">
+  <!-- <demo-block card :title="t('defaultValue')">
     <van-picker
       :default-value="defaultSelectedValues"
       :title="t('title')"
       :columns="t('basicColumns')"
     />
-  </demo-block>
+  </demo-block> -->
 </template>
