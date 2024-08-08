@@ -139,6 +139,7 @@ export default {
 | columns-num | 显示列数，3-省市区，2-省市，1-省 | _number \| string_ | `3` |
 | visible-option-num | 可见的选项个数 | _number \| string_ | `6` |
 | swipe-duration | 快速滑动时惯性滚动的时长，单位 `ms` | _number \| string_ | `1000` |
+| default-value | 默认选中项对应的值 | _string_ | - |
 
 ### Events
 

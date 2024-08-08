@@ -183,6 +183,7 @@ export default {
 | option-height | Option height, supports `px` `vw` `vh` `rem` unit, default `px` | _number \| string_ | `44` |
 | visible-option-num | Count of visible columns | _number \| string_ | `6` |
 | swipe-duration | Duration of the momentum animation, unit `ms` | _number \| string_ | `1000` |
+| default-value | default values of chosen option | _string[]_ | `[]` |
 
 ### Events
 

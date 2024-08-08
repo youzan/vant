@@ -332,6 +332,61 @@ export default {
 };
 ```
 
+### defaultValue
+
+Using `default-value` to set the default value of the Picker.
+
+```html
+<van-field
+  v-model="fieldValue"
+  is-link
+  readonly
+  label="City"
+  placeholder="Choose City"
+  @click="showPicker = true"
+/>
+<van-popup v-model:show="showPicker" round position="bottom">
+  <van-picker
+    title="Title"
+    :default-value="defaultSelectedValues"
+    :columns="columns"
+    @cancel="showPicker = false"
+    @confirm="onConfirm"
+  />
+</van-popup>
+```
+
+```js
+import { ref } from 'vue';
+
+export default {
+  setup() {
+    const columns = [
+      { text: 'Delaware', value: 'Delaware' },
+      { text: 'Florida', value: 'Florida' },
+      { text: 'Wenzhou', value: 'Wenzhou' },
+      { text: 'Indiana', value: 'Indiana' },
+      { text: 'Maine', value: 'Maine' },
+    ];
+    const fieldValue = ref('');
+    const defaultSelectedValues = ref(['Indiana']);
+    const showPicker = ref(false);
+
+    const onConfirm = ({ selectedOptions }) => {
+      showPicker.value = false;
+    };
+
+    return {
+      columns,
+      onConfirm,
+      fieldValue,
+      defaultSelectedValues,
+      showPicker,
+    };
+  },
+};
+```
+
 ## API
 
 ### Props
@@ -352,6 +407,7 @@ export default {
 | option-height | Option height, supports `px` `vw` `vh` `rem` unit, default `px` | _number \| string_ | `44` |
 | visible-option-num | Count of visible columns | _number \| string_ | `6` |
 | swipe-duration | Duration of the momentum animation, unit `ms` | _number \| string_ | `1000` |
+| default-value | default values of chosen option | _number[] \| string[]_ | - |
 
 ### Events
 

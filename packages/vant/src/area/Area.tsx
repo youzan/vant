@@ -32,6 +32,7 @@ const [name, bem] = createNamespace('area');
 
 export const areaProps = extend({}, pick(pickerSharedProps, INHERIT_PROPS), {
   modelValue: String,
+  defaultValue: String,
   columnsNum: makeNumericProp(3),
   columnsPlaceholder: makeArrayProp<string>(),
   areaList: {
@@ -57,6 +58,7 @@ export default defineComponent({
     const onChange = (...args: unknown[]) => emit('change', ...args);
     const onCancel = (...args: unknown[]) => emit('cancel', ...args);
     const onConfirm = (...args: unknown[]) => emit('confirm', ...args);
+    setCodes(props.defaultValue);
 
     watch(
       codes,
@@ -69,23 +71,27 @@ export default defineComponent({
       { deep: true },
     );
 
+    function setCodes(newCode: string | undefined) {
+      if (newCode) {
+        const lastCode = codes.value.length
+          ? codes.value[codes.value.length - 1]
+          : '';
+        if (newCode !== lastCode) {
+          codes.value = [
+            `${newCode.slice(0, 2)}0000`,
+            `${newCode.slice(0, 4)}00`,
+            newCode,
+          ].slice(0, +props.columnsNum);
+        }
+      } else {
+        codes.value = [];
+      }
+    }
+
     watch(
       () => props.modelValue,
       (newCode) => {
-        if (newCode) {
-          const lastCode = codes.value.length
-            ? codes.value[codes.value.length - 1]
-            : '';
-          if (newCode !== lastCode) {
-            codes.value = [
-              `${newCode.slice(0, 2)}0000`,
-              `${newCode.slice(0, 4)}00`,
-              newCode,
-            ].slice(0, +props.columnsNum);
-          }
-        } else {
-          codes.value = [];
-        }
+        setCodes(newCode);
       },
       { immediate: true },
     );
