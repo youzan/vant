@@ -32,6 +32,7 @@ const value = ref('330302');
 
   <demo-block card :title="t('title2')">
     <van-area v-model="value" :title="t('title')" :area-list="t('areaList')" />
+    <!-- <van-area  :default-value="value" :title="t('title')" :area-list="t('areaList')" /> -->
   </demo-block>
 
   <demo-block card :title="t('title3')">
