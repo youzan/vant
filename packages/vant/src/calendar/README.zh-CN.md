@@ -465,3 +465,5 @@ setTimeout(() => {
 如果你遇到了在 iOS 上无法渲染组件的问题，请确认在创建 Date 对象时没有使用`new Date('2020-01-01')`这样的写法，iOS 不支持以中划线分隔的日期格式，正确写法是`new Date('2020/01/01')`。
 
 对此问题的详细解释：[stackoverflow](https://stackoverflow.com/questions/13363673/javascript-date-is-invalid-on-ios)。
+
+或者，你应该采用一种在各个系统和浏览器上兼容性更好的写法：`new Date(2020, 0, 1)`，但是需要注意的是，月份是从 0 开始的。

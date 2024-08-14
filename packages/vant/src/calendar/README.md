@@ -429,3 +429,35 @@ The component provides the following CSS variables, which can be used to customi
 | --van-calendar-day-disabled-color | _var(--van-text-color-3)_ | - |
 | --van-calendar-confirm-button-height | _36px_ | - |
 | --van-calendar-confirm-button-margin | _7px 0_ | - |
+
+## FAQ
+
+### How to use asynchronously returned data in the 'formatter'?
+
+If you need to use asynchronously returned data in a 'formatter', you can dynamically create a 'formatter' function using computed properties, as shown in the following example:
+
+```js
+const asyncData = ref();
+
+const formatter = computed(() => {
+  if (!asyncData.value) {
+    return (day) => day;
+  }
+  return (day) => {
+    day.bottomInfo = asyncData.value;
+    return day;
+  };
+});
+
+setTimeout(() => {
+  asyncData.value = 'text';
+}, 3000);
+```
+
+### Failed to initialize components on iOS system?
+
+If you encounter an issue where components cannot be rendered on iOS, please confirm that you did not use the `new Date ('2020-01-01')` notation when creating the Date object. iOS does not support date formats separated by a dash. The correct notation is `new Date ('2020/01/01')`.
+
+Detailed explanation of this issue: [stackoverflow](https://stackoverflow.com/questions/13363673/javascript-date-is-invalid-on-ios).
+
+Alternatively, you should adopt a more compatible writing style across different systems and browsers: `new Date (2020, 0, 1)`, but it should be noted that the month starts from 0.
