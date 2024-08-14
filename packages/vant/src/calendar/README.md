@@ -43,7 +43,9 @@ export default {
     const date = ref('');
     const show = ref(false);
 
-    const formatDate = (date) => `${date.getMonth() + 1}/${date.getDate()}`;
+    const formatDate = (date) => {
+      return `${date.getFullYear()}/${date.getMonth() + 1}/${date.getDate()}`;
+    };
     const onConfirm = (value) => {
       show.value = false;
       date.value = formatDate(value);
