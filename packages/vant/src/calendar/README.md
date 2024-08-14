@@ -334,11 +334,11 @@ Following props are supported when the type is multiple
 | opened | Emitted when Popup is opened | - |
 | closed | Emitted when Popup is closed | - |
 | unselect | Emitted when unselect date when type is multiple | _value: Date_ |
-| month-show | Emitted when a month enters the visible area | _value: { date: Date, title: string }_ |
+| month-show | Emitted when a month enters the visible area (effective when `switch mode` is `none`) | _value: { date: Date, title: string }_ |
 | over-range | Emitted when exceeded max range | - |
 | click-subtitle | Emitted when clicking the subtitle | _event: MouseEvent_ |
 | click-disabled-date `v4.7.0` | Emitted when clicking disabled date | _value: Date \| Date[]_ |
-| panel-change | Emitted when switching calendar panel | _{ date: Date }_ |
+| panel-change | Emitted when switching calendar panel (effective when `switch mode` is not `none`) | _{ date: Date, title: string }_ |
 
 ### Slots
 
