@@ -269,7 +269,7 @@ exports[`should render demo and match snapshot 1`] = `
       </div>
       <div class="van-calendar__month">
         <div class="van-calendar__month-title">
-          2012/2
+          2024/9
         </div>
         <div
           role="grid"
@@ -304,7 +304,7 @@ exports[`should render demo and match snapshot 1`] = `
       </div>
       <div class="van-calendar__month">
         <div class="van-calendar__month-title">
-          2012/3
+          2024/10
         </div>
         <div
           role="grid"
@@ -339,7 +339,7 @@ exports[`should render demo and match snapshot 1`] = `
       </div>
       <div class="van-calendar__month">
         <div class="van-calendar__month-title">
-          2012/4
+          2024/11
         </div>
         <div
           role="grid"
@@ -374,7 +374,7 @@ exports[`should render demo and match snapshot 1`] = `
       </div>
       <div class="van-calendar__month">
         <div class="van-calendar__month-title">
-          2012/5
+          2024/12
         </div>
         <div
           role="grid"
@@ -409,7 +409,7 @@ exports[`should render demo and match snapshot 1`] = `
       </div>
       <div class="van-calendar__month">
         <div class="van-calendar__month-title">
-          2012/6
+          2025/1
         </div>
         <div
           role="grid"
@@ -444,307 +444,12 @@ exports[`should render demo and match snapshot 1`] = `
       </div>
       <div class="van-calendar__month">
         <div class="van-calendar__month-title">
-          2012/7
+          2025/2
         </div>
         <div
           role="grid"
           class="van-calendar__days"
         >
-          <div
-            class="van-calendar__day"
-            style="width: 100%;"
-          >
-          </div>
-          <div
-            class="van-calendar__day"
-            style="width: 100%;"
-          >
-          </div>
-          <div
-            class="van-calendar__day"
-            style="width: 100%;"
-          >
-          </div>
-          <div
-            class="van-calendar__day"
-            style="width: 100%;"
-          >
-          </div>
-          <div
-            class="van-calendar__day"
-            style="width: 100%;"
-          >
-          </div>
-        </div>
-      </div>
-      <div class="van-calendar__month">
-        <div class="van-calendar__month-title">
-          2012/8
-        </div>
-        <div
-          role="grid"
-          class="van-calendar__days"
-        >
-          <div
-            class="van-calendar__day"
-            style="width: 100%;"
-          >
-          </div>
-          <div
-            class="van-calendar__day"
-            style="width: 100%;"
-          >
-          </div>
-          <div
-            class="van-calendar__day"
-            style="width: 100%;"
-          >
-          </div>
-          <div
-            class="van-calendar__day"
-            style="width: 100%;"
-          >
-          </div>
-          <div
-            class="van-calendar__day"
-            style="width: 100%;"
-          >
-          </div>
-        </div>
-      </div>
-      <div class="van-calendar__month">
-        <div class="van-calendar__month-title">
-          2012/9
-        </div>
-        <div
-          role="grid"
-          class="van-calendar__days"
-        >
-          <div
-            class="van-calendar__day"
-            style="width: 100%;"
-          >
-          </div>
-          <div
-            class="van-calendar__day"
-            style="width: 100%;"
-          >
-          </div>
-          <div
-            class="van-calendar__day"
-            style="width: 100%;"
-          >
-          </div>
-          <div
-            class="van-calendar__day"
-            style="width: 100%;"
-          >
-          </div>
-          <div
-            class="van-calendar__day"
-            style="width: 100%;"
-          >
-          </div>
-          <div
-            class="van-calendar__day"
-            style="width: 100%;"
-          >
-          </div>
-        </div>
-      </div>
-      <div class="van-calendar__month">
-        <div class="van-calendar__month-title">
-          2012/10
-        </div>
-        <div
-          role="grid"
-          class="van-calendar__days"
-        >
-          <div
-            class="van-calendar__day"
-            style="width: 100%;"
-          >
-          </div>
-          <div
-            class="van-calendar__day"
-            style="width: 100%;"
-          >
-          </div>
-          <div
-            class="van-calendar__day"
-            style="width: 100%;"
-          >
-          </div>
-          <div
-            class="van-calendar__day"
-            style="width: 100%;"
-          >
-          </div>
-          <div
-            class="van-calendar__day"
-            style="width: 100%;"
-          >
-          </div>
-        </div>
-      </div>
-      <div class="van-calendar__month">
-        <div class="van-calendar__month-title">
-          2012/11
-        </div>
-        <div
-          role="grid"
-          class="van-calendar__days"
-        >
-          <div
-            class="van-calendar__day"
-            style="width: 100%;"
-          >
-          </div>
-          <div
-            class="van-calendar__day"
-            style="width: 100%;"
-          >
-          </div>
-          <div
-            class="van-calendar__day"
-            style="width: 100%;"
-          >
-          </div>
-          <div
-            class="van-calendar__day"
-            style="width: 100%;"
-          >
-          </div>
-          <div
-            class="van-calendar__day"
-            style="width: 100%;"
-          >
-          </div>
-        </div>
-      </div>
-      <div class="van-calendar__month">
-        <div class="van-calendar__month-title">
-          2012/12
-        </div>
-        <div
-          role="grid"
-          class="van-calendar__days"
-        >
-          <div
-            class="van-calendar__day"
-            style="width: 100%;"
-          >
-          </div>
-          <div
-            class="van-calendar__day"
-            style="width: 100%;"
-          >
-          </div>
-          <div
-            class="van-calendar__day"
-            style="width: 100%;"
-          >
-          </div>
-          <div
-            class="van-calendar__day"
-            style="width: 100%;"
-          >
-          </div>
-          <div
-            class="van-calendar__day"
-            style="width: 100%;"
-          >
-          </div>
-          <div
-            class="van-calendar__day"
-            style="width: 100%;"
-          >
-          </div>
-        </div>
-      </div>
-      <div class="van-calendar__month">
-        <div class="van-calendar__month-title">
-          2013/1
-        </div>
-        <div
-          role="grid"
-          class="van-calendar__days"
-        >
-          <div
-            class="van-calendar__day"
-            style="width: 100%;"
-          >
-          </div>
-          <div
-            class="van-calendar__day"
-            style="width: 100%;"
-          >
-          </div>
-          <div
-            class="van-calendar__day"
-            style="width: 100%;"
-          >
-          </div>
-          <div
-            class="van-calendar__day"
-            style="width: 100%;"
-          >
-          </div>
-          <div
-            class="van-calendar__day"
-            style="width: 100%;"
-          >
-          </div>
-        </div>
-      </div>
-      <div class="van-calendar__month">
-        <div class="van-calendar__month-title">
-          2013/2
-        </div>
-        <div
-          role="grid"
-          class="van-calendar__days"
-        >
-          <div
-            class="van-calendar__day"
-            style="width: 100%;"
-          >
-          </div>
-          <div
-            class="van-calendar__day"
-            style="width: 100%;"
-          >
-          </div>
-          <div
-            class="van-calendar__day"
-            style="width: 100%;"
-          >
-          </div>
-          <div
-            class="van-calendar__day"
-            style="width: 100%;"
-          >
-          </div>
-          <div
-            class="van-calendar__day"
-            style="width: 100%;"
-          >
-          </div>
-        </div>
-      </div>
-      <div class="van-calendar__month">
-        <div class="van-calendar__month-title">
-          2013/3
-        </div>
-        <div
-          role="grid"
-          class="van-calendar__days"
-        >
-          <div
-            class="van-calendar__day"
-            style="width: 100%;"
-          >
-          </div>
           <div
             class="van-calendar__day"
             style="width: 100%;"
