@@ -3,6 +3,7 @@ import {
   watch,
   computed,
   defineComponent,
+  nextTick,
   type PropType,
   type TeleportProps,
   type ExtractPropTypes,
@@ -387,7 +388,9 @@ export default defineComponent({
 
     const onPanelChange = (date: Date) => {
       currentPanelDate.value = date;
-      emit('panelChange', { date });
+      nextTick(() => {
+        emit('panelChange', { date, title: currentMonthRef.value?.getTitle() });
+      });
     };
 
     const onConfirm = () =>

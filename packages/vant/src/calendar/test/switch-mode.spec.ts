@@ -212,19 +212,31 @@ test('should emit panelChange event', async () => {
 
   await prevMonth.trigger('click');
   currentDate = getPrevMonth(currentDate);
-  expect(onPanelChange).toHaveBeenLastCalledWith({ date: currentDate });
+  expect(onPanelChange).toHaveBeenLastCalledWith({
+    date: currentDate,
+    title: '2019/12',
+  });
 
   await prevYear.trigger('click');
   currentDate = getPrevYear(currentDate);
-  expect(onPanelChange).toHaveBeenLastCalledWith({ date: currentDate });
+  expect(onPanelChange).toHaveBeenLastCalledWith({
+    date: currentDate,
+    title: '2018/12',
+  });
 
   await nextYear.trigger('click');
   currentDate = getNextYear(currentDate);
-  expect(onPanelChange).toHaveBeenLastCalledWith({ date: currentDate });
+  expect(onPanelChange).toHaveBeenLastCalledWith({
+    date: currentDate,
+    title: '2019/12',
+  });
 
   await nextMonth.trigger('click');
   currentDate = getNextMonth(currentDate);
-  expect(onPanelChange).toHaveBeenLastCalledWith({ date: currentDate });
+  expect(onPanelChange).toHaveBeenLastCalledWith({
+    date: currentDate,
+    title: '2020/1',
+  });
 });
 
 test('correctly change the panelDate when the selected date is the last day of each month', async () => {
@@ -245,7 +257,10 @@ test('correctly change the panelDate when the selected date is the last day of e
   await nextMonth.trigger('click');
   let panelDate = getNextMonth(defaultDate);
   expect(panelDate).toEqual(new Date(2024, 5, 30));
-  expect(onPanelChange).toHaveBeenLastCalledWith({ date: panelDate });
+  expect(onPanelChange).toHaveBeenLastCalledWith({
+    date: panelDate,
+    title: '2024/6',
+  });
 
   defaultDate = new Date(2024, 1, 29);
   await wrapper.setProps({
@@ -257,5 +272,8 @@ test('correctly change the panelDate when the selected date is the last day of e
   await nextYear.trigger('click');
   panelDate = getNextYear(defaultDate);
   expect(panelDate).toEqual(new Date(2025, 1, 28));
-  expect(onPanelChange).toHaveBeenLastCalledWith({ date: panelDate });
+  expect(onPanelChange).toHaveBeenLastCalledWith({
+    date: panelDate,
+    title: '2025/2',
+  });
 });
