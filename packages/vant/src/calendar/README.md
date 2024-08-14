@@ -229,7 +229,7 @@ Use `position` to custom popup position, can be set to `top`、`left`、`right`.
 When selecting a date range, you can use the `max-range` prop to specify the maximum number of selectable days.
 
 ```html
-<van-calendar type="range" :max-range="3" :style="{ height: '500px' }" />
+<van-calendar type="range" :max-range="3" />
 ```
 
 ### Custom First Day Of Week
