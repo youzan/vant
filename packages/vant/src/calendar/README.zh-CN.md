@@ -43,7 +43,9 @@ export default {
     const date = ref('');
     const show = ref(false);
 
-    const formatDate = (date) => `${date.getMonth() + 1}/${date.getDate()}`;
+    const formatDate = (date) => {
+      return `${date.getFullYear()}/${date.getMonth() + 1}/${date.getDate()}`;
+    };
     const onConfirm = (value) => {
       show.value = false;
       date.value = formatDate(value);
@@ -231,7 +233,7 @@ export default {
 选择日期区间时，可以通过 `max-range` 属性来指定最多可选天数，选择的范围超过最多可选天数时，会弹出相应的提示文案。
 
 ```html
-<van-calendar type="range" :max-range="3" :style="{ height: '500px' }" />
+<van-calendar type="range" :max-range="3" />
 ```
 
 ### 自定义周起始日

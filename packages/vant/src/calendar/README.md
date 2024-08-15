@@ -43,7 +43,9 @@ export default {
     const date = ref('');
     const show = ref(false);
 
-    const formatDate = (date) => `${date.getMonth() + 1}/${date.getDate()}`;
+    const formatDate = (date) => {
+      return `${date.getFullYear()}/${date.getMonth() + 1}/${date.getDate()}`;
+    };
     const onConfirm = (value) => {
       show.value = false;
       date.value = formatDate(value);
@@ -227,7 +229,7 @@ Use `position` to custom popup position, can be set to `top`、`left`、`right`.
 When selecting a date range, you can use the `max-range` prop to specify the maximum number of selectable days.
 
 ```html
-<van-calendar type="range" :max-range="3" :style="{ height: '500px' }" />
+<van-calendar type="range" :max-range="3" />
 ```
 
 ### Custom First Day Of Week
