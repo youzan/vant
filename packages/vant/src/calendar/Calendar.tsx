@@ -294,6 +294,8 @@ export default defineComponent({
               title: month.getTitle(),
             });
           }
+        } else {
+          monthRefs.value[i].showed = false;
         }
 
         height += heights[i];
