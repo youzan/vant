@@ -95,12 +95,12 @@ test('should format input value when type is digit', () => {
   expect(wrapper.emitted('update:modelValue')[2][0]).toEqual('123');
 });
 
-test('should limit input value based on min and max props', () => {
+test('should limit input value based on min and max props', async () => {
   const wrapper = mount(Field, {
     props: {
       type: 'number',
-      min: 10,
-      max: 20,
+      min: 2,
+      max: 10,
       modelValue: '',
     },
   });
@@ -108,19 +108,19 @@ test('should limit input value based on min and max props', () => {
   const input = wrapper.find('input');
 
   // Test input value less than min
-  input.element.value = '5';
-  input.trigger('blur');
-  expect(wrapper.emitted('update:modelValue')[0][0]).toEqual('10');
+  await wrapper.setProps({ modelValue: '1' });
+  await input.trigger('blur');
+  expect(wrapper.emitted('update:modelValue')[0][0]).toEqual('2');
 
   // Test input value greater than max
-  input.element.value = '25';
-  input.trigger('blur');
-  expect(wrapper.emitted('update:modelValue')[1][0]).toEqual('20');
+  await wrapper.setProps({ modelValue: '15' });
+  await input.trigger('blur');
+  expect(wrapper.emitted('update:modelValue')[1][0]).toEqual('10');
 
   // Test input value within range
-  input.element.value = '15';
-  input.trigger('blur');
-  expect(wrapper.emitted('update:modelValue')[2][0]).toEqual('15');
+  input.element.value = '5';
+  input.trigger('input');
+  expect(wrapper.emitted('update:modelValue')[2][0]).toEqual('5');
 });
 
 test('should render textarea when type is textarea', async () => {
