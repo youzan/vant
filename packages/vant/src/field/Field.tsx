@@ -81,6 +81,8 @@ export const fieldSharedProps = {
   autofocus: Boolean,
   clearable: Boolean,
   maxlength: numericProp,
+  max: Number,
+  min: Number,
   formatter: Function as PropType<(value: string) => string>,
   clearIcon: makeStringProp('clear'),
   modelValue: makeNumericProp(''),
@@ -417,6 +419,25 @@ export default defineComponent({
 
       if (getProp('readonly')) {
         return;
+      }
+
+      const { value } = event.target as HTMLInputElement;
+
+      if (value === '') {
+        updateValue('');
+      } else if (props.type === 'number' || props.type === 'digit') {
+        const numericValue = Number(value);
+        const min = props.min !== undefined ? props.min : -Infinity;
+        const max = props.max !== undefined ? props.max : Infinity;
+
+        let adjustedValue = numericValue;
+        if (numericValue < min) {
+          adjustedValue = min;
+        } else if (numericValue > max) {
+          adjustedValue = max;
+        }
+
+        updateValue(adjustedValue.toString());
       }
 
       validateWithTrigger('onBlur');
