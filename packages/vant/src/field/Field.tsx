@@ -423,21 +423,21 @@ export default defineComponent({
 
       const { value } = event.target as HTMLInputElement;
 
-      if (value === '') {
-        updateValue('');
-      } else if (props.type === 'number' || props.type === 'digit') {
-        const numericValue = Number(value);
+      if (props.type === 'number' || props.type === 'digit') {
+        const numericValue = value === '' ? '' : Number(value);
         const min = props.min !== undefined ? props.min : -Infinity;
         const max = props.max !== undefined ? props.max : Infinity;
 
         let adjustedValue = numericValue;
-        if (numericValue < min) {
+        if (numericValue !== '' && numericValue < min) {
           adjustedValue = min;
-        } else if (numericValue > max) {
+        } else if (numericValue !== '' && numericValue > max) {
           adjustedValue = max;
         }
 
         updateValue(adjustedValue.toString());
+      } else {
+        updateValue(value);
       }
 
       validateWithTrigger('onBlur');
