@@ -2,6 +2,7 @@
 import VanBarrage, { BarrageInstance } from '..';
 import VanButton from '../../button';
 import VanSpace from '../../space';
+import VanTag from '../../tag';
 import { useTranslate } from '../../../docs/site';
 import { ref, watch } from 'vue';
 import { useToggle } from '@vant/use';
@@ -12,6 +13,7 @@ const t = useTranslate({
     play: '开始',
     pause: '暂停',
     videoBarrage: '模仿视频弹幕',
+    customPopUp: '自定义弹幕',
     lightweight: '轻量',
     customizable: '可定制的',
     mobile: '移动端',
@@ -22,6 +24,7 @@ const t = useTranslate({
     play: 'play',
     pause: 'pause',
     videoBarrage: 'Imitate video barrage',
+    customPopUp: 'Custom pop-up',
     lightweight: 'Lightweight',
     customizable: 'Customizable',
     mobile: 'Mobile',
@@ -42,6 +45,11 @@ const defaultList = [
 const list = ref([...defaultList]);
 const add = () => {
   list.value.push({ id: Math.random(), text: 'Barrage' });
+};
+
+const customList = ref([...defaultList]);
+const addCustomList = () => {
+  customList.value.push({ id: Math.random(), text: 'Barrage' });
 };
 
 const videoList = ref([...defaultList]);
@@ -65,6 +73,20 @@ watch(isPlay, () => {
     </van-barrage>
     <van-space style="margin-top: 10px">
       <van-button @click="add" type="primary" size="small">
+        {{ t('barrage') }}
+      </van-button>
+    </van-space>
+  </demo-block>
+
+  <demo-block :title="t('customPopUp')">
+    <van-barrage v-model="customList">
+      <div class="video"></div>
+      <template #barrage="{ item }">
+        <van-tag type="primary">{{ item.text }}</van-tag>
+      </template>
+    </van-barrage>
+    <van-space style="margin-top: 10px">
+      <van-button @click="addCustomList" type="primary" size="small">
         {{ t('barrage') }}
       </van-button>
     </van-space>

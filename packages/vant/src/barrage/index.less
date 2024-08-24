@@ -9,27 +9,36 @@
 .van-barrage {
   position: relative;
   overflow: hidden;
-  &__item {
+
+  &__wrapper {
     position: absolute;
     top: 0;
     right: 0;
     z-index: 99;
-    padding-bottom: var(--van-barrage-space);
-    opacity: 0.75;
     line-height: 1;
     font-size: var(--van-barrage-font-size);
     font-family: var(--van-barrage-font);
-    font-weight: bold;
     white-space: nowrap;
-    color: var(--van-barrage-color);
-    text-shadow:
-      1px 0 1px #000000,
-      0 1px 1px #000000,
-      0 -1px 1px #000000,
-      -1px 0 1px #000000;
-    user-select: none;
     will-change: transform;
     transform: translateX(110%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &__item {
+      &__default {
+        opacity: 0.75;
+        font-weight: bold;
+        white-space: nowrap;
+        color: var(--van-barrage-color);
+        text-shadow:
+          1px 0 1px #000000,
+          0 1px 1px #000000,
+          0 -1px 1px #000000,
+          -1px 0 1px #000000;
+        user-select: none;
+      }
+    }
   }
 }
 

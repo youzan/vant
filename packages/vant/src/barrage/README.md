@@ -107,9 +107,9 @@ export default {
 | v-model | Barrage data | _BarrageItem[]_ | - |
 | auto-play | Whether to play the bullet screen automatically | _boolean_ | `true` |
 | rows | The number of lines of text | _number \| string_ | `4` |
-| top | Spacing between the top of the barrage area, unit `px` | _number \| string_ | `10` |
-| duration | Text animation duration, unit `ms` | _number \| string_ | `4000` |
-| delay | Barrage animation delay, unit `ms` | _number_ | `300` |
+| top | Spacing between the top of the barrage area, unit`px` | _number \| string_ | `10` |
+| duration | Text animation duration, unit`ms` | _number \| string_ | `4000` |
+| delay | Barrage animation delay, unit`ms` | _number_ | `300` |
 
 ### Methods
 
@@ -122,9 +122,10 @@ Use [ref](https://vuejs.org/guide/essentials/template-refs.html) to get Barrage 
 
 ### Slots
 
-| Name    | Description  |
-| ------- | ------------ |
-| default | Default slot |
+| Name    | Description            |
+| ------- | ---------------------- |
+| default | Default slot           |
+| barrage | custom barrage content |
 
 ### Types
 

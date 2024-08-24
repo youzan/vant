@@ -5,6 +5,8 @@ import {
   type ExtractPropTypes,
   nextTick,
   watch,
+  render,
+  VNode,
 } from 'vue';
 import { useExpose } from '../composables/use-expose';
 import {
@@ -43,37 +45,75 @@ export default defineComponent({
 
   setup(props, { emit, slots }) {
     const barrageWrapper = ref<HTMLDivElement>();
-    const className = bem('item') as string;
     const total = ref(0);
     const barrageItems: HTMLSpanElement[] = [];
-
-    const createBarrageItem = (
-      text: string | number,
-      delay: number = props.delay,
-    ) => {
-      const item = document.createElement('span');
-      item.className = className;
-      item.innerText = String(text);
-
-      item.style.animationDuration = `${props.duration}ms`;
-      item.style.animationDelay = `${delay}ms`;
-      item.style.animationName = 'van-barrage';
-      item.style.animationTimingFunction = 'linear';
-
-      return item;
-    };
-
     const isInitBarrage = ref(true);
     const isPlay = ref(props.autoPlay);
 
-    const appendBarrageItem = ({ id, text }: BarrageItem, i: number) => {
+    const createBarrageItem = (
+      itemData: BarrageItem,
+      delay: number = props.delay,
+    ) => {
+      const applyStyles = (element: HTMLElement) => {
+        element.style.animationDuration = `${props.duration}ms`;
+        element.style.animationDelay = `${delay}ms`;
+        element.style.animationTimingFunction = 'linear';
+        element.style.animationName = 'van-barrage';
+      };
+
+      const createDefaultItem = (text: string) => {
+        return <span class={bem('wrapper__item__default')}>{text}</span>;
+      };
+
+      const createWrapItem = (vNode: VNode) => {
+        return <div class={bem('wrapper__item')}>{vNode}</div>;
+      };
+
+      let vNode;
+
+      if (slots.barrage) {
+        // Use slot content
+        vNode = slots.barrage({ item: itemData });
+
+        if (!Array.isArray(vNode)) {
+          vNode = [vNode]; // Ensure vNode is an array
+        }
+        vNode = vNode.map(createWrapItem);
+      } else {
+        // Use default content
+        vNode = [createWrapItem(createDefaultItem(String(itemData.text)))];
+      }
+
+      const container = (
+        <div class={bem('wrapper')}>
+          <>{vNode}</>
+        </div>
+      );
+
+      // Create a temporary container to render the component
+      const tempContainer = document.createElement('div');
+      render(container, tempContainer);
+      applyStyles(tempContainer.firstElementChild as HTMLElement);
+
+      const resultElement = tempContainer.firstElementChild as HTMLElement;
+
+      // Remove the temporary container
+      tempContainer.remove();
+
+      return resultElement;
+    };
+
+    const appendBarrageItem = (itemData: BarrageItem, i: number) => {
+      const { id } = itemData;
       const item = createBarrageItem(
-        text,
+        itemData,
         isInitBarrage.value ? i * props.delay : undefined,
       );
+
       if (!props.autoPlay && isPlay.value === false) {
         item.style.animationPlayState = 'paused';
       }
+
       barrageWrapper.value?.append(item);
       total.value++;
 
@@ -131,9 +171,8 @@ export default defineComponent({
     }>({});
 
     onMounted(async () => {
-      rootStyle.value[
-        '--move-distance'
-      ] = `-${barrageWrapper.value?.offsetWidth}px`;
+      rootStyle.value['--move-distance'] =
+        `-${barrageWrapper.value?.offsetWidth}px`;
       await nextTick();
       updateBarrages(props.modelValue, []);
     });

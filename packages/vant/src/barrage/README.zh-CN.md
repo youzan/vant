@@ -107,14 +107,14 @@ export default {
 
 ### Props
 
-| 参数      | 说明                              | 类型               | 默认值 |
-| --------- | --------------------------------- | ------------------ | ------ |
-| v-model   | 弹幕数据                          | _BarrageItem[]_    | -      |
-| auto-play | 是否自动播放弹幕                  | _boolean_          | `true` |
-| rows      | 弹幕文字行数                      | _number \| string_ | `4`    |
-| top       | 弹幕文字区域顶部间距，单位 `px`   | _number \| string_ | `10`   |
-| duration  | 弹幕文字滑过容器的时间，单位 `ms` | _number \| string_ | `4000` |
-| delay     | 弹幕动画延时，单位 `ms`           | _number_           | `300`  |
+| 参数      | 说明                             | 类型               | 默认值 |
+| --------- | -------------------------------- | ------------------ | ------ |
+| v-model   | 弹幕数据                         | _BarrageItem[]_    | -      |
+| auto-play | 是否自动播放弹幕                 | _boolean_          | `true` |
+| rows      | 弹幕文字行数                     | _number \| string_ | `4`    |
+| top       | 弹幕文字区域顶部间距，单位`px`   | _number \| string_ | `10`   |
+| duration  | 弹幕文字滑过容器的时间，单位`ms` | _number \| string_ | `4000` |
+| delay     | 弹幕动画延时，单位`ms`           | _number_           | `300`  |
 
 ### 方法
 
@@ -130,6 +130,7 @@ export default {
 | 名称    | 说明           |
 | ------- | -------------- |
 | default | 弹幕组件子元素 |
+| pop-up  | 自定义弹幕内容 |
 
 ### 类型定义
 
