@@ -104,3 +104,15 @@ test('should allow to disable lazy-render', async () => {
 
   expect(wrapper.html()).toMatchSnapshot();
 });
+
+test('should allow to use the teleport prop', () => {
+  const root = document.createElement('div');
+  mount(Overlay, {
+    props: {
+      show: true,
+      teleport: root,
+    },
+  });
+
+  expect(root.querySelector('.van-overlay')).toBeTruthy();
+});
