@@ -27,6 +27,7 @@ import {
   makeNumericProp,
   createNamespace,
   type ComponentInstance,
+  clamp,
 } from '../utils';
 import {
   cutString,
@@ -328,9 +329,19 @@ export default defineComponent({
       const limitDiffLen =
         getStringLength(originalValue) - getStringLength(value);
 
+      // https://github.com/youzan/vant/issues/13058
       if (props.type === 'number' || props.type === 'digit') {
         const isNumber = props.type === 'number';
         value = formatNumber(value, isNumber, isNumber);
+
+        if (trigger === 'onBlur' && value !== '') {
+          const adjustedValue = clamp(
+            +value,
+            props.min ?? -Infinity,
+            props.max ?? Infinity,
+          );
+          value = adjustedValue.toString();
+        }
       }
 
       let formatterDiffLen = 0;
@@ -419,25 +430,6 @@ export default defineComponent({
 
       if (getProp('readonly')) {
         return;
-      }
-
-      const { value } = event.target as HTMLInputElement;
-
-      if (props.type === 'number' || props.type === 'digit') {
-        const numericValue = value === '' ? '' : Number(value);
-        const min = props.min !== undefined ? props.min : -Infinity;
-        const max = props.max !== undefined ? props.max : Infinity;
-
-        let adjustedValue = numericValue;
-        if (numericValue !== '' && numericValue < min) {
-          adjustedValue = min;
-        } else if (numericValue !== '' && numericValue > max) {
-          adjustedValue = max;
-        }
-
-        updateValue(adjustedValue.toString());
-      } else {
-        updateValue(value);
       }
 
       validateWithTrigger('onBlur');
