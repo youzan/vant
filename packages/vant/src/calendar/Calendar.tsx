@@ -161,7 +161,11 @@ export default defineComponent({
       const now = getToday();
 
       if (type === 'range') {
-        if (!Array.isArray(defaultDate) || defaultDate.length === 1) {
+        if (!Array.isArray(defaultDate)) {
+          defaultDate = [];
+        }
+
+        if (defaultDate.length === 1 && compareDay(defaultDate[0], now) === 1) {
           defaultDate = [];
         }
 
