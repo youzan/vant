@@ -319,7 +319,7 @@ Following props are supported when the type is multiple
 | Key | Description | Type |
 | --- | --- | --- |
 | date | Date | _Date_ |
-| type | Type, can be set to `selected`、`start`、`middle`、`end`、`disabled` | _string_ |
+| type | Type, can be set to `selected`、`start`、`middle`、`end`、`disabled`、`start-end`、`multiple-selected`、`multiple-middle`、`placeholder` | _string_ |
 | text | Text | _string_ |
 | topInfo | Top info | _string_ |
 | bottomInfo | Bottom info | _string_ |
