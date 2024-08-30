@@ -77,7 +77,7 @@ export default {
 
     const onConfirm = (dates) => {
       show.value = false;
-      text.value = `选择了 ${dates.length} 个日期`;
+      text.value = `${dates.length} dates selected`;
     };
 
     return {
@@ -319,7 +319,7 @@ Following props are supported when the type is multiple
 | Key | Description | Type |
 | --- | --- | --- |
 | date | Date | _Date_ |
-| type | Type, can be set to `selected`、`start`、`middle`、`end`、`disabled` | _string_ |
+| type | Type, can be set to `selected`、`start`、`middle`、`end`、`disabled`、`start-end`、`multiple-selected`、`multiple-middle`、`placeholder` | _string_ |
 | text | Text | _string_ |
 | topInfo | Top info | _string_ |
 | bottomInfo | Bottom info | _string_ |
@@ -336,11 +336,11 @@ Following props are supported when the type is multiple
 | opened | Emitted when Popup is opened | - |
 | closed | Emitted when Popup is closed | - |
 | unselect | Emitted when unselect date when type is multiple | _value: Date_ |
-| month-show | Emitted when a month enters the visible area | _value: { date: Date, title: string }_ |
+| month-show | Emitted when a month enters the visible area (effective when `switch mode` is `none`) | _value: { date: Date, title: string }_ |
 | over-range | Emitted when exceeded max range | - |
 | click-subtitle | Emitted when clicking the subtitle | _event: MouseEvent_ |
 | click-disabled-date `v4.7.0` | Emitted when clicking disabled date | _value: Date \| Date[]_ |
-| panel-change | Emitted when switching calendar panel | _{ date: Date }_ |
+| panel-change | Emitted when switching calendar panel (effective when `switch mode` is not `none`) | _{ date: Date }_ |
 
 ### Slots
 
@@ -408,7 +408,7 @@ The component provides the following CSS variables, which can be used to customi
 | --van-calendar-header-title-height | _44px_ | - |
 | --van-calendar-header-title-font-size | _var(--van-font-size-lg)_ | - |
 | --van-calendar-header-subtitle-font-size | _var(--van-font-size-md)_ | - |
-| --van-calendar-header-action-width | 28px | - |
+| --van-calendar-header-action-width | _28px_ | - |
 | --van-calendar-header-action-color | _var(--van-text-color)_ | - |
 | --van-calendar-header-action-disabled-color | _var(--van-text-color-3)_ | - |
 | --van-calendar-weekdays-height | _30px_ | - |
@@ -419,16 +419,16 @@ The component provides the following CSS variables, which can be used to customi
 | --van-calendar-day-height | _64px_ | - |
 | --van-calendar-day-font-size | _var(--van-font-size-lg)_ | - |
 | --van-calendar-day-margin-bottom | _4px_ | - |
+| --van-calendar-day-disabled-color | _var(--van-text-color-3)_ | - |
 | --van-calendar-range-edge-color | _var(--van-white)_ | - |
 | --van-calendar-range-edge-background | _var(--van-primary-color)_ | - |
 | --van-calendar-range-middle-color | _var(--van-primary-color)_ | - |
 | --van-calendar-range-middle-background-opacity | _0.1_ | - |
 | --van-calendar-selected-day-size | _54px_ | - |
 | --van-calendar-selected-day-color | _var(--van-white)_ | - |
+| --van-calendar-selected-day-background | _var(--van-primary-color)_ | - |
 | --van-calendar-info-font-size | _var(--van-font-size-xs)_ | - |
 | --van-calendar-info-line-height | _var(--van-line-height-xs)_ | - |
-| --van-calendar-selected-day-background | _var(--van-primary-color)_ | - |
-| --van-calendar-day-disabled-color | _var(--van-text-color-3)_ | - |
 | --van-calendar-confirm-button-height | _36px_ | - |
 | --van-calendar-confirm-button-margin | _7px 0_ | - |
 
