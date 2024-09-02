@@ -655,3 +655,19 @@ test('should render confirm-text slot correctly', async () => {
 
   expect(wrapper.find('.van-calendar__confirm').html()).toMatchSnapshot();
 });
+
+test('the defaultDate length of 1 should be handled correctly', async () => {
+  const wrapper = mount(Calendar, {
+    props: {
+      poppable: false,
+      defaultDate: [getNextDay(now)],
+      type: 'range',
+    },
+  });
+
+  wrapper.find('.van-calendar__confirm').trigger('click');
+  expect(wrapper.emitted<[Date]>('confirm')![0][0]).toEqual([
+    now,
+    getNextDay(now),
+  ]);
+});

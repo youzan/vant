@@ -165,6 +165,11 @@ export default defineComponent({
           defaultDate = [];
         }
 
+        // reset invalid default date
+        if (defaultDate.length === 1 && compareDay(defaultDate[0], now) === 1) {
+          defaultDate = [];
+        }
+
         const min = minDate.value;
         const max = maxDate.value;
 
