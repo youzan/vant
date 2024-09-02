@@ -69,16 +69,16 @@ export type CalendarThemeVars = {
   calendarDayHeight?: string;
   calendarDayFontSize?: string;
   calendarDayMarginBottom?: string;
+  calendarDayDisabledColor?: string;
   calendarRangeEdgeColor?: string;
   calendarRangeEdgeBackground?: string;
   calendarRangeMiddleColor?: string;
   calendarRangeMiddleBackgroundOpacity?: number | string;
   calendarSelectedDaySize?: string;
   calendarSelectedDayColor?: string;
+  calendarSelectedDayBackground?: string;
   calendarInfoFontSize?: string;
   calendarInfoLineHeight?: number | string;
-  calendarSelectedDayBackground?: string;
-  calendarDayDisabledColor?: string;
   calendarConfirmButtonHeight?: string;
   calendarConfirmButtonMargin?: string;
 };

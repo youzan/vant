@@ -279,8 +279,8 @@ export default {
 | show-subtitle | 是否展示日历副标题（年月） | _boolean_ | `true` |
 | show-confirm | 是否展示确认按钮 | _boolean_ | `true` |
 | readonly | 是否为只读状态，只读状态下不能选择日期 | _boolean_ | `false` |
-| confirm-text | 确认按钮的文字 | _string_ | `确定` |
-| confirm-disabled-text | 确认按钮处于禁用状态时的文字 | _string_ | `确定` |
+| confirm-text | 确认按钮的文字 | _string_ | `确认` |
+| confirm-disabled-text | 确认按钮处于禁用状态时的文字 | _string_ | `确认` |
 | first-day-of-week | 设置周起始日 | _0-6_ | `0` |
 
 ### Calendar Poppable Props
@@ -325,7 +325,7 @@ export default {
 | 键名 | 说明 | 类型 |
 | --- | --- | --- |
 | date | 日期对应的 Date 对象 | _Date_ |
-| type | 日期类型，可选值为 `selected`、`start`、`middle`、`end`、`disabled` | _string_ |
+| type | 日期类型，可选值为 `selected`、`start`、`middle`、`end`、`disabled`、`start-end`、`multiple-selected`、`multiple-middle`、`placeholder` | _string_ |
 | text | 中间显示的文字 | _string_ |
 | topInfo | 上方的提示信息 | _string_ |
 | bottomInfo | 下方的提示信息 | _string_ |
@@ -342,11 +342,11 @@ export default {
 | opened | 打开弹出层且动画结束后触发 | - |
 | closed | 关闭弹出层且动画结束后触发 | - |
 | unselect | 当日历组件的 `type` 为 `multiple` 时，取消选中日期时触发 | _value: Date_ |
-| month-show | 当某个月份进入可视区域时触发 | _{ date: Date, title: string }_ |
+| month-show | 当某个月份进入可视区域时触发（`switch-mode` 为 `none` 时生效） | _{ date: Date, title: string }_ |
 | over-range | 范围选择超过最多可选天数时触发 | - |
 | click-subtitle | 点击日历副标题时触发 | _event: MouseEvent_ |
 | click-disabled-date `v4.7.0` | 点击禁用日期时触发 | _value: Date \| Date[]_ |
-| panel-change | 日历面板切换时触发 | _{ date: Date }_ |
+| panel-change | 日历面板切换时触发（`switch-mode` 不为 `none` 时生效） | _{ date: Date }_ |
 
 ### Slots
 
@@ -414,7 +414,7 @@ calendarRef.value?.reset();
 | --van-calendar-header-title-height | _44px_ | - |
 | --van-calendar-header-title-font-size | _var(--van-font-size-lg)_ | - |
 | --van-calendar-header-subtitle-font-size | _var(--van-font-size-md)_ | - |
-| --van-calendar-header-action-width | 28px | - |
+| --van-calendar-header-action-width | _28px_ | - |
 | --van-calendar-header-action-color | _var(--van-text-color)_ | - |
 | --van-calendar-header-action-disabled-color | _var(--van-text-color-3)_ | - |
 | --van-calendar-weekdays-height | _30px_ | - |
@@ -425,16 +425,16 @@ calendarRef.value?.reset();
 | --van-calendar-day-height | _64px_ | - |
 | --van-calendar-day-font-size | _var(--van-font-size-lg)_ | - |
 | --van-calendar-day-margin-bottom | _4px_ | - |
+| --van-calendar-day-disabled-color | _var(--van-text-color-3)_ | - |
 | --van-calendar-range-edge-color | _var(--van-white)_ | - |
 | --van-calendar-range-edge-background | _var(--van-primary-color)_ | - |
 | --van-calendar-range-middle-color | _var(--van-primary-color)_ | - |
 | --van-calendar-range-middle-background-opacity | _0.1_ | - |
 | --van-calendar-selected-day-size | _54px_ | - |
 | --van-calendar-selected-day-color | _var(--van-white)_ | - |
+| --van-calendar-selected-day-background | _var(--van-primary-color)_ | - |
 | --van-calendar-info-font-size | _var(--van-font-size-xs)_ | - |
 | --van-calendar-info-line-height | _var(--van-line-height-xs)_ | - |
-| --van-calendar-selected-day-background | _var(--van-primary-color)_ | - |
-| --van-calendar-day-disabled-color | _var(--van-text-color-3)_ | - |
 | --van-calendar-confirm-button-height | _36px_ | - |
 | --van-calendar-confirm-button-margin | _7px 0_ | - |
 
