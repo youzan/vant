@@ -105,6 +105,16 @@ test('should render extra-key slot correctly', () => {
   expect(wrapper.findAll('.van-key')[9].html()).toMatchSnapshot();
 });
 
+test('should render zero key correctly when extra-key prop is an empty array', () => {
+  const wrapper = mount(NumberKeyboard, {
+    props: {
+      theme: 'custom',
+      extraKey: [],
+    },
+  });
+  expect(wrapper.findAll('.van-key')[9].html()).toMatchSnapshot();
+});
+
 test('should render delete slot correctly', () => {
   const wrapper = mount(NumberKeyboard, {
     slots: {
