@@ -40,7 +40,7 @@
     "vant": "workspace:*",
     "vue": "^3.5.0",
     "esbuild": "^0.20.2",
-    "rimraf": "^5.0.9",
+    "rimraf": "^5.0.10",
     "typescript": "^5.4.5"
   }
 }
