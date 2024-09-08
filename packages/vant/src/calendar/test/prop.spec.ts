@@ -308,3 +308,30 @@ test('should allow default date to be maxDate when using allowSameDay prop', () 
   wrapper.find('.van-calendar__confirm').trigger('click');
   expect(wrapper.emitted<[Date]>('confirm')![0][0]).toEqual([maxDate, maxDate]);
 });
+
+test('should call reset when defaultDate prop changes', async () => {
+  const wrapper = mount(Calendar, {
+    props: {
+      poppable: false,
+      defaultDate: undefined,
+      minDate,
+      maxDate,
+    },
+  });
+
+  wrapper.find('.van-calendar__confirm').trigger('click');
+  expect(wrapper.emitted<[Date]>('confirm')![0][0]).toEqual(maxDate);
+
+  await wrapper.setProps({ defaultDate: minDate });
+  wrapper.find('.van-calendar__confirm').trigger('click');
+  expect(wrapper.emitted<[Date]>('confirm')![1][0]).toEqual(minDate);
+
+  await wrapper.setProps({ defaultDate: null });
+  expect(wrapper.find('.van-calendar__confirm').classes()).toContain(
+    'van-button--disabled',
+  );
+
+  await wrapper.setProps({ defaultDate: undefined });
+  wrapper.find('.van-calendar__confirm').trigger('click');
+  expect(wrapper.emitted<[Date]>('confirm')![2][0]).toEqual(maxDate);
+});

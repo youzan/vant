@@ -622,9 +622,8 @@ export default defineComponent({
     );
     watch(
       () => props.defaultDate,
-      (value = null) => {
-        currentDate.value = value;
-        scrollToCurrentDate();
+      (value) => {
+        reset(value);
       },
     );
 
