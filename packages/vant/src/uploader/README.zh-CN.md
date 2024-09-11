@@ -416,6 +416,7 @@ before-read、after-read、before-delete 执行时会传递以下回调参数：
 | --- | --- | --- | --- |
 | closeImagePreview | 关闭全屏的图片预览 | - | - |
 | chooseFile | 主动调起文件选择，由于浏览器安全限制，只有在用户触发操作的上下文中调用才有效 | - | - |
+| reuploadFile `4.9.3` | 主动调起文件选择，选择新文件后将覆盖原先上传的文件，由于浏览器安全限制，只有在用户触发操作的上下文中调用才有效 | _index: number_ | - |
 
 ### 类型定义
 
@@ -427,6 +428,8 @@ import type {
   UploaderInstance,
   UploaderResultType,
   UploaderFileListItem,
+  UploaderBeforeRead,
+  UploaderAfterRead,
 } from 'vant';
 ```
 

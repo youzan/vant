@@ -257,6 +257,7 @@ dropdownItemRef.value?.toggle();
 | --- | --- | --- |
 | text | 文字 | _string_ |
 | value | 标识符 | _number \| string \| boolean_ |
+| disabled | 是否禁用选项 | _boolean_ |
 | icon | 左侧图标名称或图片链接，等同于 Icon 组件的 [name 属性](#/zh-CN/icon#props) | _string_ |
 
 ## 主题定制
@@ -277,6 +278,7 @@ dropdownItemRef.value?.toggle();
 | --van-dropdown-menu-title-padding | _0 var(--van-padding-xs)_ | - |
 | --van-dropdown-menu-title-line-height | _var(--van-line-height-lg)_ | - |
 | --van-dropdown-menu-option-active-color | _var(--van-primary-color)_ | - |
+| --van-dropdown-menu-option-disabled-color | _var(--van-text-color-3)_ | - |
 | --van-dropdown-menu-content-max-height | _80%_ | - |
 | --van-dropdown-item-z-index | _10_ | - |
 

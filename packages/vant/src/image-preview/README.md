@@ -185,6 +185,20 @@ export default {
 };
 ```
 
+When you customize the image through the `image` slot, you can bind the `style` and `onLoad` callback through the params of the slot, which can allow the `<img>` tag to support image scaling.
+
+```html
+<van-image-preview
+  v-model:show="show"
+  :images="images"
+  :close-on-click-image="false"
+>
+  <template #image="{ src, style, onLoad }">
+    <img :src="src" :style="[{ width: '100%' }, style]" @load="onLoad" />
+  </template>
+</van-image-preview>
+```
+
 ## API
 
 ### Methods
@@ -302,7 +316,7 @@ imagePreviewRef.value?.swipeTo(1);
 | --- | --- | --- |
 | index | Custom index | _{ index: index of current image }_ |
 | cover | Custom content that covers the image preview | - |
-| image | Custom image content | _{ src: current image src }_ |
+| image | Custom image content | _{ src: current image src, onLoad: load image, style: current image style }_ |
 
 ### onClose Parameters
 

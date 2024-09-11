@@ -1,6 +1,6 @@
 {
 	"$schema": "https://docs.renovatebot.com/renovate-schema.json",
-	"extends": ["config:recommended"],
+	"extends": ["config:recommended", "schedule:weekly"],
 	"dependencyDashboard": false,
 	"packageRules": [
 		// Use chore as semantic commit type for commit messages
@@ -24,6 +24,12 @@
 			"groupName": "types",
 			"packagePatterns": ["^@types/"],
 			"groupSlug": "types"
+		},
+		{
+			"groupName": "all patch dependencies",
+			"groupSlug": "all-patch",
+			"matchPackagePatterns": ["*"],
+			"matchUpdateTypes": ["patch"]
 		},
 		// manually update peer dependencies
 		{

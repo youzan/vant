@@ -38,6 +38,7 @@ test('should allow to drag to show right part', async () => {
 });
 
 test('should call beforeClose before closing', async () => {
+  let event;
   let position;
   let clickPosition;
   let usePromise;
@@ -58,7 +59,7 @@ test('should call beforeClose before closing', async () => {
             }, 100);
           });
         } else {
-          ({ position } = params);
+          ({ event, position } = params);
         }
       },
     },
@@ -70,12 +71,16 @@ test('should call beforeClose before closing', async () => {
 
   wrapper.vm.open('left');
   wrapper.trigger('click');
+
+  expect(event).toBeInstanceOf(MouseEvent);
   expect(position).toEqual('cell');
 
   wrapper.find('.van-swipe-cell__left').trigger('click');
+  expect(event).toBeInstanceOf(MouseEvent);
   expect(position).toEqual('left');
 
   wrapper.find('.van-swipe-cell__right').trigger('click');
+  expect(event).toBeInstanceOf(MouseEvent);
   expect(position).toEqual('right');
 
   wrapper.vm.close();

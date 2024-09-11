@@ -781,7 +781,7 @@ exports[`should render demo and match snapshot 1`] = `
         aria-labelledby="van-tabs-0"
         style
       >
-        Content 1
+        content of tab 1
       </div>
       <div
         id="van-tab"
@@ -878,7 +878,7 @@ exports[`should render demo and match snapshot 1`] = `
         aria-labelledby="van-tabs-0"
         style
       >
-        Content 1
+        content of tab 1
       </div>
       <div
         id="van-tab"

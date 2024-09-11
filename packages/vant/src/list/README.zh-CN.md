@@ -95,6 +95,7 @@ export default {
     const loading = ref(false);
     const onLoad = () => {
       fetchSomeThing().catch(() => {
+        loading.value = false;
         error.value = true;
       });
     };

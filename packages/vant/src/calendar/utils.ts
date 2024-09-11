@@ -43,8 +43,34 @@ export function getDayByOffset(date: Date, offset: number) {
   return cloned;
 }
 
+export function getMonthByOffset(date: Date, offset: number) {
+  const cloned = cloneDate(date);
+  cloned.setMonth(cloned.getMonth() + offset);
+
+  if (cloned.getDate() !== date.getDate()) {
+    cloned.setDate(0);
+  }
+
+  return cloned;
+}
+
+export function getYearByOffset(date: Date, offset: number) {
+  const cloned = cloneDate(date);
+  cloned.setFullYear(cloned.getFullYear() + offset);
+
+  if (cloned.getDate() !== date.getDate()) {
+    cloned.setDate(0);
+  }
+
+  return cloned;
+}
+
 export const getPrevDay = (date: Date) => getDayByOffset(date, -1);
 export const getNextDay = (date: Date) => getDayByOffset(date, 1);
+export const getPrevMonth = (date: Date) => getMonthByOffset(date, -1);
+export const getNextMonth = (date: Date) => getMonthByOffset(date, 1);
+export const getPrevYear = (date: Date) => getYearByOffset(date, -1);
+export const getNextYear = (date: Date) => getYearByOffset(date, 1);
 export const getToday = () => {
   const today = new Date();
   today.setHours(0, 0, 0, 0);

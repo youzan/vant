@@ -3,6 +3,7 @@ import {
   closeToast,
   showFailToast,
   showSuccessToast,
+  showLoadingToast,
   allowMultipleToast,
   setToastDefaultOptions,
   resetToastDefaultOptions,
@@ -32,6 +33,14 @@ Toast.success = (...args: Parameters<typeof showSuccessToast>) => {
     ...toast,
   };
 };
+
+Toast.loading = (...args: Parameters<typeof showLoadingToast>) => {
+  const toast = showLoadingToast(...args);
+  return {
+    clear: toast.close,
+    ...toast,
+  }
+}
 
 Toast.clear = closeToast;
 Toast.allowMultiple = allowMultipleToast;

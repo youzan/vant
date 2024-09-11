@@ -23,6 +23,8 @@ export interface VantResolverOptions {
   ssr?: boolean;
 }
 
+export type VantImportsOptions = Pick<VantResolverOptions, 'module' | 'ssr'>;
+
 /**
  * Button->button; ButtonGroup->button-group
  */
@@ -122,5 +124,13 @@ export function VantResolver(options: VantResolverOptions = {}) {
         };
       }
     },
+  };
+}
+
+export function VantImports(options: VantImportsOptions = {}) {
+  const moduleType = getModuleType(options);
+
+  return {
+    [`vant/${moduleType}`]: [...getAPIMap().keys()],
   };
 }

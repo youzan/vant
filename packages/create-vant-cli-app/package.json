@@ -1,6 +1,6 @@
 {
   "name": "create-vant-cli-app",
-  "version": "2.2.1",
+  "version": "3.0.0",
   "description": "Create Vant CLI App",
   "main": "lib/index.js",
   "bin": {
@@ -31,15 +31,15 @@
   "author": "chenjiahan",
   "license": "MIT",
   "devDependencies": {
-    "@types/fs-extra": "^11.0.1",
-    "rimraf": "^5.0.0",
-    "typescript": "^5.0.4"
+    "@types/fs-extra": "^11.0.4",
+    "rimraf": "^6.0.1",
+    "typescript": "^5.5.4"
   },
   "dependencies": {
-    "rslog": "^1.1.0",
-    "fast-glob": "^3.2.11",
-    "fs-extra": "^11.1.0",
-    "enquirer": "2.3.6",
-    "picocolors": "^1.0.0"
+    "rslog": "^1.2.3",
+    "fast-glob": "^3.3.2",
+    "fs-extra": "^11.2.0",
+    "enquirer": "2.4.1",
+    "picocolors": "^1.0.1"
   }
 }

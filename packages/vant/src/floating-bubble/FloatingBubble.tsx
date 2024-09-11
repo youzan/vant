@@ -205,6 +205,7 @@ export default defineComponent({
     watch(
       [windowWidth, windowHeight, () => props.gap, () => props.offset],
       updateState,
+      { deep: true },
     );
 
     const show = ref(true);

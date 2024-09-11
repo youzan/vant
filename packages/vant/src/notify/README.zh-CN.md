@@ -142,7 +142,7 @@ Vant 中导出了以下 Notify 相关的辅助函数：
 | type | 类型，可选值为 `primary` `success` `warning` | _NotifyType_ | `danger` |
 | message | 展示文案，支持通过`\n`换行 | _string_ | - |
 | duration | 展示时长(ms)，值为 0 时，notify 不会消失 | _number \| string_ | `3000` |
-| z-index | 将组件的 z-index 层级设置为一个固定值 | _number \| string_ | `2000+` |
+| zIndex | 将组件的 z-index 层级设置为一个固定值 | _number \| string_ | `2000+` |
 | position | 弹出位置，可选值为 `bottom` | _NotifyPosition_ | `top` |
 | color | 字体颜色 | _string_ | `white` |
 | background | 背景颜色 | _string_ | - |

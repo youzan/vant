@@ -33,6 +33,10 @@ export default {
     baiduAnalytics: {
       seed: 'af5d41bc4e446e76665dbe3ec18d55c3',
     },
+    icpLicense: {
+      text: '浙ICP备2021036118号',
+      link: 'https://beian.miit.gov.cn/',
+    },
     headHtml: `<script>
 if (location.host === 'youzan.github.io') {
 location.href = location.href.replace('youzan.github.io', 'vant-ui.github.io');
@@ -49,7 +53,7 @@ location.href = location.href.replace('youzan.github.io', 'vant-ui.github.io');
         links: [
           {
             logo: 'https://fastly.jsdelivr.net/npm/@vant/assets/weapp.svg',
-            url: 'https://vant-contrib.gitee.io/vant-weapp/',
+            url: '/vant-weapp/',
           },
           {
             logo: 'https://fastly.jsdelivr.net/npm/@vant/assets/github.svg',

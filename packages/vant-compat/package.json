@@ -1,6 +1,6 @@
 {
   "name": "@vant/compat",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Provide Vant 3 compatible behavior for Vant 4",
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.mjs",
@@ -36,11 +36,11 @@
   "author": "chenjiahan",
   "license": "MIT",
   "devDependencies": {
-    "@vue/runtime-core": "^3.4.13",
+    "@vue/runtime-core": "^3.5.0",
     "vant": "workspace:*",
-    "vue": "^3.4.13",
-    "esbuild": "^0.20.0",
-    "rimraf": "^5.0.0",
-    "typescript": "^5.0.4"
+    "vue": "^3.5.0",
+    "esbuild": "^0.23.1",
+    "rimraf": "^6.0.1",
+    "typescript": "^5.5.4"
   }
 }

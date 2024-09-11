@@ -14,6 +14,7 @@ import { Tag } from '../tag';
 import { Icon } from '../icon';
 import { Cell } from '../cell';
 import { Radio } from '../radio';
+import { Checkbox } from '../checkbox';
 
 const [name, bem] = createNamespace('address-item');
 
@@ -32,6 +33,7 @@ export default defineComponent({
     address: makeRequiredProp<PropType<AddressListAddress>>(Object),
     disabled: Boolean,
     switchable: Boolean,
+    singleChoice: Boolean,
     defaultTagText: String,
     rightIcon: makeStringProp('edit'),
   },
@@ -39,11 +41,11 @@ export default defineComponent({
   emits: ['edit', 'click', 'select'],
 
   setup(props, { slots, emit }) {
-    const onClick = () => {
+    const onClick = (event: MouseEvent) => {
       if (props.switchable) {
         emit('select');
       }
-      emit('click');
+      emit('click', event);
     };
 
     const renderRightIcon = () => (
@@ -53,7 +55,7 @@ export default defineComponent({
         onClick={(event) => {
           event.stopPropagation();
           emit('edit');
-          emit('click');
+          emit('click', event);
         }}
       />
     );
@@ -72,7 +74,7 @@ export default defineComponent({
     };
 
     const renderContent = () => {
-      const { address, disabled, switchable } = props;
+      const { address, disabled, switchable, singleChoice } = props;
 
       const Info = [
         <div class={bem('name')}>
@@ -83,11 +85,19 @@ export default defineComponent({
       ];
 
       if (switchable && !disabled) {
-        return (
-          <Radio name={address.id} iconSize={18}>
-            {Info}
-          </Radio>
-        );
+        if (singleChoice) {
+          return (
+            <Radio name={address.id} iconSize={18}>
+              {Info}
+            </Radio>
+          );
+        } else {
+          return (
+            <Checkbox name={address.id} iconSize={18}>
+              {Info}
+            </Checkbox>
+          );
+        }
       }
 
       return Info;

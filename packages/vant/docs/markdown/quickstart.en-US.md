@@ -206,7 +206,9 @@ module.exports = {
       AutoImport({ resolvers: [VantResolver()] }),
       Components({ resolvers: [VantResolver()] }),
       // when the unplugin-vue-components version is greater than or equal to 0.26.0:
-      AutoImport.default({ resolvers: [VantResolver()] }),
+      AutoImport.default({
+        resolvers: [VantResolver()],
+      }),
       Components.default({ resolvers: [VantResolver()] }),
     ],
   },
@@ -226,7 +228,9 @@ module.exports = {
     AutoImport({ resolvers: [VantResolver()] }),
     Components({ resolvers: [VantResolver()] }),
     // when the unplugin-vue-components version is greater than or equal to 0.26.0:
-    AutoImport.default({ resolvers: [VantResolver()] }),
+    AutoImport.default({
+      resolvers: [VantResolver()],
+    }),
     Components.default({ resolvers: [VantResolver()] }),
   ],
 };
@@ -246,7 +250,7 @@ Then you can using components from Vant in the template, the `unplugin-vue-compo
 
 ```html
 <script>
-showToast('No need to import showToast')
+  showToast('No need to import showToast');
 </script>
 ```
 

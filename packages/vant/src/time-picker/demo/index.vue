@@ -31,7 +31,7 @@ const t = useTranslate({
 const baseTime = ref(['12', '00']);
 const secondTime = ref(['12', '00', '00']);
 const rangeTime = ref(['12', '35']);
-const filterTime = ref(['12', ' 00']);
+const filterTime = ref(['12', '00']);
 const formatterTime = ref(['12', '00']);
 const hourMinuteTime = ref(['12', '00', '00']);
 

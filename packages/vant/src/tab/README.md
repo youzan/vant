@@ -25,7 +25,7 @@ The first tab is active by default, you can set `v-model:active` to active speci
 
 ```html
 <van-tabs v-model:active="active">
-  <van-tab v-for="index in 4" :title="'tab' + index">
+  <van-tab v-for="index in 4" :title="'Tab ' + index">
     content of tab {{ index }}
   </van-tab>
 </van-tabs>
@@ -46,9 +46,9 @@ export default {
 
 ```html
 <van-tabs v-model:active="activeName">
-  <van-tab title="tab 1" name="a">content of tab 1</van-tab>
-  <van-tab title="tab 2" name="b">content of tab 2</van-tab>
-  <van-tab title="tab 3" name="c">content of tab 3</van-tab>
+  <van-tab title="Tab 1" name="a">content of tab 1</van-tab>
+  <van-tab title="Tab 2" name="b">content of tab 2</van-tab>
+  <van-tab title="Tab 3" name="c">content of tab 3</van-tab>
 </van-tabs>
 ```
 
@@ -69,7 +69,7 @@ By default more than 5 tabs, you can scroll through the tabs. You can set `swipe
 
 ```html
 <van-tabs v-model:active="active">
-  <van-tab v-for="index in 8" :title="'tab' + index">
+  <van-tab v-for="index in 8" :title="'Tab ' + index">
     content of tab {{ index }}
   </van-tab>
 </van-tabs>
@@ -81,7 +81,7 @@ Use `disabled` prop to disable a tab.
 
 ```html
 <van-tabs v-model:active="active">
-  <van-tab v-for="index in 3" :title="'tab' + index" :disabled="index === 2">
+  <van-tab v-for="index in 3" :title="'Tab ' + index" :disabled="index === 2">
     content of tab {{ index }}
   </van-tab>
 </van-tabs>
@@ -93,17 +93,17 @@ Tabs styled as cards.
 
 ```html
 <van-tabs v-model:active="active" type="card">
-  <van-tab v-for="index in 3" :title="'tab' + index">
+  <van-tab v-for="index in 3" :title="'Tab ' + index">
     content of tab {{ index }}
   </van-tab>
 </van-tabs>
 ```
 
-### Click Tab Event
+### Click Event
 
 ```html
 <van-tabs v-model:active="active" @click-tab="onClickTab">
-  <van-tab v-for="index in 2" :title="'tab' + index">
+  <van-tab v-for="index in 2" :title="'Tab ' + index">
     content of tab {{ index }}
   </van-tab>
 </van-tabs>
@@ -128,8 +128,8 @@ In sticky mode, the tab nav will be fixed to top when scroll to top.
 
 ```html
 <van-tabs v-model:active="active" sticky>
-  <van-tab v-for="index in 4" :title="'tab ' + index">
-    content {{ index }}
+  <van-tab v-for="index in 4" :title="'Tab ' + index">
+    content of tab {{ index }}
   </van-tab>
 </van-tabs>
 ```
@@ -140,21 +140,27 @@ In shrink mode, the tabs will be shrinked to the left.
 
 ```html
 <van-tabs v-model:active="active" shrink>
-  <van-tab v-for="index in 4" :title="'tab ' + index">
-    content {{ index }}
+  <van-tab v-for="index in 4" :title="'Tab ' + index">
+    content of tab {{ index }}
+  </van-tab>
+</van-tabs>
+
+<van-tabs v-model:active="active" shrink type="card">
+  <van-tab v-for="index in 4" :title="'Tab ' + index">
+    content of tab {{ index }}
   </van-tab>
 </van-tabs>
 ```
 
-### Custom title
+### Custom Tab
 
 Use title slot to custom tab title.
 
 ```html
 <van-tabs v-model:active="active">
   <van-tab v-for="index in 2">
-    <template #title> <van-icon name="more-o" />tab </template>
-    content {{ index }}
+    <template #title><van-icon name="more-o" />Tab</template>
+    content of tab {{ index }}
   </van-tab>
 </van-tabs>
 ```
@@ -165,8 +171,8 @@ Use `animated` props to change tabs with animation.
 
 ```html
 <van-tabs v-model:active="active" animated>
-  <van-tab v-for="index in 4" :title="'tab ' + index">
-    content {{ index }}
+  <van-tab v-for="index in 4" :title="'Tab ' + index">
+    content of tab {{ index }}
   </van-tab>
 </van-tabs>
 ```
@@ -177,8 +183,8 @@ In swipeable mode, you can switch tabs with swipe gesture in the content.
 
 ```html
 <van-tabs v-model:active="active" swipeable>
-  <van-tab v-for="index in 4" :title="'tab ' + index">
-    content {{ index }}
+  <van-tab v-for="index in 4" :title="'Tab ' + index">
+    content of tab {{ index }}
   </van-tab>
 </van-tabs>
 ```
@@ -189,8 +195,8 @@ In scrollspy mode, the list of content will be tiled.
 
 ```html
 <van-tabs v-model:active="active" scrollspy sticky>
-  <van-tab v-for="index in 8" :title="'tab ' + index">
-    content {{ index }}
+  <van-tab v-for="index in 8" :title="'Tab ' + index">
+    content of tab {{ index }}
   </van-tab>
 </van-tabs>
 ```
@@ -199,8 +205,8 @@ In scrollspy mode, the list of content will be tiled.
 
 ```html
 <van-tabs v-model:active="active" :before-change="beforeChange">
-  <van-tab v-for="index in 4" :title="'tab ' + index">
-    content {{ index }}
+  <van-tab v-for="index in 4" :title="'Tab ' + index">
+    content of tab {{ index }}
   </van-tab>
 </van-tabs>
 ```
@@ -239,7 +245,7 @@ By setting the `showHeader` prop to `false`, the title bar of the Tabs component
 
 ```html
 <van-tabs v-model:active="active" :show-header="false">
-  <van-tab v-for="index in 4"> content {{ index }} </van-tab>
+  <van-tab v-for="index in 4">content of tab {{ index }}</van-tab>
 </van-tabs>
 ```
 
@@ -256,17 +262,17 @@ By setting the `showHeader` prop to `false`, the title bar of the Tabs component
 | duration | Toggle tab's animation time | _number \| string_ | `0.3` |
 | line-width | Width of tab line | _number \| string_ | `40px` |
 | line-height | Height of tab line | _number \| string_ | `3px` |
-| animated | Whether to change tabs with animation | _boolean_ | `false` |
+| animated | Whether to change tabs with animation (After enabling this attribute, if there is a sticky layout in the content area, it will not meet expectations) | _boolean_ | `false` |
 | border | Whether to show border when `type="line"` | _boolean_ | `false` |
-| ellipsis | Whether to ellipsis too long title | _boolean_ | `true` |
+| ellipsis | Whether to ellipsis too long title (Takes effect only if `shrink` is `false` and the number of `tabs` is less than or equal to `swipe-threshold`) | _boolean_ | `true` |
 | sticky | Whether to use sticky mode | _boolean_ | `false` |
 | shrink | Whether to shrink the the tabs to the left | _boolean_ | `false` |
-| swipeable | Whether to enable gestures to slide left and right | _boolean_ | `false` |
+| swipeable | Whether to enable gestures to slide left and right (After enabling this attribute, if there is a sticky layout in the content area, it will not meet expectations) | _boolean_ | `false` |
 | lazy-render | Whether to enable tab content lazy render | _boolean_ | `true` |
 | scrollspy | Whether to use scrollspy mode | _boolean_ | `false` |
 | show-header `v4.7.3` | Whether to show title bar | _boolean_ | `true` |
 | offset-top | Sticky offset top , supports `px` `vw` `vh` `rem` unit, default `px` | _number \| string_ | `0` |
-| swipe-threshold | Set swipe tabs threshold | _number \| string_ | `5` |
+| swipe-threshold | Set swipe tabs threshold (Takes effect only when `shrink` is `false` and `ellipsis` is `true`) | _number \| string_ | `5` |
 | title-active-color | Title active color | _string_ | - |
 | title-inactive-color | Title inactive color | _string_ | - |
 | before-change | Callback function before changing tabs, return `false` to prevent change, support return Promise | _(name: number \| string) => boolean \| Promise\<boolean\>_ | - |
@@ -278,7 +284,7 @@ By setting the `showHeader` prop to `false`, the title bar of the Tabs component
 | title | Title | _string_ | - |
 | disabled | Whether to disable tab | _boolean_ | `false` |
 | dot | Whether to show red dot on the title | _boolean_ | `false` |
-| badge | Content of the badge on the title | _number \| string_ | - |
+| badge | Content of the badge on the title (Effective when `dot` is `false`) | _number \| string_ | - |
 | name | Identifier | _number \| string_ | Index of tab |
 | url | Link | _string_ | - |
 | to | The target route should navigate to when clicked on, same as the [to prop](https://router.vuejs.org/api/interfaces/RouterLinkProps.html#Properties-to) of Vue Router | _string \| object_ | - |
@@ -359,3 +365,23 @@ The component provides the following CSS variables, which can be used to customi
 | --van-tabs-bottom-bar-width   | _40px_                      | -           |
 | --van-tabs-bottom-bar-height  | _3px_                       | -           |
 | --van-tabs-bottom-bar-color   | _var(--van-primary-color)_  | -           |
+
+## FAQ
+
+### After Tabs enable the swipeable or animated attribute, the sticky function of content area elements will not meet expectations
+
+When the `swipeable` or `animated` attribute is enabled for `Tabs`, the content area will be wrapped by an element with the `transform` attribute, and if the `sticky` function is enabled for the element in the content area, the function will take effect, but the display position will not be as expected.
+
+For example, the following code:
+
+```html
+<van-tabs v-model:active="active" swipeable>
+  <van-tab>
+    <van-sticky>
+      <van-button>sticky button</van-button>
+    </van-sticky>
+  </van-tab>
+</van-tabs>
+```
+
+This is because the `fixed` positioning inside the `transform` element is computed relative to that element, not relative to the entire document, resulting in layout exceptions.

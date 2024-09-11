@@ -20,7 +20,7 @@ jobs:
     - name: Install pnpm
       run: corepack enable
 
-    - uses: actions/setup-node@v3
+    - uses: actions/setup-node@v4
       with:
         node-version: '18'
         cache: 'pnpm'
@@ -39,7 +39,7 @@ jobs:
     - name: Install pnpm
       run: corepack enable
 
-    - uses: actions/setup-node@v3
+    - uses: actions/setup-node@v4
       with:
         node-version: '18'
         cache: 'pnpm'
@@ -51,7 +51,7 @@ jobs:
       run: pnpm run test:coverage
 
     - name: Upload coverage to Codecov  
-      uses: codecov/codecov-action@v3
+      uses: codecov/codecov-action@v4
       with:
         token: ${{ secrets.CODECOV_TOKEN }}
         directory: ./packages/vant/test/coverage
@@ -64,7 +64,7 @@ jobs:
     - name: Install pnpm
       run: corepack enable
 
-    - uses: actions/setup-node@v3
+    - uses: actions/setup-node@v4
       with:
         node-version: '18'
         cache: 'pnpm'

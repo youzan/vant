@@ -100,6 +100,14 @@ export default defineComponent({
 
       const lastChunk = chunks[chunks.length - 1];
 
+      if (!lastChunk) {
+        chunks.push({
+          start: 0,
+          end: sourceString.length,
+          highlight: false,
+        });
+      }
+
       if (lastChunk && lastChunk.end < sourceString.length) {
         chunks.push({
           start: lastChunk.end,

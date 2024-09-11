@@ -3,7 +3,11 @@ import { getVantConfig, setBuildTarget } from '../common/index.js';
 import { getTemplateParams } from './get-template-params.js';
 import { genPackageEntry } from './gen-package-entry.js';
 import { genStyleDepsMap } from './gen-style-deps-map.js';
-import type { RsbuildConfig } from '@rsbuild/core';
+import {
+  loadConfig,
+  mergeRsbuildConfig,
+  type RsbuildConfig,
+} from '@rsbuild/core';
 import { RspackVirtualModulePlugin } from 'rspack-plugin-virtual-module';
 import { CSS_LANG } from '../common/css.js';
 import { genSiteMobileShared } from '../compiler/gen-site-mobile-shared.js';
@@ -39,6 +43,8 @@ export async function compileSite(isProd = false) {
   const { pluginVue } = await import('@rsbuild/plugin-vue');
   const { pluginVueJsx } = await import('@rsbuild/plugin-vue-jsx');
   const { pluginBabel } = await import('@rsbuild/plugin-babel');
+  const { pluginSass } = await import('@rsbuild/plugin-sass');
+  const { pluginLess } = await import('@rsbuild/plugin-less');
 
   await genSiteEntry();
 
@@ -53,6 +59,8 @@ export async function compileSite(isProd = false) {
       }),
       pluginVue(),
       pluginVueJsx(),
+      pluginSass(),
+      pluginLess(),
     ],
     source: {
       entry: {
@@ -95,9 +103,11 @@ export async function compileSite(isProd = false) {
     },
   };
 
+  const userRsbuildConfig = await loadConfig({ cwd: process.cwd() });
+
   const rsbuild = await createRsbuild({
     cwd: SITE_SRC_DIR,
-    rsbuildConfig,
+    rsbuildConfig: mergeRsbuildConfig(rsbuildConfig, userRsbuildConfig.content),
   });
 
   if (isProd) {

@@ -1,7 +1,33 @@
 # 更新日志
 
-## Unreleased
+## v7.0.3
 
+`2024-05-18`
+
+- 修复 scopedId 生成异常
+
+## v7.0.2
+
+`2024-04-20`
+
+- 支持读取 `rsbuild.config.*` 配置文件
+- 支持编译 Vue SFC scopeId
+
+## v7.0.1
+
+`2024-04-14`
+
+- 修复 tsconfig 导致的编译错误
+
+## v7.0.0
+
+`2024-04-14`
+
+请注意，由于 Vant 仓库自身 workflow 的变化，Vant CLI v7 包含了较大的 breaking changes。
+
+如果你在使用 Vant CLI v6，可以基于 v6 版本 fork 进行使用。你可以在 [vant_cli_v6](https://github.com/youzan/vant/tree/vant_cli_v6) 分支上找到 v6 代码。
+
+- 站点的构建工具切换为 [Rsbuild](https://github.com/web-infra-dev/rsbuild)
 - 移除 vant-cli test 命令
 - 移除 vant-cli release 命令
 - 移除 vant-cli changelog 命令

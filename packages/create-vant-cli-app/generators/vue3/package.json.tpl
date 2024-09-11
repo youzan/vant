@@ -13,13 +13,9 @@
   "scripts": {
     "dev": "vant-cli dev",
     "lint": "vant-cli lint",
-    "test": "vant-cli test",
     "build": "vant-cli build",
     "build:site": "vant-cli build-site",
-    "release": "vant-cli release --tag next",
-    "release:site": "pnpm build:site && npx gh-pages -d site-dist",
-    "test:watch": "vant-cli test --watch",
-    "test:coverage": "open test/coverage/index.html"
+    "release:site": "pnpm build:site && npx gh-pages -d site-dist"
   },
   "author": "",
   "nano-staged": {
@@ -28,11 +24,11 @@
     "*.{ts,tsx,js,vue}": "eslint --fix"
   },
   "peerDependencies": {
-    "vue": "^3.3.4"
+    "vue": "^3.5.0"
   },
   "devDependencies": {
-    "@vant/cli": "^6.0.0",
-    "vue": "^3.3.4",
+    "@vant/cli": "^7.0.0",
+    "vue": "^3.5.0",
     "sass": "^1.49.7"
   },
   "eslintConfig": {

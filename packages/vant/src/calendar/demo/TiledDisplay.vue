@@ -2,8 +2,11 @@
 import VanCalendar from '..';
 import { useTranslate } from '../../../docs/site';
 
+const { switchMode } = defineProps({
+  switchMode: String,
+});
 const minDate = new Date(2012, 0, 10);
-const maxDate = new Date(2012, 2, 20);
+const maxDate = new Date(2013, 2, 20);
 
 const t = useTranslate({
   'zh-CN': {
@@ -26,6 +29,7 @@ const t = useTranslate({
       :min-date="minDate"
       :max-date="maxDate"
       :default-date="minDate"
+      :switch-mode="switchMode"
       :style="{ height: '500px' }"
     />
   </demo-block>

@@ -13,7 +13,7 @@ export const Dialog = (...args: Parameters<typeof showDialog>) =>
 
 Dialog.Component = VanDialog;
 Dialog.alert = Dialog;
-Dialog.config = showConfirmDialog;
+Dialog.confirm = showConfirmDialog;
 Dialog.close = closeDialog;
 Dialog.setDefaultOptions = setDialogDefaultOptions;
 Dialog.resetDefaultOptions = resetDialogDefaultOptions;

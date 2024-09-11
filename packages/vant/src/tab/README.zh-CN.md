@@ -135,7 +135,7 @@ export default {
 
 ```html
 <van-tabs v-model:active="active" sticky>
-  <van-tab v-for="index in 4" :title="'选项 ' + index">
+  <van-tab v-for="index in 4" :title="'标签 ' + index">
     内容 {{ index }}
   </van-tab>
 </van-tabs>
@@ -149,7 +149,13 @@ export default {
 
 ```html
 <van-tabs v-model:active="active" shrink>
-  <van-tab v-for="index in 4" :title="'选项 ' + index">
+  <van-tab v-for="index in 4" :title="'标签 ' + index">
+    内容 {{ index }}
+  </van-tab>
+</van-tabs>
+
+<van-tabs v-model:active="active" shrink type="card">
+  <van-tab v-for="index in 4" :title="'标签 ' + index">
     内容 {{ index }}
   </van-tab>
 </van-tabs>
@@ -162,7 +168,7 @@ export default {
 ```html
 <van-tabs v-model:active="active">
   <van-tab v-for="index in 2">
-    <template #title> <van-icon name="more-o" />选项 </template>
+    <template #title><van-icon name="more-o" />标签</template>
     内容 {{ index }}
   </van-tab>
 </van-tabs>
@@ -174,7 +180,7 @@ export default {
 
 ```html
 <van-tabs v-model:active="active" animated>
-  <van-tab v-for="index in 4" :title="'选项 ' + index">
+  <van-tab v-for="index in 4" :title="'标签 ' + index">
     内容 {{ index }}
   </van-tab>
 </van-tabs>
@@ -186,7 +192,7 @@ export default {
 
 ```html
 <van-tabs v-model:active="active" swipeable>
-  <van-tab v-for="index in 4" :title="'选项 ' + index">
+  <van-tab v-for="index in 4" :title="'标签 ' + index">
     内容 {{ index }}
   </van-tab>
 </van-tabs>
@@ -198,7 +204,7 @@ export default {
 
 ```html
 <van-tabs v-model:active="active" scrollspy sticky>
-  <van-tab v-for="index in 8" :title="'选项 ' + index">
+  <van-tab v-for="index in 8" :title="'标签 ' + index">
     内容 {{ index }}
   </van-tab>
 </van-tabs>
@@ -210,7 +216,7 @@ export default {
 
 ```html
 <van-tabs v-model:active="active" :before-change="beforeChange">
-  <van-tab v-for="index in 4" :title="'选项 ' + index">
+  <van-tab v-for="index in 4" :title="'标签 ' + index">
     内容 {{ index }}
   </van-tab>
 </van-tabs>
@@ -250,7 +256,7 @@ export default {
 
 ```html
 <van-tabs v-model:active="active" :show-header="false">
-  <van-tab v-for="index in 4"> 内容 {{ index }} </van-tab>
+  <van-tab v-for="index in 4">内容 {{ index }}</van-tab>
 </van-tabs>
 ```
 
@@ -267,17 +273,17 @@ export default {
 | duration | 动画时间，单位秒，设置为 0 可以禁用动画 | _number \| string_ | `0.3` |
 | line-width | 底部条宽度，默认单位 `px` | _number \| string_ | `40px` |
 | line-height | 底部条高度，默认单位 `px` | _number \| string_ | `3px` |
-| animated | 是否开启切换标签内容时的转场动画 | _boolean_ | `false` |
+| animated | 是否开启切换标签内容时的转场动画（开启该属性后，内容区如果有粘性布局将会不达预期） | _boolean_ | `false` |
 | border | 是否显示标签栏外边框，仅在 `type="line"` 时有效 | _boolean_ | `false` |
-| ellipsis | 是否省略过长的标题文字 | _boolean_ | `true` |
+| ellipsis | 是否省略过长的标题文字（仅在 `shrink` 为 `false` 且 `tab` 数量小于等于 `swipe-threshold` 时生效） | _boolean_ | `true` |
 | sticky | 是否使用粘性布局 | _boolean_ | `false` |
 | shrink | 是否开启左侧收缩布局 | _boolean_ | `false` |
-| swipeable | 是否开启手势左右滑动切换 | _boolean_ | `false` |
+| swipeable | 是否开启手势左右滑动切换（开启该属性后，内容区如果有粘性布局将会不达预期） | _boolean_ | `false` |
 | lazy-render | 是否开启延迟渲染（首次切换到标签时才触发内容渲染） | _boolean_ | `true` |
 | scrollspy | 是否开启滚动导航 | _boolean_ | `false` |
 | show-header `v4.7.3` | 是否显示标题栏 | _boolean_ | `true` |
 | offset-top | 粘性布局下吸顶时与顶部的距离，支持 `px` `vw` `vh` `rem` 单位，默认 `px` | _number \| string_ | `0` |
-| swipe-threshold | 滚动阈值，标签数量超过阈值且总宽度超过标签栏宽度时开始横向滚动 | _number \| string_ | `5` |
+| swipe-threshold | 滚动阈值，标签数量超过阈值且总宽度超过标签栏宽度时开始横向滚动（仅在 `shrink` 为 `false` 且 `ellipsis` 为 `true` 时生效） | _number \| string_ | `5` |
 | title-active-color | 标题选中态颜色 | _string_ | - |
 | title-inactive-color | 标题默认态颜色 | _string_ | - |
 | before-change | 切换标签前的回调函数，返回 `false` 可阻止切换，支持返回 Promise | _(name: number \| string) => boolean \| Promise\<boolean\>_ | - |
@@ -289,7 +295,7 @@ export default {
 | title | 标题 | _string_ | - |
 | disabled | 是否禁用标签 | _boolean_ | `false` |
 | dot | 是否在标题右上角显示小红点 | _boolean_ | `false` |
-| badge | 图标右上角徽标的内容 | _number \| string_ | - |
+| badge | 图标右上角徽标的内容（`dot` 为 `fasle` 时生效） | _number \| string_ | - |
 | name | 标签名称，作为匹配的标识符 | _number \| string_ | 标签的索引值 |
 | url | 点击后跳转的链接地址 | _string_ | - |
 | to | 点击后跳转的目标路由对象，等同于 Vue Router 的 [to 属性](https://router.vuejs.org/zh/api/interfaces/RouterLinkProps.html#Properties-to) | _string \| object_ | - |
@@ -399,3 +405,21 @@ Tabs 组件在挂载时，会获取自身的宽度，并计算出底部条的位
 ```js
 this.$refs.tabs.resize();
 ```
+
+### Tabs 开启 swipeable 或 animated 属性后，内容区元素的 sticky 功能将不达预期
+
+`Tabs` 开启 `swipeable` 或 `animated` 属性后，内容区将被带有 `transform` 属性的元素包裹，此时如果内容区的元素开启了 `sticky` 功能，那么该功能生效了，但显示位置将不达预期。
+
+比如下面的代码：
+
+```html
+<van-tabs v-model:active="active" swipeable>
+  <van-tab>
+    <van-sticky>
+      <van-button>sticky button</van-button>
+    </van-sticky>
+  </van-tab>
+</van-tabs>
+```
+
+这是因为 `transform` 元素内部的 `fixed` 定位会相对于该元素进行计算，而不是相对于整个文档，从而导致布局异常。

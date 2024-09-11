@@ -95,3 +95,18 @@ test('empty text should not be matched', () => {
 
   expect(tags[0].text()).toEqual('bc');
 });
+
+test('empty keywords should correctly rendered', () => {
+  const wrapper = mount(Highlight, {
+    props: {
+      keywords: '',
+      sourceString: 'abcd',
+    },
+  });
+
+  const highlight = wrapper.find('.van-highlight');
+  const tags = highlight.findAll('.van-highlight__tag');
+
+  expect(highlight.text()).toEqual('abcd');
+  expect(tags.length).toEqual(0);
+});

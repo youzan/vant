@@ -84,6 +84,7 @@ Use the `icon` prop to set the button icon. It supports all icons from the Icon 
 <van-button icon="plus" type="primary" />
 <van-button icon="plus" type="primary">Button</van-button>
 <van-button
+  plain
   icon="https://fastly.jsdelivr.net/npm/@vant/assets/user-active.png"
   type="primary"
 >

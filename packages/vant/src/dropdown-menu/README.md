@@ -249,11 +249,12 @@ dropdownItemRef.value?.toggle();
 
 ### Data Structure of Option
 
-| Key   | Description | Type                          |
-| ----- | ----------- | ----------------------------- |
-| text  | Text        | _string_                      |
-| value | Value       | _number \| string \| boolean_ |
-| icon  | Left icon   | _string_                      |
+| Key      | Description               | Type                          |
+| -------- | ------------------------- | ----------------------------- |
+| text     | Text                      | _string_                      |
+| value    | Value                     | _number \| string \| boolean_ |
+| disabled | Whether to disable option | _boolean_                     |
+| icon     | Left icon                 | _string_                      |
 
 ## Theming
 
@@ -273,5 +274,6 @@ The component provides the following CSS variables, which can be used to customi
 | --van-dropdown-menu-title-padding | _0 var(--van-padding-xs)_ | - |
 | --van-dropdown-menu-title-line-height | _var(--van-line-height-lg)_ | - |
 | --van-dropdown-menu-option-active-color | _var(--van-primary-color)_ | - |
+| --van-dropdown-menu-option-disabled-color | _var(--van-text-color-3)_ | - |
 | --van-dropdown-menu-content-max-height | _80%_ | - |
 | --van-dropdown-item-z-index | _10_ | - |

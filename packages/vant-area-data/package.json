@@ -1,6 +1,6 @@
 {
   "name": "@vant/area-data",
-  "version": "1.5.1",
+  "version": "1.5.2",
   "description": "Vant 省市区数据",
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.mjs",
@@ -10,7 +10,8 @@
       "types": "./dist/index.d.ts",
       "import": "./dist/index.esm.mjs",
       "require": "./dist/index.cjs.js"
-    }
+    },
+    "./package.json": "./package.json"
   },
   "sideEffects": false,
   "files": [
@@ -38,8 +39,8 @@
   "author": "chenjiahan",
   "license": "MIT",
   "devDependencies": {
-    "esbuild": "^0.20.0",
-    "rimraf": "^5.0.0",
-    "typescript": "^5.0.4"
+    "esbuild": "^0.23.1",
+    "rimraf": "^6.0.1",
+    "typescript": "^5.5.4"
   }
 }

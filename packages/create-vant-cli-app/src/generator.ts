@@ -13,12 +13,12 @@ const PROMPTS = [
     type: 'select',
     choices: [
       {
-        name: 'vue2',
-        message: 'Vue 2',
-      },
-      {
         name: 'vue3',
         message: 'Vue 3',
+      },
+      {
+        name: 'vue2',
+        message: 'Vue 2',
       },
     ],
   },
@@ -26,7 +26,7 @@ const PROMPTS = [
     name: 'preprocessor',
     message: 'Select css preprocessor',
     type: 'select',
-    choices: ['Less', 'Sass'],
+    choices: ['Sass', 'Less'],
   },
 ];
 

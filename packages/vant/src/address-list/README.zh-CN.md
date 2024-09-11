@@ -83,7 +83,7 @@ export default {
 
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
-| v-model | 当前选中地址的 id | _number \| string_ | - |
+| v-model | 当前选中地址的 id，支持多选（类型为 `[]`） | _number \| string \| number[] \| string[]_ | - |
 | list | 地址列表 | _AddressListAddress[]_ | `[]` |
 | disabled-list | 不可配送地址列表 | _AddressListAddress[]_ | `[]` |
 | disabled-text | 不可配送提示文案 | _string_ | - |
@@ -102,7 +102,7 @@ export default {
 | select | 切换选中的地址时触发 | _item: AddressListAddress, index: number_ |
 | edit-disabled | 编辑不可配送的地址时触发 | _item: AddressListAddress, index: number_ |
 | select-disabled | 选中不可配送的地址时触发 | _item: AddressListAddress, index: number_ |
-| click-item | 点击任意地址时触发 | _item: AddressListAddress, index: number_ |
+| click-item | 点击任意地址时触发 | _item: AddressListAddress, index: number, { event }_ |
 
 ### AddressListAddress 数据结构
 

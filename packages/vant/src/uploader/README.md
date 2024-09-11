@@ -393,6 +393,7 @@ Use [ref](https://vuejs.org/guide/essentials/template-refs.html) to get Uploader
 | --- | --- | --- | --- |
 | closeImagePreview | Close full screen image preview | - | - |
 | chooseFile | Trigger choosing files, works with the user action context only because of browser security | - | - |
+| reuploadFile `4.9.3` | Trigger choosing files, choosing a new file will overwrite the previously uploaded file, works with the user action context only because of browser security | _index: number_ | - |
 
 ### Types
 
@@ -404,6 +405,8 @@ import type {
   UploaderInstance,
   UploaderResultType,
   UploaderFileListItem,
+  UploaderBeforeRead,
+  UploaderAfterRead,
 } from 'vant';
 ```
 

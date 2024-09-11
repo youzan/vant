@@ -39,16 +39,6 @@ Different branches of the repository correspond to different Vant versions, plea
 - 3.x branch corresponds to Vant 3 version, suitable for Vue 3
 - 2.x branch corresponds to Vant 2 version, suitable for Vue 2
 
-### Mirror repository
-
-If GitHub cloning is slow, you can also directly clone Vant's [mirror repository](https://gitee.com/vant-contrib/vant) directly on gitee:
-
-```bash
-git clone git@gitee.com:vant-contrib/vant.git
-```
-
-The mirror repository is only used to speed up local access, please do not submit issues and pull requests to the mirror repository.
-
 ### Directory Structure
 
 Vant uses monorepo for code management, and all subpackages are in the `packages/vant` directory:

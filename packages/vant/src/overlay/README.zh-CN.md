@@ -84,6 +84,7 @@ Overlay 组件默认的 z-index 层级为 `1`，你可以通过 `z-index` 属性
 | custom-style | 自定义样式 | _object_ | - |
 | lock-scroll | 是否锁定背景滚动，锁定时蒙层里的内容也将无法滚动 | _boolean_ | `true` |
 | lazy-render | 是否在显示时才渲染节点 | _boolean_ | `true` |
+| teleport | 指定挂载的节点，等同于 Teleport 组件的 [to 属性](https://cn.vuejs.org/api/built-in-components.html#teleport) | _string \| Element_ | - |
 
 ### Events
 

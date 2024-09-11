@@ -27,6 +27,7 @@ import {
   makeNumericProp,
   createNamespace,
   type ComponentInstance,
+  clamp,
 } from '../utils';
 import {
   cutString,
@@ -81,6 +82,8 @@ export const fieldSharedProps = {
   autofocus: Boolean,
   clearable: Boolean,
   maxlength: numericProp,
+  max: Number,
+  min: Number,
   formatter: Function as PropType<(value: string) => string>,
   clearIcon: makeStringProp('clear'),
   modelValue: makeNumericProp(''),
@@ -326,9 +329,19 @@ export default defineComponent({
       const limitDiffLen =
         getStringLength(originalValue) - getStringLength(value);
 
+      // https://github.com/youzan/vant/issues/13058
       if (props.type === 'number' || props.type === 'digit') {
         const isNumber = props.type === 'number';
         value = formatNumber(value, isNumber, isNumber);
+
+        if (trigger === 'onBlur' && value !== '') {
+          const adjustedValue = clamp(
+            +value,
+            props.min ?? -Infinity,
+            props.max ?? Infinity,
+          );
+          value = adjustedValue.toString();
+        }
       }
 
       let formatterDiffLen = 0;

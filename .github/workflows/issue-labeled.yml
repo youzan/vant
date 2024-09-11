@@ -53,9 +53,20 @@ jobs:
           actions: 'create-comment, close-issue'
           issue-number: ${{ github.event.issue.number }}
           body: |
-            Hi @${{ github.event.issue.user.login }}. Current version (2.x) is off the maintenance period. We will only fix critical bugs. This issue will be auto closed.
+            Hi @${{ github.event.issue.user.login }}. Current version (2.x) has reached End of Life. We recommend using the latest 4.x version (LTS). This issue will be auto closed.
 
-            你好 @${{ github.event.issue.user.login }}，当前版本（2.x）已经过了维护期。我们仅会修复重要 bug。当前 issue 会被自动关闭。
+            你好 @${{ github.event.issue.user.login }}，当前版本（2.x）已经终止支持且不再维护。我们建议使用最新的 4.x 版本。当前 issue 会被自动关闭。
+
+      - name: 3.x
+        if: github.event.label.name == '3.x'
+        uses: actions-cool/issues-helper@v3
+        with:
+          actions: 'create-comment, close-issue'
+          issue-number: ${{ github.event.issue.number }}
+          body: |
+            Hi @${{ github.event.issue.user.login }}. Current version (3.x) has reached End of Life. We recommend using the latest 4.x version (LTS). This issue will be auto closed.
+
+            你好 @${{ github.event.issue.user.login }}，当前版本（3.x）已经终止支持且不再维护。我们建议使用最新的 4.x 版本。当前 issue 会被自动关闭。
 
       - name: invalid
         if: github.event.label.name == 'invalid'

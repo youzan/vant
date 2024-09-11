@@ -37,4 +37,40 @@ exports[`should render demo and match snapshot 1`] = `
   >
   </transition-stub>
 </div>
+<div>
+  <div
+    class="van-cell van-cell--clickable van-coupon-cell"
+    role="button"
+    tabindex="0"
+  >
+    <div class="van-cell__title">
+      <span>
+        Coupon
+      </span>
+    </div>
+    <div class="van-cell__value van-coupon-cell__value">
+      <span>
+        You have 2 coupons
+      </span>
+    </div>
+    <i class="van-badge__wrapper van-icon van-icon-arrow van-cell__right-icon">
+    </i>
+  </div>
+  <transition-stub
+    name="van-fade"
+    appear="true"
+    persisted="false"
+    css="true"
+    role="button"
+    tabindex="0"
+  >
+  </transition-stub>
+  <transition-stub
+    name="van-popup-slide-bottom"
+    appear="false"
+    persisted="false"
+    css="true"
+  >
+  </transition-stub>
+</div>
 `;

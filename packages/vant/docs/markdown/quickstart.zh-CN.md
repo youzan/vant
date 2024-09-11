@@ -228,7 +228,9 @@ module.exports = {
       AutoImport({ resolvers: [VantResolver()] }),
       Components({ resolvers: [VantResolver()] }),
       //当 unplugin-vue-components 版本大于等于 0.26.0 时，使用以下写法
-      AutoImport.default({ resolvers: [VantResolver()] }),
+      AutoImport.default({
+        resolvers: [VantResolver()],
+      }),
       Components.default({ resolvers: [VantResolver()] }),
     ],
   },
@@ -248,7 +250,9 @@ module.exports = {
     AutoImport({ resolvers: [VantResolver()] }),
     Components({ resolvers: [VantResolver()] }),
     //当 unplugin-vue-components 版本大于等于 0.26.0 时，使用以下写法
-    AutoImport.default({ resolvers: [VantResolver()] }),
+    AutoImport.default({
+      resolvers: [VantResolver()],
+    }),
     Components.default({ resolvers: [VantResolver()] }),
   ],
 };
@@ -268,7 +272,7 @@ module.exports = {
 
 ```html
 <script>
-showToast('No need to import showToast')
+  showToast('No need to import showToast');
 </script>
 ```
 

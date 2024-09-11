@@ -143,7 +143,7 @@ app.use(Badge);
 
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
-| content | 徽标内容 | _number \| string_ | - |
+| content | 徽标内容（`dot` 为 `fasle` 时生效） | _number \| string_ | - |
 | color | 徽标背景颜色 | _string_ | `#ee0a24` |
 | dot | 是否展示为小红点 | _boolean_ | `false` |
 | max | 最大值，超过最大值会显示 `{max}+`，仅当 content 为数字时有效 | _number \| string_ | - |

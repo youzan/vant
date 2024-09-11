@@ -1,11 +1,15 @@
 # 更新日志
 
-### 提示
+### 重要提示
 
-当前文档为 Vant 4 的更新日志，其他版本请参考：
+**为了避免重复维护，降低维护成本。**
 
-- [Vant 2 更新日志](https://vant-ui.github.io/vant/v2/#/zh-CN/changelog)
-- [Vant 3 更新日志](https://vant-ui.github.io/vant/v3/#/zh-CN/changelog)
+**从 v4.9.0 开始，Vant 的更新日志统一发布在 [GitHub 的 Releases 页面](https://github.com/youzan/vant/releases)，当前页面将不再更新。**
+
+当前文档为 Vant v4.0.0 ~ v4.9.0 的的更新日志，其他版本请参考：
+
+- [Vant 2 更新日志](/vant/v2/#/zh-CN/changelog)
+- [Vant 3 更新日志](/vant/v3/#/zh-CN/changelog)
 
 ### 介绍
 
@@ -18,6 +22,146 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 - 主版本号：无固定的发布时间，包含不兼容更新和重大功能更新。
 
 ## 更新内容
+
+### v4.9.0
+
+`2024-05-02`
+
+#### 新功能 🎉
+
+- feat(Calendar)：添加 switch-mode 属性，由[@inottn](https://github.com/inottn) 贡献，在[#12836](https://github.com/youzan/vant/pull/12836)
+- feat(PickerGroup)：添加新属性 showToolbar，由[@ReinoFu](https://github.com/ReinoFu) 贡献，在[#12839](https://github.com/youzan/vant/pull/12839)
+- feat(CLI)：支持配置 Rsbuild，由[@chenjiahan](https://github.com/chenjiahan) 贡献，在[#12809](https://github.com/youzan/vant/pull/12809)
+
+#### Bug 修复 🐞
+
+- fix(cli)：修复 Vue SFC 样式绑定失败，由[@zoy-l](https://github.com/zoy-l) 贡献，在[#12799](https://github.com/youzan/vant/pull/12799)
+- fix(ImagePreview)：修复 swipeItem 可能为 undefined，由[@inottn](https://github.com/inottn) 贡献，在[#12818](https://github.com/youzan/vant/pull/12818)
+- fix(Highlight)：当 keywords 为空时正确渲染，由[@Jungzl](https://github.com/Jungzl) 贡献，在[#12829](https://github.com/youzan/vant/pull/12829)
+- fix(IndexBar)：当传入 sticky & stickyOffsetTop 时正确渲染激活锚点，由[@Jungzl](https://github.com/Jungzl) 贡献，在[#12837](https://github.com/youzan/vant/pull/12837)
+
+#### 文档 📖
+
+- docs: 移除所有 Gitee 链接，由[@chenjiahan](https://github.com/chenjiahan) 贡献，在[#12845](https://github.com/youzan/vant/pull/12845)
+- docs: 移除 gzip 大小徽章，由[@chenjiahan](https://github.com/chenjiahan) 贡献，在[#12847](https://github.com/youzan/vant/pull/12847)
+- docs: 修复 Rsbuild HTML 构建失败，由[@chenjiahan](https://github.com/chenjiahan) 贡献，在[#12848](https://github.com/youzan/vant/pull/12848)
+
+#### 其他更改
+
+- chore(deps)：升级依赖 terser 至 ^5.30.3，由[@renovate](https://github.com/renovate) 贡献，在[#12795](https://github.com/youzan/vant/pull/12795)
+- chore(deps)：升级依赖 eslint-plugin-vue 至 ^9.25.0，由[@renovate](https://github.com/renovate) 贡献，在[#12794](https://github.com/youzan/vant/pull/12794)
+- chore(deps)：更新所有补丁依赖，由[@renovate](https://github.com/renovate) 贡献，在[#12773](https://github.com/youzan/vant/pull/12773)
+- chore(workflow)：升级至 pnpm v9，由[@chenjiahan](https://github.com/chenjiahan) 贡献，在[#12808](https://github.com/youzan/vant/pull/12808)
+- chore：推送 github-pages-deploy-action[@v4](https://github.com/v4).6.0，由 @chenjiahan 贡献，在[#12810](https://github.com/youzan/vant/pull/12810)
+- chore(deps)：升级依赖 [@vitejs](https://github.com/vitejs)/plugin-vue 至 v5，由 @renovate 贡献，在[#12840](https://github.com/youzan/vant/pull/12840)
+- chore(deps)：升级依赖 commander 至 v12，由[@renovate](https://github.com/renovate) 贡献，在[#12841](https://github.com/youzan/vant/pull/12841)
+- chore(deps)：更新 actions/setup-node 行为至 v4，由[@renovate](https://github.com/renovate) 贡献，在[#12814](https://github.com/youzan/vant/pull/12814)
+- chore(deps)：更新 github/issue-labeler 行为至 v3.4，由[@renovate](https://github.com/renovate) 贡献，在[#12813](https://github.com/youzan/vant/pull/12813)
+- chore(deps)：更新 codecov/codecov-action 行为至 v4，由[@renovate](https://github.com/renovate) 贡献，在[#12815](https://github.com/youzan/vant/pull/12815)
+- chore(deps)：更新所有补丁依赖，由[@renovate](https://github.com/renovate) 贡献，在[#12812](https://github.com/youzan/vant/pull/12812)
+
+#### 新贡献者
+
+- [@ReinoFu](https://github.com/ReinoFu) 在[#12839](https://github.com/youzan/vant/pull/12839) 中首次贡献
+
+### v4.8.11
+
+`2024-04-14`
+
+#### 新功能 🎉
+
+- feat(DropdownMenu)：通过 [@inottn](https://github.com/inottn) 在 [#12785](https://github.com/youzan/vant/pull/12785) 中为选项添加 disabled 属性
+
+#### Bug 修复 🐞
+
+- fix：在 JetBrains IDE 中修复警告 `is not a valid value for v-model`，贡献者 [@anyesu](https://github.com/anyesu) 在 [#12787](https://github.com/youzan/vant/pull/12787)
+- fix(Cli)：移除站点的 tsconfig 文件，贡献者 [@chenjiahan](https://github.com/chenjiahan) 在 [#12792](https://github.com/youzan/vant/pull/12792)
+
+#### 文档 📖
+
+- docs(list)：更新模块代码加载错误信息，贡献者 [@wangjue666](https://github.com/wangjue666) 在 [#12778](https://github.com/youzan/vant/pull/12778)
+
+#### 其他变更
+
+- chore(deps)：更新依赖 eslint-plugin-vue 至 ^9.24.1，由 [@renovate](https://github.com/renovate) 在 [#12774](https://github.com/youzan/vant/pull/12774) 提交
+- chore(deps)：升级 Rsbuild 至 v0.6 版本，由 [@chenjiahan](https://github.com/chenjiahan) 在 [#12790](https://github.com/youzan/vant/pull/12790) 提交
+
+#### 新贡献者
+
+- [@wangjue666](https://github.com/wangjue666) 在 [#12778](https://github.com/youzan/vant/pull/12778) 中首次贡献
+- [@anyesu](https://github.com/anyesu) 在 [#12787](https://github.com/youzan/vant/pull/12787) 中首次贡献
+
+### v4.8.10
+
+`2024-04-06`
+
+#### 新功能 🎉
+
+- feat(TimePicker)：支持 confirm 和 getSelectedTime 方法，由 [@bluesky335](https://github.com/bluesky335) 在 [#12761](https://github.com/youzan/vant/pull/12761) 提供
+- feat(DatePicker)：支持 confirm 和 getSelectedDate 方法，由 [@bluesky335](https://github.com/bluesky335) 在 [#12762](https://github.com/youzan/vant/pull/12762) 提供
+- feat(Coupon)：支持复选框用法，由 [@CatsAndMice](https://github.com/CatsAndMice) 在 [#12744](https://github.com/youzan/vant/pull/12744) 提供
+
+#### 其他变更
+
+- chore(deps)：更新依赖 vite 至 v5.0.13 [安全]，由 [@renovate](https://github.com/renovate) 在 [#12767](https://github.com/youzan/vant/pull/12767) 提供
+- chore(deps)：更新所有补丁依赖项，由 [@renovate](https://github.com/renovate) 在 [#12756](https://github.com/youzan/vant/pull/12756) 提供
+- chore(deps)：更新依赖项 [@types](https://github.com/types)/lodash 至 ^4.17.0，由 [@renovate](https://github.com/renovate) 在 [#12757](https://github.com/youzan/vant/pull/12757) 提供
+- chore：修正 getSelectedTime 的返回类型，由 [@chenjiahan](https://github.com/chenjiahan) 在 [#12768](https://github.com/youzan/vant/pull/12768) 提供
+- refactor(Coupon)：简化复选框用法，由 [@chenjiahan](https://github.com/chenjiahan) 在 [#12771](https://github.com/youzan/vant/pull/12771) 提供
+
+#### 新贡献者
+
+- [@bluesky335](https://github.com/bluesky335) 在 [#12761](https://github.com/youzan/vant/pull/12761) 中首次贡献
+
+### v4.8.9
+
+`2024-04-06`
+
+无效版本，请勿使用。
+
+### v4.8.8
+
+`2024-03-31`
+
+#### 新特性 🎉
+
+- feat(image-preview): 导出 image 插槽的 onLoad 和 style 属性，由[@chouchouji](https://github.com/chouchouji) 在 [#12740](https://github.com/youzan/vant/pull/12740) 提交
+- feat(AddressList): 为 click-item 添加事件参数，由[@chenjiahan](https://github.com/chenjiahan) 在 [#12748](https://github.com/youzan/vant/pull/12748) 提交
+
+#### 故障修复 🐞
+
+- fix(floating-bubble): 当值更改时更新偏移量，由[@chouchouji](https://github.com/chouchouji) 在 [#12730](https://github.com/youzan/vant/pull/12730) 提交
+- fix(vant-cli): 支持以定义的选项命名，由[@wChenonly](https://github.com/wChenonly) 在 [#12734](https://github.com/youzan/vant/pull/12734) 提交
+- fix(PickerGroup): 使用 v-for 时能够正确渲染，由[@inottn](https://github.com/inottn) 在 [#12732](https://github.com/youzan/vant/pull/12732) 提交
+- fix(TextEllipsis): 当组件被激活时应重新计算省略状态，由[@inottn](https://github.com/inottn) 在 [#12741](https://github.com/youzan/vant/pull/12741) 提交
+
+#### 文档更新 📖
+
+- docs(button): 保持中英文文档一致，由[@chouchouji](https://github.com/chouchouji) 在 [#12708](https://github.com/youzan/vant/pull/12708) 提交
+- docs(cell): 更正 label 的类型，由[@chouchouji](https://github.com/chouchouji) 在 [#12721](https://github.com/youzan/vant/pull/12721) 提交
+- docs(ImagePreview): 添加图片插槽缩放指导，由[@chenjiahan](https://github.com/chenjiahan) 在 [#12751](https://github.com/youzan/vant/pull/12751) 提交
+
+#### 其他更改
+
+- chore(deps): 更新 vue-router 依赖至 v4.3.0，由[@renovate](https://github.com/renovate) 在 [#12702](https://github.com/youzan/vant/pull/12702) 提交
+- chore(deps): 更新 esbuild 依赖至 ^0.20.0，由[@renovate](https://github.com/renovate) 在 [#12696](https://github.com/youzan/vant/pull/12696) 提交
+- chore(workflow): 让 renovate 提升 package.json 版本，由[@chenjiahan](https://github.com/chenjiahan) 在 [#12714](https://github.com/youzan/vant/pull/12714) 提交
+- chore(deps): 更新 eslint 依赖至 ^8.57.0，由[@renovate](https://github.com/renovate) 在 [#12723](https://github.com/youzan/vant/pull/12723) 提交
+- chore(docs): 更新 vue3-vant-mobile 参考文档，由[@CharleeWa](https://github.com/CharleeWa) 在 [#12735](https://github.com/youzan/vant/pull/12735) 提交
+- chore(deps): 更新 commander 依赖至 ^11.1.0，由[@renovate](https://github.com/renovate) 在 [#12718](https://github.com/youzan/vant/pull/12718) 提交
+- chore(deps): 更新 enquirer 依赖至 v2.4.1，由[@renovate](https://github.com/renovate) 在 [#12695](https://github.com/youzan/vant/pull/12695) 提交
+- chore(deps): 更新 [@vue](https://github.com/vue)/test-utils 依赖至 ^2.4.5，由 @renovate 在 [#12716](https://github.com/youzan/vant/pull/12716) 提交
+- chore(deps): 版本升至 Rsbuild v0.5，由[@chenjiahan](https://github.com/chenjiahan) 在 [#12747](https://github.com/youzan/vant/pull/12747) 提交
+- chore(deps): 更新 eslint-config-prettier 依赖至 ^9.1.0，由[@renovate](https://github.com/renovate) 在 [#12724](https://github.com/youzan/vant/pull/12724) 提交
+- chore(deps): 更新 fs-extra 依赖至 ^11.2.0，由[@renovate](https://github.com/renovate) 在 [#12745](https://github.com/youzan/vant/pull/12745) 提交
+- chore(deps): 更新 highlight.js 依赖至 ^11.9.0，由[@renovate](https://github.com/renovate) 在 [#12746](https://github.com/youzan/vant/pull/12746) 提交
+- chore(deps): 更新 fast-glob 依赖至 ^3.3.2，由[@renovate](https://github.com/renovate) 在 [#12731](https://github.com/youzan/vant/pull/12731) 提交
+- chore(deps): 更新 less 依赖至 ^4.2.0，由[@renovate](https://github.com/renovate) 在 [#12752](https://github.com/youzan/vant/pull/12752) 提交
+- chore(workflow): 让 renovate 整合补丁更新，由[@chenjiahan](https://github.com/chenjiahan) 在 [#12754](https://github.com/youzan/vant/pull/12754) 提交
+
+#### 新贡献者
+
+- [@CharleeWa](https://github.com/CharleeWa) 在 [#12735](https://github.com/youzan/vant/pull/12735) 中首次贡献
 
 ### v4.8.7
 
@@ -979,7 +1123,7 @@ Vant 遵循 [Semver](https://semver.org/lang/zh-CN/) 语义化版本规范。
 
 `2022-11-26`
 
-> 完整内容请移步：[「4.0 更新介绍」](https://vant-ui.github.io/vant/#/zh-CN/release-note-v4)
+> 完整内容请移步：[「4.0 更新介绍」](/vant/#/zh-CN/release-note-v4)
 
 **Feature**
 

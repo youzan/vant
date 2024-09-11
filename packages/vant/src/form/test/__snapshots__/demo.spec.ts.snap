@@ -331,9 +331,11 @@ exports[`should render demo and match snapshot 1`] = `
                   role="spinbutton"
                   class="van-stepper__input"
                   inputmode="decimal"
+                  autocomplete="off"
                   aria-valuemax="Infinity"
                   aria-valuemin="1"
                   aria-valuenow="1"
+                  value="1"
                 >
                 <button
                   type="button"

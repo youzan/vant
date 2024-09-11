@@ -116,3 +116,15 @@ test('should only drag header when allowDraggingContent is false', async () => {
   await later();
   expect(wrapper.emitted('change')).toBeTruthy();
 });
+
+test('should render header slot correctly', () => {
+  const wrapper = mount(FloatingPanel, {
+    slots: {
+      header: () => 'Custom Header',
+    },
+  });
+
+  expect(wrapper.html()).toMatchSnapshot();
+
+  wrapper.unmount();
+});

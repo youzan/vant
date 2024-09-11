@@ -150,6 +150,18 @@ export default defineComponent({
     // useEventListener will set passive to `false` to eliminate the warning of Chrome
     useEventListener('touchmove', onTouchmove, { target: rootRef });
 
+    const renderHeader = () => {
+      if (slots.header) {
+        return slots.header();
+      }
+
+      return (
+        <div class={bem('header')}>
+          <div class={bem('header-bar')} />
+        </div>
+      );
+    };
+
     return () => (
       <div
         class={[bem(), { 'van-safe-area-bottom': props.safeAreaInsetBottom }]}
@@ -159,9 +171,7 @@ export default defineComponent({
         onTouchend={onTouchend}
         onTouchcancel={onTouchend}
       >
-        <div class={bem('header')}>
-          <div class={bem('header-bar')} />
-        </div>
+        {renderHeader()}
         <div class={bem('content')} ref={contentRef}>
           {slots.default?.()}
         </div>

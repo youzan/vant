@@ -54,9 +54,9 @@ The current maintenance status of each version of Vant is as follows:
 
 | Name | Framework | Release | Latest Version | Status |
 | --- | --- | --- | --- | --- |
-| Vant 4 | Vue 3 | `2022.12` | ![](https://img.shields.io/npm/v/vant/latest?style=flat-square) | Under active development |
-| Vant 3 | Vue 3 | `2020.12` | ![](https://img.shields.io/npm/v/vant/latest-v3?style=flat-square) | Bugfix only |
-| Vant 2 | Vue 2 | `2019.06` | ![](https://img.shields.io/npm/v/vant/latest-v2?style=flat-square) | Bugfix only |
+| Vant 4 | Vue 3 | `2022.12` | ![](https://img.shields.io/npm/v/vant/latest?style=flat-square) | Long-term support |
+| Vant 3 | Vue 3 | `2020.12` | ![](https://img.shields.io/npm/v/vant/latest-v3?style=flat-square) | End of life |
+| Vant 2 | Vue 2 | `2019.06` | ![](https://img.shields.io/npm/v/vant/latest-v2?style=flat-square) | End of life |
 | Vant 1 | Vue 2 | `2018.03` | ![](https://img.shields.io/npm/v/vant/latest-v1?style=flat-square) | End of life |
 
 ## Links
@@ -78,13 +78,12 @@ The current maintenance status of each version of Vant is as follows:
 | --- | --- |
 | [3lang3/react-vant](https://github.com/3lang3/react-vant) | React mobile UI Components based on Vant |
 | [vant-aliapp](https://github.com/ant-move/Vant-Aliapp) | Alipay MiniProgram UI |
-| [taroify](https://gitee.com/mallfoundry/taroify) | Vant Taro |
 | [vant-theme](https://github.com/Aisen60/vant-theme) | Online theme preview built on Vant UI |
 | [@antmjs/vantui](https://github.com/antmjs/vantui) | Mobile UI Components based on Vant, supporting Taro and React |
 | [vant-playground](https://github.com/LadyChatterleyLover/vant-playground) | Vant Playground |
 | [sfc-playground-vant](https://github.com/zhixiaoqiang/sfc-playground-vant) | Vant Playground |
 | [vue3-h5-template](https://github.com/yulimchen/vue3-h5-template) | Mobile project template based on Vant |
-| [vue3-vant-mobile](https://github.com/CharleeWa/vue3-vant-mobile) | Mobile project template based on Vant |
+| [vue3-vant-mobile](https://github.com/easy-temps/vue3-vant-mobile) | Mobile project template based on Vant |
 
 ### Other Links
 
