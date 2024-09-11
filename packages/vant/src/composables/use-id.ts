@@ -12,5 +12,5 @@ export function useId() {
     return name;
   }
 
-  return _useId();
+  return _useId() ?? `${name}-${vm?.uid}`;
 }
