@@ -4,6 +4,7 @@ import WithPopup from './WithPopup.vue';
 import VanPicker, {
   PickerChangeEventParams,
   PickerConfirmEventParams,
+  PickerOption,
 } from '..';
 import {
   dateColumns,
@@ -29,6 +30,7 @@ const t = useTranslate({
     multipleColumns: '多列选择',
     customChildrenKey: '自定义 Columns 结构',
     customChildrenColumns: customKeyColumns['zh-CN'],
+    scrollInto: '监听 scrollInto 事件',
     toastContent: (value: string) => `当前值：${value}`,
   },
   'en-US': {
@@ -44,6 +46,7 @@ const t = useTranslate({
     multipleColumns: 'Multiple Columns',
     customChildrenKey: 'Custom Columns Fields',
     customChildrenColumns: customKeyColumns['en-US'],
+    scrollInto: 'ScrollInto Event',
     toastContent: (value: string) => `Value: ${value}`,
   },
 });
@@ -65,6 +68,10 @@ const onConfirm = ({ selectedValues }: PickerConfirmEventParams) => {
 };
 
 const onCancel = () => showToast(t('cancel'));
+
+const onScrollInto = ({ currentOption }: { currentOption: PickerOption }) => {
+  showToast(t('toastContent', currentOption.text));
+};
 </script>
 
 <template>
@@ -114,6 +121,14 @@ const onCancel = () => showToast(t('cancel'));
       :title="t('title')"
       :columns="t('customChildrenColumns')"
       :columns-field-names="customFieldName"
+    />
+  </demo-block>
+
+  <demo-block card :title="t('scrollInto')">
+    <van-picker
+      :title="t('title')"
+      :columns="t('basicColumns')"
+      @scroll-into="onScrollInto"
     />
   </demo-block>
 </template>
