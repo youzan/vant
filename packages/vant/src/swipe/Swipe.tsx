@@ -25,6 +25,7 @@ import {
   preventDefault,
   createNamespace,
   makeNumericProp,
+  isRtl,
 } from '../utils';
 
 // Composables
@@ -98,7 +99,9 @@ export default defineComponent({
     const minOffset = computed(() => {
       if (state.rect) {
         const base = props.vertical ? state.rect.height : state.rect.width;
-        return base - size.value * count.value;
+        return isRtl(root)
+          ? size.value * count.value - base
+          : base - size.value * count.value;
       }
       return 0;
     });
@@ -111,9 +114,9 @@ export default defineComponent({
 
     const trackSize = computed(() => count.value * size.value);
 
-    const activeIndicator = computed(
-      () => (state.active + count.value) % count.value,
-    );
+    const activeIndicator = computed(() => {
+      return (state.active + count.value) % count.value;
+    });
 
     const isCorrectDirection = computed(() => {
       const expect = props.vertical ? 'vertical' : 'horizontal';
@@ -153,12 +156,14 @@ export default defineComponent({
     const getTargetOffset = (targetActive: number, offset = 0) => {
       let currentPosition = targetActive * size.value;
       if (!props.loop) {
-        currentPosition = Math.min(currentPosition, -minOffset.value);
+        currentPosition = isRtl(root)
+          ? Math.min(currentPosition, minOffset.value)
+          : Math.min(currentPosition, -minOffset.value);
       }
 
       let targetOffset = offset - currentPosition;
       if (!props.loop) {
-        targetOffset = clamp(targetOffset, minOffset.value, 0);
+        targetOffset = clamp(targetOffset, 0, minOffset.value);
       }
 
       return targetOffset;
@@ -180,19 +185,32 @@ export default defineComponent({
       const { active } = state;
       const targetActive = getTargetActive(pace);
       const targetOffset = getTargetOffset(targetActive, offset);
-
       // auto move first and last swipe in loop mode
       if (props.loop) {
-        if (children[0] && targetOffset !== minOffset.value) {
-          const outRightBound = targetOffset < minOffset.value;
-          children[0].setOffset(outRightBound ? trackSize.value : 0);
-        }
+        if (isRtl(root)) {
+          if (children[count.value - 1]) {
+            const outRightBound = targetOffset < size.value;
+            children[count.value - 1].setOffset(
+              outRightBound ? trackSize.value : 0,
+            );
+          }
 
-        if (children[count.value - 1] && targetOffset !== 0) {
-          const outLeftBound = targetOffset > 0;
-          children[count.value - 1].setOffset(
-            outLeftBound ? -trackSize.value : 0,
-          );
+          if (children[0]) {
+            const outLeftBound = targetOffset >= minOffset.value;
+            children[0].setOffset(outLeftBound ? minOffset.value : 0);
+          }
+        } else {
+          if (children[0] && targetOffset !== minOffset.value) {
+            const outRightBound = targetOffset < minOffset.value;
+            children[0].setOffset(outRightBound ? trackSize.value : 0);
+          }
+
+          if (children[count.value - 1] && targetOffset !== 0) {
+            const outLeftBound = targetOffset > 0;
+            children[count.value - 1].setOffset(
+              outLeftBound ? -trackSize.value : 0,
+            );
+          }
         }
       }
 
@@ -327,9 +345,12 @@ export default defineComponent({
         if (isCorrectDirection.value) {
           const isEdgeTouch =
             !props.loop &&
-            ((state.active === 0 && delta.value > 0) ||
-              (state.active === count.value - 1 && delta.value < 0));
-
+            ((!isRtl(root) &&
+              ((state.active === 0 && delta.value > 0) ||
+                (state.active === count.value - 1 && delta.value < 0))) ||
+              (isRtl(root) &&
+                ((state.active === count.value - 1 && delta.value > 0) ||
+                  (state.active === 0 && delta.value < 0))));
           if (!isEdgeTouch) {
             preventDefault(event, props.stopPropagation);
             move({ offset: delta.value });
@@ -359,13 +380,22 @@ export default defineComponent({
           : touch.offsetX.value;
 
         let pace = 0;
-
-        if (props.loop) {
-          pace = offset > 0 ? (delta.value > 0 ? -1 : 1) : 0;
+        if (isRtl(root)) {
+          if (props.loop) {
+            pace = offset > 0 ? (delta.value > 0 ? 1 : -1) : 0;
+          } else {
+            pace = Math[delta.value > 0 ? 'ceil' : 'floor'](
+              delta.value / size.value,
+            );
+          }
         } else {
-          pace = -Math[delta.value > 0 ? 'ceil' : 'floor'](
-            delta.value / size.value,
-          );
+          if (props.loop) {
+            pace = offset > 0 ? (delta.value > 0 ? -1 : 1) : 0;
+          } else {
+            pace = -Math[delta.value > 0 ? 'ceil' : 'floor'](
+              delta.value / size.value,
+            );
+          }
         }
 
         move({
@@ -430,7 +460,12 @@ export default defineComponent({
       }
       if (props.showIndicators && count.value > 1) {
         return (
-          <div class={bem('indicators', { vertical: props.vertical })}>
+          <div
+            class={bem('indicators', {
+              vertical: props.vertical,
+              rtl: isRtl(root),
+            })}
+          >
             {Array(count.value).fill('').map(renderDot)}
           </div>
         );

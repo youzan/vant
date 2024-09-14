@@ -45,6 +45,13 @@
         margin-bottom: var(--van-swipe-indicator-size);
       }
     }
+
+    &--rtl {
+      .van-swipe__indicator:not(:last-child) {
+        margin-left: var(--van-swipe-indicator-size);
+        margin-right: 0;
+      }
+    }
   }
 
   &__indicator {
