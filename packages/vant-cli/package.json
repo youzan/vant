@@ -73,7 +73,7 @@
     "less": "^4.2.0",
     "lodash": "^4.17.21",
     "markdown-it": "^14.1.0",
-    "markdown-it-anchor": "^9.0.1",
+    "markdown-it-anchor": "^9.2.0",
     "nano-staged": "^0.8.0",
     "picocolors": "^1.0.1",
     "postcss": "^8.4.47",
