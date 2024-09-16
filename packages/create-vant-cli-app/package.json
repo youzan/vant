@@ -31,15 +31,15 @@
   "author": "chenjiahan",
   "license": "MIT",
   "devDependencies": {
-    "@types/fs-extra": "^11.0.4",
-    "rimraf": "^6.0.1",
-    "typescript": "^5.5.4"
+    "@types/fs-extra": "catalog:",
+    "rimraf": "catalog:",
+    "typescript": "catalog:"
   },
   "dependencies": {
-    "rslog": "^1.2.3",
-    "fast-glob": "^3.3.2",
-    "fs-extra": "^11.2.0",
-    "enquirer": "2.4.1",
-    "picocolors": "^1.0.1"
+    "rslog": "catalog:",
+    "fast-glob": "catalog:",
+    "fs-extra": "catalog:",
+    "enquirer": "catalog:",
+    "picocolors": "catalog:"
   }
 }

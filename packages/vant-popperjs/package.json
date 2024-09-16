@@ -37,9 +37,9 @@
   "author": "chenjiahan",
   "license": "MIT",
   "devDependencies": {
-    "@popperjs/core": "^2.11.8",
-    "esbuild": "^0.23.1",
-    "rimraf": "^6.0.1",
-    "typescript": "^5.5.4"
+    "@popperjs/core": "catalog:",
+    "esbuild": "catalog:",
+    "rimraf": "catalog:",
+    "typescript": "catalog:"
   }
 }

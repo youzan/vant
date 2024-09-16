@@ -48,31 +48,31 @@
   "dependencies": {
     "@vant/popperjs": "workspace:^",
     "@vant/use": "workspace:^",
-    "@vue/shared": "^3.5.5"
+    "@vue/shared": "catalog:"
   },
   "peerDependencies": {
     "vue": "^3.0.0"
   },
   "devDependencies": {
-    "@types/node": "^20.16.5",
+    "@types/node": "catalog:",
     "@vant/area-data": "workspace:*",
     "@vant/cli": "workspace:*",
     "@vant/eslint-config": "workspace:*",
     "@vant/icons": "workspace:*",
-    "@vitejs/plugin-vue": "^5.1.3",
-    "@vitejs/plugin-vue-jsx": "^4.0.1",
-    "@vitest/coverage-istanbul": "^1.6.0",
-    "@vue/runtime-core": "^3.5.5",
-    "@vue/test-utils": "^2.4.6",
-    "csstype": "^3.1.3",
-    "diffable-html": "^5.0.0",
-    "jsdom": "^24.1.3",
-    "typescript": "^5.5.4",
-    "vite": "^5.4.5",
-    "vitest": "^1.6.0",
-    "vitest-canvas-mock": "^0.3.3",
-    "vue": "^3.5.5",
-    "vue-router": "^4.4.5"
+    "@vitejs/plugin-vue": "catalog:",
+    "@vitejs/plugin-vue-jsx": "catalog:",
+    "@vitest/coverage-istanbul": "catalog:",
+    "@vue/runtime-core": "catalog:",
+    "@vue/test-utils": "catalog:",
+    "csstype": "catalog:",
+    "diffable-html": "catalog:",
+    "jsdom": "catalog:",
+    "typescript": "catalog:",
+    "vite": "catalog:",
+    "vitest": "catalog:",
+    "vitest-canvas-mock": "catalog:",
+    "vue": "catalog:",
+    "vue-router": "catalog:"
   },
   "sideEffects": [
     "es/**/style/*",
