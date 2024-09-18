@@ -348,8 +348,8 @@ export default {
 | type | 输入框类型, 支持原生 input 标签的所有 [type 属性](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/input#%3Cinput%3E_types)，额外支持了 `digit` 类型 | _FieldType_ | `text` |
 | size | 大小，可选值为 `large` `normal` | _string_ | - |
 | maxlength | 输入的最大字符数 | _number \| string_ | - |
-| min | 输入框类型为 `number` 或 `digit` 类型时设置可允许的最小值 | \_number | - |
-| max | 输入框类型为 `number` 或 `digit` 类型时设置可允许的最大值 | \_number | - |
+| min | 输入框类型为 `number` 或 `digit` 类型时设置可允许的最小值 | _number_ | - |
+| max | 输入框类型为 `number` 或 `digit` 类型时设置可允许的最大值 | _number_ | - |
 | placeholder | 输入框占位提示文字 | _string_ | - |
 | border | 是否显示内边框 | _boolean_ | `true` |
 | disabled | 是否禁用输入框 | _boolean_ | `false` |
