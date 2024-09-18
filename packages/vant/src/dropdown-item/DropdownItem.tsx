@@ -216,6 +216,7 @@ export default defineComponent({
             lazyRender={props.lazyRender}
             overlayStyle={{ position: 'absolute' }}
             aria-labelledby={`${parent.id}-${index.value}`}
+            data-allow-mismatch="attribute"
             closeOnClickOverlay={closeOnClickOverlay}
             onOpen={onOpen}
             onClose={onClose}

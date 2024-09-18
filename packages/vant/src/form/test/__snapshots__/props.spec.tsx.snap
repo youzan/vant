@@ -7,6 +7,7 @@ exports[`should render colon when using colon prop 1`] = `
       <label
         id="van-field-label"
         for="van-field-input"
+        data-allow-mismatch="attribute"
       >
         Label:
       </label>
@@ -18,6 +19,7 @@ exports[`should render colon when using colon prop 1`] = `
           id="van-field-input"
           class="van-field__control"
           aria-labelledby="van-field-label"
+          data-allow-mismatch="attribute"
         >
       </div>
     </div>
@@ -32,6 +34,7 @@ exports[`should render colon when using colon prop 1`] = `
           type="text"
           id="van-field-input"
           class="van-field__control"
+          data-allow-mismatch="attribute"
         >
       </div>
     </div>
@@ -48,6 +51,7 @@ exports[`should render error-message-align prop correctly 1`] = `
           type="text"
           id="van-field-input"
           class="van-field__control"
+          data-allow-mismatch="attribute"
         >
       </div>
       <div class="van-field__error-message van-field__error-message--right">
@@ -67,6 +71,7 @@ exports[`should render input-align prop correctly 1`] = `
           type="text"
           id="van-field-input"
           class="van-field__control van-field__control--right"
+          data-allow-mismatch="attribute"
         >
       </div>
     </div>
@@ -91,6 +96,7 @@ exports[`should render label-align prop correctly 1`] = `
       <label
         id="van-field-label"
         for="van-field-input"
+        data-allow-mismatch="attribute"
       >
         Label
       </label>
@@ -102,6 +108,7 @@ exports[`should render label-align prop correctly 1`] = `
           id="van-field-input"
           class="van-field__control"
           aria-labelledby="van-field-label"
+          data-allow-mismatch="attribute"
         >
       </div>
     </div>
@@ -111,6 +118,7 @@ exports[`should render label-align prop correctly 1`] = `
       <label
         id="van-field-label"
         for="van-field-input"
+        data-allow-mismatch="attribute"
       >
         Label
       </label>
@@ -122,6 +130,7 @@ exports[`should render label-align prop correctly 1`] = `
           id="van-field-input"
           class="van-field__control"
           aria-labelledby="van-field-label"
+          data-allow-mismatch="attribute"
         >
       </div>
     </div>
@@ -139,6 +148,7 @@ exports[`should render label-width prop correctly 1`] = `
       <label
         id="van-field-label"
         for="van-field-input"
+        data-allow-mismatch="attribute"
       >
         Label
       </label>
@@ -150,6 +160,7 @@ exports[`should render label-width prop correctly 1`] = `
           id="van-field-input"
           class="van-field__control"
           aria-labelledby="van-field-label"
+          data-allow-mismatch="attribute"
         >
       </div>
     </div>
@@ -162,6 +173,7 @@ exports[`should render label-width prop correctly 1`] = `
       <label
         id="van-field-label"
         for="van-field-input"
+        data-allow-mismatch="attribute"
       >
         Label
       </label>
@@ -173,6 +185,7 @@ exports[`should render label-width prop correctly 1`] = `
           id="van-field-input"
           class="van-field__control"
           aria-labelledby="van-field-label"
+          data-allow-mismatch="attribute"
         >
       </div>
     </div>
@@ -182,6 +195,7 @@ exports[`should render label-width prop correctly 1`] = `
       <label
         id="van-field-label"
         for="van-field-input"
+        data-allow-mismatch="attribute"
         style="width: 10vw;"
       >
         Label
@@ -194,6 +208,7 @@ exports[`should render label-width prop correctly 1`] = `
           id="van-field-input"
           class="van-field__control"
           aria-labelledby="van-field-label"
+          data-allow-mismatch="attribute"
         >
       </div>
     </div>
@@ -211,6 +226,7 @@ exports[`should validate first field when using validate-first prop 1`] = `
           id="van-field-input"
           name="A"
           class="van-field__control"
+          data-allow-mismatch="attribute"
         >
       </div>
       <div class="van-field__error-message">
@@ -226,6 +242,7 @@ exports[`should validate first field when using validate-first prop 1`] = `
           id="van-field-input"
           name="B"
           class="van-field__control"
+          data-allow-mismatch="attribute"
         >
       </div>
     </div>
