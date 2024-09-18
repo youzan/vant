@@ -32,11 +32,11 @@
   "license": "MIT",
   "devDependencies": {
     "@types/fs-extra": "^11.0.4",
-    "rimraf": "^5.0.9",
-    "typescript": "^5.4.5"
+    "rimraf": "^6.0.1",
+    "typescript": "^5.5.4"
   },
   "dependencies": {
-    "rslog": "^1.2.2",
+    "rslog": "^1.2.3",
     "fast-glob": "^3.3.2",
     "fs-extra": "^11.2.0",
     "enquirer": "2.4.1",

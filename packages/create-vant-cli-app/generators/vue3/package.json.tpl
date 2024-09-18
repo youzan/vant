@@ -24,11 +24,11 @@
     "*.{ts,tsx,js,vue}": "eslint --fix"
   },
   "peerDependencies": {
-    "vue": "^3.3.4"
+    "vue": "^3.5.0"
   },
   "devDependencies": {
     "@vant/cli": "^7.0.0",
-    "vue": "^3.3.4",
+    "vue": "^3.5.0",
     "sass": "^1.49.7"
   },
   "eslintConfig": {

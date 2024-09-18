@@ -17,18 +17,18 @@
     "*.{ts,tsx,js,vue}": "eslint --fix"
   },
   "engines": {
-    "pnpm": ">= 9.0.0"
+    "pnpm": ">= 9.9.0"
   },
-  "packageManager": "pnpm@9.1.4",
+  "packageManager": "pnpm@9.9.0",
   "devDependencies": {
     "@vant/cli": "workspace:*",
     "@vant/eslint-config": "workspace:*",
     "eslint": "^8.57.0",
-    "husky": "^9.1.1",
+    "husky": "^9.1.6",
     "nano-staged": "^0.8.0",
     "prettier": "^3.3.3"
   },
   "overrides": {
-    "esbuild": "^0.20.2"
+    "esbuild": "^0.23.1"
   }
 }

@@ -1,10 +1,12 @@
 import {
   ref,
-  Transition,
   defineComponent,
+  Teleport,
+  Transition,
   type PropType,
   type CSSProperties,
   type ExtractPropTypes,
+  type TeleportProps,
 } from 'vue';
 
 // Utils
@@ -33,6 +35,7 @@ export const overlayProps = {
   lockScroll: truthProp,
   lazyRender: truthProp,
   customStyle: Object as PropType<CSSProperties>,
+  teleport: [String, Object] as PropType<TeleportProps['to']>,
 };
 
 export type OverlayProps = ExtractPropTypes<typeof overlayProps>;
@@ -79,8 +82,20 @@ export default defineComponent({
       target: root,
     });
 
-    return () => (
-      <Transition v-slots={{ default: renderOverlay }} name="van-fade" appear />
-    );
+    return () => {
+      const Content = (
+        <Transition
+          v-slots={{ default: renderOverlay }}
+          name="van-fade"
+          appear
+        />
+      );
+
+      if (props.teleport) {
+        return <Teleport to={props.teleport}>{Content}</Teleport>;
+      }
+
+      return Content;
+    };
   },
 });
