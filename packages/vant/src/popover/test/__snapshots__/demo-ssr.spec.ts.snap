@@ -52,6 +52,7 @@ exports[`should render demo and match snapshot 1`] = `
       <label
         id="van-field-label"
         for="van-field-input"
+        data-allow-mismatch="attribute"
         style
       >
         Placement
@@ -67,6 +68,7 @@ exports[`should render demo and match snapshot 1`] = `
           class="van-field__control"
           readonly
           aria-labelledby="van-field-label"
+          data-allow-mismatch="attribute"
         >
       </div>
     </div>

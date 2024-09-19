@@ -15,6 +15,7 @@ exports[`should render demo and match snapshot 1`] = `
         <label
           id="van-field-label"
           for="van-field-input"
+          data-allow-mismatch="attribute"
           style
         >
           Label
@@ -29,6 +30,7 @@ exports[`should render demo and match snapshot 1`] = `
             class="van-field__control"
             placeholder="Text"
             aria-labelledby="van-field-label"
+            data-allow-mismatch="attribute"
           >
         </div>
       </div>
@@ -50,6 +52,7 @@ exports[`should render demo and match snapshot 1`] = `
           <label
             id="van-field-label"
             for="van-field-input"
+            data-allow-mismatch="attribute"
             style
           >
             Text
@@ -65,6 +68,7 @@ exports[`should render demo and match snapshot 1`] = `
               placeholder="Text"
               autocomplete="off"
               aria-labelledby="van-field-label"
+              data-allow-mismatch="attribute"
             >
           </div>
         </div>
@@ -78,6 +82,7 @@ exports[`should render demo and match snapshot 1`] = `
           <label
             id="van-field-label"
             for="van-field-input"
+            data-allow-mismatch="attribute"
             style
           >
             Phone
@@ -92,6 +97,7 @@ exports[`should render demo and match snapshot 1`] = `
               class="van-field__control"
               placeholder="Phone"
               aria-labelledby="van-field-label"
+              data-allow-mismatch="attribute"
             >
           </div>
         </div>
@@ -105,6 +111,7 @@ exports[`should render demo and match snapshot 1`] = `
           <label
             id="van-field-label"
             for="van-field-input"
+            data-allow-mismatch="attribute"
             style
           >
             Digit
@@ -120,6 +127,7 @@ exports[`should render demo and match snapshot 1`] = `
               class="van-field__control"
               placeholder="Digit"
               aria-labelledby="van-field-label"
+              data-allow-mismatch="attribute"
             >
           </div>
         </div>
@@ -133,6 +141,7 @@ exports[`should render demo and match snapshot 1`] = `
           <label
             id="van-field-label"
             for="van-field-input"
+            data-allow-mismatch="attribute"
             style
           >
             Number
@@ -148,6 +157,7 @@ exports[`should render demo and match snapshot 1`] = `
               class="van-field__control"
               placeholder="Number"
               aria-labelledby="van-field-label"
+              data-allow-mismatch="attribute"
             >
           </div>
         </div>
@@ -161,6 +171,7 @@ exports[`should render demo and match snapshot 1`] = `
           <label
             id="van-field-label"
             for="van-field-input"
+            data-allow-mismatch="attribute"
             style
           >
             Password
@@ -176,6 +187,7 @@ exports[`should render demo and match snapshot 1`] = `
               placeholder="Password"
               autocomplete="off"
               aria-labelledby="van-field-label"
+              data-allow-mismatch="attribute"
             >
           </div>
         </div>
@@ -196,6 +208,7 @@ exports[`should render demo and match snapshot 1`] = `
         <label
           id="van-field-label"
           for="van-field-input"
+          data-allow-mismatch="attribute"
           style
         >
           Text
@@ -210,6 +223,7 @@ exports[`should render demo and match snapshot 1`] = `
             class="van-field__control"
             readonly
             aria-labelledby="van-field-label"
+            data-allow-mismatch="attribute"
           >
         </div>
       </div>
@@ -223,6 +237,7 @@ exports[`should render demo and match snapshot 1`] = `
         <label
           id="van-field-label"
           for="van-field-input"
+          data-allow-mismatch="attribute"
           style
         >
           Text
@@ -237,6 +252,7 @@ exports[`should render demo and match snapshot 1`] = `
             class="van-field__control"
             disabled
             aria-labelledby="van-field-label"
+            data-allow-mismatch="attribute"
           >
         </div>
       </div>
@@ -265,6 +281,7 @@ exports[`should render demo and match snapshot 1`] = `
         <label
           id="van-field-label"
           for="van-field-input"
+          data-allow-mismatch="attribute"
           style
         >
           Text
@@ -279,6 +296,7 @@ exports[`should render demo and match snapshot 1`] = `
             class="van-field__control"
             placeholder="Show Icon"
             aria-labelledby="van-field-label"
+            data-allow-mismatch="attribute"
           >
           <div class="van-field__right-icon">
             <i
@@ -309,6 +327,7 @@ exports[`should render demo and match snapshot 1`] = `
         <label
           id="van-field-label"
           for="van-field-input"
+          data-allow-mismatch="attribute"
           style
         >
           Text
@@ -323,6 +342,7 @@ exports[`should render demo and match snapshot 1`] = `
             class="van-field__control"
             placeholder="Show Clear Icon"
             aria-labelledby="van-field-label"
+            data-allow-mismatch="attribute"
           >
         </div>
       </div>
@@ -343,6 +363,7 @@ exports[`should render demo and match snapshot 1`] = `
         <label
           id="van-field-label"
           for="van-field-input"
+          data-allow-mismatch="attribute"
           style
         >
           Username
@@ -357,6 +378,7 @@ exports[`should render demo and match snapshot 1`] = `
             class="van-field__control"
             placeholder="Username"
             aria-labelledby="van-field-label"
+            data-allow-mismatch="attribute"
           >
         </div>
       </div>
@@ -370,6 +392,7 @@ exports[`should render demo and match snapshot 1`] = `
         <label
           id="van-field-label"
           for="van-field-input"
+          data-allow-mismatch="attribute"
           style
         >
           Phone
@@ -384,6 +407,7 @@ exports[`should render demo and match snapshot 1`] = `
             class="van-field__control"
             placeholder="Phone"
             aria-labelledby="van-field-label"
+            data-allow-mismatch="attribute"
           >
         </div>
       </div>
@@ -405,6 +429,7 @@ exports[`should render demo and match snapshot 1`] = `
           <label
             id="van-field-label"
             for="van-field-input"
+            data-allow-mismatch="attribute"
             style
           >
             Username
@@ -419,6 +444,7 @@ exports[`should render demo and match snapshot 1`] = `
               class="van-field__control"
               placeholder="Username"
               aria-labelledby="van-field-label"
+              data-allow-mismatch="attribute"
             >
           </div>
         </div>
@@ -432,6 +458,7 @@ exports[`should render demo and match snapshot 1`] = `
           <label
             id="van-field-label"
             for="van-field-input"
+            data-allow-mismatch="attribute"
             style
           >
             Phone
@@ -446,6 +473,7 @@ exports[`should render demo and match snapshot 1`] = `
               class="van-field__control"
               placeholder="Phone"
               aria-labelledby="van-field-label"
+              data-allow-mismatch="attribute"
             >
           </div>
         </div>
@@ -466,6 +494,7 @@ exports[`should render demo and match snapshot 1`] = `
         <label
           id="van-field-label"
           for="van-field-input"
+          data-allow-mismatch="attribute"
           style
         >
           Username
@@ -480,6 +509,7 @@ exports[`should render demo and match snapshot 1`] = `
             class="van-field__control van-field__control--error"
             placeholder="Username"
             aria-labelledby="van-field-label"
+            data-allow-mismatch="attribute"
           >
         </div>
       </div>
@@ -493,6 +523,7 @@ exports[`should render demo and match snapshot 1`] = `
         <label
           id="van-field-label"
           for="van-field-input"
+          data-allow-mismatch="attribute"
           style
         >
           Phone
@@ -507,6 +538,7 @@ exports[`should render demo and match snapshot 1`] = `
             class="van-field__control"
             placeholder="Phone"
             aria-labelledby="van-field-label"
+            data-allow-mismatch="attribute"
           >
         </div>
         <div class="van-field__error-message">
@@ -529,6 +561,7 @@ exports[`should render demo and match snapshot 1`] = `
         <label
           id="van-field-label"
           for="van-field-input"
+          data-allow-mismatch="attribute"
           style
         >
           SMS
@@ -543,6 +576,7 @@ exports[`should render demo and match snapshot 1`] = `
             class="van-field__control"
             placeholder="SMS"
             aria-labelledby="van-field-label"
+            data-allow-mismatch="attribute"
           >
           <div class="van-field__button">
             <!--[-->
@@ -577,6 +611,7 @@ exports[`should render demo and match snapshot 1`] = `
         <label
           id="van-field-label"
           for="van-field-input"
+          data-allow-mismatch="attribute"
           style
         >
           Text
@@ -591,6 +626,7 @@ exports[`should render demo and match snapshot 1`] = `
             class="van-field__control"
             placeholder="Format On Change"
             aria-labelledby="van-field-label"
+            data-allow-mismatch="attribute"
           >
         </div>
       </div>
@@ -604,6 +640,7 @@ exports[`should render demo and match snapshot 1`] = `
         <label
           id="van-field-label"
           for="van-field-input"
+          data-allow-mismatch="attribute"
           style
         >
           Text
@@ -618,6 +655,7 @@ exports[`should render demo and match snapshot 1`] = `
             class="van-field__control"
             placeholder="Format On Blur"
             aria-labelledby="van-field-label"
+            data-allow-mismatch="attribute"
           >
         </div>
       </div>
@@ -637,6 +675,7 @@ exports[`should render demo and match snapshot 1`] = `
             rows="1"
             class="van-field__control"
             placeholder="Message"
+            data-allow-mismatch="attribute"
           >
           </textarea>
         </div>
@@ -657,6 +696,7 @@ exports[`should render demo and match snapshot 1`] = `
         <label
           id="van-field-label"
           for="van-field-input"
+          data-allow-mismatch="attribute"
           style
         >
           Message
@@ -671,6 +711,7 @@ exports[`should render demo and match snapshot 1`] = `
             class="van-field__control"
             placeholder="Message"
             aria-labelledby="van-field-label"
+            data-allow-mismatch="attribute"
           >
           </textarea>
         </div>
@@ -697,6 +738,7 @@ exports[`should render demo and match snapshot 1`] = `
         <label
           id="van-field-label"
           for="van-field-input"
+          data-allow-mismatch="attribute"
           style
         >
           Text
@@ -711,6 +753,7 @@ exports[`should render demo and match snapshot 1`] = `
             class="van-field__control van-field__control--right"
             placeholder="Input Align Right"
             aria-labelledby="van-field-label"
+            data-allow-mismatch="attribute"
           >
         </div>
       </div>
@@ -730,6 +773,7 @@ exports[`should render demo and match snapshot 1`] = `
         <label
           id="van-field-label"
           for="van-field-input"
+          data-allow-mismatch="attribute"
           style
         >
           Label
@@ -744,6 +788,7 @@ exports[`should render demo and match snapshot 1`] = `
             class="van-field__control"
             placeholder="Align Top"
             aria-labelledby="van-field-label"
+            data-allow-mismatch="attribute"
           >
         </div>
       </div>
@@ -757,6 +802,7 @@ exports[`should render demo and match snapshot 1`] = `
         <label
           id="van-field-label"
           for="van-field-input"
+          data-allow-mismatch="attribute"
           style
         >
           Label
@@ -771,6 +817,7 @@ exports[`should render demo and match snapshot 1`] = `
             class="van-field__control"
             placeholder="Align Left"
             aria-labelledby="van-field-label"
+            data-allow-mismatch="attribute"
           >
         </div>
       </div>
@@ -784,6 +831,7 @@ exports[`should render demo and match snapshot 1`] = `
         <label
           id="van-field-label"
           for="van-field-input"
+          data-allow-mismatch="attribute"
           style
         >
           Label
@@ -798,6 +846,7 @@ exports[`should render demo and match snapshot 1`] = `
             class="van-field__control"
             placeholder="Align Center"
             aria-labelledby="van-field-label"
+            data-allow-mismatch="attribute"
           >
         </div>
       </div>
@@ -811,6 +860,7 @@ exports[`should render demo and match snapshot 1`] = `
         <label
           id="van-field-label"
           for="van-field-input"
+          data-allow-mismatch="attribute"
           style
         >
           Label
@@ -825,6 +875,7 @@ exports[`should render demo and match snapshot 1`] = `
             class="van-field__control"
             placeholder="Align Right"
             aria-labelledby="van-field-label"
+            data-allow-mismatch="attribute"
           >
         </div>
       </div>

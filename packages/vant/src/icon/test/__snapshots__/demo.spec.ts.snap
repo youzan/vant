@@ -18,6 +18,7 @@ exports[`should render demo and match snapshot 1`] = `
               tabindex="0"
               aria-selected="true"
               aria-controls="van-tab"
+              data-allow-mismatch="attribute"
             >
               <span class="van-tab__text van-tab__text--ellipsis">
                 Demo
@@ -30,6 +31,7 @@ exports[`should render demo and match snapshot 1`] = `
               tabindex="-1"
               aria-selected="false"
               aria-controls="van-tab"
+              data-allow-mismatch="attribute"
             >
               <span class="van-tab__text van-tab__text--ellipsis">
                 Basic
@@ -42,6 +44,7 @@ exports[`should render demo and match snapshot 1`] = `
               tabindex="-1"
               aria-selected="false"
               aria-controls="van-tab"
+              data-allow-mismatch="attribute"
             >
               <span class="van-tab__text van-tab__text--ellipsis">
                 Outline
@@ -54,6 +57,7 @@ exports[`should render demo and match snapshot 1`] = `
               tabindex="-1"
               aria-selected="false"
               aria-controls="van-tab"
+              data-allow-mismatch="attribute"
             >
               <span class="van-tab__text van-tab__text--ellipsis">
                 Filled
@@ -76,6 +80,7 @@ exports[`should render demo and match snapshot 1`] = `
       class="van-tab__panel demo-icon-tab-panel"
       tabindex="0"
       aria-labelledby="van-tabs-0"
+      data-allow-mismatch="attribute"
       style
     >
       <div>
@@ -165,6 +170,7 @@ exports[`should render demo and match snapshot 1`] = `
       class="van-tab__panel demo-icon-tab-panel"
       tabindex="-1"
       aria-labelledby="van-tabs-1"
+      data-allow-mismatch="attribute"
       style="display: none;"
     >
     </div>
@@ -174,6 +180,7 @@ exports[`should render demo and match snapshot 1`] = `
       class="van-tab__panel demo-icon-tab-panel"
       tabindex="-1"
       aria-labelledby="van-tabs-2"
+      data-allow-mismatch="attribute"
       style="display: none;"
     >
     </div>
@@ -183,6 +190,7 @@ exports[`should render demo and match snapshot 1`] = `
       class="van-tab__panel demo-icon-tab-panel"
       tabindex="-1"
       aria-labelledby="van-tabs-3"
+      data-allow-mismatch="attribute"
       style="display: none;"
     >
     </div>

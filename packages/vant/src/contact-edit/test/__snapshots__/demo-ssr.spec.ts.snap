@@ -15,6 +15,7 @@ exports[`should render demo and match snapshot 1`] = `
           <label
             id="van-field-label"
             for="van-field-input"
+            data-allow-mismatch="attribute"
             style
           >
             Name
@@ -29,6 +30,7 @@ exports[`should render demo and match snapshot 1`] = `
               class="van-field__control"
               placeholder="Name"
               aria-labelledby="van-field-label"
+              data-allow-mismatch="attribute"
             >
           </div>
         </div>
@@ -42,6 +44,7 @@ exports[`should render demo and match snapshot 1`] = `
           <label
             id="van-field-label"
             for="van-field-input"
+            data-allow-mismatch="attribute"
             style
           >
             Phone
@@ -56,6 +59,7 @@ exports[`should render demo and match snapshot 1`] = `
               class="van-field__control"
               placeholder="Phone"
               aria-labelledby="van-field-label"
+              data-allow-mismatch="attribute"
             >
           </div>
         </div>

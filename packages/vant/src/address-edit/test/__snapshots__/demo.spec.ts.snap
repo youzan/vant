@@ -9,6 +9,7 @@ exports[`should render demo and match snapshot 1`] = `
           <label
             id="van-field-label"
             for="van-field-input"
+            data-allow-mismatch="attribute"
           >
             Name
           </label>
@@ -21,6 +22,7 @@ exports[`should render demo and match snapshot 1`] = `
               class="van-field__control"
               placeholder="Name"
               aria-labelledby="van-field-label"
+              data-allow-mismatch="attribute"
             >
           </div>
         </div>
@@ -30,6 +32,7 @@ exports[`should render demo and match snapshot 1`] = `
           <label
             id="van-field-label"
             for="van-field-input"
+            data-allow-mismatch="attribute"
           >
             Phone
           </label>
@@ -42,6 +45,7 @@ exports[`should render demo and match snapshot 1`] = `
               class="van-field__control"
               placeholder="Phone"
               aria-labelledby="van-field-label"
+              data-allow-mismatch="attribute"
             >
           </div>
         </div>
@@ -55,6 +59,7 @@ exports[`should render demo and match snapshot 1`] = `
           <label
             id="van-field-label"
             for="van-field-input"
+            data-allow-mismatch="attribute"
           >
             Area
           </label>
@@ -68,6 +73,7 @@ exports[`should render demo and match snapshot 1`] = `
               readonly
               placeholder="Area"
               aria-labelledby="van-field-label"
+              data-allow-mismatch="attribute"
             >
           </div>
         </div>
@@ -79,6 +85,7 @@ exports[`should render demo and match snapshot 1`] = `
           <label
             id="van-field-label"
             for="van-field-input"
+            data-allow-mismatch="attribute"
           >
             Address
           </label>
@@ -91,6 +98,7 @@ exports[`should render demo and match snapshot 1`] = `
               class="van-field__control"
               placeholder="Address"
               aria-labelledby="van-field-label"
+              data-allow-mismatch="attribute"
               style="height: auto;"
             >
             </textarea>
