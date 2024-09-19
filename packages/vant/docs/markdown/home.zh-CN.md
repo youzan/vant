@@ -98,6 +98,7 @@ Vant 3/4 支持现代浏览器以及 Chrome >= 51、iOS >= 10.0（与 Vue 3 一�
 | [sfc-playground-vant](https://github.com/zhixiaoqiang/sfc-playground-vant) | Vant Playground |
 | [vue3-h5-template](https://github.com/yulimchen/vue3-h5-template) | 基于 Vant 的移动端项目模板 |
 | [vue3-vant-mobile](https://github.com/easy-temps/vue3-vant-mobile) | 基于 Vant 的移动端项目模板 |
+| [raycast-vant-documentation](https://github.com/Aisen60/raycast-vant-documentation) | 一个 Raycast 拓展，能在 Raycast 中搜索 Vant 组件库文档 |
 
 ### 其他链接
 
