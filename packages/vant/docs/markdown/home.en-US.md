@@ -84,6 +84,7 @@ The current maintenance status of each version of Vant is as follows:
 | [sfc-playground-vant](https://github.com/zhixiaoqiang/sfc-playground-vant) | Vant Playground |
 | [vue3-h5-template](https://github.com/yulimchen/vue3-h5-template) | Mobile project template based on Vant |
 | [vue3-vant-mobile](https://github.com/easy-temps/vue3-vant-mobile) | Mobile project template based on Vant |
+| [raycast-vant-documentation](https://github.com/Aisen60/raycast-vant-documentation) | An Raycast extension, it can search Vant UI library documentation in Raycast |
 
 ### Other Links
 
