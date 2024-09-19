@@ -99,7 +99,7 @@ const onChange = (index: number) => showToast(t('message') + index);
   </demo-block>
 
   <demo-block :title="t('title7')">
-    <van-swipe :loop="false" indicator-color="white" style="direction: rtl">
+    <van-swipe indicator-color="white" style="direction: rtl">
       <van-swipe-item>1</van-swipe-item>
       <van-swipe-item>2</van-swipe-item>
       <van-swipe-item>3</van-swipe-item>

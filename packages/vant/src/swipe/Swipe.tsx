@@ -99,7 +99,7 @@ export default defineComponent({
     const minOffset = computed(() => {
       if (state.rect) {
         const base = props.vertical ? state.rect.height : state.rect.width;
-        return isRtl(root)
+        return isRtl(root) && !props.vertical
           ? size.value * count.value - base
           : base - size.value * count.value;
       }
@@ -156,16 +156,21 @@ export default defineComponent({
     const getTargetOffset = (targetActive: number, offset = 0) => {
       let currentPosition = targetActive * size.value;
       if (!props.loop) {
-        currentPosition = isRtl(root)
-          ? Math.min(currentPosition, minOffset.value)
-          : Math.min(currentPosition, -minOffset.value);
+        currentPosition =
+          isRtl(root) && !props.vertical
+            ? Math.min(currentPosition, minOffset.value)
+            : Math.min(currentPosition, -minOffset.value);
       }
-
-      let targetOffset = offset - currentPosition;
+      let targetOffset =
+        isRtl(root) && !props.vertical
+          ? offset + currentPosition
+          : offset - currentPosition;
       if (!props.loop) {
-        targetOffset = clamp(targetOffset, 0, minOffset.value);
+        targetOffset =
+          isRtl(root) && !props.vertical
+            ? clamp(targetOffset, 0, minOffset.value)
+            : clamp(targetOffset, minOffset.value, 0);
       }
-
       return targetOffset;
     };
 
@@ -187,7 +192,7 @@ export default defineComponent({
       const targetOffset = getTargetOffset(targetActive, offset);
       // auto move first and last swipe in loop mode
       if (props.loop) {
-        if (isRtl(root)) {
+        if (isRtl(root) && !props.vertical) {
           if (children[count.value - 1]) {
             const outRightBound = targetOffset < size.value;
             children[count.value - 1].setOffset(
@@ -197,7 +202,7 @@ export default defineComponent({
 
           if (children[0]) {
             const outLeftBound = targetOffset >= minOffset.value;
-            children[0].setOffset(outLeftBound ? minOffset.value : 0);
+            children[0].setOffset(outLeftBound ? -trackSize.value : 0);
           }
         } else {
           if (children[0] && targetOffset !== minOffset.value) {
@@ -213,7 +218,6 @@ export default defineComponent({
           }
         }
       }
-
       state.active = targetActive;
       state.offset = targetOffset;
 
@@ -350,7 +354,8 @@ export default defineComponent({
                 (state.active === count.value - 1 && delta.value < 0))) ||
               (isRtl(root) &&
                 ((state.active === count.value - 1 && delta.value > 0) ||
-                  (state.active === 0 && delta.value < 0))));
+                  (state.active === 0 && delta.value < 0)) &&
+                !props.vertical));
           if (!isEdgeTouch) {
             preventDefault(event, props.stopPropagation);
             move({ offset: delta.value });
@@ -378,25 +383,19 @@ export default defineComponent({
         const offset = props.vertical
           ? touch.offsetY.value
           : touch.offsetX.value;
-
         let pace = 0;
-        if (isRtl(root)) {
-          if (props.loop) {
-            pace = offset > 0 ? (delta.value > 0 ? 1 : -1) : 0;
+        if (props.loop) {
+          if (offset > 0) {
+            pace = delta.value > 0 ? -1 : 1;
           } else {
-            pace = Math[delta.value > 0 ? 'ceil' : 'floor'](
-              delta.value / size.value,
-            );
+            pace = 0;
           }
         } else {
-          if (props.loop) {
-            pace = offset > 0 ? (delta.value > 0 ? -1 : 1) : 0;
-          } else {
-            pace = -Math[delta.value > 0 ? 'ceil' : 'floor'](
-              delta.value / size.value,
-            );
-          }
+          pace = -Math[delta.value > 0 ? 'ceil' : 'floor'](
+            delta.value / size.value,
+          );
         }
+        pace = isRtl(root) && !props.vertical ? -pace : pace;
 
         move({
           pace,
