@@ -95,11 +95,22 @@ export default defineComponent({
       }
     };
 
+    const renderText = () => {
+      const { item } = props;
+      const { text } = item;
+
+      if (slots['text']) {
+        return <div class={bem('text')}>{slots['text'](props.item)}</div>;
+      }
+
+      return text;
+    };
+
     const renderContent = () => {
       const { item, color, rowHeight } = props;
-      const { type, text } = item;
+      const { type } = item;
 
-      const Nodes = [renderTopInfo(), text, renderBottomInfo()];
+      const Nodes = [renderTopInfo(), renderText(), renderBottomInfo()];
 
       if (type === 'selected') {
         return (
