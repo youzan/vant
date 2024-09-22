@@ -80,7 +80,7 @@
     "postcss-load-config": "^6.0.1",
     "prettier": "^3.3.3",
     "rspack-plugin-virtual-module": "^0.1.13",
-    "terser": "^5.31.6",
+    "terser": "^5.33.0",
     "transliteration": "^2.3.5",
     "typescript": "^5.5.4",
     "vite": "^5.4.5",
