@@ -14,6 +14,7 @@ exports[`should render AddressEdit correctly 1`] = `
         <label
           id="van-field-label"
           for="van-field-input"
+          data-allow-mismatch="attribute"
         >
           Name
         </label>
@@ -26,6 +27,7 @@ exports[`should render AddressEdit correctly 1`] = `
             class="van-field__control"
             placeholder="Name"
             aria-labelledby="van-field-label"
+            data-allow-mismatch="attribute"
           >
         </div>
       </div>
@@ -35,6 +37,7 @@ exports[`should render AddressEdit correctly 1`] = `
         <label
           id="van-field-label"
           for="van-field-input"
+          data-allow-mismatch="attribute"
         >
           Phone
         </label>
@@ -47,6 +50,7 @@ exports[`should render AddressEdit correctly 1`] = `
             class="van-field__control"
             placeholder="Phone"
             aria-labelledby="van-field-label"
+            data-allow-mismatch="attribute"
           >
         </div>
       </div>
@@ -60,6 +64,7 @@ exports[`should render AddressEdit correctly 1`] = `
         <label
           id="van-field-label"
           for="van-field-input"
+          data-allow-mismatch="attribute"
         >
           Area
         </label>
@@ -73,6 +78,7 @@ exports[`should render AddressEdit correctly 1`] = `
             readonly
             placeholder="Area"
             aria-labelledby="van-field-label"
+            data-allow-mismatch="attribute"
           >
         </div>
       </div>
@@ -84,6 +90,7 @@ exports[`should render AddressEdit correctly 1`] = `
         <label
           id="van-field-label"
           for="van-field-input"
+          data-allow-mismatch="attribute"
         >
           Address
         </label>
@@ -96,6 +103,7 @@ exports[`should render AddressEdit correctly 1`] = `
             class="van-field__control"
             placeholder="Address"
             aria-labelledby="van-field-label"
+            data-allow-mismatch="attribute"
           >
           </textarea>
         </div>
@@ -125,6 +133,7 @@ exports[`should render AddressEdit with props correctly 1`] = `
         <label
           id="van-field-label"
           for="van-field-input"
+          data-allow-mismatch="attribute"
         >
           Name
         </label>
@@ -137,6 +146,7 @@ exports[`should render AddressEdit with props correctly 1`] = `
             class="van-field__control"
             placeholder="Name"
             aria-labelledby="van-field-label"
+            data-allow-mismatch="attribute"
           >
         </div>
       </div>
@@ -146,6 +156,7 @@ exports[`should render AddressEdit with props correctly 1`] = `
         <label
           id="van-field-label"
           for="van-field-input"
+          data-allow-mismatch="attribute"
         >
           Phone
         </label>
@@ -158,6 +169,7 @@ exports[`should render AddressEdit with props correctly 1`] = `
             class="van-field__control"
             placeholder="Phone"
             aria-labelledby="van-field-label"
+            data-allow-mismatch="attribute"
           >
         </div>
       </div>
@@ -171,6 +183,7 @@ exports[`should render AddressEdit with props correctly 1`] = `
         <label
           id="van-field-label"
           for="van-field-input"
+          data-allow-mismatch="attribute"
         >
           Area
         </label>
@@ -184,6 +197,7 @@ exports[`should render AddressEdit with props correctly 1`] = `
             readonly
             placeholder="Area"
             aria-labelledby="van-field-label"
+            data-allow-mismatch="attribute"
           >
         </div>
       </div>
@@ -195,6 +209,7 @@ exports[`should render AddressEdit with props correctly 1`] = `
         <label
           id="van-field-label"
           for="van-field-input"
+          data-allow-mismatch="attribute"
         >
           Address
         </label>
@@ -207,6 +222,7 @@ exports[`should render AddressEdit with props correctly 1`] = `
             class="van-field__control"
             placeholder="Address"
             aria-labelledby="van-field-label"
+            data-allow-mismatch="attribute"
           >
           </textarea>
         </div>
@@ -250,6 +266,7 @@ exports[`should valid address detail and render error message correctly 1`] = `
     <label
       id="van-field-label"
       for="van-field-input"
+      data-allow-mismatch="attribute"
     >
       Address
     </label>
@@ -262,6 +279,7 @@ exports[`should valid address detail and render error message correctly 1`] = `
         class="van-field__control"
         placeholder="Address"
         aria-labelledby="van-field-label"
+        data-allow-mismatch="attribute"
         style="height: auto;"
       >
       </textarea>
@@ -283,6 +301,7 @@ exports[`should valid area code and render error message correctly 1`] = `
     <label
       id="van-field-label"
       for="van-field-input"
+      data-allow-mismatch="attribute"
     >
       Area
     </label>
@@ -296,6 +315,7 @@ exports[`should valid area code and render error message correctly 1`] = `
         readonly
         placeholder="Area"
         aria-labelledby="van-field-label"
+        data-allow-mismatch="attribute"
       >
     </div>
   </div>
@@ -310,6 +330,7 @@ exports[`should valid name and render error message correctly 1`] = `
     <label
       id="van-field-label"
       for="van-field-input"
+      data-allow-mismatch="attribute"
     >
       Name
     </label>
@@ -322,6 +343,7 @@ exports[`should valid name and render error message correctly 1`] = `
         class="van-field__control"
         placeholder="Name"
         aria-labelledby="van-field-label"
+        data-allow-mismatch="attribute"
       >
     </div>
     <div class="van-field__error-message">
@@ -337,6 +359,7 @@ exports[`should valid tel and render error message correctly 1`] = `
     <label
       id="van-field-label"
       for="van-field-input"
+      data-allow-mismatch="attribute"
     >
       Phone
     </label>
@@ -349,6 +372,7 @@ exports[`should valid tel and render error message correctly 1`] = `
         class="van-field__control"
         placeholder="Phone"
         aria-labelledby="van-field-label"
+        data-allow-mismatch="attribute"
       >
     </div>
     <div class="van-field__error-message">

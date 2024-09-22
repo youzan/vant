@@ -62,6 +62,7 @@ export default defineComponent({
           fy="54%"
           r="297%"
           gradientTransform="matrix(-.16 0 0 -.33 .58 .72)"
+          data-allow-mismatch="attribute"
         >
           {renderStop('#EBEDF0', 0)}
           {renderStop('#F2F3F5', 100, 0.3)}
@@ -74,17 +75,24 @@ export default defineComponent({
         cy="140"
         rx="46"
         ry="8"
+        data-allow-mismatch="attribute"
       />,
     ];
 
     const renderBuilding = () => [
       <defs>
-        <linearGradient id={getId('a')} x1="64%" y1="100%" x2="64%">
+        <linearGradient
+          id={getId('a')}
+          x1="64%"
+          y1="100%"
+          x2="64%"
+          data-allow-mismatch="attribute"
+        >
           {renderStop('#FFF', 0, 0.5)}
           {renderStop('#F2F3F5', 100)}
         </linearGradient>
       </defs>,
-      <g opacity=".8">
+      <g opacity=".8" data-allow-mismatch="children">
         <path d="M36 131V53H16v20H2v58h34z" fill={getUrlById('a')} />
         <path d="M123 15h22v14h9v77h-31V15z" fill={getUrlById('a')} />
       </g>,
@@ -92,12 +100,19 @@ export default defineComponent({
 
     const renderCloud = () => [
       <defs>
-        <linearGradient id={getId('b')} x1="64%" y1="97%" x2="64%" y2="0%">
+        <linearGradient
+          id={getId('b')}
+          x1="64%"
+          y1="97%"
+          x2="64%"
+          y2="0%"
+          data-allow-mismatch="attribute"
+        >
           {renderStop('#F2F3F5', 0, 0.3)}
           {renderStop('#F2F3F5', 100)}
         </linearGradient>
       </defs>,
-      <g opacity=".8">
+      <g opacity=".8" data-allow-mismatch="children">
         <path
           d="M87 6c3 0 7 3 8 6a8 8 0 1 1-1 16H80a7 7 0 0 1-8-6c0-4 3-7 6-7 0-5 4-9 9-9Z"
           fill={getUrlById('b')}
@@ -111,7 +126,7 @@ export default defineComponent({
 
     const renderNetwork = () => (
       <svg viewBox="0 0 160 160">
-        <defs>
+        <defs data-allow-mismatch="children">
           <linearGradient id={getId(1)} x1="64%" y1="100%" x2="64%">
             {renderStop('#FFF', 0, 0.5)}
             {renderStop('#F2F3F5', 100)}
@@ -138,12 +153,22 @@ export default defineComponent({
         </defs>
         <g fill="none">
           {renderBuilding()}
-          <path fill={getUrlById(4)} d="M0 139h160v21H0z" />
+          <path
+            fill={getUrlById(4)}
+            d="M0 139h160v21H0z"
+            data-allow-mismatch="attribute"
+          />
           <path
             d="M80 54a7 7 0 0 1 3 13v27l-2 2h-2a2 2 0 0 1-2-2V67a7 7 0 0 1 3-13z"
             fill={getUrlById(2)}
+            data-allow-mismatch="attribute"
           />
-          <g opacity=".6" stroke-linecap="round" stroke-width="7">
+          <g
+            opacity=".6"
+            stroke-linecap="round"
+            stroke-width="7"
+            data-allow-mismatch="children"
+          >
             <path
               d="M64 47a19 19 0 0 0-5 13c0 5 2 10 5 13"
               stroke={getUrlById(3)}
@@ -166,7 +191,7 @@ export default defineComponent({
 
     const renderMaterial = () => (
       <svg viewBox="0 0 160 160">
-        <defs>
+        <defs data-allow-mismatch="children">
           <linearGradient x1="50%" x2="50%" y2="100%" id={getId(5)}>
             {renderStops('#F2F3F5', '#DCDEE0')}
           </linearGradient>
@@ -190,15 +215,32 @@ export default defineComponent({
               height="53"
               rx="2"
             />
-            <rect fill={getUrlById(5)} width="64" height="66" rx="2" />
+            <rect
+              fill={getUrlById(5)}
+              width="64"
+              height="66"
+              rx="2"
+              data-allow-mismatch="attribute"
+            />
             <rect fill="#FFF" x="6" y="6" width="52" height="55" rx="1" />
-            <g transform="translate(15 17)" fill={getUrlById(6)}>
+            <g
+              transform="translate(15 17)"
+              fill={getUrlById(6)}
+              data-allow-mismatch="attribute"
+            >
               <rect width="34" height="6" rx="1" />
               <path d="M0 14h34v6H0z" />
               <rect y="28" width="34" height="6" rx="1" />
             </g>
           </g>
-          <rect fill={getUrlById(7)} y="61" width="88" height="28" rx="1" />
+          <rect
+            fill={getUrlById(7)}
+            y="61"
+            width="88"
+            height="28"
+            rx="1"
+            data-allow-mismatch="attribute"
+          />
           <rect fill="#F7F8FA" x="29" y="72" width="30" height="6" rx="1" />
         </g>
       </svg>
@@ -207,7 +249,13 @@ export default defineComponent({
     const renderError = () => (
       <svg viewBox="0 0 160 160">
         <defs>
-          <linearGradient x1="50%" x2="50%" y2="100%" id={getId(8)}>
+          <linearGradient
+            x1="50%"
+            x2="50%"
+            y2="100%"
+            id={getId(8)}
+            data-allow-mismatch="attribute"
+          >
             {renderStops('#EAEDF1', '#DCDEE0')}
           </linearGradient>
         </defs>
@@ -217,13 +265,14 @@ export default defineComponent({
         <path
           d="m59 60 21 21 21-21h3l9 9v3L92 93l21 21v3l-9 9h-3l-21-21-21 21h-3l-9-9v-3l21-21-21-21v-3l9-9h3Z"
           fill={getUrlById(8)}
+          data-allow-mismatch="attribute"
         />
       </svg>
     );
 
     const renderSearch = () => (
       <svg viewBox="0 0 160 160">
-        <defs>
+        <defs data-allow-mismatch="children">
           <linearGradient x1="50%" y1="100%" x2="50%" id={getId(9)}>
             {renderStops('#EEE', '#D8D8D8')}
           </linearGradient>
@@ -240,7 +289,11 @@ export default defineComponent({
         {renderBuilding()}
         {renderCloud()}
         {renderShadow('d')}
-        <g transform="rotate(-45 113 -4)" fill="none">
+        <g
+          transform="rotate(-45 113 -4)"
+          fill="none"
+          data-allow-mismatch="children"
+        >
           <rect
             fill={getUrlById(9)}
             x="24"

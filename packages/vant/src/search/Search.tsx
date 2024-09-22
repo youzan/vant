@@ -76,7 +76,11 @@ export default defineComponent({
     const renderLabel = () => {
       if (slots.label || props.label) {
         return (
-          <label class={bem('label')} for={getInputId()}>
+          <label
+            class={bem('label')}
+            for={getInputId()}
+            data-allow-mismatch="attribute"
+          >
             {slots.label ? slots.label() : props.label}
           </label>
         );

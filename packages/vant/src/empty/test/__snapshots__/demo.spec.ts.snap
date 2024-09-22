@@ -5,7 +5,7 @@ exports[`should render demo and match snapshot 1`] = `
   <div class="van-empty">
     <div class="van-empty__image">
       <svg viewbox="0 0 160 160">
-        <defs>
+        <defs data-allow-mismatch="children">
           <linearGradient
             x1="50%"
             x2="50%"
@@ -65,6 +65,7 @@ exports[`should render demo and match snapshot 1`] = `
             x1="64%"
             y1="100%"
             x2="64%"
+            data-allow-mismatch="attribute"
           >
             <stop
               stop-color="#FFF"
@@ -79,7 +80,10 @@ exports[`should render demo and match snapshot 1`] = `
             </stop>
           </linearGradient>
         </defs>
-        <g opacity=".8">
+        <g
+          opacity=".8"
+          data-allow-mismatch="children"
+        >
           <path
             d="M36 131V53H16v20H2v58h34z"
             fill="url(#van-empty-a)"
@@ -98,6 +102,7 @@ exports[`should render demo and match snapshot 1`] = `
             y1="97%"
             x2="64%"
             y2="0%"
+            data-allow-mismatch="attribute"
           >
             <stop
               stop-color="#F2F3F5"
@@ -112,7 +117,10 @@ exports[`should render demo and match snapshot 1`] = `
             </stop>
           </linearGradient>
         </defs>
-        <g opacity=".8">
+        <g
+          opacity=".8"
+          data-allow-mismatch="children"
+        >
           <path
             d="M87 6c3 0 7 3 8 6a8 8 0 1 1-1 16H80a7 7 0 0 1-8-6c0-4 3-7 6-7 0-5 4-9 9-9Z"
             fill="url(#van-empty-b)"
@@ -144,6 +152,7 @@ exports[`should render demo and match snapshot 1`] = `
               width="64"
               height="66"
               rx="2"
+              data-allow-mismatch="attribute"
             >
             </rect>
             <rect
@@ -158,6 +167,7 @@ exports[`should render demo and match snapshot 1`] = `
             <g
               transform="translate(15 17)"
               fill="url(#van-empty-6)"
+              data-allow-mismatch="attribute"
             >
               <rect
                 width="34"
@@ -182,6 +192,7 @@ exports[`should render demo and match snapshot 1`] = `
             width="88"
             height="28"
             rx="1"
+            data-allow-mismatch="attribute"
           >
           </rect>
           <rect
@@ -216,6 +227,7 @@ exports[`should render demo and match snapshot 1`] = `
           tabindex="0"
           aria-selected="true"
           aria-controls="van-tab"
+          data-allow-mismatch="attribute"
         >
           <span class="van-tab__text van-tab__text--ellipsis">
             Error
@@ -228,6 +240,7 @@ exports[`should render demo and match snapshot 1`] = `
           tabindex="-1"
           aria-selected="false"
           aria-controls="van-tab"
+          data-allow-mismatch="attribute"
         >
           <span class="van-tab__text van-tab__text--ellipsis">
             Network
@@ -240,6 +253,7 @@ exports[`should render demo and match snapshot 1`] = `
           tabindex="-1"
           aria-selected="false"
           aria-controls="van-tab"
+          data-allow-mismatch="attribute"
         >
           <span class="van-tab__text van-tab__text--ellipsis">
             Search
@@ -259,6 +273,7 @@ exports[`should render demo and match snapshot 1`] = `
         class="van-tab__panel"
         tabindex="0"
         aria-labelledby="van-tabs-0"
+        data-allow-mismatch="attribute"
         style
       >
         <div class="van-empty">
@@ -270,6 +285,7 @@ exports[`should render demo and match snapshot 1`] = `
                   x2="50%"
                   y2="100%"
                   id="van-empty-8"
+                  data-allow-mismatch="attribute"
                 >
                   <stop
                     stop-color="#EAEDF1"
@@ -289,6 +305,7 @@ exports[`should render demo and match snapshot 1`] = `
                   x1="64%"
                   y1="100%"
                   x2="64%"
+                  data-allow-mismatch="attribute"
                 >
                   <stop
                     stop-color="#FFF"
@@ -303,7 +320,10 @@ exports[`should render demo and match snapshot 1`] = `
                   </stop>
                 </linearGradient>
               </defs>
-              <g opacity=".8">
+              <g
+                opacity=".8"
+                data-allow-mismatch="children"
+              >
                 <path
                   d="M36 131V53H16v20H2v58h34z"
                   fill="url(#van-empty-a)"
@@ -322,6 +342,7 @@ exports[`should render demo and match snapshot 1`] = `
                   y1="97%"
                   x2="64%"
                   y2="0%"
+                  data-allow-mismatch="attribute"
                 >
                   <stop
                     stop-color="#F2F3F5"
@@ -336,7 +357,10 @@ exports[`should render demo and match snapshot 1`] = `
                   </stop>
                 </linearGradient>
               </defs>
-              <g opacity=".8">
+              <g
+                opacity=".8"
+                data-allow-mismatch="children"
+              >
                 <path
                   d="M87 6c3 0 7 3 8 6a8 8 0 1 1-1 16H80a7 7 0 0 1-8-6c0-4 3-7 6-7 0-5 4-9 9-9Z"
                   fill="url(#van-empty-b)"
@@ -357,6 +381,7 @@ exports[`should render demo and match snapshot 1`] = `
                   fy="54%"
                   r="297%"
                   gradienttransform="matrix(-.16 0 0 -.33 .58 .72)"
+                  data-allow-mismatch="attribute"
                 >
                   <stop
                     stop-color="#EBEDF0"
@@ -378,11 +403,13 @@ exports[`should render demo and match snapshot 1`] = `
                 cy="140"
                 rx="46"
                 ry="8"
+                data-allow-mismatch="attribute"
               >
               </ellipse>
               <path
                 d="m59 60 21 21 21-21h3l9 9v3L92 93l21 21v3l-9 9h-3l-21-21-21 21h-3l-9-9v-3l21-21-21-21v-3l9-9h3Z"
                 fill="url(#van-empty-8)"
+                data-allow-mismatch="attribute"
               >
               </path>
             </svg>
@@ -398,6 +425,7 @@ exports[`should render demo and match snapshot 1`] = `
         class="van-tab__panel"
         tabindex="-1"
         aria-labelledby="van-tabs-1"
+        data-allow-mismatch="attribute"
         style="display: none;"
       >
       </div>
@@ -407,6 +435,7 @@ exports[`should render demo and match snapshot 1`] = `
         class="van-tab__panel"
         tabindex="-1"
         aria-labelledby="van-tabs-2"
+        data-allow-mismatch="attribute"
         style="display: none;"
       >
       </div>
@@ -420,7 +449,7 @@ exports[`should render demo and match snapshot 1`] = `
       style="width: 100px; height: 100px;"
     >
       <svg viewbox="0 0 160 160">
-        <defs>
+        <defs data-allow-mismatch="children">
           <linearGradient
             x1="50%"
             x2="50%"
@@ -480,6 +509,7 @@ exports[`should render demo and match snapshot 1`] = `
             x1="64%"
             y1="100%"
             x2="64%"
+            data-allow-mismatch="attribute"
           >
             <stop
               stop-color="#FFF"
@@ -494,7 +524,10 @@ exports[`should render demo and match snapshot 1`] = `
             </stop>
           </linearGradient>
         </defs>
-        <g opacity=".8">
+        <g
+          opacity=".8"
+          data-allow-mismatch="children"
+        >
           <path
             d="M36 131V53H16v20H2v58h34z"
             fill="url(#van-empty-a)"
@@ -513,6 +546,7 @@ exports[`should render demo and match snapshot 1`] = `
             y1="97%"
             x2="64%"
             y2="0%"
+            data-allow-mismatch="attribute"
           >
             <stop
               stop-color="#F2F3F5"
@@ -527,7 +561,10 @@ exports[`should render demo and match snapshot 1`] = `
             </stop>
           </linearGradient>
         </defs>
-        <g opacity=".8">
+        <g
+          opacity=".8"
+          data-allow-mismatch="children"
+        >
           <path
             d="M87 6c3 0 7 3 8 6a8 8 0 1 1-1 16H80a7 7 0 0 1-8-6c0-4 3-7 6-7 0-5 4-9 9-9Z"
             fill="url(#van-empty-b)"
@@ -559,6 +596,7 @@ exports[`should render demo and match snapshot 1`] = `
               width="64"
               height="66"
               rx="2"
+              data-allow-mismatch="attribute"
             >
             </rect>
             <rect
@@ -573,6 +611,7 @@ exports[`should render demo and match snapshot 1`] = `
             <g
               transform="translate(15 17)"
               fill="url(#van-empty-6)"
+              data-allow-mismatch="attribute"
             >
               <rect
                 width="34"
@@ -597,6 +636,7 @@ exports[`should render demo and match snapshot 1`] = `
             width="88"
             height="28"
             rx="1"
+            data-allow-mismatch="attribute"
           >
           </rect>
           <rect
@@ -633,7 +673,7 @@ exports[`should render demo and match snapshot 1`] = `
   <div class="van-empty">
     <div class="van-empty__image">
       <svg viewbox="0 0 160 160">
-        <defs>
+        <defs data-allow-mismatch="children">
           <linearGradient
             x1="50%"
             x2="50%"
@@ -693,6 +733,7 @@ exports[`should render demo and match snapshot 1`] = `
             x1="64%"
             y1="100%"
             x2="64%"
+            data-allow-mismatch="attribute"
           >
             <stop
               stop-color="#FFF"
@@ -707,7 +748,10 @@ exports[`should render demo and match snapshot 1`] = `
             </stop>
           </linearGradient>
         </defs>
-        <g opacity=".8">
+        <g
+          opacity=".8"
+          data-allow-mismatch="children"
+        >
           <path
             d="M36 131V53H16v20H2v58h34z"
             fill="url(#van-empty-a)"
@@ -726,6 +770,7 @@ exports[`should render demo and match snapshot 1`] = `
             y1="97%"
             x2="64%"
             y2="0%"
+            data-allow-mismatch="attribute"
           >
             <stop
               stop-color="#F2F3F5"
@@ -740,7 +785,10 @@ exports[`should render demo and match snapshot 1`] = `
             </stop>
           </linearGradient>
         </defs>
-        <g opacity=".8">
+        <g
+          opacity=".8"
+          data-allow-mismatch="children"
+        >
           <path
             d="M87 6c3 0 7 3 8 6a8 8 0 1 1-1 16H80a7 7 0 0 1-8-6c0-4 3-7 6-7 0-5 4-9 9-9Z"
             fill="url(#van-empty-b)"
@@ -772,6 +820,7 @@ exports[`should render demo and match snapshot 1`] = `
               width="64"
               height="66"
               rx="2"
+              data-allow-mismatch="attribute"
             >
             </rect>
             <rect
@@ -786,6 +835,7 @@ exports[`should render demo and match snapshot 1`] = `
             <g
               transform="translate(15 17)"
               fill="url(#van-empty-6)"
+              data-allow-mismatch="attribute"
             >
               <rect
                 width="34"
@@ -810,6 +860,7 @@ exports[`should render demo and match snapshot 1`] = `
             width="88"
             height="28"
             rx="1"
+            data-allow-mismatch="attribute"
           >
           </rect>
           <rect

@@ -16,6 +16,7 @@ exports[`should render demo and match snapshot 1`] = `
           tabindex="0"
           aria-selected="true"
           aria-controls="van-tab"
+          data-allow-mismatch="attribute"
         >
           <span class="van-tab__text van-tab__text--ellipsis">
             Tab 1
@@ -28,6 +29,7 @@ exports[`should render demo and match snapshot 1`] = `
           tabindex="-1"
           aria-selected="false"
           aria-controls="van-tab"
+          data-allow-mismatch="attribute"
         >
           <span class="van-tab__text van-tab__text--ellipsis">
             Tab 2
@@ -40,6 +42,7 @@ exports[`should render demo and match snapshot 1`] = `
           tabindex="-1"
           aria-selected="false"
           aria-controls="van-tab"
+          data-allow-mismatch="attribute"
         >
           <span class="van-tab__text van-tab__text--ellipsis">
             Tab 3
@@ -52,6 +55,7 @@ exports[`should render demo and match snapshot 1`] = `
           tabindex="-1"
           aria-selected="false"
           aria-controls="van-tab"
+          data-allow-mismatch="attribute"
         >
           <span class="van-tab__text van-tab__text--ellipsis">
             Tab 4
@@ -71,6 +75,7 @@ exports[`should render demo and match snapshot 1`] = `
         class="van-tab__panel"
         tabindex="0"
         aria-labelledby="van-tabs-0"
+        data-allow-mismatch="attribute"
         style
       >
         content of tab 1
@@ -81,6 +86,7 @@ exports[`should render demo and match snapshot 1`] = `
         class="van-tab__panel"
         tabindex="-1"
         aria-labelledby="van-tabs-1"
+        data-allow-mismatch="attribute"
         style="display: none;"
       >
       </div>
@@ -90,6 +96,7 @@ exports[`should render demo and match snapshot 1`] = `
         class="van-tab__panel"
         tabindex="-1"
         aria-labelledby="van-tabs-2"
+        data-allow-mismatch="attribute"
         style="display: none;"
       >
       </div>
@@ -99,6 +106,7 @@ exports[`should render demo and match snapshot 1`] = `
         class="van-tab__panel"
         tabindex="-1"
         aria-labelledby="van-tabs-3"
+        data-allow-mismatch="attribute"
         style="display: none;"
       >
       </div>
@@ -120,6 +128,7 @@ exports[`should render demo and match snapshot 1`] = `
           tabindex="-1"
           aria-selected="false"
           aria-controls="van-tab"
+          data-allow-mismatch="attribute"
         >
           <span class="van-tab__text van-tab__text--ellipsis">
             Tab 1
@@ -132,6 +141,7 @@ exports[`should render demo and match snapshot 1`] = `
           tabindex="0"
           aria-selected="true"
           aria-controls="van-tab"
+          data-allow-mismatch="attribute"
         >
           <span class="van-tab__text van-tab__text--ellipsis">
             Tab 2
@@ -144,6 +154,7 @@ exports[`should render demo and match snapshot 1`] = `
           tabindex="-1"
           aria-selected="false"
           aria-controls="van-tab"
+          data-allow-mismatch="attribute"
         >
           <span class="van-tab__text van-tab__text--ellipsis">
             Tab 3
@@ -163,6 +174,7 @@ exports[`should render demo and match snapshot 1`] = `
         class="van-tab__panel"
         tabindex="-1"
         aria-labelledby="van-tabs-0"
+        data-allow-mismatch="attribute"
         style="display: none;"
       >
       </div>
@@ -172,6 +184,7 @@ exports[`should render demo and match snapshot 1`] = `
         class="van-tab__panel"
         tabindex="0"
         aria-labelledby="van-tabs-1"
+        data-allow-mismatch="attribute"
         style
       >
         content of tab 2
@@ -182,6 +195,7 @@ exports[`should render demo and match snapshot 1`] = `
         class="van-tab__panel"
         tabindex="-1"
         aria-labelledby="van-tabs-2"
+        data-allow-mismatch="attribute"
         style="display: none;"
       >
       </div>
@@ -203,6 +217,7 @@ exports[`should render demo and match snapshot 1`] = `
           tabindex="0"
           aria-selected="true"
           aria-controls="van-tab"
+          data-allow-mismatch="attribute"
         >
           <span class="van-tab__text">
             Tab 1
@@ -215,6 +230,7 @@ exports[`should render demo and match snapshot 1`] = `
           tabindex="-1"
           aria-selected="false"
           aria-controls="van-tab"
+          data-allow-mismatch="attribute"
         >
           <span class="van-tab__text">
             Tab 2
@@ -227,6 +243,7 @@ exports[`should render demo and match snapshot 1`] = `
           tabindex="-1"
           aria-selected="false"
           aria-controls="van-tab"
+          data-allow-mismatch="attribute"
         >
           <span class="van-tab__text">
             Tab 3
@@ -239,6 +256,7 @@ exports[`should render demo and match snapshot 1`] = `
           tabindex="-1"
           aria-selected="false"
           aria-controls="van-tab"
+          data-allow-mismatch="attribute"
         >
           <span class="van-tab__text">
             Tab 4
@@ -251,6 +269,7 @@ exports[`should render demo and match snapshot 1`] = `
           tabindex="-1"
           aria-selected="false"
           aria-controls="van-tab"
+          data-allow-mismatch="attribute"
         >
           <span class="van-tab__text">
             Tab 5
@@ -263,6 +282,7 @@ exports[`should render demo and match snapshot 1`] = `
           tabindex="-1"
           aria-selected="false"
           aria-controls="van-tab"
+          data-allow-mismatch="attribute"
         >
           <span class="van-tab__text">
             Tab 6
@@ -275,6 +295,7 @@ exports[`should render demo and match snapshot 1`] = `
           tabindex="-1"
           aria-selected="false"
           aria-controls="van-tab"
+          data-allow-mismatch="attribute"
         >
           <span class="van-tab__text">
             Tab 7
@@ -287,6 +308,7 @@ exports[`should render demo and match snapshot 1`] = `
           tabindex="-1"
           aria-selected="false"
           aria-controls="van-tab"
+          data-allow-mismatch="attribute"
         >
           <span class="van-tab__text">
             Tab 8
@@ -306,6 +328,7 @@ exports[`should render demo and match snapshot 1`] = `
         class="van-tab__panel"
         tabindex="0"
         aria-labelledby="van-tabs-0"
+        data-allow-mismatch="attribute"
         style
       >
         content of tab 1
@@ -316,6 +339,7 @@ exports[`should render demo and match snapshot 1`] = `
         class="van-tab__panel"
         tabindex="-1"
         aria-labelledby="van-tabs-1"
+        data-allow-mismatch="attribute"
         style="display: none;"
       >
       </div>
@@ -325,6 +349,7 @@ exports[`should render demo and match snapshot 1`] = `
         class="van-tab__panel"
         tabindex="-1"
         aria-labelledby="van-tabs-2"
+        data-allow-mismatch="attribute"
         style="display: none;"
       >
       </div>
@@ -334,6 +359,7 @@ exports[`should render demo and match snapshot 1`] = `
         class="van-tab__panel"
         tabindex="-1"
         aria-labelledby="van-tabs-3"
+        data-allow-mismatch="attribute"
         style="display: none;"
       >
       </div>
@@ -343,6 +369,7 @@ exports[`should render demo and match snapshot 1`] = `
         class="van-tab__panel"
         tabindex="-1"
         aria-labelledby="van-tabs-4"
+        data-allow-mismatch="attribute"
         style="display: none;"
       >
       </div>
@@ -352,6 +379,7 @@ exports[`should render demo and match snapshot 1`] = `
         class="van-tab__panel"
         tabindex="-1"
         aria-labelledby="van-tabs-5"
+        data-allow-mismatch="attribute"
         style="display: none;"
       >
       </div>
@@ -361,6 +389,7 @@ exports[`should render demo and match snapshot 1`] = `
         class="van-tab__panel"
         tabindex="-1"
         aria-labelledby="van-tabs-6"
+        data-allow-mismatch="attribute"
         style="display: none;"
       >
       </div>
@@ -370,6 +399,7 @@ exports[`should render demo and match snapshot 1`] = `
         class="van-tab__panel"
         tabindex="-1"
         aria-labelledby="van-tabs-7"
+        data-allow-mismatch="attribute"
         style="display: none;"
       >
       </div>
@@ -391,6 +421,7 @@ exports[`should render demo and match snapshot 1`] = `
           tabindex="0"
           aria-selected="true"
           aria-controls="van-tab"
+          data-allow-mismatch="attribute"
         >
           <span class="van-tab__text van-tab__text--ellipsis">
             Tab 1
@@ -403,6 +434,7 @@ exports[`should render demo and match snapshot 1`] = `
           aria-selected="false"
           aria-disabled="true"
           aria-controls="van-tab"
+          data-allow-mismatch="attribute"
         >
           <span class="van-tab__text van-tab__text--ellipsis">
             Tab 2
@@ -415,6 +447,7 @@ exports[`should render demo and match snapshot 1`] = `
           tabindex="-1"
           aria-selected="false"
           aria-controls="van-tab"
+          data-allow-mismatch="attribute"
         >
           <span class="van-tab__text van-tab__text--ellipsis">
             Tab 3
@@ -434,6 +467,7 @@ exports[`should render demo and match snapshot 1`] = `
         class="van-tab__panel"
         tabindex="0"
         aria-labelledby="van-tabs-0"
+        data-allow-mismatch="attribute"
         style
       >
         content of tab 1
@@ -444,6 +478,7 @@ exports[`should render demo and match snapshot 1`] = `
         class="van-tab__panel"
         tabindex="-1"
         aria-labelledby="van-tabs-1"
+        data-allow-mismatch="attribute"
         style="display: none;"
       >
       </div>
@@ -453,6 +488,7 @@ exports[`should render demo and match snapshot 1`] = `
         class="van-tab__panel"
         tabindex="-1"
         aria-labelledby="van-tabs-2"
+        data-allow-mismatch="attribute"
         style="display: none;"
       >
       </div>
@@ -474,6 +510,7 @@ exports[`should render demo and match snapshot 1`] = `
           tabindex="0"
           aria-selected="true"
           aria-controls="van-tab"
+          data-allow-mismatch="attribute"
         >
           <span class="van-tab__text van-tab__text--ellipsis">
             Tab 1
@@ -486,6 +523,7 @@ exports[`should render demo and match snapshot 1`] = `
           tabindex="-1"
           aria-selected="false"
           aria-controls="van-tab"
+          data-allow-mismatch="attribute"
         >
           <span class="van-tab__text van-tab__text--ellipsis">
             Tab 2
@@ -498,6 +536,7 @@ exports[`should render demo and match snapshot 1`] = `
           tabindex="-1"
           aria-selected="false"
           aria-controls="van-tab"
+          data-allow-mismatch="attribute"
         >
           <span class="van-tab__text van-tab__text--ellipsis">
             Tab 3
@@ -512,6 +551,7 @@ exports[`should render demo and match snapshot 1`] = `
         class="van-tab__panel"
         tabindex="0"
         aria-labelledby="van-tabs-0"
+        data-allow-mismatch="attribute"
         style
       >
         content of tab 1
@@ -522,6 +562,7 @@ exports[`should render demo and match snapshot 1`] = `
         class="van-tab__panel"
         tabindex="-1"
         aria-labelledby="van-tabs-1"
+        data-allow-mismatch="attribute"
         style="display: none;"
       >
       </div>
@@ -531,6 +572,7 @@ exports[`should render demo and match snapshot 1`] = `
         class="van-tab__panel"
         tabindex="-1"
         aria-labelledby="van-tabs-2"
+        data-allow-mismatch="attribute"
         style="display: none;"
       >
       </div>
@@ -552,6 +594,7 @@ exports[`should render demo and match snapshot 1`] = `
           tabindex="0"
           aria-selected="true"
           aria-controls="van-tab"
+          data-allow-mismatch="attribute"
         >
           <span class="van-tab__text van-tab__text--ellipsis">
             Tab 1
@@ -564,6 +607,7 @@ exports[`should render demo and match snapshot 1`] = `
           tabindex="-1"
           aria-selected="false"
           aria-controls="van-tab"
+          data-allow-mismatch="attribute"
         >
           <span class="van-tab__text van-tab__text--ellipsis">
             Tab 2
@@ -583,6 +627,7 @@ exports[`should render demo and match snapshot 1`] = `
         class="van-tab__panel"
         tabindex="0"
         aria-labelledby="van-tabs-0"
+        data-allow-mismatch="attribute"
         style
       >
         content of tab 1
@@ -593,6 +638,7 @@ exports[`should render demo and match snapshot 1`] = `
         class="van-tab__panel"
         tabindex="-1"
         aria-labelledby="van-tabs-1"
+        data-allow-mismatch="attribute"
         style="display: none;"
       >
       </div>
@@ -617,6 +663,7 @@ exports[`should render demo and match snapshot 1`] = `
                 tabindex="0"
                 aria-selected="true"
                 aria-controls="van-tab"
+                data-allow-mismatch="attribute"
               >
                 <span class="van-tab__text van-tab__text--ellipsis">
                   Tab 1
@@ -629,6 +676,7 @@ exports[`should render demo and match snapshot 1`] = `
                 tabindex="-1"
                 aria-selected="false"
                 aria-controls="van-tab"
+                data-allow-mismatch="attribute"
               >
                 <span class="van-tab__text van-tab__text--ellipsis">
                   Tab 2
@@ -641,6 +689,7 @@ exports[`should render demo and match snapshot 1`] = `
                 tabindex="-1"
                 aria-selected="false"
                 aria-controls="van-tab"
+                data-allow-mismatch="attribute"
               >
                 <span class="van-tab__text van-tab__text--ellipsis">
                   Tab 3
@@ -653,6 +702,7 @@ exports[`should render demo and match snapshot 1`] = `
                 tabindex="-1"
                 aria-selected="false"
                 aria-controls="van-tab"
+                data-allow-mismatch="attribute"
               >
                 <span class="van-tab__text van-tab__text--ellipsis">
                   Tab 4
@@ -675,6 +725,7 @@ exports[`should render demo and match snapshot 1`] = `
         class="van-tab__panel"
         tabindex="0"
         aria-labelledby="van-tabs-0"
+        data-allow-mismatch="attribute"
         style
       >
         content of tab 1
@@ -685,6 +736,7 @@ exports[`should render demo and match snapshot 1`] = `
         class="van-tab__panel"
         tabindex="-1"
         aria-labelledby="van-tabs-1"
+        data-allow-mismatch="attribute"
         style="display: none;"
       >
       </div>
@@ -694,6 +746,7 @@ exports[`should render demo and match snapshot 1`] = `
         class="van-tab__panel"
         tabindex="-1"
         aria-labelledby="van-tabs-2"
+        data-allow-mismatch="attribute"
         style="display: none;"
       >
       </div>
@@ -703,6 +756,7 @@ exports[`should render demo and match snapshot 1`] = `
         class="van-tab__panel"
         tabindex="-1"
         aria-labelledby="van-tabs-3"
+        data-allow-mismatch="attribute"
         style="display: none;"
       >
       </div>
@@ -724,6 +778,7 @@ exports[`should render demo and match snapshot 1`] = `
           tabindex="0"
           aria-selected="true"
           aria-controls="van-tab"
+          data-allow-mismatch="attribute"
         >
           <span class="van-tab__text">
             Tab 1
@@ -736,6 +791,7 @@ exports[`should render demo and match snapshot 1`] = `
           tabindex="-1"
           aria-selected="false"
           aria-controls="van-tab"
+          data-allow-mismatch="attribute"
         >
           <span class="van-tab__text">
             Tab 2
@@ -748,6 +804,7 @@ exports[`should render demo and match snapshot 1`] = `
           tabindex="-1"
           aria-selected="false"
           aria-controls="van-tab"
+          data-allow-mismatch="attribute"
         >
           <span class="van-tab__text">
             Tab 3
@@ -760,6 +817,7 @@ exports[`should render demo and match snapshot 1`] = `
           tabindex="-1"
           aria-selected="false"
           aria-controls="van-tab"
+          data-allow-mismatch="attribute"
         >
           <span class="van-tab__text">
             Tab 4
@@ -779,6 +837,7 @@ exports[`should render demo and match snapshot 1`] = `
         class="van-tab__panel"
         tabindex="0"
         aria-labelledby="van-tabs-0"
+        data-allow-mismatch="attribute"
         style
       >
         content of tab 1
@@ -789,6 +848,7 @@ exports[`should render demo and match snapshot 1`] = `
         class="van-tab__panel"
         tabindex="-1"
         aria-labelledby="van-tabs-1"
+        data-allow-mismatch="attribute"
         style="display: none;"
       >
       </div>
@@ -798,6 +858,7 @@ exports[`should render demo and match snapshot 1`] = `
         class="van-tab__panel"
         tabindex="-1"
         aria-labelledby="van-tabs-2"
+        data-allow-mismatch="attribute"
         style="display: none;"
       >
       </div>
@@ -807,6 +868,7 @@ exports[`should render demo and match snapshot 1`] = `
         class="van-tab__panel"
         tabindex="-1"
         aria-labelledby="van-tabs-3"
+        data-allow-mismatch="attribute"
         style="display: none;"
       >
       </div>
@@ -826,6 +888,7 @@ exports[`should render demo and match snapshot 1`] = `
           tabindex="0"
           aria-selected="true"
           aria-controls="van-tab"
+          data-allow-mismatch="attribute"
         >
           <span class="van-tab__text">
             Tab 1
@@ -838,6 +901,7 @@ exports[`should render demo and match snapshot 1`] = `
           tabindex="-1"
           aria-selected="false"
           aria-controls="van-tab"
+          data-allow-mismatch="attribute"
         >
           <span class="van-tab__text">
             Tab 2
@@ -850,6 +914,7 @@ exports[`should render demo and match snapshot 1`] = `
           tabindex="-1"
           aria-selected="false"
           aria-controls="van-tab"
+          data-allow-mismatch="attribute"
         >
           <span class="van-tab__text">
             Tab 3
@@ -862,6 +927,7 @@ exports[`should render demo and match snapshot 1`] = `
           tabindex="-1"
           aria-selected="false"
           aria-controls="van-tab"
+          data-allow-mismatch="attribute"
         >
           <span class="van-tab__text">
             Tab 4
@@ -876,6 +942,7 @@ exports[`should render demo and match snapshot 1`] = `
         class="van-tab__panel"
         tabindex="0"
         aria-labelledby="van-tabs-0"
+        data-allow-mismatch="attribute"
         style
       >
         content of tab 1
@@ -886,6 +953,7 @@ exports[`should render demo and match snapshot 1`] = `
         class="van-tab__panel"
         tabindex="-1"
         aria-labelledby="van-tabs-1"
+        data-allow-mismatch="attribute"
         style="display: none;"
       >
       </div>
@@ -895,6 +963,7 @@ exports[`should render demo and match snapshot 1`] = `
         class="van-tab__panel"
         tabindex="-1"
         aria-labelledby="van-tabs-2"
+        data-allow-mismatch="attribute"
         style="display: none;"
       >
       </div>
@@ -904,6 +973,7 @@ exports[`should render demo and match snapshot 1`] = `
         class="van-tab__panel"
         tabindex="-1"
         aria-labelledby="van-tabs-3"
+        data-allow-mismatch="attribute"
         style="display: none;"
       >
       </div>
@@ -925,6 +995,7 @@ exports[`should render demo and match snapshot 1`] = `
           tabindex="0"
           aria-selected="true"
           aria-controls="van-tab"
+          data-allow-mismatch="attribute"
         >
           <span class="van-tab__text van-tab__text--ellipsis">
             <i class="van-badge__wrapper van-icon van-icon-more-o">
@@ -939,6 +1010,7 @@ exports[`should render demo and match snapshot 1`] = `
           tabindex="-1"
           aria-selected="false"
           aria-controls="van-tab"
+          data-allow-mismatch="attribute"
         >
           <span class="van-tab__text van-tab__text--ellipsis">
             <i class="van-badge__wrapper van-icon van-icon-more-o">
@@ -960,6 +1032,7 @@ exports[`should render demo and match snapshot 1`] = `
         class="van-tab__panel"
         tabindex="0"
         aria-labelledby="van-tabs-0"
+        data-allow-mismatch="attribute"
         style
       >
         content of tab 1
@@ -970,6 +1043,7 @@ exports[`should render demo and match snapshot 1`] = `
         class="van-tab__panel"
         tabindex="-1"
         aria-labelledby="van-tabs-1"
+        data-allow-mismatch="attribute"
         style="display: none;"
       >
       </div>
@@ -991,6 +1065,7 @@ exports[`should render demo and match snapshot 1`] = `
           tabindex="0"
           aria-selected="true"
           aria-controls="van-tab"
+          data-allow-mismatch="attribute"
         >
           <span class="van-tab__text van-tab__text--ellipsis">
             Tab 1
@@ -1003,6 +1078,7 @@ exports[`should render demo and match snapshot 1`] = `
           tabindex="-1"
           aria-selected="false"
           aria-controls="van-tab"
+          data-allow-mismatch="attribute"
         >
           <span class="van-tab__text van-tab__text--ellipsis">
             Tab 2
@@ -1015,6 +1091,7 @@ exports[`should render demo and match snapshot 1`] = `
           tabindex="-1"
           aria-selected="false"
           aria-controls="van-tab"
+          data-allow-mismatch="attribute"
         >
           <span class="van-tab__text van-tab__text--ellipsis">
             Tab 3
@@ -1027,6 +1104,7 @@ exports[`should render demo and match snapshot 1`] = `
           tabindex="-1"
           aria-selected="false"
           aria-controls="van-tab"
+          data-allow-mismatch="attribute"
         >
           <span class="van-tab__text van-tab__text--ellipsis">
             Tab 4
@@ -1052,6 +1130,7 @@ exports[`should render demo and match snapshot 1`] = `
             tabindex="0"
             aria-hidden="false"
             aria-labelledby="van-tabs-0"
+            data-allow-mismatch="attribute"
             style="width: 100px;"
           >
             <div class="van-tab__panel">
@@ -1065,6 +1144,7 @@ exports[`should render demo and match snapshot 1`] = `
             tabindex="-1"
             aria-hidden="true"
             aria-labelledby="van-tabs-1"
+            data-allow-mismatch="attribute"
             style="width: 100px;"
           >
             <div class="van-tab__panel">
@@ -1078,6 +1158,7 @@ exports[`should render demo and match snapshot 1`] = `
             tabindex="-1"
             aria-hidden="true"
             aria-labelledby="van-tabs-2"
+            data-allow-mismatch="attribute"
             style="width: 100px;"
           >
           </div>
@@ -1088,6 +1169,7 @@ exports[`should render demo and match snapshot 1`] = `
             tabindex="-1"
             aria-hidden="true"
             aria-labelledby="van-tabs-3"
+            data-allow-mismatch="attribute"
             style="width: 100px;"
           >
           </div>
@@ -1111,6 +1193,7 @@ exports[`should render demo and match snapshot 1`] = `
           tabindex="0"
           aria-selected="true"
           aria-controls="van-tab"
+          data-allow-mismatch="attribute"
         >
           <span class="van-tab__text van-tab__text--ellipsis">
             Tab 1
@@ -1123,6 +1206,7 @@ exports[`should render demo and match snapshot 1`] = `
           tabindex="-1"
           aria-selected="false"
           aria-controls="van-tab"
+          data-allow-mismatch="attribute"
         >
           <span class="van-tab__text van-tab__text--ellipsis">
             Tab 2
@@ -1135,6 +1219,7 @@ exports[`should render demo and match snapshot 1`] = `
           tabindex="-1"
           aria-selected="false"
           aria-controls="van-tab"
+          data-allow-mismatch="attribute"
         >
           <span class="van-tab__text van-tab__text--ellipsis">
             Tab 3
@@ -1147,6 +1232,7 @@ exports[`should render demo and match snapshot 1`] = `
           tabindex="-1"
           aria-selected="false"
           aria-controls="van-tab"
+          data-allow-mismatch="attribute"
         >
           <span class="van-tab__text van-tab__text--ellipsis">
             Tab 4
@@ -1172,6 +1258,7 @@ exports[`should render demo and match snapshot 1`] = `
             tabindex="0"
             aria-hidden="false"
             aria-labelledby="van-tabs-0"
+            data-allow-mismatch="attribute"
             style="width: 100px;"
           >
             <div class="van-tab__panel">
@@ -1185,6 +1272,7 @@ exports[`should render demo and match snapshot 1`] = `
             tabindex="-1"
             aria-hidden="true"
             aria-labelledby="van-tabs-1"
+            data-allow-mismatch="attribute"
             style="width: 100px;"
           >
             <div class="van-tab__panel">
@@ -1198,6 +1286,7 @@ exports[`should render demo and match snapshot 1`] = `
             tabindex="-1"
             aria-hidden="true"
             aria-labelledby="van-tabs-2"
+            data-allow-mismatch="attribute"
             style="width: 100px;"
           >
           </div>
@@ -1208,6 +1297,7 @@ exports[`should render demo and match snapshot 1`] = `
             tabindex="-1"
             aria-hidden="true"
             aria-labelledby="van-tabs-3"
+            data-allow-mismatch="attribute"
             style="width: 100px;"
           >
           </div>
@@ -1234,6 +1324,7 @@ exports[`should render demo and match snapshot 1`] = `
                 tabindex="0"
                 aria-selected="true"
                 aria-controls="van-tab"
+                data-allow-mismatch="attribute"
               >
                 <span class="van-tab__text">
                   Tab 1
@@ -1246,6 +1337,7 @@ exports[`should render demo and match snapshot 1`] = `
                 tabindex="-1"
                 aria-selected="false"
                 aria-controls="van-tab"
+                data-allow-mismatch="attribute"
               >
                 <span class="van-tab__text">
                   Tab 2
@@ -1258,6 +1350,7 @@ exports[`should render demo and match snapshot 1`] = `
                 tabindex="-1"
                 aria-selected="false"
                 aria-controls="van-tab"
+                data-allow-mismatch="attribute"
               >
                 <span class="van-tab__text">
                   Tab 3
@@ -1270,6 +1363,7 @@ exports[`should render demo and match snapshot 1`] = `
                 tabindex="-1"
                 aria-selected="false"
                 aria-controls="van-tab"
+                data-allow-mismatch="attribute"
               >
                 <span class="van-tab__text">
                   Tab 4
@@ -1282,6 +1376,7 @@ exports[`should render demo and match snapshot 1`] = `
                 tabindex="-1"
                 aria-selected="false"
                 aria-controls="van-tab"
+                data-allow-mismatch="attribute"
               >
                 <span class="van-tab__text">
                   Tab 5
@@ -1294,6 +1389,7 @@ exports[`should render demo and match snapshot 1`] = `
                 tabindex="-1"
                 aria-selected="false"
                 aria-controls="van-tab"
+                data-allow-mismatch="attribute"
               >
                 <span class="van-tab__text">
                   Tab 6
@@ -1306,6 +1402,7 @@ exports[`should render demo and match snapshot 1`] = `
                 tabindex="-1"
                 aria-selected="false"
                 aria-controls="van-tab"
+                data-allow-mismatch="attribute"
               >
                 <span class="van-tab__text">
                   Tab 7
@@ -1318,6 +1415,7 @@ exports[`should render demo and match snapshot 1`] = `
                 tabindex="-1"
                 aria-selected="false"
                 aria-controls="van-tab"
+                data-allow-mismatch="attribute"
               >
                 <span class="van-tab__text">
                   Tab 8
@@ -1340,6 +1438,7 @@ exports[`should render demo and match snapshot 1`] = `
         class="van-tab__panel"
         tabindex="0"
         aria-labelledby="van-tabs-0"
+        data-allow-mismatch="attribute"
       >
         content of tab 1
       </div>
@@ -1349,6 +1448,7 @@ exports[`should render demo and match snapshot 1`] = `
         class="van-tab__panel"
         tabindex="0"
         aria-labelledby="van-tabs-1"
+        data-allow-mismatch="attribute"
       >
         content of tab 2
       </div>
@@ -1358,6 +1458,7 @@ exports[`should render demo and match snapshot 1`] = `
         class="van-tab__panel"
         tabindex="0"
         aria-labelledby="van-tabs-2"
+        data-allow-mismatch="attribute"
       >
         content of tab 3
       </div>
@@ -1367,6 +1468,7 @@ exports[`should render demo and match snapshot 1`] = `
         class="van-tab__panel"
         tabindex="0"
         aria-labelledby="van-tabs-3"
+        data-allow-mismatch="attribute"
       >
         content of tab 4
       </div>
@@ -1376,6 +1478,7 @@ exports[`should render demo and match snapshot 1`] = `
         class="van-tab__panel"
         tabindex="0"
         aria-labelledby="van-tabs-4"
+        data-allow-mismatch="attribute"
       >
         content of tab 5
       </div>
@@ -1385,6 +1488,7 @@ exports[`should render demo and match snapshot 1`] = `
         class="van-tab__panel"
         tabindex="0"
         aria-labelledby="van-tabs-5"
+        data-allow-mismatch="attribute"
       >
         content of tab 6
       </div>
@@ -1394,6 +1498,7 @@ exports[`should render demo and match snapshot 1`] = `
         class="van-tab__panel"
         tabindex="0"
         aria-labelledby="van-tabs-6"
+        data-allow-mismatch="attribute"
       >
         content of tab 7
       </div>
@@ -1403,6 +1508,7 @@ exports[`should render demo and match snapshot 1`] = `
         class="van-tab__panel"
         tabindex="0"
         aria-labelledby="van-tabs-7"
+        data-allow-mismatch="attribute"
       >
         content of tab 8
       </div>
@@ -1424,6 +1530,7 @@ exports[`should render demo and match snapshot 1`] = `
           tabindex="0"
           aria-selected="true"
           aria-controls="van-tab"
+          data-allow-mismatch="attribute"
         >
           <span class="van-tab__text van-tab__text--ellipsis">
             Tab 1
@@ -1436,6 +1543,7 @@ exports[`should render demo and match snapshot 1`] = `
           tabindex="-1"
           aria-selected="false"
           aria-controls="van-tab"
+          data-allow-mismatch="attribute"
         >
           <span class="van-tab__text van-tab__text--ellipsis">
             Tab 2
@@ -1448,6 +1556,7 @@ exports[`should render demo and match snapshot 1`] = `
           tabindex="-1"
           aria-selected="false"
           aria-controls="van-tab"
+          data-allow-mismatch="attribute"
         >
           <span class="van-tab__text van-tab__text--ellipsis">
             Tab 3
@@ -1460,6 +1569,7 @@ exports[`should render demo and match snapshot 1`] = `
           tabindex="-1"
           aria-selected="false"
           aria-controls="van-tab"
+          data-allow-mismatch="attribute"
         >
           <span class="van-tab__text van-tab__text--ellipsis">
             Tab 4
@@ -1479,6 +1589,7 @@ exports[`should render demo and match snapshot 1`] = `
         class="van-tab__panel"
         tabindex="0"
         aria-labelledby="van-tabs-0"
+        data-allow-mismatch="attribute"
         style
       >
         content of tab 1
@@ -1489,6 +1600,7 @@ exports[`should render demo and match snapshot 1`] = `
         class="van-tab__panel"
         tabindex="-1"
         aria-labelledby="van-tabs-1"
+        data-allow-mismatch="attribute"
         style="display: none;"
       >
       </div>
@@ -1498,6 +1610,7 @@ exports[`should render demo and match snapshot 1`] = `
         class="van-tab__panel"
         tabindex="-1"
         aria-labelledby="van-tabs-2"
+        data-allow-mismatch="attribute"
         style="display: none;"
       >
       </div>
@@ -1507,6 +1620,7 @@ exports[`should render demo and match snapshot 1`] = `
         class="van-tab__panel"
         tabindex="-1"
         aria-labelledby="van-tabs-3"
+        data-allow-mismatch="attribute"
         style="display: none;"
       >
       </div>

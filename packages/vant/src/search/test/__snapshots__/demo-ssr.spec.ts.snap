@@ -27,6 +27,7 @@ exports[`should render demo and match snapshot 1`] = `
               id="van-search-input"
               class="van-field__control"
               placeholder="Placeholder"
+              data-allow-mismatch="attribute"
             >
           </div>
         </div>
@@ -60,6 +61,7 @@ exports[`should render demo and match snapshot 1`] = `
                 id="van-search-input"
                 class="van-field__control"
                 placeholder="Placeholder"
+                data-allow-mismatch="attribute"
               >
             </div>
           </div>
@@ -100,6 +102,7 @@ exports[`should render demo and match snapshot 1`] = `
               id="van-search-input"
               class="van-field__control van-field__control--center"
               placeholder="Placeholder"
+              data-allow-mismatch="attribute"
             >
           </div>
         </div>
@@ -133,6 +136,7 @@ exports[`should render demo and match snapshot 1`] = `
               class="van-field__control"
               disabled
               placeholder="Placeholder"
+              data-allow-mismatch="attribute"
             >
           </div>
         </div>
@@ -165,6 +169,7 @@ exports[`should render demo and match snapshot 1`] = `
               id="van-search-input"
               class="van-field__control"
               placeholder="Placeholder"
+              data-allow-mismatch="attribute"
             >
           </div>
         </div>
@@ -182,6 +187,7 @@ exports[`should render demo and match snapshot 1`] = `
       <label
         class="van-search__label"
         for="van-search-input"
+        data-allow-mismatch="attribute"
       >
         Address
       </label>
@@ -203,6 +209,7 @@ exports[`should render demo and match snapshot 1`] = `
               id="van-search-input"
               class="van-field__control"
               placeholder="Placeholder"
+              data-allow-mismatch="attribute"
             >
           </div>
         </div>
