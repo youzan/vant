@@ -84,6 +84,7 @@ export default defineComponent({
 
     // Whether the user is dragging the swipe
     let dragging = false;
+    let rtl = false;
 
     const touch = useTouch();
     const { children, linkChildren } = useChildren(SWIPE_KEY);
@@ -99,7 +100,7 @@ export default defineComponent({
     const minOffset = computed(() => {
       if (state.rect) {
         const base = props.vertical ? state.rect.height : state.rect.width;
-        return isRtl(root) && !props.vertical
+        return rtl && !props.vertical
           ? size.value * count.value - base
           : base - size.value * count.value;
       }
@@ -157,17 +158,17 @@ export default defineComponent({
       let currentPosition = targetActive * size.value;
       if (!props.loop) {
         currentPosition =
-          isRtl(root) && !props.vertical
+          rtl && !props.vertical
             ? Math.min(currentPosition, minOffset.value)
             : Math.min(currentPosition, -minOffset.value);
       }
       let targetOffset =
-        isRtl(root) && !props.vertical
+        rtl && !props.vertical
           ? offset + currentPosition
           : offset - currentPosition;
       if (!props.loop) {
         targetOffset =
-          isRtl(root) && !props.vertical
+          rtl && !props.vertical
             ? clamp(targetOffset, 0, minOffset.value)
             : clamp(targetOffset, minOffset.value, 0);
       }
@@ -192,7 +193,7 @@ export default defineComponent({
       const targetOffset = getTargetOffset(targetActive, offset);
       // auto move first and last swipe in loop mode
       if (props.loop) {
-        if (isRtl(root) && !props.vertical) {
+        if (rtl && !props.vertical) {
           if (children[count.value - 1]) {
             const outRightBound = targetOffset < size.value;
             children[count.value - 1].setOffset(
@@ -303,6 +304,7 @@ export default defineComponent({
           }
         }
 
+        rtl = isRtl(root);
         state.active = active;
         state.swiping = true;
         state.offset = getTargetOffset(active);
@@ -349,10 +351,10 @@ export default defineComponent({
         if (isCorrectDirection.value) {
           const isEdgeTouch =
             !props.loop &&
-            ((!isRtl(root) &&
+            ((!rtl &&
               ((state.active === 0 && delta.value > 0) ||
                 (state.active === count.value - 1 && delta.value < 0))) ||
-              (isRtl(root) &&
+              (rtl &&
                 ((state.active === count.value - 1 && delta.value > 0) ||
                   (state.active === 0 && delta.value < 0)) &&
                 !props.vertical));
@@ -395,7 +397,7 @@ export default defineComponent({
             delta.value / size.value,
           );
         }
-        pace = isRtl(root) && !props.vertical ? -pace : pace;
+        pace = rtl && !props.vertical ? -pace : pace;
 
         move({
           pace,
@@ -462,7 +464,7 @@ export default defineComponent({
           <div
             class={bem('indicators', {
               vertical: props.vertical,
-              rtl: isRtl(root),
+              rtl: rtl,
             })}
           >
             {Array(count.value).fill('').map(renderDot)}
