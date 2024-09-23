@@ -99,11 +99,7 @@ export default defineComponent({
       const { item } = props;
       const { text } = item;
 
-      if (slots['text']) {
-        return <div class={bem('text')}>{slots['text'](props.item)}</div>;
-      }
-
-      return text;
+      return <>{slots.text ? slots.text(props.item) : text}</>;
     };
 
     const renderContent = () => {

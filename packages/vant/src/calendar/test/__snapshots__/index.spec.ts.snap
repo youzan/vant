@@ -883,9 +883,7 @@ exports[`should render top-info, bottom-info and text slot correctly 1`] = `
   <div class="van-calendar__top-info">
     top: 1
   </div>
-  <div class="van-calendar__text">
-    text: 1
-  </div>
+  text: 1
   <div class="van-calendar__bottom-info">
     bottom: 1
   </div>
