@@ -52,8 +52,8 @@ importers:
         specifier: ^6.0.1
         version: 6.0.1
       typescript:
-        specifier: ^5.5.4
-        version: 5.5.4
+        specifier: ^5.6.2
+        version: 5.6.2
 
   packages/vant:
     dependencies:
@@ -84,10 +84,10 @@ importers:
         version: link:../vant-icons
       '@vitejs/plugin-vue':
         specifier: ^5.1.3
-        version: 5.1.3(vite@5.4.5(@types/node@20.16.5)(less@4.2.0)(sass-embedded@1.78.0)(terser@5.33.0))(vue@3.5.5(typescript@5.5.4))
+        version: 5.1.3(vite@5.4.5(@types/node@20.16.5)(less@4.2.0)(sass-embedded@1.78.0)(terser@5.33.0))(vue@3.5.5(typescript@5.6.2))
       '@vitejs/plugin-vue-jsx':
         specifier: ^4.0.1
-        version: 4.0.1(vite@5.4.5(@types/node@20.16.5)(less@4.2.0)(sass-embedded@1.78.0)(terser@5.33.0))(vue@3.5.5(typescript@5.5.4))
+        version: 4.0.1(vite@5.4.5(@types/node@20.16.5)(less@4.2.0)(sass-embedded@1.78.0)(terser@5.33.0))(vue@3.5.5(typescript@5.6.2))
       '@vitest/coverage-istanbul':
         specifier: ^1.6.0
         version: 1.6.0(vitest@1.6.0(@types/node@20.16.5)(jsdom@24.1.3)(less@4.2.0)(sass-embedded@1.78.0)(terser@5.33.0))
@@ -107,8 +107,8 @@ importers:
         specifier: ^24.1.3
         version: 24.1.3
       typescript:
-        specifier: ^5.5.4
-        version: 5.5.4
+        specifier: ^5.6.2
+        version: 5.6.2
       vite:
         specifier: ^5.4.5
         version: 5.4.5(@types/node@20.16.5)(less@4.2.0)(sass-embedded@1.78.0)(terser@5.33.0)
@@ -120,10 +120,10 @@ importers:
         version: 0.3.3(vitest@1.6.0(@types/node@20.16.5)(jsdom@24.1.3)(less@4.2.0)(sass-embedded@1.78.0)(terser@5.33.0))
       vue:
         specifier: ^3.5.5
-        version: 3.5.5(typescript@5.5.4)
+        version: 3.5.5(typescript@5.6.2)
       vue-router:
         specifier: ^4.4.5
-        version: 4.4.5(vue@3.5.5(typescript@5.5.4))
+        version: 4.4.5(vue@3.5.5(typescript@5.6.2))
 
   packages/vant-area-data:
     devDependencies:
@@ -134,8 +134,8 @@ importers:
         specifier: ^6.0.1
         version: 6.0.1
       typescript:
-        specifier: ^5.5.4
-        version: 5.5.4
+        specifier: ^5.6.2
+        version: 5.6.2
 
   packages/vant-auto-import-resolver:
     devDependencies:
@@ -143,8 +143,8 @@ importers:
         specifier: ^6.0.1
         version: 6.0.1
       typescript:
-        specifier: ^5.5.4
-        version: 5.5.4
+        specifier: ^5.6.2
+        version: 5.6.2
 
   packages/vant-cli:
     dependencies:
@@ -168,7 +168,7 @@ importers:
         version: 1.0.1(@rsbuild/core@1.0.4)
       '@rsbuild/plugin-vue':
         specifier: 1.0.1
-        version: 1.0.1(@rsbuild/core@1.0.4)(esbuild@0.23.1)(vue@3.5.5(typescript@5.5.4))
+        version: 1.0.1(@rsbuild/core@1.0.4)(esbuild@0.23.1)(vue@3.5.5(typescript@5.6.2))
       '@rsbuild/plugin-vue-jsx':
         specifier: 1.0.1
         version: 1.0.1(@babel/core@7.25.2)(@rsbuild/core@1.0.4)
@@ -180,10 +180,10 @@ importers:
         version: link:../vant-touch-emulator
       '@vitejs/plugin-vue':
         specifier: ^5.1.3
-        version: 5.1.3(vite@5.4.5(@types/node@20.16.5)(less@4.2.0)(sass-embedded@1.78.0)(terser@5.33.0))(vue@3.5.5(typescript@5.5.4))
+        version: 5.1.3(vite@5.4.5(@types/node@20.16.5)(less@4.2.0)(sass-embedded@1.78.0)(terser@5.33.0))(vue@3.5.5(typescript@5.6.2))
       '@vitejs/plugin-vue-jsx':
         specifier: ^4.0.1
-        version: 4.0.1(vite@5.4.5(@types/node@20.16.5)(less@4.2.0)(sass-embedded@1.78.0)(terser@5.33.0))(vue@3.5.5(typescript@5.5.4))
+        version: 4.0.1(vite@5.4.5(@types/node@20.16.5)(less@4.2.0)(sass-embedded@1.78.0)(terser@5.33.0))(vue@3.5.5(typescript@5.6.2))
       '@vue/babel-plugin-jsx':
         specifier: ^1.2.5
         version: 1.2.5(@babel/core@7.25.2)
@@ -257,14 +257,14 @@ importers:
         specifier: ^2.3.5
         version: 2.3.5
       typescript:
-        specifier: ^5.5.4
-        version: 5.5.4
+        specifier: ^5.6.2
+        version: 5.6.2
       vite:
         specifier: ^5.4.5
         version: 5.4.5(@types/node@20.16.5)(less@4.2.0)(sass-embedded@1.78.0)(terser@5.33.0)
       vue-router:
         specifier: ^4.4.5
-        version: 4.4.5(vue@3.5.5(typescript@5.5.4))
+        version: 4.4.5(vue@3.5.5(typescript@5.6.2))
     devDependencies:
       '@types/fs-extra':
         specifier: ^11.0.4
@@ -283,7 +283,7 @@ importers:
         version: 6.0.1
       vue:
         specifier: ^3.5.5
-        version: 3.5.5(typescript@5.5.4)
+        version: 3.5.5(typescript@5.6.2)
 
   packages/vant-compat:
     devDependencies:
@@ -297,23 +297,23 @@ importers:
         specifier: ^6.0.1
         version: 6.0.1
       typescript:
-        specifier: ^5.5.4
-        version: 5.5.4
+        specifier: ^5.6.2
+        version: 5.6.2
       vant:
         specifier: workspace:*
         version: link:../vant
       vue:
         specifier: ^3.5.5
-        version: 3.5.5(typescript@5.5.4)
+        version: 3.5.5(typescript@5.6.2)
 
   packages/vant-eslint-config:
     dependencies:
       '@typescript-eslint/eslint-plugin':
         specifier: ^6.21.0
-        version: 6.21.0(@typescript-eslint/parser@6.21.0(eslint@8.57.0)(typescript@5.5.4))(eslint@8.57.0)(typescript@5.5.4)
+        version: 6.21.0(@typescript-eslint/parser@6.21.0(eslint@8.57.0)(typescript@5.6.2))(eslint@8.57.0)(typescript@5.6.2)
       '@typescript-eslint/parser':
         specifier: ^6.21.0
-        version: 6.21.0(eslint@8.57.0)(typescript@5.5.4)
+        version: 6.21.0(eslint@8.57.0)(typescript@5.6.2)
       eslint-config-prettier:
         specifier: ^9.1.0
         version: 9.1.0(eslint@8.57.0)
@@ -325,8 +325,8 @@ importers:
         specifier: ^8.57.0
         version: 8.57.0
       typescript:
-        specifier: ^5.5.4
-        version: 5.5.4
+        specifier: ^5.6.2
+        version: 5.6.2
 
   packages/vant-icons: {}
 
@@ -342,8 +342,8 @@ importers:
         specifier: ^6.0.1
         version: 6.0.1
       typescript:
-        specifier: ^5.5.4
-        version: 5.5.4
+        specifier: ^5.6.2
+        version: 5.6.2
 
   packages/vant-touch-emulator: {}
 
@@ -356,11 +356,11 @@ importers:
         specifier: ^6.0.1
         version: 6.0.1
       typescript:
-        specifier: ^5.5.4
-        version: 5.5.4
+        specifier: ^5.6.2
+        version: 5.6.2
       vue:
         specifier: ^3.5.5
-        version: 3.5.5(typescript@5.5.4)
+        version: 3.5.5(typescript@5.6.2)
 
 packages:
 
@@ -2926,8 +2926,8 @@ packages:
     resolution: {integrity: sha512-Ne+eE4r0/iWnpAxD852z3A+N0Bt5RN//NjJwRd2VFHEmrywxf5vsZlh4R6lixl6B+wz/8d+maTSAkN1FIkI3LQ==}
     engines: {node: '>=10'}
 
-  typescript@5.5.4:
-    resolution: {integrity: sha512-Mtq29sKDAEYP7aljRgtPOpTvOfbwRWlS6dPRzwjdE+C0R4brX/GUyhHSecbHMFLNBLcJIPt9nl9yG5TZ1weH+Q==}
+  typescript@5.6.2:
+    resolution: {integrity: sha512-NW8ByodCSNCwZeghjN3o+JX5OFH0Ojg6sadjEKY4huZ52TqbJTJnDo5+Tw98lSy63NZvi4n+ez5m2u5d4PkZyw==}
     engines: {node: '>=14.17'}
     hasBin: true
 
@@ -3860,10 +3860,10 @@ snapshots:
       - '@babel/core'
       - supports-color
 
-  '@rsbuild/plugin-vue@1.0.1(@rsbuild/core@1.0.4)(esbuild@0.23.1)(vue@3.5.5(typescript@5.5.4))':
+  '@rsbuild/plugin-vue@1.0.1(@rsbuild/core@1.0.4)(esbuild@0.23.1)(vue@3.5.5(typescript@5.6.2))':
     dependencies:
       '@rsbuild/core': 1.0.4
-      vue-loader: 17.4.2(vue@3.5.5(typescript@5.5.4))(webpack@5.94.0(esbuild@0.23.1))
+      vue-loader: 17.4.2(vue@3.5.5(typescript@5.6.2))(webpack@5.94.0(esbuild@0.23.1))
       webpack: 5.94.0(esbuild@0.23.1)
     transitivePeerDependencies:
       - '@swc/core'
@@ -3986,13 +3986,13 @@ snapshots:
 
   '@types/semver@7.5.8': {}
 
-  '@typescript-eslint/eslint-plugin@6.21.0(@typescript-eslint/parser@6.21.0(eslint@8.57.0)(typescript@5.5.4))(eslint@8.57.0)(typescript@5.5.4)':
+  '@typescript-eslint/eslint-plugin@6.21.0(@typescript-eslint/parser@6.21.0(eslint@8.57.0)(typescript@5.6.2))(eslint@8.57.0)(typescript@5.6.2)':
     dependencies:
       '@eslint-community/regexpp': 4.10.0
-      '@typescript-eslint/parser': 6.21.0(eslint@8.57.0)(typescript@5.5.4)
+      '@typescript-eslint/parser': 6.21.0(eslint@8.57.0)(typescript@5.6.2)
       '@typescript-eslint/scope-manager': 6.21.0
-      '@typescript-eslint/type-utils': 6.21.0(eslint@8.57.0)(typescript@5.5.4)
-      '@typescript-eslint/utils': 6.21.0(eslint@8.57.0)(typescript@5.5.4)
+      '@typescript-eslint/type-utils': 6.21.0(eslint@8.57.0)(typescript@5.6.2)
+      '@typescript-eslint/utils': 6.21.0(eslint@8.57.0)(typescript@5.6.2)
       '@typescript-eslint/visitor-keys': 6.21.0
       debug: 4.3.4
       eslint: 8.57.0
@@ -4000,22 +4000,22 @@ snapshots:
       ignore: 5.3.1
       natural-compare: 1.4.0
       semver: 7.6.0
-      ts-api-utils: 1.3.0(typescript@5.5.4)
+      ts-api-utils: 1.3.0(typescript@5.6.2)
     optionalDependencies:
-      typescript: 5.5.4
+      typescript: 5.6.2
     transitivePeerDependencies:
       - supports-color
 
-  '@typescript-eslint/parser@6.21.0(eslint@8.57.0)(typescript@5.5.4)':
+  '@typescript-eslint/parser@6.21.0(eslint@8.57.0)(typescript@5.6.2)':
     dependencies:
       '@typescript-eslint/scope-manager': 6.21.0
       '@typescript-eslint/types': 6.21.0
-      '@typescript-eslint/typescript-estree': 6.21.0(typescript@5.5.4)
+      '@typescript-eslint/typescript-estree': 6.21.0(typescript@5.6.2)
       '@typescript-eslint/visitor-keys': 6.21.0
       debug: 4.3.4
       eslint: 8.57.0
     optionalDependencies:
-      typescript: 5.5.4
+      typescript: 5.6.2
     transitivePeerDependencies:
       - supports-color
 
@@ -4024,21 +4024,21 @@ snapshots:
       '@typescript-eslint/types': 6.21.0
       '@typescript-eslint/visitor-keys': 6.21.0
 
-  '@typescript-eslint/type-utils@6.21.0(eslint@8.57.0)(typescript@5.5.4)':
+  '@typescript-eslint/type-utils@6.21.0(eslint@8.57.0)(typescript@5.6.2)':
     dependencies:
-      '@typescript-eslint/typescript-estree': 6.21.0(typescript@5.5.4)
-      '@typescript-eslint/utils': 6.21.0(eslint@8.57.0)(typescript@5.5.4)
+      '@typescript-eslint/typescript-estree': 6.21.0(typescript@5.6.2)
+      '@typescript-eslint/utils': 6.21.0(eslint@8.57.0)(typescript@5.6.2)
       debug: 4.3.4
       eslint: 8.57.0
-      ts-api-utils: 1.3.0(typescript@5.5.4)
+      ts-api-utils: 1.3.0(typescript@5.6.2)
     optionalDependencies:
-      typescript: 5.5.4
+      typescript: 5.6.2
     transitivePeerDependencies:
       - supports-color
 
   '@typescript-eslint/types@6.21.0': {}
 
-  '@typescript-eslint/typescript-estree@6.21.0(typescript@5.5.4)':
+  '@typescript-eslint/typescript-estree@6.21.0(typescript@5.6.2)':
     dependencies:
       '@typescript-eslint/types': 6.21.0
       '@typescript-eslint/visitor-keys': 6.21.0
@@ -4047,20 +4047,20 @@ snapshots:
       is-glob: 4.0.3
       minimatch: 9.0.3
       semver: 7.6.0
-      ts-api-utils: 1.3.0(typescript@5.5.4)
+      ts-api-utils: 1.3.0(typescript@5.6.2)
     optionalDependencies:
-      typescript: 5.5.4
+      typescript: 5.6.2
     transitivePeerDependencies:
       - supports-color
 
-  '@typescript-eslint/utils@6.21.0(eslint@8.57.0)(typescript@5.5.4)':
+  '@typescript-eslint/utils@6.21.0(eslint@8.57.0)(typescript@5.6.2)':
     dependencies:
       '@eslint-community/eslint-utils': 4.4.0(eslint@8.57.0)
       '@types/json-schema': 7.0.15
       '@types/semver': 7.5.8
       '@typescript-eslint/scope-manager': 6.21.0
       '@typescript-eslint/types': 6.21.0
-      '@typescript-eslint/typescript-estree': 6.21.0(typescript@5.5.4)
+      '@typescript-eslint/typescript-estree': 6.21.0(typescript@5.6.2)
       eslint: 8.57.0
       semver: 7.6.0
     transitivePeerDependencies:
@@ -4074,20 +4074,20 @@ snapshots:
 
   '@ungap/structured-clone@1.2.0': {}
 
-  '@vitejs/plugin-vue-jsx@4.0.1(vite@5.4.5(@types/node@20.16.5)(less@4.2.0)(sass-embedded@1.78.0)(terser@5.33.0))(vue@3.5.5(typescript@5.5.4))':
+  '@vitejs/plugin-vue-jsx@4.0.1(vite@5.4.5(@types/node@20.16.5)(less@4.2.0)(sass-embedded@1.78.0)(terser@5.33.0))(vue@3.5.5(typescript@5.6.2))':
     dependencies:
       '@babel/core': 7.25.2
       '@babel/plugin-transform-typescript': 7.24.7(@babel/core@7.25.2)
       '@vue/babel-plugin-jsx': 1.2.4(@babel/core@7.25.2)
       vite: 5.4.5(@types/node@20.16.5)(less@4.2.0)(sass-embedded@1.78.0)(terser@5.33.0)
-      vue: 3.5.5(typescript@5.5.4)
+      vue: 3.5.5(typescript@5.6.2)
     transitivePeerDependencies:
       - supports-color
 
-  '@vitejs/plugin-vue@5.1.3(vite@5.4.5(@types/node@20.16.5)(less@4.2.0)(sass-embedded@1.78.0)(terser@5.33.0))(vue@3.5.5(typescript@5.5.4))':
+  '@vitejs/plugin-vue@5.1.3(vite@5.4.5(@types/node@20.16.5)(less@4.2.0)(sass-embedded@1.78.0)(terser@5.33.0))(vue@3.5.5(typescript@5.6.2))':
     dependencies:
       vite: 5.4.5(@types/node@20.16.5)(less@4.2.0)(sass-embedded@1.78.0)(terser@5.33.0)
-      vue: 3.5.5(typescript@5.5.4)
+      vue: 3.5.5(typescript@5.6.2)
 
   '@vitest/coverage-istanbul@1.6.0(vitest@1.6.0(@types/node@20.16.5)(jsdom@24.1.3)(less@4.2.0)(sass-embedded@1.78.0)(terser@5.33.0))':
     dependencies:
@@ -4271,11 +4271,11 @@ snapshots:
       '@vue/shared': 3.5.5
       csstype: 3.1.3
 
-  '@vue/server-renderer@3.5.5(vue@3.5.5(typescript@5.5.4))':
+  '@vue/server-renderer@3.5.5(vue@3.5.5(typescript@5.6.2))':
     dependencies:
       '@vue/compiler-ssr': 3.5.5
       '@vue/shared': 3.5.5
-      vue: 3.5.5(typescript@5.5.4)
+      vue: 3.5.5(typescript@5.6.2)
 
   '@vue/shared@3.5.3': {}
 
@@ -5822,9 +5822,9 @@ snapshots:
     dependencies:
       yargs: 17.7.2
 
-  ts-api-utils@1.3.0(typescript@5.5.4):
+  ts-api-utils@1.3.0(typescript@5.6.2):
     dependencies:
-      typescript: 5.5.4
+      typescript: 5.6.2
 
   tslib@2.6.2: {}
 
@@ -5836,7 +5836,7 @@ snapshots:
 
   type-fest@0.20.2: {}
 
-  typescript@5.5.4: {}
+  typescript@5.6.2: {}
 
   uc.micro@2.1.0: {}
 
@@ -5962,29 +5962,29 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  vue-loader@17.4.2(vue@3.5.5(typescript@5.5.4))(webpack@5.94.0(esbuild@0.23.1)):
+  vue-loader@17.4.2(vue@3.5.5(typescript@5.6.2))(webpack@5.94.0(esbuild@0.23.1)):
     dependencies:
       chalk: 4.1.2
       hash-sum: 2.0.0
       watchpack: 2.4.1
       webpack: 5.94.0(esbuild@0.23.1)
     optionalDependencies:
-      vue: 3.5.5(typescript@5.5.4)
+      vue: 3.5.5(typescript@5.6.2)
 
-  vue-router@4.4.5(vue@3.5.5(typescript@5.5.4)):
+  vue-router@4.4.5(vue@3.5.5(typescript@5.6.2)):
     dependencies:
       '@vue/devtools-api': 6.6.4
-      vue: 3.5.5(typescript@5.5.4)
+      vue: 3.5.5(typescript@5.6.2)
 
-  vue@3.5.5(typescript@5.5.4):
+  vue@3.5.5(typescript@5.6.2):
     dependencies:
       '@vue/compiler-dom': 3.5.5
       '@vue/compiler-sfc': 3.5.5
       '@vue/runtime-dom': 3.5.5
-      '@vue/server-renderer': 3.5.5(vue@3.5.5(typescript@5.5.4))
+      '@vue/server-renderer': 3.5.5(vue@3.5.5(typescript@5.6.2))
       '@vue/shared': 3.5.5
     optionalDependencies:
-      typescript: 5.5.4
+      typescript: 5.6.2
 
   w3c-xmlserializer@5.0.0:
     dependencies:
