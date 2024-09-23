@@ -15,6 +15,7 @@ exports[`should render demo and match snapshot 1`] = `
         tabindex="0"
         aria-selected="true"
         aria-controls="van-tab"
+        data-allow-mismatch="attribute"
       >
         <span class="van-tab__text">
           Basic Usage
@@ -27,6 +28,7 @@ exports[`should render demo and match snapshot 1`] = `
         tabindex="-1"
         aria-selected="false"
         aria-controls="van-tab"
+        data-allow-mismatch="attribute"
       >
         <span class="van-tab__text">
           Custom Position
@@ -39,6 +41,7 @@ exports[`should render demo and match snapshot 1`] = `
         tabindex="-1"
         aria-selected="false"
         aria-controls="van-tab"
+        data-allow-mismatch="attribute"
       >
         <span class="van-tab__text">
           Custom Content
@@ -51,6 +54,7 @@ exports[`should render demo and match snapshot 1`] = `
         tabindex="-1"
         aria-selected="false"
         aria-controls="van-tab"
+        data-allow-mismatch="attribute"
       >
         <span class="van-tab__text">
           Set Scroll Target
@@ -63,6 +67,7 @@ exports[`should render demo and match snapshot 1`] = `
         tabindex="-1"
         aria-selected="false"
         aria-controls="van-tab"
+        data-allow-mismatch="attribute"
       >
         <span class="van-tab__text">
           Immediate Scroll
@@ -82,6 +87,7 @@ exports[`should render demo and match snapshot 1`] = `
       class="van-tab__panel"
       tabindex="0"
       aria-labelledby="van-tabs-0"
+      data-allow-mismatch="attribute"
       style
     >
       <div class="van-cell">
@@ -443,6 +449,7 @@ exports[`should render demo and match snapshot 1`] = `
       class="van-tab__panel"
       tabindex="-1"
       aria-labelledby="van-tabs-1"
+      data-allow-mismatch="attribute"
       style="display: none;"
     >
     </div>
@@ -452,6 +459,7 @@ exports[`should render demo and match snapshot 1`] = `
       class="van-tab__panel"
       tabindex="-1"
       aria-labelledby="van-tabs-2"
+      data-allow-mismatch="attribute"
       style="display: none;"
     >
     </div>
@@ -461,6 +469,7 @@ exports[`should render demo and match snapshot 1`] = `
       class="van-tab__panel"
       tabindex="-1"
       aria-labelledby="van-tabs-3"
+      data-allow-mismatch="attribute"
       style="display: none;"
     >
     </div>
@@ -470,6 +479,7 @@ exports[`should render demo and match snapshot 1`] = `
       class="van-tab__panel"
       tabindex="-1"
       aria-labelledby="van-tabs-4"
+      data-allow-mismatch="attribute"
       style="display: none;"
     >
     </div>

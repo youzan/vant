@@ -10,6 +10,7 @@ exports[`should emit failed event when validating failed 1`] = `
           id="van-field-input"
           name="A"
           class="van-field__control"
+          data-allow-mismatch="attribute"
         >
       </div>
       <div class="van-field__error-message">
@@ -25,6 +26,7 @@ exports[`should emit failed event when validating failed 1`] = `
           id="van-field-input"
           name="B"
           class="van-field__control"
+          data-allow-mismatch="attribute"
         >
       </div>
       <div class="van-field__error-message">

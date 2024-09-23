@@ -523,6 +523,7 @@ export default defineComponent({
         enterkeyhint: props.enterkeyhint,
         spellcheck: props.spellcheck,
         'aria-labelledby': props.label ? `${id}-label` : undefined,
+        'data-allow-mismatch': 'attribute',
         onBlur,
         onFocus,
         onInput,
@@ -614,6 +615,7 @@ export default defineComponent({
           <label
             id={`${id}-label`}
             for={slots.input ? undefined : getInputId()}
+            data-allow-mismatch="attribute"
             onClick={(event: MouseEvent) => {
               // https://github.com/youzan/vant/issues/11831
               preventDefault(event);

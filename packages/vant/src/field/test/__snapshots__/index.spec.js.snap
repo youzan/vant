@@ -13,6 +13,7 @@ exports[`should render colon when using colon prop 1`] = `
   <label
     id="van-field-label"
     for="van-field-input"
+    data-allow-mismatch="attribute"
   >
     foo:
   </label>
@@ -33,6 +34,7 @@ exports[`should render extra slot correctly 1`] = `
         type="text"
         id="van-field-input"
         class="van-field__control"
+        data-allow-mismatch="attribute"
       >
     </div>
   </div>
@@ -51,6 +53,7 @@ exports[`should render label correctly when dynamically set empty label 1`] = `
   <label
     id="van-field-label"
     for="van-field-input"
+    data-allow-mismatch="attribute"
   >
     abc
   </label>
@@ -73,6 +76,7 @@ exports[`should render left icon inside label when label-align is top 1`] = `
     <label
       id="van-field-label"
       for="van-field-input"
+      data-allow-mismatch="attribute"
     >
       Label
     </label>
@@ -84,6 +88,7 @@ exports[`should render left icon inside label when label-align is top 1`] = `
         id="van-field-input"
         class="van-field__control"
         aria-labelledby="van-field-label"
+        data-allow-mismatch="attribute"
       >
     </div>
   </div>
@@ -97,6 +102,7 @@ exports[`should render textarea when type is textarea 1`] = `
       <textarea
         id="van-field-input"
         class="van-field__control"
+        data-allow-mismatch="attribute"
         style="height: auto;"
       >
       </textarea>
@@ -122,6 +128,7 @@ exports[`should render word limit correctly when modelValue is null 1`] = `
         type="text"
         id="van-field-input"
         class="van-field__control"
+        data-allow-mismatch="attribute"
       >
     </div>
     <div class="van-field__word-limit">
@@ -142,6 +149,7 @@ exports[`should render word limit correctly when modelValue is undefined 1`] = `
         type="text"
         id="van-field-input"
         class="van-field__control"
+        data-allow-mismatch="attribute"
       >
     </div>
     <div class="van-field__word-limit">

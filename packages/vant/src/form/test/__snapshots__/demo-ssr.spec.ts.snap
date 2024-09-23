@@ -17,6 +17,7 @@ exports[`should render demo and match snapshot 1`] = `
           <label
             id="van-field-label"
             for="van-field-input"
+            data-allow-mismatch="attribute"
             style
           >
             Username
@@ -32,6 +33,7 @@ exports[`should render demo and match snapshot 1`] = `
               class="van-field__control"
               placeholder="Username"
               aria-labelledby="van-field-label"
+              data-allow-mismatch="attribute"
             >
           </div>
         </div>
@@ -45,6 +47,7 @@ exports[`should render demo and match snapshot 1`] = `
           <label
             id="van-field-label"
             for="van-field-input"
+            data-allow-mismatch="attribute"
             style
           >
             Password
@@ -60,6 +63,7 @@ exports[`should render demo and match snapshot 1`] = `
               class="van-field__control"
               placeholder="Password"
               aria-labelledby="van-field-label"
+              data-allow-mismatch="attribute"
             >
           </div>
         </div>
@@ -96,6 +100,7 @@ exports[`should render demo and match snapshot 1`] = `
           <label
             id="van-field-label"
             for="van-field-input"
+            data-allow-mismatch="attribute"
             style
           >
             Label
@@ -111,6 +116,7 @@ exports[`should render demo and match snapshot 1`] = `
               class="van-field__control"
               placeholder="Use pattern"
               aria-labelledby="van-field-label"
+              data-allow-mismatch="attribute"
             >
           </div>
         </div>
@@ -124,6 +130,7 @@ exports[`should render demo and match snapshot 1`] = `
           <label
             id="van-field-label"
             for="van-field-input"
+            data-allow-mismatch="attribute"
             style
           >
             Label
@@ -139,6 +146,7 @@ exports[`should render demo and match snapshot 1`] = `
               class="van-field__control"
               placeholder="Use validator"
               aria-labelledby="van-field-label"
+              data-allow-mismatch="attribute"
             >
           </div>
         </div>
@@ -152,6 +160,7 @@ exports[`should render demo and match snapshot 1`] = `
           <label
             id="van-field-label"
             for="van-field-input"
+            data-allow-mismatch="attribute"
             style
           >
             Label
@@ -167,6 +176,7 @@ exports[`should render demo and match snapshot 1`] = `
               class="van-field__control"
               placeholder="Use validator to return message"
               aria-labelledby="van-field-label"
+              data-allow-mismatch="attribute"
             >
           </div>
         </div>
@@ -180,6 +190,7 @@ exports[`should render demo and match snapshot 1`] = `
           <label
             id="van-field-label"
             for="van-field-input"
+            data-allow-mismatch="attribute"
             style
           >
             Label
@@ -195,6 +206,7 @@ exports[`should render demo and match snapshot 1`] = `
               class="van-field__control"
               placeholder="Use async validator"
               aria-labelledby="van-field-label"
+              data-allow-mismatch="attribute"
             >
           </div>
         </div>
@@ -230,6 +242,7 @@ exports[`should render demo and match snapshot 1`] = `
           <!--[-->
           <label
             id="van-field-label"
+            data-allow-mismatch="attribute"
             style
           >
             Switch
@@ -262,6 +275,7 @@ exports[`should render demo and match snapshot 1`] = `
           <!--[-->
           <label
             id="van-field-label"
+            data-allow-mismatch="attribute"
             style
           >
             Checkbox
@@ -303,6 +317,7 @@ exports[`should render demo and match snapshot 1`] = `
           <!--[-->
           <label
             id="van-field-label"
+            data-allow-mismatch="attribute"
             style
           >
             Checkbox Group
@@ -374,6 +389,7 @@ exports[`should render demo and match snapshot 1`] = `
           <!--[-->
           <label
             id="van-field-label"
+            data-allow-mismatch="attribute"
             style
           >
             Radio
@@ -448,6 +464,7 @@ exports[`should render demo and match snapshot 1`] = `
           <!--[-->
           <label
             id="van-field-label"
+            data-allow-mismatch="attribute"
             style
           >
             Stepper
@@ -500,6 +517,7 @@ exports[`should render demo and match snapshot 1`] = `
           <!--[-->
           <label
             id="van-field-label"
+            data-allow-mismatch="attribute"
             style
           >
             Rate
@@ -611,6 +629,7 @@ exports[`should render demo and match snapshot 1`] = `
           <!--[-->
           <label
             id="van-field-label"
+            data-allow-mismatch="attribute"
             style
           >
             Slider
@@ -658,6 +677,7 @@ exports[`should render demo and match snapshot 1`] = `
           <!--[-->
           <label
             id="van-field-label"
+            data-allow-mismatch="attribute"
             style
           >
             Uploader
@@ -741,6 +761,7 @@ exports[`should render demo and match snapshot 1`] = `
           <label
             id="van-field-label"
             for="van-field-input"
+            data-allow-mismatch="attribute"
             style
           >
             Picker
@@ -757,6 +778,7 @@ exports[`should render demo and match snapshot 1`] = `
               readonly
               placeholder="Select city"
               aria-labelledby="van-field-label"
+              data-allow-mismatch="attribute"
             >
           </div>
         </div>
@@ -781,6 +803,7 @@ exports[`should render demo and match snapshot 1`] = `
           <label
             id="van-field-label"
             for="van-field-input"
+            data-allow-mismatch="attribute"
             style
           >
             Datetime Picker
@@ -797,6 +820,7 @@ exports[`should render demo and match snapshot 1`] = `
               readonly
               placeholder="Select time"
               aria-labelledby="van-field-label"
+              data-allow-mismatch="attribute"
             >
           </div>
         </div>
@@ -821,6 +845,7 @@ exports[`should render demo and match snapshot 1`] = `
           <label
             id="van-field-label"
             for="van-field-input"
+            data-allow-mismatch="attribute"
             style
           >
             Area Picker
@@ -837,6 +862,7 @@ exports[`should render demo and match snapshot 1`] = `
               readonly
               placeholder="Select area"
               aria-labelledby="van-field-label"
+              data-allow-mismatch="attribute"
             >
           </div>
         </div>
@@ -861,6 +887,7 @@ exports[`should render demo and match snapshot 1`] = `
           <label
             id="van-field-label"
             for="van-field-input"
+            data-allow-mismatch="attribute"
             style
           >
             Calendar
@@ -877,6 +904,7 @@ exports[`should render demo and match snapshot 1`] = `
               readonly
               placeholder="Select date"
               aria-labelledby="van-field-label"
+              data-allow-mismatch="attribute"
             >
           </div>
         </div>

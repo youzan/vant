@@ -8,6 +8,7 @@ exports[`should allow to disable lazy-render prop 1`] = `
     class="van-tab__panel"
     tabindex="-1"
     aria-labelledby="van-tabs-0"
+    data-allow-mismatch="attribute"
     style="display: none;"
   >
   </div>
@@ -17,6 +18,7 @@ exports[`should allow to disable lazy-render prop 1`] = `
     class="van-tab__panel"
     tabindex="-1"
     aria-labelledby="van-tabs-1"
+    data-allow-mismatch="attribute"
     style="display: none;"
   >
   </div>
@@ -31,6 +33,7 @@ exports[`should allow to disable lazy-render prop 2`] = `
     class="van-tab__panel"
     tabindex="0"
     aria-labelledby="van-tabs-0"
+    data-allow-mismatch="attribute"
     style
   >
     Text
@@ -41,6 +44,7 @@ exports[`should allow to disable lazy-render prop 2`] = `
     class="van-tab__panel"
     tabindex="-1"
     aria-labelledby="van-tabs-1"
+    data-allow-mismatch="attribute"
     style="display: none;"
   >
     Text
@@ -63,6 +67,7 @@ exports[`should allow to set name prop 1`] = `
         tabindex="0"
         aria-selected="true"
         aria-controls="van-tab"
+        data-allow-mismatch="attribute"
       >
         <span class="van-tab__text van-tab__text--ellipsis">
           title1
@@ -75,6 +80,7 @@ exports[`should allow to set name prop 1`] = `
         tabindex="-1"
         aria-selected="false"
         aria-controls="van-tab"
+        data-allow-mismatch="attribute"
       >
         <span class="van-tab__text van-tab__text--ellipsis">
           title2
@@ -87,6 +93,7 @@ exports[`should allow to set name prop 1`] = `
         aria-selected="false"
         aria-disabled="true"
         aria-controls="van-tab"
+        data-allow-mismatch="attribute"
       >
         <span class="van-tab__text van-tab__text--ellipsis">
           title3
@@ -106,6 +113,7 @@ exports[`should allow to set name prop 1`] = `
       class="van-tab__panel"
       tabindex="0"
       aria-labelledby="van-tabs-0"
+      data-allow-mismatch="attribute"
       style
     >
       Text
@@ -116,6 +124,7 @@ exports[`should allow to set name prop 1`] = `
       class="van-tab__panel"
       tabindex="-1"
       aria-labelledby="van-tabs-1"
+      data-allow-mismatch="attribute"
       style="display: none;"
     >
     </div>
@@ -125,6 +134,7 @@ exports[`should allow to set name prop 1`] = `
       class="van-tab__panel"
       tabindex="-1"
       aria-labelledby="van-tabs-2"
+      data-allow-mismatch="attribute"
       style="display: none;"
     >
     </div>
@@ -139,6 +149,7 @@ exports[`should emit rendered event after tab is rendered 1`] = `
   class="van-tab__panel"
   tabindex="0"
   aria-labelledby="van-tabs-0"
+  data-allow-mismatch="attribute"
   style
 >
   Text
@@ -158,6 +169,7 @@ exports[`should render badge prop correctly 1`] = `
   tabindex="0"
   aria-selected="true"
   aria-controls="van-tab"
+  data-allow-mismatch="attribute"
 >
   <div class="van-badge__wrapper">
     <span class="van-tab__text van-tab__text--ellipsis">
@@ -184,6 +196,7 @@ exports[`should render nav-left、nav-right slot correctly 1`] = `
       tabindex="0"
       aria-selected="true"
       aria-controls="van-tab"
+      data-allow-mismatch="attribute"
     >
       <span class="van-tab__text van-tab__text--ellipsis">
         Title
@@ -214,6 +227,7 @@ exports[`should switch tab after click the tab title 1`] = `
         tabindex="0"
         aria-selected="true"
         aria-controls="van-tab"
+        data-allow-mismatch="attribute"
       >
         <span class="van-tab__text van-tab__text--ellipsis">
           title1
@@ -226,6 +240,7 @@ exports[`should switch tab after click the tab title 1`] = `
         tabindex="-1"
         aria-selected="false"
         aria-controls="van-tab"
+        data-allow-mismatch="attribute"
       >
         <span class="van-tab__text van-tab__text--ellipsis">
           title2
@@ -238,6 +253,7 @@ exports[`should switch tab after click the tab title 1`] = `
         aria-selected="false"
         aria-disabled="true"
         aria-controls="van-tab"
+        data-allow-mismatch="attribute"
       >
         <span class="van-tab__text van-tab__text--ellipsis">
           title3
@@ -257,6 +273,7 @@ exports[`should switch tab after click the tab title 1`] = `
       class="van-tab__panel"
       tabindex="0"
       aria-labelledby="van-tabs-0"
+      data-allow-mismatch="attribute"
       style
     >
       Text
@@ -267,6 +284,7 @@ exports[`should switch tab after click the tab title 1`] = `
       class="van-tab__panel"
       tabindex="-1"
       aria-labelledby="van-tabs-1"
+      data-allow-mismatch="attribute"
       style="display: none;"
     >
     </div>
@@ -276,6 +294,7 @@ exports[`should switch tab after click the tab title 1`] = `
       class="van-tab__panel"
       tabindex="-1"
       aria-labelledby="van-tabs-2"
+      data-allow-mismatch="attribute"
       style="display: none;"
     >
     </div>
@@ -298,6 +317,7 @@ exports[`should switch tab after click the tab title 2`] = `
         tabindex="-1"
         aria-selected="false"
         aria-controls="van-tab"
+        data-allow-mismatch="attribute"
       >
         <span class="van-tab__text van-tab__text--ellipsis">
           title1
@@ -310,6 +330,7 @@ exports[`should switch tab after click the tab title 2`] = `
         tabindex="0"
         aria-selected="true"
         aria-controls="van-tab"
+        data-allow-mismatch="attribute"
       >
         <span class="van-tab__text van-tab__text--ellipsis">
           title2
@@ -322,6 +343,7 @@ exports[`should switch tab after click the tab title 2`] = `
         aria-selected="false"
         aria-disabled="true"
         aria-controls="van-tab"
+        data-allow-mismatch="attribute"
       >
         <span class="van-tab__text van-tab__text--ellipsis">
           title3
@@ -341,6 +363,7 @@ exports[`should switch tab after click the tab title 2`] = `
       class="van-tab__panel"
       tabindex="-1"
       aria-labelledby="van-tabs-0"
+      data-allow-mismatch="attribute"
       style="display: none;"
     >
       Text
@@ -351,6 +374,7 @@ exports[`should switch tab after click the tab title 2`] = `
       class="van-tab__panel"
       tabindex="0"
       aria-labelledby="van-tabs-1"
+      data-allow-mismatch="attribute"
       style
     >
       Text
@@ -361,6 +385,7 @@ exports[`should switch tab after click the tab title 2`] = `
       class="van-tab__panel"
       tabindex="-1"
       aria-labelledby="van-tabs-2"
+      data-allow-mismatch="attribute"
       style="display: none;"
     >
     </div>
@@ -383,6 +408,7 @@ exports[`swipe switch tab after swiping tab content 1`] = `
         tabindex="0"
         aria-selected="true"
         aria-controls="van-tab"
+        data-allow-mismatch="attribute"
       >
         <span class="van-tab__text van-tab__text--ellipsis">
           title1
@@ -395,6 +421,7 @@ exports[`swipe switch tab after swiping tab content 1`] = `
         tabindex="-1"
         aria-selected="false"
         aria-controls="van-tab"
+        data-allow-mismatch="attribute"
       >
         <span class="van-tab__text van-tab__text--ellipsis">
           title2
@@ -407,6 +434,7 @@ exports[`swipe switch tab after swiping tab content 1`] = `
         aria-selected="false"
         aria-disabled="true"
         aria-controls="van-tab"
+        data-allow-mismatch="attribute"
       >
         <span class="van-tab__text van-tab__text--ellipsis">
           title3
@@ -432,6 +460,7 @@ exports[`swipe switch tab after swiping tab content 1`] = `
           tabindex="0"
           aria-hidden="false"
           aria-labelledby="van-tabs-0"
+          data-allow-mismatch="attribute"
           style="width: 100px;"
         >
           <div class="van-tab__panel">
@@ -445,6 +474,7 @@ exports[`swipe switch tab after swiping tab content 1`] = `
           tabindex="-1"
           aria-hidden="true"
           aria-labelledby="van-tabs-1"
+          data-allow-mismatch="attribute"
           style="width: 100px;"
         >
           <div class="van-tab__panel">
@@ -458,6 +488,7 @@ exports[`swipe switch tab after swiping tab content 1`] = `
           tabindex="-1"
           aria-hidden="true"
           aria-labelledby="van-tabs-2"
+          data-allow-mismatch="attribute"
           style="width: 100px;"
         >
         </div>
@@ -482,6 +513,7 @@ exports[`swipe switch tab after swiping tab content 2`] = `
         tabindex="-1"
         aria-selected="false"
         aria-controls="van-tab"
+        data-allow-mismatch="attribute"
       >
         <span class="van-tab__text van-tab__text--ellipsis">
           title1
@@ -494,6 +526,7 @@ exports[`swipe switch tab after swiping tab content 2`] = `
         tabindex="0"
         aria-selected="true"
         aria-controls="van-tab"
+        data-allow-mismatch="attribute"
       >
         <span class="van-tab__text van-tab__text--ellipsis">
           title2
@@ -506,6 +539,7 @@ exports[`swipe switch tab after swiping tab content 2`] = `
         aria-selected="false"
         aria-disabled="true"
         aria-controls="van-tab"
+        data-allow-mismatch="attribute"
       >
         <span class="van-tab__text van-tab__text--ellipsis">
           title3
@@ -531,6 +565,7 @@ exports[`swipe switch tab after swiping tab content 2`] = `
           tabindex="-1"
           aria-hidden="true"
           aria-labelledby="van-tabs-0"
+          data-allow-mismatch="attribute"
           style="width: 100px;"
         >
           <div class="van-tab__panel">
@@ -544,6 +579,7 @@ exports[`swipe switch tab after swiping tab content 2`] = `
           tabindex="0"
           aria-hidden="false"
           aria-labelledby="van-tabs-1"
+          data-allow-mismatch="attribute"
           style="width: 100px;"
         >
           <div class="van-tab__panel">
@@ -557,6 +593,7 @@ exports[`swipe switch tab after swiping tab content 2`] = `
           tabindex="-1"
           aria-hidden="true"
           aria-labelledby="van-tabs-2"
+          data-allow-mismatch="attribute"
           style="width: 100px;"
         >
           <div class="van-tab__panel">
@@ -584,6 +621,7 @@ exports[`swipe switch tab after swiping tab content 3`] = `
         tabindex="-1"
         aria-selected="false"
         aria-controls="van-tab"
+        data-allow-mismatch="attribute"
       >
         <span class="van-tab__text van-tab__text--ellipsis">
           title1
@@ -596,6 +634,7 @@ exports[`swipe switch tab after swiping tab content 3`] = `
         tabindex="0"
         aria-selected="true"
         aria-controls="van-tab"
+        data-allow-mismatch="attribute"
       >
         <span class="van-tab__text van-tab__text--ellipsis">
           title2
@@ -608,6 +647,7 @@ exports[`swipe switch tab after swiping tab content 3`] = `
         aria-selected="false"
         aria-disabled="true"
         aria-controls="van-tab"
+        data-allow-mismatch="attribute"
       >
         <span class="van-tab__text van-tab__text--ellipsis">
           title3
@@ -633,6 +673,7 @@ exports[`swipe switch tab after swiping tab content 3`] = `
           tabindex="-1"
           aria-hidden="true"
           aria-labelledby="van-tabs-0"
+          data-allow-mismatch="attribute"
           style="width: 100px;"
         >
           <div class="van-tab__panel">
@@ -646,6 +687,7 @@ exports[`swipe switch tab after swiping tab content 3`] = `
           tabindex="0"
           aria-hidden="false"
           aria-labelledby="van-tabs-1"
+          data-allow-mismatch="attribute"
           style="width: 100px;"
         >
           <div class="van-tab__panel">
@@ -659,6 +701,7 @@ exports[`swipe switch tab after swiping tab content 3`] = `
           tabindex="-1"
           aria-hidden="true"
           aria-labelledby="van-tabs-2"
+          data-allow-mismatch="attribute"
           style="width: 100px;"
         >
           <div class="van-tab__panel">
