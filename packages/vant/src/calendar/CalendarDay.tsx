@@ -96,10 +96,7 @@ export default defineComponent({
     };
 
     const renderText = () => {
-      const { item } = props;
-      const { text } = item;
-
-      return <>{slots.text ? slots.text(props.item) : text}</>;
+      return slots.text ? slots.text(props.item) : props.item.text;
     };
 
     const renderContent = () => {
