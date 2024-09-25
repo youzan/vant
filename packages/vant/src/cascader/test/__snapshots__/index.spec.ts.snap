@@ -87,6 +87,7 @@ exports[`should update tabs when previous tab is clicked 1`] = `
           tabindex="-1"
           aria-selected="false"
           aria-controls="van-tab"
+          data-allow-mismatch="attribute"
         >
           <span class="van-tab__text">
             Jiangsu
@@ -99,6 +100,7 @@ exports[`should update tabs when previous tab is clicked 1`] = `
           tabindex="0"
           aria-selected="true"
           aria-controls="van-tab"
+          data-allow-mismatch="attribute"
         >
           <span class="van-tab__text">
             Select
@@ -124,6 +126,7 @@ exports[`should update tabs when previous tab is clicked 1`] = `
             tabindex="-1"
             aria-hidden="true"
             aria-labelledby="van-tabs-0"
+            data-allow-mismatch="attribute"
             style="width: 100px;"
           >
             <div class="van-tab__panel">
@@ -163,6 +166,7 @@ exports[`should update tabs when previous tab is clicked 1`] = `
             tabindex="0"
             aria-hidden="false"
             aria-labelledby="van-tabs-1"
+            data-allow-mismatch="attribute"
             style="width: 100px;"
           >
             <div class="van-tab__panel">

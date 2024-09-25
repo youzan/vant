@@ -130,6 +130,7 @@ export default defineComponent({
           id={`${id}-${index}`}
           role="button"
           tabindex={disabled ? undefined : 0}
+          data-allow-mismatch="attribute"
           class={[
             bem('item', { disabled, grow: scrollable.value }),
             { [HAPTICS_FEEDBACK]: !disabled },
