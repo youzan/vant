@@ -339,7 +339,7 @@ The component provides the following CSS variables, which can be used to customi
 
 ## FAQ
 
-### Compilation Error When Referencing showToast?
+### Compilation error when referencing showToast?
 
 If you encounter the following error when referencing the `showToast` method, it indicates that the project is using the `babel-plugin-import` plugin, which causes incorrect compilation.
 
@@ -354,9 +354,9 @@ Starting from version 4.0, Vant no longer supports the `babel-plugin-import` plu
 
 ### Style Issues When Using showToast with On-Demand Component Import?
 
-When integrating `vant` using the [on-demand component import](https://vant.pro/vant/#/en-US/quickstart#import-on-demand) method, using functions like `showToast` does not require explicit import. Doing so can cause style issues.
+When integrating Vant using the [on-demand component import](#/en-US/quickstart#import-on-demand) method, using functions like `showToast` does not require explicit import. Doing so can cause style issues.
 
-```
+```js
 // The following import is not needed
 import { showToast } from 'vant'
 ```
@@ -364,10 +364,11 @@ import { showToast } from 'vant'
 This is because when you explicitly import functions like `showToast`, `@vant/auto-import-resolver` will not automatically import the style resources for Toast, leading to missing styles and resulting in style issues.
 
 There are two solutions:
+
 - Do not explicitly import `showToast` when using it.
 - If you must explicitly import `showToast`, you also need to manually import the related styles for the `Toast` component.
 
-```
+```js
 import { showToast } from 'vant'
 import 'vant/lib/toast/style'
 ```

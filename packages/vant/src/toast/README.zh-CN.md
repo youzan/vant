@@ -371,21 +371,21 @@ Vant 从 4.0 版本开始不再支持 `babel-plugin-import` 插件，请参考 [
 
 ### 按需引入组件时，使用 showToast 时出现样式异常问题？
 
-在使用[按需引入组件](https://vant.pro/vant/#/zh-CN/quickstart#fang-fa-er.-an-xu-yin-ru-zu-jian-yang-shi)方案集成 `vant` 时，使用 showToast 等函数无需进行显式导入，否则会造成样式异常。
+在使用[按需引入组件](#/zh-CN/quickstart#fang-fa-er.-an-xu-yin-ru-zu-jian-yang-shi)方案集成 Vant 时，使用 showToast 等函数无需进行显式导入，否则会造成样式异常。
 
-```
+```js
 // 以下方式是不需要的
 import { showToast } from 'vant'
 ```
 
-这是因为在显式导入 showToast 等函数时，` @vant/auto-import-resolver` 将不会自动导入 Toast 的样式资源，这将导致 Toast 组件
-的样式缺失，从而导致样式异常问题。
+这是因为在显式导入 showToast 等函数时，` @vant/auto-import-resolver` 将不会自动导入 Toast 的样式资源，这将导致 Toast 组件的样式缺失，从而导致样式异常问题。
 
-解决方案有2种：
+解决方案有 2 种：
+
 - 使用 `showToast` 时不进行显式导入；
 - 如果必须显示导入 `showToast` ，则同时需要手动导入 `Toast` 组件的相关样式。
 
-```
+```js
 import { showToast } from 'vant'
 import 'vant/lib/toast/style'
 ```
