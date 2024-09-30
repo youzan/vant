@@ -14,7 +14,6 @@ import {
   genOptions,
   pickerInheritKeys,
   sharedProps,
-  type TimeFilter,
 } from '../date-picker/utils';
 import {
   pick,
@@ -57,7 +56,6 @@ export const timePickerProps = extend({}, sharedProps, {
     type: Array as PropType<TimePickerColumnType[]>,
     default: () => ['hour', 'minute'],
   },
-  filter: Function as PropType<TimeFilter>,
 });
 
 export type TimePickerProps = ExtractPropTypes<typeof timePickerProps>;

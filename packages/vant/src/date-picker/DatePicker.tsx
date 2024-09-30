@@ -69,18 +69,9 @@ export default defineComponent({
     const currentValues = ref<string[]>(props.modelValue);
     const updatedByExternalSources = ref(false);
     const pickerRef = ref<PickerInstance>();
-
-    const genYearOptions = () => {
-      const minYear = props.minDate.getFullYear();
-      const maxYear = props.maxDate.getFullYear();
-      return genOptions(
-        minYear,
-        maxYear,
-        'year',
-        props.formatter,
-        props.filter,
-      );
-    };
+    const computedValues = computed(() =>
+      updatedByExternalSources.value ? props.modelValue : currentValues.value,
+    );
 
     const isMinYear = (year: number) => year === props.minDate.getFullYear();
     const isMaxYear = (year: number) => year === props.maxDate.getFullYear();
@@ -92,9 +83,8 @@ export default defineComponent({
     const getValue = (type: DatePickerColumnType) => {
       const { minDate, columnsType } = props;
       const index = columnsType.indexOf(type);
-      const value = updatedByExternalSources.value
-        ? props.modelValue[index]
-        : currentValues.value[index];
+      const value = computedValues.value[index];
+
       if (value) {
         return +value;
       }
@@ -109,6 +99,19 @@ export default defineComponent({
       }
     };
 
+    const genYearOptions = () => {
+      const minYear = props.minDate.getFullYear();
+      const maxYear = props.maxDate.getFullYear();
+      return genOptions(
+        minYear,
+        maxYear,
+        'year',
+        props.formatter,
+        props.filter,
+        computedValues.value,
+      );
+    };
+
     const genMonthOptions = () => {
       const year = getValue('year');
       const minMonth = isMinYear(year) ? props.minDate.getMonth() + 1 : 1;
@@ -120,6 +123,7 @@ export default defineComponent({
         'month',
         props.formatter,
         props.filter,
+        computedValues.value,
       );
     };
 
@@ -133,7 +137,14 @@ export default defineComponent({
           ? props.maxDate.getDate()
           : getMonthEndDay(year, month);
 
-      return genOptions(minDate, maxDate, 'day', props.formatter, props.filter);
+      return genOptions(
+        minDate,
+        maxDate,
+        'day',
+        props.formatter,
+        props.filter,
+        computedValues.value,
+      );
     };
 
     const confirm = () => pickerRef.value?.confirm();

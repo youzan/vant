@@ -184,7 +184,7 @@ export default {
 | show-toolbar | 是否显示顶部栏 | _boolean_ | `true` |
 | loading | 是否显示加载状态 | _boolean_ | `false` |
 | readonly | 是否为只读状态，只读状态下无法切换选项 | _boolean_ | `false` |
-| filter | 选项过滤函数 | _(type: string, options: PickerOption[]) => PickerOption[]_ | - |
+| filter | 选项过滤函数 | _(type: string, options: PickerOption[], values: string[]) => PickerOption[]_ | - |
 | formatter | 选项格式化函数 | _(type: string, option: PickerOption) => PickerOption_ | - |
 | option-height | 选项高度，支持 `px` `vw` `vh` `rem` 单位，默认 `px` | _number \| string_ | `44` |
 | visible-option-num | 可见的选项个数 | _number \| string_ | `6` |

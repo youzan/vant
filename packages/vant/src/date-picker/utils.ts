@@ -1,10 +1,4 @@
-import {
-  extend,
-  padZero,
-  makeArrayProp,
-  clamp,
-  type RequiredParams,
-} from '../utils';
+import { extend, padZero, makeArrayProp, clamp } from '../utils';
 import { pickerSharedProps } from '../picker/Picker';
 import type { PropType } from 'vue';
 import type { PickerOption } from '../picker';
@@ -12,9 +6,8 @@ import type { PickerOption } from '../picker';
 type Filter = (
   columnType: string,
   options: PickerOption[],
-  values?: string[],
+  values: string[],
 ) => PickerOption[];
-export type TimeFilter = RequiredParams<Filter>;
 type Formatter = (type: string, option: PickerOption) => PickerOption;
 
 export const sharedProps = extend({}, pickerSharedProps, {
@@ -53,8 +46,8 @@ export const genOptions = <T extends string>(
   max: number,
   type: T,
   formatter: Formatter,
-  filter?: Filter | TimeFilter,
-  values?: string[],
+  filter: Filter | undefined,
+  values: string[],
 ) => {
   const options = times(max - min + 1, (index) => {
     const value = padZero(min + index);
@@ -63,7 +56,7 @@ export const genOptions = <T extends string>(
       value,
     });
   });
-  return filter ? filter(type, options, values!) : options;
+  return filter ? filter(type, options, values) : options;
 };
 
 export const formatValueRange = (values: string[], columns: PickerOption[][]) =>
