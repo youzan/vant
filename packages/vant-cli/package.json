@@ -43,12 +43,12 @@
     "@types/lodash": "^4.17.9",
     "@types/markdown-it": "^14.1.2",
     "rimraf": "^6.0.1",
-    "vue": "^3.5.9"
+    "vue": "^3.5.10"
   },
   "dependencies": {
     "@babel/core": "^7.25.2",
     "@babel/preset-typescript": "^7.24.7",
-    "@rsbuild/core": "1.0.7",
+    "@rsbuild/core": "1.0.9",
     "@rsbuild/plugin-babel": "1.0.1",
     "@rsbuild/plugin-less": "1.0.1",
     "@rsbuild/plugin-sass": "1.0.1",
