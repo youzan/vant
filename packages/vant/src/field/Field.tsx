@@ -334,7 +334,11 @@ export default defineComponent({
         const isNumber = props.type === 'number';
         value = formatNumber(value, isNumber, isNumber);
 
-        if (trigger === 'onBlur' && value !== '') {
+        if (
+          trigger === 'onBlur' &&
+          value !== '' &&
+          (props.min !== undefined || props.max !== undefined)
+        ) {
           const adjustedValue = clamp(
             +value,
             props.min ?? -Infinity,
