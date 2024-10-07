@@ -59,9 +59,9 @@ test('should format input value when type is number', () => {
 
   const input = wrapper.find('input');
 
-  input.element.value = '1';
+  input.element.value = '01';
   input.trigger('input');
-  expect(wrapper.emitted('update:modelValue')[0][0]).toEqual('1');
+  expect(wrapper.emitted('update:modelValue')[0][0]).toEqual('01');
 
   input.element.value = '1.2.';
   input.trigger('input');
