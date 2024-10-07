@@ -40,18 +40,18 @@
   "devDependencies": {
     "@types/fs-extra": "^11.0.4",
     "@types/less": "^3.0.6",
-    "@types/lodash": "^4.17.9",
+    "@types/lodash": "^4.17.10",
     "@types/markdown-it": "^14.1.2",
     "rimraf": "^6.0.1",
-    "vue": "^3.5.10"
+    "vue": "^3.5.11"
   },
   "dependencies": {
-    "@babel/core": "^7.25.2",
+    "@babel/core": "^7.25.7",
     "@babel/preset-typescript": "^7.25.7",
-    "@rsbuild/core": "1.0.9",
+    "@rsbuild/core": "1.0.10",
     "@rsbuild/plugin-babel": "1.0.1",
     "@rsbuild/plugin-less": "1.0.1",
-    "@rsbuild/plugin-sass": "1.0.1",
+    "@rsbuild/plugin-sass": "1.0.2",
     "@rsbuild/plugin-vue": "1.0.1",
     "@rsbuild/plugin-vue-jsx": "1.0.1",
     "@vant/eslint-config": "workspace:^",
