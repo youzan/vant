@@ -353,6 +353,7 @@ Following props are supported when the type is multiple
 | confirm-text | Custom confirm text | _{ disabled: boolean }_ |
 | top-info | Custom top info of day | _day: Day_ |
 | bottom-info | Custom bottom info of day | _day: Day_ |
+| text | Custom text of day | _day: Day_ |
 | prev-month | Custom previous month button | _{ disabled: boolean }_ |
 | prev-year | Custom previous year button | _{ disabled: boolean }_ |
 | next-month | Custom next month button | _{ disabled: boolean }_ |

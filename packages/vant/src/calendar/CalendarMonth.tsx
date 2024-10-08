@@ -261,7 +261,7 @@ export default defineComponent({
 
     const renderDay = (item: CalendarDayItem, index: number) => (
       <CalendarDay
-        v-slots={pick(slots, ['top-info', 'bottom-info'])}
+        v-slots={pick(slots, ['top-info', 'bottom-info', 'text'])}
         item={item}
         index={index}
         color={props.color}
