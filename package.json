@@ -19,7 +19,7 @@
   "engines": {
     "pnpm": ">= 9.9.0"
   },
-  "packageManager": "pnpm@9.9.0",
+  "packageManager": "pnpm@9.12.1",
   "devDependencies": {
     "@vant/cli": "workspace:*",
     "@vant/eslint-config": "workspace:*",
