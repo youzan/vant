@@ -359,6 +359,7 @@ export default {
 | confirm-text | 自定义确认按钮的内容 | _{ disabled: boolean }_ |
 | top-info | 自定义日期上方的提示信息 | _day: Day_ |
 | bottom-info | 自定义日期下方的提示信息 | _day: Day_ |
+| text | 自定义日期内容 | _day: Day_ |
 | prev-month | 自定义上个月按钮 | _{ disabled: boolean }_ |
 | prev-year | 自定义上一年按钮 | _{ disabled: boolean }_ |
 | next-month | 自定义下个月按钮 | _{ disabled: boolean }_ |

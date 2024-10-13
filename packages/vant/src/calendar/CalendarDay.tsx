@@ -95,11 +95,15 @@ export default defineComponent({
       }
     };
 
+    const renderText = () => {
+      return slots.text ? slots.text(props.item) : props.item.text;
+    };
+
     const renderContent = () => {
       const { item, color, rowHeight } = props;
-      const { type, text } = item;
+      const { type } = item;
 
-      const Nodes = [renderTopInfo(), text, renderBottomInfo()];
+      const Nodes = [renderTopInfo(), renderText(), renderBottomInfo()];
 
       if (type === 'selected') {
         return (

@@ -874,7 +874,7 @@ exports[`should render title、footer、subtitle slot correctly 1`] = `
 </div>
 `;
 
-exports[`should render top-info and bottom-info slot correctly 1`] = `
+exports[`should render top-info, bottom-info and text slot correctly 1`] = `
 <div
   role="gridcell"
   style="margin-left: 71.42857142857143%;"
@@ -883,7 +883,7 @@ exports[`should render top-info and bottom-info slot correctly 1`] = `
   <div class="van-calendar__top-info">
     top: 1
   </div>
-  1
+  text: 1
   <div class="van-calendar__bottom-info">
     bottom: 1
   </div>
