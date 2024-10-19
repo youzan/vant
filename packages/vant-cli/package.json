@@ -40,19 +40,19 @@
   "devDependencies": {
     "@types/fs-extra": "^11.0.4",
     "@types/less": "^3.0.6",
-    "@types/lodash": "^4.17.10",
+    "@types/lodash": "^4.17.12",
     "@types/markdown-it": "^14.1.2",
     "rimraf": "^6.0.1",
-    "vue": "^3.5.11"
+    "vue": "^3.5.12"
   },
   "dependencies": {
-    "@babel/core": "^7.25.7",
+    "@babel/core": "^7.25.8",
     "@babel/preset-typescript": "^7.25.7",
-    "@rsbuild/core": "1.0.10",
-    "@rsbuild/plugin-babel": "1.0.1",
-    "@rsbuild/plugin-less": "1.0.1",
-    "@rsbuild/plugin-sass": "1.0.2",
-    "@rsbuild/plugin-vue": "1.0.1",
+    "@rsbuild/core": "1.0.15",
+    "@rsbuild/plugin-babel": "1.0.2",
+    "@rsbuild/plugin-less": "1.0.2",
+    "@rsbuild/plugin-sass": "1.0.3",
+    "@rsbuild/plugin-vue": "1.0.2",
     "@rsbuild/plugin-vue-jsx": "1.0.1",
     "@vant/eslint-config": "workspace:^",
     "@vant/touch-emulator": "workspace:^",
@@ -75,15 +75,15 @@
     "markdown-it": "^14.1.0",
     "markdown-it-anchor": "^9.2.0",
     "nano-staged": "^0.8.0",
-    "picocolors": "^1.1.0",
+    "picocolors": "^1.1.1",
     "postcss": "^8.4.47",
     "postcss-load-config": "^6.0.1",
     "prettier": "^3.3.3",
     "rspack-plugin-virtual-module": "^0.1.13",
     "terser": "^5.34.1",
     "transliteration": "^2.3.5",
-    "typescript": "^5.6.2",
-    "vite": "^5.4.8",
+    "typescript": "^5.6.3",
+    "vite": "^5.4.9",
     "vue-router": "^4.4.5"
   }
 }
