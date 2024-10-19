@@ -125,6 +125,7 @@ Vant 3/4 supports modern browsers and Chrome >= 51、iOS >= 10.0 (same as Vue 3)
 | [vant-aliapp](https://github.com/ant-move/Vant-Aliapp) | Alipay MiniProgram UI |
 | [vant-theme](https://github.com/Aisen60/vant-theme) | Online theme preview built on Vant UI |
 | [@antmjs/vantui](https://github.com/antmjs/vantui) | Mobile UI Components based on Vant, supporting Taro and React |
+| [Taroify](https://github.com/mallfoundry/taroify) | Taroify is the Taro version of Vant |
 | [vant-playground](https://github.com/LadyChatterleyLover/vant-playground) | Vant Playground |
 | [sfc-playground-vant](https://github.com/zhixiaoqiang/sfc-playground-vant) | Vant Playground |
 | [vue3-h5-template](https://github.com/yulimchen/vue3-h5-template) | Mobile project template based on Vant |
