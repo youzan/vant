@@ -155,23 +155,23 @@ importers:
         specifier: ^7.25.7
         version: 7.25.7(@babel/core@7.25.8)
       '@rsbuild/core':
-        specifier: 1.0.15
-        version: 1.0.15
+        specifier: 1.0.16
+        version: 1.0.16
       '@rsbuild/plugin-babel':
         specifier: 1.0.2
-        version: 1.0.2(@rsbuild/core@1.0.15)
+        version: 1.0.2(@rsbuild/core@1.0.16)
       '@rsbuild/plugin-less':
         specifier: 1.0.2
-        version: 1.0.2(@rsbuild/core@1.0.15)
+        version: 1.0.2(@rsbuild/core@1.0.16)
       '@rsbuild/plugin-sass':
-        specifier: 1.0.3
-        version: 1.0.3(@rsbuild/core@1.0.15)
+        specifier: 1.0.4
+        version: 1.0.4(@rsbuild/core@1.0.16)
       '@rsbuild/plugin-vue':
         specifier: 1.0.2
-        version: 1.0.2(@rsbuild/core@1.0.15)(esbuild@0.24.0)(vue@3.5.12(typescript@5.6.3))
+        version: 1.0.2(@rsbuild/core@1.0.16)(esbuild@0.24.0)(vue@3.5.12(typescript@5.6.3))
       '@rsbuild/plugin-vue-jsx':
         specifier: 1.0.1
-        version: 1.0.1(@babel/core@7.25.8)(@rsbuild/core@1.0.15)
+        version: 1.0.1(@babel/core@7.25.8)(@rsbuild/core@1.0.16)
       '@vant/eslint-config':
         specifier: workspace:^
         version: link:../vant-eslint-config
@@ -318,8 +318,8 @@ importers:
         specifier: ^9.1.0
         version: 9.1.0(eslint@8.57.1)
       eslint-plugin-vue:
-        specifier: ^9.29.0
-        version: 9.29.0(eslint@8.57.1)
+        specifier: ^9.29.1
+        version: 9.29.1(eslint@8.57.1)
     devDependencies:
       eslint:
         specifier: ^8.57.1
@@ -1136,8 +1136,8 @@ packages:
     cpu: [x64]
     os: [win32]
 
-  '@rsbuild/core@1.0.15':
-    resolution: {integrity: sha512-LIOgs4UzfFeT3sZnPMww1JbqF7zkGNMZdMJ6vV8xEXGOU4t8Z6QAtM5A0FGRfb2mYW5u2+XnMog+JAbo2RrN/A==}
+  '@rsbuild/core@1.0.16':
+    resolution: {integrity: sha512-ioQg9HfDh5eXPZi+An7yCRaSE9TH4W3IBqrxBrv4IjOg/ajpVpKidiKwyYpX3QPbxY1ybfvQTH7HwATND4crCA==}
     engines: {node: '>=16.7.0'}
     hasBin: true
 
@@ -1151,8 +1151,8 @@ packages:
     peerDependencies:
       '@rsbuild/core': 1.x || ^1.0.1-rc.0
 
-  '@rsbuild/plugin-sass@1.0.3':
-    resolution: {integrity: sha512-Hy9MZtjXpoLfRvYeLP4F/1L5/mINRZ+IEFRQoaS7yAwzvydNMxI3QXoXDQvEaaUxnuNhCh2TCDrvsxd+cds22A==}
+  '@rsbuild/plugin-sass@1.0.4':
+    resolution: {integrity: sha512-0eTVOgglTBf440ykuZWJQmh44S3hj/MT95K+P5XwEU8gU72MrEGTrQlZciOqFW8tVkEVmtUlHPx7YEipXhplSQ==}
     peerDependencies:
       '@rsbuild/core': 1.x || ^1.0.1-rc.0
 
@@ -1891,8 +1891,8 @@ packages:
     peerDependencies:
       eslint: '>=7.0.0'
 
-  eslint-plugin-vue@9.29.0:
-    resolution: {integrity: sha512-hamyjrBhNH6Li6R1h1VF9KHfshJlKgKEg3ARbGTn72CMNDSMhWbgC7NdkRDEh25AFW+4SDATzyNM+3gWuZii8g==}
+  eslint-plugin-vue@9.29.1:
+    resolution: {integrity: sha512-MH/MbVae4HV/tM8gKAVWMPJbYgW04CK7SuzYRrlNERpxbO0P3+Zdsa2oAcFBW6xNu7W6lIkGOsFAMCRTYmrlWQ==}
     engines: {node: ^14.17.0 || >=16.0.0}
     peerDependencies:
       eslint: ^6.2.0 || ^7.0.0 || ^8.0.0 || ^9.0.0
@@ -3958,7 +3958,7 @@ snapshots:
   '@rollup/rollup-win32-x64-msvc@4.21.2':
     optional: true
 
-  '@rsbuild/core@1.0.15':
+  '@rsbuild/core@1.0.16':
     dependencies:
       '@rspack/core': 1.0.13(@swc/helpers@0.5.13)
       '@rspack/lite-tapable': 1.0.1
@@ -3967,13 +3967,13 @@ snapshots:
     optionalDependencies:
       fsevents: 2.3.3
 
-  '@rsbuild/plugin-babel@1.0.2(@rsbuild/core@1.0.15)':
+  '@rsbuild/plugin-babel@1.0.2(@rsbuild/core@1.0.16)':
     dependencies:
       '@babel/core': 7.25.8
       '@babel/plugin-proposal-decorators': 7.25.7(@babel/core@7.25.8)
       '@babel/plugin-transform-class-properties': 7.25.7(@babel/core@7.25.8)
       '@babel/preset-typescript': 7.25.7(@babel/core@7.25.8)
-      '@rsbuild/core': 1.0.15
+      '@rsbuild/core': 1.0.16
       '@types/babel__core': 7.20.5
       deepmerge: 4.3.1
       reduce-configs: 1.0.0
@@ -3981,35 +3981,35 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@rsbuild/plugin-less@1.0.2(@rsbuild/core@1.0.15)':
+  '@rsbuild/plugin-less@1.0.2(@rsbuild/core@1.0.16)':
     dependencies:
-      '@rsbuild/core': 1.0.15
+      '@rsbuild/core': 1.0.16
       deepmerge: 4.3.1
       reduce-configs: 1.0.0
 
-  '@rsbuild/plugin-sass@1.0.3(@rsbuild/core@1.0.15)':
+  '@rsbuild/plugin-sass@1.0.4(@rsbuild/core@1.0.16)':
     dependencies:
-      '@rsbuild/core': 1.0.15
+      '@rsbuild/core': 1.0.16
       deepmerge: 4.3.1
       loader-utils: 2.0.4
       postcss: 8.4.47
       reduce-configs: 1.0.0
       sass-embedded: 1.80.3
 
-  '@rsbuild/plugin-vue-jsx@1.0.1(@babel/core@7.25.8)(@rsbuild/core@1.0.15)':
+  '@rsbuild/plugin-vue-jsx@1.0.1(@babel/core@7.25.8)(@rsbuild/core@1.0.16)':
     dependencies:
-      '@rsbuild/plugin-babel': 1.0.2(@rsbuild/core@1.0.15)
+      '@rsbuild/plugin-babel': 1.0.2(@rsbuild/core@1.0.16)
       '@vue/babel-plugin-jsx': 1.2.5(@babel/core@7.25.8)
       babel-plugin-vue-jsx-hmr: 1.0.0
     optionalDependencies:
-      '@rsbuild/core': 1.0.15
+      '@rsbuild/core': 1.0.16
     transitivePeerDependencies:
       - '@babel/core'
       - supports-color
 
-  '@rsbuild/plugin-vue@1.0.2(@rsbuild/core@1.0.15)(esbuild@0.24.0)(vue@3.5.12(typescript@5.6.3))':
+  '@rsbuild/plugin-vue@1.0.2(@rsbuild/core@1.0.16)(esbuild@0.24.0)(vue@3.5.12(typescript@5.6.3))':
     dependencies:
-      '@rsbuild/core': 1.0.15
+      '@rsbuild/core': 1.0.16
       vue-loader: 17.4.2(vue@3.5.12(typescript@5.6.3))(webpack@5.95.0(esbuild@0.24.0))
       webpack: 5.95.0(esbuild@0.24.0)
     transitivePeerDependencies:
@@ -4889,7 +4889,7 @@ snapshots:
     dependencies:
       eslint: 8.57.1
 
-  eslint-plugin-vue@9.29.0(eslint@8.57.1):
+  eslint-plugin-vue@9.29.1(eslint@8.57.1):
     dependencies:
       '@eslint-community/eslint-utils': 4.4.0(eslint@8.57.1)
       eslint: 8.57.1
