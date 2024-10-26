@@ -46,12 +46,12 @@
     "vue": "^3.5.12"
   },
   "dependencies": {
-    "@babel/core": "^7.25.8",
-    "@babel/preset-typescript": "^7.25.7",
-    "@rsbuild/core": "1.0.15",
+    "@babel/core": "^7.25.9",
+    "@babel/preset-typescript": "^7.25.9",
+    "@rsbuild/core": "1.0.17",
     "@rsbuild/plugin-babel": "1.0.2",
     "@rsbuild/plugin-less": "1.0.2",
-    "@rsbuild/plugin-sass": "1.0.3",
+    "@rsbuild/plugin-sass": "1.0.4",
     "@rsbuild/plugin-vue": "1.0.2",
     "@rsbuild/plugin-vue-jsx": "1.0.1",
     "@vant/eslint-config": "workspace:^",
@@ -83,7 +83,7 @@
     "terser": "^5.34.1",
     "transliteration": "^2.3.5",
     "typescript": "^5.6.3",
-    "vite": "^5.4.9",
+    "vite": "^5.4.10",
     "vue-router": "^4.4.5"
   }
 }
