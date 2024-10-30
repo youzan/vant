@@ -182,6 +182,7 @@ Vant exports following Dialog utility functions:
 | beforeClose | Callback function before close | _(action: string) => boolean \| Promise\<boolean\>_ | - |
 | transition | Transition, equivalent to `name` prop of [transition](https://vuejs.org/api/built-in-components.html#transition) | _string_ | - |
 | teleport | Specifies a target element where Dialog will be mounted | _string \| Element_ | `body` |
+| keyboardEnabled | Whether or not the keyboard capability is used, the `Enter` and `Esc` keys by default execute the confirm and cancel functions when the `confirm` and `cancel` buttons are displayed | _boolean_ | `true` |
 
 ### Props
 
@@ -213,6 +214,7 @@ Vant exports following Dialog utility functions:
 | before-close | Callback function before close | _(action: string) => boolean \| Promise\<boolean\>_ | - |
 | transition | Transition, equivalent to `name` prop of [transition](https://vuejs.org/api/built-in-components.html#transition) | _string_ | - |
 | teleport | Specifies a target element where Dialog will be mounted | _string \| Element_ | - |
+| keyboard-enabled | Whether or not the keyboard capability is used, the `Enter` and `Esc` keys by default execute the confirm and cancel functions when the `confirm` and `cancel` buttons are displayed | _boolean_ | `true` |
 
 ### Events
 
