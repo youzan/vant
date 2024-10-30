@@ -234,7 +234,7 @@ test('should sync v-model when accessing matched route directly', async () => {
           <Tabbar route v-model={active.value} onChange={onChange}>
             <TabbarItem to="/">Tab 1</TabbarItem>
             <TabbarItem to="/search">Tab 2</TabbarItem>
-            <TabbarItem to={{ name: 'star', path: '/star' }}>Tab 3</TabbarItem>
+            <TabbarItem to="/star">Tab 3</TabbarItem>
           </Tabbar>
         );
       },
