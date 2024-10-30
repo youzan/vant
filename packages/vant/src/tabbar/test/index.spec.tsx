@@ -217,3 +217,98 @@ test('should render badge-props prop correctly', async () => {
   const badge = wrapper.find('.van-badge');
   expect(badge.style.backgroundColor).toEqual('blue');
 });
+
+test('should sync v-model when accessing matched route directly', async () => {
+  const onChange = vi.fn();
+  const active = ref(0);
+
+  const wrapper = mount(
+    {
+      setup() {
+        return {
+          active,
+        };
+      },
+      render() {
+        return (
+          <Tabbar route v-model={active.value} onChange={onChange}>
+            <TabbarItem to="/">Tab 1</TabbarItem>
+            <TabbarItem to="/search">Tab 2</TabbarItem>
+            <TabbarItem to={{ name: 'star', path: '/star' }}>Tab 3</TabbarItem>
+          </Tabbar>
+        );
+      },
+    },
+    {
+      global: {
+        mocks: {
+          $route: {
+            path: '/search',
+            name: 'search',
+            matched: [{ path: '/search', name: 'search' }],
+          },
+          $router: {
+            push: vi.fn(),
+            replace: vi.fn(),
+          },
+        },
+      },
+    },
+  );
+
+  // 等待组件挂载和响应式更新
+  await nextTick();
+  await later();
+
+  // 验证是否正确设置了激活状态
+  const items = wrapper.findAll('.van-tabbar-item');
+  expect(items[1].classes()).toContain(activeClass);
+
+  // 验证是否触发了 onChange
+  expect(onChange).toHaveBeenCalledWith(1);
+});
+
+test('should not sync v-model when route does not match', async () => {
+  const onChange = vi.fn();
+  const wrapper = mount(
+    {
+      setup() {
+        const active = ref(0);
+        return {
+          active,
+        };
+      },
+      render() {
+        return (
+          <Tabbar route modelValue={this.active} onChange={onChange}>
+            <TabbarItem to="/">Tab 1</TabbarItem>
+            <TabbarItem to="/search">Tab 2</TabbarItem>
+          </Tabbar>
+        );
+      },
+    },
+    {
+      global: {
+        mocks: {
+          ...getMockRouter(),
+          $route: {
+            path: '/other',
+            name: 'other',
+            matched: [{ path: '/other', name: 'other' }],
+          },
+        },
+      },
+    },
+  );
+
+  await nextTick();
+
+  // 验证没有任何 tab 被激活
+  const items = wrapper.findAll('.van-tabbar-item');
+  items.forEach((item) => {
+    expect(item.classes()).not.toContain(activeClass);
+  });
+
+  // 验证没有触发 onChange
+  expect(onChange).not.toHaveBeenCalled();
+});
