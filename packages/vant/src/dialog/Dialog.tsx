@@ -123,7 +123,6 @@ export default defineComponent({
     const onConfirm = getActionHandler('confirm');
     const onKeydown = withKeys(
       (event: KeyboardEvent) => {
-        // disable keyboard events when loading
         if (!props.keyboardEnabled) {
           return;
         }
