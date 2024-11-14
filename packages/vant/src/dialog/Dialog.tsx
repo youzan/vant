@@ -62,6 +62,7 @@ export const dialogProps = extend({}, popupSharedProps, {
   confirmButtonDisabled: Boolean,
   showConfirmButton: truthProp,
   closeOnClickOverlay: Boolean,
+  keyboardEnabled: truthProp,
 });
 
 export type DialogProps = ExtractPropTypes<typeof dialogProps>;
@@ -122,6 +123,9 @@ export default defineComponent({
     const onConfirm = getActionHandler('confirm');
     const onKeydown = withKeys(
       (event: KeyboardEvent) => {
+        if (!props.keyboardEnabled) {
+          return;
+        }
         // skip keyboard events of child elements
         if (event.target !== root.value?.popupRef?.value) {
           return;
