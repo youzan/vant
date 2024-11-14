@@ -58,7 +58,7 @@ const imagePreviewItemProps = {
   closeOnClickImage: Boolean,
   closeOnClickOverlay: Boolean,
   vertical: Boolean,
-  rotateAngle: makeNumberProp(90),
+  rotateAngle: makeNumberProp(0),
 };
 
 export type ImagePreviewItemProps = ExtractPropTypes<
@@ -94,11 +94,16 @@ export default defineComponent({
       const style: CSSProperties = {
         transitionDuration: zooming || moving || initializing ? '0s' : '.3s',
       };
-
-      if (scale !== 1 || isLongImage.value || props.rotateAngle !== 0) {
-        style.transform = `matrix(${scale}, 0, 0, ${scale}, ${moveX}, ${moveY}) rotate(${props.rotateAngle}deg)`;
+      const transforms: string[] = [];
+      if (scale !== 1 || isLongImage.value) {
+        transforms.push(`matrix(${scale}, 0, 0, ${scale}, ${moveX}, ${moveY})`);
       }
-
+      if (props.rotateAngle !== 0) {
+        transforms.push(`rotate(${props.rotateAngle}deg)`);
+      }
+      if (transforms.length) {
+        style.transform = transforms.join(' ');
+      }
       return style;
     });
 
