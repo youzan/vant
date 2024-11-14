@@ -79,7 +79,7 @@ export const imagePreviewProps = {
   closeOnClickOverlay: truthProp,
   closeIconPosition: makeStringProp<PopupCloseIconPosition>('top-right'),
   teleport: [String, Object] as PropType<TeleportProps['to']>,
-  rotate: truthProp,
+  rotate: Boolean,
   rotationAngle: makeNumberProp(90),
 };
 
