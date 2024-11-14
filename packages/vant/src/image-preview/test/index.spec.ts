@@ -9,6 +9,7 @@ import { LONG_PRESS_START_TIME } from '../../utils';
 import ImagePreview from '../ImagePreview';
 import { images, triggerDoubleTap, triggerZoom } from './shared';
 import type { ImagePreviewInstance } from '../types';
+import { nextTick } from 'vue';
 
 test('should swipe to current index after calling the swipeTo method', async () => {
   const wrapper = mount(ImagePreview, {
@@ -459,4 +460,56 @@ test('should reset scale after calling the resetScale method', async () => {
   (wrapper.vm as ImagePreviewInstance).resetScale();
   await later();
   expect(image.style.transform).toBeFalsy();
+});
+
+test('should render rotate buttons when rotate prop is true', async () => {
+  const wrapper = mount(ImagePreview, {
+    props: {
+      show: true,
+      images,
+      rotate: true,
+    },
+  });
+
+  await later();
+
+  const rotateButtons = wrapper.findAll('.van-image-preview__rotate-button');
+  expect(rotateButtons).toHaveLength(2);
+  expect(
+    wrapper.find('.van-image-preview__rotate-buttons').exists(),
+  ).toBeTruthy();
+});
+
+test('should not render rotate buttons when rotate prop is false', () => {
+  const wrapper = mount(ImagePreview, {
+    props: {
+      show: true,
+      images,
+      rotate: false,
+    },
+  });
+
+  expect(
+    wrapper.find('.van-image-preview__rotate-buttons').exists(),
+  ).toBeFalsy();
+});
+
+test('should respect custom rotation angle', async () => {
+  const wrapper = mount(ImagePreview, {
+    props: {
+      show: true,
+      images,
+      rotate: true,
+      rotationAngle: 45,
+    },
+  });
+
+  await later();
+  const rotateButtons = wrapper.findAll('.van-image-preview__rotate-button');
+
+  await rotateButtons[1].trigger('click');
+  await nextTick();
+  expect(
+    wrapper.find('.van-image-preview__image').element.style.transform,
+  ).toContain('rotate(45deg)');
 });

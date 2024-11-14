@@ -17,6 +17,7 @@ import {
   makeRequiredProp,
   LONG_PRESS_START_TIME,
   type ComponentInstance,
+  makeNumberProp,
 } from '../utils';
 
 // Composables
@@ -57,6 +58,7 @@ const imagePreviewItemProps = {
   closeOnClickImage: Boolean,
   closeOnClickOverlay: Boolean,
   vertical: Boolean,
+  rotateAngle: makeNumberProp(90),
 };
 
 export type ImagePreviewItemProps = ExtractPropTypes<
@@ -93,9 +95,8 @@ export default defineComponent({
         transitionDuration: zooming || moving || initializing ? '0s' : '.3s',
       };
 
-      if (scale !== 1 || isLongImage.value) {
-        // use matrix to solve the problem of elements not rendering due to safari optimization
-        style.transform = `matrix(${scale}, 0, 0, ${scale}, ${moveX}, ${moveY})`;
+      if (scale !== 1 || isLongImage.value || props.rotateAngle !== 0) {
+        style.transform = `matrix(${scale}, 0, 0, ${scale}, ${moveX}, ${moveY}) rotate(${props.rotateAngle}deg)`;
       }
 
       return style;

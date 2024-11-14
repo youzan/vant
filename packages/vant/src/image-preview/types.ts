@@ -44,6 +44,7 @@ export type ImagePreviewScaleEventParams = {
 
 type ImagePreviewItemExpose = {
   resetScale: () => void;
+  updateRotate: (angle: number) => void;
 };
 
 export type ImagePreviewItemInstance = ComponentPublicInstance<

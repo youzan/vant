@@ -25,6 +25,7 @@ import {
   callInterceptor,
   createNamespace,
   HAPTICS_FEEDBACK,
+  makeNumberProp,
 } from '../utils';
 
 // Composables
@@ -78,6 +79,8 @@ export const imagePreviewProps = {
   closeOnClickOverlay: truthProp,
   closeIconPosition: makeStringProp<PopupCloseIconPosition>('top-right'),
   teleport: [String, Object] as PropType<TeleportProps['to']>,
+  rotate: Boolean,
+  rotationAngle: makeNumberProp(90),
 };
 
 export type ImagePreviewProps = ExtractPropTypes<typeof imagePreviewProps>;
@@ -98,7 +101,16 @@ export default defineComponent({
       rootWidth: 0,
       rootHeight: 0,
       disableZoom: false,
+      rotateAngles: [] as number[],
     });
+
+    const handleRotate = (direction: 'left' | 'right') => {
+      if (!props.rotate) return;
+      const angle = props.rotationAngle * (direction === 'left' ? -1 : 1);
+      // 更新当前图片的旋转角度
+      state.rotateAngles[state.active] =
+        (state.rotateAngles[state.active] || 0) + angle;
+    };
 
     const resize = () => {
       if (swipeRef.value) {
@@ -154,6 +166,31 @@ export default defineComponent({
       state.disableZoom = false;
     };
 
+    const renderRotateButtons = () => {
+      if (!props.rotate) return null;
+
+      return (
+        <div class={bem('rotate-buttons')}>
+          <button
+            class={bem('rotate-button')}
+            onClick={() => handleRotate('left')}
+          >
+            <Icon
+              role="button"
+              name="replay"
+              class={bem('rotate-icon--reverse')}
+            />
+          </button>
+          <button
+            class={bem('rotate-button')}
+            onClick={() => handleRotate('right')}
+          >
+            <Icon role="button" name="replay" />
+          </button>
+        </div>
+      );
+    };
+
     const renderImages = () => (
       <Swipe
         ref={swipeRef}
@@ -174,6 +211,7 @@ export default defineComponent({
             v-slots={{
               image: slots.image,
             }}
+            rotateAngle={state.rotateAngles[index]}
             ref={(item) => {
               if (index === state.active) {
                 activedPreviewItemRef.value = item as ImagePreviewItemInstance;
@@ -241,6 +279,7 @@ export default defineComponent({
       (value) => {
         const { images, startPosition } = props;
         if (value) {
+          state.rotateAngles = images.map(() => 0);
           setActive(+startPosition);
           nextTick(() => {
             resize();
@@ -266,6 +305,7 @@ export default defineComponent({
         {renderClose()}
         {renderImages()}
         {renderIndex()}
+        {renderRotateButtons()}
         {renderCover()}
       </Popup>
     );
