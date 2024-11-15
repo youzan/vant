@@ -142,7 +142,7 @@ export default defineComponent({
 
         return (
           <div
-            class={bem('header-subtitle', { 'with-swicth': canSwitch })}
+            class={bem('header-subtitle', { 'with-switch': canSwitch })}
             onClick={onClickSubtitle}
           >
             {canSwitch
