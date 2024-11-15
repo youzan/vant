@@ -48,11 +48,11 @@
   "dependencies": {
     "@babel/core": "^7.26.0",
     "@babel/preset-typescript": "^7.26.0",
-    "@rsbuild/core": "1.1.0",
+    "@rsbuild/core": "1.1.2",
     "@rsbuild/plugin-babel": "1.0.3",
     "@rsbuild/plugin-less": "1.1.0",
     "@rsbuild/plugin-sass": "1.1.0",
-    "@rsbuild/plugin-vue": "1.0.3",
+    "@rsbuild/plugin-vue": "1.0.5",
     "@rsbuild/plugin-vue-jsx": "1.0.1",
     "@vant/eslint-config": "workspace:^",
     "@vant/touch-emulator": "workspace:^",
@@ -76,14 +76,14 @@
     "markdown-it-anchor": "^9.2.0",
     "nano-staged": "^0.8.0",
     "picocolors": "^1.1.1",
-    "postcss": "^8.4.47",
+    "postcss": "^8.4.49",
     "postcss-load-config": "^6.0.1",
     "prettier": "^3.3.3",
     "rspack-plugin-virtual-module": "^0.1.13",
     "terser": "^5.36.0",
     "transliteration": "^2.3.5",
     "typescript": "^5.6.3",
-    "vite": "^5.4.10",
+    "vite": "^5.4.11",
     "vue-router": "^4.4.5"
   }
 }
