@@ -383,7 +383,8 @@ export default {
 | autocapitalize `v4.6.2` | HTML 原生属性，用于控制文本输入时是否自动大写，此 API 仅在部分浏览器支持，详见 [MDN - autocapitalize](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/autocapitalize) | _string_ | - |
 | enterkeyhint | HTML 原生属性，用于控制回车键样式，此 API 仅在部分浏览器支持，详见 [MDN - enterkeyhint](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/enterkeyhint)<br> | _string_ | - |
 | spellcheck `v4.6.2` | HTML 原生属性，用于检查元素的拼写错误，此 API 仅在部分浏览器支持，详见 [MDN - spellcheck](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/spellcheck)<br> | _boolean_ | - |
-| autocorrect `v4.6.2` | 仅 Safari 适用，用于自动更正输入的文本，详见 [MDN - autocorrect](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#autocorrect)<br> | _string_ | - |
+| autocorrect `v4.6.2` | HTML 原生属性，仅 Safari 适用，用于自动更正输入的文本，详见 [MDN - autocorrect](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#autocorrect)<br> | _string_ | - |
+| inputmode `v4.9.9` | HTML 原生属性，用于指定输入框的输入模式，详见 [MDN - inputmode](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/inputmode) | _string_ | 根据 `type` 属性自动设置 |
 
 ### Events
 
