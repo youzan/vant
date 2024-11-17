@@ -155,22 +155,22 @@ importers:
         specifier: ^7.26.0
         version: 7.26.0(@babel/core@7.26.0)
       '@rsbuild/core':
-        specifier: 1.1.2
+        specifier: ^1.1.2
         version: 1.1.2
       '@rsbuild/plugin-babel':
-        specifier: 1.0.3
+        specifier: ^1.0.3
         version: 1.0.3(@rsbuild/core@1.1.2)
       '@rsbuild/plugin-less':
-        specifier: 1.1.0
+        specifier: ^1.1.0
         version: 1.1.0(@rsbuild/core@1.1.2)
       '@rsbuild/plugin-sass':
-        specifier: 1.1.0
+        specifier: ^1.1.0
         version: 1.1.0(@rsbuild/core@1.1.2)
       '@rsbuild/plugin-vue':
-        specifier: 1.0.5
+        specifier: ^1.0.5
         version: 1.0.5(@rsbuild/core@1.1.2)(esbuild@0.24.0)(vue@3.5.12(typescript@5.6.3))
       '@rsbuild/plugin-vue-jsx':
-        specifier: 1.0.1
+        specifier: ^1.0.1
         version: 1.0.1(@babel/core@7.26.0)(@rsbuild/core@1.1.2)
       '@vant/eslint-config':
         specifier: workspace:^
@@ -1706,9 +1706,6 @@ packages:
   errno@0.1.8:
     resolution: {integrity: sha512-dJ6oBr5SQ1VSd9qkk7ByRgb/1SH4JZjCHSW/mr63/QcXO9zLVxvJ6Oy13nio03rxpSnVDDjFor75SjVeZWPW/A==}
     hasBin: true
-
-  es-module-lexer@1.5.0:
-    resolution: {integrity: sha512-pqrTKmwEIgafsYZAGw9kszYzmagcE/n4dbgwGWLEXg7J4QFJVQRBld8j3Q3GNez79jzxZshq0bcT962QHOghjw==}
 
   es-module-lexer@1.5.4:
     resolution: {integrity: sha512-MVNK56NiMrOwitFB7cqDwq0CQutbw+0BvLshJSse0MUNU+y1FC3bUS/AQg7oUng+/wKrrki7JfmwtVHkVfPLlw==}
@@ -4418,8 +4415,6 @@ snapshots:
       prr: 1.0.1
     optional: true
 
-  es-module-lexer@1.5.0: {}
-
   es-module-lexer@1.5.4: {}
 
   esbuild@0.21.5:
@@ -5260,7 +5255,7 @@ snapshots:
 
   rxjs@7.8.1:
     dependencies:
-      tslib: 2.6.2
+      tslib: 2.8.1
 
   safe-buffer@5.2.1: {}
 
@@ -5690,7 +5685,7 @@ snapshots:
       browserslist: 4.24.0
       chrome-trace-event: 1.0.3
       enhanced-resolve: 5.17.1
-      es-module-lexer: 1.5.0
+      es-module-lexer: 1.5.4
       eslint-scope: 5.1.1
       events: 3.3.0
       glob-to-regexp: 0.4.1
