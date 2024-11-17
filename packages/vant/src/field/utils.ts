@@ -91,27 +91,26 @@ export function resizeTextarea(
   }
 }
 
-export function mapInputType(type: FieldType): {
+export function mapInputType(
+  type: FieldType,
+  inputmode?: HTMLAttributes['inputmode'],
+): {
   type: InputHTMLAttributes['type'];
   inputmode?: HTMLAttributes['inputmode'];
 } {
   // type="number" is weird in iOS, and can't prevent dot in Android
   // so use inputmode to set keyboard in modern browsers
   if (type === 'number') {
-    return {
-      type: 'text',
-      inputmode: 'decimal',
-    };
+    type = 'text';
+    inputmode ??= 'decimal';
   }
 
   if (type === 'digit') {
-    return {
-      type: 'tel',
-      inputmode: 'numeric',
-    };
+    type = 'tel';
+    inputmode ??= 'numeric';
   }
 
-  return { type };
+  return { type, inputmode };
 }
 
 // get correct length of emoji
