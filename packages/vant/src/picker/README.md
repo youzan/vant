@@ -276,11 +276,27 @@ export default {
 };
 ```
 
+### Empty content
+
+When the data is empty, you can use the `empty` slot to customize the empty content.
+
+```html
+<van-picker title="Title">
+  <template #empty>
+    <van-empty
+      image="https://fastly.jsdelivr.net/npm/@vant/assets/custom-empty-image.png"
+      image-size="80"
+      description="No data"
+    />
+  </template>
+</van-picker>
+```
+
 ### Custom Columns Field
 
 ```html
 <van-picker
-  :title="Title"
+  title="Title"
   :columns="columns"
   :columns-field-names="customFieldName"
 />
@@ -374,6 +390,7 @@ export default {
 | option | Custom option content | _option: PickerOption, index: number_ |
 | columns-top | Custom content above columns | - |
 | columns-bottom | Custom content below columns | - |
+| empty `v4.9.10` | Custom empty content | - |
 
 ### Data Structure of PickerOption
 

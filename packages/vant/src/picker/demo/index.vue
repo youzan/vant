@@ -12,6 +12,7 @@ import {
   disabledColumns,
   customKeyColumns,
 } from './data';
+import VanEmpty from '../../empty';
 import { showToast } from '../../toast';
 import { useTranslate } from '../../../docs/site';
 
@@ -29,6 +30,7 @@ const t = useTranslate({
     multipleColumns: '多列选择',
     customChildrenKey: '自定义 Columns 结构',
     customChildrenColumns: customKeyColumns['zh-CN'],
+    emptyDescription: '暂无数据',
     toastContent: (value: string) => `当前值：${value}`,
   },
   'en-US': {
@@ -44,6 +46,7 @@ const t = useTranslate({
     multipleColumns: 'Multiple Columns',
     customChildrenKey: 'Custom Columns Fields',
     customChildrenColumns: customKeyColumns['en-US'],
+    emptyDescription: 'No data',
     toastContent: (value: string) => `Value: ${value}`,
   },
 });
@@ -107,6 +110,18 @@ const onCancel = () => showToast(t('cancel'));
 
   <demo-block card :title="t('loadingStatus')">
     <van-picker loading :title="t('title')" />
+  </demo-block>
+
+  <demo-block card :title="t('emptyStatus')">
+    <van-picker :title="t('title')">
+      <template #empty>
+        <van-empty
+          image="https://fastly.jsdelivr.net/npm/@vant/assets/custom-empty-image.png"
+          image-size="80"
+          :description="t('emptyDescription')"
+        />
+      </template>
+    </van-picker>
   </demo-block>
 
   <demo-block card :title="t('customChildrenKey')">
