@@ -3,7 +3,7 @@ import VanCell from '../../cell';
 import VanCalendar from '..';
 import { reactive, ref } from 'vue';
 import { useTranslate } from '../../../docs/site';
-import SwicthModeField from './SwicthModeField.vue';
+import SwitchModeField from './SwitchModeField.vue';
 import TiledDisplay from './TiledDisplay.vue';
 import type { CalendarDayItem, CalendarSwitchMode } from '../types';
 
@@ -197,7 +197,7 @@ const switchMode = ref<CalendarSwitchMode>('none');
 </script>
 
 <template>
-  <SwicthModeField v-model="switchMode" />
+  <SwitchModeField v-model="switchMode" />
 
   <demo-block card :title="t('basicUsage')">
     <van-cell
