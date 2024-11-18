@@ -462,12 +462,12 @@ test('should reset scale after calling the resetScale method', async () => {
   expect(image.style.transform).toBeFalsy();
 });
 
-test('should render rotate buttons when rotate prop is true', async () => {
+test('should render rotate buttons when rotate prop is number', async () => {
   const wrapper = mount(ImagePreview, {
     props: {
       show: true,
       images,
-      rotate: true,
+      rotate: 90,
     },
   });
 
@@ -480,12 +480,11 @@ test('should render rotate buttons when rotate prop is true', async () => {
   ).toBeTruthy();
 });
 
-test('should not render rotate buttons when rotate prop is false', () => {
+test('should not render rotate buttons when rotate prop is null', () => {
   const wrapper = mount(ImagePreview, {
     props: {
       show: true,
       images,
-      rotate: false,
     },
   });
 
@@ -499,17 +498,27 @@ test('should respect custom rotation angle', async () => {
     props: {
       show: true,
       images,
-      rotate: true,
-      rotationAngle: 45,
+      rotate: 45,
     },
   });
-
   await later();
   const rotateButtons = wrapper.findAll('.van-image-preview__rotate-button');
 
   await rotateButtons[1].trigger('click');
   await nextTick();
-  expect(
-    wrapper.find('.van-image-preview__image').element.style.transform,
-  ).toContain('rotate(45deg)');
+
+  const transformStyle = wrapper.find('.van-image-preview__image').element.style
+    .transform;
+  const matches = transformStyle.match(
+    /matrix\(([-\d.]+), ([-\d.]+), ([-\d.]+), ([-\d.]+), ([-\d.]+), ([-\d.]+)\)/,
+  );
+  const actualMatrix = matches
+    ? matches
+        .slice(1, 7)
+        .map((n: string) => Number(n).toFixed(6))
+        .join(', ')
+    : '';
+  expect(actualMatrix).toBe(
+    '0.707107, 0.707107, -0.707107, 0.707107, 0.000000, 0.000000',
+  );
 });

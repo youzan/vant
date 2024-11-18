@@ -79,8 +79,7 @@ export const imagePreviewProps = {
   closeOnClickOverlay: truthProp,
   closeIconPosition: makeStringProp<PopupCloseIconPosition>('top-right'),
   teleport: [String, Object] as PropType<TeleportProps['to']>,
-  rotate: Boolean,
-  rotationAngle: makeNumberProp(90),
+  rotate: makeNumberProp(0),
 };
 
 export type ImagePreviewProps = ExtractPropTypes<typeof imagePreviewProps>;
@@ -105,8 +104,8 @@ export default defineComponent({
     });
 
     const handleRotate = (direction: 'left' | 'right') => {
-      if (!props.rotate) return;
-      const angle = props.rotationAngle * (direction === 'left' ? -1 : 1);
+      if (props.rotate === 0) return;
+      const angle = props.rotate * (direction === 'left' ? -1 : 1);
       // 更新当前图片的旋转角度
       state.rotateAngles[state.active] =
         (state.rotateAngles[state.active] || 0) + angle;
@@ -167,7 +166,7 @@ export default defineComponent({
     };
 
     const renderRotateButtons = () => {
-      if (!props.rotate) return null;
+      if (props.rotate === 0) return null;
 
       return (
         <div class={bem('rotate-buttons')}>

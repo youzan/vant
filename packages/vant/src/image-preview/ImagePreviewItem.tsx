@@ -89,21 +89,60 @@ export default defineComponent({
 
     let initialMoveY = 0;
 
+    const getRotatedDimensions = (
+      width: number,
+      height: number,
+      angle: number,
+    ) => {
+      const radians = (Math.abs(angle) * Math.PI) / 180;
+      const sin = Math.sin(radians);
+      const cos = Math.cos(radians);
+      const rotatedWidth = Math.abs(width * cos) + Math.abs(height * sin);
+      const rotatedHeight = Math.abs(width * sin) + Math.abs(height * cos);
+      return { width: rotatedWidth, height: rotatedHeight };
+    };
+
+    const getContainScale = computed(() => {
+      if (!state.imageRatio) return 1;
+      const { rootWidth, rootHeight, rotateAngle } = props;
+      const naturalWidth = rootWidth;
+      const naturalHeight = naturalWidth * state.imageRatio;
+      const rotated = getRotatedDimensions(
+        naturalWidth,
+        naturalHeight,
+        rotateAngle,
+      );
+      const scaleX = rootWidth / rotated.width;
+      const scaleY = rootHeight / rotated.height;
+      return Math.min(scaleX, scaleY);
+    });
+
     const imageStyle = computed(() => {
       const { scale, moveX, moveY, moving, zooming, initializing } = state;
       const style: CSSProperties = {
         transitionDuration: zooming || moving || initializing ? '0s' : '.3s',
       };
+
       const transforms: string[] = [];
-      if (scale !== 1 || isLongImage.value) {
-        transforms.push(`matrix(${scale}, 0, 0, ${scale}, ${moveX}, ${moveY})`);
+      const actualScale = scale * getContainScale.value;
+
+      if (actualScale !== 1 || isLongImage.value) {
+        transforms.push(
+          `matrix(${actualScale}, 0, 0, ${actualScale}, ${moveX}, ${moveY})`,
+        );
       }
+
       if (props.rotateAngle !== 0) {
-        transforms.push(`rotate(${props.rotateAngle}deg)`);
+        const angle = (props.rotateAngle * Math.PI) / 180;
+        const cos = Math.cos(angle);
+        const sin = Math.sin(angle);
+        transforms.push(`matrix(${cos}, ${sin}, ${-sin}, ${cos}, 0, 0)`);
       }
+
       if (transforms.length) {
         style.transform = transforms.join(' ');
       }
+
       return style;
     });
 
@@ -134,7 +173,12 @@ export default defineComponent({
     });
 
     const setScale = (scale: number, center?: { x: number; y: number }) => {
-      scale = clamp(scale, +props.minZoom, +props.maxZoom + 1);
+      const baseScale = getContainScale.value;
+      scale = clamp(
+        scale,
+        +props.minZoom * baseScale,
+        +props.maxZoom * baseScale,
+      );
 
       if (scale !== state.scale) {
         const ratio = scale / state.scale;
