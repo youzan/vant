@@ -39,19 +39,19 @@
   "license": "MIT",
   "devDependencies": {
     "@types/fs-extra": "^11.0.4",
-    "@types/less": "^3.0.6",
+    "@types/less": "^3.0.7",
     "@types/lodash": "^4.17.13",
     "@types/markdown-it": "^14.1.2",
     "rimraf": "^6.0.1",
-    "vue": "^3.5.12"
+    "vue": "^3.5.13"
   },
   "dependencies": {
     "@babel/core": "^7.26.0",
     "@babel/preset-typescript": "^7.26.0",
-    "@rsbuild/core": "^1.1.2",
+    "@rsbuild/core": "^1.1.4",
     "@rsbuild/plugin-babel": "^1.0.3",
     "@rsbuild/plugin-less": "^1.1.0",
-    "@rsbuild/plugin-sass": "^1.1.0",
+    "@rsbuild/plugin-sass": "^1.1.1",
     "@rsbuild/plugin-vue": "^1.0.5",
     "@rsbuild/plugin-vue-jsx": "^1.0.1",
     "@vant/eslint-config": "workspace:^",
@@ -69,7 +69,7 @@
     "fs-extra": "^11.2.0",
     "hash-sum": "^2.0.0",
     "highlight.js": "^11.10.0",
-    "husky": "^9.1.6",
+    "husky": "^9.1.7",
     "less": "^4.2.0",
     "lodash": "^4.17.21",
     "markdown-it": "^14.1.0",
