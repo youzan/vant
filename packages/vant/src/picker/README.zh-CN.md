@@ -81,8 +81,9 @@ export default {
   placeholder="选择城市"
   @click="showPicker = true"
 />
-<van-popup v-model:show="showPicker" round position="bottom">
+<van-popup v-model:show="showPicker" destroy-on-close round position="bottom">
   <van-picker
+    :model-value="pickerValue"
     :columns="columns"
     @cancel="showPicker = false"
     @confirm="onConfirm"
@@ -104,9 +105,10 @@ export default {
     ];
     const fieldValue = ref('');
     const showPicker = ref(false);
-
-    const onConfirm = ({ selectedOptions }) => {
+    const pickerValue = ref<Numeric[]>([]);
+    const onConfirm = ({ selectedValues, selectedOptions }) => {
       showPicker.value = false;
+      pickerValue.value = selectedValues;
       fieldValue.value = selectedOptions[0].text;
     };
 

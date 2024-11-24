@@ -71,8 +71,9 @@ export default {
   placeholder="Choose City"
   @click="showPicker = true"
 />
-<van-popup v-model:show="showPicker" round position="bottom">
+<van-popup v-model:show="showPicker" destroy-on-close round position="bottom">
   <van-picker
+    :model-value="pickerValue"
     title="Title"
     :columns="columns"
     @cancel="showPicker = false"
@@ -94,10 +95,12 @@ export default {
       { text: 'Maine', value: 'Maine' },
     ];
     const fieldValue = ref('');
+    const pickerValue = ref<Numeric[]>([]);
     const showPicker = ref(false);
 
-    const onConfirm = ({ selectedOptions }) => {
+    const onConfirm = ({ selectedValues, selectedOptions }) => {
       showPicker.value = false;
+      pickerValue.value = selectedValues;
       fieldValue.value = selectedOptions[0].text;
     };
 

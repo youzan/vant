@@ -283,3 +283,23 @@ test('should have safe-area-inset-bottom class when using safe-area-inset-bottom
     'van-safe-area-bottom',
   );
 });
+
+test('should destroy content when using destroyOnClose prop', async () => {
+  const wrapper = mount(Popup, {
+    props: {
+      show: false,
+      destroyOnClose: true,
+    },
+    slots: {
+      default: () => <div class="foo" />,
+    },
+  });
+
+  expect(wrapper.find('.foo').exists()).toBeFalsy();
+
+  await wrapper.setProps({ show: true });
+  expect(wrapper.find('.foo').exists()).toBeTruthy();
+
+  await wrapper.setProps({ show: false });
+  expect(wrapper.find('.foo').exists()).toBeFalsy();
+});

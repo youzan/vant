@@ -21,10 +21,15 @@ const t = useTranslate({
 });
 
 const result = ref<Numeric>('');
+const pickerValue = ref<Numeric[]>([]);
 const showPicker = ref(false);
 
-const onConfirm = ({ selectedOptions }: PickerConfirmEventParams) => {
+const onConfirm = ({
+  selectedValues,
+  selectedOptions,
+}: PickerConfirmEventParams) => {
   result.value = selectedOptions[0]?.text || '';
+  pickerValue.value = selectedValues;
   showPicker.value = false;
 };
 
@@ -43,8 +48,15 @@ const onCancel = () => {
     :placeholder="t('placeholder')"
     @click="showPicker = true"
   />
-  <van-popup v-model:show="showPicker" round position="bottom" teleport="body">
+  <van-popup
+    v-model:show="showPicker"
+    destroy-on-close
+    round
+    position="bottom"
+    teleport="body"
+  >
     <van-picker
+      :model-value="pickerValue"
       :columns="t('textColumns')"
       @confirm="onConfirm"
       @cancel="onCancel"
