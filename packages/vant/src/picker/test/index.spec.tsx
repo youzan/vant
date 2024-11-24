@@ -420,3 +420,23 @@ test('should allow to skip rendering confirm and cancel buttons', async () => {
   expect(wrapper.find('.van-picker__confirm').exists()).toBeFalsy();
   expect(wrapper.find('.van-picker__cancel').exists()).toBeFalsy();
 });
+
+test('should render empty slot when options is empty', async () => {
+  const wrapper = mount(Picker, {
+    props: {
+      loading: true,
+      columns: [[], []],
+    },
+    slots: {
+      empty: () => <div>empty content</div>,
+    },
+  });
+
+  expect(wrapper.html()).not.toContain('empty content');
+
+  await wrapper.setProps({ loading: false });
+  expect(wrapper.html()).toContain('empty content');
+
+  await wrapper.setProps({ columns: [{ values: ['foo'] }] });
+  expect(wrapper.html()).not.toContain('empty content');
+});

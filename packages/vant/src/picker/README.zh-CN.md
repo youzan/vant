@@ -297,11 +297,27 @@ export default {
 };
 ```
 
+### 空状态
+
+当数据为空时，可以使用 `empty` 插槽自定义空状态内容。
+
+```html
+<van-picker title="标题">
+  <template #empty>
+    <van-empty
+      image="https://fastly.jsdelivr.net/npm/@vant/assets/custom-empty-image.png"
+      image-size="80"
+      description="No data"
+    />
+  </template>
+</van-picker>
+```
+
 ### 自定义 Columns 的结构
 
 ```html
 <van-picker
-  :title="标题"
+  title="标题"
   :columns="columns"
   :columns-field-names="customFieldName"
 />
@@ -395,6 +411,7 @@ export default {
 | option | 自定义选项内容 | _option: PickerOption, index: number_ |
 | columns-top | 自定义选项上方内容 | - |
 | columns-bottom | 自定义选项下方内容 | - |
+| empty `v4.9.10` | 自定义空状态内容 | - |
 
 ### PickerOption 数据结构
 
