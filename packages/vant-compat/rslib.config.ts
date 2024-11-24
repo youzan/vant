@@ -2,8 +2,8 @@ import { defineConfig } from '@rslib/core';
 
 export default defineConfig({
   lib: [
-    { format: 'esm', syntax: 'es6', dts: true },
-    { format: 'cjs', syntax: 'es6' },
+    { format: 'esm', syntax: ['Chrome 53'], dts: true },
+    { format: 'cjs', syntax: ['Chrome 53'] },
   ],
   output: {
     target: 'web',
