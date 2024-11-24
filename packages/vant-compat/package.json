@@ -2,13 +2,13 @@
   "name": "@vant/compat",
   "version": "1.0.1",
   "description": "Provide Vant 3 compatible behavior for Vant 4",
-  "main": "dist/index.cjs.js",
-  "module": "dist/index.esm.mjs",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
   "exports": {
     ".": {
-      "import": "./dist/index.esm.mjs",
-      "require": "./dist/index.cjs.js"
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
     }
   },
   "sideEffects": false,
@@ -20,11 +20,8 @@
     "registry": "https://registry.npmjs.org/"
   },
   "scripts": {
-    "clean": "rimraf ./dist",
-    "dev": "node ./build.js -w",
-    "build:types": "tsc -p ./tsconfig.json --emitDeclarationOnly",
-    "build:bundle": "node ./build.js",
-    "build": "pnpm clean && pnpm build:bundle && pnpm build:types",
+    "dev": "rslib dev",
+    "build": "rslib build",
     "release": "vant-cli release"
   },
   "repository": {
@@ -36,11 +33,10 @@
   "author": "chenjiahan",
   "license": "MIT",
   "devDependencies": {
+    "@rslib/core": "^0.1.0",
     "@vue/runtime-core": "^3.5.13",
+    "typescript": "^5.6.3",
     "vant": "workspace:*",
-    "vue": "^3.5.13",
-    "esbuild": "^0.24.0",
-    "rimraf": "^6.0.1",
-    "typescript": "^5.6.3"
+    "vue": "^3.5.13"
   }
 }
