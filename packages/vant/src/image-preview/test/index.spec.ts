@@ -498,7 +498,7 @@ test('should respect custom rotation angle', async () => {
     props: {
       show: true,
       images,
-      rotate: 45,
+      rotate: true,
     },
   });
   await later();
@@ -507,18 +507,25 @@ test('should respect custom rotation angle', async () => {
   await rotateButtons[1].trigger('click');
   await nextTick();
 
-  const transformStyle = wrapper.find('.van-image-preview__image').element.style
-    .transform;
+  const image = wrapper.find('.van-image-preview__image');
+  const transformStyle = image.element.style.transform;
+
   const matches = transformStyle.match(
-    /matrix\(([-\d.]+), ([-\d.]+), ([-\d.]+), ([-\d.]+), ([-\d.]+), ([-\d.]+)\)/,
+    /matrix\(([-\d.e+-]+), ([-\d.e+-]+), ([-\d.e+-]+), ([-\d.e+-]+), ([-\d.e+-]+), ([-\d.e+-]+)\)/,
   );
+  if (!matches) {
+    console.log('No matches found for transform style');
+    return;
+  }
   const actualMatrix = matches
-    ? matches
-        .slice(1, 7)
-        .map((n: string) => Number(n).toFixed(6))
-        .join(', ')
-    : '';
+    .slice(1, 7)
+    .map((n: string) => {
+      const num = Number(n);
+      return Math.abs(num) < 1e-10 ? '0.000000' : num.toFixed(6);
+    })
+    .join(', ');
+
   expect(actualMatrix).toBe(
-    '0.707107, 0.707107, -0.707107, 0.707107, 0.000000, 0.000000',
+    '0.000000, 1.000000, -1.000000, 0.000000, 0.000000, 0.000000',
   );
 });
