@@ -248,7 +248,7 @@ You can use Popover as a controlled or uncontrolled component:
 - When `v-model:show` is not used, Popover is an uncontrolled component. You can pass in a default value through the `show` prop, and the display is controlled by the component itself.
 
 ```html
-<van-popover :actions="actions" position="top-start" @select="onSelect">
+<van-popover :actions="actions" placement="top-start" @select="onSelect">
   <template #reference>
     <van-button type="primary">Uncontrolled</van-button>
   </template>

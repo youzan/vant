@@ -328,8 +328,9 @@ export default {
   placeholder="Select city"
   @click="showPicker = true"
 />
-<van-popup v-model:show="showPicker" position="bottom">
+<van-popup v-model:show="showPicker" destroy-on-close position="bottom">
   <van-picker
+    :model-value="pickerValue"
     :columns="columns"
     @confirm="onConfirm"
     @cancel="showPicker = false"
@@ -343,6 +344,7 @@ import { ref } from 'vue';
 export default {
   setup() {
     const result = ref('');
+    const pickerValue = ref([]);
     const showPicker = ref(false);
     const columns = [
       { text: 'Delaware', value: 'Delaware' },
@@ -352,13 +354,15 @@ export default {
       { text: 'Maine', value: 'Maine' },
     ];
 
-    const onConfirm = ({ selectedOptions }) => {
+    const onConfirm = ({ selectedValues, selectedOptions }) => {
       result.value = selectedOptions[0]?.text;
+      pickerValue.value = selectedValues;
       showPicker.value = false;
     };
 
     return {
       result,
+      pickerValue,
       columns,
       onConfirm,
       showPicker,
@@ -379,8 +383,12 @@ export default {
   placeholder="Select date"
   @click="showPicker = true"
 />
-<van-popup v-model:show="showPicker" position="bottom">
-  <van-date-picker @confirm="onConfirm" @cancel="showPicker = false" />
+<van-popup v-model:show="showPicker" destroy-on-close position="bottom">
+  <van-date-picker
+    :model-value="pickerValue"
+    @confirm="onConfirm"
+    @cancel="showPicker = false"
+  />
 </van-popup>
 ```
 
@@ -391,13 +399,16 @@ export default {
   setup() {
     const result = ref('');
     const showPicker = ref(false);
+    const pickerValue = ref<string[]>([]);
     const onConfirm = ({ selectedValues }) => {
       result.value = selectedValues.join('/');
+      pickerValue.value = selectedValues;
       showPicker.value = false;
     };
 
     return {
       result,
+      pickerValue,
       onConfirm,
       showPicker,
     };
@@ -417,9 +428,10 @@ export default {
   placeholder="Select area"
   @click="showArea = true"
 />
-<van-popup v-model:show="showArea" position="bottom">
+<van-popup v-model:show="showArea" destroy-on-close position="bottom">
   <van-area
     :area-list="areaList"
+    :model-value="pickerValue"
     @confirm="onConfirm"
     @cancel="showArea = false"
   />
@@ -434,7 +446,11 @@ export default {
   setup() {
     const result = ref('');
     const showArea = ref(false);
-    const onConfirm = ({ selectedOptions }) => {
+    const pickerValue = ref('');
+    const onConfirm = ({ selectedValues, selectedOptions }) => {
+      pickerValue.value = selectedValues.length
+        ? selectedValues[selectedValues.length - 1]
+        : '';
       showArea.value = false;
       result.value = selectedOptions.map((item) => item.text).join('/');
     };
@@ -442,6 +458,7 @@ export default {
     return {
       result,
       areaList,
+      pickerValue,
       showArea,
       onConfirm,
     };

@@ -50,6 +50,7 @@ export const popupProps = extend({}, popupSharedProps, {
   iconPrefix: String,
   closeOnPopstate: Boolean,
   closeIconPosition: makeStringProp<PopupCloseIconPosition>('top-right'),
+  destroyOnClose: Boolean,
   safeAreaInsetTop: Boolean,
   safeAreaInsetBottom: Boolean,
 });
@@ -186,11 +187,22 @@ export default defineComponent({
     const onKeydown = (event: KeyboardEvent) => emit('keydown', event);
 
     const renderPopup = lazyRender(() => {
-      const { round, position, safeAreaInsetTop, safeAreaInsetBottom } = props;
+      const {
+        destroyOnClose,
+        round,
+        position,
+        safeAreaInsetTop,
+        safeAreaInsetBottom,
+        show,
+      } = props;
+
+      if (!show && destroyOnClose) {
+        return;
+      }
 
       return (
         <div
-          v-show={props.show}
+          v-show={show}
           ref={popupRef}
           style={style.value}
           role="dialog"
