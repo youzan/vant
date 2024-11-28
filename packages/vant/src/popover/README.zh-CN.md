@@ -258,7 +258,7 @@ export default {
 - 当未绑定 `v-model:show` 时，Popover 为非受控组件，此时你可以通过 `show` 属性传入一个默认值，组件值的显示由组件自身控制。
 
 ```html
-<van-popover :actions="actions" position="top-start" @select="onSelect">
+<van-popover :actions="actions" placement="top-start" @select="onSelect">
   <template #reference>
     <van-button type="primary">非受控模式</van-button>
   </template>

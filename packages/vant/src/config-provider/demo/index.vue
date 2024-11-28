@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref } from 'vue';
+import { ref, onActivated } from 'vue';
 import VanCell from '../../cell';
 import VanForm from '../../form';
 import VanField from '../../field';
@@ -44,6 +44,17 @@ const themeVars = {
   buttonPrimaryBackground: '#07c160',
   buttonPrimaryBorderColor: '#07c160',
 };
+// fix https://github.com/youzan/vant/issues/13179
+const removeUselessStyle = () => {
+  const element = document.documentElement;
+  if (
+    element.classList.contains('van-theme-dark') &&
+    element.classList.contains('van-theme-light')
+  ) {
+    element.classList.remove('van-theme-light');
+  }
+};
+onActivated(removeUselessStyle);
 </script>
 
 <template>

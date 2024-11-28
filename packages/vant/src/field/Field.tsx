@@ -9,6 +9,7 @@ import {
   defineComponent,
   type PropType,
   type ExtractPropTypes,
+  type HTMLAttributes,
 } from 'vue';
 
 // Utils
@@ -112,6 +113,7 @@ export const fieldSharedProps = {
     type: Boolean,
     default: null,
   },
+  inputmode: String as PropType<HTMLAttributes['inputmode']>,
 };
 
 export const fieldProps = extend({}, cellSharedProps, fieldSharedProps, {
@@ -539,10 +541,12 @@ export default defineComponent({
       };
 
       if (props.type === 'textarea') {
-        return <textarea {...inputAttrs} />;
+        return <textarea {...inputAttrs} inputmode={props.inputmode} />;
       }
 
-      return <input {...mapInputType(props.type)} {...inputAttrs} />;
+      return (
+        <input {...mapInputType(props.type, props.inputmode)} {...inputAttrs} />
+      );
     };
 
     const renderLeftIcon = () => {

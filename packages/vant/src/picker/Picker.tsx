@@ -241,6 +241,11 @@ export default defineComponent({
     const renderColumns = () => {
       const wrapHeight = optionHeight.value * +props.visibleOptionNum;
       const columnsStyle = { height: `${wrapHeight}px` };
+
+      if (!props.loading && !hasOptions.value && slots.empty) {
+        return slots.empty();
+      }
+
       return (
         <div ref={columnsRef} class={bem('columns')} style={columnsStyle}>
           {renderColumnItems()}

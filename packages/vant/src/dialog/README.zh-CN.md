@@ -182,6 +182,7 @@ Vant 中导出了以下 Dialog 相关的辅助函数：
 | beforeClose | 关闭前的回调函数，返回 `false` 可阻止关闭，支持返回 Promise | _(action: string) => boolean \| Promise\<boolean\>_ | - |
 | transition | 动画类名，等价于 [transition](https://cn.vuejs.org/api/built-in-components.html#transition) 的 `name` 属性 | _string_ | - |
 | teleport | 指定挂载的节点，等同于 Teleport 组件的 [to 属性](https://cn.vuejs.org/api/built-in-components.html#teleport) | _string \| Element_ | `body` |
+| keyboardEnabled | 是否启用键盘能力，在展示确认和取消按钮的时候，默认情况下键盘的 `Enter` 和 `Esc` 会执行 `confirm` 和 `cancel` 函数 | _boolean_ | `true` |
 
 ### Props
 
@@ -215,6 +216,7 @@ Vant 中导出了以下 Dialog 相关的辅助函数：
 | before-close | 关闭前的回调函数，返回 `false` 可阻止关闭，支持返回 Promise | _(action: string) => boolean \| Promise\<boolean\>_ | - |
 | transition | 动画类名，等价于 [transition](https://cn.vuejs.org/api/built-in-components.html#transition) 的 `name` 属性 | _string_ | - |
 | teleport | 指定挂载的节点，等同于 Teleport 组件的 [to 属性](https://cn.vuejs.org/api/built-in-components.html#teleport) | _string \| Element_ | - |
+| keyboard-enabled | 是否启用键盘能力，在展示确认和取消按钮的时候，默认情况下键盘的 `Enter` 和 `Esc` 会执行 `confirm` 和 `cancel` 函数 | _boolean_ | `true` |
 
 ### Events
 

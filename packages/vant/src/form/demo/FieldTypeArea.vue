@@ -22,10 +22,17 @@ const t = useTranslate({
 });
 
 const areaCode = ref('');
+const pickerValue = ref('');
 const showArea = ref(false);
 
-const onConfirm = ({ selectedOptions }: PickerConfirmEventParams) => {
+const onConfirm = ({
+  selectedValues,
+  selectedOptions,
+}: PickerConfirmEventParams) => {
   areaCode.value = selectedOptions.map((item) => item!.text).join('/');
+  pickerValue.value = selectedValues.length
+    ? (selectedValues[selectedValues.length - 1] as string)
+    : '';
   showArea.value = false;
 };
 
@@ -44,9 +51,16 @@ const onCancel = () => {
     :placeholder="t('placeholder')"
     @click="showArea = true"
   />
-  <van-popup v-model:show="showArea" round position="bottom" teleport="body">
+  <van-popup
+    v-model:show="showArea"
+    destroy-on-close
+    round
+    position="bottom"
+    teleport="body"
+  >
     <van-area
       :area-list="t('areaList')"
+      :model-value="pickerValue"
       @confirm="onConfirm"
       @cancel="onCancel"
     />
