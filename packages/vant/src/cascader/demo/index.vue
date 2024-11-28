@@ -110,11 +110,11 @@ const customContentState = reactive<StateItem>({
   result: '',
 });
 
-const checkStrictlyState = reactive<StateItem>({
-  show: false,
-  value: undefined,
-  result: '',
-});
+// const checkStrictlyState = reactive<StateItem>({
+//   show: false,
+//   value: undefined,
+//   result: '',
+// });
 
 const customFieldOptions = computed(() => {
   const options = deepClone(t('options'));
@@ -325,7 +325,7 @@ const onFinish = (
     </van-popup>
   </demo-block>
 
-  <demo-block card :title="t('checkStrictly')">
+  <!-- <demo-block card :title="t('checkStrictly')">
     <van-field
       v-model="checkStrictlyState.result"
       is-link
@@ -346,9 +346,10 @@ const onFinish = (
         :options="t('options')"
         @close="checkStrictlyState.show = false"
         @finish="onFinish(checkStrictlyState, $event)"
+        :check-strictly="true"
       />
     </van-popup>
-  </demo-block>
+  </demo-block> -->
 </template>
 
 <style lang="less">
