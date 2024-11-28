@@ -110,6 +110,12 @@ const customContentState = reactive<StateItem>({
   result: '',
 });
 
+const checkStrictlyState = reactive<StateItem>({
+  show: false,
+  value: undefined,
+  result: '',
+});
+
 const customFieldOptions = computed(() => {
   const options = deepClone(t('options'));
   const adjustFieldName = (item: CascaderOption) => {
@@ -316,6 +322,31 @@ const onFinish = (
           <div class="current-level">{{ t('currentLevel', tabIndex + 1) }}</div>
         </template>
       </van-cascader>
+    </van-popup>
+  </demo-block>
+
+  <demo-block card :title="t('checkStrictly')">
+    <van-field
+      v-model="checkStrictlyState.result"
+      is-link
+      readonly
+      :label="t('area')"
+      :placeholder="t('selectArea')"
+      @click="checkStrictlyState.show = true"
+    />
+    <van-popup
+      v-model:show="checkStrictlyState.show"
+      round
+      teleport="body"
+      position="bottom"
+    >
+      <van-cascader
+        v-model="checkStrictlyState.value"
+        :title="t('selectArea')"
+        :options="t('options')"
+        @close="checkStrictlyState.show = false"
+        @finish="onFinish(checkStrictlyState, $event)"
+      />
     </van-popup>
   </demo-block>
 </template>

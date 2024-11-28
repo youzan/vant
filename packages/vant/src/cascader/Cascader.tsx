@@ -9,6 +9,7 @@ import {
 import {
   extend,
   truthProp,
+  falseProp,
   numericProp,
   makeArrayProp,
   makeStringProp,
@@ -24,6 +25,7 @@ import { useRefs } from '../composables/use-refs';
 import { Tab } from '../tab';
 import { Tabs } from '../tabs';
 import { Icon } from '../icon';
+import { Button } from '../button';
 
 // Types
 import type { TabsClickTabEventParams } from '../tabs/types';
@@ -42,6 +44,7 @@ export const cascaderProps = {
   fieldNames: Object as PropType<CascaderFieldNames>,
   placeholder: String,
   activeColor: String,
+  checkStrictly: falseProp,
 };
 
 export type CascaderProps = ExtractPropTypes<typeof cascaderProps>;
@@ -58,6 +61,7 @@ export default defineComponent({
     const activeTab = ref(0);
     const [selectedElementRefs, setSelectedElementRefs] =
       useRefs<HTMLElement>();
+    const checkStrictlyData = ref();
 
     const {
       text: textKey,
@@ -125,10 +129,11 @@ export default defineComponent({
             });
           }
 
-          nextTick(() => {
-            activeTab.value = tabs.value.length - 1;
-          });
-
+          if (!props.checkStrictly) {
+            nextTick(() => {
+              activeTab.value = tabs.value.length - 1;
+            });
+          }
           return;
         }
       }
@@ -145,7 +150,6 @@ export default defineComponent({
       if (option.disabled) {
         return;
       }
-
       tabs.value[tabIndex].selected = option;
 
       if (tabs.value.length > tabIndex + 1) {
@@ -164,16 +168,25 @@ export default defineComponent({
           tabs.value.push(nextTab);
         }
 
-        nextTick(() => {
-          activeTab.value++;
-        });
+        if (!props.checkStrictly) {
+          nextTick(() => {
+            activeTab.value++;
+          });
+        }
       }
 
       const selectedOptions = tabs.value
         .map((tab) => tab.selected)
         .filter(Boolean);
-
       emit('update:modelValue', option[valueKey]);
+
+      if (props.checkStrictly) {
+        checkStrictlyData.value = {
+          value: option[valueKey],
+          tabIndex,
+          selectedOptions,
+        };
+      }
 
       const params = {
         value: option[valueKey],
@@ -189,6 +202,10 @@ export default defineComponent({
 
     const onClose = () => emit('close');
 
+    const confirmBtn = () => {
+      emit('finish', checkStrictlyData.value);
+    };
+
     const onClickTab = ({ name, title }: TabsClickTabEventParams) =>
       emit('clickTab', name, title);
 
@@ -198,7 +215,12 @@ export default defineComponent({
           <h2 class={bem('title')}>
             {slots.title ? slots.title() : props.title}
           </h2>
-          {props.closeable ? (
+          {props.checkStrictly ? (
+            <Button type="default" onClick={confirmBtn}>
+              {t('confirm')}
+            </Button>
+          ) : null}
+          {props.closeable && !props.checkStrictly ? (
             <Icon
               name={props.closeIcon}
               class={[bem('close-icon'), HAPTICS_FEEDBACK]}
