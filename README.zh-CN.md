@@ -137,6 +137,7 @@ Vant 3/4 支持现代浏览器以及 Chrome >= 51、iOS >= 10.0（与 Vue 3 一�
 | [vue3-h5-template](https://github.com/yulimchen/vue3-h5-template) | 基于 Vant 的移动端项目模板 |
 | [vue3-vant-mobile](https://github.com/easy-temps/vue3-vant-mobile) | 基于 Vant 的移动端项目模板 |
 | [vscode-common-intellisense](https://github.com/Simon-He95/vscode-common-intellisense) | VS Code 扩展，为 Vant 开发者提供更好的智能感知 |
+| [nuxt-vant-mobile](https://github.com/easy-temps/nuxt-vant-mobile) | 基于 Vant 的 Nuxt _⁴_ 项目模板，开箱即用 |
 
 ## 链接
 
