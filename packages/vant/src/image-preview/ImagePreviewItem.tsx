@@ -116,6 +116,29 @@ export default defineComponent({
       const scaleY = rootHeight / rotated.height;
       return Math.min(scaleX, scaleY);
     });
+    watch(
+      () => props.rotateAngle,
+      () => {
+        adjustPositionAfterRotate();
+      },
+    );
+
+    const adjustPositionAfterRotate = () => {
+      if (state.scale === 1) {
+        state.moveX = 0;
+        state.moveY = isLongImage.value ? initialMoveY : 0;
+        return;
+      }
+      state.moveX = clamp(state.moveX, -maxMoveX.value, maxMoveX.value);
+      state.moveY = clamp(state.moveY, -maxMoveY.value, maxMoveY.value);
+      if (
+        Math.abs(state.moveX) > maxMoveX.value ||
+        Math.abs(state.moveY) > maxMoveY.value
+      ) {
+        state.moveX = 0;
+        state.moveY = 0;
+      }
+    };
 
     const imageStyle = computed(() => {
       const { scale, moveX, moveY, moving, zooming, initializing } = state;
@@ -146,39 +169,44 @@ export default defineComponent({
       return style;
     });
 
+    // 添加旋转后的尺寸计算
+    const getRotatedImageSize = computed(() => {
+      const { rootWidth } = props;
+      const naturalWidth = rootWidth;
+      const naturalHeight = naturalWidth * state.imageRatio;
+      const { width: rotatedWidth, height: rotatedHeight } =
+        getRotatedDimensions(naturalWidth, naturalHeight, props.rotateAngle);
+      return {
+        width: rotatedWidth,
+        height: rotatedHeight,
+      };
+    });
+
     const maxMoveX = computed(() => {
       if (state.imageRatio) {
-        const { rootWidth, rootHeight } = props;
-        const displayWidth = vertical.value
-          ? rootHeight / state.imageRatio
-          : rootWidth;
+        const { rootWidth } = props;
+        const { width: rotatedWidth } = getRotatedImageSize.value;
+        const scaledWidth = rotatedWidth * state.scale * getContainScale.value;
 
-        return Math.max(0, (state.scale * displayWidth - rootWidth) / 2);
+        return Math.max(0, (scaledWidth - rootWidth) / 2);
       }
-
       return 0;
     });
 
     const maxMoveY = computed(() => {
       if (state.imageRatio) {
-        const { rootWidth, rootHeight } = props;
-        const displayHeight = vertical.value
-          ? rootHeight
-          : rootWidth * state.imageRatio;
+        const { rootHeight } = props;
+        const { height: rotatedHeight } = getRotatedImageSize.value;
+        const scaledHeight =
+          rotatedHeight * state.scale * getContainScale.value;
 
-        return Math.max(0, (state.scale * displayHeight - rootHeight) / 2);
+        return Math.max(0, (scaledHeight - rootHeight) / 2);
       }
-
       return 0;
     });
 
     const setScale = (scale: number, center?: { x: number; y: number }) => {
-      const baseScale = getContainScale.value;
-      scale = clamp(
-        scale,
-        +props.minZoom * baseScale,
-        +props.maxZoom * baseScale,
-      );
+      scale = clamp(scale, +props.minZoom, +props.maxZoom + 1);
 
       if (scale !== state.scale) {
         const ratio = scale / state.scale;
