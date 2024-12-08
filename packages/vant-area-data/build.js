@@ -1,1 +1,1 @@
-require('../vant-use/build');
+require('../vant-use/build.cjs');
