@@ -343,9 +343,6 @@ importers:
       '@rslib/core':
         specifier: ^0.1.3
         version: 0.1.3(typescript@5.7.2)
-      esbuild:
-        specifier: ^0.24.0
-        version: 0.24.0
       typescript:
         specifier: ^5.7.2
         version: 5.7.2
