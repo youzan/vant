@@ -54,8 +54,15 @@ export default defineComponent({
         }
       }
 
-      if (offset + (item.date?.getDate() || 1) > 28) {
-        style.marginBottom = 0;
+      if (item.date) {
+        const lastDay = new Date(
+          item.date.getFullYear(),
+          item.date.getMonth() + 1,
+          0,
+        ).getDate();
+        if (offset + item.date.getDate() > lastDay + offset - 7) {
+          style.marginBottom = 0;
+        }
       }
 
       return style;
