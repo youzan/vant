@@ -1,4 +1,10 @@
-import { compareDay, compareMonth, getNextDay, calcDateNum } from '../utils';
+import {
+  compareDay,
+  compareMonth,
+  getNextDay,
+  calcDateNum,
+  isLastRowInMonth,
+} from '../utils';
 
 const date1 = new Date(2010, 0, 1);
 const date2 = new Date(2010, 0, 2);
@@ -28,4 +34,23 @@ test('getNextDay', () => {
 test('calcDateNum', () => {
   expect(calcDateNum([date1, date2])).toEqual(2);
   expect(calcDateNum([date1, date3])).toEqual(32);
+});
+
+test('isLastRowInMonth', () => {
+  // test first day of month
+  expect(isLastRowInMonth(new Date(2024, 0, 1), 0)).toEqual(false);
+
+  // test middle of month
+  expect(isLastRowInMonth(new Date(2024, 0, 22), 0)).toEqual(false);
+  expect(isLastRowInMonth(new Date(2024, 0, 28), 0)).toEqual(false);
+
+  // test last week of month
+  expect(isLastRowInMonth(new Date(2024, 0, 29), 0)).toEqual(true);
+  expect(isLastRowInMonth(new Date(2024, 0, 31), 0)).toEqual(true);
+
+  // test different offset
+  expect(isLastRowInMonth(new Date(2024, 0, 18), 4)).toEqual(false);
+  expect(isLastRowInMonth(new Date(2024, 0, 24), 4)).toEqual(false);
+  expect(isLastRowInMonth(new Date(2024, 0, 25), 4)).toEqual(true);
+  expect(isLastRowInMonth(new Date(2024, 0, 31), 4)).toEqual(true);
 });

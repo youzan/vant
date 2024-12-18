@@ -5,7 +5,7 @@ import {
   type CSSProperties,
 } from 'vue';
 import { makeNumberProp, createNamespace, makeRequiredProp } from '../utils';
-import { bem } from './utils';
+import { bem, isLastRowInMonth } from './utils';
 import type { CalendarDayItem } from './types';
 
 const [name] = createNamespace('calendar-day');
@@ -54,15 +54,8 @@ export default defineComponent({
         }
       }
 
-      if (item.date) {
-        const lastDay = new Date(
-          item.date.getFullYear(),
-          item.date.getMonth() + 1,
-          0,
-        ).getDate();
-        if (offset + item.date.getDate() > lastDay + offset - 7) {
-          style.marginBottom = 0;
-        }
+      if (item.date && isLastRowInMonth(item.date, offset)) {
+        style.marginBottom = 0;
       }
 
       return style;
