@@ -167,8 +167,8 @@ importers:
         specifier: ^1.0.5
         version: 1.0.5(@rsbuild/core@1.1.11)(esbuild@0.24.2)(vue@3.5.13(typescript@5.7.2))
       '@rsbuild/plugin-vue-jsx':
-        specifier: ^1.0.1
-        version: 1.0.1(@babel/core@7.26.0)(@rsbuild/core@1.1.11)
+        specifier: ^1.1.0
+        version: 1.1.0(@babel/core@7.26.0)(@rsbuild/core@1.1.11)
       '@vant/eslint-config':
         specifier: workspace:^
         version: link:../vant-eslint-config
@@ -1026,10 +1026,10 @@ packages:
     peerDependencies:
       '@rsbuild/core': 1.x
 
-  '@rsbuild/plugin-vue-jsx@1.0.1':
-    resolution: {integrity: sha512-+Oo6FT7hT5Jb8K43qOgwNP35nXZbCopIlSOFa9KC1DKBJ1n0VueqshRY4pP5pVl6R2BeU87RRnmv0pbc2hH5Mg==}
+  '@rsbuild/plugin-vue-jsx@1.1.0':
+    resolution: {integrity: sha512-ZvYXPs00bG5mMhAFsJ5cVbHgF7Kz+rRpMlRHOJQhKGihFEiUK1Wx8Qfmn5ZrMBIgIGp0BaOnHoGSPH7fVQikCA==}
     peerDependencies:
-      '@rsbuild/core': 1.x || ^1.0.1-beta.0
+      '@rsbuild/core': 1.x
     peerDependenciesMeta:
       '@rsbuild/core':
         optional: true
@@ -3682,7 +3682,7 @@ snapshots:
       reduce-configs: 1.1.0
       sass-embedded: 1.83.0
 
-  '@rsbuild/plugin-vue-jsx@1.0.1(@babel/core@7.26.0)(@rsbuild/core@1.1.11)':
+  '@rsbuild/plugin-vue-jsx@1.1.0(@babel/core@7.26.0)(@rsbuild/core@1.1.11)':
     dependencies:
       '@rsbuild/plugin-babel': 1.0.3(@rsbuild/core@1.1.11)
       '@vue/babel-plugin-jsx': 1.2.5(@babel/core@7.26.0)

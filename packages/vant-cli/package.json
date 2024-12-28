@@ -53,7 +53,7 @@
     "@rsbuild/plugin-less": "^1.1.0",
     "@rsbuild/plugin-sass": "^1.1.2",
     "@rsbuild/plugin-vue": "^1.0.5",
-    "@rsbuild/plugin-vue-jsx": "^1.0.1",
+    "@rsbuild/plugin-vue-jsx": "^1.1.0",
     "@vant/eslint-config": "workspace:^",
     "@vant/touch-emulator": "workspace:^",
     "@vitejs/plugin-vue": "^5.2.1",
