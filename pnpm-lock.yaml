@@ -152,23 +152,23 @@ importers:
         specifier: ^7.26.0
         version: 7.26.0(@babel/core@7.26.0)
       '@rsbuild/core':
-        specifier: ^1.1.11
-        version: 1.1.11
+        specifier: ^1.1.13
+        version: 1.1.13
       '@rsbuild/plugin-babel':
         specifier: ^1.0.3
-        version: 1.0.3(@rsbuild/core@1.1.11)
+        version: 1.0.3(@rsbuild/core@1.1.13)
       '@rsbuild/plugin-less':
         specifier: ^1.1.0
-        version: 1.1.0(@rsbuild/core@1.1.11)
+        version: 1.1.0(@rsbuild/core@1.1.13)
       '@rsbuild/plugin-sass':
         specifier: ^1.1.2
-        version: 1.1.2(@rsbuild/core@1.1.11)
+        version: 1.1.2(@rsbuild/core@1.1.13)
       '@rsbuild/plugin-vue':
         specifier: ^1.0.5
-        version: 1.0.5(@rsbuild/core@1.1.11)(esbuild@0.24.2)(vue@3.5.13(typescript@5.7.2))
+        version: 1.0.5(@rsbuild/core@1.1.13)(esbuild@0.24.2)(vue@3.5.13(typescript@5.7.2))
       '@rsbuild/plugin-vue-jsx':
         specifier: ^1.1.0
-        version: 1.1.0(@babel/core@7.26.0)(@rsbuild/core@1.1.11)
+        version: 1.1.0(@babel/core@7.26.0)(@rsbuild/core@1.1.13)
       '@vant/eslint-config':
         specifier: workspace:^
         version: link:../vant-eslint-config
@@ -209,8 +209,8 @@ importers:
         specifier: ^2.0.0
         version: 2.0.0
       highlight.js:
-        specifier: ^11.11.0
-        version: 11.11.0
+        specifier: ^11.11.1
+        version: 11.11.1
       husky:
         specifier: ^9.1.7
         version: 9.1.7
@@ -1008,6 +1008,11 @@ packages:
 
   '@rsbuild/core@1.1.11':
     resolution: {integrity: sha512-PZM7yRt6noWycYi2h22QsOQ2VU4bBBgthOblVdu7HKoEM8GwYvVImKd9oNOF5Y5WJLS0TVAkU90DelNttnnQiw==}
+    engines: {node: '>=16.7.0'}
+    hasBin: true
+
+  '@rsbuild/core@1.1.13':
+    resolution: {integrity: sha512-XBL2hrin8731W6iTGGL+x3cv07n4vm2D7u6XHRwtQkRfySzAqGx7ThlQLdNX/dJwfsoQrYQuWl/qzaljjXtGtg==}
     engines: {node: '>=16.7.0'}
     hasBin: true
 
@@ -1931,8 +1936,8 @@ packages:
   hash-sum@2.0.0:
     resolution: {integrity: sha512-WdZTbAByD+pHfl/g9QSsBIIwy8IT+EsPiKDs0KNX+zSHhdDLFKdZu0BQHljvO+0QI/BasbMSUa8wYNCZTvhslg==}
 
-  highlight.js@11.11.0:
-    resolution: {integrity: sha512-6ErL7JlGu2CNFHyRQEuDogOyGPNiqcuWdt4iSSFUPyferNTGlNTPFqeV36Y/XwA4V/TJ8l0sxp6FTnxud/mf8g==}
+  highlight.js@11.11.1:
+    resolution: {integrity: sha512-Xwwo44whKBVCYoliBQwaPvtd/2tYFkRQtXDWj1nackaV2JPXx3L0+Jvd8/qCJ2p+ML0/XVkJ2q+Mr+UVdpJK5w==}
     engines: {node: '>=12.0.0'}
 
   html-encoding-sniffer@4.0.0:
@@ -3653,13 +3658,20 @@ snapshots:
       '@swc/helpers': 0.5.15
       core-js: 3.39.0
 
-  '@rsbuild/plugin-babel@1.0.3(@rsbuild/core@1.1.11)':
+  '@rsbuild/core@1.1.13':
+    dependencies:
+      '@rspack/core': 1.1.8(@swc/helpers@0.5.15)
+      '@rspack/lite-tapable': 1.0.1
+      '@swc/helpers': 0.5.15
+      core-js: 3.39.0
+
+  '@rsbuild/plugin-babel@1.0.3(@rsbuild/core@1.1.13)':
     dependencies:
       '@babel/core': 7.26.0
       '@babel/plugin-proposal-decorators': 7.25.9(@babel/core@7.26.0)
       '@babel/plugin-transform-class-properties': 7.25.9(@babel/core@7.26.0)
       '@babel/preset-typescript': 7.26.0(@babel/core@7.26.0)
-      '@rsbuild/core': 1.1.11
+      '@rsbuild/core': 1.1.13
       '@types/babel__core': 7.20.5
       deepmerge: 4.3.1
       reduce-configs: 1.0.0
@@ -3667,35 +3679,35 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@rsbuild/plugin-less@1.1.0(@rsbuild/core@1.1.11)':
+  '@rsbuild/plugin-less@1.1.0(@rsbuild/core@1.1.13)':
     dependencies:
-      '@rsbuild/core': 1.1.11
+      '@rsbuild/core': 1.1.13
       deepmerge: 4.3.1
       reduce-configs: 1.0.0
 
-  '@rsbuild/plugin-sass@1.1.2(@rsbuild/core@1.1.11)':
+  '@rsbuild/plugin-sass@1.1.2(@rsbuild/core@1.1.13)':
     dependencies:
-      '@rsbuild/core': 1.1.11
+      '@rsbuild/core': 1.1.13
       deepmerge: 4.3.1
       loader-utils: 2.0.4
       postcss: 8.4.49
       reduce-configs: 1.1.0
       sass-embedded: 1.83.0
 
-  '@rsbuild/plugin-vue-jsx@1.1.0(@babel/core@7.26.0)(@rsbuild/core@1.1.11)':
+  '@rsbuild/plugin-vue-jsx@1.1.0(@babel/core@7.26.0)(@rsbuild/core@1.1.13)':
     dependencies:
-      '@rsbuild/plugin-babel': 1.0.3(@rsbuild/core@1.1.11)
+      '@rsbuild/plugin-babel': 1.0.3(@rsbuild/core@1.1.13)
       '@vue/babel-plugin-jsx': 1.2.5(@babel/core@7.26.0)
       babel-plugin-vue-jsx-hmr: 1.0.0
     optionalDependencies:
-      '@rsbuild/core': 1.1.11
+      '@rsbuild/core': 1.1.13
     transitivePeerDependencies:
       - '@babel/core'
       - supports-color
 
-  '@rsbuild/plugin-vue@1.0.5(@rsbuild/core@1.1.11)(esbuild@0.24.2)(vue@3.5.13(typescript@5.7.2))':
+  '@rsbuild/plugin-vue@1.0.5(@rsbuild/core@1.1.13)(esbuild@0.24.2)(vue@3.5.13(typescript@5.7.2))':
     dependencies:
-      '@rsbuild/core': 1.1.11
+      '@rsbuild/core': 1.1.13
       vue-loader: 17.4.2(vue@3.5.13(typescript@5.7.2))(webpack@5.96.1(esbuild@0.24.2))
       webpack: 5.96.1(esbuild@0.24.2)
     transitivePeerDependencies:
@@ -4775,7 +4787,7 @@ snapshots:
 
   hash-sum@2.0.0: {}
 
-  highlight.js@11.11.0: {}
+  highlight.js@11.11.1: {}
 
   html-encoding-sniffer@4.0.0:
     dependencies:
