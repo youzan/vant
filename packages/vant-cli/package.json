@@ -48,7 +48,7 @@
   "dependencies": {
     "@babel/core": "^7.26.0",
     "@babel/preset-typescript": "^7.26.0",
-    "@rsbuild/core": "^1.1.11",
+    "@rsbuild/core": "^1.1.13",
     "@rsbuild/plugin-babel": "^1.0.3",
     "@rsbuild/plugin-less": "^1.1.0",
     "@rsbuild/plugin-sass": "^1.1.2",
@@ -68,7 +68,7 @@
     "fast-glob": "^3.3.2",
     "fs-extra": "^11.2.0",
     "hash-sum": "^2.0.0",
-    "highlight.js": "^11.11.0",
+    "highlight.js": "^11.11.1",
     "husky": "^9.1.7",
     "less": "^4.2.1",
     "lodash": "^4.17.21",
