@@ -128,8 +128,8 @@ importers:
   packages/vant-area-data:
     devDependencies:
       '@rslib/core':
-        specifier: ^0.1.5
-        version: 0.1.5(typescript@5.7.2)
+        specifier: ^0.2.2
+        version: 0.2.2(typescript@5.7.2)
       typescript:
         specifier: ^5.7.2
         version: 5.7.2
@@ -137,8 +137,8 @@ importers:
   packages/vant-auto-import-resolver:
     devDependencies:
       '@rslib/core':
-        specifier: ^0.1.5
-        version: 0.1.5(typescript@5.7.2)
+        specifier: ^0.2.2
+        version: 0.2.2(typescript@5.7.2)
       typescript:
         specifier: ^5.7.2
         version: 5.7.2
@@ -285,8 +285,8 @@ importers:
   packages/vant-compat:
     devDependencies:
       '@rslib/core':
-        specifier: ^0.1.5
-        version: 0.1.5(typescript@5.7.2)
+        specifier: ^0.2.2
+        version: 0.2.2(typescript@5.7.2)
       '@vue/runtime-core':
         specifier: ^3.5.13
         version: 3.5.13
@@ -330,8 +330,8 @@ importers:
         specifier: ^2.11.8
         version: 2.11.8
       '@rslib/core':
-        specifier: ^0.1.5
-        version: 0.1.5(typescript@5.7.2)
+        specifier: ^0.2.2
+        version: 0.2.2(typescript@5.7.2)
       typescript:
         specifier: ^5.7.2
         version: 5.7.2
@@ -341,8 +341,8 @@ importers:
   packages/vant-use:
     devDependencies:
       '@rslib/core':
-        specifier: ^0.1.5
-        version: 0.1.5(typescript@5.7.2)
+        specifier: ^0.2.2
+        version: 0.2.2(typescript@5.7.2)
       typescript:
         specifier: ^5.7.2
         version: 5.7.2
@@ -1006,11 +1006,6 @@ packages:
     cpu: [x64]
     os: [win32]
 
-  '@rsbuild/core@1.1.11':
-    resolution: {integrity: sha512-PZM7yRt6noWycYi2h22QsOQ2VU4bBBgthOblVdu7HKoEM8GwYvVImKd9oNOF5Y5WJLS0TVAkU90DelNttnnQiw==}
-    engines: {node: '>=16.7.0'}
-    hasBin: true
-
   '@rsbuild/core@1.1.13':
     resolution: {integrity: sha512-XBL2hrin8731W6iTGGL+x3cv07n4vm2D7u6XHRwtQkRfySzAqGx7ThlQLdNX/dJwfsoQrYQuWl/qzaljjXtGtg==}
     engines: {node: '>=16.7.0'}
@@ -1044,8 +1039,8 @@ packages:
     peerDependencies:
       '@rsbuild/core': 1.x
 
-  '@rslib/core@0.1.5':
-    resolution: {integrity: sha512-m0OPJNy5ZZqqKDNWTdiG8GELgg++77Ndx3Op48mHMZ1aUSknqwKm59Rya/nZr/6fc3rvos1YM5FogXQ3/pt1/A==}
+  '@rslib/core@0.2.2':
+    resolution: {integrity: sha512-u4qKfoO2YAdtoga6NqCDcTfvqyaTZj/L0kZjDrbThMcD51qUb8HiCS8pX5Hwj5v4doGkk+rHeQnw0Ad7HyMPMQ==}
     engines: {node: '>=16.0.0'}
     hasBin: true
     peerDependencies:
@@ -2479,8 +2474,8 @@ packages:
   rrweb-cssom@0.7.1:
     resolution: {integrity: sha512-TrEMa7JGdVm0UThDJSx7ddw5nVm3UJS9o9CCIZ72B1vSyEZoziDqBYP3XIoi/12lKrJR8rE3jeFHMok2F/Mnsg==}
 
-  rsbuild-plugin-dts@0.1.5:
-    resolution: {integrity: sha512-p5xN+Cxv59Pk7dHZJk3ca6ryycPfIbyVPk0KWuanLE0/c2s2A5KNJCB/Qyc/MZTYEXhcJNS8FTKxEMXXJGYwvA==}
+  rsbuild-plugin-dts@0.2.2:
+    resolution: {integrity: sha512-RwkVcMwig1+UHkVJFaD6tagjxZOQqIenbkLS+J85bEdKO/ra+YiLC1Gq3DItEv/hU02u5WPgJmQhaQWKb17T9w==}
     engines: {node: '>=16.0.0'}
     peerDependencies:
       '@microsoft/api-extractor': ^7
@@ -3651,13 +3646,6 @@ snapshots:
   '@rollup/rollup-win32-x64-msvc@4.21.2':
     optional: true
 
-  '@rsbuild/core@1.1.11':
-    dependencies:
-      '@rspack/core': 1.1.8(@swc/helpers@0.5.15)
-      '@rspack/lite-tapable': 1.0.1
-      '@swc/helpers': 0.5.15
-      core-js: 3.39.0
-
   '@rsbuild/core@1.1.13':
     dependencies:
       '@rspack/core': 1.1.8(@swc/helpers@0.5.15)
@@ -3718,10 +3706,10 @@ snapshots:
       - vue
       - webpack-cli
 
-  '@rslib/core@0.1.5(typescript@5.7.2)':
+  '@rslib/core@0.2.2(typescript@5.7.2)':
     dependencies:
-      '@rsbuild/core': 1.1.11
-      rsbuild-plugin-dts: 0.1.5(@rsbuild/core@1.1.11)(typescript@5.7.2)
+      '@rsbuild/core': 1.1.13
+      rsbuild-plugin-dts: 0.2.2(@rsbuild/core@1.1.13)(typescript@5.7.2)
       tinyglobby: 0.2.10
     optionalDependencies:
       typescript: 5.7.2
@@ -4072,7 +4060,7 @@ snapshots:
       '@vue/compiler-ssr': 3.5.12
       '@vue/shared': 3.5.12
       estree-walker: 2.0.2
-      magic-string: 0.30.14
+      magic-string: 0.30.17
       postcss: 8.4.49
       source-map-js: 1.2.1
 
@@ -5326,9 +5314,9 @@ snapshots:
 
   rrweb-cssom@0.7.1: {}
 
-  rsbuild-plugin-dts@0.1.5(@rsbuild/core@1.1.11)(typescript@5.7.2):
+  rsbuild-plugin-dts@0.2.2(@rsbuild/core@1.1.13)(typescript@5.7.2):
     dependencies:
-      '@rsbuild/core': 1.1.11
+      '@rsbuild/core': 1.1.13
       magic-string: 0.30.17
       picocolors: 1.1.1
       tinyglobby: 0.2.10
