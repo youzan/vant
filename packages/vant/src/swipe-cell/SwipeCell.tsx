@@ -2,10 +2,11 @@ import {
   ref,
   Ref,
   reactive,
-  computed,
   defineComponent,
   type PropType,
   type ExtractPropTypes,
+  onMounted,
+  onUnmounted,
 } from 'vue';
 
 // Utils
@@ -21,7 +22,7 @@ import {
 } from '../utils';
 
 // Composables
-import { useRect, useClickAway, useEventListener } from '@vant/use';
+import { useClickAway, useEventListener } from '@vant/use';
 import { useTouch } from '../composables/use-touch';
 import { useExpose } from '../composables/use-expose';
 
@@ -67,18 +68,44 @@ export default defineComponent({
       dragging: false,
     });
 
+    const leftWidth = ref(0);
+    const rightWidth = ref(0);
+
+    const leftRO = new ResizeObserver((entries) => {
+      const cr = entries[0].contentRect;
+      leftWidth.value = isDef(props.leftWidth) ? +props.leftWidth : cr.width;
+      if (opened) {
+        state.offset = leftWidth.value;
+      }
+    });
+
+    const rightRO = new ResizeObserver((entries) => {
+      const cr = entries[0].contentRect;
+      rightWidth.value = isDef(props.rightWidth) ? +props.rightWidth : cr.width;
+      if (opened) {
+        state.offset = -rightWidth.value;
+      }
+    });
+
+    onMounted(() => {
+      if (leftRef.value) {
+        leftRO.observe(leftRef.value);
+      }
+      if (rightRef.value) {
+        rightRO.observe(rightRef.value);
+      }
+    });
+
+    onUnmounted(() => {
+      if (leftRef.value) {
+        leftRO.unobserve(leftRef.value);
+      }
+      if (rightRef.value) {
+        rightRO.unobserve(rightRef.value);
+      }
+    });
+
     const touch = useTouch();
-
-    const getWidthByRef = (ref: Ref<HTMLElement | undefined>) =>
-      ref.value ? useRect(ref).width : 0;
-
-    const leftWidth = computed(() =>
-      isDef(props.leftWidth) ? +props.leftWidth : getWidthByRef(leftRef),
-    );
-
-    const rightWidth = computed(() =>
-      isDef(props.rightWidth) ? +props.rightWidth : getWidthByRef(rightRef),
-    );
 
     const open = (side: SwipeCellSide) => {
       state.offset = side === 'left' ? leftWidth.value : -rightWidth.value;
