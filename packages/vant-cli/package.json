@@ -1,20 +1,22 @@
 {
   "name": "@vant/cli",
   "version": "7.1.0",
+  "keywords": [
+    "vant"
+  ],
+  "bugs": "https://github.com/vant-ui/vant/issues",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/vant-ui/vant.git",
+    "directory": "packages/vant-cli"
+  },
+  "license": "MIT",
+  "author": "chenjiahan",
   "type": "module",
   "main": "lib/index.js",
   "typings": "lib/index.d.ts",
   "bin": {
     "vant-cli": "./bin.js"
-  },
-  "engines": {
-    "node": ">=16.0.0"
-  },
-  "scripts": {
-    "dev": "tsc --watch",
-    "build": "rimraf ./lib && tsc",
-    "release": "rm -rf ./site/node_modules && vant-cli release",
-    "prepare": "pnpm build"
   },
   "files": [
     "lib",
@@ -22,28 +24,11 @@
     "site",
     "bin.js"
   ],
-  "keywords": [
-    "vant"
-  ],
-  "publishConfig": {
-    "access": "public",
-    "registry": "https://registry.npmjs.org/"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/vant-ui/vant.git",
-    "directory": "packages/vant-cli"
-  },
-  "bugs": "https://github.com/vant-ui/vant/issues",
-  "author": "chenjiahan",
-  "license": "MIT",
-  "devDependencies": {
-    "@types/fs-extra": "^11.0.4",
-    "@types/less": "^3.0.7",
-    "@types/lodash": "^4.17.14",
-    "@types/markdown-it": "^14.1.2",
-    "rimraf": "^6.0.1",
-    "vue": "^3.5.13"
+  "scripts": {
+    "build": "rimraf ./lib && tsc",
+    "dev": "tsc --watch",
+    "prepare": "pnpm build",
+    "release": "rm -rf ./site/node_modules && vant-cli release"
   },
   "dependencies": {
     "@babel/core": "^7.26.0",
@@ -61,10 +46,9 @@
     "@vue/babel-plugin-jsx": "^1.2.5",
     "autoprefixer": "^10.4.20",
     "commander": "^13.0.0",
-    "rslog": "^1.2.3",
+    "enquirer": "2.4.1",
     "esbuild": "^0.24.2",
     "eslint": "^8.57.1",
-    "enquirer": "2.4.1",
     "fast-glob": "^3.3.3",
     "fs-extra": "^11.2.0",
     "hash-sum": "^2.0.0",
@@ -79,11 +63,28 @@
     "postcss": "^8.4.49",
     "postcss-load-config": "^6.0.1",
     "prettier": "^3.4.2",
+    "rslog": "^1.2.3",
     "rspack-plugin-virtual-module": "^0.1.13",
     "terser": "^5.37.0",
     "transliteration": "^2.3.5",
     "typescript": "^5.7.3",
     "vite": "^5.4.11",
     "vue-router": "^4.5.0"
+  },
+  "devDependencies": {
+    "@types/fs-extra": "^11.0.4",
+    "@types/less": "^3.0.7",
+    "@types/lodash": "^4.17.14",
+    "@types/markdown-it": "^14.1.2",
+    "@types/node": "^22.10.5",
+    "rimraf": "^6.0.1",
+    "vue": "^3.5.13"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
   }
 }
