@@ -50,7 +50,7 @@
     "esbuild": "^0.24.2",
     "eslint": "^8.57.1",
     "fast-glob": "^3.3.3",
-    "fs-extra": "^11.2.0",
+    "fs-extra": "^11.3.0",
     "hash-sum": "^2.0.0",
     "highlight.js": "^11.11.1",
     "husky": "^9.1.7",
