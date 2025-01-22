@@ -40,7 +40,7 @@ Locale.add(messages);
 Current supported languages:
 
 | Language                 | Filename     | Version  |
-| ------------------------ | ------------ | -------- |
+|--------------------------|--------------|----------|
 | Arabic                   | ar-SA        | `v3.5.0` |
 | Bulgarian                | bg-BG        | `v3.5.0` |
 | Bangla (Bangladesh)      | bn-BD        | `v3.4.5` |
@@ -66,6 +66,7 @@ Current supported languages:
 | Mongolian                | mm-MN        | `v4.0.5` |
 | Norwegian                | nb-NO        | -        |
 | Dutch                    | nl-NL        | `v4.0.5` |
+| Polish                   | pl-PL        | -        |
 | Portuguese (Brazil)      | pt-BR        | `v3.3.3` |
 | Romanian                 | ro-RO        | -        |
 | Russian                  | ru-RU        | `v3.1.5` |
