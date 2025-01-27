@@ -17,9 +17,9 @@
     "*.{ts,tsx,js,vue}": "eslint --fix"
   },
   "engines": {
-    "pnpm": ">= 9.15.3"
+    "pnpm": ">= 9.15.4"
   },
-  "packageManager": "pnpm@9.15.3",
+  "packageManager": "pnpm@9.15.4",
   "devDependencies": {
     "@vant/cli": "workspace:*",
     "@vant/eslint-config": "workspace:*",

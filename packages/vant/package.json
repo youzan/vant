@@ -54,7 +54,7 @@
     "vue": "^3.0.0"
   },
   "devDependencies": {
-    "@types/node": "^22.10.5",
+    "@types/node": "^22.10.10",
     "@vant/area-data": "workspace:*",
     "@vant/cli": "workspace:*",
     "@vant/eslint-config": "workspace:*",
@@ -68,7 +68,7 @@
     "diffable-html": "^5.0.0",
     "jsdom": "^25.0.1",
     "typescript": "^5.7.3",
-    "vite": "^5.4.11",
+    "vite": "^5.4.14",
     "vitest": "^2.1.8",
     "vitest-canvas-mock": "^0.3.3",
     "vue": "^3.5.13",
