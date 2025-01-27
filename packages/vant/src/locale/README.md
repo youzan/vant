@@ -39,46 +39,46 @@ Locale.add(messages);
 
 Current supported languages:
 
-| Language                 | Filename     | Version  |
-|--------------------------|--------------|----------|
-| Arabic                   | ar-SA        | `v3.5.0` |
-| Bulgarian                | bg-BG        | `v3.5.0` |
-| Bangla (Bangladesh)      | bn-BD        | `v3.4.5` |
-| Danish                   | da-DK        | `v3.4.8` |
-| German                   | de-DE        | -        |
-| German (formal)          | de-DE-formal | -        |
-| Greek                    | el-GR        | `v3.5.0` |
-| English                  | en-US        | -        |
-| Esperanto                | eo-EO        | `v4.0.9` |
-| Spanish (Spain)          | es-ES        | -        |
-| Farsi                    | fa-IR        | `v3.5.0` |
-| French                   | fr-FR        | -        |
-| Hebrew                   | he-IL        | `v3.5.0` |
-| Hindi                    | hi-IN        | `v3.4.3` |
-| Indonesian               | id-ID        | `v3.4.5` |
-| Icelandic                | is-IS        | `v3.4.7` |
-| Italian                  | it-IT        | `v3.4.5` |
-| Japanese                 | ja-JP        | -        |
-| Kazakh                   | kk-KZ        | -        |
-| Khmer                    | km-KH        | `v4.1.2` |
-| Korean                   | ko-KR        | `v3.4.3` |
-| Lao                      | la-LA        | `v3.4.7` |
-| Mongolian                | mm-MN        | `v4.0.5` |
-| Norwegian                | nb-NO        | -        |
-| Dutch                    | nl-NL        | `v4.0.5` |
-| Polish                   | pl-PL        | -        |
-| Portuguese (Brazil)      | pt-BR        | `v3.3.3` |
-| Romanian                 | ro-RO        | -        |
-| Russian                  | ru-RU        | `v3.1.5` |
-| Serbian                  | sr-RS        | `v4.6.4` |
-| Swedish                  | sv-SE        | `v3.4.7` |
-| Thai                     | th-TH        | -        |
-| Turkish                  | tr-TR        | -        |
-| Ukrainian                | uk-UA        | `v3.4.5` |
-| Vietnamese               | vi-VN        | `v3.4.5` |
-| Chinese                  | zh-CN        | -        |
-| Traditional Chinese (HK) | zh-HK        | -        |
-| Traditional Chinese (TW) | zh-TW        | -        |
+| Language                 | Filename     | Version   |
+| ------------------------ | ------------ | --------- |
+| Arabic                   | ar-SA        | `v3.5.0`  |
+| Bulgarian                | bg-BG        | `v3.5.0`  |
+| Bangla (Bangladesh)      | bn-BD        | `v3.4.5`  |
+| Danish                   | da-DK        | `v3.4.8`  |
+| German                   | de-DE        | -         |
+| German (formal)          | de-DE-formal | -         |
+| Greek                    | el-GR        | `v3.5.0`  |
+| English                  | en-US        | -         |
+| Esperanto                | eo-EO        | `v4.0.9`  |
+| Spanish (Spain)          | es-ES        | -         |
+| Farsi                    | fa-IR        | `v3.5.0`  |
+| French                   | fr-FR        | -         |
+| Hebrew                   | he-IL        | `v3.5.0`  |
+| Hindi                    | hi-IN        | `v3.4.3`  |
+| Indonesian               | id-ID        | `v3.4.5`  |
+| Icelandic                | is-IS        | `v3.4.7`  |
+| Italian                  | it-IT        | `v3.4.5`  |
+| Japanese                 | ja-JP        | -         |
+| Kazakh                   | kk-KZ        | -         |
+| Khmer                    | km-KH        | `v4.1.2`  |
+| Korean                   | ko-KR        | `v3.4.3`  |
+| Lao                      | la-LA        | `v3.4.7`  |
+| Mongolian                | mm-MN        | `v4.0.5`  |
+| Norwegian                | nb-NO        | -         |
+| Dutch                    | nl-NL        | `v4.0.5`  |
+| Polish                   | pl-PL        | `v4.9.17` |
+| Portuguese (Brazil)      | pt-BR        | `v3.3.3`  |
+| Romanian                 | ro-RO        | -         |
+| Russian                  | ru-RU        | `v3.1.5`  |
+| Serbian                  | sr-RS        | `v4.6.4`  |
+| Swedish                  | sv-SE        | `v3.4.7`  |
+| Thai                     | th-TH        | -         |
+| Turkish                  | tr-TR        | -         |
+| Ukrainian                | uk-UA        | `v3.4.5`  |
+| Vietnamese               | vi-VN        | `v3.4.5`  |
+| Chinese                  | zh-CN        | -         |
+| Traditional Chinese (HK) | zh-HK        | -         |
+| Traditional Chinese (TW) | zh-TW        | -         |
 
 > View all language configs [Here](https://github.com/vant-ui/vant/tree/main/packages/vant/src/locale/lang).
 
