@@ -11,7 +11,6 @@ export type AddressEditInfo = {
   name: string;
   city: string;
   county: string;
-  country: string;
   province: string;
   areaCode: string;
   isDefault?: boolean;

@@ -47,7 +47,6 @@ const DEFAULT_DATA: AddressEditInfo = {
   tel: '',
   city: '',
   county: '',
-  country: '',
   province: '',
   areaCode: '',
   isDefault: false,
