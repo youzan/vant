@@ -147,18 +147,30 @@ Place two `DatePicker` components in the default slot of `PickerGroup` to select
     :min-date="minDate"
     :max-date="maxDate"
   />
-  <van-date-picker v-model="endDate" :min-date="minDate" :max-date="maxDate" />
+  <van-date-picker
+    v-model="endDate"
+    :min-date="endMinDate"
+    :max-date="maxDate"
+  />
 </van-picker-group>
 ```
 
 ```js
-import { ref } from 'vue';
+import { computed, ref } from 'vue';
 import { showToast } from 'vant';
 
 export default {
   setup() {
     const startDate = ref(['2022', '06', '01']);
     const endDate = ref(['2023', '06', '01']);
+    const endMinDate = computed(
+      () =>
+        new Date(
+          Number(startDate.value[0]),
+          Number(startDate.value[1]) - 1,
+          Number(startDate.value[2]),
+        ),
+    );
 
     const onConfirm = () => {
       showToast(`${startDate.value.join('/')} ${endDate.value.join('/')}`);
@@ -171,6 +183,7 @@ export default {
     return {
       minDate: new Date(2020, 0, 1),
       maxDate: new Date(2025, 5, 1),
+      endMinDate,
       endDate,
       startDate,
       onConfirm,
