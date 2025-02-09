@@ -123,6 +123,23 @@ test('should limit input value based on min and max props', async () => {
   expect(wrapper.emitted('update:modelValue')[2][0]).toEqual('5');
 });
 
+test('should not modify the value if it is within the min/max', async () => {
+  const wrapper = mount(Field, {
+    props: {
+      type: 'number',
+      min: 2,
+      max: 10,
+      modelValue: '',
+    },
+  });
+
+  const input = wrapper.find('input');
+
+  await wrapper.setProps({ modelValue: '2.00' });
+  await input.trigger('blur');
+  expect(wrapper.emitted('update:modelValue')).toBeFalsy();
+});
+
 test('should render textarea when type is textarea', async () => {
   const wrapper = mount(Field, {
     props: {

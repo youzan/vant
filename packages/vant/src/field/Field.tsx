@@ -346,6 +346,7 @@ export default defineComponent({
             props.min ?? -Infinity,
             props.max ?? Infinity,
           );
+
           if (+value !== adjustedValue) {
             value = adjustedValue.toString();
           }
