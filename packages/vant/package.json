@@ -61,7 +61,7 @@
     "@vant/icons": "workspace:*",
     "@vitejs/plugin-vue": "^5.2.1",
     "@vitejs/plugin-vue-jsx": "^4.1.1",
-    "@vitest/coverage-istanbul": "^2.1.8",
+    "@vitest/coverage-istanbul": "^2.1.9",
     "@vue/runtime-core": "^3.5.13",
     "@vue/test-utils": "^2.4.6",
     "csstype": "^3.1.3",
