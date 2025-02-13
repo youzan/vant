@@ -191,7 +191,7 @@ export default defineComponent({
 
     const getClickHandler =
       (position: SwipeCellPosition, stop?: boolean) => (event: MouseEvent) => {
-        if (stop) {
+        if (stop || opened) {
           event.stopPropagation();
         }
 
@@ -244,7 +244,7 @@ export default defineComponent({
         <div
           ref={root}
           class={bem()}
-          onClick={getClickHandler('cell', lockClick)}
+          onClick={getClickHandler('cell')}
           onTouchstartPassive={onTouchStart}
           onTouchend={onTouchEnd}
           onTouchcancel={onTouchEnd}

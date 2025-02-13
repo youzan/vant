@@ -223,3 +223,37 @@ test('should not trigger close event again if already closed', () => {
   wrapper.vm.close();
   expect(wrapper.emitted('close')).toHaveLength(1);
 });
+
+test('should not stop propagation of native click event when canceling swipe', async () => {
+  const onWrapperClick = vi.fn();
+  const wrapper = mount({
+    template: `
+      <div class="wrapper" @click="onWrapperClick">
+        <swipe-cell v-bind="props" />
+      </div>
+    `,
+    components: {
+      SwipeCell,
+    },
+    setup() {
+      return {
+        props: defaultProps.props,
+        onWrapperClick,
+      };
+    },
+  });
+
+  triggerDrag(wrapper.findComponent(SwipeCell), 5, 0);
+  await later();
+
+  const track = wrapper.find('.van-swipe-cell__wrapper').element;
+
+  const clickEvent = new MouseEvent('click', {
+    bubbles: true,
+    cancelable: true,
+  });
+
+  track.dispatchEvent(clickEvent);
+
+  expect(onWrapperClick).toHaveBeenCalled();
+});
