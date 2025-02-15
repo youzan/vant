@@ -191,7 +191,7 @@ export default defineComponent({
 
     const getClickHandler =
       (position: SwipeCellPosition, stop?: boolean) => (event: MouseEvent) => {
-        if (stop || opened) {
+        if (stop || lockClick || opened) {
           event.stopPropagation();
         }
 
