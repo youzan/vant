@@ -1,0 +1,46 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders demo correctly 1`] = `
+<div>
+  <div>
+    <div role="switch" aria-checked="true" class="van-switch van-switch--on">
+      <div class="van-switch__node"></div>
+    </div>
+  </div>
+  <div>
+    <div role="switch" aria-checked="true" class="van-switch van-switch--on van-switch--disabled">
+      <div class="van-switch__node"></div>
+    </div>
+  </div>
+  <div>
+    <div role="switch" aria-checked="true" class="van-switch van-switch--on van-switch--loading">
+      <div class="van-switch__node">
+        <div class="van-loading van-loading--circular van-switch__loading"><span class="van-loading__spinner van-loading__spinner--circular"><svg viewBox="25 25 50 50" class="van-loading__circular"><circle cx="50" cy="50" r="20" fill="none"></circle></svg></span></div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div role="switch" aria-checked="true" class="van-switch van-switch--on" style="font-size: 24px;">
+      <div class="van-switch__node"></div>
+    </div>
+  </div>
+  <div>
+    <div role="switch" aria-checked="true" class="van-switch van-switch--on" style="background-color: rgb(238, 10, 36);">
+      <div class="van-switch__node"></div>
+    </div>
+  </div>
+  <div>
+    <div role="switch" aria-checked="true" class="van-switch van-switch--on">
+      <div class="van-switch__node"></div>
+    </div>
+  </div>
+  <div>
+    <div class="van-cell van-cell--center">
+      <div class="van-cell__title"><span>标题</span></div>
+      <div role="switch" aria-checked="true" class="van-switch van-switch--on" style="font-size: 24px;">
+        <div class="van-switch__node"></div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

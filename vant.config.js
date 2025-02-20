@@ -190,6 +190,14 @@ module.exports = {
                 path: 'uploader',
                 title: 'Uploader 文件上传',
               },
+              {
+                path: 'uploader',
+                title: 'Uploader 文件上传',
+              },
+              {
+                path: 'signature',
+                title: 'Signature 签名板',
+              },
             ],
           },
           {
