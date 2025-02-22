@@ -281,11 +281,11 @@ test('should not stop propagation of native click event when canceling swipe', a
 test('should not trigger native click event after drag operations in desktop simulation scenarios', async () => {
   const { onWrapperClick, swipeCell } = createWithNativeWrapper();
 
-  triggerDrag(swipeCell, 50, 0, { simulateDesktop: true });
+  triggerDrag(swipeCell, 50, 0);
   await later();
   expect(onWrapperClick).not.toHaveBeenCalled();
 
-  triggerDrag(swipeCell, -50, 0, { simulateDesktop: true });
+  triggerDrag(swipeCell, -50, 0);
   await later();
   expect(onWrapperClick).not.toHaveBeenCalled();
 });

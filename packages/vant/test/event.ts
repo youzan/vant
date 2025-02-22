@@ -63,7 +63,9 @@ export function triggerDrag(
     | HTMLElement,
   relativeX = 0,
   relativeY = 0,
-  options: TriggerDragOptions = {},
+  options: TriggerDragOptions = {
+    simulateDesktop: true,
+  },
 ) {
   let x = relativeX;
   let y = relativeY;
