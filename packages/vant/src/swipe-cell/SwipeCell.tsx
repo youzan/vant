@@ -190,8 +190,8 @@ export default defineComponent({
     };
 
     const getClickHandler =
-      (position: SwipeCellPosition, stop?: boolean) => (event: MouseEvent) => {
-        if (stop) {
+      (position: SwipeCellPosition) => (event: MouseEvent) => {
+        if (lockClick || opened) {
           event.stopPropagation();
         }
 
@@ -209,11 +209,7 @@ export default defineComponent({
       const contentSlot = slots[side];
       if (contentSlot) {
         return (
-          <div
-            ref={ref}
-            class={bem(side)}
-            onClick={getClickHandler(side, true)}
-          >
+          <div ref={ref} class={bem(side)} onClick={getClickHandler(side)}>
             {contentSlot()}
           </div>
         );
@@ -244,7 +240,7 @@ export default defineComponent({
         <div
           ref={root}
           class={bem()}
-          onClick={getClickHandler('cell', lockClick)}
+          onClick={getClickHandler('cell')}
           onTouchstartPassive={onTouchStart}
           onTouchend={onTouchEnd}
           onTouchcancel={onTouchEnd}

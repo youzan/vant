@@ -51,6 +51,10 @@ export function trigger(
   return nextTick();
 }
 
+interface TriggerDragOptions {
+  simulateDesktop?: boolean;
+}
+
 // simulate drag gesture
 export function triggerDrag(
   el:
@@ -59,6 +63,9 @@ export function triggerDrag(
     | HTMLElement,
   relativeX = 0,
   relativeY = 0,
+  options: TriggerDragOptions = {
+    simulateDesktop: true,
+  },
 ) {
   let x = relativeX;
   let y = relativeY;
@@ -78,6 +85,10 @@ export function triggerDrag(
   trigger(el, 'touchmove', x / 2, y / 2);
   trigger(el, 'touchmove', x, y);
   trigger(el, 'touchend', x, y);
+
+  if (options.simulateDesktop) {
+    trigger(el, 'click', x, y);
+  }
 
   return nextTick();
 }
