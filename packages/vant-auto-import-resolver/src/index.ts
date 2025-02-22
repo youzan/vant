@@ -21,6 +21,13 @@ export interface VantResolverOptions {
    * @deprecated Please use `module` option instead.
    */
   ssr?: boolean;
+
+  /**
+   * exclude components or API that do not require automatic import
+   *
+   * @default []
+   */
+  exclude?: string[];
 }
 
 export type VantImportsOptions = Pick<VantResolverOptions, 'module' | 'ssr'>;
@@ -107,21 +114,23 @@ export function VantResolver(options: VantResolverOptions = {}) {
     resolve: (name: string) => {
       if (name.startsWith('Van')) {
         const partialName = name.slice(3);
-        return {
-          name: partialName,
-          from: `vant/${moduleType}`,
-          sideEffects: getSideEffects(kebabCase(partialName), options),
-        };
+        if (!options.exclude?.includes(partialName)) {
+          return {
+            name: partialName,
+            from: `vant/${moduleType}`,
+            sideEffects: getSideEffects(kebabCase(partialName), options)
+          };
+        }
       }
 
       // import API
-      if (apiMap.has(name)) {
+      if (apiMap.has(name) && !options.exclude?.includes(name)) {
         const partialName = apiMap.get(name)!;
-        return {
-          name,
-          from: `vant/${moduleType}`,
-          sideEffects: getSideEffects(kebabCase(partialName), options),
-        };
+          return {
+            name,
+            from: `vant/${moduleType}`,
+            sideEffects: getSideEffects(kebabCase(partialName), options),
+          };
       }
     },
   };
