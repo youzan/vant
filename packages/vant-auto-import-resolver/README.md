@@ -196,3 +196,31 @@ Components({
 - **Default:** `undefined`
 
 This option is deprecated. Please use the `module` option to set the module type.
+
+### exclude
+
+Set the components or APIs that do not require automatic import.
+
+- **Type:** `string[]`
+- **Default:** `[]`
+- **Example:**
+
+```ts
+Components({
+  resolvers: [
+    VantResolver({
+      exclude: ['Button'],
+    }),
+  ],
+});
+```
+
+```ts
+AutoImport({
+  resolvers: [
+    VantResolver({
+      exclude: ['showToast'],
+    }),
+  ],
+});
+```
