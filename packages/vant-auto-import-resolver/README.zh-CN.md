@@ -196,3 +196,31 @@ Components({
 - **Default：** `undefined`
 
 此选项已废弃，请使用 `module` 选项来设置模块类型。
+
+### exclude
+
+设置不自动引入的组件或 API。
+
+- **Type：** `string[]`
+- **Default：** `[]`
+- **Example：**
+
+```ts
+Components({
+  resolvers: [
+    VantResolver({
+      exclude: ['Button'],
+    }),
+  ],
+});
+```
+
+```ts
+AutoImport({
+  resolvers: [
+    VantResolver({
+      exclude: ['showToast'],
+    }),
+  ],
+});
+```
