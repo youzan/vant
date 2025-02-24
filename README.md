@@ -132,6 +132,7 @@ Vant 3/4 supports modern browsers and Chrome >= 51、iOS >= 10.0 (same as Vue 3)
 | [vue3-vant-mobile](https://github.com/easy-temps/vue3-vant-mobile) | Mobile project template based on Vant |
 | [vscode-common-intellisense](https://github.com/Simon-He95/vscode-common-intellisense) | A VS Code extension that provides better intellisense to Vant developers |
 | [nuxt-vant-mobile](https://github.com/easy-temps/nuxt-vant-mobile) | Nuxt _⁴_ project template based on Vant, out of the box |
+| [mobvue](https://github.com/un-pany/mobvue) | A well-crafted mobile web app template |
 
 ## Links
 

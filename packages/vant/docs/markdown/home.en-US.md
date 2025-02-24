@@ -86,6 +86,7 @@ The current maintenance status of each version of Vant is as follows:
 | [vue3-vant-mobile](https://github.com/easy-temps/vue3-vant-mobile) | Mobile project template based on Vant |
 | [raycast-vant-documentation](https://github.com/Aisen60/raycast-vant-documentation) | An Raycast extension, it can search Vant UI library documentation in Raycast |
 | [nuxt-vant-mobile](https://github.com/easy-temps/nuxt-vant-mobile) | Nuxt _⁴_ project template based on Vant, out of the box |
+| [mobvue](https://github.com/un-pany/mobvue) | A well-crafted mobile web app template |
 
 ### Other Links
 
