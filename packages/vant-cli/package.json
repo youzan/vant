@@ -62,7 +62,7 @@
     "picocolors": "^1.1.1",
     "postcss": "^8.5.3",
     "postcss-load-config": "^6.0.1",
-    "prettier": "^3.4.2",
+    "prettier": "^3.5.2",
     "rslog": "^1.2.3",
     "rspack-plugin-virtual-module": "^0.1.13",
     "terser": "^5.37.0",
