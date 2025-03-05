@@ -1,4 +1,4 @@
-# RollingText 翻滚文本动效
+# RollingText 翻滚文本
 
 ### 介绍
 
@@ -131,16 +131,16 @@ export default {
 
 ### Props
 
-| 参数 | 说明 | 类型 | 默认值 |
-| --- | --- | --- | --- |
-| start-num | 起始数值 | _number_ | `0` |
-| target-num | 目标数值 | _number_ | - |
-| text-list | 内容数组，用于翻转非数字内容 | _string[]_ | `[]` |
-| duration | 动画时长，单位为秒 | _number_ | `2` |
-| direction | 文本翻滚方向，值为 `down` 和 `up` | _string_ | `down` |
-| auto-start | 是否自动开始动画 | _boolean_ | `true` |
-| stop-order | 各个数位动画停止先后顺序，值为 `ltr` 和 `rtl` | _string_ | `ltr` |
-| height | 数字高度，单位为 `px` | _number_ | `40` |
+| 参数       | 说明                                          | 类型       | 默认值 |
+| ---------- | --------------------------------------------- | ---------- | ------ |
+| start-num  | 起始数值                                      | _number_   | `0`    |
+| target-num | 目标数值                                      | _number_   | -      |
+| text-list  | 内容数组，用于翻转非数字内容                  | _string[]_ | `[]`   |
+| duration   | 动画时长，单位为秒                            | _number_   | `2`    |
+| direction  | 文本翻滚方向，值为 `down` 和 `up`             | _string_   | `down` |
+| auto-start | 是否自动开始动画                              | _boolean_  | `true` |
+| stop-order | 各个数位动画停止先后顺序，值为 `ltr` 和 `rtl` | _string_   | `ltr`  |
+| height     | 数字高度，单位为 `px`                         | _number_   | `40`   |
 
 ### 方法
 
@@ -181,11 +181,11 @@ rollingTextRef.value?.start();
 
 组件提供了下列 CSS 变量，可用于自定义样式，使用方法请参考 [ConfigProvider 组件](#/zh-CN/config-provider)。
 
-| 名称 | 默认值 | 描述 |
-| --- | --- | --- |
-| --van-rolling-text-background | _inherit_ | 单个数位背景色 |
-| --van-rolling-text-color | _var(--van-text-color)_ | 数字颜色 |
-| --van-rolling-text-font-size | _var(--van-font-size-md)_ | 字体大小 |
-| --van-rolling-text-gap | _0px_ | 数位之间的间隔 |
-| --van-rolling-text-item-width | _15px_ | 单个数位宽度 |
-| --van-rolling-text-item-border-radius | _0px_ | 单个数位边框圆角 |
+| 名称                                  | 默认值                    | 描述             |
+| ------------------------------------- | ------------------------- | ---------------- |
+| --van-rolling-text-background         | _inherit_                 | 单个数位背景色   |
+| --van-rolling-text-color              | _var(--van-text-color)_   | 数字颜色         |
+| --van-rolling-text-font-size          | _var(--van-font-size-md)_ | 字体大小         |
+| --van-rolling-text-gap                | _0px_                     | 数位之间的间隔   |
+| --van-rolling-text-item-width         | _15px_                    | 单个数位宽度     |
+| --van-rolling-text-item-border-radius | _0px_                     | 单个数位边框圆角 |
