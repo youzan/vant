@@ -31,6 +31,7 @@ const DEFAULT_OPTIONS = {
   showCancelButton: false,
   closeOnPopstate: true,
   closeOnClickOverlay: false,
+  destroyOnClose: false,
 } as const;
 
 let currentOptions = extend({}, DEFAULT_OPTIONS);
