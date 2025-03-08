@@ -62,7 +62,7 @@
     "picocolors": "^1.1.1",
     "postcss": "^8.5.3",
     "postcss-load-config": "^6.0.1",
-    "prettier": "^3.5.2",
+    "prettier": "^3.5.3",
     "rslog": "^1.2.3",
     "rspack-plugin-virtual-module": "^0.1.13",
     "terser": "^5.39.0",
@@ -74,9 +74,9 @@
   "devDependencies": {
     "@types/fs-extra": "^11.0.4",
     "@types/less": "^3.0.8",
-    "@types/lodash": "^4.17.15",
+    "@types/lodash": "^4.17.16",
     "@types/markdown-it": "^14.1.2",
-    "@types/node": "^22.13.5",
+    "@types/node": "^22.13.10",
     "rimraf": "^6.0.1",
     "vue": "^3.5.13"
   },
