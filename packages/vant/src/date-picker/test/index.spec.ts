@@ -227,3 +227,30 @@ test('should be displayed correctly when modelValue updated by external sources'
       .selectedValues,
   ).toEqual(['2024', '01']);
 });
+
+test('should correctly render min-date when dragging month column and confirming quickly before scroll stops', async () => {
+  const minDate = new Date(2025, 2, 10);
+  const maxDate = new Date(2025, 11, 30);
+  const wrapper = mount(DatePicker, {
+    props: {
+      modelValue: ['2025', '08', '01'],
+      minDate,
+      maxDate,
+      'onUpdate:modelValue': (newVal: string[]) => {
+        nextTick(() => {
+          wrapper.setProps({
+            modelValue: newVal,
+          });
+        });
+      },
+    },
+  });
+
+  await later();
+  await wrapper.setProps({ modelValue: ['2025', '03', '01'] });
+  await wrapper.find('.van-picker__confirm').trigger('click');
+  expect(
+    wrapper.emitted<[PickerConfirmEventParams]>('confirm')![0][0]
+      .selectedValues,
+  ).toEqual(['2025', '03', '10']);
+});
