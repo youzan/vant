@@ -440,3 +440,62 @@ test('should render empty slot when options is empty', async () => {
   await wrapper.setProps({ columns: [{ values: ['foo'] }] });
   expect(wrapper.html()).not.toContain('empty content');
 });
+
+test('should reset subsequent columns to their first item when a column changes', async () => {
+  const wrapper = mount(Picker, {
+    props: {
+      showToolbar: true,
+      columns: [
+        {
+          text: 'test1',
+          value: '1',
+          children: [
+            {
+              text: '-1',
+              value: '-1',
+            },
+            {
+              text: '0',
+              value: '0',
+            },
+          ],
+        },
+        {
+          text: 'test2',
+          value: '2',
+          children: [
+            {
+              text: '0',
+              value: '0',
+            },
+            {
+              text: '1',
+              value: '2',
+            },
+          ],
+        },
+      ],
+    },
+  });
+  const getPickerColumn = wrapper.findAll('.van-picker-column')[0];
+  const getItem = getPickerColumn.findAll('.van-picker-column__item');
+  await getItem[0].trigger('click');
+  expect(wrapper.emitted<[PickerConfirmEventParams]>('change')).toBeFalsy();
+  await getItem[1].trigger('click');
+  await getItem[0].trigger('click');
+  await wrapper.find('.van-picker__confirm').trigger('click');
+  expect(
+    wrapper.emitted<[PickerConfirmEventParams]>('confirm')![0][0]
+      .selectedValues,
+  ).toEqual(['1', '-1']);
+  await wrapper
+    .findAll('.van-picker-column')[1]
+    .findAll('.van-picker-column__item')[1]
+    .trigger('click');
+
+  await wrapper.find('.van-picker__confirm').trigger('click');
+  expect(
+    wrapper.emitted<[PickerConfirmEventParams]>('confirm')![1][0]
+      .selectedValues,
+  ).toEqual(['1', '0']);
+});
