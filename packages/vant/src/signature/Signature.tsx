@@ -53,7 +53,7 @@ export default defineComponent({
 
   emits: ['submit', 'clear', 'start', 'end', 'signing'],
 
-  setup(props, { emit }) {
+  setup(props, { emit, slots }) {
     const canvasRef = ref<HTMLCanvasElement>();
     const wrapRef = ref<HTMLElement>();
     const ctx = computed(() => {
@@ -195,6 +195,8 @@ export default defineComponent({
               onTouchmove={touchMove}
               onTouchend={touchEnd}
             />
+          ) : slots.tips ? (
+            slots.tips()
           ) : (
             <p>{props.tips}</p>
           )}

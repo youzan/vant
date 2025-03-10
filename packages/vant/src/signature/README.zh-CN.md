@@ -99,6 +99,12 @@ export default {
 | submit | 点击确定按钮时触发 | _data: { image: string; canvas: HTMLCanvasElement }_ |
 | clear | 点击取消按钮时触发 | - |
 
+### Slots
+
+| 名称 | 说明           | 参数 |
+| ---- | -------------- | ---- |
+| tips | 自定义提示文案 | -    |
+
 ### 方法
 
 通过 ref 可以获取到 Signature 实例并调用实例方法，详见[组件实例方法](#/zh-CN/advanced-usage#zu-jian-shi-li-fang-fa)。
