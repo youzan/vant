@@ -27,7 +27,7 @@ app.use(CellGroup);
   <van-cell-group inset>
     <van-field
       v-model="username"
-      name="Username"
+      name="username"
       label="Username"
       placeholder="Username"
       :rules="[{ required: true, message: 'Username is required' }]"
@@ -35,7 +35,7 @@ app.use(CellGroup);
     <van-field
       v-model="password"
       type="password"
-      name="Password"
+      name="password"
       label="Password"
       placeholder="Password"
       :rules="[{ required: true, message: 'Password is required' }]"
