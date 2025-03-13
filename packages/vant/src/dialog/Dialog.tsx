@@ -63,6 +63,7 @@ export const dialogProps = extend({}, popupSharedProps, {
   showConfirmButton: truthProp,
   closeOnClickOverlay: Boolean,
   keyboardEnabled: truthProp,
+  destroyOnClose: Boolean,
 });
 
 export type DialogProps = ExtractPropTypes<typeof dialogProps>;
@@ -71,6 +72,7 @@ const popupInheritKeys = [
   ...popupSharedPropKeys,
   'transition',
   'closeOnPopstate',
+  'destroyOnClose',
 ] as const;
 
 export default defineComponent({

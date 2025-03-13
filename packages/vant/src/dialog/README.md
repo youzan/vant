@@ -172,6 +172,7 @@ Vant exports following Dialog utility functions:
 | confirmButtonText | Confirm button text | _string_ | `Confirm` |
 | confirmButtonColor | Confirm button color | _string_ | `#ee0a24` |
 | confirmButtonDisabled | Whether to disable confirm button | _boolean_ | `false` |
+| destroyOnClose `v4.9.18` | Whether to destroy content when closed | _boolean_ | `false` |
 | overlay | Whether to show overlay | _boolean_ | `true` |
 | overlayClass | Custom overlay class | _string \| Array \| object_ | - |
 | overlayStyle | Custom overlay style | _object_ | - |
@@ -202,6 +203,7 @@ Vant exports following Dialog utility functions:
 | confirm-button-text | Confirm button text | _string_ | `Confirm` |
 | confirm-button-color | Confirm button color | _string_ | `#ee0a24` |
 | confirm-button-disabled | Whether to disable confirm button | _boolean_ | `false` |
+| destroy-on-close `v4.9.18` | Whether to destroy content when closed | _boolean_ | `false` |
 | z-index | Set the z-index to a fixed value | _number \| string_ | `2000+` |
 | overlay | Whether to show overlay | _boolean_ | `true` |
 | overlay-class | Custom overlay class | _string_ | - |

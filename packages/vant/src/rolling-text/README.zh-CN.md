@@ -1,4 +1,4 @@
-# RollingText 翻滚文本动效
+# RollingText 翻滚文本
 
 ### 介绍
 
