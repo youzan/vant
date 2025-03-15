@@ -267,12 +267,11 @@ export default defineComponent({
       name: Numeric,
       skipScrollIntoView?: boolean,
     ) => {
-      const matched = children.find(
+      const index = children.findIndex(
         (tab, index) => getTabName(tab, index) === name,
       );
 
-      const index = matched ? children.indexOf(matched) : 0;
-      setCurrentIndex(index, skipScrollIntoView);
+      setCurrentIndex(index === -1 ? 0 : index, skipScrollIntoView);
     };
 
     const scrollToCurrentContent = (immediate = false) => {
