@@ -49,7 +49,7 @@ export const isOptionExist = (
   fields: Required<PickerFieldNames>,
 ) =>
   value !== undefined &&
-  !!options.find((option) => option[fields.value] === value);
+  options.some((option) => option[fields.value] === value);
 
 export function findOptionByValue(
   options: PickerOption[],
