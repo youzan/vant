@@ -43,7 +43,7 @@
     "@vant/touch-emulator": "workspace:^",
     "@vitejs/plugin-vue": "^5.2.1",
     "@vitejs/plugin-vue-jsx": "^4.1.1",
-    "@vue/babel-plugin-jsx": "^1.2.5",
+    "@vue/babel-plugin-jsx": "^1.4.0",
     "autoprefixer": "^10.4.21",
     "commander": "^13.1.0",
     "enquirer": "2.4.1",
