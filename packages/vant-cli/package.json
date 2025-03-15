@@ -67,7 +67,7 @@
     "rspack-plugin-virtual-module": "^0.1.13",
     "terser": "^5.39.0",
     "transliteration": "^2.3.5",
-    "typescript": "^5.7.3",
+    "typescript": "^5.8.2",
     "vite": "^5.4.14",
     "vue-router": "^4.5.0"
   },
