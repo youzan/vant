@@ -59,7 +59,7 @@ export default defineComponent({
         const { $route } = vm;
         const { to } = props;
         const config = isObject(to) ? to : { path: to };
-        return !!$route.matched.find((val) => {
+        return $route.matched.some((val) => {
           const pathMatched = 'path' in config && config.path === val.path;
           const nameMatched = 'name' in config && config.name === val.name;
           return pathMatched || nameMatched;

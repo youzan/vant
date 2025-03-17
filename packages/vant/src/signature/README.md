@@ -99,6 +99,12 @@ Use `background-color` prop to set the color of the background.
 | submit | Emitted when clicking the confirm button | _data: { image: string; canvas: HTMLCanvasElement }_ |
 | clear | Emitted when clicking the cancel button | - |
 
+### Slots
+
+| Name | Description | SlotProps |
+| ---- | ----------- | --------- |
+| tips | Custom tips | -         |
+
 ### Methods
 
 Use [ref](https://vuejs.org/guide/essentials/template-refs.html) to get Signature instance and call instance methods.
