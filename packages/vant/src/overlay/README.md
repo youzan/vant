@@ -38,6 +38,8 @@ export default {
 
 ### Embedded Content
 
+Any content can be embedded on the overlay through the default slot.
+
 ```html
 <van-overlay :show="show" @click="show = false">
   <div class="wrapper">
