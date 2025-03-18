@@ -42,7 +42,7 @@ const showZIndex = ref(false);
     />
     <van-overlay :show="showEmbedded" @click="showEmbedded = false">
       <div class="wrapper">
-        <div class="block" />
+        <div class="block" @click.stop />
       </div>
     </van-overlay>
   </demo-block>
