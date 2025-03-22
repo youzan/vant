@@ -477,8 +477,6 @@ test('should emit correct values when clicking confirm button during column scro
   // Scroll to select "Shanghai"
   triggerDrag(picker.findAll('.van-picker-column')[0], 0, -100);
   // Trigger confirm immediately without waiting for scroll animation to complete
-  // ⚠️ DO NOT uncomment, this line is for documentation purposes only
-  // await picker.find('.van-picker-column ul').trigger('transitionend');
   await picker.find('.van-picker__confirm').trigger('click');
   expect(picker.emitted('confirm')![0]).toEqual([
     {
