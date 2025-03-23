@@ -37,7 +37,7 @@
   "author": "chenjiahan",
   "license": "MIT",
   "devDependencies": {
-    "@rslib/core": "^0.5.4",
+    "@rslib/core": "^0.5.5",
     "typescript": "^5.8.2"
   }
 }
