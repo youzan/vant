@@ -101,6 +101,26 @@ export default defineComponent({
       }
     };
 
+    const offsetStyle = computed(() => {
+      const style: CSSProperties = getZIndexStyle(props.zIndex);
+      let offsetValue = offset.value;
+
+      if (props.autoLocate && root.value) {
+        const offsetParent = getContainingBlock(root.value);
+        if (offsetParent) {
+          offsetValue -= useRect(offsetParent).top;
+        }
+      }
+
+      if (props.direction === 'down') {
+        style.top = `${offsetValue}px`;
+      } else {
+        style.bottom = `${offsetValue}px`;
+      }
+
+      return style;
+    });
+
     const updateOffset = () => {
       if (barRef.value) {
         const rect = useRect(barRef);
@@ -130,23 +150,6 @@ export default defineComponent({
 
     const renderOverlay = () => {
       if (props.overlay) {
-        const style: CSSProperties = getZIndexStyle(props.zIndex);
-        let offsetValue = offset.value;
-
-        if (props.autoLocate && root.value) {
-          const offsetParent = getContainingBlock(root.value);
-
-          if (offsetParent) {
-            offsetValue -= useRect(offsetParent).top;
-          }
-        }
-
-        if (props.direction === 'down') {
-          style.top = `${offsetValue}px`;
-        } else {
-          style.bottom = `${offsetValue}px`;
-        }
-
         return (
           <Overlay
             show={showOverlay.value}
@@ -155,7 +158,7 @@ export default defineComponent({
             role={props.closeOnClickOverlay ? 'button' : undefined}
             tabindex={props.closeOnClickOverlay ? 0 : undefined}
             onClick={props.closeOnClickOverlay ? close : undefined}
-            style={style}
+            style={offsetStyle.value}
           />
         );
       }
@@ -198,7 +201,7 @@ export default defineComponent({
     };
 
     useExpose({ close });
-    linkChildren({ id, props, offset, updateOffset });
+    linkChildren({ id, props, offsetStyle, updateOffset });
     useClickAway(root, onClickAway);
     useEventListener('scroll', onScroll, {
       target: scrollParent,

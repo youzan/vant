@@ -1,4 +1,4 @@
-import type { ComponentPublicInstance, Ref } from 'vue';
+import type { ComponentPublicInstance, Ref, CSSProperties } from 'vue';
 import type { DropdownMenuProps } from './DropdownMenu';
 
 export type DropdownMenuDirection = 'up' | 'down';
@@ -6,7 +6,7 @@ export type DropdownMenuDirection = 'up' | 'down';
 export type DropdownMenuProvide = {
   id: string;
   props: DropdownMenuProps;
-  offset: Ref<number>;
+  offsetStyle: Ref<CSSProperties>;
   updateOffset: () => void;
 };
 
