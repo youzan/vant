@@ -17,6 +17,8 @@ import {
   makeNumericProp,
   createNamespace,
   HAPTICS_FEEDBACK,
+  getZIndexStyle,
+  getContainingBlock,
   type ComponentInstance,
 } from '../utils';
 
@@ -33,6 +35,7 @@ import {
 
 // Types
 import type { DropdownMenuProvide, DropdownMenuDirection } from './types';
+import Overlay from '../overlay';
 
 const [name, bem] = createNamespace('dropdown-menu');
 
@@ -82,6 +85,10 @@ export default defineComponent({
       }
     });
 
+    const showOverlay = computed(() => {
+      return children.some((item) => item.state.showPopup);
+    });
+
     const close = () => {
       children.forEach((item) => {
         item.toggle(false);
@@ -119,6 +126,39 @@ export default defineComponent({
           item.toggle(false, { immediate: true });
         }
       });
+    };
+
+    const renderOverlay = () => {
+      if (props.overlay) {
+        const style: CSSProperties = getZIndexStyle(props.zIndex);
+        let offsetValue = offset.value;
+
+        if (props.autoLocate && root.value) {
+          const offsetParent = getContainingBlock(root.value);
+
+          if (offsetParent) {
+            offsetValue -= useRect(offsetParent).top;
+          }
+        }
+
+        if (props.direction === 'down') {
+          style.top = `${offsetValue}px`;
+        } else {
+          style.bottom = `${offsetValue}px`;
+        }
+
+        return (
+          <Overlay
+            show={showOverlay.value}
+            duration={props.duration}
+            class={bem('overlay')}
+            role={props.closeOnClickOverlay ? 'button' : undefined}
+            tabindex={props.closeOnClickOverlay ? 0 : undefined}
+            onClick={props.closeOnClickOverlay ? close : undefined}
+            style={style}
+          />
+        );
+      }
     };
 
     const renderTitle = (item: ComponentInstance, index: number) => {
@@ -177,6 +217,7 @@ export default defineComponent({
         >
           {children.map(renderTitle)}
         </div>
+        {renderOverlay()}
         {slots.default?.()}
       </div>
     );

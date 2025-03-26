@@ -172,14 +172,7 @@ export default defineComponent({
 
     const renderContent = () => {
       const { offset } = parent;
-      const {
-        autoLocate,
-        zIndex,
-        overlay,
-        duration,
-        direction,
-        closeOnClickOverlay,
-      } = parent.props;
+      const { autoLocate, zIndex, duration, direction } = parent.props;
       const style: CSSProperties = getZIndexStyle(zIndex);
       let offsetValue = offset.value;
 
@@ -210,14 +203,12 @@ export default defineComponent({
             v-model:show={state.showPopup}
             role="menu"
             class={bem('content')}
-            overlay={overlay}
+            overlay={false}
             position={direction === 'down' ? 'top' : 'bottom'}
             duration={state.transition ? duration : 0}
             lazyRender={props.lazyRender}
-            overlayStyle={{ position: 'absolute' }}
             aria-labelledby={`${parent.id}-${index.value}`}
             data-allow-mismatch="attribute"
-            closeOnClickOverlay={closeOnClickOverlay}
             onOpen={onOpen}
             onClose={onClose}
             onOpened={onOpened}

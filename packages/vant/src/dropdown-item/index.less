@@ -9,6 +9,7 @@
   left: 0;
   z-index: var(--van-dropdown-item-z-index);
   overflow: hidden;
+  pointer-events: none;
 
   &__icon {
     display: block;
@@ -46,5 +47,6 @@
   &__content {
     position: absolute;
     max-height: var(--van-dropdown-menu-content-max-height);
+    pointer-events: auto;
   }
 }
