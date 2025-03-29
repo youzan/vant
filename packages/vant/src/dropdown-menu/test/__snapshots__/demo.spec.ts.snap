@@ -31,19 +31,21 @@ exports[`should render demo and match snapshot 1`] = `
         </span>
       </div>
     </div>
+    <transition-stub
+      name="van-fade"
+      appear="true"
+      persisted="false"
+      css="true"
+      class="van-dropdown-menu__overlay"
+      role="button"
+      tabindex="0"
+      style="top: 0px;"
+    >
+    </transition-stub>
     <div
       style="top: 0px; display: none;"
       class="van-dropdown-item van-dropdown-item--down"
     >
-      <transition-stub
-        name="van-fade"
-        appear="true"
-        persisted="false"
-        css="true"
-        role="button"
-        tabindex="0"
-      >
-      </transition-stub>
       <transition-stub
         name="van-popup-slide-top"
         appear="false"
@@ -56,15 +58,6 @@ exports[`should render demo and match snapshot 1`] = `
       style="top: 0px; display: none;"
       class="van-dropdown-item van-dropdown-item--down"
     >
-      <transition-stub
-        name="van-fade"
-        appear="true"
-        persisted="false"
-        css="true"
-        role="button"
-        tabindex="0"
-      >
-      </transition-stub>
       <transition-stub
         name="van-popup-slide-top"
         appear="false"
@@ -105,19 +98,21 @@ exports[`should render demo and match snapshot 1`] = `
         </span>
       </div>
     </div>
+    <transition-stub
+      name="van-fade"
+      appear="true"
+      persisted="false"
+      css="true"
+      class="van-dropdown-menu__overlay"
+      role="button"
+      tabindex="0"
+      style="top: 0px;"
+    >
+    </transition-stub>
     <div
       style="top: 0px; display: none;"
       class="van-dropdown-item van-dropdown-item--down"
     >
-      <transition-stub
-        name="van-fade"
-        appear="true"
-        persisted="false"
-        css="true"
-        role="button"
-        tabindex="0"
-      >
-      </transition-stub>
       <transition-stub
         name="van-popup-slide-top"
         appear="false"
@@ -130,15 +125,6 @@ exports[`should render demo and match snapshot 1`] = `
       style="top: 0px; display: none;"
       class="van-dropdown-item van-dropdown-item--down"
     >
-      <transition-stub
-        name="van-fade"
-        appear="true"
-        persisted="false"
-        css="true"
-        role="button"
-        tabindex="0"
-      >
-      </transition-stub>
       <transition-stub
         name="van-popup-slide-top"
         appear="false"
@@ -179,19 +165,21 @@ exports[`should render demo and match snapshot 1`] = `
         </span>
       </div>
     </div>
+    <transition-stub
+      name="van-fade"
+      appear="true"
+      persisted="false"
+      css="true"
+      class="van-dropdown-menu__overlay"
+      role="button"
+      tabindex="0"
+      style="top: 0px;"
+    >
+    </transition-stub>
     <div
       style="top: 0px; display: none;"
       class="van-dropdown-item van-dropdown-item--down"
     >
-      <transition-stub
-        name="van-fade"
-        appear="true"
-        persisted="false"
-        css="true"
-        role="button"
-        tabindex="0"
-      >
-      </transition-stub>
       <transition-stub
         name="van-popup-slide-top"
         appear="false"
@@ -204,15 +192,6 @@ exports[`should render demo and match snapshot 1`] = `
       style="top: 0px; display: none;"
       class="van-dropdown-item van-dropdown-item--down"
     >
-      <transition-stub
-        name="van-fade"
-        appear="true"
-        persisted="false"
-        css="true"
-        role="button"
-        tabindex="0"
-      >
-      </transition-stub>
       <transition-stub
         name="van-popup-slide-top"
         appear="false"
@@ -292,19 +271,21 @@ exports[`should render demo and match snapshot 1`] = `
         </span>
       </div>
     </div>
+    <transition-stub
+      name="van-fade"
+      appear="true"
+      persisted="false"
+      css="true"
+      class="van-dropdown-menu__overlay"
+      role="button"
+      tabindex="0"
+      style="top: 0px;"
+    >
+    </transition-stub>
     <div
       style="top: 0px; display: none;"
       class="van-dropdown-item van-dropdown-item--down"
     >
-      <transition-stub
-        name="van-fade"
-        appear="true"
-        persisted="false"
-        css="true"
-        role="button"
-        tabindex="0"
-      >
-      </transition-stub>
       <transition-stub
         name="van-popup-slide-top"
         appear="false"
@@ -318,14 +299,17 @@ exports[`should render demo and match snapshot 1`] = `
       class="van-dropdown-item van-dropdown-item--down"
     >
       <transition-stub
-        name="van-fade"
-        appear="true"
+        name="van-popup-slide-top"
+        appear="false"
         persisted="false"
         css="true"
-        role="button"
-        tabindex="0"
       >
       </transition-stub>
+    </div>
+    <div
+      style="top: 0px; display: none;"
+      class="van-dropdown-item van-dropdown-item--down"
+    >
       <transition-stub
         name="van-popup-slide-top"
         appear="false"
@@ -339,15 +323,6 @@ exports[`should render demo and match snapshot 1`] = `
       class="van-dropdown-item van-dropdown-item--down"
     >
       <transition-stub
-        name="van-fade"
-        appear="true"
-        persisted="false"
-        css="true"
-        role="button"
-        tabindex="0"
-      >
-      </transition-stub>
-      <transition-stub
         name="van-popup-slide-top"
         appear="false"
         persisted="false"
@@ -359,36 +334,6 @@ exports[`should render demo and match snapshot 1`] = `
       style="top: 0px; display: none;"
       class="van-dropdown-item van-dropdown-item--down"
     >
-      <transition-stub
-        name="van-fade"
-        appear="true"
-        persisted="false"
-        css="true"
-        role="button"
-        tabindex="0"
-      >
-      </transition-stub>
-      <transition-stub
-        name="van-popup-slide-top"
-        appear="false"
-        persisted="false"
-        css="true"
-      >
-      </transition-stub>
-    </div>
-    <div
-      style="top: 0px; display: none;"
-      class="van-dropdown-item van-dropdown-item--down"
-    >
-      <transition-stub
-        name="van-fade"
-        appear="true"
-        persisted="false"
-        css="true"
-        role="button"
-        tabindex="0"
-      >
-      </transition-stub>
       <transition-stub
         name="van-popup-slide-top"
         appear="false"
@@ -429,19 +374,21 @@ exports[`should render demo and match snapshot 1`] = `
         </span>
       </div>
     </div>
+    <transition-stub
+      name="van-fade"
+      appear="true"
+      persisted="false"
+      css="true"
+      class="van-dropdown-menu__overlay"
+      role="button"
+      tabindex="0"
+      style="bottom: 0px;"
+    >
+    </transition-stub>
     <div
       style="bottom: 0px; display: none;"
       class="van-dropdown-item van-dropdown-item--up"
     >
-      <transition-stub
-        name="van-fade"
-        appear="true"
-        persisted="false"
-        css="true"
-        role="button"
-        tabindex="0"
-      >
-      </transition-stub>
       <transition-stub
         name="van-popup-slide-bottom"
         appear="false"
@@ -454,15 +401,6 @@ exports[`should render demo and match snapshot 1`] = `
       style="bottom: 0px; display: none;"
       class="van-dropdown-item van-dropdown-item--up"
     >
-      <transition-stub
-        name="van-fade"
-        appear="true"
-        persisted="false"
-        css="true"
-        role="button"
-        tabindex="0"
-      >
-      </transition-stub>
       <transition-stub
         name="van-popup-slide-bottom"
         appear="false"
@@ -501,19 +439,21 @@ exports[`should render demo and match snapshot 1`] = `
         </span>
       </div>
     </div>
+    <transition-stub
+      name="van-fade"
+      appear="true"
+      persisted="false"
+      css="true"
+      class="van-dropdown-menu__overlay"
+      role="button"
+      tabindex="0"
+      style="top: 0px;"
+    >
+    </transition-stub>
     <div
       style="top: 0px; display: none;"
       class="van-dropdown-item van-dropdown-item--down"
     >
-      <transition-stub
-        name="van-fade"
-        appear="true"
-        persisted="false"
-        css="true"
-        role="button"
-        tabindex="0"
-      >
-      </transition-stub>
       <transition-stub
         name="van-popup-slide-top"
         appear="false"
@@ -526,15 +466,6 @@ exports[`should render demo and match snapshot 1`] = `
       style="top: 0px; display: none;"
       class="van-dropdown-item van-dropdown-item--down"
     >
-      <transition-stub
-        name="van-fade"
-        appear="true"
-        persisted="false"
-        css="true"
-        role="button"
-        tabindex="0"
-      >
-      </transition-stub>
       <transition-stub
         name="van-popup-slide-top"
         appear="false"

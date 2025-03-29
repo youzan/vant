@@ -5,7 +5,6 @@ import {
   ref,
   type PropType,
   type TeleportProps,
-  type CSSProperties,
   type ExtractPropTypes,
 } from 'vue';
 
@@ -13,15 +12,13 @@ import {
 import {
   truthProp,
   unknownProp,
-  getZIndexStyle,
   createNamespace,
   makeArrayProp,
-  getContainingBlock,
 } from '../utils';
 import { DROPDOWN_KEY } from '../dropdown-menu/DropdownMenu';
 
 // Composables
-import { useParent, useRect } from '@vant/use';
+import { useParent } from '@vant/use';
 import { useExpose } from '../composables/use-expose';
 
 // Components
@@ -171,37 +168,14 @@ export default defineComponent({
     };
 
     const renderContent = () => {
-      const { offset } = parent;
-      const {
-        autoLocate,
-        zIndex,
-        overlay,
-        duration,
-        direction,
-        closeOnClickOverlay,
-      } = parent.props;
-      const style: CSSProperties = getZIndexStyle(zIndex);
-      let offsetValue = offset.value;
-
-      if (autoLocate && wrapperRef.value) {
-        const offsetParent = getContainingBlock(wrapperRef.value);
-
-        if (offsetParent) {
-          offsetValue -= useRect(offsetParent).top;
-        }
-      }
-
-      if (direction === 'down') {
-        style.top = `${offsetValue}px`;
-      } else {
-        style.bottom = `${offsetValue}px`;
-      }
+      const { offsetStyle } = parent;
+      const { duration, direction } = parent.props;
 
       return (
         <div
           v-show={state.showWrapper}
           ref={wrapperRef}
-          style={style}
+          style={offsetStyle.value}
           class={bem([direction])}
           onClick={onClickWrapper}
           {...attrs}
@@ -210,14 +184,12 @@ export default defineComponent({
             v-model:show={state.showPopup}
             role="menu"
             class={bem('content')}
-            overlay={overlay}
+            overlay={false}
             position={direction === 'down' ? 'top' : 'bottom'}
             duration={state.transition ? duration : 0}
             lazyRender={props.lazyRender}
-            overlayStyle={{ position: 'absolute' }}
             aria-labelledby={`${parent.id}-${index.value}`}
             data-allow-mismatch="attribute"
-            closeOnClickOverlay={closeOnClickOverlay}
             onOpen={onOpen}
             onClose={onClose}
             onOpened={onOpened}

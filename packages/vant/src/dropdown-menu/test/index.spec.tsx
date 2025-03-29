@@ -362,7 +362,7 @@ test('auto-locate prop', async () => {
   autoLocate.value = true;
   await later();
   expect(mockedFn).toHaveBeenCalled();
-  expect(mockedFn.mock.calls[0]).toEqual([item.element]);
+  expect(mockedFn.mock.calls[0]).toEqual([wrapper.element]);
   expect(item.style.top).toEqual('-10px');
 
   vi.doUnmock('../../utils/dom');
