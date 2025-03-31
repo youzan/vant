@@ -204,7 +204,7 @@ exports[`should render demo and match snapshot 1`] = `
             Y
           </span>
           <span
-            class="van-index-bar__index van-index-bar__index--active"
+            class="van-index-bar__index"
             data-index="Z"
           >
             Z
@@ -911,8 +911,8 @@ exports[`should render demo and match snapshot 1`] = `
           </div>
         </div>
         <div>
-          <div style="height: 0px;">
-            <div class="van-index-anchor van-index-anchor--sticky van-hairline--bottom">
+          <div>
+            <div class="van-index-anchor">
               Z
             </div>
           </div>
