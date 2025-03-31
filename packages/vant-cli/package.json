@@ -32,7 +32,7 @@
   },
   "dependencies": {
     "@babel/core": "^7.26.10",
-    "@babel/preset-typescript": "^7.26.0",
+    "@babel/preset-typescript": "^7.27.0",
     "@rsbuild/core": "^1.1.13",
     "@rsbuild/plugin-babel": "^1.0.4",
     "@rsbuild/plugin-less": "^1.1.1",
