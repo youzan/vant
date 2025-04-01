@@ -6,11 +6,12 @@ exports[`render image 1`] = `
   appear="true"
   persisted="false"
   css="true"
-  class="van-image-preview__overlay"
-  role="button"
-  tabindex="0"
 >
-  <div class="van-overlay">
+  <div
+    class="van-overlay van-image-preview__overlay"
+    role="button"
+    tabindex="0"
+  >
   </div>
 </transition-stub>
 <transition-stub
@@ -66,11 +67,12 @@ exports[`should render cover slot correctly 1`] = `
   appear="true"
   persisted="false"
   css="true"
-  class="van-image-preview__overlay"
-  role="button"
-  tabindex="0"
 >
-  <div class="van-overlay">
+  <div
+    class="van-overlay van-image-preview__overlay"
+    role="button"
+    tabindex="0"
+  >
   </div>
 </transition-stub>
 <transition-stub
