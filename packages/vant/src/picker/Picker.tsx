@@ -147,7 +147,9 @@ export default defineComponent({
     };
 
     const getEventParams = () => ({
-      selectedValues: selectedValues.value.slice(0),
+      selectedValues: selectedValues.value.length
+        ? selectedValues.value.slice(0)
+        : resetSelectedValues(currentColumns.value),
       selectedOptions: selectedOptions.value,
       selectedIndexes: selectedIndexes.value,
     });
@@ -268,23 +270,20 @@ export default defineComponent({
       }
     };
 
-    watch(
-      currentColumns,
-      (columns) => {
-        columns.forEach((options, index) => {
-          if (
-            options.length &&
-            !isOptionExist(options, selectedValues.value[index], fields.value)
-          ) {
-            setValue(
-              index,
-              getFirstEnabledOption(options)![fields.value.value],
-            );
-          }
-        });
-      },
-      { immediate: true },
-    );
+    const resetSelectedValues = (columns: PickerColumn[]) => {
+      columns.forEach((options, index) => {
+        if (
+          options.length &&
+          !isOptionExist(options, selectedValues.value[index], fields.value)
+        ) {
+          setValue(index, getFirstEnabledOption(options)![fields.value.value]);
+        }
+      });
+    };
+
+    watch(currentColumns, (columns) => resetSelectedValues(columns), {
+      immediate: true,
+    });
 
     // preserve last emitted model value
     // when props.modelValue is updated by parent component,
