@@ -101,6 +101,7 @@ Vant 3/4 支持现代浏览器以及 Chrome >= 51、iOS >= 10.0（与 Vue 3 一�
 | [raycast-vant-documentation](https://github.com/Aisen60/raycast-vant-documentation) | 一个 Raycast 拓展，能在 Raycast 中搜索 Vant 组件库文档 |
 | [nuxt-vant-mobile](https://github.com/easy-temps/nuxt-vant-mobile) | 基于 Vant 的 Nuxt _⁴_ 项目模板，开箱即用 |
 | [mobvue](https://github.com/un-pany/mobvue) | 一个精心制作的移动端 H5 模板 |
+| [novlan1/press-ui](https://github.com/novlan1/press-ui) | 参照 Vant 打造的 uni-app 框架移动端组件库 |
 
 ### 其他链接
 
