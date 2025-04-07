@@ -20,8 +20,6 @@ exports[`should render demo and match snapshot 1`] = `
     appear="true"
     persisted="false"
     css="true"
-    role="button"
-    tabindex="0"
   >
   </transition-stub>
   <transition-stub
@@ -51,8 +49,6 @@ exports[`should render demo and match snapshot 1`] = `
     appear="true"
     persisted="false"
     css="true"
-    role="button"
-    tabindex="0"
   >
   </transition-stub>
   <transition-stub
@@ -82,8 +78,6 @@ exports[`should render demo and match snapshot 1`] = `
     appear="true"
     persisted="false"
     css="true"
-    role="button"
-    tabindex="0"
   >
   </transition-stub>
   <transition-stub
@@ -113,8 +107,6 @@ exports[`should render demo and match snapshot 1`] = `
     appear="true"
     persisted="false"
     css="true"
-    role="button"
-    tabindex="0"
   >
   </transition-stub>
   <transition-stub

@@ -6,10 +6,12 @@ exports[`should change icon class prefix when using icon-prefix prop 1`] = `
   appear="true"
   persisted="false"
   css="true"
-  role="button"
-  tabindex="0"
 >
-  <div class="van-overlay">
+  <div
+    class="van-overlay"
+    role="button"
+    tabindex="0"
+  >
   </div>
 </transition-stub>
 <transition-stub
@@ -47,10 +49,12 @@ exports[`should render overlay-content slot correctly 1`] = `
   appear="true"
   persisted="false"
   css="true"
-  role="button"
-  tabindex="0"
 >
-  <div class="van-overlay">
+  <div
+    class="van-overlay"
+    role="button"
+    tabindex="0"
+  >
     Custom Overlay Content
   </div>
 </transition-stub>
