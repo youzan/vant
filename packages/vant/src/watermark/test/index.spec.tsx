@@ -1,6 +1,7 @@
 // @ts-nocheck
 import { Watermark } from '..';
 import { mount } from '../../../test';
+import { KeepAlive } from 'vue';
 
 describe('watermark', () => {
   beforeEach(() => {
@@ -17,7 +18,7 @@ describe('watermark', () => {
       }
       return createElement(tagName);
     };
-    global.URL.createObjectURL = vi.fn(() => 'run to here');
+    global.URL.createObjectURL = vi.fn(() => 'blob:test');
     global.Image = class {
       crossOrigin = 'anonymous';
 
@@ -104,5 +105,23 @@ describe('watermark', () => {
     });
 
     expect(wrapper.html()).toMatchSnapshot();
+  });
+
+  test('should render KeepAlive with Watermark correctly', async () => {
+    const wrapper = mount({
+      render() {
+        return <KeepAlive>{this.render ? <Watermark /> : null}</KeepAlive>;
+      },
+      data() {
+        return {
+          render: false,
+        };
+      },
+    });
+
+    await wrapper.setData({ render: true });
+    expect(wrapper.find('.van-watermark').style.backgroundImage).toBe(
+      'url(blob:test)',
+    );
   });
 });
