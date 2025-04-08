@@ -20,7 +20,7 @@ import {
   addUnit,
   closest,
   createNamespace,
-  makeNumberProp,
+  isObject,
   makeStringProp,
   windowWidth,
   windowHeight,
@@ -38,11 +38,15 @@ import {
   FloatingBubbleAxis,
   FloatingBubbleMagnetic,
   FloatingBubbleOffset,
+  FloatingBubbleGap,
   FloatingBubbleBoundary,
 } from './types';
 
 export const floatingBubbleProps = {
-  gap: makeNumberProp(24),
+  gap: {
+    type: [Number, Object] as unknown as PropType<FloatingBubbleGap>,
+    default: 24,
+  },
   icon: String,
   axis: makeStringProp<FloatingBubbleAxis>('y'),
   magnetic: String as PropType<FloatingBubbleMagnetic>,
@@ -79,11 +83,17 @@ export default defineComponent({
       height: 0,
     });
 
+    const gapX = computed(() =>
+      isObject(props.gap) ? props.gap.x : props.gap,
+    );
+    const gapY = computed(() =>
+      isObject(props.gap) ? props.gap.y : props.gap,
+    );
     const boundary = computed<FloatingBubbleBoundary>(() => ({
-      top: props.gap,
-      right: windowWidth.value - state.value.width - props.gap,
-      bottom: windowHeight.value - state.value.height - props.gap,
-      left: props.gap,
+      top: gapY.value,
+      right: windowWidth.value - state.value.width - gapX.value,
+      bottom: windowHeight.value - state.value.height - gapY.value,
+      left: gapX.value,
     }));
 
     const dragging = ref(false);
@@ -110,8 +120,8 @@ export default defineComponent({
       const { width, height } = useRect(rootRef.value!);
       const { offset } = props;
       state.value = {
-        x: offset.x > -1 ? offset.x : windowWidth.value - width - props.gap,
-        y: offset.y > -1 ? offset.y : windowHeight.value - height - props.gap,
+        x: offset.x > -1 ? offset.x : windowWidth.value - width - gapX.value,
+        y: offset.y > -1 ? offset.y : windowHeight.value - height - gapY.value,
         width,
         height,
       };
@@ -203,7 +213,7 @@ export default defineComponent({
     });
 
     watch(
-      [windowWidth, windowHeight, () => props.gap, () => props.offset],
+      [windowWidth, windowHeight, gapX, gapY, () => props.offset],
       updateState,
       { deep: true },
     );

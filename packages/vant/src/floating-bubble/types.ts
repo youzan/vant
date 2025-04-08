@@ -16,6 +16,13 @@ export type FloatingBubbleOffset = {
   y: number;
 };
 
+export type FloatingBubbleGap =
+  | number
+  | {
+      x: number;
+      y: number;
+    };
+
 export type FloatingBubbleBoundary = {
   top: number;
   right: number;
