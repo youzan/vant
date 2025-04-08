@@ -62,6 +62,33 @@ test('should render correctly when all props set', async () => {
   restore();
 });
 
+test('should render with xy gaps', async () => {
+  useWindowSize();
+  const restore = mockGetBoundingClientRect({ width: 48, height: 48 });
+
+  const root = document.createElement('div');
+  mount(FloatingBubble, {
+    props: {
+      teleport: root,
+      gap: { x: 50, y: 27 },
+    },
+  });
+
+  const floatingBubbleEl = root.querySelector<HTMLDivElement>(
+    '.van-floating-bubble',
+  )!;
+
+  await later();
+
+  expect(floatingBubbleEl.style.transform).toEqual(
+    `translate3d(${window.innerWidth - 48 - 50}px, ${
+      window.innerHeight - 48 - 27
+    }px, 0)`,
+  );
+
+  restore();
+});
+
 test('should only y axis direction move when axis is default', async () => {
   const restore = mockGetBoundingClientRect({ width: 48, height: 48 });
 
