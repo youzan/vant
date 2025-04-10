@@ -76,7 +76,7 @@ export const TabTitle = defineComponent({
       if (
         props.dot ||
         (isObject(props.badge)
-          ? props.badge.content !== ''
+          ? isDef(props.badge.content) && props.badge.content !== ''
           : isDef(props.badge) && props.badge !== '')
       ) {
         const rest =
