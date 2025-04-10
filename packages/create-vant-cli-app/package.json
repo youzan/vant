@@ -38,7 +38,7 @@
     "@types/fs-extra": "^11.0.4",
     "@types/node": "^22.13.11",
     "rimraf": "^6.0.1",
-    "typescript": "^5.8.2"
+    "typescript": "^5.8.3"
   },
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
