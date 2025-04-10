@@ -34,7 +34,7 @@
     "@babel/core": "^7.26.10",
     "@babel/preset-typescript": "^7.26.0",
     "@rsbuild/core": "^1.1.13",
-    "@rsbuild/plugin-babel": "^1.0.4",
+    "@rsbuild/plugin-babel": "^1.0.5",
     "@rsbuild/plugin-less": "^1.1.1",
     "@rsbuild/plugin-sass": "^1.1.2",
     "@rsbuild/plugin-vue": "^1.0.7",
@@ -47,7 +47,7 @@
     "autoprefixer": "^10.4.21",
     "commander": "^13.1.0",
     "enquirer": "2.4.1",
-    "esbuild": "^0.25.1",
+    "esbuild": "^0.25.2",
     "eslint": "^8.57.1",
     "fast-glob": "^3.3.3",
     "fs-extra": "^11.3.0",
@@ -67,8 +67,8 @@
     "rspack-plugin-virtual-module": "^0.1.13",
     "terser": "^5.39.0",
     "transliteration": "^2.3.5",
-    "typescript": "^5.8.2",
-    "vite": "^5.4.15",
+    "typescript": "^5.8.3",
+    "vite": "^5.4.18",
     "vue-router": "^4.5.0"
   },
   "devDependencies": {
