@@ -1,6 +1,17 @@
-import { computed, defineComponent, type CSSProperties } from 'vue';
-import { isDef, truthProp, numericProp, createNamespace } from '../utils';
-import { Badge } from '../badge';
+import {
+  computed,
+  defineComponent,
+  type CSSProperties,
+  type PropType,
+} from 'vue';
+import {
+  isDef,
+  truthProp,
+  numericProp,
+  createNamespace,
+  isObject,
+} from '../utils';
+import { Badge, type BadgeProps } from '../badge';
 
 const [name, bem] = createNamespace('tab');
 
@@ -13,7 +24,9 @@ export const TabTitle = defineComponent({
     type: String,
     color: String,
     title: String,
-    badge: numericProp,
+    badge: [...numericProp, Object] as PropType<
+      Omit<BadgeProps, 'dot' | 'showZero'> | string | number
+    >,
     shrink: Boolean,
     isActive: Boolean,
     disabled: Boolean,
@@ -60,13 +73,18 @@ export const TabTitle = defineComponent({
         </span>
       );
 
-      if (props.dot || (isDef(props.badge) && props.badge !== '')) {
+      if (
+        props.dot ||
+        (isObject(props.badge)
+          ? props.badge.content !== ''
+          : isDef(props.badge) && props.badge !== '')
+      ) {
+        const rest =
+          typeof props.badge === 'number' || typeof props.badge === 'string'
+            ? { content: props.badge }
+            : props.badge;
         return (
-          <Badge
-            dot={props.dot}
-            content={props.badge}
-            showZero={props.showZeroBadge}
-          >
+          <Badge dot={props.dot} showZero={props.showZeroBadge} {...rest}>
             {Text}
           </Badge>
         );
