@@ -36,7 +36,7 @@
   "author": "chenjiahan",
   "license": "MIT",
   "devDependencies": {
-    "@rslib/core": "^0.5.5",
+    "@rslib/core": "^0.6.2",
     "typescript": "^5.8.3",
     "vue": "^3.5.13"
   },
