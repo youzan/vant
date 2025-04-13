@@ -32,7 +32,7 @@ import { useId } from '../composables/use-id';
 import { useExpose } from '../composables/use-expose';
 import { routeProps } from '../composables/use-route';
 import { TAB_STATUS_KEY } from '../composables/use-tab-status';
-import type { BadgeProps } from '../badge';
+import type { Badge, BadgeProps } from '../badge';
 
 // Components
 import { TabTitle } from './TabTitle';
@@ -44,7 +44,12 @@ export const tabProps = extend({}, routeProps, {
   dot: Boolean,
   name: numericProp,
   badge: [...numericProp, Object] as PropType<
-    Omit<BadgeProps, 'dot' | 'showZero'> | string | number
+    | Omit<
+        Pick<InstanceType<typeof Badge>['$props'], keyof BadgeProps>,
+        'dot' | 'showZero'
+      >
+    | string
+    | number
   >,
   title: String,
   disabled: Boolean,

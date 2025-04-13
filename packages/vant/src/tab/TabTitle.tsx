@@ -25,7 +25,12 @@ export const TabTitle = defineComponent({
     color: String,
     title: String,
     badge: [...numericProp, Object] as PropType<
-      Omit<BadgeProps, 'dot' | 'showZero'> | string | number
+      | Omit<
+          Pick<InstanceType<typeof Badge>['$props'], keyof BadgeProps>,
+          'dot' | 'showZero'
+        >
+      | string
+      | number
     >,
     shrink: Boolean,
     isActive: Boolean,
