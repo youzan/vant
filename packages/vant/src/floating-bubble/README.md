@@ -94,7 +94,7 @@ export default {
 | axis | Drag direction, `xy` stands for free drag, `lock` stands for disable drag | _'x' \| 'y' \| 'xy' \| 'lock'_ | `y` |
 | magnetic | Direction of automatic magnetic absorption | _'x' \| 'y'_ | - |
 | icon | Bubble icon | _string_ | - |
-| gap | Minimum gap between the bubble and the window, unit `px` | _number_ | `24` |
+| gap | Minimum gap between the bubble and the window, unit `px` | _number \| { x: number, y: number }_ | `24` |
 | teleport | Specifies a target element where BackTop will be mounted | _string \| Element_ | `body` |
 
 ### Events
