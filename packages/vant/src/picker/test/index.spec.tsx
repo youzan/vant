@@ -489,3 +489,35 @@ test('should emit correct values when clicking confirm button during column scro
     },
   ]);
 });
+
+test('should emit default values when clear modelValue', async () => {
+  const columns = [
+    { text: '1', value: '1' },
+    { text: '2', value: '2' },
+  ];
+  const wrapper = mount({
+    setup() {
+      const modelValue = ref(['1']);
+      return () => (
+        <>
+          <button
+            class="clear-button"
+            onClick={() => (modelValue.value = [])}
+          />
+          <Picker v-model={modelValue.value} columns={columns} />
+        </>
+      );
+    },
+  });
+  const button = wrapper.find('.clear-button');
+  await button.trigger('click');
+  const picker = wrapper.findComponent(Picker);
+  await picker.find('.van-picker__confirm').trigger('click');
+  expect(picker.emitted('confirm')![0]).toEqual([
+    {
+      selectedOptions: [{ text: '1', value: '1' }],
+      selectedValues: ['1'],
+      selectedIndexes: [0],
+    },
+  ]);
+});
