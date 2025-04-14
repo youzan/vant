@@ -20,6 +20,7 @@ import {
   makeStringProp,
   makeNumericProp,
   BORDER_UNSET_TOP_BOTTOM,
+  falseProp,
   type Numeric,
 } from '../utils';
 import {
@@ -58,6 +59,7 @@ import { PICKER_GROUP_KEY } from '../picker-group/PickerGroup';
 
 export const pickerSharedProps = extend(
   {
+    resetChildren: falseProp,
     loading: Boolean,
     readonly: Boolean,
     allowHtml: Boolean,
@@ -159,7 +161,10 @@ export default defineComponent({
         // reset values after cascading
         selectedValues.value.forEach((value, index) => {
           const options = currentColumns.value[index];
-          if (!isOptionExist(options, value, fields.value)) {
+          if (
+            !isOptionExist(options, value, fields.value) ||
+            (props.resetChildren && columnIndex === 0 && index > 0)
+          ) {
             setValue(
               index,
               options.length ? options[0][fields.value.value] : undefined,
