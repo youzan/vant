@@ -94,7 +94,7 @@ export default {
 | axis | 拖拽的方向，`xy` 代表自由拖拽，`lock` 代表禁止拖拽 | _'x' \| 'y' \| 'xy' \| 'lock'_ | `y` |
 | magnetic | 自动磁吸的方向 | _'x' \| 'y'_ | - |
 | icon | 气泡图标名称或图片链接，等同于 Icon 组件的 [name 属性](#/zh-CN/icon#props) | _string_ | - |
-| gap | 气泡与窗口的最小间距，单位为 `px` | _number_ | `24` |
+| gap | 气泡与窗口的最小间距，单位为 `px` | _number \| { x: number, y: number }_ | `24` |
 | teleport | 指定挂载的节点，等同于 Teleport 组件的 [to 属性](https://cn.vuejs.org/api/built-in-components.html#teleport) | _string \| Element_ | `body` |
 
 ### Events
