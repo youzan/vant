@@ -137,17 +137,17 @@ export default defineComponent({
 
     const renderLoading = () => {
       if (loading.value && !props.finished && !props.disabled) {
-        return (
-          <div class={bem('loading')}>
-            {slots.loading ? (
-              slots.loading()
-            ) : (
-              <Loading class={bem('loading-icon')}>
-                {props.loadingText || t('loading')}
-              </Loading>
-            )}
-          </div>
-        );
+        if (slots.loading) {
+          return <div class={bem('loading')}>{slots.loading()}</div>;
+        }
+        const text = props.loadingText ?? t('loading');
+        if (text) {
+          return (
+            <div class={bem('loading')}>
+              <Loading class={bem('loading-icon')}>{text}</Loading>
+            </div>
+          );
+        }
       }
     };
 
