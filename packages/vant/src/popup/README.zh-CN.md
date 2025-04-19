@@ -229,6 +229,7 @@ export default {
 | z-index | 将弹窗的 z-index 层级设置为一个固定值 | _number \| string_ | `2000+` |
 | round | 是否显示圆角 | _boolean_ | `false` |
 | destroy-on-close `v4.9.10` | 是否在关闭时销毁内容 | _boolean_ | `false` |
+| disableOverlayTransition | 是否禁用遮罩层动画 | _boolean_ | `false` |
 | lock-scroll | 是否锁定背景滚动 | _boolean_ | `true` |
 | lazy-render | 是否在显示弹层时才渲染节点 | _boolean_ | `true` |
 | close-on-popstate | 是否在页面回退时自动关闭 | _boolean_ | `false` |

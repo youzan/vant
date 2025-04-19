@@ -41,7 +41,7 @@ exports[`click option 1`] = `
       css="true"
     >
       <div
-        style="z-index: 2007; position: absolute; animation-duration: 0.2s; display: none;"
+        style="z-index: 2007; position: absolute; animation-duration: 0s; display: none;"
         class="van-overlay"
         role="button"
         tabindex="0"
@@ -156,7 +156,7 @@ exports[`close-on-click-outside 1`] = `
       css="true"
     >
       <div
-        style="z-index: 2004; position: absolute; animation-duration: 0.2s; display: none;"
+        style="z-index: 2004; position: absolute; animation-duration: 0s; display: none;"
         class="van-overlay"
         role="button"
         tabindex="0"
@@ -381,7 +381,7 @@ exports[`direction up 2`] = `
       css="true"
     >
       <div
-        style="z-index: 2006; position: absolute; animation-duration: 0.2s;"
+        style="z-index: 2006; position: absolute; animation-duration: 0s;"
         class="van-overlay"
         role="button"
         tabindex="0"
@@ -496,7 +496,7 @@ exports[`disable close-on-click-outside 1`] = `
       css="true"
     >
       <div
-        style="z-index: 2005; position: absolute; animation-duration: 0.2s;"
+        style="z-index: 2005; position: absolute; animation-duration: 0s;"
         class="van-overlay"
         role="button"
         tabindex="0"
@@ -649,7 +649,7 @@ exports[`render option icon 1`] = `
       css="true"
     >
       <div
-        style="z-index: 2003; position: absolute; animation-duration: 0.2s;"
+        style="z-index: 2003; position: absolute; animation-duration: 0s;"
         class="van-overlay"
         role="button"
         tabindex="0"
@@ -768,7 +768,7 @@ exports[`show dropdown item 1`] = `
       css="true"
     >
       <div
-        style="z-index: 2001; position: absolute; animation-duration: 0.2s;"
+        style="z-index: 2001; position: absolute; animation-duration: 0s;"
         class="van-overlay"
         role="button"
         tabindex="0"
@@ -946,7 +946,7 @@ exports[`show dropdown item 2`] = `
       css="true"
     >
       <div
-        style="z-index: 2002; position: absolute; animation-duration: 0.2s;"
+        style="z-index: 2002; position: absolute; animation-duration: 0s;"
         class="van-overlay"
         role="button"
         tabindex="0"
@@ -1105,7 +1105,7 @@ exports[`show dropdown item 3`] = `
       css="true"
     >
       <div
-        style="z-index: 2002; position: absolute; animation-duration: 0.2s; display: none;"
+        style="z-index: 2002; position: absolute; animation-duration: 0s; display: none;"
         class="van-overlay"
         role="button"
         tabindex="0"

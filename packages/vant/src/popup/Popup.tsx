@@ -141,7 +141,7 @@ export default defineComponent({
             show={props.show}
             class={props.overlayClass}
             zIndex={zIndex.value}
-            duration={props.duration}
+            duration={props.disableOverlayTransition ? 0 : props.duration}
             customStyle={props.overlayStyle}
             role={props.closeOnClickOverlay ? 'button' : undefined}
             tabindex={props.closeOnClickOverlay ? 0 : undefined}

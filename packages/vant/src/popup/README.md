@@ -227,6 +227,7 @@ Use `teleport` prop to specify mount location.
 | z-index | Set the z-index to a fixed value | _number \| string_ | `2000+` |
 | round | Whether to show round corner | _boolean_ | `false` |
 | destroy-on-close `v4.9.10` | Whether to destroy content when closed | _boolean_ | `false` |
+| disableOverlayTransition | Whether to disable overlay transition | _boolean_ | `false` |
 | lock-scroll | Whether to lock background scroll | _boolean_ | `true` |
 | lazy-render | Whether to lazy render util appeared | _boolean_ | `true` |
 | close-on-popstate | Whether to close when popstate | _boolean_ | `false` |

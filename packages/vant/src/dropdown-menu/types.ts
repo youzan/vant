@@ -7,10 +7,12 @@ export type DropdownMenuProvide = {
   id: string;
   props: DropdownMenuProps;
   offset: Ref<number>;
+  opened: Ref<boolean>;
   updateOffset: () => void;
 };
 
 export type DropdownMenuExpose = {
+  opened: Ref<boolean>;
   close: () => void;
 };
 

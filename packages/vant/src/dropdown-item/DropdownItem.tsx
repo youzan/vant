@@ -211,6 +211,7 @@ export default defineComponent({
             role="menu"
             class={bem('content')}
             overlay={overlay}
+            disableOverlayTransition={parent.opened.value}
             position={direction === 'down' ? 'top' : 'bottom'}
             duration={state.transition ? duration : 0}
             lazyRender={props.lazyRender}

@@ -10,6 +10,8 @@ export const popupSharedProps = {
   overlay: truthProp,
   // transition duration
   duration: numericProp,
+  // disable overlay transition
+  disableOverlayTransition: Boolean,
   // teleport
   teleport: [String, Object] as PropType<TeleportProps['to']>,
   // prevent body scroll
