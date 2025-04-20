@@ -88,6 +88,7 @@ The current maintenance status of each version of Vant is as follows:
 | [nuxt-vant-mobile](https://github.com/easy-temps/nuxt-vant-mobile) | Nuxt _⁴_ project template based on Vant, out of the box |
 | [mobvue](https://github.com/un-pany/mobvue) | A well-crafted mobile web app template |
 | [novlan1/press-ui](https://github.com/novlan1/press-ui) | Uni APP mobile UI Components based on Vant |
+| [Fantastic-mobile](https://github.com/fantastic-mobile/basic) | A unique mobile H5 framework |
 
 ### Other Links
 
