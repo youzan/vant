@@ -490,6 +490,7 @@ test('should emit correct values when clicking confirm button during column scro
   ]);
 });
 
+// https://github.com/youzan/vant/issues/13423
 test('should emit default values when clear modelValue', async () => {
   const columns = [
     { text: '1', value: '1' },
