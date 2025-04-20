@@ -147,9 +147,7 @@ export default defineComponent({
     };
 
     const getEventParams = () => ({
-      selectedValues: selectedValues.value.length
-        ? selectedValues.value.slice(0)
-        : resetSelectedValues(currentColumns.value),
+      selectedValues: selectedValues.value.slice(0),
       selectedOptions: selectedOptions.value,
       selectedIndexes: selectedIndexes.value,
     });
@@ -299,9 +297,14 @@ export default defineComponent({
           selectedValues.value = newValues.slice(0);
           lastEmittedModelValue = newValues.slice(0);
         }
+
+        if (props.modelValue.length === 0) {
+          resetSelectedValues(currentColumns.value);
+        }
       },
       { deep: true },
     );
+
     watch(
       selectedValues,
       (newValues) => {
