@@ -161,26 +161,6 @@ exports[`should not render empty tab 1`] = `
 </div>
 `;
 
-exports[`should render badge prop correctly 1`] = `
-<div
-  id="van-tabs-0"
-  role="tab"
-  class="van-tab van-tab--line van-tab--active"
-  tabindex="0"
-  aria-selected="true"
-  aria-controls="van-tab"
-  data-allow-mismatch="attribute"
->
-  <div class="van-badge__wrapper">
-    <span class="van-tab__text van-tab__text--ellipsis">
-    </span>
-    <div class="van-badge van-badge--top-right van-badge--fixed">
-      10
-    </div>
-  </div>
-</div>
-`;
-
 exports[`should render nav-left、nav-right slot correctly 1`] = `
 <div class="van-tabs__wrap">
   <div
