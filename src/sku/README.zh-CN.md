@@ -281,7 +281,7 @@ sku: {
 [
   sku_id: 239883,
   // 规格属性, 数据结构和properties相同
-  properties: Peoperties
+  properties: Properties
 ];
 ```
 
