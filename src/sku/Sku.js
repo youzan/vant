@@ -370,7 +370,7 @@ export default createComponent({
 
   methods: {
     setCurrentSkuProperties(id) {
-      const target = this.skuProperties?.find((item) => item.skuId === id) || {};
+      const target = this.skuProperties?.find((item) => item.sku_id === id) || {};
       this.currentSkuProperties = target.properties || [];
     },
     resetStepper() {
