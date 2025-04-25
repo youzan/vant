@@ -282,6 +282,16 @@ sku: {
 ];
 ```
 
+### skuProperties Data Structure
+
+```js
+[
+  sku_id: 239883,
+  // sku properties, data structure is same as properties
+  properties: Properties
+];
+```
+
 ### initialSku Data Structure
 
 ```js

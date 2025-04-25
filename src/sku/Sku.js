@@ -36,6 +36,7 @@ export default createComponent({
     lazyLoad: Boolean,
     hideStock: Boolean,
     properties: Array,
+    skuProperties: Array,
     addCartText: String,
     stepperTitle: String,
     getContainer: [String, Function],
@@ -118,6 +119,7 @@ export default createComponent({
       selectedProp: {},
       selectedNum: 1,
       show: this.value,
+      currentSkuProperties: []
     };
   },
 
@@ -155,6 +157,9 @@ export default createComponent({
   },
 
   computed: {
+    isSkuProperties() {
+      return this.skuProperties && this.skuProperties.length;
+    },
     skuGroupClass() {
       return [
         'van-sku-group-container',
@@ -202,7 +207,7 @@ export default createComponent({
 
     selectedSkuComb() {
       let skuComb = null;
-      if (this.isSkuCombSelected) {
+      if (this.isSkuCombSelected || this.isSkuProperties) {
         if (this.hasSku) {
           skuComb = getSkuComb(this.skuList, this.selectedSku);
         } else {
@@ -214,6 +219,8 @@ export default createComponent({
         }
 
         if (skuComb) {
+          // 更新当前规格属性数据
+          this.setCurrentSkuProperties(skuComb.id);
           skuComb.properties = getSelectedProperties(
             this.propList,
             this.selectedProp
@@ -266,7 +273,7 @@ export default createComponent({
     },
 
     propList() {
-      return this.properties || [];
+      return this.isSkuProperties ? this.currentSkuProperties : this.properties || [];
     },
 
     imageList() {
@@ -362,6 +369,10 @@ export default createComponent({
   },
 
   methods: {
+    setCurrentSkuProperties(id) {
+      const target = this.skuProperties?.find((item) => item.sku_id === id) || {};
+      this.currentSkuProperties = target.properties || [];
+    },
     resetStepper() {
       const { skuStepper } = this.$refs;
       const { selectedNum } = this.initialSku;
@@ -503,13 +514,20 @@ export default createComponent({
             }
           : { ...this.selectedSku, [skuValue.skuKeyStr]: skuValue.id };
 
+      // 切换sku清空当前选择属性数据，触发prop-clear
+      if (this.isSkuProperties) {
+        this.selectedProp = {}
+        this.onPropClear()
+      }
       this.$emit('sku-selected', {
         skuValue,
         selectedSku: this.selectedSku,
         selectedSkuComb: this.selectedSkuComb,
       });
     },
-
+    onPropClear() {
+      this.$emit('sku-prop-clear');
+    },
     onPropSelect(propValue) {
       const arr = this.selectedProp[propValue.skuKeyStr] || [];
       const pos = arr.indexOf(propValue.id);

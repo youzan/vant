@@ -275,6 +275,16 @@ sku: {
 ];
 ```
 
+### skuProperties 对象结构
+
+```js
+[
+  sku_id: 239883,
+  // 规格属性, 数据结构和properties相同
+  properties: Properties
+];
+```
+
 ### initialSku 对象结构
 
 ```js
