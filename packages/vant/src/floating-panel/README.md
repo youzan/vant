@@ -85,7 +85,7 @@ By default, both the header and content areas of FloatingPanel can be dragged, b
 | Attribute | Description | Type | Default |
 | --- | --- | --- | --- |
 | v-model:height | The current display height of the panel | _number \| string_ | `0` |
-| anchors | Setting custom anchors, unit `px` | _number[]_ | `[100, window.innerWidth * 0.6]` |
+| anchors | Setting custom anchors, unit `px` | _number[]_ | `[100, window.innerHeight * 0.6]` |
 | duration | Transition duration, unit second | _number \| string_ | `0.3` |
 | content-draggable | Allow dragging content | _boolean_ | `true` |
 | lock-scroll `v4.6.4` | When not dragging, Whether to lock background scroll | _boolean_ | `false` |
