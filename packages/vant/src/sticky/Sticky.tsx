@@ -4,6 +4,7 @@ import {
   computed,
   nextTick,
   reactive,
+  onMounted,
   defineComponent,
   type PropType,
   type CSSProperties,
@@ -61,8 +62,20 @@ export default defineComponent({
     });
     const isReset = ref(false);
 
+    // add scroll parent offset
+    const scrollParentTop = ref(0);
+    const scrollParentBottom = ref(0);
+    onMounted(() => {
+      const scrollParentRect = useRect(scrollParent);
+      scrollParentTop.value = scrollParentRect.top;
+      scrollParentBottom.value =
+        scrollParentRect.bottom - scrollParentRect.height;
+    });
+
     const offset = computed(() =>
-      unitToPx(props.position === 'top' ? props.offsetTop : props.offsetBottom),
+      props.position === 'top'
+        ? unitToPx(props.offsetTop) + scrollParentTop.value
+        : unitToPx(props.offsetBottom) + scrollParentBottom.value,
     );
 
     const rootStyle = computed<CSSProperties | undefined>(() => {
