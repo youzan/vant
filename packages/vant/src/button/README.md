@@ -111,6 +111,20 @@ By default, the button is an inline-block element. Use the `block` prop to chang
 <van-button type="primary" block>Block Element</van-button>
 ```
 
+> **Compatibility Tip (for Android devices):** On certain Android devices (especially running version 10.0 and below), using `style="position: fixed; width: 100%"` directly on `<van-button>` may cause layout issues or unexpected rendering behavior due to differences in WebView rendering engines.
+>
+> **Recommended solution:** Instead of applying positioning styles directly to the button, wrap the `<van-button>` inside a container `<div>` to control layout more reliably:
+>
+> ```html
+> <div
+>   style="position: fixed; bottom: 0; left: 0; right: 0; padding: 12px; background: #fff; z-index: 999;"
+> >
+>   <van-button type="primary" block @click="onAdd">Add</van-button>
+> </div>
+> ```
+>
+> This approach ensures better layout compatibility across Android devices, especially in embedded WebViews used by hybrid apps or mini programs.
+
 ### Route
 
 You can use the `url` prop for URL redirection or the `to` prop for route navigation.
