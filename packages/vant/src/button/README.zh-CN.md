@@ -111,6 +111,20 @@ app.use(Button);
 <van-button type="primary" block>块级元素</van-button>
 ```
 
+> **兼容性提示：** 在某些 Android 设备（尤其是系统版本 10.0 及以下）中，`van-button` 组件在设置 `style="position: fixed; width: 100%"` 后，可能会出现布局错位或样式不生效的问题。这通常与 WebView 内核渲染差异有关。
+>
+> **建议：** 为确保兼容性，建议使用以下方式进行布局控制：
+>
+> ```html
+> <div
+>   style="position: fixed; bottom: 0; left: 0; right: 0; padding: 12px; background: #fff; z-index: 999;"
+> >
+>   <van-button type="primary" block @click="onAdd">新增</van-button>
+> </div>
+> ```
+>
+> 同时建议避免直接在 `van-button` 组件上使用 `position: fixed`，而应将其包裹在 `div` 容器中实现定位，以获得更好的跨设备兼容性。
+
 ### 页面导航
 
 可以通过 `url` 属性进行 URL 跳转，或通过 `to` 属性进行路由跳转。
