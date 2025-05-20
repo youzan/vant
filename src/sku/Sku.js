@@ -221,8 +221,6 @@ export default createComponent({
         // 更新当前规格属性数据
         this.setCurrentSkuProperties(skuComb ? skuComb.id : null);
         if (skuComb) {
-          // 更新当前规格属性数据
-          this.setCurrentSkuProperties(skuComb.id);
           skuComb.properties = getSelectedProperties(
             this.propList,
             this.selectedProp
