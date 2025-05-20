@@ -36,7 +36,7 @@
   },
   "devDependencies": {
     "@types/fs-extra": "^11.0.4",
-    "@types/node": "^22.15.17",
+    "@types/node": "^22.15.19",
     "rimraf": "^6.0.1",
     "typescript": "^5.8.3"
   },
