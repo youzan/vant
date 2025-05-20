@@ -1,5 +1,6 @@
 import {
   defineComponent,
+  nextTick,
   onMounted,
   onUnmounted,
   ref,
@@ -158,7 +159,6 @@ export default defineComponent({
 
     watch(
       () => [
-        imageBase64.value,
         props.content,
         props.textColor,
         props.height,
@@ -169,6 +169,10 @@ export default defineComponent({
       ],
       generateWatermarkUrl,
     );
+
+    watch(imageBase64, () => {
+      nextTick(generateWatermarkUrl);
+    });
 
     onMounted(generateWatermarkUrl);
 
