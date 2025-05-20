@@ -139,6 +139,7 @@ export default {
 | safe-area-inset-bottom | Whether to enable bottom safe area adaptation | _boolean_ | `true` |
 | start-sale-num | Minimum quantity | _number_ | `1` |
 | properties | Goods properties | _array_ | - |
+| skuProperties | Sku properties `v2.13.7` | _array_ | - |
 | preview-on-click-image `v2.5.2` | Whether to preview image when click goods image | _boolean_ | `true` |
 | show-header-image `v2.9.0` | Whether to display header image | _boolean_ | `true` |
 | lazy-load | Whether to enable lazy load，should register [Lazyload](#/en-US/lazyload) component | _boolean_ | `false` |

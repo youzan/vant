@@ -144,6 +144,7 @@ export default {
 | safe-area-inset-bottom | 是否开启[底部安全区适配](#/zh-CN/advanced-usage#di-bu-an-quan-qu-gua-pei) | _boolean_ | `true` |
 | start-sale-num | 起售数量 | _number_ | `1` |
 | properties | 商品属性 | _array_ | - |
+| skuProperties | 规格属性 `v2.13.7` | _array_ | - |
 | preview-on-click-image `v2.5.2` | 是否在点击商品图片时自动预览 | _boolean_ | `true` |
 | show-header-image `v2.9.0` | 是否展示头部图片 | _boolean_ | `true` |
 | lazy-load `v2.9.0` | 是否开启图片懒加载，须配合 [Lazyload](#/zh-CN/lazyload) 组件使用 | _boolean_ | `false` |
