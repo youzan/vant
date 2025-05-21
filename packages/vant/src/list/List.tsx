@@ -41,7 +41,10 @@ export const listProps = {
   scroller: Object as PropType<Element>,
   errorText: String,
   direction: makeStringProp<ListDirection>('down'),
-  loadingText: String,
+  loadingText: {
+    type: String as PropType<string | null>,
+    default: '',
+  },
   finishedText: String,
   immediateCheck: truthProp,
 };
@@ -139,13 +142,13 @@ export default defineComponent({
       if (loading.value && !props.finished && !props.disabled) {
         return (
           <div class={bem('loading')}>
-            {slots.loading ? (
-              slots.loading()
-            ) : (
-              <Loading class={bem('loading-icon')}>
-                {props.loadingText || t('loading')}
-              </Loading>
-            )}
+            {slots.loading
+              ? slots.loading()
+              : props.loadingText != null && (
+                  <Loading class={bem('loading-icon')}>
+                    {props.loadingText || t('loading')}
+                  </Loading>
+                )}
           </div>
         );
       }
