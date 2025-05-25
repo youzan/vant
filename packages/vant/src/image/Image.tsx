@@ -52,6 +52,7 @@ export const imageProps = {
   loadingIcon: makeStringProp('photo'),
   crossorigin: String as PropType<ImgHTMLAttributes['crossorigin']>,
   referrerpolicy: String as PropType<ImgHTMLAttributes['referrerpolicy']>,
+  decoding: String as PropType<ImgHTMLAttributes['decoding']>,
 };
 
 export type ImageProps = ExtractPropTypes<typeof imageProps>;
@@ -153,6 +154,7 @@ export default defineComponent({
       const attrs = {
         alt: props.alt,
         class: bem('img'),
+        decoding: props.decoding,
         style: {
           objectFit: props.fit,
           objectPosition: props.position,
