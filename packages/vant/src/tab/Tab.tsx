@@ -32,6 +32,7 @@ import { useId } from '../composables/use-id';
 import { useExpose } from '../composables/use-expose';
 import { routeProps } from '../composables/use-route';
 import { TAB_STATUS_KEY } from '../composables/use-tab-status';
+import type { Badge, BadgeProps } from '../badge';
 
 // Components
 import { TabTitle } from './TabTitle';
@@ -42,7 +43,14 @@ const [name, bem] = createNamespace('tab');
 export const tabProps = extend({}, routeProps, {
   dot: Boolean,
   name: numericProp,
-  badge: numericProp,
+  badge: [...numericProp, Object] as PropType<
+    | Omit<
+        Pick<InstanceType<typeof Badge>['$props'], keyof BadgeProps>,
+        'dot' | 'showZero'
+      >
+    | string
+    | number
+  >,
   title: String,
   disabled: Boolean,
   titleClass: unknownProp,
