@@ -1,6 +1,6 @@
 import { ref } from 'vue';
 import { mount, later, triggerDrag, mockScrollTop } from '../../../test';
-import { Tab } from '..';
+import { Tab, type TabProps } from '..';
 import { Tabs, TabsInstance } from '../../tabs';
 
 test('should emit clickTab event when tab is clicked', async () => {
@@ -169,16 +169,21 @@ test('should render dot prop correctly', async () => {
 test('should render badge prop correctly', async () => {
   const wrapper = mount({
     render() {
+      const badge: TabProps['badge'] = { content: '20' };
       return (
         <Tabs>
           <Tab badge="10">Text</Tab>
+          <Tab badge={badge}>Text</Tab>
         </Tabs>
       );
     },
   });
 
   await later();
-  expect(wrapper.find('.van-tab').html()).toMatchSnapshot();
+  const tabs = wrapper.findAll('.van-badge');
+  expect(expect.length).toBe(2);
+  expect(tabs[0].text()).toBe('10');
+  expect(tabs[1].text()).toBe('20');
 });
 
 test('should change title style when using title-style prop', async () => {
