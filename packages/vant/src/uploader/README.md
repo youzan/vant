@@ -372,10 +372,10 @@ export default {
 
 ### Parameters of before-read、after-read、before-delete
 
-| Attribute | Description                          | Type     |
-| --------- | ------------------------------------ | -------- |
-| file      | File object                          | _object_ |
-| detail    | Detail info, contains name and index | _object_ |
+| Attribute | Description | Type |
+| --- | --- | --- |
+| file | Contains File object | _UploaderFileListItem \| UploaderFileListItem[]_ |
+| detail | Detail info, contains name and index | _object_ |
 
 ### ResultType
 
