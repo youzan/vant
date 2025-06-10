@@ -18,6 +18,7 @@ import {
   getSelectedSkuValues,
   getSelectedPropValues,
   getSelectedProperties,
+  filterDisabledSkuTree,
 } from './utils/sku-helper';
 import { LIMIT_TYPE, UNSELECTED_SKU_VALUE_ID } from './constants';
 
@@ -119,7 +120,7 @@ export default createComponent({
       selectedProp: {},
       selectedNum: 1,
       show: this.value,
-      currentSkuProperties: []
+      currentSkuProperties: [],
     };
   },
 
@@ -223,11 +224,11 @@ export default createComponent({
         if (skuComb) {
           skuComb.properties = getSelectedProperties(
             this.propList,
-            this.selectedProp
+            this.selectedProp,
           );
           skuComb.property_price = this.selectedPropValues.reduce(
             (acc, cur) => acc + (cur.price || 0),
-            0
+            0,
           );
         }
       }
@@ -265,7 +266,8 @@ export default createComponent({
     },
 
     skuTree() {
-      return this.sku.tree || [];
+      const originTree = this.sku.tree || [];
+      return filterDisabledSkuTree(originTree, this.skuList, this.selectedSku);
     },
 
     skuList() {
@@ -273,7 +275,9 @@ export default createComponent({
     },
 
     propList() {
-      return this.isSkuProperties ? this.currentSkuProperties : this.properties || [];
+      return this.isSkuProperties
+        ? this.currentSkuProperties
+        : this.properties || [];
     },
 
     imageList() {
@@ -336,7 +340,7 @@ export default createComponent({
 
       const unselectedSku = this.skuTree
         .filter(
-          (item) => this.selectedSku[item.k_s] === UNSELECTED_SKU_VALUE_ID
+          (item) => this.selectedSku[item.k_s] === UNSELECTED_SKU_VALUE_ID,
         )
         .map((item) => item.k);
 
@@ -370,7 +374,8 @@ export default createComponent({
 
   methods: {
     setCurrentSkuProperties(id) {
-      const target = this.skuProperties?.find((item) => item.sku_id === id) || {};
+      const target =
+        this.skuProperties?.find((item) => item.sku_id === id) || {};
       this.currentSkuProperties = target.properties || [];
     },
     resetStepper() {
@@ -401,11 +406,22 @@ export default createComponent({
         // 规格值只有1个时，优先判断
         const valueId =
           item.v.length === 1 ? item.v[0].id : this.initialSku[key];
+
         if (
           valueId &&
           isSkuChoosable(this.skuList, this.selectedSku, { key, valueId })
         ) {
-          this.selectedSku[key] = valueId;
+          // 检查是否有对应的非禁用SKU
+          const skusWithThisValue = this.skuList.filter(
+            (sku) => String(sku[key]) === String(valueId),
+          );
+          const hasNonDisabledSku = skusWithThisValue.some(
+            (sku) => sku.disableStatus !== 1,
+          );
+
+          if (hasNonDisabledSku) {
+            this.selectedSku[key] = valueId;
+          }
         }
       });
 
@@ -516,9 +532,13 @@ export default createComponent({
 
       // 切换sku清空当前选择属性数据，触发prop-clear
       if (this.isSkuProperties) {
-        this.selectedProp = {}
-        this.onPropClear()
+        this.selectedProp = {};
+        this.onPropClear();
       }
+
+      // 触发更新以重新过滤规格树
+      this.$forceUpdate();
+
       this.$emit('sku-selected', {
         skuValue,
         selectedSku: this.selectedSku,
