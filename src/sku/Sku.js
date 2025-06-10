@@ -149,8 +149,6 @@ export default createComponent({
       this.show = val;
     },
 
-    skuTree: 'resetSelectedSku',
-
     initialSku() {
       this.resetStepper();
       this.resetSelectedSku();
@@ -224,11 +222,11 @@ export default createComponent({
         if (skuComb) {
           skuComb.properties = getSelectedProperties(
             this.propList,
-            this.selectedProp,
+            this.selectedProp
           );
           skuComb.property_price = this.selectedPropValues.reduce(
             (acc, cur) => acc + (cur.price || 0),
-            0,
+            0
           );
         }
       }
@@ -267,6 +265,10 @@ export default createComponent({
 
     skuTree() {
       const originTree = this.sku.tree || [];
+      // 避免不必要的重复计算
+      if (!originTree.length || !this.skuList.length) {
+        return originTree;
+      }
       return filterDisabledSkuTree(originTree, this.skuList, this.selectedSku);
     },
 
@@ -340,7 +342,7 @@ export default createComponent({
 
       const unselectedSku = this.skuTree
         .filter(
-          (item) => this.selectedSku[item.k_s] === UNSELECTED_SKU_VALUE_ID,
+          (item) => this.selectedSku[item.k_s] === UNSELECTED_SKU_VALUE_ID
         )
         .map((item) => item.k);
 
@@ -413,10 +415,10 @@ export default createComponent({
         ) {
           // 检查是否有对应的非禁用SKU
           const skusWithThisValue = this.skuList.filter(
-            (sku) => String(sku[key]) === String(valueId),
+            (sku) => String(sku[key]) === String(valueId)
           );
           const hasNonDisabledSku = skusWithThisValue.some(
-            (sku) => sku.disableStatus !== 1,
+            (sku) => sku.disable_status !== 1
           );
 
           if (hasNonDisabledSku) {
@@ -522,13 +524,15 @@ export default createComponent({
 
     onSelect(skuValue) {
       // 点击已选中的sku时则取消选中
-      this.selectedSku =
-        this.selectedSku[skuValue.skuKeyStr] === skuValue.id
-          ? {
-              ...this.selectedSku,
-              [skuValue.skuKeyStr]: UNSELECTED_SKU_VALUE_ID,
-            }
-          : { ...this.selectedSku, [skuValue.skuKeyStr]: skuValue.id };
+      const newSelectedSku = { ...this.selectedSku };
+      if (newSelectedSku[skuValue.skuKeyStr] === skuValue.id) {
+        newSelectedSku[skuValue.skuKeyStr] = UNSELECTED_SKU_VALUE_ID;
+      } else {
+        newSelectedSku[skuValue.skuKeyStr] = skuValue.id;
+      }
+
+      // 使用 Vue.set 来确保正确触发响应式更新
+      this.selectedSku = newSelectedSku;
 
       // 切换sku清空当前选择属性数据，触发prop-clear
       if (this.isSkuProperties) {
@@ -536,13 +540,13 @@ export default createComponent({
         this.onPropClear();
       }
 
-      // 触发更新以重新过滤规格树
-      this.$forceUpdate();
-
-      this.$emit('sku-selected', {
-        skuValue,
-        selectedSku: this.selectedSku,
-        selectedSkuComb: this.selectedSkuComb,
+      // 使用 $nextTick 等待 DOM 更新后再触发事件
+      this.$nextTick(() => {
+        this.$emit('sku-selected', {
+          skuValue,
+          selectedSku: this.selectedSku,
+          selectedSkuComb: this.selectedSkuComb,
+        });
       });
     },
     onPropClear() {
