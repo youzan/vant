@@ -476,7 +476,7 @@ export default {
   setup() {
     const result = ref('');
     const showArea = ref(false);
-    const pickerValue = ref([]);
+    const pickerValue = ref('');
     const onConfirm = ({ selectedValues, selectedOptions }) => {
       pickerValue.value = selectedValues.length
         ? selectedValues[selectedValues.length - 1]
