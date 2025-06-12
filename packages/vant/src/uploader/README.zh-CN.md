@@ -360,7 +360,7 @@ export default {
 | capture | 图片选取模式，可选值为 `camera` (直接调起摄像头) | _string_ | - |
 | after-read | 文件读取完成后的回调函数 | _Function_ | - |
 | before-read | 文件读取前的回调函数，返回 `false` 可终止文件读取，<br>支持返回 `Promise` | _Function_ | - |
-| before-delete | 文件删除前的回调函数，返回 `false` 可终止文件删除，<br>支持返回 `Promise` | _Function_ | - |
+| before-delete | 文件删除前的回调函数，返回 `false` 可终止文件删除，支持返回 `Promise` | _Function_ | - |
 | max-size | 文件大小限制，单位为 `byte` | _number \| string \| (file: File) => boolean_ | `Infinity` |
 | max-count | 文件上传数量限制 | _number \| string_ | `Infinity` |
 | result-type | 文件读取结果类型，可选值为 `file` `text` | _string_ | `dataUrl` |
