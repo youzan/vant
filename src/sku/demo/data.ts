@@ -57,22 +57,6 @@ export function getSkuData(largeImageMode = false) {
       ],
       list: [
         {
-          id: 2259,
-          s1: '2',
-          s2: '1',
-          price: 100,
-          discount: 100,
-          stock_num: 110,
-        },
-        {
-          id: 2260,
-          s1: '3',
-          s2: '1',
-          price: 100,
-          discount: 100,
-          stock_num: 99,
-        },
-        {
           id: 2257,
           s1: '1',
           s2: '1',
@@ -87,6 +71,42 @@ export function getSkuData(largeImageMode = false) {
           price: 100,
           discount: 100,
           stock_num: 6,
+          disable_status: 1,
+        },
+        {
+          id: 2259,
+          s1: '2',
+          s2: '1',
+          price: 100,
+          discount: 100,
+          stock_num: 110,
+          // disable_status: 1,
+        },
+        {
+          id: 2262,
+          s1: '2',
+          s2: '2',
+          price: 100,
+          discount: 100,
+          stock_num: 6,
+          // disable_status: 1,
+        },
+        {
+          id: 2260,
+          s1: '3',
+          s2: '1',
+          price: 100,
+          discount: 100,
+          stock_num: 99,
+        },
+        {
+          id: 2263,
+          s1: '3',
+          s2: '2',
+          price: 100,
+          discount: 100,
+          stock_num: 6,
+          // disable_status: 1,
         },
       ],
       messages: [
@@ -242,7 +262,7 @@ export function getSkuData(largeImageMode = false) {
 
 export const initialSku = {
   s1: '1',
-  s2: '1',
+  s2: '2',
   selectedNum: 3,
   selectedProp: {
     124: [1225, 1226],

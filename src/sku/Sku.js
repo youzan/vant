@@ -399,6 +399,16 @@ export default createComponent({
     resetSelectedSku() {
       this.selectedSku = {};
 
+      // 检查initialSku中指定的值是否全部被禁用
+      const initialSkuDisabled = this.checkInitialSkuDisabled();
+
+      // 如果initialSku中的值全部被禁用，直接返回空选择
+      if (initialSkuDisabled) {
+        // 重置商品属性
+        this.resetSelectedProp();
+        return;
+      }
+
       // 重置 selectedSku
       this.skuTree.forEach((item) => {
         this.selectedSku[item.k_s] = UNSELECTED_SKU_VALUE_ID;
@@ -439,7 +449,57 @@ export default createComponent({
         });
       }
 
-      // 重置商品属性
+      this.resetSelectedProp();
+
+      // 抛出重置事件
+      this.$emit('sku-reset', {
+        selectedSku: this.selectedSku,
+        selectedProp: this.selectedProp,
+        selectedSkuComb: this.selectedSkuComb,
+      });
+
+      this.centerInitialSku();
+    },
+
+    // 检查initialSku中指定的值是否全部被禁用
+    checkInitialSkuDisabled() {
+      // 如果没有initialSku或者没有skuList，则不进行检查
+      if (isEmpty(this.initialSku) || !this.skuList.length) {
+        return false;
+      }
+
+      // 只关注 s1 到 s5 的规格键
+      const skuKeys = ['s1', 's2', 's3', 's4', 's5'];
+
+      // 获取initialSku中有效的规格项
+      const initialSkuKeys = skuKeys.filter(
+        (key) =>
+          this.initialSku[key] !== undefined &&
+          this.initialSku[key] !== UNSELECTED_SKU_VALUE_ID &&
+          this.initialSku[key] !== ''
+      );
+
+      // 如果没有有效的规格项，则不进行检查
+      if (!initialSkuKeys.length) {
+        return false;
+      }
+
+      // 查找符合initialSku的所有sku组合
+      const matchedSkus = this.skuList.filter((sku) =>
+        initialSkuKeys.every(
+          (key) => String(sku[key]) === String(this.initialSku[key])
+        )
+      );
+
+      // 如果没有匹配的sku或者所有匹配的sku都被禁用，则返回true
+      return (
+        !matchedSkus.length ||
+        matchedSkus.every((sku) => sku.disable_status === 1)
+      );
+    },
+
+    // 重置商品属性
+    resetSelectedProp() {
       this.selectedProp = {};
       const { selectedProp = {} } = this.initialSku;
       // 选中外部传入信息
@@ -477,15 +537,6 @@ export default createComponent({
           selectedSkuComb: this.selectedSkuComb,
         });
       }
-
-      // 抛出重置事件
-      this.$emit('sku-reset', {
-        selectedSku: this.selectedSku,
-        selectedProp: this.selectedProp,
-        selectedSkuComb: this.selectedSkuComb,
-      });
-
-      this.centerInitialSku();
     },
 
     getSkuMessages() {
