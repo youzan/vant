@@ -370,12 +370,19 @@ export default {
 | preview-delete | Custom delete icon | - |
 | preview-cover | Custom content that covers the image preview | _item: FileListItem_ |
 
-### Parameters of before-read、after-read、before-delete
+### Parameters of before-read、before-delete
 
 | Attribute | Description                          | Type     |
 | --------- | ------------------------------------ | -------- |
 | file      | File object                          | _object_ |
 | detail    | Detail info, contains name and index | _object_ |
+
+### Parameters of after-read
+
+| Attribute | Description | Type |
+| --- | --- | --- |
+| file | Contains File object | _UploaderFileListItem \| UploaderFileListItem[]_ |
+| detail | Detail info, contains name and index | _object_ |
 
 ### ResultType
 
