@@ -341,7 +341,7 @@ export default {
 | capture | Capture, can be set to `camera` | _string_ | - |
 | after-read | Hook after reading the file | _Function_ | - |
 | before-read | Hook before reading the file, return false to stop reading the file, can return Promise | _Function_ | - |
-| before-delete | Hook before delete the file, return false to stop reading the file, can return Promise | _Function_ | - |
+| before-delete | Hook before delete the file, return false to stop deleting the file, can return Promise | _Function_ | - |
 | max-size | Max size of file | _number \| string \| (file: File) => boolean_ | `Infinity` |
 | max-count | Max count of image | _number \| string_ | `Infinity` |
 | result-type | Type of file read result, can be set to `file` `text` | _string_ | `dataUrl` |
