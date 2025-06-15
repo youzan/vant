@@ -398,7 +398,7 @@ before-read、before-delete 执行时会传递以下回调参数：
 | file   | file 对象                         | _object_ |
 | detail | 额外信息，包含 name 和 index 字段 | _object_ |
 
-### 回调参数
+### after-read 回调参数
 
 after-read 执行时会传递以下回调参数：
 
