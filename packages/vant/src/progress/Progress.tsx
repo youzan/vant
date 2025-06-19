@@ -37,15 +37,18 @@ export default defineComponent({
       props.inactive ? undefined : props.color,
     );
 
+    const format = (rate: Numeric) => Math.min(Math.max(+rate, 0), 100);
+
     const renderPivot = () => {
       const { textColor, pivotText, pivotColor, percentage } = props;
+      const safePercentage = format(percentage);
       const text = pivotText ?? `${percentage}%`;
 
       if (props.showPivot && text) {
         const style = {
           color: textColor,
-          left: `${+percentage}%`,
-          transform: `translate(-${+percentage}%,-50%)`,
+          left: `${safePercentage}%`,
+          transform: `translate(-${safePercentage}%,-50%)`,
           background: pivotColor || background.value,
         };
 
@@ -62,12 +65,13 @@ export default defineComponent({
 
     return () => {
       const { trackColor, percentage, strokeWidth } = props;
+      const safePercentage = format(percentage);
       const rootStyle = {
         background: trackColor,
         height: addUnit(strokeWidth),
       };
       const portionStyle = {
-        width: `${percentage}%`,
+        width: `${safePercentage}%`,
         background: background.value,
       };
 
