@@ -18,6 +18,7 @@ import {
   getSelectedSkuValues,
   getSelectedPropValues,
   getSelectedProperties,
+  filterDisabledSkuTree,
 } from './utils/sku-helper';
 import { LIMIT_TYPE, UNSELECTED_SKU_VALUE_ID } from './constants';
 
@@ -119,7 +120,7 @@ export default createComponent({
       selectedProp: {},
       selectedNum: 1,
       show: this.value,
-      currentSkuProperties: []
+      currentSkuProperties: [],
     };
   },
 
@@ -147,8 +148,6 @@ export default createComponent({
     value(val) {
       this.show = val;
     },
-
-    skuTree: 'resetSelectedSku',
 
     initialSku() {
       this.resetStepper();
@@ -265,7 +264,12 @@ export default createComponent({
     },
 
     skuTree() {
-      return this.sku.tree || [];
+      const originTree = this.sku.tree || [];
+      // 避免不必要的重复计算
+      if (!originTree.length || !this.skuList.length) {
+        return originTree;
+      }
+      return filterDisabledSkuTree(originTree, this.skuList, this.selectedSku);
     },
 
     skuList() {
@@ -273,7 +277,9 @@ export default createComponent({
     },
 
     propList() {
-      return this.isSkuProperties ? this.currentSkuProperties : this.properties || [];
+      return this.isSkuProperties
+        ? this.currentSkuProperties
+        : this.properties || [];
     },
 
     imageList() {
@@ -370,7 +376,8 @@ export default createComponent({
 
   methods: {
     setCurrentSkuProperties(id) {
-      const target = this.skuProperties?.find((item) => item.sku_id === id) || {};
+      const target =
+        this.skuProperties?.find((item) => item.sku_id === id) || {};
       this.currentSkuProperties = target.properties || [];
     },
     resetStepper() {
@@ -392,6 +399,16 @@ export default createComponent({
     resetSelectedSku() {
       this.selectedSku = {};
 
+      // 检查initialSku中指定的值是否全部被禁用
+      const initialSkuDisabled = this.checkInitialSkuDisabled();
+
+      // 如果initialSku中的值全部被禁用，直接返回空选择
+      if (initialSkuDisabled) {
+        // 重置商品属性
+        this.resetSelectedProp();
+        return;
+      }
+
       // 重置 selectedSku
       this.skuTree.forEach((item) => {
         this.selectedSku[item.k_s] = UNSELECTED_SKU_VALUE_ID;
@@ -401,11 +418,22 @@ export default createComponent({
         // 规格值只有1个时，优先判断
         const valueId =
           item.v.length === 1 ? item.v[0].id : this.initialSku[key];
+
         if (
           valueId &&
           isSkuChoosable(this.skuList, this.selectedSku, { key, valueId })
         ) {
-          this.selectedSku[key] = valueId;
+          // 检查是否有对应的非禁用SKU
+          const skusWithThisValue = this.skuList.filter(
+            (sku) => String(sku[key]) === String(valueId)
+          );
+          const hasNonDisabledSku = skusWithThisValue.some(
+            (sku) => sku.disable_status !== 1
+          );
+
+          if (hasNonDisabledSku) {
+            this.selectedSku[key] = valueId;
+          }
         }
       });
 
@@ -421,7 +449,57 @@ export default createComponent({
         });
       }
 
-      // 重置商品属性
+      this.resetSelectedProp();
+
+      // 抛出重置事件
+      this.$emit('sku-reset', {
+        selectedSku: this.selectedSku,
+        selectedProp: this.selectedProp,
+        selectedSkuComb: this.selectedSkuComb,
+      });
+
+      this.centerInitialSku();
+    },
+
+    // 检查initialSku中指定的值是否全部被禁用
+    checkInitialSkuDisabled() {
+      // 如果没有initialSku或者没有skuList，则不进行检查
+      if (isEmpty(this.initialSku) || !this.skuList.length) {
+        return false;
+      }
+
+      // 只关注 s1 到 s5 的规格键
+      const skuKeys = ['s1', 's2', 's3', 's4', 's5'];
+
+      // 获取initialSku中有效的规格项
+      const initialSkuKeys = skuKeys.filter(
+        (key) =>
+          this.initialSku[key] !== undefined &&
+          this.initialSku[key] !== UNSELECTED_SKU_VALUE_ID &&
+          this.initialSku[key] !== ''
+      );
+
+      // 如果没有有效的规格项，则不进行检查
+      if (!initialSkuKeys.length) {
+        return false;
+      }
+
+      // 查找符合initialSku的所有sku组合
+      const matchedSkus = this.skuList.filter((sku) =>
+        initialSkuKeys.every(
+          (key) => String(sku[key]) === String(this.initialSku[key])
+        )
+      );
+
+      // 如果没有匹配的sku或者所有匹配的sku都被禁用，则返回true
+      return (
+        !matchedSkus.length ||
+        matchedSkus.every((sku) => sku.disable_status === 1)
+      );
+    },
+
+    // 重置商品属性
+    resetSelectedProp() {
       this.selectedProp = {};
       const { selectedProp = {} } = this.initialSku;
       // 选中外部传入信息
@@ -459,15 +537,6 @@ export default createComponent({
           selectedSkuComb: this.selectedSkuComb,
         });
       }
-
-      // 抛出重置事件
-      this.$emit('sku-reset', {
-        selectedSku: this.selectedSku,
-        selectedProp: this.selectedProp,
-        selectedSkuComb: this.selectedSkuComb,
-      });
-
-      this.centerInitialSku();
     },
 
     getSkuMessages() {
@@ -506,23 +575,29 @@ export default createComponent({
 
     onSelect(skuValue) {
       // 点击已选中的sku时则取消选中
-      this.selectedSku =
-        this.selectedSku[skuValue.skuKeyStr] === skuValue.id
-          ? {
-              ...this.selectedSku,
-              [skuValue.skuKeyStr]: UNSELECTED_SKU_VALUE_ID,
-            }
-          : { ...this.selectedSku, [skuValue.skuKeyStr]: skuValue.id };
+      const newSelectedSku = { ...this.selectedSku };
+      if (newSelectedSku[skuValue.skuKeyStr] === skuValue.id) {
+        newSelectedSku[skuValue.skuKeyStr] = UNSELECTED_SKU_VALUE_ID;
+      } else {
+        newSelectedSku[skuValue.skuKeyStr] = skuValue.id;
+      }
+
+      // 使用 Vue.set 来确保正确触发响应式更新
+      this.selectedSku = newSelectedSku;
 
       // 切换sku清空当前选择属性数据，触发prop-clear
       if (this.isSkuProperties) {
-        this.selectedProp = {}
-        this.onPropClear()
+        this.selectedProp = {};
+        this.onPropClear();
       }
-      this.$emit('sku-selected', {
-        skuValue,
-        selectedSku: this.selectedSku,
-        selectedSkuComb: this.selectedSkuComb,
+
+      // 使用 $nextTick 等待 DOM 更新后再触发事件
+      this.$nextTick(() => {
+        this.$emit('sku-selected', {
+          skuValue,
+          selectedSku: this.selectedSku,
+          selectedSkuComb: this.selectedSkuComb,
+        });
       });
     },
     onPropClear() {

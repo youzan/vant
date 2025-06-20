@@ -20,6 +20,7 @@
           reset-selected-sku-on-hide
           @buy-clicked="onBuyClicked"
           @add-cart="onAddCartClicked"
+          :initial-sku="initialSku"
         />
         <van-button block type="primary" @click="showBase = true">
           {{ t('basicUsage') }}

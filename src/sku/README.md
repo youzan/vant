@@ -216,7 +216,8 @@ sku: {
       s1: '1',
       s2: '1',
       price: 100,
-      stock_num: 110
+      stock_num: 110,
+      disable_status: 0 // 0: available, 1: disabled
     }
   ],
   price: '1.00',
@@ -287,9 +288,9 @@ sku: {
 
 ```js
 [
-  sku_id: 239883,
+  (sku_id: 239883),
   // sku properties, data structure is same as properties
-  properties: Properties
+  (properties: Properties),
 ];
 ```
 
@@ -307,6 +308,8 @@ sku: {
   }
 }
 ```
+
+> Note: If all SKUs corresponding to the values specified in initialSku are disabled (have disable_status: 1), these values will not be selected automatically when the component is initialized.
 
 ### Goods Data Structure
 
