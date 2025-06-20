@@ -71,7 +71,6 @@ export function getSkuData(largeImageMode = false) {
           price: 100,
           discount: 100,
           stock_num: 6,
-          disable_status: 1,
         },
         {
           id: 2259,
@@ -106,7 +105,7 @@ export function getSkuData(largeImageMode = false) {
           price: 100,
           discount: 100,
           stock_num: 6,
-          // disable_status: 1,
+          disable_status: 1,
         },
       ],
       messages: [
