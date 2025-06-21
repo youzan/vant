@@ -360,7 +360,7 @@ export default {
 | capture | 图片选取模式，可选值为 `camera` (直接调起摄像头) | _string_ | - |
 | after-read | 文件读取完成后的回调函数 | _Function_ | - |
 | before-read | 文件读取前的回调函数，返回 `false` 可终止文件读取，<br>支持返回 `Promise` | _Function_ | - |
-| before-delete | 文件删除前的回调函数，返回 `false` 可终止文件读取，<br>支持返回 `Promise` | _Function_ | - |
+| before-delete | 文件删除前的回调函数，返回 `false` 可终止文件删除，支持返回 `Promise` | _Function_ | - |
 | max-size | 文件大小限制，单位为 `byte` | _number \| string \| (file: File) => boolean_ | `Infinity` |
 | max-count | 文件上传数量限制 | _number \| string_ | `Infinity` |
 | result-type | 文件读取结果类型，可选值为 `file` `text` | _string_ | `dataUrl` |
@@ -391,11 +391,20 @@ export default {
 
 ### 回调参数
 
-before-read、after-read、before-delete 执行时会传递以下回调参数：
+before-read、before-delete 执行时会传递以下回调参数：
 
 | 参数名 | 说明                              | 类型     |
 | ------ | --------------------------------- | -------- |
 | file   | file 对象                         | _object_ |
+| detail | 额外信息，包含 name 和 index 字段 | _object_ |
+
+### after-read 回调参数
+
+after-read 执行时会传递以下回调参数：
+
+| 参数名 | 说明 | 类型 |
+| --- | --- | --- |
+| file | 包含 file 对象 | _UploaderFileListItem \| UploaderFileListItem[]_ |
 | detail | 额外信息，包含 name 和 index 字段 | _object_ |
 
 ### ResultType 可选值

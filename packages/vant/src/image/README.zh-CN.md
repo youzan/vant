@@ -137,6 +137,7 @@ app.use(Lazyload);
 | icon-prefix | 图标类名前缀，等同于 Icon 组件的 [class-prefix 属性](#/zh-CN/icon#props) | _string_ | `van-icon` |
 | crossorigin | 等同于原生的 [crossorigin](https://developer.mozilla.org/zh-CN/docs/Web/API/HTMLImageElement/crossOrigin) 属性 | _string_ | - |
 | referrerpolicy | 等同于原生的 [referrerpolicy](https://developer.mozilla.org/zh-CN/docs/Web/API/HTMLImageElement/referrerPolicy) 属性 | _string_ | - |
+| decoding `v4.9.20` | 等同于原生的 [decoding](https://developer.mozilla.org/zh-CN/docs/Web/API/HTMLImageElement/decoding) 属性 | _string_ | - |
 
 ### 图片填充模式
 

@@ -341,7 +341,7 @@ export default {
 | capture | Capture, can be set to `camera` | _string_ | - |
 | after-read | Hook after reading the file | _Function_ | - |
 | before-read | Hook before reading the file, return false to stop reading the file, can return Promise | _Function_ | - |
-| before-delete | Hook before delete the file, return false to stop reading the file, can return Promise | _Function_ | - |
+| before-delete | Hook before delete the file, return false to stop deleting the file, can return Promise | _Function_ | - |
 | max-size | Max size of file | _number \| string \| (file: File) => boolean_ | `Infinity` |
 | max-count | Max count of image | _number \| string_ | `Infinity` |
 | result-type | Type of file read result, can be set to `file` `text` | _string_ | `dataUrl` |
@@ -370,12 +370,19 @@ export default {
 | preview-delete | Custom delete icon | - |
 | preview-cover | Custom content that covers the image preview | _item: FileListItem_ |
 
-### Parameters of before-read、after-read、before-delete
+### Parameters of before-read、before-delete
 
 | Attribute | Description                          | Type     |
 | --------- | ------------------------------------ | -------- |
 | file      | File object                          | _object_ |
 | detail    | Detail info, contains name and index | _object_ |
+
+### Parameters of after-read
+
+| Attribute | Description | Type |
+| --- | --- | --- |
+| file | Contains File object | _UploaderFileListItem \| UploaderFileListItem[]_ |
+| detail | Detail info, contains name and index | _object_ |
 
 ### ResultType
 
