@@ -87,13 +87,13 @@ importers:
         version: link:../vant-icons
       '@vitejs/plugin-vue':
         specifier: ^5.2.4
-        version: 5.2.4(vite@5.4.19(@types/node@22.15.31)(less@4.3.0)(sass-embedded@1.89.0)(terser@5.41.0))(vue@3.5.16(typescript@5.8.3))
+        version: 5.2.4(vite@5.4.19(@types/node@22.15.31)(less@4.3.0)(sass-embedded@1.89.0)(terser@5.43.1))(vue@3.5.16(typescript@5.8.3))
       '@vitejs/plugin-vue-jsx':
         specifier: ^4.2.0
-        version: 4.2.0(vite@5.4.19(@types/node@22.15.31)(less@4.3.0)(sass-embedded@1.89.0)(terser@5.41.0))(vue@3.5.16(typescript@5.8.3))
+        version: 4.2.0(vite@5.4.19(@types/node@22.15.31)(less@4.3.0)(sass-embedded@1.89.0)(terser@5.43.1))(vue@3.5.16(typescript@5.8.3))
       '@vitest/coverage-istanbul':
         specifier: ^3.2.3
-        version: 3.2.3(vitest@3.2.3(@types/node@22.15.31)(jsdom@25.0.1)(less@4.3.0)(sass-embedded@1.89.0)(terser@5.41.0))
+        version: 3.2.3(vitest@3.2.3(@types/node@22.15.31)(jsdom@25.0.1)(less@4.3.0)(sass-embedded@1.89.0)(terser@5.43.1))
       '@vue/runtime-core':
         specifier: ^3.5.16
         version: 3.5.16
@@ -114,13 +114,13 @@ importers:
         version: 5.8.3
       vite:
         specifier: ^5.4.19
-        version: 5.4.19(@types/node@22.15.31)(less@4.3.0)(sass-embedded@1.89.0)(terser@5.41.0)
+        version: 5.4.19(@types/node@22.15.31)(less@4.3.0)(sass-embedded@1.89.0)(terser@5.43.1)
       vitest:
         specifier: ^3.2.3
-        version: 3.2.3(@types/node@22.15.31)(jsdom@25.0.1)(less@4.3.0)(sass-embedded@1.89.0)(terser@5.41.0)
+        version: 3.2.3(@types/node@22.15.31)(jsdom@25.0.1)(less@4.3.0)(sass-embedded@1.89.0)(terser@5.43.1)
       vitest-canvas-mock:
         specifier: ^0.3.3
-        version: 0.3.3(vitest@3.2.3(@types/node@22.15.31)(jsdom@25.0.1)(less@4.3.0)(sass-embedded@1.89.0)(terser@5.41.0))
+        version: 0.3.3(vitest@3.2.3(@types/node@22.15.31)(jsdom@25.0.1)(less@4.3.0)(sass-embedded@1.89.0)(terser@5.43.1))
       vue:
         specifier: ^3.5.16
         version: 3.5.16(typescript@5.8.3)
@@ -180,10 +180,10 @@ importers:
         version: link:../vant-touch-emulator
       '@vitejs/plugin-vue':
         specifier: ^5.2.4
-        version: 5.2.4(vite@5.4.19(@types/node@22.15.31)(less@4.3.0)(sass-embedded@1.89.0)(terser@5.41.0))(vue@3.5.16(typescript@5.8.3))
+        version: 5.2.4(vite@5.4.19(@types/node@22.15.31)(less@4.3.0)(sass-embedded@1.89.0)(terser@5.43.1))(vue@3.5.16(typescript@5.8.3))
       '@vitejs/plugin-vue-jsx':
         specifier: ^4.2.0
-        version: 4.2.0(vite@5.4.19(@types/node@22.15.31)(less@4.3.0)(sass-embedded@1.89.0)(terser@5.41.0))(vue@3.5.16(typescript@5.8.3))
+        version: 4.2.0(vite@5.4.19(@types/node@22.15.31)(less@4.3.0)(sass-embedded@1.89.0)(terser@5.43.1))(vue@3.5.16(typescript@5.8.3))
       '@vue/babel-plugin-jsx':
         specifier: ^1.4.0
         version: 1.4.0(@babel/core@7.27.4)
@@ -251,8 +251,8 @@ importers:
         specifier: ^0.1.13
         version: 0.1.13
       terser:
-        specifier: ^5.41.0
-        version: 5.41.0
+        specifier: ^5.43.1
+        version: 5.43.1
       transliteration:
         specifier: ^2.3.5
         version: 2.3.5
@@ -261,7 +261,7 @@ importers:
         version: 5.8.3
       vite:
         specifier: ^5.4.19
-        version: 5.4.19(@types/node@22.15.31)(less@4.3.0)(sass-embedded@1.89.0)(terser@5.41.0)
+        version: 5.4.19(@types/node@22.15.31)(less@4.3.0)(sass-embedded@1.89.0)(terser@5.43.1)
       vue-router:
         specifier: ^4.5.1
         version: 4.5.1(vue@3.5.16(typescript@5.8.3))
@@ -3027,8 +3027,8 @@ packages:
       uglify-js:
         optional: true
 
-  terser@5.41.0:
-    resolution: {integrity: sha512-H406eLPXpZbAX14+B8psIuvIr8+3c+2hkuYzpMkoE0ij+NdsVATbA78vb8neA/eqrj7rywa2pIkdmWRsXW6wmw==}
+  terser@5.43.1:
+    resolution: {integrity: sha512-+6erLbBm0+LROX2sPXlUYx/ux5PyE9K/a92Wrt6oA+WDAoFTdpHE5tCYCI5PNzq2y8df4rA+QgHLJuR4jNymsg==}
     engines: {node: '>=10'}
     hasBin: true
 
@@ -4498,23 +4498,23 @@ snapshots:
 
   '@ungap/structured-clone@1.2.0': {}
 
-  '@vitejs/plugin-vue-jsx@4.2.0(vite@5.4.19(@types/node@22.15.31)(less@4.3.0)(sass-embedded@1.89.0)(terser@5.41.0))(vue@3.5.16(typescript@5.8.3))':
+  '@vitejs/plugin-vue-jsx@4.2.0(vite@5.4.19(@types/node@22.15.31)(less@4.3.0)(sass-embedded@1.89.0)(terser@5.43.1))(vue@3.5.16(typescript@5.8.3))':
     dependencies:
       '@babel/core': 7.27.1
       '@babel/plugin-transform-typescript': 7.27.1(@babel/core@7.27.1)
       '@rolldown/pluginutils': 1.0.0-beta.13
       '@vue/babel-plugin-jsx': 1.4.0(@babel/core@7.27.1)
-      vite: 5.4.19(@types/node@22.15.31)(less@4.3.0)(sass-embedded@1.89.0)(terser@5.41.0)
+      vite: 5.4.19(@types/node@22.15.31)(less@4.3.0)(sass-embedded@1.89.0)(terser@5.43.1)
       vue: 3.5.16(typescript@5.8.3)
     transitivePeerDependencies:
       - supports-color
 
-  '@vitejs/plugin-vue@5.2.4(vite@5.4.19(@types/node@22.15.31)(less@4.3.0)(sass-embedded@1.89.0)(terser@5.41.0))(vue@3.5.16(typescript@5.8.3))':
+  '@vitejs/plugin-vue@5.2.4(vite@5.4.19(@types/node@22.15.31)(less@4.3.0)(sass-embedded@1.89.0)(terser@5.43.1))(vue@3.5.16(typescript@5.8.3))':
     dependencies:
-      vite: 5.4.19(@types/node@22.15.31)(less@4.3.0)(sass-embedded@1.89.0)(terser@5.41.0)
+      vite: 5.4.19(@types/node@22.15.31)(less@4.3.0)(sass-embedded@1.89.0)(terser@5.43.1)
       vue: 3.5.16(typescript@5.8.3)
 
-  '@vitest/coverage-istanbul@3.2.3(vitest@3.2.3(@types/node@22.15.31)(jsdom@25.0.1)(less@4.3.0)(sass-embedded@1.89.0)(terser@5.41.0))':
+  '@vitest/coverage-istanbul@3.2.3(vitest@3.2.3(@types/node@22.15.31)(jsdom@25.0.1)(less@4.3.0)(sass-embedded@1.89.0)(terser@5.43.1))':
     dependencies:
       '@istanbuljs/schema': 0.1.3
       debug: 4.4.1
@@ -4526,7 +4526,7 @@ snapshots:
       magicast: 0.3.5
       test-exclude: 7.0.1
       tinyrainbow: 2.0.0
-      vitest: 3.2.3(@types/node@22.15.31)(jsdom@25.0.1)(less@4.3.0)(sass-embedded@1.89.0)(terser@5.41.0)
+      vitest: 3.2.3(@types/node@22.15.31)(jsdom@25.0.1)(less@4.3.0)(sass-embedded@1.89.0)(terser@5.43.1)
     transitivePeerDependencies:
       - supports-color
 
@@ -4538,13 +4538,13 @@ snapshots:
       chai: 5.2.0
       tinyrainbow: 2.0.0
 
-  '@vitest/mocker@3.2.3(vite@5.4.19(@types/node@22.15.31)(less@4.3.0)(sass-embedded@1.89.0)(terser@5.41.0))':
+  '@vitest/mocker@3.2.3(vite@5.4.19(@types/node@22.15.31)(less@4.3.0)(sass-embedded@1.89.0)(terser@5.43.1))':
     dependencies:
       '@vitest/spy': 3.2.3
       estree-walker: 3.0.3
       magic-string: 0.30.17
     optionalDependencies:
-      vite: 5.4.19(@types/node@22.15.31)(less@4.3.0)(sass-embedded@1.89.0)(terser@5.41.0)
+      vite: 5.4.19(@types/node@22.15.31)(less@4.3.0)(sass-embedded@1.89.0)(terser@5.43.1)
 
   '@vitest/pretty-format@3.2.3':
     dependencies:
@@ -6153,12 +6153,12 @@ snapshots:
       jest-worker: 27.5.1
       schema-utils: 4.3.0
       serialize-javascript: 6.0.2
-      terser: 5.41.0
+      terser: 5.43.1
       webpack: 5.98.0(esbuild@0.25.5)
     optionalDependencies:
       esbuild: 0.25.5
 
-  terser@5.41.0:
+  terser@5.43.1:
     dependencies:
       '@jridgewell/source-map': 0.3.6
       acorn: 8.14.0
@@ -6258,13 +6258,13 @@ snapshots:
 
   varint@6.0.0: {}
 
-  vite-node@3.2.3(@types/node@22.15.31)(less@4.3.0)(sass-embedded@1.89.0)(terser@5.41.0):
+  vite-node@3.2.3(@types/node@22.15.31)(less@4.3.0)(sass-embedded@1.89.0)(terser@5.43.1):
     dependencies:
       cac: 6.7.14
       debug: 4.4.1
       es-module-lexer: 1.7.0
       pathe: 2.0.3
-      vite: 5.4.19(@types/node@22.15.31)(less@4.3.0)(sass-embedded@1.89.0)(terser@5.41.0)
+      vite: 5.4.19(@types/node@22.15.31)(less@4.3.0)(sass-embedded@1.89.0)(terser@5.43.1)
     transitivePeerDependencies:
       - '@types/node'
       - less
@@ -6276,7 +6276,7 @@ snapshots:
       - supports-color
       - terser
 
-  vite@5.4.19(@types/node@22.15.31)(less@4.3.0)(sass-embedded@1.89.0)(terser@5.41.0):
+  vite@5.4.19(@types/node@22.15.31)(less@4.3.0)(sass-embedded@1.89.0)(terser@5.43.1):
     dependencies:
       esbuild: 0.21.5
       postcss: 8.5.3
@@ -6286,18 +6286,18 @@ snapshots:
       fsevents: 2.3.3
       less: 4.3.0
       sass-embedded: 1.89.0
-      terser: 5.41.0
+      terser: 5.43.1
 
-  vitest-canvas-mock@0.3.3(vitest@3.2.3(@types/node@22.15.31)(jsdom@25.0.1)(less@4.3.0)(sass-embedded@1.89.0)(terser@5.41.0)):
+  vitest-canvas-mock@0.3.3(vitest@3.2.3(@types/node@22.15.31)(jsdom@25.0.1)(less@4.3.0)(sass-embedded@1.89.0)(terser@5.43.1)):
     dependencies:
       jest-canvas-mock: 2.5.2
-      vitest: 3.2.3(@types/node@22.15.31)(jsdom@25.0.1)(less@4.3.0)(sass-embedded@1.89.0)(terser@5.41.0)
+      vitest: 3.2.3(@types/node@22.15.31)(jsdom@25.0.1)(less@4.3.0)(sass-embedded@1.89.0)(terser@5.43.1)
 
-  vitest@3.2.3(@types/node@22.15.31)(jsdom@25.0.1)(less@4.3.0)(sass-embedded@1.89.0)(terser@5.41.0):
+  vitest@3.2.3(@types/node@22.15.31)(jsdom@25.0.1)(less@4.3.0)(sass-embedded@1.89.0)(terser@5.43.1):
     dependencies:
       '@types/chai': 5.2.2
       '@vitest/expect': 3.2.3
-      '@vitest/mocker': 3.2.3(vite@5.4.19(@types/node@22.15.31)(less@4.3.0)(sass-embedded@1.89.0)(terser@5.41.0))
+      '@vitest/mocker': 3.2.3(vite@5.4.19(@types/node@22.15.31)(less@4.3.0)(sass-embedded@1.89.0)(terser@5.43.1))
       '@vitest/pretty-format': 3.2.3
       '@vitest/runner': 3.2.3
       '@vitest/snapshot': 3.2.3
@@ -6315,8 +6315,8 @@ snapshots:
       tinyglobby: 0.2.14
       tinypool: 1.1.0
       tinyrainbow: 2.0.0
-      vite: 5.4.19(@types/node@22.15.31)(less@4.3.0)(sass-embedded@1.89.0)(terser@5.41.0)
-      vite-node: 3.2.3(@types/node@22.15.31)(less@4.3.0)(sass-embedded@1.89.0)(terser@5.41.0)
+      vite: 5.4.19(@types/node@22.15.31)(less@4.3.0)(sass-embedded@1.89.0)(terser@5.43.1)
+      vite-node: 3.2.3(@types/node@22.15.31)(less@4.3.0)(sass-embedded@1.89.0)(terser@5.43.1)
       why-is-node-running: 2.3.0
     optionalDependencies:
       '@types/node': 22.15.31
