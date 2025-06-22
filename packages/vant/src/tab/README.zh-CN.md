@@ -423,3 +423,16 @@ this.$refs.tabs.resize();
 ```
 
 这是因为 `transform` 元素内部的 `fixed` 定位会相对于该元素进行计算，而不是相对于整个文档，从而导致布局异常。
+
+### 如何判断当前组件是否处于激活的 Tab 内？
+
+可以在子组件中通过调用 `useTabStatus` 或 `useAllTabStatus` 来判断当前组件是否处于激活的 `Tab` 内部。
+
+- `useTabStatus`：返回当前组件所在的 `Tab` 是否为激活状态，若组件不在 `Tab` 内部则返回 `null`。
+- `useAllTabStatus`：在存在嵌套 `Tab` 的场景下，返回是否所有上层 `Tab` 为激活状态，若组件不在 `Tab` 内部则返回 `null`。
+
+```js
+const isActive = useTabStatus();
+// 嵌套 Tab 场景
+const isAllActive = useAllTabStatus();
+```
