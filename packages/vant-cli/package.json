@@ -45,7 +45,7 @@
     "@vitejs/plugin-vue-jsx": "^4.2.0",
     "@vue/babel-plugin-jsx": "^1.4.0",
     "autoprefixer": "^10.4.21",
-    "commander": "^13.1.0",
+    "commander": "^14.0.0",
     "enquirer": "2.4.1",
     "esbuild": "^0.25.5",
     "eslint": "^8.57.1",
