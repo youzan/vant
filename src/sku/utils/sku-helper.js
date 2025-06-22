@@ -109,11 +109,128 @@ export const isSkuChoosable = (skuList, selectedSku, skuToChoose) => {
     )
   );
 
-  const stock = filteredSku.reduce((total, sku) => {
+  // 检查是否有非禁用的SKU可选
+  const availableSku = filteredSku.filter((sku) => sku.disable_status !== 1);
+
+  const stock = availableSku.reduce((total, sku) => {
     total += sku.stock_num;
     return total;
   }, 0);
   return stock > 0;
+};
+
+// 根据disable_status字段过滤skuTree
+export const filterDisabledSkuTree = (skuTree, skuList, selectedSku = {}) => {
+  if (!skuList?.length) {
+    return skuTree;
+  }
+
+  // 创建规格树的深拷贝，避免修改原始数据
+  const treeClone = JSON.parse(JSON.stringify(skuTree));
+
+  // 对每个规格值，收集所有包含它的SKU
+  const specValueToSkus = {};
+
+  // 初始化规格值到SKU的映射
+  treeClone.forEach((treeItem) => {
+    const key = treeItem.k_s;
+    treeItem.v.forEach((value) => {
+      const valueId = value.id;
+      specValueToSkus[`${key}-${valueId}`] = [];
+    });
+  });
+
+  // 收集每个规格值对应的所有SKU
+  skuList.forEach((item) => {
+    for (let i = 1; i <= 5; i++) {
+      const key = `s${i}`;
+      const value = item[key];
+      if (value && value !== '0') {
+        const mapKey = `${key}-${value}`;
+        if (specValueToSkus[mapKey]) {
+          specValueToSkus[mapKey].push(item);
+        }
+      }
+    }
+  });
+
+  // 过滤规格树
+  return treeClone.filter((treeItem) => {
+    const key = treeItem.k_s;
+    const isSelectedSpec =
+      selectedSku[key] && selectedSku[key] !== UNSELECTED_SKU_VALUE_ID;
+
+    // 过滤规格值
+    treeItem.v = treeItem.v.filter((value) => {
+      const valueId = value.id;
+      const mapKey = `${key}-${valueId}`;
+      const relatedSkus = specValueToSkus[mapKey] || [];
+
+      // 1. 如果所有包含该规格值的SKU都被明确禁用，则过滤掉该规格值
+      if (relatedSkus.length > 0) {
+        const allExplicitlyDisabled = relatedSkus.every(
+          (sku) => sku.disable_status === 1
+        );
+        if (allExplicitlyDisabled) {
+          return false;
+        }
+      }
+
+      // 2. 如果是已选中的值，保留它
+      if (isSelectedSpec && String(valueId) === String(selectedSku[key])) {
+        return true;
+      }
+
+      // 3. 如果用户已经选择了其他规格，检查组合
+      const validSelectedEntries = Object.entries(selectedSku).filter(
+        ([selectedKey, val]) =>
+          val !== UNSELECTED_SKU_VALUE_ID && selectedKey !== key // 排除当前规格
+      );
+
+      if (validSelectedEntries.length > 0) {
+        // 创建当前组合
+        const combinedSelection = {};
+
+        // 添加已选规格
+        validSelectedEntries.forEach(([selectedKey, val]) => {
+          combinedSelection[selectedKey] = val;
+        });
+
+        // 添加当前正在检查的规格值
+        combinedSelection[key] = String(valueId);
+
+        // 查找满足当前组合的SKU
+        const matchingSku = skuList.filter((sku) =>
+          Object.entries(combinedSelection).every(
+            ([selectedKey, selectedVal]) =>
+              String(sku[selectedKey]) === String(selectedVal)
+          )
+        );
+
+        // 如果有匹配的SKU，检查它们是否全部被禁用
+        if (matchingSku.length > 0) {
+          const allDisabled = matchingSku.every(
+            (sku) => sku.disable_status === 1
+          );
+          return !allDisabled;
+        }
+      }
+
+      // 默认保留所有规格值
+      return true;
+    });
+
+    // 如果是已选中的规格项，但过滤后没有包含已选值，则隐藏
+    if (isSelectedSpec) {
+      const selectedValueExists = treeItem.v.some(
+        (value) => String(value.id) === String(selectedSku[key])
+      );
+      return selectedValueExists;
+    }
+
+    // 如果该规格项下没有规格值了，则隐藏整个规格项
+    return treeItem.v.length > 0;
+  });
 };
 
 export const getSelectedPropValues = (propList, selectedProp) => {
@@ -155,4 +272,5 @@ export default {
   isSkuChoosable,
   getSelectedPropValues,
   getSelectedProperties,
+  filterDisabledSkuTree,
 };
