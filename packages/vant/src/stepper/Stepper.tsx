@@ -286,7 +286,7 @@ export default defineComponent({
     );
 
     watch(current, (value) => {
-      if (!isEqual(props.modelValue, current.value)) {
+      if (!isEqual(props.modelValue, value)) {
         emit('update:modelValue', value);
       }
       emit('change', value, { name: props.name });
