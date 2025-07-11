@@ -86,7 +86,11 @@ export default defineComponent({
     const iconStyle = computed(() => {
       const checkedColor = props.checkedColor || getParentProp('checkedColor');
 
-      if (checkedColor && props.checked && !disabled.value) {
+      if (
+        checkedColor &&
+        (props.checked || props.indeterminate) &&
+        !disabled.value
+      ) {
         return {
           borderColor: checkedColor,
           backgroundColor: checkedColor,
