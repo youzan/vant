@@ -54,7 +54,7 @@
     "vue": "^3.0.0"
   },
   "devDependencies": {
-    "@types/node": "^22.15.31",
+    "@types/node": "^22.16.3",
     "@vant/area-data": "workspace:*",
     "@vant/cli": "workspace:*",
     "@vant/eslint-config": "workspace:*",
