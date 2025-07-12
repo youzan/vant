@@ -29,6 +29,6 @@
     "prettier": "^3.6.2"
   },
   "overrides": {
-    "esbuild": "^0.25.5"
+    "esbuild": "^0.25.6"
   }
 }
