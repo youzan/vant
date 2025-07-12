@@ -32,11 +32,11 @@
     "fast-glob": "^3.3.3",
     "fs-extra": "^11.3.0",
     "picocolors": "^1.1.1",
-    "rslog": "^1.2.3"
+    "rslog": "^1.2.9"
   },
   "devDependencies": {
     "@types/fs-extra": "^11.0.4",
-    "@types/node": "^22.15.31",
+    "@types/node": "^22.16.3",
     "rimraf": "^6.0.1",
     "typescript": "^5.8.3"
   },
