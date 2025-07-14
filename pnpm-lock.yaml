@@ -248,8 +248,8 @@ importers:
         specifier: ^1.2.9
         version: 1.2.9
       rspack-plugin-virtual-module:
-        specifier: ^0.1.13
-        version: 0.1.13
+        specifier: ^1.0.1
+        version: 1.0.1
       terser:
         specifier: ^5.43.1
         version: 5.43.1
@@ -2707,8 +2707,8 @@ packages:
   rslog@1.2.9:
     resolution: {integrity: sha512-KSjM8jJKYYaKgI4jUGZZ4kdTBTM/EIGH1JnoB0ptMkzcyWaHeXW9w6JVLCYs37gh8sFZkLLqAyBb2sT02bqpcQ==}
 
-  rspack-plugin-virtual-module@0.1.13:
-    resolution: {integrity: sha512-VC0HiVHH6dtGfTgfpbDgVTt6LlYv+uAg9CWGWAR5lBx9FbKPEZeGz7iRUUP8vMymx+PGI8ps0u4a25dne0rtuQ==}
+  rspack-plugin-virtual-module@1.0.1:
+    resolution: {integrity: sha512-NQJ3fXa1v0WayvfHMWbyqLUA3JIqgCkhIcIOnZscuisinxorQyIAo+bqcU5pCusMKSyPqVIWO3caQyl0s9VDAg==}
 
   run-parallel@1.2.0:
     resolution: {integrity: sha512-5l4VyZR86LZ/lDxZTR6jqL8AFE2S0IFLMP26AbjsLVADxHdhB/c0GUsH+y39UfCi3dzz8OlQuPmnaJOMoDHQBA==}
@@ -5837,7 +5837,7 @@ snapshots:
 
   rslog@1.2.9: {}
 
-  rspack-plugin-virtual-module@0.1.13:
+  rspack-plugin-virtual-module@1.0.1:
     dependencies:
       fs-extra: 11.3.0
 
