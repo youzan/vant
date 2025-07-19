@@ -33,7 +33,7 @@
   "dependencies": {
     "@babel/core": "^7.28.0",
     "@babel/preset-typescript": "^7.27.1",
-    "@rsbuild/core": "^1.4.6",
+    "@rsbuild/core": "^1.4.8",
     "@rsbuild/plugin-babel": "^1.0.5",
     "@rsbuild/plugin-less": "^1.2.5",
     "@rsbuild/plugin-sass": "^1.3.3",
@@ -47,7 +47,7 @@
     "autoprefixer": "^10.4.21",
     "commander": "^14.0.0",
     "enquirer": "2.4.1",
-    "esbuild": "^0.25.6",
+    "esbuild": "^0.25.7",
     "eslint": "^8.57.1",
     "fast-glob": "^3.3.3",
     "fs-extra": "^11.3.0",
@@ -76,7 +76,7 @@
     "@types/less": "^3.0.8",
     "@types/lodash": "^4.17.20",
     "@types/markdown-it": "^14.1.2",
-    "@types/node": "^22.16.3",
+    "@types/node": "^22.16.5",
     "rimraf": "^6.0.1",
     "vue": "^3.5.17"
   },
