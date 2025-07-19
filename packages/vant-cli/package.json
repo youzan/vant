@@ -64,7 +64,7 @@
     "postcss-load-config": "^6.0.1",
     "prettier": "^3.6.2",
     "rslog": "^1.2.9",
-    "rspack-plugin-virtual-module": "^0.1.13",
+    "rspack-plugin-virtual-module": "^1.0.1",
     "terser": "^5.43.1",
     "transliteration": "^2.3.5",
     "typescript": "^5.8.3",
