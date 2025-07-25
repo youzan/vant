@@ -161,6 +161,8 @@ export default defineComponent({
       validateMessage: '',
     });
 
+    let selectionInfo: { selectionStart: number; selectionEnd: number };
+
     const inputRef = ref<HTMLInputElement>();
     const clearIconRef = ref<ComponentInstance>();
     const customValue = ref<() => unknown>();
@@ -410,6 +412,9 @@ export default defineComponent({
       if (!event.target!.composing) {
         updateValue((event.target as HTMLInputElement).value);
       }
+      const { selectionStart, selectionEnd } = event.target as HTMLInputElement;
+      if (selectionStart === null || selectionEnd === null) return;
+      selectionInfo = { selectionStart, selectionEnd };
     };
 
     const blur = () => inputRef.value?.blur();
@@ -452,10 +457,19 @@ export default defineComponent({
     const onClickLeftIcon = (event: MouseEvent) => emit('clickLeftIcon', event);
 
     const onClickRightIcon = (event: MouseEvent) => {
+      emit('clickRightIcon', event);
+
       if (showPwdIcon.value) {
         showPassword.value = !showPassword.value;
+        if (selectionInfo === undefined) return;
+        focus();
+        setTimeout(() => {
+          inputRef.value?.setSelectionRange(
+            selectionInfo.selectionStart,
+            selectionInfo.selectionEnd,
+          );
+        });
       }
-      emit('clickRightIcon', event);
     };
 
     const onClear = (event: TouchEvent) => {
