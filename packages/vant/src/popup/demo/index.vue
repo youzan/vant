@@ -159,7 +159,6 @@ const showDisplayEvents = ref(false);
     <van-popup
       v-model:show="showRoundCornerCenter"
       round
-      position="center"
       :style="{ padding: '64px' }"
     />
 
