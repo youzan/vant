@@ -356,6 +356,7 @@ Use `label-align` prop to align the input value, can be set to `center`, `right`
 | spellcheck `v4.6.2` | HTML native attribute, see [MDN - spellcheck](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/spellcheck)<br> | _boolean_ | - |
 | autocorrect `v4.6.2` | HTML native attribute, Safari only, see [MDN - autocorrect](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#autocorrect)<br> | _string_ | - |
 | inputmode `v4.9.9` | HTML native attribute, see [MDN - inputmode](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/inputmode) | _string_ | Set automatically according to the `type` prop |
+| rows | HTML native attribute, the number of visible text lines for the control, only valid for textarea | _number \| string_ | - |
 
 ### Events
 
