@@ -161,9 +161,7 @@ const showDisplayEvents = ref(false);
       round
       position="center"
       :style="{ padding: '64px' }"
-    >
-      {{ t('content') }}
-    </van-popup>
+    />
 
     <van-cell
       :title="t('roundCornerBottom')"
