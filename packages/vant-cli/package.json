@@ -81,7 +81,7 @@
     "vue": "^3.5.18"
   },
   "engines": {
-    "node": ">=16.0.0"
+    "node": ">=22.18.0"
   },
   "publishConfig": {
     "access": "public",
