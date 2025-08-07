@@ -1,0 +1,45 @@
+:root,
+:host {
+  --van-avatar-group-overlap: -12px;
+}
+
+.van-avatar-group {
+  display: inline-flex;
+  align-items: center;
+
+  &__right-up {
+    .van-avatar-group__item {
+      position: relative;
+
+      + .van-avatar-group__item {
+        margin-left: var(--van-avatar-group-overlap);
+      }
+    }
+  }
+
+  &__left-up {
+    .van-avatar-group__item {
+      position: relative;
+
+      + .van-avatar-group__item {
+        margin-left: var(--van-avatar-group-overlap);
+      }
+    }
+  }
+
+  &__item {
+    position: relative;
+    border-radius: 50%;
+
+    .van-avatar {
+      position: relative;
+      z-index: 1;
+    }
+  }
+
+  &__collapse {
+    background-color: var(--van-gray-3);
+    color: var(--van-gray-6);
+    font-size: 12px;
+  }
+}
