@@ -83,7 +83,7 @@ Locale.add(messages);
 
 ### 业务代码如何实现国际化？
 
-可以使用 [vue-i18n](https://github.com/kazupon/vue-i18n) 来实现。
+可以使用 [vue-i18n](https://github.com/intlify/vue-i18n) 来实现。
 
 ### 以 CDN 形式引入时，如何使用语言包？
 
