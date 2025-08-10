@@ -6,6 +6,7 @@ import {
   type PropType,
   type TeleportProps,
   type ExtractPropTypes,
+  reactive,
 } from 'vue';
 
 // Utils
@@ -32,6 +33,8 @@ import {
   compareMonth,
   getDayByOffset,
   getMonthByOffset,
+  getPrevMonth,
+  getNextMonth,
 } from './utils';
 
 // Composables
@@ -587,6 +590,37 @@ export default defineComponent({
       </div>
     );
 
+    const swipeTouch = reactive({
+      touchStartX: 0,
+      touchEndX: 0,
+    });
+
+    const swipeToLeftOrRight = () => {
+      const threshold = 50; // min swipe distance
+      const deltaX = swipeTouch.touchEndX - swipeTouch.touchStartX;
+      const currentDate = currentMonthRef.value?.date;
+      if (deltaX > threshold) {
+        // swipe right
+        currentDate && onPanelChange(getPrevMonth(currentDate));
+      } else if (deltaX < -threshold) {
+        // swipe left
+        currentDate && onPanelChange(getNextMonth(currentDate));
+      }
+    };
+
+    const onTouchstart = (e: TouchEvent) => {
+      if (e.changedTouches && e.changedTouches.length) {
+        swipeTouch.touchStartX = e.changedTouches[0].screenX;
+      }
+    };
+
+    const onTouchend = (e: TouchEvent) => {
+      if (e.changedTouches && e.changedTouches.length) {
+        swipeTouch.touchEndX = e.changedTouches[0].screenX;
+        swipeToLeftOrRight();
+      }
+    };
+
     const renderCalendar = () => (
       <div class={bem()}>
         <CalendarHeader
@@ -613,6 +647,8 @@ export default defineComponent({
         <div
           ref={bodyRef}
           class={bem('body')}
+          onTouchstart={canSwitch.value ? onTouchstart : undefined}
+          onTouchend={canSwitch.value ? onTouchend : undefined}
           onScroll={canSwitch.value ? undefined : onScroll}
         >
           {canSwitch.value
