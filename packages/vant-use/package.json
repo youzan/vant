@@ -38,7 +38,7 @@
   "devDependencies": {
     "@rslib/core": "^0.10.6",
     "typescript": "^5.8.3",
-    "vue": "^3.5.17"
+    "vue": "^3.5.18"
   },
   "peerDependencies": {
     "vue": "^3.0.0"
