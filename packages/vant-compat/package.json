@@ -34,9 +34,9 @@
   "license": "MIT",
   "devDependencies": {
     "@rslib/core": "^0.10.6",
-    "@vue/runtime-core": "^3.5.17",
+    "@vue/runtime-core": "^3.5.18",
     "typescript": "^5.8.3",
     "vant": "workspace:*",
-    "vue": "^3.5.17"
+    "vue": "^3.5.18"
   }
 }

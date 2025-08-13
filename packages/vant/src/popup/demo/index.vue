@@ -159,11 +159,8 @@ const showDisplayEvents = ref(false);
     <van-popup
       v-model:show="showRoundCornerCenter"
       round
-      position="center"
       :style="{ padding: '64px' }"
-    >
-      {{ t('content') }}
-    </van-popup>
+    />
 
     <van-cell
       :title="t('roundCornerBottom')"
