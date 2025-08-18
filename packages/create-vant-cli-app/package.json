@@ -30,9 +30,9 @@
   "dependencies": {
     "enquirer": "2.4.1",
     "fast-glob": "^3.3.3",
-    "fs-extra": "^11.3.0",
+    "fs-extra": "^11.3.1",
     "picocolors": "^1.1.1",
-    "rslog": "^1.2.9"
+    "rslog": "^1.2.11"
   },
   "devDependencies": {
     "@types/fs-extra": "^11.0.4",
