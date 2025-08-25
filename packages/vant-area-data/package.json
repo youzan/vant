@@ -1,6 +1,6 @@
 {
   "name": "@vant/area-data",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "description": "Vant 省市区数据",
   "type": "module",
   "main": "dist/index.cjs",
@@ -37,7 +37,7 @@
   "author": "chenjiahan",
   "license": "MIT",
   "devDependencies": {
-    "@rslib/core": "^0.10.6",
+    "@rslib/core": "^0.12.1",
     "typescript": "^5.8.3"
   }
 }
