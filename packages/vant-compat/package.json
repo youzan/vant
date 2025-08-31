@@ -35,7 +35,7 @@
   "devDependencies": {
     "@rslib/core": "^0.12.1",
     "@vue/runtime-core": "^3.5.18",
-    "typescript": "^5.8.3",
+    "typescript": "^5.9.2",
     "vant": "workspace:*",
     "vue": "^3.5.18"
   }
