@@ -128,3 +128,44 @@ test('should render header slot correctly', () => {
 
   wrapper.unmount();
 });
+
+test('should not snap to anchors when magnetic is false', async () => {
+  const wrapper = mount({
+    render() {
+      return (
+        <FloatingPanel anchors={[100, 200, 400]} magnetic={false}>
+          Content
+        </FloatingPanel>
+      );
+    },
+  });
+
+  // Initial height should be 400 (highest anchor)
+  expect((wrapper.element as HTMLDivElement).style.height).toBe('400px');
+
+  // Drag to a position between anchors
+  await triggerDrag(wrapper.find('.van-floating-panel__header'), 0, 50);
+  await later();
+
+  // Should not snap to nearest anchor when magnetic is false
+  const {transform} = (wrapper.element as HTMLDivElement).style;
+  expect(transform).not.toContain('-100px');
+  expect(transform).not.toContain('-200px');
+});
+
+test('should snap to nearest anchor when magnetic is true (default)', async () => {
+  const wrapper = mount({
+    render() {
+      return <FloatingPanel anchors={[100, 200, 400]}>Content</FloatingPanel>;
+    },
+  });
+
+  // Drag to trigger height change and snapping
+  await triggerDrag(wrapper.find('.van-floating-panel__header'), 0, 10);
+  await later();
+
+  // Should snap to nearest anchor (100px)
+  expect((wrapper.element as HTMLDivElement).style.transform).toContain(
+    '-100px',
+  );
+});
