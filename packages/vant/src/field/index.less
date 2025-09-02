@@ -142,6 +142,11 @@
     &[type='search'] {
       -webkit-appearance: none;
     }
+
+    // for edge
+    &[type='password']::-ms-reveal {
+      display: none;
+    }
   }
 
   &__clear,
