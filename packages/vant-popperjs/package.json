@@ -37,7 +37,7 @@
   "license": "MIT",
   "devDependencies": {
     "@popperjs/core": "^2.11.8",
-    "@rslib/core": "^0.12.1",
+    "@rslib/core": "^0.12.4",
     "typescript": "^5.9.2"
   }
 }
