@@ -2,7 +2,7 @@
     <img alt="logo" src="https://fastly.jsdelivr.net/npm/@vant/assets/logo.png" width="120" style="margin-bottom: 10px;">
 </p>
 
-<h1 align="center">Vant</h1>
+<h1 align="center">Vant222</h1>
 
 <p align="center">轻量、可定制的移动端 Vue 组件库</p>
 
