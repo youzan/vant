@@ -135,16 +135,23 @@ export default defineComponent({
 
     const renderOverlay = () => {
       if (props.overlay) {
+        const overlayProps = extend(
+          {
+            show: props.show,
+            class: props.overlayClass,
+            zIndex: zIndex.value,
+            duration: props.duration,
+            customStyle: props.overlayStyle,
+            role: props.closeOnClickOverlay ? 'button' : undefined,
+            tabindex: props.closeOnClickOverlay ? 0 : undefined,
+          },
+          props.overlayProps,
+        );
+
         return (
           <Overlay
             v-slots={{ default: slots['overlay-content'] }}
-            show={props.show}
-            class={props.overlayClass}
-            zIndex={zIndex.value}
-            duration={props.duration}
-            customStyle={props.overlayStyle}
-            role={props.closeOnClickOverlay ? 'button' : undefined}
-            tabindex={props.closeOnClickOverlay ? 0 : undefined}
+            {...overlayProps}
             {...useScopeId()}
             onClick={onClickOverlay}
           />

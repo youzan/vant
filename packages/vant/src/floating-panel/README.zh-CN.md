@@ -85,7 +85,7 @@ export default {
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
 | v-model:height | 当前面板的显示高度 | _number \| string_ | `0` |
-| anchors | 设置自定义锚点, 单位 `px` | _number[]_ | `[100, window.innerWidth * 0.6]` |
+| anchors | 设置自定义锚点, 单位 `px` | _number[]_ | `[100, window.innerHeight * 0.6]` |
 | duration | 动画时长，单位秒，设置为 0 可以禁用动画 | _number \| string_ | `0.3` |
 | content-draggable | 允许拖拽内容容器 | _boolean_ | `true` |
 | lock-scroll `v4.6.4` | 当不拖拽时，是否锁定背景滚动 | _boolean_ | `false` |

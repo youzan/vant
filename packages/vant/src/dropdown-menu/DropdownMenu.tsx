@@ -157,8 +157,8 @@ export default defineComponent({
       );
     };
 
-    useExpose({ close });
-    linkChildren({ id, props, offset, updateOffset });
+    useExpose({ close, opened });
+    linkChildren({ id, props, offset, opened, updateOffset });
     useClickAway(root, onClickAway);
     useEventListener('scroll', onScroll, {
       target: scrollParent,

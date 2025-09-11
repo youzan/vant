@@ -129,10 +129,11 @@ Vant 3/4 supports modern browsers and Chrome >= 51、iOS >= 10.0 (same as Vue 3)
 | [vant-playground](https://github.com/LadyChatterleyLover/vant-playground) | Vant Playground |
 | [sfc-playground-vant](https://github.com/zhixiaoqiang/sfc-playground-vant) | Vant Playground |
 | [vue3-h5-template](https://github.com/yulimchen/vue3-h5-template) | Mobile project template based on Vant |
-| [vue3-vant-mobile](https://github.com/easy-temps/vue3-vant-mobile) | Mobile project template based on Vant |
+| [vue3-vant-mobile](https://github.com/vue-zone/vue3-vant-mobile) | Mobile project template based on Vant, out of the box |
 | [vscode-common-intellisense](https://github.com/Simon-He95/vscode-common-intellisense) | A VS Code extension that provides better intellisense to Vant developers |
-| [nuxt-vant-mobile](https://github.com/easy-temps/nuxt-vant-mobile) | Nuxt _⁴_ project template based on Vant, out of the box |
+| [nuxt-vant-mobile](https://github.com/vue-zone/nuxt-vant-mobile) | Nuxt _⁴_ project template based on Vant, out of the box |
 | [mobvue](https://github.com/un-pany/mobvue) | A well-crafted mobile web app template |
+| [novlan1/press-ui](https://github.com/novlan1/press-ui) | Uni APP mobile UI Components based on Vant |
 
 ## Links
 

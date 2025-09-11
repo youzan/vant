@@ -385,3 +385,16 @@ For example, the following code:
 ```
 
 This is because the `fixed` positioning inside the `transform` element is computed relative to that element, not relative to the entire document, resulting in layout exceptions.
+
+### How to determine if the current component is inside an active Tab?
+
+In a child component, you can use `useTabStatus` or `useAllTabStatus` to check whether the component is inside an active `Tab`.
+
+- `useTabStatus`: Returns whether the current component's parent `Tab` is active. Returns `null` if the component is not inside a `Tab`.
+- `useAllTabStatus`: In nested Tab scenarios, returns whether all parent `Tabs` are active. Returns `null` if the component is not inside a `Tab`.
+
+```js
+const isActive = useTabStatus();
+// For nested Tab scenarios
+const isAllActive = useAllTabStatus();
+```

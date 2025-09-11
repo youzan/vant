@@ -43,9 +43,11 @@ export type OverlayProps = ExtractPropTypes<typeof overlayProps>;
 export default defineComponent({
   name,
 
+  inheritAttrs: false,
+
   props: overlayProps,
 
-  setup(props, { slots }) {
+  setup(props, { attrs, slots }) {
     const root = ref<HTMLElement>();
     const lazyRender = useLazyRender(() => props.show || !props.lazyRender);
 
@@ -71,6 +73,7 @@ export default defineComponent({
           ref={root}
           style={style}
           class={[bem(), props.className]}
+          {...attrs}
         >
           {slots.default?.()}
         </div>

@@ -223,6 +223,7 @@ Use `teleport` prop to specify mount location.
 | position | Can be set to `top` `bottom` `right` `left` | _string_ | `center` |
 | overlay-class | Custom overlay class | _string \| Array \| object_ | - |
 | overlay-style | Custom overlay style | _object_ | - |
+| overlay-props | Overlay props, see [Overlay](#/en-US/overlay#api) component | _object_ | - |
 | duration | Transition duration, unit second | _number \| string_ | `0.3` |
 | z-index | Set the z-index to a fixed value | _number \| string_ | `2000+` |
 | round | Whether to show round corner | _boolean_ | `false` |

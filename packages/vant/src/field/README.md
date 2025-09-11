@@ -319,8 +319,8 @@ Use `label-align` prop to align the input value, can be set to `center`, `right`
 | type | Input type, support all [native types](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#input_types) and `digit` type | _FieldType_ | `text` |
 | size | Size, can be set to `large` `normal` | _string_ | - |
 | maxlength | Max length of value | _number \| string_ | - |
-| min | When the input type is `number` or `digit`, set the minimum allowable value | _number_ | - |
-| max | When the input type is `number` or `digit`, set the maximum allowable value | _number_ | - |
+| min `v4.9.5` | When the input type is `number` or `digit`, set the minimum allowable value | _number_ | - |
+| max `v4.9.5` | When the input type is `number` or `digit`, set the maximum allowable value | _number_ | - |
 | placeholder | Input placeholder | _string_ | - |
 | border | Whether to show inner border | _boolean_ | `true` |
 | disabled | Whether to disable field | _boolean_ | `false` |
@@ -356,6 +356,7 @@ Use `label-align` prop to align the input value, can be set to `center`, `right`
 | spellcheck `v4.6.2` | HTML native attribute, see [MDN - spellcheck](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/spellcheck)<br> | _boolean_ | - |
 | autocorrect `v4.6.2` | HTML native attribute, Safari only, see [MDN - autocorrect](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#autocorrect)<br> | _string_ | - |
 | inputmode `v4.9.9` | HTML native attribute, see [MDN - inputmode](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/inputmode) | _string_ | Set automatically according to the `type` prop |
+| rows | HTML native attribute, the number of visible text lines for the control, only valid for textarea | _number \| string_ | - |
 
 ### Events
 

@@ -22,7 +22,7 @@ import {
 // Composables
 import { useRect, useScrollParent, useEventListener } from '@vant/use';
 import { useExpose } from '../composables/use-expose';
-import { useTabStatus } from '../composables/use-tab-status';
+import { useAllTabStatus } from '../composables/use-tab-status';
 
 // Components
 import { Loading } from '../loading';
@@ -60,7 +60,7 @@ export default defineComponent({
     const loading = ref(props.loading);
     const root = ref<HTMLElement>();
     const placeholder = ref<HTMLElement>();
-    const tabStatus = useTabStatus();
+    const tabStatus = useAllTabStatus();
     const scrollParent = useScrollParent(root);
     const scroller = computed(() => props.scroller || scrollParent.value);
 

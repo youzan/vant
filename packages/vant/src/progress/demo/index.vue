@@ -21,14 +21,12 @@ const t = useTranslate({
 
 const percentage = ref(50);
 
-const format = (rate: number) => Math.min(Math.max(rate, 0), 100);
-
 const add = () => {
-  percentage.value = format(percentage.value + 20);
+  percentage.value = percentage.value + 20;
 };
 
 const reduce = () => {
-  percentage.value = format(percentage.value - 20);
+  percentage.value = percentage.value - 20;
 };
 </script>
 

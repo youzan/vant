@@ -348,8 +348,8 @@ export default {
 | type | 输入框类型, 支持原生 input 标签的所有 [type 属性](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/input#%3Cinput%3E_types)，额外支持了 `digit` 类型 | _FieldType_ | `text` |
 | size | 大小，可选值为 `large` `normal` | _string_ | - |
 | maxlength | 输入的最大字符数 | _number \| string_ | - |
-| min | 输入框类型为 `number` 或 `digit` 类型时设置可允许的最小值 | _number_ | - |
-| max | 输入框类型为 `number` 或 `digit` 类型时设置可允许的最大值 | _number_ | - |
+| min `v4.9.5` | 输入框类型为 `number` 或 `digit` 类型时设置可允许的最小值 | _number_ | - |
+| max `v4.9.5` | 输入框类型为 `number` 或 `digit` 类型时设置可允许的最大值 | _number_ | - |
 | placeholder | 输入框占位提示文字 | _string_ | - |
 | border | 是否显示内边框 | _boolean_ | `true` |
 | disabled | 是否禁用输入框 | _boolean_ | `false` |
@@ -385,6 +385,7 @@ export default {
 | spellcheck `v4.6.2` | HTML 原生属性，用于检查元素的拼写错误，此 API 仅在部分浏览器支持，详见 [MDN - spellcheck](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/spellcheck)<br> | _boolean_ | - |
 | autocorrect `v4.6.2` | HTML 原生属性，仅 Safari 适用，用于自动更正输入的文本，详见 [MDN - autocorrect](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#autocorrect)<br> | _string_ | - |
 | inputmode `v4.9.9` | HTML 原生属性，用于指定输入框的输入模式，详见 [MDN - inputmode](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/inputmode) | _string_ | 根据 `type` 属性自动设置 |
+| rows | HTML 原生属性，用于指定输入框的可见文本行数，只对 textarea 有效 | _number \| string_ | - |
 
 ### Events
 

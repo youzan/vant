@@ -39,12 +39,12 @@ exports[`click option 1`] = `
       appear="true"
       persisted="false"
       css="true"
-      role="button"
-      tabindex="0"
     >
       <div
-        style="z-index: 2007; position: absolute; animation-duration: 0.2s; display: none;"
+        style="z-index: 2007; position: absolute; animation-duration: 0s; display: none;"
         class="van-overlay"
+        role="button"
+        tabindex="0"
       >
       </div>
     </transition-stub>
@@ -102,8 +102,6 @@ exports[`click option 1`] = `
       appear="true"
       persisted="false"
       css="true"
-      role="button"
-      tabindex="0"
     >
     </transition-stub>
     <transition-stub
@@ -156,12 +154,12 @@ exports[`close-on-click-outside 1`] = `
       appear="true"
       persisted="false"
       css="true"
-      role="button"
-      tabindex="0"
     >
       <div
-        style="z-index: 2004; position: absolute; animation-duration: 0.2s; display: none;"
+        style="z-index: 2004; position: absolute; animation-duration: 0s; display: none;"
         class="van-overlay"
+        role="button"
+        tabindex="0"
       >
       </div>
     </transition-stub>
@@ -219,8 +217,6 @@ exports[`close-on-click-outside 1`] = `
       appear="true"
       persisted="false"
       css="true"
-      role="button"
-      tabindex="0"
     >
     </transition-stub>
     <transition-stub
@@ -260,8 +256,6 @@ exports[`destroy one item 1`] = `
       appear="true"
       persisted="false"
       css="true"
-      role="button"
-      tabindex="0"
     >
     </transition-stub>
     <transition-stub
@@ -314,8 +308,6 @@ exports[`direction up 1`] = `
       appear="true"
       persisted="false"
       css="true"
-      role="button"
-      tabindex="0"
     >
     </transition-stub>
     <transition-stub
@@ -335,8 +327,6 @@ exports[`direction up 1`] = `
       appear="true"
       persisted="false"
       css="true"
-      role="button"
-      tabindex="0"
     >
     </transition-stub>
     <transition-stub
@@ -389,12 +379,12 @@ exports[`direction up 2`] = `
       appear="true"
       persisted="false"
       css="true"
-      role="button"
-      tabindex="0"
     >
       <div
-        style="z-index: 2006; position: absolute; animation-duration: 0.2s;"
+        style="z-index: 2006; position: absolute; animation-duration: 0s;"
         class="van-overlay"
+        role="button"
+        tabindex="0"
       >
       </div>
     </transition-stub>
@@ -452,8 +442,6 @@ exports[`direction up 2`] = `
       appear="true"
       persisted="false"
       css="true"
-      role="button"
-      tabindex="0"
     >
     </transition-stub>
     <transition-stub
@@ -506,12 +494,12 @@ exports[`disable close-on-click-outside 1`] = `
       appear="true"
       persisted="false"
       css="true"
-      role="button"
-      tabindex="0"
     >
       <div
-        style="z-index: 2005; position: absolute; animation-duration: 0.2s;"
+        style="z-index: 2005; position: absolute; animation-duration: 0s;"
         class="van-overlay"
+        role="button"
+        tabindex="0"
       >
       </div>
     </transition-stub>
@@ -569,8 +557,6 @@ exports[`disable close-on-click-outside 1`] = `
       appear="true"
       persisted="false"
       css="true"
-      role="button"
-      tabindex="0"
     >
     </transition-stub>
     <transition-stub
@@ -609,8 +595,6 @@ exports[`disable dropdown item 1`] = `
       appear="true"
       persisted="false"
       css="true"
-      role="button"
-      tabindex="0"
     >
     </transition-stub>
     <transition-stub
@@ -663,12 +647,12 @@ exports[`render option icon 1`] = `
       appear="true"
       persisted="false"
       css="true"
-      role="button"
-      tabindex="0"
     >
       <div
-        style="z-index: 2003; position: absolute; animation-duration: 0.2s;"
+        style="z-index: 2003; position: absolute; animation-duration: 0s;"
         class="van-overlay"
+        role="button"
+        tabindex="0"
       >
       </div>
     </transition-stub>
@@ -730,8 +714,6 @@ exports[`render option icon 1`] = `
       appear="true"
       persisted="false"
       css="true"
-      role="button"
-      tabindex="0"
     >
     </transition-stub>
     <transition-stub
@@ -784,12 +766,12 @@ exports[`show dropdown item 1`] = `
       appear="true"
       persisted="false"
       css="true"
-      role="button"
-      tabindex="0"
     >
       <div
-        style="z-index: 2001; position: absolute; animation-duration: 0.2s;"
+        style="z-index: 2001; position: absolute; animation-duration: 0s;"
         class="van-overlay"
+        role="button"
+        tabindex="0"
       >
       </div>
     </transition-stub>
@@ -847,8 +829,6 @@ exports[`show dropdown item 1`] = `
       appear="true"
       persisted="false"
       css="true"
-      role="button"
-      tabindex="0"
     >
     </transition-stub>
     <transition-stub
@@ -901,12 +881,12 @@ exports[`show dropdown item 2`] = `
       appear="true"
       persisted="false"
       css="true"
-      role="button"
-      tabindex="0"
     >
       <div
         style="z-index: 2001; position: absolute; animation-duration: 0s; display: none;"
         class="van-overlay"
+        role="button"
+        tabindex="0"
       >
       </div>
     </transition-stub>
@@ -964,12 +944,12 @@ exports[`show dropdown item 2`] = `
       appear="true"
       persisted="false"
       css="true"
-      role="button"
-      tabindex="0"
     >
       <div
-        style="z-index: 2002; position: absolute; animation-duration: 0.2s;"
+        style="z-index: 2002; position: absolute; animation-duration: 0s;"
         class="van-overlay"
+        role="button"
+        tabindex="0"
       >
       </div>
     </transition-stub>
@@ -1060,12 +1040,12 @@ exports[`show dropdown item 3`] = `
       appear="true"
       persisted="false"
       css="true"
-      role="button"
-      tabindex="0"
     >
       <div
         style="z-index: 2001; position: absolute; animation-duration: 0s; display: none;"
         class="van-overlay"
+        role="button"
+        tabindex="0"
       >
       </div>
     </transition-stub>
@@ -1123,12 +1103,12 @@ exports[`show dropdown item 3`] = `
       appear="true"
       persisted="false"
       css="true"
-      role="button"
-      tabindex="0"
     >
       <div
-        style="z-index: 2002; position: absolute; animation-duration: 0.2s; display: none;"
+        style="z-index: 2002; position: absolute; animation-duration: 0s; display: none;"
         class="van-overlay"
+        role="button"
+        tabindex="0"
       >
       </div>
     </transition-stub>
@@ -1219,8 +1199,6 @@ exports[`title prop 1`] = `
       appear="true"
       persisted="false"
       css="true"
-      role="button"
-      tabindex="0"
     >
     </transition-stub>
     <transition-stub
@@ -1240,8 +1218,6 @@ exports[`title prop 1`] = `
       appear="true"
       persisted="false"
       css="true"
-      role="button"
-      tabindex="0"
     >
     </transition-stub>
     <transition-stub
@@ -1281,8 +1257,6 @@ exports[`title slot 1`] = `
       appear="true"
       persisted="false"
       css="true"
-      role="button"
-      tabindex="0"
     >
     </transition-stub>
     <transition-stub

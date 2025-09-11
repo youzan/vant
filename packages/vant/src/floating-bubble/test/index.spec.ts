@@ -9,9 +9,16 @@ import {
   triggerDrag,
 } from '../../../test';
 
+const bubbleWidth = 48;
+const bubbleHeight = 48;
+const defaultGap = 24;
+
 test('should render correctly when all props set', async () => {
   useWindowSize();
-  const restore = mockGetBoundingClientRect({ width: 48, height: 48 });
+  const restore = mockGetBoundingClientRect({
+    width: bubbleWidth,
+    height: bubbleHeight,
+  });
 
   const root = document.createElement('div');
   const wrapper = mount(FloatingBubble, {
@@ -27,8 +34,8 @@ test('should render correctly when all props set', async () => {
   await later();
 
   expect(floatingBubbleEl.style.transform).toEqual(
-    `translate3d(${window.innerWidth - 48 - 24}px, ${
-      window.innerHeight - 48 - 24
+    `translate3d(${window.innerWidth - bubbleWidth - defaultGap}px, ${
+      window.innerHeight - bubbleHeight - defaultGap
     }px, 0)`,
   );
 
@@ -37,8 +44,8 @@ test('should render correctly when all props set', async () => {
   });
 
   expect(floatingBubbleEl.style.transform).toEqual(
-    `translate3d(${window.innerWidth - 48 - 50}px, ${
-      window.innerHeight - 48 - 50
+    `translate3d(${window.innerWidth - bubbleWidth - 50}px, ${
+      window.innerHeight - bubbleHeight - 50
     }px, 0)`,
   );
 
@@ -62,8 +69,41 @@ test('should render correctly when all props set', async () => {
   restore();
 });
 
+test('should render with xy gaps', async () => {
+  useWindowSize();
+  const restore = mockGetBoundingClientRect({
+    width: bubbleWidth,
+    height: bubbleHeight,
+  });
+
+  const root = document.createElement('div');
+  mount(FloatingBubble, {
+    props: {
+      teleport: root,
+      gap: { x: 50, y: 27 },
+    },
+  });
+
+  const floatingBubbleEl = root.querySelector<HTMLDivElement>(
+    '.van-floating-bubble',
+  )!;
+
+  await later();
+
+  expect(floatingBubbleEl.style.transform).toEqual(
+    `translate3d(${window.innerWidth - bubbleWidth - 50}px, ${
+      window.innerHeight - bubbleHeight - 27
+    }px, 0)`,
+  );
+
+  restore();
+});
+
 test('should only y axis direction move when axis is default', async () => {
-  const restore = mockGetBoundingClientRect({ width: 48, height: 48 });
+  const restore = mockGetBoundingClientRect({
+    width: bubbleWidth,
+    height: bubbleHeight,
+  });
 
   const root = document.createElement('div');
   mount(FloatingBubble, {
@@ -79,16 +119,19 @@ test('should only y axis direction move when axis is default', async () => {
   await triggerDrag(floatingBubbleEl, -100, -100);
 
   expect(floatingBubbleEl.style.transform).toEqual(
-    `translate3d(${window.innerWidth - 48 - 24}px, ${
-      window.innerHeight - 48 - 24 - 100
+    `translate3d(${window.innerWidth - bubbleWidth - defaultGap}px, ${
+      window.innerHeight - bubbleHeight - defaultGap - 100
     }px, 0)`,
   );
 
   restore();
 });
 
-test('should only x axis direction adn emit offsetChange move when axis is "x" ', async () => {
-  const restore = mockGetBoundingClientRect({ width: 48, height: 48 });
+test('should only x axis direction and emit offsetChange move when axis is "x"', async () => {
+  const restore = mockGetBoundingClientRect({
+    width: bubbleWidth,
+    height: bubbleHeight,
+  });
 
   const root = document.createElement('div');
   const wrapper = mount(FloatingBubble, {
@@ -105,8 +148,8 @@ test('should only x axis direction adn emit offsetChange move when axis is "x" '
   await triggerDrag(floatingBubbleEl, -100, -100);
 
   expect(floatingBubbleEl.style.transform).toEqual(
-    `translate3d(${window.innerWidth - 48 - 24 - 100}px, ${
-      window.innerHeight - 48 - 24
+    `translate3d(${window.innerWidth - bubbleWidth - defaultGap - 100}px, ${
+      window.innerHeight - bubbleHeight - defaultGap
     }px, 0)`,
   );
 
@@ -118,8 +161,11 @@ test('should only x axis direction adn emit offsetChange move when axis is "x" '
   restore();
 });
 
-test('should free direction move when axis is "xy" ', async () => {
-  const restore = mockGetBoundingClientRect({ width: 48, height: 48 });
+test('should free direction move when axis is "xy"', async () => {
+  const restore = mockGetBoundingClientRect({
+    width: bubbleWidth,
+    height: bubbleHeight,
+  });
 
   const root = document.createElement('div');
   mount(FloatingBubble, {
@@ -136,44 +182,21 @@ test('should free direction move when axis is "xy" ', async () => {
   await triggerDrag(floatingBubbleEl, -100, -100);
 
   expect(floatingBubbleEl.style.transform).toEqual(
-    `translate3d(${window.innerWidth - 48 - 24 - 100}px, ${
-      window.innerHeight - 48 - 24 - 100
+    `translate3d(${window.innerWidth - bubbleWidth - defaultGap - 100}px, ${
+      window.innerHeight - bubbleHeight - defaultGap - 100
     }px, 0)`,
   );
 
   restore();
 });
 
-test('should free direction move when axis is "xy" ', async () => {
-  const restore = mockGetBoundingClientRect({ width: 48, height: 48 });
-
-  const root = document.createElement('div');
-  mount(FloatingBubble, {
-    props: {
-      teleport: root,
-      axis: 'xy',
-    },
-  });
-
-  const floatingBubbleEl = root.querySelector<HTMLDivElement>(
-    '.van-floating-bubble',
-  )!;
-
-  await triggerDrag(floatingBubbleEl, -100, -100);
-
-  expect(floatingBubbleEl.style.transform).toEqual(
-    `translate3d(${window.innerWidth - 48 - 24 - 100}px, ${
-      window.innerHeight - 48 - 24 - 100
-    }px, 0)`,
-  );
-
-  restore();
-});
-
-test('should free direction move and  magnetic to x axios when magnetic is "x" ', async () => {
+test('should free direction move and magnetic to x axis when magnetic is "x" ', async () => {
   vi.useFakeTimers();
 
-  const restore = mockGetBoundingClientRect({ width: 48, height: 48 });
+  const restore = mockGetBoundingClientRect({
+    width: bubbleWidth,
+    height: bubbleHeight,
+  });
   const root = document.createElement('div');
   mount(FloatingBubble, {
     props: {
@@ -191,8 +214,8 @@ test('should free direction move and  magnetic to x axios when magnetic is "x" '
   await vi.advanceTimersByTimeAsync(400);
 
   expect(floatingBubbleEl.style.transform).toEqual(
-    `translate3d(${window.innerWidth - 48 - 24}px, ${
-      window.innerHeight - 48 - 24 - 100
+    `translate3d(${window.innerWidth - bubbleWidth - defaultGap}px, ${
+      window.innerHeight - bubbleHeight - defaultGap - 100
     }px, 0)`,
   );
 
@@ -200,17 +223,20 @@ test('should free direction move and  magnetic to x axios when magnetic is "x" '
   await vi.advanceTimersByTimeAsync(400);
 
   expect(floatingBubbleEl.style.transform).toEqual(
-    `translate3d(${24}px, ${window.innerHeight - 48 - 24 - 200}px, 0)`,
+    `translate3d(${defaultGap}px, ${window.innerHeight - bubbleHeight - defaultGap - 200}px, 0)`,
   );
 
   restore();
   vi.useRealTimers();
 });
 
-test('should offset control positioning when use v-model:offset ', async () => {
+test('should offset control positioning when use v-model:offset', async () => {
   vi.useFakeTimers();
 
-  const restore = mockGetBoundingClientRect({ width: 48, height: 48 });
+  const restore = mockGetBoundingClientRect({
+    width: bubbleWidth,
+    height: bubbleHeight,
+  });
   const root = document.createElement('div');
   const wrapper = mount(FloatingBubble, {
     props: {
@@ -262,4 +288,38 @@ test('should emit click when click wrapper', async () => {
   trigger(wrapper, 'click');
 
   expect(wrapper.emitted('click')).toBeFalsy();
+});
+
+test('should handle negative gap values', async () => {
+  const restore = mockGetBoundingClientRect({
+    width: bubbleWidth,
+    height: bubbleHeight,
+  });
+
+  const root = document.createElement('div');
+  mount(FloatingBubble, {
+    props: {
+      teleport: root,
+      axis: 'xy',
+      gap: -10,
+    },
+  });
+
+  const floatingBubbleEl = root.querySelector<HTMLDivElement>(
+    '.van-floating-bubble',
+  )!;
+
+  await triggerDrag(floatingBubbleEl, -1000, -1000);
+
+  expect(floatingBubbleEl.style.transform).toEqual(
+    `translate3d(-10px, -10px, 0)`,
+  );
+
+  await triggerDrag(floatingBubbleEl, 1000, 1000);
+
+  expect(floatingBubbleEl.style.transform).toEqual(
+    `translate3d(${window.innerWidth - bubbleWidth + 10}px, ${window.innerHeight - bubbleHeight + 10}px, 0)`,
+  );
+
+  restore();
 });

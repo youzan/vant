@@ -91,7 +91,7 @@ When writing code, please note:
 
 If this is your first time submitting a pull request on GitHub, you can learn from the following article:
 
-- [First participation in open source](https://github.com/firstcontributions/first-contributions)
+- [First participation in open source](https://github.com/firstcontributions/first-contributions/blob/main/docs/translations/README.en-pirate.md)
 
 ### Pull Request Specification
 

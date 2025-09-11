@@ -116,3 +116,19 @@ test('should allow to use the teleport prop', () => {
 
   expect(root.querySelector('.van-overlay')).toBeTruthy();
 });
+
+test('should inherit attrs when using teleport prop', async () => {
+  const root = document.createElement('div');
+  mount(Overlay, {
+    props: {
+      show: true,
+      teleport: root,
+    },
+    attrs: {
+      class: 'foo',
+    },
+  });
+
+  const overlay = root.querySelector('.van-overlay');
+  expect(overlay?.classList.contains('foo')).toBeTruthy();
+});

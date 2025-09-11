@@ -1,6 +1,7 @@
 import {
   defineComponent,
   nextTick,
+  onMounted,
   onUnmounted,
   ref,
   watch,
@@ -43,9 +44,9 @@ export default defineComponent({
 
   setup(props, { slots }) {
     const svgElRef = ref<HTMLDivElement>();
-
     const watermarkUrl = ref('');
     const imageBase64 = ref('');
+
     const renderWatermark = () => {
       const rotateStyle = {
         transformOrigin: 'center',
@@ -132,6 +133,24 @@ export default defineComponent({
       return URL.createObjectURL(svgBlob);
     };
 
+    const revokeWatermarkUrl = () => {
+      if (watermarkUrl.value) {
+        URL.revokeObjectURL(watermarkUrl.value);
+      }
+    };
+
+    const generateWatermarkUrl = () => {
+      /**
+       * The path is the actual HTML rendered by renderWatermark
+       * => convert the SVG string to a blob image
+       * => put it in background-image.
+       */
+      if (svgElRef.value) {
+        revokeWatermarkUrl();
+        watermarkUrl.value = makeSvgToBlobUrl(svgElRef.value.innerHTML);
+      }
+    };
+
     watchEffect(() => {
       if (props.image) {
         makeImageToBase64(props.image);
@@ -140,7 +159,6 @@ export default defineComponent({
 
     watch(
       () => [
-        imageBase64.value,
         props.content,
         props.textColor,
         props.height,
@@ -149,31 +167,16 @@ export default defineComponent({
         props.gapX,
         props.gapY,
       ],
-      () => {
-        /**
-         * The path is the actual HTML rendered by renderWatermark
-         * => convert the SVG string to a blob image
-         * => put it in background-image.
-         */
-        nextTick(() => {
-          if (svgElRef.value) {
-            if (watermarkUrl.value) {
-              URL.revokeObjectURL(watermarkUrl.value);
-            }
-            watermarkUrl.value = makeSvgToBlobUrl(svgElRef.value.innerHTML);
-          }
-        });
-      },
-      {
-        immediate: true,
-      },
+      generateWatermarkUrl,
     );
 
-    onUnmounted(() => {
-      if (watermarkUrl.value) {
-        URL.revokeObjectURL(watermarkUrl.value);
-      }
+    watch(imageBase64, () => {
+      nextTick(generateWatermarkUrl);
     });
+
+    onMounted(generateWatermarkUrl);
+
+    onUnmounted(revokeWatermarkUrl);
 
     return () => {
       const style = extend(
