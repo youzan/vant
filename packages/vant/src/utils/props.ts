@@ -13,6 +13,11 @@ export const truthProp = {
   default: true as const,
 };
 
+export const falseProp = {
+  type: Boolean,
+  default: false as const,
+};
+
 export const makeRequiredProp = <T>(type: T) => ({
   type,
   required: true as const,
