@@ -30,15 +30,15 @@
   "dependencies": {
     "enquirer": "2.4.1",
     "fast-glob": "^3.3.3",
-    "fs-extra": "^11.3.0",
+    "fs-extra": "^11.3.1",
     "picocolors": "^1.1.1",
-    "rslog": "^1.2.9"
+    "rslog": "^1.2.11"
   },
   "devDependencies": {
     "@types/fs-extra": "^11.0.4",
-    "@types/node": "^22.16.5",
+    "@types/node": "^22.17.2",
     "rimraf": "^6.0.1",
-    "typescript": "^5.8.3"
+    "typescript": "^5.9.2"
   },
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
