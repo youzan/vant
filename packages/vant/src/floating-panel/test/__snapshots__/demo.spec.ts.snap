@@ -48,6 +48,19 @@ exports[`should render demo and match snapshot 1`] = `
         </span>
       </div>
       <div
+        id="van-tabs-3"
+        role="tab"
+        class="van-tab van-tab--line"
+        tabindex="-1"
+        aria-selected="false"
+        aria-controls="van-tab"
+        data-allow-mismatch="attribute"
+      >
+        <span class="van-tab__text van-tab__text--ellipsis">
+          Disable Magnetic
+        </span>
+      </div>
+      <div
         class="van-tabs__line"
         style="transform: translateX(50px) translateX(-50%);"
       >
@@ -276,6 +289,16 @@ exports[`should render demo and match snapshot 1`] = `
       class="van-tab__panel"
       tabindex="-1"
       aria-labelledby="van-tabs-2"
+      data-allow-mismatch="attribute"
+      style="display: none;"
+    >
+    </div>
+    <div
+      id="van-tab"
+      role="tabpanel"
+      class="van-tab__panel"
+      tabindex="-1"
+      aria-labelledby="van-tabs-3"
       data-allow-mismatch="attribute"
       style="display: none;"
     >
