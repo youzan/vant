@@ -14,14 +14,18 @@ const t = useTranslate({
   'zh-CN': {
     customAnchors: '自定义锚点',
     headDragOnly: '仅头部拖拽',
+    disableMagnetic: '禁用吸附',
     panelShowHeight: '面板显示高度',
     contentUnDrag: '内容不可拖拽',
+    magneticDisabled: '已禁用磁力吸附，可在边界内任意停留',
   },
   'en-US': {
     customAnchors: 'Custom Anchors',
     headDragOnly: 'Head Drag Only',
+    disableMagnetic: 'Disable Magnetic',
     panelShowHeight: 'Panel Show Height',
     contentUnDrag: 'Content cannot be dragged',
+    magneticDisabled: 'Magnetic disabled, free positioning within boundaries',
   },
 });
 
@@ -61,6 +65,14 @@ const height = ref(anchors[0]);
       <van-floating-panel :content-draggable="false">
         <div style="text-align: center; padding: 15px">
           <p>{{ t('contentUnDrag') }}</p>
+        </div>
+      </van-floating-panel>
+    </van-tab>
+
+    <van-tab :title="t('disableMagnetic')">
+      <van-floating-panel :magnetic="false">
+        <div style="text-align: center; padding: 15px">
+          <p>{{ t('magneticDisabled') }}</p>
         </div>
       </van-floating-panel>
     </van-tab>
