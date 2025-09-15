@@ -78,6 +78,21 @@ By default, both the header and content areas of FloatingPanel can be dragged, b
 </van-floating-panel>
 ```
 
+### Disable Magnetic Adsorption
+
+By default, when dragging ends, the panel will automatically snap to the nearest anchor point. You can disable this magnetic adsorption behavior through the `magnetic` attribute.
+
+When `magnetic` is set to `false`, the panel will not automatically snap to anchor points after dragging, but it will still be constrained within the minimum and maximum boundaries defined by the anchors.
+
+```html
+<van-floating-panel :anchors="[100, 200, 300]" :magnetic="false">
+  <div style="text-align: center; padding: 15px">
+    <p>Magnetic adsorption disabled</p>
+    <p>Panel can stop at any position within boundaries</p>
+  </div>
+</van-floating-panel>
+```
+
 ## API
 
 ### Props
@@ -87,6 +102,7 @@ By default, both the header and content areas of FloatingPanel can be dragged, b
 | v-model:height | The current display height of the panel | _number \| string_ | `0` |
 | anchors | Setting custom anchors, unit `px` | _number[]_ | `[100, window.innerHeight * 0.6]` |
 | duration | Transition duration, unit second | _number \| string_ | `0.3` |
+| magnetic | Whether to enable magnetic adsorption to anchors. When disabled, panel can stop at any position within the anchor boundaries | _boolean_ | `true` |
 | content-draggable | Allow dragging content | _boolean_ | `true` |
 | lock-scroll `v4.6.4` | When not dragging, Whether to lock background scroll | _boolean_ | `false` |
 | safe-area-inset-bottom | Whether to enable bottom safe area adaptation | _boolean_ | `true` |

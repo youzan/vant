@@ -46,6 +46,16 @@ exports[`should render demo and match snapshot 1`] = `
       style="display:none;"
     >
     </div>
+    <div
+      id="van-tab"
+      role="tabpanel"
+      class="van-tab__panel"
+      tabindex="-1"
+      aria-labelledby="van-tabs-3"
+      data-allow-mismatch="attribute"
+      style="display:none;"
+    >
+    </div>
   </div>
 </div>
 `;
