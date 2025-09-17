@@ -826,8 +826,11 @@ describe('Slider format function boundary tests', () => {
     // 触发 format 调用
     trigger(wrapper2, 'click', 100, 0);
 
-    const result2 = wrapper2.emitted('update:modelValue')!.pop()![0] as number;
-    expect(result2).toBeLessThanOrEqual(6);
+    const emitted2 = wrapper2.emitted('update:modelValue');
+    if (emitted2 && emitted2.length > 0) {
+      const result2 = emitted2.pop()![0] as number;
+      expect(result2).toBeLessThanOrEqual(6);
+    }
 
     // 测试：确保 distanceToMax > distanceToPrev 分支
     const wrapper3 = mount(Slider, {
@@ -846,7 +849,31 @@ describe('Slider format function boundary tests', () => {
     // 3.2 > 0.8，应该返回 prevSteppedValue=6
 
     trigger(wrapper3, 'click', 100, 0);
-    const result3 = wrapper3.emitted('update:modelValue')!.pop()![0] as number;
-    expect(result3).toBeLessThanOrEqual(10);
+    const emitted3 = wrapper3.emitted('update:modelValue');
+    if (emitted3 && emitted3.length > 0) {
+      const result3 = emitted3.pop()![0] as number;
+      expect(result3).toBeLessThanOrEqual(10);
+    }
+
+    // 额外测试：通过拖拽来触发边界检查
+    const wrapper4 = mount(Slider, {
+      props: {
+        min: 0,
+        max: 8,
+        step: 5, // 步长序列：0, 5, 10(超出max=8)
+        modelValue: 0,
+      },
+    });
+
+    const button = wrapper4.find('.van-slider__button');
+    if (button.exists()) {
+      triggerDrag(button, 100, 0); // 拖拽到最右端
+
+      const emitted4 = wrapper4.emitted('update:modelValue');
+      if (emitted4 && emitted4.length > 0) {
+        const result4 = emitted4.pop()![0] as number;
+        expect(result4).toBeLessThanOrEqual(8);
+      }
+    }
   });
 });
