@@ -376,31 +376,40 @@ test('should update modelValue correctly after clicking the reversed vertical sl
 });
 
 test('should format value correctly when steppedValue > max via click', async () => {
+  const restoreMock = mockRect();
+
   const wrapper = mount(Slider, {
     props: { min: 0, max: 100, step: 10, modelValue: 50 },
   });
 
   trigger(wrapper, 'click', 200, 0);
-
   expect(wrapper.emitted('update:modelValue')!.pop()).toEqual([100]);
+
+  restoreMock();
 });
 
 test('should format value correctly when closer to max via click', async () => {
+  const restoreMock = mockRect();
+
   const wrapper = mount(Slider, {
     props: { min: 0, max: 100, step: 10, modelValue: 50 },
   });
 
   trigger(wrapper, 'click', 96, 0);
-
   expect(wrapper.emitted('update:modelValue')!.pop()).toEqual([100]);
+
+  restoreMock();
 });
 
 test('should format value correctly when closer to prev step via click', async () => {
+  const restoreMock = mockRect();
+
   const wrapper = mount(Slider, {
     props: { min: 0, max: 100, step: 10, modelValue: 50 },
   });
 
   trigger(wrapper, 'click', 94, 0);
-
   expect(wrapper.emitted('update:modelValue')!.pop()).toEqual([90]);
+
+  restoreMock();
 });
