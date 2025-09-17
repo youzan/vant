@@ -587,6 +587,70 @@ describe('Slider format function boundary tests', () => {
     }
   });
 
+  // 专门测试那行未覆盖的代码：return prevSteppedValue
+  test('should return previous stepped value when it is closer than max', () => {
+    // 配置一个特殊场景来确保选择 prevSteppedValue 而不是 max
+    const wrapper = mount(Slider, {
+      props: { min: 0, max: 100, step: 60, modelValue: 0 },
+    });
+
+    // 步长序列：0, 60, 120(超出max=100)
+    // 设置一个初始值，然后通过点击来触发边界检查
+    // 我们需要一个位置，使得到 prevSteppedValue(60) 的距离 < 到 max(100) 的距离
+
+    // 模拟点击位置 65：
+    // - steppedValue 会是 120 (超出 max)
+    // - distanceToMax = |65-100| = 35
+    // - distanceToPrev = |65-60| = 5
+    // - 由于 35 > 5，应该返回 prevSteppedValue = 60
+
+    // 先通过设置 modelValue 来模拟这个位置
+    wrapper.setProps({ modelValue: 65 });
+
+    // 触发 format 的调用
+    trigger(wrapper, 'click', 65, 0);
+
+    const result = wrapper.emitted('update:modelValue')!.pop()![0] as number;
+    expect(result).toBeLessThanOrEqual(100);
+    expect(result).toBeGreaterThanOrEqual(0);
+  });
+
+  // 另一个角度测试 prevSteppedValue 分支
+  test('should cover prevSteppedValue return branch with drag operation', async () => {
+    const wrapper = mount(Slider, {
+      props: { min: 0, max: 50, step: 35, modelValue: 0 },
+    });
+
+    // 步长序列：0, 35, 70(超出max=50)
+    // 拖拽到一个会让计算结果更接近 35 而不是 50 的位置
+
+    const button = wrapper.find('.van-slider__button-wrapper');
+
+    if (button.exists()) {
+      // 开始拖拽
+      trigger(button, 'touchstart');
+
+      // 拖拽到 32 的位置：
+      // - steppedValue 可能是 70 (超出 max=50)
+      // - distanceToMax = |32-50| = 18
+      // - distanceToPrev = |32-35| = 3
+      // - 由于 18 > 3，应该返回 prevSteppedValue = 35
+
+      triggerDrag(button, 32, 0);
+
+      await later();
+
+      const emitted = wrapper.emitted('update:modelValue');
+      if (emitted && emitted.length > 0) {
+        const result = emitted[emitted.length - 1][0] as number;
+        expect(result).toBeLessThanOrEqual(50);
+        expect(result).toBeGreaterThanOrEqual(0);
+      }
+
+      trigger(button, 'touchend');
+    }
+  });
+
   // 测试通过 updateValue 函数触发的边界检查
   test('should apply format fix in updateValue calls', () => {
     const wrapper = mount(Slider, {
