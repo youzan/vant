@@ -115,27 +115,65 @@ Vant exports following Notify utility functions:
 
 | Methods | Description | Attribute | Return value |
 | --- | --- | --- | --- |
-| showNotify | Show notify | `NotifyOptions \| string` | notify instance |
-| closeNotify | Close notify | - | `void` |
-| setNotifyDefaultOptions | Set default options of all notifies | `NotifyOptions` | `void` |
-| resetNotifyDefaultOptions | Reset default options of all notifies | - | `void` |
+| showNotify | Display Notify at the top of the page | `NotifyOptions \| string` | Notify instance |
+| closeNotify | Close the currently displayed Notify | - | `void` |
+| setNotifyDefaultOptions | Modify the default configuration, affecting all `showNotify` calls | `NotifyOptions` | `void` |
+| resetNotifyDefaultOptions | Reset the default configuration, affecting all `showNotify` calls | - | `void` |
 
 ### NotifyOptions
+
+When calling the `showNotify` and other related methods, the following options are supported:
 
 | Attribute | Description | Type | Default |
 | --- | --- | --- | --- |
 | type | Can be set to `primary` `success` `warning` | _NotifyType_ | `danger` |
 | message | Message | _string_ | - |
 | duration | Duration(ms), won't disappear if value is 0 | _number \| string_ | `3000` |
-| z-index | Set the z-index to a fixed value | _number \| string_ | `2000+` |
+| zIndex | Set the z-index to a fixed value | _number \| string_ | `2000+` |
 | position | Position, can be set to `bottom` | _NotifyPosition_ | `top` |
 | color | Message color | _string_ | `white` |
 | background | Background color | _string_ | - |
 | className | Custom className | _string \| Array \| object_ | - |
 | lockScroll | Whether to lock background scroll | _boolean_ | `false` |
+| teleport | Specifies a target element where Notify will be mounted | _string \| Element_ | - |
 | onClick | Callback function after click | _(event: MouseEvent) => void_ | - |
 | onOpened | Callback function after opened | _() => void_ | - |
 | onClose | Callback function after close | _() => void_ | - |
+
+### Props
+
+When using `Notify` as a component, the following props are supported:
+
+| Attribute | Description | Type | Default |
+| --- | --- | --- | --- |
+| v-model:show | Whether to show notify | _boolean_ | `false` |
+| type | Can be set to `primary` `success` `warning` | _NotifyType_ | `danger` |
+| message | Message | _string_ | - |
+| z-index | Set the z-index to a fixed value | _number \| string_ | `2000+` |
+| position | Position, can be set to `bottom` | _NotifyPosition_ | `top` |
+| color | Message color | _string_ | `white` |
+| background | Background color | _string_ | - |
+| class-name | Custom className | _string \| Array \| object_ | - |
+| lock-scroll | Whether to lock background scroll | _boolean_ | `false` |
+| teleport | Specifies a target element where Notify will be mounted | _string \| Element_ | - |
+
+### Events
+
+When using `Notify` as a component, the following events are supported:
+
+| Event  | Description                    | Parameters          |
+| ------ | ------------------------------ | ------------------- |
+| click  | Callback function after click  | _event: MouseEvent_ |
+| close  | Callback function after close  | -                   |
+| opened | Callback function after opened | -                   |
+
+### Slots
+
+When using `Notify` as a component, the following slots are supported:
+
+| Name    | Description    |
+| ------- | -------------- |
+| default | Custom content |
 
 ### Types
 

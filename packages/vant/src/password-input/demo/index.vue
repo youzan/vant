@@ -56,8 +56,8 @@ const onInput = (key: ValueKeys) => {
     return;
   }
 
-  const maxlegnth = current.value === 'customLength' ? 4 : 6;
-  const newValue = (values.value[current.value] + key).slice(0, maxlegnth);
+  const maxlength = current.value === 'customLength' ? 4 : 6;
+  const newValue = (values.value[current.value] + key).slice(0, maxlength);
 
   values.value[current.value] = newValue;
 

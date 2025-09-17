@@ -1,6 +1,6 @@
 import { mount } from '../../../test';
-import { nextTick } from 'vue';
-import TextEllipsis from '..';
+import { defineComponent, KeepAlive, nextTick } from 'vue';
+import TextEllipsis, { type TextEllipsisInstance } from '..';
 
 const originGetComputedStyle = window.getComputedStyle;
 
@@ -32,8 +32,33 @@ afterAll(() => {
   window.getComputedStyle = originGetComputedStyle;
 });
 
+test('should render action slot correctly', async () => {
+  const wrapper = mount(TextEllipsis, {
+    attachTo: document.body,
+    props: {
+      content,
+    },
+    slots: {
+      action: ({ expanded }) => (expanded ? 'Expand' : 'Collapse'),
+    },
+  });
+
+  await nextTick();
+
+  expect(wrapper.html()).toMatchSnapshot();
+
+  (wrapper.vm as TextEllipsisInstance).toggle();
+  await nextTick();
+  expect(wrapper.html()).toMatchSnapshot();
+
+  (wrapper.vm as TextEllipsisInstance).toggle();
+  await nextTick();
+  expect(wrapper.html()).toMatchSnapshot();
+});
+
 test('should render content correctly', async () => {
   const wrapper = mount(TextEllipsis, {
+    attachTo: document.body,
     props: {
       content,
     },
@@ -45,6 +70,7 @@ test('should render content correctly', async () => {
 
 test('Expand and Collapse should be work', async () => {
   const wrapper = mount(TextEllipsis, {
+    attachTo: document.body,
     props: {
       content,
       expandText: 'expand',
@@ -60,6 +86,7 @@ test('Expand and Collapse should be work', async () => {
 
 test('should emit click event after Expand/Collapse is clicked', async () => {
   const wrapper = mount(TextEllipsis, {
+    attachTo: document.body,
     props: {
       content,
       expandText: 'expand',
@@ -79,6 +106,7 @@ test('text not exceeded', async () => {
 
   const shortContent = 'Vant is a component library';
   const wrapper = mount(TextEllipsis, {
+    attachTo: document.body,
     props: {
       content: shortContent,
       expandText: 'expand',
@@ -88,4 +116,46 @@ test('text not exceeded', async () => {
 
   await nextTick();
   expect(wrapper.text()).not.toMatch('...');
+});
+
+// https://github.com/vant-ui/vant/issues/12445
+test('should recalculate the ellipsis state when the component is activated', async () => {
+  vi.useFakeTimers();
+
+  const Comp = defineComponent({
+    data() {
+      return {
+        show: false,
+      };
+    },
+    beforeMount() {
+      setTimeout(() => {
+        this.show = true;
+      }, 1000);
+    },
+    render() {
+      return this.show ? <TextEllipsis content={content} /> : null;
+    },
+  });
+
+  const wrapper = mount(
+    {
+      data() {
+        return {
+          render: true,
+        };
+      },
+      render() {
+        return <KeepAlive>{this.render ? <Comp /> : null}</KeepAlive>;
+      },
+    },
+    { attachTo: document.body },
+  );
+
+  wrapper.setData({ render: false });
+  await vi.advanceTimersByTimeAsync(1000);
+  await wrapper.setData({ render: true });
+  expect(wrapper.text()).toMatch(content);
+
+  vi.useRealTimers();
 });

@@ -89,6 +89,7 @@ exports[`should render demo and match snapshot 1`] = `
       <label
         id="van-field-label"
         for="van-field-input"
+        data-allow-mismatch="attribute"
       >
         Bind Value
       </label>
@@ -102,6 +103,7 @@ exports[`should render demo and match snapshot 1`] = `
           readonly
           placeholder="Click To Input"
           aria-labelledby="van-field-label"
+          data-allow-mismatch="attribute"
         >
       </div>
     </div>

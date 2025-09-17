@@ -128,8 +128,8 @@ Vant 中导出了以下 Notify 相关的辅助函数：
 
 | 方法名 | 说明 | 参数 | 返回值 |
 | --- | --- | --- | --- |
-| showNotify | 展示提示 | `NotifyOptions \| string` | notify 实例 |
-| closeNotify | 关闭提示 | - | `void` |
+| showNotify | 在页面顶部展示 Notify | `NotifyOptions \| string` | notify 实例 |
+| closeNotify | 关闭当前展示的 Notify | - | `void` |
 | setNotifyDefaultOptions | 修改默认配置，影响所有的 `showNotify` 调用 | `NotifyOptions` | `void` |
 | resetNotifyDefaultOptions | 重置默认配置，影响所有的 `showNotify` 调用 | - | `void` |
 
@@ -142,15 +142,51 @@ Vant 中导出了以下 Notify 相关的辅助函数：
 | type | 类型，可选值为 `primary` `success` `warning` | _NotifyType_ | `danger` |
 | message | 展示文案，支持通过`\n`换行 | _string_ | - |
 | duration | 展示时长(ms)，值为 0 时，notify 不会消失 | _number \| string_ | `3000` |
-| z-index | 将组件的 z-index 层级设置为一个固定值 | _number \| string_ | `2000+` |
+| zIndex | 将组件的 z-index 层级设置为一个固定值 | _number \| string_ | `2000+` |
 | position | 弹出位置，可选值为 `bottom` | _NotifyPosition_ | `top` |
 | color | 字体颜色 | _string_ | `white` |
 | background | 背景颜色 | _string_ | - |
 | className | 自定义类名 | _string \| Array \| object_ | - |
 | lockScroll | 是否锁定背景滚动 | _boolean_ | `false` |
+| teleport | 指定挂载的节点，等同于 Teleport 组件的 [to 属性](https://cn.vuejs.org/api/built-in-components.html#teleport) | _string \| Element_ | - |
 | onClick | 点击时的回调函数 | _(event: MouseEvent): void_ | - |
 | onOpened | 完全展示后的回调函数 | _() => void_ | - |
 | onClose | 关闭时的回调函数 | _() => void_ | - |
+
+### Props
+
+通过组件调用 `Notify` 时，支持以下 Props：
+
+| 参数 | 说明 | 类型 | 默认值 |
+| --- | --- | --- | --- |
+| v-model:show | 是否显示通知 | _boolean_ | `false` |
+| type | 类型，可选值为 `primary` `success` `warning` | _NotifyType_ | `danger` |
+| message | 展示文案，支持通过`\n`换行 | _string_ | - |
+| z-index | 将组件的 z-index 层级设置为一个固定值 | _number \| string_ | `2000+` |
+| position | 弹出位置，可选值为 `bottom` | _NotifyPosition_ | `top` |
+| color | 字体颜色 | _string_ | `white` |
+| background | 背景颜色 | _string_ | - |
+| class-name | 自定义类名 | _string \| Array \| object_ | - |
+| lock-scroll | 是否锁定背景滚动 | _boolean_ | `false` |
+| teleport | 指定挂载的节点，等同于 Teleport 组件的 [to 属性](https://cn.vuejs.org/api/built-in-components.html#teleport) | _string \| Element_ | - |
+
+### Events
+
+通过组件调用 `Notify` 时，支持以下事件：
+
+| 事件名 | 说明                 | 回调参数            |
+| ------ | -------------------- | ------------------- |
+| click  | 点击时的回调函数     | _event: MouseEvent_ |
+| close  | 关闭时的回调函数     | -                   |
+| opened | 完全展示后的回调函数 | -                   |
+
+### Slots
+
+通过组件调用 `Notify` 时，支持以下插槽：
+
+| 名称    | 说明       |
+| ------- | ---------- |
+| default | 自定义内容 |
 
 ### 类型定义
 

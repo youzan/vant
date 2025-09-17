@@ -74,6 +74,7 @@ export const tabsProps = {
   offsetTop: makeNumericProp(0),
   background: String,
   lazyRender: truthProp,
+  showHeader: truthProp,
   lineWidth: numericProp,
   lineHeight: numericProp,
   beforeChange: Function as PropType<Interceptor>,
@@ -266,12 +267,11 @@ export default defineComponent({
       name: Numeric,
       skipScrollIntoView?: boolean,
     ) => {
-      const matched = children.find(
+      const index = children.findIndex(
         (tab, index) => getTabName(tab, index) === name,
       );
 
-      const index = matched ? children.indexOf(matched) : 0;
-      setCurrentIndex(index, skipScrollIntoView);
+      setCurrentIndex(index === -1 ? 0 : index, skipScrollIntoView);
     };
 
     const scrollToCurrentContent = (immediate = false) => {
@@ -479,17 +479,19 @@ export default defineComponent({
 
     return () => (
       <div ref={root} class={bem([props.type])}>
-        {props.sticky ? (
-          <Sticky
-            container={root.value}
-            offsetTop={offsetTopPx.value}
-            onScroll={onStickyScroll}
-          >
-            {renderHeader()}
-          </Sticky>
-        ) : (
-          renderHeader()
-        )}
+        {props.showHeader ? (
+          props.sticky ? (
+            <Sticky
+              container={root.value}
+              offsetTop={offsetTopPx.value}
+              onScroll={onStickyScroll}
+            >
+              {renderHeader()}
+            </Sticky>
+          ) : (
+            renderHeader()
+          )
+        ) : null}
         <TabsContent
           ref={contentRef}
           count={children.length}

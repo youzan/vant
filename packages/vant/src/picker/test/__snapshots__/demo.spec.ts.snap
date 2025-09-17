@@ -104,6 +104,7 @@ exports[`should render demo and match snapshot 1`] = `
       <label
         id="van-field-label"
         for="van-field-input"
+        data-allow-mismatch="attribute"
       >
         City
       </label>
@@ -117,6 +118,7 @@ exports[`should render demo and match snapshot 1`] = `
           readonly
           placeholder="Choose City"
           aria-labelledby="van-field-label"
+          data-allow-mismatch="attribute"
         >
       </div>
     </div>
@@ -128,8 +130,6 @@ exports[`should render demo and match snapshot 1`] = `
     appear="true"
     persisted="false"
     css="true"
-    role="button"
-    tabindex="0"
   >
   </transition-stub>
   <transition-stub
@@ -603,6 +603,38 @@ exports[`should render demo and match snapshot 1`] = `
         >
         </ul>
       </div>
+    </div>
+  </div>
+</div>
+<div>
+  <div class="van-picker">
+    <div class="van-picker__toolbar">
+      <button
+        type="button"
+        class="van-picker__cancel van-haptics-feedback"
+      >
+        Cancel
+      </button>
+      <div class="van-picker__title van-ellipsis">
+        Title
+      </div>
+      <button
+        type="button"
+        class="van-picker__confirm van-haptics-feedback"
+      >
+        Confirm
+      </button>
+    </div>
+    <div class="van-empty">
+      <div
+        class="van-empty__image"
+        style="width: 80px; height: 80px;"
+      >
+        <img src="https://fastly.jsdelivr.net/npm/@vant/assets/custom-empty-image.png">
+      </div>
+      <p class="van-empty__description">
+        No data
+      </p>
     </div>
   </div>
 </div>

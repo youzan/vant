@@ -176,6 +176,7 @@ export default {
 | close-on-click-overlay | 是否在点击遮罩层后关闭菜单 | _boolean_ | `true` |
 | close-on-click-outside | 是否在点击外部元素后关闭菜单 | _boolean_ | `true` |
 | swipe-threshold | 滚动阈值，选项数量超过阈值且总宽度超过菜单栏宽度时，可以横向滚动 | _number \| string_ | - |
+| auto-locate | 当祖先元素设置了 transform 时，自动调整下拉菜单的位置 | _boolean_ | `false` |
 
 ### DropdownItem Props
 
@@ -256,6 +257,7 @@ dropdownItemRef.value?.toggle();
 | --- | --- | --- |
 | text | 文字 | _string_ |
 | value | 标识符 | _number \| string \| boolean_ |
+| disabled | 是否禁用选项 | _boolean_ |
 | icon | 左侧图标名称或图片链接，等同于 Icon 组件的 [name 属性](#/zh-CN/icon#props) | _string_ |
 
 ## 主题定制
@@ -276,6 +278,7 @@ dropdownItemRef.value?.toggle();
 | --van-dropdown-menu-title-padding | _0 var(--van-padding-xs)_ | - |
 | --van-dropdown-menu-title-line-height | _var(--van-line-height-lg)_ | - |
 | --van-dropdown-menu-option-active-color | _var(--van-primary-color)_ | - |
+| --van-dropdown-menu-option-disabled-color | _var(--van-text-color-3)_ | - |
 | --van-dropdown-menu-content-max-height | _80%_ | - |
 | --van-dropdown-item-z-index | _10_ | - |
 
@@ -283,7 +286,7 @@ dropdownItemRef.value?.toggle();
 
 ### 父元素设置 transform 后，下拉菜单的位置错误？
 
-把 `DropdownMenu` 嵌套在 `Tabs` 等组件内部使用时，可能会遇到下拉菜单位置错误的问题。这是因为在 Chrome 浏览器中，transform 元素内部的 fixed 布局会降级成 absolute 布局，导致下拉菜单的布局异常。
+把 `DropdownMenu` 嵌套在 `Tabs` 等组件内部使用时，可能会遇到下拉菜单位置错误的问题。这是因为 transform 元素内部的 fixed 定位会相对于该元素进行计算，而不是相对于整个文档，从而导致下拉菜单的布局异常。
 
 将 `DropdownItem` 的 `teleport` 属性设置为 `body` 即可避免此问题：
 
@@ -291,5 +294,14 @@ dropdownItemRef.value?.toggle();
 <van-dropdown-menu>
   <van-dropdown-item teleport="body" />
   <van-dropdown-item teleport="body" />
+</van-dropdown-menu>
+```
+
+也可以将 `DropdownMenu` 的 `auto-locate` 属性设置为 `true`：
+
+```html
+<van-dropdown-menu auto-locate>
+  <van-dropdown-item />
+  <van-dropdown-item />
 </van-dropdown-menu>
 ```

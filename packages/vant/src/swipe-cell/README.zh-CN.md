@@ -143,9 +143,10 @@ export default {
 
 beforeClose 的第一个参数为对象，对象中包含以下属性：
 
-| 参数名   | 说明             | 类型                                       |
-| -------- | ---------------- | ------------------------------------------ |
-| name     | 标识符           | _string \| number_                         |
+| 参数名 | 说明 | 类型 |
+| --- | --- | --- |
+| event `v4.9.4` | 触发关闭的事件对象 | _MouseEvent \| TouchEvent_ |
+| name | 标识符 | _string \| number_ |
 | position | 关闭时的点击位置 | _'left' \| 'right' \| 'cell' \| 'outside'_ |
 
 ### 方法

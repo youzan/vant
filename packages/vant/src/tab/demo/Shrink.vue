@@ -8,10 +8,12 @@ const t = useTranslate({
   'zh-CN': {
     tab: '标签 ',
     shrink: '收缩布局',
+    content: '内容',
   },
   'en-US': {
     tab: 'Tab ',
     shrink: 'Shrink',
+    content: 'content of tab',
   },
 });
 

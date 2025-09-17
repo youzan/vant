@@ -50,7 +50,7 @@ exports[`should render demo and match snapshot 1`] = `
         Florida
       </div>
       <div class="van-ellipsis van-tree-select__item van-tree-select__item--disabled">
-        Georqia
+        Georgia
       </div>
     </div>
   </div>
@@ -106,7 +106,7 @@ exports[`should render demo and match snapshot 1`] = `
         </i>
       </div>
       <div class="van-ellipsis van-tree-select__item van-tree-select__item--disabled">
-        Georqia
+        Georgia
       </div>
     </div>
   </div>
@@ -196,7 +196,7 @@ exports[`should render demo and match snapshot 1`] = `
         Florida
       </div>
       <div class="van-ellipsis van-tree-select__item van-tree-select__item--disabled">
-        Georqia
+        Georgia
       </div>
     </div>
   </div>

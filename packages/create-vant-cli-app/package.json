@@ -1,45 +1,46 @@
 {
   "name": "create-vant-cli-app",
-  "version": "2.2.1",
+  "version": "3.0.0",
   "description": "Create Vant CLI App",
-  "main": "lib/index.js",
-  "bin": {
-    "create-vant-cli-app": "./lib/index.js"
-  },
-  "scripts": {
-    "dev": "tsc --watch",
-    "build": "rimraf ./lib && tsc",
-    "release": "vant-cli release",
-    "prepare": "pnpm build"
-  },
-  "files": [
-    "lib",
-    "generators"
-  ],
   "keywords": [
     "vant"
   ],
-  "publishConfig": {
-    "registry": "https://registry.npmjs.org/"
-  },
+  "bugs": "https://github.com/vant-ui/vant/issues",
   "repository": {
     "type": "git",
     "url": "https://github.com/vant-ui/vant.git",
     "directory": "packages/create-vant-cli-app"
   },
-  "bugs": "https://github.com/vant-ui/vant/issues",
-  "author": "chenjiahan",
   "license": "MIT",
-  "devDependencies": {
-    "@types/fs-extra": "^11.0.1",
-    "rimraf": "^5.0.0",
-    "typescript": "^5.0.4"
+  "author": "chenjiahan",
+  "main": "lib/index.js",
+  "bin": {
+    "create-vant-cli-app": "./lib/index.js"
+  },
+  "files": [
+    "lib",
+    "generators"
+  ],
+  "scripts": {
+    "build": "rimraf ./lib && tsc",
+    "dev": "tsc --watch",
+    "prepare": "pnpm build",
+    "release": "vant-cli release"
   },
   "dependencies": {
-    "consola": "^3.0.2",
-    "fast-glob": "^3.2.11",
-    "fs-extra": "^11.1.0",
-    "enquirer": "2.3.6",
-    "picocolors": "^1.0.0"
+    "enquirer": "2.4.1",
+    "fast-glob": "^3.3.3",
+    "fs-extra": "^11.3.1",
+    "picocolors": "^1.1.1",
+    "rslog": "^1.2.11"
+  },
+  "devDependencies": {
+    "@types/fs-extra": "^11.0.4",
+    "@types/node": "^22.18.3",
+    "rimraf": "^6.0.1",
+    "typescript": "^5.9.2"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
   }
 }

@@ -27,7 +27,7 @@ app.use(CellGroup);
   <van-cell-group inset>
     <van-field
       v-model="username"
-      name="Username"
+      name="username"
       label="Username"
       placeholder="Username"
       :rules="[{ required: true, message: 'Username is required' }]"
@@ -35,7 +35,7 @@ app.use(CellGroup);
     <van-field
       v-model="password"
       type="password"
-      name="Password"
+      name="password"
       label="Password"
       placeholder="Password"
       :rules="[{ required: true, message: 'Password is required' }]"
@@ -328,8 +328,9 @@ export default {
   placeholder="Select city"
   @click="showPicker = true"
 />
-<van-popup v-model:show="showPicker" position="bottom">
+<van-popup v-model:show="showPicker" destroy-on-close position="bottom">
   <van-picker
+    :model-value="pickerValue"
     :columns="columns"
     @confirm="onConfirm"
     @cancel="showPicker = false"
@@ -343,22 +344,25 @@ import { ref } from 'vue';
 export default {
   setup() {
     const result = ref('');
+    const pickerValue = ref([]);
     const showPicker = ref(false);
     const columns = [
       { text: 'Delaware', value: 'Delaware' },
       { text: 'Florida', value: 'Florida' },
-      { text: 'Georqia', value: 'Georqia' },
+      { text: 'Georgia', value: 'Georgia' },
       { text: 'Indiana', value: 'Indiana' },
       { text: 'Maine', value: 'Maine' },
     ];
 
-    const onConfirm = ({ selectedOptions }) => {
+    const onConfirm = ({ selectedValues, selectedOptions }) => {
       result.value = selectedOptions[0]?.text;
+      pickerValue.value = selectedValues;
       showPicker.value = false;
     };
 
     return {
       result,
+      pickerValue,
       columns,
       onConfirm,
       showPicker,
@@ -379,8 +383,12 @@ export default {
   placeholder="Select date"
   @click="showPicker = true"
 />
-<van-popup v-model:show="showPicker" position="bottom">
-  <van-date-picker @confirm="onConfirm" @cancel="showPicker = false" />
+<van-popup v-model:show="showPicker" destroy-on-close position="bottom">
+  <van-date-picker
+    :model-value="pickerValue"
+    @confirm="onConfirm"
+    @cancel="showPicker = false"
+  />
 </van-popup>
 ```
 
@@ -391,13 +399,16 @@ export default {
   setup() {
     const result = ref('');
     const showPicker = ref(false);
+    const pickerValue = ref<string[]>([]);
     const onConfirm = ({ selectedValues }) => {
       result.value = selectedValues.join('/');
+      pickerValue.value = selectedValues;
       showPicker.value = false;
     };
 
     return {
       result,
+      pickerValue,
       onConfirm,
       showPicker,
     };
@@ -417,9 +428,10 @@ export default {
   placeholder="Select area"
   @click="showArea = true"
 />
-<van-popup v-model:show="showArea" position="bottom">
+<van-popup v-model:show="showArea" destroy-on-close position="bottom">
   <van-area
     :area-list="areaList"
+    :model-value="pickerValue"
     @confirm="onConfirm"
     @cancel="showArea = false"
   />
@@ -434,7 +446,11 @@ export default {
   setup() {
     const result = ref('');
     const showArea = ref(false);
-    const onConfirm = ({ selectedOptions }) => {
+    const pickerValue = ref('');
+    const onConfirm = ({ selectedValues, selectedOptions }) => {
+      pickerValue.value = selectedValues.length
+        ? selectedValues[selectedValues.length - 1]
+        : '';
       showArea.value = false;
       result.value = selectedOptions.map((item) => item.text).join('/');
     };
@@ -442,6 +458,7 @@ export default {
     return {
       result,
       areaList,
+      pickerValue,
       showArea,
       onConfirm,
     };
@@ -499,8 +516,10 @@ export default {
 | colon | Whether to display colon after label | _boolean_ | `false` |
 | disabled | Whether to disable form | _boolean_ | `false` |
 | readonly | Whether to be readonly | _boolean_ | `false` |
+| required `v4.7.3` | Whether to show required mark | _boolean \| 'auto'_ | `null` |
 | validate-first | Whether to stop the validation when a rule fails | _boolean_ | `false` |
 | scroll-to-error | Whether to scroll to the error field when validation failed | _boolean_ | `false` |
+| scroll-to-error-position `v4.9.2` | The position when scrolling to the wrong form item, can be set to `center` \| `end` \| `nearest` \| `start` | _string_ | - |
 | show-error | Whether to highlight input when validation failed | _boolean_ | `false` |
 | show-error-message | Whether to show error message when validation failed | _boolean_ | `true` |
 | submit-on-enter | Whether to submit form on enter | _boolean_ | `true` |

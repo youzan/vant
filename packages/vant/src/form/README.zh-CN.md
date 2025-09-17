@@ -29,7 +29,7 @@ app.use(CellGroup);
   <van-cell-group inset>
     <van-field
       v-model="username"
-      name="用户名"
+      name="username"
       label="用户名"
       placeholder="用户名"
       :rules="[{ required: true, message: '请填写用户名' }]"
@@ -37,7 +37,7 @@ app.use(CellGroup);
     <van-field
       v-model="password"
       type="password"
-      name="密码"
+      name="password"
       label="密码"
       placeholder="密码"
       :rules="[{ required: true, message: '请填写密码' }]"
@@ -354,9 +354,10 @@ export default {
   placeholder="点击选择城市"
   @click="showPicker = true"
 />
-<van-popup v-model:show="showPicker" position="bottom">
+<van-popup v-model:show="showPicker" destroy-on-close position="bottom">
   <van-picker
     :columns="columns"
+    :model-value="pickerValue"
     @confirm="onConfirm"
     @cancel="showPicker = false"
   />
@@ -369,6 +370,7 @@ import { ref } from 'vue';
 export default {
   setup() {
     const result = ref('');
+    const pickerValue = ref([]);
     const showPicker = ref(false);
     const columns = [
       { text: '杭州', value: 'Hangzhou' },
@@ -378,13 +380,15 @@ export default {
       { text: '湖州', value: 'Huzhou' },
     ];
 
-    const onConfirm = ({ selectedOptions }) => {
+    const onConfirm = ({ selectedValues, selectedOptions }) => {
       result.value = selectedOptions[0]?.text;
+      pickerValue.value = selectedValues;
       showPicker.value = false;
     };
 
     return {
       result,
+      pickerValue,
       columns,
       onConfirm,
       showPicker,
@@ -407,8 +411,12 @@ export default {
   placeholder="点击选择时间"
   @click="showPicker = true"
 />
-<van-popup v-model:show="showPicker" position="bottom">
-  <van-date-picker @confirm="onConfirm" @cancel="showPicker = false" />
+<van-popup v-model:show="showPicker" destroy-on-close position="bottom">
+  <van-date-picker
+    :model-value="pickerValue"
+    @confirm="onConfirm"
+    @cancel="showPicker = false"
+  />
 </van-popup>
 ```
 
@@ -419,13 +427,16 @@ export default {
   setup() {
     const result = ref('');
     const showPicker = ref(false);
+    const pickerValue = ref([]);
     const onConfirm = ({ selectedValues }) => {
       result.value = selectedValues.join('/');
+      pickerValue.value = selectedValues;
       showPicker.value = false;
     };
 
     return {
       result,
+      pickerValue,
       onConfirm,
       showPicker,
     };
@@ -447,9 +458,10 @@ export default {
   placeholder="点击选择省市区"
   @click="showArea = true"
 />
-<van-popup v-model:show="showArea" position="bottom">
+<van-popup v-model:show="showArea" destroy-on-close position="bottom">
   <van-area
     :area-list="areaList"
+    :model-value="pickerValue"
     @confirm="onConfirm"
     @cancel="showArea = false"
   />
@@ -464,7 +476,11 @@ export default {
   setup() {
     const result = ref('');
     const showArea = ref(false);
-    const onConfirm = ({ selectedOptions }) => {
+    const pickerValue = ref('');
+    const onConfirm = ({ selectedValues, selectedOptions }) => {
+      pickerValue.value = selectedValues.length
+        ? selectedValues[selectedValues.length - 1]
+        : '';
       showArea.value = false;
       result.value = selectedOptions.map((item) => item.text).join('/');
     };
@@ -472,6 +488,7 @@ export default {
     return {
       result,
       areaList,
+      pickerValue,
       showArea,
       onConfirm,
     };
@@ -485,7 +502,7 @@ export default {
 
 ```html
 <van-field
-  v-model="value"
+  v-model="result"
   is-link
   readonly
   name="calendar"
@@ -531,8 +548,10 @@ export default {
 | colon | 是否在 label 后面添加冒号 | _boolean_ | `false` |
 | disabled | 是否禁用表单中的所有输入框 | _boolean_ | `false` |
 | readonly | 是否将表单中的所有输入框设置为只读状态 | _boolean_ | `false` |
+| required `v4.7.3` | 是否显示表单必填星号 | _boolean \| 'auto'_ | `null` |
 | validate-first | 是否在某一项校验不通过时停止校验 | _boolean_ | `false` |
 | scroll-to-error | 是否在提交表单且校验不通过时滚动至错误的表单项 | _boolean_ | `false` |
+| scroll-to-error-position `v4.9.2` | 滚动至错误的表单项时的位置，可选值为 `center` \| `end` \| `nearest` \| `start` | _string_ | - |
 | show-error | 是否在校验不通过时标红输入框 | _boolean_ | `false` |
 | show-error-message | 是否在校验不通过时在输入框下方展示错误提示 | _boolean_ | `true` |
 | submit-on-enter | 是否在按下回车键时提交表单 | _boolean_ | `true` |

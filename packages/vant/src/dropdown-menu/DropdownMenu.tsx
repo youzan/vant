@@ -42,6 +42,7 @@ export const dropdownMenuProps = {
   duration: makeNumericProp(0.2),
   direction: makeStringProp<DropdownMenuDirection>('down'),
   activeColor: String,
+  autoLocate: Boolean,
   closeOnClickOutside: truthProp,
   closeOnClickOverlay: truthProp,
   swipeThreshold: numericProp,
@@ -129,6 +130,7 @@ export default defineComponent({
           id={`${id}-${index}`}
           role="button"
           tabindex={disabled ? undefined : 0}
+          data-allow-mismatch="attribute"
           class={[
             bem('item', { disabled, grow: scrollable.value }),
             { [HAPTICS_FEEDBACK]: !disabled },
@@ -155,8 +157,8 @@ export default defineComponent({
       );
     };
 
-    useExpose({ close });
-    linkChildren({ id, props, offset, updateOffset });
+    useExpose({ close, opened });
+    linkChildren({ id, props, offset, opened, updateOffset });
     useClickAway(root, onClickAway);
     useEventListener('scroll', onScroll, {
       target: scrollParent,

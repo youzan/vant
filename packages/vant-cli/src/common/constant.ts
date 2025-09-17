@@ -41,6 +41,8 @@ export const STYLE_DEPS_JSON_FILE = join(DIST_DIR, 'style-deps.json');
 // Config files
 export const POSTCSS_CONFIG_FILE = join(CJS_DIR, 'postcss.config.cjs');
 
+export const MD_LOADER = join(CJS_DIR, 'md-loader.cjs');
+
 export const SCRIPT_EXTS = [
   '.js',
   '.jsx',

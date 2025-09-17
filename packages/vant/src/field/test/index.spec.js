@@ -59,9 +59,9 @@ test('should format input value when type is number', () => {
 
   const input = wrapper.find('input');
 
-  input.element.value = '1';
+  input.element.value = '01';
   input.trigger('input');
-  expect(wrapper.emitted('update:modelValue')[0][0]).toEqual('1');
+  expect(wrapper.emitted('update:modelValue')[0][0]).toEqual('01');
 
   input.element.value = '1.2.';
   input.trigger('input');
@@ -95,6 +95,51 @@ test('should format input value when type is digit', () => {
   expect(wrapper.emitted('update:modelValue')[2][0]).toEqual('123');
 });
 
+test('should limit input value based on min and max props', async () => {
+  const wrapper = mount(Field, {
+    props: {
+      type: 'number',
+      min: 2,
+      max: 10,
+      modelValue: '',
+    },
+  });
+
+  const input = wrapper.find('input');
+
+  // Test input value less than min
+  await wrapper.setProps({ modelValue: '1' });
+  await input.trigger('blur');
+  expect(wrapper.emitted('update:modelValue')[0][0]).toEqual('2');
+
+  // Test input value greater than max
+  await wrapper.setProps({ modelValue: '15' });
+  await input.trigger('blur');
+  expect(wrapper.emitted('update:modelValue')[1][0]).toEqual('10');
+
+  // Test input value within range
+  input.element.value = '5';
+  input.trigger('input');
+  expect(wrapper.emitted('update:modelValue')[2][0]).toEqual('5');
+});
+
+test('should not modify the value if it is within the min/max', async () => {
+  const wrapper = mount(Field, {
+    props: {
+      type: 'number',
+      min: 2,
+      max: 10,
+      modelValue: '',
+    },
+  });
+
+  const input = wrapper.find('input');
+
+  await wrapper.setProps({ modelValue: '2.00' });
+  await input.trigger('blur');
+  expect(wrapper.emitted('update:modelValue')).toBeFalsy();
+});
+
 test('should render textarea when type is textarea', async () => {
   const wrapper = mount(Field, {
     props: {
@@ -105,6 +150,21 @@ test('should render textarea when type is textarea', async () => {
 
   await later();
   expect(wrapper.html()).toMatchSnapshot();
+});
+
+test('should show required icon when using rules which contain required', async () => {
+  const wrapper = mount(Field, {
+    props: {
+      modelValue: '123',
+      label: '123',
+      required: 'auto',
+      rules: [{ required: false }],
+    },
+  });
+
+  expect(wrapper.find('.van-field__label--required').exists()).toBeFalsy();
+  await wrapper.setProps({ rules: [{ required: true }] });
+  expect(wrapper.find('.van-field__label--required').exists()).toBeTruthy();
 });
 
 test('should autosize textarea field', async () => {

@@ -81,3 +81,6 @@ export const isSameValue = (newValue: unknown, oldValue: unknown) =>
 
 export const toArray = <T>(item: T | T[]): T[] =>
   Array.isArray(item) ? item : [item];
+
+export const flat = <T>(arr: Array<T | T[]>) =>
+  arr.reduce<T[]>((acc, val) => acc.concat(val), []);

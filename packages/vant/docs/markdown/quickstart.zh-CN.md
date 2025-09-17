@@ -33,10 +33,25 @@ bun add vant
 
 ### 在新项目中使用
 
-如果你需要新建一个项目，我们推荐使用 [Vite](https://cn.vitejs.dev/) 或 [Nuxt 框架](https://nuxt.com)。
+如果你需要新建一个项目，我们推荐使用 [Rsbuild](https://github.com/web-infra-dev/rsbuild)，[Vite](https://cn.vitejs.dev/) 或 [Nuxt 框架](https://nuxt.com)。
+
+#### Rsbuild
+
+Rsbuild 是基于 Rspack 的构建工具，由 Vant 作者开发，具备一流的构建速度和开发体验，对 Vant 提供第一优先级支持。
+
+你可以通过以下命令创建一个 Rsbuild 项目：
+
+```bash
+npm create rsbuild@latest
+```
+
+请访问 [Rsbuild 仓库](https://github.com/web-infra-dev/rsbuild) 了解更多信息。
+
+#### 示例项目
 
 以下是 Vant 官方提供的一些示例项目，你可以克隆该项目，并直接拷贝代码来使用。
 
+- [vant-demo - rsbuild](https://github.com/vant-ui/vant-demo/tree/master/vant/rsbuild)：使用 Vue 3、Vant 4、Rsbuild 搭建应用
 - [vant-demo - vite](https://github.com/vant-ui/vant-demo/tree/master/vant/vite)：使用 Vue 3、Vant 4、Vite 搭建应用
 - [vant-demo - nuxt3](https://github.com/vant-ui/vant-demo/tree/master/vant/nuxt3)：使用 Vue 3、Nuxt 3、Vant 4 搭建应用。
 
@@ -94,6 +109,7 @@ bun add vant
 
 我们提供了丰富的[示例工程](https://github.com/vant-ui/vant-demo)，通过示例工程你可以了解如下内容：
 
+- 基于 Rsbuild 和 Vant 搭建应用
 - 基于 Vite 和 Vant 搭建应用
 - 基于 Nuxt 和 Vant 搭建应用
 - 基于 Vue CLI 和 Vant 搭建应用
@@ -127,7 +143,7 @@ Vant 支持多种组件注册方式，除了在 app 上全局注册组件，你�
 
 ### 方法二. 按需引入组件样式
 
-在基于 `vite`、`webpack` 或 `vue-cli` 的项目中使用 Vant 时，可以使用 [unplugin-vue-components](https://github.com/unplugin/unplugin-vue-components) 插件，它可以自动引入组件。
+在基于 Rsbuild、Vite、webpack 或 vue-cli 的项目中使用 Vant 时，可以使用 [unplugin-vue-components](https://github.com/unplugin/unplugin-vue-components) 插件，它可以自动引入组件。
 
 Vant 官方基于 `unplugin-vue-components` 提供了自动导入样式的解析器 [@vant/auto-import-resolver](https://github.com/youzan/vant/tree/main/packages/vant-auto-import-resolver)，两者可以配合使用。
 
@@ -137,30 +153,60 @@ Vant 官方基于 `unplugin-vue-components` 提供了自动导入样式的解析
 
 ```bash
 # 通过 npm 安装
-npm i @vant/auto-import-resolver unplugin-vue-components -D
+npm i @vant/auto-import-resolver unplugin-vue-components unplugin-auto-import -D
 
 # 通过 yarn 安装
-yarn add @vant/auto-import-resolver unplugin-vue-components -D
+yarn add @vant/auto-import-resolver unplugin-vue-components unplugin-auto-import -D
 
 # 通过 pnpm 安装
-pnpm add @vant/auto-import-resolver unplugin-vue-components -D
+pnpm add @vant/auto-import-resolver unplugin-vue-components unplugin-auto-import -D
 
 # 通过 bun 安装
-bun add @vant/auto-import-resolver unplugin-vue-components -D
+bun add @vant/auto-import-resolver unplugin-vue-components unplugin-auto-import -D
 ```
 
 #### 2. 配置插件
 
-如果是基于 `vite` 的项目，在 `vite.config.js` 文件中配置插件：
+如果是基于 [Rsbuild](https://github.com/web-infra-dev/rsbuild) 的项目，在 `rsbuild.config.js` 文件中配置插件：
+
+```js
+import { defineConfig } from '@rsbuild/core';
+import { pluginVue } from '@rsbuild/plugin-vue';
+import AutoImport from 'unplugin-auto-import/rspack';
+import Components from 'unplugin-vue-components/rspack';
+import { VantResolver } from '@vant/auto-import-resolver';
+
+export default defineConfig({
+  plugins: [pluginVue()],
+  tools: {
+    rspack: {
+      plugins: [
+        AutoImport({
+          resolvers: [VantResolver()],
+        }),
+        Components({
+          resolvers: [VantResolver()],
+        }),
+      ],
+    },
+  },
+});
+```
+
+如果是基于 Vite 的项目，在 `vite.config.js` 文件中配置插件：
 
 ```js
 import vue from '@vitejs/plugin-vue';
+import AutoImport from 'unplugin-auto-import/vite';
 import Components from 'unplugin-vue-components/vite';
 import { VantResolver } from '@vant/auto-import-resolver';
 
 export default {
   plugins: [
     vue(),
+    AutoImport({
+      resolvers: [VantResolver()],
+    }),
     Components({
       resolvers: [VantResolver()],
     }),
@@ -168,39 +214,51 @@ export default {
 };
 ```
 
-如果是基于 `vue-cli` 的项目，在 `vue.config.js` 文件中配置插件：
+如果是基于 vue-cli 的项目，在 `vue.config.js` 文件中配置插件：
 
 ```js
 const { VantResolver } = require('@vant/auto-import-resolver');
-const ComponentsPlugin = require('unplugin-vue-components/webpack');
+const AutoImport = require('unplugin-auto-import/webpack');
+const Components = require('unplugin-vue-components/webpack');
 
 module.exports = {
   configureWebpack: {
     plugins: [
-      ComponentsPlugin({
+      // 当 unplugin-vue-components 版本小于 0.26.0 时，使用以下写法
+      AutoImport({ resolvers: [VantResolver()] }),
+      Components({ resolvers: [VantResolver()] }),
+      //当 unplugin-vue-components 版本大于等于 0.26.0 时，使用以下写法
+      AutoImport.default({
         resolvers: [VantResolver()],
       }),
+      Components.default({ resolvers: [VantResolver()] }),
     ],
   },
 };
 ```
 
-如果是基于 `webpack` 的项目，在 `webpack.config.js` 文件中配置插件：
+如果是基于 webpack 的项目，在 `webpack.config.js` 文件中配置插件：
 
 ```js
 const { VantResolver } = require('@vant/auto-import-resolver');
-const ComponentsPlugin = require('unplugin-vue-components/webpack');
+const AutoImport = require('unplugin-auto-import/webpack');
+const Components = require('unplugin-vue-components/webpack');
 
 module.exports = {
   plugins: [
-    ComponentsPlugin({
+    // 当 unplugin-vue-components 版本小于 0.26.0 时，使用以下写法
+    AutoImport({ resolvers: [VantResolver()] }),
+    Components({ resolvers: [VantResolver()] }),
+    //当 unplugin-vue-components 版本大于等于 0.26.0 时，使用以下写法
+    AutoImport.default({
       resolvers: [VantResolver()],
     }),
+    Components.default({ resolvers: [VantResolver()] }),
   ],
 };
 ```
 
-#### 3. 使用组件
+#### 3. 使用组件和 API
 
 完成以上两步，就可以直接在模板中使用 Vant 组件了，`unplugin-vue-components` 会解析模板并自动注册对应的组件, `@vant/auto-import-resolver` 会自动引入对应的组件样式。
 
@@ -210,34 +268,20 @@ module.exports = {
 </template>
 ```
 
-#### 4. 引入函数组件的样式
+`unplugin-auto-import` 会自动导入对应的 Vant API 以及样式。
 
-Vant 中有个别组件是以函数的形式提供的，包括 `Toast`，`Dialog`，`Notify` 和 `ImagePreview` 组件。在使用函数组件时，`unplugin-vue-components` 无法解析自动注册组件，导致 `@vant/auto-import-resolver` 无法解析样式，因此需要手动引入样式。
-
-```js
-// Toast
-import { showToast } from 'vant';
-import 'vant/es/toast/style';
-
-// Dialog
-import { showDialog } from 'vant';
-import 'vant/es/dialog/style';
-
-// Notify
-import { showNotify } from 'vant';
-import 'vant/es/notify/style';
-
-// ImagePreview
-import { showImagePreview } from 'vant';
-import 'vant/es/image-preview/style';
+```html
+<script>
+  showToast('No need to import showToast');
+</script>
 ```
-
-你可以在项目的入口文件或公共模块中引入以上组件的样式，这样在业务代码中使用组件时，便不再需要重复引入样式了。
 
 #### 使用提示
 
 - 请避免同时使用「全量引入」和「按需引入」这两种引入方式，否则会导致代码重复、样式错乱等问题。
 - 在使用过程中，如果你遇到组件不能导入的问题，因为 unplugin-vue-components 并不是 Vant 官方维护的插件，所以建议到 [unplugin/unplugin-vue-components](https://github.com/unplugin/unplugin-vue-components) 仓库下反馈。
+- 当 `unplugin-vue-components` 的版本号 >= 0.26.0 时，对于 `webpack`、`vue-cli` 和 `rspack`，你需要使用 `ComponentsPlugin.default` 进行注册。
+- `@vant/auto-import-resolver` 提供了一些配置项，请参考 [README 文档](https://github.com/youzan/vant/tree/main/packages/vant-auto-import-resolver) 来了解更多。
 - 如果是样式不生效的相关问题，你可以在 Vant 仓库下反馈。
 
 ## 在框架中使用

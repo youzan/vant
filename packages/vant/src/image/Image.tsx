@@ -11,6 +11,7 @@ import {
   type PropType,
   type CSSProperties,
   type ExtractPropTypes,
+  type ImgHTMLAttributes,
 } from 'vue';
 
 // Utils
@@ -29,15 +30,8 @@ import { Icon } from '../icon';
 
 const [name, bem] = createNamespace('image');
 
-export type ImageFit = 'contain' | 'cover' | 'fill' | 'none' | 'scale-down';
-
-export type ImagePosition =
-  | 'center'
-  | 'top'
-  | 'right'
-  | 'bottom'
-  | 'left'
-  | string;
+// Types
+import type { ImageFit, ImagePosition } from './types';
 
 export const imageProps = {
   src: String,
@@ -56,6 +50,9 @@ export const imageProps = {
   iconPrefix: String,
   showLoading: truthProp,
   loadingIcon: makeStringProp('photo'),
+  crossorigin: String as PropType<ImgHTMLAttributes['crossorigin']>,
+  referrerpolicy: String as PropType<ImgHTMLAttributes['referrerpolicy']>,
+  decoding: String as PropType<ImgHTMLAttributes['decoding']>,
 };
 
 export type ImageProps = ExtractPropTypes<typeof imageProps>;
@@ -157,10 +154,13 @@ export default defineComponent({
       const attrs = {
         alt: props.alt,
         class: bem('img'),
+        decoding: props.decoding,
         style: {
           objectFit: props.fit,
           objectPosition: props.position,
         },
+        crossorigin: props.crossorigin,
+        referrerpolicy: props.referrerpolicy,
       };
 
       if (props.lazyLoad) {

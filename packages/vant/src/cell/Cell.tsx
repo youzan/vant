@@ -38,13 +38,16 @@ export const cellSharedProps = {
   center: Boolean,
   isLink: Boolean,
   border: truthProp,
-  required: Boolean,
   iconPrefix: String,
   valueClass: unknownProp,
   labelClass: unknownProp,
   titleClass: unknownProp,
   titleStyle: null as unknown as PropType<string | CSSProperties>,
   arrowDirection: String as PropType<CellArrowDirection>,
+  required: {
+    type: [Boolean, String] as PropType<boolean | 'auto'>,
+    default: null,
+  },
   clickable: {
     type: Boolean as PropType<boolean | null>,
     default: null,
@@ -147,7 +150,7 @@ export default defineComponent({
 
       const classes: Record<string, boolean | undefined> = {
         center,
-        required,
+        required: !!required,
         clickable,
         borderless: !border,
       };

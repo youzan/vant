@@ -172,6 +172,7 @@ You can set `swipe-threshold` prop to customize threshold number.
 | close-on-click-overlay | Whether to close when overlay is clicked | _boolean_ | `true` |
 | close-on-click-outside | Whether to close when outside is clicked | _boolean_ | `true` |
 | swipe-threshold | Horizontal scrolling is allowed when the number of items exceeds the threshold and the total width exceeds the width of the menu. | _number \| string_ | - |
+| auto-locate | When the ancestor element is set with a transform, the position of the dropdown menu will be automatically adjusted. | _boolean_ | `false` |
 
 ### DropdownItem Props
 
@@ -248,11 +249,12 @@ dropdownItemRef.value?.toggle();
 
 ### Data Structure of Option
 
-| Key   | Description | Type                          |
-| ----- | ----------- | ----------------------------- |
-| text  | Text        | _string_                      |
-| value | Value       | _number \| string \| boolean_ |
-| icon  | Left icon   | _string_                      |
+| Key      | Description               | Type                          |
+| -------- | ------------------------- | ----------------------------- |
+| text     | Text                      | _string_                      |
+| value    | Value                     | _number \| string \| boolean_ |
+| disabled | Whether to disable option | _boolean_                     |
+| icon     | Left icon                 | _string_                      |
 
 ## Theming
 
@@ -272,5 +274,6 @@ The component provides the following CSS variables, which can be used to customi
 | --van-dropdown-menu-title-padding | _0 var(--van-padding-xs)_ | - |
 | --van-dropdown-menu-title-line-height | _var(--van-line-height-lg)_ | - |
 | --van-dropdown-menu-option-active-color | _var(--van-primary-color)_ | - |
+| --van-dropdown-menu-option-disabled-color | _var(--van-text-color-3)_ | - |
 | --van-dropdown-menu-content-max-height | _80%_ | - |
 | --van-dropdown-item-z-index | _10_ | - |

@@ -31,13 +31,11 @@ const username = ref('');
       <van-field
         v-model="username"
         error
-        required
         :label="t('username')"
         :placeholder="t('usernamePlaceholder')"
       />
       <van-field
         v-model="phone"
-        required
         :label="t('phone')"
         :placeholder="t('phonePlaceholder')"
         :error-message="t('phoneError')"

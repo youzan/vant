@@ -7,6 +7,7 @@ exports[`click option 1`] = `
       id="van-dropdown-menu-0"
       role="button"
       tabindex="0"
+      data-allow-mismatch="attribute"
       class="van-dropdown-menu__item van-haptics-feedback"
     >
       <span class="van-dropdown-menu__title">
@@ -19,6 +20,7 @@ exports[`click option 1`] = `
       id="van-dropdown-menu-1"
       role="button"
       tabindex="0"
+      data-allow-mismatch="attribute"
       class="van-dropdown-menu__item van-haptics-feedback"
     >
       <span class="van-dropdown-menu__title">
@@ -37,12 +39,12 @@ exports[`click option 1`] = `
       appear="true"
       persisted="false"
       css="true"
-      role="button"
-      tabindex="0"
     >
       <div
-        style="z-index: 2007; position: absolute; animation-duration: 0.2s; display: none;"
+        style="z-index: 2007; position: absolute; animation-duration: 0s; display: none;"
         class="van-overlay"
+        role="button"
+        tabindex="0"
       >
       </div>
     </transition-stub>
@@ -58,6 +60,7 @@ exports[`click option 1`] = `
         tabindex="0"
         class="van-popup van-popup--top van-dropdown-item__content"
         aria-labelledby="van-dropdown-menu-0"
+        data-allow-mismatch="attribute"
       >
         <div
           class="van-cell van-cell--clickable van-dropdown-item__option van-dropdown-item__option--active"
@@ -99,8 +102,6 @@ exports[`click option 1`] = `
       appear="true"
       persisted="false"
       css="true"
-      role="button"
-      tabindex="0"
     >
     </transition-stub>
     <transition-stub
@@ -121,6 +122,7 @@ exports[`close-on-click-outside 1`] = `
       id="van-dropdown-menu-0"
       role="button"
       tabindex="0"
+      data-allow-mismatch="attribute"
       class="van-dropdown-menu__item van-haptics-feedback"
     >
       <span class="van-dropdown-menu__title">
@@ -133,6 +135,7 @@ exports[`close-on-click-outside 1`] = `
       id="van-dropdown-menu-1"
       role="button"
       tabindex="0"
+      data-allow-mismatch="attribute"
       class="van-dropdown-menu__item van-haptics-feedback"
     >
       <span class="van-dropdown-menu__title">
@@ -151,12 +154,12 @@ exports[`close-on-click-outside 1`] = `
       appear="true"
       persisted="false"
       css="true"
-      role="button"
-      tabindex="0"
     >
       <div
-        style="z-index: 2004; position: absolute; animation-duration: 0.2s; display: none;"
+        style="z-index: 2004; position: absolute; animation-duration: 0s; display: none;"
         class="van-overlay"
+        role="button"
+        tabindex="0"
       >
       </div>
     </transition-stub>
@@ -172,6 +175,7 @@ exports[`close-on-click-outside 1`] = `
         tabindex="0"
         class="van-popup van-popup--top van-dropdown-item__content"
         aria-labelledby="van-dropdown-menu-0"
+        data-allow-mismatch="attribute"
       >
         <div
           class="van-cell van-cell--clickable van-dropdown-item__option van-dropdown-item__option--active"
@@ -213,8 +217,6 @@ exports[`close-on-click-outside 1`] = `
       appear="true"
       persisted="false"
       css="true"
-      role="button"
-      tabindex="0"
     >
     </transition-stub>
     <transition-stub
@@ -235,6 +237,7 @@ exports[`destroy one item 1`] = `
       id="van-dropdown-menu-0"
       role="button"
       tabindex="0"
+      data-allow-mismatch="attribute"
       class="van-dropdown-menu__item van-haptics-feedback"
     >
       <span class="van-dropdown-menu__title">
@@ -253,8 +256,6 @@ exports[`destroy one item 1`] = `
       appear="true"
       persisted="false"
       css="true"
-      role="button"
-      tabindex="0"
     >
     </transition-stub>
     <transition-stub
@@ -275,6 +276,7 @@ exports[`direction up 1`] = `
       id="van-dropdown-menu-0"
       role="button"
       tabindex="0"
+      data-allow-mismatch="attribute"
       class="van-dropdown-menu__item van-haptics-feedback"
     >
       <span class="van-dropdown-menu__title van-dropdown-menu__title--down">
@@ -287,6 +289,7 @@ exports[`direction up 1`] = `
       id="van-dropdown-menu-1"
       role="button"
       tabindex="0"
+      data-allow-mismatch="attribute"
       class="van-dropdown-menu__item van-haptics-feedback"
     >
       <span class="van-dropdown-menu__title van-dropdown-menu__title--down">
@@ -305,8 +308,6 @@ exports[`direction up 1`] = `
       appear="true"
       persisted="false"
       css="true"
-      role="button"
-      tabindex="0"
     >
     </transition-stub>
     <transition-stub
@@ -326,8 +327,6 @@ exports[`direction up 1`] = `
       appear="true"
       persisted="false"
       css="true"
-      role="button"
-      tabindex="0"
     >
     </transition-stub>
     <transition-stub
@@ -348,6 +347,7 @@ exports[`direction up 2`] = `
       id="van-dropdown-menu-0"
       role="button"
       tabindex="0"
+      data-allow-mismatch="attribute"
       class="van-dropdown-menu__item van-haptics-feedback"
     >
       <span class="van-dropdown-menu__title van-dropdown-menu__title--active">
@@ -360,6 +360,7 @@ exports[`direction up 2`] = `
       id="van-dropdown-menu-1"
       role="button"
       tabindex="0"
+      data-allow-mismatch="attribute"
       class="van-dropdown-menu__item van-haptics-feedback"
     >
       <span class="van-dropdown-menu__title van-dropdown-menu__title--down">
@@ -378,12 +379,12 @@ exports[`direction up 2`] = `
       appear="true"
       persisted="false"
       css="true"
-      role="button"
-      tabindex="0"
     >
       <div
-        style="z-index: 2006; position: absolute; animation-duration: 0.2s;"
+        style="z-index: 2006; position: absolute; animation-duration: 0s;"
         class="van-overlay"
+        role="button"
+        tabindex="0"
       >
       </div>
     </transition-stub>
@@ -399,6 +400,7 @@ exports[`direction up 2`] = `
         tabindex="0"
         class="van-popup van-popup--bottom van-dropdown-item__content"
         aria-labelledby="van-dropdown-menu-0"
+        data-allow-mismatch="attribute"
       >
         <div
           class="van-cell van-cell--clickable van-dropdown-item__option van-dropdown-item__option--active"
@@ -440,8 +442,6 @@ exports[`direction up 2`] = `
       appear="true"
       persisted="false"
       css="true"
-      role="button"
-      tabindex="0"
     >
     </transition-stub>
     <transition-stub
@@ -462,6 +462,7 @@ exports[`disable close-on-click-outside 1`] = `
       id="van-dropdown-menu-0"
       role="button"
       tabindex="0"
+      data-allow-mismatch="attribute"
       class="van-dropdown-menu__item van-haptics-feedback"
     >
       <span class="van-dropdown-menu__title van-dropdown-menu__title--down van-dropdown-menu__title--active">
@@ -474,6 +475,7 @@ exports[`disable close-on-click-outside 1`] = `
       id="van-dropdown-menu-1"
       role="button"
       tabindex="0"
+      data-allow-mismatch="attribute"
       class="van-dropdown-menu__item van-haptics-feedback"
     >
       <span class="van-dropdown-menu__title">
@@ -492,12 +494,12 @@ exports[`disable close-on-click-outside 1`] = `
       appear="true"
       persisted="false"
       css="true"
-      role="button"
-      tabindex="0"
     >
       <div
-        style="z-index: 2005; position: absolute; animation-duration: 0.2s;"
+        style="z-index: 2005; position: absolute; animation-duration: 0s;"
         class="van-overlay"
+        role="button"
+        tabindex="0"
       >
       </div>
     </transition-stub>
@@ -513,6 +515,7 @@ exports[`disable close-on-click-outside 1`] = `
         tabindex="0"
         class="van-popup van-popup--top van-dropdown-item__content"
         aria-labelledby="van-dropdown-menu-0"
+        data-allow-mismatch="attribute"
       >
         <div
           class="van-cell van-cell--clickable van-dropdown-item__option van-dropdown-item__option--active"
@@ -554,8 +557,6 @@ exports[`disable close-on-click-outside 1`] = `
       appear="true"
       persisted="false"
       css="true"
-      role="button"
-      tabindex="0"
     >
     </transition-stub>
     <transition-stub
@@ -575,6 +576,7 @@ exports[`disable dropdown item 1`] = `
     <div
       id="van-dropdown-menu-0"
       role="button"
+      data-allow-mismatch="attribute"
       class="van-dropdown-menu__item van-dropdown-menu__item--disabled"
     >
       <span class="van-dropdown-menu__title">
@@ -593,8 +595,6 @@ exports[`disable dropdown item 1`] = `
       appear="true"
       persisted="false"
       css="true"
-      role="button"
-      tabindex="0"
     >
     </transition-stub>
     <transition-stub
@@ -615,6 +615,7 @@ exports[`render option icon 1`] = `
       id="van-dropdown-menu-0"
       role="button"
       tabindex="0"
+      data-allow-mismatch="attribute"
       class="van-dropdown-menu__item van-haptics-feedback"
     >
       <span class="van-dropdown-menu__title van-dropdown-menu__title--down van-dropdown-menu__title--active">
@@ -627,6 +628,7 @@ exports[`render option icon 1`] = `
       id="van-dropdown-menu-1"
       role="button"
       tabindex="0"
+      data-allow-mismatch="attribute"
       class="van-dropdown-menu__item van-haptics-feedback"
     >
       <span class="van-dropdown-menu__title">
@@ -645,12 +647,12 @@ exports[`render option icon 1`] = `
       appear="true"
       persisted="false"
       css="true"
-      role="button"
-      tabindex="0"
     >
       <div
-        style="z-index: 2003; position: absolute; animation-duration: 0.2s;"
+        style="z-index: 2003; position: absolute; animation-duration: 0s;"
         class="van-overlay"
+        role="button"
+        tabindex="0"
       >
       </div>
     </transition-stub>
@@ -666,6 +668,7 @@ exports[`render option icon 1`] = `
         tabindex="0"
         class="van-popup van-popup--top van-dropdown-item__content"
         aria-labelledby="van-dropdown-menu-0"
+        data-allow-mismatch="attribute"
       >
         <div
           class="van-cell van-cell--clickable van-dropdown-item__option van-dropdown-item__option--active"
@@ -711,8 +714,6 @@ exports[`render option icon 1`] = `
       appear="true"
       persisted="false"
       css="true"
-      role="button"
-      tabindex="0"
     >
     </transition-stub>
     <transition-stub
@@ -733,6 +734,7 @@ exports[`show dropdown item 1`] = `
       id="van-dropdown-menu-0"
       role="button"
       tabindex="0"
+      data-allow-mismatch="attribute"
       class="van-dropdown-menu__item van-haptics-feedback"
     >
       <span class="van-dropdown-menu__title van-dropdown-menu__title--down van-dropdown-menu__title--active">
@@ -745,6 +747,7 @@ exports[`show dropdown item 1`] = `
       id="van-dropdown-menu-1"
       role="button"
       tabindex="0"
+      data-allow-mismatch="attribute"
       class="van-dropdown-menu__item van-haptics-feedback"
     >
       <span class="van-dropdown-menu__title">
@@ -763,12 +766,12 @@ exports[`show dropdown item 1`] = `
       appear="true"
       persisted="false"
       css="true"
-      role="button"
-      tabindex="0"
     >
       <div
-        style="z-index: 2001; position: absolute; animation-duration: 0.2s;"
+        style="z-index: 2001; position: absolute; animation-duration: 0s;"
         class="van-overlay"
+        role="button"
+        tabindex="0"
       >
       </div>
     </transition-stub>
@@ -784,6 +787,7 @@ exports[`show dropdown item 1`] = `
         tabindex="0"
         class="van-popup van-popup--top van-dropdown-item__content"
         aria-labelledby="van-dropdown-menu-0"
+        data-allow-mismatch="attribute"
       >
         <div
           class="van-cell van-cell--clickable van-dropdown-item__option van-dropdown-item__option--active"
@@ -825,8 +829,6 @@ exports[`show dropdown item 1`] = `
       appear="true"
       persisted="false"
       css="true"
-      role="button"
-      tabindex="0"
     >
     </transition-stub>
     <transition-stub
@@ -847,6 +849,7 @@ exports[`show dropdown item 2`] = `
       id="van-dropdown-menu-0"
       role="button"
       tabindex="0"
+      data-allow-mismatch="attribute"
       class="van-dropdown-menu__item van-haptics-feedback"
     >
       <span class="van-dropdown-menu__title">
@@ -859,6 +862,7 @@ exports[`show dropdown item 2`] = `
       id="van-dropdown-menu-1"
       role="button"
       tabindex="0"
+      data-allow-mismatch="attribute"
       class="van-dropdown-menu__item van-haptics-feedback"
     >
       <span class="van-dropdown-menu__title van-dropdown-menu__title--down van-dropdown-menu__title--active">
@@ -877,12 +881,12 @@ exports[`show dropdown item 2`] = `
       appear="true"
       persisted="false"
       css="true"
-      role="button"
-      tabindex="0"
     >
       <div
         style="z-index: 2001; position: absolute; animation-duration: 0s; display: none;"
         class="van-overlay"
+        role="button"
+        tabindex="0"
       >
       </div>
     </transition-stub>
@@ -898,6 +902,7 @@ exports[`show dropdown item 2`] = `
         tabindex="0"
         class="van-popup van-popup--top van-dropdown-item__content"
         aria-labelledby="van-dropdown-menu-0"
+        data-allow-mismatch="attribute"
       >
         <div
           class="van-cell van-cell--clickable van-dropdown-item__option van-dropdown-item__option--active"
@@ -939,12 +944,12 @@ exports[`show dropdown item 2`] = `
       appear="true"
       persisted="false"
       css="true"
-      role="button"
-      tabindex="0"
     >
       <div
-        style="z-index: 2002; position: absolute; animation-duration: 0.2s;"
+        style="z-index: 2002; position: absolute; animation-duration: 0s;"
         class="van-overlay"
+        role="button"
+        tabindex="0"
       >
       </div>
     </transition-stub>
@@ -960,6 +965,7 @@ exports[`show dropdown item 2`] = `
         tabindex="0"
         class="van-popup van-popup--top van-dropdown-item__content"
         aria-labelledby="van-dropdown-menu-1"
+        data-allow-mismatch="attribute"
       >
         <div
           class="van-cell van-cell--clickable van-dropdown-item__option van-dropdown-item__option--active"
@@ -1002,6 +1008,7 @@ exports[`show dropdown item 3`] = `
       id="van-dropdown-menu-0"
       role="button"
       tabindex="0"
+      data-allow-mismatch="attribute"
       class="van-dropdown-menu__item van-haptics-feedback"
     >
       <span class="van-dropdown-menu__title">
@@ -1014,6 +1021,7 @@ exports[`show dropdown item 3`] = `
       id="van-dropdown-menu-1"
       role="button"
       tabindex="0"
+      data-allow-mismatch="attribute"
       class="van-dropdown-menu__item van-haptics-feedback"
     >
       <span class="van-dropdown-menu__title">
@@ -1032,12 +1040,12 @@ exports[`show dropdown item 3`] = `
       appear="true"
       persisted="false"
       css="true"
-      role="button"
-      tabindex="0"
     >
       <div
         style="z-index: 2001; position: absolute; animation-duration: 0s; display: none;"
         class="van-overlay"
+        role="button"
+        tabindex="0"
       >
       </div>
     </transition-stub>
@@ -1053,6 +1061,7 @@ exports[`show dropdown item 3`] = `
         tabindex="0"
         class="van-popup van-popup--top van-dropdown-item__content"
         aria-labelledby="van-dropdown-menu-0"
+        data-allow-mismatch="attribute"
       >
         <div
           class="van-cell van-cell--clickable van-dropdown-item__option van-dropdown-item__option--active"
@@ -1094,12 +1103,12 @@ exports[`show dropdown item 3`] = `
       appear="true"
       persisted="false"
       css="true"
-      role="button"
-      tabindex="0"
     >
       <div
-        style="z-index: 2002; position: absolute; animation-duration: 0.2s; display: none;"
+        style="z-index: 2002; position: absolute; animation-duration: 0s; display: none;"
         class="van-overlay"
+        role="button"
+        tabindex="0"
       >
       </div>
     </transition-stub>
@@ -1115,6 +1124,7 @@ exports[`show dropdown item 3`] = `
         tabindex="0"
         class="van-popup van-popup--top van-dropdown-item__content"
         aria-labelledby="van-dropdown-menu-1"
+        data-allow-mismatch="attribute"
       >
         <div
           class="van-cell van-cell--clickable van-dropdown-item__option van-dropdown-item__option--active"
@@ -1157,6 +1167,7 @@ exports[`title prop 1`] = `
       id="van-dropdown-menu-0"
       role="button"
       tabindex="0"
+      data-allow-mismatch="attribute"
       class="van-dropdown-menu__item van-haptics-feedback"
     >
       <span class="van-dropdown-menu__title">
@@ -1169,6 +1180,7 @@ exports[`title prop 1`] = `
       id="van-dropdown-menu-1"
       role="button"
       tabindex="0"
+      data-allow-mismatch="attribute"
       class="van-dropdown-menu__item van-haptics-feedback"
     >
       <span class="van-dropdown-menu__title">
@@ -1187,8 +1199,6 @@ exports[`title prop 1`] = `
       appear="true"
       persisted="false"
       css="true"
-      role="button"
-      tabindex="0"
     >
     </transition-stub>
     <transition-stub
@@ -1208,8 +1218,6 @@ exports[`title prop 1`] = `
       appear="true"
       persisted="false"
       css="true"
-      role="button"
-      tabindex="0"
     >
     </transition-stub>
     <transition-stub
@@ -1230,6 +1238,7 @@ exports[`title slot 1`] = `
       id="van-dropdown-menu-0"
       role="button"
       tabindex="0"
+      data-allow-mismatch="attribute"
       class="van-dropdown-menu__item van-haptics-feedback"
     >
       <span class="van-dropdown-menu__title">
@@ -1248,8 +1257,6 @@ exports[`title slot 1`] = `
       appear="true"
       persisted="false"
       css="true"
-      role="button"
-      tabindex="0"
     >
     </transition-stub>
     <transition-stub

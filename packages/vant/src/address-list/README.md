@@ -83,7 +83,7 @@ export default {
 
 | Attribute | Description | Type | Default |
 | --- | --- | --- | --- |
-| v-model | Id of chosen address | _number \| string_ | - |
+| v-model | Id of chosen address, support multiple selection (type is `[]`) | _number \| string \| number[] \| string[]_ | - |
 | list | Address list | _Address[]_ | `[]` |
 | disabled-list | Disabled address list | _Address[]_ | `[]` |
 | disabled-text | Disabled text | _string_ | - |
@@ -102,7 +102,7 @@ export default {
 | select | Emitted when an address is selected | _item: Address, index: number_ |
 | edit-disabled | Emitted when the edit icon of disabled address is clicked | _item: Address, index: number_ |
 | select-disabled | Emitted when a disabled address is selected | _item: Address, index: number_ |
-| click-item | Emitted when an address item is clicked | _item: Address, index: number_ |
+| click-item | Emitted when an address item is clicked | _item: Address, index: number, { event }_ |
 
 ### Data Structure of Address
 

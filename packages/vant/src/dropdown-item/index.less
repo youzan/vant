@@ -1,4 +1,5 @@
-:root {
+:root,
+:host {
   --van-dropdown-item-z-index: 10;
 }
 
@@ -22,6 +23,14 @@
 
       .van-dropdown-item__icon {
         color: var(--van-dropdown-menu-option-active-color);
+      }
+    }
+
+    &--disabled {
+      color: var(--van-dropdown-menu-option-disabled-color);
+
+      .van-dropdown-item__icon {
+        color: var(--van-dropdown-menu-option-disabled-color);
       }
     }
   }

@@ -15,6 +15,7 @@ exports[`should render demo and match snapshot 1`] = `
         tabindex="0"
         aria-selected="true"
         aria-controls="van-tab"
+        data-allow-mismatch="attribute"
       >
         <span class="van-tab__text van-tab__text--ellipsis">
           Basic Usage
@@ -27,6 +28,7 @@ exports[`should render demo and match snapshot 1`] = `
         tabindex="-1"
         aria-selected="false"
         aria-controls="van-tab"
+        data-allow-mismatch="attribute"
       >
         <span class="van-tab__text van-tab__text--ellipsis">
           Custom Index List
@@ -46,6 +48,7 @@ exports[`should render demo and match snapshot 1`] = `
       class="van-tab__panel"
       tabindex="0"
       aria-labelledby="van-tabs-0"
+      data-allow-mismatch="attribute"
       style
     >
       <div class="van-index-bar">
@@ -201,7 +204,7 @@ exports[`should render demo and match snapshot 1`] = `
             Y
           </span>
           <span
-            class="van-index-bar__index van-index-bar__index--active"
+            class="van-index-bar__index"
             data-index="Z"
           >
             Z
@@ -908,8 +911,8 @@ exports[`should render demo and match snapshot 1`] = `
           </div>
         </div>
         <div>
-          <div style="height: 0px;">
-            <div class="van-index-anchor van-index-anchor--sticky van-hairline--bottom">
+          <div>
+            <div class="van-index-anchor">
               Z
             </div>
           </div>
@@ -943,6 +946,7 @@ exports[`should render demo and match snapshot 1`] = `
       class="van-tab__panel"
       tabindex="-1"
       aria-labelledby="van-tabs-1"
+      data-allow-mismatch="attribute"
       style="display: none;"
     >
     </div>

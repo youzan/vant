@@ -53,6 +53,20 @@ Set grid spacing using `gutter` attribute. The default value is 0.
 </van-row>
 ```
 
+### Vertical Spacing
+
+If you want to set the vertical spacing, you can set `[horizontal, vertical]` as an array.
+
+```html
+<!-- set the vertical spacing -->
+<van-row :gutter="[20, 20]">
+  <van-col span="12">span: 12</van-col>
+  <van-col span="12">span: 12</van-col>
+  <van-col span="12">span: 12</van-col>
+  <van-col span="12">span: 12</van-col>
+</van-row>
+```
+
 ### Justify Content
 
 ```html
@@ -87,7 +101,7 @@ Set grid spacing using `gutter` attribute. The default value is 0.
 
 | Attribute | Description | Type | Default |
 | --- | --- | --- | --- |
-| gutter | Grid spacing（px） | _number \| string_ | - |
+| gutter | Grid spacing（px） | _number \| string \| Array_ | - |
 | tag | Custom element tag | _string_ | `div` |
 | justify | Flex main axis, can be set to end/center/space-around/space-between | _string_ | `start` |
 | align | Flex cross axis, be set to center/bottom | _string_ | `top` |

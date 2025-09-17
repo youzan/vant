@@ -34,6 +34,7 @@ exports[`should render demo and match snapshot 1`] = `
             tabindex="0"
             aria-selected="true"
             aria-controls="van-tab"
+            data-allow-mismatch="attribute"
           >
             <span class="van-tab__text">
               Date
@@ -46,6 +47,7 @@ exports[`should render demo and match snapshot 1`] = `
             tabindex="-1"
             aria-selected="false"
             aria-controls="van-tab"
+            data-allow-mismatch="attribute"
           >
             <span class="van-tab__text">
               Time
@@ -71,6 +73,7 @@ exports[`should render demo and match snapshot 1`] = `
               tabindex="0"
               aria-hidden="false"
               aria-labelledby="van-tabs-0"
+              data-allow-mismatch="attribute"
               style="width: 100px;"
             >
               <div class="van-tab__panel">
@@ -601,6 +604,7 @@ exports[`should render demo and match snapshot 1`] = `
               tabindex="-1"
               aria-hidden="true"
               aria-labelledby="van-tabs-1"
+              data-allow-mismatch="attribute"
               style="width: 100px;"
             >
               <div class="van-tab__panel">
@@ -1516,6 +1520,7 @@ exports[`should render demo and match snapshot 1`] = `
             tabindex="0"
             aria-selected="true"
             aria-controls="van-tab"
+            data-allow-mismatch="attribute"
           >
             <span class="van-tab__text">
               Date
@@ -1528,6 +1533,7 @@ exports[`should render demo and match snapshot 1`] = `
             tabindex="-1"
             aria-selected="false"
             aria-controls="van-tab"
+            data-allow-mismatch="attribute"
           >
             <span class="van-tab__text">
               Time
@@ -1553,6 +1559,7 @@ exports[`should render demo and match snapshot 1`] = `
               tabindex="0"
               aria-hidden="false"
               aria-labelledby="van-tabs-0"
+              data-allow-mismatch="attribute"
               style="width: 100px;"
             >
               <div class="van-tab__panel">
@@ -2083,6 +2090,7 @@ exports[`should render demo and match snapshot 1`] = `
               tabindex="-1"
               aria-hidden="true"
               aria-labelledby="van-tabs-1"
+              data-allow-mismatch="attribute"
               style="width: 100px;"
             >
               <div class="van-tab__panel">
@@ -2998,6 +3006,7 @@ exports[`should render demo and match snapshot 1`] = `
             tabindex="0"
             aria-selected="true"
             aria-controls="van-tab"
+            data-allow-mismatch="attribute"
           >
             <span class="van-tab__text">
               Start Date
@@ -3010,6 +3019,7 @@ exports[`should render demo and match snapshot 1`] = `
             tabindex="-1"
             aria-selected="false"
             aria-controls="van-tab"
+            data-allow-mismatch="attribute"
           >
             <span class="van-tab__text">
               End Date
@@ -3035,6 +3045,7 @@ exports[`should render demo and match snapshot 1`] = `
               tabindex="0"
               aria-hidden="false"
               aria-labelledby="van-tabs-0"
+              data-allow-mismatch="attribute"
               style="width: 100px;"
             >
               <div class="van-tab__panel">
@@ -3565,6 +3576,7 @@ exports[`should render demo and match snapshot 1`] = `
               tabindex="-1"
               aria-hidden="true"
               aria-labelledby="van-tabs-1"
+              data-allow-mismatch="attribute"
               style="width: 100px;"
             >
               <div class="van-tab__panel">
@@ -4107,6 +4119,7 @@ exports[`should render demo and match snapshot 1`] = `
             tabindex="0"
             aria-selected="true"
             aria-controls="van-tab"
+            data-allow-mismatch="attribute"
           >
             <span class="van-tab__text">
               Start Time
@@ -4119,6 +4132,7 @@ exports[`should render demo and match snapshot 1`] = `
             tabindex="-1"
             aria-selected="false"
             aria-controls="van-tab"
+            data-allow-mismatch="attribute"
           >
             <span class="van-tab__text">
               End Time
@@ -4144,6 +4158,7 @@ exports[`should render demo and match snapshot 1`] = `
               tabindex="0"
               aria-hidden="false"
               aria-labelledby="van-tabs-0"
+              data-allow-mismatch="attribute"
               style="width: 100px;"
             >
               <div class="van-tab__panel">
@@ -5027,6 +5042,7 @@ exports[`should render demo and match snapshot 1`] = `
               tabindex="-1"
               aria-hidden="true"
               aria-labelledby="van-tabs-1"
+              data-allow-mismatch="attribute"
               style="width: 100px;"
             >
               <div class="van-tab__panel">
@@ -5953,6 +5969,7 @@ exports[`should render demo and match snapshot 1`] = `
             tabindex="0"
             aria-selected="true"
             aria-controls="van-tab"
+            data-allow-mismatch="attribute"
           >
             <span class="van-tab__text">
               Date
@@ -5965,6 +5982,7 @@ exports[`should render demo and match snapshot 1`] = `
             tabindex="-1"
             aria-selected="false"
             aria-controls="van-tab"
+            data-allow-mismatch="attribute"
           >
             <span class="van-tab__text">
               Time
@@ -5990,6 +6008,7 @@ exports[`should render demo and match snapshot 1`] = `
               tabindex="0"
               aria-hidden="false"
               aria-labelledby="van-tabs-0"
+              data-allow-mismatch="attribute"
               style="width: 100px;"
             >
               <div class="van-tab__panel">
@@ -6520,6 +6539,7 @@ exports[`should render demo and match snapshot 1`] = `
               tabindex="-1"
               aria-hidden="true"
               aria-labelledby="van-tabs-1"
+              data-allow-mismatch="attribute"
               style="width: 100px;"
             >
               <div class="van-tab__panel">

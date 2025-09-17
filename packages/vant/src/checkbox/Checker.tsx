@@ -86,7 +86,11 @@ export default defineComponent({
     const iconStyle = computed(() => {
       const checkedColor = props.checkedColor || getParentProp('checkedColor');
 
-      if (checkedColor && props.checked && !disabled.value) {
+      if (
+        checkedColor &&
+        (props.checked || props.indeterminate) &&
+        !disabled.value
+      ) {
         return {
           borderColor: checkedColor,
           backgroundColor: checkedColor,
@@ -148,6 +152,8 @@ export default defineComponent({
     };
 
     const renderLabel = () => {
+      const { checked } = props;
+
       if (slots.default) {
         return (
           <span
@@ -156,7 +162,7 @@ export default defineComponent({
               { disabled: disabled.value },
             ])}
           >
-            {slots.default()}
+            {slots.default({ checked, disabled: disabled.value })}
           </span>
         );
       }

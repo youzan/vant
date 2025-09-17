@@ -76,7 +76,11 @@ export default defineComponent({
     const renderLabel = () => {
       if (slots.label || props.label) {
         return (
-          <label class={bem('label')} for={getInputId()}>
+          <label
+            class={bem('label')}
+            for={getInputId()}
+            data-allow-mismatch="attribute"
+          >
             {slots.label ? slots.label() : props.label}
           </label>
         );
@@ -125,7 +129,7 @@ export default defineComponent({
           v-slots={pick(slots, ['left-icon', 'right-icon'])}
           ref={fieldRef}
           type="search"
-          class={bem('field')}
+          class={bem('field', { 'with-message': fieldAttrs.errorMessage })}
           border={false}
           onBlur={onBlur}
           onFocus={onFocus}

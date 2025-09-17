@@ -1,12 +1,21 @@
-import { defineComponent, type InjectionKey, type ExtractPropTypes } from 'vue';
+import {
+  defineComponent,
+  Comment,
+  Fragment,
+  type InjectionKey,
+  type ExtractPropTypes,
+  type VNode,
+} from 'vue';
 
 // Utils
 import {
+  flat,
   pick,
   extend,
   makeArrayProp,
   makeNumericProp,
   createNamespace,
+  truthProp,
 } from '../utils';
 
 // Composables
@@ -32,6 +41,7 @@ export const pickerGroupProps = extend(
     tabs: makeArrayProp<string>(),
     activeTab: makeNumericProp(0),
     nextStepText: String,
+    showToolbar: truthProp,
   },
   pickerToolbarProps,
 );
@@ -71,21 +81,37 @@ export default defineComponent({
     const onCancel = () => emit('cancel');
 
     return () => {
-      const childNodes = slots.default?.();
+      let childNodes = slots
+        .default?.()
+        ?.filter((node) => node.type !== Comment)
+        .map((node) => {
+          if (node.type === Fragment) {
+            return node.children as VNode[];
+          }
+
+          return node;
+        });
+
+      if (childNodes) {
+        childNodes = flat(childNodes);
+      }
+
       const confirmButtonText = showNextButton()
         ? props.nextStepText
         : props.confirmButtonText;
 
       return (
         <div class={bem()}>
-          <Toolbar
-            v-slots={pick(slots, pickerToolbarSlots)}
-            title={props.title}
-            cancelButtonText={props.cancelButtonText}
-            confirmButtonText={confirmButtonText}
-            onConfirm={onConfirm}
-            onCancel={onCancel}
-          />
+          {props.showToolbar ? (
+            <Toolbar
+              v-slots={pick(slots, pickerToolbarSlots)}
+              title={props.title}
+              cancelButtonText={props.cancelButtonText}
+              confirmButtonText={confirmButtonText}
+              onConfirm={onConfirm}
+              onCancel={onCancel}
+            />
+          ) : null}
           <Tabs
             v-model:active={activeTab.value}
             class={bem('tabs')}

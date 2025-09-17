@@ -1,4 +1,4 @@
-name: 我要反馈 Vant 的 Bug
+name: 我要反馈 Bug
 description: 通过标准模板进行 Bug 反馈。
 title: "[Bug Report] 请在此填写标题"
 labels: ["bug: need confirm"]
@@ -16,7 +16,7 @@ body:
     id: reproduce
     attributes:
       label: 重现链接
-      description: 请提供一个尽可能简单的 [codesandbox](https://codesandbox.io/s/vant-3-issue-template-8fuq5o) 或 GitHub 仓库链接。不要填写无效的链接，这会导致你的 issue 被直接关闭。
+      description: 请提供一个尽可能简单的 [codesandbox](https://codesandbox.io/p/devbox/vant-4-issue-template-8fuq5o) 或 GitHub 仓库链接。不要填写无效的链接，这会导致你的 issue 被直接关闭。
     validations:
       required: true
 
@@ -25,7 +25,7 @@ body:
     attributes:
       label: Vant 版本
       description: 你正在使用的 Vant 版本是多少？（请填写 node_modules/vant/package.json 里实际安装的版本）
-      placeholder: 比如 3.2.0
+      placeholder: 比如 4.2.0
     validations:
       required: true
 

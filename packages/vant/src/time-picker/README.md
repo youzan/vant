@@ -267,9 +267,9 @@ export default {
 
 | Event | Description | Arguments |
 | --- | --- | --- |
-| confirm | Emitted when the confirm button is clicked | _{ selectedValues, selectedOptions }_ |
-| cancel | Emitted when the cancel button is clicked | _{ selectedValues, selectedOptions }_ |
-| change | Emitted when current option is changed | _{ selectedValues, selectedOptions, columnIndex }_ |
+| confirm | Emitted when the confirm button is clicked | _{ selectedValues, selectedOptions, selectedIndexes }_ |
+| cancel | Emitted when the cancel button is clicked | _{ selectedValues, selectedOptions, selectedIndexes }_ |
+| change | Emitted when current option is changed | _{ selectedValues, selectedOptions, selectedIndexes, columnIndex }_ |
 
 ### Slots
 
@@ -283,10 +283,34 @@ export default {
 | columns-top | Custom content above columns | - |
 | columns-bottom | Custom content below columns | - |
 
+### Methods
+
+Use [ref](https://vuejs.org/guide/essentials/template-refs.html) to get Picker instance and call instance methods.
+
+| Name | Description | Attribute | Return value |
+| --- | --- | --- | --- |
+| confirm | Stop scrolling and emit confirm event | - | - |
+| getSelectedTime | Get current selected time | - | _string[]_ |
+
 ### Types
 
 The component exports the following type definitions:
 
 ```ts
-import type { TimePickerProps, TimePickerColumnType } from 'vant';
+import type {
+  TimePickerProps,
+  TimePickerColumnType,
+  TimePickerInstance,
+} from 'vant';
+```
+
+`TimePickerInstance` is the type of component instance:
+
+```ts
+import { ref } from 'vue';
+import type { TimePickerInstance } from 'vant';
+
+const timePickerRef = ref<TimePickerInstance>();
+
+timePickerRef.value?.confirm();
 ```

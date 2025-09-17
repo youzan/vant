@@ -363,7 +363,7 @@ export default {
 
 | Name    | Description  | SlotProps                                 |
 | ------- | ------------ | ----------------------------------------- |
-| default | Custom label | -                                         |
+| default | Custom label | _{ checked: boolean, disabled: boolean }_ |
 | icon    | Custom icon  | _{ checked: boolean, disabled: boolean }_ |
 
 ### CheckboxGroup Methods

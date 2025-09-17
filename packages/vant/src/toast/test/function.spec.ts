@@ -10,15 +10,17 @@ import {
 } from '../function-call';
 
 test('toast disappeared after duration', async () => {
+  vi.useFakeTimers();
   const onClose = vi.fn();
   showToast({
     duration: 10,
     onClose,
   });
 
-  expect(onClose).toHaveBeenCalledTimes(0);
-  await later(50);
+  expect(onClose).not.toHaveBeenCalled();
+  await vi.advanceTimersByTimeAsync(100);
   expect(onClose).toHaveBeenCalledTimes(1);
+  vi.useRealTimers();
 });
 
 test('show loading toast', async () => {
@@ -31,17 +33,19 @@ test('show loading toast', async () => {
 });
 
 test('show html toast', async () => {
+  vi.useFakeTimers();
   showToast({
     type: 'html',
     className: 'html-toast',
     message: '<div>Message</div>',
   });
+  await vi.runAllTimersAsync();
 
-  await later(1000);
   const toastText = document.querySelector(
     '.html-toast .van-toast__text',
   ) as HTMLDivElement;
   expect(toastText.innerHTML).toEqual('<div>Message</div>');
+  vi.useRealTimers();
 });
 
 test('icon prop', async () => {
@@ -108,15 +112,15 @@ test('clear multiple toast', async () => {
 });
 
 test('remove toast DOM when cleared in multiple mode', async () => {
+  vi.useFakeTimers();
   allowMultipleToast();
   closeToast(true);
   const toast = showToast({ className: 'remove-toast' });
-  await later();
-
-  await toast.close();
-  await later(100);
+  toast.close();
+  await vi.advanceTimersByTimeAsync(100);
   expect(document.querySelector('.remove-toast')).toBeNull();
   allowMultipleToast(false);
+  vi.useRealTimers();
 });
 
 test('set default options', async () => {
@@ -151,13 +155,15 @@ test('set default options by type', async () => {
 });
 
 test('toast duration 0', async () => {
+  vi.useFakeTimers();
   allowMultipleToast();
   const onClose = vi.fn();
   showToast({ duration: 0, onClose });
 
-  await later(2100);
-  expect(onClose).toHaveBeenCalledTimes(0);
+  await vi.advanceTimersByTimeAsync(100);
+  expect(onClose).not.toHaveBeenCalled();
   allowMultipleToast(false);
+  vi.useRealTimers();
 });
 
 test('should trigger onClose callback after closed', async () => {

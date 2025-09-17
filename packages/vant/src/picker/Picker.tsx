@@ -189,6 +189,7 @@ export default defineComponent({
       // wait nextTick to ensure the model value is update to date
       // when confirm event is emitted
       nextTick(() => {
+        const params = getEventParams();
         emit('confirm', params);
       });
 
@@ -241,6 +242,11 @@ export default defineComponent({
     const renderColumns = () => {
       const wrapHeight = optionHeight.value * +props.visibleOptionNum;
       const columnsStyle = { height: `${wrapHeight}px` };
+
+      if (!props.loading && !hasOptions.value && slots.empty) {
+        return slots.empty();
+      }
+
       return (
         <div ref={columnsRef} class={bem('columns')} style={columnsStyle}>
           {renderColumnItems()}
@@ -262,23 +268,20 @@ export default defineComponent({
       }
     };
 
-    watch(
-      currentColumns,
-      (columns) => {
-        columns.forEach((options, index) => {
-          if (
-            options.length &&
-            !isOptionExist(options, selectedValues.value[index], fields.value)
-          ) {
-            setValue(
-              index,
-              getFirstEnabledOption(options)![fields.value.value],
-            );
-          }
-        });
-      },
-      { immediate: true },
-    );
+    const resetSelectedValues = (columns: PickerColumn[]) => {
+      columns.forEach((options, index) => {
+        if (
+          options.length &&
+          !isOptionExist(options, selectedValues.value[index], fields.value)
+        ) {
+          setValue(index, getFirstEnabledOption(options)![fields.value.value]);
+        }
+      });
+    };
+
+    watch(currentColumns, (columns) => resetSelectedValues(columns), {
+      immediate: true,
+    });
 
     // preserve last emitted model value
     // when props.modelValue is updated by parent component,
@@ -294,9 +297,14 @@ export default defineComponent({
           selectedValues.value = newValues.slice(0);
           lastEmittedModelValue = newValues.slice(0);
         }
+
+        if (props.modelValue.length === 0) {
+          resetSelectedValues(currentColumns.value);
+        }
       },
       { deep: true },
     );
+
     watch(
       selectedValues,
       (newValues) => {

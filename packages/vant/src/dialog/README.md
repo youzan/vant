@@ -25,25 +25,28 @@ For example, calling the `showDialog` function will render a Dialog directly in 
 ```js
 import { showDialog } from 'vant';
 
-showDialog({ message: 'Content' });
+showDialog({ message: 'Alert' });
 ```
 
 ## Usage
 
 ### Alert dialog
 
-Used to prompt for some messages, only including one confirm button.
+Used to prompt for some messages, only including one confirm button by default.
 
 ```js
+import { showDialog } from 'vant';
+
 showDialog({
   title: 'Title',
-  message: 'Content',
+  message: 'The code is written for people to see and can be run on a machine.',
 }).then(() => {
   // on close
 });
 
 showDialog({
-  message: 'Content',
+  message:
+    'Life is far more than just spinning and being busy to the limit, and human experiences are much broader and richer than this.',
 }).then(() => {
   // on close
 });
@@ -51,12 +54,15 @@ showDialog({
 
 ### Confirm dialog
 
-Used to confirm some messages, including a confirm button and a cancel button.
+Used to confirm some messages, including a confirm button and a cancel button by default.
 
 ```js
+import { showConfirmDialog } from 'vant';
+
 showConfirmDialog({
   title: 'Title',
-  message: 'Content',
+  message:
+    'If the solution is ugly, then there must be a better solution, but it has not been discovered yet.',
 })
   .then(() => {
     // on confirm
@@ -68,19 +74,22 @@ showConfirmDialog({
 
 ### Round Button Style
 
-Use round button style.
+Setting the `theme` option to `round-button` will display the Dialog with a rounded button style.
 
 ```js
+import { showDialog } from 'vant';
+
 showDialog({
   title: 'Title',
-  message: 'Content',
+  message: 'The code is written for people to see and can be run on a machine.',
   theme: 'round-button',
 }).then(() => {
   // on close
 });
 
 showDialog({
-  message: 'Content',
+  message:
+    'Life is far more than just spinning and being busy to the limit, and human experiences are much broader and richer than this.',
   theme: 'round-button',
 }).then(() => {
   // on close
@@ -89,24 +98,30 @@ showDialog({
 
 ### Async Close
 
+You can pass a callback function through the `beforeClose` option to perform specific operations before closing the Dialog.
+
 ```js
+import { showConfirmDialog } from 'vant';
+
 const beforeClose = (action) =>
   new Promise((resolve) => {
     setTimeout(() => {
+      // action !== 'confirm'  Interception cancellation operation
       resolve(action === 'confirm');
     }, 1000);
   });
 
 showConfirmDialog({
   title: 'Title',
-  message: 'Content',
+  message:
+    'If the solution is ugly, then there must be a better solution, but it has not been discovered yet.',
   beforeClose,
 });
 ```
 
 ### Use Dialog Component
 
-If you need to render Vue components within a Dialog, you can use the Dialog component.
+If you need to embed components or other custom content within a Dialog, you can directly use the Dialog component and customize it using the default slot. Before using it, you need to register the component using `app.use` or other methods.
 
 ```html
 <van-dialog v-model:show="show" title="Title" show-cancel-button>
@@ -133,11 +148,11 @@ Vant exports following Dialog utility functions:
 
 | Name | Description | Attribute | Return value |
 | --- | --- | --- | --- |
-| showDialog | Show dialog | _options: DialogOptions_ | `Promise<void>` |
-| showConfirmDialog | Show confirm dialog | _options: DialogOptions_ | `Promise<void>` |
-| closeDialog | Close dialog | - | `void` |
-| setDialogDefaultOptions | Set default options of all dialogs | _options: DialogOptions_ | `void` |
-| resetDialogDefaultOptions | Reset default options of all dialogs | - | `void` |
+| showDialog | Display a message prompt dialog with a default confirm button | _options: DialogOptions_ | `Promise<void>` |
+| showConfirmDialog | Display a message confirmation dialog with default confirm and cancel buttons | _options: DialogOptions_ | `Promise<void>` |
+| closeDialog | Close the currently displayed dialog | - | `void` |
+| setDialogDefaultOptions | Modify the default configuration that affects all `showDialog` calls | _options: DialogOptions_ | `void` |
+| resetDialogDefaultOptions | Reset the default configuration that affects all `showDialog` calls | - | `void` |
 
 ### DialogOptions
 
@@ -157,6 +172,7 @@ Vant exports following Dialog utility functions:
 | confirmButtonText | Confirm button text | _string_ | `Confirm` |
 | confirmButtonColor | Confirm button color | _string_ | `#ee0a24` |
 | confirmButtonDisabled | Whether to disable confirm button | _boolean_ | `false` |
+| destroyOnClose `v4.9.18` | Whether to destroy content when closed | _boolean_ | `false` |
 | overlay | Whether to show overlay | _boolean_ | `true` |
 | overlayClass | Custom overlay class | _string \| Array \| object_ | - |
 | overlayStyle | Custom overlay style | _object_ | - |
@@ -167,6 +183,7 @@ Vant exports following Dialog utility functions:
 | beforeClose | Callback function before close | _(action: string) => boolean \| Promise\<boolean\>_ | - |
 | transition | Transition, equivalent to `name` prop of [transition](https://vuejs.org/api/built-in-components.html#transition) | _string_ | - |
 | teleport | Specifies a target element where Dialog will be mounted | _string \| Element_ | `body` |
+| keyboardEnabled | Whether to enable keyboard capabilities. When displaying the confirm and cancel buttons, the keyboard's `Enter` and `Esc` will call the `confirm` and `cancel` functions by default | _boolean_ | `true` |
 
 ### Props
 
@@ -186,6 +203,7 @@ Vant exports following Dialog utility functions:
 | confirm-button-text | Confirm button text | _string_ | `Confirm` |
 | confirm-button-color | Confirm button color | _string_ | `#ee0a24` |
 | confirm-button-disabled | Whether to disable confirm button | _boolean_ | `false` |
+| destroy-on-close `v4.9.18` | Whether to destroy content when closed | _boolean_ | `false` |
 | z-index | Set the z-index to a fixed value | _number \| string_ | `2000+` |
 | overlay | Whether to show overlay | _boolean_ | `true` |
 | overlay-class | Custom overlay class | _string_ | - |
@@ -198,6 +216,7 @@ Vant exports following Dialog utility functions:
 | before-close | Callback function before close | _(action: string) => boolean \| Promise\<boolean\>_ | - |
 | transition | Transition, equivalent to `name` prop of [transition](https://vuejs.org/api/built-in-components.html#transition) | _string_ | - |
 | teleport | Specifies a target element where Dialog will be mounted | _string \| Element_ | - |
+| keyboard-enabled | Whether to enable keyboard capabilities. When displaying the confirm and cancel buttons, the keyboard's `Enter` and `Esc` will call the `confirm` and `cancel` functions by default | _boolean_ | `true` |
 
 ### Events
 

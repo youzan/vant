@@ -81,17 +81,6 @@ app.use(Progress);
 import type { ProgressProps, ProgressInstance } from 'vant';
 ```
 
-`ProgressInstance` 是组件实例的类型，用法如下：
-
-```ts
-import { ref } from 'vue';
-import type { ProgressInstance } from 'vant';
-
-const progressRef = ref<ProgressInstance>();
-
-progressRef.value?.resize();
-```
-
 ## 主题定制
 
 ### 样式变量

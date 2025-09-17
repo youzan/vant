@@ -32,6 +32,7 @@ exports[`should render demo and match snapshot 1`] = `
       class="van-tab__panel demo-icon-tab-panel"
       tabindex="-1"
       aria-labelledby="van-tabs-0"
+      data-allow-mismatch="attribute"
       style="display:none;"
     >
     </div>
@@ -41,6 +42,7 @@ exports[`should render demo and match snapshot 1`] = `
       class="van-tab__panel demo-icon-tab-panel"
       tabindex="-1"
       aria-labelledby="van-tabs-1"
+      data-allow-mismatch="attribute"
       style="display:none;"
     >
     </div>
@@ -50,6 +52,7 @@ exports[`should render demo and match snapshot 1`] = `
       class="van-tab__panel demo-icon-tab-panel"
       tabindex="-1"
       aria-labelledby="van-tabs-2"
+      data-allow-mismatch="attribute"
       style="display:none;"
     >
     </div>
@@ -59,6 +62,7 @@ exports[`should render demo and match snapshot 1`] = `
       class="van-tab__panel demo-icon-tab-panel"
       tabindex="-1"
       aria-labelledby="van-tabs-3"
+      data-allow-mismatch="attribute"
       style="display:none;"
     >
     </div>

@@ -4,7 +4,7 @@ exports[`should render bottom slot correctly 1`] = `
 <div class="van-empty">
   <div class="van-empty__image">
     <svg viewbox="0 0 160 160">
-      <defs>
+      <defs data-allow-mismatch="children">
         <linearGradient
           x1="50%"
           x2="50%"
@@ -64,6 +64,7 @@ exports[`should render bottom slot correctly 1`] = `
           x1="64%"
           y1="100%"
           x2="64%"
+          data-allow-mismatch="attribute"
         >
           <stop
             stop-color="#FFF"
@@ -78,7 +79,10 @@ exports[`should render bottom slot correctly 1`] = `
           </stop>
         </linearGradient>
       </defs>
-      <g opacity=".8">
+      <g
+        opacity=".8"
+        data-allow-mismatch="children"
+      >
         <path
           d="M36 131V53H16v20H2v58h34z"
           fill="url(#van-empty-a)"
@@ -97,6 +101,7 @@ exports[`should render bottom slot correctly 1`] = `
           y1="97%"
           x2="64%"
           y2="0%"
+          data-allow-mismatch="attribute"
         >
           <stop
             stop-color="#F2F3F5"
@@ -111,7 +116,10 @@ exports[`should render bottom slot correctly 1`] = `
           </stop>
         </linearGradient>
       </defs>
-      <g opacity=".8">
+      <g
+        opacity=".8"
+        data-allow-mismatch="children"
+      >
         <path
           d="M87 6c3 0 7 3 8 6a8 8 0 1 1-1 16H80a7 7 0 0 1-8-6c0-4 3-7 6-7 0-5 4-9 9-9Z"
           fill="url(#van-empty-b)"
@@ -143,6 +151,7 @@ exports[`should render bottom slot correctly 1`] = `
             width="64"
             height="66"
             rx="2"
+            data-allow-mismatch="attribute"
           >
           </rect>
           <rect
@@ -157,6 +166,7 @@ exports[`should render bottom slot correctly 1`] = `
           <g
             transform="translate(15 17)"
             fill="url(#van-empty-6)"
+            data-allow-mismatch="attribute"
           >
             <rect
               width="34"
@@ -181,6 +191,7 @@ exports[`should render bottom slot correctly 1`] = `
           width="88"
           height="28"
           rx="1"
+          data-allow-mismatch="attribute"
         >
         </rect>
         <rect
@@ -205,7 +216,7 @@ exports[`should render description slot correctly 1`] = `
 <div class="van-empty">
   <div class="van-empty__image">
     <svg viewbox="0 0 160 160">
-      <defs>
+      <defs data-allow-mismatch="children">
         <linearGradient
           x1="50%"
           x2="50%"
@@ -265,6 +276,7 @@ exports[`should render description slot correctly 1`] = `
           x1="64%"
           y1="100%"
           x2="64%"
+          data-allow-mismatch="attribute"
         >
           <stop
             stop-color="#FFF"
@@ -279,7 +291,10 @@ exports[`should render description slot correctly 1`] = `
           </stop>
         </linearGradient>
       </defs>
-      <g opacity=".8">
+      <g
+        opacity=".8"
+        data-allow-mismatch="children"
+      >
         <path
           d="M36 131V53H16v20H2v58h34z"
           fill="url(#van-empty-a)"
@@ -298,6 +313,7 @@ exports[`should render description slot correctly 1`] = `
           y1="97%"
           x2="64%"
           y2="0%"
+          data-allow-mismatch="attribute"
         >
           <stop
             stop-color="#F2F3F5"
@@ -312,7 +328,10 @@ exports[`should render description slot correctly 1`] = `
           </stop>
         </linearGradient>
       </defs>
-      <g opacity=".8">
+      <g
+        opacity=".8"
+        data-allow-mismatch="children"
+      >
         <path
           d="M87 6c3 0 7 3 8 6a8 8 0 1 1-1 16H80a7 7 0 0 1-8-6c0-4 3-7 6-7 0-5 4-9 9-9Z"
           fill="url(#van-empty-b)"
@@ -344,6 +363,7 @@ exports[`should render description slot correctly 1`] = `
             width="64"
             height="66"
             rx="2"
+            data-allow-mismatch="attribute"
           >
           </rect>
           <rect
@@ -358,6 +378,7 @@ exports[`should render description slot correctly 1`] = `
           <g
             transform="translate(15 17)"
             fill="url(#van-empty-6)"
+            data-allow-mismatch="attribute"
           >
             <rect
               width="34"
@@ -382,6 +403,7 @@ exports[`should render description slot correctly 1`] = `
           width="88"
           height="28"
           rx="1"
+          data-allow-mismatch="attribute"
         >
         </rect>
         <rect
@@ -414,7 +436,7 @@ exports[`should render svg when image is network 1`] = `
 <div class="van-empty">
   <div class="van-empty__image">
     <svg viewbox="0 0 160 160">
-      <defs>
+      <defs data-allow-mismatch="children">
         <linearGradient
           id="van-empty-1"
           x1="64%"
@@ -497,6 +519,7 @@ exports[`should render svg when image is network 1`] = `
             x1="64%"
             y1="100%"
             x2="64%"
+            data-allow-mismatch="attribute"
           >
             <stop
               stop-color="#FFF"
@@ -511,7 +534,10 @@ exports[`should render svg when image is network 1`] = `
             </stop>
           </linearGradient>
         </defs>
-        <g opacity=".8">
+        <g
+          opacity=".8"
+          data-allow-mismatch="children"
+        >
           <path
             d="M36 131V53H16v20H2v58h34z"
             fill="url(#van-empty-a)"
@@ -526,17 +552,20 @@ exports[`should render svg when image is network 1`] = `
         <path
           fill="url(#van-empty-4)"
           d="M0 139h160v21H0z"
+          data-allow-mismatch="attribute"
         >
         </path>
         <path
           d="M80 54a7 7 0 0 1 3 13v27l-2 2h-2a2 2 0 0 1-2-2V67a7 7 0 0 1 3-13z"
           fill="url(#van-empty-2)"
+          data-allow-mismatch="attribute"
         >
         </path>
         <g
           opacity=".6"
           stroke-linecap="round"
           stroke-width="7"
+          data-allow-mismatch="children"
         >
           <path
             d="M64 47a19 19 0 0 0-5 13c0 5 2 10 5 13"

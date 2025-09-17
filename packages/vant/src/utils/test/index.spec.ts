@@ -1,6 +1,7 @@
 import { get, noop, isDef, isMobile, isNumeric } from '../basic';
 import { deepClone } from '../deep-clone';
 import { deepAssign } from '../deep-assign';
+import { getContainingBlock } from '../dom';
 import { addUnit, unitToPx, camelize, formatNumber } from '../format';
 import { trigger } from '../../../test';
 
@@ -117,6 +118,31 @@ test('unitToPx', () => {
   expect(unitToPx('10rem')).toEqual(160);
   expect(unitToPx('10vw')).toEqual(10);
   expect(unitToPx('10vh')).toEqual(20);
+
+  spy.mockRestore();
+});
+
+test('getContainingBlock', () => {
+  const root = document.createElement('div');
+  const parent = document.createElement('div');
+  const child = document.createElement('div');
+
+  root.appendChild(parent);
+  parent.appendChild(child);
+
+  const spy = vi.spyOn(window, 'getComputedStyle').mockImplementation((el) => {
+    if (el === root)
+      return {
+        transform: 'matrix(1, 1, -1, 1, 0, 0)',
+      } as CSSStyleDeclaration;
+
+    return {
+      transform: 'none',
+      perspective: 'none',
+    } as CSSStyleDeclaration;
+  });
+
+  expect(getContainingBlock(child)).toEqual(root);
 
   spy.mockRestore();
 });

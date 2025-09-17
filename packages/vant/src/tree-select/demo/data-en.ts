@@ -8,7 +8,7 @@ const group1 = [
     id: 2,
   },
   {
-    text: 'Georqia',
+    text: 'Georgia',
     id: 3,
     disabled: true,
   },

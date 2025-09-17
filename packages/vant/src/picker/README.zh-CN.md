@@ -81,8 +81,9 @@ export default {
   placeholder="选择城市"
   @click="showPicker = true"
 />
-<van-popup v-model:show="showPicker" round position="bottom">
+<van-popup v-model:show="showPicker" destroy-on-close round position="bottom">
   <van-picker
+    :model-value="pickerValue"
     :columns="columns"
     @cancel="showPicker = false"
     @confirm="onConfirm"
@@ -104,9 +105,10 @@ export default {
     ];
     const fieldValue = ref('');
     const showPicker = ref(false);
-
-    const onConfirm = ({ selectedOptions }) => {
+    const pickerValue = ref<Numeric[]>([]);
+    const onConfirm = ({ selectedValues, selectedOptions }) => {
       showPicker.value = false;
+      pickerValue.value = selectedValues;
       fieldValue.value = selectedOptions[0].text;
     };
 
@@ -297,11 +299,27 @@ export default {
 };
 ```
 
+### 空状态
+
+当数据为空时，可以使用 `empty` 插槽自定义空状态内容。
+
+```html
+<van-picker title="标题">
+  <template #empty>
+    <van-empty
+      image="https://fastly.jsdelivr.net/npm/@vant/assets/custom-empty-image.png"
+      image-size="80"
+      description="No data"
+    />
+  </template>
+</van-picker>
+```
+
 ### 自定义 Columns 的结构
 
 ```html
 <van-picker
-  :title="标题"
+  title="标题"
   :columns="columns"
   :columns-field-names="customFieldName"
 />
@@ -363,8 +381,8 @@ export default {
 | columns | 对象数组，配置每一列显示的数据 | _PickerOption[] \| PickerOption[][]_ | `[]` |
 | columns-field-names | 自定义 `columns` 结构中的字段 | _object_ | `{ text: 'text', value: 'value', children: 'children' }` |
 | title | 顶部栏标题 | _string_ | - |
-| confirm-button-text | 确认按钮文字 | _string_ | `确认` |
-| cancel-button-text | 取消按钮文字 | _string_ | `取消` |
+| confirm-button-text | 确认按钮文字，设置为空字符串可以隐藏按钮 | _string_ | `确认` |
+| cancel-button-text | 取消按钮文字，设置为空字符串可以隐藏按钮 | _string_ | `取消` |
 | toolbar-position | 顶部栏位置，可选值为 `bottom` | _string_ | `top` |
 | loading | 是否显示加载状态 | _boolean_ | `false` |
 | readonly | 是否为只读状态，只读状态下无法切换选项 | _boolean_ | `false` |
@@ -395,6 +413,7 @@ export default {
 | option | 自定义选项内容 | _option: PickerOption, index: number_ |
 | columns-top | 自定义选项上方内容 | - |
 | columns-bottom | 自定义选项下方内容 | - |
+| empty `v4.9.10` | 自定义空状态内容 | - |
 
 ### PickerOption 数据结构
 

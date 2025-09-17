@@ -99,12 +99,39 @@ Use `background-color` prop to set the color of the background.
 | submit | Emitted when clicking the confirm button | _data: { image: string; canvas: HTMLCanvasElement }_ |
 | clear | Emitted when clicking the cancel button | - |
 
+### Slots
+
+| Name | Description | SlotProps |
+| ---- | ----------- | --------- |
+| tips | Custom tips | -         |
+
+### Methods
+
+Use [ref](https://vuejs.org/guide/essentials/template-refs.html) to get Signature instance and call instance methods.
+
+| Name | Description | Attribute | Return value |
+| --- | --- | --- | --- |
+| resize `v4.7.3` | Resize Signature when container element resized or visibility changed | - | - |
+| clear `v4.8.6` | Can be called to clear the signature | - | - |
+| submit `v4.8.6` | Trigger the `submit` event, which is equivalent to clicking the confirm button. | - | - |
+
 ### Types
 
 The component exports the following type definitions:
 
-```js
-import type { SignatureProps } from 'vant';
+```ts
+import type { SignatureProps, SignatureInstance } from 'vant';
+```
+
+`SignatureInstance` is the type of component instance:
+
+```ts
+import { ref } from 'vue';
+import type { SignatureInstance } from 'vant';
+
+const signatureRef = ref<SignatureInstance>();
+
+signatureRef.value?.resize();
 ```
 
 ## Theming

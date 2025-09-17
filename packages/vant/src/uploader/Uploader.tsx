@@ -5,6 +5,7 @@ import {
   onBeforeUnmount,
   type PropType,
   type ExtractPropTypes,
+  nextTick,
 } from 'vue';
 
 // Utils
@@ -104,6 +105,7 @@ export default defineComponent({
     const inputRef = ref();
     const urls: string[] = [];
     const reuploadIndex = ref(-1);
+    const isReuploading = ref(false);
 
     const getDetail = (index = props.modelValue.length) => ({
       name: props.name,
@@ -277,10 +279,17 @@ export default defineComponent({
       emit('delete', item, getDetail(index));
     };
 
-    const reuploadImage = (index: number) => {
-      // eslint-disable-next-line no-use-before-define
-      chooseFile();
+    const reuploadFile = (index: number) => {
+      isReuploading.value = true;
       reuploadIndex.value = index;
+      nextTick(() => chooseFile());
+    };
+
+    const onInputClick = () => {
+      if (!isReuploading.value) {
+        reuploadIndex.value = -1;
+      }
+      isReuploading.value = false;
     };
 
     const renderPreviewItem = (item: UploaderFileListItem, index: number) => {
@@ -311,7 +320,7 @@ export default defineComponent({
           }
           onDelete={() => deleteFile(item, index)}
           onPreview={() => previewImage(item)}
-          onReupload={() => reuploadImage(index)}
+          onReupload={() => reuploadFile(index)}
           {...pick(props, ['name', 'lazyLoad'])}
           {...previewData}
         />
@@ -327,12 +336,7 @@ export default defineComponent({
     const onClickUpload = (event: MouseEvent) => emit('clickUpload', event);
 
     const renderUpload = () => {
-      if (props.modelValue.length >= +props.maxCount && !props.reupload) {
-        return;
-      }
-
-      const hideUploader =
-        props.modelValue.length >= +props.maxCount && props.reupload;
+      const lessThanMax = props.modelValue.length < +props.maxCount;
 
       const Input = props.readonly ? null : (
         <input
@@ -344,13 +348,14 @@ export default defineComponent({
           multiple={props.multiple && reuploadIndex.value === -1}
           disabled={props.disabled}
           onChange={onChange}
+          onClick={onInputClick}
         />
       );
 
       if (slots.default) {
         return (
           <div
-            v-show={!hideUploader}
+            v-show={lessThanMax}
             class={bem('input-wrapper')}
             onClick={onClickUpload}
           >
@@ -362,7 +367,7 @@ export default defineComponent({
 
       return (
         <div
-          v-show={props.showUpload && !hideUploader}
+          v-show={props.showUpload && lessThanMax}
           class={bem('upload', { readonly: props.readonly })}
           style={getSizeStyle(props.previewSize)}
           onClick={onClickUpload}
@@ -388,6 +393,7 @@ export default defineComponent({
 
     useExpose<UploaderExpose>({
       chooseFile,
+      reuploadFile,
       closeImagePreview,
     });
     useCustomFieldValue(() => props.modelValue);

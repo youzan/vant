@@ -124,6 +124,25 @@ export default {
 };
 ```
 
+### 自定义操作内容
+
+通过插槽 `action` 自定义操作内容。
+
+```html
+<van-text-ellipsis :content="text">
+  <template #action="{ expanded }">{{ expanded ? '收起' : '展开' }}</template>
+</van-text-ellipsis>
+```
+
+```js
+export default {
+  setup() {
+    const text = '慢慢来，不要急，生活给你出了难题，可也终有一天会给出答案。';
+    return { text };
+  },
+};
+```
+
 ## API
 
 ### Props
@@ -143,12 +162,41 @@ export default {
 | ------------ | ------------------- | ------------------- |
 | click-action | 点击展开/收起时触发 | _event: MouseEvent_ |
 
+### TextEllipsis 方法
+
+通过 ref 可以获取到 TextEllipsis 实例并调用实例方法，详见[组件实例方法](#/zh-CN/advanced-usage#zu-jian-shi-li-fang-fa)。
+
+| 方法名 | 说明 | 参数 | 返回值 |
+| --- | --- | --- | --- |
+| toggle | 切换文本的展开状态，传 `true` 为展开，`false` 为收起，不传参为切换 | _expanded?: boolean_ | - |
+
+### Slots
+
+| 名称            | 说明       | 参数                    |
+| --------------- | ---------- | ----------------------- |
+| action `v4.8.3` | 自定义操作 | _{ expanded: boolean }_ |
+
 ### 类型定义
 
 组件导出以下类型定义：
 
 ```ts
-import type { TextEllipsisProps, TextEllipsisThemeVars } from 'vant';
+import type {
+  TextEllipsisProps,
+  TextEllipsisInstance,
+  TextEllipsisThemeVars,
+} from 'vant';
+```
+
+`TextEllipsisInstance` 是组件实例的类型，用法如下：
+
+```ts
+import { ref } from 'vue';
+import type { TextEllipsisInstance } from 'vant';
+
+const textEllipsisRef = ref<TextEllipsisInstance>();
+
+textEllipsisRef.value?.toggle();
 ```
 
 ## 主题定制

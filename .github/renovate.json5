@@ -1,0 +1,39 @@
+{
+	"$schema": "https://docs.renovatebot.com/renovate-schema.json",
+	"extends": ["config:recommended", "schedule:weekly"],
+	"packageRules": [
+		// Use chore as semantic commit type for commit messages
+		{
+			"matchPackagePatterns": ["*"],
+			"semanticCommitType": "chore",
+			// always bump package.json
+			"rangeStrategy": "bump"
+		},
+		{
+			"groupName": "rsbuild",
+			"packagePatterns": ["rsbuild"],
+			"groupSlug": "rsbuild"
+		},
+		{
+			"groupName": "vite",
+			"packagePatterns": ["vite"],
+			"groupSlug": "vite"
+		},
+		{
+			"groupName": "types",
+			"packagePatterns": ["^@types/"],
+			"groupSlug": "types"
+		},
+		{
+			"groupName": "all patch dependencies",
+			"groupSlug": "all-patch",
+			"matchPackagePatterns": ["*"],
+			"matchUpdateTypes": ["patch"]
+		},
+		// manually update peer dependencies
+		{
+			"depTypeList": ["peerDependencies"],
+			"enabled": false
+		}
+	]
+}

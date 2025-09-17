@@ -382,7 +382,7 @@ export default {
 
 | 名称    | 说明       | 参数                                      |
 | ------- | ---------- | ----------------------------------------- |
-| default | 自定义文本 | -                                         |
+| default | 自定义文本 | _{ checked: boolean, disabled: boolean }_ |
 | icon    | 自定义图标 | _{ checked: boolean, disabled: boolean }_ |
 
 ### CheckboxGroup 方法

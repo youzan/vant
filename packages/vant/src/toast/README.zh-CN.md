@@ -32,6 +32,8 @@ showToast('提示内容');
 
 ### 文字提示
 
+使用 `showToast` 方法在屏幕中间展示一条文字提示。
+
 ```js
 import { showToast } from 'vant';
 
@@ -80,7 +82,7 @@ showToast({
 });
 ```
 
-通过`loadingType` 属性可以自定义加载图标类型。
+通过 `loadingType` 属性可以自定义加载图标类型。
 
 ```js
 import { showLoadingToast } from 'vant';
@@ -112,7 +114,7 @@ showToast({
 
 ### 文字换行方式
 
-通过 `wordBreak` 选择可以控制 Toast 中的文字过长时的截断方式，默认值为 `break-all`，可选值为 `break-word` 和 `normal`。
+通过 `wordBreak` 选项可以控制 Toast 中的文字过长时的截断方式，默认值为 `break-all`，可选值为 `break-word` 和 `normal`。
 
 ```js
 import { showToast } from 'vant';
@@ -189,7 +191,7 @@ resetToastDefaultOptions('loading');
 
 ### 使用 Toast 组件
 
-如果需要在 Toast 内嵌入组件或其他自定义内容，可以直接使用 Toast 组件，并使用 message 插槽进行定制。使用前需要通过 `app.use` 等方式注册组件。
+如果你需要在 Toast 内嵌入组件或其他自定义内容，可以直接使用 Toast 组件，并使用 message 插槽进行定制。使用前需要通过 `app.use` 等方式注册组件。
 
 ```html
 <van-toast v-model:show="show" style="padding: 0">
@@ -218,14 +220,14 @@ Vant 中导出了以下 Toast 相关的辅助函数：
 
 | 方法名 | 说明 | 参数 | 返回值 |
 | --- | --- | --- | --- |
-| showToast | 展示提示 | `ToastOptions \| string` | toast 实例 |
-| showLoadingToast | 展示加载提示 | `ToastOptions \| string` | toast 实例 |
-| showSuccessToast | 展示成功提示 | `ToastOptions \| string` | toast 实例 |
-| showFailToast | 展示失败提示 | `ToastOptions \| string` | toast 实例 |
-| closeToast | 关闭提示 | `closeAll: boolean` | `void` |
+| showToast | 展示文字提示 | `ToastOptions \| string` | Toast 实例 |
+| showLoadingToast | 展示加载提示 | `ToastOptions \| string` | Toast 实例 |
+| showSuccessToast | 展示成功提示 | `ToastOptions \| string` | Toast 实例 |
+| showFailToast | 展示失败提示 | `ToastOptions \| string` | Toast 实例 |
+| closeToast | 关闭当前展示的提示 | `closeAll: boolean` | `void` |
 | allowMultipleToast | 允许同时存在多个 Toast | - | `void` |
-| setToastDefaultOptions | 修改默认配置，影响所有的 `showToast` 调用。<br>传入 type 可以修改指定类型的默认配置 | `type \| ToastOptions` | `void` |
-| resetToastDefaultOptions | 重置默认配置，影响所有的 `showToast` 调用。<br>传入 type 可以重置指定类型的默认配置 | `type` | `void` |
+| setToastDefaultOptions | 修改默认配置，影响所有的 `showToast` 调用。传入 type 可以修改指定类型 Toast 的默认配置 | `type \| ToastOptions` | `void` |
+| resetToastDefaultOptions | 重置默认配置，影响所有的 `showToast` 调用。传入 type 可以重置指定类型 Toast 的默认配置 | `type` | `void` |
 
 ### ToastOptions 数据结构
 
@@ -233,7 +235,7 @@ Vant 中导出了以下 Toast 相关的辅助函数：
 
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
-| type | 提示类型，可选值为 `loading` `success`<br>`fail` `html` | _ToastType_ | `text` |
+| type | 提示类型，可选值为 `loading` `success` `fail` `html` | _ToastType_ | `text` |
 | position | 位置，可选值为 `top` `bottom` | _ToastPosition_ | `middle` |
 | message | 文本内容，支持通过`\n`换行 | _string_ | `''` |
 | wordBreak | 文本内容的换行方式，可选值为 `normal` `break-all` `break-word` | _ToastWordBreak_ | `'break-all'` |
@@ -249,10 +251,46 @@ Vant 中导出了以下 Toast 相关的辅助函数：
 | className | 自定义类名 | _string \| Array \| object_ | - |
 | overlayClass | 自定义遮罩层类名 | _string \| Array \| object_ | - |
 | overlayStyle | 自定义遮罩层样式 | _object_ | - |
-| onOpened | 完全展示后的回调函数 | _Function_ | - |
-| onClose | 关闭时的回调函数 | _Function_ | - |
 | transition | 动画类名，等价于 [transition](https://cn.vuejs.org/api/built-in-components.html#transition) 的`name`属性 | _string_ | `van-fade` |
 | teleport | 指定挂载的节点，等同于 Teleport 组件的 [to 属性](https://cn.vuejs.org/api/built-in-components.html#teleport) | _string \| Element_ | `body` |
+| z-index | 将组件的 z-index 层级设置为一个固定值 | _number \| string_ | `2000+` |
+| onClose | 关闭时的回调函数 | _Function_ | - |
+| onOpened | 完全展示后的回调函数 | _Function_ | - |
+
+### Props
+
+通过组件调用 `Toast` 时，支持以下 Props：
+
+| 参数 | 说明 | 类型 | 默认值 |
+| --- | --- | --- | --- |
+| type | 提示类型，可选值为 `loading` `success` `fail` `html` | _ToastType_ | `text` |
+| position | 位置，可选值为 `top` `bottom` | _ToastPosition_ | `middle` |
+| message | 文本内容，支持通过`\n`换行 | _string_ | `''` |
+| word-break | 文本内容的换行方式，可选值为 `normal` `break-all` `break-word` | _ToastWordBreak_ | `'break-all'` |
+| icon | 自定义图标，支持传入图标名称或图片链接，等同于 Icon 组件的 [name 属性](#/zh-CN/icon#props) | _string_ | - |
+| icon-size | 图标大小，如 `20px` `2em`，默认单位为 `px` | _number \| string_ | `36px` |
+| icon-prefix | 图标类名前缀，等同于 Icon 组件的 [class-prefix 属性](#/zh-CN/icon#props) | _string_ | `van-icon` |
+| overlay | 是否显示背景遮罩层 | _boolean_ | `false` |
+| forbid-click | 是否禁止背景点击 | _boolean_ | `false` |
+| close-on-click | 是否在点击后关闭 | _boolean_ | `false` |
+| close-on-click-overlay | 是否在点击遮罩层后关闭 | _boolean_ | `false` |
+| loading-type | [加载图标类型](#/zh-CN/loading), 可选值为 `spinner` | _string_ | `circular` |
+| duration | 展示时长(ms)，值为 0 时，toast 不会消失 | _number_ | `2000` |
+| class-name | 自定义类名 | _string \| Array \| object_ | - |
+| overlay-class | 自定义遮罩层类名 | _string \| Array \| object_ | - |
+| overlay-style | 自定义遮罩层样式 | _object_ | - |
+| transition | 动画类名，等价于 [transition](https://cn.vuejs.org/api/built-in-components.html#transition) 的`name`属性 | _string_ | `van-fade` |
+| teleport | 指定挂载的节点，等同于 Teleport 组件的 [to 属性](https://cn.vuejs.org/api/built-in-components.html#teleport) | _string \| Element_ | `body` |
+| z-index | 将组件的 z-index 层级设置为一个固定值 | _number \| string_ | `2000+` |
+
+### Events
+
+通过组件调用 `Toast` 时，支持以下事件：
+
+| 事件名 | 说明                 | 回调参数 |
+| ------ | -------------------- | -------- |
+| close  | 关闭时的回调函数     | -        |
+| opened | 完全展示后的回调函数 | -        |
 
 ### Slots
 
@@ -315,3 +353,39 @@ These dependencies were not found:
 ```
 
 Vant 从 4.0 版本开始不再支持 `babel-plugin-import` 插件，请参考 [迁移指南](#/zh-CN/migrate-from-v3#yi-chu-babel-plugin-import) 移除该插件。
+
+## 常见问题
+
+### 引用 showToast 时出现编译报错？
+
+如果引用 `showToast` 方法时出现以下报错，说明项目中使用了 `babel-plugin-import` 插件，导致代码被错误编译。
+
+```bash
+These dependencies were not found:
+
+* vant/es/show-toast in ./src/xxx.js
+* vant/es/show-toast/style in ./src/xxx.js
+```
+
+Vant 从 4.0 版本开始不再支持 `babel-plugin-import` 插件，请参考 [迁移指南](#/zh-CN/migrate-from-v3#yi-chu-babel-plugin-import) 移除该插件。
+
+### 按需引入组件时，使用 showToast 时出现样式异常问题？
+
+在使用[按需引入组件](#/zh-CN/quickstart#fang-fa-er.-an-xu-yin-ru-zu-jian-yang-shi)方案集成 Vant 时，使用 showToast 等函数无需进行显式导入，否则会造成样式异常。
+
+```js
+// 以下方式是不需要的
+import { showToast } from 'vant'
+```
+
+这是因为在显式导入 showToast 等函数时，` @vant/auto-import-resolver` 将不会自动导入 Toast 的样式资源，这将导致 Toast 组件的样式缺失，从而导致样式异常问题。
+
+解决方案有 2 种：
+
+- 使用 `showToast` 时不进行显式导入；
+- 如果必须显示导入 `showToast` ，则同时需要手动导入 `Toast` 组件的相关样式。
+
+```js
+import { showToast } from 'vant'
+import 'vant/lib/toast/style'
+```

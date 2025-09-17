@@ -1,0 +1,36 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`should render action slot correctly 1`] = `
+<div class="van-text-ellipsis">
+  Vant is a lightweight, customizable mobile component library th...
+  <span class="van-text-ellipsis__action">
+    Collapse
+  </span>
+</div>
+`;
+
+exports[`should render action slot correctly 2`] = `
+<div class="van-text-ellipsis">
+  Vant is a lightweight, customizable mobile component library that was open sourced in 2017. Currently Vant officially provides Vue 2 version, Vue 3 version and WeChat applet version, and the community team maintains React version and Alipay applet version.
+  <span class="van-text-ellipsis__action">
+    Expand
+  </span>
+</div>
+`;
+
+exports[`should render action slot correctly 3`] = `
+<div class="van-text-ellipsis">
+  Vant is a lightweight, customizable mobile component library th...
+  <span class="van-text-ellipsis__action">
+    Collapse
+  </span>
+</div>
+`;
+
+exports[`should render content correctly 1`] = `
+<div class="van-text-ellipsis">
+  Vant is a lightweight, customizable mobile component library th...
+  <span class="van-text-ellipsis__action">
+  </span>
+</div>
+`;

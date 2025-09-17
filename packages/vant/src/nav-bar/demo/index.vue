@@ -33,7 +33,7 @@ const onClickRight = () => showToast(t('button'));
       :title="t('title')"
       :left-text="t('back')"
       left-arrow
-      @click-right="onClickRight"
+      @click-left="onClickLeft"
     />
   </demo-block>
 

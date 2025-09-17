@@ -184,7 +184,7 @@ export default {
 | show-toolbar | 是否显示顶部栏 | _boolean_ | `true` |
 | loading | 是否显示加载状态 | _boolean_ | `false` |
 | readonly | 是否为只读状态，只读状态下无法切换选项 | _boolean_ | `false` |
-| filter | 选项过滤函数 | _(type: string, options: PickerOption[]) => PickerOption[]_ | - |
+| filter | 选项过滤函数 | _(type: string, options: PickerOption[], values: string[]) => PickerOption[]_ | - |
 | formatter | 选项格式化函数 | _(type: string, option: PickerOption) => PickerOption_ | - |
 | option-height | 选项高度，支持 `px` `vw` `vh` `rem` 单位，默认 `px` | _number \| string_ | `44` |
 | visible-option-num | 可见的选项个数 | _number \| string_ | `6` |
@@ -194,9 +194,9 @@ export default {
 
 | 事件名 | 说明 | 回调参数 |
 | --- | --- | --- |
-| confirm | 点击完成按钮时触发 | _{ selectedValues, selectedOptions }_ |
-| cancel | 点击取消按钮时触发 | _{ selectedValues, selectedOptions }_ |
-| change | 选项改变时触发 | _{ selectedValues, selectedOptions, columnIndex }_ |
+| confirm | 点击完成按钮时触发 | _{ selectedValues, selectedOptions, selectedIndexes }_ |
+| cancel | 点击取消按钮时触发 | _{ selectedValues, selectedOptions, selectedIndexes }_ |
+| change | 选项改变时触发 | _{ selectedValues, selectedOptions, selectedIndexes, columnIndex }_ |
 
 ### Slots
 
@@ -210,12 +210,36 @@ export default {
 | columns-top | 自定义选项上方内容 | - |
 | columns-bottom | 自定义选项下方内容 | - |
 
+### 方法
+
+通过 ref 可以获取到 Picker 实例并调用实例方法，详见[组件实例方法](#/zh-CN/advanced-usage#zu-jian-shi-li-fang-fa)。
+
+| 方法名          | 说明                              | 参数 | 返回值     |
+| --------------- | --------------------------------- | ---- | ---------- |
+| confirm         | 停止惯性滚动并触发 `confirm` 事件 | -    | -          |
+| getSelectedDate | 获取当前选中的日期                | -    | _string[]_ |
+
 ### 类型定义
 
 组件导出以下类型定义：
 
 ```ts
-import type { DatePickerProps, DatePickerColumnType } from 'vant';
+import type {
+  DatePickerProps,
+  DatePickerColumnType,
+  DatePickerInstance,
+} from 'vant';
+```
+
+`DatePickerInstance` 是组件实例的类型，用法如下：
+
+```ts
+import { ref } from 'vue';
+import type { DatePickerInstance } from 'vant';
+
+const datePickerRef = ref<DatePickerInstance>();
+
+datePickerRef.value?.confirm();
 ```
 
 ## 常见问题

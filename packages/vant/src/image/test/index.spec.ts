@@ -18,6 +18,19 @@ test('should emit load event after image loaded', async () => {
   expect(wrapper.html()).toMatchSnapshot();
 });
 
+test('should pass props to img', async () => {
+  const wrapper = mount(VanImage, {
+    props: {
+      src: IMAGE_URL,
+      referrerpolicy: 'no-referrer',
+      crossorigin: 'anonymous',
+    },
+  });
+
+  await wrapper.find('img').trigger('load');
+  expect(wrapper.html()).toMatchSnapshot();
+});
+
 test('should watch src and reset', async () => {
   const wrapper = mount(VanImage, {
     props: {

@@ -18,6 +18,14 @@ app.use(Calendar);
 
 ## Usage
 
+### Select Switch Mode
+
+By default, all months will be displayed without showing the switch button. When there are too many months, it may affect the page's interactivity performance. You can display the year and month switching buttons by setting the `switch-mode` prop.
+
+```html
+<van-calendar v-model:show="show" switch-mode="year-month" />
+```
+
 ### Select Single Date
 
 The `confirm` event will be emitted after the date selection is completed.
@@ -35,7 +43,9 @@ export default {
     const date = ref('');
     const show = ref(false);
 
-    const formatDate = (date) => `${date.getMonth() + 1}/${date.getDate()}`;
+    const formatDate = (date) => {
+      return `${date.getFullYear()}/${date.getMonth() + 1}/${date.getDate()}`;
+    };
     const onConfirm = (value) => {
       show.value = false;
       date.value = formatDate(value);
@@ -67,7 +77,7 @@ export default {
 
     const onConfirm = (dates) => {
       show.value = false;
-      text.value = `选择了 ${dates.length} 个日期`;
+      text.value = `${dates.length} dates selected`;
     };
 
     return {
@@ -219,7 +229,7 @@ Use `position` to custom popup position, can be set to `top`、`left`、`right`.
 When selecting a date range, you can use the `max-range` prop to specify the maximum number of selectable days.
 
 ```html
-<van-calendar type="range" :max-range="3" :style="{ height: '500px' }" />
+<van-calendar type="range" :max-range="3" />
 ```
 
 ### Custom First Day Of Week
@@ -250,10 +260,11 @@ Set `poppable` to `false`, the calendar will be displayed directly on the page i
 | Attribute | Description | Type | Default |
 | --- | --- | --- | --- |
 | type | Type, can be set to `range` `multiple` | _string_ | `single` |
+| switch-mode `v4.9.0` | Switch mode:<br>`none` Display all months in a tiled format without switch buttons <br>`month` Support switching by month, displaying buttons for previous month/next month <br>`year-month` Support switching by year, as well as by month, displaying buttons for previous year/next year and previous month/next month | _string_ | `none` |
 | title | Title of calendar | _string_ | `Calendar` |
 | color | Color for the bottom button and selected date | _string_ | `#1989fa` |
-| min-date | Min date | _Date_ | Today |
-| max-date | Max date | _Date_ | Six months after the today |
+| min-date | Min date | _Date_ | When `switch-mode` is set to `none`, the default value is the today |
+| max-date | Max date | _Date_ | When `switch-mode` is set to `none`, the default value is six months after the today |
 | default-date | Default selected date | _Date \| Date[] \| null_ | Today |
 | row-height | Row height | _number \| string_ | `64` |
 | formatter | Day formatter | _(day: Day) => Day_ | - |
@@ -308,7 +319,7 @@ Following props are supported when the type is multiple
 | Key | Description | Type |
 | --- | --- | --- |
 | date | Date | _Date_ |
-| type | Type, can be set to `selected`、`start`、`middle`、`end`、`disabled` | _string_ |
+| type | Type, can be set to `selected`、`start`、`middle`、`end`、`disabled`、`start-end`、`multiple-selected`、`multiple-middle`、`placeholder` | _string_ |
 | text | Text | _string_ |
 | topInfo | Top info | _string_ |
 | bottomInfo | Bottom info | _string_ |
@@ -325,10 +336,12 @@ Following props are supported when the type is multiple
 | opened | Emitted when Popup is opened | - |
 | closed | Emitted when Popup is closed | - |
 | unselect | Emitted when unselect date when type is multiple | _value: Date_ |
-| month-show | Emitted when a month enters the visible area | _value: { date: Date, title: string }_ |
+| month-show | Emitted when a month enters the visible area (effective when `switch mode` is `none`) | _value: { date: Date, title: string }_ |
 | over-range | Emitted when exceeded max range | - |
 | click-subtitle | Emitted when clicking the subtitle | _event: MouseEvent_ |
 | click-disabled-date `v4.7.0` | Emitted when clicking disabled date | _value: Date \| Date[]_ |
+| click-overlay `v4.9.16` | Emitted when overlay is clicked | _event: MouseEvent_ |
+| panel-change | Emitted when switching calendar panel (effective when `switch mode` is not `none`) | _{ date: Date }_ |
 
 ### Slots
 
@@ -341,6 +354,11 @@ Following props are supported when the type is multiple
 | confirm-text | Custom confirm text | _{ disabled: boolean }_ |
 | top-info | Custom top info of day | _day: Day_ |
 | bottom-info | Custom bottom info of day | _day: Day_ |
+| text | Custom text of day | _day: Day_ |
+| prev-month | Custom previous month button | _{ disabled: boolean }_ |
+| prev-year | Custom previous year button | _{ disabled: boolean }_ |
+| next-month | Custom next month button | _{ disabled: boolean }_ |
+| next-year | Custom next year button | _{ disabled: boolean }_ |
 
 ### Methods
 
@@ -358,6 +376,7 @@ The component exports the following type definitions:
 
 ```ts
 import type {
+  CalendarSwitchMode,
   CalendarType,
   CalendarProps,
   CalendarDayItem,
@@ -391,6 +410,9 @@ The component provides the following CSS variables, which can be used to customi
 | --van-calendar-header-title-height | _44px_ | - |
 | --van-calendar-header-title-font-size | _var(--van-font-size-lg)_ | - |
 | --van-calendar-header-subtitle-font-size | _var(--van-font-size-md)_ | - |
+| --van-calendar-header-action-width | _28px_ | - |
+| --van-calendar-header-action-color | _var(--van-text-color)_ | - |
+| --van-calendar-header-action-disabled-color | _var(--van-text-color-3)_ | - |
 | --van-calendar-weekdays-height | _30px_ | - |
 | --van-calendar-weekdays-font-size | _var(--van-font-size-sm)_ | - |
 | --van-calendar-month-title-font-size | _var(--van-font-size-md)_ | - |
@@ -399,15 +421,47 @@ The component provides the following CSS variables, which can be used to customi
 | --van-calendar-day-height | _64px_ | - |
 | --van-calendar-day-font-size | _var(--van-font-size-lg)_ | - |
 | --van-calendar-day-margin-bottom | _4px_ | - |
+| --van-calendar-day-disabled-color | _var(--van-text-color-3)_ | - |
 | --van-calendar-range-edge-color | _var(--van-white)_ | - |
 | --van-calendar-range-edge-background | _var(--van-primary-color)_ | - |
 | --van-calendar-range-middle-color | _var(--van-primary-color)_ | - |
 | --van-calendar-range-middle-background-opacity | _0.1_ | - |
 | --van-calendar-selected-day-size | _54px_ | - |
 | --van-calendar-selected-day-color | _var(--van-white)_ | - |
+| --van-calendar-selected-day-background | _var(--van-primary-color)_ | - |
 | --van-calendar-info-font-size | _var(--van-font-size-xs)_ | - |
 | --van-calendar-info-line-height | _var(--van-line-height-xs)_ | - |
-| --van-calendar-selected-day-background | _var(--van-primary-color)_ | - |
-| --van-calendar-day-disabled-color | _var(--van-text-color-3)_ | - |
 | --van-calendar-confirm-button-height | _36px_ | - |
 | --van-calendar-confirm-button-margin | _7px 0_ | - |
+
+## FAQ
+
+### How to use asynchronously returned data in the 'formatter'?
+
+If you need to use asynchronously returned data in a 'formatter', you can dynamically create a 'formatter' function using computed properties, as shown in the following example:
+
+```js
+const asyncData = ref();
+
+const formatter = computed(() => {
+  if (!asyncData.value) {
+    return (day) => day;
+  }
+  return (day) => {
+    day.bottomInfo = asyncData.value;
+    return day;
+  };
+});
+
+setTimeout(() => {
+  asyncData.value = 'text';
+}, 3000);
+```
+
+### Failed to initialize components on iOS system?
+
+If you encounter an issue where components cannot be rendered on iOS, please confirm that you did not use the `new Date ('2020-01-01')` notation when creating the Date object. iOS does not support date formats separated by a dash. The correct notation is `new Date ('2020/01/01')`.
+
+Detailed explanation of this issue: [stackoverflow](https://stackoverflow.com/questions/13363673/javascript-date-is-invalid-on-ios).
+
+Alternatively, you should adopt a more compatible writing style across different systems and browsers: `new Date (2020, 0, 1)`, but it should be noted that the month starts from 0.

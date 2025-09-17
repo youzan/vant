@@ -115,3 +115,11 @@ The component exports the following type definitions:
 ```ts
 import type { IconProps } from 'vant';
 ```
+
+### CSS Variables
+
+The component provides the following CSS variables, which can be used to customize styles. Please refer to [ConfigProvider component](#/en-US/config-provider).
+
+| Name                   | Default Value | Description |
+| ---------------------- | ------------- | ----------- |
+| --van-icon-font-family | _'van-icon'_  | -           |

@@ -11,8 +11,6 @@ export type ToastOptions = {
   type?: ToastType;
   mask?: boolean;
   message?: Numeric;
-  onClose?: () => void;
-  onOpened?: () => void;
   overlay?: boolean;
   duration?: number;
   teleport?: TeleportProps['to'];
@@ -28,6 +26,9 @@ export type ToastOptions = {
   overlayClass?: unknown;
   overlayStyle?: Record<string, any>;
   closeOnClickOverlay?: boolean;
+  zIndex?: Numeric;
+  onClose?: () => void;
+  onOpened?: () => void;
 };
 
 export type ToastWrapperInstance = ComponentPublicInstance<

@@ -50,6 +50,36 @@ exports[`should render demo and match snapshot 1`] = `
   </div>
 </div>
 <div>
+  <div class="demo-vertical-space">
+    <div class="van-row">
+      <div
+        class="van-col van-col--12"
+        style="padding-right: 10px; margin-bottom: 20px;"
+      >
+        span: 12
+      </div>
+      <div
+        style="padding-left: 10px; margin-bottom: 20px;"
+        class="van-col van-col--12"
+      >
+        span: 12
+      </div>
+      <div
+        class="van-col van-col--12"
+        style="padding-right: 10px;"
+      >
+        span: 12
+      </div>
+      <div
+        style="padding-left: 10px;"
+        class="van-col van-col--12"
+      >
+        span: 12
+      </div>
+    </div>
+  </div>
+</div>
+<div>
   <div class="van-row van-row--justify-center">
     <div class="van-col van-col--6">
       span: 6

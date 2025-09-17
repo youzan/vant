@@ -2,6 +2,7 @@
   "compilerOptions": {
     "baseUrl": ".",
     "jsx": "preserve",
+    "jsxImportSource": "vue",
     "strict": true,
     "target": "ES2015",
     "module": "ESNext",

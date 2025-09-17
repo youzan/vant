@@ -140,7 +140,11 @@ export default defineComponent({
         const match = getMatchAnchor(selectActiveIndex);
         if (match) {
           const rect = match.getRect(scrollParent.value, scrollParentRect);
-          active = getActiveAnchor(rect.top, rects);
+          if (props.sticky && props.stickyOffsetTop) {
+            active = getActiveAnchor(rect.top - props.stickyOffsetTop, rects);
+          } else {
+            active = getActiveAnchor(rect.top, rects);
+          }
         }
       } else {
         active = getActiveAnchor(scrollTop, rects);
@@ -229,7 +233,11 @@ export default defineComponent({
         }
 
         if (props.sticky && props.stickyOffsetTop) {
-          setRootScrollTop(getRootScrollTop() - props.stickyOffsetTop);
+          if (getRootScrollTop() === offsetHeight - scrollParentRect.height) {
+            setRootScrollTop(getRootScrollTop());
+          } else {
+            setRootScrollTop(getRootScrollTop() - props.stickyOffsetTop);
+          }
         }
 
         emit('select', match.index);

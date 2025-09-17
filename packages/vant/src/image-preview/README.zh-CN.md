@@ -61,7 +61,7 @@ showImagePreview({
 
 ### 展示关闭按钮
 
-设置 `closeable` 属性后，会在弹出层的右上角显示关闭图标，并且可以通过 `close-icon` 属性自定义图标，使用`close-icon-position` 属性可以自定义图标位置。
+开启 `closeable` 选项后，会在弹出层的右上角显示关闭图标，并且可以通过 `close-icon` 属性自定义图标，使用`close-icon-position` 属性可以自定义图标位置。
 
 ```js
 import { showImagePreview } from 'vant';
@@ -95,7 +95,7 @@ showImagePreview({
 
 ### 异步关闭
 
-通过 `beforeClose` 属性可以拦截关闭行为。
+通过 `beforeClose` 属性可以传入一个回调函数，在图片预览关闭前进行特定操作。
 
 ```js
 import { showImagePreview } from 'vant';
@@ -151,10 +151,14 @@ export default {
 
 ### 使用 image 插槽
 
-当以组件调用的方式使用 ImagePreview 时，可以通过 `image` 插槽来插入自定义的内容，比如展示一个视频内容。
+当以组件调用的方式使用 ImagePreview 时，可以通过 `image` 插槽来插入自定义的内容，比如展示一个视频内容。在这个例子中，你可以将 `close-on-click-image` 属性设置为 `false`，这样当你点击视频时就不会意外关闭预览了。
 
 ```html
-<van-image-preview v-model:show="show" :images="images">
+<van-image-preview
+  v-model:show="show"
+  :images="images"
+  :close-on-click-image="false"
+>
   <template #image="{ src }">
     <video style="width: 100%;" controls>
       <source :src="src" />
@@ -182,6 +186,20 @@ export default {
 };
 ```
 
+当你通过 `image` 插槽自定义图片时，可以通过插槽的参数绑定 `style` 样式和 `onLoad` 回调函数，这可以让 `<img>` 标签支持图片缩放。
+
+```html
+<van-image-preview
+  v-model:show="show"
+  :images="images"
+  :close-on-click-image="false"
+>
+  <template #image="{ src, style, onLoad }">
+    <img :src="src" :style="[{ width: '100%' }, style]" @load="onLoad" />
+  </template>
+</van-image-preview>
+```
+
 ## API
 
 ### 方法
@@ -190,7 +208,7 @@ Vant 中导出了以下 ImagePreview 相关的辅助函数：
 
 | 方法名 | 说明 | 参数 | 返回值 |
 | --- | --- | --- | --- |
-| showImagePreview | 展示图片预览 | _string[] \| ImagePreviewOptions_ | ImagePreview 实例 |
+| showImagePreview | 展示一个全屏的图片预览组件 | _string[] \| ImagePreviewOptions_ | ImagePreview 实例 |
 
 ### ImagePreviewOptions
 
@@ -204,13 +222,16 @@ Vant 中导出了以下 ImagePreview 相关的辅助函数：
 | showIndex | 是否显示页码 | _boolean_ | `true` |
 | showIndicators | 是否显示轮播指示器 | _boolean_ | `false` |
 | loop | 是否开启循环播放 | _boolean_ | `true` |
+| doubleScale `v4.7.2` | 是否启用双击缩放手势，禁用后，点击时会立即关闭图片预览 | _boolean_ | `true` |
 | onClose | 关闭时的回调函数 | _Function_ | - |
 | onChange | 切换图片时的回调函数，回调参数为当前索引 | _Function_ | - |
 | onScale | 缩放图片时的回调函数，回调参数为当前索引和当前缩放值组成的对象 | _Function_ | - |
 | beforeClose | 关闭前的回调函数，返回 `false` 可阻止关闭，支持返回 Promise | _(active: number) => boolean \| Promise\<boolean\>_ | - |
 | closeOnPopstate | 是否在页面回退时自动关闭 | _boolean_ | `true` |
+| closeOnClickImage `v4.8.3` | 是否在点击图片后关闭图片预览 | _boolean_ | `true` |
 | closeOnClickOverlay `v4.6.4` | 是否在点击遮罩层后关闭图片预览 | _boolean_ | `true` |
-| className | 自定义类名 | _string \| Array \| object_ | - |
+| vertical `v4.8.6` | 是否开启纵向手势滑动 | _boolean_ | `false` |
+| className | 自定义类名 (应用在图片预览的弹出层) | _string \| Array \| object_ | - |
 | maxZoom | 手势缩放时，最大缩放比例 | _number \| string_ | `3` |
 | minZoom | 手势缩放时，最小缩放比例 | _number \| string_ | `1/3` |
 | closeable | 是否显示关闭图标 | _boolean_ | `false` |
@@ -234,9 +255,12 @@ Vant 中导出了以下 ImagePreview 相关的辅助函数：
 | show-index | 是否显示页码 | _boolean_ | `true` |
 | show-indicators | 是否显示轮播指示器 | _boolean_ | `false` |
 | loop | 是否开启循环播放 | _boolean_ | `true` |
+| double-scale `v4.7.2` | 是否启用双击缩放手势，禁用后，点击时会立即关闭图片预览 | _boolean_ | `true` |
 | before-close | 关闭前的回调函数，返回 `false` 可阻止关闭，支持返回 Promise | _(active: number) => boolean \| Promise\<boolean\>_ | - |
 | close-on-popstate | 是否在页面回退时自动关闭 | _boolean_ | `true` |
+| close-on-click-image `v4.8.3` | 是否在点击图片后关闭图片预览 | _boolean_ | `true` |
 | close-on-click-overlay `v4.6.4` | 是否在点击遮罩层后关闭图片预览 | _boolean_ | `true` |
+| vertical `v4.8.6` | 是否开启纵向手势滑动 | _boolean_ | `false` |
 | class-name | 自定义类名 | _string \| Array \| object_ | - |
 | max-zoom | 手势缩放时，最大缩放比例 | _number \| string_ | `3` |
 | min-zoom | 手势缩放时，最小缩放比例 | _number \| string_ | `1/3` |
@@ -266,7 +290,8 @@ Vant 中导出了以下 ImagePreview 相关的辅助函数：
 
 | 方法名 | 说明 | 参数 | 返回值 |
 | --- | --- | --- | --- |
-| swipeTo `2.9.0` | 切换到指定位置 | _index: number, options?: SwipeToOptions_ | - |
+| resetScale `4.7.4` | 重置当前图片的缩放比 | - | - |
+| swipeTo | 切换到指定位置 | _index: number, options?: SwipeToOptions_ | - |
 
 ### 类型定义
 
@@ -296,11 +321,11 @@ imagePreviewRef.value?.swipeTo(1);
 
 通过组件调用 `ImagePreview` 时，支持以下插槽：
 
-| 名称  | 说明                           | 参数                        |
-| ----- | ------------------------------ | --------------------------- |
-| index | 自定义页码内容                 | _{ index: 当前图片的索引 }_ |
-| cover | 自定义覆盖在图片预览上方的内容 | -                           |
-| image | 自定义图片内容                 | _{ src: 当前资源地址 }_     |
+| 名称 | 说明 | 参数 |
+| --- | --- | --- |
+| index | 自定义页码内容 | _{ index: 当前图片的索引 }_ |
+| cover | 自定义覆盖在图片预览上方的内容 | - |
+| image | 自定义图片内容 | _{ src: 当前资源地址, onLoad: 加载图片函数, style: 当前图片样式 }_ |
 
 ### onClose 回调参数
 

@@ -6,7 +6,7 @@
 
 <script>
 export default {
-  name: 'demo-button',
+  name: 'DemoButton',
 
   props: {
     color: String,

@@ -86,3 +86,34 @@ export function isHidden(
 }
 
 export const { width: windowWidth, height: windowHeight } = useWindowSize();
+
+function isContainingBlock(el: Element) {
+  const css = window.getComputedStyle(el);
+
+  return (
+    css.transform !== 'none' ||
+    css.perspective !== 'none' ||
+    ['transform', 'perspective', 'filter'].some((value) =>
+      (css.willChange || '').includes(value),
+    )
+  );
+}
+
+export function getContainingBlock(el: Element) {
+  let node = el.parentElement;
+
+  while (node) {
+    if (
+      node &&
+      node.tagName !== 'HTML' &&
+      node.tagName !== 'BODY' &&
+      isContainingBlock(node)
+    ) {
+      return node;
+    }
+
+    node = node.parentElement;
+  }
+
+  return null;
+}

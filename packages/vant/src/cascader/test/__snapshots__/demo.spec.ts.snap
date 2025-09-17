@@ -11,6 +11,7 @@ exports[`should render demo and match snapshot 1`] = `
       <label
         id="van-field-label"
         for="van-field-input"
+        data-allow-mismatch="attribute"
       >
         Area
       </label>
@@ -24,6 +25,7 @@ exports[`should render demo and match snapshot 1`] = `
           readonly
           placeholder="Select Area"
           aria-labelledby="van-field-label"
+          data-allow-mismatch="attribute"
         >
       </div>
     </div>
@@ -41,6 +43,7 @@ exports[`should render demo and match snapshot 1`] = `
       <label
         id="van-field-label"
         for="van-field-input"
+        data-allow-mismatch="attribute"
       >
         Area
       </label>
@@ -54,6 +57,7 @@ exports[`should render demo and match snapshot 1`] = `
           readonly
           placeholder="Select Area"
           aria-labelledby="van-field-label"
+          data-allow-mismatch="attribute"
         >
       </div>
     </div>
@@ -71,6 +75,7 @@ exports[`should render demo and match snapshot 1`] = `
       <label
         id="van-field-label"
         for="van-field-input"
+        data-allow-mismatch="attribute"
       >
         Area
       </label>
@@ -84,6 +89,7 @@ exports[`should render demo and match snapshot 1`] = `
           readonly
           placeholder="Select Area"
           aria-labelledby="van-field-label"
+          data-allow-mismatch="attribute"
         >
       </div>
     </div>
@@ -101,6 +107,7 @@ exports[`should render demo and match snapshot 1`] = `
       <label
         id="van-field-label"
         for="van-field-input"
+        data-allow-mismatch="attribute"
       >
         Area
       </label>
@@ -114,6 +121,7 @@ exports[`should render demo and match snapshot 1`] = `
           readonly
           placeholder="Select Area"
           aria-labelledby="van-field-label"
+          data-allow-mismatch="attribute"
         >
       </div>
     </div>
@@ -131,6 +139,7 @@ exports[`should render demo and match snapshot 1`] = `
       <label
         id="van-field-label"
         for="van-field-input"
+        data-allow-mismatch="attribute"
       >
         Area
       </label>
@@ -144,6 +153,7 @@ exports[`should render demo and match snapshot 1`] = `
           readonly
           placeholder="Select Area"
           aria-labelledby="van-field-label"
+          data-allow-mismatch="attribute"
         >
       </div>
     </div>

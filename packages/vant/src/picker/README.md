@@ -71,8 +71,9 @@ export default {
   placeholder="Choose City"
   @click="showPicker = true"
 />
-<van-popup v-model:show="showPicker" round position="bottom">
+<van-popup v-model:show="showPicker" destroy-on-close round position="bottom">
   <van-picker
+    :model-value="pickerValue"
     title="Title"
     :columns="columns"
     @cancel="showPicker = false"
@@ -94,10 +95,12 @@ export default {
       { text: 'Maine', value: 'Maine' },
     ];
     const fieldValue = ref('');
+    const pickerValue = ref<Numeric[]>([]);
     const showPicker = ref(false);
 
-    const onConfirm = ({ selectedOptions }) => {
+    const onConfirm = ({ selectedValues, selectedOptions }) => {
       showPicker.value = false;
+      pickerValue.value = selectedValues;
       fieldValue.value = selectedOptions[0].text;
     };
 
@@ -276,11 +279,27 @@ export default {
 };
 ```
 
+### Empty content
+
+When the data is empty, you can use the `empty` slot to customize the empty content.
+
+```html
+<van-picker title="Title">
+  <template #empty>
+    <van-empty
+      image="https://fastly.jsdelivr.net/npm/@vant/assets/custom-empty-image.png"
+      image-size="80"
+      description="No data"
+    />
+  </template>
+</van-picker>
+```
+
 ### Custom Columns Field
 
 ```html
 <van-picker
-  :title="Title"
+  title="Title"
   :columns="columns"
   :columns-field-names="customFieldName"
 />
@@ -342,8 +361,8 @@ export default {
 | columns | Columns data | _PickerOption[] \| PickerOption[][]_ | `[]` |
 | columns-field-names | custom columns field | _object_ | `{ text: 'text', value: 'value', children: 'children' }` |
 | title | Toolbar title | _string_ | - |
-| confirm-button-text | Text of confirm button | _string_ | `Confirm` |
-| cancel-button-text | Text of cancel button | _string_ | `Cancel` |
+| confirm-button-text | Text of confirm button, setting it as an empty string can hide the button | _string_ | `Confirm` |
+| cancel-button-text | Text of cancel button, setting it as an empty string can hide the button | _string_ | `Cancel` |
 | toolbar-position | Toolbar position, cat be set to `bottom` | _string_ | `top` |
 | loading | Whether to show loading prompt | _boolean_ | `false` |
 | readonly | Whether to be readonly | _boolean_ | `false` |
@@ -374,6 +393,7 @@ export default {
 | option | Custom option content | _option: PickerOption, index: number_ |
 | columns-top | Custom content above columns | - |
 | columns-bottom | Custom content below columns | - |
+| empty `v4.9.10` | Custom empty content | - |
 
 ### Data Structure of PickerOption
 

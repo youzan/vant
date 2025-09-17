@@ -360,7 +360,7 @@ export default {
 | capture | 图片选取模式，可选值为 `camera` (直接调起摄像头) | _string_ | - |
 | after-read | 文件读取完成后的回调函数 | _Function_ | - |
 | before-read | 文件读取前的回调函数，返回 `false` 可终止文件读取，<br>支持返回 `Promise` | _Function_ | - |
-| before-delete | 文件删除前的回调函数，返回 `false` 可终止文件读取，<br>支持返回 `Promise` | _Function_ | - |
+| before-delete | 文件删除前的回调函数，返回 `false` 可终止文件删除，支持返回 `Promise` | _Function_ | - |
 | max-size | 文件大小限制，单位为 `byte` | _number \| string \| (file: File) => boolean_ | `Infinity` |
 | max-count | 文件上传数量限制 | _number \| string_ | `Infinity` |
 | result-type | 文件读取结果类型，可选值为 `file` `text` | _string_ | `dataUrl` |
@@ -391,11 +391,20 @@ export default {
 
 ### 回调参数
 
-before-read、after-read、before-delete 执行时会传递以下回调参数：
+before-read、before-delete 执行时会传递以下回调参数：
 
 | 参数名 | 说明                              | 类型     |
 | ------ | --------------------------------- | -------- |
 | file   | file 对象                         | _object_ |
+| detail | 额外信息，包含 name 和 index 字段 | _object_ |
+
+### after-read 回调参数
+
+after-read 执行时会传递以下回调参数：
+
+| 参数名 | 说明 | 类型 |
+| --- | --- | --- |
+| file | 包含 file 对象 | _UploaderFileListItem \| UploaderFileListItem[]_ |
 | detail | 额外信息，包含 name 和 index 字段 | _object_ |
 
 ### ResultType 可选值
@@ -416,6 +425,7 @@ before-read、after-read、before-delete 执行时会传递以下回调参数：
 | --- | --- | --- | --- |
 | closeImagePreview | 关闭全屏的图片预览 | - | - |
 | chooseFile | 主动调起文件选择，由于浏览器安全限制，只有在用户触发操作的上下文中调用才有效 | - | - |
+| reuploadFile `4.9.3` | 主动调起文件选择，选择新文件后将覆盖原先上传的文件，由于浏览器安全限制，只有在用户触发操作的上下文中调用才有效 | _index: number_ | - |
 
 ### 类型定义
 
@@ -427,6 +437,8 @@ import type {
   UploaderInstance,
   UploaderResultType,
   UploaderFileListItem,
+  UploaderBeforeRead,
+  UploaderAfterRead,
 } from 'vant';
 ```
 
@@ -480,7 +492,7 @@ uploaderRef.value?.chooseFile();
 
 ### Uploader 在部分安卓机型上无法上传图片？
 
-Uploader 采用了 HTML 原生的 `<input type="file />` 标签进行上传，能否上传取决于当前系统和浏览器的兼容性。当遇到无法上传的问题时，一般有以下几种情况：
+Uploader 采用了 HTML 原生的 `<input type="file" />` 标签进行上传，能否上传取决于当前系统和浏览器的兼容性。当遇到无法上传的问题时，一般有以下几种情况：
 
 1. 遇到了安卓 App WebView 的兼容性问题，需要在安卓原生代码中进行兼容，可以参考此[文章](https://blog.csdn.net/qq_32756581/article/details/112861088)。
 2. 图片格式不正确，在当前系统/浏览器中无法识别，比如 `webp` 或 `heic` 格式。

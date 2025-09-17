@@ -2,4 +2,4 @@
 
 ## Reporting a Vulnerability
 
-chenjiahan@buaa.edu.cn
+jait.chen@foxmail.com

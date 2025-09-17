@@ -1,4 +1,5 @@
-:root {
+:root,
+:host {
   --van-floating-panel-border-radius: 16px;
   --van-floating-panel-header-height: 30px;
   --van-floating-panel-z-index: 999;
@@ -20,6 +21,7 @@
   border-top-left-radius: var(--van-floating-panel-border-radius);
   border-top-right-radius: var(--van-floating-panel-border-radius);
   background: var(--van-floating-panel-background);
+  will-change: transform;
 
   &::after {
     content: '';

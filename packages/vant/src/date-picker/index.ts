@@ -5,7 +5,7 @@ export const DatePicker = withInstall(_DatePicker);
 export default DatePicker;
 export { datePickerProps } from './DatePicker';
 export type { DatePickerProps };
-export type { DatePickerColumnType } from './DatePicker';
+export type { DatePickerColumnType, DatePickerInstance } from './DatePicker';
 
 declare module 'vue' {
   export interface GlobalComponents {

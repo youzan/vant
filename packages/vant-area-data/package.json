@@ -1,26 +1,26 @@
 {
   "name": "@vant/area-data",
-  "version": "1.5.0",
+  "version": "2.1.0",
   "description": "Vant 省市区数据",
-  "main": "dist/index.cjs.js",
-  "module": "dist/index.esm.mjs",
+  "type": "module",
+  "main": "dist/index.cjs",
+  "module": "dist/index.js",
   "types": "dist/index.d.ts",
   "exports": {
     ".": {
-      "import": "./dist/index.esm.mjs",
-      "require": "./dist/index.cjs.js"
-    }
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    },
+    "./package.json": "./package.json"
   },
   "sideEffects": false,
   "files": [
     "dist"
   ],
   "scripts": {
-    "clean": "rimraf ./dist",
-    "dev": "node ./build.js -w",
-    "build:types": "tsc -p ./tsconfig.json --emitDeclarationOnly",
-    "build:bundle": "node ./build.js",
-    "build": "pnpm clean && pnpm build:bundle && pnpm build:types",
+    "dev": "rslib build -w",
+    "build": "rslib build",
     "release": "vant-cli release",
     "prepare": "pnpm build"
   },
@@ -37,8 +37,7 @@
   "author": "chenjiahan",
   "license": "MIT",
   "devDependencies": {
-    "esbuild": "^0.18.11",
-    "rimraf": "^5.0.0",
-    "typescript": "^5.0.4"
+    "@rslib/core": "^0.12.4",
+    "typescript": "^5.9.2"
   }
 }

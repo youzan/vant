@@ -8,6 +8,7 @@ exports[`should render demo and match snapshot 1`] = `
         id="van-dropdown-menu-0"
         role="button"
         tabindex="0"
+        data-allow-mismatch="attribute"
         class="van-dropdown-menu__item van-haptics-feedback"
       >
         <span class="van-dropdown-menu__title">
@@ -20,6 +21,7 @@ exports[`should render demo and match snapshot 1`] = `
         id="van-dropdown-menu-1"
         role="button"
         tabindex="0"
+        data-allow-mismatch="attribute"
         class="van-dropdown-menu__item van-haptics-feedback"
       >
         <span class="van-dropdown-menu__title">
@@ -38,8 +40,6 @@ exports[`should render demo and match snapshot 1`] = `
         appear="true"
         persisted="false"
         css="true"
-        role="button"
-        tabindex="0"
       >
       </transition-stub>
       <transition-stub
@@ -59,8 +59,6 @@ exports[`should render demo and match snapshot 1`] = `
         appear="true"
         persisted="false"
         css="true"
-        role="button"
-        tabindex="0"
       >
       </transition-stub>
       <transition-stub
@@ -80,6 +78,7 @@ exports[`should render demo and match snapshot 1`] = `
         id="van-dropdown-menu-0"
         role="button"
         tabindex="0"
+        data-allow-mismatch="attribute"
         class="van-dropdown-menu__item van-haptics-feedback"
       >
         <span class="van-dropdown-menu__title">
@@ -92,6 +91,7 @@ exports[`should render demo and match snapshot 1`] = `
         id="van-dropdown-menu-1"
         role="button"
         tabindex="0"
+        data-allow-mismatch="attribute"
         class="van-dropdown-menu__item van-haptics-feedback"
       >
         <span class="van-dropdown-menu__title">
@@ -110,8 +110,6 @@ exports[`should render demo and match snapshot 1`] = `
         appear="true"
         persisted="false"
         css="true"
-        role="button"
-        tabindex="0"
       >
       </transition-stub>
       <transition-stub
@@ -131,8 +129,6 @@ exports[`should render demo and match snapshot 1`] = `
         appear="true"
         persisted="false"
         css="true"
-        role="button"
-        tabindex="0"
       >
       </transition-stub>
       <transition-stub
@@ -152,6 +148,7 @@ exports[`should render demo and match snapshot 1`] = `
         id="van-dropdown-menu-0"
         role="button"
         tabindex="0"
+        data-allow-mismatch="attribute"
         class="van-dropdown-menu__item van-haptics-feedback"
       >
         <span class="van-dropdown-menu__title">
@@ -164,6 +161,7 @@ exports[`should render demo and match snapshot 1`] = `
         id="van-dropdown-menu-1"
         role="button"
         tabindex="0"
+        data-allow-mismatch="attribute"
         class="van-dropdown-menu__item van-haptics-feedback"
       >
         <span class="van-dropdown-menu__title">
@@ -182,8 +180,6 @@ exports[`should render demo and match snapshot 1`] = `
         appear="true"
         persisted="false"
         css="true"
-        role="button"
-        tabindex="0"
       >
       </transition-stub>
       <transition-stub
@@ -203,8 +199,6 @@ exports[`should render demo and match snapshot 1`] = `
         appear="true"
         persisted="false"
         css="true"
-        role="button"
-        tabindex="0"
       >
       </transition-stub>
       <transition-stub
@@ -224,6 +218,7 @@ exports[`should render demo and match snapshot 1`] = `
         id="van-dropdown-menu-0"
         role="button"
         tabindex="0"
+        data-allow-mismatch="attribute"
         class="van-dropdown-menu__item van-dropdown-menu__item--grow van-haptics-feedback"
       >
         <span class="van-dropdown-menu__title">
@@ -236,6 +231,7 @@ exports[`should render demo and match snapshot 1`] = `
         id="van-dropdown-menu-1"
         role="button"
         tabindex="0"
+        data-allow-mismatch="attribute"
         class="van-dropdown-menu__item van-dropdown-menu__item--grow van-haptics-feedback"
       >
         <span class="van-dropdown-menu__title">
@@ -248,6 +244,7 @@ exports[`should render demo and match snapshot 1`] = `
         id="van-dropdown-menu-2"
         role="button"
         tabindex="0"
+        data-allow-mismatch="attribute"
         class="van-dropdown-menu__item van-dropdown-menu__item--grow van-haptics-feedback"
       >
         <span class="van-dropdown-menu__title">
@@ -260,6 +257,7 @@ exports[`should render demo and match snapshot 1`] = `
         id="van-dropdown-menu-3"
         role="button"
         tabindex="0"
+        data-allow-mismatch="attribute"
         class="van-dropdown-menu__item van-dropdown-menu__item--grow van-haptics-feedback"
       >
         <span class="van-dropdown-menu__title">
@@ -272,6 +270,7 @@ exports[`should render demo and match snapshot 1`] = `
         id="van-dropdown-menu-4"
         role="button"
         tabindex="0"
+        data-allow-mismatch="attribute"
         class="van-dropdown-menu__item van-dropdown-menu__item--grow van-haptics-feedback"
       >
         <span class="van-dropdown-menu__title">
@@ -290,8 +289,6 @@ exports[`should render demo and match snapshot 1`] = `
         appear="true"
         persisted="false"
         css="true"
-        role="button"
-        tabindex="0"
       >
       </transition-stub>
       <transition-stub
@@ -311,8 +308,6 @@ exports[`should render demo and match snapshot 1`] = `
         appear="true"
         persisted="false"
         css="true"
-        role="button"
-        tabindex="0"
       >
       </transition-stub>
       <transition-stub
@@ -332,8 +327,6 @@ exports[`should render demo and match snapshot 1`] = `
         appear="true"
         persisted="false"
         css="true"
-        role="button"
-        tabindex="0"
       >
       </transition-stub>
       <transition-stub
@@ -353,8 +346,6 @@ exports[`should render demo and match snapshot 1`] = `
         appear="true"
         persisted="false"
         css="true"
-        role="button"
-        tabindex="0"
       >
       </transition-stub>
       <transition-stub
@@ -374,8 +365,6 @@ exports[`should render demo and match snapshot 1`] = `
         appear="true"
         persisted="false"
         css="true"
-        role="button"
-        tabindex="0"
       >
       </transition-stub>
       <transition-stub
@@ -395,6 +384,7 @@ exports[`should render demo and match snapshot 1`] = `
         id="van-dropdown-menu-0"
         role="button"
         tabindex="0"
+        data-allow-mismatch="attribute"
         class="van-dropdown-menu__item van-haptics-feedback"
       >
         <span class="van-dropdown-menu__title van-dropdown-menu__title--down">
@@ -407,6 +397,7 @@ exports[`should render demo and match snapshot 1`] = `
         id="van-dropdown-menu-1"
         role="button"
         tabindex="0"
+        data-allow-mismatch="attribute"
         class="van-dropdown-menu__item van-haptics-feedback"
       >
         <span class="van-dropdown-menu__title van-dropdown-menu__title--down">
@@ -425,8 +416,6 @@ exports[`should render demo and match snapshot 1`] = `
         appear="true"
         persisted="false"
         css="true"
-        role="button"
-        tabindex="0"
       >
       </transition-stub>
       <transition-stub
@@ -446,8 +435,6 @@ exports[`should render demo and match snapshot 1`] = `
         appear="true"
         persisted="false"
         css="true"
-        role="button"
-        tabindex="0"
       >
       </transition-stub>
       <transition-stub
@@ -466,6 +453,7 @@ exports[`should render demo and match snapshot 1`] = `
       <div
         id="van-dropdown-menu-0"
         role="button"
+        data-allow-mismatch="attribute"
         class="van-dropdown-menu__item van-dropdown-menu__item--disabled"
       >
         <span class="van-dropdown-menu__title">
@@ -477,6 +465,7 @@ exports[`should render demo and match snapshot 1`] = `
       <div
         id="van-dropdown-menu-1"
         role="button"
+        data-allow-mismatch="attribute"
         class="van-dropdown-menu__item van-dropdown-menu__item--disabled"
       >
         <span class="van-dropdown-menu__title">
@@ -495,8 +484,6 @@ exports[`should render demo and match snapshot 1`] = `
         appear="true"
         persisted="false"
         css="true"
-        role="button"
-        tabindex="0"
       >
       </transition-stub>
       <transition-stub
@@ -516,8 +503,6 @@ exports[`should render demo and match snapshot 1`] = `
         appear="true"
         persisted="false"
         css="true"
-        role="button"
-        tabindex="0"
       >
       </transition-stub>
       <transition-stub

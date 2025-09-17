@@ -41,7 +41,7 @@ export default {
         children: [
           { text: 'Delaware', id: 1 },
           { text: 'Florida', id: 2 },
-          { text: 'Georqia', id: 3, disabled: true },
+          { text: 'Georgia', id: 3, disabled: true },
         ],
       },
       {
@@ -79,7 +79,7 @@ import { ref } from 'vue';
 
 export default {
   setup() {
-    const activeId = ref([1, 2]);
+    const activeIds = ref([1, 2]);
     const activeIndex = ref(0);
     const items = [
       {
@@ -87,7 +87,7 @@ export default {
         children: [
           { text: 'Delaware', id: 1 },
           { text: 'Florida', id: 2 },
-          { text: 'Georqia', id: 3, disabled: true },
+          { text: 'Georgia', id: 3, disabled: true },
         ],
       },
       {
@@ -103,7 +103,7 @@ export default {
 
     return {
       items,
-      activeId,
+      activeIds,
       activeIndex,
     };
   },
@@ -169,7 +169,7 @@ export default {
           children: [
             { text: 'Delaware', id: 1 },
             { text: 'Florida', id: 2 },
-            { text: 'Georqia', id: 3, disabled: true },
+            { text: 'Georgia', id: 3, disabled: true },
           ],
           dot: true,
         },

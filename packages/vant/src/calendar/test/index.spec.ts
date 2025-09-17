@@ -531,6 +531,22 @@ test('popup wrapper', async () => {
   expect(wrapper.find('.van-calendar__popup').style.display).toEqual('none');
 });
 
+test('should trigger click-overlay event when overlay is clicked', async () => {
+  const onClickOverlay = vi.fn();
+  const wrapper = mount(Calendar, {
+    props: {
+      minDate,
+      maxDate,
+      defaultDate: minDate,
+      show: true,
+      onClickOverlay,
+    },
+  });
+
+  wrapper.find('.van-overlay').trigger('click');
+  expect(onClickOverlay).toHaveBeenCalled();
+});
+
 test('set show-mark prop to false', async () => {
   const wrapper = mount(Calendar, {
     props: {
@@ -605,7 +621,7 @@ test('close event', async () => {
   expect(onClose).toHaveBeenCalledTimes(1);
 });
 
-test('should render top-info and bottom-info slot correctly', async () => {
+test('should render top-info, bottom-info and text slot correctly', async () => {
   const wrapper = mount(Calendar, {
     props: {
       minDate,
@@ -617,6 +633,7 @@ test('should render top-info and bottom-info slot correctly', async () => {
     slots: {
       'top-info': (item) => 'top: ' + item.text,
       'bottom-info': (item) => 'bottom: ' + item.text,
+      text: (item) => 'text: ' + item.text,
     },
   });
 
@@ -654,4 +671,20 @@ test('should render confirm-text slot correctly', async () => {
   await later(50);
 
   expect(wrapper.find('.van-calendar__confirm').html()).toMatchSnapshot();
+});
+
+test('the defaultDate length of 1 should be handled correctly', async () => {
+  const wrapper = mount(Calendar, {
+    props: {
+      poppable: false,
+      defaultDate: [getNextDay(now)],
+      type: 'range',
+    },
+  });
+
+  wrapper.find('.van-calendar__confirm').trigger('click');
+  expect(wrapper.emitted<[Date]>('confirm')![0][0]).toEqual([
+    now,
+    getNextDay(now),
+  ]);
 });

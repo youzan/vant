@@ -202,49 +202,42 @@ exports[`formatter prop 1`] = `
         </div>
         <div
           role="gridcell"
-          style="margin-bottom: 0px;"
           class="van-calendar__day van-calendar__day--disabled"
         >
           24
         </div>
         <div
           role="gridcell"
-          style="margin-bottom: 0px;"
           class="van-calendar__day van-calendar__day--disabled"
         >
           25
         </div>
         <div
           role="gridcell"
-          style="margin-bottom: 0px;"
           class="van-calendar__day van-calendar__day--disabled"
         >
           26
         </div>
         <div
           role="gridcell"
-          style="margin-bottom: 0px;"
           class="van-calendar__day van-calendar__day--disabled"
         >
           27
         </div>
         <div
           role="gridcell"
-          style="margin-bottom: 0px;"
           class="van-calendar__day van-calendar__day--disabled"
         >
           28
         </div>
         <div
           role="gridcell"
-          style="margin-bottom: 0px;"
           class="van-calendar__day van-calendar__day--disabled"
         >
           29
         </div>
         <div
           role="gridcell"
-          style="margin-bottom: 0px;"
           class="van-calendar__day van-calendar__day--disabled"
         >
           30
@@ -275,10 +268,10 @@ exports[`formatter prop 1`] = `
 `;
 
 exports[`popup wrapper 1`] = `
-"<transition-stub name=\\"van-fade\\" appear=\\"true\\" persisted=\\"false\\" css=\\"true\\" role=\\"button\\" tabindex=\\"0\\">
+"<transition-stub name="van-fade" appear="true" persisted="false" css="true">
   <!---->
 </transition-stub>
-<transition-stub name=\\"van-popup-slide-bottom\\" appear=\\"false\\" persisted=\\"false\\" css=\\"true\\">
+<transition-stub name="van-popup-slide-bottom" appear="false" persisted="false" css="true">
   <!---->
 </transition-stub>"
 `;
@@ -289,12 +282,12 @@ exports[`popup wrapper 2`] = `
   appear="true"
   persisted="false"
   css="true"
-  role="button"
-  tabindex="0"
 >
   <div
     style="z-index: 2001;"
     class="van-overlay"
+    role="button"
+    tabindex="0"
   >
   </div>
 </transition-stub>
@@ -510,49 +503,42 @@ exports[`popup wrapper 2`] = `
             </div>
             <div
               role="gridcell"
-              style="margin-bottom: 0px;"
               class="van-calendar__day van-calendar__day--disabled"
             >
               24
             </div>
             <div
               role="gridcell"
-              style="margin-bottom: 0px;"
               class="van-calendar__day van-calendar__day--disabled"
             >
               25
             </div>
             <div
               role="gridcell"
-              style="margin-bottom: 0px;"
               class="van-calendar__day van-calendar__day--disabled"
             >
               26
             </div>
             <div
               role="gridcell"
-              style="margin-bottom: 0px;"
               class="van-calendar__day van-calendar__day--disabled"
             >
               27
             </div>
             <div
               role="gridcell"
-              style="margin-bottom: 0px;"
               class="van-calendar__day van-calendar__day--disabled"
             >
               28
             </div>
             <div
               role="gridcell"
-              style="margin-bottom: 0px;"
               class="van-calendar__day van-calendar__day--disabled"
             >
               29
             </div>
             <div
               role="gridcell"
-              style="margin-bottom: 0px;"
               class="van-calendar__day van-calendar__day--disabled"
             >
               30
@@ -811,49 +797,42 @@ exports[`should render title、footer、subtitle slot correctly 1`] = `
         </div>
         <div
           role="gridcell"
-          style="margin-bottom: 0px;"
           class="van-calendar__day van-calendar__day--disabled"
         >
           24
         </div>
         <div
           role="gridcell"
-          style="margin-bottom: 0px;"
           class="van-calendar__day van-calendar__day--disabled"
         >
           25
         </div>
         <div
           role="gridcell"
-          style="margin-bottom: 0px;"
           class="van-calendar__day van-calendar__day--disabled"
         >
           26
         </div>
         <div
           role="gridcell"
-          style="margin-bottom: 0px;"
           class="van-calendar__day van-calendar__day--disabled"
         >
           27
         </div>
         <div
           role="gridcell"
-          style="margin-bottom: 0px;"
           class="van-calendar__day van-calendar__day--disabled"
         >
           28
         </div>
         <div
           role="gridcell"
-          style="margin-bottom: 0px;"
           class="van-calendar__day van-calendar__day--disabled"
         >
           29
         </div>
         <div
           role="gridcell"
-          style="margin-bottom: 0px;"
           class="van-calendar__day van-calendar__day--disabled"
         >
           30
@@ -874,7 +853,7 @@ exports[`should render title、footer、subtitle slot correctly 1`] = `
 </div>
 `;
 
-exports[`should render top-info and bottom-info slot correctly 1`] = `
+exports[`should render top-info, bottom-info and text slot correctly 1`] = `
 <div
   role="gridcell"
   style="margin-left: 71.42857142857143%;"
@@ -883,7 +862,7 @@ exports[`should render top-info and bottom-info slot correctly 1`] = `
   <div class="van-calendar__top-info">
     top: 1
   </div>
-  1
+  text: 1
   <div class="van-calendar__bottom-info">
     bottom: 1
   </div>

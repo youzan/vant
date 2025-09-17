@@ -9,6 +9,7 @@ import {
   defineComponent,
   type PropType,
   type ExtractPropTypes,
+  type HTMLAttributes,
 } from 'vue';
 
 // Utils
@@ -27,6 +28,7 @@ import {
   makeNumericProp,
   createNamespace,
   type ComponentInstance,
+  clamp,
 } from '../utils';
 import {
   cutString,
@@ -81,6 +83,8 @@ export const fieldSharedProps = {
   autofocus: Boolean,
   clearable: Boolean,
   maxlength: numericProp,
+  max: Number,
+  min: Number,
   formatter: Function as PropType<(value: string) => string>,
   clearIcon: makeStringProp('clear'),
   modelValue: makeNumericProp(''),
@@ -91,12 +95,12 @@ export const fieldSharedProps = {
   autocorrect: String,
   errorMessage: String,
   enterkeyhint: String,
+  clearTrigger: makeStringProp<FieldClearTrigger>('focus'),
+  formatTrigger: makeStringProp<FieldFormatTrigger>('onChange'),
   spellcheck: {
     type: Boolean,
     default: null,
   },
-  clearTrigger: makeStringProp<FieldClearTrigger>('focus'),
-  formatTrigger: makeStringProp<FieldFormatTrigger>('onChange'),
   error: {
     type: Boolean,
     default: null,
@@ -109,6 +113,7 @@ export const fieldSharedProps = {
     type: Boolean,
     default: null,
   },
+  inputmode: String as PropType<HTMLAttributes['inputmode']>,
 };
 
 export const fieldProps = extend({}, cellSharedProps, fieldSharedProps, {
@@ -191,6 +196,14 @@ export default defineComponent({
         return customValue.value();
       }
       return props.modelValue;
+    });
+
+    const showRequiredMark = computed(() => {
+      const required = getProp('required');
+      if (required === 'auto') {
+        return props.rules?.some((rule: FieldRule) => rule.required);
+      }
+      return required;
     });
 
     const runRules = (rules: FieldRule[]) =>
@@ -318,9 +331,26 @@ export default defineComponent({
       const limitDiffLen =
         getStringLength(originalValue) - getStringLength(value);
 
+      // https://github.com/youzan/vant/issues/13058
       if (props.type === 'number' || props.type === 'digit') {
         const isNumber = props.type === 'number';
         value = formatNumber(value, isNumber, isNumber);
+
+        if (
+          trigger === 'onBlur' &&
+          value !== '' &&
+          (props.min !== undefined || props.max !== undefined)
+        ) {
+          const adjustedValue = clamp(
+            +value,
+            props.min ?? -Infinity,
+            props.max ?? Infinity,
+          );
+
+          if (+value !== adjustedValue) {
+            value = adjustedValue.toString();
+          }
+        }
       }
 
       let formatterDiffLen = 0;
@@ -502,6 +532,7 @@ export default defineComponent({
         enterkeyhint: props.enterkeyhint,
         spellcheck: props.spellcheck,
         'aria-labelledby': props.label ? `${id}-label` : undefined,
+        'data-allow-mismatch': 'attribute',
         onBlur,
         onFocus,
         onInput,
@@ -513,10 +544,12 @@ export default defineComponent({
       };
 
       if (props.type === 'textarea') {
-        return <textarea {...inputAttrs} />;
+        return <textarea {...inputAttrs} inputmode={props.inputmode} />;
       }
 
-      return <input {...mapInputType(props.type)} {...inputAttrs} />;
+      return (
+        <input {...mapInputType(props.type, props.inputmode)} {...inputAttrs} />
+      );
     };
 
     const renderLeftIcon = () => {
@@ -593,6 +626,7 @@ export default defineComponent({
           <label
             id={`${id}-label`}
             for={slots.input ? undefined : getInputId()}
+            data-allow-mismatch="attribute"
             onClick={(event: MouseEvent) => {
               // https://github.com/youzan/vant/issues/11831
               preventDefault(event);
@@ -696,7 +730,7 @@ export default defineComponent({
           titleStyle={labelStyle.value}
           valueClass={bem('value')}
           titleClass={[
-            bem('label', [labelAlign, { required: props.required }]),
+            bem('label', [labelAlign, { required: showRequiredMark.value }]),
             props.labelClass,
           ]}
           arrowDirection={props.arrowDirection}

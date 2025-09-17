@@ -147,18 +147,30 @@ export default {
     :min-date="minDate"
     :max-date="maxDate"
   />
-  <van-date-picker v-model="endDate" :min-date="minDate" :max-date="maxDate" />
+  <van-date-picker
+    v-model="endDate"
+    :min-date="endMinDate"
+    :max-date="maxDate"
+  />
 </van-picker-group>
 ```
 
 ```js
-import { ref } from 'vue';
+import { computed, ref } from 'vue';
 import { showToast } from 'vant';
 
 export default {
   setup() {
     const startDate = ref(['2022', '06', '01']);
     const endDate = ref(['2023', '06', '01']);
+    const endMinDate = computed(
+      () =>
+        new Date(
+          Number(startDate.value[0]),
+          Number(startDate.value[1]) - 1,
+          Number(startDate.value[2]),
+        ),
+    );
 
     const onConfirm = () => {
       showToast(`${startDate.value.join('/')} ${endDate.value.join('/')}`);
@@ -171,6 +183,7 @@ export default {
     return {
       minDate: new Date(2020, 0, 1),
       maxDate: new Date(2025, 5, 1),
+      endMinDate,
       endDate,
       startDate,
       onConfirm,
@@ -297,6 +310,7 @@ export default {
 | v-model:active-tab `v4.3.2` | 设置当前选中的标签 | _number \| string_ | `0` |
 | tabs | 设置标签页的标题 | _string[]_ | `[]` |
 | title | 顶部栏标题 | _string_ | `''` |
+| show-toolbar | 是否显示顶部栏 | _boolean_ | `true` |
 | next-step-text `v4.0.8` | 下一步按钮的文字 | _string_ | `''` |
 | confirm-button-text | 确认按钮的文字 | _string_ | `确认` |
 | cancel-button-text | 取消按钮的文字 | _string_ | `取消` |

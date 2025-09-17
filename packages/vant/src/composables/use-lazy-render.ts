@@ -13,5 +13,6 @@ export function useLazyRender(show: WatchSource<boolean | undefined>) {
     { immediate: true },
   );
 
-  return (render: () => JSX.Element) => () => (inited.value ? render() : null);
+  return (render: () => JSX.Element | undefined) => () =>
+    inited.value ? render() : null;
 }

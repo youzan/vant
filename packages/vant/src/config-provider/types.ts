@@ -78,6 +78,7 @@ export type ConfigProviderThemeVars = BaseThemeVars &
   import('../action-sheet').ActionSheetThemeVars &
   import('../address-edit').AddressEditThemeVars &
   import('../address-list').AddressListThemeVars &
+  import('../back-top').BackTopThemeVars &
   import('../badge').BadgeThemeVars &
   import('../barrage').BarrageThemeVars &
   import('../button').ButtonThemeVars &
@@ -101,6 +102,7 @@ export type ConfigProviderThemeVars = BaseThemeVars &
   import('../dropdown-item').DropdownItemThemeVars &
   import('../dropdown-menu').DropdownMenuThemeVars &
   import('../empty').EmptyThemeVars &
+  import('../highlight').HighlightThemeVars &
   import('../field').FieldThemeVars &
   import('../floating-bubble').FloatingBubbleThemeVars &
   import('../floating-panel').FloatingPanelThemeVars &

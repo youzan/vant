@@ -13,6 +13,7 @@ const defaultConfig: ImagePreviewOptions = {
   onScale: undefined,
   onClose: undefined,
   onChange: undefined,
+  vertical: false,
   teleport: 'body',
   className: '',
   showIndex: true,
@@ -20,6 +21,7 @@ const defaultConfig: ImagePreviewOptions = {
   closeIcon: 'clear',
   transition: undefined,
   beforeClose: undefined,
+  doubleScale: true,
   overlayStyle: undefined,
   overlayClass: undefined,
   startPosition: 0,
@@ -49,6 +51,9 @@ function initInstance() {
   }));
 }
 
+/**
+ * Display a full-screen image preview component
+ */
 export const showImagePreview = (
   options: string[] | ImagePreviewOptions,
   startPosition = 0,

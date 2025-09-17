@@ -1,7 +1,6 @@
 import {
   ref,
   watch,
-  provide,
   computed,
   nextTick,
   watchEffect,
@@ -31,7 +30,7 @@ import { doubleRaf, useParent } from '@vant/use';
 import { useId } from '../composables/use-id';
 import { useExpose } from '../composables/use-expose';
 import { routeProps } from '../composables/use-route';
-import { TAB_STATUS_KEY } from '../composables/use-tab-status';
+import { useProvideTabStatus } from '../composables/use-tab-status';
 
 // Components
 import { TabTitle } from './TabTitle';
@@ -154,7 +153,7 @@ export default defineComponent({
       },
     );
 
-    provide(TAB_STATUS_KEY, active);
+    useProvideTabStatus(active);
 
     useExpose({
       id,
@@ -180,6 +179,7 @@ export default defineComponent({
             tabindex={active.value ? 0 : -1}
             aria-hidden={!active.value}
             aria-labelledby={label}
+            data-allow-mismatch="attribute"
           >
             <div class={bem('panel')}>{slots.default?.()}</div>
           </SwipeItem>
@@ -197,6 +197,7 @@ export default defineComponent({
           class={bem('panel')}
           tabindex={show ? 0 : -1}
           aria-labelledby={label}
+          data-allow-mismatch="attribute"
         >
           {Content}
         </div>

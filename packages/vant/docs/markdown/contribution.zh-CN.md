@@ -39,16 +39,6 @@ pnpm dev
 - 3.x 分支对应 Vant 3 版本 ，适用于 Vue 3
 - 2.x 分支对应 Vant 2 版本，适用于 Vue 2
 
-### 镜像仓库
-
-如果 GitHub 克隆速度较慢，你也可以直接克隆 Vant 在 gitee 上的[镜像仓库](https://gitee.com/vant-contrib/vant)：
-
-```bash
-git clone git@gitee.com:vant-contrib/vant.git
-```
-
-镜像仓库仅用于加快国内的访问速度，请勿在镜像仓库中提 issue 和 Pull Request。
-
 ### 目录结构
 
 Vant 采用 monorepo 进行代码管理，所有子包在 `packages` 目录下:
@@ -101,7 +91,7 @@ src
 
 如果你是第一次在 GitHub 上提 Pull Request ，可以阅读下面这两篇文章来学习：
 
-- [第一次参与开源](https://github.com/firstcontributions/first-contributions/blob/main/translations/README.zh-cn.md)
+- [第一次参与开源](https://github.com/firstcontributions/first-contributions/blob/main/docs/translations/README.zh-cn.md)
 - [如何优雅地在 GitHub 上贡献代码](https://segmentfault.com/a/1190000000736629)
 
 ### Pull Request 规范

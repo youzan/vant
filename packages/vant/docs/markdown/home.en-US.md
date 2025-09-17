@@ -24,6 +24,20 @@
 - 🍭 Support SSR
 - 🌍 Support i18n, built-in 30+ languages
 
+### Scaffold
+
+It is recommended to use [Rsbuild](https://github.com/web-infra-dev/rsbuild) to create a scaffold project.
+
+Rsbuild is a build tool based on Rspack, developed by the author of Vant, with first-class build speed and development experience, providing first-priority support for Vant.
+
+You can create a Rsbuild project with the following command:
+
+```bash
+npm create rsbuild@latest
+```
+
+Please visit the [Rsbuild repository](https://github.com/web-infra-dev/rsbuild) for more information.
+
 ### Quickstart
 
 See in [Quickstart](#/en-US/quickstart).
@@ -40,9 +54,9 @@ The current maintenance status of each version of Vant is as follows:
 
 | Name | Framework | Release | Latest Version | Status |
 | --- | --- | --- | --- | --- |
-| Vant 4 | Vue 3 | `2022.12` | ![](https://img.shields.io/npm/v/vant/latest?style=flat-square) | Under active development |
-| Vant 3 | Vue 3 | `2020.12` | ![](https://img.shields.io/npm/v/vant/latest-v3?style=flat-square) | Bugfix only |
-| Vant 2 | Vue 2 | `2019.06` | ![](https://img.shields.io/npm/v/vant/latest-v2?style=flat-square) | Bugfix only |
+| Vant 4 | Vue 3 | `2022.12` | ![](https://img.shields.io/npm/v/vant/latest?style=flat-square) | Long-term support |
+| Vant 3 | Vue 3 | `2020.12` | ![](https://img.shields.io/npm/v/vant/latest-v3?style=flat-square) | End of life |
+| Vant 2 | Vue 2 | `2019.06` | ![](https://img.shields.io/npm/v/vant/latest-v2?style=flat-square) | End of life |
 | Vant 1 | Vue 2 | `2018.03` | ![](https://img.shields.io/npm/v/vant/latest-v1?style=flat-square) | End of life |
 
 ## Links
@@ -64,10 +78,16 @@ The current maintenance status of each version of Vant is as follows:
 | --- | --- |
 | [3lang3/react-vant](https://github.com/3lang3/react-vant) | React mobile UI Components based on Vant |
 | [vant-aliapp](https://github.com/ant-move/Vant-Aliapp) | Alipay MiniProgram UI |
-| [taroify](https://gitee.com/mallfoundry/taroify) | Vant Taro |
 | [vant-theme](https://github.com/Aisen60/vant-theme) | Online theme preview built on Vant UI |
 | [@antmjs/vantui](https://github.com/antmjs/vantui) | Mobile UI Components based on Vant, supporting Taro and React |
-| [sfc-playground-vant](https://github.com/zhixiaoqiang/sfc-playground-vant) | Try Vant in the Playground. Currently only Vant 3+ is supported |
+| [vant-playground](https://github.com/LadyChatterleyLover/vant-playground) | Vant Playground |
+| [sfc-playground-vant](https://github.com/zhixiaoqiang/sfc-playground-vant) | Vant Playground |
+| [vue3-h5-template](https://github.com/yulimchen/vue3-h5-template) | Mobile project template based on Vant |
+| [vue3-vant-mobile](https://github.com/vue-zone/vue3-vant-mobile) | Mobile project template based on Vant, out of the box |
+| [raycast-vant-documentation](https://github.com/Aisen60/raycast-vant-documentation) | An Raycast extension, it can search Vant UI library documentation in Raycast |
+| [nuxt-vant-mobile](https://github.com/vue-zone/nuxt-vant-mobile) | Nuxt _⁴_ project template based on Vant, out of the box |
+| [mobvue](https://github.com/un-pany/mobvue) | A well-crafted mobile web app template |
+| [novlan1/press-ui](https://github.com/novlan1/press-ui) | Uni APP mobile UI Components based on Vant |
 
 ### Other Links
 

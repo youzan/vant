@@ -108,7 +108,7 @@ export default {
         option.text += ' Year';
       }
       if (type === 'month') {
-        option.text += '月Month';
+        option.text += 'Month';
       }
       return option;
     };
@@ -178,7 +178,7 @@ export default {
 | show-toolbar | Whether to show toolbar | _boolean_ | `true` |
 | loading | Whether to show loading prompt | _boolean_ | `false` |
 | readonly | Whether to be readonly | _boolean_ | `false` |
-| filter | Option filter | _(type: string, options: PickerOption[]) => PickerOption[]_ | - |
+| filter | Option filter | _(type: string, options: PickerOption[], values: string[]) => PickerOption[]_ | - |
 | formatter | Option formatter | _(type: string, option: PickerOption) => PickerOption_ | - |
 | option-height | Option height, supports `px` `vw` `vh` `rem` unit, default `px` | _number \| string_ | `44` |
 | visible-option-num | Count of visible columns | _number \| string_ | `6` |
@@ -188,9 +188,9 @@ export default {
 
 | Event | Description | Arguments |
 | --- | --- | --- |
-| confirm | Emitted when the confirm button is clicked | _{ selectedValues, selectedOptions }_ |
-| cancel | Emitted when the cancel button is clicked | _{ selectedValues, selectedOptions }_ |
-| change | Emitted when current option is changed | _{ selectedValues, selectedOptions, columnIndex }_ |
+| confirm | Emitted when the confirm button is clicked | _{ selectedValues, selectedOptions, selectedIndexes }_ |
+| cancel | Emitted when the cancel button is clicked | _{ selectedValues, selectedOptions, selectedIndexes }_ |
+| change | Emitted when current option is changed | _{ selectedValues, selectedOptions, selectedIndexes, columnIndex }_ |
 
 ### Slots
 
@@ -204,10 +204,34 @@ export default {
 | columns-top | Custom content above columns | - |
 | columns-bottom | Custom content below columns | - |
 
+### Methods
+
+Use [ref](https://vuejs.org/guide/essentials/template-refs.html) to get Picker instance and call instance methods.
+
+| Name | Description | Attribute | Return value |
+| --- | --- | --- | --- |
+| confirm | Stop scrolling and emit confirm event | - | - |
+| getSelectedDate | Get current selected date | - | _string[]_ |
+
 ### Types
 
 The component exports the following type definitions:
 
 ```ts
-import type { DatePickerProps, DatePickerColumnType } from 'vant';
+import type {
+  DatePickerProps,
+  DatePickerColumnType,
+  DatePickerInstance,
+} from 'vant';
+```
+
+`DatePickerInstance` is the type of component instance:
+
+```ts
+import { ref } from 'vue';
+import type { DatePickerInstance } from 'vant';
+
+const datePickerRef = ref<DatePickerInstance>();
+
+datePickerRef.value?.confirm();
 ```

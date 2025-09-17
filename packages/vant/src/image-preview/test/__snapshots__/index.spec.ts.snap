@@ -6,11 +6,12 @@ exports[`render image 1`] = `
   appear="true"
   persisted="false"
   css="true"
-  class="van-image-preview__overlay"
-  role="button"
-  tabindex="0"
 >
-  <div class="van-overlay">
+  <div
+    class="van-overlay van-image-preview__overlay"
+    role="button"
+    tabindex="0"
+  >
   </div>
 </transition-stub>
 <transition-stub
@@ -45,7 +46,7 @@ exports[`render image 1`] = `
 `;
 
 exports[`should change close icon position when using close-icon-position prop 1`] = `
-"<i class=\\"van-badge__wrapper van-icon van-icon-clear van-image-preview__close-icon van-image-preview__close-icon--top-left van-haptics-feedback\\" role=\\"button\\">
+"<i class="van-badge__wrapper van-icon van-icon-clear van-image-preview__close-icon van-image-preview__close-icon--top-left van-haptics-feedback" role="button">
   <!---->
   <!---->
   <!---->
@@ -53,7 +54,7 @@ exports[`should change close icon position when using close-icon-position prop 1
 `;
 
 exports[`should change close icon when using close-icon prop 1`] = `
-"<i class=\\"van-badge__wrapper van-icon van-icon-success van-image-preview__close-icon van-image-preview__close-icon--top-right van-haptics-feedback\\" role=\\"button\\">
+"<i class="van-badge__wrapper van-icon van-icon-success van-image-preview__close-icon van-image-preview__close-icon--top-right van-haptics-feedback" role="button">
   <!---->
   <!---->
   <!---->
@@ -66,11 +67,12 @@ exports[`should render cover slot correctly 1`] = `
   appear="true"
   persisted="false"
   css="true"
-  class="van-image-preview__overlay"
-  role="button"
-  tabindex="0"
 >
-  <div class="van-overlay">
+  <div
+    class="van-overlay van-image-preview__overlay"
+    role="button"
+    tabindex="0"
+  >
   </div>
 </transition-stub>
 <transition-stub

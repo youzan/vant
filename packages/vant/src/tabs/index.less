@@ -1,4 +1,5 @@
-:root {
+:root,
+:host {
   --van-tab-text-color: var(--van-gray-7);
   --van-tab-active-text-color: var(--van-text-color);
   --van-tab-disabled-text-color: var(--van-text-color-3);
@@ -59,7 +60,7 @@
       background-color: var(--van-tabs-default-color);
     }
 
-    &--disabled {
+    &.van-tab--disabled {
       color: var(--van-tab-disabled-text-color);
     }
   }
@@ -123,7 +124,7 @@
       height: var(--van-tabs-card-height);
       margin: 0 var(--van-padding-md);
       border: var(--van-border-width) solid var(--van-tabs-default-color);
-      border-radius: var(--van-border-radius-sm);
+      border-radius: var(--van-radius-sm);
     }
 
     &--card&--shrink {

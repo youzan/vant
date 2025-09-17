@@ -2,16 +2,22 @@ import {
   ref,
   watch,
   computed,
+  onActivated,
   onMounted,
   defineComponent,
+  nextTick,
   type ExtractPropTypes,
 } from 'vue';
 
-// Composables
-import { useEventListener } from '@vant/use';
-
 // Utils
-import { makeNumericProp, makeStringProp, createNamespace } from '../utils';
+import {
+  makeNumericProp,
+  makeStringProp,
+  createNamespace,
+  windowWidth,
+} from '../utils';
+
+import { useExpose } from '../composables/use-expose';
 
 const [name, bem] = createNamespace('text-ellipsis');
 
@@ -33,11 +39,13 @@ export default defineComponent({
 
   emits: ['clickAction'],
 
-  setup(props, { emit }) {
-    const text = ref('');
+  setup(props, { emit, slots }) {
+    const text = ref(props.content);
     const expanded = ref(false);
     const hasAction = ref(false);
     const root = ref<HTMLElement>();
+    const actionRef = ref<HTMLElement>();
+    let needRecalculate = false;
 
     const actionText = computed(() =>
       expanded.value ? props.collapseText : props.expandText,
@@ -49,122 +57,128 @@ export default defineComponent({
       return match ? Number(match[0]) : 0;
     };
 
-    const calcEllipsised = () => {
-      const cloneContainer = () => {
-        if (!root.value) return;
+    const cloneContainer = () => {
+      if (!root.value || !root.value.isConnected) return;
 
-        const originStyle = window.getComputedStyle(root.value);
-        const container = document.createElement('div');
-        const styleNames: string[] = Array.prototype.slice.apply(originStyle);
-        styleNames.forEach((name) => {
-          container.style.setProperty(name, originStyle.getPropertyValue(name));
-        });
+      const originStyle = window.getComputedStyle(root.value);
+      const container = document.createElement('div');
+      const styleNames: string[] = Array.prototype.slice.apply(originStyle);
 
-        container.style.position = 'fixed';
-        container.style.zIndex = '-9999';
-        container.style.top = '-9999px';
-        container.style.height = 'auto';
-        container.style.minHeight = 'auto';
-        container.style.maxHeight = 'auto';
+      styleNames.forEach((name) => {
+        container.style.setProperty(name, originStyle.getPropertyValue(name));
+      });
 
-        container.innerText = props.content;
-        document.body.appendChild(container);
-        return container;
-      };
+      container.style.position = 'fixed';
+      container.style.zIndex = '-9999';
+      container.style.top = '-9999px';
+      container.style.height = 'auto';
+      container.style.minHeight = 'auto';
+      container.style.maxHeight = 'auto';
 
-      const calcEllipsisText = (
-        container: HTMLDivElement,
-        maxHeight: number,
-      ) => {
-        const { content, position, dots } = props;
-        const end = content.length;
+      container.innerText = props.content;
+      document.body.appendChild(container);
 
-        const calcEllipse = () => {
-          // calculate the former or later content
-          const tail = (left: number, right: number): string => {
-            if (right - left <= 1) {
-              if (position === 'end') {
-                return content.slice(0, left) + dots;
-              }
-              return dots + content.slice(right, end);
-            }
+      return container;
+    };
 
-            const middle = Math.round((left + right) / 2);
+    const calcEllipsisText = (container: HTMLDivElement, maxHeight: number) => {
+      const { content, position, dots } = props;
+      const end = content.length;
+      const middle = (0 + end) >> 1;
+      const actionHTML = slots.action
+        ? actionRef.value?.outerHTML ?? ''
+        : props.expandText;
 
-            // Set the interception location
+      const calcEllipse = () => {
+        // calculate the former or later content
+        const tail = (left: number, right: number): string => {
+          if (right - left <= 1) {
             if (position === 'end') {
-              container.innerText =
-                content.slice(0, middle) + dots + actionText.value;
-            } else {
-              container.innerText =
-                dots + content.slice(middle, end) + actionText.value;
+              return content.slice(0, left) + dots;
             }
+            return dots + content.slice(right, end);
+          }
 
-            // The height after interception still does not match the rquired height
-            if (container.offsetHeight > maxHeight) {
-              if (position === 'end') {
-                return tail(left, middle);
-              }
-              return tail(middle, right);
-            }
+          const middle = Math.round((left + right) / 2);
 
+          // Set the interception location
+          if (position === 'end') {
+            container.innerText = content.slice(0, middle) + dots;
+          } else {
+            container.innerText = dots + content.slice(middle, end);
+          }
+
+          container.innerHTML += actionHTML;
+
+          // The height after interception still does not match the rquired height
+          if (container.offsetHeight > maxHeight) {
             if (position === 'end') {
-              return tail(middle, right);
+              return tail(left, middle);
             }
+            return tail(middle, right);
+          }
 
-            return tail(left, middle);
-          };
+          if (position === 'end') {
+            return tail(middle, right);
+          }
 
-          container.innerText = tail(0, end);
+          return tail(left, middle);
         };
 
-        const middleTail = (
-          leftPart: [number, number],
-          rightPart: [number, number],
-        ): string => {
-          if (
-            leftPart[1] - leftPart[0] <= 1 &&
-            rightPart[1] - rightPart[0] <= 1
-          ) {
-            return (
-              content.slice(0, leftPart[0]) +
-              dots +
-              content.slice(rightPart[1], end)
-            );
-          }
+        return tail(0, end);
+      };
 
-          const leftMiddle = Math.floor((leftPart[0] + leftPart[1]) / 2);
-          const rightMiddle = Math.ceil((rightPart[0] + rightPart[1]) / 2);
-
-          container.innerText =
-            props.content.slice(0, leftMiddle) +
-            props.dots +
-            props.content.slice(rightMiddle, end) +
-            props.expandText;
-
-          if (container.offsetHeight >= maxHeight) {
-            return middleTail(
-              [leftPart[0], leftMiddle],
-              [rightMiddle, rightPart[1]],
-            );
-          }
-
-          return middleTail(
-            [leftMiddle, leftPart[1]],
-            [rightPart[0], rightMiddle],
+      const middleTail = (
+        leftPart: [number, number],
+        rightPart: [number, number],
+      ): string => {
+        if (
+          leftPart[1] - leftPart[0] <= 1 &&
+          rightPart[1] - rightPart[0] <= 1
+        ) {
+          return (
+            content.slice(0, leftPart[0]) +
+            dots +
+            content.slice(rightPart[1], end)
           );
-        };
+        }
 
-        const middle = (0 + end) >> 1;
-        props.position === 'middle'
-          ? (container.innerText = middleTail([0, middle], [middle, end]))
-          : calcEllipse();
-        return container.innerText;
+        const leftMiddle = Math.floor((leftPart[0] + leftPart[1]) / 2);
+        const rightMiddle = Math.ceil((rightPart[0] + rightPart[1]) / 2);
+
+        container.innerText =
+          props.content.slice(0, leftMiddle) +
+          props.dots +
+          props.content.slice(rightMiddle, end);
+        container.innerHTML += actionHTML;
+
+        if (container.offsetHeight >= maxHeight) {
+          return middleTail(
+            [leftPart[0], leftMiddle],
+            [rightMiddle, rightPart[1]],
+          );
+        }
+
+        return middleTail(
+          [leftMiddle, leftPart[1]],
+          [rightPart[0], rightMiddle],
+        );
       };
 
+      return props.position === 'middle'
+        ? middleTail([0, middle], [middle, end])
+        : calcEllipse();
+    };
+
+    const calcEllipsised = () => {
       // Calculate the interceptional text
       const container = cloneContainer();
-      if (!container) return;
+
+      if (!container) {
+        needRecalculate = true;
+        return;
+      }
+
       const { paddingBottom, paddingTop, lineHeight } = container.style;
       const maxHeight = Math.ceil(
         (Number(props.rows) + 0.5) * pxToNum(lineHeight) +
@@ -183,22 +197,47 @@ export default defineComponent({
       document.body.removeChild(container);
     };
 
+    const toggle = (isExpanded = !expanded.value) => {
+      expanded.value = isExpanded;
+    };
+
     const onClickAction = (event: MouseEvent) => {
-      expanded.value = !expanded.value;
+      toggle();
       emit('clickAction', event);
     };
 
-    const renderAction = () => (
-      <span class={bem('action')} onClick={onClickAction}>
-        {actionText.value}
-      </span>
+    const renderAction = () => {
+      const action = slots.action
+        ? slots.action({ expanded: expanded.value })
+        : actionText.value;
+      return (
+        <span ref={actionRef} class={bem('action')} onClick={onClickAction}>
+          {action}
+        </span>
+      );
+    };
+
+    onMounted(() => {
+      calcEllipsised();
+
+      if (slots.action) {
+        nextTick(calcEllipsised);
+      }
+    });
+
+    onActivated(() => {
+      if (needRecalculate) {
+        needRecalculate = false;
+        calcEllipsised();
+      }
+    });
+
+    watch(
+      [windowWidth, () => [props.content, props.rows, props.position]],
+      calcEllipsised,
     );
 
-    onMounted(calcEllipsised);
-
-    watch(() => [props.content, props.rows, props.position], calcEllipsised);
-
-    useEventListener('resize', calcEllipsised);
+    useExpose({ toggle });
 
     return () => (
       <div ref={root} class={bem()}>

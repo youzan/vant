@@ -6,6 +6,7 @@ import VanPopup from '../../popup';
 import { basicColumns } from './data';
 import { useTranslate } from '../../../docs/site';
 import type { PickerConfirmEventParams } from '../types';
+import type { Numeric } from '../../utils';
 
 const t = useTranslate({
   'zh-CN': {
@@ -24,6 +25,7 @@ const t = useTranslate({
 
 const showPicker = ref(false);
 const fieldValue = ref('');
+const pickerValue = ref<Numeric[]>([]);
 
 const onClickField = () => {
   showPicker.value = true;
@@ -31,8 +33,12 @@ const onClickField = () => {
 const onCancel = () => {
   showPicker.value = false;
 };
-const onConfirm = ({ selectedOptions }: PickerConfirmEventParams) => {
+const onConfirm = ({
+  selectedValues,
+  selectedOptions,
+}: PickerConfirmEventParams) => {
   showPicker.value = false;
+  pickerValue.value = selectedValues;
   fieldValue.value = selectedOptions[0]!.text as string;
 };
 </script>
@@ -47,8 +53,14 @@ const onConfirm = ({ selectedOptions }: PickerConfirmEventParams) => {
       :placeholder="t('chooseCity')"
       @click="onClickField"
     />
-    <van-popup v-model:show="showPicker" round position="bottom">
+    <van-popup
+      v-model:show="showPicker"
+      destroy-on-close
+      round
+      position="bottom"
+    >
       <van-picker
+        :model-value="pickerValue"
         :title="t('title')"
         :columns="t('basicColumns')"
         @cancel="onCancel"

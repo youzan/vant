@@ -12,6 +12,9 @@ changelog:
     - title: New Features 🎉
       labels:
         - "change: feat"
+    - title: Performance 🚀
+      labels:
+        - "change: perf"
     - title: Bug Fixes 🐞
       labels:
         - "change: fix"

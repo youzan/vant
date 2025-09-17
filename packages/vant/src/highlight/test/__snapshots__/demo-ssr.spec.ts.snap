@@ -1,0 +1,62 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`should render demo and match snapshot 1`] = `
+<!--[-->
+<div>
+  <!--[-->
+  <div class="van-highlight">
+    <!--[-->
+    <span class>
+      Take your time and be patient. Life itself will eventually answer all those
+    </span>
+    <span class="van-highlight__tag">
+      questions
+    </span>
+    <span class>
+      it once raised for you.
+    </span>
+  </div>
+</div>
+<div>
+  <!--[-->
+  <div class="van-highlight">
+    <!--[-->
+    <span class>
+      Take your
+    </span>
+    <span class="van-highlight__tag">
+      time
+    </span>
+    <span class>
+      and be patient.
+    </span>
+    <span class="van-highlight__tag">
+      Life
+    </span>
+    <span class>
+      itself will eventually
+    </span>
+    <span class="van-highlight__tag">
+      answer
+    </span>
+    <span class>
+      all those questions it once raised for you.
+    </span>
+  </div>
+</div>
+<div>
+  <!--[-->
+  <div class="van-highlight">
+    <!--[-->
+    <span class>
+      Take your time and be patient.
+    </span>
+    <span class="van-highlight__tag custom-class">
+      Life
+    </span>
+    <span class>
+      itself will eventually answer all those questions it once raised for you.
+    </span>
+  </div>
+</div>
+`;

@@ -72,6 +72,7 @@ export type FieldValidationStatus = 'passed' | 'failed' | 'unvalidated';
 // Shared props of Field and Form
 export type FieldFormSharedProps =
   | 'colon'
+  | 'required'
   | 'disabled'
   | 'readonly'
   | 'labelWidth'

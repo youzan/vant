@@ -27,7 +27,7 @@ import { useSyncPropRef } from '../composables/use-sync-prop-ref';
 export const floatingPanelProps = {
   height: makeNumericProp(0),
   anchors: makeArrayProp<number>(),
-  duration: makeNumericProp(0.2),
+  duration: makeNumericProp(0.3),
   contentDraggable: truthProp,
   lockScroll: Boolean,
   safeAreaInsetBottom: truthProp,
@@ -71,7 +71,9 @@ export default defineComponent({
     const rootStyle = computed(() => ({
       height: addUnit(boundary.value.max),
       transform: `translateY(calc(100% + ${addUnit(-height.value)}))`,
-      transition: !dragging.value ? `transform ${props.duration}s` : 'none',
+      transition: !dragging.value
+        ? `transform ${props.duration}s cubic-bezier(0.18, 0.89, 0.32, 1.28)`
+        : 'none',
     }));
 
     const ease = (moveY: number): number => {
@@ -148,6 +150,18 @@ export default defineComponent({
     // useEventListener will set passive to `false` to eliminate the warning of Chrome
     useEventListener('touchmove', onTouchmove, { target: rootRef });
 
+    const renderHeader = () => {
+      if (slots.header) {
+        return slots.header();
+      }
+
+      return (
+        <div class={bem('header')}>
+          <div class={bem('header-bar')} />
+        </div>
+      );
+    };
+
     return () => (
       <div
         class={[bem(), { 'van-safe-area-bottom': props.safeAreaInsetBottom }]}
@@ -157,9 +171,7 @@ export default defineComponent({
         onTouchend={onTouchend}
         onTouchcancel={onTouchend}
       >
-        <div class={bem('header')}>
-          <div class={bem('header-bar')} />
-        </div>
+        {renderHeader()}
         <div class={bem('content')} ref={contentRef}>
           {slots.default?.()}
         </div>

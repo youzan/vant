@@ -161,7 +161,10 @@ export default defineComponent({
       }
     };
 
-    const onClick = (position: SwipeCellPosition = 'outside') => {
+    const onClick = (
+      position: SwipeCellPosition = 'outside',
+      event: MouseEvent | TouchEvent,
+    ) => {
       if (isInBeforeClosing) return;
 
       emit('click', position);
@@ -171,6 +174,7 @@ export default defineComponent({
         callInterceptor(props.beforeClose, {
           args: [
             {
+              event,
               name: props.name,
               position,
             },
@@ -186,11 +190,16 @@ export default defineComponent({
     };
 
     const getClickHandler =
-      (position: SwipeCellPosition, stop?: boolean) => (event: MouseEvent) => {
-        if (stop) {
+      (position: SwipeCellPosition) => (event: MouseEvent) => {
+        if (lockClick || opened) {
           event.stopPropagation();
         }
-        onClick(position);
+
+        if (lockClick) {
+          return;
+        }
+
+        onClick(position, event);
       };
 
     const renderSideContent = (
@@ -200,11 +209,7 @@ export default defineComponent({
       const contentSlot = slots[side];
       if (contentSlot) {
         return (
-          <div
-            ref={ref}
-            class={bem(side)}
-            onClick={getClickHandler(side, true)}
-          >
+          <div ref={ref} class={bem(side)} onClick={getClickHandler(side)}>
             {contentSlot()}
           </div>
         );
@@ -216,7 +221,9 @@ export default defineComponent({
       close,
     });
 
-    useClickAway(root, () => onClick('outside'), { eventName: 'touchstart' });
+    useClickAway(root, (event) => onClick('outside', event as TouchEvent), {
+      eventName: 'touchstart',
+    });
 
     // useEventListener will set passive to `false` to eliminate the warning of Chrome
     useEventListener('touchmove', onTouchMove, {
@@ -233,7 +240,7 @@ export default defineComponent({
         <div
           ref={root}
           class={bem()}
-          onClick={getClickHandler('cell', lockClick)}
+          onClick={getClickHandler('cell')}
           onTouchstartPassive={onTouchStart}
           onTouchend={onTouchEnd}
           onTouchcancel={onTouchEnd}

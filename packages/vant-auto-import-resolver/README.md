@@ -1,6 +1,6 @@
 # Vant Auto Import Resolver
 
-[English](./README.md) | 简体中文
+English | [简体中文](./README.zh-CN.md)
 
 `@vant/auto-import-resolver` is a resolver for [unplugin-vue-components](https://github.com/unplugin/unplugin-vue-components) that enables on-demand importing of Vant components.
 
@@ -14,16 +14,16 @@
 
 ```shell
 # via npm
-npm i @vant/auto-import-resolver unplugin-vue-components -D
+npm i @vant/auto-import-resolver unplugin-vue-components unplugin-auto-import -D
 
 # via yarn
-yarn add @vant/auto-import-resolver unplugin-vue-components -D
+yarn add @vant/auto-import-resolver unplugin-vue-components unplugin-auto-import -D
 
 # via pnpm
-pnpm add @vant/auto-import-resolver unplugin-vue-components -D
+pnpm add @vant/auto-import-resolver unplugin-vue-components unplugin-auto-import -D
 
 # via Bun
-bun add @vant/auto-import-resolver unplugin-vue-components -D
+bun add @vant/auto-import-resolver unplugin-vue-components unplugin-auto-import -D
 ```
 
 ## Usage
@@ -32,11 +32,15 @@ bun add @vant/auto-import-resolver unplugin-vue-components -D
 
 ```ts
 // vite.config.ts
+import AutoImport from 'unplugin-auto-import/vite';
 import Components from 'unplugin-vue-components/vite';
 import { VantResolver } from '@vant/auto-import-resolver';
 
 export default defineConfig({
   plugins: [
+    AutoImport({
+      resolvers: [VantResolver()],
+    }),
     Components({
       resolvers: [VantResolver()],
     }),
@@ -48,11 +52,15 @@ export default defineConfig({
 
 ```ts
 // rollup.config.js
+import AutoImport from 'unplugin-auto-import/rollup';
 import Components from 'unplugin-vue-components/rollup';
 import { VantResolver } from '@vant/auto-import-resolver';
 
 export default {
   plugins: [
+    AutoImport({
+      resolvers: [VantResolver()],
+    }),
     Components({
       resolvers: [VantResolver()],
     }),
@@ -64,11 +72,15 @@ export default {
 
 ```ts
 // webpack.config.js
+import AutoImport from 'unplugin-auto-import/webpack';
 import Components from 'unplugin-vue-components/webpack';
 import { VantResolver } from '@vant/auto-import-resolver';
 
 module.exports = {
   plugins: [
+    AutoImport({
+      resolvers: [VantResolver()],
+    }),
     Components({
       resolvers: [VantResolver()],
     }),
@@ -80,11 +92,15 @@ module.exports = {
 
 ```ts
 // rspack.config.js
+import AutoImport from 'unplugin-auto-import/rspack';
 import Components from 'unplugin-vue-components/rspack';
 import { VantResolver } from '@vant/auto-import-resolver';
 
 module.exports = {
   plugins: [
+    AutoImport({
+      resolvers: [VantResolver()],
+    }),
     Components({
       resolvers: [VantResolver()],
     }),
@@ -96,12 +112,16 @@ module.exports = {
 
 ```ts
 // vue.config.js
+import AutoImport from 'unplugin-auto-import/webpack';
 import Components from 'unplugin-vue-components/webpack';
 import { VantResolver } from '@vant/auto-import-resolver';
 
 module.exports = {
   configureWebpack: {
     plugins: [
+      AutoImport({
+        resolvers: [VantResolver()],
+      }),
       Components({
         resolvers: [VantResolver()],
       }),
@@ -115,13 +135,91 @@ module.exports = {
 ```ts
 // esbuild.config.js
 import { build } from 'esbuild';
+import AutoImport from 'unplugin-auto-import/esbuild';
 import Components from 'unplugin-vue-components/esbuild';
 import { VantResolver } from '@vant/auto-import-resolver';
 
 build({
   plugins: [
+    AutoImport({
+      resolvers: [VantResolver()],
+    }),
     Components({
       resolvers: [VantResolver()],
+    }),
+  ],
+});
+```
+
+## Options
+
+### importStyle
+
+Whether to automatically import the corresponding styles of the components.
+
+- **Type:** `boolean`
+- **Default:** `true`
+- **Example:**
+
+```ts
+Components({
+  resolvers: [
+    VantResolver({
+      // Disable style import
+      importStyle: false,
+    }),
+  ],
+});
+```
+
+### module
+
+Specifies the type of module to be imported.
+
+- **Type:** `'esm' | 'cjs'`
+- **Default:** `'esm'`
+- **Example:**
+
+```ts
+Components({
+  resolvers: [
+    VantResolver({
+      module: 'cjs',
+    }),
+  ],
+});
+```
+
+### ssr
+
+- **Type:** `boolean`
+- **Default:** `undefined`
+
+This option is deprecated. Please use the `module` option to set the module type.
+
+### exclude
+
+Set the components or APIs that do not require automatic import.
+
+- **Type:** `string[]`
+- **Default:** `[]`
+- **Example:**
+
+```ts
+Components({
+  resolvers: [
+    VantResolver({
+      exclude: ['Button'],
+    }),
+  ],
+});
+```
+
+```ts
+AutoImport({
+  resolvers: [
+    VantResolver({
+      exclude: ['showToast'],
     }),
   ],
 });
