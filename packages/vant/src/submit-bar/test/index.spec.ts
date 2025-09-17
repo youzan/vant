@@ -1,7 +1,6 @@
 import { SubmitBar } from '..';
 import { later, mockGetBoundingClientRect, mount } from '../../../test';
 
-// 添加定时器清理
 afterEach(() => {
   vi.clearAllTimers();
 });
