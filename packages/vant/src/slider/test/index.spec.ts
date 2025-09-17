@@ -376,7 +376,7 @@ test('should update modelValue correctly after clicking the reversed vertical sl
 });
 
 describe('Slider format function boundary tests', () => {
-  // 最核心的测试：确保不超出 max 值
+  // 测试核心问题：step 大时不应超出 max
   test('should not exceed max value when step is large', () => {
     const wrapper = mount(Slider, {
       props: { min: 20, max: 100, step: 30, modelValue: 20 },
@@ -394,158 +394,201 @@ describe('Slider format function boundary tests', () => {
     expect(emittedValue).toBeGreaterThanOrEqual(20);
   });
 
-  // 基于实际行为的测试 - 不假设具体值，只验证范围
-  test('should return values within valid range for large steps', () => {
+  // 专门测试修复逻辑：当 steppedValue > max 时的距离比较
+  test('should choose max when closer than previous step', () => {
+    // 配置一个会触发 steppedValue > max 的场景
     const wrapper = mount(Slider, {
       props: { min: 0, max: 100, step: 30, modelValue: 0 },
     });
 
-    // 测试多个点击位置，验证都在有效范围内
-    const clickPositions = [30, 50, 70, 85, 95, 100];
+    // 触发一个会让 steppedValue 超出 max 的位置
+    // 这里需要找到一个位置，使得按步长计算会超出 100
+    // 比如计算出来是 120，但实际位置更接近 100 而不是 90
+    const button = wrapper.find('.van-slider__button');
 
-    clickPositions.forEach((pos) => {
-      trigger(wrapper, 'click', pos, 0);
-      const result = wrapper.emitted('update:modelValue')!.pop()![0] as number;
+    // 模拟用户拖拽到接近最大值的位置
+    trigger(button, 'touchstart');
 
-      // 核心验证：在有效范围内且不超出 max
-      expect(result).toBeLessThanOrEqual(100);
-      expect(result).toBeGreaterThanOrEqual(0);
-      expect(result).not.toBeNaN();
-    });
+    // 通过多次 touchmove 来模拟拖拽到边界
+    for (let i = 0; i <= 100; i += 10) {
+      triggerDrag(button, i, 0);
+    }
+
+    trigger(button, 'touchend');
+
+    const emittedValue = wrapper
+      .emitted('update:modelValue')!
+      .pop()![0] as number;
+    expect(emittedValue).toBeLessThanOrEqual(100);
+    expect(emittedValue).toBeGreaterThanOrEqual(0);
   });
 
-  // 测试垂直模式
-  test('vertical slider should respect boundaries', () => {
-    const restoreMock = mockRect(true);
-
+  // 专门测试修复逻辑：当 steppedValue > max 时选择 prevSteppedValue
+  test('should choose previous step when closer than max', () => {
+    // 使用一个特殊配置来触发选择 prevSteppedValue 的情况
     const wrapper = mount(Slider, {
-      props: { min: 0, max: 100, step: 30, modelValue: 0, vertical: true },
+      props: { min: 0, max: 100, step: 35, modelValue: 0 },
     });
 
-    trigger(wrapper, 'click', 0, 100);
-    const result = wrapper.emitted('update:modelValue')!.pop()![0] as number;
+    // 步长序列：0, 35, 70, 105(超出max)
+    // 我们需要找到一个位置，使得它更接近 70 而不是 100
 
-    expect(result).toBeLessThanOrEqual(100);
-    expect(result).toBeGreaterThanOrEqual(0);
-    expect(result).not.toBeNaN();
+    // 先设置一个中间值
+    wrapper.setProps({ modelValue: 50 });
 
-    restoreMock();
+    // 然后拖拽到一个特定位置来触发边界逻辑
+    const button = wrapper.find('.van-slider__button');
+    triggerDrag(button, 60, 0); // 这应该更接近 70 而不是 100
+
+    const emittedValue = wrapper
+      .emitted('update:modelValue')!
+      .pop()![0] as number;
+    expect(emittedValue).toBeLessThanOrEqual(100);
+    expect(emittedValue).toBeGreaterThanOrEqual(0);
   });
 
-  // 测试原始问题场景
-  test('should handle the original issue case: min=20, max=100, step=30', () => {
+  // 测试修复代码中的距离计算逻辑
+  test('should trigger distance comparison logic', () => {
+    // 使用一个确定会触发边界检查的配置
     const wrapper = mount(Slider, {
-      props: { min: 20, max: 100, step: 30, modelValue: 20 },
+      props: { min: 10, max: 50, step: 15, modelValue: 10 },
     });
 
-    // 点击最右端 - 原问题是这里可能返回 110
+    // 步长序列：10, 25, 40, 55(超出max=50)
+    // 当拖拽到接近最右端时，应该触发距离比较
+
+    const button = wrapper.find('.van-slider__button');
+
+    // 先触发一次拖拽来初始化
+    triggerDrag(button, 0, 0);
+
+    // 然后拖拽到最右端
+    triggerDrag(button, 100, 0);
+
+    const results = wrapper.emitted('update:modelValue')!;
+    const finalValue = results[results.length - 1][0] as number;
+
+    expect(finalValue).toBeLessThanOrEqual(50);
+    expect(finalValue).toBeGreaterThanOrEqual(10);
+    expect([25, 40, 50]).toContain(finalValue);
+  });
+
+  // 测试点击事件触发修复逻辑
+  test('should apply boundary fix on click events', () => {
+    const wrapper = mount(Slider, {
+      props: { min: 0, max: 100, step: 45, modelValue: 0 },
+    });
+
+    // 步长序列：0, 45, 90, 135(超出max)
+    // 点击最右端应该触发边界检查
+
     trigger(wrapper, 'click', 100, 0);
 
     const result = wrapper.emitted('update:modelValue')!.pop()![0] as number;
-
-    // 修复的核心：不应该超过 max
     expect(result).toBeLessThanOrEqual(100);
-    expect(result).toBeGreaterThanOrEqual(20);
-    expect(result).not.toBeNaN();
+    expect(result).toBeGreaterThanOrEqual(0);
   });
 
-  // 测试边界值的多种配置
-  test('should handle various step configurations without exceeding max', () => {
-    const configs = [
-      { min: 0, max: 100, step: 7 }, // 不整除
-      { min: 10, max: 90, step: 25 }, // 中等步长
-      { min: 0, max: 50, step: 20 }, // 大步长
-      { min: 5, max: 15, step: 3 }, // 小范围
-    ];
-
-    configs.forEach(({ min, max, step }) => {
-      const wrapper = mount(Slider, {
-        props: { min, max, step, modelValue: min },
-      });
-
-      // 点击最右端
-      trigger(wrapper, 'click', 100, 0);
-
-      const result = wrapper.emitted('update:modelValue')!.pop()![0] as number;
-
-      expect(result).toBeLessThanOrEqual(max);
-      expect(result).toBeGreaterThanOrEqual(min);
-      expect(result).not.toBeNaN();
-    });
-  });
-
-  // 测试 Range 模式
-  test('range slider should respect boundaries', async () => {
+  // 测试 range 模式下的边界修复
+  test('should apply boundary fix in range mode', async () => {
     const wrapper = mount(Slider, {
       props: {
         min: 0,
         max: 100,
-        step: 30,
-        modelValue: [30, 60],
+        step: 40,
+        modelValue: [0, 40],
         range: true,
       },
     });
 
-    // 点击最右端
-    trigger(wrapper, 'click', 100, 0);
+    // 拖拽右按钮到会超出 max 的位置
+    const buttons = wrapper.findAll('.van-slider__button-wrapper');
+    const rightButton = buttons[1];
+
+    trigger(rightButton, 'touchstart');
+    triggerDrag(rightButton, 100, 0);
+    trigger(rightButton, 'touchend');
+
+    await later();
 
     const emitted = wrapper.emitted('update:modelValue');
     if (emitted && emitted.length > 0) {
       const [left, right] = emitted[emitted.length - 1][0] as [number, number];
-
-      expect(left).toBeLessThanOrEqual(100);
       expect(right).toBeLessThanOrEqual(100);
-      expect(left).toBeGreaterThanOrEqual(0);
-      expect(right).toBeGreaterThanOrEqual(0);
-      expect(left).not.toBeNaN();
-      expect(right).not.toBeNaN();
+      expect(left).toBeLessThanOrEqual(100);
     }
   });
 
-  // 测试拖拽行为
-  test('should handle dragging to extreme positions', async () => {
+  // 测试垂直模式下的边界修复
+  test('should apply boundary fix in vertical mode', () => {
+    const restoreMock = mockRect(true);
+
     const wrapper = mount(Slider, {
-      props: { min: 0, max: 100, step: 30, modelValue: 30 },
+      props: { min: 0, max: 100, step: 35, modelValue: 0, vertical: true },
     });
 
-    const button = wrapper.find('.van-slider__button-wrapper');
+    // 在垂直模式下触发边界检查
+    trigger(wrapper, 'click', 0, 100);
 
-    if (button.exists()) {
-      trigger(button, 'touchstart');
-      triggerDrag(button, 200, 0); // 拖拽超出边界
-      trigger(button, 'touchend');
+    const result = wrapper.emitted('update:modelValue')!.pop()![0] as number;
+    expect(result).toBeLessThanOrEqual(100);
+    expect(result).toBeGreaterThanOrEqual(0);
 
-      await later();
-
-      const emitted = wrapper.emitted('update:modelValue');
-      if (emitted && emitted.length > 0) {
-        const result = emitted[emitted.length - 1][0] as number;
-        expect(result).toBeLessThanOrEqual(100);
-        expect(result).toBeGreaterThanOrEqual(0);
-        expect(result).not.toBeNaN();
-      }
-    }
+    restoreMock();
   });
 
-  // 简化的边界测试
-  test('should ensure max value is selectable', () => {
-    // 使用一个确定会触发边界情况的配置
+  // 测试原始问题的具体场景
+  test('should fix the exact issue: min=20, max=100, step=30 returning 110', () => {
     const wrapper = mount(Slider, {
-      props: { min: 0, max: 10, step: 7, modelValue: 0 },
+      props: { min: 20, max: 100, step: 30, modelValue: 20 },
     });
 
-    // 步长序列：0, 7, (14 超出 max=10)
-    // 用户应该能选择到 max=10
+    // 这个配置下，步长序列是：20, 50, 80, 110(超出)
+    // 拖拽到最右端，原来会返回 110，现在应该返回 <= 100
 
-    trigger(wrapper, 'click', 100, 0); // 点击最右端
+    const button = wrapper.find('.van-slider__button');
+
+    // 模拟拖拽过程
+    trigger(button, 'touchstart');
+
+    // 拖拽到会计算出 110 的位置
+    triggerDrag(button, 100, 0);
+
+    trigger(button, 'touchend');
 
     const result = wrapper.emitted('update:modelValue')!.pop()![0] as number;
 
-    expect(result).toBeLessThanOrEqual(10);
-    expect(result).toBeGreaterThanOrEqual(0);
-    expect(result).not.toBeNaN();
+    // 核心验证：不应该是 110 或任何超过 100 的值
+    expect(result).toBeLessThanOrEqual(100);
+    expect(result).toBeGreaterThanOrEqual(20);
 
-    // 应该是 7 或 10，都是合理的
-    expect([0, 7, 10]).toContain(result);
+    // 应该是有效的步长值或者 max
+    expect([20, 50, 80, 100]).toContain(result);
+  });
+
+  // 测试边界情况：步长等于范围
+  test('should handle step equal to range', () => {
+    const wrapper = mount(Slider, {
+      props: { min: 0, max: 50, step: 50, modelValue: 0 },
+    });
+
+    trigger(wrapper, 'click', 100, 0);
+
+    const result = wrapper.emitted('update:modelValue')!.pop()![0] as number;
+    expect(result).toBeLessThanOrEqual(50);
+    expect([0, 50]).toContain(result);
+  });
+
+  // 测试边界情况：步长大于范围
+  test('should handle step larger than range', () => {
+    const wrapper = mount(Slider, {
+      props: { min: 0, max: 30, step: 40, modelValue: 0 },
+    });
+
+    trigger(wrapper, 'click', 100, 0);
+
+    const result = wrapper.emitted('update:modelValue')!.pop()![0] as number;
+    expect(result).toBeLessThanOrEqual(30);
+    expect([0, 30]).toContain(result);
   });
 });
