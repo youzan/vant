@@ -328,8 +328,7 @@ export default defineComponent({
       // When the value length exceeds maxlength,
       // record the excess length for correcting the cursor position.
       // https://github.com/youzan/vant/issues/11289
-      const limitDiffLen =
-        getStringLength(originalValue) - getStringLength(value);
+      const limitDiffLen = originalValue.length - value.length;
 
       // https://github.com/youzan/vant/issues/13058
       if (props.type === 'number' || props.type === 'digit') {
@@ -379,7 +378,7 @@ export default defineComponent({
           inputRef.value.value = value;
 
           if (isDef(selectionStart) && isDef(selectionEnd)) {
-            const valueLen = getStringLength(value);
+            const valueLen = value.length;
 
             if (limitDiffLen) {
               selectionStart -= limitDiffLen;
