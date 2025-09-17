@@ -375,41 +375,92 @@ test('should update modelValue correctly after clicking the reversed vertical sl
   expect(wrapper.emitted('update:modelValue')!.pop()).toEqual([0]);
 });
 
-test('should format value correctly when steppedValue > max via click', async () => {
-  const restoreMock = mockRect();
-
-  const wrapper = mount(Slider, {
-    props: { min: 0, max: 100, step: 10, modelValue: 50 },
+describe('Slider steppedValue boundary tests for patch coverage', () => {
+  // -------- 水平 slider --------
+  test('horizontal: steppedValue > max -> return max', () => {
+    const wrapper = mount(Slider, {
+      props: { min: 0, max: 100, step: 10, modelValue: 50 },
+    });
+    trigger(wrapper, 'click', 150, 0); // value 超过 max
+    expect(wrapper.emitted('update:modelValue')!.pop()).toEqual([100]);
   });
 
-  trigger(wrapper, 'click', 200, 0);
-  expect(wrapper.emitted('update:modelValue')!.pop()).toEqual([100]);
-
-  restoreMock();
-});
-
-test('should format value correctly when closer to max via click', async () => {
-  const restoreMock = mockRect();
-
-  const wrapper = mount(Slider, {
-    props: { min: 0, max: 100, step: 10, modelValue: 50 },
+  test('horizontal: steppedValue > max but closer to prev step -> return prev', () => {
+    const wrapper = mount(Slider, {
+      props: { min: 0, max: 100, step: 10, modelValue: 50 },
+    });
+    trigger(wrapper, 'click', 95, 0); // value 超 max，但接近 90
+    expect(wrapper.emitted('update:modelValue')!.pop()).toEqual([90]);
   });
 
-  trigger(wrapper, 'click', 96, 0);
-  expect(wrapper.emitted('update:modelValue')!.pop()).toEqual([100]);
-
-  restoreMock();
-});
-
-test('should format value correctly when closer to prev step via click', async () => {
-  const restoreMock = mockRect();
-
-  const wrapper = mount(Slider, {
-    props: { min: 0, max: 100, step: 10, modelValue: 50 },
+  test('horizontal: steppedValue == max -> return max', () => {
+    const wrapper = mount(Slider, {
+      props: { min: 0, max: 100, step: 10, modelValue: 50 },
+    });
+    trigger(wrapper, 'click', 100, 0); // value == max
+    expect(wrapper.emitted('update:modelValue')!.pop()).toEqual([100]);
   });
 
-  trigger(wrapper, 'click', 94, 0);
-  expect(wrapper.emitted('update:modelValue')!.pop()).toEqual([90]);
+  // -------- 垂直 slider --------
+  test('vertical: steppedValue > max -> return max', () => {
+    const wrapper = mount(Slider, {
+      props: { min: 0, max: 100, step: 10, modelValue: 50, vertical: true },
+    });
+    trigger(wrapper, 'click', 0, 150);
+    expect(wrapper.emitted('update:modelValue')!.pop()).toEqual([100]);
+  });
 
-  restoreMock();
+  test('vertical: steppedValue > max but closer to prev step -> return prev', () => {
+    const wrapper = mount(Slider, {
+      props: { min: 0, max: 100, step: 10, modelValue: 50, vertical: true },
+    });
+    trigger(wrapper, 'click', 0, 95);
+    expect(wrapper.emitted('update:modelValue')!.pop()).toEqual([90]);
+  });
+
+  // -------- range slider --------
+  test('range slider: right button > max -> snap to max', async () => {
+    const wrapper = mount(Slider, {
+      props: { min: 0, max: 100, step: 10, modelValue: [20, 50], range: true },
+    });
+    const rightButton = wrapper.findAll('.van-slider__button-wrapper')[1];
+    trigger(rightButton, 'touchstart', 0, 50);
+    trigger(rightButton, 'touchmove', 0, 150);
+    await later();
+    const emitted = wrapper.emitted('update:modelValue')!.pop()!;
+    expect(emitted[1]).toBe(100);
+  });
+
+  test('range slider: left button snaps to step', async () => {
+    const wrapper = mount(Slider, {
+      props: { min: 0, max: 100, step: 10, modelValue: [25, 50], range: true },
+    });
+    const leftButton = wrapper.findAll('.van-slider__button-wrapper')[0];
+    trigger(leftButton, 'touchstart', 0, 25);
+    trigger(leftButton, 'touchmove', 0, 28); // 接近 30
+    await later();
+    const emitted = wrapper.emitted('update:modelValue')!.pop()!;
+    expect(emitted[0]).toBe(30);
+  });
+
+  // -------- reverse + vertical + range --------
+  test('reverse + vertical range: right button > max -> snap to max', async () => {
+    const wrapper = mount(Slider, {
+      props: {
+        min: 0,
+        max: 100,
+        step: 10,
+        modelValue: [20, 50],
+        range: true,
+        reverse: true,
+        vertical: true,
+      },
+    });
+    const rightButton = wrapper.findAll('.van-slider__button-wrapper')[1];
+    trigger(rightButton, 'touchstart', 0, 50);
+    trigger(rightButton, 'touchmove', 0, 150);
+    await later();
+    const emitted = wrapper.emitted('update:modelValue')!.pop()!;
+    expect(emitted[1]).toBe(100);
+  });
 });
