@@ -374,3 +374,30 @@ test('should update modelValue correctly after clicking the reversed vertical sl
   trigger(wrapper, 'click', 0, 100);
   expect(wrapper.emitted('update:modelValue')!.pop()).toEqual([0]);
 });
+
+test('should format value correctly when steppedValue > max', () => {
+  const wrapper = mount(Slider, {
+    props: { min: 0, max: 100, step: 10, modelValue: 50 },
+  });
+
+  const result = wrapper.vm.format(120);
+  expect(result).toBe(100);
+});
+
+test('should format value correctly when closer to max', () => {
+  const wrapper = mount(Slider, {
+    props: { min: 0, max: 100, step: 10, modelValue: 50 },
+  });
+
+  const result = wrapper.vm.format(96);
+  expect(result).toBe(100);
+});
+
+test('should format value correctly when closer to prev step', () => {
+  const wrapper = mount(Slider, {
+    props: { min: 0, max: 100, step: 10, modelValue: 50 },
+  });
+
+  const result = wrapper.vm.format(94);
+  expect(result).toBe(90);
+});
