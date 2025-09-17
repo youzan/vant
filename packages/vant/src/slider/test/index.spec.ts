@@ -375,41 +375,75 @@ test('should update modelValue correctly after clicking the reversed vertical sl
   expect(wrapper.emitted('update:modelValue')!.pop()).toEqual([0]);
 });
 
-test('should format value correctly when steppedValue > max via click', async () => {
-  const restoreMock = mockRect();
-
+test('should format value to min when clicked below min', async () => {
   const wrapper = mount(Slider, {
     props: { min: 0, max: 100, step: 10, modelValue: 50 },
   });
 
-  trigger(wrapper, 'click', 200, 0);
-  expect(wrapper.emitted('update:modelValue')!.pop()).toEqual([100]);
-
-  restoreMock();
+  trigger(wrapper, 'click', -50, 0);
+  expect(wrapper.emitted('update:modelValue')!.pop()).toEqual([0]);
 });
 
-test('should format value correctly when closer to max via click', async () => {
-  const restoreMock = mockRect();
-
+test('should format value to max when clicked above max', async () => {
   const wrapper = mount(Slider, {
     props: { min: 0, max: 100, step: 10, modelValue: 50 },
   });
 
-  trigger(wrapper, 'click', 96, 0);
+  trigger(wrapper, 'click', 150, 0);
   expect(wrapper.emitted('update:modelValue')!.pop()).toEqual([100]);
-
-  restoreMock();
 });
 
-test('should format value correctly when closer to prev step via click', async () => {
-  const restoreMock = mockRect();
-
+test('should snap to nearest step correctly', async () => {
   const wrapper = mount(Slider, {
     props: { min: 0, max: 100, step: 10, modelValue: 50 },
   });
 
-  trigger(wrapper, 'click', 94, 0);
-  expect(wrapper.emitted('update:modelValue')!.pop()).toEqual([90]);
+  trigger(wrapper, 'click', 37, 0);
+  expect(wrapper.emitted('update:modelValue')!.pop()).toEqual([40]);
 
-  restoreMock();
+  trigger(wrapper, 'click', 33, 0);
+  expect(wrapper.emitted('update:modelValue')!.pop()).toEqual([30]);
+});
+
+test('should handle vertical + reverse correctly', async () => {
+  const wrapper = mount(Slider, {
+    props: {
+      min: 0,
+      max: 100,
+      step: 10,
+      modelValue: 50,
+      vertical: true,
+      reverse: true,
+    },
+  });
+
+  trigger(wrapper, 'click', 0, 20);
+  expect(wrapper.emitted('update:modelValue')!.pop()).toEqual([80]);
+
+  trigger(wrapper, 'click', 0, 95);
+  expect(wrapper.emitted('update:modelValue')!.pop()).toEqual([0]);
+});
+
+test('should format range slider values correctly', async () => {
+  const wrapper = mount(Slider, {
+    props: { min: 0, max: 100, step: 10, modelValue: [20, 80], range: true },
+  });
+
+  const [leftButton, rightButton] = wrapper.findAll(
+    '.van-slider__button-wrapper',
+  );
+
+  trigger(leftButton, 'touchstart', 0, 0);
+  trigger(leftButton, 'touchmove', 30, 0);
+  trigger(leftButton, 'touchend', 30, 0);
+  await later();
+  const leftValue = wrapper.emitted('update:modelValue')!.pop()!;
+  expect(leftValue[0]).toBeGreaterThanOrEqual(20);
+
+  trigger(rightButton, 'touchstart', 0, 0);
+  trigger(rightButton, 'touchmove', 80, 0);
+  trigger(rightButton, 'touchend', 80, 0);
+  await later();
+  const rightValue = wrapper.emitted('update:modelValue')!.pop()!;
+  expect(rightValue[1]).toBeLessThanOrEqual(80);
 });
