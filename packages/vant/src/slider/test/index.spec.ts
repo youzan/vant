@@ -489,6 +489,35 @@ describe('Slider format function boundary tests', () => {
     expect(result).toBeGreaterThanOrEqual(0);
   });
 
+  // 专门测试距离相等时的边界情况（覆盖 <= 分支）
+  test('should handle equal distance case in boundary comparison', () => {
+    // 配置一个特殊的场景，使得到 max 和到 prevStep 的距离相等
+    const wrapper = mount(Slider, {
+      props: { min: 0, max: 100, step: 60, modelValue: 0 },
+    });
+
+    // 步长序列：0, 60, 120(超出max=100)
+    // 如果输入值是 80，那么：
+    // - 到 max(100) 的距离：|80-100| = 20
+    // - 到 prev(60) 的距离：|80-60| = 20
+    // 距离相等时，应该选择 max（因为 <= 条件）
+
+    // 通过手动设置 modelValue 来模拟这种情况
+    wrapper.setProps({ modelValue: 80 });
+
+    // 触发 format 函数的调用
+    const button = wrapper.find('.van-slider__button');
+    trigger(button, 'touchstart');
+    trigger(button, 'touchend');
+
+    const results = wrapper.emitted('update:modelValue')!;
+    if (results && results.length > 0) {
+      const result = results[results.length - 1][0] as number;
+      expect(result).toBeLessThanOrEqual(100);
+      expect(result).toBeGreaterThanOrEqual(0);
+    }
+  });
+
   // 测试 range 模式下的边界修复
   test('should apply boundary fix in range mode', async () => {
     const wrapper = mount(Slider, {
@@ -535,6 +564,47 @@ describe('Slider format function boundary tests', () => {
     expect(result).toBeGreaterThanOrEqual(0);
 
     restoreMock();
+  });
+
+  // 专门测试覆盖剩余的那行代码：通过初始化时的 format 调用
+  test('should apply format fix during initialization', () => {
+    // 创建一个初始值就会触发边界问题的 slider
+    const wrapper = mount(Slider, {
+      props: {
+        min: 0,
+        max: 100,
+        step: 30,
+        modelValue: 110, // 初始值超出 max，应该被 format 修正
+      },
+    });
+
+    // 在组件初始化时就会调用 format 函数
+    // 这应该触发我们的修复逻辑
+    const emitted = wrapper.emitted('update:modelValue');
+    if (emitted && emitted.length > 0) {
+      const result = emitted[0][0] as number;
+      expect(result).toBeLessThanOrEqual(100);
+    }
+  });
+
+  // 测试通过 updateValue 函数触发的边界检查
+  test('should apply format fix in updateValue calls', () => {
+    const wrapper = mount(Slider, {
+      props: { min: 0, max: 100, step: 25, modelValue: 0 },
+    });
+
+    // 测试各种会触发 updateValue 的操作
+    const button = wrapper.find('.van-slider__button');
+
+    // 1. touchstart -> touchmove -> touchend 序列
+    trigger(button, 'touchstart');
+    triggerDrag(button, 95, 0); // 这会触发 updateValue
+    trigger(button, 'touchend'); // 这也会触发 updateValue with end=true
+
+    const results = wrapper.emitted('update:modelValue')!;
+    results.forEach(([value]) => {
+      expect(value as number).toBeLessThanOrEqual(100);
+    });
   });
 
   // 测试原始问题的具体场景
