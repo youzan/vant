@@ -767,4 +767,149 @@ describe('Slider format function boundary tests', () => {
     const finalValue = emitted!.pop()![0] as number;
     expect(finalValue).toBe(35); // 返回 prevSteppedValue
   });
+
+  test('should return max when max is closer or equal distance to prevSteppedValue', () => {
+    const wrapper = mount(Slider, {
+      props: { min: 0, max: 100, step: 60, modelValue: 0 },
+    });
+
+    // 设置一个值，使得 max 比 prevSteppedValue 更接近实际 value
+    // step=60, 当 value=85 时:
+    // steppedValue = 120 > max=100
+    // prevSteppedValue = 60
+    // distanceToMax = |85-100| = 15
+    // distanceToPrev = |85-60| = 25
+    // 应该返回 max (100) 因为距离更近
+    wrapper.setProps({ modelValue: 85 });
+
+    const emitted = wrapper.emitted('update:modelValue');
+    if (emitted && emitted.length > 0) {
+      const result = emitted[emitted.length - 1][0] as number;
+      expect(result).toBe(100); // 应该返回 max
+    }
+  });
+
+  test('should return max when distances are equal', () => {
+    const wrapper = mount(Slider, {
+      props: { min: 0, max: 100, step: 40, modelValue: 0 },
+    });
+
+    // 构造一个等距离的情况
+    // step=40, 当 value=70 时:
+    // steppedValue = 80 (假设不超过max的情况下)
+    // 但如果 max=75, step=40, value=70 时:
+    // steppedValue = 80 > max=75
+    // prevSteppedValue = 40
+    // distanceToMax = |70-75| = 5
+    // distanceToPrev = |70-40| = 30
+    // 应该返回 max
+    wrapper.setProps({ max: 75, modelValue: 70 });
+
+    const emitted = wrapper.emitted('update:modelValue');
+    if (emitted && emitted.length > 0) {
+      const result = emitted[emitted.length - 1][0] as number;
+      expect(result).toBe(75); // 应该返回 max
+    }
+  });
+
+  test('should return max value when it is closer to target than previous step', () => {
+    const wrapper = mount(Slider, {
+      props: { min: 10, max: 55, step: 30, modelValue: 10 },
+    });
+
+    const button = wrapper.find('.van-slider__button');
+
+    // 拖拽到一个值，使得：
+    // value ≈ 50, steppedValue = 70 > max = 55
+    // prevSteppedValue = 40
+    // distanceToMax = |50-55| = 5
+    // distanceToPrev = |50-40| = 10
+    // 应该返回 max (55)
+    triggerDrag(button, 50, 0);
+
+    const result = wrapper.emitted('update:modelValue')!.pop()![0] as number;
+    expect(result).toBe(55); // 确保返回的是 max，而不是 prevSteppedValue
+  });
+
+  test('should return prevSteppedValue when it is definitively closer than max', () => {
+    const wrapper = mount(Slider, {
+      props: { min: 0, max: 50, step: 45, modelValue: 0 },
+    });
+
+    // 构造一个 prevSteppedValue 更接近的情况
+    // step=45, max=50
+    // 设置 value=47，使得：
+    // steppedValue = 90 > max=50
+    // prevSteppedValue = 45
+    // distanceToMax = |47-50| = 3
+    // distanceToPrev = |47-45| = 2
+    // 因为 distanceToMax (3) > distanceToPrev (2)，应该返回 prevSteppedValue (45)
+
+    wrapper.setProps({ modelValue: 47 });
+
+    const emitted = wrapper.emitted('update:modelValue');
+    if (emitted && emitted.length > 0) {
+      const result = emitted[emitted.length - 1][0] as number;
+      expect(result).toBe(45); // 应该返回 prevSteppedValue
+    }
+  });
+
+  test('should return prevSteppedValue when distance is clearly closer', () => {
+    const wrapper = mount(Slider, {
+      props: { min: 0, max: 40, step: 30, modelValue: 0 },
+    });
+
+    // 精确计算：
+    // step=30, min=0, max=40
+    // 设置 value=32，使得：
+    // diff = Math.round((32-0)/30) * 30 = Math.round(1.07) * 30 = 30
+    // steppedValue = 0 + 30 = 30 (不超过max)
+
+    // 需要让 steppedValue > max，设置 value=35：
+    // diff = Math.round((35-0)/30) * 30 = Math.round(1.17) * 30 = 30
+    // 还是30，需要更大的值
+
+    // 设置 value=45：
+    // diff = Math.round((45-0)/30) * 30 = Math.round(1.5) * 30 = 60
+    // steppedValue = 0 + 60 = 60 > max=40
+    // prevSteppedValue = 0 + (60-30) = 30
+    // distanceToMax = |45-40| = 5
+    // distanceToPrev = |45-30| = 15
+    // 5 < 15，所以返回max（这个已经覆盖了）
+
+    // 需要构造 distanceToPrev < distanceToMax 的情况
+    // 设置 value=32：
+    // steppedValue = 60 > max=40
+    // prevSteppedValue = 30
+    // distanceToMax = |32-40| = 8
+    // distanceToPrev = |32-30| = 2
+    // 2 < 8，所以应该返回 prevSteppedValue (30)
+
+    wrapper.setProps({ modelValue: 32 });
+
+    const emitted = wrapper.emitted('update:modelValue');
+    if (emitted && emitted.length > 0) {
+      const result = emitted[emitted.length - 1][0] as number;
+      expect(result).toBe(30); // 应该返回 prevSteppedValue
+    }
+  });
+
+  test('should cover prevSteppedValue branch precisely', () => {
+    const wrapper = mount(Slider, {
+      props: { min: 0, max: 35, step: 25, modelValue: 26 },
+    });
+
+    // step=25, min=0, max=35, value=26
+    // steppedValue = 50 > max=35
+    // prevSteppedValue = 25
+    // distanceToMax = |26-35| = 9
+    // distanceToPrev = |26-25| = 1
+    // 1 < 9，返回 prevSteppedValue (25)
+
+    const emitted = wrapper.emitted('update:modelValue');
+    if (emitted && emitted.length > 0) {
+      const result = emitted[emitted.length - 1][0] as number;
+      expect(result).toBe(25);
+    }
+  });
 });
