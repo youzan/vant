@@ -729,20 +729,15 @@ describe('Slider format function boundary tests', () => {
     const button = wrapper.find('.van-slider__button-wrapper');
     if (!button.exists()) return;
 
-    // 拖拽到一个数值，使 steppedValue > max，prevSteppedValue 更接近 value
-    // step = 35, min=0, max=50
-    // value 设为 48 -> diff = 48/35≈1.37 -> Math.round(diff)=1 -> steppedValue=0+35=35
-    // 为了走 prevSteppedValue 分支，需要 steppedValue > max，diff=2 -> steppedValue=70
-    // 所以拖拽到 value≈65，让 steppedValue=70 > max=50，prevSteppedValue=35
     trigger(button, 'touchstart');
-    triggerDrag(button, 65, 0); // 拖到 65
+    triggerDrag(button, 65, 0);
     trigger(button, 'touchend');
 
     const emitted = wrapper.emitted('update:modelValue');
     expect(emitted).toBeTruthy();
 
     const finalValue = emitted!.pop()![0] as number;
-    expect(finalValue).toBe(35); // 返回 prevSteppedValue
+    expect(finalValue).toBe(35);
   });
 
   test('should cover prevSteppedValue return branch precisely', () => {
@@ -753,10 +748,6 @@ describe('Slider format function boundary tests', () => {
     const button = wrapper.find('.van-slider__button-wrapper');
     if (!button.exists()) return;
 
-    // 拖拽到可以触发 prevSteppedValue 分支的位置
-    // step = 35, min=0, max=50
-    // value 设置为 65 -> diff = Math.round((65-0)/35) * 35 = 70 > max
-    // prevSteppedValue = 35, 更接近 value 65
     trigger(button, 'touchstart');
     triggerDrag(button, 65, 0);
     trigger(button, 'touchend');
@@ -765,7 +756,7 @@ describe('Slider format function boundary tests', () => {
     expect(emitted).toBeTruthy();
 
     const finalValue = emitted!.pop()![0] as number;
-    expect(finalValue).toBe(35); // 返回 prevSteppedValue
+    expect(finalValue).toBe(35);
   });
 
   test('should return max when max is closer or equal distance to prevSteppedValue', () => {
@@ -773,19 +764,12 @@ describe('Slider format function boundary tests', () => {
       props: { min: 0, max: 100, step: 60, modelValue: 0 },
     });
 
-    // 设置一个值，使得 max 比 prevSteppedValue 更接近实际 value
-    // step=60, 当 value=85 时:
-    // steppedValue = 120 > max=100
-    // prevSteppedValue = 60
-    // distanceToMax = |85-100| = 15
-    // distanceToPrev = |85-60| = 25
-    // 应该返回 max (100) 因为距离更近
     wrapper.setProps({ modelValue: 85 });
 
     const emitted = wrapper.emitted('update:modelValue');
     if (emitted && emitted.length > 0) {
       const result = emitted[emitted.length - 1][0] as number;
-      expect(result).toBe(100); // 应该返回 max
+      expect(result).toBe(100);
     }
   });
 
@@ -794,21 +778,12 @@ describe('Slider format function boundary tests', () => {
       props: { min: 0, max: 100, step: 40, modelValue: 0 },
     });
 
-    // 构造一个等距离的情况
-    // step=40, 当 value=70 时:
-    // steppedValue = 80 (假设不超过max的情况下)
-    // 但如果 max=75, step=40, value=70 时:
-    // steppedValue = 80 > max=75
-    // prevSteppedValue = 40
-    // distanceToMax = |70-75| = 5
-    // distanceToPrev = |70-40| = 30
-    // 应该返回 max
     wrapper.setProps({ max: 75, modelValue: 70 });
 
     const emitted = wrapper.emitted('update:modelValue');
     if (emitted && emitted.length > 0) {
       const result = emitted[emitted.length - 1][0] as number;
-      expect(result).toBe(75); // 应该返回 max
+      expect(result).toBe(75);
     }
   });
 
@@ -819,16 +794,10 @@ describe('Slider format function boundary tests', () => {
 
     const button = wrapper.find('.van-slider__button');
 
-    // 拖拽到一个值，使得：
-    // value ≈ 50, steppedValue = 70 > max = 55
-    // prevSteppedValue = 40
-    // distanceToMax = |50-55| = 5
-    // distanceToPrev = |50-40| = 10
-    // 应该返回 max (55)
     triggerDrag(button, 50, 0);
 
     const result = wrapper.emitted('update:modelValue')!.pop()![0] as number;
-    expect(result).toBe(55); // 确保返回的是 max，而不是 prevSteppedValue
+    expect(result).toBe(55);
   });
 
   test('should return prevSteppedValue when it is definitively closer than max', () => {
@@ -836,21 +805,12 @@ describe('Slider format function boundary tests', () => {
       props: { min: 0, max: 50, step: 45, modelValue: 0 },
     });
 
-    // 构造一个 prevSteppedValue 更接近的情况
-    // step=45, max=50
-    // 设置 value=47，使得：
-    // steppedValue = 90 > max=50
-    // prevSteppedValue = 45
-    // distanceToMax = |47-50| = 3
-    // distanceToPrev = |47-45| = 2
-    // 因为 distanceToMax (3) > distanceToPrev (2)，应该返回 prevSteppedValue (45)
-
     wrapper.setProps({ modelValue: 47 });
 
     const emitted = wrapper.emitted('update:modelValue');
     if (emitted && emitted.length > 0) {
       const result = emitted[emitted.length - 1][0] as number;
-      expect(result).toBe(45); // 应该返回 prevSteppedValue
+      expect(result).toBe(45);
     }
   });
 
@@ -859,38 +819,12 @@ describe('Slider format function boundary tests', () => {
       props: { min: 0, max: 40, step: 30, modelValue: 0 },
     });
 
-    // 精确计算：
-    // step=30, min=0, max=40
-    // 设置 value=32，使得：
-    // diff = Math.round((32-0)/30) * 30 = Math.round(1.07) * 30 = 30
-    // steppedValue = 0 + 30 = 30 (不超过max)
-
-    // 需要让 steppedValue > max，设置 value=35：
-    // diff = Math.round((35-0)/30) * 30 = Math.round(1.17) * 30 = 30
-    // 还是30，需要更大的值
-
-    // 设置 value=45：
-    // diff = Math.round((45-0)/30) * 30 = Math.round(1.5) * 30 = 60
-    // steppedValue = 0 + 60 = 60 > max=40
-    // prevSteppedValue = 0 + (60-30) = 30
-    // distanceToMax = |45-40| = 5
-    // distanceToPrev = |45-30| = 15
-    // 5 < 15，所以返回max（这个已经覆盖了）
-
-    // 需要构造 distanceToPrev < distanceToMax 的情况
-    // 设置 value=32：
-    // steppedValue = 60 > max=40
-    // prevSteppedValue = 30
-    // distanceToMax = |32-40| = 8
-    // distanceToPrev = |32-30| = 2
-    // 2 < 8，所以应该返回 prevSteppedValue (30)
-
     wrapper.setProps({ modelValue: 32 });
 
     const emitted = wrapper.emitted('update:modelValue');
     if (emitted && emitted.length > 0) {
       const result = emitted[emitted.length - 1][0] as number;
-      expect(result).toBe(30); // 应该返回 prevSteppedValue
+      expect(result).toBe(30);
     }
   });
 
@@ -898,13 +832,6 @@ describe('Slider format function boundary tests', () => {
     const wrapper = mount(Slider, {
       props: { min: 0, max: 35, step: 25, modelValue: 26 },
     });
-
-    // step=25, min=0, max=35, value=26
-    // steppedValue = 50 > max=35
-    // prevSteppedValue = 25
-    // distanceToMax = |26-35| = 9
-    // distanceToPrev = |26-25| = 1
-    // 1 < 9，返回 prevSteppedValue (25)
 
     const emitted = wrapper.emitted('update:modelValue');
     if (emitted && emitted.length > 0) {
@@ -914,13 +841,7 @@ describe('Slider format function boundary tests', () => {
   });
 
   test('should comprehensively cover all boundary conditions in format function', () => {
-    // 测试策略：系统性地测试所有可能导致 steppedValue > max 的情况
-    // 以及确保两个分支都被触发
-
     const testCases = [
-      // 格式：{ min, max, step, value, expectedBranch, description }
-
-      // 确保触发 prevSteppedValue 分支的情况
       {
         min: 0,
         max: 20,
@@ -954,7 +875,6 @@ describe('Slider format function boundary tests', () => {
         description: 'another prev case',
       },
 
-      // 确保触发 max 分支的情况
       {
         min: 0,
         max: 40,
@@ -980,7 +900,6 @@ describe('Slider format function boundary tests', () => {
         description: 'another max case',
       },
 
-      // 等距离情况（应该返回 max）
       {
         min: 0,
         max: 50,
@@ -993,7 +912,6 @@ describe('Slider format function boundary tests', () => {
 
     testCases.forEach(
       ({ min, max, step, value, expectedBranch, description }) => {
-        // 直接创建组件时就使用目标值，避免 setProps 问题
         const wrapper = mount(Slider, {
           props: { min, max, step, modelValue: value },
         });
@@ -1003,13 +921,10 @@ describe('Slider format function boundary tests', () => {
         if (emitted && emitted.length > 0) {
           const result = emitted[emitted.length - 1][0] as number;
 
-          // 验证结果在有效范围内
           expect(result).toBeGreaterThanOrEqual(min);
           expect(result).toBeLessThanOrEqual(max);
 
-          // 根据预期分支验证结果
           if (expectedBranch === 'prevSteppedValue') {
-            // 手动计算预期的 prevSteppedValue
             const diff = Math.round((value - min) / step) * step;
             const steppedValue = min + diff;
             if (steppedValue > max) {
@@ -1022,7 +937,6 @@ describe('Slider format function boundary tests', () => {
               }
             }
           } else if (expectedBranch === 'max') {
-            // 在边界情况下应该返回 max 或接近 max
             const diff = Math.round((value - min) / step) * step;
             const steppedValue = min + diff;
             if (steppedValue > max) {
@@ -1044,7 +958,6 @@ describe('Slider format function boundary tests', () => {
             `  Result: ${result}, Expected branch: ${expectedBranch}`,
           );
         } else {
-          // 如果没有事件触发，可能是正常情况或者值没有改变
           console.log(
             `No event emitted for: ${description} (min=${min}, max=${max}, step=${step}, value=${value})`,
           );
@@ -1054,15 +967,13 @@ describe('Slider format function boundary tests', () => {
   });
 
   test('should test edge cases with mathematical precision', () => {
-    // 专门测试数学计算的边界情况
     const precisionTestCases = [
-      // 这些情况专门设计来触发特定的数学边界
-      { min: 0, max: 37, step: 25, value: 19 }, // 确保 prevSteppedValue 分支
-      { min: 0, max: 43, step: 30, value: 38 }, // 确保 max 分支
-      { min: 0, max: 28, step: 20, value: 14 }, // 等距离情况
-      { min: 0, max: 33, step: 22, value: 27 }, // 另一个边界情况
-      { min: 0, max: 46, step: 35, value: 23 }, // 测试舍入
-      { min: 0, max: 39, step: 28, value: 31 }, // 测试另一个舍入情况
+      { min: 0, max: 37, step: 25, value: 19 },
+      { min: 0, max: 43, step: 30, value: 38 },
+      { min: 0, max: 28, step: 20, value: 14 },
+      { min: 0, max: 33, step: 22, value: 27 },
+      { min: 0, max: 46, step: 35, value: 23 },
+      { min: 0, max: 39, step: 28, value: 31 },
     ];
 
     precisionTestCases.forEach(({ min, max, step, value }, index) => {
@@ -1074,11 +985,9 @@ describe('Slider format function boundary tests', () => {
       if (emitted && emitted.length > 0) {
         const result = emitted[emitted.length - 1][0] as number;
 
-        // 验证基本约束
         expect(result).toBeGreaterThanOrEqual(min);
         expect(result).toBeLessThanOrEqual(max);
 
-        // 详细的计算验证
         const diff = Math.round((value - min) / step) * step;
         const steppedValue = min + diff;
 
@@ -1109,10 +1018,8 @@ describe('Slider format function boundary tests', () => {
   });
 
   test('should exhaustively test return path coverage', () => {
-    // 穷举式测试，确保覆盖所有返回路径
     const exhaustiveTests = [];
 
-    // 生成大量测试用例来确保覆盖
     for (let stepSize = 15; stepSize <= 40; stepSize += 5) {
       for (let maxVal = 20; maxVal <= 50; maxVal += 10) {
         for (let valueOffset = 5; valueOffset <= 25; valueOffset += 5) {
@@ -1123,7 +1030,6 @@ describe('Slider format function boundary tests', () => {
             value: valueOffset,
           };
 
-          // 只添加可能触发边界条件的测试用例
           const diff =
             Math.round((testCase.value - testCase.min) / testCase.step) *
             testCase.step;
@@ -1145,12 +1051,8 @@ describe('Slider format function boundary tests', () => {
       if (emitted && emitted.length > 0) {
         const result = emitted[emitted.length - 1][0] as number;
 
-        // 确保结果有效
         expect(result).toBeGreaterThanOrEqual(min);
         expect(result).toBeLessThanOrEqual(max);
-
-        // 这个测试的目的是触发所有可能的代码路径
-        // 不需要验证具体结果，只要确保没有错误即可
       }
     });
 
@@ -1160,65 +1062,21 @@ describe('Slider format function boundary tests', () => {
   });
 
   test('should guarantee prevSteppedValue return with precise calculation', () => {
-    // 使用非常精确的数值，确保能触发 prevSteppedValue 分支
     const wrapper = mount(Slider, {
       props: { min: 0, max: 20, step: 15, modelValue: 0 },
     });
 
-    // 精确计算：step=15, min=0, max=20
-    // 设置 value=16
-    // diff = Math.round((16-0)/15) * 15 = Math.round(1.067) * 15 = 15
-    // steppedValue = 0 + 15 = 15 (不超过max=20)
-
-    // 设置 value=17
-    // diff = Math.round((17-0)/15) * 15 = Math.round(1.133) * 15 = 15
-    // steppedValue = 15 (还是不超过max)
-
-    // 设置 value=23 (会被clamp到20)
-    // 但我们需要在clamp之前计算，所以直接设置value=18
-    // diff = Math.round((18-0)/15) * 15 = Math.round(1.2) * 15 = 15
-    // 还是15...
-
-    // 设置更大的step让steppedValue超过max
     wrapper.setProps({ step: 18, modelValue: 15 });
 
-    // step=18, min=0, max=20, value=15
-    // diff = Math.round((15-0)/18) * 18 = Math.round(0.833) * 18 = 18
-    // steppedValue = 0 + 18 = 18 (不超过max=20)
-
-    // 设置 value=19
     wrapper.setProps({ modelValue: 19 });
-    // diff = Math.round((19-0)/18) * 18 = Math.round(1.056) * 18 = 18
-    // steppedValue = 18 (还是不超过)
 
-    // 设置 value=27，但会被clamp到20，然后：
-    // 我们需要直接在测试中模拟这种情况
     wrapper.setProps({ step: 25, modelValue: 13 });
-    // step=25, min=0, max=20, value=13
-    // diff = Math.round((13-0)/25) * 25 = 0
-    // steppedValue = 0
 
-    // 最终方案：使用确定会超过max的配置
     wrapper.setProps({ min: 5, max: 18, step: 20, modelValue: 16 });
-    // step=20, min=5, max=18, value=16
-    // diff = Math.round((16-5)/20) * 20 = Math.round(0.55) * 20 = 20
-    // steppedValue = 5 + 20 = 25 > max=18
-    // prevSteppedValue = 5 + (20-20) = 5
-    // distanceToMax = |16-18| = 2
-    // distanceToPrev = |16-5| = 11
-    // 2 < 11，所以返回max，这不是我们要的
 
-    // 重新计算：需要让prevSteppedValue更接近
     wrapper.setProps({ min: 10, max: 22, step: 20, modelValue: 15 });
-    // step=20, min=10, max=22, value=15
-    // diff = Math.round((15-10)/20) * 20 = 0
-    // steppedValue = 10，不超过max
 
-    // 最后一次尝试
     wrapper.setProps({ min: 0, max: 15, step: 20, modelValue: 12 });
-    // step=20, min=0, max=15, value=12
-    // diff = Math.round((12-0)/20) * 20 = 0
-    // steppedValue = 0，不超过max
 
     const emitted = wrapper.emitted('update:modelValue');
     if (emitted && emitted.length > 0) {
@@ -1230,58 +1088,20 @@ describe('Slider format function boundary tests', () => {
   });
 
   test('should trigger prevSteppedValue branch with mathematical precision', () => {
-    // 精确构造：确保 distanceToMax > distanceToPrev
-
-    // 参数设计：min=0, max=17, step=12, value=9
-    // 计算过程：
-    // diff = Math.round((9-0)/12) * 12 = Math.round(0.75) * 12 = 12
-    // steppedValue = 0 + 12 = 12 (≤ max=17，不会进入if分支)
-
-    // 重新设计：min=0, max=17, step=12, value=15
-    // diff = Math.round((15-0)/12) * 12 = Math.round(1.25) * 12 = 24
-    // steppedValue = 0 + 24 = 24 > max=17 ✓
-    // prevSteppedValue = 0 + 24 - 12 = 12
-    // distanceToMax = |15-17| = 2
-    // distanceToPrev = |15-12| = 3
-    // 因为 distanceToMax (2) < distanceToPrev (3)，会返回 max（这不是我们要的）
-
-    // 再次设计：min=0, max=17, step=12, value=13
-    // diff = Math.round((13-0)/12) * 12 = Math.round(1.08) * 12 = 12
-    // steppedValue = 12 ≤ max=17（还是不会进入if分支）
-
-    // 最终设计：min=0, max=14, step=12, value=11
-    // diff = Math.round((11-0)/12) * 12 = Math.round(0.92) * 12 = 12
-    // steppedValue = 12 ≤ max=14（依然不进入if）
-
-    // 正确设计：min=0, max=14, step=12, value=18（会被clamp到14）
-    // 实际计算的value=14：
-    // diff = Math.round((14-0)/12) * 12 = Math.round(1.17) * 12 = 12
-    // steppedValue = 12 ≤ max=14（还是不行）
-
-    // 终极方案：min=0, max=10, step=8, value=7
-    // diff = Math.round((7-0)/8) * 8 = Math.round(0.875) * 8 = 8
-    // steppedValue = 8 ≤ max=10（不行）
-
-    // 让我直接找一个确定可行的：min=0, max=10, step=12, value=8
-    // diff = Math.round((8-0)/12) * 12 = 0
-    // steppedValue = 0 ≤ max=10（不行）
-
-    // 最后尝试：通过拖拽操作，让组件内部计算出超过max的steppedValue
     const wrapper = mount(Slider, {
       props: { min: 0, max: 15, step: 11, modelValue: 0 },
     });
 
     const button = wrapper.find('.van-slider__button');
 
-    // 拖拽到一个精确位置，让内部计算产生我们需要的条件
     trigger(button, 'touchstart');
-    triggerDrag(button, 10.5, 0); // 这个位置应该让 prevSteppedValue 更接近
+    triggerDrag(button, 10.5, 0);
     trigger(button, 'touchend');
 
     const emitted = wrapper.emitted('update:modelValue');
     if (emitted && emitted.length > 0) {
       const result = emitted[emitted.length - 1][0] as number;
-      // 验证结果，具体值可能是11（prevSteppedValue）而不是15（max）
+
       expect(result).toBe(11);
     }
   });
