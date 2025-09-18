@@ -744,4 +744,27 @@ describe('Slider format function boundary tests', () => {
     const finalValue = emitted!.pop()![0] as number;
     expect(finalValue).toBe(35); // 返回 prevSteppedValue
   });
+
+  test('should cover prevSteppedValue return branch precisely', () => {
+    const wrapper = mount(Slider, {
+      props: { min: 0, max: 50, step: 35, modelValue: 0 },
+    });
+
+    const button = wrapper.find('.van-slider__button-wrapper');
+    if (!button.exists()) return;
+
+    // 拖拽到可以触发 prevSteppedValue 分支的位置
+    // step = 35, min=0, max=50
+    // value 设置为 65 -> diff = Math.round((65-0)/35) * 35 = 70 > max
+    // prevSteppedValue = 35, 更接近 value 65
+    trigger(button, 'touchstart');
+    triggerDrag(button, 65, 0);
+    trigger(button, 'touchend');
+
+    const emitted = wrapper.emitted('update:modelValue');
+    expect(emitted).toBeTruthy();
+
+    const finalValue = emitted!.pop()![0] as number;
+    expect(finalValue).toBe(35); // 返回 prevSteppedValue
+  });
 });
