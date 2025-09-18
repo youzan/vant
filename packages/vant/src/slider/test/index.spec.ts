@@ -720,4 +720,28 @@ describe('Slider format function boundary tests', () => {
       expect(finalValue).toBe(35); // 返回 prevSteppedValue
     }
   });
+
+  test('should return prevSteppedValue when steppedValue > max and prev is closer', () => {
+    const wrapper = mount(Slider, {
+      props: { min: 0, max: 50, step: 35, modelValue: 0 },
+    });
+
+    const button = wrapper.find('.van-slider__button-wrapper');
+    if (!button.exists()) return;
+
+    // 拖拽到一个数值，使 steppedValue > max，prevSteppedValue 更接近 value
+    // step = 35, min=0, max=50
+    // value 设为 48 -> diff = 48/35≈1.37 -> Math.round(diff)=1 -> steppedValue=0+35=35
+    // 为了走 prevSteppedValue 分支，需要 steppedValue > max，diff=2 -> steppedValue=70
+    // 所以拖拽到 value≈65，让 steppedValue=70 > max=50，prevSteppedValue=35
+    trigger(button, 'touchstart');
+    triggerDrag(button, 65, 0); // 拖到 65
+    trigger(button, 'touchend');
+
+    const emitted = wrapper.emitted('update:modelValue');
+    expect(emitted).toBeTruthy();
+
+    const finalValue = emitted!.pop()![0] as number;
+    expect(finalValue).toBe(35); // 返回 prevSteppedValue
+  });
 });
