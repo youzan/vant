@@ -1,6 +1,10 @@
 import { SubmitBar } from '..';
 import { later, mockGetBoundingClientRect, mount } from '../../../test';
 
+afterEach(() => {
+  vi.clearAllTimers();
+});
+
 test('should emit submit event when submit button is clicked', () => {
   const wrapper = mount(SubmitBar);
   const button = wrapper.find('.van-submit-bar__button');
