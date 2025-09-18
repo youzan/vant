@@ -699,4 +699,25 @@ describe('Slider format function boundary tests', () => {
     expect(result).toBeLessThanOrEqual(30);
     expect([0, 30]).toContain(result);
   });
+
+  test('should return prevSteppedValue when it is closer than max', () => {
+    const wrapper = mount(Slider, {
+      props: { min: 0, max: 50, step: 35, modelValue: 0 },
+    });
+
+    const button = wrapper.find('.van-slider__button-wrapper');
+
+    if (button.exists()) {
+      // 拖拽到 steppedValue > max 且 prevSteppedValue 更接近 value 的位置
+      trigger(button, 'touchstart');
+      triggerDrag(button, 48, 0); // 拖到 48，steppedValue=70 > max=50，prevSteppedValue=35
+      trigger(button, 'touchend');
+
+      const emitted = wrapper.emitted('update:modelValue');
+      expect(emitted).toBeTruthy();
+
+      const finalValue = emitted!.pop()![0] as number;
+      expect(finalValue).toBe(35); // 返回 prevSteppedValue
+    }
+  });
 });
