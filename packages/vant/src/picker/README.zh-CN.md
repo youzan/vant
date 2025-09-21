@@ -391,6 +391,7 @@ export default {
 | option-height | 选项高度，支持 `px` `vw` `vh` `rem` 单位，默认 `px` | _number \| string_ | `44` |
 | visible-option-num | 可见的选项个数 | _number \| string_ | `6` |
 | swipe-duration | 快速滑动时惯性滚动的时长，单位 `ms` | _number \| string_ | `1000` |
+| reset-children | 是否在选项变化时重置子选项 | _boolean_ | `false` |
 
 ### Events
 
