@@ -1207,4 +1207,30 @@ describe('Slider format function boundary tests', () => {
       expect(result).toBeLessThanOrEqual(13);
     }
   });
+
+  test('should test with range mode edge cases', () => {
+    const wrapper = mount(Slider, {
+      props: {
+        range: true,
+        min: 0,
+        max: 7,
+        step: 5,
+        modelValue: [2, 6],
+      },
+    });
+
+    const buttons = wrapper.findAll('.van-slider__button-wrapper');
+    const rightButton = buttons[1];
+
+    trigger(rightButton, 'touchstart');
+    triggerDrag(rightButton, 6.5, 0);
+    trigger(rightButton, 'touchend');
+
+    const emitted = wrapper.emitted('update:modelValue');
+    if (emitted && emitted.length > 0) {
+      const [left, right] = emitted[emitted.length - 1][0] as [number, number];
+      expect(left).toBeGreaterThanOrEqual(0);
+      expect(right).toBeLessThanOrEqual(7);
+    }
+  });
 });
