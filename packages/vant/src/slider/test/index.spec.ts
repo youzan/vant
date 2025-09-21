@@ -1145,4 +1145,17 @@ describe('Slider format function boundary tests', () => {
       expect(result).toBeLessThanOrEqual(-2);
     }
   });
+
+  test('should test with fractional steps', () => {
+    const wrapper = mount(Slider, {
+      props: { min: 0, max: 2.5, step: 1.8, modelValue: 1.3 },
+    });
+
+    const emitted = wrapper.emitted('update:modelValue');
+    if (emitted && emitted.length > 0) {
+      const result = emitted[emitted.length - 1][0] as number;
+      expect(result).toBeGreaterThanOrEqual(0);
+      expect(result).toBeLessThanOrEqual(2.5);
+    }
+  });
 });
