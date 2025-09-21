@@ -375,6 +375,7 @@ test('should update modelValue correctly after clicking the reversed vertical sl
   expect(wrapper.emitted('update:modelValue')!.pop()).toEqual([0]);
 });
 
+// https://github.com/vant-ui/vant/issues/13625
 describe('Slider format function boundary tests', () => {
   afterEach(() => {
     vi.clearAllTimers();
