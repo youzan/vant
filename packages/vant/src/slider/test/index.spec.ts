@@ -1158,4 +1158,17 @@ describe('Slider format function boundary tests', () => {
       expect(result).toBeLessThanOrEqual(2.5);
     }
   });
+
+  test('should use very small ranges', () => {
+    const wrapper = mount(Slider, {
+      props: { min: 0.1, max: 0.9, step: 0.7, modelValue: 0.4 },
+    });
+
+    const emitted = wrapper.emitted('update:modelValue');
+    if (emitted && emitted.length > 0) {
+      const result = emitted[emitted.length - 1][0] as number;
+      expect(result).toBeGreaterThanOrEqual(0.1);
+      expect(result).toBeLessThanOrEqual(0.9);
+    }
+  });
 });
