@@ -1005,7 +1005,7 @@ describe('Slider format function boundary tests', () => {
           }
         }
 
-        console.log(`Precision test ${index + 1}:`);
+        console.log(`Precision testis ${index + 1}:`);
         console.log(
           `  Calculated: steppedValue=${steppedValue}, prevSteppedValue=${min + diff - step}`,
         );
