@@ -1057,7 +1057,7 @@ describe('Slider format function boundary tests', () => {
     });
 
     console.log(
-      `Exhaustive test completed with ${exhaustiveTests.length} test cases`,
+      `Exhaustive test completed with this ${exhaustiveTests.length} test cases`,
     );
   });
 
