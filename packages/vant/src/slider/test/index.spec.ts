@@ -1012,7 +1012,7 @@ describe('Slider format function boundary tests', () => {
         console.log(
           `  Distances: toMax=${Math.abs(value - max)}, toPrev=${Math.abs(value - (min + diff - step))}`,
         );
-        console.log(`  Result: ${result}`);
+        console.log(`  Result is: ${result}`);
       }
     });
   });
