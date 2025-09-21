@@ -959,7 +959,7 @@ describe('Slider format function boundary tests', () => {
           );
         } else {
           console.log(
-            `No event emitted for: ${description} (min=${min}, max=${max}, step=${step}, value=${value})`,
+            `No event emitted for that: ${description} (min=${min}, max=${max}, step=${step}, value=${value})`,
           );
         }
       },
