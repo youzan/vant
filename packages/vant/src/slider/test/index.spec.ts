@@ -375,7 +375,6 @@ test('should update modelValue correctly after clicking the reversed vertical sl
   expect(wrapper.emitted('update:modelValue')!.pop()).toEqual([0]);
 });
 
-// https://github.com/vant-ui/vant/issues/13625
 describe('Slider format function boundary tests', () => {
   afterEach(() => {
     vi.clearAllTimers();
@@ -951,16 +950,16 @@ describe('Slider format function boundary tests', () => {
             }
           }
 
-          console.log(`Test case is: ${description}`);
+          console.log(`Test case: ${description}`);
           console.log(
             `  Input: min=${min}, max=${max}, step=${step}, value=${value}`,
           );
           console.log(
-            `  Result is: ${result}, Expected branch: ${expectedBranch}`,
+            `  Result: ${result}, Expected branch: ${expectedBranch}`,
           );
         } else {
           console.log(
-            `No event emitted for that: ${description} (min=${min}, max=${max}, step=${step}, value=${value})`,
+            `No event emitted for: ${description} (min=${min}, max=${max}, step=${step}, value=${value})`,
           );
         }
       },
@@ -1006,14 +1005,14 @@ describe('Slider format function boundary tests', () => {
           }
         }
 
-        console.log(`Precision testis ${index + 1}:`);
+        console.log(`Precision test ${index + 1}:`);
         console.log(
           `  Calculated: steppedValue=${steppedValue}, prevSteppedValue=${min + diff - step}`,
         );
         console.log(
           `  Distances: toMax=${Math.abs(value - max)}, toPrev=${Math.abs(value - (min + diff - step))}`,
         );
-        console.log(`  Result is: ${result}`);
+        console.log(`  Result: ${result}`);
       }
     });
   });
@@ -1058,7 +1057,7 @@ describe('Slider format function boundary tests', () => {
     });
 
     console.log(
-      `Exhaustive test completed with this ${exhaustiveTests.length} test cases`,
+      `Exhaustive test completed with ${exhaustiveTests.length} test cases`,
     );
   });
 
@@ -1104,317 +1103,6 @@ describe('Slider format function boundary tests', () => {
       const result = emitted[emitted.length - 1][0] as number;
 
       expect(result).toBe(11);
-    }
-  });
-
-  test('should trigger prevSteppedValue with calculated precision', () => {
-    const wrapper = mount(Slider, {
-      props: { min: 0.5, max: 5.5, step: 4.5, modelValue: 3.2 },
-    });
-
-    const emitted = wrapper.emitted('update:modelValue');
-    if (emitted && emitted.length > 0) {
-      const result = emitted[emitted.length - 1][0] as number;
-      expect(result).toBeGreaterThanOrEqual(0.5);
-      expect(result).toBeLessThanOrEqual(5.5);
-    }
-  });
-
-  test('should use extreme step values to force boundary', () => {
-    const wrapper = mount(Slider, {
-      props: { min: 0, max: 3, step: 100, modelValue: 2 },
-    });
-
-    const emitted = wrapper.emitted('update:modelValue');
-    if (emitted && emitted.length > 0) {
-      const result = emitted[emitted.length - 1][0] as number;
-      expect(result).toBeGreaterThanOrEqual(0);
-      expect(result).toBeLessThanOrEqual(3);
-    }
-  });
-
-  test('should trigger with negative values', () => {
-    const wrapper = mount(Slider, {
-      props: { min: -10, max: -2, step: 7, modelValue: -5 },
-    });
-
-    const emitted = wrapper.emitted('update:modelValue');
-    if (emitted && emitted.length > 0) {
-      const result = emitted[emitted.length - 1][0] as number;
-      expect(result).toBeGreaterThanOrEqual(-10);
-      expect(result).toBeLessThanOrEqual(-2);
-    }
-  });
-
-  test('should test with fractional steps', () => {
-    const wrapper = mount(Slider, {
-      props: { min: 0, max: 2.5, step: 1.8, modelValue: 1.3 },
-    });
-
-    const emitted = wrapper.emitted('update:modelValue');
-    if (emitted && emitted.length > 0) {
-      const result = emitted[emitted.length - 1][0] as number;
-      expect(result).toBeGreaterThanOrEqual(0);
-      expect(result).toBeLessThanOrEqual(2.5);
-    }
-  });
-
-  test('should use very small ranges', () => {
-    const wrapper = mount(Slider, {
-      props: { min: 0.1, max: 0.9, step: 0.7, modelValue: 0.4 },
-    });
-
-    const emitted = wrapper.emitted('update:modelValue');
-    if (emitted && emitted.length > 0) {
-      const result = emitted[emitted.length - 1][0] as number;
-      expect(result).toBeGreaterThanOrEqual(0.1);
-      expect(result).toBeLessThanOrEqual(0.9);
-    }
-  });
-
-  test('should test boundary with interactive operations', () => {
-    const wrapper = mount(Slider, {
-      props: { min: 0, max: 8, step: 6, modelValue: 0 },
-    });
-
-    const button = wrapper.find('.van-slider__button');
-
-    trigger(button, 'touchstart');
-    triggerDrag(button, 1, 0);
-    triggerDrag(button, 2, 0);
-    triggerDrag(button, 3, 0);
-    triggerDrag(button, 4, 0);
-    triggerDrag(button, 5, 0);
-    trigger(button, 'touchend');
-
-    const emitted = wrapper.emitted('update:modelValue');
-    if (emitted && emitted.length > 0) {
-      const result = emitted[emitted.length - 1][0] as number;
-      expect(result).toBeGreaterThanOrEqual(0);
-      expect(result).toBeLessThanOrEqual(8);
-    }
-  });
-
-  test('should use prime numbers for calculations', () => {
-    const wrapper = mount(Slider, {
-      props: { min: 0, max: 13, step: 11, modelValue: 7 },
-    });
-
-    const emitted = wrapper.emitted('update:modelValue');
-    if (emitted && emitted.length > 0) {
-      const result = emitted[emitted.length - 1][0] as number;
-      expect(result).toBeGreaterThanOrEqual(0);
-      expect(result).toBeLessThanOrEqual(13);
-    }
-  });
-
-  test('should test with range mode edge cases', () => {
-    const wrapper = mount(Slider, {
-      props: {
-        range: true,
-        min: 0,
-        max: 7,
-        step: 5,
-        modelValue: [2, 6],
-      },
-    });
-
-    const buttons = wrapper.findAll('.van-slider__button-wrapper');
-    const rightButton = buttons[1];
-
-    trigger(rightButton, 'touchstart');
-    triggerDrag(rightButton, 6.5, 0);
-    trigger(rightButton, 'touchend');
-
-    const emitted = wrapper.emitted('update:modelValue');
-    if (emitted && emitted.length > 0) {
-      const [left, right] = emitted[emitted.length - 1][0] as [number, number];
-      expect(left).toBeGreaterThanOrEqual(0);
-      expect(right).toBeLessThanOrEqual(7);
-    }
-  });
-
-  test('should force specific mathematical conditions', () => {
-    const wrapper = mount(Slider, {
-      props: { min: 0, max: 9, step: 7, modelValue: 8 },
-    });
-
-    const emitted = wrapper.emitted('update:modelValue');
-    if (emitted && emitted.length > 0) {
-      const result = emitted[emitted.length - 1][0] as number;
-      expect(result).toBeGreaterThanOrEqual(0);
-      expect(result).toBeLessThanOrEqual(9);
-    }
-  });
-
-  test('should test boundary with decimal precision edge case', () => {
-    const wrapper = mount(Slider, {
-      props: { min: 0.1, max: 0.7, step: 0.3, modelValue: 0.5 },
-    });
-
-    const emitted = wrapper.emitted('update:modelValue');
-    if (emitted && emitted.length > 0) {
-      const result = emitted[emitted.length - 1][0] as number;
-      expect(result).toBeGreaterThanOrEqual(0.1);
-      expect(result).toBeLessThanOrEqual(0.7);
-    }
-  });
-
-  test('should test with manually calculated prevSteppedValue scenario', () => {
-    const wrapper = mount(Slider, {
-      props: { min: 0, max: 11, step: 8, modelValue: 0 },
-    });
-
-    const button = wrapper.find('.van-slider__button');
-
-    trigger(button, 'touchstart');
-    triggerDrag(button, 7, 0);
-    trigger(button, 'touchend');
-
-    const emitted = wrapper.emitted('update:modelValue');
-    if (emitted && emitted.length > 0) {
-      const result = emitted[emitted.length - 1][0] as number;
-      expect(result).toBeGreaterThanOrEqual(0);
-      expect(result).toBeLessThanOrEqual(11);
-    }
-  });
-
-  test('should force prevSteppedValue branch with multiple property changes', () => {
-    const wrapper = mount(Slider, {
-      props: { min: 0, max: 20, step: 12, modelValue: 0 },
-    });
-
-    wrapper.setProps({ modelValue: 8 });
-    wrapper.setProps({ modelValue: 14 });
-    wrapper.setProps({ modelValue: 19 });
-    wrapper.setProps({ max: 10 });
-    wrapper.setProps({ modelValue: 18 });
-
-    const emitted = wrapper.emitted('update:modelValue');
-    if (emitted && emitted.length > 0) {
-      const result = emitted[emitted.length - 1][0] as number;
-      expect(result).toBeGreaterThanOrEqual(0);
-      expect(result).toBeLessThanOrEqual(10);
-    }
-  });
-
-  test('should test irrational number combinations', () => {
-    const wrapper = mount(Slider, {
-      props: { min: 0, max: Math.PI, step: Math.E, modelValue: Math.sqrt(2) },
-    });
-
-    const emitted = wrapper.emitted('update:modelValue');
-    if (emitted && emitted.length > 0) {
-      const result = emitted[emitted.length - 1][0] as number;
-      expect(result).toBeGreaterThanOrEqual(0);
-      expect(result).toBeLessThanOrEqual(Math.PI);
-    }
-  });
-
-  test('should test with step larger than range twice', () => {
-    const wrapper = mount(Slider, {
-      props: { min: 1, max: 4, step: 7, modelValue: 2.5 },
-    });
-
-    const emitted = wrapper.emitted('update:modelValue');
-    if (emitted && emitted.length > 0) {
-      const result = emitted[emitted.length - 1][0] as number;
-      expect(result).toBeGreaterThanOrEqual(1);
-      expect(result).toBeLessThanOrEqual(4);
-    }
-  });
-
-  test('should test with click at precise boundary positions', () => {
-    const wrapper = mount(Slider, {
-      props: { min: 0, max: 12, step: 8, modelValue: 0 },
-    });
-
-    trigger(wrapper, 'click', 6.5, 0);
-    trigger(wrapper, 'click', 7.5, 0);
-    trigger(wrapper, 'click', 8.5, 0);
-
-    const emitted = wrapper.emitted('update:modelValue');
-    if (emitted && emitted.length > 0) {
-      const result = emitted[emitted.length - 1][0] as number;
-      expect(result).toBeGreaterThanOrEqual(0);
-      expect(result).toBeLessThanOrEqual(12);
-    }
-  });
-
-  test('should test with floating point precision issues', () => {
-    const wrapper = mount(Slider, {
-      props: { min: 0.1, max: 0.3, step: 0.1, modelValue: 0.2 },
-    });
-
-    const emitted = wrapper.emitted('update:modelValue');
-    if (emitted && emitted.length > 0) {
-      const result = emitted[emitted.length - 1][0] as number;
-      expect(result).toBeGreaterThanOrEqual(0.1);
-      expect(result).toBeLessThanOrEqual(0.3);
-    }
-  });
-
-  test('should test edge case with step equals max minus min', () => {
-    const wrapper = mount(Slider, {
-      props: { min: 2, max: 9, step: 7, modelValue: 5 },
-    });
-
-    const emitted = wrapper.emitted('update:modelValue');
-    if (emitted && emitted.length > 0) {
-      const result = emitted[emitted.length - 1][0] as number;
-      expect(result).toBeGreaterThanOrEqual(2);
-      expect(result).toBeLessThanOrEqual(9);
-    }
-  });
-
-  test('should test with multiple rapid value changes', () => {
-    const wrapper = mount(Slider, {
-      props: { min: 0, max: 15, step: 9, modelValue: 0 },
-    });
-
-    for (let i = 1; i <= 10; i++) {
-      wrapper.setProps({ modelValue: i * 1.5 });
-    }
-
-    const emitted = wrapper.emitted('update:modelValue');
-    if (emitted && emitted.length > 0) {
-      const result = emitted[emitted.length - 1][0] as number;
-      expect(result).toBeGreaterThanOrEqual(0);
-      expect(result).toBeLessThanOrEqual(15);
-    }
-  });
-
-  test('should test boundary with very specific calculated values', () => {
-    const wrapper = mount(Slider, {
-      props: { min: 1.7, max: 8.3, step: 4.2, modelValue: 5.1 },
-    });
-
-    const emitted = wrapper.emitted('update:modelValue');
-    if (emitted && emitted.length > 0) {
-      const result = emitted[emitted.length - 1][0] as number;
-      expect(result).toBeGreaterThanOrEqual(1.7);
-      expect(result).toBeLessThanOrEqual(8.3);
-    }
-  });
-
-  test('should test with drag operations at exact mathematical boundaries', () => {
-    const wrapper = mount(Slider, {
-      props: { min: 0, max: 10, step: 7, modelValue: 0 },
-    });
-
-    const button = wrapper.find('.van-slider__button');
-
-    trigger(button, 'touchstart');
-    triggerDrag(button, 3.5, 0);
-    triggerDrag(button, 7, 0);
-    triggerDrag(button, 10.5, 0);
-    trigger(button, 'touchend');
-
-    const emitted = wrapper.emitted('update:modelValue');
-    if (emitted && emitted.length > 0) {
-      const result = emitted[emitted.length - 1][0] as number;
-      expect(result).toBeGreaterThanOrEqual(0);
-      expect(result).toBeLessThanOrEqual(10);
     }
   });
 });
