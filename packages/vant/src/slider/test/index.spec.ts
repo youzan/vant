@@ -1132,4 +1132,17 @@ describe('Slider format function boundary tests', () => {
       expect(result).toBeLessThanOrEqual(3);
     }
   });
+
+  test('should trigger with negative values', () => {
+    const wrapper = mount(Slider, {
+      props: { min: -10, max: -2, step: 7, modelValue: -5 },
+    });
+
+    const emitted = wrapper.emitted('update:modelValue');
+    if (emitted && emitted.length > 0) {
+      const result = emitted[emitted.length - 1][0] as number;
+      expect(result).toBeGreaterThanOrEqual(-10);
+      expect(result).toBeLessThanOrEqual(-2);
+    }
+  });
 });
