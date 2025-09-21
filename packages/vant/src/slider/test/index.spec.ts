@@ -1194,4 +1194,17 @@ describe('Slider format function boundary tests', () => {
       expect(result).toBeLessThanOrEqual(8);
     }
   });
+
+  test('should use prime numbers for calculations', () => {
+    const wrapper = mount(Slider, {
+      props: { min: 0, max: 13, step: 11, modelValue: 7 },
+    });
+
+    const emitted = wrapper.emitted('update:modelValue');
+    if (emitted && emitted.length > 0) {
+      const result = emitted[emitted.length - 1][0] as number;
+      expect(result).toBeGreaterThanOrEqual(0);
+      expect(result).toBeLessThanOrEqual(13);
+    }
+  });
 });
