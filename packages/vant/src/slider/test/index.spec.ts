@@ -1171,4 +1171,27 @@ describe('Slider format function boundary tests', () => {
       expect(result).toBeLessThanOrEqual(0.9);
     }
   });
+
+  test('should test boundary with interactive operations', () => {
+    const wrapper = mount(Slider, {
+      props: { min: 0, max: 8, step: 6, modelValue: 0 },
+    });
+
+    const button = wrapper.find('.van-slider__button');
+
+    trigger(button, 'touchstart');
+    triggerDrag(button, 1, 0);
+    triggerDrag(button, 2, 0);
+    triggerDrag(button, 3, 0);
+    triggerDrag(button, 4, 0);
+    triggerDrag(button, 5, 0);
+    trigger(button, 'touchend');
+
+    const emitted = wrapper.emitted('update:modelValue');
+    if (emitted && emitted.length > 0) {
+      const result = emitted[emitted.length - 1][0] as number;
+      expect(result).toBeGreaterThanOrEqual(0);
+      expect(result).toBeLessThanOrEqual(8);
+    }
+  });
 });
