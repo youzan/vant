@@ -966,7 +966,7 @@ describe('Slider format function boundary tests', () => {
     );
   });
 
-  test('should test edge cases with mathematical precision', () => {
+  test('should test edge cases with mathematical precisions', () => {
     const precisionTestCases = [
       { min: 0, max: 37, step: 25, value: 19 },
       { min: 0, max: 43, step: 30, value: 38 },
