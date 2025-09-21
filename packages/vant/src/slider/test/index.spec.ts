@@ -955,7 +955,7 @@ describe('Slider format function boundary tests', () => {
             `  Input: min=${min}, max=${max}, step=${step}, value=${value}`,
           );
           console.log(
-            `  Result: ${result}, Expected branch: ${expectedBranch}`,
+            `  Result is: ${result}, Expected branch: ${expectedBranch}`,
           );
         } else {
           console.log(
