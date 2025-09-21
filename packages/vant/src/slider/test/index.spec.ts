@@ -950,7 +950,7 @@ describe('Slider format function boundary tests', () => {
             }
           }
 
-          console.log(`Test case: ${description}`);
+          console.log(`Test case is: ${description}`);
           console.log(
             `  Input: min=${min}, max=${max}, step=${step}, value=${value}`,
           );
