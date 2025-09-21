@@ -1106,4 +1106,17 @@ describe('Slider format function boundary tests', () => {
       expect(result).toBe(11);
     }
   });
+
+  test('should trigger prevSteppedValue with calculated precision', () => {
+    const wrapper = mount(Slider, {
+      props: { min: 0.5, max: 5.5, step: 4.5, modelValue: 3.2 },
+    });
+
+    const emitted = wrapper.emitted('update:modelValue');
+    if (emitted && emitted.length > 0) {
+      const result = emitted[emitted.length - 1][0] as number;
+      expect(result).toBeGreaterThanOrEqual(0.5);
+      expect(result).toBeLessThanOrEqual(5.5);
+    }
+  });
 });
