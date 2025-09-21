@@ -1334,3 +1334,25 @@ test('should handle readonly state properly in focus events', async () => {
   // Should not emit focus event due to immediate blur
   expect(wrapper.emitted('focus')).toBeFalsy();
 });
+
+test('should handle readonly state in blur validation correctly', async () => {
+  const wrapper = mount(Field, {
+    props: {
+      readonly: true,
+      modelValue: 'readonly value',
+      placeholder: 'Readonly field',
+      rules: [{ required: true, message: 'Required' }],
+    },
+  });
+
+  const input = wrapper.find('input');
+
+  expect(input.element.readOnly).toBe(true);
+
+  await input.trigger('blur');
+
+  expect(wrapper.emitted('startValidate')).toBeFalsy();
+  expect(wrapper.emitted('endValidate')).toBeFalsy();
+
+  expect(wrapper.emitted('blur')).toBeTruthy();
+});
