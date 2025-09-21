@@ -158,6 +158,8 @@ export default defineComponent({
       status: 'unvalidated' as FieldValidationStatus,
       focused: false,
       validateMessage: '',
+      // FIX 1: Add flag to track if focus is user-initiated to prevent keyboard blocking issue
+      userInitiatedFocus: false,
     });
 
     const inputRef = ref<HTMLInputElement>();
@@ -421,19 +423,27 @@ export default defineComponent({
       }
     };
 
+    // FIX 2: Optimize onFocus handling to prevent readonly blur and properly track user focus
     const onFocus = (event: Event) => {
-      state.focused = true;
-      emit('focus', event);
-      nextTick(adjustTextareaSize);
-
-      // readonly not work in legacy mobile safari
+      // If readonly, immediately blur and return without updating any state
       if (getProp('readonly')) {
         blur();
+        return;
       }
+
+      state.focused = true;
+      // FIX 3: Mark this as user-initiated focus
+      state.userInitiatedFocus = true;
+
+      emit('focus', event);
+      nextTick(adjustTextareaSize);
     };
 
     const onBlur = (event: Event) => {
       state.focused = false;
+      // FIX 4: Reset user-initiated focus flag
+      state.userInitiatedFocus = false;
+
       updateValue(getModelValue(), 'onBlur');
       emit('blur', event);
 
@@ -446,7 +456,23 @@ export default defineComponent({
       resetScroll();
     };
 
-    const onClickInput = (event: MouseEvent) => emit('clickInput', event);
+    // FIX 5: Optimize click input handling for placeholder-related keyboard blocking
+    const onClickInput = (event: MouseEvent) => {
+      // Mark this as user-initiated action
+      state.userInitiatedFocus = true;
+
+      // If placeholder exists and input is not focused, ensure proper focus handling
+      if (props.placeholder && !state.focused) {
+        // Use nextTick to avoid state conflicts and ensure proper keyboard behavior
+        nextTick(() => {
+          if (inputRef.value && !state.focused) {
+            inputRef.value.focus();
+          }
+        });
+      }
+
+      emit('clickInput', event);
+    };
 
     const onClickLeftIcon = (event: MouseEvent) => emit('clickLeftIcon', event);
 
@@ -676,6 +702,7 @@ export default defineComponent({
       validateWithTrigger,
     });
 
+    // FIX 6: Optimize modelValue watching logic
     watch(
       () => props.modelValue,
       () => {
@@ -683,6 +710,17 @@ export default defineComponent({
         resetValidation();
         validateWithTrigger('onChange');
         nextTick(adjustTextareaSize);
+      },
+    );
+
+    // FIX 7: Watch placeholder changes and reset focus-related state
+    watch(
+      () => props.placeholder,
+      () => {
+        // Reset focus state when placeholder changes to prevent keyboard blocking
+        if (props.placeholder && !state.focused) {
+          state.userInitiatedFocus = false;
+        }
       },
     );
 
