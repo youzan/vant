@@ -390,8 +390,10 @@ test('should return max when distanceToMax <= distanceToPrev', () => {
 
 test('should enter steppedValue > max branch', () => {
   const wrapper = mount(Slider, {
-    props: { min: 0, max: 12, step: 20, modelValue: 11 },
+    props: { min: 0, max: 12, step: 20, modelValue: 0 },
   });
+
+  wrapper.setProps({ modelValue: 11 });
 
   const emitted = wrapper.emitted('update:modelValue');
   if (emitted && emitted.length > 0) {
