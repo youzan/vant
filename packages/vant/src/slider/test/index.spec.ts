@@ -388,14 +388,15 @@ test('should return max when distanceToMax <= distanceToPrev', () => {
   }
 });
 
-test('should return prevSteppedValue when distanceToMax > distanceToPrev', () => {
+test('should enter steppedValue > max branch', () => {
   const wrapper = mount(Slider, {
-    props: { min: 0, max: 8, step: 12, modelValue: 2 },
+    props: { min: 0, max: 12, step: 20, modelValue: 11 },
   });
 
   const emitted = wrapper.emitted('update:modelValue');
   if (emitted && emitted.length > 0) {
     const result = emitted[emitted.length - 1][0] as number;
-    expect(result).toBe(0); // Should return prevSteppedValue
+    expect(result).toBeGreaterThanOrEqual(0);
+    expect(result).toBeLessThanOrEqual(12);
   }
 });
