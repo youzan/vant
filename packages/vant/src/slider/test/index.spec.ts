@@ -376,28 +376,26 @@ test('should update modelValue correctly after clicking the reversed vertical sl
 });
 
 //https://github.com/youzan/vant/issues/13625
-test('should trigger prevSteppedValue branch with precise values', () => {
+test('should return max when distanceToMax <= distanceToPrev', () => {
   const wrapper = mount(Slider, {
-    props: { min: 0, max: 6, step: 8, modelValue: 1 },
+    props: { min: 0, max: 50, step: 60, modelValue: 45 },
   });
 
   const emitted = wrapper.emitted('update:modelValue');
   if (emitted && emitted.length > 0) {
     const result = emitted[emitted.length - 1][0] as number;
-    expect(result).toBeGreaterThanOrEqual(0);
-    expect(result).toBeLessThanOrEqual(6);
+    expect(result).toBe(50); // Should return max
   }
 });
 
-test('should test boundary with extreme step ratio', () => {
+test('should return prevSteppedValue when distanceToMax > distanceToPrev', () => {
   const wrapper = mount(Slider, {
-    props: { min: 1, max: 3, step: 10, modelValue: 2 },
+    props: { min: 0, max: 8, step: 12, modelValue: 2 },
   });
 
   const emitted = wrapper.emitted('update:modelValue');
   if (emitted && emitted.length > 0) {
     const result = emitted[emitted.length - 1][0] as number;
-    expect(result).toBeGreaterThanOrEqual(1);
-    expect(result).toBeLessThanOrEqual(3);
+    expect(result).toBe(0); // Should return prevSteppedValue
   }
 });
