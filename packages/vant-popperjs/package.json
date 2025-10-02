@@ -38,6 +38,6 @@
   "devDependencies": {
     "@popperjs/core": "^2.11.8",
     "@rslib/core": "^0.13.3",
-    "typescript": "^5.9.2"
+    "typescript": "^5.9.3"
   }
 }
