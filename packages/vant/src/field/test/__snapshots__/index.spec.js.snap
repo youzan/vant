@@ -8,6 +8,14 @@ exports[`should change clear icon when using clear-icon prop 1`] = `
 </i>"
 `;
 
+exports[`should change clear icon when using clear-icon prop 2`] = `
+"<i class="van-badge__wrapper van-icon van-icon-cross van-field__clear">
+  <!---->
+  <!---->
+  <!---->
+</i>"
+`;
+
 exports[`should render colon when using colon prop 1`] = `
 <div class="van-cell__title van-field__label">
   <label
@@ -20,7 +28,25 @@ exports[`should render colon when using colon prop 1`] = `
 </div>
 `;
 
+exports[`should render colon when using colon prop 2`] = `
+<div class="van-cell__title van-field__label">
+  <label
+    id="van-field-label"
+    for="van-field-input"
+    data-allow-mismatch="attribute"
+  >
+    foo:
+  </label>
+</div>
+`;
+
 exports[`should render error-message slot correctly 1`] = `
+<div class="van-field__error-message">
+  Custom error
+</div>
+`;
+
+exports[`should render error-message slot correctly 2`] = `
 <div class="van-field__error-message">
   Custom error
 </div>
@@ -42,7 +68,29 @@ exports[`should render extra slot correctly 1`] = `
 </div>
 `;
 
+exports[`should render extra slot correctly 2`] = `
+<div class="van-cell van-field">
+  <div class="van-cell__value van-field__value">
+    <div class="van-field__body">
+      <input
+        type="text"
+        id="van-field-input"
+        class="van-field__control"
+        data-allow-mismatch="attribute"
+      >
+    </div>
+  </div>
+  Extra
+</div>
+`;
+
 exports[`should render input slot correctly 1`] = `
+<div class="van-field__control van-field__control--custom">
+  Custom Input
+</div>
+`;
+
+exports[`should render input slot correctly 2`] = `
 <div class="van-field__control van-field__control--custom">
   Custom Input
 </div>
@@ -60,13 +108,60 @@ exports[`should render label correctly when dynamically set empty label 1`] = `
 </div>
 `;
 
+exports[`should render label correctly when dynamically set empty label 2`] = `
+<div class="van-cell__title van-field__label">
+  <label
+    id="van-field-label"
+    for="van-field-input"
+    data-allow-mismatch="attribute"
+  >
+    abc
+  </label>
+</div>
+`;
+
 exports[`should render label slot correctly 1`] = `
 <div class="van-cell__title van-field__label">
   Custom Label
 </div>
 `;
 
+exports[`should render label slot correctly 2`] = `
+<div class="van-cell__title van-field__label">
+  Custom Label
+</div>
+`;
+
 exports[`should render left icon inside label when label-align is top 1`] = `
+<div class="van-cell van-field van-field--label-top">
+  <div class="van-cell__title van-field__label van-field__label--top">
+    <div class="van-field__left-icon">
+      <i class="van-badge__wrapper van-icon van-icon-success">
+      </i>
+    </div>
+    <label
+      id="van-field-label"
+      for="van-field-input"
+      data-allow-mismatch="attribute"
+    >
+      Label
+    </label>
+  </div>
+  <div class="van-cell__value van-field__value">
+    <div class="van-field__body">
+      <input
+        type="text"
+        id="van-field-input"
+        class="van-field__control"
+        aria-labelledby="van-field-label"
+        data-allow-mismatch="attribute"
+      >
+    </div>
+  </div>
+</div>
+`;
+
+exports[`should render left icon inside label when label-align is top 2`] = `
 <div class="van-cell van-field van-field--label-top">
   <div class="van-cell__title van-field__label van-field__label--top">
     <div class="van-field__left-icon">
@@ -111,6 +206,22 @@ exports[`should render textarea when type is textarea 1`] = `
 </div>
 `;
 
+exports[`should render textarea when type is textarea 2`] = `
+<div class="van-cell van-field">
+  <div class="van-cell__value van-field__value">
+    <div class="van-field__body">
+      <textarea
+        id="van-field-input"
+        class="van-field__control"
+        data-allow-mismatch="attribute"
+        style="height: auto;"
+      >
+      </textarea>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`should render word limit correctly 1`] = `
 <div class="van-field__word-limit">
   <span class="van-field__word-num">
@@ -120,7 +231,37 @@ exports[`should render word limit correctly 1`] = `
 </div>
 `;
 
+exports[`should render word limit correctly 2`] = `
+<div class="van-field__word-limit">
+  <span class="van-field__word-num">
+    3
+  </span>
+  /3
+</div>
+`;
+
 exports[`should render word limit correctly when modelValue is null 1`] = `
+<div class="van-cell van-field">
+  <div class="van-cell__value van-field__value">
+    <div class="van-field__body">
+      <input
+        type="text"
+        id="van-field-input"
+        class="van-field__control"
+        data-allow-mismatch="attribute"
+      >
+    </div>
+    <div class="van-field__word-limit">
+      <span class="van-field__word-num">
+        0
+      </span>
+      /3
+    </div>
+  </div>
+</div>
+`;
+
+exports[`should render word limit correctly when modelValue is null 2`] = `
 <div class="van-cell van-field">
   <div class="van-cell__value van-field__value">
     <div class="van-field__body">
@@ -162,7 +303,37 @@ exports[`should render word limit correctly when modelValue is undefined 1`] = `
 </div>
 `;
 
+exports[`should render word limit correctly when modelValue is undefined 2`] = `
+<div class="van-cell van-field">
+  <div class="van-cell__value van-field__value">
+    <div class="van-field__body">
+      <input
+        type="text"
+        id="van-field-input"
+        class="van-field__control"
+        data-allow-mismatch="attribute"
+      >
+    </div>
+    <div class="van-field__word-limit">
+      <span class="van-field__word-num">
+        0
+      </span>
+      /3
+    </div>
+  </div>
+</div>
+`;
+
 exports[`should render word limit with emoji correctly 1`] = `
+<div class="van-field__word-limit">
+  <span class="van-field__word-num">
+    2
+  </span>
+  /3
+</div>
+`;
+
+exports[`should render word limit with emoji correctly 2`] = `
 <div class="van-field__word-limit">
   <span class="van-field__word-num">
     2
