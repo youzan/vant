@@ -33,7 +33,7 @@
   "dependencies": {
     "@babel/core": "^7.28.4",
     "@babel/preset-typescript": "^7.27.1",
-    "@rsbuild/core": "^1.5.10",
+    "@rsbuild/core": "^1.5.17",
     "@rsbuild/plugin-babel": "^1.0.6",
     "@rsbuild/plugin-less": "^1.5.0",
     "@rsbuild/plugin-sass": "^1.4.0",
@@ -47,14 +47,14 @@
     "autoprefixer": "^10.4.21",
     "commander": "^14.0.1",
     "enquirer": "2.4.1",
-    "esbuild": "^0.25.9",
+    "esbuild": "^0.25.11",
     "eslint": "^8.57.1",
     "fast-glob": "^3.3.3",
-    "fs-extra": "^11.3.1",
+    "fs-extra": "^11.3.2",
     "hash-sum": "^2.0.0",
     "highlight.js": "^11.11.1",
     "husky": "^9.1.7",
-    "less": "^4.4.1",
+    "less": "^4.4.2",
     "lodash": "^4.17.21",
     "markdown-it": "^14.1.0",
     "markdown-it-anchor": "^9.2.0",
@@ -67,7 +67,7 @@
     "rspack-plugin-virtual-module": "^1.0.1",
     "terser": "^5.44.0",
     "transliteration": "^2.3.5",
-    "typescript": "^5.9.2",
+    "typescript": "^5.9.3",
     "vite": "^5.4.20",
     "vue-router": "^4.5.1"
   },
@@ -76,9 +76,9 @@
     "@types/less": "^3.0.8",
     "@types/lodash": "^4.17.20",
     "@types/markdown-it": "^14.1.2",
-    "@types/node": "^22.18.3",
+    "@types/node": "^22.18.11",
     "rimraf": "^6.0.1",
-    "vue": "^3.5.21"
+    "vue": "^3.5.22"
   },
   "engines": {
     "node": ">=16.0.0"
