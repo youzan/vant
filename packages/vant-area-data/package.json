@@ -38,6 +38,6 @@
   "license": "MIT",
   "devDependencies": {
     "@rslib/core": "^0.15.1",
-    "typescript": "^5.9.2"
+    "typescript": "^5.9.3"
   }
 }
