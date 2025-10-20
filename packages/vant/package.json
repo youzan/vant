@@ -72,7 +72,7 @@
     "vitest": "^3.2.4",
     "vitest-canvas-mock": "^0.3.3",
     "vue": "^3.5.22",
-    "vue-router": "^4.5.1"
+    "vue-router": "^4.6.3"
   },
   "sideEffects": [
     "es/**/style/*",
