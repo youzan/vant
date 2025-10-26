@@ -131,6 +131,7 @@ export default defineComponent({
           type="search"
           class={bem('field', { 'with-message': fieldAttrs.errorMessage })}
           border={false}
+          labelAlign="left"
           onBlur={onBlur}
           onFocus={onFocus}
           onClear={onClear}

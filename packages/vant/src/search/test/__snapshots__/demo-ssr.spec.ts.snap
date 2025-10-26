@@ -9,7 +9,7 @@ exports[`should render demo and match snapshot 1`] = `
     style
   >
     <div class="van-search__content van-search__content--square">
-      <div class="van-cell van-cell--borderless van-field van-search__field">
+      <div class="van-cell van-cell--borderless van-field van-field--label-left van-search__field">
         <!--[-->
         <div class="van-field__left-icon">
           <i
@@ -43,7 +43,7 @@ exports[`should render demo and match snapshot 1`] = `
       style
     >
       <div class="van-search__content van-search__content--square">
-        <div class="van-cell van-cell--borderless van-field van-search__field">
+        <div class="van-cell van-cell--borderless van-field van-field--label-left van-search__field">
           <!--[-->
           <div class="van-field__left-icon">
             <i
@@ -84,7 +84,7 @@ exports[`should render demo and match snapshot 1`] = `
     style
   >
     <div class="van-search__content van-search__content--square">
-      <div class="van-cell van-cell--borderless van-field van-search__field">
+      <div class="van-cell van-cell--borderless van-field van-field--label-left van-search__field">
         <!--[-->
         <div class="van-field__left-icon">
           <i
@@ -117,7 +117,7 @@ exports[`should render demo and match snapshot 1`] = `
     style
   >
     <div class="van-search__content van-search__content--square">
-      <div class="van-cell van-cell--borderless van-field van-field--disabled van-search__field">
+      <div class="van-cell van-cell--borderless van-field van-field--disabled van-field--label-left van-search__field">
         <!--[-->
         <div class="van-field__left-icon">
           <i
@@ -151,7 +151,7 @@ exports[`should render demo and match snapshot 1`] = `
     style="background:#4fc08d;"
   >
     <div class="van-search__content van-search__content--round">
-      <div class="van-cell van-cell--borderless van-field van-search__field">
+      <div class="van-cell van-cell--borderless van-field van-field--label-left van-search__field">
         <!--[-->
         <div class="van-field__left-icon">
           <i
@@ -191,7 +191,7 @@ exports[`should render demo and match snapshot 1`] = `
       >
         Address
       </label>
-      <div class="van-cell van-cell--borderless van-field van-search__field">
+      <div class="van-cell van-cell--borderless van-field van-field--label-left van-search__field">
         <!--[-->
         <div class="van-field__left-icon">
           <i
