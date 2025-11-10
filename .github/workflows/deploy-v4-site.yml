@@ -23,7 +23,7 @@ jobs:
           npm install -g corepack@latest --force 
           corepack enable
 
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v6
         with:
           node-version: '22.14.0'
           cache: 'pnpm'
