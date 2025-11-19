@@ -20,6 +20,7 @@ export type {
   FieldAutosizeConfig,
   FieldValidateTrigger,
   FieldValidationStatus,
+  FieldEnterKeyHint,
 } from './types';
 
 declare module 'vue' {
