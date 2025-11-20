@@ -70,6 +70,7 @@ import type {
   FieldValidationStatus,
   FieldValidateTrigger,
   FieldFormSharedProps,
+  FieldEnterKeyHint,
 } from './types';
 
 const [name, bem] = createNamespace('field');
@@ -94,7 +95,7 @@ export const fieldSharedProps = {
   autocapitalize: String,
   autocorrect: String,
   errorMessage: String,
-  enterkeyhint: String,
+  enterkeyhint: String as PropType<FieldEnterKeyHint>,
   clearTrigger: makeStringProp<FieldClearTrigger>('focus'),
   formatTrigger: makeStringProp<FieldFormatTrigger>('onChange'),
   spellcheck: {
