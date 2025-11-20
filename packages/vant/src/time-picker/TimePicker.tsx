@@ -153,7 +153,7 @@ export default defineComponent({
           default:
             if (process.env.NODE_ENV !== 'production') {
               throw new Error(
-                `[Vant] DatePicker: unsupported columns type: ${type}`,
+                `[Vant] TimePicker: unsupported columns type: ${type}`,
               );
             }
             return [];
