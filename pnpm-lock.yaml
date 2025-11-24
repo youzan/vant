@@ -42,8 +42,8 @@ importers:
         specifier: ^1.1.1
         version: 1.1.1
       rslog:
-        specifier: ^1.2.11
-        version: 1.2.11
+        specifier: ^1.3.0
+        version: 1.3.0
     devDependencies:
       '@types/fs-extra':
         specifier: ^11.0.4
@@ -245,8 +245,8 @@ importers:
         specifier: ^3.6.2
         version: 3.6.2
       rslog:
-        specifier: ^1.2.11
-        version: 1.2.11
+        specifier: ^1.3.0
+        version: 1.3.0
       rspack-plugin-virtual-module:
         specifier: ^1.0.1
         version: 1.0.1
@@ -2809,8 +2809,8 @@ packages:
       typescript:
         optional: true
 
-  rslog@1.2.11:
-    resolution: {integrity: sha512-YgMMzQf6lL9q4rD9WS/lpPWxVNJ1ttY9+dOXJ0+7vJrKCAOT4GH0EiRnBi9mKOitcHiOwjqJPV1n/HRqqgZmOQ==}
+  rslog@1.3.0:
+    resolution: {integrity: sha512-93DpwwaiRrLz7fJ5z6Uwb171hHBws1VVsWjU6IruLFX63BicLA44QNu0sfn3guKHnBHZMFSKO8akfx5QhjuegQ==}
 
   rspack-plugin-virtual-module@1.0.1:
     resolution: {integrity: sha512-NQJ3fXa1v0WayvfHMWbyqLUA3JIqgCkhIcIOnZscuisinxorQyIAo+bqcU5pCusMKSyPqVIWO3caQyl0s9VDAg==}
@@ -5974,7 +5974,7 @@ snapshots:
     optionalDependencies:
       typescript: 5.9.3
 
-  rslog@1.2.11: {}
+  rslog@1.3.0: {}
 
   rspack-plugin-virtual-module@1.0.1:
     dependencies:
