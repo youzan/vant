@@ -131,6 +131,7 @@ export const fieldProps = extend({}, cellSharedProps, fieldSharedProps, {
     type: Boolean,
     default: null,
   },
+  showPasswordIcon: Boolean,
 });
 
 export type FieldProps = ExtractPropTypes<typeof fieldProps>;
@@ -160,6 +161,8 @@ export default defineComponent({
       focused: false,
       validateMessage: '',
     });
+
+    let selectionInfo: { selectionStart: number; selectionEnd: number };
 
     const inputRef = ref<HTMLInputElement>();
     const clearIconRef = ref<ComponentInstance>();
@@ -410,6 +413,9 @@ export default defineComponent({
       if (!event.target!.composing) {
         updateValue((event.target as HTMLInputElement).value);
       }
+      const { selectionStart, selectionEnd } = event.target as HTMLInputElement;
+      if (selectionStart === null || selectionEnd === null) return;
+      selectionInfo = { selectionStart, selectionEnd };
     };
 
     const blur = () => inputRef.value?.blur();
@@ -451,8 +457,21 @@ export default defineComponent({
 
     const onClickLeftIcon = (event: MouseEvent) => emit('clickLeftIcon', event);
 
-    const onClickRightIcon = (event: MouseEvent) =>
+    const onClickRightIcon = (event: MouseEvent) => {
       emit('clickRightIcon', event);
+
+      if (showPwdIcon.value) {
+        showPassword.value = !showPassword.value;
+        if (selectionInfo === undefined) return;
+        focus();
+        setTimeout(() => {
+          inputRef.value?.setSelectionRange(
+            selectionInfo.selectionStart,
+            selectionInfo.selectionEnd,
+          );
+        });
+      }
+    };
 
     const onClear = (event: TouchEvent) => {
       preventDefault(event);
@@ -498,6 +517,14 @@ export default defineComponent({
     const getInputId = () => props.id || `${id}-input`;
 
     const getValidationStatus = () => state.status;
+
+    const showPassword = ref(false);
+    const passwordIcon = computed(() =>
+      showPassword.value ? 'eye-o' : 'closed-eye',
+    );
+    const showPwdIcon = computed(
+      () => props.showPasswordIcon && !getProp('disabled') && !!getModelValue(),
+    );
 
     const renderInput = () => {
       const controlClass = bem('control', [
@@ -548,9 +575,13 @@ export default defineComponent({
         return <textarea {...inputAttrs} inputmode={props.inputmode} />;
       }
 
-      return (
-        <input {...mapInputType(props.type, props.inputmode)} {...inputAttrs} />
-      );
+      const type = props.showPasswordIcon
+        ? showPassword.value
+          ? 'text'
+          : 'password'
+        : props.type;
+
+      return <input {...mapInputType(type, props.inputmode)} {...inputAttrs} />;
     };
 
     const renderLeftIcon = () => {
@@ -571,14 +602,17 @@ export default defineComponent({
 
     const renderRightIcon = () => {
       const rightIconSlot = slots['right-icon'];
+      const rightIcon = showPwdIcon.value
+        ? passwordIcon.value
+        : props.rightIcon;
 
-      if (props.rightIcon || rightIconSlot) {
+      if (rightIcon || rightIconSlot) {
         return (
           <div class={bem('right-icon')} onClick={onClickRightIcon}>
             {rightIconSlot ? (
               rightIconSlot()
             ) : (
-              <Icon name={props.rightIcon} classPrefix={props.iconPrefix} />
+              <Icon name={rightIcon} classPrefix={props.iconPrefix} />
             )}
           </div>
         );
