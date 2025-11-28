@@ -48,7 +48,7 @@
   "dependencies": {
     "@vant/popperjs": "workspace:^",
     "@vant/use": "workspace:^",
-    "@vue/shared": "^3.5.22"
+    "@vue/shared": "^3.5.25"
   },
   "peerDependencies": {
     "vue": "^3.0.0"
@@ -62,16 +62,16 @@
     "@vitejs/plugin-vue": "^5.2.4",
     "@vitejs/plugin-vue-jsx": "^4.2.0",
     "@vitest/coverage-istanbul": "^3.2.4",
-    "@vue/runtime-core": "^3.5.22",
+    "@vue/runtime-core": "^3.5.25",
     "@vue/test-utils": "^2.4.6",
-    "csstype": "^3.2.2",
+    "csstype": "^3.2.3",
     "diffable-html": "^6.0.1",
     "jsdom": "^25.0.1",
     "typescript": "^5.9.3",
     "vite": "^5.4.20",
     "vitest": "^3.2.4",
     "vitest-canvas-mock": "^0.3.3",
-    "vue": "^3.5.22",
+    "vue": "^3.5.25",
     "vue-router": "^4.6.3"
   },
   "sideEffects": [
