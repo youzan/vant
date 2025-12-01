@@ -4,7 +4,7 @@ exports[`should render demo and match snapshot 1`] = `
 <div>
   <div class="van-search">
     <div class="van-search__content van-search__content--square">
-      <div class="van-cell van-cell--borderless van-field van-search__field">
+      <div class="van-cell van-cell--borderless van-field van-field--label-left van-search__field">
         <div class="van-field__left-icon">
           <i class="van-badge__wrapper van-icon van-icon-search">
           </i>
@@ -28,7 +28,7 @@ exports[`should render demo and match snapshot 1`] = `
   <form action="/">
     <div class="van-search van-search--show-action">
       <div class="van-search__content van-search__content--square">
-        <div class="van-cell van-cell--borderless van-field van-search__field">
+        <div class="van-cell van-cell--borderless van-field van-field--label-left van-search__field">
           <div class="van-field__left-icon">
             <i class="van-badge__wrapper van-icon van-icon-search">
             </i>
@@ -59,7 +59,7 @@ exports[`should render demo and match snapshot 1`] = `
 <div>
   <div class="van-search">
     <div class="van-search__content van-search__content--square">
-      <div class="van-cell van-cell--borderless van-field van-search__field">
+      <div class="van-cell van-cell--borderless van-field van-field--label-left van-search__field">
         <div class="van-field__left-icon">
           <i class="van-badge__wrapper van-icon van-icon-search">
           </i>
@@ -82,7 +82,7 @@ exports[`should render demo and match snapshot 1`] = `
 <div>
   <div class="van-search">
     <div class="van-search__content van-search__content--square">
-      <div class="van-cell van-cell--borderless van-field van-field--disabled van-search__field">
+      <div class="van-cell van-cell--borderless van-field van-field--disabled van-field--label-left van-search__field">
         <div class="van-field__left-icon">
           <i class="van-badge__wrapper van-icon van-icon-search">
           </i>
@@ -109,7 +109,7 @@ exports[`should render demo and match snapshot 1`] = `
     style="background: rgb(79, 192, 141);"
   >
     <div class="van-search__content van-search__content--round">
-      <div class="van-cell van-cell--borderless van-field van-search__field">
+      <div class="van-cell van-cell--borderless van-field van-field--label-left van-search__field">
         <div class="van-field__left-icon">
           <i class="van-badge__wrapper van-icon van-icon-search">
           </i>
@@ -139,7 +139,7 @@ exports[`should render demo and match snapshot 1`] = `
       >
         Address
       </label>
-      <div class="van-cell van-cell--borderless van-field van-search__field">
+      <div class="van-cell van-cell--borderless van-field van-field--label-left van-search__field">
         <div class="van-field__left-icon">
           <i class="van-badge__wrapper van-icon van-icon-search">
           </i>
