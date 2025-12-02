@@ -156,11 +156,26 @@ export default defineComponent({
       const nav = navRef.value;
       const titles = titleRefs.value;
 
-      if (!scrollable.value || !nav || !titles || !titles[state.currentIndex]) {
+      if (!scrollable.value || !nav || !titles) {
         return;
       }
 
-      const title = titles[state.currentIndex].$el;
+      const validTitles = titles.filter((t) => t && t.$el);
+
+      if (
+        !validTitles.length ||
+        state.currentIndex < 0 ||
+        state.currentIndex >= validTitles.length
+      ) {
+        return;
+      }
+
+      const currentTitle = validTitles[state.currentIndex];
+      if (!currentTitle || !currentTitle.$el) {
+        return;
+      }
+
+      const title = currentTitle.$el;
       const to = title.offsetLeft - (nav.offsetWidth - title.offsetWidth) / 2;
 
       if (cancelScrollLeftToRaf) cancelScrollLeftToRaf();
@@ -177,17 +192,24 @@ export default defineComponent({
 
       nextTick(() => {
         const titles = titleRefs.value;
+        const validTitles = titles.filter((t) => t && t.$el);
 
         if (
-          !titles ||
-          !titles[state.currentIndex] ||
+          !validTitles.length ||
+          state.currentIndex < 0 ||
+          state.currentIndex >= validTitles.length ||
           props.type !== 'line' ||
           isHidden(root.value!)
         ) {
           return;
         }
 
-        const title = titles[state.currentIndex].$el;
+        const currentTitle = validTitles[state.currentIndex];
+        if (!currentTitle || !currentTitle.$el) {
+          return;
+        }
+
+        const title = currentTitle.$el;
         const { lineWidth, lineHeight } = props;
         const left = title.offsetLeft + title.offsetWidth / 2;
 
