@@ -33,11 +33,11 @@
   "dependencies": {
     "@babel/core": "^7.28.5",
     "@babel/preset-typescript": "^7.28.5",
-    "@rsbuild/core": "^1.5.17",
+    "@rsbuild/core": "^1.6.13",
     "@rsbuild/plugin-babel": "^1.0.6",
     "@rsbuild/plugin-less": "^1.5.0",
     "@rsbuild/plugin-sass": "^1.4.0",
-    "@rsbuild/plugin-vue": "^1.1.2",
+    "@rsbuild/plugin-vue": "^1.2.0",
     "@rsbuild/plugin-vue-jsx": "^1.1.1",
     "@vant/eslint-config": "workspace:^",
     "@vant/touch-emulator": "workspace:^",
