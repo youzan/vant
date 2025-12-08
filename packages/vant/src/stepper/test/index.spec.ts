@@ -455,3 +455,30 @@ test('should allow input be to empty when using allow-empty prop', async () => {
   await input.trigger('blur');
   expect(wrapper.emitted('update:modelValue')![0]).toEqual([1]);
 });
+
+test('scientific number', async () => {
+  const wrapper = mount(Stepper, {
+    props: {
+      min: 0,
+      modelValue: 9.9e-7,
+    },
+  });
+
+  const input = wrapper.find('input');
+
+  expect(input.element.value).toEqual('9.9e-7');
+});
+
+test('scientific number with decimal length', async () => {
+  const wrapper = mount(Stepper, {
+    props: {
+      min: 0,
+      modelValue: 9.9e-7,
+      decimalLength: 8,
+    },
+  });
+
+  const input = wrapper.find('input');
+
+  expect(input.element.value).toEqual('0.00000099');
+});
