@@ -608,3 +608,29 @@ test("should not be set label's for attribute when using input slot", async () =
     wrapper.find('.van-field__label label').attributes('for'),
   ).toBeUndefined();
 });
+
+test('should change input field type when password icon is clicked', async () => {
+  const wrapper = mount(Field, {
+    props: {
+      modelValue: '',
+      type: 'password',
+      showPasswordIcon: true,
+    },
+  });
+  const input = wrapper.find('.van-field__control');
+  const rightIconHide = wrapper.find('.van-field__right-icon');
+  expect(rightIconHide.exists()).toBeFalsy();
+  await wrapper.setProps({ modelValue: 'password' });
+
+  const rightIconShow = wrapper.find('.van-field__right-icon');
+  expect(rightIconShow.exists()).toBeTruthy();
+  const passwordClosedIcon = rightIconShow.find('.van-icon-closed-eye');
+  expect(passwordClosedIcon.exists()).toBeTruthy();
+  expect(input.element.type).toEqual('password');
+  await passwordClosedIcon.trigger('click');
+
+  const passwordOpenIcon = rightIconShow.find('.van-icon-eye-o');
+  expect(rightIconShow.find('.van-icon-closed-eye').exists()).toBeFalsy();
+  expect(passwordOpenIcon.exists()).toBeTruthy();
+  expect(input.element.type).toEqual('text');
+});
