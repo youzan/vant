@@ -5,6 +5,7 @@ import {
   computed,
   nextTick,
   reactive,
+  onUpdated,
   onMounted,
   defineComponent,
   type PropType,
@@ -686,6 +687,10 @@ export default defineComponent({
         nextTick(adjustTextareaSize);
       },
     );
+
+    onUpdated(() => {
+      updateValue(getModelValue());
+    });
 
     onMounted(() => {
       updateValue(getModelValue(), props.formatTrigger);
