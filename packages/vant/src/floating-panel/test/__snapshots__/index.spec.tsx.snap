@@ -9,7 +9,10 @@ exports[`should drag adsorption effect when anchors props is [100, 200, 400] 1`]
     <div class="van-floating-panel__header-bar">
     </div>
   </div>
-  <div class="van-floating-panel__content">
+  <div
+    class="van-floating-panel__content"
+    style="padding-bottom: 300px;"
+  >
     内容
   </div>
 </div>
@@ -24,7 +27,10 @@ exports[`should minHeight 100 and maxHeight 0.6 innerHeight when anchors props d
     <div class="van-floating-panel__header-bar">
     </div>
   </div>
-  <div class="van-floating-panel__content">
+  <div
+    class="van-floating-panel__content"
+    style="padding-bottom: 361px;"
+  >
     Content
   </div>
 </div>
@@ -36,7 +42,10 @@ exports[`should render header slot correctly 1`] = `
   style="height: 461px; transform: translateY(calc(100% + -100px)); transition: transform 0.3s cubic-bezier(0.18, 0.89, 0.32, 1.28);"
 >
   Custom Header
-  <div class="van-floating-panel__content">
+  <div
+    class="van-floating-panel__content"
+    style="padding-bottom: 361px;"
+  >
   </div>
 </div>
 `;
