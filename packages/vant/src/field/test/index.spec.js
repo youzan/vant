@@ -608,3 +608,39 @@ test("should not be set label's for attribute when using input slot", async () =
     wrapper.find('.van-field__label label').attributes('for'),
   ).toBeUndefined();
 });
+
+test('should update selection range correctly when inputting text into string with emoji', async () => {
+  const wrapper = mount(Field, {
+    props: {
+      maxlength: 2,
+      modelValue: '😀😀',
+    },
+  });
+
+  const input = wrapper.find('input');
+  await input.trigger('focus');
+
+  input.element.value = '😀😀😀';
+  input.element.selectionEnd = 6;
+  input.trigger('input');
+
+  expect(input.element.selectionEnd).toEqual(4);
+});
+
+test('should update selection range correctly when using formatter with emoji', async () => {
+  const wrapper = mount(Field, {
+    props: {
+      modelValue: '',
+      formatter: (val) => val.replace('1', '😀😀'),
+    },
+  });
+
+  const input = wrapper.find('input');
+  await input.trigger('focus');
+
+  input.element.value = '1';
+  input.element.selectionEnd = 1;
+  input.trigger('input');
+
+  expect(input.element.selectionEnd).toEqual(4);
+});
