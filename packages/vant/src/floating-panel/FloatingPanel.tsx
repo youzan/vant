@@ -179,7 +179,11 @@ export default defineComponent({
         onTouchcancel={onTouchend}
       >
         {renderHeader()}
-        <div class={bem('content')} ref={contentRef}>
+        <div
+          class={bem('content')}
+          ref={contentRef}
+          style={{ paddingBottom: addUnit(boundary.value.max - height.value) }}
+        >
           {slots.default?.()}
         </div>
       </div>

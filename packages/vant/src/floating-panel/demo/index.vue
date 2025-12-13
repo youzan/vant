@@ -39,7 +39,7 @@ const height = ref(anchors[0]);
 </script>
 
 <template>
-  <van-tabs>
+  <van-tabs swipe-threshold="3">
     <van-tab :title="t('basicUsage')">
       <van-floating-panel>
         <van-cell-group>
