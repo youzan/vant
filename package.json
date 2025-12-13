@@ -26,7 +26,7 @@
     "eslint": "^8.57.1",
     "husky": "^9.1.7",
     "nano-staged": "^0.9.0",
-    "prettier": "^3.6.2"
+    "prettier": "^3.7.4"
   },
   "overrides": {
     "esbuild": "^0.27.1"
