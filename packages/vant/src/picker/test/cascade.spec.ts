@@ -130,3 +130,58 @@ test('should move to first option when all options are disabled', () => {
 
   expect(wrapper.html()).toMatchSnapshot();
 });
+
+// https://github.com/youzan/vant/issues/13365
+test('should reset subsequent columns when a column is changed', async () => {
+  const wrapper = mount(Picker, {
+    props: {
+      columns: [
+        {
+          text: 'A1',
+          value: 'A1',
+          children: [
+            {
+              text: 'B1',
+              value: 'B1',
+            },
+            {
+              text: 'B2',
+              value: 'B2',
+            },
+          ],
+        },
+        {
+          text: 'A2',
+          value: 'A2',
+          children: [
+            {
+              text: 'B2',
+              value: 'B2',
+            },
+            {
+              text: 'B1',
+              value: 'B1',
+            },
+          ],
+        },
+      ],
+    },
+  });
+
+  await wrapper.find('.van-picker__confirm').trigger('click');
+  expect(
+    wrapper.emitted<[PickerConfirmEventParams]>('confirm')![0][0]
+      .selectedValues,
+  ).toEqual(['A1', 'B1']);
+
+  await wrapper
+    .findAll('.van-picker-column')[0]
+    .findAll('.van-picker-column__item')[1]
+    .trigger('click');
+
+  await wrapper.find('.van-picker__confirm').trigger('click');
+  expect(
+    wrapper.emitted<[PickerConfirmEventParams]>('confirm')![1][0]
+      .selectedValues,
+  ).toEqual(['A2', 'B2']);
+});
