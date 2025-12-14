@@ -308,10 +308,11 @@ export default defineComponent({
         }
         // Remove redundant interpolated values,
         // make it consistent with the native input maxlength behavior.
-        const selectionEnd = inputRef.value?.selectionEnd;
+        let selectionEnd = inputRef.value?.selectionEnd;
         if (state.focused && selectionEnd) {
           const valueArr = [...value];
           const exceededLength = valueArr.length - +maxlength;
+          selectionEnd = getStringLength(value.slice(0, selectionEnd));
           valueArr.splice(selectionEnd - exceededLength, exceededLength);
           return valueArr.join('');
         }
