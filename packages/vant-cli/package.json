@@ -54,7 +54,7 @@
     "hash-sum": "^2.0.0",
     "highlight.js": "^11.11.1",
     "husky": "^9.1.7",
-    "less": "^4.4.2",
+    "less": "^4.5.1",
     "lodash": "^4.17.21",
     "markdown-it": "^14.1.0",
     "markdown-it-anchor": "^9.2.0",
