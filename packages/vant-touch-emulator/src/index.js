@@ -146,7 +146,7 @@
         !eventTarget ||
         (eventTarget && !eventTarget.dispatchEvent)
       ) {
-        eventTarget = ev.target;
+        eventTarget = ev.composed ? ev.composedPath()[0] : ev.target;
       }
 
       if (eventTarget.closest('[data-no-touch-simulate]') == null) {
@@ -166,8 +166,11 @@
    * @param mouseEv
    */
   function triggerTouch(eventName, mouseEv) {
-    var touchEvent = document.createEvent('Event');
-    touchEvent.initEvent(eventName, true, true);
+    var touchEvent = new Event(eventName, {
+      bubbles: true,
+      cancelable: true,
+      composed: true,
+    });
 
     touchEvent.altKey = mouseEv.altKey;
     touchEvent.ctrlKey = mouseEv.ctrlKey;
