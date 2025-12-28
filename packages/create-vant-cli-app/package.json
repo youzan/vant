@@ -30,13 +30,13 @@
   "dependencies": {
     "enquirer": "2.4.1",
     "fast-glob": "^3.3.3",
-    "fs-extra": "^11.3.2",
+    "fs-extra": "^11.3.3",
     "picocolors": "^1.1.1",
     "rslog": "^1.3.2"
   },
   "devDependencies": {
     "@types/fs-extra": "^11.0.4",
-    "@types/node": "^22.19.1",
+    "@types/node": "^22.19.3",
     "rimraf": "^6.1.2",
     "typescript": "^5.9.3"
   },
