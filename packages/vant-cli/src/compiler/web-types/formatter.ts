@@ -149,9 +149,9 @@ export function formatter(
               },
             ],
           });
+        } else {
+          tag.attributes.push(attribute);
         }
-
-        tag.attributes.push(attribute);
       });
       return;
     }
