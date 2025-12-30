@@ -123,8 +123,9 @@ export function formatter(
           },
         };
 
-        if (name === 'v-model') {
-          const modelValue = 'modelValue';
+        const vModelMatch = name.match(/^v-model:([\w-]+)$/);
+        if (name === 'v-model' || vModelMatch) {
+          const modelValue = vModelMatch ? vModelMatch[1] : 'modelValue';
           // add `modelValue`
           tag.attributes.push({ ...attribute, name: modelValue });
 
