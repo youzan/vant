@@ -73,3 +73,43 @@ test('should render badge-props prop correctly', async () => {
   const badge = wrapper.find('.van-badge');
   expect(badge.style.backgroundColor).toEqual('blue');
 });
+
+test('should render disabled prop correctly', () => {
+  const wrapper = mount(ActionBarIcon, {
+    props: {
+      disabled: true,
+      text: 'Search',
+      icon: 'search',
+    },
+  });
+
+  expect(wrapper.classes()).toContain('van-action-bar-icon--disabled');
+  expect(wrapper.attributes('tabindex')).toBe('-1');
+  expect(wrapper.html()).toMatchSnapshot();
+});
+
+test('should have correct class and tabindex when disabled', async () => {
+  const wrapper = mount(ActionBarIcon, {
+    props: {
+      disabled: true,
+      text: 'Search',
+      icon: 'search',
+    },
+  });
+
+  expect(wrapper.classes()).toContain('van-action-bar-icon--disabled');
+  expect(wrapper.attributes('tabindex')).toBe('-1');
+});
+
+test('should have correct class and tabindex when not disabled', async () => {
+  const wrapper = mount(ActionBarIcon, {
+    props: {
+      disabled: false,
+      text: 'Search',
+      icon: 'search',
+    },
+  });
+
+  expect(wrapper.classes()).not.toContain('van-action-bar-icon--disabled');
+  expect(wrapper.attributes('tabindex')).toBe('0');
+});
