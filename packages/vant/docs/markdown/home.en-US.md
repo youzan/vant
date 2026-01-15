@@ -113,7 +113,7 @@ Core contributors of Vant and Vant Weapp:
 
 Thanks to the following friends for their contributions to Vant:
 
-<a href="https://github.com/vant-ui/vant/graphs/contributors" target="_black">
+<a href="https://github.com/vant-ui/vant/graphs/contributors" target="_blank">
   <img src="https://opencollective.com/vant/contributors.svg?width=890&button=false" alt="contributors" style="width: 100%; margin: 16px 0">
 </a>
 
