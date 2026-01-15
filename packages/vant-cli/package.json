@@ -76,7 +76,7 @@
     "@types/less": "^3.0.8",
     "@types/lodash": "^4.17.21",
     "@types/markdown-it": "^14.1.2",
-    "@types/node": "^22.19.3",
+    "@types/node": "^24.10.9",
     "rimraf": "^6.1.2",
     "vue": "^3.5.26"
   },
