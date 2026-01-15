@@ -127,7 +127,7 @@ Vant 3/4 支持现代浏览器以及 Chrome >= 51、iOS >= 10.0（与 Vue 3 一�
 
 感谢以下小伙伴们为 Vant 发展做出的贡献：
 
-<a href="https://github.com/vant-ui/vant/graphs/contributors" target="_black">
+<a href="https://github.com/vant-ui/vant/graphs/contributors" target="_blank">
   <img src="https://opencollective.com/vant/contributors.svg?width=890&button=false" alt="contributors" style="width: 100%; margin: 16px 0">
 </a>
 
