@@ -33,7 +33,7 @@
   "author": "chenjiahan",
   "license": "MIT",
   "devDependencies": {
-    "@rslib/core": "^0.18.6",
+    "@rslib/core": "^0.19.2",
     "@vue/runtime-core": "^3.5.26",
     "typescript": "^5.9.3",
     "vant": "workspace:*",
