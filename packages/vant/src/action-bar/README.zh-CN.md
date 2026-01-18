@@ -111,6 +111,7 @@ export default {
 | url | 点击后跳转的链接地址 | _string_ | - |
 | to | 点击后跳转的目标路由对象，等同于 Vue Router 的 [to 属性](https://router.vuejs.org/zh/api/interfaces/RouterLinkProps.html#Properties-to) | _string \| object_ | - |
 | replace | 是否在跳转时替换当前页面历史 | _boolean_ | `false` |
+| disabled | 是否禁用图标 | _boolean_ | `false` |
 
 ### ActionBarButton Props
 

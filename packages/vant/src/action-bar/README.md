@@ -107,6 +107,7 @@ Use `badge` prop to show badge in icon.
 | url | Link URL | _string_ | - |
 | to | The target route should navigate to when clicked on, same as the [to prop](https://router.vuejs.org/api/interfaces/RouterLinkProps.html#Properties-to) of Vue Router | _string \| object_ | - |
 | replace | If true, the navigation will not leave a history record | _boolean_ | `false` |
+| disabled | Whether to disable icon | _boolean_ | `false` |
 
 ### ActionBarButton Props
 

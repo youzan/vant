@@ -21,6 +21,7 @@ export const actionBarIconProps = extend({}, routeProps, {
   iconClass: unknownProp,
   badgeProps: Object as PropType<Partial<BadgeProps>>,
   iconPrefix: String,
+  disabled: Boolean,
 });
 
 export type ActionBarIconProps = ExtractPropTypes<typeof actionBarIconProps>;
@@ -65,11 +66,26 @@ export default defineComponent({
       );
     };
 
-    return () => (
-      <div role="button" class={bem()} tabindex={0} onClick={route}>
-        {renderIcon()}
-        {slots.default ? slots.default() : props.text}
-      </div>
-    );
+    return () => {
+      const { disabled } = props;
+
+      const handleClick = () => {
+        if (!disabled) {
+          route();
+        }
+      };
+
+      return (
+        <div
+          role="button"
+          class={bem({ disabled })}
+          tabindex={disabled ? -1 : 0}
+          onClick={handleClick}
+        >
+          {renderIcon()}
+          {slots.default ? slots.default() : props.text}
+        </div>
+      );
+    };
   },
 });
