@@ -108,6 +108,7 @@ export default defineComponent({
         'year',
         props.formatter,
         props.filter,
+        props.sort,
         computedValues.value,
       );
     };
@@ -123,6 +124,7 @@ export default defineComponent({
         'month',
         props.formatter,
         props.filter,
+        props.sort,
         computedValues.value,
       );
     };
@@ -143,6 +145,7 @@ export default defineComponent({
         'day',
         props.formatter,
         props.filter,
+        props.sort,
         computedValues.value,
       );
     };
