@@ -1,3 +1,4 @@
+import { EmitsToProps } from 'vue';
 import { withInstall } from '../utils';
 import _Popup from './Popup';
 
@@ -5,6 +6,11 @@ export const Popup = withInstall(_Popup);
 export default Popup;
 export { popupProps } from './Popup';
 export type { PopupProps } from './Popup';
+
+export type PopupEmitsProps = EmitsToProps<
+  NonNullable<(typeof Popup)['emits']>
+>;
+
 export type {
   PopupPosition,
   PopupInstance,
