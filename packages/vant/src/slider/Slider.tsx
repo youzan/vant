@@ -130,7 +130,10 @@ export default defineComponent({
 
       value = clamp(value, min, max);
       const diff = Math.round((value - min) / step) * step;
-      return addNumber(min, diff);
+      const result = addNumber(min, diff);
+      // fix precision problem
+      const decimal = (step.toString().split('.')[1] || '').length;
+      return parseFloat(result.toFixed(decimal));
     };
 
     const updateStartValue = () => {
