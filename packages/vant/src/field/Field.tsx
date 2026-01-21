@@ -686,6 +686,20 @@ export default defineComponent({
       },
     );
 
+    // Ensure native <input> is synced when switching from custom input slot back to native input
+    watch(
+      () => Boolean(slots.input),
+      (hasSlot) => {
+        // when custom slot is removed, the native input will be rendered;
+        // sync its value from props.modelValue on next tick.
+        if (!hasSlot) {
+          nextTick(() => {
+            updateValue(getModelValue());
+          });
+        }
+      },
+    );  
+
     onMounted(() => {
       updateValue(getModelValue(), props.formatTrigger);
       nextTick(adjustTextareaSize);
