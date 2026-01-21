@@ -1,3 +1,4 @@
+import { ref } from 'vue';
 import { Field } from '..';
 import { mount, later } from '../../../test';
 
@@ -662,4 +663,32 @@ test('should limit maxlength correctly when pasting multiple emojis', async () =
 
   expect(wrapper.emitted('update:modelValue')[0][0]).toEqual('1😀😀😀');
   expect(input.element.value).toEqual('1😀😀😀');
+});
+
+test('should keep modelValue when toggling input slot dynamically', async () => {
+  const wrapper = mount({
+    components: { Field },
+    setup() {
+      const showCustom = ref(true);
+      const value = ref('hello');
+      return { showCustom, value };
+    },
+    template: `
+      <div>
+        <van-field v-model="value" label="Label">
+          <template #input v-if="showCustom">
+            <input v-model="value" />
+          </template>
+        </van-field>
+        <button id="toggle" @click="showCustom = !showCustom">toggle</button>
+      </div>
+    `,
+  });
+
+  // Initially custom input shown, then toggle to native input
+  await wrapper.find('#toggle').trigger('click');
+  await later(); // wait for nextTick / re-render
+
+  const input = wrapper.find('input').element;
+  expect(input.value).toBe('hello');
 });
