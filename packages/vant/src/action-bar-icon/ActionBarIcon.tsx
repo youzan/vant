@@ -66,26 +66,22 @@ export default defineComponent({
       );
     };
 
-    return () => {
-      const { disabled } = props;
-
-      const handleClick = () => {
-        if (!disabled) {
-          route();
-        }
-      };
-
-      return (
-        <div
-          role="button"
-          class={bem({ disabled })}
-          tabindex={disabled ? -1 : 0}
-          onClick={handleClick}
-        >
-          {renderIcon()}
-          {slots.default ? slots.default() : props.text}
-        </div>
-      );
+    const onClick = () => {
+      if (!props.disabled) {
+        route();
+      }
     };
+
+    return () => (
+      <div
+        role="button"
+        class={bem({ disabled: props.disabled })}
+        tabindex={props.disabled ? -1 : 0}
+        onClick={onClick}
+      >
+        {renderIcon()}
+        {slots.default ? slots.default() : props.text}
+      </div>
+    );
   },
 });
