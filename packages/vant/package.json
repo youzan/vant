@@ -66,7 +66,7 @@
     "@vue/test-utils": "^2.4.6",
     "csstype": "^3.2.3",
     "diffable-html": "^6.0.1",
-    "jsdom": "^25.0.1",
+    "jsdom": "^27.4.0",
     "typescript": "^5.9.3",
     "vite": "^5.4.20",
     "vitest": "^3.2.4",
