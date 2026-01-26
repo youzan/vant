@@ -31,14 +31,14 @@
     "release": "rm -rf ./site/node_modules && vant-cli release"
   },
   "dependencies": {
-    "@babel/core": "^7.28.5",
+    "@babel/core": "^7.28.6",
     "@babel/preset-typescript": "^7.28.5",
-    "@rsbuild/core": "^1.6.15",
-    "@rsbuild/plugin-babel": "^1.0.6",
-    "@rsbuild/plugin-less": "^1.5.0",
-    "@rsbuild/plugin-sass": "^1.4.0",
-    "@rsbuild/plugin-vue": "^1.2.2",
-    "@rsbuild/plugin-vue-jsx": "^1.1.1",
+    "@rsbuild/core": "^1.7.2",
+    "@rsbuild/plugin-babel": "^1.0.7",
+    "@rsbuild/plugin-less": "^1.5.1",
+    "@rsbuild/plugin-sass": "^1.4.1",
+    "@rsbuild/plugin-vue": "^1.2.3",
+    "@rsbuild/plugin-vue-jsx": "^1.1.2",
     "@vant/eslint-config": "workspace:^",
     "@vant/touch-emulator": "workspace:^",
     "@vitejs/plugin-vue": "^5.2.4",
@@ -74,9 +74,9 @@
   "devDependencies": {
     "@types/fs-extra": "^11.0.4",
     "@types/less": "^3.0.8",
-    "@types/lodash": "^4.17.21",
+    "@types/lodash": "^4.17.23",
     "@types/markdown-it": "^14.1.2",
-    "@types/node": "^22.19.3",
+    "@types/node": "^24.10.9",
     "rimraf": "^6.1.2",
     "vue": "^3.5.26"
   },

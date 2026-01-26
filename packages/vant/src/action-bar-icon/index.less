@@ -27,6 +27,19 @@
     background-color: var(--van-action-bar-icon-active-color);
   }
 
+  &--disabled {
+    color: var(--van-text-color-3);
+    cursor: not-allowed;
+
+    &:active {
+      background-color: transparent;
+    }
+
+    .van-action-bar-icon__icon {
+      color: var(--van-text-color-3);
+    }
+  }
+
   &__icon {
     margin: 0 auto var(--van-padding-base);
     color: var(--van-action-bar-icon-color);
