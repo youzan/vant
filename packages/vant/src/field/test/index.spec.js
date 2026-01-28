@@ -1,5 +1,6 @@
 import { Field } from '..';
 import { mount, later } from '../../../test';
+import { ref, nextTick } from 'vue';
 
 test('should emit "update:modelValue" event when after inputting', () => {
   const wrapper = mount(Field);
@@ -662,4 +663,34 @@ test('should limit maxlength correctly when pasting multiple emojis', async () =
 
   expect(wrapper.emitted('update:modelValue')[0][0]).toEqual('1😀😀😀');
   expect(input.element.value).toEqual('1😀😀😀');
+});
+
+test('should render correct value when input slot is removed dynamically', async () => {
+  const Wrapper = {
+    template: `
+      <Field v-model="value">
+        <template #input v-if="showSlot">
+          <div class="custom-input">Custom Input</div>
+        </template>
+      </Field>
+    `,
+    components: { Field },
+    setup() {
+      const value = ref('foo');
+      const showSlot = ref(true);
+      return { value, showSlot };
+    },
+  };
+
+  const wrapper = mount(Wrapper);
+
+  expect(wrapper.find('.custom-input').exists()).toBeTruthy();
+  expect(wrapper.find('input').exists()).toBeFalsy();
+
+  wrapper.vm.showSlot = false;
+  await nextTick();
+
+  const input = wrapper.find('input');
+  expect(input.exists()).toBeTruthy();
+  expect(input.element.value).toEqual('foo');
 });
