@@ -29,6 +29,7 @@ export const floatingPanelProps = {
   anchors: makeArrayProp<number>(),
   duration: makeNumericProp(0.3),
   magnetic: truthProp,
+  draggable: truthProp,
   contentDraggable: truthProp,
   lockScroll: Boolean,
   safeAreaInsetBottom: truthProp,
@@ -97,6 +98,8 @@ export default defineComponent({
     const touch = useTouch();
 
     const onTouchstart = (e: TouchEvent) => {
+      if (!props.draggable) return;
+
       touch.start(e);
       dragging.value = true;
       startY = -height.value;
@@ -104,6 +107,8 @@ export default defineComponent({
     };
 
     const onTouchmove = (e: TouchEvent) => {
+      if (!props.draggable) return;
+
       touch.move(e);
 
       const target = e.target as Element;
@@ -130,6 +135,12 @@ export default defineComponent({
 
     const onTouchend = () => {
       maxScroll = -1;
+
+      if (!props.draggable || !dragging.value) {
+        dragging.value = false;
+        return;
+      }
+
       dragging.value = false;
 
       if (props.magnetic) {
@@ -160,6 +171,10 @@ export default defineComponent({
     const renderHeader = () => {
       if (slots.header) {
         return slots.header();
+      }
+
+      if (!props.draggable) {
+        return null;
       }
 
       return (

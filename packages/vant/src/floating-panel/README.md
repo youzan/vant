@@ -93,6 +93,18 @@ When `magnetic` is set to `false`, the panel will not automatically snap to anch
 </van-floating-panel>
 ```
 
+### Disable Dragging
+
+You can disable the dragging functionality of the panel through the `draggable` attribute. When set to `false`, the panel will not be draggable, and the header drag bar will be hidden.
+
+```html
+<van-floating-panel :draggable="false">
+  <div style="text-align: center; padding: 15px">
+    <p>This panel cannot be dragged</p>
+  </div>
+</van-floating-panel>
+```
+
 ## API
 
 ### Props
@@ -104,6 +116,7 @@ When `magnetic` is set to `false`, the panel will not automatically snap to anch
 | duration | Transition duration, unit second | _number \| string_ | `0.3` |
 | magnetic | Whether to enable magnetic adsorption to anchors. When disabled, panel can stop at any position within the anchor boundaries | _boolean_ | `true` |
 | content-draggable | Allow dragging content | _boolean_ | `true` |
+| draggable | Whether to allow dragging the panel. When disabled, the header drag bar will be hidden | _boolean_ | `true` |
 | lock-scroll `v4.6.4` | When not dragging, Whether to lock background scroll | _boolean_ | `false` |
 | safe-area-inset-bottom | Whether to enable bottom safe area adaptation | _boolean_ | `true` |
 
