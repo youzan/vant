@@ -108,3 +108,18 @@ test('should call resize when window width changes', async () => {
   await trigger(window, 'resize');
   expect(spy).toBeCalled();
 });
+
+test('expose undo method', async () => {
+  const wrapper = mount(Signature);
+  expect(wrapper.vm.undo).toBeTypeOf('function');
+});
+
+test('should allow to custom undo button text', async () => {
+  const wrapper = mount(Signature, {
+    props: {
+      undoButtonText: 'Back',
+    },
+  });
+
+  expect(wrapper.find('.van-signature__footer').text()).toContain('Back');
+});

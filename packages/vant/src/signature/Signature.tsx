@@ -34,6 +34,7 @@ export const signatureProps = {
   type: makeStringProp('png'),
   penColor: makeStringProp('#000'),
   lineWidth: makeNumberProp(3),
+  undoButtonText: String,
   clearButtonText: String,
   backgroundColor: makeStringProp(''),
   confirmButtonText: String,
@@ -65,6 +66,16 @@ export default defineComponent({
     let canvasWidth = 0;
     let canvasHeight = 0;
     let canvasRect: DOMRect;
+
+    const history = ref<ImageData[]>([]);
+
+    const saveState = () => {
+      if (ctx.value && canvasWidth && canvasHeight) {
+        history.value.push(
+          ctx.value.getImageData(0, 0, canvasWidth, canvasHeight),
+        );
+      }
+    };
 
     const touchStart = () => {
       if (!ctx.value) {
@@ -100,6 +111,7 @@ export default defineComponent({
 
     const touchEnd = (event: TouchEvent) => {
       preventDefault(event);
+      saveState();
       emit('end');
     };
 
@@ -152,7 +164,25 @@ export default defineComponent({
         ctx.value.closePath();
         setCanvasBgColor(ctx.value);
       }
+      history.value = [];
       emit('clear');
+    };
+
+    const undo = () => {
+      if (history.value.length) {
+        history.value.pop();
+        if (ctx.value) {
+          ctx.value.clearRect(0, 0, canvasWidth, canvasHeight);
+          setCanvasBgColor(ctx.value);
+          if (history.value.length) {
+            ctx.value.putImageData(
+              history.value[history.value.length - 1],
+              0,
+              0,
+            );
+          }
+        }
+      }
     };
 
     const initialize = () => {
@@ -183,6 +213,7 @@ export default defineComponent({
       resize,
       clear,
       submit,
+      undo,
     });
 
     return () => (
@@ -204,6 +235,9 @@ export default defineComponent({
         <div class={bem('footer')}>
           <Button size="small" onClick={clear}>
             {props.clearButtonText || t('clear')}
+          </Button>
+          <Button type="warning" size="small" onClick={undo}>
+            {props.undoButtonText || t('undo')}
           </Button>
           <Button type="primary" size="small" onClick={submit}>
             {props.confirmButtonText || t('confirm')}

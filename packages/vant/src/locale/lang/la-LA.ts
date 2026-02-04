@@ -3,6 +3,7 @@ export default {
   tel: 'ໂທລະສັບ',
   save: 'ບັນທຶກ',
   clear: 'ຈະແຈ້ງ',
+  undo: 'ຍົກເລີກ',
   cancel: 'ຍົກເລີກ',
   confirm: 'ຢຶນຢັນ',
   delete: 'ລືບ',

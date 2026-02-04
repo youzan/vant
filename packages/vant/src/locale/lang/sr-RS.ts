@@ -3,6 +3,7 @@ export default {
   tel: 'Broj telefona',
   save: 'Sačuvaj',
   clear: 'Prazno',
+  undo: 'Поништи',
   cancel: 'Otkaži',
   confirm: 'Potvrdi',
   delete: 'Brisanje',

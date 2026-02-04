@@ -87,6 +87,7 @@ Use `background-color` prop to set the color of the background.
 | background-color | Background color | _string_ | - |
 | tips | Text that appears when Canvas is not supported | _string_ | - |
 | clear-button-text | Clear button text | _string_ | `Clear` |
+| undo-button-text | Undo button text | _string_ | `Undo` |
 | confirm-button-text | Confirm button text | _string_ | `Confirm` |
 
 ### Events
@@ -114,6 +115,7 @@ Use [ref](https://vuejs.org/guide/essentials/template-refs.html) to get Signatur
 | resize `v4.7.3` | Resize Signature when container element resized or visibility changed | - | - |
 | clear `v4.8.6` | Can be called to clear the signature | - | - |
 | submit `v4.8.6` | Trigger the `submit` event, which is equivalent to clicking the confirm button. | - | - |
+| undo | Undo the last stroke | - | - |
 
 ### Types
 
