@@ -236,7 +236,7 @@ export default defineComponent({
           <Button size="small" onClick={clear}>
             {props.clearButtonText || t('clear')}
           </Button>
-          <Button type="warning" size="small" onClick={undo}>
+          <Button size="small" onClick={undo}>
             {props.undoButtonText || t('undo')}
           </Button>
           <Button type="primary" size="small" onClick={submit}>
