@@ -84,6 +84,7 @@ export default {
 | type | 导出图片类型 | _string_ | `png` |
 | pen-color | 笔触颜色，默认黑色 | _string_ | `#000` |
 | line-width | 线条宽度 | _number_ | `3` |
+| history-size | 撤销历史记录最大数量 | _number_ | `20` |
 | background-color | 背景颜色 | _string_ | - |
 | tips | 当不支持 Canvas 的时候出现的提示文案 | _string_ | - |
 | clear-button-text | 清除按钮文案 | _string_ | `清空` |

@@ -34,6 +34,7 @@ export const signatureProps = {
   type: makeStringProp('png'),
   penColor: makeStringProp('#000'),
   lineWidth: makeNumberProp(3),
+  historySize: makeNumberProp(20),
   undoButtonText: String,
   clearButtonText: String,
   backgroundColor: makeStringProp(''),
@@ -71,6 +72,9 @@ export default defineComponent({
 
     const saveState = () => {
       if (ctx.value && canvasWidth && canvasHeight) {
+        if (history.value.length >= props.historySize) {
+          history.value.shift();
+        }
         history.value.push(
           ctx.value.getImageData(0, 0, canvasWidth, canvasHeight),
         );

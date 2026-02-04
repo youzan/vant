@@ -84,6 +84,7 @@ Use `background-color` prop to set the color of the background.
 | type | Export image type | _string_ | `png` |
 | pen-color | Color of the brush stroke, default is black | _string_ | `#000` |
 | line-width | Width of the line | _number_ | `3` |
+| history-size | Maximum undo history size | _number_ | `20` |
 | background-color | Background color | _string_ | - |
 | tips | Text that appears when Canvas is not supported | _string_ | - |
 | clear-button-text | Clear button text | _string_ | `Clear` |
