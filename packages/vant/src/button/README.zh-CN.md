@@ -134,7 +134,7 @@ app.use(Button);
 
 ### 按钮组
 
-通过 `ButtonGroup` 组件可以将多个按钮组合在一起，形成按钮组。可以通过 `type`、`size`、`round` 等\属性统一设置组内按钮的样式。
+通过 `ButtonGroup` 组件可以将多个按钮组合在一起，形成按钮组。可以通过 `type`、`size`、`round` 等属性统一设置组内按钮的样式。
 
 ```html
 <van-button-group type="primary">
