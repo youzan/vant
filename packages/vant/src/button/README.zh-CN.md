@@ -132,6 +132,30 @@ app.use(Button);
 </van-button>
 ```
 
+### 按钮组
+
+通过 `ButtonGroup` 组件可以将多个按钮组合在一起，形成按钮组。可以通过 `type`、`size`、`round` 等\属性统一设置组内按钮的样式。
+
+```html
+<van-button-group type="primary">
+  <van-button>按钮 1</van-button>
+  <van-button>按钮 2</van-button>
+  <van-button>按钮 3</van-button>
+</van-button-group>
+
+<van-button-group size="small">
+  <van-button>按钮 1</van-button>
+  <van-button>按钮 2</van-button>
+  <van-button>按钮 3</van-button>
+</van-button-group>
+
+<van-button-group round>
+  <van-button>按钮 1</van-button>
+  <van-button>按钮 2</van-button>
+  <van-button>按钮 3</van-button>
+</van-button-group>
+```
+
 ### 动画按钮
 
 搭配 Button 和 [Swipe 组件](/#/zh-CN/swipe)，可以实现垂直滚动的动画按钮效果。
@@ -160,7 +184,7 @@ app.use(Button);
 
 ## API
 
-### Props
+### Button Props
 
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
@@ -187,20 +211,34 @@ app.use(Button);
 | to | 点击后跳转的目标路由对象，等同于 Vue Router 的 [to 属性](https://router.vuejs.org/zh/api/interfaces/RouterLinkProps.html#Properties-to) | _string \| object_ | - |
 | replace | 是否在跳转时替换当前页面历史 | _boolean_ | `false` |
 
-### Events
+### ButtonGroup Props
+
+| 参数 | 说明 | 类型 | 默认值 |
+| --- | --- | --- | --- |
+| type | 类型，可选值为 `primary` `success` `warning` `danger` | _string_ | `primary` |
+| size | 尺寸，可选值为 `large` `small` `mini` | _string_ | - |
+| round | 是否为圆形按钮 | _boolean_ | `false` |
+
+### Button Events
 
 | 事件名     | 说明                                     | 回调参数            |
 | ---------- | ---------------------------------------- | ------------------- |
 | click      | 点击按钮，且按钮状态不为加载或禁用时触发 | _event: MouseEvent_ |
 | touchstart | 开始触摸按钮时触发                       | _event: TouchEvent_ |
 
-### Slots
+### Button Slots
 
 | 名称    | 说明           |
 | ------- | -------------- |
 | default | 按钮内容       |
 | icon    | 自定义图标     |
 | loading | 自定义加载图标 |
+
+### ButtonGroup Slots
+
+| 名称    | 说明       |
+| ------- | ---------- |
+| default | 按钮组内容 |
 
 ### 类型定义
 
@@ -211,6 +249,7 @@ import type {
   ButtonType,
   ButtonSize,
   ButtonProps,
+  ButtonGroupProps,
   ButtonNativeType,
   ButtonIconPosition,
 } from 'vant';
