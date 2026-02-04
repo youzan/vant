@@ -136,12 +136,15 @@ export default defineComponent({
     const onTouchend = () => {
       maxScroll = -1;
 
-      if (!props.draggable || !dragging.value) {
-        dragging.value = false;
+      if (!dragging.value) {
         return;
       }
 
       dragging.value = false;
+
+      if (!props.draggable) {
+        return;
+      }
 
       if (props.magnetic) {
         height.value = closest(anchors.value, height.value);
