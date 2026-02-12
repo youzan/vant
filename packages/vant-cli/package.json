@@ -31,7 +31,7 @@
     "release": "rm -rf ./site/node_modules && vant-cli release"
   },
   "dependencies": {
-    "@babel/core": "^7.28.6",
+    "@babel/core": "^7.29.0",
     "@babel/preset-typescript": "^7.28.5",
     "@rsbuild/core": "^1.7.2",
     "@rsbuild/plugin-babel": "^1.0.7",
