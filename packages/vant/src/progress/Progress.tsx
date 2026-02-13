@@ -32,7 +32,7 @@ export default defineComponent({
 
   props: progressProps,
 
-  setup(props) {
+  setup(props, { slots }) {
     const background = computed(() =>
       props.inactive ? undefined : props.color,
     );
@@ -44,7 +44,7 @@ export default defineComponent({
       const safePercentage = format(percentage);
       const text = pivotText ?? `${percentage}%`;
 
-      if (props.showPivot && text) {
+      if (props.showPivot && (slots.pivot || text)) {
         const style = {
           color: textColor,
           left: `${safePercentage}%`,
@@ -57,7 +57,7 @@ export default defineComponent({
             style={style}
             class={bem('pivot', { inactive: props.inactive })}
           >
-            {text}
+            {slots.pivot ? slots.pivot({ percentage: safePercentage }) : text}
           </span>
         );
       }
