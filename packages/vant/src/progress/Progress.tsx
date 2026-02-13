@@ -42,7 +42,7 @@ export default defineComponent({
     const renderPivot = () => {
       const { textColor, pivotText, pivotColor, percentage } = props;
       const safePercentage = format(percentage);
-      const text = pivotText ?? `${percentage}%`;
+      const text = pivotText ?? `${safePercentage}%`;
 
       if (props.showPivot && (slots.pivot || text)) {
         const style = {
