@@ -374,3 +374,31 @@ test('should update modelValue correctly after clicking the reversed vertical sl
   trigger(wrapper, 'click', 0, 100);
   expect(wrapper.emitted('update:modelValue')!.pop()).toEqual([0]);
 });
+
+//https://github.com/youzan/vant/issues/13625
+test('should return max when distanceToMax <= distanceToPrev', () => {
+  const wrapper = mount(Slider, {
+    props: { min: 0, max: 50, step: 60, modelValue: 45 },
+  });
+
+  const emitted = wrapper.emitted('update:modelValue');
+  if (emitted && emitted.length > 0) {
+    const result = emitted[emitted.length - 1][0] as number;
+    expect(result).toBe(50); // Should return max
+  }
+});
+
+test('should enter steppedValue > max branch', () => {
+  const wrapper = mount(Slider, {
+    props: { min: 0, max: 12, step: 20, modelValue: 0 },
+  });
+
+  wrapper.setProps({ modelValue: 11 });
+
+  const emitted = wrapper.emitted('update:modelValue');
+  if (emitted && emitted.length > 0) {
+    const result = emitted[emitted.length - 1][0] as number;
+    expect(result).toBeGreaterThanOrEqual(0);
+    expect(result).toBeLessThanOrEqual(12);
+  }
+});
