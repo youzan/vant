@@ -125,6 +125,36 @@ exports[`should render demo and match snapshot 1`] = `
       style="left:50%;transform:translate(-50%,-50%);"
       class="van-progress__pivot"
     >
+      <!--[-->
+      <span style="display:inline-flex;align-items:center;">
+        <i
+          class="van-badge__wrapper van-icon van-icon-fire"
+          style
+        >
+          <!--[-->
+        </i>
+        <span style="margin-left:2px;">
+          50%
+        </span>
+      </span>
+    </span>
+  </div>
+</div>
+<div>
+  <!--[-->
+  <div
+    class="van-progress"
+    style
+  >
+    <span
+      class="van-progress__portion"
+      style="width:50%;"
+    >
+    </span>
+    <span
+      style="left:50%;transform:translate(-50%,-50%);"
+      class="van-progress__pivot"
+    >
       50%
     </span>
   </div>

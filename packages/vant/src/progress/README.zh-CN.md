@@ -57,6 +57,19 @@ app.use(Progress);
 />
 ```
 
+### 自定义插槽内容
+
+通过 `pivot` 插槽可以自定义进度文字的内容。
+
+```html
+<van-progress :percentage="50">
+  <template #pivot="{ percentage }">
+    <van-icon name="fire" />
+    <span>{{ percentage }}%</span>
+  </template>
+</van-progress>
+```
+
 ## API
 
 ### Props
@@ -72,6 +85,12 @@ app.use(Progress);
 | text-color | 进度文字颜色 | _string_ | `white` |
 | inactive | 是否置灰 | _boolean_ | `false` |
 | show-pivot | 是否显示进度文字 | _boolean_ | `true` |
+
+### Slots
+
+| 名称  | 说明           | 参数                     |
+| ----- | -------------- | ------------------------ |
+| pivot | 自定义进度文字 | _{ percentage: number }_ |
 
 ### 类型定义
 

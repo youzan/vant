@@ -53,6 +53,19 @@ Use `pivot-text` to custom text, use `color` to custom bar color.
 />
 ```
 
+### Custom Pivot Content
+
+Use `pivot` slot to custom the pivot content.
+
+```html
+<van-progress :percentage="50">
+  <template #pivot="{ percentage }">
+    <van-icon name="fire" />
+    <span>{{ percentage }}%</span>
+  </template>
+</van-progress>
+```
+
 ## API
 
 ### Props
@@ -68,6 +81,12 @@ Use `pivot-text` to custom text, use `color` to custom bar color.
 | text-color | Pivot text color | _string_ | `white` |
 | inactive | Whether to be gray | _boolean_ | `false` |
 | show-pivot | Whether to show text | _boolean_ | `true` |
+
+### Slots
+
+| Name  | Description          | SlotProps                |
+| ----- | -------------------- | ------------------------ |
+| pivot | Custom pivot content | _{ percentage: number }_ |
 
 ### Types
 
