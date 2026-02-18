@@ -3,6 +3,7 @@ export default {
   tel: 'الهاتف',
   save: 'حفظ',
   clear: 'مسح',
+  undo: 'تراجع',
   cancel: 'إلغاء',
   confirm: 'تأكيد',
   delete: 'حذف',
@@ -15,9 +16,17 @@ export default {
     end: 'نهاية',
     start: 'بداية',
     title: 'التقويم',
-    weekdays: ['الأحد', 'الاثنين', 'الثلاثاء', 'الأربعاء', 'الخميس', 'الجمعة', 'السبت'],
+    weekdays: [
+      'الأحد',
+      'الاثنين',
+      'الثلاثاء',
+      'الأربعاء',
+      'الخميس',
+      'الجمعة',
+      'السبت',
+    ],
     monthTitle: (year: number, month: number) => `${year}/${month}`,
-    rangePrompt: (maxRange: number) => `اختر لا يزيد عن ${maxRange} أيام`
+    rangePrompt: (maxRange: number) => `اختر لا يزيد عن ${maxRange} أيام`,
   },
   vanCascader: {
     select: 'اختر',

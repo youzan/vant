@@ -3,6 +3,7 @@ export default {
   tel: 'Телефон',
   save: 'Сақтау',
   clear: 'Тазарту',
+  undo: 'Болдырмау',
   cancel: 'Бастарту',
   confirm: 'Растау',
   delete: 'Жою',

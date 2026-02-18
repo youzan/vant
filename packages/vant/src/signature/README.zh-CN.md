@@ -84,9 +84,11 @@ export default {
 | type | 导出图片类型 | _string_ | `png` |
 | pen-color | 笔触颜色，默认黑色 | _string_ | `#000` |
 | line-width | 线条宽度 | _number_ | `3` |
+| history-size | 撤销历史记录最大数量 | _number_ | `20` |
 | background-color | 背景颜色 | _string_ | - |
 | tips | 当不支持 Canvas 的时候出现的提示文案 | _string_ | - |
 | clear-button-text | 清除按钮文案 | _string_ | `清空` |
+| undo-button-text | 撤销按钮文案 | _string_ | `撤销` |
 | confirm-button-text | 确认按钮文案 | _string_ | `确认` |
 
 ### Events
@@ -114,6 +116,7 @@ export default {
 | resize `v4.7.3` | 外层元素大小或组件显示状态变化时，可以调用此方法来触发重绘 | - | - |
 | clear `v4.8.6` | 可调用此方法来清除签名 | - | - |
 | submit `v4.8.6` | 触发 `submit` 事件，与点击确认按钮的效果等价 | - | - |
+| undo | 撤销上一次笔画 | - | - |
 
 ### 类型定义
 

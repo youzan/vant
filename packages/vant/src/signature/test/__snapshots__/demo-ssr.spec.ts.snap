@@ -24,6 +24,18 @@ exports[`should render demo and match snapshot 1`] = `
       </button>
       <button
         type="button"
+        class="van-button van-button--default van-button--small"
+        style
+      >
+        <div class="van-button__content">
+          <span class="van-button__text">
+            <!--[-->
+            Undo
+          </span>
+        </div>
+      </button>
+      <button
+        type="button"
         class="van-button van-button--primary van-button--small"
         style
       >
@@ -59,6 +71,18 @@ exports[`should render demo and match snapshot 1`] = `
       </button>
       <button
         type="button"
+        class="van-button van-button--default van-button--small"
+        style
+      >
+        <div class="van-button__content">
+          <span class="van-button__text">
+            <!--[-->
+            Undo
+          </span>
+        </div>
+      </button>
+      <button
+        type="button"
         class="van-button van-button--primary van-button--small"
         style
       >
@@ -94,6 +118,18 @@ exports[`should render demo and match snapshot 1`] = `
       </button>
       <button
         type="button"
+        class="van-button van-button--default van-button--small"
+        style
+      >
+        <div class="van-button__content">
+          <span class="van-button__text">
+            <!--[-->
+            Undo
+          </span>
+        </div>
+      </button>
+      <button
+        type="button"
         class="van-button van-button--primary van-button--small"
         style
       >
@@ -124,6 +160,18 @@ exports[`should render demo and match snapshot 1`] = `
           <span class="van-button__text">
             <!--[-->
             Clear
+          </span>
+        </div>
+      </button>
+      <button
+        type="button"
+        class="van-button van-button--default van-button--small"
+        style
+      >
+        <div class="van-button__content">
+          <span class="van-button__text">
+            <!--[-->
+            Undo
           </span>
         </div>
       </button>

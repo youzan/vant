@@ -108,3 +108,88 @@ test('should call resize when window width changes', async () => {
   await trigger(window, 'resize');
   expect(spy).toBeCalled();
 });
+
+test('expose undo method', async () => {
+  const wrapper = mount(Signature);
+  expect(wrapper.vm.undo).toBeTypeOf('function');
+});
+
+test('should allow to custom undo button text', async () => {
+  const wrapper = mount(Signature, {
+    props: {
+      undoButtonText: 'Back',
+    },
+  });
+
+  expect(wrapper.find('.van-signature__footer').text()).toContain('Back');
+});
+
+test('undo should restore canvas to previous state', async () => {
+  const wrapper = mount(Signature);
+  const canvas = wrapper.find('canvas');
+  const ctx = canvas.element.getContext('2d')!;
+
+  const putImageDataSpy = vi.spyOn(ctx, 'putImageData');
+  const clearRectSpy = vi.spyOn(ctx, 'clearRect');
+
+  // First stroke
+  await canvas.trigger('touchstart');
+  await canvas.trigger('touchmove', {
+    touches: [{ clientX: 10, clientY: 10 }],
+  });
+  await canvas.trigger('touchend');
+
+  // Second stroke
+  await canvas.trigger('touchstart');
+  await canvas.trigger('touchmove', {
+    touches: [{ clientX: 50, clientY: 50 }],
+  });
+  await canvas.trigger('touchend');
+
+  // Undo should restore to state after first stroke
+  wrapper.vm.undo();
+  expect(clearRectSpy).toHaveBeenCalled();
+  expect(putImageDataSpy).toHaveBeenCalled();
+
+  // Undo again should clear canvas (no more history)
+  wrapper.vm.undo();
+  expect(clearRectSpy).toHaveBeenCalledTimes(2);
+});
+
+test('history should be limited by historySize prop', async () => {
+  const wrapper = mount(Signature, {
+    props: {
+      historySize: 3,
+    },
+  });
+  const canvas = wrapper.find('canvas');
+  const ctx = canvas.element.getContext('2d')!;
+
+  const getImageDataSpy = vi.spyOn(ctx, 'getImageData');
+
+  // Draw 5 strokes
+  for (let i = 0; i < 5; i++) {
+    await canvas.trigger('touchstart');
+    await canvas.trigger('touchmove', {
+      touches: [{ clientX: i * 10, clientY: i * 10 }],
+    });
+    await canvas.trigger('touchend');
+  }
+
+  // getImageData should be called 5 times
+  expect(getImageDataSpy).toHaveBeenCalledTimes(5);
+
+  // Undo 3 times (max history size)
+  const clearRectSpy = vi.spyOn(ctx, 'clearRect');
+  wrapper.vm.undo();
+  wrapper.vm.undo();
+  wrapper.vm.undo();
+
+  expect(clearRectSpy).toHaveBeenCalledTimes(3);
+
+  // Fourth undo should do nothing (history exhausted)
+  const putImageDataSpy = vi.spyOn(ctx, 'putImageData');
+  putImageDataSpy.mockClear();
+  wrapper.vm.undo();
+  expect(putImageDataSpy).not.toHaveBeenCalled();
+});

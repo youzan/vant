@@ -3,6 +3,7 @@ export default {
   tel: 'Sími',
   save: 'Vista',
   clear: 'Hreinsa',
+  undo: 'Afturkalla',
   cancel: 'hætta við',
   confirm: 'Staðfesta',
   delete: 'Eyða',

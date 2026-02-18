@@ -5,6 +5,7 @@ export type SignatureExpose = {
   resize: () => void;
   clear: () => void;
   submit: () => void;
+  undo: () => void;
 };
 
 export type SignatureInstance = ComponentPublicInstance<
