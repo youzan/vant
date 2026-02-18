@@ -686,6 +686,17 @@ export default defineComponent({
       },
     );
 
+    // Sync value when input element is recreated (e.g., when toggling custom input slot)
+    // https://github.com/youzan/vant/issues/13769
+    watch(
+      () => inputRef.value,
+      (input) => {
+        if (input && input.value !== getModelValue()) {
+          input.value = getModelValue();
+        }
+      },
+    );
+
     onMounted(() => {
       updateValue(getModelValue(), props.formatTrigger);
       nextTick(adjustTextareaSize);
