@@ -93,6 +93,18 @@ export default {
 </van-floating-panel>
 ```
 
+### 禁用拖拽
+
+你可以通过 `draggable` 属性来禁用面板的拖拽功能。当设置为 `false` 时，面板将不可拖拽，同时头部拖拽栏也会被隐藏。
+
+```html
+<van-floating-panel :draggable="false">
+  <div style="text-align: center; padding: 15px">
+    <p>该面板不可拖拽</p>
+  </div>
+</van-floating-panel>
+```
+
 ## API
 
 ### Props
@@ -104,6 +116,7 @@ export default {
 | duration | 动画时长，单位秒，设置为 0 可以禁用动画 | _number \| string_ | `0.3` |
 | magnetic | 是否启用磁力吸附到锚点。禁用后面板可在锚点边界范围内任意位置停留 | _boolean_ | `true` |
 | content-draggable | 允许拖拽内容容器 | _boolean_ | `true` |
+| draggable | 是否允许拖拽面板。禁用后头部拖拽栏会被隐藏 | _boolean_ | `true` |
 | lock-scroll `v4.6.4` | 当不拖拽时，是否锁定背景滚动 | _boolean_ | `false` |
 | safe-area-inset-bottom | 是否开启[底部安全区适配](#/zh-CN/advanced-usage#di-bu-an-quan-qu-gua-pei) | _boolean_ | `true` |
 
