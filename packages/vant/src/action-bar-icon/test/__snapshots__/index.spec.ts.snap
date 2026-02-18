@@ -12,6 +12,18 @@ exports[`should render default slot correctly 1`] = `
 </div>
 `;
 
+exports[`should render disabled prop correctly 1`] = `
+<div
+  role="button"
+  class="van-action-bar-icon van-action-bar-icon--disabled"
+  tabindex="-1"
+>
+  <div class="van-badge__wrapper van-icon van-icon-search van-action-bar-icon__icon">
+  </div>
+  Search
+</div>
+`;
+
 exports[`should render icon slot correctly 1`] = `
 <div
   role="button"

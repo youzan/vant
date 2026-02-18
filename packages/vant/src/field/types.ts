@@ -36,6 +36,15 @@ export type FieldFormatTrigger = 'onBlur' | 'onChange';
 
 export type FieldValidateTrigger = 'onBlur' | 'onChange' | 'onSubmit';
 
+export type FieldEnterKeyHint =
+  | 'search'
+  | 'done'
+  | 'enter'
+  | 'go'
+  | 'next'
+  | 'previous'
+  | 'send';
+
 export type FieldAutosizeConfig = {
   maxHeight?: number;
   minHeight?: number;

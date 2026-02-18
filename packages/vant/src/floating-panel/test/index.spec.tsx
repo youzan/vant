@@ -148,7 +148,7 @@ test('should not snap to anchors when magnetic is false', async () => {
   await later();
 
   // Should stay at dragged position (around 250px), not snap to nearest anchor (200px)
-  const {transform} = (wrapper.element as HTMLDivElement).style;
+  const { transform } = (wrapper.element as HTMLDivElement).style;
   expect(transform).not.toContain('-200px');
   expect(transform).not.toContain('-400px');
   expect(transform).toContain('-250px');
@@ -169,4 +169,58 @@ test('should snap to nearest anchor when magnetic is true (default)', async () =
   expect((wrapper.element as HTMLDivElement).style.transform).toContain(
     '-100px',
   );
+});
+
+test('should add padding bottom to content when panel is not fully expanded', async () => {
+  const wrapper = mount(FloatingPanel, {
+    props: {
+      anchors: [100, 200, 400],
+      height: 200,
+    },
+  });
+
+  const content = wrapper.find('.van-floating-panel__content')
+    .element as HTMLElement;
+  expect(content.style.paddingBottom).toBe('200px');
+
+  await wrapper.setProps({ height: 100 });
+  expect(content.style.paddingBottom).toBe('300px');
+
+  await wrapper.setProps({ height: 400 });
+  expect(content.style.paddingBottom).toBe('0px');
+});
+
+test('should not allow dragging when draggable is false', async () => {
+  const wrapper = mount({
+    render() {
+      return (
+        <FloatingPanel
+          anchors={[100, 200, 400]}
+          draggable={false}
+          onHeightChange={(h) => this.$emit('change', h)}
+        >
+          Content
+        </FloatingPanel>
+      );
+    },
+  });
+
+  expect(wrapper.find('.van-floating-panel__header').exists()).toBe(false);
+
+  await triggerDrag(wrapper.find('.van-floating-panel__content'), 0, -199);
+  await later();
+  expect(wrapper.emitted('change')).toBeFalsy();
+});
+
+test('should render header slot even when draggable is false', () => {
+  const wrapper = mount(FloatingPanel, {
+    props: {
+      draggable: false,
+    },
+    slots: {
+      header: () => 'Custom Header',
+    },
+  });
+
+  expect(wrapper.html()).toContain('Custom Header');
 });

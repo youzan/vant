@@ -11,10 +11,10 @@ on:
 jobs:
   build-and-deploy:
     if: github.repository == 'youzan/vant'
-    runs-on: macos-14
+    runs-on: macos-15
     steps:
       - name: Checkout 🛎️
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
         with:
           ref: 'main'
 
@@ -23,9 +23,9 @@ jobs:
           npm install -g corepack@latest --force 
           corepack enable
 
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v6
         with:
-          node-version: '22.14.0'
+          node-version: '22.21.1'
           cache: 'pnpm'
 
       - name: Install dependencies
@@ -35,7 +35,7 @@ jobs:
         run: npm run build:site
 
       - name: Deploy for GitHub 🚀
-        uses: JamesIves/github-pages-deploy-action@v4.7.3
+        uses: JamesIves/github-pages-deploy-action@v4.8.0
         with:
           branch: gh-pages
           folder: packages/vant/site-dist

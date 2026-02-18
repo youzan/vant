@@ -15,16 +15,16 @@ jobs:
   lint:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
 
       - name: Install pnpm
         run: |
           npm install -g corepack@latest --force 
           corepack enable
 
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v6
         with:
-          node-version: '22.14.0'
+          node-version: '22.21.1'
           cache: 'pnpm'
 
       - name: Install dependencies
@@ -34,18 +34,18 @@ jobs:
         run: npm run lint
 
   test:
-    runs-on: macos-14
+    runs-on: macos-15
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
 
       - name: Install pnpm
         run: |
           npm install -g corepack@latest --force 
           corepack enable
 
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v6
         with:
-          node-version: '22.14.0'
+          node-version: '22.21.1'
           cache: 'pnpm'
 
       - name: Install dependencies
@@ -61,18 +61,18 @@ jobs:
           directory: ./packages/vant/test/coverage
 
   build:
-    runs-on: macos-14
+    runs-on: macos-15
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
 
       - name: Install pnpm
         run: |
           npm install -g corepack@latest --force 
           corepack enable
 
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v6
         with:
-          node-version: '22.14.0'
+          node-version: '22.21.1'
           cache: 'pnpm'
 
       - name: Install dependencies

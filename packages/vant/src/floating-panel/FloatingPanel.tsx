@@ -29,6 +29,7 @@ export const floatingPanelProps = {
   anchors: makeArrayProp<number>(),
   duration: makeNumericProp(0.3),
   magnetic: truthProp,
+  draggable: truthProp,
   contentDraggable: truthProp,
   lockScroll: Boolean,
   safeAreaInsetBottom: truthProp,
@@ -97,6 +98,8 @@ export default defineComponent({
     const touch = useTouch();
 
     const onTouchstart = (e: TouchEvent) => {
+      if (!props.draggable) return;
+
       touch.start(e);
       dragging.value = true;
       startY = -height.value;
@@ -104,6 +107,8 @@ export default defineComponent({
     };
 
     const onTouchmove = (e: TouchEvent) => {
+      if (!props.draggable) return;
+
       touch.move(e);
 
       const target = e.target as Element;
@@ -130,7 +135,16 @@ export default defineComponent({
 
     const onTouchend = () => {
       maxScroll = -1;
+
+      if (!dragging.value) {
+        return;
+      }
+
       dragging.value = false;
+
+      if (!props.draggable) {
+        return;
+      }
 
       if (props.magnetic) {
         height.value = closest(anchors.value, height.value);
@@ -162,6 +176,10 @@ export default defineComponent({
         return slots.header();
       }
 
+      if (!props.draggable) {
+        return null;
+      }
+
       return (
         <div class={bem('header')}>
           <div class={bem('header-bar')} />
@@ -179,7 +197,11 @@ export default defineComponent({
         onTouchcancel={onTouchend}
       >
         {renderHeader()}
-        <div class={bem('content')} ref={contentRef}>
+        <div
+          class={bem('content')}
+          ref={contentRef}
+          style={{ paddingBottom: addUnit(boundary.value.max - height.value) }}
+        >
           {slots.default?.()}
         </div>
       </div>

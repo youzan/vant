@@ -77,7 +77,6 @@ The current maintenance status of each version of Vant is as follows:
 | Project | Description |
 | --- | --- |
 | [3lang3/react-vant](https://github.com/3lang3/react-vant) | React mobile UI Components based on Vant |
-| [vant-aliapp](https://github.com/ant-move/Vant-Aliapp) | Alipay MiniProgram UI |
 | [vant-theme](https://github.com/Aisen60/vant-theme) | Online theme preview built on Vant UI |
 | [@antmjs/vantui](https://github.com/antmjs/vantui) | Mobile UI Components based on Vant, supporting Taro and React |
 | [vant-playground](https://github.com/LadyChatterleyLover/vant-playground) | Vant Playground |
@@ -87,7 +86,6 @@ The current maintenance status of each version of Vant is as follows:
 | [raycast-vant-documentation](https://github.com/Aisen60/raycast-vant-documentation) | An Raycast extension, it can search Vant UI library documentation in Raycast |
 | [nuxt-vant-mobile](https://github.com/vue-zone/nuxt-vant-mobile) | Nuxt _⁴_ project template based on Vant, out of the box |
 | [mobvue](https://github.com/un-pany/mobvue) | A well-crafted mobile web app template |
-| [novlan1/press-ui](https://github.com/novlan1/press-ui) | Uni APP mobile UI Components based on Vant |
 
 ### Other Links
 
@@ -113,7 +111,7 @@ Core contributors of Vant and Vant Weapp:
 
 Thanks to the following friends for their contributions to Vant:
 
-<a href="https://github.com/vant-ui/vant/graphs/contributors" target="_black">
+<a href="https://github.com/vant-ui/vant/graphs/contributors" target="_blank">
   <img src="https://opencollective.com/vant/contributors.svg?width=890&button=false" alt="contributors" style="width: 100%; margin: 16px 0">
 </a>
 

@@ -91,6 +91,11 @@ export default defineComponent({
         return value;
       }
 
+      // format scientific number
+      if (typeof value === 'number' && String(value).includes('e')) {
+        value = value.toFixed(decimalLength ? +decimalLength : 17); // 17 is the max precision of a JS number
+      }
+
       value = formatNumber(String(value), !props.integer);
       value = value === '' ? 0 : +value;
       value = Number.isNaN(value) ? +min : value;
