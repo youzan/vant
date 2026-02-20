@@ -36,8 +36,8 @@
   },
   "devDependencies": {
     "@types/fs-extra": "^11.0.4",
-    "@types/node": "^24.10.9",
-    "rimraf": "^6.1.2",
+    "@types/node": "^24.10.13",
+    "rimraf": "^6.1.3",
     "typescript": "^5.9.3"
   },
   "publishConfig": {
