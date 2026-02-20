@@ -23,7 +23,7 @@
   "devDependencies": {
     "@vant/cli": "workspace:*",
     "@vant/eslint-config": "workspace:*",
-    "eslint": "^8.57.1",
+    "eslint": "^10.0.1",
     "husky": "^9.1.7",
     "nano-staged": "^0.9.0",
     "prettier": "^3.8.1"
