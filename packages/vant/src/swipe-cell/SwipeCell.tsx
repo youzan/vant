@@ -39,6 +39,7 @@ export const swipeCellProps = {
   disabled: Boolean,
   leftWidth: numericProp,
   rightWidth: numericProp,
+  threshold: makeNumericProp(0.15),
   beforeClose: Function as PropType<Interceptor>,
   stopPropagation: Boolean,
 };
@@ -106,8 +107,8 @@ export default defineComponent({
 
     const toggle = (side: SwipeCellSide) => {
       const offset = Math.abs(state.offset);
-      const THRESHOLD = 0.15;
-      const threshold = opened ? 1 - THRESHOLD : THRESHOLD;
+      const thresholdValue = +props.threshold;
+      const threshold = opened ? 1 - thresholdValue : thresholdValue;
       const width = side === 'left' ? leftWidth.value : rightWidth.value;
 
       if (width && offset > width * threshold) {

@@ -202,6 +202,27 @@ test('should emit open event when opening right side', () => {
   });
 });
 
+test('should use custom threshold prop', async () => {
+  const wrapper = mount(SwipeCell, {
+    ...defaultProps,
+    props: {
+      ...defaultProps.props,
+      threshold: 0.5,
+    },
+  });
+
+  triggerDrag(wrapper, 50, 0);
+  await later();
+
+  const track = wrapper.find('.van-swipe-cell__wrapper').element;
+  expect(track.style.transform).toEqual('translate3d(0px, 0, 0)');
+
+  triggerDrag(wrapper, 60, 0);
+  await later();
+
+  expect(track.style.transform).toEqual('translate3d(100px, 0, 0)');
+});
+
 test('should emit close event after closed', () => {
   const wrapper = mount(SwipeCell, defaultProps);
 
