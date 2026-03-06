@@ -39,7 +39,11 @@ export const swipeCellProps = {
   disabled: Boolean,
   leftWidth: numericProp,
   rightWidth: numericProp,
-  threshold: makeNumericProp(0.15),
+  threshold: {
+    type: numericProp,
+    default: 0.15,
+    validator: (value: number | string) => +value >= 0 && +value <= 1,
+  },
   beforeClose: Function as PropType<Interceptor>,
   stopPropagation: Boolean,
 };
