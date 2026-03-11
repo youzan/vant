@@ -51,7 +51,7 @@
     "@vue/shared": "^3.5.26"
   },
   "peerDependencies": {
-    "vue": "^3.0.0"
+    "vue": "^3.5.0"
   },
   "devDependencies": {
     "@types/node": "^24.10.9",
