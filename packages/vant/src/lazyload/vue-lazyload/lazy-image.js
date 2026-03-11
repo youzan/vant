@@ -6,105 +6,119 @@
 import { useRect } from '@vant/use';
 import { loadImageAsync } from './util';
 import { noop } from '../../utils';
-import { h } from 'vue';
+import {
+  h,
+  ref,
+  reactive,
+  defineComponent,
+  getCurrentInstance,
+  onMounted,
+  onBeforeUnmount,
+  watch,
+} from 'vue';
 
-export default (lazyManager) => ({
-  props: {
-    src: [String, Object],
-    tag: {
-      type: String,
-      default: 'img',
-    },
-  },
-  render() {
-    return h(
-      this.tag,
-      {
-        src: this.renderSrc,
+export default (lazyManager) =>
+  defineComponent({
+    props: {
+      src: [String, Object],
+      tag: {
+        type: String,
+        default: 'img',
       },
-      this.$slots.default?.(),
-    );
-  },
-  data() {
-    return {
-      el: null,
-      options: {
+    },
+    setup(props, { slots }) {
+      const instance = getCurrentInstance();
+      const renderSrc = ref('');
+      const options = {
         src: '',
         error: '',
         loading: '',
         attempt: lazyManager.options.attempt,
-      },
-      state: {
+      };
+      const state = reactive({
         loaded: false,
         error: false,
         attempt: 0,
-      },
-      renderSrc: '',
-    };
-  },
-  watch: {
-    src() {
-      this.init();
-      lazyManager.addLazyBox(this);
-      lazyManager.lazyLoadHandler();
-    },
-  },
-  created() {
-    this.init();
-  },
-  mounted() {
-    this.el = this.$el;
-    lazyManager.addLazyBox(this);
-    lazyManager.lazyLoadHandler();
-  },
-  beforeUnmount() {
-    lazyManager.removeComponent(this);
-  },
-  methods: {
-    init() {
-      const { src, loading, error } = lazyManager.valueFormatter(this.src);
-      this.state.loaded = false;
-      this.options.src = src;
-      this.options.error = error;
-      this.options.loading = loading;
-      this.renderSrc = this.options.loading;
-    },
-    checkInView() {
-      const rect = useRect(this.$el);
-      return (
-        rect.top < window.innerHeight * lazyManager.options.preLoad &&
-        rect.bottom > 0 &&
-        rect.left < window.innerWidth * lazyManager.options.preLoad &&
-        rect.right > 0
-      );
-    },
-    load(onFinish = noop) {
-      if (this.state.attempt > this.options.attempt - 1 && this.state.error) {
-        if (
-          process.env.NODE_ENV !== 'production' &&
-          !lazyManager.options.silent
-        ) {
-          console.log(
-            `[@vant/lazyload] ${this.options.src} tried too more than ${this.options.attempt} times`,
-          );
-        }
+      });
 
-        onFinish();
-        return;
-      }
-      const { src } = this.options;
-      loadImageAsync(
-        { src },
-        ({ src }) => {
-          this.renderSrc = src;
-          this.state.loaded = true;
+      const init = () => {
+        const { src, loading, error } = lazyManager.valueFormatter(props.src);
+        state.loaded = false;
+        options.src = src;
+        options.error = error;
+        options.loading = loading;
+        renderSrc.value = options.loading;
+      };
+
+      const lazyBox = {
+        get el() {
+          return instance.proxy.$el;
         },
+        get $el() {
+          return instance.proxy.$el;
+        },
+        get $parent() {
+          return instance.proxy.$parent;
+        },
+        state,
+        options,
+        checkInView() {
+          const rect = useRect(instance.proxy.$el);
+          return (
+            rect.top < window.innerHeight * lazyManager.options.preLoad &&
+            rect.bottom > 0 &&
+            rect.left < window.innerWidth * lazyManager.options.preLoad &&
+            rect.right > 0
+          );
+        },
+        load(onFinish = noop) {
+          if (state.attempt > options.attempt - 1 && state.error) {
+            if (
+              process.env.NODE_ENV !== 'production' &&
+              !lazyManager.options.silent
+            ) {
+              console.log(
+                `[@vant/lazyload] ${options.src} tried too more than ${options.attempt} times`,
+              );
+            }
+            onFinish();
+            return;
+          }
+          const { src } = options;
+          loadImageAsync(
+            { src },
+            ({ src }) => {
+              renderSrc.value = src;
+              state.loaded = true;
+            },
+            () => {
+              state.attempt++;
+              renderSrc.value = options.error;
+              state.error = true;
+            },
+          );
+        },
+      };
+
+      init();
+
+      watch(
+        () => props.src,
         () => {
-          this.state.attempt++;
-          this.renderSrc = this.options.error;
-          this.state.error = true;
+          init();
+          lazyManager.lazyLoadHandler();
         },
       );
+
+      onMounted(() => {
+        lazyManager.addLazyBox(lazyBox);
+        lazyManager.lazyLoadHandler();
+      });
+
+      onBeforeUnmount(() => {
+        lazyManager.removeComponent(lazyBox);
+      });
+
+      return () => h(props.tag, { src: renderSrc.value }, slots.default?.());
     },
-  },
-});
+  });
