@@ -1,6 +1,6 @@
 import { nextTick } from 'vue';
 import { mount, triggerDrag } from '../../../test';
-import { Popup } from '..';
+import { Popup, useGlobalZIndex, setGlobalZIndex } from '..';
 
 let wrapper;
 afterEach(() => {
@@ -302,4 +302,30 @@ test('should destroy content when using destroyOnClose prop', async () => {
 
   await wrapper.setProps({ show: false });
   expect(wrapper.find('.foo').exists()).toBeFalsy();
+});
+
+test('useGlobalZIndex should return auto-incrementing z-index', () => {
+  setGlobalZIndex(2000);
+  const first = useGlobalZIndex();
+  const second = useGlobalZIndex();
+  const third = useGlobalZIndex();
+  expect(first).toBe(2001);
+  expect(second).toBe(2002);
+  expect(third).toBe(2003);
+});
+
+test('setGlobalZIndex should reset the global z-index', () => {
+  setGlobalZIndex(100);
+  expect(useGlobalZIndex()).toBe(101);
+  expect(useGlobalZIndex()).toBe(102);
+
+  setGlobalZIndex(500);
+  expect(useGlobalZIndex()).toBe(501);
+  expect(useGlobalZIndex()).toBe(502);
+});
+
+test('setGlobalZIndex should allow custom initial value', () => {
+  setGlobalZIndex(0);
+  expect(useGlobalZIndex()).toBe(1);
+  expect(useGlobalZIndex()).toBe(2);
 });
