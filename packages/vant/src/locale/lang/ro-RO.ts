@@ -3,6 +3,7 @@ export default {
   tel: 'Telefon',
   save: 'Salvează',
   clear: 'Clar',
+  undo: 'Anulează',
   cancel: 'Anulează',
   confirm: 'Confirmă',
   delete: 'Șterge',

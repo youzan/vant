@@ -3,6 +3,7 @@ export default {
   tel: 'Điện thoại',
   save: 'Cứu',
   clear: 'Thông thoáng',
+  undo: 'Hoàn tác',
   cancel: 'Hủy bỏ',
   confirm: 'Xác nhận',
   delete: 'Xóa',

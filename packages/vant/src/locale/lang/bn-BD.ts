@@ -3,6 +3,7 @@ export default {
   tel: 'ফোন',
   save: 'সংরক্ষণ করুন',
   clear: 'পরিষ্কার',
+  undo: 'পূর্বাবস্থা',
   cancel: 'বাতিল',
   confirm: 'নিশ্চিত করুন',
   delete: 'মুছুন',
