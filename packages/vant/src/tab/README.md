@@ -4,6 +4,8 @@
 
 Used to switch between different content areas.
 
+> ⚠️ **Attention**: The Tab component has compatibility issues in SSR (Server-Side Rendering) scenarios. For details, see [SSR Compatibility Issues](#/en-US/ssr-issue#tab).
+
 ### Install
 
 Register component globally via `app.use`, refer to [Component Registration](#/en-US/advanced-usage#zu-jian-zhu-ce) for more registration ways.
