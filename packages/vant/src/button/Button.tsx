@@ -16,6 +16,9 @@ import {
 } from '../utils';
 import { useRoute, routeProps } from '../composables/use-route';
 
+import { useParent } from '@vant/use';
+import { BUTTON_GROUP_KEY } from './ButtonGroup';
+
 // Components
 import { Icon } from '../icon';
 import { Loading, LoadingType } from '../loading';
@@ -63,6 +66,7 @@ export default defineComponent({
 
   setup(props, { emit, slots }) {
     const route = useRoute();
+    const { parent: group } = useParent(BUTTON_GROUP_KEY);
 
     const renderLoadingIcon = () => {
       if (slots.loading) {
@@ -146,10 +150,7 @@ export default defineComponent({
     return () => {
       const {
         tag,
-        type,
-        size,
         block,
-        round,
         plain,
         square,
         loading,
@@ -158,6 +159,17 @@ export default defineComponent({
         nativeType,
         iconPosition,
       } = props;
+
+      // Inherit from ButtonGroup if not explicitly set
+      const type =
+        props.type === 'default' && group?.props.type
+          ? group.props.type
+          : props.type;
+      const size =
+        props.size === 'normal' && group?.props.size
+          ? group.props.size
+          : props.size;
+      const round = props.round || group?.props.round;
 
       const classes = [
         bem([
