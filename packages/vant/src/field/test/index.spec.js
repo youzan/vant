@@ -663,3 +663,44 @@ test('should limit maxlength correctly when pasting multiple emojis', async () =
   expect(wrapper.emitted('update:modelValue')[0][0]).toEqual('1😀😀😀');
   expect(input.element.value).toEqual('1😀😀😀');
 });
+
+test('should sync value when dynamically toggling input slot', async () => {
+  const wrapper = mount({
+    data() {
+      return {
+        useSlot: false,
+        modelValue: 'hello',
+      };
+    },
+    render() {
+      return (
+        <Field
+          v-model={this.modelValue}
+          v-slots={{
+            input: this.useSlot ? () => 'Custom Input' : undefined,
+          }}
+        />
+      );
+    },
+  });
+
+  let input = wrapper.find('input');
+  expect(input.element.value).toEqual('hello');
+
+  // Toggle to use custom input slot
+  await wrapper.vm.$data.useSlot = true;
+  await wrapper.vm.$nextTick();
+  expect(wrapper.find('.van-field__control').text()).toContain('Custom Input');
+
+  // Update model value while slot is active
+  await wrapper.vm.$data.modelValue = 'world';
+  await wrapper.vm.$nextTick();
+
+  // Toggle back to native input
+  await wrapper.vm.$data.useSlot = false;
+  await wrapper.vm.$nextTick();
+
+  // The native input should have the updated value
+  input = wrapper.find('input');
+  expect(input.element.value).toEqual('world');
+});
