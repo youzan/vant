@@ -686,6 +686,13 @@ export default defineComponent({
       },
     );
 
+    watch(inputRef, (newVal) => {
+      if (newVal) {
+        updateValue(getModelValue(), props.formatTrigger);
+        nextTick(adjustTextareaSize);
+      }
+    });
+
     onMounted(() => {
       updateValue(getModelValue(), props.formatTrigger);
       nextTick(adjustTextareaSize);
