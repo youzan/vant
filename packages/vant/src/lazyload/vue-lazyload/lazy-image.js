@@ -107,6 +107,9 @@ export default (lazyManager) =>
         () => {
           init();
           lazyManager.lazyLoadHandler();
+          if (lazyManager.observer && lazyBox.el) {
+            lazyManager.observer.observe(lazyBox.el);
+          }
         },
       );
 
