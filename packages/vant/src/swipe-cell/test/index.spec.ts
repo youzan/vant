@@ -41,7 +41,9 @@ test('should call beforeClose before closing', async () => {
   let event;
   let position;
   let clickPosition;
+  /* eslint-disable prefer-const */
   let usePromise;
+  /* eslint-disable prefer-const */
   let promiseRet;
 
   const wrapper = mount(SwipeCell, {
@@ -225,7 +227,7 @@ test('should not trigger close event again if already closed', () => {
 });
 
 const createWithNativeWrapper = () => {
-  const onWrapperClick = vi.fn();
+  const onWrapperClick = rs.fn();
 
   const component = {
     template: `

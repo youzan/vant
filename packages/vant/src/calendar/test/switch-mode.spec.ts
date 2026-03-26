@@ -151,10 +151,10 @@ test('should switch to the provided date after calling the scrollToDate method',
 });
 
 test('should render action slots correctly', async () => {
-  const prevYearSlot = vi.fn(() => 'prev year');
-  const prevMonthSlot = vi.fn(() => 'prev month');
-  const nextMonthSlot = vi.fn(() => 'next month');
-  const nextYearSlot = vi.fn(() => 'next year');
+  const prevYearSlot = rs.fn(() => 'prev year');
+  const prevMonthSlot = rs.fn(() => 'prev month');
+  const nextMonthSlot = rs.fn(() => 'next month');
+  const nextYearSlot = rs.fn(() => 'next year');
   const maxDate = getNextYear(minDate);
   const wrapper = mount(Calendar, {
     props: {
@@ -192,7 +192,7 @@ test('should render action slots correctly', async () => {
 });
 
 test('should emit panelChange event', async () => {
-  const onPanelChange = vi.fn();
+  const onPanelChange = rs.fn();
   const maxDate = getYearByOffset(minDate, 10);
   const wrapper = mount(Calendar, {
     props: {
@@ -229,7 +229,7 @@ test('should emit panelChange event', async () => {
 
 test('correctly change the panelDate when the selected date is the last day of each month', async () => {
   let defaultDate = new Date(2024, 4, 31);
-  const onPanelChange = vi.fn();
+  const onPanelChange = rs.fn();
   const wrapper = mount(Calendar, {
     props: {
       defaultDate,

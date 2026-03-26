@@ -1,6 +1,3 @@
-/**
- * @vitest-environment node
- */
 import { BackTop } from '..';
 import { renderComponentToString } from '../../../test';
 

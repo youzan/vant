@@ -1,4 +1,4 @@
-import 'vitest-canvas-mock';
+import 'rstest-canvas-mock';
 import { Signature } from '..';
 import { mount, trigger } from '../../../test';
 
@@ -63,7 +63,7 @@ test('submit() should output a valid canvas', async () => {
 test('should render tips correctly', async () => {
   const createElement = document.createElement.bind(document);
 
-  const spy = vi.spyOn(document, 'createElement');
+  const spy = rs.spyOn(document, 'createElement');
   spy.mockImplementation((tagName, options) => {
     if (tagName === 'canvas') {
       return {} as HTMLCanvasElement;
@@ -102,7 +102,7 @@ test('should call resize when window width changes', async () => {
   const wrapper = mount(Signature);
   const canvas = wrapper.find('canvas');
   const ctx = canvas.element.getContext('2d')!;
-  const spy = vi.spyOn(ctx, 'getImageData');
+  const spy = rs.spyOn(ctx, 'getImageData');
 
   Object.defineProperty(window, 'innerWidth', { value: 400 });
   await trigger(window, 'resize');

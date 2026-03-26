@@ -105,7 +105,7 @@ test('addUnit', () => {
 
 test('unitToPx', () => {
   const mockedStyle = { fontSize: '16px' } as CSSStyleDeclaration;
-  const spy = vi.spyOn(window, 'getComputedStyle').mockReturnValue(mockedStyle);
+  const spy = rs.spyOn(window, 'getComputedStyle').mockReturnValue(mockedStyle);
 
   Object.defineProperty(window, 'innerWidth', { value: 100 });
   Object.defineProperty(window, 'innerHeight', { value: 200 });
@@ -130,7 +130,7 @@ test('getContainingBlock', () => {
   root.appendChild(parent);
   parent.appendChild(child);
 
-  const spy = vi.spyOn(window, 'getComputedStyle').mockImplementation((el) => {
+  const spy = rs.spyOn(window, 'getComputedStyle').mockImplementation((el) => {
     if (el === root)
       return {
         transform: 'matrix(1, 1, -1, 1, 0, 0)',

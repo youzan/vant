@@ -1,4 +1,4 @@
-// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+// Rstest Snapshot v1
 
 exports[`should change stroke linecap when using stroke-linecap prop 1`] = `
 <div class="van-circle">
