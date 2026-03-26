@@ -129,8 +129,8 @@ test('undo should restore canvas to previous state', async () => {
   const canvas = wrapper.find('canvas');
   const ctx = canvas.element.getContext('2d')!;
 
-  const putImageDataSpy = vi.spyOn(ctx, 'putImageData');
-  const clearRectSpy = vi.spyOn(ctx, 'clearRect');
+  const putImageDataSpy = rs.spyOn(ctx, 'putImageData');
+  const clearRectSpy = rs.spyOn(ctx, 'clearRect');
 
   // First stroke
   await canvas.trigger('touchstart');
@@ -165,7 +165,7 @@ test('history should be limited by historySize prop', async () => {
   const canvas = wrapper.find('canvas');
   const ctx = canvas.element.getContext('2d')!;
 
-  const getImageDataSpy = vi.spyOn(ctx, 'getImageData');
+  const getImageDataSpy = rs.spyOn(ctx, 'getImageData');
 
   // Draw 5 strokes
   for (let i = 0; i < 5; i++) {
@@ -180,7 +180,7 @@ test('history should be limited by historySize prop', async () => {
   expect(getImageDataSpy).toHaveBeenCalledTimes(5);
 
   // Undo 3 times (max history size)
-  const clearRectSpy = vi.spyOn(ctx, 'clearRect');
+  const clearRectSpy = rs.spyOn(ctx, 'clearRect');
   wrapper.vm.undo();
   wrapper.vm.undo();
   wrapper.vm.undo();
@@ -188,7 +188,7 @@ test('history should be limited by historySize prop', async () => {
   expect(clearRectSpy).toHaveBeenCalledTimes(3);
 
   // Fourth undo should do nothing (history exhausted)
-  const putImageDataSpy = vi.spyOn(ctx, 'putImageData');
+  const putImageDataSpy = rs.spyOn(ctx, 'putImageData');
   putImageDataSpy.mockClear();
   wrapper.vm.undo();
   expect(putImageDataSpy).not.toHaveBeenCalled();
