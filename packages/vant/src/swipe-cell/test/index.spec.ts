@@ -41,7 +41,9 @@ test('should call beforeClose before closing', async () => {
   let event;
   let position;
   let clickPosition;
+  /* eslint-disable prefer-const */
   let usePromise;
+  /* eslint-disable prefer-const */
   let promiseRet;
 
   const wrapper = mount(SwipeCell, {
