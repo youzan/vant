@@ -12,7 +12,6 @@ const commonConfig: ProjectConfig = {
     pluginVue(),
   ],
   globals: true,
-  include: ['src/**/*.spec.[jt]s?(x)'],
   restoreMocks: true,
   tools: {
     rspack: {
