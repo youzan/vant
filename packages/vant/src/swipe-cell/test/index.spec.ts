@@ -225,7 +225,7 @@ test('should not trigger close event again if already closed', () => {
 });
 
 const createWithNativeWrapper = () => {
-  const onWrapperClick = vi.fn();
+  const onWrapperClick = rs.fn();
 
   const component = {
     template: `

@@ -120,7 +120,7 @@ test('text not exceeded', async () => {
 
 // https://github.com/vant-ui/vant/issues/12445
 test('should recalculate the ellipsis state when the component is activated', async () => {
-  vi.useFakeTimers();
+  rs.useFakeTimers();
 
   const Comp = defineComponent({
     data() {
@@ -153,9 +153,9 @@ test('should recalculate the ellipsis state when the component is activated', as
   );
 
   wrapper.setData({ render: false });
-  await vi.advanceTimersByTimeAsync(1000);
+  await rs.advanceTimersByTimeAsync(1000);
   await wrapper.setData({ render: true });
   expect(wrapper.text()).toMatch(content);
 
-  vi.useRealTimers();
+  rs.useRealTimers();
 });

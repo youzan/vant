@@ -13,7 +13,7 @@ test('should allow to use the teleport option', async () => {
 
 test('should trigger onClose option correctly', async () => {
   const root = document.createElement('div');
-  const onClose = vi.fn();
+  const onClose = rs.fn();
   const instance = showImagePreview({
     images,
     startPosition: 1,
@@ -33,7 +33,7 @@ test('should trigger onClose option correctly', async () => {
 
 test('should trigger onChange option correctly', async () => {
   const root = document.createElement('div');
-  const onChange = vi.fn();
+  const onChange = rs.fn();
   showImagePreview({
     images,
     startPosition: 0,

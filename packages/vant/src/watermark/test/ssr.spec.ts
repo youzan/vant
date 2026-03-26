@@ -1,6 +1,3 @@
-/**
- * @vitest-environment node
- */
 import { Watermark } from '..';
 import { renderComponentToString } from '../../../test';
 

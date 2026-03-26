@@ -23,7 +23,7 @@ test('should allow to custom anchor content', () => {
 });
 
 test('should scroll to anchor and emit select event after clicking the index-bar', () => {
-  const onSelect = vi.fn();
+  const onSelect = rs.fn();
   const wrapper = mount({
     render: () => (
       <IndexBar onSelect={onSelect}>
@@ -42,7 +42,7 @@ test('should scroll to anchor and emit select event after clicking the index-bar
 });
 
 test('should scroll to anchor after touching the index-bar', () => {
-  const onSelect = vi.fn();
+  const onSelect = rs.fn();
   const wrapper = mount({
     render: () => (
       <IndexBar onSelect={onSelect}>
@@ -137,7 +137,7 @@ test('should emit change event when active index changed', async () => {
     };
   };
 
-  const onChange = vi.fn();
+  const onChange = rs.fn();
 
   mount({
     render() {
@@ -164,7 +164,7 @@ test('should emit change event when active index changed', async () => {
 });
 
 test('should scroll to target element after calling scrollTo method', () => {
-  const onSelect = vi.fn();
+  const onSelect = rs.fn();
   const scrollIntoView = mockScrollIntoView();
 
   mount({
@@ -219,8 +219,8 @@ test('should render active anchor when stick prop is true and has stickyOffsetTo
   };
 
   mockScrollTo();
-  const onSelect = vi.fn();
-  const onChange = vi.fn();
+  const onSelect = rs.fn();
+  const onChange = rs.fn();
 
   const wrapper = mount({
     render() {

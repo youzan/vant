@@ -94,7 +94,7 @@ test('hide close icon when there is no title', async () => {
 });
 
 test('allow-same-day prop', async () => {
-  const onSelect = vi.fn();
+  const onSelect = rs.fn();
   const wrapper = mount(Calendar, {
     props: {
       type: 'range',
@@ -249,7 +249,7 @@ test('should disabled prompt when using show-range-prompt prop', async () => {
 });
 
 test('should emit overRange when exceeded max range', async () => {
-  const onOverRange = vi.fn();
+  const onOverRange = rs.fn();
   const wrapper = mount(Calendar, {
     props: {
       type: 'range',
