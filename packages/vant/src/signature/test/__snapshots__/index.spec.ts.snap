@@ -14,6 +14,16 @@ exports[`should allow to custom button text 1`] = `
   </button>
   <button
     type="button"
+    class="van-button van-button--default van-button--small"
+  >
+    <div class="van-button__content">
+      <span class="van-button__text">
+        Undo
+      </span>
+    </div>
+  </button>
+  <button
+    type="button"
     class="van-button van-button--primary van-button--small"
   >
     <div class="van-button__content">
@@ -40,6 +50,16 @@ exports[`should render tips correctly 1`] = `
       <div class="van-button__content">
         <span class="van-button__text">
           Clear
+        </span>
+      </div>
+    </button>
+    <button
+      type="button"
+      class="van-button van-button--default van-button--small"
+    >
+      <div class="van-button__content">
+        <span class="van-button__text">
+          Undo
         </span>
       </div>
     </button>

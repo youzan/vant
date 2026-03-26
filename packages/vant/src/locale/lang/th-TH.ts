@@ -3,6 +3,7 @@ export default {
   tel: 'โทรศัพท์',
   save: 'บันทึก',
   clear: 'ชัดเจน',
+  undo: 'เลิกทำ',
   cancel: 'ยกเลิก',
   confirm: 'ยืนยัน',
   delete: 'ลบ',

@@ -3,6 +3,7 @@ export default {
   tel: 'טלפון',
   save: 'שמור',
   clear: 'ברור',
+  undo: 'בטל',
   cancel: 'ביטול',
   confirm: 'אישור',
   delete: 'מחיקה',

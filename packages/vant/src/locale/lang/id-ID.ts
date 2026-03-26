@@ -3,6 +3,7 @@ export default {
   tel: 'Telepon',
   save: 'Simpan',
   clear: 'Jernih',
+  undo: 'Batalkan',
   cancel: 'Batal',
   confirm: 'Konfirmasi',
   delete: 'Hapus',

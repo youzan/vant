@@ -3,6 +3,7 @@ export default {
   tel: 'تلفن',
   save: 'ذخیره',
   clear: 'پاک کردن',
+  undo: 'واگرد',
   cancel: 'انصراف',
   confirm: 'تایید',
   delete: 'حذف',

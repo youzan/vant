@@ -3,6 +3,7 @@ export default {
   tel: '電話番号',
   save: 'セーブ',
   clear: 'クリア',
+  undo: '元に戻す',
   cancel: 'キャンセル',
   confirm: '確認',
   delete: '削除',
