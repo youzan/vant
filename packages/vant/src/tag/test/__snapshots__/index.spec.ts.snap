@@ -1,4 +1,4 @@
-// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+// Rstest Snapshot v1
 
 exports[`should hide tag when the show prop is false 1`] = `
 "<transition-stub appear="false" persisted="false" css="true">

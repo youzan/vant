@@ -17,7 +17,7 @@ function mockRect(vertical?: boolean) {
 }
 
 function testSlotReceivedParams(
-  slot: ReturnType<typeof vi.fn>,
+  slot: ReturnType<typeof rs.fn>,
   dragging: boolean,
   dragIndex?: number,
 ) {
@@ -236,7 +236,7 @@ test('should format v-model with step correctly', async () => {
 });
 
 test('should render button slot correctly', async () => {
-  const buttonSlot = vi.fn();
+  const buttonSlot = rs.fn();
   const wrapper = mount(Slider, {
     props: {
       modelValue: 30,
@@ -261,8 +261,8 @@ test('should render button slot correctly', async () => {
 });
 
 test('should render left-button、right-button slot correctly', async () => {
-  const leftButtonSlot = vi.fn();
-  const rightButtonSlot = vi.fn();
+  const leftButtonSlot = rs.fn();
+  const rightButtonSlot = rs.fn();
   const wrapper = mount(Slider, {
     props: {
       range: true,

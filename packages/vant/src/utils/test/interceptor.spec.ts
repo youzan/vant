@@ -2,9 +2,9 @@ import { later } from '../../../test';
 import { callInterceptor } from '../interceptor';
 
 test('callInterceptor', async () => {
-  const done = vi.fn();
-  const canceled = vi.fn();
-  const error = vi.fn();
+  const done = rs.fn();
+  const canceled = rs.fn();
+  const error = rs.fn();
 
   callInterceptor(undefined, { done, canceled, error });
   expect(done).toHaveBeenCalledTimes(1);
