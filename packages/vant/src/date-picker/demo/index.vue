@@ -15,6 +15,8 @@ const t = useTranslate({
     optionsFilter: '过滤选项',
     chooseYearMonth: '选择年月',
     optionsFormatter: '格式化选项',
+    optionsSort: '排序选项',
+    chooseDateDesc: '选择日期（倒序）',
   },
   'en-US': {
     day: ' Day',
@@ -25,6 +27,8 @@ const t = useTranslate({
     optionsFilter: 'Options Filter',
     chooseYearMonth: 'Choose Year-Month',
     optionsFormatter: 'Options Formatter',
+    optionsSort: 'Options Sort',
+    chooseDateDesc: 'Choose Date (Descending)',
   },
 });
 
@@ -34,6 +38,7 @@ const basicDate = ref(['2021', '01', '01']);
 const yearMonthDate = ref(['2021', '01']);
 const formatterDate = ref(['2021', '01']);
 const filterDate = ref(['2021', '01']);
+const sortDate = ref(['2021', '01', '01']);
 
 const columnsType: DatePickerColumnType[] = ['year', 'month'];
 
@@ -55,6 +60,13 @@ const formatter = (type: string, option: PickerOption) => {
     option.text += t('day');
   }
   return option;
+};
+
+const sort = (type: string, options: PickerOption[]) => {
+  if (type === 'year') {
+    return options.reverse();
+  }
+  return options;
 };
 </script>
 
@@ -97,6 +109,16 @@ const formatter = (type: string, option: PickerOption) => {
       :min-date="minDate"
       :max-date="maxDate"
       :columns-type="columnsType"
+    />
+  </demo-block>
+
+  <demo-block card :title="t('optionsSort')">
+    <van-date-picker
+      v-model="sortDate"
+      :title="t('chooseDateDesc')"
+      :min-date="minDate"
+      :max-date="maxDate"
+      :sort="sort"
     />
   </demo-block>
 </template>
