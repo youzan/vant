@@ -68,7 +68,7 @@
     "@vue/test-utils": "^2.4.6",
     "csstype": "^3.2.3",
     "diffable-html": "^6.0.1",
-    "jsdom": "^25.0.1",
+    "jsdom": "^29.0.1",
     "typescript": "^5.9.3",
     "rstest-canvas-mock": "^0.0.5",
     "vue": "^3.5.31",
