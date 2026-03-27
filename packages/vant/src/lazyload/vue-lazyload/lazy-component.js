@@ -3,66 +3,76 @@
  * license at https://github.com/hilongjw/vue-lazyload/blob/master/LICENSE
  */
 
-import { h } from 'vue';
+import {
+  h,
+  ref,
+  reactive,
+  defineComponent,
+  getCurrentInstance,
+  onMounted,
+  onBeforeUnmount,
+} from 'vue';
 import { inBrowser, useRect } from '@vant/use';
 
-export default (lazy) => ({
-  props: {
-    tag: {
-      type: String,
-      default: 'div',
-    },
-  },
-
-  emits: ['show'],
-
-  render() {
-    return h(
-      this.tag,
-      this.show && this.$slots.default ? this.$slots.default() : null,
-    );
-  },
-
-  data() {
-    return {
-      el: null,
-      state: {
-        loaded: false,
+export default (lazy) =>
+  defineComponent({
+    props: {
+      tag: {
+        type: String,
+        default: 'div',
       },
-      show: false,
-    };
-  },
-
-  mounted() {
-    this.el = this.$el;
-    lazy.addLazyBox(this);
-    lazy.lazyLoadHandler();
-  },
-
-  beforeUnmount() {
-    lazy.removeComponent(this);
-  },
-
-  methods: {
-    checkInView() {
-      const rect = useRect(this.$el);
-      return (
-        inBrowser &&
-        rect.top < window.innerHeight * lazy.options.preLoad &&
-        rect.bottom > 0 &&
-        rect.left < window.innerWidth * lazy.options.preLoad &&
-        rect.right > 0
-      );
     },
 
-    load() {
-      this.show = true;
-      this.state.loaded = true;
-      this.$emit('show', this);
-    },
+    emits: ['show'],
 
-    destroy() {
-      return this.$destroy;
+    setup(props, { slots, emit }) {
+      const instance = getCurrentInstance();
+      const show = ref(false);
+      const state = reactive({
+        loaded: false,
+      });
+
+      const lazyBox = {
+        get el() {
+          return instance.proxy.$el;
+        },
+        get $el() {
+          return instance.proxy.$el;
+        },
+        get $parent() {
+          return instance.proxy.$parent;
+        },
+        state,
+        checkInView() {
+          const rect = useRect(instance.proxy.$el);
+          return (
+            inBrowser &&
+            rect.top < window.innerHeight * lazy.options.preLoad &&
+            rect.bottom > 0 &&
+            rect.left < window.innerWidth * lazy.options.preLoad &&
+            rect.right > 0
+          );
+        },
+        load() {
+          show.value = true;
+          state.loaded = true;
+          emit('show', instance.proxy);
+        },
+        destroy() {
+          return undefined;
+        },
+      };
+
+      onMounted(() => {
+        lazy.addLazyBox(lazyBox);
+        lazy.lazyLoadHandler();
+      });
+
+      onBeforeUnmount(() => {
+        lazy.removeComponent(lazyBox);
+      });
+
+      return () =>
+        h(props.tag, show.value && slots.default ? slots.default() : null);
     },
-  },
-});
+  });
