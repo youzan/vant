@@ -3,6 +3,7 @@ export default {
   tel: 'ទូរស័ព្ទ',
   save: 'រក្សាទុក',
   clear: 'ច្បាស់',
+  undo: 'មិនធ្វើវិញ',
   cancel: 'បោះបង់',
   confirm: 'យល់ព្រម',
   delete: 'លុប',

@@ -4,7 +4,7 @@ import { Form } from '..';
 import { Field } from '../../field';
 
 test('should emit submit event when submitting form', async () => {
-  const onSubmit = vi.fn();
+  const onSubmit = rs.fn();
   const wrapper = mount({
     render() {
       return (
@@ -21,7 +21,7 @@ test('should emit submit event when submitting form', async () => {
 });
 
 test('should emit failed event when validating failed', async () => {
-  const onFailed = vi.fn();
+  const onFailed = rs.fn();
   const { form } = mountSimpleRulesForm({
     methods: {
       onFailed,
@@ -41,7 +41,7 @@ test('should emit failed event when validating failed', async () => {
 });
 
 test('should emit failed event correctly when rule message is empty', async () => {
-  const onFailed = vi.fn();
+  const onFailed = rs.fn();
   const wrapper = mount({
     render() {
       return (
@@ -66,7 +66,7 @@ test('should emit failed event correctly when rule message is empty', async () =
 });
 
 test('Field should emit startValidate event when validation start', async () => {
-  const onStart = vi.fn();
+  const onStart = rs.fn();
   const wrapper = mount({
     render() {
       return (
@@ -87,7 +87,7 @@ test('Field should emit startValidate event when validation start', async () => 
 });
 
 test('Field should emit endValidate event when validation end', async () => {
-  const onEnd = vi.fn();
+  const onEnd = rs.fn();
   const rules = [
     {
       validator: () =>

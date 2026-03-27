@@ -34,7 +34,7 @@ function mockFileReader() {
 mockFileReader();
 
 test('disabled', async () => {
-  const afterRead = vi.fn();
+  const afterRead = rs.fn();
   const wrapper = mount(Uploader, {
     props: {
       disabled: true,
@@ -45,7 +45,7 @@ test('disabled', async () => {
   await later();
   const input = wrapper.find<HTMLInputElement>('.van-uploader__input');
   Object.defineProperty(input.element, 'files', {
-    get: vi.fn().mockReturnValue([mockFile]),
+    get: rs.fn().mockReturnValue([mockFile]),
   });
 
   input.trigger('change');
@@ -69,7 +69,7 @@ test('result-type as text', () => {
 
     const input = wrapper.find<HTMLInputElement>('.van-uploader__input');
     Object.defineProperty(input.element, 'files', {
-      get: vi.fn().mockReturnValue([mockFile]),
+      get: rs.fn().mockReturnValue([mockFile]),
     });
     input.trigger('change');
   });
@@ -92,7 +92,7 @@ test('result-type as file', () => {
 
     const input = wrapper.find<HTMLInputElement>('.van-uploader__input');
     Object.defineProperty(input.element, 'files', {
-      get: vi.fn().mockReturnValue([mockFile]),
+      get: rs.fn().mockReturnValue([mockFile]),
     });
     input.trigger('change');
   });
@@ -122,14 +122,14 @@ test('set input name', () => {
 
     const input = wrapper.find<HTMLInputElement>('.van-uploader__input');
     Object.defineProperty(input.element, 'files', {
-      get: vi.fn().mockReturnValue([mockFile]),
+      get: rs.fn().mockReturnValue([mockFile]),
     });
     input.trigger('change');
   });
 });
 
 test('unknown resultType', async () => {
-  const afterRead = vi.fn();
+  const afterRead = rs.fn();
   const wrapper = mount(Uploader, {
     props: {
       afterRead,
@@ -139,7 +139,7 @@ test('unknown resultType', async () => {
 
   const input = wrapper.find<HTMLInputElement>('.van-uploader__input');
   Object.defineProperty(input.element, 'files', {
-    get: vi.fn().mockReturnValue([mockFile]),
+    get: rs.fn().mockReturnValue([mockFile]),
   });
   input.trigger('change');
   await later();
@@ -147,7 +147,7 @@ test('unknown resultType', async () => {
 });
 
 test('before read return false', async () => {
-  const afterRead = vi.fn();
+  const afterRead = rs.fn();
   const wrapper = mount(Uploader, {
     props: {
       beforeRead: () => undefined,
@@ -157,7 +157,7 @@ test('before read return false', async () => {
 
   const input = wrapper.find<HTMLInputElement>('.van-uploader__input');
   Object.defineProperty(input.element, 'files', {
-    get: vi.fn().mockReturnValue([mockFile]),
+    get: rs.fn().mockReturnValue([mockFile]),
   });
   input.trigger('change');
   await later();
@@ -166,7 +166,7 @@ test('before read return false', async () => {
 });
 
 test('before read return promise and resolve', async () => {
-  const afterRead = vi.fn();
+  const afterRead = rs.fn();
   const wrapper = mount(Uploader, {
     props: {
       beforeRead: (file: File | File[]) =>
@@ -179,7 +179,7 @@ test('before read return promise and resolve', async () => {
 
   const input = wrapper.find<HTMLInputElement>('.van-uploader__input');
   Object.defineProperty(input.element, 'files', {
-    get: vi.fn().mockReturnValue([mockFile]),
+    get: rs.fn().mockReturnValue([mockFile]),
   });
   input.trigger('change');
   await later();
@@ -187,7 +187,7 @@ test('before read return promise and resolve', async () => {
 });
 
 test('before read return promise and resolve no value', async () => {
-  const afterRead = vi.fn();
+  const afterRead = rs.fn();
   const wrapper = mount(Uploader, {
     props: {
       beforeRead: () =>
@@ -200,7 +200,7 @@ test('before read return promise and resolve no value', async () => {
 
   const input = wrapper.find<HTMLInputElement>('.van-uploader__input');
   Object.defineProperty(input.element, 'files', {
-    get: vi.fn().mockReturnValue([mockFile]),
+    get: rs.fn().mockReturnValue([mockFile]),
   });
   input.trigger('change');
   await later();
@@ -209,7 +209,7 @@ test('before read return promise and resolve no value', async () => {
 });
 
 test('before read return promise and reject', async () => {
-  const afterRead = vi.fn();
+  const afterRead = rs.fn();
   const wrapper = mount(Uploader, {
     props: {
       beforeRead: () =>
@@ -222,7 +222,7 @@ test('before read return promise and reject', async () => {
 
   const input = wrapper.find<HTMLInputElement>('.van-uploader__input');
   Object.defineProperty(input.element, 'files', {
-    get: vi.fn().mockReturnValue([mockFile]),
+    get: rs.fn().mockReturnValue([mockFile]),
   });
   input.trigger('change');
   await later();
@@ -241,7 +241,7 @@ test('should trigger oversize event when file size is overlimit', async () => {
 
   let fileList = [mockFile];
   Object.defineProperty(input.element, 'files', {
-    get: () => vi.fn().mockReturnValue(fileList)(),
+    get: () => rs.fn().mockReturnValue(fileList)(),
   });
 
   await input.trigger('change');
@@ -278,7 +278,7 @@ test('should allow to custom max-size for different type of files', async () => 
   const fileList = [mockFile];
 
   Object.defineProperty(input.element, 'files', {
-    get: () => vi.fn().mockReturnValue(fileList)(),
+    get: () => rs.fn().mockReturnValue(fileList)(),
   });
 
   await input.trigger('change');
@@ -359,7 +359,7 @@ test('max-count prop', async () => {
 
   const input = wrapper.find<HTMLInputElement>('.van-uploader__input');
   Object.defineProperty(input.element, 'files', {
-    get: vi.fn().mockReturnValue([mockFile, mockFile]),
+    get: rs.fn().mockReturnValue([mockFile, mockFile]),
   });
   input.trigger('change');
   await later();
@@ -613,7 +613,7 @@ test('file message should be reactive', () => {
 
     const input = wrapper.find<HTMLInputElement>('.van-uploader__input');
     Object.defineProperty(input.element, 'files', {
-      get: vi.fn().mockReturnValue([mockFile]),
+      get: rs.fn().mockReturnValue([mockFile]),
     });
     input.trigger('change');
   });
@@ -629,7 +629,7 @@ test('multiFile upload filter max-size file', async () => {
   const smallFile = new File([new ArrayBuffer(100)], 'small.jpg');
   const input = wrapper.find<HTMLInputElement>('.van-uploader__input');
   Object.defineProperty(input.element, 'files', {
-    get: vi.fn().mockReturnValue([mockFile, smallFile]),
+    get: rs.fn().mockReturnValue([mockFile, smallFile]),
   });
   input.trigger('change');
   await later();
@@ -700,14 +700,14 @@ test('should emit clickReUpload event when props reupload true', async () => {
 
   const input = wrapper.find<HTMLInputElement>('.van-uploader__input');
   Object.defineProperty(input.element, 'files', {
-    get: vi.fn().mockReturnValue([mockFile]),
+    get: rs.fn().mockReturnValue([mockFile]),
   });
   await trigger(input, 'change');
   expect(wrapper.emitted('update:modelValue')?.[0][0]).toHaveLength(1);
 });
 
 test('expose reuploadFile method', async () => {
-  const onUpdate = vi.fn();
+  const onUpdate = rs.fn();
   const wrapper = mount(Uploader, {
     props: {
       maxCount: 2,
@@ -721,7 +721,7 @@ test('expose reuploadFile method', async () => {
 
   const input = wrapper.find<HTMLInputElement>('.van-uploader__input');
   Object.defineProperty(input.element, 'files', {
-    get: vi.fn().mockReturnValue([mockFile]),
+    get: rs.fn().mockReturnValue([mockFile]),
   });
 
   reuploadFile(1);

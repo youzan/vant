@@ -188,7 +188,7 @@ test('should not trigger select event when click disabled day', async () => {
 });
 
 test('should trigger click-disabled-date event when click disabled day', async () => {
-  const fn = vi.fn();
+  const fn = rs.fn();
   const wrapper = mount(Calendar, {
     props: {
       minDate,
@@ -532,7 +532,7 @@ test('popup wrapper', async () => {
 });
 
 test('should trigger click-overlay event when overlay is clicked', async () => {
-  const onClickOverlay = vi.fn();
+  const onClickOverlay = rs.fn();
   const wrapper = mount(Calendar, {
     props: {
       minDate,
@@ -608,7 +608,7 @@ test('color prop when type is range', async () => {
 });
 
 test('close event', async () => {
-  const onClose = vi.fn();
+  const onClose = rs.fn();
   const wrapper = mount(Calendar, {
     props: {
       show: true,

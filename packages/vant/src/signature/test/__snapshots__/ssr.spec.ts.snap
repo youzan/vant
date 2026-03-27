@@ -1,4 +1,4 @@
-// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+// Rstest Snapshot v1
 
 exports[`should render correctly when SSR 1`] = `
 <div class="van-signature">
@@ -16,6 +16,18 @@ exports[`should render correctly when SSR 1`] = `
         <span class="van-button__text">
           <!--[-->
           Clear
+        </span>
+      </div>
+    </button>
+    <button
+      type="button"
+      class="van-button van-button--default van-button--small"
+      style
+    >
+      <div class="van-button__content">
+        <span class="van-button__text">
+          <!--[-->
+          Undo
         </span>
       </div>
     </button>
