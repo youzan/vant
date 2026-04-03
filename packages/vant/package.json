@@ -48,7 +48,7 @@
   "dependencies": {
     "@vant/popperjs": "workspace:^",
     "@vant/use": "workspace:^",
-    "@vue/shared": "^3.5.31"
+    "@vue/shared": "^3.5.32"
   },
   "peerDependencies": {
     "vue": "^3.0.0"
@@ -57,21 +57,21 @@
     "@rsbuild/plugin-vue": "1.2.7",
     "@rsbuild/plugin-vue-jsx": "1.1.2",
     "@rsbuild/plugin-babel": "1.1.2",
-    "@rstest/coverage-istanbul": "^0.3.0",
-    "@rstest/core": "^0.9.5",
-    "@types/node": "^24.12.0",
+    "@rstest/coverage-istanbul": "^0.3.1",
+    "@rstest/core": "^0.9.6",
+    "@types/node": "^24.12.2",
     "@vant/area-data": "workspace:*",
     "@vant/cli": "workspace:*",
     "@vant/eslint-config": "workspace:*",
     "@vant/icons": "workspace:*",
-    "@vue/runtime-core": "^3.5.31",
+    "@vue/runtime-core": "^3.5.32",
     "@vue/test-utils": "^2.4.6",
     "csstype": "^3.2.3",
     "diffable-html": "^6.0.1",
     "jsdom": "^25.0.1",
     "typescript": "^5.9.3",
     "rstest-canvas-mock": "^0.0.5",
-    "vue": "^3.5.31",
+    "vue": "^3.5.32",
     "vue-router": "^4.6.4"
   },
   "sideEffects": [

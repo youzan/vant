@@ -36,9 +36,9 @@
   "author": "chenjiahan",
   "license": "MIT",
   "devDependencies": {
-    "@rslib/core": "^0.20.1",
+    "@rslib/core": "^0.20.3",
     "typescript": "^5.9.3",
-    "vue": "^3.5.31"
+    "vue": "^3.5.32"
   },
   "peerDependencies": {
     "vue": "^3.0.0"
