@@ -13,11 +13,6 @@
       "groupSlug": "rsbuild"
     },
     {
-      "groupName": "vite",
-      "packagePatterns": ["vite"],
-      "groupSlug": "vite"
-    },
-    {
       "groupName": "types",
       "packagePatterns": ["^@types/"],
       "groupSlug": "types"
