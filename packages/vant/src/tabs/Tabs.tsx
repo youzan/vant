@@ -237,15 +237,6 @@ export default defineComponent({
       const newName = getTabName(newTab, newIndex);
       const shouldEmitChange = state.currentIndex !== null;
 
-      if (state.currentIndex !== newIndex) {
-        state.currentIndex = newIndex;
-
-        if (!skipScrollIntoView) {
-          scrollIntoView();
-        }
-        setLine();
-      }
-
       if (newName !== props.active) {
         emit('update:active', newName);
 
@@ -254,11 +245,21 @@ export default defineComponent({
         }
       }
 
-      // scroll to correct position
-      if (stickyFixed && !props.scrollspy) {
-        setRootScrollTop(
-          Math.ceil(getElementTop(root.value!) - offsetTopPx.value),
-        );
+      // only update current index when active prop is changed
+      if (newName === props.active && state.currentIndex !== newIndex) {
+        state.currentIndex = newIndex;
+
+        if (!skipScrollIntoView) {
+          scrollIntoView();
+        }
+        setLine();
+
+        // scroll to correct position
+        if (stickyFixed && !props.scrollspy) {
+          setRootScrollTop(
+            Math.ceil(getElementTop(root.value!) - offsetTopPx.value),
+          );
+        }
       }
     };
 
