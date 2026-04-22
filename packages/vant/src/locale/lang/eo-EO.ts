@@ -3,6 +3,7 @@ export default {
   tel: 'Telefonnumero',
   save: 'Konservi',
   clear: 'Klara',
+  undo: 'Malfari',
   cancel: 'Rezigni',
   confirm: 'Konfirmi',
   delete: 'Forigi',

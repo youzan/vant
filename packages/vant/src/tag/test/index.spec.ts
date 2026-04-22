@@ -22,7 +22,7 @@ test('should hide tag when the show prop is false', () => {
 });
 
 test('should not trigger click event when clicking the close icon', () => {
-  const onClick = vi.fn();
+  const onClick = rs.fn();
   const wrapper = mount(Tag, {
     props: {
       onClick,

@@ -113,7 +113,7 @@ test('should limit max value when using max prop', async () => {
 });
 
 test('should update value after long pressing', async () => {
-  vi.useFakeTimers();
+  rs.useFakeTimers();
   const wrapper = mount(Stepper, {
     props: {
       modelValue: 1,
@@ -128,14 +128,14 @@ test('should update value after long pressing', async () => {
   expect(wrapper.emitted('update:modelValue')![0]).toEqual([2]);
 
   await plus.trigger('touchstart');
-  await vi.advanceTimersByTimeAsync(LONG_PRESS_START_TIME + 500);
+  await rs.advanceTimersByTimeAsync(LONG_PRESS_START_TIME + 500);
   await plus.trigger('touchend');
   expect(wrapper.emitted('update:modelValue')).toEqual([[2], [3], [4], [5]]);
-  vi.useRealTimers();
+  rs.useRealTimers();
 });
 
 test('should allow to disable long press', async () => {
-  vi.useFakeTimers();
+  rs.useFakeTimers();
   const wrapper = mount(Stepper, {
     props: {
       longPress: false,
@@ -145,11 +145,11 @@ test('should allow to disable long press', async () => {
 
   const plus = wrapper.find('.van-stepper__plus');
   await plus.trigger('touchstart');
-  await vi.advanceTimersByTimeAsync(LONG_PRESS_START_TIME + 500);
+  await rs.advanceTimersByTimeAsync(LONG_PRESS_START_TIME + 500);
   await plus.trigger('touchend');
 
   expect(wrapper.emitted('update:modelValue')).toBeFalsy();
-  vi.useRealTimers();
+  rs.useRealTimers();
 });
 
 test('should filter invalid value during user input', async () => {

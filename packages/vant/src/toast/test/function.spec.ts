@@ -10,17 +10,17 @@ import {
 } from '../function-call';
 
 test('toast disappeared after duration', async () => {
-  vi.useFakeTimers();
-  const onClose = vi.fn();
+  rs.useFakeTimers();
+  const onClose = rs.fn();
   showToast({
     duration: 10,
     onClose,
   });
 
   expect(onClose).not.toHaveBeenCalled();
-  await vi.advanceTimersByTimeAsync(100);
+  await rs.advanceTimersByTimeAsync(100);
   expect(onClose).toHaveBeenCalledTimes(1);
-  vi.useRealTimers();
+  rs.useRealTimers();
 });
 
 test('show loading toast', async () => {
@@ -33,19 +33,19 @@ test('show loading toast', async () => {
 });
 
 test('show html toast', async () => {
-  vi.useFakeTimers();
+  rs.useFakeTimers();
   showToast({
     type: 'html',
     className: 'html-toast',
     message: '<div>Message</div>',
   });
-  await vi.runAllTimersAsync();
+  await rs.runAllTimersAsync();
 
   const toastText = document.querySelector(
     '.html-toast .van-toast__text',
   ) as HTMLDivElement;
   expect(toastText.innerHTML).toEqual('<div>Message</div>');
-  vi.useRealTimers();
+  rs.useRealTimers();
 });
 
 test('icon prop', async () => {
@@ -66,9 +66,9 @@ test('icon-prefix prop', async () => {
 });
 
 test('clear toast', async () => {
-  const onClose1 = vi.fn();
-  const onClose2 = vi.fn();
-  const onClose3 = vi.fn();
+  const onClose1 = rs.fn();
+  const onClose2 = rs.fn();
+  const onClose3 = rs.fn();
 
   showToast({ onClose: onClose1 });
 
@@ -96,8 +96,8 @@ test('clear multiple toast', async () => {
   allowMultipleToast();
   closeToast(true);
 
-  const onClose1 = vi.fn();
-  const onClose2 = vi.fn();
+  const onClose1 = rs.fn();
+  const onClose2 = rs.fn();
 
   showSuccessToast({ onClose: onClose1 });
   await later();
@@ -112,15 +112,15 @@ test('clear multiple toast', async () => {
 });
 
 test('remove toast DOM when cleared in multiple mode', async () => {
-  vi.useFakeTimers();
+  rs.useFakeTimers();
   allowMultipleToast();
   closeToast(true);
   const toast = showToast({ className: 'remove-toast' });
   toast.close();
-  await vi.advanceTimersByTimeAsync(100);
+  await rs.advanceTimersByTimeAsync(100);
   expect(document.querySelector('.remove-toast')).toBeNull();
   allowMultipleToast(false);
-  vi.useRealTimers();
+  rs.useRealTimers();
 });
 
 test('set default options', async () => {
@@ -155,20 +155,20 @@ test('set default options by type', async () => {
 });
 
 test('toast duration 0', async () => {
-  vi.useFakeTimers();
+  rs.useFakeTimers();
   allowMultipleToast();
-  const onClose = vi.fn();
+  const onClose = rs.fn();
   showToast({ duration: 0, onClose });
 
-  await vi.advanceTimersByTimeAsync(100);
+  await rs.advanceTimersByTimeAsync(100);
   expect(onClose).not.toHaveBeenCalled();
   allowMultipleToast(false);
-  vi.useRealTimers();
+  rs.useRealTimers();
 });
 
 test('should trigger onClose callback after closed', async () => {
   allowMultipleToast();
-  const onClose = vi.fn();
+  const onClose = rs.fn();
   const toast = showToast({ onClose });
 
   await later();

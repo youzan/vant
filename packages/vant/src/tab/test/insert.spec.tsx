@@ -72,7 +72,7 @@ test('should render correctly after inserting a tab from an array', async () => 
 });
 
 test('should render correctly after inserting a tab with name', async () => {
-  const onChange = vi.fn();
+  const onChange = rs.fn();
   const wrapper = mount({
     render() {
       return (

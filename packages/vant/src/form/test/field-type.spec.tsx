@@ -14,8 +14,8 @@ import { CheckboxGroup } from '../../checkbox-group';
 import { Uploader, UploaderFileListItem } from '../../uploader';
 
 function mountFormWithChild(input: () => JSX.Element) {
-  const onSubmit = vi.fn();
-  const onFailed = vi.fn();
+  const onSubmit = rs.fn();
+  const onFailed = rs.fn();
   const form = mount({
     render() {
       return (
@@ -179,7 +179,7 @@ test('should allow to use Uploader as a form item', async () => {
 });
 
 test('should not get formValue from button slot', async () => {
-  const onSubmit = vi.fn();
+  const onSubmit = rs.fn();
 
   const form = mount({
     render() {

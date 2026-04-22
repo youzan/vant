@@ -5,7 +5,7 @@ import { Form, FormInstance } from '..';
 import { Field } from '../../field';
 
 test('should emit submit event after calling the submit method', async () => {
-  const onSubmit = vi.fn();
+  const onSubmit = rs.fn();
   const form = ref<FormInstance>();
   mount({
     render() {

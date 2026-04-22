@@ -1,7 +1,7 @@
 import { raf, cancelRaf } from '../src/utils';
 
 test('raf', async () => {
-  const spy = vi.fn();
+  const spy = rs.fn();
   raf(spy);
 
   expect(spy).toHaveBeenCalledTimes(1);

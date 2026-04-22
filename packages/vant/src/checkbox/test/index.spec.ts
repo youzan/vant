@@ -91,7 +91,7 @@ test('should adjust label position when using label-position prop', () => {
 });
 
 test('should emit click event when checkbox icon is clicked', async () => {
-  const onClick = vi.fn();
+  const onClick = rs.fn();
   const wrapper = mount(Checkbox, {
     props: {
       onClick,
@@ -118,7 +118,7 @@ test('should render icon slot correctly', async () => {
 });
 
 test('should render label slot correctly', async () => {
-  const slot = vi.fn();
+  const slot = rs.fn();
   const wrapper = mount(Checkbox, {
     slots: {
       default: slot,

@@ -3,6 +3,7 @@ export default {
   tel: 'Утас',
   save: 'Хадгалах',
   clear: 'Тодорхой',
+  undo: 'Буцаах',
   cancel: 'Цуцлах',
   confirm: 'Баталгаажуулах',
   delete: 'Устгах',

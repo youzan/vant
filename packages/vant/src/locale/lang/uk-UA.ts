@@ -3,6 +3,7 @@ export default {
   tel: 'Телефон',
   save: 'Зберегти',
   clear: 'ясно',
+  undo: 'Скасувати',
   cancel: 'Скасувати',
   confirm: 'Підтвердити',
   delete: 'Видалити',

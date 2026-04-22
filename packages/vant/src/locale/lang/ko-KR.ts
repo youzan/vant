@@ -3,6 +3,7 @@ export default {
   tel: '핸드폰',
   save: '구하다',
   clear: '분명한',
+  undo: '실행 취소',
   cancel: '취소',
   confirm: '확인',
   delete: '삭제',

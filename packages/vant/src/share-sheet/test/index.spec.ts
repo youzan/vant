@@ -91,7 +91,7 @@ test('should render title and description slot correctly', () => {
 
 test('should emit clickOverlay event when overlay is clicked', async () => {
   const root = document.createElement('div');
-  const onClickOverlay = vi.fn();
+  const onClickOverlay = rs.fn();
   const wrapper = mount(ShareSheet, {
     props: {
       show: true,

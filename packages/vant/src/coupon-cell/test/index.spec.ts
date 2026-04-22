@@ -41,7 +41,7 @@ test('should render CouponCell correctly with zero discount', () => {
 });
 
 test('should click one time when coupon cell is clicked', () => {
-  const onClick = vi.fn();
+  const onClick = rs.fn();
   const wrapper = mount(CouponCell, {
     props: {
       onClick,

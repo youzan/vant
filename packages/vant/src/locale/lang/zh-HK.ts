@@ -3,6 +3,7 @@ export default {
   tel: '電話',
   save: '保存',
   clear: '清空',
+  undo: '撤銷',
   cancel: '取消',
   confirm: '確認',
   delete: '刪除',

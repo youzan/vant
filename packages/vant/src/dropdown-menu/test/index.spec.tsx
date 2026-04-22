@@ -2,9 +2,7 @@ import { later, mount } from '../../../test';
 import { reactive, ref, onMounted, computed } from 'vue';
 import DropdownItem from '../../dropdown-item';
 import DropdownMenu, { DropdownMenuDirection } from '..';
-import { getContainingBlock } from '../../utils/dom';
-
-vi.mock('../../utils/dom');
+import * as domUtils from '../../utils/dom';
 
 function renderWrapper(
   options: {
@@ -122,6 +120,7 @@ test('direction up', async () => {
 
   const titles = wrapper.findAll('.van-dropdown-menu__title');
   await titles[0].trigger('click');
+
   expect(wrapper.html()).toMatchSnapshot();
 });
 
@@ -201,7 +200,7 @@ test('disable dropdown item', async () => {
 });
 
 test('change event', async () => {
-  const onChange = vi.fn();
+  const onChange = rs.fn();
 
   const wrapper = mount({
     setup() {
@@ -330,7 +329,7 @@ test('scrolling is allowed when the number of items exceeds the threshold', asyn
 });
 
 test('auto-locate prop', async () => {
-  const mockedFn = vi.mocked(getContainingBlock);
+  const mockedFn = rs.spyOn(domUtils, 'getContainingBlock');
   const autoLocate = ref(false);
   const wrapper = mount({
     setup() {
@@ -365,11 +364,11 @@ test('auto-locate prop', async () => {
   expect(mockedFn.mock.calls[0]).toEqual([item.element]);
   expect(item.style.top).toEqual('-10px');
 
-  vi.doUnmock('../../utils/dom');
+  mockedFn.mockRestore();
 });
 
 test('disable dropdown option', async () => {
-  const onChange = vi.fn();
+  const onChange = rs.fn();
   const optionsRef = ref([
     { text: 'A', value: 0 },
     { text: 'B', value: 1, disabled: true },

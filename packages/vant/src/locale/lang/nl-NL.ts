@@ -3,6 +3,7 @@ export default {
   tel: 'Telefoon',
   save: 'Opslaan',
   clear: 'Duidelijk',
+  undo: 'Ongedaan maken',
   cancel: 'Annuleren',
   confirm: 'Bevestigen',
   delete: 'Verwijderen',

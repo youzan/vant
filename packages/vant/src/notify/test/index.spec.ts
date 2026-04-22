@@ -42,7 +42,7 @@ test('should change default options after calling setDefaultOptions method', asy
 });
 
 test('should call onClose option when closing', async () => {
-  const onClose = vi.fn();
+  const onClose = rs.fn();
   showNotify({
     message: 'test',
     onClose,
@@ -54,7 +54,7 @@ test('should call onClose option when closing', async () => {
 });
 
 test('should call onClick option when clicked', async () => {
-  const onClick = vi.fn();
+  const onClick = rs.fn();
   showNotify({
     message: 'test',
     onClick,

@@ -1,6 +1,6 @@
 import { nextTick } from 'vue';
 import { mount, triggerDrag } from '../../../test';
-import { Popup } from '..';
+import { Popup, useGlobalZIndex, setGlobalZIndex } from '..';
 
 let wrapper;
 afterEach(() => {
@@ -105,7 +105,7 @@ test('should emit clickOverlay event when overlay is clicked', async () => {
 });
 
 test('should emit open event when show prop is set to true', async () => {
-  const onOpen = vi.fn();
+  const onOpen = rs.fn();
   wrapper = mount(Popup, {
     props: {
       onOpen,
@@ -117,7 +117,7 @@ test('should emit open event when show prop is set to true', async () => {
 });
 
 test('should emit close event when show prop is set to false', async () => {
-  const onClose = vi.fn();
+  const onClose = rs.fn();
   wrapper = mount(Popup, {
     props: {
       show: true,
@@ -130,7 +130,7 @@ test('should emit close event when show prop is set to false', async () => {
 });
 
 test('should emit close event after clicking the overlay', async () => {
-  const onClose = vi.fn();
+  const onClose = rs.fn();
   wrapper = mount(Popup, {
     props: {
       show: true,
@@ -248,7 +248,7 @@ test('should allow to prevent close with before-close prop', async () => {
 });
 
 test('should not call before-close when show prop becomes false', async () => {
-  const beforeClose = vi.fn();
+  const beforeClose = rs.fn();
   const wrapper = mount(Popup, {
     props: {
       show: true,
@@ -302,4 +302,30 @@ test('should destroy content when using destroyOnClose prop', async () => {
 
   await wrapper.setProps({ show: false });
   expect(wrapper.find('.foo').exists()).toBeFalsy();
+});
+
+test('useGlobalZIndex should return auto-incrementing z-index', () => {
+  setGlobalZIndex(2000);
+  const first = useGlobalZIndex();
+  const second = useGlobalZIndex();
+  const third = useGlobalZIndex();
+  expect(first).toBe(2001);
+  expect(second).toBe(2002);
+  expect(third).toBe(2003);
+});
+
+test('setGlobalZIndex should reset the global z-index', () => {
+  setGlobalZIndex(100);
+  expect(useGlobalZIndex()).toBe(101);
+  expect(useGlobalZIndex()).toBe(102);
+
+  setGlobalZIndex(500);
+  expect(useGlobalZIndex()).toBe(501);
+  expect(useGlobalZIndex()).toBe(502);
+});
+
+test('setGlobalZIndex should allow custom initial value', () => {
+  setGlobalZIndex(0);
+  expect(useGlobalZIndex()).toBe(1);
+  expect(useGlobalZIndex()).toBe(2);
 });

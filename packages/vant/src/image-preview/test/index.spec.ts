@@ -258,7 +258,7 @@ test('should not close when overlay is clicked and closeOnClickOverlay is false'
 });
 
 test('should trigger scale after double clicking', async () => {
-  const onScale = vi.fn();
+  const onScale = rs.fn();
   const wrapper = mount(ImagePreview, {
     props: {
       images,
@@ -290,8 +290,8 @@ test('should trigger scale after double clicking', async () => {
 });
 
 test('should allow to disable double click gesture', async () => {
-  const onScale = vi.fn();
-  const onClose = vi.fn();
+  const onScale = rs.fn();
+  const onClose = rs.fn();
   const wrapper = mount(ImagePreview, {
     props: {
       images,
@@ -352,7 +352,7 @@ test('zoom in and drag image to move', async () => {
 test('zoom out', async () => {
   const restore = mockGetBoundingClientRect({ width: 100, height: 100 });
 
-  const onScale = vi.fn();
+  const onScale = rs.fn();
   const wrapper = mount(ImagePreview, {
     props: {
       images,
@@ -421,7 +421,7 @@ test('should render image slot correctly 3', async () => {
 });
 
 test('should emit long-press event after long press', async () => {
-  const onLongPress = vi.fn();
+  const onLongPress = rs.fn();
   const wrapper = mount(ImagePreview, {
     props: {
       images,

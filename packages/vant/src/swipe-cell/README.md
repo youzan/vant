@@ -112,6 +112,7 @@ export default {
 | name | Identifier of SwipeCell, usually a unique string or number | _number \| string_ | - |
 | left-width | Width of the left swipe area | _number \| string_ | `auto` |
 | right-width | Width of the right swipe area | _number \| string_ | `auto` |
+| threshold | Swipe threshold (ratio of swipe distance to side width) | _number \| string_ | `0.15` |
 | before-close | Callback function before close | _(args) => boolean \| Promise\<boolean\>_ | - |
 | disabled | Whether to disabled swipe | _boolean_ | `false` |
 | stop-propagation | Whether to stop touchmove event propagation | _boolean_ | `false` |

@@ -3,7 +3,7 @@ import { mount } from '../../../test';
 import type { SearchInstance } from '../types';
 
 test('should emit update:modelValue event when input value changed', () => {
-  const onUpdateModelValue = vi.fn();
+  const onUpdateModelValue = rs.fn();
   const wrapper = mount(Search, {
     props: {
       'onUpdate:modelValue': onUpdateModelValue,
@@ -123,7 +123,7 @@ test('should render action text when using action-text prop', () => {
 
 test('should call input.focus when vm.focus is called', () => {
   const wrapper = mount(Search);
-  const onFocus = vi.fn();
+  const onFocus = rs.fn();
   wrapper.find('input').element.focus = onFocus;
 
   (wrapper.vm as SearchInstance).focus();
@@ -132,7 +132,7 @@ test('should call input.focus when vm.focus is called', () => {
 
 test('should call input.blur when vm.blur is called', () => {
   const wrapper = mount(Search);
-  const onBlur = vi.fn();
+  const onBlur = rs.fn();
   wrapper.find('input').element.blur = onBlur;
 
   (wrapper.vm as SearchInstance).blur();

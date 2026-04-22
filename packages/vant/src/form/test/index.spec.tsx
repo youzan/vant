@@ -36,7 +36,7 @@ test('should not reset validation after blurred when validate-trigger is onChang
 });
 
 test('should render correctly when dynamically add/remove fields', async () => {
-  const onSubmit = vi.fn();
+  const onSubmit = rs.fn();
   const wrapper = mount({
     render() {
       return (
@@ -65,7 +65,7 @@ test('should render correctly when dynamically add/remove fields', async () => {
 });
 
 test('should validate first correctly when dynamically add field', async () => {
-  const onFailed = vi.fn();
+  const onFailed = rs.fn();
   const wrapper = mount({
     render() {
       return (

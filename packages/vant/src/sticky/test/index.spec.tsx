@@ -12,7 +12,7 @@ function mockStickyRect(
   wrapper: VueWrapper<ComponentInstance>,
   rect: Partial<DOMRect>,
 ) {
-  const mocked = vi
+  const mocked = rs
     .spyOn(wrapper.element, 'getBoundingClientRect')
     .mockReturnValue(rect as DOMRect);
 
@@ -154,7 +154,7 @@ test('should allow to using offset-top prop with vw unit', async () => {
 });
 
 test('should not trigger scroll event when hidden', () => {
-  const onScroll = vi.fn();
+  const onScroll = rs.fn();
 
   mount({
     render() {
@@ -188,7 +188,7 @@ test('should sticky inside container when using container prop', async () => {
     },
   });
 
-  const mockStickyRect = vi
+  const mockStickyRect = rs
     .spyOn(wrapper.element.firstElementChild!, 'getBoundingClientRect')
     .mockReturnValue({
       height: 44,
@@ -196,7 +196,7 @@ test('should sticky inside container when using container prop', async () => {
       top: -100,
       bottom: -56,
     } as DOMRect);
-  const mockContainerRect = vi
+  const mockContainerRect = rs
     .spyOn(wrapper.element, 'getBoundingClientRect')
     .mockReturnValue({
       top: -100,
@@ -247,7 +247,7 @@ test('should sticky inside container bottom when using container prop', async ()
     },
   });
 
-  const mockStickyRect = vi
+  const mockStickyRect = rs
     .spyOn(wrapper.element.children[1], 'getBoundingClientRect')
     .mockReturnValue({
       height: 44,
@@ -255,7 +255,7 @@ test('should sticky inside container bottom when using container prop', async ()
       top: 690,
       bottom: 734,
     } as DOMRect);
-  const mockContainerRect = vi
+  const mockContainerRect = rs
     .spyOn(wrapper.element, 'getBoundingClientRect')
     .mockReturnValue({
       top: 540,
@@ -284,9 +284,9 @@ test('should sticky inside container bottom when using container prop', async ()
 test('should emit scroll event when visibility changed', async () => {
   const originIntersectionObserver = window.IntersectionObserver;
 
-  const observe = vi.fn();
-  const unobserve = vi.fn();
-  const onScroll = vi.fn();
+  const observe = rs.fn();
+  const unobserve = rs.fn();
+  const onScroll = rs.fn();
 
   type ObserverCallback = (
     entries: Partial<IntersectionObserverEntry>[],
@@ -369,7 +369,7 @@ test('should sticky resize or orientationchange reset root height and width', as
 
   Object.defineProperty(window, 'innerWidth', { value: 375 });
 
-  const mockStickyRect = vi
+  const mockStickyRect = rs
     .spyOn(wrapper.element, 'getBoundingClientRect')
     .mockReturnValue({
       top: -100,

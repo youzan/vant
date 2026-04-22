@@ -3,6 +3,7 @@ export default {
   tel: 'Telefon',
   save: 'Kaydet',
   clear: 'Temizlemek',
+  undo: 'Geri Al',
   cancel: 'İptal',
   confirm: 'Onayla',
   delete: 'Sil',

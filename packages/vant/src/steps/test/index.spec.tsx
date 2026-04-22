@@ -19,7 +19,7 @@ test('should render icon slot correctly', () => {
 });
 
 test('should emit clickStep event when step is clicked', () => {
-  const onClickStep = vi.fn();
+  const onClickStep = rs.fn();
   const wrapper = mount({
     setup() {
       return () => (

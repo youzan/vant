@@ -3,6 +3,7 @@ export default {
   tel: 'Telefon',
   save: 'Speichern',
   clear: 'Klar',
+  undo: 'Rückgängig',
   cancel: 'Abbrechen',
   confirm: 'Bestätigen',
   delete: 'Löschen',

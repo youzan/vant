@@ -191,7 +191,7 @@ test('should free direction move when axis is "xy"', async () => {
 });
 
 test('should free direction move and magnetic to x axis when magnetic is "x" ', async () => {
-  vi.useFakeTimers();
+  rs.useFakeTimers();
 
   const restore = mockGetBoundingClientRect({
     width: bubbleWidth,
@@ -211,7 +211,7 @@ test('should free direction move and magnetic to x axis when magnetic is "x" ', 
   )!;
 
   await triggerDrag(floatingBubbleEl, -100, -100);
-  await vi.advanceTimersByTimeAsync(400);
+  await rs.advanceTimersByTimeAsync(400);
 
   expect(floatingBubbleEl.style.transform).toEqual(
     `translate3d(${window.innerWidth - bubbleWidth - defaultGap}px, ${
@@ -220,18 +220,18 @@ test('should free direction move and magnetic to x axis when magnetic is "x" ', 
   );
 
   await triggerDrag(floatingBubbleEl, -600, -100);
-  await vi.advanceTimersByTimeAsync(400);
+  await rs.advanceTimersByTimeAsync(400);
 
   expect(floatingBubbleEl.style.transform).toEqual(
     `translate3d(${defaultGap}px, ${window.innerHeight - bubbleHeight - defaultGap - 200}px, 0)`,
   );
 
   restore();
-  vi.useRealTimers();
+  rs.useRealTimers();
 });
 
 test('should offset control positioning when use v-model:offset', async () => {
-  vi.useFakeTimers();
+  rs.useFakeTimers();
 
   const restore = mockGetBoundingClientRect({
     width: bubbleWidth,
@@ -254,7 +254,7 @@ test('should offset control positioning when use v-model:offset', async () => {
   )!;
 
   await triggerDrag(floatingBubbleEl, 100, 100);
-  await vi.advanceTimersByTimeAsync(400);
+  await rs.advanceTimersByTimeAsync(400);
 
   expect(floatingBubbleEl.style.transform).toEqual(
     `translate3d(${300}px, ${300}px, 0)`,
@@ -267,7 +267,7 @@ test('should offset control positioning when use v-model:offset', async () => {
   });
 
   restore();
-  vi.useRealTimers();
+  rs.useRealTimers();
 });
 
 test('should emit click when click wrapper', async () => {

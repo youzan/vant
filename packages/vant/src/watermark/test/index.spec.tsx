@@ -18,7 +18,7 @@ describe('watermark', () => {
       }
       return createElement(tagName);
     };
-    global.URL.createObjectURL = vi.fn(() => 'blob:test');
+    global.URL.createObjectURL = rs.fn(() => 'blob:test');
     global.Image = class {
       crossOrigin = 'anonymous';
 
