@@ -77,8 +77,8 @@ importers:
         specifier: 1.2.7
         version: 1.2.7(@rsbuild/core@2.0.1)(@rspack/core@2.0.0(@swc/helpers@0.5.21))(vue@3.5.32(typescript@5.9.3))
       '@rsbuild/plugin-vue-jsx':
-        specifier: 1.1.2
-        version: 1.1.2(@babel/core@7.29.0)(@rsbuild/core@2.0.1)
+        specifier: 2.0.0
+        version: 2.0.0(@babel/core@7.29.0)(@rsbuild/core@2.0.1)
       '@rstest/core':
         specifier: ^0.9.7
         version: 0.9.7(@emnapi/core@1.10.0)(@emnapi/runtime@1.10.0)(jsdom@25.0.1)
@@ -170,8 +170,8 @@ importers:
         specifier: ^1.2.7
         version: 1.2.7(@rsbuild/core@2.0.1)(@rspack/core@2.0.0(@swc/helpers@0.5.21))(vue@3.5.32(typescript@5.9.3))
       '@rsbuild/plugin-vue-jsx':
-        specifier: ^1.1.2
-        version: 1.1.2(@babel/core@7.29.0)(@rsbuild/core@2.0.1)
+        specifier: ^2.0.0
+        version: 2.0.0(@babel/core@7.29.0)(@rsbuild/core@2.0.1)
       '@vant/eslint-config':
         specifier: workspace:^
         version: link:../vant-eslint-config
@@ -1369,8 +1369,8 @@ packages:
       '@rsbuild/core':
         optional: true
 
-  '@rsbuild/plugin-vue-jsx@1.1.2':
-    resolution: {integrity: sha512-HhoHyIXX2LNzmoLjCb3ZKu0JTySUt8Ryc/iuEs4mZV1W+a64F1GGJJzzZ08eIFu0VgEF7cQwlj3nE1CSo+u1Nw==}
+  '@rsbuild/plugin-vue-jsx@2.0.0':
+    resolution: {integrity: sha512-P0kzXfILMle1oPkB7GfH7VvKFCF7F6P1+9TmxCGEE03ZH7/vxbv15EjEIPFwY3MqSdgrmhIBz08dAOT8T0ffSQ==}
     peerDependencies:
       '@rsbuild/core': ^1.0.0 || ^2.0.0-0
     peerDependenciesMeta:
@@ -3475,7 +3475,7 @@ snapshots:
 
   '@babel/helper-member-expression-to-functions@7.27.1':
     dependencies:
-      '@babel/traverse': 7.28.6
+      '@babel/traverse': 7.29.0
       '@babel/types': 7.29.0
     transitivePeerDependencies:
       - supports-color
@@ -3550,7 +3550,7 @@ snapshots:
       '@babel/core': 7.27.1
       '@babel/helper-member-expression-to-functions': 7.28.5
       '@babel/helper-optimise-call-expression': 7.27.1
-      '@babel/traverse': 7.28.6
+      '@babel/traverse': 7.29.0
     transitivePeerDependencies:
       - supports-color
 
@@ -3559,7 +3559,7 @@ snapshots:
       '@babel/core': 7.29.0
       '@babel/helper-member-expression-to-functions': 7.28.5
       '@babel/helper-optimise-call-expression': 7.27.1
-      '@babel/traverse': 7.28.6
+      '@babel/traverse': 7.29.0
     transitivePeerDependencies:
       - supports-color
 
@@ -4228,10 +4228,10 @@ snapshots:
     optionalDependencies:
       '@rsbuild/core': 2.0.1
 
-  '@rsbuild/plugin-vue-jsx@1.1.2(@babel/core@7.29.0)(@rsbuild/core@2.0.1)':
+  '@rsbuild/plugin-vue-jsx@2.0.0(@babel/core@7.29.0)(@rsbuild/core@2.0.1)':
     dependencies:
       '@rsbuild/plugin-babel': 1.1.2(@rsbuild/core@2.0.1)
-      '@vue/babel-plugin-jsx': 1.5.0(@babel/core@7.29.0)
+      '@vue/babel-plugin-jsx': 2.0.1(@babel/core@7.29.0)
       babel-plugin-vue-jsx-hmr: 1.0.0
     optionalDependencies:
       '@rsbuild/core': 2.0.1
@@ -4706,7 +4706,7 @@ snapshots:
       '@babel/helper-module-imports': 7.28.6
       '@babel/helper-plugin-utils': 7.28.6
       '@babel/parser': 7.29.2
-      '@vue/compiler-sfc': 3.5.31
+      '@vue/compiler-sfc': 3.5.32
     transitivePeerDependencies:
       - supports-color
 
