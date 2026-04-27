@@ -60,7 +60,7 @@
     "markdown-it-anchor": "^9.2.0",
     "nano-staged": "^0.9.0",
     "picocolors": "^1.1.1",
-    "postcss": "^8.5.9",
+    "postcss": "^8.5.10",
     "postcss-load-config": "^6.0.1",
     "prettier": "^3.8.2",
     "rslog": "^2.1.1",
