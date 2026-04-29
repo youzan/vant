@@ -41,7 +41,7 @@
     "@rsbuild/plugin-vue-jsx": "^1.1.2",
     "@vant/eslint-config": "workspace:^",
     "@vant/touch-emulator": "workspace:^",
-    "@vitejs/plugin-vue": "^5.2.4",
+    "@vitejs/plugin-vue": "^6.0.6",
     "@vitejs/plugin-vue-jsx": "^4.2.0",
     "@vue/babel-plugin-jsx": "^2.0.1",
     "autoprefixer": "^10.4.27",
