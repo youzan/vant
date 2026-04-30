@@ -54,6 +54,8 @@ export type ImagePreviewItemInstance = ComponentPublicInstance<
 export type ImagePreviewExpose = {
   resetScale: () => void;
   swipeTo: (index: number, options?: SwipeToOptions) => void;
+  prev: () => void;
+  next: () => void;
 };
 
 export type ImagePreviewInstance = ComponentPublicInstance<
