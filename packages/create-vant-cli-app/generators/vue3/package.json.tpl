@@ -12,7 +12,6 @@
   ],
   "scripts": {
     "dev": "vant-cli dev",
-    "lint": "vant-cli lint",
     "build": "vant-cli build",
     "build:site": "vant-cli build-site",
     "release:site": "pnpm build:site && npx gh-pages -d site-dist"
@@ -20,8 +19,7 @@
   "author": "",
   "nano-staged": {
     "*.md": "prettier --write",
-    "*.{ts,tsx,js,vue,less,scss}": "prettier --write",
-    "*.{ts,tsx,js,vue}": "eslint --fix"
+    "*.{ts,tsx,js,vue,less,scss}": "prettier --write"
   },
   "peerDependencies": {
     "vue": "^3.5.0"
@@ -30,12 +28,6 @@
     "@vant/cli": "^7.0.0",
     "vue": "^3.5.0",
     "sass": "^1.49.7"
-  },
-  "eslintConfig": {
-    "root": true,
-    "extends": [
-      "@vant"
-    ]
   },
   "prettier": {
     "singleQuote": true

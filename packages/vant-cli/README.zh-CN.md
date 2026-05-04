@@ -7,7 +7,6 @@ Vant CLI 是一个基于 Rsbuild 实现的 Vue 组件库构建工具，通过 Va
 - 基于 Rsbuild 实现，享受愉悦的开发体验
 - 提供丰富的命令，涵盖从开发测试到构建发布的完整流程
 - 基于约定的目录结构，自动生成优雅的文档站点和组件示例
-- 内置 ESLint 校验规则，提交代码时自动执行校验
 - 构建后的组件库默认支持按需引入、主题定制、Tree Shaking
 
 ### 快速上手
@@ -41,7 +40,6 @@ bun add @vant/cli -D
   "scripts": {
     "dev": "vant-cli dev",
     "test": "vant-cli test",
-    "lint": "vant-cli lint",
     "build": "vant-cli build",
     "prepare": "husky",
     "release": "vant-cli release",
@@ -49,12 +47,7 @@ bun add @vant/cli -D
   },
   "nano-staged": {
     "*.md": "prettier --write",
-    "*.{ts,tsx,js,vue,less,scss}": "prettier --write",
-    "*.{ts,tsx,js,vue}": "eslint --fix"
-  },
-  "eslintConfig": {
-    "root": true,
-    "extends": ["@vant"]
+    "*.{ts,tsx,js,vue,less,scss}": "prettier --write"
   },
   "prettier": {
     "singleQuote": true

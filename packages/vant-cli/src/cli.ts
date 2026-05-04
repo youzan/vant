@@ -15,14 +15,6 @@ program
   });
 
 program
-  .command('lint')
-  .description('Run ESLint')
-  .action(async () => {
-    const { lint } = await import('./commands/lint.js');
-    return lint();
-  });
-
-program
   .command('clean')
   .description('Clean all dist files')
   .action(async () => {

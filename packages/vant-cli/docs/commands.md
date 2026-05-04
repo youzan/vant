@@ -8,7 +8,6 @@ You can add built-in commands to `npm scripts` to use it.
   "scripts": {
     "dev": "vant-cli dev",
     "test": "vant-cli test",
-    "lint": "vant-cli lint",
     "release": "vant-cli release",
     "build-site": "vant-cli build-site"
   }

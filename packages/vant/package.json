@@ -14,7 +14,6 @@
   ],
   "scripts": {
     "dev": "vant-cli dev",
-    "lint": "vant-cli lint",
     "test": "rstest run",
     "build": "vant-cli build",
     "build:site": "vant-cli build-site",
@@ -62,7 +61,6 @@
     "@types/node": "^24.12.2",
     "@vant/area-data": "workspace:*",
     "@vant/cli": "workspace:*",
-    "@vant/eslint-config": "workspace:*",
     "@vant/icons": "workspace:*",
     "@vue/runtime-core": "^3.5.33",
     "@vue/test-utils": "^2.4.10",

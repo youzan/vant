@@ -81,7 +81,7 @@ src
 
 When writing code, please note:
 
-- Make sure the code can pass the repository's ESLint check.
+- Make sure the code can pass the repository's Rslint check.
 - Make sure the code format is standardized, use prettier for code formatting.
 - Make sure you don't use incompatible APIs like `async`, `await`.
 
