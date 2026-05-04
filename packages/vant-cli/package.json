@@ -67,7 +67,7 @@
     "transliteration": "^2.6.1",
     "typescript": "^5.9.3",
     "vite": "^5.4.20",
-    "vue-router": "^4.6.4"
+    "vue-router": "^5.0.6"
   },
   "devDependencies": {
     "@types/fs-extra": "^11.0.4",
