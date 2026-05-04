@@ -50,15 +50,15 @@ export default defineComponent({
     });
 
     return () => {
-      const { tag, span, offset } = props;
+      const { span, offset } = props;
 
       return (
-        <tag
+        <props.tag
           style={style.value}
           class={bem({ [span]: span, [`offset-${offset}`]: offset })}
         >
           {slots.default?.()}
-        </tag>
+        </props.tag>
       );
     };
   },

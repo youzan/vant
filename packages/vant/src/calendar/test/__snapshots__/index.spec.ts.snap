@@ -345,44 +345,39 @@ exports[`popup wrapper 2`] = `
               1
             </div>
             <div
-              class="van-calendar__day van-calendar__day--disabled"
-              style="margin-left: 71.42857142857143%;"
               role="gridcell"
+              style="margin-left: 71.42857142857143%;"
+              class="van-calendar__day van-calendar__day--disabled"
             >
               1
             </div>
             <div
-              class="van-calendar__day van-calendar__day--disabled"
-              style
               role="gridcell"
+              class="van-calendar__day van-calendar__day--disabled"
             >
               2
             </div>
             <div
-              class="van-calendar__day van-calendar__day--disabled"
-              style
               role="gridcell"
+              class="van-calendar__day van-calendar__day--disabled"
             >
               3
             </div>
             <div
-              class="van-calendar__day van-calendar__day--disabled"
-              style
               role="gridcell"
+              class="van-calendar__day van-calendar__day--disabled"
             >
               4
             </div>
             <div
-              class="van-calendar__day van-calendar__day--disabled"
-              style
               role="gridcell"
+              class="van-calendar__day van-calendar__day--disabled"
             >
               5
             </div>
             <div
-              class="van-calendar__day van-calendar__day--disabled"
-              style
               role="gridcell"
+              class="van-calendar__day van-calendar__day--disabled"
             >
               6
             </div>

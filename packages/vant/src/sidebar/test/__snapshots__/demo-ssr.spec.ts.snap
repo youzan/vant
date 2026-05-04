@@ -31,16 +31,6 @@ exports[`should render demo and match snapshot 1`] = `
         >
           <div class="van-badge__wrapper van-sidebar-item__text">
             <!--[-->
-            Title
-          </div>
-        </div>
-        <div
-          role="tab"
-          class="van-sidebar-item"
-          tabindex="0"
-          aria-selected="false"
-        >
-          <div class="van-badge__wrapper van-sidebar-item__text">
             <!--[-->
             Title
           </div>
@@ -52,6 +42,19 @@ exports[`should render demo and match snapshot 1`] = `
           aria-selected="false"
         >
           <div class="van-badge__wrapper van-sidebar-item__text">
+            <!--[-->
+            <!--[-->
+            Title
+          </div>
+        </div>
+        <div
+          role="tab"
+          class="van-sidebar-item"
+          tabindex="0"
+          aria-selected="false"
+        >
+          <div class="van-badge__wrapper van-sidebar-item__text">
+            <!--[-->
             <!--[-->
             Title
           </div>
@@ -84,6 +87,7 @@ exports[`should render demo and match snapshot 1`] = `
         >
           <div class="van-badge__wrapper van-sidebar-item__text">
             <!--[-->
+            <!--[-->
             Title
             <div
               class="van-badge van-badge--top-right van-badge--dot van-badge--fixed"
@@ -99,6 +103,7 @@ exports[`should render demo and match snapshot 1`] = `
           aria-selected="false"
         >
           <div class="van-badge__wrapper van-sidebar-item__text">
+            <!--[-->
             <!--[-->
             Title
             <div
@@ -116,6 +121,7 @@ exports[`should render demo and match snapshot 1`] = `
           aria-selected="false"
         >
           <div class="van-badge__wrapper van-sidebar-item__text">
+            <!--[-->
             <!--[-->
             Title
           </div>
@@ -148,6 +154,7 @@ exports[`should render demo and match snapshot 1`] = `
         >
           <div class="van-badge__wrapper van-sidebar-item__text">
             <!--[-->
+            <!--[-->
             Title
           </div>
         </div>
@@ -157,6 +164,7 @@ exports[`should render demo and match snapshot 1`] = `
           aria-selected="false"
         >
           <div class="van-badge__wrapper van-sidebar-item__text">
+            <!--[-->
             <!--[-->
             Title
           </div>
@@ -168,6 +176,7 @@ exports[`should render demo and match snapshot 1`] = `
           aria-selected="false"
         >
           <div class="van-badge__wrapper van-sidebar-item__text">
+            <!--[-->
             <!--[-->
             Title
           </div>
@@ -200,6 +209,7 @@ exports[`should render demo and match snapshot 1`] = `
         >
           <div class="van-badge__wrapper van-sidebar-item__text">
             <!--[-->
+            <!--[-->
             Title 1
           </div>
         </div>
@@ -211,6 +221,7 @@ exports[`should render demo and match snapshot 1`] = `
         >
           <div class="van-badge__wrapper van-sidebar-item__text">
             <!--[-->
+            <!--[-->
             Title 2
           </div>
         </div>
@@ -221,6 +232,7 @@ exports[`should render demo and match snapshot 1`] = `
           aria-selected="false"
         >
           <div class="van-badge__wrapper van-sidebar-item__text">
+            <!--[-->
             <!--[-->
             Title 3
           </div>

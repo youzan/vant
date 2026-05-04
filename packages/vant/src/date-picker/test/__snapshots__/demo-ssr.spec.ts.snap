@@ -5,12 +5,15 @@ exports[`should render demo and match snapshot 1`] = `
 <div>
   <!--[-->
   <div class="van-picker">
+    <!--[-->
     <div class="van-picker__toolbar">
+      <!--[-->
       <!--[-->
       <button
         type="button"
         class="van-picker__cancel van-haptics-feedback"
       >
+        <!--[-->
         Cancel
       </button>
       <div class="van-picker__title van-ellipsis">
@@ -20,6 +23,7 @@ exports[`should render demo and match snapshot 1`] = `
         type="button"
         class="van-picker__confirm van-haptics-feedback"
       >
+        <!--[-->
         Confirm
       </button>
     </div>
@@ -559,12 +563,15 @@ exports[`should render demo and match snapshot 1`] = `
 <div>
   <!--[-->
   <div class="van-picker">
+    <!--[-->
     <div class="van-picker__toolbar">
+      <!--[-->
       <!--[-->
       <button
         type="button"
         class="van-picker__cancel van-haptics-feedback"
       >
+        <!--[-->
         Cancel
       </button>
       <div class="van-picker__title van-ellipsis">
@@ -574,6 +581,7 @@ exports[`should render demo and match snapshot 1`] = `
         type="button"
         class="van-picker__confirm van-haptics-feedback"
       >
+        <!--[-->
         Confirm
       </button>
     </div>
@@ -795,12 +803,15 @@ exports[`should render demo and match snapshot 1`] = `
 <div>
   <!--[-->
   <div class="van-picker">
+    <!--[-->
     <div class="van-picker__toolbar">
+      <!--[-->
       <!--[-->
       <button
         type="button"
         class="van-picker__cancel van-haptics-feedback"
       >
+        <!--[-->
         Cancel
       </button>
       <div class="van-picker__title van-ellipsis">
@@ -810,6 +821,7 @@ exports[`should render demo and match snapshot 1`] = `
         type="button"
         class="van-picker__confirm van-haptics-feedback"
       >
+        <!--[-->
         Confirm
       </button>
     </div>
@@ -1031,18 +1043,22 @@ exports[`should render demo and match snapshot 1`] = `
 <div>
   <!--[-->
   <div class="van-picker">
+    <!--[-->
     <div class="van-picker__toolbar">
+      <!--[-->
       <!--[-->
       <button
         type="button"
         class="van-picker__cancel van-haptics-feedback"
       >
+        <!--[-->
         Cancel
       </button>
       <button
         type="button"
         class="van-picker__confirm van-haptics-feedback"
       >
+        <!--[-->
         Confirm
       </button>
     </div>

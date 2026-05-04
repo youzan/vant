@@ -23,6 +23,7 @@ exports[`should render demo and match snapshot 1`] = `
         style="transform:;transition-duration:0s;"
         class="van-notice-bar__content"
       >
+        <!--[-->
         Technology is the common soul of the people who developed it.
       </div>
     </div>
@@ -43,6 +44,7 @@ exports[`should render demo and match snapshot 1`] = `
         style="transform:;transition-duration:0s;"
         class="van-notice-bar__content"
       >
+        <!--[-->
         Short Content
       </div>
     </div>
@@ -60,6 +62,7 @@ exports[`should render demo and match snapshot 1`] = `
         style="transform:;transition-duration:0s;"
         class="van-notice-bar__content van-ellipsis"
       >
+        <!--[-->
         Technology is the common soul of the people who developed it.
       </div>
     </div>
@@ -80,6 +83,7 @@ exports[`should render demo and match snapshot 1`] = `
         style="transform:;transition-duration:0s;"
         class="van-notice-bar__content"
       >
+        <!--[-->
         Technology is the common soul of the people who developed it.
       </div>
     </div>
@@ -100,6 +104,7 @@ exports[`should render demo and match snapshot 1`] = `
         style="transform:;transition-duration:0s;"
         class="van-notice-bar__content"
       >
+        <!--[-->
         Short Content
       </div>
     </div>
@@ -123,6 +128,7 @@ exports[`should render demo and match snapshot 1`] = `
         style="transform:;transition-duration:0s;"
         class="van-notice-bar__content"
       >
+        <!--[-->
         Short Content
       </div>
     </div>
@@ -155,6 +161,7 @@ exports[`should render demo and match snapshot 1`] = `
         style="transform:;transition-duration:0s;"
         class="van-notice-bar__content"
       >
+        <!--[-->
         Short Content
       </div>
     </div>
@@ -182,6 +189,7 @@ exports[`should render demo and match snapshot 1`] = `
         class="van-notice-bar__content van-ellipsis"
       >
         <!--[-->
+        <!--[-->
         <div class="van-swipe notice-swipe">
           <div
             style="transition-duration:500ms;transform:translateY(0px);"
@@ -193,6 +201,7 @@ exports[`should render demo and match snapshot 1`] = `
               style
             >
               <!--[-->
+              <!--[-->
               Content 1
             </div>
             <div
@@ -200,12 +209,14 @@ exports[`should render demo and match snapshot 1`] = `
               style
             >
               <!--[-->
+              <!--[-->
               Content 2
             </div>
             <div
               class="van-swipe-item"
               style
             >
+              <!--[-->
               <!--[-->
               Content 3
             </div>

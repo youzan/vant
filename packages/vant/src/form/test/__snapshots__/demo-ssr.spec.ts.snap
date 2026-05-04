@@ -25,6 +25,7 @@ exports[`should render demo and match snapshot 1`] = `
         </div>
         <div class="van-cell__value van-field__value">
           <!--[-->
+          <!--[-->
           <div class="van-field__body">
             <input
               type="text"
@@ -54,6 +55,7 @@ exports[`should render demo and match snapshot 1`] = `
           </label>
         </div>
         <div class="van-cell__value van-field__value">
+          <!--[-->
           <!--[-->
           <div class="van-field__body">
             <input
@@ -108,6 +110,7 @@ exports[`should render demo and match snapshot 1`] = `
         </div>
         <div class="van-cell__value van-field__value">
           <!--[-->
+          <!--[-->
           <div class="van-field__body">
             <input
               type="text"
@@ -137,6 +140,7 @@ exports[`should render demo and match snapshot 1`] = `
           </label>
         </div>
         <div class="van-cell__value van-field__value">
+          <!--[-->
           <!--[-->
           <div class="van-field__body">
             <input
@@ -168,6 +172,7 @@ exports[`should render demo and match snapshot 1`] = `
         </div>
         <div class="van-cell__value van-field__value">
           <!--[-->
+          <!--[-->
           <div class="van-field__body">
             <input
               type="text"
@@ -197,6 +202,7 @@ exports[`should render demo and match snapshot 1`] = `
           </label>
         </div>
         <div class="van-cell__value van-field__value">
+          <!--[-->
           <!--[-->
           <div class="van-field__body">
             <input
@@ -250,6 +256,7 @@ exports[`should render demo and match snapshot 1`] = `
         </div>
         <div class="van-cell__value van-field__value">
           <!--[-->
+          <!--[-->
           <div class="van-field__body">
             <div class="van-field__control van-field__control--custom">
               <!--[-->
@@ -283,6 +290,7 @@ exports[`should render demo and match snapshot 1`] = `
         </div>
         <div class="van-cell__value van-field__value">
           <!--[-->
+          <!--[-->
           <div class="van-field__body">
             <div class="van-field__control van-field__control--custom">
               <!--[-->
@@ -297,6 +305,7 @@ exports[`should render demo and match snapshot 1`] = `
                   class="van-checkbox__icon van-checkbox__icon--square"
                   style
                 >
+                  <!--[-->
                   <i
                     class="van-badge__wrapper van-icon van-icon-success"
                     style
@@ -325,6 +334,7 @@ exports[`should render demo and match snapshot 1`] = `
         </div>
         <div class="van-cell__value van-field__value">
           <!--[-->
+          <!--[-->
           <div class="van-field__body">
             <div class="van-field__control van-field__control--custom">
               <!--[-->
@@ -341,6 +351,7 @@ exports[`should render demo and match snapshot 1`] = `
                     class="van-checkbox__icon van-checkbox__icon--square"
                     style
                   >
+                    <!--[-->
                     <i
                       class="van-badge__wrapper van-icon van-icon-success"
                       style
@@ -364,6 +375,7 @@ exports[`should render demo and match snapshot 1`] = `
                     class="van-checkbox__icon van-checkbox__icon--square"
                     style
                   >
+                    <!--[-->
                     <i
                       class="van-badge__wrapper van-icon van-icon-success"
                       style
@@ -397,6 +409,7 @@ exports[`should render demo and match snapshot 1`] = `
         </div>
         <div class="van-cell__value van-field__value">
           <!--[-->
+          <!--[-->
           <div class="van-field__body">
             <div class="van-field__control van-field__control--custom">
               <!--[-->
@@ -416,6 +429,7 @@ exports[`should render demo and match snapshot 1`] = `
                     class="van-radio__icon van-radio__icon--round van-radio__icon--checked"
                     style
                   >
+                    <!--[-->
                     <i
                       class="van-badge__wrapper van-icon van-icon-success"
                       style
@@ -439,6 +453,7 @@ exports[`should render demo and match snapshot 1`] = `
                     class="van-radio__icon van-radio__icon--round"
                     style
                   >
+                    <!--[-->
                     <i
                       class="van-badge__wrapper van-icon van-icon-success"
                       style
@@ -471,6 +486,7 @@ exports[`should render demo and match snapshot 1`] = `
           </label>
         </div>
         <div class="van-cell__value van-field__value">
+          <!--[-->
           <!--[-->
           <div class="van-field__body">
             <div class="van-field__control van-field__control--custom">
@@ -524,6 +540,7 @@ exports[`should render demo and match snapshot 1`] = `
           </label>
         </div>
         <div class="van-cell__value van-field__value">
+          <!--[-->
           <!--[-->
           <div class="van-field__body">
             <div class="van-field__control van-field__control--custom">
@@ -637,6 +654,7 @@ exports[`should render demo and match snapshot 1`] = `
         </div>
         <div class="van-cell__value van-field__value">
           <!--[-->
+          <!--[-->
           <div class="van-field__body">
             <div class="van-field__control van-field__control--custom">
               <!--[-->
@@ -648,6 +666,7 @@ exports[`should render demo and match snapshot 1`] = `
                   class="van-slider__bar"
                   style="width:50%;left:0%;"
                 >
+                  <!--[-->
                   <div
                     role="slider"
                     class="van-slider__button-wrapper van-slider__button-wrapper--right"
@@ -684,6 +703,7 @@ exports[`should render demo and match snapshot 1`] = `
           </label>
         </div>
         <div class="van-cell__value van-field__value">
+          <!--[-->
           <!--[-->
           <div class="van-field__body">
             <div class="van-field__control van-field__control--custom">
@@ -769,6 +789,7 @@ exports[`should render demo and match snapshot 1`] = `
         </div>
         <div class="van-cell__value van-field__value">
           <!--[-->
+          <!--[-->
           <div class="van-field__body">
             <input
               type="text"
@@ -810,6 +831,7 @@ exports[`should render demo and match snapshot 1`] = `
           </label>
         </div>
         <div class="van-cell__value van-field__value">
+          <!--[-->
           <!--[-->
           <div class="van-field__body">
             <input
@@ -853,6 +875,7 @@ exports[`should render demo and match snapshot 1`] = `
         </div>
         <div class="van-cell__value van-field__value">
           <!--[-->
+          <!--[-->
           <div class="van-field__body">
             <input
               type="text"
@@ -894,6 +917,7 @@ exports[`should render demo and match snapshot 1`] = `
           </label>
         </div>
         <div class="van-cell__value van-field__value">
+          <!--[-->
           <!--[-->
           <div class="van-field__body">
             <input

@@ -128,12 +128,11 @@ export default defineComponent({
 
     return () => {
       if (slots.default) {
-        const { tag } = props;
         return (
-          <tag class={bem('wrapper')}>
+          <props.tag class={bem('wrapper')}>
             {slots.default()}
             {renderBadge()}
-          </tag>
+          </props.tag>
         );
       }
 

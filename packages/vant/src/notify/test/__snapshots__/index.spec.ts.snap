@@ -8,7 +8,9 @@ exports[`should render Notify correctly 1`] = `
   tabindex="0"
 >
   
+  
   test
+  
   
   <!---->
 </div>

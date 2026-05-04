@@ -23,6 +23,7 @@ exports[`should render demo and match snapshot 1`] = `
         <div class="van-badge__wrapper van-sidebar-item__text">
           <!--[-->
           <!--[-->
+          <!--[-->
           Group 1
         </div>
       </div>
@@ -35,6 +36,7 @@ exports[`should render demo and match snapshot 1`] = `
         <div class="van-badge__wrapper van-sidebar-item__text">
           <!--[-->
           <!--[-->
+          <!--[-->
           Group 2
         </div>
       </div>
@@ -44,6 +46,7 @@ exports[`should render demo and match snapshot 1`] = `
         aria-selected="false"
       >
         <div class="van-badge__wrapper van-sidebar-item__text">
+          <!--[-->
           <!--[-->
           <!--[-->
           Group 3
@@ -91,6 +94,7 @@ exports[`should render demo and match snapshot 1`] = `
         <div class="van-badge__wrapper van-sidebar-item__text">
           <!--[-->
           <!--[-->
+          <!--[-->
           Group 1
         </div>
       </div>
@@ -103,6 +107,7 @@ exports[`should render demo and match snapshot 1`] = `
         <div class="van-badge__wrapper van-sidebar-item__text">
           <!--[-->
           <!--[-->
+          <!--[-->
           Group 2
         </div>
       </div>
@@ -112,6 +117,7 @@ exports[`should render demo and match snapshot 1`] = `
         aria-selected="false"
       >
         <div class="van-badge__wrapper van-sidebar-item__text">
+          <!--[-->
           <!--[-->
           <!--[-->
           Group 3
@@ -165,6 +171,7 @@ exports[`should render demo and match snapshot 1`] = `
         <div class="van-badge__wrapper van-sidebar-item__text">
           <!--[-->
           <!--[-->
+          <!--[-->
           Group 1
         </div>
       </div>
@@ -175,6 +182,7 @@ exports[`should render demo and match snapshot 1`] = `
         aria-selected="false"
       >
         <div class="van-badge__wrapper van-sidebar-item__text">
+          <!--[-->
           <!--[-->
           <!--[-->
           Group 2
@@ -217,6 +225,7 @@ exports[`should render demo and match snapshot 1`] = `
         <div class="van-badge__wrapper van-sidebar-item__text">
           <!--[-->
           <!--[-->
+          <!--[-->
           Group 1
           <div
             class="van-badge van-badge--top-right van-badge--dot van-badge--fixed"
@@ -232,6 +241,7 @@ exports[`should render demo and match snapshot 1`] = `
         aria-selected="false"
       >
         <div class="van-badge__wrapper van-sidebar-item__text">
+          <!--[-->
           <!--[-->
           <!--[-->
           Group 2

@@ -30,6 +30,7 @@ exports[`should render demo and match snapshot 1`] = `
           Cell title
         </span>
         <div class="van-cell__label">
+          <!--[-->
           Description
         </div>
       </div>
@@ -69,6 +70,7 @@ exports[`should render demo and match snapshot 1`] = `
           Cell title
         </span>
         <div class="van-cell__label">
+          <!--[-->
           Description
         </div>
       </div>
@@ -106,6 +108,7 @@ exports[`should render demo and match snapshot 1`] = `
         Cell title
       </span>
       <div class="van-cell__label">
+        <!--[-->
         Description
       </div>
     </div>
@@ -260,6 +263,7 @@ exports[`should render demo and match snapshot 1`] = `
   <!--[-->
   <!--[-->
   <div class="van-cell-group__title">
+    <!--[-->
     Group 1
   </div>
   <div class="van-cell-group van-hairline--top-bottom">
@@ -282,6 +286,7 @@ exports[`should render demo and match snapshot 1`] = `
   </div>
   <!--[-->
   <div class="van-cell-group__title">
+    <!--[-->
     Group 2
   </div>
   <div class="van-cell-group van-hairline--top-bottom">
@@ -373,6 +378,7 @@ exports[`should render demo and match snapshot 1`] = `
         Cell title
       </span>
       <div class="van-cell__label">
+        <!--[-->
         Description
       </div>
     </div>

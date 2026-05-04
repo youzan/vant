@@ -261,6 +261,7 @@ export default defineComponent({
 
     const renderDay = (item: CalendarDayItem, index: number) => (
       <CalendarDay
+        key={item.text}
         v-slots={pick(slots, ['top-info', 'bottom-info', 'text'])}
         item={item}
         index={index}
