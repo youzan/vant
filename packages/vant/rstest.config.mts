@@ -1,7 +1,7 @@
 import { defineConfig, type ProjectConfig } from '@rstest/core';
 import { pluginBabel } from '@rsbuild/plugin-babel';
 import { pluginVue } from '@rsbuild/plugin-vue';
-import vueJsxCompiler from 'vue-jsx-vapor/rsbuild'
+import vueJsxCompiler from 'vue-jsx-vapor/rsbuild';
 
 const commonConfig: ProjectConfig = {
   plugins: [
@@ -11,7 +11,7 @@ const commonConfig: ProjectConfig = {
     vueJsxCompiler({
       interop: true,
       compiler: {
-        runtimeModuleName: 'vue-jsx-vapor',
+        runtimeModuleName: 'vue-jsx-vapor', // for SSR tests
       },
     }),
     pluginVue(),
