@@ -99,6 +99,7 @@ export type FieldExpose = {
   getValidationStatus: () => FieldValidationStatus;
   /** @private */
   formValue: ComputedRef<unknown>;
+  adjustTextareaSize: () => void;
 };
 
 export type FieldInstance = ComponentPublicInstance<FieldProps, FieldExpose>;
