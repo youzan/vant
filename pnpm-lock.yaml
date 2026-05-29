@@ -80,8 +80,8 @@ importers:
         specifier: ^0.9.10
         version: 0.9.10(jsdom@25.0.1)
       '@rstest/coverage-istanbul':
-        specifier: ^0.3.2
-        version: 0.3.2(@rstest/core@0.9.10(jsdom@25.0.1))
+        specifier: ^0.10.3
+        version: 0.10.3(@rstest/core@0.9.10(jsdom@25.0.1))
       '@types/node':
         specifier: ^24.12.2
         version: 24.12.2
@@ -1504,10 +1504,10 @@ packages:
       jsdom:
         optional: true
 
-  '@rstest/coverage-istanbul@0.3.2':
-    resolution: {integrity: sha512-qmAg7gbrmHkvk0p7FH46sfoBRL83EEylW8rBk0L1eVZpK3JSQBeTBuVVFrVOlSRffBgK3Rl7aQEUKJ7PUi+5wQ==}
+  '@rstest/coverage-istanbul@0.10.3':
+    resolution: {integrity: sha512-CpnPZzHn8t5fmJobdsslK7oCJ5Si4mLA+5TCBjWGEy8C5t8ueIQX4NZVatM/zj30hv/1r7GCVRQqh2MRpPeSVA==}
     peerDependencies:
-      '@rstest/core': ~0.9.8
+      '@rstest/core': ^0.10.3
 
   '@swc/helpers@0.5.21':
     resolution: {integrity: sha512-jI/VAmtdjB/RnI8GTnokyX7Ug8c+g+ffD6QRLa6XQewtnGyukKkKSk3wLTM3b5cjt1jNh9x0jfVlagdN2gDKQg==}
@@ -4004,7 +4004,7 @@ snapshots:
       - '@module-federation/runtime-tools'
       - core-js
 
-  '@rstest/coverage-istanbul@0.3.2(@rstest/core@0.9.10(jsdom@25.0.1))':
+  '@rstest/coverage-istanbul@0.10.3(@rstest/core@0.9.10(jsdom@25.0.1))':
     dependencies:
       '@rstest/core': 0.9.10(jsdom@25.0.1)
       istanbul-lib-coverage: 3.2.2
