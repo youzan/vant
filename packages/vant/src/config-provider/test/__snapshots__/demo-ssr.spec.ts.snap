@@ -35,6 +35,7 @@ exports[`should render demo and match snapshot 1`] = `
         </div>
         <div class="van-cell__value van-field__value">
           <!--[-->
+          <!--[-->
           <div class="van-field__body">
             <div class="van-field__control van-field__control--custom">
               <!--[-->
@@ -147,6 +148,7 @@ exports[`should render demo and match snapshot 1`] = `
         </div>
         <div class="van-cell__value van-field__value">
           <!--[-->
+          <!--[-->
           <div class="van-field__body">
             <div class="van-field__control van-field__control--custom">
               <!--[-->
@@ -158,6 +160,7 @@ exports[`should render demo and match snapshot 1`] = `
                   class="van-slider__bar"
                   style="width:50%;left:0%;"
                 >
+                  <!--[-->
                   <div
                     role="slider"
                     class="van-slider__button-wrapper van-slider__button-wrapper--right"
@@ -219,6 +222,7 @@ exports[`should render demo and match snapshot 1`] = `
             </label>
           </div>
           <div class="van-cell__value van-field__value">
+            <!--[-->
             <!--[-->
             <div class="van-field__body">
               <div class="van-field__control van-field__control--custom">
@@ -332,6 +336,7 @@ exports[`should render demo and match snapshot 1`] = `
           </div>
           <div class="van-cell__value van-field__value">
             <!--[-->
+            <!--[-->
             <div class="van-field__body">
               <div class="van-field__control van-field__control--custom">
                 <!--[-->
@@ -343,6 +348,7 @@ exports[`should render demo and match snapshot 1`] = `
                     class="van-slider__bar"
                     style="width:50%;left:0%;"
                   >
+                    <!--[-->
                     <div
                       role="slider"
                       class="van-slider__button-wrapper van-slider__button-wrapper--right"

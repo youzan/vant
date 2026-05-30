@@ -5,12 +5,15 @@ exports[`should render demo and match snapshot 1`] = `
 <div>
   <!--[-->
   <div class="van-picker">
+    <!--[-->
     <div class="van-picker__toolbar">
+      <!--[-->
       <!--[-->
       <button
         type="button"
         class="van-picker__cancel van-haptics-feedback"
       >
+        <!--[-->
         Cancel
       </button>
       <div class="van-picker__title van-ellipsis">
@@ -20,6 +23,7 @@ exports[`should render demo and match snapshot 1`] = `
         type="button"
         class="van-picker__confirm van-haptics-feedback"
       >
+        <!--[-->
         Confirm
       </button>
     </div>
@@ -123,6 +127,7 @@ exports[`should render demo and match snapshot 1`] = `
     </div>
     <div class="van-cell__value van-field__value">
       <!--[-->
+      <!--[-->
       <div class="van-field__body">
         <input
           type="text"
@@ -147,12 +152,15 @@ exports[`should render demo and match snapshot 1`] = `
 <div>
   <!--[-->
   <div class="van-picker">
+    <!--[-->
     <div class="van-picker__toolbar">
+      <!--[-->
       <!--[-->
       <button
         type="button"
         class="van-picker__cancel van-haptics-feedback"
       >
+        <!--[-->
         Cancel
       </button>
       <div class="van-picker__title van-ellipsis">
@@ -162,6 +170,7 @@ exports[`should render demo and match snapshot 1`] = `
         type="button"
         class="van-picker__confirm van-haptics-feedback"
       >
+        <!--[-->
         Confirm
       </button>
     </div>
@@ -245,12 +254,15 @@ exports[`should render demo and match snapshot 1`] = `
 <div>
   <!--[-->
   <div class="van-picker">
+    <!--[-->
     <div class="van-picker__toolbar">
+      <!--[-->
       <!--[-->
       <button
         type="button"
         class="van-picker__cancel van-haptics-feedback"
       >
+        <!--[-->
         Cancel
       </button>
       <div class="van-picker__title van-ellipsis">
@@ -260,6 +272,7 @@ exports[`should render demo and match snapshot 1`] = `
         type="button"
         class="van-picker__confirm van-haptics-feedback"
       >
+        <!--[-->
         Confirm
       </button>
     </div>
@@ -381,12 +394,15 @@ exports[`should render demo and match snapshot 1`] = `
 <div>
   <!--[-->
   <div class="van-picker">
+    <!--[-->
     <div class="van-picker__toolbar">
+      <!--[-->
       <!--[-->
       <button
         type="button"
         class="van-picker__cancel van-haptics-feedback"
       >
+        <!--[-->
         Cancel
       </button>
       <div class="van-picker__title van-ellipsis">
@@ -396,6 +412,7 @@ exports[`should render demo and match snapshot 1`] = `
         type="button"
         class="van-picker__confirm van-haptics-feedback"
       >
+        <!--[-->
         Confirm
       </button>
     </div>
@@ -505,12 +522,15 @@ exports[`should render demo and match snapshot 1`] = `
 <div>
   <!--[-->
   <div class="van-picker">
+    <!--[-->
     <div class="van-picker__toolbar">
+      <!--[-->
       <!--[-->
       <button
         type="button"
         class="van-picker__cancel van-haptics-feedback"
       >
+        <!--[-->
         Cancel
       </button>
       <div class="van-picker__title van-ellipsis">
@@ -520,6 +540,7 @@ exports[`should render demo and match snapshot 1`] = `
         type="button"
         class="van-picker__confirm van-haptics-feedback"
       >
+        <!--[-->
         Confirm
       </button>
     </div>
@@ -583,12 +604,15 @@ exports[`should render demo and match snapshot 1`] = `
 <div>
   <!--[-->
   <div class="van-picker">
+    <!--[-->
     <div class="van-picker__toolbar">
+      <!--[-->
       <!--[-->
       <button
         type="button"
         class="van-picker__cancel van-haptics-feedback"
       >
+        <!--[-->
         Cancel
       </button>
       <div class="van-picker__title van-ellipsis">
@@ -598,6 +622,7 @@ exports[`should render demo and match snapshot 1`] = `
         type="button"
         class="van-picker__confirm van-haptics-feedback"
       >
+        <!--[-->
         Confirm
       </button>
     </div>
@@ -610,6 +635,7 @@ exports[`should render demo and match snapshot 1`] = `
         class="van-loading__spinner van-loading__spinner--circular"
         style
       >
+        <!--[-->
         <svg
           class="van-loading__circular"
           viewbox="25 25 50 50"
@@ -643,12 +669,15 @@ exports[`should render demo and match snapshot 1`] = `
 <div>
   <!--[-->
   <div class="van-picker">
+    <!--[-->
     <div class="van-picker__toolbar">
+      <!--[-->
       <!--[-->
       <button
         type="button"
         class="van-picker__cancel van-haptics-feedback"
       >
+        <!--[-->
         Cancel
       </button>
       <div class="van-picker__title van-ellipsis">
@@ -658,6 +687,7 @@ exports[`should render demo and match snapshot 1`] = `
         type="button"
         class="van-picker__confirm van-haptics-feedback"
       >
+        <!--[-->
         Confirm
       </button>
     </div>
@@ -678,12 +708,15 @@ exports[`should render demo and match snapshot 1`] = `
 <div>
   <!--[-->
   <div class="van-picker">
+    <!--[-->
     <div class="van-picker__toolbar">
+      <!--[-->
       <!--[-->
       <button
         type="button"
         class="van-picker__cancel van-haptics-feedback"
       >
+        <!--[-->
         Cancel
       </button>
       <div class="van-picker__title van-ellipsis">
@@ -693,6 +726,7 @@ exports[`should render demo and match snapshot 1`] = `
         type="button"
         class="van-picker__confirm van-haptics-feedback"
       >
+        <!--[-->
         Confirm
       </button>
     </div>

@@ -291,6 +291,7 @@ exports[`should render demo and match snapshot 1`] = `
         Calendar
       </div>
       <div class="van-calendar__header-subtitle">
+        <!--[-->
       </div>
       <div class="van-calendar__weekdays">
         <!--[-->
@@ -318,6 +319,7 @@ exports[`should render demo and match snapshot 1`] = `
       </div>
     </div>
     <div class="van-calendar__body">
+      <!--[-->
       <!--[-->
       <div class="van-calendar__month">
         <div
@@ -354,6 +356,7 @@ exports[`should render demo and match snapshot 1`] = `
       </div>
       <div class="van-calendar__month">
         <div class="van-calendar__month-title">
+          <!--[-->
           2012/2
         </div>
         <div
@@ -390,6 +393,7 @@ exports[`should render demo and match snapshot 1`] = `
       </div>
       <div class="van-calendar__month">
         <div class="van-calendar__month-title">
+          <!--[-->
           2012/3
         </div>
         <div
@@ -426,6 +430,7 @@ exports[`should render demo and match snapshot 1`] = `
       </div>
       <div class="van-calendar__month">
         <div class="van-calendar__month-title">
+          <!--[-->
           2012/4
         </div>
         <div
@@ -462,6 +467,7 @@ exports[`should render demo and match snapshot 1`] = `
       </div>
       <div class="van-calendar__month">
         <div class="van-calendar__month-title">
+          <!--[-->
           2012/5
         </div>
         <div
@@ -498,6 +504,7 @@ exports[`should render demo and match snapshot 1`] = `
       </div>
       <div class="van-calendar__month">
         <div class="van-calendar__month-title">
+          <!--[-->
           2012/6
         </div>
         <div
@@ -534,6 +541,7 @@ exports[`should render demo and match snapshot 1`] = `
       </div>
       <div class="van-calendar__month">
         <div class="van-calendar__month-title">
+          <!--[-->
           2012/7
         </div>
         <div
@@ -570,6 +578,7 @@ exports[`should render demo and match snapshot 1`] = `
       </div>
       <div class="van-calendar__month">
         <div class="van-calendar__month-title">
+          <!--[-->
           2012/8
         </div>
         <div
@@ -606,6 +615,7 @@ exports[`should render demo and match snapshot 1`] = `
       </div>
       <div class="van-calendar__month">
         <div class="van-calendar__month-title">
+          <!--[-->
           2012/9
         </div>
         <div
@@ -647,6 +657,7 @@ exports[`should render demo and match snapshot 1`] = `
       </div>
       <div class="van-calendar__month">
         <div class="van-calendar__month-title">
+          <!--[-->
           2012/10
         </div>
         <div
@@ -683,6 +694,7 @@ exports[`should render demo and match snapshot 1`] = `
       </div>
       <div class="van-calendar__month">
         <div class="van-calendar__month-title">
+          <!--[-->
           2012/11
         </div>
         <div
@@ -719,6 +731,7 @@ exports[`should render demo and match snapshot 1`] = `
       </div>
       <div class="van-calendar__month">
         <div class="van-calendar__month-title">
+          <!--[-->
           2012/12
         </div>
         <div
@@ -760,6 +773,7 @@ exports[`should render demo and match snapshot 1`] = `
       </div>
       <div class="van-calendar__month">
         <div class="van-calendar__month-title">
+          <!--[-->
           2013/1
         </div>
         <div
@@ -796,6 +810,7 @@ exports[`should render demo and match snapshot 1`] = `
       </div>
       <div class="van-calendar__month">
         <div class="van-calendar__month-title">
+          <!--[-->
           2013/2
         </div>
         <div
@@ -832,6 +847,7 @@ exports[`should render demo and match snapshot 1`] = `
       </div>
       <div class="van-calendar__month">
         <div class="van-calendar__month-title">
+          <!--[-->
           2013/3
         </div>
         <div

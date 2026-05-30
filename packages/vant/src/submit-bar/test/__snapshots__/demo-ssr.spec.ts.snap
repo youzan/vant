@@ -114,6 +114,7 @@ exports[`should render demo and match snapshot 1`] = `
               class="van-loading__spinner van-loading__spinner--circular"
               style
             >
+              <!--[-->
               <svg
                 class="van-loading__circular"
                 viewbox="25 25 50 50"
@@ -156,6 +157,7 @@ exports[`should render demo and match snapshot 1`] = `
           class="van-checkbox__icon van-checkbox__icon--round van-checkbox__icon--checked"
           style
         >
+          <!--[-->
           <i
             class="van-badge__wrapper van-icon van-icon-success"
             style

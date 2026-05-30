@@ -145,7 +145,7 @@ export default defineComponent({
     };
 
     return () => {
-      const { tag, size, center, border, isLink, required } = props;
+      const { size, center, border, isLink, required } = props;
       const clickable = props.clickable ?? isLink;
 
       const classes: Record<string, boolean | undefined> = {
@@ -159,7 +159,7 @@ export default defineComponent({
       }
 
       return (
-        <tag
+        <props.tag
           class={bem(classes)}
           role={clickable ? 'button' : undefined}
           tabindex={clickable ? 0 : undefined}
@@ -170,7 +170,7 @@ export default defineComponent({
           {renderValue()}
           {renderRightIcon()}
           {slots.extra?.()}
-        </tag>
+        </props.tag>
       );
     };
   },

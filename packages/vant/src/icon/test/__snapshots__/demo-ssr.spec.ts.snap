@@ -2,6 +2,7 @@
 
 exports[`should render demo and match snapshot 1`] = `
 <div class="van-tabs van-tabs--line">
+  <!--[-->
   <div style>
     <div
       class="van-sticky"

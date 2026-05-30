@@ -17,6 +17,7 @@ exports[`should render demo and match snapshot 1`] = `
       >
         <!--[-->
       </div>
+      <!--[-->
       Icon1
     </div>
     <div
@@ -30,6 +31,7 @@ exports[`should render demo and match snapshot 1`] = `
       >
         <!--[-->
       </div>
+      <!--[-->
       Icon2
     </div>
     <div
@@ -43,6 +45,7 @@ exports[`should render demo and match snapshot 1`] = `
       >
         <!--[-->
       </div>
+      <!--[-->
       Icon3
     </div>
     <button
@@ -52,6 +55,7 @@ exports[`should render demo and match snapshot 1`] = `
     >
       <div class="van-button__content">
         <span class="van-button__text">
+          <!--[-->
           <!--[-->
           Button
         </span>
@@ -79,6 +83,7 @@ exports[`should render demo and match snapshot 1`] = `
         >
         </div>
       </div>
+      <!--[-->
       Icon1
     </div>
     <div
@@ -98,6 +103,7 @@ exports[`should render demo and match snapshot 1`] = `
           5
         </div>
       </div>
+      <!--[-->
       Icon2
     </div>
     <div
@@ -117,6 +123,7 @@ exports[`should render demo and match snapshot 1`] = `
           12
         </div>
       </div>
+      <!--[-->
       Icon3
     </div>
     <button
@@ -126,6 +133,7 @@ exports[`should render demo and match snapshot 1`] = `
     >
       <div class="van-button__content">
         <span class="van-button__text">
+          <!--[-->
           <!--[-->
           Button
         </span>
@@ -138,6 +146,7 @@ exports[`should render demo and match snapshot 1`] = `
     >
       <div class="van-button__content">
         <span class="van-button__text">
+          <!--[-->
           <!--[-->
           Button
         </span>
@@ -160,6 +169,7 @@ exports[`should render demo and match snapshot 1`] = `
       >
         <!--[-->
       </div>
+      <!--[-->
       Icon1
     </div>
     <div
@@ -173,6 +183,7 @@ exports[`should render demo and match snapshot 1`] = `
       >
         <!--[-->
       </div>
+      <!--[-->
       Icon2
     </div>
     <div
@@ -186,6 +197,7 @@ exports[`should render demo and match snapshot 1`] = `
       >
         <!--[-->
       </div>
+      <!--[-->
       Collected
     </div>
     <button
@@ -195,6 +207,7 @@ exports[`should render demo and match snapshot 1`] = `
     >
       <div class="van-button__content">
         <span class="van-button__text">
+          <!--[-->
           <!--[-->
           Button
         </span>
@@ -207,6 +220,7 @@ exports[`should render demo and match snapshot 1`] = `
     >
       <div class="van-button__content">
         <span class="van-button__text">
+          <!--[-->
           <!--[-->
           Button
         </span>
@@ -229,6 +243,7 @@ exports[`should render demo and match snapshot 1`] = `
       >
         <!--[-->
       </div>
+      <!--[-->
       Icon1
     </div>
     <div
@@ -242,6 +257,7 @@ exports[`should render demo and match snapshot 1`] = `
       >
         <!--[-->
       </div>
+      <!--[-->
       Icon2
     </div>
     <button
@@ -251,6 +267,7 @@ exports[`should render demo and match snapshot 1`] = `
     >
       <div class="van-button__content">
         <span class="van-button__text">
+          <!--[-->
           <!--[-->
           Button
         </span>
@@ -263,6 +280,7 @@ exports[`should render demo and match snapshot 1`] = `
     >
       <div class="van-button__content">
         <span class="van-button__text">
+          <!--[-->
           <!--[-->
           Button
         </span>

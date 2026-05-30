@@ -145,7 +145,6 @@ export default defineComponent({
 
     return () => {
       const {
-        tag,
         type,
         size,
         block,
@@ -177,7 +176,7 @@ export default defineComponent({
       ];
 
       return (
-        <tag
+        <props.tag
           type={nativeType}
           class={classes}
           style={getStyle()}
@@ -189,7 +188,7 @@ export default defineComponent({
             {renderText()}
             {iconPosition === 'right' && renderIcon()}
           </div>
-        </tag>
+        </props.tag>
       );
     };
   },

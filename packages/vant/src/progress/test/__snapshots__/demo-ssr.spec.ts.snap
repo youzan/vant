@@ -17,6 +17,7 @@ exports[`should render demo and match snapshot 1`] = `
       style="left:50%;transform:translate(-50%,-50%);"
       class="van-progress__pivot"
     >
+      <!--[-->
       50%
     </span>
   </div>
@@ -36,6 +37,7 @@ exports[`should render demo and match snapshot 1`] = `
       style="left:50%;transform:translate(-50%,-50%);"
       class="van-progress__pivot"
     >
+      <!--[-->
       50%
     </span>
   </div>
@@ -55,6 +57,7 @@ exports[`should render demo and match snapshot 1`] = `
       style="left:50%;transform:translate(-50%,-50%);"
       class="van-progress__pivot van-progress__pivot--inactive"
     >
+      <!--[-->
       50%
     </span>
   </div>
@@ -74,6 +77,7 @@ exports[`should render demo and match snapshot 1`] = `
       style="left:25%;transform:translate(-25%,-50%);background:#f2826a;"
       class="van-progress__pivot"
     >
+      <!--[-->
       Orange
     </span>
   </div>
@@ -90,6 +94,7 @@ exports[`should render demo and match snapshot 1`] = `
       style="left:50%;transform:translate(-50%,-50%);background:#ee0a24;"
       class="van-progress__pivot"
     >
+      <!--[-->
       Red
     </span>
   </div>
@@ -106,6 +111,7 @@ exports[`should render demo and match snapshot 1`] = `
       style="left:75%;transform:translate(-75%,-50%);background:#7232dd;"
       class="van-progress__pivot"
     >
+      <!--[-->
       Purple
     </span>
   </div>
@@ -125,6 +131,7 @@ exports[`should render demo and match snapshot 1`] = `
       style="left:50%;transform:translate(-50%,-50%);"
       class="van-progress__pivot"
     >
+      <!--[-->
       <!--[-->
       <span style="display:inline-flex;align-items:center;">
         <i
@@ -155,6 +162,7 @@ exports[`should render demo and match snapshot 1`] = `
       style="left:50%;transform:translate(-50%,-50%);"
       class="van-progress__pivot"
     >
+      <!--[-->
       50%
     </span>
   </div>
