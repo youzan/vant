@@ -34,7 +34,7 @@ jobs:
         run: npm run lint
 
   test:
-    runs-on: macos-15
+    runs-on: macos-26
     steps:
       - uses: actions/checkout@v6
 
@@ -61,7 +61,7 @@ jobs:
           directory: ./packages/vant/test/coverage
 
   build:
-    runs-on: macos-15
+    runs-on: macos-26
     steps:
       - uses: actions/checkout@v6
 
