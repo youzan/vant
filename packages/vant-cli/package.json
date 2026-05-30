@@ -54,7 +54,7 @@
     "husky": "^9.1.7",
     "less": "^4.6.4",
     "lodash": "^4.18.1",
-    "markdown-it": "^14.1.1",
+    "markdown-it": "^14.2.0",
     "markdown-it-anchor": "^9.2.0",
     "nano-staged": "^0.9.0",
     "picocolors": "^1.1.1",
