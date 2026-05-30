@@ -56,7 +56,7 @@
     "@rsbuild/plugin-vue": "1.2.7",
     "@rsbuild/plugin-vue-jsx": "2.0.0",
     "@rsbuild/plugin-babel": "1.1.2",
-    "@rstest/coverage-istanbul": "^0.3.2",
+    "@rstest/coverage-istanbul": "^0.10.3",
     "@rstest/core": "^0.9.10",
     "@types/node": "^24.12.2",
     "@vant/area-data": "workspace:*",
