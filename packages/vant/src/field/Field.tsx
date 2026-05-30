@@ -668,6 +668,7 @@ export default defineComponent({
       formValue,
       resetValidation,
       getValidationStatus,
+      adjustTextareaSize,
     });
 
     provide(CUSTOM_FIELD_INJECTION_KEY, {
