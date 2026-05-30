@@ -63,7 +63,7 @@
     "prettier": "^3.8.3",
     "rslog": "^2.1.1",
     "rspack-plugin-virtual-module": "^1.0.1",
-    "terser": "^5.46.2",
+    "terser": "^5.48.0",
     "transliteration": "^2.6.1",
     "typescript": "^5.9.3",
     "vite": "^5.4.20",
