@@ -377,10 +377,11 @@ Use `label-align` prop to align the input value, can be set to `center`, `right`
 
 Use [ref](https://vuejs.org/guide/essentials/template-refs.html) to get Field instance and call instance methods.
 
-| Name  | Description         | Attribute | Return value |
-| ----- | ------------------- | --------- | ------------ |
-| focus | Trigger input focus | -         | -            |
-| blur  | Trigger input blur  | -         | -            |
+| Name               | Description          | Attribute | Return value |
+| ------------------ | -------------------- | --------- | ------------ |
+| focus              | Trigger input focus  | -         | -            |
+| blur               | Trigger input blur   | -         | -            |
+| adjustTextareaSize | adjust textarea size | -         | -            |
 
 ### Types
 

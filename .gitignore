@@ -2,7 +2,8 @@
 .cache
 .DS_Store
 .idea
-.vscode
+.vscode/*
+!.vscode/extensions.json
 
 # npm
 node_modules

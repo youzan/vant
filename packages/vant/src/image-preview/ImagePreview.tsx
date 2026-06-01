@@ -217,6 +217,10 @@ export default defineComponent({
 
     const onClosed = () => emit('closed');
 
+    const prev = () => swipeRef.value?.prev();
+
+    const next = () => swipeRef.value?.next();
+
     const swipeTo = (index: number, options?: SwipeToOptions) =>
       swipeRef.value?.swipeTo(index, options);
 
@@ -225,6 +229,8 @@ export default defineComponent({
         activedPreviewItemRef.value?.resetScale();
       },
       swipeTo,
+      prev,
+      next,
     });
 
     onMounted(resize);

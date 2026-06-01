@@ -19,10 +19,24 @@ export function useLockScroll(
     touch.move(event);
 
     const direction = touch.deltaY.value > 0 ? DIRECTION_DOWN : DIRECTION_UP;
-    const el = getScrollParent(
+    let el = getScrollParent(
       event.target as Element,
       rootRef.value,
     ) as HTMLElement;
+
+    // If the nearest scroll parent has no vertical scrollable content
+    // (e.g. a horizontal-only scroll container), walk up the DOM to find
+    // the actual vertical scroll parent within the popup root. This prevents
+    // false-positive blocking of vertical scroll on the popup itself when
+    // the touch starts inside a child that only scrolls horizontally.
+    while (
+      el.scrollHeight <= el.offsetHeight &&
+      el !== rootRef.value &&
+      el.parentElement
+    ) {
+      el = getScrollParent(el.parentElement, rootRef.value) as HTMLElement;
+    }
+
     const { scrollHeight, offsetHeight, scrollTop } = el;
     let status = '11';
 
