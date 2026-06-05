@@ -726,8 +726,13 @@ export default defineComponent({
           })}
           center={props.center}
           border={props.border}
-          isLink={props.isLink}
-          clickable={props.clickable}
+          isLink={disabled ? false : props.isLink}
+          clickable={disabled ? false : props.clickable}
+          onClick={
+            disabled
+              ? (e: MouseEvent) => e.stopImmediatePropagation()
+              : undefined
+          }
           titleStyle={labelStyle.value}
           valueClass={bem('value')}
           titleClass={[
