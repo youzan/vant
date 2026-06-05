@@ -159,7 +159,10 @@ export default defineComponent({
         // reset values after cascading
         selectedValues.value.forEach((value, index) => {
           const options = currentColumns.value[index];
-          if (!isOptionExist(options, value, fields.value)) {
+          if (
+            index > columnIndex ||
+            !isOptionExist(options, value, fields.value)
+          ) {
             setValue(
               index,
               options.length ? options[0][fields.value.value] : undefined,
