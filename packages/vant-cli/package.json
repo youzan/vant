@@ -46,7 +46,7 @@
     "autoprefixer": "^10.5.0",
     "commander": "^14.0.3",
     "enquirer": "2.4.1",
-    "esbuild": "^0.28.0",
+    "esbuild": "^0.28.1",
     "fast-glob": "^3.3.3",
     "fs-extra": "^11.3.5",
     "hash-sum": "^2.0.0",
