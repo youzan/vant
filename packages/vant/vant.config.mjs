@@ -108,6 +108,10 @@ location.href = location.href.replace('youzan.github.io', 'vant-ui.github.io');
                 path: 'locale',
                 title: '国际化',
               },
+              {
+                path: 'ssr-issue',
+                title: 'SSR兼容问题',
+              },
             ],
           },
           {
@@ -579,6 +583,10 @@ location.href = location.href.replace('youzan.github.io', 'vant-ui.github.io');
               {
                 path: 'locale',
                 title: 'Internationalization',
+              },
+              {
+                path: 'ssr-issue',
+                title: 'SSR Issues',
               },
             ],
           },
