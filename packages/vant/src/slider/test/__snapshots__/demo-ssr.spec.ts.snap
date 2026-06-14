@@ -12,6 +12,7 @@ exports[`should render demo and match snapshot 1`] = `
       class="van-slider__bar"
       style="width:50%;left:0%;"
     >
+      <!--[-->
       <div
         role="slider"
         class="van-slider__button-wrapper van-slider__button-wrapper--right"
@@ -40,6 +41,7 @@ exports[`should render demo and match snapshot 1`] = `
       class="van-slider__bar"
       style="width:40%;left:20%;"
     >
+      <!--[-->
       <!--[-->
       <div
         role="slider"
@@ -84,6 +86,7 @@ exports[`should render demo and match snapshot 1`] = `
       class="van-slider__bar"
       style="width:50%;left:0%;"
     >
+      <!--[-->
       <div
         role="slider"
         class="van-slider__button-wrapper van-slider__button-wrapper--right"
@@ -112,6 +115,7 @@ exports[`should render demo and match snapshot 1`] = `
       class="van-slider__bar"
       style="width:50%;left:0%;"
     >
+      <!--[-->
       <div
         role="slider"
         class="van-slider__button-wrapper van-slider__button-wrapper--right"
@@ -140,6 +144,7 @@ exports[`should render demo and match snapshot 1`] = `
       class="van-slider__bar"
       style="width:50%;left:0%;"
     >
+      <!--[-->
       <div
         role="slider"
         class="van-slider__button-wrapper van-slider__button-wrapper--right"
@@ -168,6 +173,7 @@ exports[`should render demo and match snapshot 1`] = `
       class="van-slider__bar"
       style="width:50%;background:#ee0a24;left:0%;"
     >
+      <!--[-->
       <div
         role="slider"
         class="van-slider__button-wrapper van-slider__button-wrapper--right"
@@ -196,6 +202,7 @@ exports[`should render demo and match snapshot 1`] = `
       class="van-slider__bar"
       style="width:50%;left:0%;"
     >
+      <!--[-->
       <div
         role="slider"
         class="van-slider__button-wrapper van-slider__button-wrapper--right"
@@ -224,6 +231,7 @@ exports[`should render demo and match snapshot 1`] = `
         class="van-slider__bar"
         style="height:50%;top:0%;"
       >
+        <!--[-->
         <div
           role="slider"
           class="van-slider__button-wrapper van-slider__button-wrapper--right"
@@ -249,6 +257,7 @@ exports[`should render demo and match snapshot 1`] = `
         class="van-slider__bar"
         style="height:40%;top:20%;"
       >
+        <!--[-->
         <!--[-->
         <div
           role="slider"

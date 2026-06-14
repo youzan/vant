@@ -149,34 +149,40 @@ exports[`should render demo and match snapshot 1`] = `
         class="van-password-input__item"
         style
       >
+        <!--[-->
         1
       </li>
       <li
         class="van-hairline--left van-password-input__item"
         style
       >
+        <!--[-->
         2
       </li>
       <li
         class="van-hairline--left van-password-input__item"
         style
       >
+        <!--[-->
         3
       </li>
       <li
         class="van-hairline--left van-password-input__item"
         style
       >
+        <!--[-->
       </li>
       <li
         class="van-hairline--left van-password-input__item"
         style
       >
+        <!--[-->
       </li>
       <li
         class="van-hairline--left van-password-input__item"
         style
       >
+        <!--[-->
       </li>
     </ul>
   </div>

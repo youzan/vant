@@ -41,7 +41,7 @@ export async function compileSite(isProd = false) {
 
   const { createRsbuild } = await import('@rsbuild/core');
   const { pluginVue } = await import('@rsbuild/plugin-vue');
-  const { pluginVueJsx } = await import('@rsbuild/plugin-vue-jsx');
+  const { default: pluginVueJsx } = await import('vue-jsx-vapor/rsbuild');
   const { pluginBabel } = await import('@rsbuild/plugin-babel');
   const { pluginSass } = await import('@rsbuild/plugin-sass');
   const { pluginLess } = await import('@rsbuild/plugin-less');
@@ -58,7 +58,9 @@ export async function compileSite(isProd = false) {
         exclude: /[\\/]node_modules[\\/]/,
       }),
       pluginVue(),
-      pluginVueJsx(),
+      pluginVueJsx({
+        interop: true,
+      }),
       pluginSass(),
       pluginLess(),
     ],

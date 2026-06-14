@@ -266,6 +266,7 @@ exports[`should render demo and match snapshot 1`] = `
         class="van-radio__icon van-radio__icon--round"
         style
       >
+        <!--[-->
         <i
           class="van-badge__wrapper van-icon van-icon-success"
           style
@@ -289,6 +290,7 @@ exports[`should render demo and match snapshot 1`] = `
         class="van-radio__icon van-radio__icon--round van-radio__icon--checked"
         style
       >
+        <!--[-->
         <i
           class="van-badge__wrapper van-icon van-icon-success"
           style
@@ -312,6 +314,7 @@ exports[`should render demo and match snapshot 1`] = `
         class="van-radio__icon van-radio__icon--round"
         style
       >
+        <!--[-->
         <i
           class="van-badge__wrapper van-icon van-icon-success"
           style
@@ -335,6 +338,7 @@ exports[`should render demo and match snapshot 1`] = `
         class="van-radio__icon van-radio__icon--round"
         style
       >
+        <!--[-->
         <i
           class="van-badge__wrapper van-icon van-icon-success"
           style

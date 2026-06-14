@@ -14,6 +14,7 @@ exports[`should render demo and match snapshot 1`] = `
     </div>
     <div class="van-cell__value">
       <!--[-->
+      <!--[-->
       <div
         role="group"
         class="van-stepper"
@@ -56,6 +57,7 @@ exports[`should render demo and match snapshot 1`] = `
       </span>
     </div>
     <div class="van-cell__value">
+      <!--[-->
       <!--[-->
       <div
         role="group"
@@ -100,6 +102,7 @@ exports[`should render demo and match snapshot 1`] = `
     </div>
     <div class="van-cell__value">
       <!--[-->
+      <!--[-->
       <div
         role="group"
         class="van-stepper"
@@ -143,6 +146,7 @@ exports[`should render demo and match snapshot 1`] = `
     </div>
     <div class="van-cell__value">
       <!--[-->
+      <!--[-->
       <div
         role="group"
         class="van-stepper"
@@ -185,6 +189,7 @@ exports[`should render demo and match snapshot 1`] = `
       </span>
     </div>
     <div class="van-cell__value">
+      <!--[-->
       <!--[-->
       <div
         role="group"
@@ -231,6 +236,7 @@ exports[`should render demo and match snapshot 1`] = `
     </div>
     <div class="van-cell__value">
       <!--[-->
+      <!--[-->
       <div
         role="group"
         class="van-stepper"
@@ -275,6 +281,7 @@ exports[`should render demo and match snapshot 1`] = `
     </div>
     <div class="van-cell__value">
       <!--[-->
+      <!--[-->
       <div
         role="group"
         class="van-stepper"
@@ -317,6 +324,7 @@ exports[`should render demo and match snapshot 1`] = `
       </span>
     </div>
     <div class="van-cell__value">
+      <!--[-->
       <!--[-->
       <div
         role="group"
@@ -361,6 +369,7 @@ exports[`should render demo and match snapshot 1`] = `
     </div>
     <div class="van-cell__value">
       <!--[-->
+      <!--[-->
       <div
         role="group"
         class="van-stepper"
@@ -403,6 +412,7 @@ exports[`should render demo and match snapshot 1`] = `
       </span>
     </div>
     <div class="van-cell__value">
+      <!--[-->
       <!--[-->
       <div
         role="group"

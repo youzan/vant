@@ -120,13 +120,7 @@ export default defineComponent({
     });
 
     const renderContent = () => {
-      const {
-        sourceString,
-        highlightClass,
-        unhighlightClass,
-        highlightTag,
-        unhighlightTag,
-      } = props;
+      const { sourceString, highlightClass, unhighlightClass } = props;
 
       return highlightChunks.value.map((chunk) => {
         const { start, end, highlight } = chunk;
@@ -134,20 +128,22 @@ export default defineComponent({
 
         if (highlight) {
           return (
-            <highlightTag class={[bem('tag'), highlightClass]}>
+            <props.highlightTag class={[bem('tag'), highlightClass]}>
               {text}
-            </highlightTag>
+            </props.highlightTag>
           );
         }
 
-        return <unhighlightTag class={unhighlightClass}>{text}</unhighlightTag>;
+        return (
+          <props.unhighlightTag class={unhighlightClass}>
+            {text}
+          </props.unhighlightTag>
+        );
       });
     };
 
     return () => {
-      const { tag } = props;
-
-      return <tag class={bem()}>{renderContent()}</tag>;
+      return <props.tag class={bem()}>{renderContent()}</props.tag>;
     };
   },
 });
