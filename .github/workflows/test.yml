@@ -24,7 +24,7 @@ jobs:
 
       - uses: actions/setup-node@v6
         with:
-          node-version: '22.22.2'
+          node-version: '22.22.3'
           cache: 'pnpm'
 
       - name: Install dependencies
@@ -34,7 +34,7 @@ jobs:
         run: npm run lint
 
   test:
-    runs-on: macos-15
+    runs-on: macos-26
     steps:
       - uses: actions/checkout@v6
 
@@ -45,7 +45,7 @@ jobs:
 
       - uses: actions/setup-node@v6
         with:
-          node-version: '22.22.2'
+          node-version: '22.22.3'
           cache: 'pnpm'
 
       - name: Install dependencies
@@ -61,7 +61,7 @@ jobs:
           directory: ./packages/vant/test/coverage
 
   build:
-    runs-on: macos-15
+    runs-on: macos-26
     steps:
       - uses: actions/checkout@v6
 
@@ -72,7 +72,7 @@ jobs:
 
       - uses: actions/setup-node@v6
         with:
-          node-version: '22.22.2'
+          node-version: '22.22.3'
           cache: 'pnpm'
 
       - name: Install dependencies

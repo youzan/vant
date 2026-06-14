@@ -357,6 +357,32 @@ test('should change arrow direction when using arrow-direction prop', () => {
   expect(wrapper.find('.van-icon-arrow-up').exists()).toBeTruthy();
 });
 
+test('should not trigger click event when disabled with is-link', () => {
+  const onClick = rs.fn();
+  const wrapper = mount(Field, {
+    props: {
+      disabled: true,
+      isLink: true,
+      onClick,
+    },
+  });
+
+  wrapper.trigger('click');
+  expect(onClick).not.toHaveBeenCalled();
+});
+
+test('should not show arrow icon when disabled with is-link', () => {
+  const wrapper = mount(Field, {
+    props: {
+      disabled: true,
+      isLink: true,
+    },
+  });
+
+  expect(wrapper.find('.van-icon-arrow').exists()).toBeFalsy();
+  expect(wrapper.find('.van-cell--clickable').exists()).toBeFalsy();
+});
+
 test('should allow to format value with formatter prop', () => {
   const wrapper = mount(Field, {
     props: {
