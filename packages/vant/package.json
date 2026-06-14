@@ -70,7 +70,7 @@
     "typescript": "^5.9.3",
     "rstest-canvas-mock": "^0.0.5",
     "vue": "^3.5.33",
-    "vue-jsx-vapor": "3.2.13",
+    "vue-jsx-vapor": "3.2.16",
     "vue-router": "^5.0.6"
   },
   "sideEffects": [

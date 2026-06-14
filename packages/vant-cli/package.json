@@ -39,7 +39,7 @@
     "@rsbuild/plugin-sass": "^1.5.2",
     "@rsbuild/plugin-vue": "^1.2.7",
     "@rsbuild/plugin-vue-jsx": "^2.0.0",
-    "vue-jsx-vapor": "3.2.13",
+    "vue-jsx-vapor": "3.2.16",
     "@vant/touch-emulator": "workspace:^",
     "@vitejs/plugin-vue": "^5.2.4",
     "@vitejs/plugin-vue-jsx": "^4.2.0",
