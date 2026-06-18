@@ -2,6 +2,7 @@ import 'rstest-canvas-mock';
 import { mount } from '../../../test';
 import { Lazyload } from '../../lazyload';
 import VanImage from '..';
+import type { ImageFit, ImagePosition } from '../types';
 
 const IMAGE_URL = 'https://img.com';
 
@@ -244,3 +245,25 @@ test('should render default slot correctly', () => {
 //     },
 //   });
 // });
+
+// Regression test for https://github.com/youzan/vant/issues/13818
+// ImageFit and ImagePosition must be self-contained types that do not
+// reference csstype, so that consumers generating d.ts files do not
+// encounter TS2742 ("cannot be named without a reference to …csstype").
+test('ImageFit only allows valid CSS object-fit keywords', () => {
+  const validFits: ImageFit[] = ['contain', 'cover', 'fill', 'none', 'scale-down'];
+  validFits.forEach((fit) => {
+    const wrapper = mount(VanImage, {
+      props: { src: 'https://img.com', fit },
+    });
+    expect(wrapper.find('img').attributes('style')).toContain(`object-fit: ${fit}`);
+  });
+});
+
+test('ImagePosition accepts a string value', () => {
+  const position: ImagePosition = 'center top';
+  const wrapper = mount(VanImage, {
+    props: { src: 'https://img.com', position },
+  });
+  expect(wrapper.find('img').attributes('style')).toContain('object-position: center top');
+});
