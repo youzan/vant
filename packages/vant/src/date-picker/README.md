@@ -162,6 +162,39 @@ export default {
 };
 ```
 
+### Options Sort
+
+By passing the `sort` function, you can sort the options array to achieve custom sorting rules, such as descending order.
+
+```html
+<van-date-picker
+  v-model="currentDate"
+  title="Choose Date (Descending)"
+  :min-date="minDate"
+  :max-date="maxDate"
+  :sort="sort"
+/>
+```
+
+```js
+import { ref } from 'vue';
+export default {
+  setup() {
+    const currentDate = ref(['2021', '01', '01']);
+    const sort = (type, options) => {
+      if (type === 'year') return options.reverse();
+      return options;
+    };
+    return {
+      currentDate,
+      sort,
+      minDate: new Date(2020, 0, 1),
+      maxDate: new Date(2025, 5, 1),
+    };
+  },
+};
+```
+
 ## API
 
 ### Props
@@ -180,6 +213,7 @@ export default {
 | readonly | Whether to be readonly | _boolean_ | `false` |
 | filter | Option filter | _(type: string, options: PickerOption[], values: string[]) => PickerOption[]_ | - |
 | formatter | Option formatter | _(type: string, option: PickerOption) => PickerOption_ | - |
+| sort | Option sort | _(type: string, options: PickerOption[], values: string[]) => PickerOption[]_ | - |
 | option-height | Option height, supports `px` `vw` `vh` `rem` unit, default `px` | _number \| string_ | `44` |
 | visible-option-num | Count of visible columns | _number \| string_ | `6` |
 | swipe-duration | Duration of the momentum animation, unit `ms` | _number \| string_ | `1000` |

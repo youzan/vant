@@ -130,6 +130,7 @@ export default defineComponent({
               type,
               formatter,
               filter,
+              undefined,
               currentValues.value,
             );
           case 'minute':
@@ -139,6 +140,7 @@ export default defineComponent({
               type,
               formatter,
               filter,
+              undefined,
               currentValues.value,
             );
           case 'second':
@@ -148,6 +150,7 @@ export default defineComponent({
               type,
               formatter,
               filter,
+              undefined,
               currentValues.value,
             );
           default:
