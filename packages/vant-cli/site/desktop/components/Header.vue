@@ -11,6 +11,10 @@
         </a>
 
         <ul class="van-doc-header__top-nav">
+          <li v-if="search" class="van-doc-header__top-nav-item">
+            <van-doc-search :lang="lang" />
+          </li>
+
           <li
             v-for="(item, index) in config.links"
             :key="index"
@@ -73,9 +77,14 @@
 <script>
 import { packageVersion } from 'site-desktop-shared';
 import { getDefaultTheme, syncThemeToChild } from '../../common/iframe-sync';
+import VanDocSearch from './Search.vue';
 
 export default {
   name: 'VanDocHeader',
+
+  components: {
+    VanDocSearch,
+  },
 
   props: {
     lang: String,
@@ -83,6 +92,7 @@ export default {
     versions: Array,
     langConfigs: Array,
     darkModeClass: String,
+    search: Boolean,
   },
 
   data() {

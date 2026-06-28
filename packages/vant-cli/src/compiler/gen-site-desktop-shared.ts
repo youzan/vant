@@ -2,6 +2,7 @@ import glob from 'fast-glob';
 import { join, parse } from 'node:path';
 import { existsSync, readFileSync, readdirSync } from 'node:fs';
 import { pascalize, getVantConfig, normalizePath } from '../common/index.js';
+import { genSiteSearchIndex } from './gen-site-search-index.js';
 import {
   SRC_DIR,
   DOCS_DIR,
@@ -109,6 +110,7 @@ ${genVantConfigContent()}
 
 ${genExportConfig()}
 ${genExportDocuments(documents)}
+${genSiteSearchIndex()}
 ${genExportVersion()}
 `;
 

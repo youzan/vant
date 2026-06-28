@@ -25,6 +25,7 @@ export default {
     darkModeClass: 'van-theme-dark',
     lightModeClass: 'van-theme-light',
     enableVConsole: false,
+    search: true,
     versions: [
       { label: 'v1', link: '/vant/v1/' },
       { label: 'v2', link: '/vant/v2/' },

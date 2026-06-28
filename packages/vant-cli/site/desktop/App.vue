@@ -9,6 +9,7 @@
       :has-simulator="hasSimulator"
       :lang-configs="langConfigs"
       :dark-mode-class="darkModeClass"
+      :search="search"
     >
       <router-view />
       <div class="van-doc-icp" v-if="icpLicense">
@@ -78,6 +79,10 @@ export default {
 
     versions() {
       return config.site.versions || null;
+    },
+
+    search() {
+      return Boolean(config.site?.search);
     },
   },
 
