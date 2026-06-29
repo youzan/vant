@@ -163,7 +163,7 @@ export default defineComponent({
           class={bem(classes)}
           role={clickable ? 'button' : undefined}
           tabindex={clickable ? 0 : undefined}
-          onClick={route}
+          onClick={clickable ? route : undefined}
         >
           {renderLeftIcon()}
           {renderTitle()}

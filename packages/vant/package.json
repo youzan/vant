@@ -1,6 +1,6 @@
 {
   "name": "vant",
-  "version": "4.9.24",
+  "version": "4.10.0",
   "description": "Mobile UI Components built on Vue",
   "main": "lib/vant.cjs.js",
   "module": "es/index.mjs",
@@ -47,29 +47,29 @@
   "dependencies": {
     "@vant/popperjs": "workspace:^",
     "@vant/use": "workspace:^",
-    "@vue/shared": "^3.5.35"
+    "@vue/shared": "^3.5.39"
   },
   "peerDependencies": {
     "vue": "^3.0.0"
   },
   "devDependencies": {
-    "@rsbuild/plugin-vue": "1.2.8",
+    "@rsbuild/plugin-vue": "1.2.9",
     "@rsbuild/plugin-vue-jsx": "2.0.1",
     "@rsbuild/plugin-babel": "1.1.2",
-    "@rstest/coverage-istanbul": "^0.10.3",
-    "@rstest/core": "^0.10.3",
+    "@rstest/coverage-istanbul": "^0.10.6",
+    "@rstest/core": "^0.10.6",
     "@types/node": "^24.12.4",
     "@vant/area-data": "workspace:*",
     "@vant/cli": "workspace:*",
     "@vant/icons": "workspace:*",
-    "@vue/runtime-core": "^3.5.35",
-    "@vue/test-utils": "^2.4.10",
+    "@vue/runtime-core": "^3.5.39",
+    "@vue/test-utils": "^2.4.11",
     "csstype": "^3.2.3",
     "diffable-html": "^6.0.1",
     "jsdom": "^25.0.1",
     "typescript": "^5.9.3",
     "rstest-canvas-mock": "^0.0.5",
-    "vue": "^3.5.35",
+    "vue": "^3.5.39",
     "vue-router": "^5.0.6"
   },
   "sideEffects": [

@@ -95,6 +95,18 @@ test('should allow to disable clickable when using is-link prop', () => {
   expect(wrapper.classes()).not.toContain('van-cell--clickable');
 });
 
+test('should not render as button when clickable is false with is-link prop', () => {
+  const wrapper = mount(Cell, {
+    props: {
+      isLink: true,
+      clickable: false,
+    },
+  });
+  const root = wrapper.find('.van-cell');
+  expect(root.attributes('role')).toBeFalsy();
+  expect(root.attributes('tabindex')).toBeFalsy();
+});
+
 test('should render tag prop correctly', () => {
   const wrapper = mount(Cell, {
     props: {
