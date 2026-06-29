@@ -44,8 +44,8 @@ export default {
     count: (count: number) => `${count}枚が利用可能`,
   },
   vanCouponList: {
-    exchange: '両替',
-    close: '使用禁止',
+    exchange: '交換',
+    close: '使用しない',
     enable: '利用可能',
     disabled: '利用できません',
     placeholder: '割引コードを入力してください',
