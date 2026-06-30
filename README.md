@@ -22,6 +22,10 @@
   ·
   &nbsp;
   <a href="./README.zh-CN.md">中文介绍</a>
+  &nbsp;
+  ·
+  &nbsp;
+  <a href="./README.ja-JP.md">日本語</a>
 </p>
 
 ---
