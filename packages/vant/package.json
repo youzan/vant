@@ -55,7 +55,7 @@
   "devDependencies": {
     "@rsbuild/plugin-vue": "1.2.9",
     "@rsbuild/plugin-vue-jsx": "2.0.1",
-    "@rsbuild/plugin-babel": "1.1.2",
+    "@rsbuild/plugin-babel": "1.2.1",
     "@rstest/coverage-istanbul": "^0.10.6",
     "@rstest/core": "^0.10.6",
     "@types/node": "^24.12.4",
