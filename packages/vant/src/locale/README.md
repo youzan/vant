@@ -65,6 +65,7 @@ Current supported languages:
 | Lao                      | la-LA        | `v3.4.7`  |
 | Mongolian                | mm-MN        | `v4.0.5`  |
 | Norwegian                | nb-NO        | -         |
+| Norwegian Nynorsk        | nn-NO        | -         |
 | Dutch                    | nl-NL        | `v4.0.5`  |
 | Polish                   | pl-PL        | `v4.9.17` |
 | Portuguese (Brazil)      | pt-BR        | `v3.3.3`  |
