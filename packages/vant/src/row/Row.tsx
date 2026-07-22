@@ -122,9 +122,9 @@ export default defineComponent({
     linkChildren({ spaces, verticalSpaces });
 
     return () => {
-      const { tag, wrap, align, justify } = props;
+      const { wrap, align, justify } = props;
       return (
-        <tag
+        <props.tag
           class={bem({
             [`align-${align}`]: align,
             [`justify-${justify}`]: justify,
@@ -132,7 +132,7 @@ export default defineComponent({
           })}
         >
           {slots.default?.()}
-        </tag>
+        </props.tag>
       );
     };
   },

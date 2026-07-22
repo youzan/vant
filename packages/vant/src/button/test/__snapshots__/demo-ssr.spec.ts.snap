@@ -161,6 +161,7 @@ exports[`should render demo and match snapshot 1`] = `
           class="van-loading__spinner van-loading__spinner--circular"
           style
         >
+          <!--[-->
           <svg
             class="van-loading__circular"
             viewbox="25 25 50 50"
@@ -192,6 +193,7 @@ exports[`should render demo and match snapshot 1`] = `
           class="van-loading__spinner van-loading__spinner--spinner"
           style
         >
+          <!--[-->
           <!--[-->
           <i class="van-loading__line van-loading__line--1">
           </i>
@@ -236,6 +238,7 @@ exports[`should render demo and match snapshot 1`] = `
           class="van-loading__spinner van-loading__spinner--circular"
           style
         >
+          <!--[-->
           <svg
             class="van-loading__circular"
             viewbox="25 25 50 50"
@@ -484,12 +487,14 @@ exports[`should render demo and match snapshot 1`] = `
               style
             >
               <!--[-->
+              <!--[-->
               Do Task
             </div>
             <div
               class="van-swipe-item"
               style
             >
+              <!--[-->
               <!--[-->
               Lottery
             </div>

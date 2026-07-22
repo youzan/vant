@@ -23,6 +23,7 @@ exports[`should render demo and match snapshot 1`] = `
         </div>
         <div class="van-cell__value van-field__value">
           <!--[-->
+          <!--[-->
           <div class="van-field__body">
             <input
               type="text"
@@ -51,6 +52,7 @@ exports[`should render demo and match snapshot 1`] = `
           </label>
         </div>
         <div class="van-cell__value van-field__value">
+          <!--[-->
           <!--[-->
           <div class="van-field__body">
             <input
@@ -84,6 +86,7 @@ exports[`should render demo and match snapshot 1`] = `
           </label>
         </div>
         <div class="van-cell__value van-field__value">
+          <!--[-->
           <!--[-->
           <div class="van-field__body">
             <input
@@ -121,6 +124,7 @@ exports[`should render demo and match snapshot 1`] = `
           </label>
         </div>
         <div class="van-cell__value van-field__value">
+          <!--[-->
           <!--[-->
           <div class="van-field__body">
             <textarea

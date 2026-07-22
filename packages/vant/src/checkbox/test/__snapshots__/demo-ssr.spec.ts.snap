@@ -15,6 +15,7 @@ exports[`should render demo and match snapshot 1`] = `
       class="van-checkbox__icon van-checkbox__icon--round van-checkbox__icon--checked"
       style
     >
+      <!--[-->
       <i
         class="van-badge__wrapper van-icon van-icon-success"
         style
@@ -40,6 +41,7 @@ exports[`should render demo and match snapshot 1`] = `
       class="van-checkbox__icon van-checkbox__icon--round van-checkbox__icon--disabled"
       style
     >
+      <!--[-->
       <i
         class="van-badge__wrapper van-icon van-icon-success"
         style
@@ -62,6 +64,7 @@ exports[`should render demo and match snapshot 1`] = `
       class="van-checkbox__icon van-checkbox__icon--round van-checkbox__icon--disabled van-checkbox__icon--checked"
       style
     >
+      <!--[-->
       <i
         class="van-badge__wrapper van-icon van-icon-success"
         style
@@ -90,6 +93,7 @@ exports[`should render demo and match snapshot 1`] = `
         class="van-checkbox__icon van-checkbox__icon--square van-checkbox__icon--checked"
         style
       >
+        <!--[-->
         <i
           class="van-badge__wrapper van-icon van-icon-success"
           style
@@ -113,6 +117,7 @@ exports[`should render demo and match snapshot 1`] = `
         class="van-checkbox__icon van-checkbox__icon--square van-checkbox__icon--checked"
         style
       >
+        <!--[-->
         <i
           class="van-badge__wrapper van-icon van-icon-success"
           style
@@ -140,6 +145,7 @@ exports[`should render demo and match snapshot 1`] = `
       class="van-checkbox__icon van-checkbox__icon--round van-checkbox__icon--checked"
       style
     >
+      <!--[-->
       <i
         class="van-badge__wrapper van-icon van-icon-success"
         style="border-color:#ee0a24;background-color:#ee0a24;"
@@ -166,6 +172,7 @@ exports[`should render demo and match snapshot 1`] = `
       class="van-checkbox__icon van-checkbox__icon--round van-checkbox__icon--checked"
       style="font-size:24px;"
     >
+      <!--[-->
       <i
         class="van-badge__wrapper van-icon van-icon-success"
         style
@@ -193,6 +200,7 @@ exports[`should render demo and match snapshot 1`] = `
       style
     >
       <!--[-->
+      <!--[-->
       <img src="https://fastly.jsdelivr.net/npm/@vant/assets/user-active.png">
     </div>
     <span class="van-checkbox__label">
@@ -218,6 +226,7 @@ exports[`should render demo and match snapshot 1`] = `
       class="van-checkbox__icon van-checkbox__icon--round"
       style
     >
+      <!--[-->
       <i
         class="van-badge__wrapper van-icon van-icon-success"
         style
@@ -240,6 +249,7 @@ exports[`should render demo and match snapshot 1`] = `
       class="van-checkbox__icon van-checkbox__icon--round van-checkbox__icon--checked"
       style
     >
+      <!--[-->
       <i
         class="van-badge__wrapper van-icon van-icon-success"
         style
@@ -268,6 +278,7 @@ exports[`should render demo and match snapshot 1`] = `
         class="van-checkbox__icon van-checkbox__icon--round van-checkbox__icon--checked"
         style
       >
+        <!--[-->
         <i
           class="van-badge__wrapper van-icon van-icon-success"
           style
@@ -291,6 +302,7 @@ exports[`should render demo and match snapshot 1`] = `
         class="van-checkbox__icon van-checkbox__icon--round van-checkbox__icon--checked"
         style
       >
+        <!--[-->
         <i
           class="van-badge__wrapper van-icon van-icon-success"
           style
@@ -320,6 +332,7 @@ exports[`should render demo and match snapshot 1`] = `
         class="van-checkbox__icon van-checkbox__icon--round"
         style
       >
+        <!--[-->
         <i
           class="van-badge__wrapper van-icon van-icon-success"
           style
@@ -343,6 +356,7 @@ exports[`should render demo and match snapshot 1`] = `
         class="van-checkbox__icon van-checkbox__icon--round"
         style
       >
+        <!--[-->
         <i
           class="van-badge__wrapper van-icon van-icon-success"
           style
@@ -372,6 +386,7 @@ exports[`should render demo and match snapshot 1`] = `
         class="van-checkbox__icon van-checkbox__icon--round"
         style
       >
+        <!--[-->
         <i
           class="van-badge__wrapper van-icon van-icon-success"
           style
@@ -395,6 +410,7 @@ exports[`should render demo and match snapshot 1`] = `
         class="van-checkbox__icon van-checkbox__icon--round"
         style
       >
+        <!--[-->
         <i
           class="van-badge__wrapper van-icon van-icon-success"
           style
@@ -418,6 +434,7 @@ exports[`should render demo and match snapshot 1`] = `
         class="van-checkbox__icon van-checkbox__icon--round"
         style
       >
+        <!--[-->
         <i
           class="van-badge__wrapper van-icon van-icon-success"
           style
@@ -447,6 +464,7 @@ exports[`should render demo and match snapshot 1`] = `
         class="van-checkbox__icon van-checkbox__icon--round"
         style
       >
+        <!--[-->
         <i
           class="van-badge__wrapper van-icon van-icon-success"
           style
@@ -470,6 +488,7 @@ exports[`should render demo and match snapshot 1`] = `
         class="van-checkbox__icon van-checkbox__icon--round"
         style
       >
+        <!--[-->
         <i
           class="van-badge__wrapper van-icon van-icon-success"
           style
@@ -493,6 +512,7 @@ exports[`should render demo and match snapshot 1`] = `
         class="van-checkbox__icon van-checkbox__icon--round"
         style
       >
+        <!--[-->
         <i
           class="van-badge__wrapper van-icon van-icon-success"
           style
@@ -565,6 +585,7 @@ exports[`should render demo and match snapshot 1`] = `
             class="van-checkbox__icon van-checkbox__icon--round"
             style
           >
+            <!--[-->
             <i
               class="van-badge__wrapper van-icon van-icon-success"
               style
@@ -599,6 +620,7 @@ exports[`should render demo and match snapshot 1`] = `
             class="van-checkbox__icon van-checkbox__icon--round"
             style
           >
+            <!--[-->
             <i
               class="van-badge__wrapper van-icon van-icon-success"
               style
@@ -624,6 +646,7 @@ exports[`should render demo and match snapshot 1`] = `
       class="van-checkbox__icon van-checkbox__icon--round van-checkbox__icon--indeterminate"
       style
     >
+      <!--[-->
       <i
         class="van-badge__wrapper van-icon van-icon-minus"
         style
@@ -652,6 +675,7 @@ exports[`should render demo and match snapshot 1`] = `
         class="van-checkbox__icon van-checkbox__icon--round van-checkbox__icon--checked"
         style
       >
+        <!--[-->
         <i
           class="van-badge__wrapper van-icon van-icon-success"
           style
@@ -675,6 +699,7 @@ exports[`should render demo and match snapshot 1`] = `
         class="van-checkbox__icon van-checkbox__icon--round van-checkbox__icon--checked"
         style
       >
+        <!--[-->
         <i
           class="van-badge__wrapper van-icon van-icon-success"
           style
@@ -698,6 +723,7 @@ exports[`should render demo and match snapshot 1`] = `
         class="van-checkbox__icon van-checkbox__icon--round"
         style
       >
+        <!--[-->
         <i
           class="van-badge__wrapper van-icon van-icon-success"
           style
@@ -721,6 +747,7 @@ exports[`should render demo and match snapshot 1`] = `
         class="van-checkbox__icon van-checkbox__icon--round van-checkbox__icon--checked"
         style
       >
+        <!--[-->
         <i
           class="van-badge__wrapper van-icon van-icon-success"
           style

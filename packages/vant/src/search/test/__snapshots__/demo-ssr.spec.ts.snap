@@ -21,6 +21,7 @@ exports[`should render demo and match snapshot 1`] = `
         </div>
         <div class="van-cell__value van-field__value">
           <!--[-->
+          <!--[-->
           <div class="van-field__body">
             <input
               type="search"
@@ -55,6 +56,7 @@ exports[`should render demo and match snapshot 1`] = `
           </div>
           <div class="van-cell__value van-field__value">
             <!--[-->
+            <!--[-->
             <div class="van-field__body">
               <input
                 type="search"
@@ -72,6 +74,7 @@ exports[`should render demo and match snapshot 1`] = `
         role="button"
         tabindex="0"
       >
+        <!--[-->
         Cancel
       </div>
     </div>
@@ -95,6 +98,7 @@ exports[`should render demo and match snapshot 1`] = `
           </i>
         </div>
         <div class="van-cell__value van-field__value">
+          <!--[-->
           <!--[-->
           <div class="van-field__body">
             <input
@@ -128,6 +132,7 @@ exports[`should render demo and match snapshot 1`] = `
           </i>
         </div>
         <div class="van-cell__value van-field__value">
+          <!--[-->
           <!--[-->
           <div class="van-field__body">
             <input
@@ -163,6 +168,7 @@ exports[`should render demo and match snapshot 1`] = `
         </div>
         <div class="van-cell__value van-field__value">
           <!--[-->
+          <!--[-->
           <div class="van-field__body">
             <input
               type="search"
@@ -189,6 +195,7 @@ exports[`should render demo and match snapshot 1`] = `
         for="van-search-input"
         data-allow-mismatch="attribute"
       >
+        <!--[-->
         Address
       </label>
       <div class="van-cell van-cell--borderless van-field van-field--label-left van-search__field">
@@ -202,6 +209,7 @@ exports[`should render demo and match snapshot 1`] = `
           </i>
         </div>
         <div class="van-cell__value van-field__value">
+          <!--[-->
           <!--[-->
           <div class="van-field__body">
             <input
@@ -220,6 +228,7 @@ exports[`should render demo and match snapshot 1`] = `
       role="button"
       tabindex="0"
     >
+      <!--[-->
       <!--[-->
       <div>
         Search

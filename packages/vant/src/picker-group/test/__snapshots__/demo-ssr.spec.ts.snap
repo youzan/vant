@@ -7,10 +7,12 @@ exports[`should render demo and match snapshot 1`] = `
   <div class="van-picker-group">
     <div class="van-picker__toolbar">
       <!--[-->
+      <!--[-->
       <button
         type="button"
         class="van-picker__cancel van-haptics-feedback"
       >
+        <!--[-->
         Cancel
       </button>
       <div class="van-picker__title van-ellipsis">
@@ -20,10 +22,13 @@ exports[`should render demo and match snapshot 1`] = `
         type="button"
         class="van-picker__confirm van-haptics-feedback"
       >
+        <!--[-->
         Confirm
       </button>
     </div>
     <div class="van-tabs van-tabs--line van-picker-group__tabs">
+      <!--[-->
+      <!--[-->
       <!--[-->
       <div class="van-tabs__wrap">
         <div
@@ -56,9 +61,11 @@ exports[`should render demo and match snapshot 1`] = `
               data-allow-mismatch="attribute"
             >
               <!--[-->
+              <!--[-->
               <div class="van-tab__panel">
                 <!--[-->
                 <div class="van-picker">
+                  <!--[-->
                   <div
                     class="van-picker__columns"
                     style="height:264px;"
@@ -594,9 +601,11 @@ exports[`should render demo and match snapshot 1`] = `
               data-allow-mismatch="attribute"
             >
               <!--[-->
+              <!--[-->
               <div class="van-tab__panel">
                 <!--[-->
                 <div class="van-picker">
+                  <!--[-->
                   <div
                     class="van-picker__columns"
                     style="height:264px;"
@@ -1484,10 +1493,12 @@ exports[`should render demo and match snapshot 1`] = `
   <div class="van-picker-group">
     <div class="van-picker__toolbar">
       <!--[-->
+      <!--[-->
       <button
         type="button"
         class="van-picker__cancel van-haptics-feedback"
       >
+        <!--[-->
         Cancel
       </button>
       <div class="van-picker__title van-ellipsis">
@@ -1497,11 +1508,14 @@ exports[`should render demo and match snapshot 1`] = `
         type="button"
         class="van-picker__confirm van-haptics-feedback"
       >
+        <!--[-->
         Next Step
       </button>
     </div>
     <div class="van-tabs van-tabs--line van-picker-group__tabs">
       <!--[-->
+      <!--[-->
+      <!--[-->
       <div class="van-tabs__wrap">
         <div
           role="tablist"
@@ -1533,9 +1547,11 @@ exports[`should render demo and match snapshot 1`] = `
               data-allow-mismatch="attribute"
             >
               <!--[-->
+              <!--[-->
               <div class="van-tab__panel">
                 <!--[-->
                 <div class="van-picker">
+                  <!--[-->
                   <div
                     class="van-picker__columns"
                     style="height:264px;"
@@ -2071,9 +2087,11 @@ exports[`should render demo and match snapshot 1`] = `
               data-allow-mismatch="attribute"
             >
               <!--[-->
+              <!--[-->
               <div class="van-tab__panel">
                 <!--[-->
                 <div class="van-picker">
+                  <!--[-->
                   <div
                     class="van-picker__columns"
                     style="height:264px;"
@@ -2961,10 +2979,12 @@ exports[`should render demo and match snapshot 1`] = `
   <div class="van-picker-group">
     <div class="van-picker__toolbar">
       <!--[-->
+      <!--[-->
       <button
         type="button"
         class="van-picker__cancel van-haptics-feedback"
       >
+        <!--[-->
         Cancel
       </button>
       <div class="van-picker__title van-ellipsis">
@@ -2974,10 +2994,13 @@ exports[`should render demo and match snapshot 1`] = `
         type="button"
         class="van-picker__confirm van-haptics-feedback"
       >
+        <!--[-->
         Confirm
       </button>
     </div>
     <div class="van-tabs van-tabs--line van-picker-group__tabs">
+      <!--[-->
+      <!--[-->
       <!--[-->
       <div class="van-tabs__wrap">
         <div
@@ -3010,9 +3033,11 @@ exports[`should render demo and match snapshot 1`] = `
               data-allow-mismatch="attribute"
             >
               <!--[-->
+              <!--[-->
               <div class="van-tab__panel">
                 <!--[-->
                 <div class="van-picker">
+                  <!--[-->
                   <div
                     class="van-picker__columns"
                     style="height:264px;"
@@ -3548,9 +3573,11 @@ exports[`should render demo and match snapshot 1`] = `
               data-allow-mismatch="attribute"
             >
               <!--[-->
+              <!--[-->
               <div class="van-tab__panel">
                 <!--[-->
                 <div class="van-picker">
+                  <!--[-->
                   <div
                     class="van-picker__columns"
                     style="height:264px;"
@@ -4066,10 +4093,12 @@ exports[`should render demo and match snapshot 1`] = `
   <div class="van-picker-group">
     <div class="van-picker__toolbar">
       <!--[-->
+      <!--[-->
       <button
         type="button"
         class="van-picker__cancel van-haptics-feedback"
       >
+        <!--[-->
         Cancel
       </button>
       <div class="van-picker__title van-ellipsis">
@@ -4079,10 +4108,13 @@ exports[`should render demo and match snapshot 1`] = `
         type="button"
         class="van-picker__confirm van-haptics-feedback"
       >
+        <!--[-->
         Confirm
       </button>
     </div>
     <div class="van-tabs van-tabs--line van-picker-group__tabs">
+      <!--[-->
+      <!--[-->
       <!--[-->
       <div class="van-tabs__wrap">
         <div
@@ -4115,9 +4147,11 @@ exports[`should render demo and match snapshot 1`] = `
               data-allow-mismatch="attribute"
             >
               <!--[-->
+              <!--[-->
               <div class="van-tab__panel">
                 <!--[-->
                 <div class="van-picker">
+                  <!--[-->
                   <div
                     class="van-picker__columns"
                     style="height:264px;"
@@ -5005,9 +5039,11 @@ exports[`should render demo and match snapshot 1`] = `
               data-allow-mismatch="attribute"
             >
               <!--[-->
+              <!--[-->
               <div class="van-tab__panel">
                 <!--[-->
                 <div class="van-picker">
+                  <!--[-->
                   <div
                     class="van-picker__columns"
                     style="height:264px;"
@@ -5908,10 +5944,12 @@ exports[`should render demo and match snapshot 1`] = `
   <div class="van-picker-group">
     <div class="van-picker__toolbar">
       <!--[-->
+      <!--[-->
       <button
         type="button"
         class="van-picker__cancel van-haptics-feedback"
       >
+        <!--[-->
         Cancel
       </button>
       <div class="van-picker__title van-ellipsis">
@@ -5921,10 +5959,13 @@ exports[`should render demo and match snapshot 1`] = `
         type="button"
         class="van-picker__confirm van-haptics-feedback"
       >
+        <!--[-->
         Confirm
       </button>
     </div>
     <div class="van-tabs van-tabs--line van-picker-group__tabs">
+      <!--[-->
+      <!--[-->
       <!--[-->
       <div class="van-tabs__wrap">
         <div
@@ -5957,9 +5998,11 @@ exports[`should render demo and match snapshot 1`] = `
               data-allow-mismatch="attribute"
             >
               <!--[-->
+              <!--[-->
               <div class="van-tab__panel">
                 <!--[-->
                 <div class="van-picker">
+                  <!--[-->
                   <div
                     class="van-picker__columns"
                     style="height:264px;"
@@ -6495,9 +6538,11 @@ exports[`should render demo and match snapshot 1`] = `
               data-allow-mismatch="attribute"
             >
               <!--[-->
+              <!--[-->
               <div class="van-tab__panel">
                 <!--[-->
                 <div class="van-picker">
+                  <!--[-->
                   <div
                     class="van-picker__columns"
                     style="height:264px;"

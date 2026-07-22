@@ -108,6 +108,7 @@ exports[`should render demo and match snapshot 1`] = `
             </div>
             <div class="van-card__bottom">
               <div class="van-card__price">
+                <!--[-->
                 <div>
                   <span class="van-card__price-currency">
                     ¥
@@ -123,6 +124,7 @@ exports[`should render demo and match snapshot 1`] = `
                 </div>
               </div>
               <div class="van-card__num">
+                <!--[-->
                 x2
               </div>
             </div>

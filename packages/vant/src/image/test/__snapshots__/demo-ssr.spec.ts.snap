@@ -545,6 +545,7 @@ exports[`should render demo and match snapshot 1`] = `
               style="width:20px;height:20px;"
             >
               <!--[-->
+              <!--[-->
               <i class="van-loading__line van-loading__line--1">
               </i>
               <i class="van-loading__line van-loading__line--2">

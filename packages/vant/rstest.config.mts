@@ -1,14 +1,19 @@
 import { defineConfig, type ProjectConfig } from '@rstest/core';
 import { pluginBabel } from '@rsbuild/plugin-babel';
 import { pluginVue } from '@rsbuild/plugin-vue';
-import { pluginVueJsx } from '@rsbuild/plugin-vue-jsx';
+import vueJsxCompiler from 'vue-jsx-vapor/rsbuild';
 
-const commonConfig: ProjectConfig = {
+const commonConfig: (ssr: boolean) => ProjectConfig = (ssr) => ({
   plugins: [
     pluginBabel({
       include: /\.(?:jsx|tsx)$/,
     }),
-    pluginVueJsx(),
+    vueJsxCompiler({
+      interop: true,
+      compiler: {
+        runtimeModuleName: ssr ? 'vue-jsx-vapor' : undefined, // for SSR tests
+      },
+    }),
     pluginVue(),
   ],
   globals: true,
@@ -26,7 +31,7 @@ const commonConfig: ProjectConfig = {
       },
     },
   },
-};
+});
 
 export default defineConfig({
   coverage: {
@@ -43,14 +48,14 @@ export default defineConfig({
   },
   projects: [
     {
-      extends: commonConfig,
+      extends: commonConfig(false),
       name: 'client',
       testEnvironment: 'jsdom',
       include: ['src/**/*.spec.[jt]s?(x)'],
       exclude: ['src/**/*/ssr.spec.[jt]s?(x)', 'src/**/*/*-ssr.spec.[jt]s?(x)'],
     },
     {
-      extends: commonConfig,
+      extends: commonConfig(true),
       name: 'ssr',
       testEnvironment: 'node',
       include: ['src/**/*/ssr.spec.[jt]s?(x)', 'src/**/*/*-ssr.spec.[jt]s?(x)'],

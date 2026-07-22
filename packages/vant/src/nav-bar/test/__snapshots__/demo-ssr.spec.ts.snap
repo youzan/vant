@@ -10,6 +10,7 @@ exports[`should render demo and match snapshot 1`] = `
   >
     <div class="van-nav-bar__content">
       <div class="van-nav-bar__title van-ellipsis">
+        <!--[-->
         Title
       </div>
     </div>
@@ -35,6 +36,7 @@ exports[`should render demo and match snapshot 1`] = `
         </span>
       </div>
       <div class="van-nav-bar__title van-ellipsis">
+        <!--[-->
         Title
       </div>
     </div>
@@ -60,6 +62,7 @@ exports[`should render demo and match snapshot 1`] = `
         </span>
       </div>
       <div class="van-nav-bar__title van-ellipsis">
+        <!--[-->
         Title
       </div>
       <div class="van-nav-bar__right van-haptics-feedback">
@@ -90,6 +93,7 @@ exports[`should render demo and match snapshot 1`] = `
         </span>
       </div>
       <div class="van-nav-bar__title van-ellipsis">
+        <!--[-->
         Title
       </div>
       <div class="van-nav-bar__right van-haptics-feedback">
@@ -124,6 +128,7 @@ exports[`should render demo and match snapshot 1`] = `
         </span>
       </div>
       <div class="van-nav-bar__title van-ellipsis">
+        <!--[-->
         Title
       </div>
       <div class="van-nav-bar__right van-nav-bar__right--disabled">

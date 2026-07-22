@@ -15,12 +15,14 @@ exports[`should render demo and match snapshot 1`] = `
         style
       >
         <!--[-->
+        <!--[-->
         1
       </div>
       <div
         class="van-swipe-item"
         style
       >
+        <!--[-->
         <!--[-->
         2
       </div>
@@ -29,12 +31,14 @@ exports[`should render demo and match snapshot 1`] = `
         style
       >
         <!--[-->
+        <!--[-->
         3
       </div>
       <div
         class="van-swipe-item"
         style
       >
+        <!--[-->
         <!--[-->
         4
       </div>
@@ -86,12 +90,14 @@ exports[`should render demo and match snapshot 1`] = `
         style
       >
         <!--[-->
+        <!--[-->
         1
       </div>
       <div
         class="van-swipe-item"
         style
       >
+        <!--[-->
         <!--[-->
         2
       </div>
@@ -100,12 +106,14 @@ exports[`should render demo and match snapshot 1`] = `
         style
       >
         <!--[-->
+        <!--[-->
         3
       </div>
       <div
         class="van-swipe-item"
         style
       >
+        <!--[-->
         <!--[-->
         4
       </div>
@@ -128,12 +136,14 @@ exports[`should render demo and match snapshot 1`] = `
         style
       >
         <!--[-->
+        <!--[-->
         1
       </div>
       <div
         class="van-swipe-item"
         style
       >
+        <!--[-->
         <!--[-->
         2
       </div>
@@ -142,12 +152,14 @@ exports[`should render demo and match snapshot 1`] = `
         style
       >
         <!--[-->
+        <!--[-->
         3
       </div>
       <div
         class="van-swipe-item"
         style
       >
+        <!--[-->
         <!--[-->
         4
       </div>
@@ -167,12 +179,14 @@ exports[`should render demo and match snapshot 1`] = `
         style
       >
         <!--[-->
+        <!--[-->
         1
       </div>
       <div
         class="van-swipe-item"
         style
       >
+        <!--[-->
         <!--[-->
         2
       </div>
@@ -181,12 +195,14 @@ exports[`should render demo and match snapshot 1`] = `
         style
       >
         <!--[-->
+        <!--[-->
         3
       </div>
       <div
         class="van-swipe-item"
         style
       >
+        <!--[-->
         <!--[-->
         4
       </div>
@@ -206,12 +222,14 @@ exports[`should render demo and match snapshot 1`] = `
         style
       >
         <!--[-->
+        <!--[-->
         1
       </div>
       <div
         class="van-swipe-item"
         style
       >
+        <!--[-->
         <!--[-->
         2
       </div>
@@ -220,12 +238,14 @@ exports[`should render demo and match snapshot 1`] = `
         style
       >
         <!--[-->
+        <!--[-->
         3
       </div>
       <div
         class="van-swipe-item"
         style
       >
+        <!--[-->
         <!--[-->
         4
       </div>

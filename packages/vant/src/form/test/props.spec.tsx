@@ -339,12 +339,7 @@ test('should trigger validate correctly when validate-trigger prop is array', as
     render() {
       return (
         <Form ref="form" validateTrigger={['onBlur', 'onChange']}>
-          <Field
-            v-model={this.value}
-            name="A"
-            rules={this.rulesA}
-            modelValue=""
-          />
+          <Field v-model={this.value} name="A" rules={this.rulesA} />
         </Form>
       );
     },

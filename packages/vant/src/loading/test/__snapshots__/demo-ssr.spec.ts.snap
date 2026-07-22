@@ -13,6 +13,7 @@ exports[`should render demo and match snapshot 1`] = `
       class="van-loading__spinner van-loading__spinner--circular"
       style
     >
+      <!--[-->
       <svg
         class="van-loading__circular"
         viewbox="25 25 50 50"
@@ -37,6 +38,7 @@ exports[`should render demo and match snapshot 1`] = `
       style
     >
       <!--[-->
+      <!--[-->
       <i class="van-loading__line van-loading__line--1">
       </i>
       <i class="van-loading__line van-loading__line--2">
@@ -75,6 +77,7 @@ exports[`should render demo and match snapshot 1`] = `
       class="van-loading__spinner van-loading__spinner--circular"
       style="color:#1989fa;"
     >
+      <!--[-->
       <svg
         class="van-loading__circular"
         viewbox="25 25 50 50"
@@ -98,6 +101,7 @@ exports[`should render demo and match snapshot 1`] = `
       class="van-loading__spinner van-loading__spinner--spinner"
       style="color:#1989fa;"
     >
+      <!--[-->
       <!--[-->
       <i class="van-loading__line van-loading__line--1">
       </i>
@@ -137,6 +141,7 @@ exports[`should render demo and match snapshot 1`] = `
       class="van-loading__spinner van-loading__spinner--circular"
       style="width:24px;height:24px;"
     >
+      <!--[-->
       <svg
         class="van-loading__circular"
         viewbox="25 25 50 50"
@@ -160,6 +165,7 @@ exports[`should render demo and match snapshot 1`] = `
       class="van-loading__spinner van-loading__spinner--spinner"
       style="width:24px;height:24px;"
     >
+      <!--[-->
       <!--[-->
       <i class="van-loading__line van-loading__line--1">
       </i>
@@ -199,6 +205,7 @@ exports[`should render demo and match snapshot 1`] = `
       class="van-loading__spinner van-loading__spinner--circular"
       style="width:24px;height:24px;"
     >
+      <!--[-->
       <svg
         class="van-loading__circular"
         viewbox="25 25 50 50"
@@ -232,6 +239,7 @@ exports[`should render demo and match snapshot 1`] = `
       class="van-loading__spinner van-loading__spinner--circular"
       style="width:24px;height:24px;"
     >
+      <!--[-->
       <svg
         class="van-loading__circular"
         viewbox="25 25 50 50"
@@ -265,6 +273,7 @@ exports[`should render demo and match snapshot 1`] = `
       class="van-loading__spinner van-loading__spinner--circular"
       style="color:#0094ff;width:24px;height:24px;"
     >
+      <!--[-->
       <svg
         class="van-loading__circular"
         viewbox="25 25 50 50"
@@ -295,6 +304,7 @@ exports[`should render demo and match snapshot 1`] = `
       class="van-loading__spinner van-loading__spinner--circular"
       style="width:24px;height:24px;"
     >
+      <!--[-->
       <svg
         class="van-loading__circular"
         viewbox="25 25 50 50"
@@ -328,6 +338,7 @@ exports[`should render demo and match snapshot 1`] = `
       class="van-loading__spinner van-loading__spinner--circular"
       style
     >
+      <!--[-->
       <!--[-->
       <i
         class="van-badge__wrapper van-icon van-icon-star-o"
