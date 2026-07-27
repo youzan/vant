@@ -58,7 +58,7 @@
     "markdown-it-anchor": "^9.2.0",
     "nano-staged": "^0.9.0",
     "picocolors": "^1.1.1",
-    "postcss": "^8.5.15",
+    "postcss": "^8.5.18",
     "postcss-load-config": "^6.0.1",
     "prettier": "^3.8.5",
     "rslog": "^2.1.3",
