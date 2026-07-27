@@ -48,7 +48,7 @@
     "enquirer": "2.4.1",
     "esbuild": "^0.28.1",
     "fast-glob": "^3.3.3",
-    "fs-extra": "^11.3.5",
+    "fs-extra": "^11.4.0",
     "hash-sum": "^2.0.0",
     "highlight.js": "^11.11.1",
     "husky": "^9.1.7",
