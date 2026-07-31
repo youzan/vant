@@ -373,6 +373,10 @@ location.href = location.href.replace('youzan.github.io', 'vant-ui.github.io');
                 title: 'TextEllipsis 文本省略',
               },
               {
+                path: 'timer',
+                title: 'Timer 计时器',
+              },
+              {
                 path: 'watermark',
                 title: 'Watermark 水印',
               },
@@ -506,6 +510,10 @@ location.href = location.href.replace('youzan.github.io', 'vant-ui.github.io');
               {
                 path: 'use-toggle',
                 title: 'useToggle',
+              },
+              {
+                path: 'use-timer',
+                title: 'useTimer',
               },
               {
                 path: 'use-window-size',
@@ -845,6 +853,10 @@ location.href = location.href.replace('youzan.github.io', 'vant-ui.github.io');
                 title: 'TextEllipsis',
               },
               {
+                path: 'timer',
+                title: 'Timer',
+              },
+              {
                 path: 'watermark',
                 title: 'Watermark',
               },
@@ -978,6 +990,10 @@ location.href = location.href.replace('youzan.github.io', 'vant-ui.github.io');
               {
                 path: 'use-toggle',
                 title: 'useToggle',
+              },
+              {
+                path: 'use-timer',
+                title: 'useTimer',
               },
               {
                 path: 'use-window-size',
