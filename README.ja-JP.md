@@ -162,14 +162,6 @@ Vant および Vant Weapp のコアコントリビューター：
 | :-: | :-: | :-: | :-: | :-: | :-: |
 | [Lindysen](https://github.com/Lindysen/) | [JakeLaoyu](https://github.com/JakeLaoyu/) | [landluck](https://github.com/landluck/) | [wjw-gavin](https://github.com/wjw-gavin/) | [inottn](https://github.com/inottn/) | [zhousg](https://github.com/zhousg/) |
 
-## 全コントリビューター
-
-Vant への貢献に感謝します：
-
-<a href="https://github.com/vant-ui/vant/graphs/contributors">
-  <img src="https://opencollective.com/vant/contributors.svg?width=890&button=false" alt="contributors">
-</a>
-
 ## コントリビューションガイド
 
 プルリクエストを作成する前に必ず [コントリビューティングガイド](./.github/CONTRIBUTING.md) をお読みください。
