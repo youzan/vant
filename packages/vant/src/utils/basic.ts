@@ -17,8 +17,7 @@ export const isObject = (val: unknown): val is Record<any, any> =>
 export const isDef = <T>(val: T): val is NonNullable<T> =>
   val !== undefined && val !== null;
 
-// eslint-disable-next-line @typescript-eslint/ban-types
-export const isFunction = (val: unknown): val is Function =>
+export const isFunction = (val: unknown): val is (...args: any[]) => any =>
   typeof val === 'function';
 
 export const isPromise = <T = any>(val: unknown): val is Promise<T> =>
@@ -48,7 +47,7 @@ export function get(object: any, path: string): any {
   let result = object;
 
   keys.forEach((key) => {
-    result = isObject(result) ? result[key] ?? '' : '';
+    result = isObject(result) ? (result[key] ?? '') : '';
   });
 
   return result;
