@@ -26,15 +26,17 @@ export default (lazyManager) =>
         default: 'img',
       },
     },
-    setup(props, { slots, expose }) {
+
+    setup(props) {
       const instance = getCurrentInstance();
+      const el = ref(null);
       const renderSrc = ref('');
-      const options = {
+      const options = reactive({
         src: '',
         error: '',
         loading: '',
         attempt: lazyManager.options.attempt,
-      };
+      });
       const state = reactive({
         loaded: false,
         error: false,
@@ -50,54 +52,42 @@ export default (lazyManager) =>
         renderSrc.value = options.loading;
       };
 
-      const lazyBox = {
-        get el() {
-          return instance.proxy.$el;
-        },
-        get $el() {
-          return instance.proxy.$el;
-        },
-        get $parent() {
-          return instance.proxy.$parent;
-        },
-        state,
-        options,
-        checkInView() {
-          const rect = useRect(instance.proxy.$el);
-          return (
-            rect.top < window.innerHeight * lazyManager.options.preLoad &&
-            rect.bottom > 0 &&
-            rect.left < window.innerWidth * lazyManager.options.preLoad &&
-            rect.right > 0
-          );
-        },
-        load(onFinish = noop) {
-          if (state.attempt > options.attempt - 1 && state.error) {
-            if (
-              process.env.NODE_ENV !== 'production' &&
-              !lazyManager.options.silent
-            ) {
-              console.log(
-                `[@vant/lazyload] ${options.src} tried too more than ${options.attempt} times`,
-              );
-            }
-            onFinish();
-            return;
+      const checkInView = () => {
+        const rect = useRect(instance.proxy.$el);
+        return (
+          rect.top < window.innerHeight * lazyManager.options.preLoad &&
+          rect.bottom > 0 &&
+          rect.left < window.innerWidth * lazyManager.options.preLoad &&
+          rect.right > 0
+        );
+      };
+
+      const load = (onFinish = noop) => {
+        if (state.attempt > options.attempt - 1 && state.error) {
+          if (
+            process.env.NODE_ENV !== 'production' &&
+            !lazyManager.options.silent
+          ) {
+            console.log(
+              `[@vant/lazyload] ${options.src} tried too more than ${options.attempt} times`,
+            );
           }
-          const { src } = options;
-          loadImageAsync(
-            { src },
-            ({ src }) => {
-              renderSrc.value = src;
-              state.loaded = true;
-            },
-            () => {
-              state.attempt++;
-              renderSrc.value = options.error;
-              state.error = true;
-            },
-          );
-        },
+          onFinish();
+          return;
+        }
+        const { src } = options;
+        loadImageAsync(
+          { src },
+          ({ src }) => {
+            renderSrc.value = src;
+            state.loaded = true;
+          },
+          () => {
+            state.attempt++;
+            renderSrc.value = options.error;
+            state.error = true;
+          },
+        );
       };
 
       init();
@@ -107,28 +97,34 @@ export default (lazyManager) =>
         () => {
           init();
           lazyManager.lazyLoadHandler();
-          if (lazyManager.observer && lazyBox.el) {
-            lazyManager.observer.observe(lazyBox.el);
+          if (lazyManager.observer && el.value) {
+            lazyManager.observer.observe(el.value);
           }
         },
       );
 
       onMounted(() => {
-        lazyManager.addLazyBox(lazyBox);
+        el.value = instance.proxy.$el;
+        lazyManager.addLazyBox(instance.proxy);
         lazyManager.lazyLoadHandler();
       });
 
       onBeforeUnmount(() => {
-        lazyManager.removeComponent(lazyBox);
+        lazyManager.removeComponent(instance.proxy);
       });
 
-      expose({
+      return {
+        el,
+        renderSrc,
         state,
         options,
-        checkInView: lazyBox.checkInView,
-        load: lazyBox.load,
-      });
+        init,
+        checkInView,
+        load,
+      };
+    },
 
-      return () => h(props.tag, { src: renderSrc.value }, slots.default?.());
+    render() {
+      return h(this.tag, { src: this.renderSrc }, this.$slots.default?.());
     },
   });

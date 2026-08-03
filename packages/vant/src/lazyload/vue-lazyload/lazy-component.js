@@ -25,62 +25,57 @@ export default (lazy) =>
 
     emits: ['show'],
 
-    setup(props, { slots, emit, expose }) {
+    setup(_, { emit }) {
       const instance = getCurrentInstance();
+      const el = ref(null);
       const show = ref(false);
       const state = reactive({
         loaded: false,
       });
 
-      const lazyBox = {
-        get el() {
-          return instance.proxy.$el;
-        },
-        get $el() {
-          return instance.proxy.$el;
-        },
-        get $parent() {
-          return instance.proxy.$parent;
-        },
-        state,
-        checkInView() {
-          const rect = useRect(instance.proxy.$el);
-          return (
-            inBrowser &&
-            rect.top < window.innerHeight * lazy.options.preLoad &&
-            rect.bottom > 0 &&
-            rect.left < window.innerWidth * lazy.options.preLoad &&
-            rect.right > 0
-          );
-        },
-        load() {
-          show.value = true;
-          state.loaded = true;
-          emit('show', instance.proxy);
-        },
-        destroy() {
-          return undefined;
-        },
+      const checkInView = () => {
+        const rect = useRect(instance.proxy.$el);
+        return (
+          inBrowser &&
+          rect.top < window.innerHeight * lazy.options.preLoad &&
+          rect.bottom > 0 &&
+          rect.left < window.innerWidth * lazy.options.preLoad &&
+          rect.right > 0
+        );
       };
 
+      const load = () => {
+        show.value = true;
+        state.loaded = true;
+        emit('show', instance.proxy);
+      };
+
+      const destroy = () => instance.proxy.$destroy;
+
       onMounted(() => {
-        lazy.addLazyBox(lazyBox);
+        el.value = instance.proxy.$el;
+        lazy.addLazyBox(instance.proxy);
         lazy.lazyLoadHandler();
       });
 
       onBeforeUnmount(() => {
-        lazy.removeComponent(lazyBox);
+        lazy.removeComponent(instance.proxy);
       });
 
-      expose({
+      return {
+        el,
         show,
         state,
-        checkInView: lazyBox.checkInView,
-        load: lazyBox.load,
-        destroy: lazyBox.destroy,
-      });
+        checkInView,
+        load,
+        destroy,
+      };
+    },
 
-      return () =>
-        h(props.tag, show.value && slots.default ? slots.default() : null);
+    render() {
+      return h(
+        this.tag,
+        this.show && this.$slots.default ? this.$slots.default() : null,
+      );
     },
   });
