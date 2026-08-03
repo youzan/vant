@@ -26,7 +26,7 @@ export default (lazyManager) =>
         default: 'img',
       },
     },
-    setup(props, { slots }) {
+    setup(props, { slots, expose }) {
       const instance = getCurrentInstance();
       const renderSrc = ref('');
       const options = {
@@ -120,6 +120,13 @@ export default (lazyManager) =>
 
       onBeforeUnmount(() => {
         lazyManager.removeComponent(lazyBox);
+      });
+
+      expose({
+        state,
+        options,
+        checkInView: lazyBox.checkInView,
+        load: lazyBox.load,
       });
 
       return () => h(props.tag, { src: renderSrc.value }, slots.default?.());

@@ -25,7 +25,7 @@ export default (lazy) =>
 
     emits: ['show'],
 
-    setup(props, { slots, emit }) {
+    setup(props, { slots, emit, expose }) {
       const instance = getCurrentInstance();
       const show = ref(false);
       const state = reactive({
@@ -70,6 +70,14 @@ export default (lazy) =>
 
       onBeforeUnmount(() => {
         lazy.removeComponent(lazyBox);
+      });
+
+      expose({
+        show,
+        state,
+        checkInView: lazyBox.checkInView,
+        load: lazyBox.load,
+        destroy: lazyBox.destroy,
       });
 
       return () =>
