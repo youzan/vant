@@ -1,0 +1,15 @@
+# Plumber overlay: inherits every control from the CLI's built-in
+# baseline, only the differences for this repo are written here.
+# Run 'plumber config resolve' to see the full effective config.
+extends: plumber:default
+version: '2.0'
+
+github:
+  controls:
+    githubActionMustComeFromAuthorizedSources:
+      # Keep the curated default list and trust the release and site
+      # deploy actions this repo already uses on top of it.
+      includePlumberDefaults: true
+      trustedGithubActions:
+        - JamesIves/github-pages-deploy-action
+        - ncipollo/release-action
