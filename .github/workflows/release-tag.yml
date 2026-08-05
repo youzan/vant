@@ -5,10 +5,16 @@ on:
     tags:
       - 'v*' # Push events to matching v*, i.e. v1.0, v20.15.10
 
+permissions:
+  contents: read
+
 jobs:
   build:
     name: Create Release
     runs-on: ubuntu-latest
+    permissions:
+      # Create the GitHub release and generate its notes.
+      contents: write
     steps:
       - name: Checkout code
         uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6.1.0
