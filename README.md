@@ -10,6 +10,7 @@
     <img src="https://img.shields.io/npm/v/vant?style=flat-square" alt="npm version" />
     <img src="https://img.shields.io/codecov/c/github/youzan/vant/main.svg?style=flat-square&color=#4fc08d" alt="Coverage Status" />
     <img src="https://img.shields.io/npm/dm/vant.svg?style=flat-square&color=#4fc08d" alt="downloads" />
+    <a href="https://score.getplumber.io/github.com/youzan/vant"><img src="https://score.getplumber.io/github.com/youzan/vant.svg" alt="plumber score" /></a>
 </p>
 
 <p align="center">
