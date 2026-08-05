@@ -6,12 +6,17 @@ on:
       - opened
       - edited
 
+permissions:
+  # Read .github/pr-labeler.yml and apply labels to the pull request.
+  contents: read
+  pull-requests: write
+
 jobs:
   change-labeling:
     name: Labeling for changes
     runs-on: ubuntu-latest
     steps:
-      - uses: github/issue-labeler@v3.4
+      - uses: github/issue-labeler@c1b0f9f52a63158c4adc09425e858e87b32e9685 # v3.4
         with:
           repo-token: "${{ secrets.GITHUB_TOKEN }}"
           configuration-path: .github/pr-labeler.yml
