@@ -147,6 +147,7 @@ export type ConfigProviderThemeVars = BaseThemeVars &
   import('../tabbar-item').TabbarItemThemeVars &
   import('../tabs').TabsThemeVars &
   import('../tag').TagThemeVars &
+  import('../timer').TimerThemeVars &
   import('../toast').ToastThemeVars &
   import('../tree-select').TreeSelectThemeVars &
   import('../uploader').UploaderThemeVars &
