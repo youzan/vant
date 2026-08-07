@@ -227,3 +227,44 @@ test('should be displayed correctly when modelValue updated by external sources'
       .selectedValues,
   ).toEqual(['2024', '01']);
 });
+
+test('should sort options correctly when using sort prop', async () => {
+  const sort = (type: string, options: any[]) => {
+    if (type === 'year') {
+      return options.reverse();
+    }
+    return options;
+  };
+
+  const wrapper = mount(DatePicker, {
+    props: {
+      modelValue: ['2023', '01', '01'],
+      minDate: new Date(2020, 0, 1),
+      maxDate: new Date(2025, 0, 1),
+      sort,
+    },
+  });
+
+  await later();
+
+  // Check if years are sorted in descending order
+  const yearColumn = wrapper.find('.van-picker-column');
+  const yearItems = yearColumn.findAll('.van-picker-column__item');
+  expect(yearItems[0].text()).toEqual('2025');
+  expect(yearItems[1].text()).toEqual('2024');
+  expect(yearItems[2].text()).toEqual('2023');
+  expect(yearItems[3].text()).toEqual('2022');
+  expect(yearItems[4].text()).toEqual('2021');
+  expect(yearItems[5].text()).toEqual('2020');
+
+  // Check if the selected value is correct
+  const selectedItems = wrapper.findAll('.van-picker-column__item--selected');
+  expect(selectedItems[0].text()).toEqual('2023');
+
+  // Confirm the value
+  await wrapper.find('.van-picker__confirm').trigger('click');
+  expect(
+    wrapper.emitted<[PickerConfirmEventParams]>('confirm')![0][0]
+      .selectedValues,
+  ).toEqual(['2023', '01', '01']);
+});
