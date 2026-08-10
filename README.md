@@ -22,6 +22,10 @@
   ·
   &nbsp;
   <a href="./README.zh-CN.md">中文介绍</a>
+  &nbsp;
+  ·
+  &nbsp;
+  <a href="./README.ja-JP.md">日本語</a>
 </p>
 
 ---
@@ -157,14 +161,6 @@ Core contributors of Vant and Vant Weapp:
 | [![Lindysen](https://avatars.githubusercontent.com/u/33708359?s=80&v=4)](https://github.com/Lindysen/) | [![JakeLaoyu](https://avatars.githubusercontent.com/u/16181940?s=80&v=4)](https://github.com/JakeLaoyu/) | [![landluck](https://avatars.githubusercontent.com/u/27060081?s=80&v=4)](https://github.com/landluck/) | [![wjw-gavin](https://avatars.githubusercontent.com/u/19986739?s=80&v=4)](https://github.com/wjw-gavin/) | [![inottn](https://avatars.githubusercontent.com/u/18509404?s=80&v=4)](https://github.com/inottn/) | [![zhousg](https://avatars.githubusercontent.com/u/15833290?s=80&v=4)](https://github.com/zhousg/) |
 | :-: | :-: | :-: | :-: | :-: | :-: |
 | [Lindysen](https://github.com/Lindysen/) | [JakeLaoyu](https://github.com/JakeLaoyu/) | [landluck](https://github.com/landluck/) | [wjw-gavin](https://github.com/wjw-gavin/) | [inottn](https://github.com/inottn/) | [zhousg](https://github.com/zhousg/) |
-
-## All Contributors
-
-Thanks to the following friends for their contributions to Vant:
-
-<a href="https://github.com/vant-ui/vant/graphs/contributors">
-  <img src="https://opencollective.com/vant/contributors.svg?width=890&button=false" alt="contributors">
-</a>
 
 ## Contribution Guide
 

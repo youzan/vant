@@ -163,14 +163,6 @@ Vant 3/4 支持现代浏览器以及 Chrome >= 51、iOS >= 10.0（与 Vue 3 一�
 | :-: | :-: | :-: | :-: | :-: | :-: |
 | [Lindysen](https://github.com/Lindysen/) | [JakeLaoyu](https://github.com/JakeLaoyu/) | [landluck](https://github.com/landluck/) | [wjw-gavin](https://github.com/wjw-gavin/) | [inottn](https://github.com/inottn/) | [zhousg](https://github.com/zhousg/) |
 
-## 贡献者们
-
-感谢以下小伙伴们为 Vant 发展做出的贡献：
-
-<a href="https://github.com/vant-ui/vant/graphs/contributors">
-  <img src="https://opencollective.com/vant/contributors.svg?width=890&button=false" alt="contributors">
-</a>
-
 ## 贡献指南
 
 修改代码请阅读我们的 [贡献指南](https://vant-ui.github.io/vant/#/zh-CN/contribution)。
