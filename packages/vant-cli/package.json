@@ -50,7 +50,7 @@
     "fast-glob": "^3.3.3",
     "fs-extra": "^11.4.0",
     "hash-sum": "^2.0.0",
-    "highlight.js": "^11.11.1",
+    "highlight.js": "^11.12.0",
     "husky": "^9.1.7",
     "less": "^4.8.1",
     "lodash": "^4.18.1",
