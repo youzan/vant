@@ -146,22 +146,37 @@ export default {
 
 ### Viewport 布局
 
-Vant 默认使用 `px` 作为样式单位，如果需要使用 `viewport` 单位 (vw, vh, vmin, vmax)，推荐使用 [postcss-px-to-viewport](https://github.com/evrone/postcss-px-to-viewport) 进行转换。
+Vant 默认使用 `px` 作为样式单位，如果需要使用 `viewport` 单位 (vw, vh, vmin, vmax)，推荐使用 [postcss-mobile-forever](https://github.com/wswmsword/postcss-mobile-forever) 进行转换。
 
-[postcss-px-to-viewport](https://github.com/evrone/postcss-px-to-viewport) 是一款 PostCSS 插件，用于将 px 单位转化为 vw/vh 单位。
+[postcss-mobile-forever](https://github.com/wswmsword/postcss-mobile-forever) 是一款基于 PostCSS 8 的插件，用于将 `px` 单位转化为 `vw`/`vh` 单位，支持 `include`/`exclude` 文件匹配，以及按文件动态配置设计稿宽度。
 
-#### PostCSS PostCSS 示例配置
+#### 安装
+
+```bash
+npm i postcss-mobile-forever -D
+```
+
+#### PostCSS 示例配置
 
 下面提供了一份基本的 PostCSS 示例配置，可以在此配置的基础上根据项目需求进行修改。
 
 ```js
 // postcss.config.js
 module.exports = {
-  plugins: {
-    'postcss-px-to-viewport': {
-      viewportWidth: 375,
-    },
-  },
+  plugins: [require('postcss-mobile-forever')({ viewportWidth: 375 })],
+};
+```
+
+如果设计稿的尺寸不是 375，而是 750 或其他大小，可以通过 `viewportWidth` 函数按文件动态配置。下面的示例将 Vant 组件（375px 设计稿）与业务代码（750px 设计稿）分开处理：
+
+```js
+// postcss.config.js
+module.exports = {
+  plugins: [
+    require('postcss-mobile-forever')({
+      viewportWidth: (file) => (file.includes('vant') ? 375 : 750),
+    }),
+  ],
 };
 ```
 
