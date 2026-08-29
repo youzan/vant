@@ -89,7 +89,15 @@ export default {
 
 ### Viewport Units
 
-Vant uses `px` unit by default，you can use tools such as [postcss--px-to-viewport](https://github.com/evrone/postcss-px-to-viewport) to transform `px` unit to viewport units (vw, vh, vmin, vmax).
+Vant uses `px` unit by default, you can use [postcss-mobile-forever](https://github.com/wswmsword/postcss-mobile-forever) to transform `px` unit to viewport units (vw, vh, vmin, vmax).
+
+[postcss-mobile-forever](https://github.com/wswmsword/postcss-mobile-forever) is a PostCSS 8 based plugin that transforms `px` units to `vw`/`vh` units. It supports `include`/`exclude` file matching and per-file dynamic `viewportWidth`.
+
+#### Install
+
+```bash
+npm i postcss-mobile-forever -D
+```
 
 #### PostCSS Config
 
@@ -98,11 +106,20 @@ PostCSS config example:
 ```js
 // postcss.config.js
 module.exports = {
-  plugins: {
-    'postcss-px-to-viewport': {
-      viewportWidth: 375,
-    },
-  },
+  plugins: [require('postcss-mobile-forever')({ viewportWidth: 375 })],
+};
+```
+
+If the design width is not 375, use the `viewportWidth` function to configure it per file. The following example handles Vant components (375px design) and business code (750px design) separately:
+
+```js
+// postcss.config.js
+module.exports = {
+  plugins: [
+    require('postcss-mobile-forever')({
+      viewportWidth: (file) => (file.includes('vant') ? 375 : 750),
+    }),
+  ],
 };
 ```
 
