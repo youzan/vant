@@ -9,8 +9,8 @@ importers:
   .:
     devDependencies:
       '@rslint/core':
-        specifier: ^0.7.2
-        version: 0.7.2
+        specifier: ^0.8.2
+        version: 0.8.2
       '@vant/cli':
         specifier: workspace:*
         version: link:packages/vant-cli
@@ -1323,56 +1323,56 @@ packages:
       typescript:
         optional: true
 
-  '@rslint/core@0.7.2':
-    resolution: {integrity: sha512-jzSu6fMEWnuNEIZZk016z5Zk1AHYhNdfsCkvVvYfcduGyEAOo4QZDx+eXJ8R2bJqunAXLJPMx3JykXTjxyGjlQ==}
+  '@rslint/core@0.8.2':
+    resolution: {integrity: sha512-O7c9hg5Soo1MOta0Aj+3Td2Bjd6ZZUV+lLPWJvVRNqaZEzl2FKmkS9xuT9o4jHXTXhTvlxGuyyaJUUlEpW57Cw==}
     hasBin: true
     peerDependencies:
-      jiti: ^2.0.0
+      jiti: ^2.7.0
     peerDependenciesMeta:
       jiti:
         optional: true
 
-  '@rslint/native-darwin-arm64@0.7.2':
-    resolution: {integrity: sha512-Q7Nx26S7O1zlELKNIyi3+ZBn6s+ZrGFmyMkqWT2UsXsq9jW3sUGJG44/BcvAFXtFYg7ONUl7LDYakz/VP7DzXQ==}
+  '@rslint/native-darwin-arm64@0.8.2':
+    resolution: {integrity: sha512-SdGy7Mh8a53VQiMbQQ+pvtaivwUCeBdYP0QeORZfUWqcqqaTdfTQnaCm/7BG9NRIjAwSZcwooJnklZwqky2gGA==}
     cpu: [arm64]
     os: [darwin]
 
-  '@rslint/native-darwin-x64@0.7.2':
-    resolution: {integrity: sha512-ONbEKiPd/StrV+/enPMJz60/+oJCiuVK9cbMpymWjAv1qDNCiuTNIqb5RUc4OHxWy7QZ9LWbVw4X/5XcJf0ebQ==}
+  '@rslint/native-darwin-x64@0.8.2':
+    resolution: {integrity: sha512-Yp8+zNxhkO92QpNFTcJLYPU/Q02QC0GIR9BRn2DdMHtVattFctZKXujWprLFNafh7Di/5fitebNKeqck2+pxoQ==}
     cpu: [x64]
     os: [darwin]
 
-  '@rslint/native-linux-arm64-gnu@0.7.2':
-    resolution: {integrity: sha512-06C0QJF6gJ/VkLPBw6+SauH91PnUM83Kd7tBIqU5QP11q3iIK+aPFGMbSrKsKu6/+yVig424Z4nSxcQ2MzCmag==}
+  '@rslint/native-linux-arm64-gnu@0.8.2':
+    resolution: {integrity: sha512-LUp+w/bDgyyEpuDDp8fO18JsdyZndF5pRSeOnxPs1Ms6cUI3JRUJ/al7RMUQEzfMuNHPSrmEnFZW1nAjLOubdA==}
     cpu: [arm64]
     os: [linux]
     libc: [glibc]
 
-  '@rslint/native-linux-arm64-musl@0.7.2':
-    resolution: {integrity: sha512-KpgwL3sgRVNx3LciBcfmRxxIymuQKBo3vinEewHWdll+WkRlS08Ow1XhSu2YIrenOYQ5cKSD26PW57AUE8s2zA==}
+  '@rslint/native-linux-arm64-musl@0.8.2':
+    resolution: {integrity: sha512-dDPAy1+EsXT6kKVy2qgzCJSBCZ+ry2LVLbo5eLX1kueTB6uGQATnKVKhS0SiSkdqC9clxiviBRs/XBivbc4uVQ==}
     cpu: [arm64]
     os: [linux]
     libc: [musl]
 
-  '@rslint/native-linux-x64-gnu@0.7.2':
-    resolution: {integrity: sha512-TOTVGJvFW2uxMthV3g05HNik0BWUE8gabZp5mYiDF4dc+yFihqWw1kRO//4hZyd4m0CPkRpsBL89UCwAX6lBzA==}
+  '@rslint/native-linux-x64-gnu@0.8.2':
+    resolution: {integrity: sha512-n5TOiNTQGpfAjw7LScEdxYv41CaNpF2ff/6GVUuUBlA/GJr3pWApZUR3lP+RQmM/Ov2i+2Yfn2KrP+fIT1we5A==}
     cpu: [x64]
     os: [linux]
     libc: [glibc]
 
-  '@rslint/native-linux-x64-musl@0.7.2':
-    resolution: {integrity: sha512-rn4g1i8VVZeVnc/Qa1IJVvX0e4XQncB144CTwHeFnC2V8aMBL6kmfvBox2mL59nPRTlILf4GAMOMlD3tSD5N5Q==}
+  '@rslint/native-linux-x64-musl@0.8.2':
+    resolution: {integrity: sha512-kP1uGWoHgtJuRcfMRqbu22tpMNkH2MIDQfQFu0O37PZQYh9uc0/yQzS6c5ILPKqr0PnBu4uljHa+I6a34kZ+Mw==}
     cpu: [x64]
     os: [linux]
     libc: [musl]
 
-  '@rslint/native-win32-arm64-msvc@0.7.2':
-    resolution: {integrity: sha512-j2kdE1+3TdXhjtmu+b9lWJThSaT3SZKcMa5dlEy20+bDwTCBmuhO6lR79/4BllXz8/avP8W0YmkfORitoVPxrA==}
+  '@rslint/native-win32-arm64-msvc@0.8.2':
+    resolution: {integrity: sha512-FYeEm0xa/vmgEHduoDrHj4k4oRBuX8xCS3JNgJALuqwUqPsh9h/pLmV+11M4X3aoiMWvqADfG4mZ0hbf79uzSQ==}
     cpu: [arm64]
     os: [win32]
 
-  '@rslint/native-win32-x64-msvc@0.7.2':
-    resolution: {integrity: sha512-qOXNWTn4Q9gf6/GCmJlJt5heVD+WIdbVSLRb2KbJLt055ZuVQV40Md8NkUSWF94j/J9+1d21/UoOvKDNt144fg==}
+  '@rslint/native-win32-x64-msvc@0.8.2':
+    resolution: {integrity: sha512-AyJTA/pMW7o1fXZ8oS6xwrQ89BdQwAuwCgVUB3tRUHYFNqbmjjjQAEqXz9xKSKbZlaENSRuDDptu0gq5VWPGmQ==}
     cpu: [x64]
     os: [win32]
 
@@ -2536,6 +2536,10 @@ packages:
 
   picomatch@4.0.4:
     resolution: {integrity: sha512-QP88BAKvMam/3NxH6vj2o21R6MjxZUAd6nlwAS/pnGvN9IVLocLHxGYIzFhg6fUQ+5th6P4dv4eW9jX3DSIj7A==}
+    engines: {node: '>=12'}
+
+  picomatch@4.0.7:
+    resolution: {integrity: sha512-qcJu88Q2IWqJsDD529JKMdwGm/dvInW4HvQnRwiH9JtihJvzGOscDtHE3x1pBKeUOTysQ8kVmLnJ2kJu7yhcGA==}
     engines: {node: '>=12'}
 
   pkg-types@1.3.1:
@@ -4003,41 +4007,41 @@ snapshots:
       - '@typescript/native-preview'
       - core-js
 
-  '@rslint/core@0.7.2':
+  '@rslint/core@0.8.2':
     dependencies:
-      picomatch: 4.0.4
+      picomatch: 4.0.7
     optionalDependencies:
-      '@rslint/native-darwin-arm64': 0.7.2
-      '@rslint/native-darwin-x64': 0.7.2
-      '@rslint/native-linux-arm64-gnu': 0.7.2
-      '@rslint/native-linux-arm64-musl': 0.7.2
-      '@rslint/native-linux-x64-gnu': 0.7.2
-      '@rslint/native-linux-x64-musl': 0.7.2
-      '@rslint/native-win32-arm64-msvc': 0.7.2
-      '@rslint/native-win32-x64-msvc': 0.7.2
+      '@rslint/native-darwin-arm64': 0.8.2
+      '@rslint/native-darwin-x64': 0.8.2
+      '@rslint/native-linux-arm64-gnu': 0.8.2
+      '@rslint/native-linux-arm64-musl': 0.8.2
+      '@rslint/native-linux-x64-gnu': 0.8.2
+      '@rslint/native-linux-x64-musl': 0.8.2
+      '@rslint/native-win32-arm64-msvc': 0.8.2
+      '@rslint/native-win32-x64-msvc': 0.8.2
 
-  '@rslint/native-darwin-arm64@0.7.2':
+  '@rslint/native-darwin-arm64@0.8.2':
     optional: true
 
-  '@rslint/native-darwin-x64@0.7.2':
+  '@rslint/native-darwin-x64@0.8.2':
     optional: true
 
-  '@rslint/native-linux-arm64-gnu@0.7.2':
+  '@rslint/native-linux-arm64-gnu@0.8.2':
     optional: true
 
-  '@rslint/native-linux-arm64-musl@0.7.2':
+  '@rslint/native-linux-arm64-musl@0.8.2':
     optional: true
 
-  '@rslint/native-linux-x64-gnu@0.7.2':
+  '@rslint/native-linux-x64-gnu@0.8.2':
     optional: true
 
-  '@rslint/native-linux-x64-musl@0.7.2':
+  '@rslint/native-linux-x64-musl@0.8.2':
     optional: true
 
-  '@rslint/native-win32-arm64-msvc@0.7.2':
+  '@rslint/native-win32-arm64-msvc@0.8.2':
     optional: true
 
-  '@rslint/native-win32-x64-msvc@0.7.2':
+  '@rslint/native-win32-x64-msvc@0.8.2':
     optional: true
 
   '@rspack/binding-darwin-arm64@2.1.2':
@@ -5253,6 +5257,8 @@ snapshots:
   picomatch@2.3.1: {}
 
   picomatch@4.0.4: {}
+
+  picomatch@4.0.7: {}
 
   pkg-types@1.3.1:
     dependencies:
