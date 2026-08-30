@@ -11,12 +11,6 @@ importers:
       '@vant/cli':
         specifier: workspace:*
         version: link:packages/vant-cli
-      husky:
-        specifier: ^9.1.7
-        version: 9.1.7
-      nano-staged:
-        specifier: ^0.9.0
-        version: 0.9.0
       rstack:
         specifier: ^0.6.5
         version: 0.6.5(jsdom@25.0.1)(typescript@5.9.3)
