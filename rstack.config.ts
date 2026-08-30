@@ -1,3 +1,4 @@
+// Configuration guide: https://rstack.rs/config
 import { define } from 'rstack';
 
 define.lint(({ js, ts }) => [
@@ -24,4 +25,10 @@ define.lint(({ js, ts }) => [
 define.fmt({
   singleQuote: true,
   proseWrap: 'never',
+});
+
+define.staged({
+  '*.md': 'rs fmt',
+  '*.{ts,tsx,js,vue,less}': 'rs fmt',
+  '*.{ts,tsx,js,mjs,cjs}': 'rs lint --fix',
 });
