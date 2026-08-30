@@ -3,7 +3,7 @@
   "scripts": {
     "prepare": "husky",
     "dev": "pnpm --dir ./packages/vant dev",
-    "lint": "rslint",
+    "lint": "rs lint",
     "test": "pnpm --dir ./packages/vant test",
     "test:watch": "pnpm --dir ./packages/vant test:watch",
     "test:update": "pnpm --dir ./packages/vant test:update",
@@ -12,20 +12,19 @@
     "build:site": "pnpm --dir ./packages/vant build:site"
   },
   "nano-staged": {
-    "*.md": "prettier --write",
-    "*.{ts,tsx,js,vue,less}": "prettier --write",
-    "*.{ts,tsx,js,mjs,cjs}": "rslint --fix"
+    "*.md": "rs fmt",
+    "*.{ts,tsx,js,vue,less}": "rs fmt",
+    "*.{ts,tsx,js,mjs,cjs}": "rs lint --fix"
   },
   "engines": {
     "pnpm": ">= 10.33.2"
   },
   "packageManager": "pnpm@10.33.2",
   "devDependencies": {
-    "@rslint/core": "^0.8.2",
     "@vant/cli": "workspace:*",
     "husky": "^9.1.7",
     "nano-staged": "^0.9.0",
-    "prettier": "^3.9.6"
+    "rstack": "^0.6.5"
   },
   "overrides": {
     "esbuild": "^0.28.2"
