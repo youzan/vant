@@ -1,6 +1,6 @@
-import { defineConfig, js, ts } from '@rslint/core';
+import { define } from 'rstack';
 
-export default defineConfig([
+define.lint(({ js, ts }) => [
   js.configs.recommended,
   ts.configs.recommended,
   {
@@ -20,3 +20,8 @@ export default defineConfig([
     },
   },
 ]);
+
+define.fmt({
+  singleQuote: true,
+  proseWrap: 'never',
+});

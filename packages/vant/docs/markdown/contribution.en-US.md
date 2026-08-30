@@ -81,8 +81,8 @@ src
 
 When writing code, please note:
 
-- Make sure the code can pass the repository's Rslint check.
-- Make sure the code format is standardized, use prettier for code formatting.
+- Make sure the code can pass the repository's lint check (`pnpm lint`).
+- Format the code with Rstack CLI (`pnpm exec rs fmt`).
 - Make sure you don't use incompatible APIs like `async`, `await`.
 
 ## Submitting a Pull Request
