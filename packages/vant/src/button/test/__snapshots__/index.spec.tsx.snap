@@ -12,6 +12,41 @@ exports[`should change icon class prefix when using icon-prefix prop 1`] = `
 </button>
 `;
 
+exports[`should render button group correctly 1`] = `
+<div class="van-button-group">
+  <button
+    type="button"
+    class="van-button van-button--primary van-button--normal"
+  >
+    <div class="van-button__content">
+      <span class="van-button__text">
+        Button 1
+      </span>
+    </div>
+  </button>
+  <button
+    type="button"
+    class="van-button van-button--primary van-button--normal"
+  >
+    <div class="van-button__content">
+      <span class="van-button__text">
+        Button 2
+      </span>
+    </div>
+  </button>
+  <button
+    type="button"
+    class="van-button van-button--primary van-button--normal"
+  >
+    <div class="van-button__content">
+      <span class="van-button__text">
+        Button 3
+      </span>
+    </div>
+  </button>
+</div>
+`;
+
 exports[`should render icon in the right side when setting icon-position to right 1`] = `
 <button
   type="button"
