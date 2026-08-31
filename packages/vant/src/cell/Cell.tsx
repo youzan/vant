@@ -146,7 +146,11 @@ export default defineComponent({
 
     return () => {
       const { tag, size, center, border, isLink, required } = props;
-      const clickable = props.clickable ?? isLink;
+      // `to` / `url` props imply clickable behavior (same as before v4.10.0),
+      // so Cells with a route target keep working without an explicit `clickable` prop.
+      const clickable = Boolean(
+        props.clickable ?? props.to ?? props.url ?? isLink,
+      );
 
       const classes: Record<string, boolean | undefined> = {
         center,

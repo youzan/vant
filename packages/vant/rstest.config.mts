@@ -45,7 +45,10 @@ export default defineConfig({
     {
       extends: commonConfig,
       name: 'client',
-      testEnvironment: 'jsdom',
+      testEnvironment: {
+        name: 'jsdom',
+        prebundle: 'auto',
+      },
       include: ['src/**/*.spec.[jt]s?(x)'],
       exclude: ['src/**/*/ssr.spec.[jt]s?(x)', 'src/**/*/*-ssr.spec.[jt]s?(x)'],
     },

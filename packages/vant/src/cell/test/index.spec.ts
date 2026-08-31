@@ -107,6 +107,27 @@ test('should not render as button when clickable is false with is-link prop', ()
   expect(root.attributes('tabindex')).toBeFalsy();
 });
 
+test('should be clickable when only to prop is set (regression #13868)', () => {
+  const wrapper = mount(Cell, {
+    props: {
+      to: '/foo',
+    },
+  });
+  expect(wrapper.classes()).toContain('van-cell--clickable');
+  const root = wrapper.find('.van-cell');
+  expect(root.attributes('role')).toEqual('button');
+  expect(root.attributes('tabindex')).toEqual('0');
+});
+
+test('should be clickable when only url prop is set (regression #13868)', () => {
+  const wrapper = mount(Cell, {
+    props: {
+      url: 'https://example.com',
+    },
+  });
+  expect(wrapper.classes()).toContain('van-cell--clickable');
+});
+
 test('should render tag prop correctly', () => {
   const wrapper = mount(Cell, {
     props: {
