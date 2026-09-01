@@ -3,6 +3,7 @@ export * from './useRect';
 export * from './useToggle';
 export * from './useRelation';
 export * from './useCountDown';
+export * from './useTimer';
 export * from './useClickAway';
 export * from './useWindowSize';
 export * from './useScrollParent';
