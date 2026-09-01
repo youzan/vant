@@ -1,21 +1,21 @@
-import { nextTick, defineComponent, type ExtractPropTypes } from 'vue';
+import { defineComponent, nextTick, type ExtractPropTypes } from 'vue';
 
 // Utils
 import {
-  pick,
+  createNamespace,
   extend,
-  truthProp,
+  HAPTICS_FEEDBACK,
   makeArrayProp,
   makeStringProp,
-  createNamespace,
-  HAPTICS_FEEDBACK,
+  pick,
+  truthProp,
 } from '../utils';
 
 // Components
 import { Icon } from '../icon';
-import { Popup } from '../popup';
 import { Loading } from '../loading';
-import { popupSharedProps, popupSharedPropKeys } from '../popup/shared';
+import { Popup, PopupEmitsProps } from '../popup';
+import { popupSharedPropKeys, popupSharedProps } from '../popup/shared';
 
 const [name, bem] = createNamespace('action-sheet');
 
@@ -59,7 +59,7 @@ export default defineComponent({
 
   emits: ['select', 'cancel', 'update:show'],
 
-  setup(props, { slots, emit }) {
+  setup(props: ActionSheetProps & PopupEmitsProps, { emit, slots }) {
     const updateShow = (show: boolean) => emit('update:show', show);
 
     const onCancel = () => {
