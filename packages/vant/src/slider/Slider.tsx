@@ -129,8 +129,18 @@ export default defineComponent({
       const step = +props.step;
 
       value = clamp(value, min, max);
+
       const diff = Math.round((value - min) / step) * step;
-      return addNumber(min, diff);
+      const steppedValue = addNumber(min, diff);
+
+      if (steppedValue > max) {
+        const prevSteppedValue = addNumber(min, diff - step);
+        const distanceToMax = Math.abs(value - max);
+        const distanceToPrev = Math.abs(value - prevSteppedValue);
+
+        return distanceToMax <= distanceToPrev ? max : prevSteppedValue;
+      }
+      return steppedValue;
     };
 
     const updateStartValue = () => {
