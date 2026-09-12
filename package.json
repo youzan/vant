@@ -17,7 +17,7 @@
   "packageManager": "pnpm@10.33.2",
   "devDependencies": {
     "@vant/cli": "workspace:*",
-    "rstack": "^0.7.3"
+    "rstack": "^0.7.4"
   },
   "overrides": {
     "esbuild": "^0.28.2"
