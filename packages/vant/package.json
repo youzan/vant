@@ -63,7 +63,7 @@
     "@vant/cli": "workspace:*",
     "@vant/icons": "workspace:*",
     "@vue/runtime-core": "^3.5.42",
-    "@vue/test-utils": "^2.4.11",
+    "@vue/test-utils": "^2.5.0",
     "csstype": "^3.2.3",
     "diffable-html": "^6.0.1",
     "jsdom": "^25.0.1",
