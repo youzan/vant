@@ -1,0 +1,81 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`should limit avatars when maxCount is set 1`] = `
+<div class="van-avatar-group van-avatar-group__left-up">
+  <div
+    class="van-avatar-group__item"
+    style="z-index: 1;"
+  >
+    <div class="van-avatar van-avatar--round">
+      <img
+        src="avatar1.jpg"
+        class="van-avatar__img"
+      >
+    </div>
+  </div>
+  <div
+    class="van-avatar-group__item"
+    style="z-index: 2;"
+  >
+    <div class="van-avatar van-avatar--round">
+      <img
+        src="avatar2.jpg"
+        class="van-avatar__img"
+      >
+    </div>
+  </div>
+  <div
+    class="van-avatar-group__item"
+    style="z-index: 3;"
+  >
+    <div class="van-avatar van-avatar--round van-avatar-group__collapse">
+      <span class="van-avatar__text">
+        +2
+      </span>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`should render avatar group correctly 1`] = `
+<div class="van-avatar-group van-avatar-group__left-up">
+  <div
+    class="van-avatar-group__item"
+    style="z-index: 1;"
+  >
+    <div class="van-avatar van-avatar--round">
+      <img
+        src="avatar1.jpg"
+        class="van-avatar__img"
+      >
+    </div>
+  </div>
+  <div
+    class="van-avatar-group__item"
+    style="z-index: 2;"
+  >
+    <div class="van-avatar van-avatar--round">
+      <img
+        src="avatar2.jpg"
+        class="van-avatar__img"
+      >
+    </div>
+  </div>
+  <div
+    class="van-avatar-group__item"
+    style="z-index: 3;"
+  >
+    <div class="van-avatar van-avatar--round">
+      <img
+        src="avatar3.jpg"
+        class="van-avatar__img"
+      >
+    </div>
+  </div>
+</div>
+`;
+
+exports[`should render empty group when no children provided 1`] = `
+<div class="van-avatar-group van-avatar-group__left-up">
+</div>
+`;

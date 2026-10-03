@@ -1,0 +1,32 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`should render default slot when no props provided 1`] = `
+<div class="van-avatar van-avatar--round">
+  Custom Content
+</div>
+`;
+
+exports[`should render icon avatar correctly 1`] = `
+<div class="van-avatar van-avatar--round">
+  <i class="van-avatar__icon van-icon van-icon-user-o">
+  </i>
+</div>
+`;
+
+exports[`should render image avatar correctly 1`] = `
+<div class="van-avatar van-avatar--round">
+  <img
+    src="https://example.com/avatar.jpg"
+    alt="User Avatar"
+    class="van-avatar__img"
+  >
+</div>
+`;
+
+exports[`should render text avatar correctly when no src provided 1`] = `
+<div class="van-avatar van-avatar--round">
+  <span class="van-avatar__text">
+    AB
+  </span>
+</div>
+`;
