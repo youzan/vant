@@ -425,11 +425,6 @@ export default defineComponent({
       state.focused = true;
       emit('focus', event);
       nextTick(adjustTextareaSize);
-
-      // readonly not work in legacy mobile safari
-      if (getProp('readonly')) {
-        blur();
-      }
     };
 
     const onBlur = (event: Event) => {
@@ -543,12 +538,22 @@ export default defineComponent({
         onCompositionstart: startComposing,
       };
 
+      const resolvedInputmode = computed(() => {
+        const readonly = getProp('readonly');
+        // readonly not work in legacy mobile safari
+        // Use inputmode:none to restrict the soft keyboard from popping up.
+        return props.inputmode ?? (readonly ? 'none' : undefined);
+      });
+
       if (props.type === 'textarea') {
-        return <textarea {...inputAttrs} inputmode={props.inputmode} />;
+        return <textarea {...inputAttrs} inputmode={resolvedInputmode.value} />;
       }
 
       return (
-        <input {...mapInputType(props.type, props.inputmode)} {...inputAttrs} />
+        <input
+          {...mapInputType(props.type, resolvedInputmode.value)}
+          {...inputAttrs}
+        />
       );
     };
 
