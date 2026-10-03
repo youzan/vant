@@ -46,6 +46,7 @@ export const pullRefreshProps = {
   pullDistance: numericProp,
   successDuration: makeNumericProp(500),
   animationDuration: makeNumericProp(300),
+  maxPullDistance: numericProp,
 };
 
 export type PullRefreshProps = ExtractPropTypes<typeof pullRefreshProps>;
@@ -87,6 +88,15 @@ export default defineComponent({
 
     const ease = (distance: number) => {
       const pullDistance = +(props.pullDistance || props.headHeight);
+
+      if (props.maxPullDistance) {
+        const maxDistance = +props.maxPullDistance;
+        const ratio = distance / maxDistance;
+        if (ratio > 0.618) {
+          const dampingFactor = 1 - Math.pow(ratio - 0.618, 2) * 2.5;
+          distance *= dampingFactor;
+        }
+      }
 
       if (distance > pullDistance) {
         if (distance < pullDistance * 2) {
@@ -184,8 +194,15 @@ export default defineComponent({
         touch.move(event);
 
         if (reachTop && deltaY.value >= 0 && touch.isVertical()) {
-          preventDefault(event);
-          setStatus(ease(deltaY.value));
+          const maxPullDistance = +(props.maxPullDistance || Infinity);
+
+          if (deltaY.value > maxPullDistance) {
+            setStatus(0);
+            // to enable default scroll behavior in this case
+          } else {
+            preventDefault(event);
+            setStatus(ease(deltaY.value));
+          }
         }
       }
     };
@@ -193,6 +210,12 @@ export default defineComponent({
     const onTouchEnd = () => {
       if (reachTop && touch.deltaY.value && isTouchable()) {
         state.duration = +props.animationDuration;
+
+        const maxPullDistance = +(props.maxPullDistance || Infinity);
+        if (touch.deltaY.value > maxPullDistance) {
+          setStatus(0);
+          return;
+        }
 
         if (state.status === 'loosing') {
           setStatus(+props.headHeight, true);
