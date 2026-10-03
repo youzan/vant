@@ -168,6 +168,39 @@ export default {
 };
 ```
 
+### 排序选项
+
+通过传入 `sort` 函数，可以对选项数组进行排序，实现自定义排序规则，例如倒序排列。
+
+```html
+<van-date-picker
+  v-model="currentDate"
+  title="选择日期（倒序）"
+  :min-date="minDate"
+  :max-date="maxDate"
+  :sort="sort"
+/>
+```
+
+```js
+import { ref } from 'vue';
+export default {
+  setup() {
+    const currentDate = ref(['2021', '01', '01']);
+    const sort = (type, options) => {
+      if (type === 'year') return options.reverse();
+      return options;
+    };
+    return {
+      currentDate,
+      sort,
+      minDate: new Date(2020, 0, 1),
+      maxDate: new Date(2025, 5, 1),
+    };
+  },
+};
+```
+
 ## API
 
 ### Props
@@ -186,6 +219,7 @@ export default {
 | readonly | 是否为只读状态，只读状态下无法切换选项 | _boolean_ | `false` |
 | filter | 选项过滤函数 | _(type: string, options: PickerOption[], values: string[]) => PickerOption[]_ | - |
 | formatter | 选项格式化函数 | _(type: string, option: PickerOption) => PickerOption_ | - |
+| sort | 选项排序函数 | _(type: string, options: PickerOption[], values: string[]) => PickerOption[]_ | - |
 | option-height | 选项高度，支持 `px` `vw` `vh` `rem` 单位，默认 `px` | _number \| string_ | `44` |
 | visible-option-num | 可见的选项个数 | _number \| string_ | `6` |
 | swipe-duration | 快速滑动时惯性滚动的时长，单位 `ms` | _number \| string_ | `1000` |
