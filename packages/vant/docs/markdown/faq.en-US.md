@@ -81,3 +81,7 @@ See [Adapt to PC Browsers](#/en-US/advanced-usage#adapt-to-pc-browsers).
 ### How do I implement mobile responsive adaptation?
 
 See [Browser Adaptation](#/en-US/advanced-usage#browser-adaptation).
+
+### Why are some components not compatible with Server-Side Rendering (SSR)?
+
+See [SSR Compatibility Issues](#/en-US/ssr-issue#intro).
