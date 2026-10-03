@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import VanButton from '..';
+import { ButtonGroup as VanButtonGroup } from '..';
 import VanSwipe from '../../swipe';
 import VanSwipeItem from '../../swipe-item';
 import { cdnURL, useTranslate } from '../../../docs/site';
@@ -36,6 +37,7 @@ const t = useTranslate({
     animatedButton: '动画按钮',
     doTask: '做任务',
     lottery: '抽大奖',
+    buttonGroup: '按钮组',
   },
   'en-US': {
     type: 'Type',
@@ -68,6 +70,7 @@ const t = useTranslate({
     animatedButton: 'Animated Button',
     doTask: 'Do Task',
     lottery: 'Lottery',
+    buttonGroup: 'Button Group',
   },
 });
 </script>
@@ -149,6 +152,28 @@ const t = useTranslate({
     />
   </demo-block>
 
+  <demo-block :title="t('buttonGroup')">
+    <div class="demo-button-row">
+      <van-button-group type="primary">
+        <van-button>{{ t('button') }} 1</van-button>
+        <van-button>{{ t('button') }} 2</van-button>
+        <van-button>{{ t('button') }} 3</van-button>
+      </van-button-group>
+    </div>
+    <div class="demo-button-row">
+      <van-button-group size="small">
+        <van-button>{{ t('button') }} 1</van-button>
+        <van-button>{{ t('button') }} 2</van-button>
+        <van-button>{{ t('button') }} 3</van-button>
+      </van-button-group>
+    </div>
+    <van-button-group round>
+      <van-button>{{ t('button') }} 1</van-button>
+      <van-button>{{ t('button') }} 2</van-button>
+      <van-button>{{ t('button') }} 3</van-button>
+    </van-button-group>
+  </demo-block>
+
   <demo-block :title="t('animatedButton')">
     <van-button type="danger" round>
       <van-swipe
@@ -176,6 +201,10 @@ const t = useTranslate({
     &--normal:not(:last-child) {
       margin-right: var(--van-padding-md);
     }
+  }
+
+  .van-button-group > .van-button {
+    margin-right: 0;
   }
 
   .van-doc-demo-block {

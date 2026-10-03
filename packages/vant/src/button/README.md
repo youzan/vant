@@ -132,6 +132,30 @@ Customize the button color using the `color` prop.
 </van-button>
 ```
 
+### Button Group
+
+Use the `ButtonGroup` component to combine multiple buttons into a group. You can use `type`, `size`, `round` props to set the style of buttons in the group.
+
+```html
+<van-button-group type="primary">
+  <van-button>Button 1</van-button>
+  <van-button>Button 2</van-button>
+  <van-button>Button 3</van-button>
+</van-button-group>
+
+<van-button-group size="small">
+  <van-button>Button 1</van-button>
+  <van-button>Button 2</van-button>
+  <van-button>Button 3</van-button>
+</van-button-group>
+
+<van-button-group round>
+  <van-button>Button 1</van-button>
+  <van-button>Button 2</van-button>
+  <van-button>Button 3</van-button>
+</van-button-group>
+```
+
 ### Animated Button
 
 With the combination of the Button and [Swipe component](<(/#/en-US/swipe)>), you can create an animated button effect with vertical scrolling.
@@ -160,7 +184,7 @@ With the combination of the Button and [Swipe component](<(/#/en-US/swipe)>), yo
 
 ## API
 
-### Props
+### Button Props
 
 | Attribute | Description | Type | Default |
 | --- | --- | --- | --- |
@@ -186,20 +210,34 @@ With the combination of the Button and [Swipe component](<(/#/en-US/swipe)>), yo
 | to | The target route should navigate to when clicked on, same as the [to prop](https://router.vuejs.org/api/interfaces/RouterLinkProps.html#Properties-to) of Vue Router | _string \| object_ | - |
 | replace | If true, the navigation will not leave a history record | _boolean_ | `false` |
 
-### Events
+### ButtonGroup Props
+
+| Attribute | Description | Type | Default |
+| --- | --- | --- | --- |
+| type | Can be set to `primary` `success` `warning` `danger` | _string_ | `primary` |
+| size | Can be set to `large` `small` `mini` | _string_ | - |
+| round | Whether to be round button | _boolean_ | `false` |
+
+### Button Events
 
 | Event | Description | Arguments |
 | --- | --- | --- |
 | click | Emitted when button is clicked and not disabled or loading | _event: MouseEvent_ |
 | touchstart | Emitted when button is touched | _event: TouchEvent_ |
 
-### Slots
+### Button Slots
 
 | Name    | Description         |
 | ------- | ------------------- |
 | default | Default slot        |
 | icon    | Custom icon         |
 | loading | Custom loading icon |
+
+### ButtonGroup Slots
+
+| Name    | Description          |
+| ------- | -------------------- |
+| default | Button group content |
 
 ### Types
 
@@ -210,6 +248,7 @@ import type {
   ButtonType,
   ButtonSize,
   ButtonProps,
+  ButtonGroupProps,
   ButtonNativeType,
   ButtonIconPosition,
 } from 'vant';
