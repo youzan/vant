@@ -2,7 +2,7 @@ export default {
   name: 'Nume',
   tel: 'Telefon',
   save: 'Salvează',
-  clear: 'Clar',
+  clear: 'Șterge',
   undo: 'Anulează',
   cancel: 'Anulează',
   confirm: 'Confirmă',
@@ -25,26 +25,34 @@ export default {
   },
   vanPagination: {
     prev: 'Precedenta',
-    next: 'Urmatoarea',
+    next: 'Următoarea',
   },
   vanPullRefresh: {
-    pulling: 'Trage pentru a da împrospăta...',
-    loosing: 'Eliberează pentru a împrospăta...',
+    pulling: 'Trage pentru a reîmprospăta...',
+    loosing: 'Eliberează pentru a reîmprospăta...',
   },
   vanSubmitBar: {
     label: 'Total:',
   },
   vanCoupon: {
     unlimited: 'Nelimitat',
-    discount: (discount: number) => `${discount * 10}% discount`,
+    discount: (discount: number) => `${discount * 10}% reducere`,
     condition: (condition: number) => `Cel puțin ${condition}`,
   },
   vanCouponCell: {
     title: 'Cupon',
-    count: (count: number) => `Ai ${count} cupoane`,
+    count: (count: number) => {
+      if (count === 1) {
+        return 'Ai 1 cupon';
+      }
+      const rest = count % 100;
+      return count < 20 || (rest > 0 && rest < 20)
+        ? `Ai ${count} cupoane`
+        : `Ai ${count} de cupoane`;
+    },
   },
   vanCouponList: {
-    exchange: 'Schimbă',
+    exchange: 'Aplică',
     close: 'Închide',
     enable: 'Disponibil',
     disabled: 'Indisponibil',
@@ -52,10 +60,10 @@ export default {
   },
   vanAddressEdit: {
     area: 'Zonă',
-    areaEmpty: 'Te rugăm sa selectezi o zona de primire',
+    areaEmpty: 'Te rugăm să selectezi o zonă de livrare',
     addressEmpty: 'Adresa nu poate fi goală',
     addressDetail: 'Adresă',
-    defaultAddress: 'Setează ca adresă de pornire',
+    defaultAddress: 'Setează ca adresă implicită',
   },
   vanAddressList: {
     add: 'Adaugă adresă nouă',
