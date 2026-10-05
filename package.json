@@ -12,9 +12,9 @@
     "build:site": "pnpm --dir ./packages/vant build:site"
   },
   "engines": {
-    "pnpm": ">= 10.33.2"
+    "pnpm": ">= 10.34.6"
   },
-  "packageManager": "pnpm@10.33.2",
+  "packageManager": "pnpm@10.34.6",
   "devDependencies": {
     "@vant/cli": "workspace:*",
     "rstack": "^0.8.0"
