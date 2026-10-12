@@ -1,3 +1,4 @@
+import { EmitsToProps } from 'vue';
 import { withInstall } from '../utils';
 import _Popup from './Popup';
 
@@ -9,6 +10,11 @@ export {
   setGlobalZIndex,
 } from '../composables/use-global-z-index';
 export type { PopupProps } from './Popup';
+
+export type PopupEmitsProps = EmitsToProps<
+  NonNullable<(typeof Popup)['emits']>
+>;
+
 export type {
   PopupPosition,
   PopupInstance,
