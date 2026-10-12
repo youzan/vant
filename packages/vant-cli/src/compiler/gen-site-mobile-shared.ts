@@ -32,7 +32,9 @@ function genExports(demos: DemoItem[]) {
 }
 
 function genConfig(demos: DemoItem[]) {
-  const vantConfig = getVantConfig();
+  // clone the config to avoid mutating the shared one,
+  // functions are dropped as they can't be serialized anyway
+  const vantConfig = JSON.parse(JSON.stringify(getVantConfig()));
   const demoNames = demos.map((item) => decamelize(item.name));
 
   function demoFilter(nav: any[]) {
