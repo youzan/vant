@@ -22,6 +22,7 @@ import {
   truthProp,
   numericProp,
   windowWidth,
+  setScrollTop,
   getElementTop,
   makeStringProp,
   callInterceptor,
@@ -256,9 +257,23 @@ export default defineComponent({
 
       // scroll to correct position
       if (stickyFixed && !props.scrollspy) {
-        setRootScrollTop(
-          Math.ceil(getElementTop(root.value!) - offsetTopPx.value),
-        );
+        const scrollParent = scroller.value;
+        if (
+          scrollParent &&
+          scrollParent !== window &&
+          scrollParent !== root.value
+        ) {
+          setScrollTop(
+            scrollParent,
+            Math.ceil(
+              getElementTop(root.value!, scrollParent) - offsetTopPx.value,
+            ),
+          );
+        } else {
+          setRootScrollTop(
+            Math.ceil(getElementTop(root.value!) - offsetTopPx.value),
+          );
+        }
       }
     };
 
