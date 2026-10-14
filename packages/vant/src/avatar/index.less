@@ -1,0 +1,75 @@
+:root,
+:host {
+  --van-avatar-size: 54px;
+  --van-avatar-size-large: 76px;
+  --van-avatar-size-medium: 64px;
+  --van-avatar-size-small: 48px;
+  --van-avatar-bg-color: var(--van-gray-5);
+  --van-avatar-text-color: var(--van-white);
+  --van-avatar-font-size: 20px;
+  --van-avatar-font-size-large: 28px;
+  --van-avatar-font-size-medium: 24px;
+  --van-avatar-font-size-small: 18px;
+  --van-avatar-font-weight: var(--van-font-bold);
+  --van-avatar-line-height: 1.2;
+  --van-avatar-border-radius: var(--van-radius-md);
+}
+
+.van-avatar {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--van-avatar-size);
+  height: var(--van-avatar-size);
+  color: var(--van-avatar-text-color);
+  font-weight: var(--van-avatar-font-weight);
+  font-size: var(--van-avatar-font-size);
+  line-height: var(--van-avatar-line-height);
+  text-align: center;
+  background-color: var(--van-avatar-bg-color);
+  border-radius: var(--van-avatar-border-radius);
+  overflow: hidden;
+  user-select: none;
+  vertical-align: middle;
+
+  &--round {
+    border-radius: 50%;
+  }
+
+  &--square {
+    border-radius: var(--van-avatar-border-radius);
+  }
+
+  &--large {
+    width: var(--van-avatar-size-large);
+    height: var(--van-avatar-size-large);
+    font-size: var(--van-avatar-font-size-large);
+  }
+
+  &--medium {
+    width: var(--van-avatar-size-medium);
+    height: var(--van-avatar-size-medium);
+    font-size: var(--van-avatar-font-size-medium);
+  }
+
+  &--small {
+    width: var(--van-avatar-size-small);
+    height: var(--van-avatar-size-small);
+    font-size: var(--van-avatar-font-size-small);
+  }
+
+  &__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  &__text {
+    white-space: nowrap;
+  }
+
+  &__icon {
+    font-size: inherit;
+  }
+}
