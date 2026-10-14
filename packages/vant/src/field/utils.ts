@@ -1,8 +1,11 @@
 import { HTMLAttributes, InputHTMLAttributes } from 'vue';
+import { getScrollParent } from '@vant/use';
 import {
   isObject,
   isPromise,
   isFunction,
+  getScrollTop,
+  setScrollTop,
   getRootScrollTop,
   setRootScrollTop,
 } from '../utils';
@@ -71,6 +74,12 @@ export function resizeTextarea(
   autosize: true | FieldAutosizeConfig,
 ) {
   const scrollTop = getRootScrollTop();
+  // the nearest scrollable ancestor also loses its scroll position
+  // while the textarea is shrunk to measure its height
+  // https://github.com/vant-ui/vant/issues/13166
+  const scrollParent = getScrollParent(input.parentElement!);
+  const parentScrollTop = scrollParent ? getScrollTop(scrollParent) : 0;
+
   input.style.height = 'auto';
 
   let height = input.scrollHeight;
@@ -88,6 +97,10 @@ export function resizeTextarea(
     input.style.height = `${height}px`;
     // https://github.com/vant-ui/vant/issues/9178
     setRootScrollTop(scrollTop);
+
+    if (scrollParent && scrollParent !== window) {
+      setScrollTop(scrollParent, parentScrollTop);
+    }
   }
 }
 
