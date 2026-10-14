@@ -1,5 +1,6 @@
 import {
   VNode,
+  toRaw,
   isVNode,
   provide,
   reactive,
@@ -37,18 +38,40 @@ export function flattenVNodes(children: VNodeNormalizedChildren) {
   return result;
 }
 
-const findVNodeIndex = (vnodes: VNode[], vnode: VNode) => {
+const findVNodeIndex = (vnodes: VNode[], child: ComponentInternalInstance) => {
+  const vnode = child.vnode;
   const index = vnodes.indexOf(vnode);
-  if (index === -1) {
-    return vnodes.findIndex(
-      (item) =>
-        vnode.key !== undefined &&
-        vnode.key !== null &&
-        item.type === vnode.type &&
-        item.key === vnode.key,
-    );
+  if (index !== -1) {
+    return index;
   }
-  return index;
+
+  // While a dynamic update is being patched, `child.vnode` can still point to
+  // the previous vnode. The component instance is stable across re-renders, so
+  // try locating the child by instance as well (`toRaw` is needed because the
+  // children are stored in a reactive array).
+  const rawChild = toRaw(child);
+  const instanceIndex = vnodes.findIndex(
+    (item) => item.component === rawChild,
+  );
+  if (instanceIndex !== -1) {
+    return instanceIndex;
+  }
+
+  const keyIndex = vnodes.findIndex(
+    (item) =>
+      vnode.key !== undefined &&
+      vnode.key !== null &&
+      item.type === vnode.type &&
+      item.key === vnode.key,
+  );
+  if (keyIndex !== -1) {
+    return keyIndex;
+  }
+
+  // The child is not in the current tree yet (e.g. a field rendered after an
+  // inserted one has not been patched). Trailing it keeps the existing order
+  // instead of moving the child to the front, which would corrupt the order.
+  return vnodes.length;
 };
 
 // sort children instances by vnodes order
@@ -60,7 +83,7 @@ export function sortChildren(
   const vnodes = flattenVNodes(parent.subTree.children);
 
   internalChildren.sort(
-    (a, b) => findVNodeIndex(vnodes, a.vnode) - findVNodeIndex(vnodes, b.vnode),
+    (a, b) => findVNodeIndex(vnodes, a) - findVNodeIndex(vnodes, b),
   );
 
   const orderedPublicChildren = internalChildren.map((item) => item.proxy!);
