@@ -201,6 +201,48 @@ test('should allow autosize prop be be an object', async () => {
   expect(textarea.style.height).toEqual('50px');
 });
 
+test('should keep the scroll position of the scroll parent when resizing an autosize textarea', async () => {
+  window.scrollTo = rs.fn();
+
+  const scrollParent = document.createElement('div');
+  scrollParent.style.overflowY = 'auto';
+  document.body.appendChild(scrollParent);
+
+  const wrapper = mount(Field, {
+    props: {
+      type: 'textarea',
+      autosize: true,
+    },
+    attachTo: scrollParent,
+  });
+  await later();
+
+  const textarea = wrapper.find('textarea').element;
+  let scrollTop = 100;
+  Object.defineProperty(scrollParent, 'scrollTop', {
+    get: () => scrollTop,
+    set: (value: number) => {
+      scrollTop = value;
+    },
+  });
+  // jsdom has no layout, so simulate the browser clamping the scroll position
+  // of the scroll parent while the textarea is shrunk to measure its height
+  Object.defineProperty(textarea, 'scrollHeight', {
+    get: () => {
+      scrollTop = 0;
+      return 50;
+    },
+  });
+
+  await wrapper.setProps({ modelValue: 'foo' });
+  await later();
+  expect(textarea.style.height).toEqual('50px');
+  expect(scrollParent.scrollTop).toEqual(100);
+
+  wrapper.unmount();
+  scrollParent.remove();
+});
+
 test('should call input.focus when vm.focus is called', () => {
   const wrapper = mount(Field);
   const onFocus = rs.fn();
