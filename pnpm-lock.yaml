@@ -149,8 +149,8 @@ importers:
         specifier: ^1.6.4
         version: 1.6.4(@rsbuild/core@2.1.9)(@rspack/core@2.2.8(@swc/helpers@0.5.23))
       '@rsbuild/plugin-sass':
-        specifier: ^1.5.3
-        version: 1.5.3(@rsbuild/core@2.1.9)
+        specifier: ^2.0.1
+        version: 2.0.1(@rsbuild/core@2.1.9)
       '@rsbuild/plugin-vue':
         specifier: ^1.2.9
         version: 1.2.9(@rsbuild/core@2.1.9)(@rspack/core@2.2.8(@swc/helpers@0.5.23))(@vue/compiler-sfc@3.5.42)(vue@3.5.42(typescript@5.9.3))
@@ -1369,10 +1369,10 @@ packages:
       '@rsbuild/core':
         optional: true
 
-  '@rsbuild/plugin-sass@1.5.3':
-    resolution: {integrity: sha512-NViSITZF3J3i96GfemWfTZBZ43CNZUgTaaKgfti0I7odwy36Qlo8MIAbGjOy8pBSygIYn7Xl4+Jw8qAbTysCBw==}
+  '@rsbuild/plugin-sass@2.0.1':
+    resolution: {integrity: sha512-BZRpVTZW+za+sv84nYYdIjR7XwVqyS8+1wAha/7BvQ1igdzlmT6xPd6h4jTWfNzdHuzIHZsuWY7kPS/ybzcndA==}
     peerDependencies:
-      '@rsbuild/core': ^1.3.0 || ^2.0.0-0
+      '@rsbuild/core': ^2.0.0
     peerDependenciesMeta:
       '@rsbuild/core':
         optional: true
@@ -3007,6 +3007,9 @@ packages:
   reduce-configs@1.1.2:
     resolution: {integrity: sha512-AgBP55V8FC7NaqoOP2RCbTpu6LE+YuX3LUZkNAoitcfyS3/PIC8Obg/TJrBzTkJ+lDvZv0TTAeDpLkzjTtYlbw==}
 
+  reduce-configs@2.0.1:
+    resolution: {integrity: sha512-H9KTCWTEb1YM1OoOz0f6TeGZYlW82sIT1viNg3W8CjjY0pD3WI4MHs8GifKt5FKTVIfHh/DenfJqqY+FP9jF2A==}
+
   reusify@1.0.4:
     resolution: {integrity: sha512-U9nH88a3fc/ekCF1l0/UP1IosiuIjyTh7hBvXVMHYgVcfGvt897Xguj2UOLDeI5BG2m7/uwyaLVT6fbtCwTyzw==}
     engines: {iojs: '>=1.0.0', node: '>=0.10.0'}
@@ -4472,12 +4475,12 @@ snapshots:
       - supports-color
       - webpack
 
-  '@rsbuild/plugin-sass@1.5.3(@rsbuild/core@2.1.9)':
+  '@rsbuild/plugin-sass@2.0.1(@rsbuild/core@2.1.9)':
     dependencies:
       deepmerge: 4.3.1
       loader-utils: 2.0.4
       postcss: 8.5.26
-      reduce-configs: 1.1.2
+      reduce-configs: 2.0.1
       sass-embedded: 1.100.0
     optionalDependencies:
       '@rsbuild/core': 2.1.9
@@ -6050,6 +6053,8 @@ snapshots:
   readdirp@5.0.0: {}
 
   reduce-configs@1.1.2: {}
+
+  reduce-configs@2.0.1: {}
 
   reusify@1.0.4: {}
 
