@@ -112,8 +112,10 @@ export function showToast(options: string | ToastOptions = {}) {
   return toast;
 }
 
-const createMethod = (type: ToastType) => (options: string | ToastOptions) =>
-  showToast(extend({ type }, parseOptions(options)));
+const createMethod =
+  (type: ToastType) =>
+  (options: string | ToastOptions = {}) =>
+    showToast(extend({ type }, parseOptions(options)));
 
 /**
  * Display a loading toast

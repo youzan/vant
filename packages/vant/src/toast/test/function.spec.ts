@@ -5,6 +5,7 @@ import {
   showLoadingToast,
   allowMultipleToast,
   showSuccessToast,
+  showFailToast,
   resetToastDefaultOptions,
   setToastDefaultOptions,
 } from '../function-call';
@@ -30,6 +31,33 @@ test('show loading toast', async () => {
   expect(
     document.querySelector('.van-toast.van-toast--loading.loading-toast'),
   ).toBeTruthy();
+});
+
+test.each([
+  ['loading', showLoadingToast],
+  ['success', showSuccessToast],
+  ['fail', showFailToast],
+] as const)('show %s toast without options', async (type, show) => {
+  try {
+    setToastDefaultOptions({ message: 'Default message' });
+    show();
+
+    await later();
+    expect(document.querySelector('.van-toast__text')?.textContent).toBe(
+      'Default message',
+    );
+    expect(document.querySelector(`.van-toast--${type}`)).toBeTruthy();
+
+    setToastDefaultOptions(type, { message: 'Type default message' });
+    show();
+
+    await later();
+    expect(document.querySelector('.van-toast__text')?.textContent).toBe(
+      'Type default message',
+    );
+  } finally {
+    resetToastDefaultOptions();
+  }
 });
 
 test('show html toast', async () => {
