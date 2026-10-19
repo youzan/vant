@@ -1,7 +1,7 @@
 import fse from 'fs-extra';
 import { logger } from 'rslog';
 import { execSync } from 'child_process';
-import { join, relative } from 'node:path';
+import { dirname, join, relative } from 'node:path';
 import { clean } from './clean.js';
 import { CSS_LANG } from '../common/css.js';
 import { installDependencies } from '../common/manager.js';
@@ -29,7 +29,7 @@ import {
 } from '../common/index.js';
 import type { Format } from 'esbuild';
 
-const { remove, copy, readdir, existsSync } = fse;
+const { remove, copy, readdir, existsSync, readFileSync, outputFile } = fse;
 
 async function compileFile(filePath: string, format: Format) {
   if (isScript(filePath)) {
@@ -98,8 +98,54 @@ async function buildCJSOutputs() {
   await compileDir(LIB_DIR, 'cjs');
 }
 
+/**
+ * Fix .vue import extensions in script files after pre-compilation.
+ * When preCompileDir compiles .vue files to .ts/.js, sibling script files
+ * still reference the old .vue paths. This function updates those imports
+ * so that tsc can resolve them correctly.
+ */
+async function fixVueImportExtensions(dir: string) {
+  const files = await readdir(dir);
+
+  await Promise.all(
+    files.map(async (filename) => {
+      const filePath = join(dir, filename);
+
+      if (isDir(filePath)) {
+        return fixVueImportExtensions(filePath);
+      }
+
+      if (!isScript(filePath)) {
+        return;
+      }
+
+      const code = readFileSync(filePath, 'utf-8');
+      if (!code.includes('.vue')) {
+        return;
+      }
+
+      const fixedCode = code.replace(
+        /(['"])([^'"]*?)\.vue(['"])/g,
+        (_match, openQuote: string, importPath: string, closeQuote: string) => {
+          const absBase = join(dirname(filePath), importPath);
+          const ext = existsSync(`${absBase}.ts`) ? '.ts' : '.js';
+          return `${openQuote}${importPath}${ext}${closeQuote}`;
+        },
+      );
+
+      if (fixedCode !== code) {
+        return outputFile(filePath, fixedCode);
+      }
+    }),
+  );
+}
+
 async function buildTypeDeclarations() {
   await Promise.all([preCompileDir(ES_DIR), preCompileDir(LIB_DIR)]);
+  await Promise.all([
+    fixVueImportExtensions(ES_DIR),
+    fixVueImportExtensions(LIB_DIR),
+  ]);
 
   const tsConfig = join(process.cwd(), 'tsconfig.declaration.json');
 
