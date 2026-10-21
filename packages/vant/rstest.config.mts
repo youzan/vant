@@ -19,7 +19,7 @@ const commonConfig: ProjectConfig = {
         rules: [
           {
             // mark test setup files as having side effects to prevent them from being tree-shaken
-            test: /test\/.*\.ts$/,
+            test: /test[\\/].*\.ts$/,
             sideEffects: true,
           },
         ],
