@@ -12,12 +12,12 @@
     "build:site": "pnpm --dir ./packages/vant build:site"
   },
   "engines": {
-    "pnpm": ">= 10.34.7"
+    "pnpm": ">= 10.34.8"
   },
-  "packageManager": "pnpm@10.34.7",
+  "packageManager": "pnpm@10.34.8",
   "devDependencies": {
     "@vant/cli": "workspace:*",
-    "rstack": "^0.8.0"
+    "rstack": "^0.8.5"
   },
   "overrides": {
     "esbuild": "^0.28.2"
