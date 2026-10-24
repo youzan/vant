@@ -430,6 +430,26 @@ test('delete preview image', () => {
   expect(wrapper.emitted<[File]>('delete')![0]).toBeTruthy();
 });
 
+test('should handle key correctly when delete middle image', () => {
+  const wrapper = mount(Uploader, {
+    props: {
+      modelValue: [
+        { url: IMAGE, name: '1' },
+        { url: IMAGE, name: '2' },
+        { url: IMAGE, name: '3' },
+      ],
+    },
+  });
+
+  // 删除中间图片
+  const deleteButtons = wrapper.findAll('.van-uploader__preview-delete');
+  deleteButtons[1].trigger('click');
+
+  expect(wrapper.emitted<[File]>('update:modelValue')![0][0]).toHaveLength(2);
+  expect(wrapper.html()).toMatchSnapshot();
+  expect(wrapper.emitted<[File]>('delete')![0]).toBeTruthy();
+});
+
 test('before-delete prop return false', () => {
   const wrapper = mount(Uploader, {
     props: {
@@ -716,7 +736,7 @@ test('expose reuploadFile method', async () => {
     },
   });
 
-  const {reuploadFile} = (wrapper.vm as UploaderInstance);
+  const { reuploadFile } = wrapper.vm as UploaderInstance;
   expect(reuploadFile).toBeTypeOf('function');
 
   const input = wrapper.find<HTMLInputElement>('.van-uploader__input');

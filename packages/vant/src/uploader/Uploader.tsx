@@ -309,6 +309,7 @@ export default defineComponent({
       return (
         <UploaderPreviewItem
           v-slots={pick(slots, ['preview-cover', 'preview-delete'])}
+          key={item.url || item.objectUrl || item.file?.name || index}
           item={item}
           index={index}
           onClick={() =>
