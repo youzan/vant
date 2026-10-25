@@ -95,6 +95,30 @@ test('should format input value when type is digit', () => {
   expect(wrapper.emitted('update:modelValue')[2][0]).toEqual('123');
 });
 
+test.each(['--123', '12-3-4', '---'])(
+  'should remove every minus sign from digit input %s',
+  (value) => {
+    const wrapper = mount(Field, {
+      props: {
+        type: 'digit',
+        modelValue: '',
+      },
+    });
+    const input = wrapper.find('input');
+
+    input.element.value = value;
+    input.trigger('input');
+
+    const expected = value.replace(/-/g, '');
+    expect(input.element.value).toBe(expected);
+    if (expected) {
+      expect(wrapper.emitted('update:modelValue')?.[0][0]).toBe(expected);
+    } else {
+      expect(wrapper.emitted('update:modelValue')).toBeUndefined();
+    }
+  },
+);
+
 test('should limit input value based on min and max props', async () => {
   const wrapper = mount(Field, {
     props: {

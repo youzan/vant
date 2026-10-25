@@ -376,6 +376,29 @@ module.exports = {
 
 是否在 dev 时开启 [vConsole](https://github.com/Tencent/vConsole) 调试，用于移动端 debug。
 
+### site.llms
+
+- Type: `boolean`
+- Default: `false`
+
+是否在构建文档站点时生成 [llms.txt](https://llmstxt.org) 文件，便于大语言模型和 AI 编程助手读取文档。
+
+开启后，`vant-cli build-site` 会在产物目录中生成以下文件，页面的顺序和分组与 `site.nav` 保持一致：
+
+- `llms.txt`：文档索引，包含每个页面的链接。
+- `llms-full.txt`：包含全部文档内容的单个文件。
+- `[path].md`：每个页面的 Markdown 内容。
+
+如果配置了 `site.locales`，会在每个语言的 `[lang]/` 目录下生成上述文件，同时在根目录下生成默认语言的 `llms.txt` 和 `llms-full.txt`。
+
+```js
+module.exports = {
+  site: {
+    llms: true,
+  },
+};
+```
+
 ## PostCSS
 
 通过根目录下的`postcss.config.js`文件可以对 PostCSS 进行配置。

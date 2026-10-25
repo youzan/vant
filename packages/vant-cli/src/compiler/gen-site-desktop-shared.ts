@@ -9,9 +9,11 @@ import {
   VANT_CONFIG_FILE,
 } from '../common/constant.js';
 
-type DocumentItem = {
+export type DocumentItem = {
   name: string;
   path: string;
+  component: string;
+  lang?: string;
 };
 
 function formatName(component: string, lang?: string) {
@@ -32,7 +34,7 @@ function formatName(component: string, lang?: string) {
  * default mode:
  *   - action-sheet/README.md => ActionSheet
  */
-function resolveDocuments(components: string[]): DocumentItem[] {
+export function resolveDocuments(components: string[]): DocumentItem[] {
   const vantConfig = getVantConfig();
   const { locales, defaultLang } = vantConfig.site;
 
@@ -46,6 +48,8 @@ function resolveDocuments(components: string[]): DocumentItem[] {
         docs.push({
           name: formatName(component, lang),
           path: join(SRC_DIR, component, fileName),
+          component,
+          lang,
         });
       });
     });
@@ -54,6 +58,7 @@ function resolveDocuments(components: string[]): DocumentItem[] {
       docs.push({
         name: formatName(component),
         path: join(SRC_DIR, component, 'README.md'),
+        component,
       });
     });
   }
@@ -62,9 +67,12 @@ function resolveDocuments(components: string[]): DocumentItem[] {
     .sync(normalizePath(join(DOCS_DIR, '**/*.md')))
     .map((path) => {
       const pairs = parse(path).name.split('.');
+      const lang = pairs[1] || defaultLang;
       return {
-        name: formatName(pairs[0], pairs[1] || defaultLang),
+        name: formatName(pairs[0], lang),
         path,
+        component: pairs[0],
+        lang,
       };
     });
 
