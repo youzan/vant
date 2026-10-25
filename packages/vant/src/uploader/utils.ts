@@ -63,9 +63,10 @@ export function filterFiles(
   return { valid, invalid };
 }
 
-const IMAGE_REGEXP = /\.(jpeg|jpg|gif|png|svg|webp|jfif|bmp|dpg|avif)/i;
+const IMAGE_REGEXP = /\.(jpeg|jpg|gif|png|svg|webp|jfif|bmp|dpg|avif)$/i;
 
-export const isImageUrl = (url: string): boolean => IMAGE_REGEXP.test(url);
+export const isImageUrl = (url: string): boolean =>
+  IMAGE_REGEXP.test(url.split(/[?#]/, 1)[0]);
 
 export function isImageFile(item: UploaderFileListItem): boolean {
   // some special urls cannot be recognized
