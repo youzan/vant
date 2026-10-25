@@ -139,7 +139,7 @@ export function formatNumber(
   if (allowMinus) {
     value = trimExtraChar(value, '-', /-/g);
   } else {
-    value = value.replace(/-/, '');
+    value = value.replace(/-/g, '');
   }
 
   const regExp = allowDot ? /[^-0-9.]/g : /[^-0-9]/g;
