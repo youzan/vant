@@ -396,6 +396,29 @@ Insert a custom HTML content in the `<head>` tag.
 
 Whether to enable [vConsole](https://github.com/Tencent/vConsole) debugging in dev, usually used for mobile debugging.
 
+### site.llms
+
+- Type: `boolean`
+- Default: `false`
+
+Whether to generate [llms.txt](https://llmstxt.org) files when building the documentation site, which helps LLMs and AI coding assistants to read the documentation.
+
+When enabled, `vant-cli build-site` generates the following files in the output directory, the order and groups of the pages are the same as `site.nav`:
+
+- `llms.txt`: an index of the documentation, including links to each page.
+- `llms-full.txt`: the whole documentation in a single file.
+- `[path].md`: the markdown content of each page.
+
+If `site.locales` is configured, the files are generated in the `[lang]/` directory for each language, and `llms.txt` and `llms-full.txt` of the default language are also generated in the root directory.
+
+```js
+module.exports = {
+  site: {
+    llms: true,
+  },
+};
+```
+
 ## PostCSS
 
 PostCSS can be configured through the `postcss.config.js` file in the root directory.

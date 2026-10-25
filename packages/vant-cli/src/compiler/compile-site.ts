@@ -13,6 +13,7 @@ import { CSS_LANG } from '../common/css.js';
 import { genSiteMobileShared } from '../compiler/gen-site-mobile-shared.js';
 import { genSiteDesktopShared } from '../compiler/gen-site-desktop-shared.js';
 import { genPackageStyle } from '../compiler/gen-package-style.js';
+import { genSiteLlmsTxt } from '../compiler/gen-llms-txt.js';
 import {
   MD_LOADER,
   SITE_SRC_DIR,
@@ -112,6 +113,7 @@ export async function compileSite(isProd = false) {
 
   if (isProd) {
     await rsbuild.build();
+    genSiteLlmsTxt(rsbuild.context.distPath);
   } else {
     await rsbuild.startDevServer();
   }
