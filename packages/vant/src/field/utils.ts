@@ -27,8 +27,11 @@ export function runSyncRule(value: unknown, rule: FieldRule) {
       return true;
     }
   }
-  if (rule.pattern && !rule.pattern.test(String(value))) {
-    return false;
+  if (rule.pattern) {
+    rule.pattern.lastIndex = 0;
+    if (!rule.pattern.test(String(value))) {
+      return false;
+    }
   }
   return true;
 }
