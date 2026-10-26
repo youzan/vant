@@ -49,6 +49,65 @@ test('should support pattern in rules prop', async () => {
   });
 });
 
+test.each(['', 'g', 'y'])(
+  'should validate repeatedly with pattern flags "%s"',
+  async (flags) => {
+    const onSubmit = rs.fn();
+    const onFailed = rs.fn();
+    const rules = [{ pattern: new RegExp('^\\d{6}$', flags), message: 'foo' }];
+    const wrapper = mount({
+      data: () => ({ value: '123456' }),
+      render() {
+        return (
+          <Form onSubmit={onSubmit} onFailed={onFailed}>
+            <Field name="A" rules={rules} modelValue={this.value} />
+          </Form>
+        );
+      },
+    });
+
+    await submitForm(wrapper);
+    await submitForm(wrapper);
+    expect(onSubmit).toHaveBeenCalledTimes(2);
+    expect(onFailed).not.toHaveBeenCalled();
+
+    await wrapper.setData({ value: '123' });
+    await submitForm(wrapper);
+    expect(onFailed).toHaveBeenCalledWith({
+      errors: [{ message: 'foo', name: 'A' }],
+      values: { A: '123' },
+    });
+
+    await wrapper.setData({ value: '654321' });
+    await submitForm(wrapper);
+    expect(onSubmit).toHaveBeenCalledTimes(3);
+    expect(onSubmit).toHaveBeenLastCalledWith({ A: '654321' });
+  },
+);
+
+test.each(['g', 'y'])(
+  'should support a pattern with flag "%s" shared by multiple fields',
+  async (flags) => {
+    const onSubmit = rs.fn();
+    const onFailed = rs.fn();
+    const rules = [{ pattern: new RegExp('^\\d{6}$', flags), message: 'foo' }];
+    const wrapper = mount({
+      render() {
+        return (
+          <Form onSubmit={onSubmit} onFailed={onFailed}>
+            <Field name="A" rules={rules} modelValue="123456" />
+            <Field name="B" rules={rules} modelValue="654321" />
+          </Form>
+        );
+      },
+    });
+
+    await submitForm(wrapper);
+    expect(onSubmit).toHaveBeenCalledWith({ A: '123456', B: '654321' });
+    expect(onFailed).not.toHaveBeenCalled();
+  },
+);
+
 test('should support message function in rules prop', async () => {
   const onFailed = rs.fn();
   const rules: FieldRule[] = [{ pattern: /\d{6}/, message: (val) => val }];
