@@ -3,6 +3,7 @@ import {
   watch,
   computed,
   nextTick,
+  onBeforeUnmount,
   defineComponent,
   type PropType,
   type ExtractPropTypes,
@@ -275,6 +276,8 @@ export default defineComponent({
       onTouchend: onTouchEnd,
       onTouchcancel: onTouchEnd,
     });
+
+    onBeforeUnmount(() => clearTimeout(longPressTimer));
 
     watch(
       () => [props.max, props.min, props.integer, props.decimalLength],
