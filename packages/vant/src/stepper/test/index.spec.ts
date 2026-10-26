@@ -152,6 +152,33 @@ test('should allow to disable long press', async () => {
   rs.useRealTimers();
 });
 
+test.each([0, LONG_PRESS_START_TIME + 400])(
+  'should stop long pressing when unmounted after %i ms',
+  async (duration) => {
+    rs.useFakeTimers();
+    const beforeChange = rs.fn(() => true);
+    const wrapper = mount(Stepper, {
+      props: { modelValue: 1, beforeChange },
+    });
+
+    try {
+      await wrapper.find('.van-stepper__plus').trigger('touchstart');
+      await rs.advanceTimersByTimeAsync(duration);
+      const calls = beforeChange.mock.calls.length;
+      expect(calls).toBe(duration === 0 ? 0 : 3);
+
+      wrapper.unmount();
+      await rs.advanceTimersByTimeAsync(LONG_PRESS_START_TIME + 400);
+
+      expect(beforeChange).toHaveBeenCalledTimes(calls);
+      expect(rs.getTimerCount()).toBe(0);
+    } finally {
+      rs.clearAllTimers();
+      rs.useRealTimers();
+    }
+  },
+);
+
 test('should filter invalid value during user input', async () => {
   const wrapper = mount(Stepper, {
     props: {
