@@ -36,6 +36,26 @@ test('calcDateNum', () => {
   expect(calcDateNum([date1, date3])).toEqual(32);
 });
 
+test.each([
+  { month: 2, day: 10, offset: -60 },
+  { month: 10, day: 3, offset: 60 },
+])(
+  'calcDateNum across daylight saving time in month $month',
+  ({ month, day, offset }) => {
+    rs.stubEnv('TZ', 'America/New_York');
+
+    try {
+      const start = new Date(2024, month, day);
+      const end = new Date(2024, month, day + 1);
+
+      expect(end.getTimezoneOffset() - start.getTimezoneOffset()).toBe(offset);
+      expect(calcDateNum([start, end])).toBe(2);
+    } finally {
+      rs.unstubAllEnvs();
+    }
+  },
+);
+
 test('isLastRowInMonth', () => {
   // test first day of month
   expect(isLastRowInMonth(new Date(2024, 0, 1), 0)).toEqual(false);
