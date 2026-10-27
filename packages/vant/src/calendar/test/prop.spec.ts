@@ -53,6 +53,46 @@ test('should limit max range when using max-range prop and type is multiple', as
   expect(wrapper.emitted<[Date]>('select')![0][0]).toHaveLength(2);
 });
 
+test.each([4, 5])(
+  'should enforce max-range across daylight saving time when selecting November 3 to %i',
+  async (endDay) => {
+    rs.stubEnv('TZ', 'America/New_York');
+    const wrapper = mount(Calendar, {
+      props: {
+        type: 'range',
+        minDate: new Date(2024, 10, 1),
+        maxDate: new Date(2024, 10, 10),
+        defaultDate: null,
+        maxRange: 2,
+        poppable: false,
+        lazyRender: false,
+        showConfirm: false,
+        showRangePrompt: false,
+      },
+    });
+
+    try {
+      await later(50);
+      const days = wrapper.findAll('.van-calendar__day');
+      await days[2].trigger('click');
+      await days[endDay - 1].trigger('click');
+
+      if (endDay === 4) {
+        expect(wrapper.emitted('overRange')).toBeFalsy();
+        expect(wrapper.emitted('confirm')).toEqual([
+          [[new Date(2024, 10, 3), new Date(2024, 10, 4)]],
+        ]);
+      } else {
+        expect(wrapper.emitted('overRange')).toHaveLength(1);
+        expect(wrapper.emitted('confirm')).toBeFalsy();
+      }
+    } finally {
+      wrapper.unmount();
+      rs.unstubAllEnvs();
+    }
+  },
+);
+
 test('show-title prop', async () => {
   const wrapper = mount(Calendar, {
     props: {

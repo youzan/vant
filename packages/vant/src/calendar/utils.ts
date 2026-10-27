@@ -78,8 +78,9 @@ export const getToday = () => {
 };
 
 export function calcDateNum(date: [Date, Date]) {
-  const day1 = date[0].getTime();
-  const day2 = date[1].getTime();
+  const [day1, day2] = date.map((item) =>
+    Date.UTC(item.getFullYear(), item.getMonth(), item.getDate()),
+  );
   return (day2 - day1) / (1000 * 60 * 60 * 24) + 1;
 }
 
