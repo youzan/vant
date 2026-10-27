@@ -15,7 +15,7 @@ Below are the guidelines for submitting feedback or code to Vant. Please take a 
 
 ### Local development
 
-Before developing locally, please make sure that [Node.js >= 18](https://nodejs.org) is installed in your development environment.
+Before developing locally, please install [Node.js](https://nodejs.org) with a version that satisfies `^22.18.0 || >=24.11.0`. Node.js 24 is recommended to match the version used in CI.
 
 Follow the steps below to develop Vant components locally.
 
