@@ -214,7 +214,9 @@ export default defineComponent({
       }
 
       touch.start(event);
-      current = props.modelValue;
+      current = isRange(props.modelValue)
+        ? [...props.modelValue]
+        : props.modelValue;
       updateStartValue();
 
       dragStatus.value = 'start';

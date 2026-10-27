@@ -38,6 +38,37 @@ test('should emit "update:modelValue" event after dragging button', () => {
   expect(wrapper.emitted('update:modelValue')!.pop()).toEqual([100]);
 });
 
+test.each([
+  { index: 0, distance: 10, expected: [30, 80] },
+  { index: 1, distance: 10, expected: [20, 90] },
+  { index: 0, distance: 70, expected: [80, 90] },
+])(
+  'should emit range updates without mutating modelValue when dragging button $index by $distance',
+  ({ index, distance, expected }) => {
+    const restoreMock = mockRect();
+    const modelValue: [number, number] = [20, 80];
+    const wrapper = mount(Slider, {
+      props: { range: true, modelValue },
+    });
+
+    try {
+      const button = wrapper.findAll('.van-slider__button-wrapper')[index];
+      trigger(button, 'touchstart', 0, 0);
+      trigger(button, 'touchmove', distance, 0);
+
+      expect(modelValue).toEqual([20, 80]);
+      expect(wrapper.emitted('update:modelValue')).toEqual([[expected]]);
+
+      trigger(button, 'touchend', distance, 0);
+      expect(wrapper.emitted('change')).toEqual([[expected]]);
+      expect(modelValue).toEqual([20, 80]);
+    } finally {
+      wrapper.unmount();
+      restoreMock();
+    }
+  },
+);
+
 test('should emit "update:modelValue" event after clicking slider', () => {
   const wrapper = mount(Slider, {
     props: {
