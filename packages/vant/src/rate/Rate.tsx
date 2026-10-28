@@ -116,6 +116,8 @@ export default defineComponent({
 
     const updateRanges = () => {
       groupRefRect = useRect(groupRef);
+      minRectTop = Number.MAX_SAFE_INTEGER;
+      maxRectTop = Number.MIN_SAFE_INTEGER;
 
       const rects = itemRefs.value.map(useRect);
 
