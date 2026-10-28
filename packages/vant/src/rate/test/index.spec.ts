@@ -97,6 +97,39 @@ test('should render gutter when using gutter prop', () => {
   expect(wrapper.html()).toMatchSnapshot();
 });
 
+test.each([
+  [100, 200, -5, false],
+  [200, 100, 30, false],
+  [100, 200, -5, true],
+  [200, 100, 30, true],
+] as const)(
+  'should refresh row bounds when moving from %s to %s with offset %s and allowHalf %s',
+  (initialTop, nextTop, offset, allowHalf) => {
+    const wrapper = mount(Rate, { props: { allowHalf } });
+    let top: number = initialTop;
+
+    wrapper.element.getBoundingClientRect = () =>
+      ({ top, bottom: top + 25, left: 0, width: 125, height: 25 }) as DOMRect;
+    wrapper.findAll('.van-rate__item').forEach((item, index) => {
+      item.element.getBoundingClientRect = () =>
+        ({ top, left: index * 25, width: 25, height: 25 }) as DOMRect;
+    });
+
+    const drag = () => {
+      trigger(wrapper, 'touchstart', 10, top + 10);
+      trigger(wrapper, 'touchmove', 80, top + offset);
+      trigger(wrapper, 'touchend');
+    };
+
+    drag();
+    top = nextTop;
+    drag();
+
+    const score = allowHalf ? 3.5 : 4;
+    expect(wrapper.emitted('update:modelValue')).toEqual([[score], [score]]);
+  },
+);
+
 test('should change icon size when using size prop', () => {
   const wrapper = mount(Rate, {
     props: {
