@@ -264,7 +264,11 @@ export default defineComponent({
     // calculate the position of the elements
     // and find the elements that needs to be rendered
     const onScroll = () => {
-      const top = getScrollTop(bodyRef.value!);
+      if (!bodyRef.value) {
+        return;
+      }
+
+      const top = getScrollTop(bodyRef.value);
       const bottom = top + bodyHeight;
 
       const heights = months.value.map((item, index) =>
