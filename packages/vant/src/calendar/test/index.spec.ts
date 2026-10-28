@@ -4,6 +4,32 @@ import { getNextDay, getPrevDay } from '../utils';
 import { now, minDate, maxDate } from './utils';
 import type { CalendarInstance } from '../types';
 
+test.each([null, minDate])(
+  'should ignore pending scroll callbacks after unmounting with defaultDate %s',
+  (defaultDate) => {
+    const callbacks: FrameRequestCallback[] = [];
+    rs.spyOn(window, 'requestAnimationFrame').mockImplementation((callback) => {
+      callbacks.push(callback);
+      return callbacks.length;
+    });
+
+    const wrapper = mount(Calendar, {
+      props: {
+        minDate,
+        maxDate,
+        defaultDate,
+        poppable: false,
+        lazyRender: false,
+      },
+    });
+
+    expect(callbacks.length).toBeGreaterThan(0);
+    wrapper.unmount();
+
+    expect(() => callbacks.forEach((callback) => callback(0))).not.toThrow();
+  },
+);
+
 test('should reset to default date when calling reset method', async () => {
   const defaultDate = [minDate, getNextDay(minDate)];
   const wrapper = mount(Calendar, {
