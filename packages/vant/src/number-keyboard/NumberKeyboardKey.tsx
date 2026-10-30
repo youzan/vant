@@ -51,7 +51,7 @@ export default defineComponent({
     const onTouchMove = (event: TouchEvent) => {
       touch.move(event);
 
-      if (touch.direction.value) {
+      if (!touch.isTap.value) {
         active.value = false;
       }
     };
