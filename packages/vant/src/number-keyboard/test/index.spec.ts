@@ -191,6 +191,86 @@ test('should remove "van-key--active" className from key when touch moved', asyn
   expect(wrapper.emitted('input')).toBeFalsy();
 });
 
+test.each([
+  [1, 0],
+  [0, 1],
+  [5, 0],
+  [0, 5],
+])('should accept a tap moved by (%i, %i)', async (x, y) => {
+  const wrapper = mount(NumberKeyboard);
+  const key = wrapper.find('.van-key');
+
+  await trigger(key, 'touchstart');
+  await trigger(key, 'touchmove', x, y);
+  expect(key.classes()).toContain('van-key--active');
+  expect(wrapper.emitted('input')).toBeFalsy();
+  expect(wrapper.emitted('update:modelValue')).toBeFalsy();
+
+  await trigger(key, 'touchend', x, y);
+  expect(key.classes()).not.toContain('van-key--active');
+  expect(wrapper.emitted('input')).toEqual([[1]]);
+  expect(wrapper.emitted('update:modelValue')).toEqual([['1']]);
+});
+
+test.each([
+  [6, 0],
+  [0, 6],
+  [6, 6],
+])('should cancel a tap moved by (%i, %i)', async (x, y) => {
+  const wrapper = mount(NumberKeyboard);
+  const key = wrapper.find('.van-key');
+
+  await trigger(key, 'touchstart');
+  await trigger(key, 'touchmove', x, y);
+  expect(key.classes()).not.toContain('van-key--active');
+
+  await trigger(key, 'touchend', x, y);
+  expect(wrapper.emitted('input')).toBeFalsy();
+  expect(wrapper.emitted('update:modelValue')).toBeFalsy();
+});
+
+test('should keep a drag cancelled after returning to the origin and accept the next tap', async () => {
+  const wrapper = mount(NumberKeyboard);
+  const key = wrapper.find('.van-key');
+
+  await trigger(key, 'touchstart');
+  await trigger(key, 'touchmove', 6, 0);
+  await trigger(key, 'touchmove', 0, 0);
+  expect(key.classes()).not.toContain('van-key--active');
+
+  await trigger(key, 'touchend');
+  expect(wrapper.emitted('input')).toBeFalsy();
+  expect(wrapper.emitted('update:modelValue')).toBeFalsy();
+
+  await trigger(key, 'touchstart');
+  await trigger(key, 'touchmove', 1, 0);
+  expect(key.classes()).toContain('van-key--active');
+
+  await trigger(key, 'touchend', 1, 0);
+  expect(wrapper.emitted('input')).toEqual([[1]]);
+  expect(wrapper.emitted('update:modelValue')).toEqual([['1']]);
+});
+
+test('should update v-model after six consecutive taps with slight movement', async () => {
+  const wrapper = mount({
+    components: { NumberKeyboard },
+    data: () => ({ value: '' }),
+    template: '<NumberKeyboard v-model="value" />',
+  });
+  const keyboard = wrapper.findComponent(NumberKeyboard);
+  const key = keyboard.find('.van-key');
+
+  for (let i = 0; i < 6; i++) {
+    await trigger(key, 'touchstart');
+    await trigger(key, 'touchmove', 1, 0);
+    await trigger(key, 'touchend', 1, 0);
+  }
+
+  expect(keyboard.emitted('input')).toEqual([[1], [1], [1], [1], [1], [1]]);
+  expect(keyboard.emitted('update:modelValue')).toHaveLength(6);
+  expect(wrapper.vm.value).toBe('111111');
+});
+
 test('should emit "update:modelValue" event after clicking key', () => {
   const wrapper = mount(NumberKeyboard);
   const keys = wrapper.findAll('.van-key');
