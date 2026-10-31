@@ -81,3 +81,7 @@ Vant 所有组件都是基于 Vue 框架实现的，没有针对 uni-app 进行�
 ### 如何进行移动端响应式适配？
 
 参见[浏览器适配](#/zh-CN/advanced-usage#liu-lan-qi-gua-pei)。
+
+### 部分组件无法兼容服务端渲染（SSR）场景？
+
+参见[SSR兼容问题](#/zh-CN/ssr-issue#jie-shao)。
