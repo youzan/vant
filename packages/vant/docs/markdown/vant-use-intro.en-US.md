@@ -46,5 +46,6 @@ console.log(height.value); // -> window height
 | [useRelation](#/en-US/use-relation) | Establish the association relationship between parent and child components |
 | [useScrollParent](#/en-US/use-scroll-parent) | Get the closest parent element that is scrollable |
 | [useToggle](#/en-US/use-toggle) | Used to switch between `true` and `false` |
+| [useTimer](#/en-US/use-timer) | Used to manage the elapsed timer |
 | [useWindowSize](#/en-US/use-window-size) | Get the viewport width and height of the browser window |
 | [useRaf](#/zh-CN/use-raf) | Used to manage the requestAnimationFrame |
