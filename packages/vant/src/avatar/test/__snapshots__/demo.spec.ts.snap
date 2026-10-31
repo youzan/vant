@@ -1,0 +1,501 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`should render demo and match snapshot 1`] = `
+<div>
+  <div class="van-row van-row--align-center">
+    <div
+      class="van-col"
+      style="padding-right: 10.666666666666666px;"
+    >
+      <div class="van-avatar van-avatar--round">
+        <img
+          src="https://fastly.jsdelivr.net/npm/@vant/assets/cat.jpeg"
+          class="van-avatar__img"
+        >
+      </div>
+    </div>
+    <div
+      style="padding-left: 5.333333333333334px; padding-right: 5.333333333333332px;"
+      class="van-col"
+    >
+      <div class="van-avatar van-avatar--round">
+        <div style="font-size: 14px;">
+          slot
+        </div>
+      </div>
+    </div>
+    <div
+      style="padding-left: 10.666666666666668px;"
+      class="van-col"
+    >
+      <div class="van-avatar van-avatar--round">
+        <i class="van-avatar__icon van-icon van-icon-user-o">
+        </i>
+      </div>
+    </div>
+  </div>
+</div>
+<div>
+  <div class="van-row van-row--align-center">
+    <div
+      class="van-col"
+      style="padding-right: 8px;"
+    >
+      <div class="van-avatar van-avatar--square">
+        <img
+          src="https://fastly.jsdelivr.net/npm/@vant/assets/cat.jpeg"
+          class="van-avatar__img"
+        >
+      </div>
+    </div>
+    <div
+      style="padding-left: 8px;"
+      class="van-col"
+    >
+      <div class="van-avatar van-avatar--round">
+        <img
+          src="https://fastly.jsdelivr.net/npm/@vant/assets/cat.jpeg"
+          class="van-avatar__img"
+        >
+      </div>
+    </div>
+  </div>
+</div>
+<div>
+  <div class="van-row van-row--align-center">
+    <div
+      class="van-col"
+      style="padding-right: 12px;"
+    >
+      <div
+        class="van-avatar van-avatar--round van-avatar--large"
+        style="font-size: calc(large * 0.45);"
+      >
+        <img
+          src="https://fastly.jsdelivr.net/npm/@vant/assets/cat.jpeg"
+          class="van-avatar__img"
+        >
+      </div>
+    </div>
+    <div
+      style="padding-left: 4px; padding-right: 8px;"
+      class="van-col"
+    >
+      <div
+        class="van-avatar van-avatar--round van-avatar--medium"
+        style="font-size: calc(medium * 0.45);"
+      >
+        <img
+          src="https://fastly.jsdelivr.net/npm/@vant/assets/cat.jpeg"
+          class="van-avatar__img"
+        >
+      </div>
+    </div>
+    <div
+      style="padding-left: 8px; padding-right: 4px;"
+      class="van-col"
+    >
+      <div
+        class="van-avatar van-avatar--round van-avatar--normal"
+        style="font-size: calc(normal * 0.45);"
+      >
+        <img
+          src="https://fastly.jsdelivr.net/npm/@vant/assets/cat.jpeg"
+          class="van-avatar__img"
+        >
+      </div>
+    </div>
+    <div
+      style="padding-left: 12px;"
+      class="van-col"
+    >
+      <div
+        class="van-avatar van-avatar--round van-avatar--small"
+        style="font-size: calc(small * 0.45);"
+      >
+        <img
+          src="https://fastly.jsdelivr.net/npm/@vant/assets/cat.jpeg"
+          class="van-avatar__img"
+        >
+      </div>
+    </div>
+  </div>
+</div>
+<div>
+  <div class="van-row van-row--align-center">
+    <div
+      class="van-col"
+      style="padding-right: 12.8px;"
+    >
+      <div
+        class="van-avatar van-avatar--round van-avatar--normal"
+        style="font-size: calc(normal * 0.45); color: rgb(255, 255, 255); background-color: rgb(220, 20, 60);"
+      >
+        <span class="van-avatar__text">
+          V
+        </span>
+      </div>
+    </div>
+    <div
+      style="padding-left: 3.1999999999999993px; padding-right: 9.600000000000001px;"
+      class="van-col"
+    >
+      <div
+        class="van-avatar van-avatar--round van-avatar--normal"
+        style="font-size: calc(normal * 0.45); color: rgb(255, 255, 255); background-color: rgb(34, 139, 34);"
+      >
+        <span class="van-avatar__text">
+          A
+        </span>
+      </div>
+    </div>
+    <div
+      style="padding-left: 6.399999999999999px; padding-right: 6.400000000000002px;"
+      class="van-col"
+    >
+      <div
+        class="van-avatar van-avatar--round van-avatar--normal"
+        style="font-size: calc(normal * 0.45); color: rgb(255, 255, 255); background-color: rgb(30, 144, 255);"
+      >
+        <span class="van-avatar__text">
+          N
+        </span>
+      </div>
+    </div>
+    <div
+      style="padding-left: 9.599999999999998px; padding-right: 3.200000000000003px;"
+      class="van-col"
+    >
+      <div
+        class="van-avatar van-avatar--round van-avatar--normal"
+        style="font-size: calc(normal * 0.45); color: rgb(255, 255, 255); background-color: rgb(138, 43, 226);"
+      >
+        <span class="van-avatar__text">
+          T
+        </span>
+      </div>
+    </div>
+    <div
+      style="padding-left: 12.799999999999997px;"
+      class="van-col"
+    >
+      <div
+        class="van-avatar van-avatar--round van-avatar--normal"
+        style="font-size: calc(normal * 0.45); color: rgb(123, 129, 152); background-color: rgb(238, 238, 238);"
+      >
+        <i class="van-avatar__icon van-icon van-icon-user-o">
+        </i>
+      </div>
+    </div>
+  </div>
+</div>
+<div>
+  <div class="van-badge__wrapper">
+    <div class="van-avatar van-avatar--square">
+      <img
+        src="https://fastly.jsdelivr.net/npm/@vant/assets/cat.jpeg"
+        class="van-avatar__img"
+      >
+    </div>
+    <div class="van-badge van-badge--top-left van-badge--fixed">
+      10
+    </div>
+  </div>
+  <div class="van-badge__wrapper">
+    <div class="van-avatar van-avatar--square">
+      <img
+        src="https://fastly.jsdelivr.net/npm/@vant/assets/cat.jpeg"
+        class="van-avatar__img"
+      >
+    </div>
+    <div class="van-badge van-badge--top-right van-badge--fixed">
+      20
+    </div>
+  </div>
+  <div class="van-badge__wrapper">
+    <div class="van-avatar van-avatar--square">
+      <img
+        src="https://fastly.jsdelivr.net/npm/@vant/assets/cat.jpeg"
+        class="van-avatar__img"
+      >
+    </div>
+    <div class="van-badge van-badge--top-right van-badge--dot van-badge--fixed">
+    </div>
+  </div>
+  <div class="van-badge__wrapper">
+    <div class="van-avatar van-avatar--square">
+      <span class="van-avatar__text">
+        A
+      </span>
+    </div>
+    <div class="van-badge van-badge--top-right van-badge--dot van-badge--fixed">
+    </div>
+  </div>
+</div>
+<div>
+  <div class="van-avatar-group van-avatar-group__left-up">
+    <div
+      class="van-avatar-group__item"
+      style="z-index: 1;"
+    >
+      <div class="van-avatar van-avatar--round">
+        <img
+          src="https://fastly.jsdelivr.net/npm/@vant/assets/cat.jpeg"
+          class="van-avatar__img"
+        >
+      </div>
+    </div>
+    <div
+      class="van-avatar-group__item"
+      style="z-index: 2;"
+    >
+      <div class="van-avatar van-avatar--round">
+        <img
+          src="https://fastly.jsdelivr.net/npm/@vant/assets/logo.png"
+          class="van-avatar__img"
+        >
+      </div>
+    </div>
+    <div
+      class="van-avatar-group__item"
+      style="z-index: 3;"
+    >
+      <div
+        class="van-avatar van-avatar--round"
+        style="background-color: rgb(30, 144, 255); color: rgb(255, 255, 255);"
+      >
+        <span class="van-avatar__text">
+          A
+        </span>
+      </div>
+    </div>
+    <div
+      class="van-avatar-group__item"
+      style="z-index: 4;"
+    >
+      <div
+        class="van-avatar van-avatar--round"
+        style="background-color: rgb(34, 139, 34); color: rgb(255, 255, 255);"
+      >
+        <span class="van-avatar__text">
+          B
+        </span>
+      </div>
+    </div>
+    <div
+      class="van-avatar-group__item"
+      style="z-index: 5;"
+    >
+      <div class="van-avatar van-avatar--round van-avatar-group__collapse">
+        <span class="van-avatar__text">
+          +2
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+<div>
+  <div class="van-avatar-group van-avatar-group__right-up">
+    <div
+      class="van-avatar-group__item"
+      style="z-index: 4;"
+    >
+      <div
+        class="van-avatar van-avatar--round van-avatar--45"
+        style="width: 45px; height: 45px; font-size: calc(45px * 0.45);"
+      >
+        <img
+          src="https://fastly.jsdelivr.net/npm/@vant/assets/cat.jpeg"
+          class="van-avatar__img"
+        >
+      </div>
+    </div>
+    <div
+      class="van-avatar-group__item"
+      style="z-index: 3;"
+    >
+      <div
+        class="van-avatar van-avatar--round van-avatar--45"
+        style="width: 45px; height: 45px; font-size: calc(45px * 0.45);"
+      >
+        <img
+          src="https://fastly.jsdelivr.net/npm/@vant/assets/logo.png"
+          class="van-avatar__img"
+        >
+      </div>
+    </div>
+    <div
+      class="van-avatar-group__item"
+      style="z-index: 2;"
+    >
+      <div
+        class="van-avatar van-avatar--round van-avatar--45"
+        style="width: 45px; height: 45px; font-size: calc(45px * 0.45); background-color: rgb(30, 144, 255); color: rgb(255, 255, 255);"
+      >
+        <span class="van-avatar__text">
+          A
+        </span>
+      </div>
+    </div>
+    <div
+      class="van-avatar-group__item"
+      style="z-index: 1;"
+    >
+      <div
+        class="van-avatar van-avatar--round van-avatar--45"
+        style="width: 45px; height: 45px; font-size: calc(45px * 0.45); background-color: rgb(34, 139, 34); color: rgb(255, 255, 255);"
+      >
+        <span class="van-avatar__text">
+          B
+        </span>
+      </div>
+    </div>
+    <div
+      class="van-avatar-group__item"
+      style="z-index: 0;"
+    >
+      <div
+        class="van-avatar van-avatar--round van-avatar--45"
+        style="width: 45px; height: 45px; font-size: calc(45px * 0.45); background-color: rgb(204, 204, 204); color: rgb(255, 255, 255);"
+      >
+        <span class="van-avatar__text">
+          +2
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+<div>
+  <div class="van-avatar-group van-avatar-group__left-up">
+    <div
+      class="van-avatar-group__item"
+      style="z-index: 1;"
+    >
+      <div
+        class="van-avatar van-avatar--round van-avatar--small"
+        style="font-size: calc(small * 0.45);"
+      >
+        <img
+          src="https://fastly.jsdelivr.net/npm/@vant/assets/cat.jpeg"
+          class="van-avatar__img"
+        >
+      </div>
+    </div>
+    <div
+      class="van-avatar-group__item"
+      style="z-index: 2;"
+    >
+      <div
+        class="van-avatar van-avatar--round van-avatar--small"
+        style="font-size: calc(small * 0.45);"
+      >
+        <img
+          src="https://fastly.jsdelivr.net/npm/@vant/assets/logo.png"
+          class="van-avatar__img"
+        >
+      </div>
+    </div>
+    <div
+      class="van-avatar-group__item"
+      style="z-index: 3;"
+    >
+      <div
+        class="van-avatar van-avatar--round van-avatar--small"
+        style="font-size: calc(small * 0.45); background-color: rgb(30, 144, 255); color: rgb(255, 255, 255);"
+      >
+        <span class="van-avatar__text">
+          A
+        </span>
+      </div>
+    </div>
+    <div
+      class="van-avatar-group__item"
+      style="z-index: 4;"
+    >
+      <div
+        class="van-avatar van-avatar--round van-avatar--small"
+        style="font-size: calc(small * 0.45); background-color: rgb(34, 139, 34); color: rgb(255, 255, 255);"
+      >
+        <span class="van-avatar__text">
+          B
+        </span>
+      </div>
+    </div>
+    <div
+      class="van-avatar-group__item"
+      style="z-index: 5;"
+    >
+      <div
+        class="van-avatar van-avatar--round van-avatar--small van-avatar-group__collapse"
+        style="font-size: calc(small * 0.45);"
+      >
+        <span class="van-avatar__text">
+          +1
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+<div>
+  <div class="van-avatar-group van-avatar-group__left-up">
+    <div
+      class="van-avatar-group__item"
+      style="z-index: 1;"
+    >
+      <div class="van-avatar van-avatar--round">
+        <img
+          src="https://fastly.jsdelivr.net/npm/@vant/assets/cat.jpeg"
+          class="van-avatar__img"
+        >
+      </div>
+    </div>
+    <div
+      class="van-avatar-group__item"
+      style="z-index: 2;"
+    >
+      <div class="van-avatar van-avatar--square">
+        <img
+          src="https://fastly.jsdelivr.net/npm/@vant/assets/logo.png"
+          class="van-avatar__img"
+        >
+      </div>
+    </div>
+    <div
+      class="van-avatar-group__item"
+      style="z-index: 3;"
+    >
+      <div
+        class="van-avatar van-avatar--round"
+        style="background-color: rgb(30, 144, 255); color: rgb(255, 255, 255);"
+      >
+        <span class="van-avatar__text">
+          A
+        </span>
+      </div>
+    </div>
+    <div
+      class="van-avatar-group__item"
+      style="z-index: 4;"
+    >
+      <div
+        class="van-avatar van-avatar--square"
+        style="background-color: rgb(34, 139, 34); color: rgb(255, 255, 255);"
+      >
+        <span class="van-avatar__text">
+          B
+        </span>
+      </div>
+    </div>
+    <div
+      class="van-avatar-group__item"
+      style="z-index: 5;"
+    >
+      <div class="van-avatar van-avatar--square van-avatar-group__collapse">
+        <span class="van-avatar__text">
+          Custom
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+`;

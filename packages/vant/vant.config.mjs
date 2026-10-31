@@ -294,6 +294,10 @@ location.href = location.href.replace('youzan.github.io', 'vant-ui.github.io');
             title: '展示组件',
             items: [
               {
+                path: 'avatar',
+                title: 'Avatar 头像',
+              },
+              {
                 path: 'badge',
                 title: 'Badge 徽标',
               },
@@ -765,6 +769,10 @@ location.href = location.href.replace('youzan.github.io', 'vant-ui.github.io');
           {
             title: 'Display Components',
             items: [
+              {
+                path: 'avatar',
+                title: 'Avatar',
+              },
               {
                 path: 'badge',
                 title: 'Badge',
