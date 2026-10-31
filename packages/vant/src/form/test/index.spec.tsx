@@ -99,3 +99,43 @@ test('should validate first correctly when dynamically add field', async () => {
   await submitForm(wrapper);
   expect(onFailed.mock.calls[1][0].errors[0].name).toEqual('A');
 });
+
+test('should validate first correctly when inserting a field before unpatched fields', async () => {
+  const onFailed = rs.fn();
+  const wrapper = mount({
+    render() {
+      return (
+        <Form validateFirst onFailed={onFailed}>
+          <Field
+            name="A"
+            rules={[{ required: true, message: 'A' }]}
+            modelValue=""
+          />
+          {this.list.map((item) => (
+            <Field
+              key={item}
+              name={item}
+              rules={[{ required: true, message: item }]}
+              modelValue=""
+            />
+          ))}
+          <Field
+            name="Z"
+            rules={[{ required: true, message: 'Z' }]}
+            modelValue=""
+          />
+        </Form>
+      );
+    },
+    data() {
+      return { list: [] as string[] };
+    },
+  });
+
+  await submitForm(wrapper);
+  expect(onFailed.mock.calls[0][0].errors[0].name).toEqual('A');
+
+  await wrapper.setData({ list: ['M'] });
+  await submitForm(wrapper);
+  expect(onFailed.mock.calls[1][0].errors[0].name).toEqual('A');
+});
