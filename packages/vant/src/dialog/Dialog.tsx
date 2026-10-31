@@ -27,7 +27,7 @@ import {
 import { popupSharedProps, popupSharedPropKeys } from '../popup/shared';
 
 // Components
-import { Popup } from '../popup';
+import { Popup, PopupEmitsProps } from '../popup';
 import { Button } from '../button';
 import { ActionBar } from '../action-bar';
 import { ActionBarButton } from '../action-bar-button';
@@ -82,7 +82,7 @@ export default defineComponent({
 
   emits: ['confirm', 'cancel', 'keydown', 'update:show'],
 
-  setup(props, { emit, slots }) {
+  setup(props: DialogProps & PopupEmitsProps, { emit, slots }) {
     const root = ref<ComponentInstance>();
     const loading = reactive({
       confirm: false,
