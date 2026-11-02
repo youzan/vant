@@ -1,3 +1,4 @@
+import { h } from 'vue';
 import {
   mount,
   later,
@@ -418,6 +419,39 @@ test('should render image slot correctly 3', async () => {
   await later();
 
   expect(wrapper.html().includes('width: 100px')).toBeTruthy();
+});
+
+test('should zoom image slot around the touched point', async () => {
+  const restore = mockGetBoundingClientRect({
+    top: 0,
+    left: 0,
+    width: 100,
+    height: 100,
+  });
+
+  const wrapper = mount(ImagePreview, {
+    props: {
+      show: true,
+      images,
+    },
+    slots: {
+      image: ({ src, style, onLoad }) => h('img', { src, style, onLoad }),
+    },
+  });
+
+  await later();
+  const image = wrapper.find<HTMLImageElement>(
+    '.van-image-preview__image-wrap img',
+  );
+  ['naturalWidth', 'naturalHeight'].forEach((key) => {
+    Object.defineProperty(image.element, key, { value: 100 });
+  });
+  await image.trigger('load');
+
+  await triggerDoubleTap(wrapper.find('.van-swipe-item'));
+  expect(image.element.style.transform).toEqual('matrix(2, 0, 0, 2, 50, 50)');
+
+  restore();
 });
 
 test('should emit long-press event after long press', async () => {

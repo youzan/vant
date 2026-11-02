@@ -81,6 +81,7 @@ export default defineComponent({
 
     const touch = useTouch();
     const imageRef = ref<ComponentInstance>();
+    const imageWrapRef = ref<HTMLElement>();
     const swipeItem = ref<ComponentInstance>();
     const vertical = ref(false);
     const isLongImage = ref(false);
@@ -135,7 +136,11 @@ export default defineComponent({
         state.scale = scale;
 
         if (center) {
-          const imageRect = useRect(imageRef.value?.$el);
+          const imageRect = useRect(
+            slots.image
+              ? imageWrapRef.value?.firstElementChild
+              : imageRef.value?.$el,
+          );
           const origin = {
             x: imageRect.width * 0.5,
             y: imageRect.height * 0.5,
@@ -409,7 +414,7 @@ export default defineComponent({
           onTouchcancel={onTouchEnd}
         >
           {slots.image ? (
-            <div class={bem('image-wrap')}>
+            <div ref={imageWrapRef} class={bem('image-wrap')}>
               {slots.image({
                 src: props.src,
                 onLoad,
