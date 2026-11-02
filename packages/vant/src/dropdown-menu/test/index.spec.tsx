@@ -177,6 +177,32 @@ test('destroy one item', async () => {
   expect(wrapper.html()).toMatchSnapshot();
 });
 
+test('does not select an option when the open dropdown item is disabled', async () => {
+  const onChange = rs.fn();
+  const wrapper = mount({
+    props: { disabled: Boolean },
+    setup(props) {
+      const options = [{ text: 'A', value: 0 }, { text: 'B', value: 1 }];
+      return () => (
+        <DropdownMenu>
+          <DropdownItem
+            disabled={props.disabled}
+            modelValue={0}
+            options={options}
+            onChange={onChange}
+          />
+        </DropdownMenu>
+      );
+    },
+  });
+
+  await later();
+  await wrapper.find('.van-dropdown-menu__title').trigger('click');
+  await wrapper.setProps({ disabled: true });
+  await wrapper.findAll('.van-dropdown-item__option')[1].trigger('click');
+  expect(onChange).not.toHaveBeenCalled();
+});
+
 test('disable dropdown item', async () => {
   const wrapper = mount({
     setup() {
