@@ -126,7 +126,7 @@ export default defineComponent({
 
     const renderOption = (option: DropdownItemOption) => {
       const { activeColor } = parent.props;
-      const { disabled } = option;
+      const disabled = props.disabled || option.disabled;
       const active = option.value === props.modelValue;
 
       const onClick = () => {
