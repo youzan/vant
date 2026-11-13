@@ -107,7 +107,11 @@ export default defineComponent({
     const reuploadIndex = ref(-1);
     const isReuploading = ref(false);
 
-    const getDetail = (index = props.modelValue.length) => ({
+    const getDetail = (
+      index = reuploadIndex.value > -1
+        ? reuploadIndex.value
+        : props.modelValue.length,
+    ) => ({
       name: props.name,
       index,
     });
@@ -121,19 +125,20 @@ export default defineComponent({
     const onAfterRead = (
       items: UploaderFileListItem | UploaderFileListItem[],
     ) => {
+      const detail = getDetail();
       resetInput();
 
       if (isOversize(items, props.maxSize)) {
         if (Array.isArray(items)) {
           const result = filterFiles(items, props.maxSize);
           items = result.valid;
-          emit('oversize', result.invalid, getDetail());
+          emit('oversize', result.invalid, detail);
 
           if (!items.length) {
             return;
           }
         } else {
-          emit('oversize', items, getDetail());
+          emit('oversize', items, detail);
           return;
         }
       }
@@ -148,7 +153,7 @@ export default defineComponent({
       }
 
       if (props.afterRead) {
-        props.afterRead(items, getDetail());
+        props.afterRead(items, detail);
       }
     };
 
