@@ -31,7 +31,7 @@
     "release": "rm -rf ./site/node_modules && vant-cli release"
   },
   "dependencies": {
-    "@babel/core": "^7.29.7",
+    "@babel/core": "^7.29.13",
     "@babel/preset-typescript": "^7.29.7",
     "@rsbuild/core": "^2.1.9",
     "@rsbuild/plugin-babel": "^2.1.0",
@@ -43,22 +43,22 @@
     "@vitejs/plugin-vue": "^5.2.4",
     "@vitejs/plugin-vue-jsx": "^4.2.0",
     "@vue/babel-plugin-jsx": "^2.0.1",
-    "autoprefixer": "^10.6.1",
+    "autoprefixer": "^10.6.2",
     "commander": "^14.0.3",
     "enquirer": "2.4.1",
     "esbuild": "^0.28.2",
     "fast-glob": "^3.3.3",
-    "fs-extra": "^11.4.0",
+    "fs-extra": "^11.4.1",
     "hash-sum": "^2.0.0",
     "highlight.js": "^11.12.0",
     "husky": "^9.1.7",
-    "less": "^4.9.0",
+    "less": "^4.9.1",
     "lodash": "^4.18.1",
-    "markdown-it": "^14.3.1",
+    "markdown-it": "^14.3.3",
     "markdown-it-anchor": "^9.2.1",
     "nano-staged": "^0.9.0",
     "picocolors": "^1.1.1",
-    "postcss": "^8.5.26",
+    "postcss": "^8.5.33",
     "postcss-load-config": "^6.0.1",
     "prettier": "^3.9.6",
     "rslog": "^2.3.0",
@@ -72,11 +72,11 @@
   "devDependencies": {
     "@types/fs-extra": "^11.0.4",
     "@types/less": "^3.0.8",
-    "@types/lodash": "^4.17.25",
+    "@types/lodash": "^4.17.27",
     "@types/markdown-it": "^14.2.0",
     "@types/node": "^24.12.4",
-    "rimraf": "^6.1.3",
-    "vue": "^3.5.42"
+    "rimraf": "^6.1.4",
+    "vue": "^3.5.45"
   },
   "engines": {
     "node": ">=16.0.0"
