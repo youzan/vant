@@ -2,6 +2,7 @@ import {
   defineComponent,
   Comment,
   Fragment,
+  nextTick,
   type InjectionKey,
   type ExtractPropTypes,
   type VNode,
@@ -71,10 +72,13 @@ export default defineComponent({
       if (showNextButton()) {
         activeTab.value = +activeTab.value + 1;
       } else {
-        emit(
-          'confirm',
-          children.map((item) => item.confirm()),
-        );
+        children.forEach((item) => item.stopMomentum());
+        nextTick(() => {
+          emit(
+            'confirm',
+            children.map((item) => item.confirm()),
+          );
+        });
       }
     };
 

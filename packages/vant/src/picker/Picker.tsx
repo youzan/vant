@@ -182,8 +182,12 @@ export default defineComponent({
       emit('scrollInto', params);
     };
 
-    const confirm = () => {
+    const stopMomentum = () => {
       children.forEach((child) => child.stopMomentum());
+    };
+
+    const confirm = () => {
+      stopMomentum();
       const params = getEventParams();
 
       // wait nextTick to ensure the model value is update to date
@@ -323,6 +327,8 @@ export default defineComponent({
 
     const getSelectedOptions = () => selectedOptions.value;
 
+    // Allow PickerGroup to settle all pickers before collecting their values.
+    useExpose({ stopMomentum });
     useExpose<PickerExpose>({ confirm, getSelectedOptions });
 
     return () => (
