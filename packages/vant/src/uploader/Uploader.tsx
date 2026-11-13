@@ -104,6 +104,7 @@ export default defineComponent({
   setup(props, { emit, slots }) {
     const inputRef = ref();
     const urls: string[] = [];
+    let isUnmounted = false;
     const reuploadIndex = ref(-1);
     const isReuploading = ref(false);
 
@@ -152,6 +153,12 @@ export default defineComponent({
       }
     };
 
+    const createObjectURL = (file: File) => {
+      const url = URL.createObjectURL(file);
+      urls.push(url);
+      return url;
+    };
+
     const readFile = (files: File | File[]) => {
       const { maxCount, modelValue, resultType } = props;
 
@@ -165,12 +172,16 @@ export default defineComponent({
         Promise.all(
           files.map((file) => readFileContent(file, resultType)),
         ).then((contents) => {
+          if (isUnmounted) {
+            return;
+          }
+
           const fileList = (files as File[]).map((file, index) => {
             const result: UploaderFileListItem = {
               file,
               status: '',
               message: '',
-              objectUrl: URL.createObjectURL(file),
+              objectUrl: createObjectURL(file),
             };
 
             if (contents[index]) {
@@ -184,11 +195,15 @@ export default defineComponent({
         });
       } else {
         readFileContent(files, resultType).then((content) => {
+          if (isUnmounted) {
+            return;
+          }
+
           const result: UploaderFileListItem = {
             file: files as File,
             status: '',
             message: '',
-            objectUrl: URL.createObjectURL(files as File),
+            objectUrl: createObjectURL(files as File),
           };
 
           if (content) {
@@ -246,7 +261,6 @@ export default defineComponent({
           .map((item) => {
             if (item.objectUrl && !item.url && item.status !== 'failed') {
               item.url = item.objectUrl;
-              urls.push(item.url);
             }
             return item.url;
           })
@@ -388,6 +402,7 @@ export default defineComponent({
     };
 
     onBeforeUnmount(() => {
+      isUnmounted = true;
       urls.forEach((url) => URL.revokeObjectURL(url));
     });
 
