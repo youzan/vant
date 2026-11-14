@@ -58,7 +58,7 @@
     "@rsbuild/plugin-babel": "2.1.0",
     "@rstest/coverage-istanbul": "^0.12.3",
     "@rstest/core": "^0.12.3",
-    "@types/node": "^24.12.4",
+    "@types/node": "^24.19.2",
     "@vant/area-data": "workspace:*",
     "@vant/cli": "workspace:*",
     "@vant/icons": "workspace:*",
