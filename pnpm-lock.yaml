@@ -233,8 +233,8 @@ importers:
         specifier: ^5.51.2
         version: 5.51.2
       transliteration:
-        specifier: ^2.6.1
-        version: 2.6.1
+        specifier: ^2.7.0
+        version: 2.7.0
       typescript:
         specifier: ^5.9.3
         version: 5.9.3
@@ -3370,8 +3370,8 @@ packages:
     resolution: {integrity: sha512-tk2G5R2KRwBd+ZN0zaEXpmzdKyOYksXwywulIX95MBODjSzMIuQnQ3m8JxgbhnL1LeVo7lqQKsYa1O3Htl7K5g==}
     engines: {node: '>=18'}
 
-  transliteration@2.6.1:
-    resolution: {integrity: sha512-hJ9BhrQAOnNTbpOr1MxsNjZISkn7ppvF5TKUeFmTE1mG4ZPD/XVxF0L0LUoIUCWmQyxH0gJpVtfYLAWf298U9w==}
+  transliteration@2.7.0:
+    resolution: {integrity: sha512-rCVoWvYXlRMKdwymthS6IR25z2XQnV3Iad3mQPpC+CEdvF7Q8yhq4a3HRPCIDf42nij2v5w7lItxn6cwqcSKiw==}
     engines: {node: '>=20.0.0'}
     hasBin: true
 
@@ -6465,7 +6465,7 @@ snapshots:
     dependencies:
       punycode: 2.3.1
 
-  transliteration@2.6.1: {}
+  transliteration@2.7.0: {}
 
   tslib@2.8.1: {}
 
