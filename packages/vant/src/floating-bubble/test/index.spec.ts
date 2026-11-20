@@ -1,3 +1,4 @@
+import { h, nextTick } from 'vue';
 import { useWindowSize } from '@vant/use';
 import FloatingBubble from '..';
 
@@ -67,6 +68,27 @@ test('should render correctly when all props set', async () => {
   expect(floatingBubbleEl.querySelector('.van-icon-chat')).not.toBeNull();
 
   restore();
+});
+
+test('should defer teleport to a target mounted later in the same render', async () => {
+  const wrapper = mount(
+    {
+      render: () => [
+        h(FloatingBubble, { teleport: '#bubble-target', defer: true }),
+        h('div', { id: 'bubble-target' }),
+      ],
+    },
+    { attachTo: document.body },
+  );
+
+  try {
+    await nextTick();
+    expect(
+      wrapper.get('#bubble-target').find('.van-floating-bubble').exists(),
+    ).toBe(true);
+  } finally {
+    wrapper.unmount();
+  }
 });
 
 test('should render with xy gaps', async () => {

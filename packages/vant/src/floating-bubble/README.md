@@ -95,7 +95,8 @@ export default {
 | magnetic | Direction of automatic magnetic absorption | _'x' \| 'y'_ | - |
 | icon | Bubble icon | _string_ | - |
 | gap | Minimum gap between the bubble and the window, unit `px` | _number \| { x: number, y: number }_ | `24` |
-| teleport | Specifies a target element where BackTop will be mounted | _string \| Element_ | `body` |
+| teleport | Specifies a target element where FloatingBubble will be mounted | _string \| Element_ | `body` |
+| defer | Resolve the teleport target after the rest of the same render cycle has mounted (Vue 3.5+) | _boolean_ | `false` |
 
 ### Events
 
