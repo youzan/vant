@@ -1,5 +1,12 @@
 export interface VantResolverOptions {
   /**
+   * Package to import components, APIs and styles from.
+   *
+   * @default 'vant'
+   */
+  packageName?: string;
+
+  /**
    * Whether to automatically import the corresponding styles of the components.
    *
    * @default true
@@ -30,7 +37,10 @@ export interface VantResolverOptions {
   exclude?: string[];
 }
 
-export type VantImportsOptions = Pick<VantResolverOptions, 'module' | 'ssr'>;
+export type VantImportsOptions = Pick<
+  VantResolverOptions,
+  'packageName' | 'module' | 'ssr'
+>;
 
 /**
  * Button->button; ButtonGroup->button-group
@@ -40,15 +50,14 @@ function kebabCase(key: string) {
   return result.split(' ').join('-').toLowerCase();
 }
 
-function getModuleType(options: VantResolverOptions): string {
-  const { ssr, module = 'esm' } = options;
-
-  // compatible with the deprecated `ssr` option
-  if (ssr !== undefined) {
-    return ssr ? 'lib' : 'es';
-  }
-
-  return module === 'cjs' ? 'lib' : 'es';
+function getModulePath({
+  packageName = 'vant',
+  module,
+  ssr,
+}: VantImportsOptions) {
+  // The deprecated ssr option takes precedence over module.
+  const commonJS = ssr ?? module === 'cjs';
+  return `${packageName}/${commonJS ? 'lib' : 'es'}`;
 }
 
 function getSideEffects(dirName: string, options: VantResolverOptions) {
@@ -58,11 +67,11 @@ function getSideEffects(dirName: string, options: VantResolverOptions) {
     return;
   }
 
-  const moduleType = getModuleType(options);
+  const from = getModulePath(options);
 
-  if (importStyle === 'less') return `vant/${moduleType}/${dirName}/style/less`;
+  if (importStyle === 'less') return `${from}/${dirName}/style/less`;
 
-  return `vant/${moduleType}/${dirName}/style/index`;
+  return `${from}/${dirName}/style/index`;
 }
 
 function getAPIMap() {
@@ -105,7 +114,7 @@ function getAPIMap() {
 }
 
 export function VantResolver(options: VantResolverOptions = {}) {
-  const moduleType = getModuleType(options);
+  const from = getModulePath(options);
   const apiMap = getAPIMap();
 
   return {
@@ -117,8 +126,8 @@ export function VantResolver(options: VantResolverOptions = {}) {
         if (!options.exclude?.includes(partialName)) {
           return {
             name: partialName,
-            from: `vant/${moduleType}`,
-            sideEffects: getSideEffects(kebabCase(partialName), options)
+            from,
+            sideEffects: getSideEffects(kebabCase(partialName), options),
           };
         }
       }
@@ -126,20 +135,20 @@ export function VantResolver(options: VantResolverOptions = {}) {
       // import API
       if (apiMap.has(name) && !options.exclude?.includes(name)) {
         const partialName = apiMap.get(name)!;
-          return {
-            name,
-            from: `vant/${moduleType}`,
-            sideEffects: getSideEffects(kebabCase(partialName), options),
-          };
+        return {
+          name,
+          from,
+          sideEffects: getSideEffects(kebabCase(partialName), options),
+        };
       }
     },
   };
 }
 
 export function VantImports(options: VantImportsOptions = {}) {
-  const moduleType = getModuleType(options);
+  const from = getModulePath(options);
 
   return {
-    [`vant/${moduleType}`]: [...getAPIMap().keys()],
+    [from]: [...getAPIMap().keys()],
   };
 }
