@@ -138,6 +138,7 @@ app.use(Lazyload);
 | crossorigin | 等同于原生的 [crossorigin](https://developer.mozilla.org/zh-CN/docs/Web/API/HTMLImageElement/crossOrigin) 属性 | _string_ | - |
 | referrerpolicy | 等同于原生的 [referrerpolicy](https://developer.mozilla.org/zh-CN/docs/Web/API/HTMLImageElement/referrerPolicy) 属性 | _string_ | - |
 | decoding `v4.9.20` | 等同于原生的 [decoding](https://developer.mozilla.org/zh-CN/docs/Web/API/HTMLImageElement/decoding) 属性 | _string_ | - |
+| fetchpriority | 图片的加载优先级提示 | _high \| low \| auto_ | - |
 
 ### 图片填充模式
 

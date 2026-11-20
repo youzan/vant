@@ -31,6 +31,24 @@ test('should pass props to img', async () => {
   expect(wrapper.html()).toMatchSnapshot();
 });
 
+test.each([false, true])(
+  'should set fetchpriority on the img with lazyLoad=%s',
+  async (lazyLoad) => {
+    const wrapper = mount(VanImage, {
+      props: { src: IMAGE_URL, lazyLoad, fetchpriority: 'high' },
+      global: { plugins: [Lazyload] },
+    });
+
+    const img = wrapper.get('img');
+    expect(img.attributes('fetchpriority')).toBe('high');
+    expect(wrapper.attributes('fetchpriority')).toBeUndefined();
+
+    await wrapper.setProps({ fetchpriority: 'low' });
+    expect(img.attributes('fetchpriority')).toBe('low');
+    wrapper.unmount();
+  },
+);
+
 test('should watch src and reset', async () => {
   const wrapper = mount(VanImage, {
     props: {
