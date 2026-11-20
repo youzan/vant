@@ -25,6 +25,7 @@
     "bin.js"
   ],
   "scripts": {
+    "test": "pnpm build && node --test",
     "build": "rimraf ./lib && tsc",
     "dev": "tsc --watch",
     "prepare": "pnpm build",
