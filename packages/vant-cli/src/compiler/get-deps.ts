@@ -69,10 +69,14 @@ function getImportRelativePath(code: string) {
   return code.split(divider)[1];
 }
 
+function isRelativePath(path: string) {
+  return /^\.\.?(?:\/|$)/.test(path);
+}
+
 function getPathByImport(code: string, filePath: string) {
   const relativePath = getImportRelativePath(code);
 
-  if (relativePath.includes('.')) {
+  if (isRelativePath(relativePath)) {
     return fillExt(join(filePath, '..', relativePath));
   }
 
@@ -129,8 +133,9 @@ export function replaceScriptImportExt(
   };
 
   imports.forEach((line, index) => {
-    if (line.includes('.vue')) {
-      updateImport(index, line.replace('.vue', ext));
+    const path = getImportRelativePath(line);
+    if (isRelativePath(path) && path.endsWith('.vue')) {
+      updateImport(index, line.replace(path, path.slice(0, -4) + ext));
     }
   });
 
