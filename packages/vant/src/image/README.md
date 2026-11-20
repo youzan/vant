@@ -112,6 +112,7 @@ app.use(Lazyload);
 | crossorigin | same as [crossorigin](https://developer.mozilla.org/en-US/docs/Web/API/HTMLImageElement/crossOrigin) | _string_ | - |
 | referrerpolicy | same as [referrerpolicy](https://developer.mozilla.org/en-US/docs/Web/API/HTMLImageElement/referrerPolicy) | _string_ | - |
 | decoding `v4.9.20` | same as [decoding](https://developer.mozilla.org/en-US/docs/Web/API/HTMLImageElement/decoding) | _string_ | - |
+| fetchpriority | Fetch priority hint for the image | _high \| low \| auto_ | - |
 
 ### fit optional value
 
