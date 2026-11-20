@@ -65,6 +65,20 @@ export default {
 };
 ```
 
+### Custom Sidebar Index
+
+```html
+<van-index-bar :index-list="['★', 'A']">
+  <template #index="{ index }">
+    <van-icon v-if="index === '★'" name="star" />
+    <span v-else>{{ index }}</span>
+  </template>
+
+  <van-index-anchor index="★" />
+  <van-index-anchor index="A" />
+</van-index-bar>
+```
+
 ## API
 
 ### IndexBar Props
@@ -117,6 +131,13 @@ const indexBarRef = ref<IndexBarInstance>();
 
 indexBarRef.value?.scrollTo('B');
 ```
+
+### IndexBar Slots
+
+| Name | Description | Slot Props |
+| --- | --- | --- |
+| default | List content | - |
+| index | Content of each sidebar index | _{ index: number \| string, active: boolean }_ |
 
 ### IndexAnchor Slots
 

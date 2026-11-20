@@ -41,6 +41,45 @@ test('should scroll to anchor and emit select event after clicking the index-bar
   expect(onSelect).toHaveBeenCalledWith('A');
 });
 
+test('should select an index by clicking or dragging over its slot content', async () => {
+  const onSelect = rs.fn();
+  const wrapper = mount({
+    render: () => (
+      <IndexBar
+        indexList={[1, 2]}
+        onSelect={onSelect}
+        v-slots={{
+          index: ({ index, active }) => <b class={{ active }}>#{index}</b>,
+        }}
+      >
+        <IndexAnchor index={1} />
+        <IndexAnchor index={2} />
+      </IndexBar>
+    ),
+  });
+
+  const labels = wrapper.findAll('.van-index-bar__index b');
+  expect(labels.map((label) => label.text())).toEqual(['#1', '#2']);
+  await mockScrollTop(0);
+  expect(labels[1].classes()).toContain('active');
+
+  await labels[0].trigger('click');
+  expect(onSelect).toHaveBeenLastCalledWith(1);
+
+  const sidebar = wrapper.get('.van-index-bar__sidebar');
+  const elementFromPoint = document.elementFromPoint;
+  try {
+    document.elementFromPoint = () => labels[1].element;
+    trigger(sidebar, 'touchstart', 0, 0);
+    trigger(sidebar, 'touchmove', 0, 100);
+    trigger(sidebar, 'touchmove', 0, 110);
+    expect(onSelect.mock.calls).toEqual([[1], [2]]);
+  } finally {
+    document.elementFromPoint = elementFromPoint;
+    wrapper.unmount();
+  }
+});
+
 test('should scroll to anchor after touching the index-bar', () => {
   const onSelect = rs.fn();
   const wrapper = mount({
@@ -65,9 +104,7 @@ test('should scroll to anchor after touching the index-bar', () => {
     }
 
     if (index === 3) {
-      return {
-        dataset: {},
-      };
+      return indexes[0].element.cloneNode(true);
     }
   };
 
