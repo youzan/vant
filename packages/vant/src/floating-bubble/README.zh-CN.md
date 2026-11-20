@@ -96,6 +96,7 @@ export default {
 | icon | 气泡图标名称或图片链接，等同于 Icon 组件的 [name 属性](#/zh-CN/icon#props) | _string_ | - |
 | gap | 气泡与窗口的最小间距，单位为 `px` | _number \| { x: number, y: number }_ | `24` |
 | teleport | 指定挂载的节点，等同于 Teleport 组件的 [to 属性](https://cn.vuejs.org/api/built-in-components.html#teleport) | _string \| Element_ | `body` |
+| defer | 是否延迟到同一轮渲染结束时再查找挂载节点，需要 Vue 3.5 及以上版本 | _boolean_ | `false` |
 
 ### Events
 

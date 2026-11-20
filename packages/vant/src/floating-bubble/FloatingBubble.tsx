@@ -51,6 +51,7 @@ export const floatingBubbleProps = {
   axis: makeStringProp<FloatingBubbleAxis>('y'),
   magnetic: String as PropType<FloatingBubbleMagnetic>,
   offset: Object as PropType<FloatingBubbleOffset>,
+  defer: Boolean,
   teleport: {
     type: [String, Object] as PropType<TeleportProps['to']>,
     default: 'body',
@@ -248,7 +249,9 @@ export default defineComponent({
         </div>
       );
       return props.teleport ? (
-        <Teleport to={props.teleport}>{Content}</Teleport>
+        <Teleport to={props.teleport} defer={props.defer}>
+          {Content}
+        </Teleport>
       ) : (
         Content
       );
