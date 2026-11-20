@@ -153,6 +153,14 @@ build({
 
 ## Options
 
+### packageName
+
+Package name used for component, API and style imports. Defaults to `vant`. The package must follow the Vant directory structure.
+
+```ts
+VantResolver({ packageName: '@acme/ui' });
+```
+
 ### importStyle
 
 Whether to automatically import the corresponding styles of the components.

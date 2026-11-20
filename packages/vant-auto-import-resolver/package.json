@@ -18,6 +18,7 @@
     "dist"
   ],
   "scripts": {
+    "test": "pnpm build && node --test",
     "dev": "rslib dev",
     "build": "rslib build",
     "release": "vant-cli release",

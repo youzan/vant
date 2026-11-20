@@ -153,6 +153,14 @@ build({
 
 ## 选项
 
+### packageName
+
+指定组件、函数和样式的导入包名，默认为 `vant`。自定义包需使用与 Vant 相同的目录结构。
+
+```ts
+VantResolver({ packageName: '@acme/ui' });
+```
+
 ### importStyle
 
 是否自动引用组件对应的样式。
