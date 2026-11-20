@@ -52,7 +52,7 @@ export const imageProps = {
   loadingIcon: makeStringProp('photo'),
   crossorigin: String as PropType<ImgHTMLAttributes['crossorigin']>,
   referrerpolicy: String as PropType<ImgHTMLAttributes['referrerpolicy']>,
-  fetchpriority: String as PropType<ImgHTMLAttributes['fetchpriority']>,
+  fetchpriority: String as PropType<'high' | 'low' | 'auto'>,
   decoding: String as PropType<ImgHTMLAttributes['decoding']>,
 };
 
