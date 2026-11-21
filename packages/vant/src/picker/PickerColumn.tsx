@@ -61,6 +61,7 @@ export default defineComponent({
 
   setup(props, { emit, slots }) {
     let moving: boolean;
+    let stoppedByTouch = false;
     let startOffset: number;
     let touchStartTime: number;
     let momentumOffset: number;
@@ -105,7 +106,8 @@ export default defineComponent({
     const isReadonly = () => props.readonly || !props.options.length;
 
     const onClickOption = (index: number) => {
-      if (moving || isReadonly()) {
+      if (moving || stoppedByTouch || isReadonly()) {
+        stoppedByTouch = false;
         return;
       }
 
@@ -148,6 +150,7 @@ export default defineComponent({
       }
 
       touch.start(event);
+      stoppedByTouch = !!moving;
 
       if (moving) {
         const translateY = getElementTranslateY(wrapper.value!);
