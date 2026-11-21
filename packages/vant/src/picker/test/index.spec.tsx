@@ -1,4 +1,4 @@
-import { later, mount, triggerDrag } from '../../../test';
+import { later, mount, trigger, triggerDrag } from '../../../test';
 import { Picker, type PickerOption, type PickerConfirmEventParams } from '..';
 import { computed, ref } from 'vue';
 
@@ -521,4 +521,25 @@ test('should emit default values when clear modelValue', async () => {
       selectedIndexes: [0],
     },
   ]);
+});
+
+test('should not select the tapped option when tapping to stop momentum scrolling', async () => {
+  const wrapper = mount(Picker, {
+    props: {
+      columns: simpleColumn,
+    },
+  });
+
+  const column = wrapper.find('.van-picker-column');
+  triggerDrag(column, 0, -100);
+  await trigger(column, 'touchstart');
+  await trigger(column, 'touchend');
+  await later();
+
+  await wrapper.findAll('.van-picker-column__item')[5].trigger('click');
+  expect(wrapper.emitted('clickOption')).toBeFalsy();
+  expect(
+    wrapper.emitted<[{ selectedValues: string[] }]>('change')?.at(-1)?.[0]
+      .selectedValues,
+  ).not.toEqual(['1995']);
 });
