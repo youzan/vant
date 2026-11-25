@@ -374,3 +374,16 @@ test('should update modelValue correctly after clicking the reversed vertical sl
   trigger(wrapper, 'click', 0, 100);
   expect(wrapper.emitted('update:modelValue')!.pop()).toEqual([0]);
 });
+
+test('should clamp a rounded release after bounds change during dragging', async () => {
+  const restore = mockRect();
+  const wrapper = mount(Slider, { props: { modelValue: 0, step: 40 } });
+  const button = wrapper.find('.van-slider__button');
+  trigger(button, 'touchstart', 0, 0);
+  trigger(button, 'touchmove', 80, 0);
+  await wrapper.setProps({ max: 60 });
+  trigger(button, 'touchend', 80, 0);
+  expect(wrapper.emitted('change')!.pop()).toEqual([60]);
+  restore();
+  wrapper.unmount();
+});
