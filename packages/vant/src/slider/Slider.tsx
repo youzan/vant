@@ -130,7 +130,7 @@ export default defineComponent({
 
       value = clamp(value, min, max);
       const diff = Math.round((value - min) / step) * step;
-      return addNumber(min, diff);
+      return clamp(addNumber(min, diff), min, max);
     };
 
     const updateStartValue = () => {
