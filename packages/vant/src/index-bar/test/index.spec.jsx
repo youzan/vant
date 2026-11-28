@@ -41,6 +41,39 @@ test('should scroll to anchor and emit select event after clicking the index-bar
   expect(onSelect).toHaveBeenCalledWith('A');
 });
 
+test('should apply the sticky offset when scrolling a nested container', async () => {
+  const onSelect = rs.fn();
+  const wrapper = mount({
+    render: () => (
+      <div style={{ height: '100px', overflowY: 'auto' }}>
+        <IndexBar stickyOffsetTop={48} onSelect={onSelect}>
+          <IndexAnchor index="A" />
+          <IndexAnchor index="B" />
+        </IndexBar>
+      </div>
+    ),
+  });
+  const scroller = wrapper.element;
+  const anchor = wrapper.findAll('.van-index-anchor')[1].element.parentElement;
+  const scrollerRect = rs
+    .spyOn(scroller, 'getBoundingClientRect')
+    .mockReturnValue({ top: 20, height: 100 });
+  const anchorRect = rs
+    .spyOn(anchor, 'getBoundingClientRect')
+    .mockImplementation(() => ({ top: 220 - scroller.scrollTop, height: 10 }));
+
+  try {
+    await wrapper.find('[data-index="B"]').trigger('click');
+
+    expect(scroller.scrollTop).toBe(152);
+    expect(onSelect).toHaveBeenCalledWith('B');
+  } finally {
+    anchorRect.mockRestore();
+    scrollerRect.mockRestore();
+    wrapper.unmount();
+  }
+});
+
 test('should scroll to anchor after touching the index-bar', () => {
   const onSelect = rs.fn();
   const wrapper = mount({
