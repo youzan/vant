@@ -20,6 +20,7 @@ import {
   truthProp,
   numericProp,
   getScrollTop,
+  setScrollTop,
   preventDefault,
   makeNumberProp,
   createNamespace,
@@ -221,8 +222,19 @@ export default defineComponent({
       const match = getMatchAnchor(selectActiveIndex);
 
       if (match) {
-        const scrollTop = getScrollTop(scrollParent.value!);
+        const scroller = scrollParent.value!;
+        const scrollTop = getScrollTop(scroller);
         const scrollParentRect = useRect(scrollParent);
+        if (props.sticky && props.stickyOffsetTop && scroller !== window) {
+          const { top } = match.getRect(scroller, scrollParentRect);
+          setScrollTop(scroller, top - props.stickyOffsetTop);
+          if (getScrollTop(scroller) === scrollTop) {
+            onScroll();
+          }
+          emit('select', match.index);
+          return;
+        }
+
         const { offsetHeight } = document.documentElement;
 
         match.$el.scrollIntoView();
